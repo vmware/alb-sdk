@@ -33,7 +33,8 @@ as a dependency-free npm module.
 
 **[Swagger UI Dist](./swagger/README.md)**
 
+# How to contribute
 
-
+The *** project team welcomes contributions from the community. Before you start working with ***, please read our Developer Certificate of Origin. All contributions to this repository must be signed as described on that page. Your signature certifies that you wrote the patch or have the right to pass it on as an open-source patch.
 
 
