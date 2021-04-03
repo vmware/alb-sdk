@@ -7,7 +7,7 @@
 package clients
 
 import (
-	"github.com/avinetworks/sdk/go/session"
+	"github.com/vmware/alb-sdk/go/session"
 )
 
 // AviClient -- an API Client for Avi Controller

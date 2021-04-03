@@ -7,7 +7,7 @@
 	<version>20.1.3</version>
 	<name>avisdk</name>
 	<description>Avi SDK is a java API which creates a session with controller and perform CRUD operations.</description>
-	<url>https://github.com/avinetworks/sdk/tree/master/java</url>
+	<url>https://github.com/vmware/alb-sdk/tree/master/java</url>
 	<licenses>
 		<license>
 			<name>The Apache License, Version 2.0</name>
@@ -39,9 +39,9 @@
 		</repository>
 	</distributionManagement>
 	<scm>
-		<connection>scm:git:git://github.com/avinetworks/sdk.git</connection>
-		<developerConnection>scm:git://github.com/avinetworks/sdk.git</developerConnection>
-		<url>http://github.com/avinetworks/sdk/tree/master/java</url>
+		<connection>scm:git:git://github.com/vmware/alb-sdk.git</connection>
+		<developerConnection>scm:git://github.com/vmware/alb-sdk.git</developerConnection>
+		<url>http://github.com/vmware/alb-sdk/tree/master/java</url>
 	</scm>
 	<build>
 		<sourceDirectory>src</sourceDirectory>

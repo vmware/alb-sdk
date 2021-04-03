@@ -1,7 +1,7 @@
 Avi GSS Config Converter
 ==============================
 
-`Avi GSS Config Converter  <https://github.com/avinetworks/sdk/releases/tag/latest>`_
+`Avi GSS Config Converter  <https://github.com/vmware/alb-sdk/releases/tag/latest>`_
 is a Python Package that can convert GSS configurations into Avi GSLB
 Configurations.
 
