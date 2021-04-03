@@ -4,8 +4,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/avinetworks/sdk/go/clients"
-	"github.com/avinetworks/sdk/go/session"
+	"github.com/vmware/alb-sdk/go/clients"
+	"github.com/vmware/alb-sdk/go/session"
 )
 
 func TestAviError(t *testing.T) {
