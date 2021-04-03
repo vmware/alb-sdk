@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/avinetworks/sdk/go/models"
+	"github.com/vmware/alb-sdk/go/models"
 	"github.com/golang/glog"
 )
 

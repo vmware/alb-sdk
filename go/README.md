@@ -30,7 +30,7 @@ They can be installed simply as:
 ```sh
 $ mkdir -p src/github.com/avinetworks/
 $ cd src/github.com/avinetworks/
-$ git clone https://github.com/avinetworks/sdk.git
+$ git clone https://github.com/vmware/alb-sdk.git
 #GOPATH will be path till src dir.
 $ export GOPATH=~/src
 ```
@@ -46,9 +46,9 @@ password and tenant in create_vs.go file.
 package main
 
 import (
-	"github.com/avinetworks/sdk/go/clients"
-	"github.com/avinetworks/sdk/go/models"
-	"github.com/avinetworks/sdk/go/session"
+	"github.com/vmware/alb-sdk/go/clients"
+	"github.com/vmware/alb-sdk/go/models"
+	"github.com/vmware/alb-sdk/go/session"
 	)
 ``` 
 - Create AVI API session:
@@ -175,8 +175,8 @@ package main
 import (
 	//"flag"
 	"fmt"
-	"github.com/avinetworks/sdk/go/clients"
-	"github.com/avinetworks/sdk/go/session"
+	"github.com/vmware/alb-sdk/go/clients"
+	"github.com/vmware/alb-sdk/go/session"
 )
 
 type MetricRequest struct {
@@ -223,14 +223,14 @@ $ go build -o /usr/bin/create_vs create_vs.go
 Following is an example entry of vendor.json file in Terraform provider
 ```go
 "package": [{
-                "path": "github.com/avinetworks/sdk/go/clients",
+                "path": "github.com/vmware/alb-sdk/go/clients",
                 "revision": "23def4e6c14b4da8ac2ed8007337bc5eb5007998",
                 "revisionTime": "2016-01-25T20:49:56Z",
                 "version": "18.1.3",
                 "versionExact": "18.1.3"
             },
             {
-                "path": "github.com/avinetworks/sdk/go/session",
+                "path": "github.com/vmware/alb-sdk/go/session",
                 "revision": "23def4e6c14b4da8ac2ed8007337bc5eb5007998",
                 "revisionTime": "2016-01-25T20:49:56Z",
                 "version": "18.1.3",
@@ -241,7 +241,7 @@ Following is an example entry of vendor.json file in Terraform provider
 Following is an example to import Go SDK packages in third party Go code
 ```go
 import (
-	"github.com/avinetworks/sdk/go/clients"
-	"github.com/avinetworks/sdk/go/session"
+	"github.com/vmware/alb-sdk/go/clients"
+	"github.com/vmware/alb-sdk/go/session"
 )
 ```

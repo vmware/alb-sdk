@@ -1,6 +1,6 @@
 # VMware Advanced Load Balancer (formerly Avi) SDK and Utilities
 
-[![Build Status](https://travis-ci.org/avinetworks/sdk.svg?branch=17.1.4_pytest)](https://travis-ci.org/avinetworks/sdk)
+[![Build Status](https://travis-ci.org/vmware/alb-sdk.svg?branch=17.1.4_pytest)](https://travis-ci.org/vmware/alb-sdk)
 
 This repository includes API documentation, SDK and sample source to integrate
 into the Avi Solution. Avi SDK provides the following tools and utilities:
@@ -33,7 +33,8 @@ as a dependency-free npm module.
 
 **[Swagger UI Dist](./swagger/README.md)**
 
+# How to contribute
 
-
+The *** project team welcomes contributions from the community. Before you start working with ***, please read our Developer Certificate of Origin. All contributions to this repository must be signed as described on that page. Your signature certifies that you wrote the patch or have the right to pass it on as an open-source patch.
 
 

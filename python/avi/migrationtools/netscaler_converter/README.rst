@@ -1,6 +1,6 @@
 Avi Netscaler Config Converter
 ==============================
-`Avi Netscaler Config Converter  <https://github.com/avinetworks/sdk/releases/tag/latest>`_
+`Avi Netscaler Config Converter  <https://github.com/vmware/alb-sdk/releases/tag/latest>`_
 is a Python Package that can convert Netscaler configurations into Avi Configurations.
 
 Netscaler converter takes input as Netscaler configuration outputs Avi configuration in JSON

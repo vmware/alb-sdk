@@ -10,11 +10,11 @@ Maven
 
 
 
-Download the jar from https://github.com/avinetworks/sdk/blob/java_sdk/java/target/avisdk-18.2.7-SNAPSHOT.jar
+Download the jar from https://github.com/vmware/alb-sdk/blob/java_sdk/java/target/avisdk-18.2.7-SNAPSHOT.jar
 
 add the jar into the classpath of your project.
 
-for documentation please refer https://github.com/avinetworks/sdk/blob/java_sdk/java/target/avisdk-18.2.7-SNAPSHOT-javadoc.jar.
+for documentation please refer https://github.com/vmware/alb-sdk/blob/java_sdk/java/target/avisdk-18.2.7-SNAPSHOT-javadoc.jar.
 
 ## Usage Examples
 
