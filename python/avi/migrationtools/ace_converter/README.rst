@@ -1,7 +1,7 @@
 Avi Ace Config Converter
 ==============================
 
-`Avi Ace Config Converter  <https://github.com/avinetworks/sdk/releases/tag/latest>`_
+`Avi Ace Config Converter  <https://github.com/vmware/alb-sdk/releases/tag/latest>`_
 is a Python Package that can convert Ace configurations into Avi Configurations.
 
 Ace converter takes input as Ace configuration outputs Avi configuration in JSON

@@ -9,5 +9,5 @@
 			"revisionTime": "2016-01-25T20:49:56Z"
 		}
 	],
-	"rootPath": "github.com/avinetworks/sdk/go"
+	"rootPath": "github.com/vmware/alb-sdk/go"
 }
