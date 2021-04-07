@@ -20,7 +20,7 @@ public class DnsServiceDomain  {
     private String domainName = null;
 
     @JsonProperty("num_dns_ip")
-    private Integer numDnsIp;
+    private Integer numDnsIp = 1;
 
     @JsonProperty("pass_through")
     private Boolean passThrough = true;
@@ -52,9 +52,10 @@ public class DnsServiceDomain  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * [deprecated] useless fieldplease refer to dnsserviceapplicationprofile's num_dns_ip for default valueplease refer to vsvip's dns_info
-     * num_records_in_response for user config valuespecifies the number of a recordsreturned by avi dns service.
-     * Field deprecated in 20.1.5.
+     * Specifies the number of a records returned by avi dns service.
+     * Allowed values are 0-20.
+     * Special values are 0- 'return all ip addresses'.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return numDnsIp
      */
     public Integer getNumDnsIp() {
@@ -63,9 +64,10 @@ public class DnsServiceDomain  {
 
     /**
      * This is the setter method to the attribute.
-     * [deprecated] useless fieldplease refer to dnsserviceapplicationprofile's num_dns_ip for default valueplease refer to vsvip's dns_info
-     * num_records_in_response for user config valuespecifies the number of a recordsreturned by avi dns service.
-     * Field deprecated in 20.1.5.
+     * Specifies the number of a records returned by avi dns service.
+     * Allowed values are 0-20.
+     * Special values are 0- 'return all ip addresses'.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param numDnsIp set the numDnsIp.
      */
     public void setNumDnsIp(Integer  numDnsIp) {

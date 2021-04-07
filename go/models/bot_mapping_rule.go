@@ -11,7 +11,8 @@ type BotMappingRule struct {
 	ClassMatcher *BotClassMatcher `json:"class_matcher,omitempty"`
 
 	// The assigned classification for this client. Field introduced in 21.1.1.
-	Classification *BotClassification `json:"classification,omitempty"`
+	// Required: true
+	Classification *BotClassification `json:"classification"`
 
 	// The component for which this mapping is used. Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION. Field introduced in 21.1.1.
 	ComponentMatcher *string `json:"component_matcher,omitempty"`

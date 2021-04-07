@@ -577,10 +577,6 @@
                     "type": "integer",
                     "format": "int32"
                 },
-                "ibgp_local_as_override": {
-                    "description": "Override the profile level local_as with the peer level remote_as. Field introduced in 21.1.1.",
-                    "type": "boolean"
-                },
                 "keepalive_interval": {
                     "description": "Keepalive interval for this Peer. Allowed values are 0-3600.",
                     "type": "integer",
@@ -989,7 +985,7 @@
                     "type": "string"
                 },
                 "gateway_mon": {
-                    "description": "Configure ping based heartbeat check for gateway in service engines of vrf.",
+                    "description": "Configure ping based heartbeat check for gateway in service engines of vrf. Maximum of 32 items allowed.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/GatewayMonitor"

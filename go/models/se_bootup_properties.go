@@ -106,7 +106,7 @@ type SeBootupProperties struct {
 	// Number of ssl_sess_cache_per_vs.
 	SslSessCachePerVs *int32 `json:"ssl_sess_cache_per_vs,omitempty"`
 
-	// Deprecated in 21.1.1, use session timeout in ssl profile. Field deprecated in 21.1.1.
+	// Number of ssl_sess_cache_timeout.
 	SslSessCacheTimeout *int32 `json:"ssl_sess_cache_timeout,omitempty"`
 
 	// Size of the TCP SYN cache hash table.

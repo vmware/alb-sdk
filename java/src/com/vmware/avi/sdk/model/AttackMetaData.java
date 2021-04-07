@@ -16,9 +16,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AttackMetaData  {
-    @JsonProperty("amplification")
-    private AttackDnsAmplification amplification = null;
-
     @JsonProperty("ip")
     private String ip = null;
 
@@ -29,28 +26,6 @@ public class AttackMetaData  {
     private String url = "url";
 
 
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Dns amplification attack record.
-     * Field introduced in 21.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return amplification
-     */
-    public AttackDnsAmplification getAmplification() {
-        return amplification;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Dns amplification attack record.
-     * Field introduced in 21.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param amplification set the amplification.
-     */
-    public void setAmplification(AttackDnsAmplification amplification) {
-        this.amplification = amplification;
-    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -122,16 +97,14 @@ public class AttackMetaData  {
       }
       AttackMetaData objAttackMetaData = (AttackMetaData) o;
       return   Objects.equals(this.ip, objAttackMetaData.ip)&&
-  Objects.equals(this.maxRespTime, objAttackMetaData.maxRespTime)&&
-  Objects.equals(this.amplification, objAttackMetaData.amplification);
+  Objects.equals(this.maxRespTime, objAttackMetaData.maxRespTime);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class AttackMetaData {\n");
-                  sb.append("    amplification: ").append(toIndentedString(amplification)).append("\n");
-                        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+                  sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
                         sb.append("    maxRespTime: ").append(toIndentedString(maxRespTime)).append("\n");
                               sb.append("}");
       return sb.toString();
