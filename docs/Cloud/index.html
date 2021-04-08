@@ -183,7 +183,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - configure cloud <key> - show cloud <key> - show cloud internals ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 20.1.4</div>
+    <div class="app-desc">Version: 21.1.1</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -602,6 +602,7 @@ font-style: italic;
     "enable_vip_on_all_interfaces" : true,
     "apic_mode" : true,
     "license_type" : "aeiou",
+    "vmc_deployment" : true,
     "cloudstack_configuration" : {
       "access_key_id" : "aeiou",
       "cntr_public_ip" : "aeiou",
@@ -685,27 +686,39 @@ font-style: italic;
     },
     "nsxt_configuration" : {
       "domain_id" : "aeiou",
+      "data_network_config" : {
+        "tz_type" : "aeiou",
+        "tier1_segment_config" : {
+          "segment_config_mode" : "aeiou",
+          "automatic" : {
+            "nsxt_segment_subnet" : "",
+            "num_se_per_segment" : 123,
+            "tier1_lr_ids" : [ "aeiou" ]
+          },
+          "manual" : {
+            "tier1_lrs" : [ {
+              "segment_id" : "aeiou",
+              "tier1_lr_id" : "aeiou"
+            } ]
+          }
+        },
+        "transport_zone" : "aeiou",
+        "vlan_segments" : [ "aeiou" ]
+      },
+      "management_network_config" : {
+        "tz_type" : "aeiou",
+        "overlay_segment" : "",
+        "vlan_segment" : "aeiou",
+        "transport_zone" : "aeiou"
+      },
       "enforcementpoint_id" : "aeiou",
       "nsxt_url" : "aeiou",
       "nsxt_credentials_ref" : "aeiou",
-      "tier1_segment_config" : {
-        "segment_config_mode" : "aeiou",
-        "automatic" : {
-          "nsxt_segment_subnet" : "",
-          "num_se_per_segment" : 123,
-          "tier1_lr_ids" : [ "aeiou" ]
-        },
-        "manual" : {
-          "tier1_lrs" : [ "" ]
-        }
-      },
+      "tier1_segment_config" : "",
       "automate_dfw_rules" : true,
       "site_id" : "aeiou",
       "transport_zone" : "aeiou",
-      "management_segment" : {
-        "segment_id" : "aeiou",
-        "tier1_lr_id" : "aeiou"
-      }
+      "management_segment" : ""
     },
     "se_group_template_ref" : "aeiou",
     "dns_resolution_on_se" : true,
@@ -737,6 +750,7 @@ font-style: italic;
       "management_network" : "aeiou",
       "vcenter_url" : "aeiou",
       "privilege" : "aeiou",
+      "disable_vm_discovery" : true,
       "username" : "aeiou"
     },
     "linuxserver_configuration" : {
@@ -1231,6 +1245,7 @@ font-style: italic;
   "enable_vip_on_all_interfaces" : true,
   "apic_mode" : true,
   "license_type" : "aeiou",
+  "vmc_deployment" : true,
   "cloudstack_configuration" : {
     "access_key_id" : "aeiou",
     "cntr_public_ip" : "aeiou",
@@ -1314,27 +1329,39 @@ font-style: italic;
   },
   "nsxt_configuration" : {
     "domain_id" : "aeiou",
+    "data_network_config" : {
+      "tz_type" : "aeiou",
+      "tier1_segment_config" : {
+        "segment_config_mode" : "aeiou",
+        "automatic" : {
+          "nsxt_segment_subnet" : "",
+          "num_se_per_segment" : 123,
+          "tier1_lr_ids" : [ "aeiou" ]
+        },
+        "manual" : {
+          "tier1_lrs" : [ {
+            "segment_id" : "aeiou",
+            "tier1_lr_id" : "aeiou"
+          } ]
+        }
+      },
+      "transport_zone" : "aeiou",
+      "vlan_segments" : [ "aeiou" ]
+    },
+    "management_network_config" : {
+      "tz_type" : "aeiou",
+      "overlay_segment" : "",
+      "vlan_segment" : "aeiou",
+      "transport_zone" : "aeiou"
+    },
     "enforcementpoint_id" : "aeiou",
     "nsxt_url" : "aeiou",
     "nsxt_credentials_ref" : "aeiou",
-    "tier1_segment_config" : {
-      "segment_config_mode" : "aeiou",
-      "automatic" : {
-        "nsxt_segment_subnet" : "",
-        "num_se_per_segment" : 123,
-        "tier1_lr_ids" : [ "aeiou" ]
-      },
-      "manual" : {
-        "tier1_lrs" : [ "" ]
-      }
-    },
+    "tier1_segment_config" : "",
     "automate_dfw_rules" : true,
     "site_id" : "aeiou",
     "transport_zone" : "aeiou",
-    "management_segment" : {
-      "segment_id" : "aeiou",
-      "tier1_lr_id" : "aeiou"
-    }
+    "management_segment" : ""
   },
   "se_group_template_ref" : "aeiou",
   "dns_resolution_on_se" : true,
@@ -1366,6 +1393,7 @@ font-style: italic;
     "management_network" : "aeiou",
     "vcenter_url" : "aeiou",
     "privilege" : "aeiou",
+    "disable_vm_discovery" : true,
     "username" : "aeiou"
   },
   "linuxserver_configuration" : {
@@ -2093,6 +2121,7 @@ font-style: italic;
   "enable_vip_on_all_interfaces" : true,
   "apic_mode" : true,
   "license_type" : "aeiou",
+  "vmc_deployment" : true,
   "cloudstack_configuration" : {
     "access_key_id" : "aeiou",
     "cntr_public_ip" : "aeiou",
@@ -2176,27 +2205,39 @@ font-style: italic;
   },
   "nsxt_configuration" : {
     "domain_id" : "aeiou",
+    "data_network_config" : {
+      "tz_type" : "aeiou",
+      "tier1_segment_config" : {
+        "segment_config_mode" : "aeiou",
+        "automatic" : {
+          "nsxt_segment_subnet" : "",
+          "num_se_per_segment" : 123,
+          "tier1_lr_ids" : [ "aeiou" ]
+        },
+        "manual" : {
+          "tier1_lrs" : [ {
+            "segment_id" : "aeiou",
+            "tier1_lr_id" : "aeiou"
+          } ]
+        }
+      },
+      "transport_zone" : "aeiou",
+      "vlan_segments" : [ "aeiou" ]
+    },
+    "management_network_config" : {
+      "tz_type" : "aeiou",
+      "overlay_segment" : "",
+      "vlan_segment" : "aeiou",
+      "transport_zone" : "aeiou"
+    },
     "enforcementpoint_id" : "aeiou",
     "nsxt_url" : "aeiou",
     "nsxt_credentials_ref" : "aeiou",
-    "tier1_segment_config" : {
-      "segment_config_mode" : "aeiou",
-      "automatic" : {
-        "nsxt_segment_subnet" : "",
-        "num_se_per_segment" : 123,
-        "tier1_lr_ids" : [ "aeiou" ]
-      },
-      "manual" : {
-        "tier1_lrs" : [ "" ]
-      }
-    },
+    "tier1_segment_config" : "",
     "automate_dfw_rules" : true,
     "site_id" : "aeiou",
     "transport_zone" : "aeiou",
-    "management_segment" : {
-      "segment_id" : "aeiou",
-      "tier1_lr_id" : "aeiou"
-    }
+    "management_segment" : ""
   },
   "se_group_template_ref" : "aeiou",
   "dns_resolution_on_se" : true,
@@ -2228,6 +2269,7 @@ font-style: italic;
     "management_network" : "aeiou",
     "vcenter_url" : "aeiou",
     "privilege" : "aeiou",
+    "disable_vm_discovery" : true,
     "username" : "aeiou"
   },
   "linuxserver_configuration" : {
@@ -2837,6 +2879,7 @@ font-style: italic;
   "enable_vip_on_all_interfaces" : true,
   "apic_mode" : true,
   "license_type" : "aeiou",
+  "vmc_deployment" : true,
   "cloudstack_configuration" : {
     "access_key_id" : "aeiou",
     "cntr_public_ip" : "aeiou",
@@ -2920,27 +2963,39 @@ font-style: italic;
   },
   "nsxt_configuration" : {
     "domain_id" : "aeiou",
+    "data_network_config" : {
+      "tz_type" : "aeiou",
+      "tier1_segment_config" : {
+        "segment_config_mode" : "aeiou",
+        "automatic" : {
+          "nsxt_segment_subnet" : "",
+          "num_se_per_segment" : 123,
+          "tier1_lr_ids" : [ "aeiou" ]
+        },
+        "manual" : {
+          "tier1_lrs" : [ {
+            "segment_id" : "aeiou",
+            "tier1_lr_id" : "aeiou"
+          } ]
+        }
+      },
+      "transport_zone" : "aeiou",
+      "vlan_segments" : [ "aeiou" ]
+    },
+    "management_network_config" : {
+      "tz_type" : "aeiou",
+      "overlay_segment" : "",
+      "vlan_segment" : "aeiou",
+      "transport_zone" : "aeiou"
+    },
     "enforcementpoint_id" : "aeiou",
     "nsxt_url" : "aeiou",
     "nsxt_credentials_ref" : "aeiou",
-    "tier1_segment_config" : {
-      "segment_config_mode" : "aeiou",
-      "automatic" : {
-        "nsxt_segment_subnet" : "",
-        "num_se_per_segment" : 123,
-        "tier1_lr_ids" : [ "aeiou" ]
-      },
-      "manual" : {
-        "tier1_lrs" : [ "" ]
-      }
-    },
+    "tier1_segment_config" : "",
     "automate_dfw_rules" : true,
     "site_id" : "aeiou",
     "transport_zone" : "aeiou",
-    "management_segment" : {
-      "segment_id" : "aeiou",
-      "tier1_lr_id" : "aeiou"
-    }
+    "management_segment" : ""
   },
   "se_group_template_ref" : "aeiou",
   "dns_resolution_on_se" : true,
@@ -2972,6 +3027,7 @@ font-style: italic;
     "management_network" : "aeiou",
     "vcenter_url" : "aeiou",
     "privilege" : "aeiou",
+    "disable_vm_discovery" : true,
     "username" : "aeiou"
   },
   "linuxserver_configuration" : {
@@ -3425,6 +3481,7 @@ font-style: italic;
   "enable_vip_on_all_interfaces" : true,
   "apic_mode" : true,
   "license_type" : "aeiou",
+  "vmc_deployment" : true,
   "cloudstack_configuration" : {
     "access_key_id" : "aeiou",
     "cntr_public_ip" : "aeiou",
@@ -3508,27 +3565,39 @@ font-style: italic;
   },
   "nsxt_configuration" : {
     "domain_id" : "aeiou",
+    "data_network_config" : {
+      "tz_type" : "aeiou",
+      "tier1_segment_config" : {
+        "segment_config_mode" : "aeiou",
+        "automatic" : {
+          "nsxt_segment_subnet" : "",
+          "num_se_per_segment" : 123,
+          "tier1_lr_ids" : [ "aeiou" ]
+        },
+        "manual" : {
+          "tier1_lrs" : [ {
+            "segment_id" : "aeiou",
+            "tier1_lr_id" : "aeiou"
+          } ]
+        }
+      },
+      "transport_zone" : "aeiou",
+      "vlan_segments" : [ "aeiou" ]
+    },
+    "management_network_config" : {
+      "tz_type" : "aeiou",
+      "overlay_segment" : "",
+      "vlan_segment" : "aeiou",
+      "transport_zone" : "aeiou"
+    },
     "enforcementpoint_id" : "aeiou",
     "nsxt_url" : "aeiou",
     "nsxt_credentials_ref" : "aeiou",
-    "tier1_segment_config" : {
-      "segment_config_mode" : "aeiou",
-      "automatic" : {
-        "nsxt_segment_subnet" : "",
-        "num_se_per_segment" : 123,
-        "tier1_lr_ids" : [ "aeiou" ]
-      },
-      "manual" : {
-        "tier1_lrs" : [ "" ]
-      }
-    },
+    "tier1_segment_config" : "",
     "automate_dfw_rules" : true,
     "site_id" : "aeiou",
     "transport_zone" : "aeiou",
-    "management_segment" : {
-      "segment_id" : "aeiou",
-      "tier1_lr_id" : "aeiou"
-    }
+    "management_segment" : ""
   },
   "se_group_template_ref" : "aeiou",
   "dns_resolution_on_se" : true,
@@ -3560,6 +3629,7 @@ font-style: italic;
     "management_network" : "aeiou",
     "vcenter_url" : "aeiou",
     "privilege" : "aeiou",
+    "disable_vm_discovery" : true,
     "username" : "aeiou"
   },
   "linuxserver_configuration" : {
@@ -3698,6 +3768,7 @@ font-style: italic;
     <li><a href="#CloudApiResponse"><code>CloudApiResponse</code></a></li>
     <li><a href="#CloudStackConfiguration"><code>CloudStackConfiguration</code></a></li>
     <li><a href="#CustomTag"><code>CustomTag</code></a></li>
+    <li><a href="#DataNetworkConfig"><code>DataNetworkConfig</code></a></li>
     <li><a href="#DockerConfiguration"><code>DockerConfiguration</code></a></li>
     <li><a href="#DockerRegistry"><code>DockerRegistry</code></a></li>
     <li><a href="#FeProxyRoutePublishConfig"><code>FeProxyRoutePublishConfig</code></a></li>
@@ -3716,6 +3787,7 @@ font-style: italic;
     <li><a href="#IpAddrPrefix"><code>IpAddrPrefix</code></a></li>
     <li><a href="#LinuxServerConfiguration"><code>LinuxServerConfiguration</code></a></li>
     <li><a href="#LinuxServerHost"><code>LinuxServerHost</code></a></li>
+    <li><a href="#ManagementNetworkConfig"><code>ManagementNetworkConfig</code></a></li>
     <li><a href="#MarathonConfiguration"><code>MarathonConfiguration</code></a></li>
     <li><a href="#MarathonSeDeployment"><code>MarathonSeDeployment</code></a></li>
     <li><a href="#MesosAttribute"><code>MesosAttribute</code></a></li>
@@ -3871,6 +3943,7 @@ font-style: italic;
 <div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Unique object identifier of the object. </div>
 <div class="param">vca_configuration (optional)</div><div class="param-desc"><span class="param-type"><a href="#vCloudAirConfiguration">vCloudAirConfiguration</a></span> Placeholder for description of property vca_configuration of obj type Cloud field type str  type object </div>
 <div class="param">vcenter_configuration (optional)</div><div class="param-desc"><span class="param-type"><a href="#vCenterConfiguration">vCenterConfiguration</a></span> Placeholder for description of property vcenter_configuration of obj type Cloud field type str  type object </div>
+<div class="param">vmc_deployment (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> This deployment is VMware on AWS cloud. Field introduced in 20.1.5, 21.1.1. </div>
 <div class="param">vtype </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Cloud type. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed in Basic(Allowed values- CLOUD_NONE,CLOUD_NSXT) edition, Essentials(Allowed values- CLOUD_NONE,CLOUD_VCENTER) edition, Enterprise edition. </div>
     </div>  <!-- field-items -->
   </div>
@@ -3899,6 +3972,15 @@ font-style: italic;
     <div class="field-items">
       <div class="param">tag_key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> tag_key of CustomTag. </div>
 <div class="param">tag_val (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> tag_val of CustomTag. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="DataNetworkConfig">DataNetworkConfig</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">tier1_segment_config (optional)</div><div class="param-desc"><span class="param-type"><a href="#NsxtTier1SegmentConfig">NsxtTier1SegmentConfig</a></span> Nsxt tier1 segment configuration for Avi Service Engine data path. This should be set only when transport zone is of type OVERLAY. Field introduced in 20.1.5. Allowed in Basic edition, Enterprise edition. </div>
+<div class="param">transport_zone </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Data transport zone path for Avi Service Engines. Example- /infra/sites/default/enforcement-points/default/transport-zones/xxx-xxx-xxxx. Field introduced in 20.1.5. Allowed in Basic edition, Enterprise edition. </div>
+<div class="param">tz_type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Data transport zone type overlay or vlan. Enum options - OVERLAY, VLAN. Field introduced in 20.1.5. Allowed in Basic edition, Enterprise edition. </div>
+<div class="param">vlan_segments (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Data vlan segments path to use for Avi Service Engines. Example- /infra/segments/vlanls. This should be set only when transport zone is of type VLAN. Field introduced in 20.1.5. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -4089,6 +4171,15 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3 class="field-label"><a name="ManagementNetworkConfig">ManagementNetworkConfig</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">overlay_segment (optional)</div><div class="param-desc"><span class="param-type"><a href="#Tier1LogicalRouterInfo">Tier1LogicalRouterInfo</a></span> Management overlay segment to use for Avi Service Engines. This should be set only when transport zone is of type OVERLAY. Field introduced in 20.1.5. Allowed in Basic edition, Enterprise edition. </div>
+<div class="param">transport_zone </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Management transport zone path for Avi Service Engines. Example- /infra/sites/default/enforcement-points/default/transport-zones/xxx-xxx-xxxx. Field introduced in 20.1.5. Allowed in Basic edition, Enterprise edition. </div>
+<div class="param">tz_type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Management transport zone type overlay or vlan. Enum options - OVERLAY, VLAN. Field introduced in 20.1.5. Allowed in Basic edition, Enterprise edition. </div>
+<div class="param">vlan_segment (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Management vlan segment path to use for Avi Service Engines. Example- /infra/segments/vlanls. This should be set only when transport zone is of type VLAN. Field introduced in 20.1.5. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="MarathonConfiguration">MarathonConfiguration</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">framework_tag (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Framework tag to be used in Virtualservice name. Default is framework name from Mesos. If this tag is altered atruntime, Virtualservices will be deleted and re-created. </div>
@@ -4182,14 +4273,16 @@ font-style: italic;
     <h3 class="field-label"><a name="NsxtConfiguration">NsxtConfiguration</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">automate_dfw_rules (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Automatically create DFW rules for VirtualService in NSX-T Manager. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition, Enterprise edition. </div>
+<div class="param">data_network_config </div><div class="param-desc"><span class="param-type"><a href="#DataNetworkConfig">DataNetworkConfig</a></span> Data network configuration for Avi Service Engines. Field introduced in 20.1.5. Allowed in Basic edition, Enterprise edition. </div>
 <div class="param">domain_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Domain where NSGroup objects belongs to. Field introduced in 20.1.1. </div>
 <div class="param">enforcementpoint_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Enforcement point is where the rules of a policy to apply. Field introduced in 20.1.1. </div>
-<div class="param">management_segment </div><div class="param-desc"><span class="param-type"><a href="#Tier1LogicalRouterInfo">Tier1LogicalRouterInfo</a></span> Management network segment to use for Avi Service Engines. Field introduced in 20.1.1. </div>
+<div class="param">management_network_config </div><div class="param-desc"><span class="param-type"><a href="#ManagementNetworkConfig">ManagementNetworkConfig</a></span> Management network configuration for Avi Service Engines. Field introduced in 20.1.5. Allowed in Basic edition, Enterprise edition. </div>
+<div class="param">management_segment (optional)</div><div class="param-desc"><span class="param-type"><a href="#Tier1LogicalRouterInfo">Tier1LogicalRouterInfo</a></span> Management network segment to use for Avi Service Engines. Field deprecated in 20.1.5. Field introduced in 20.1.1. </div>
 <div class="param">nsxt_credentials_ref </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Credentials to access NSX-T manager. It is a reference to an object of type CloudConnectorUser. Field introduced in 20.1.1. </div>
 <div class="param">nsxt_url </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> NSX-T manager hostname or IP address. Field introduced in 20.1.1. </div>
 <div class="param">site_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Site where transport zone belongs to. Field introduced in 20.1.1. </div>
-<div class="param">tier1_segment_config </div><div class="param-desc"><span class="param-type"><a href="#NsxtTier1SegmentConfig">NsxtTier1SegmentConfig</a></span> Nsxt tier1 segment configuration for Avi Service Engine data path. Field introduced in 20.1.1. </div>
-<div class="param">transport_zone </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Network zone where nodes can talk via overlay. Virtual IPs and Service Engines will belong to this zone. Field introduced in 20.1.1. </div>
+<div class="param">tier1_segment_config (optional)</div><div class="param-desc"><span class="param-type"><a href="#NsxtTier1SegmentConfig">NsxtTier1SegmentConfig</a></span> Nsxt tier1 segment configuration for Avi Service Engine data path. Field deprecated in 20.1.5. Field introduced in 20.1.1. </div>
+<div class="param">transport_zone (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Network zone where nodes can talk via overlay. Virtual IPs and Service Engines will belong to this zone. Value should be path like /infra/sites/default/enforcement-points/default/transport-zones/xxx-xxx-xxxx. Field deprecated in 20.1.5. Field introduced in 20.1.1. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -4468,14 +4561,15 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="Tier1LogicalRouterInfo">Tier1LogicalRouterInfo</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">segment_id </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Segment ID. Field introduced in 20.1.1. </div>
-<div class="param">tier1_lr_id </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tier1 logical router ID. Field introduced in 20.1.1. </div>
+      <div class="param">segment_id </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Overlay segment path. Example- /infra/segments/Seg-Web-T1-01. Field introduced in 20.1.1. </div>
+<div class="param">tier1_lr_id </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tier1 logical router path. Example- /infra/tier-1s/T1-01. Field introduced in 20.1.1. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="vCenterConfiguration">vCenterConfiguration</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">datacenter (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Datacenter for virtual infrastructure discovery. </div>
+<div class="param">disable_vm_discovery (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If true, VM&#39;s on the vCenter will not be discovered.Set it to true if there are more than 10000 VMs in the datacenter. Field introduced in 20.1.5. </div>
 <div class="param">management_ip_subnet (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrPrefix">IpAddrPrefix</a></span> Management subnet to use for Avi Service Engines. </div>
 <div class="param">management_network (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Management network to use for Avi Service Engines. It is a reference to an object of type VIMgrNWRuntime. </div>
 <div class="param">password (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The password Avi Vantage will use when authenticating with vCenter. </div>
