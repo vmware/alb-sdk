@@ -4029,6 +4029,62 @@ ServiceEngine Metrics
 <td> True </td>
 </tr>
 <tr>
+<td> se_stats.sum_arp_pkts_dropped </td>
+<td> Number of data packets dropped waiting for ARP reply. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_stats.sum_arp_pkts_received </td>
+<td> Number of ARP packets received by this host. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_stats.sum_arp_rx_replies </td>
+<td> Number of ARP replies received by this host. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_stats.sum_arp_rx_requests </td>
+<td> Number of ARP requests received by this host. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_stats.sum_arp_timeouts </td>
+<td> Number of times pending ARP were entries removed due to timeout. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_stats.sum_arp_tx_replies </td>
+<td> Number of ARP replies sent by this host. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_stats.sum_arp_tx_requests </td>
+<td> Number of ARP requests sent by this host. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
 <td> se_stats.sum_cache_object_allocation_failure </td>
 <td> Number of times cacheable objects were dropped due to memory allocation failure </td>
 <td> METRIC_COUNT </td>
@@ -6399,6 +6455,110 @@ SE Interface Metrics
 <tr>
 <td> se_if.sum_connection_dropped_table_limit </td>
 <td> Number of times flowtable entries limit is reached. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_gro_mbufs_coalesced </td>
+<td> Number of input packets received and coalesced in one burst from the rx queue. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_ierrors </td>
+<td> Total number of erroneous received packets. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_ip_checksum_drops </td>
+<td> Total number of packets dropped at every vnic owing to a bad ip header checksum. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_kni_mbuf_alloc_failures </td>
+<td> Number of times KNI mbuf pool was empty. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_kni_rx_drops </td>
+<td> Number of packets dropped by KNI in the ingress path because allocation of an skb failed due to lack of available memory. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_kni_tx_drops </td>
+<td> Number of packets dropped by the KNI interface in the egress path. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_kni_tx_errors </td>
+<td> Number of packets dropped by the KNI interface due to transmit timeout on egress. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_l4_checksum_drops </td>
+<td> Total number of packets dropped at every vnic owing to a bad tcp/udp checksum. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_local_flow_probes_req_received </td>
+<td> Number of flow probe messages received by dispatcher cores. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_local_flow_probes_sent </td>
+<td> Number of flow probe requests sent for open connection by the primary core. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_oerrors </td>
+<td> Total number of failed packet transmission. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_tx_frags_p2s </td>
+<td> Number of fragments packet is fragmented into by the dispatcher when punting from primary to secondary. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_tx_kni_errs </td>
+<td> Mbufs were depleted in kni mbuf pool or Enqueue mbufs to kni rx queue failed during ingress. </td>
 <td> METRIC_COUNT </td>
 <td> True </td>
 <td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
@@ -9942,7 +10102,7 @@ Stats for ICAP server.
 </tr>
 <tr>
 <td> icap_stats.avg_error </td>
-<td> Rate of all ICAP related errors </td>
+<td> Rate of all ICAP related errors. </td>
 <td> PER_SECOND </td>
 <td> False </td>
 <td>  </td>
@@ -9950,7 +10110,7 @@ Stats for ICAP server.
 </tr>
 <tr>
 <td> icap_stats.avg_internal_error </td>
-<td> Rate of internal errors when processing ICAP requests </td>
+<td> Rate of internal errors when processing ICAP requests. </td>
 <td> PER_SECOND </td>
 <td> False </td>
 <td>  </td>
@@ -9982,7 +10142,7 @@ Stats for ICAP server.
 </tr>
 <tr>
 <td> icap_stats.avg_server_error </td>
-<td> Rate of ICAP server error responses </td>
+<td> Rate of ICAP server error responses. </td>
 <td> PER_SECOND </td>
 <td> False </td>
 <td>  </td>
@@ -9990,7 +10150,7 @@ Stats for ICAP server.
 </tr>
 <tr>
 <td> icap_stats.avg_time_warning </td>
-<td> Rate of requests taking time more than ICAP warning threshold </td>
+<td> Rate of requests taking time more than ICAP warning threshold. </td>
 <td> PER_SECOND </td>
 <td> False </td>
 <td>  </td>
@@ -10022,7 +10182,7 @@ Stats for ICAP server.
 </tr>
 <tr>
 <td> icap_stats.pct_internal_error </td>
-<td> Fraction of requests failed due to internal errors </td>
+<td> Fraction of requests failed due to internal errors. </td>
 <td> PERCENT </td>
 <td> False </td>
 <td>  </td>
@@ -10046,7 +10206,7 @@ Stats for ICAP server.
 </tr>
 <tr>
 <td> icap_stats.pct_time_warning </td>
-<td> Fraction of ICAP requests exceeding time warning threshold </td>
+<td> Fraction of ICAP requests exceeding time warning threshold. </td>
 <td> PERCENT </td>
 <td> False </td>
 <td>  </td>
@@ -10054,7 +10214,7 @@ Stats for ICAP server.
 </tr>
 <tr>
 <td> icap_stats.pct_timedout </td>
-<td> Fraction of ICAP requests timed out </td>
+<td> Fraction of ICAP requests timed out. </td>
 <td> PERCENT </td>
 <td> False </td>
 <td>  </td>
@@ -10078,7 +10238,7 @@ Stats for ICAP server.
 </tr>
 <tr>
 <td> icap_stats.sum_error </td>
-<td> Total ICAP related errors </td>
+<td> Total ICAP related errors. </td>
 <td> METRIC_COUNT </td>
 <td> False </td>
 <td>  </td>
@@ -10086,7 +10246,7 @@ Stats for ICAP server.
 </tr>
 <tr>
 <td> icap_stats.sum_internal_error </td>
-<td> Total internal error while processing ICAP requests </td>
+<td> Total internal error while processing ICAP requests. </td>
 <td> METRIC_COUNT </td>
 <td> False </td>
 <td>  </td>
@@ -10118,7 +10278,7 @@ Stats for ICAP server.
 </tr>
 <tr>
 <td> icap_stats.sum_server_error </td>
-<td> Total error responses coming from ICAP server </td>
+<td> Total error responses coming from ICAP server. </td>
 <td> METRIC_COUNT </td>
 <td> False </td>
 <td>  </td>
@@ -10126,7 +10286,7 @@ Stats for ICAP server.
 </tr>
 <tr>
 <td> icap_stats.sum_time_warning </td>
-<td> Total requests exceeding time warning threshold </td>
+<td> Total requests exceeding time warning threshold. </td>
 <td> METRIC_COUNT </td>
 <td> False </td>
 <td>  </td>
@@ -10134,7 +10294,7 @@ Stats for ICAP server.
 </tr>
 <tr>
 <td> icap_stats.sum_timedout </td>
-<td> Total timeouts for ICAP requests </td>
+<td> Total timeouts for ICAP requests. </td>
 <td> METRIC_COUNT </td>
 <td> False </td>
 <td>  </td>
