@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/vmware/alb-sdk/go/session"
 	"github.com/golang/glog"
+	"github.com/vmware/alb-sdk/go/session"
 )
 
 var AVI_CONTROLLER = os.Getenv("AVI_CONTROLLER")
