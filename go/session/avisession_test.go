@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/vmware/alb-sdk/go/models"
 	"github.com/golang/glog"
+	"github.com/vmware/alb-sdk/go/models"
 )
 
 var AVI_CONTROLLER = os.Getenv("AVI_CONTROLLER")
