@@ -19,6 +19,9 @@ public class SecurityPolicy extends AviRestResource  {
     @JsonProperty("description")
     private String description = null;
 
+    @JsonProperty("dns_amplification_denyports")
+    private PortMatchGeneric dnsAmplificationDenyports = null;
+
     @JsonProperty("dns_attacks")
     private DnsAttacks dnsAttacks = null;
 
@@ -70,6 +73,28 @@ public class SecurityPolicy extends AviRestResource  {
      */
     public void setDescription(String  description) {
         this.description = description;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Source ports and port ranges to deny in dns amplification attacks.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return dnsAmplificationDenyports
+     */
+    public PortMatchGeneric getDnsAmplificationDenyports() {
+        return dnsAmplificationDenyports;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Source ports and port ranges to deny in dns amplification attacks.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param dnsAmplificationDenyports set the dnsAmplificationDenyports.
+     */
+    public void setDnsAmplificationDenyports(PortMatchGeneric dnsAmplificationDenyports) {
+        this.dnsAmplificationDenyports = dnsAmplificationDenyports;
     }
 
     /**
@@ -306,6 +331,7 @@ public class SecurityPolicy extends AviRestResource  {
   Objects.equals(this.networkSecurityPolicyIndex, objSecurityPolicy.networkSecurityPolicyIndex)&&
   Objects.equals(this.dnsPolicyIndex, objSecurityPolicy.dnsPolicyIndex)&&
   Objects.equals(this.labels, objSecurityPolicy.labels)&&
+  Objects.equals(this.dnsAmplificationDenyports, objSecurityPolicy.dnsAmplificationDenyports)&&
   Objects.equals(this.description, objSecurityPolicy.description)&&
   Objects.equals(this.tenantRef, objSecurityPolicy.tenantRef);
     }
@@ -315,6 +341,7 @@ public class SecurityPolicy extends AviRestResource  {
       StringBuilder sb = new StringBuilder();
       sb.append("class SecurityPolicy {\n");
                   sb.append("    description: ").append(toIndentedString(description)).append("\n");
+                        sb.append("    dnsAmplificationDenyports: ").append(toIndentedString(dnsAmplificationDenyports)).append("\n");
                         sb.append("    dnsAttacks: ").append(toIndentedString(dnsAttacks)).append("\n");
                         sb.append("    dnsPolicyIndex: ").append(toIndentedString(dnsPolicyIndex)).append("\n");
                         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
