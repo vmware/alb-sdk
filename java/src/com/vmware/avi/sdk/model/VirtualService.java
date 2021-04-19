@@ -1,3 +1,8 @@
+/*
+ * Copyright 2021 VMware, Inc.
+ * SPDX-License-Identifier: Apache License 2.0
+ */
+
 package com.vmware.avi.sdk.model;
 
 import java.util.*;
@@ -167,13 +172,16 @@ public class VirtualService extends AviRestResource  {
     private List<L4Policies> l4Policies = null;
 
     @JsonProperty("labels")
-    private List<KeyValue> labels = null;
+    private List<KeyValue> labels;
 
     @JsonProperty("ldap_vs_config")
     private LDAPVSConfig ldapVsConfig = null;
 
     @JsonProperty("limit_doser")
     private Boolean limitDoser = false;
+
+    @JsonProperty("markers")
+    private List<RoleFilterMatchLabel> markers = null;
 
     @JsonProperty("max_cps_per_client")
     private Integer maxCpsPerClient = 0;
@@ -1608,9 +1616,9 @@ public class VirtualService extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Key value pairs for granular object access control.
      * Also allows for classification and tagging of similar objects.
+     * Field deprecated in 20.1.5.
      * Field introduced in 20.1.2.
      * Maximum of 4 items allowed.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
     public List<KeyValue> getLabels() {
@@ -1621,9 +1629,9 @@ public class VirtualService extends AviRestResource  {
      * This is the setter method. this will set the labels
      * Key value pairs for granular object access control.
      * Also allows for classification and tagging of similar objects.
+     * Field deprecated in 20.1.5.
      * Field introduced in 20.1.2.
      * Maximum of 4 items allowed.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
     public void setLabels(List<KeyValue>  labels) {
@@ -1634,9 +1642,9 @@ public class VirtualService extends AviRestResource  {
      * This is the setter method this will set the labels
      * Key value pairs for granular object access control.
      * Also allows for classification and tagging of similar objects.
+     * Field deprecated in 20.1.5.
      * Field introduced in 20.1.2.
      * Maximum of 4 items allowed.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
     public VirtualService addLabelsItem(KeyValue labelsItem) {
@@ -1687,6 +1695,42 @@ public class VirtualService extends AviRestResource  {
      */
     public void setLimitDoser(Boolean  limitDoser) {
         this.limitDoser = limitDoser;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.5.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public List<RoleFilterMatchLabel> getMarkers() {
+        return markers;
+    }
+
+    /**
+     * This is the setter method. this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.5.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public void setMarkers(List<RoleFilterMatchLabel>  markers) {
+        this.markers = markers;
+    }
+
+    /**
+     * This is the setter method this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.5.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public VirtualService addMarkersItem(RoleFilterMatchLabel markersItem) {
+      if (this.markers == null) {
+        this.markers = new ArrayList<RoleFilterMatchLabel>();
+      }
+      this.markers.add(markersItem);
+      return this;
     }
 
     /**
@@ -3211,6 +3255,7 @@ public class VirtualService extends AviRestResource  {
   Objects.equals(this.apicContractGraph, objVirtualService.apicContractGraph)&&
   Objects.equals(this.labels, objVirtualService.labels)&&
   Objects.equals(this.bgpPeerLabels, objVirtualService.bgpPeerLabels)&&
+  Objects.equals(this.markers, objVirtualService.markers)&&
   Objects.equals(this.azureAvailabilitySet, objVirtualService.azureAvailabilitySet)&&
   Objects.equals(this.minPoolsUp, objVirtualService.minPoolsUp)&&
   Objects.equals(this.ssoPolicy, objVirtualService.ssoPolicy)&&
@@ -3284,6 +3329,7 @@ public class VirtualService extends AviRestResource  {
                         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
                         sb.append("    ldapVsConfig: ").append(toIndentedString(ldapVsConfig)).append("\n");
                         sb.append("    limitDoser: ").append(toIndentedString(limitDoser)).append("\n");
+                        sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    maxCpsPerClient: ").append(toIndentedString(maxCpsPerClient)).append("\n");
                         sb.append("    microserviceRef: ").append(toIndentedString(microserviceRef)).append("\n");
                         sb.append("    minPoolsUp: ").append(toIndentedString(minPoolsUp)).append("\n");

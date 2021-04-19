@@ -1,3 +1,8 @@
+/*
+ * Copyright 2021 VMware, Inc.
+ * SPDX-License-Identifier: Apache License 2.0
+ */
+
 package com.vmware.avi.sdk.model;
 
 import java.util.*;
@@ -45,6 +50,9 @@ public class Cloud extends AviRestResource  {
 
     @JsonProperty("dns_resolution_on_se")
     private Boolean dnsResolutionOnSe = false;
+
+    @JsonProperty("dns_resolvers")
+    private List<DnsResolver> dnsResolvers = null;
 
     @JsonProperty("docker_configuration")
     private DockerConfiguration dockerConfiguration = null;
@@ -375,6 +383,45 @@ public class Cloud extends AviRestResource  {
      */
     public void setDnsResolutionOnSe(Boolean  dnsResolutionOnSe) {
         this.dnsResolutionOnSe = dnsResolutionOnSe;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Dns resolver for the cloud.
+     * Field introduced in 20.1.5.
+     * Maximum of 1 items allowed.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return dnsResolvers
+     */
+    public List<DnsResolver> getDnsResolvers() {
+        return dnsResolvers;
+    }
+
+    /**
+     * This is the setter method. this will set the dnsResolvers
+     * Dns resolver for the cloud.
+     * Field introduced in 20.1.5.
+     * Maximum of 1 items allowed.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return dnsResolvers
+     */
+    public void setDnsResolvers(List<DnsResolver>  dnsResolvers) {
+        this.dnsResolvers = dnsResolvers;
+    }
+
+    /**
+     * This is the setter method this will set the dnsResolvers
+     * Dns resolver for the cloud.
+     * Field introduced in 20.1.5.
+     * Maximum of 1 items allowed.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return dnsResolvers
+     */
+    public Cloud addDnsResolversItem(DnsResolver dnsResolversItem) {
+      if (this.dnsResolvers == null) {
+        this.dnsResolvers = new ArrayList<DnsResolver>();
+      }
+      this.dnsResolvers.add(dnsResolversItem);
+      return this;
     }
 
     /**
@@ -1097,7 +1144,8 @@ public class Cloud extends AviRestResource  {
   Objects.equals(this.licenseTier, objCloud.licenseTier)&&
   Objects.equals(this.autoscalePollingInterval, objCloud.autoscalePollingInterval)&&
   Objects.equals(this.seGroupTemplateRef, objCloud.seGroupTemplateRef)&&
-  Objects.equals(this.vmcDeployment, objCloud.vmcDeployment);
+  Objects.equals(this.vmcDeployment, objCloud.vmcDeployment)&&
+  Objects.equals(this.dnsResolvers, objCloud.dnsResolvers);
     }
 
     @Override
@@ -1114,6 +1162,7 @@ public class Cloud extends AviRestResource  {
                         sb.append("    dhcpEnabled: ").append(toIndentedString(dhcpEnabled)).append("\n");
                         sb.append("    dnsProviderRef: ").append(toIndentedString(dnsProviderRef)).append("\n");
                         sb.append("    dnsResolutionOnSe: ").append(toIndentedString(dnsResolutionOnSe)).append("\n");
+                        sb.append("    dnsResolvers: ").append(toIndentedString(dnsResolvers)).append("\n");
                         sb.append("    dockerConfiguration: ").append(toIndentedString(dockerConfiguration)).append("\n");
                         sb.append("    eastWestDnsProviderRef: ").append(toIndentedString(eastWestDnsProviderRef)).append("\n");
                         sb.append("    eastWestIpamProviderRef: ").append(toIndentedString(eastWestIpamProviderRef)).append("\n");

@@ -1,3 +1,8 @@
+/*
+ * Copyright 2021 VMware, Inc.
+ * SPDX-License-Identifier: Apache License 2.0
+ */
+
 package com.vmware.avi.sdk.model;
 
 import java.util.*;
@@ -51,6 +56,9 @@ public class HealthMonitor extends AviRestResource  {
 
     @JsonProperty("is_federated")
     private Boolean isFederated = false;
+
+    @JsonProperty("markers")
+    private List<RoleFilterMatchLabel> markers = null;
 
     @JsonProperty("monitor_port")
     private Integer monitorPort = null;
@@ -379,6 +387,42 @@ public class HealthMonitor extends AviRestResource  {
      */
     public void setIsFederated(Boolean  isFederated) {
         this.isFederated = isFederated;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.5.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public List<RoleFilterMatchLabel> getMarkers() {
+        return markers;
+    }
+
+    /**
+     * This is the setter method. this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.5.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public void setMarkers(List<RoleFilterMatchLabel>  markers) {
+        this.markers = markers;
+    }
+
+    /**
+     * This is the setter method this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.5.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public HealthMonitor addMarkersItem(RoleFilterMatchLabel markersItem) {
+      if (this.markers == null) {
+        this.markers = new ArrayList<RoleFilterMatchLabel>();
+      }
+      this.markers.add(markersItem);
+      return this;
     }
 
     /**
@@ -799,6 +843,7 @@ public class HealthMonitor extends AviRestResource  {
   Objects.equals(this.pop3sMonitor, objHealthMonitor.pop3sMonitor)&&
   Objects.equals(this.imapMonitor, objHealthMonitor.imapMonitor)&&
   Objects.equals(this.imapsMonitor, objHealthMonitor.imapsMonitor)&&
+  Objects.equals(this.markers, objHealthMonitor.markers)&&
   Objects.equals(this.isFederated, objHealthMonitor.isFederated)&&
   Objects.equals(this.description, objHealthMonitor.description)&&
   Objects.equals(this.tenantRef, objHealthMonitor.tenantRef);
@@ -820,6 +865,7 @@ public class HealthMonitor extends AviRestResource  {
                         sb.append("    imapMonitor: ").append(toIndentedString(imapMonitor)).append("\n");
                         sb.append("    imapsMonitor: ").append(toIndentedString(imapsMonitor)).append("\n");
                         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
+                        sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    monitorPort: ").append(toIndentedString(monitorPort)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    pop3Monitor: ").append(toIndentedString(pop3Monitor)).append("\n");

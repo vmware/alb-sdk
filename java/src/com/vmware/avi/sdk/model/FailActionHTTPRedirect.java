@@ -1,3 +1,8 @@
+/*
+ * Copyright 2021 VMware, Inc.
+ * SPDX-License-Identifier: Apache License 2.0
+ */
+
 package com.vmware.avi.sdk.model;
 
 import java.util.*;
@@ -35,7 +40,7 @@ public class FailActionHTTPRedirect  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property host of obj type failactionhttpredirect field type str  type string.
+     * The host to which the redirect request is sent.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return host
      */
@@ -45,7 +50,7 @@ public class FailActionHTTPRedirect  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property host of obj type failactionhttpredirect field type str  type string.
+     * The host to which the redirect request is sent.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param host set the host.
      */
@@ -55,7 +60,8 @@ public class FailActionHTTPRedirect  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property path of obj type failactionhttpredirect field type str  type string.
+     * Path configuration for the redirect request.
+     * If not set the path from the original request's uri is preserved in the redirect on pool failure.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return path
      */
@@ -65,7 +71,8 @@ public class FailActionHTTPRedirect  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property path of obj type failactionhttpredirect field type str  type string.
+     * Path configuration for the redirect request.
+     * If not set the path from the original request's uri is preserved in the redirect on pool failure.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param path set the path.
      */
@@ -76,6 +83,8 @@ public class FailActionHTTPRedirect  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - HTTP, HTTPS.
+     * Allowed in basic(allowed values- http) edition, enterprise edition.
+     * Special default for basic edition is http, enterprise is https.
      * Default value when not specified in API or module is interpreted by Avi Controller as "HTTPS".
      * @return protocol
      */
@@ -86,6 +95,8 @@ public class FailActionHTTPRedirect  {
     /**
      * This is the setter method to the attribute.
      * Enum options - HTTP, HTTPS.
+     * Allowed in basic(allowed values- http) edition, enterprise edition.
+     * Special default for basic edition is http, enterprise is https.
      * Default value when not specified in API or module is interpreted by Avi Controller as "HTTPS".
      * @param protocol set the protocol.
      */
@@ -95,7 +106,8 @@ public class FailActionHTTPRedirect  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property query of obj type failactionhttpredirect field type str  type string.
+     * Query configuration for the redirect request uri.
+     * If not set, the query from the original request's uri is preserved in the redirect on pool failure.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return query
      */
@@ -105,7 +117,8 @@ public class FailActionHTTPRedirect  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property query of obj type failactionhttpredirect field type str  type string.
+     * Query configuration for the redirect request uri.
+     * If not set, the query from the original request's uri is preserved in the redirect on pool failure.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param query set the query.
      */
@@ -116,6 +129,7 @@ public class FailActionHTTPRedirect  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307.
+     * Allowed in basic(allowed values- http_redirect_status_code_302) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_REDIRECT_STATUS_CODE_302".
      * @return statusCode
      */
@@ -126,6 +140,7 @@ public class FailActionHTTPRedirect  {
     /**
      * This is the setter method to the attribute.
      * Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307.
+     * Allowed in basic(allowed values- http_redirect_status_code_302) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_REDIRECT_STATUS_CODE_302".
      * @param statusCode set the statusCode.
      */
