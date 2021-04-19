@@ -1,3 +1,8 @@
+/*
+ * Copyright 2021 VMware, Inc.
+ * SPDX-License-Identifier: Apache License 2.0
+ */
+
 package com.vmware.avi.sdk.model;
 
 import java.util.*;
@@ -34,6 +39,9 @@ public class ControllerLimits  {
     @JsonProperty("ips_per_ipgroup")
     private Integer ipsPerIpgroup = null;
 
+    @JsonProperty("l7_limits")
+    private L7limits l7Limits = null;
+
     @JsonProperty("poolgroups_per_virtualservice")
     private Integer poolgroupsPerVirtualservice = null;
 
@@ -47,7 +55,7 @@ public class ControllerLimits  {
     private Integer routesPerVrfcontext = null;
 
     @JsonProperty("rules_per_httppolicy")
-    private Integer rulesPerHttppolicy = null;
+    private Integer rulesPerHttppolicy;
 
     @JsonProperty("rules_per_networksecuritypolicy")
     private Integer rulesPerNetworksecuritypolicy = null;
@@ -234,6 +242,28 @@ public class ControllerLimits  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * System limits that apply to layer 7 configuration objects.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return l7Limits
+     */
+    public L7limits getL7Limits() {
+        return l7Limits;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * System limits that apply to layer 7 configuration objects.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param l7Limits set the l7Limits.
+     */
+    public void setL7Limits(L7limits l7Limits) {
+        this.l7Limits = l7Limits;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Maximum number of poolgroups per virtualservice.
      * Field introduced in 20.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -323,8 +353,8 @@ public class ControllerLimits  {
     /**
      * This is the getter method this will return the attribute value.
      * Maximum number of rules per httppolicy.
+     * Field deprecated in 21.1.1.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rulesPerHttppolicy
      */
     public Integer getRulesPerHttppolicy() {
@@ -334,8 +364,8 @@ public class ControllerLimits  {
     /**
      * This is the setter method to the attribute.
      * Maximum number of rules per httppolicy.
+     * Field deprecated in 21.1.1.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rulesPerHttppolicy set the rulesPerHttppolicy.
      */
     public void setRulesPerHttppolicy(Integer  rulesPerHttppolicy) {
@@ -499,6 +529,7 @@ public class ControllerLimits  {
   Objects.equals(this.vsL2Scaleout, objControllerLimits.vsL2Scaleout)&&
   Objects.equals(this.vsBgpScaleout, objControllerLimits.vsBgpScaleout)&&
   Objects.equals(this.gatewayMonPerVrf, objControllerLimits.gatewayMonPerVrf)&&
+  Objects.equals(this.l7Limits, objControllerLimits.l7Limits)&&
   Objects.equals(this.controllerSizingLimits, objControllerLimits.controllerSizingLimits)&&
   Objects.equals(this.controllerCloudLimits, objControllerLimits.controllerCloudLimits);
     }
@@ -513,6 +544,7 @@ public class ControllerLimits  {
                         sb.append("    defaultRoutesPerVrfcontext: ").append(toIndentedString(defaultRoutesPerVrfcontext)).append("\n");
                         sb.append("    gatewayMonPerVrf: ").append(toIndentedString(gatewayMonPerVrf)).append("\n");
                         sb.append("    ipsPerIpgroup: ").append(toIndentedString(ipsPerIpgroup)).append("\n");
+                        sb.append("    l7Limits: ").append(toIndentedString(l7Limits)).append("\n");
                         sb.append("    poolgroupsPerVirtualservice: ").append(toIndentedString(poolgroupsPerVirtualservice)).append("\n");
                         sb.append("    poolsPerPoolgroup: ").append(toIndentedString(poolsPerPoolgroup)).append("\n");
                         sb.append("    poolsPerVirtualservice: ").append(toIndentedString(poolsPerVirtualservice)).append("\n");

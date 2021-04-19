@@ -1,3 +1,8 @@
+/*
+ * Copyright 2021 VMware, Inc.
+ * SPDX-License-Identifier: Apache License 2.0
+ */
+
 package com.vmware.avi.sdk.model;
 
 import java.util.*;
@@ -50,13 +55,16 @@ public class WafPolicy extends AviRestResource  {
     private String geoDbRef = null;
 
     @JsonProperty("labels")
-    private List<KeyValue> labels = null;
+    private List<KeyValue> labels;
 
     @JsonProperty("learning")
     private WafLearning learning;
 
     @JsonProperty("learning_params")
     private AppLearningParams learningParams = null;
+
+    @JsonProperty("markers")
+    private List<RoleFilterMatchLabel> markers = null;
 
     @JsonProperty("min_confidence")
     private String minConfidence = "CONFIDENCE_VERY_HIGH";
@@ -371,9 +379,9 @@ public class WafPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Key value pairs for granular object access control.
      * Also allows for classification and tagging of similar objects.
+     * Field deprecated in 20.1.5.
      * Field introduced in 20.1.2.
      * Maximum of 4 items allowed.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
     public List<KeyValue> getLabels() {
@@ -384,9 +392,9 @@ public class WafPolicy extends AviRestResource  {
      * This is the setter method. this will set the labels
      * Key value pairs for granular object access control.
      * Also allows for classification and tagging of similar objects.
+     * Field deprecated in 20.1.5.
      * Field introduced in 20.1.2.
      * Maximum of 4 items allowed.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
     public void setLabels(List<KeyValue>  labels) {
@@ -397,9 +405,9 @@ public class WafPolicy extends AviRestResource  {
      * This is the setter method this will set the labels
      * Key value pairs for granular object access control.
      * Also allows for classification and tagging of similar objects.
+     * Field deprecated in 20.1.5.
      * Field introduced in 20.1.2.
      * Maximum of 4 items allowed.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
     public WafPolicy addLabelsItem(KeyValue labelsItem) {
@@ -452,6 +460,42 @@ public class WafPolicy extends AviRestResource  {
      */
     public void setLearningParams(AppLearningParams learningParams) {
         this.learningParams = learningParams;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.5.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public List<RoleFilterMatchLabel> getMarkers() {
+        return markers;
+    }
+
+    /**
+     * This is the setter method. this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.5.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public void setMarkers(List<RoleFilterMatchLabel>  markers) {
+        this.markers = markers;
+    }
+
+    /**
+     * This is the setter method this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.5.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public WafPolicy addMarkersItem(RoleFilterMatchLabel markersItem) {
+      if (this.markers == null) {
+        this.markers = new ArrayList<RoleFilterMatchLabel>();
+      }
+      this.markers.add(markersItem);
+      return this;
     }
 
     /**
@@ -822,7 +866,8 @@ public class WafPolicy extends AviRestResource  {
   Objects.equals(this.enableAutoRuleUpdates, objWafPolicy.enableAutoRuleUpdates)&&
   Objects.equals(this.labels, objWafPolicy.labels)&&
   Objects.equals(this.allowlist, objWafPolicy.allowlist)&&
-  Objects.equals(this.geoDbRef, objWafPolicy.geoDbRef);
+  Objects.equals(this.geoDbRef, objWafPolicy.geoDbRef)&&
+  Objects.equals(this.markers, objWafPolicy.markers);
     }
 
     @Override
@@ -843,6 +888,7 @@ public class WafPolicy extends AviRestResource  {
                         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
                         sb.append("    learning: ").append(toIndentedString(learning)).append("\n");
                         sb.append("    learningParams: ").append(toIndentedString(learningParams)).append("\n");
+                        sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    minConfidence: ").append(toIndentedString(minConfidence)).append("\n");
                         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");

@@ -1,3 +1,8 @@
+/*
+ * Copyright 2021 VMware, Inc.
+ * SPDX-License-Identifier: Apache License 2.0
+ */
+
 package com.vmware.avi.sdk.model;
 
 import java.util.*;
@@ -379,7 +384,7 @@ public class SupportedMigrations  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Minimum space required(in gb) on se for this image installation.
+     * Minimum space required(in gb) on se for this image installation for non-fips mode(+1 gb for fips mode).
      * Field introduced in 18.2.6.
      * Unit is gb.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
@@ -391,7 +396,7 @@ public class SupportedMigrations  {
 
     /**
      * This is the setter method to the attribute.
-     * Minimum space required(in gb) on se for this image installation.
+     * Minimum space required(in gb) on se for this image installation for non-fips mode(+1 gb for fips mode).
      * Field introduced in 18.2.6.
      * Unit is gb.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.

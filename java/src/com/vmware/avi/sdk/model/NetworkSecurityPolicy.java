@@ -1,3 +1,8 @@
+/*
+ * Copyright 2021 VMware, Inc.
+ * SPDX-License-Identifier: Apache License 2.0
+ */
+
 package com.vmware.avi.sdk.model;
 
 import java.util.*;
@@ -28,11 +33,17 @@ public class NetworkSecurityPolicy extends AviRestResource  {
     @JsonProperty("geo_db_ref")
     private String geoDbRef = null;
 
+    @JsonProperty("internal")
+    private Boolean internal = null;
+
     @JsonProperty("ip_reputation_db_ref")
     private String ipReputationDbRef = null;
 
     @JsonProperty("labels")
-    private List<KeyValue> labels = null;
+    private List<KeyValue> labels;
+
+    @JsonProperty("markers")
+    private List<RoleFilterMatchLabel> markers = null;
 
     @JsonProperty("name")
     private String name = null;
@@ -139,6 +150,30 @@ public class NetworkSecurityPolicy extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Network security policy is created and modified by internal modules only.
+     * Should not be modified by users.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return internal
+     */
+    public Boolean getInternal() {
+        return internal;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Network security policy is created and modified by internal modules only.
+     * Should not be modified by users.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param internal set the internal.
+     */
+    public void setInternal(Boolean  internal) {
+        this.internal = internal;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Ip reputation database.
      * It is a reference to an object of type ipreputationdb.
      * Field introduced in 20.1.1.
@@ -166,9 +201,9 @@ public class NetworkSecurityPolicy extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Key value pairs for granular object access control.
      * Also allows for classification and tagging of similar objects.
+     * Field deprecated in 20.1.5.
      * Field introduced in 20.1.2.
      * Maximum of 4 items allowed.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
     public List<KeyValue> getLabels() {
@@ -179,9 +214,9 @@ public class NetworkSecurityPolicy extends AviRestResource  {
      * This is the setter method. this will set the labels
      * Key value pairs for granular object access control.
      * Also allows for classification and tagging of similar objects.
+     * Field deprecated in 20.1.5.
      * Field introduced in 20.1.2.
      * Maximum of 4 items allowed.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
     public void setLabels(List<KeyValue>  labels) {
@@ -192,9 +227,9 @@ public class NetworkSecurityPolicy extends AviRestResource  {
      * This is the setter method this will set the labels
      * Key value pairs for granular object access control.
      * Also allows for classification and tagging of similar objects.
+     * Field deprecated in 20.1.5.
      * Field introduced in 20.1.2.
      * Maximum of 4 items allowed.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
     public NetworkSecurityPolicy addLabelsItem(KeyValue labelsItem) {
@@ -202,6 +237,42 @@ public class NetworkSecurityPolicy extends AviRestResource  {
         this.labels = new ArrayList<KeyValue>();
       }
       this.labels.add(labelsItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.5.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public List<RoleFilterMatchLabel> getMarkers() {
+        return markers;
+    }
+
+    /**
+     * This is the setter method. this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.5.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public void setMarkers(List<RoleFilterMatchLabel>  markers) {
+        this.markers = markers;
+    }
+
+    /**
+     * This is the setter method this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.5.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public NetworkSecurityPolicy addMarkersItem(RoleFilterMatchLabel markersItem) {
+      if (this.markers == null) {
+        this.markers = new ArrayList<RoleFilterMatchLabel>();
+      }
+      this.markers.add(markersItem);
       return this;
     }
 
@@ -333,6 +404,8 @@ public class NetworkSecurityPolicy extends AviRestResource  {
   Objects.equals(this.ipReputationDbRef, objNetworkSecurityPolicy.ipReputationDbRef)&&
   Objects.equals(this.labels, objNetworkSecurityPolicy.labels)&&
   Objects.equals(this.geoDbRef, objNetworkSecurityPolicy.geoDbRef)&&
+  Objects.equals(this.markers, objNetworkSecurityPolicy.markers)&&
+  Objects.equals(this.internal, objNetworkSecurityPolicy.internal)&&
   Objects.equals(this.description, objNetworkSecurityPolicy.description)&&
   Objects.equals(this.tenantRef, objNetworkSecurityPolicy.tenantRef);
     }
@@ -345,8 +418,10 @@ public class NetworkSecurityPolicy extends AviRestResource  {
                         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
                         sb.append("    geoDbRef: ").append(toIndentedString(geoDbRef)).append("\n");
+                        sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
                         sb.append("    ipReputationDbRef: ").append(toIndentedString(ipReputationDbRef)).append("\n");
                         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+                        sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
