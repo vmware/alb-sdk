@@ -1,3 +1,6 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 """ Almost all the constants we used are available here """
 
 # Constant Objects

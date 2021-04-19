@@ -1,3 +1,6 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 #!/usr/bin/python
 '''
 Created on Apr 15, 2015

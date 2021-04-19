@@ -1,3 +1,6 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 '''
 Created on Apr 22, 2016
 @author: grastogi
