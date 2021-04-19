@@ -1,3 +1,8 @@
+/*
+ * Copyright 2021 VMware, Inc.
+ * SPDX-License-Identifier: Apache License 2.0
+ */
+
 package com.vmware.avi.sdk.model;
 
 import java.util.*;
@@ -18,6 +23,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 public class IcapNSXDefenderLog  {
     @JsonProperty("score")
     private Integer score = null;
+
+    @JsonProperty("status_url")
+    private String statusUrl = null;
 
     @JsonProperty("task_uuid")
     private String taskUuid = null;
@@ -44,6 +52,28 @@ public class IcapNSXDefenderLog  {
      */
     public void setScore(Integer  score) {
         this.score = score;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Url to get details from nsxdefender for the request.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return statusUrl
+     */
+    public String getStatusUrl() {
+        return statusUrl;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Url to get details from nsxdefender for the request.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param statusUrl set the statusUrl.
+     */
+    public void setStatusUrl(String  statusUrl) {
+        this.statusUrl = statusUrl;
     }
 
     /**
@@ -83,7 +113,8 @@ public class IcapNSXDefenderLog  {
       }
       IcapNSXDefenderLog objIcapNSXDefenderLog = (IcapNSXDefenderLog) o;
       return   Objects.equals(this.score, objIcapNSXDefenderLog.score)&&
-  Objects.equals(this.taskUuid, objIcapNSXDefenderLog.taskUuid);
+  Objects.equals(this.taskUuid, objIcapNSXDefenderLog.taskUuid)&&
+  Objects.equals(this.statusUrl, objIcapNSXDefenderLog.statusUrl);
     }
 
     @Override
@@ -91,6 +122,7 @@ public class IcapNSXDefenderLog  {
       StringBuilder sb = new StringBuilder();
       sb.append("class IcapNSXDefenderLog {\n");
                   sb.append("    score: ").append(toIndentedString(score)).append("\n");
+                        sb.append("    statusUrl: ").append(toIndentedString(statusUrl)).append("\n");
                         sb.append("    taskUuid: ").append(toIndentedString(taskUuid)).append("\n");
                   sb.append("}");
       return sb.toString();
