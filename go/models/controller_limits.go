@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // ControllerLimits controller limits
 // swagger:model ControllerLimits
@@ -25,6 +26,9 @@ type ControllerLimits struct {
 	// Maximum number of IP's per ipaddrgroup. Field introduced in 20.1.1.
 	IpsPerIpgroup *int32 `json:"ips_per_ipgroup,omitempty"`
 
+	// System limits that apply to Layer 7 configuration objects. Field introduced in 21.1.1.
+	L7Limits *L7limits `json:"l7_limits,omitempty"`
+
 	// Maximum number of poolgroups per virtualservice. Field introduced in 20.1.1.
 	PoolgroupsPerVirtualservice *int32 `json:"poolgroups_per_virtualservice,omitempty"`
 
@@ -37,7 +41,7 @@ type ControllerLimits struct {
 	// Maximum number of routes per vrfcontext. Field introduced in 20.1.1.
 	RoutesPerVrfcontext *int32 `json:"routes_per_vrfcontext,omitempty"`
 
-	// Maximum number of rules per httppolicy. Field introduced in 20.1.1.
+	// Maximum number of rules per httppolicy. Field deprecated in 21.1.1. Field introduced in 20.1.1.
 	RulesPerHttppolicy *int32 `json:"rules_per_httppolicy,omitempty"`
 
 	// Maximum number of rules per networksecuritypolicy. Field introduced in 20.1.1.

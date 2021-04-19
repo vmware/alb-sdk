@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // ControllerSite controller site
 // swagger:model ControllerSite
@@ -14,6 +15,9 @@ type ControllerSite struct {
 	// IP Address or a DNS resolvable, fully qualified domain name of the Site Controller Cluster. Field introduced in 18.2.5.
 	// Required: true
 	Address *string `json:"address"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// Name for the Site Controller Cluster. Field introduced in 18.2.5.
 	// Required: true

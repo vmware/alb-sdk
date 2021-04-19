@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // Scheduler scheduler
 // swagger:model Scheduler
@@ -13,6 +14,9 @@ type Scheduler struct {
 
 	// Backup Configuration to be executed by this scheduler. It is a reference to an object of type BackupConfiguration.
 	BackupConfigRef *string `json:"backup_config_ref,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// Placeholder for description of property enabled of obj type Scheduler field type str  type boolean
 	Enabled *bool `json:"enabled,omitempty"`

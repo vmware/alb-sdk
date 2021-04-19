@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // NetworkService network service
 // swagger:model NetworkService
@@ -14,8 +15,14 @@ type NetworkService struct {
 	//  It is a reference to an object of type Cloud. Field introduced in 18.2.5.
 	CloudRef *string `json:"cloud_ref,omitempty"`
 
-	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed.
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
+
+	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed.
 	Labels []*KeyValue `json:"labels,omitempty"`
+
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// Name of the NetworkService. Field introduced in 18.2.5.
 	// Required: true

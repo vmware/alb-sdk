@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // Pool pool
 // swagger:model Pool
@@ -56,6 +57,9 @@ type Pool struct {
 	//  It is a reference to an object of type Cloud.
 	CloudRef *string `json:"cloud_ref,omitempty"`
 
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
+
 	// Connnection pool properties. Field introduced in 18.2.1.
 	ConnPoolProperties *ConnPoolProperties `json:"conn_pool_properties,omitempty"`
 
@@ -108,6 +112,9 @@ type Pool struct {
 	// Enable common name check for server certificate. If enabled and no explicit domain name is specified, Avi will use the incoming host header to do the match.
 	HostCheckEnabled *bool `json:"host_check_enabled,omitempty"`
 
+	// HTTP2 pool properties. Field introduced in 21.1.1.
+	Http2Properties *Http2PoolProperties `json:"http2_properties,omitempty"`
+
 	// Ignore the server port in building the load balancing state.Applicable only for consistent hash load balancing algorithm or Disable Port translation (use_service_port) use cases. Field introduced in 20.1.1.
 	IgnoreServerPort *bool `json:"ignore_server_port,omitempty"`
 
@@ -117,7 +124,7 @@ type Pool struct {
 	// Use list of servers from Ip Address Group. It is a reference to an object of type IpAddrGroup.
 	IpaddrgroupRef *string `json:"ipaddrgroup_ref,omitempty"`
 
-	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed.
+	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed.
 	Labels []*KeyValue `json:"labels,omitempty"`
 
 	// The load balancing algorithm will pick a server within the pool's list of available servers. Values LB_ALGORITHM_NEAREST_SERVER and LB_ALGORITHM_TOPOLOGY are only allowed for GSLB pool. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY. Allowed in Basic(Allowed values- LB_ALGORITHM_LEAST_CONNECTIONS,LB_ALGORITHM_ROUND_ROBIN,LB_ALGORITHM_CONSISTENT_HASH) edition, Essentials(Allowed values- LB_ALGORITHM_LEAST_CONNECTIONS,LB_ALGORITHM_ROUND_ROBIN,LB_ALGORITHM_CONSISTENT_HASH) edition, Enterprise edition.
@@ -134,6 +141,9 @@ type Pool struct {
 
 	// Allow server lookup by name. Field introduced in 17.1.11,17.2.4. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
 	LookupServerByName *bool `json:"lookup_server_by_name,omitempty"`
+
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// The maximum number of concurrent connections allowed to each server within the pool. NOTE  applied value will be no less than the number of service engines that the pool is placed on. If set to 0, no limit is applied.
 	MaxConcurrentConnectionsPerServer *int32 `json:"max_concurrent_connections_per_server,omitempty"`

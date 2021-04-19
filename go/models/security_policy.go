@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // SecurityPolicy security policy
 // swagger:model SecurityPolicy
@@ -10,6 +11,9 @@ type SecurityPolicy struct {
 	// UNIX time since epoch in microseconds. Units(MICROSECONDS).
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// Security policy is used to specify various configuration information used to perform Distributed Denial of Service (DDoS) attacks detection and mitigation. Field introduced in 18.2.1.
 	Description *string `json:"description,omitempty"`
@@ -24,8 +28,11 @@ type SecurityPolicy struct {
 	// Required: true
 	DNSPolicyIndex *int32 `json:"dns_policy_index"`
 
-	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed.
+	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed.
 	Labels []*KeyValue `json:"labels,omitempty"`
+
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// The name of the security policy. Field introduced in 18.2.1.
 	// Required: true

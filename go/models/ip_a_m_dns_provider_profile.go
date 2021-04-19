@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // IPAMDNSProviderProfile ipam Dns provider profile
 // swagger:model IpamDnsProviderProfile
@@ -20,6 +21,9 @@ type IPAMDNSProviderProfile struct {
 	// Provider details if type is Microsoft Azure. Field introduced in 17.2.1.
 	AzureProfile *IPAMDNSAzureProfile `json:"azure_profile,omitempty"`
 
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
+
 	// Provider details if type is Custom. Field introduced in 17.1.1.
 	CustomProfile *IPAMDNSCustomProfile `json:"custom_profile,omitempty"`
 
@@ -32,8 +36,11 @@ type IPAMDNSProviderProfile struct {
 	// Provider details if type is Avi.
 	InternalProfile *IPAMDNSInternalProfile `json:"internal_profile,omitempty"`
 
-	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed.
+	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed.
 	Labels []*KeyValue `json:"labels,omitempty"`
+
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// Name for the IPAM/DNS Provider profile.
 	// Required: true

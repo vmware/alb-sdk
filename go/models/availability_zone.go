@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // AvailabilityZone availability zone
 // swagger:model AvailabilityZone
@@ -13,6 +14,9 @@ type AvailabilityZone struct {
 
 	// Availability zone belongs to cloud. It is a reference to an object of type Cloud. Field introduced in 20.1.1.
 	CloudRef *string `json:"cloud_ref,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// Availabilty zone where VCenter list belongs to. Field introduced in 20.1.1.
 	// Required: true

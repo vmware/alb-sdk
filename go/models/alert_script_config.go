@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // AlertScriptConfig alert script config
 // swagger:model AlertScriptConfig
@@ -13,6 +14,9 @@ type AlertScriptConfig struct {
 
 	// User Defined Alert Action Script. Please refer to kb.avinetworks.com for more information.
 	ActionScript *string `json:"action_script,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// A user-friendly name of the Script.
 	// Required: true

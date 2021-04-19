@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // IPAddrGroup Ip addr group
 // swagger:model IpAddrGroup
@@ -17,6 +18,9 @@ type IPAddrGroup struct {
 	// Populate IP addresses from members of this Cisco APIC EPG.
 	ApicEpgName *string `json:"apic_epg_name,omitempty"`
 
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
+
 	// Populate the IP address ranges from the geo database for this country.
 	CountryCodes []string `json:"country_codes,omitempty"`
 
@@ -26,7 +30,7 @@ type IPAddrGroup struct {
 	// Configure (IP address, port) tuple(s).
 	IPPorts []*IPAddrPort `json:"ip_ports,omitempty"`
 
-	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed.
+	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed.
 	Labels []*KeyValue `json:"labels,omitempty"`
 
 	// Populate IP addresses from tasks of this Marathon app.
@@ -34,6 +38,9 @@ type IPAddrGroup struct {
 
 	// Task port associated with marathon service port. If Marathon app has multiple service ports, this is required. Else, the first task port is used.
 	MarathonServicePort *int32 `json:"marathon_service_port,omitempty"`
+
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// Name of the IP address group.
 	// Required: true

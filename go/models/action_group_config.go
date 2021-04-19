@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // ActionGroupConfig action group config
 // swagger:model ActionGroupConfig
@@ -16,6 +17,9 @@ type ActionGroupConfig struct {
 
 	// Trigger Notification to AutoScale Manager. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
 	AutoscaleTriggerNotification *bool `json:"autoscale_trigger_notification,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// User defined description for the object.
 	Description *string `json:"description,omitempty"`

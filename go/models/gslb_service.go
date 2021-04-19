@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // GslbService gslb service
 // swagger:model GslbService
@@ -13,6 +14,9 @@ type GslbService struct {
 
 	// The federated application persistence associated with GslbService site persistence functionality. . It is a reference to an object of type ApplicationPersistenceProfile. Field introduced in 17.2.1.
 	ApplicationPersistenceProfileRef *string `json:"application_persistence_profile_ref,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// GS member's overall health status is derived based on a combination of controller and datapath health-status inputs. Note that the datapath status is determined by the association of health monitor profiles. Only the controller provided status is determined through this configuration. .
 	ControllerHealthStatusEnabled *bool `json:"controller_health_status_enabled,omitempty"`
@@ -47,8 +51,11 @@ type GslbService struct {
 	// This field indicates that this object is replicated across GSLB federation. Field introduced in 17.1.3.
 	IsFederated *bool `json:"is_federated,omitempty"`
 
-	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed.
+	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed.
 	Labels []*KeyValue `json:"labels,omitempty"`
+
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// The minimum number of members to distribute traffic to. Allowed values are 1-65535. Special values are 0 - 'Disable'. Field introduced in 17.2.4.
 	MinMembers *int32 `json:"min_members,omitempty"`

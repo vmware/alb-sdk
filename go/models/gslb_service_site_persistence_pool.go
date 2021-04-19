@@ -1,11 +1,15 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // GslbServiceSitePersistencePool gslb service site persistence pool
 // swagger:model GslbServiceSitePersistencePool
 type GslbServiceSitePersistencePool struct {
+
+	// Site persistence pool's http2 state. . Field introduced in 20.1.6.
+	EnableHttp2 *bool `json:"enable_http2,omitempty"`
 
 	// Site persistence pool's name. . Field introduced in 17.2.2.
 	Name *string `json:"name,omitempty"`
