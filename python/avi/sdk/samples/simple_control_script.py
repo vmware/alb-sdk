@@ -1,3 +1,6 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 """This is a simple example of a control script. This control script is triggered by a 'Created SE' alert. 
 When the Alert triggers, it prints the alert json to a file. Then it makes an api call to retrieve the SE object info 
 and appends this info to the file"""

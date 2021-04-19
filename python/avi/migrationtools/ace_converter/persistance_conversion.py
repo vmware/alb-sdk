@@ -1,3 +1,6 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 """ Application Persistance Conversion Goes here """
 import logging
 from avi.migrationtools.ace_converter.ace_utils import update_excel

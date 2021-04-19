@@ -1,3 +1,6 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 """
 This provides an initial test cases for entity count, vs references and code
 coverage

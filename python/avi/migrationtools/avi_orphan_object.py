@@ -1,3 +1,6 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 #!/usr/bin/env python3
 from urllib.parse import urlparse, parse_qs
 

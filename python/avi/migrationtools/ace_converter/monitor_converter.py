@@ -1,3 +1,6 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 """ Health Monitor Conversion Goes here """
 import logging
 from avi.migrationtools.ace_converter.ace_constants import\

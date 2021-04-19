@@ -1,3 +1,6 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 # List of all collected metrics, used by other scripts
 metrics = (
     "l7_client.sum_total_responses,"
