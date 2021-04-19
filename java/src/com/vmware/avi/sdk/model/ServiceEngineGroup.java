@@ -1,3 +1,8 @@
+/*
+ * Copyright 2021 VMware, Inc.
+ * SPDX-License-Identifier: Apache License 2.0
+ */
+
 package com.vmware.avi.sdk.model;
 
 import java.util.*;
@@ -497,7 +502,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer seDpIsolationNumNonDpCpus = 0;
 
     @JsonProperty("se_dp_max_hb_version")
-    private Integer seDpMaxHbVersion = 2;
+    private Integer seDpMaxHbVersion = 3;
 
     @JsonProperty("se_dp_vnic_queue_stall_event_sleep")
     private Integer seDpVnicQueueStallEventSleep = 0;
@@ -4781,7 +4786,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This version is reported by secondary se to primary se in heartbeat response messages.
      * Allowed values are 1-3.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 2.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @return seDpMaxHbVersion
      */
     public Integer getSeDpMaxHbVersion() {
@@ -4794,7 +4799,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This version is reported by secondary se to primary se in heartbeat response messages.
      * Allowed values are 1-3.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 2.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @param seDpMaxHbVersion set the seDpMaxHbVersion.
      */
     public void setSeDpMaxHbVersion(Integer  seDpMaxHbVersion) {

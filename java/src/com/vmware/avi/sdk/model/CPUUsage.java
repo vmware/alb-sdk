@@ -1,3 +1,8 @@
+/*
+ * Copyright 2021 VMware, Inc.
+ * SPDX-License-Identifier: Apache License 2.0
+ */
+
 package com.vmware.avi.sdk.model;
 
 import java.util.*;
@@ -16,10 +21,37 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CPUUsage  {
+    @JsonProperty("cpu_percent")
+    private Float cpuPercent = null;
+
     @JsonProperty("num_cores")
     private Integer numCores = null;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Cpu usage in percentage.
+     * Field introduced in 21.1.1.
+     * Unit is percent.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return cpuPercent
+     */
+    public Float getCpuPercent() {
+        return cpuPercent;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Cpu usage in percentage.
+     * Field introduced in 21.1.1.
+     * Unit is percent.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param cpuPercent set the cpuPercent.
+     */
+    public void setCpuPercent(Float  cpuPercent) {
+        this.cpuPercent = cpuPercent;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -51,14 +83,16 @@ public class CPUUsage  {
           return false;
       }
       CPUUsage objCPUUsage = (CPUUsage) o;
-      return   Objects.equals(this.numCores, objCPUUsage.numCores);
+      return   Objects.equals(this.numCores, objCPUUsage.numCores)&&
+  Objects.equals(this.cpuPercent, objCPUUsage.cpuPercent);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class CPUUsage {\n");
-                  sb.append("    numCores: ").append(toIndentedString(numCores)).append("\n");
+                  sb.append("    cpuPercent: ").append(toIndentedString(cpuPercent)).append("\n");
+                        sb.append("    numCores: ").append(toIndentedString(numCores)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

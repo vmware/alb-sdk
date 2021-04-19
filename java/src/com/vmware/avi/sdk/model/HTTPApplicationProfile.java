@@ -1,3 +1,8 @@
+/*
+ * Copyright 2021 VMware, Inc.
+ * SPDX-License-Identifier: Apache License 2.0
+ */
+
 package com.vmware.avi.sdk.model;
 
 import java.util.*;
@@ -740,7 +745,7 @@ public class HTTPApplicationProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Client requests received via http will be redirected to https.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in essentials(allowed values- false) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return httpToHttps
      */
@@ -751,7 +756,7 @@ public class HTTPApplicationProfile  {
     /**
      * This is the setter method to the attribute.
      * Client requests received via http will be redirected to https.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in essentials(allowed values- false) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param httpToHttps set the httpToHttps.
      */

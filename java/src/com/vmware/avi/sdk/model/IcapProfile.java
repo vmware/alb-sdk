@@ -1,3 +1,8 @@
+/*
+ * Copyright 2021 VMware, Inc.
+ * SPDX-License-Identifier: Apache License 2.0
+ */
+
 package com.vmware.avi.sdk.model;
 
 import java.util.*;
@@ -39,6 +44,9 @@ public class IcapProfile extends AviRestResource  {
 
     @JsonProperty("name")
     private String name = null;
+
+    @JsonProperty("nsx_defender_config")
+    private IcapNsxDefenderConfig nsxDefenderConfig = null;
 
     @JsonProperty("pool_group_ref")
     private String poolGroupRef = null;
@@ -273,6 +281,28 @@ public class IcapProfile extends AviRestResource  {
      */
     public void setName(String  name) {
         this.name = name;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Nsxdefender specific icap configurations.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return nsxDefenderConfig
+     */
+    public IcapNsxDefenderConfig getNsxDefenderConfig() {
+        return nsxDefenderConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Nsxdefender specific icap configurations.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param nsxDefenderConfig set the nsxDefenderConfig.
+     */
+    public void setNsxDefenderConfig(IcapNsxDefenderConfig nsxDefenderConfig) {
+        this.nsxDefenderConfig = nsxDefenderConfig;
     }
 
     /**
@@ -521,7 +551,8 @@ public class IcapProfile extends AviRestResource  {
   Objects.equals(this.responseTimeout, objIcapProfile.responseTimeout)&&
   Objects.equals(this.slowResponseWarningThreshold, objIcapProfile.slowResponseWarningThreshold)&&
   Objects.equals(this.failAction, objIcapProfile.failAction)&&
-  Objects.equals(this.allow204, objIcapProfile.allow204);
+  Objects.equals(this.allow204, objIcapProfile.allow204)&&
+  Objects.equals(this.nsxDefenderConfig, objIcapProfile.nsxDefenderConfig);
     }
 
     @Override
@@ -536,6 +567,7 @@ public class IcapProfile extends AviRestResource  {
                         sb.append("    enablePreview: ").append(toIndentedString(enablePreview)).append("\n");
                         sb.append("    failAction: ").append(toIndentedString(failAction)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                        sb.append("    nsxDefenderConfig: ").append(toIndentedString(nsxDefenderConfig)).append("\n");
                         sb.append("    poolGroupRef: ").append(toIndentedString(poolGroupRef)).append("\n");
                         sb.append("    previewSize: ").append(toIndentedString(previewSize)).append("\n");
                         sb.append("    responseTimeout: ").append(toIndentedString(responseTimeout)).append("\n");

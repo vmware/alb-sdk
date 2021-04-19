@@ -1,3 +1,8 @@
+/*
+ * Copyright 2021 VMware, Inc.
+ * SPDX-License-Identifier: Apache License 2.0
+ */
+
 package com.vmware.avi.sdk.model;
 
 import java.util.*;
@@ -575,8 +580,8 @@ public class UpgradeStatusInfo extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * List of patches applied to this node.
-     * Example  base-image is 18.2.6 and a patch 6p1 is applied, then a patch 6p5 applied, this field will indicate the [{'6p1', '6p1_image_uuid'},
-     * {'6p5', '6p5_image_uuid'}] value.
+     * Example  base-image is 18.2.6 and a patch 6p1 is applied, then a patch 6p5 applied.
+     * This field will indicate the [{'6p1', '6p1_image_uuid'}, {'6p5', '6p5_image_uuid'}] value.
      * Field introduced in 18.2.8, 20.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return patchList
@@ -588,8 +593,8 @@ public class UpgradeStatusInfo extends AviRestResource  {
     /**
      * This is the setter method. this will set the patchList
      * List of patches applied to this node.
-     * Example  base-image is 18.2.6 and a patch 6p1 is applied, then a patch 6p5 applied, this field will indicate the [{'6p1', '6p1_image_uuid'},
-     * {'6p5', '6p5_image_uuid'}] value.
+     * Example  base-image is 18.2.6 and a patch 6p1 is applied, then a patch 6p5 applied.
+     * This field will indicate the [{'6p1', '6p1_image_uuid'}, {'6p5', '6p5_image_uuid'}] value.
      * Field introduced in 18.2.8, 20.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return patchList
@@ -601,8 +606,8 @@ public class UpgradeStatusInfo extends AviRestResource  {
     /**
      * This is the setter method this will set the patchList
      * List of patches applied to this node.
-     * Example  base-image is 18.2.6 and a patch 6p1 is applied, then a patch 6p5 applied, this field will indicate the [{'6p1', '6p1_image_uuid'},
-     * {'6p5', '6p5_image_uuid'}] value.
+     * Example  base-image is 18.2.6 and a patch 6p1 is applied, then a patch 6p5 applied.
+     * This field will indicate the [{'6p1', '6p1_image_uuid'}, {'6p5', '6p5_image_uuid'}] value.
      * Field introduced in 18.2.8, 20.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return patchList
