@@ -1,3 +1,7 @@
+<!-- 
+	Copyright 2021 VMware, Inc.
+	SPDX-License-Identifier: Apache License 2.0
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -4117,6 +4121,86 @@ ServiceEngine Metrics
 <td> False </td>
 </tr>
 <tr>
+<td> se_stats.sum_mbstats_mbuf_allocation_failures </td>
+<td> Number of mbuf allocation failures. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_stats.sum_mbstats_mbuf_available </td>
+<td> Available memory buffers. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_stats.sum_mbstats_mbuf_total </td>
+<td> Total memory buffers. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_stats.sum_mbstats_mcopy_fail </td>
+<td> Number of failures in mem copy. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_stats.sum_mbstats_pktbuf_allocation_failures </td>
+<td> Number of failures in allocating packet buffers. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_stats.sum_mbstats_pktbuf_available </td>
+<td> Available packet buffer. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_stats.sum_mbstats_pktbuf_total </td>
+<td> Total packet buffer. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_stats.sum_mbstats_small_pktbuf_allocation_failures </td>
+<td> Number of small cluster buffers allocation failures. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_stats.sum_mbstats_small_pktbuf_available </td>
+<td> Number of small cluster buffers available. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_stats.sum_mbstats_small_pktbuf_total </td>
+<td> Number of total small cluster buffers. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
 <td> se_stats.sum_packet_buffer_allocation_failure </td>
 <td> Number of times packet buffer allocation failed </td>
 <td> METRIC_COUNT </td>
@@ -6445,6 +6529,14 @@ SE Interface Metrics
 <td> True </td>
 </tr>
 <tr>
+<td> se_if.sum_arp_rx_rl_drops </td>
+<td> ARP packets dropped by rate limiter. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
 <td> se_if.sum_connection_dropped_syn_seen_limit </td>
 <td> Number of times flowtable syn seen entry limit is reached. </td>
 <td> METRIC_COUNT </td>
@@ -6461,8 +6553,80 @@ SE Interface Metrics
 <td> True </td>
 </tr>
 <tr>
+<td> se_if.sum_flow_conn_throttled </td>
+<td> Number of conn throttled due to rate limiter. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_flow_conn_throttled_mem </td>
+<td> Conn throttled due to memory failure. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_flow_mac_errors </td>
+<td> Number of packets where dst mac address does not correspond to interface. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_flow_parse_unknown </td>
+<td> Number of received packets that are not ICMP req/resp, UDP, TCP and inter-SE messages. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_flow_pkts_throttled </td>
+<td> Number of packets throttled by rate limiter. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_flow_table_num_entries </td>
+<td> Number of entries in the flow table. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_flow_table_remote_entries </td>
+<td> Number of flow table entries of flows punted to a secondary SE. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_flowprobe_tx_rl_drops </td>
+<td> Flowprobe packets dropped by rate limiter. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
 <td> se_if.sum_gro_mbufs_coalesced </td>
 <td> Number of input packets received and coalesced in one burst from the rx queue. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_icmp_rx_rl_drops </td>
+<td> Number of icmp packets dropped exceeding rate limit. </td>
 <td> METRIC_COUNT </td>
 <td> True </td>
 <td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
@@ -6543,6 +6707,30 @@ SE Interface Metrics
 <tr>
 <td> se_if.sum_oerrors </td>
 <td> Total number of failed packet transmission. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_rst_sent </td>
+<td> Number of TCP connection resets sent. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_syn_dropped_delete_pending </td>
+<td> Number of SYN packets dropped. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> se_if.sum_tcp_rst_tx_rl_drops </td>
+<td> TCP packets dropped by rate limiter. </td>
 <td> METRIC_COUNT </td>
 <td> True </td>
 <td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>

@@ -1,3 +1,7 @@
+<!-- 
+	Copyright 2021 VMware, Inc.
+	SPDX-License-Identifier: Apache License 2.0
+-->
 <!doctype html>
 <html>
   <head>
@@ -260,6 +264,9 @@ font-style: italic;
     "credentials_timeout_threshold" : 123,
     "max_concurrent_sessions" : 123,
     "name" : "aeiou",
+    "configpb_attributes" : {
+      "version" : 123456789
+    },
     "max_login_failure_count" : 123,
     "account_lock_timeout" : 123,
     "uuid" : "aeiou",
@@ -323,6 +330,9 @@ font-style: italic;
   "credentials_timeout_threshold" : 123,
   "max_concurrent_sessions" : 123,
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "max_login_failure_count" : 123,
   "account_lock_timeout" : 123,
   "uuid" : "aeiou",
@@ -457,6 +467,9 @@ font-style: italic;
   "credentials_timeout_threshold" : 123,
   "max_concurrent_sessions" : 123,
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "max_login_failure_count" : 123,
   "account_lock_timeout" : 123,
   "uuid" : "aeiou",
@@ -531,6 +544,9 @@ font-style: italic;
   "credentials_timeout_threshold" : 123,
   "max_concurrent_sessions" : 123,
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "max_login_failure_count" : 123,
   "account_lock_timeout" : 123,
   "uuid" : "aeiou",
@@ -605,6 +621,9 @@ font-style: italic;
   "credentials_timeout_threshold" : 123,
   "max_concurrent_sessions" : 123,
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "max_login_failure_count" : 123,
   "account_lock_timeout" : 123,
   "uuid" : "aeiou",
@@ -635,15 +654,23 @@ font-style: italic;
 
   <h2>Table of Contents</h2>
   <ol>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#UserAccountProfile"><code>UserAccountProfile</code></a></li>
     <li><a href="#UserAccountProfileApiResponse"><code>UserAccountProfileApiResponse</code></a></li>
   </ol>
 
   <div class="model">
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="UserAccountProfile">UserAccountProfile</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
 <div class="param">account_lock_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Lock timeout period (in minutes). Default is 30 minutes. Unit is MIN. format: int32</div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
 <div class="param">credentials_timeout_threshold (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The time period after which credentials expire. Default is 180 days. Unit is DAYS. format: int32</div>
 <div class="param">max_concurrent_sessions (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of concurrent sessions allowed. There are unlimited sessions by default. format: int32</div>
 <div class="param">max_login_failure_count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of login attempts before lockout. Default is 3 attempts. Allowed values are 3-20. Special values are 0 - &#39;Unlimited login attempts allowed.&#39;. format: int32</div>

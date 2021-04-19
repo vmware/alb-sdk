@@ -1,3 +1,7 @@
+<!-- 
+	Copyright 2021 VMware, Inc.
+	SPDX-License-Identifier: Apache License 2.0
+-->
 <!doctype html>
 <html>
   <head>
@@ -249,8 +253,6 @@ font-style: italic;
   <li><a href="#virtualserviceUuidScaleoutPost"><code><span class="http-method">post</span> /virtualservice/{uuid}/scaleout</code></a></li>
   <li><a href="#virtualserviceUuidScaleoutstatusDetailGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/scaleoutstatus/detail/</code></a></li>
   <li><a href="#virtualserviceUuidScaleoutstatusGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/scaleoutstatus/</code></a></li>
-  <li><a href="#virtualserviceUuidScaleoutstatusKeyvalGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/scaleoutstatus/keyval/</code></a></li>
-  <li><a href="#virtualserviceUuidScaleoutstatusKeyvalsummaryGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/scaleoutstatus/keyvalsummary/</code></a></li>
   <li><a href="#virtualserviceUuidSescaleoutstatusGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/sescaleoutstatus/</code></a></li>
   <li><a href="#virtualserviceUuidSslsessioncacheGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/sslsessioncache/</code></a></li>
   <li><a href="#virtualserviceUuidSsopolicystatsGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/ssopolicystats/</code></a></li>
@@ -402,6 +404,9 @@ font-style: italic;
     "pool_ref" : "aeiou",
     "delay_fairness" : true,
     "cloud_ref" : "aeiou",
+    "configpb_attributes" : {
+      "version" : 123456789
+    },
     "analytics_policy" : {
       "significant_log_throttle" : 123,
       "all_headers" : true,
@@ -555,6 +560,8 @@ font-style: italic;
         "cookie_name" : "aeiou",
         "single_signon_url" : "aeiou"
       },
+      "configpb_attributes" : "",
+      "markers" : [ "" ],
       "type" : "aeiou",
       "authorization_policy" : {
         "authz_rules" : [ {
@@ -616,6 +623,10 @@ font-style: italic;
     "active_standby_se_tag" : "aeiou",
     "nsx_securitygroup" : [ "aeiou" ],
     "vh_parent_vs_uuid" : "aeiou",
+    "markers" : [ {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    } ],
     "vsvip_cloud_config_cksum" : "aeiou",
     "east_west_placement" : true,
     "subnet" : "",
@@ -901,6 +912,9 @@ font-style: italic;
   "pool_ref" : "aeiou",
   "delay_fairness" : true,
   "cloud_ref" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "analytics_policy" : {
     "significant_log_throttle" : 123,
     "all_headers" : true,
@@ -1054,6 +1068,8 @@ font-style: italic;
       "cookie_name" : "aeiou",
       "single_signon_url" : "aeiou"
     },
+    "configpb_attributes" : "",
+    "markers" : [ "" ],
     "type" : "aeiou",
     "authorization_policy" : {
       "authz_rules" : [ {
@@ -1115,6 +1131,10 @@ font-style: italic;
   "active_standby_se_tag" : "aeiou",
   "nsx_securitygroup" : [ "aeiou" ],
   "vh_parent_vs_uuid" : "aeiou",
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "vsvip_cloud_config_cksum" : "aeiou",
   "east_west_placement" : true,
   "subnet" : "",
@@ -2153,6 +2173,9 @@ font-style: italic;
   "pool_ref" : "aeiou",
   "delay_fairness" : true,
   "cloud_ref" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "analytics_policy" : {
     "significant_log_throttle" : 123,
     "all_headers" : true,
@@ -2306,6 +2329,8 @@ font-style: italic;
       "cookie_name" : "aeiou",
       "single_signon_url" : "aeiou"
     },
+    "configpb_attributes" : "",
+    "markers" : [ "" ],
     "type" : "aeiou",
     "authorization_policy" : {
       "authz_rules" : [ {
@@ -2367,6 +2392,10 @@ font-style: italic;
   "active_standby_se_tag" : "aeiou",
   "nsx_securitygroup" : [ "aeiou" ],
   "vh_parent_vs_uuid" : "aeiou",
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "vsvip_cloud_config_cksum" : "aeiou",
   "east_west_placement" : true,
   "subnet" : "",
@@ -3709,6 +3738,9 @@ font-style: italic;
   "pool_ref" : "aeiou",
   "delay_fairness" : true,
   "cloud_ref" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "analytics_policy" : {
     "significant_log_throttle" : 123,
     "all_headers" : true,
@@ -3862,6 +3894,8 @@ font-style: italic;
       "cookie_name" : "aeiou",
       "single_signon_url" : "aeiou"
     },
+    "configpb_attributes" : "",
+    "markers" : [ "" ],
     "type" : "aeiou",
     "authorization_policy" : {
       "authz_rules" : [ {
@@ -3923,6 +3957,10 @@ font-style: italic;
   "active_standby_se_tag" : "aeiou",
   "nsx_securitygroup" : [ "aeiou" ],
   "vh_parent_vs_uuid" : "aeiou",
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "vsvip_cloud_config_cksum" : "aeiou",
   "east_west_placement" : true,
   "subnet" : "",
@@ -4271,6 +4309,9 @@ font-style: italic;
   "pool_ref" : "aeiou",
   "delay_fairness" : true,
   "cloud_ref" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "analytics_policy" : {
     "significant_log_throttle" : 123,
     "all_headers" : true,
@@ -4424,6 +4465,8 @@ font-style: italic;
       "cookie_name" : "aeiou",
       "single_signon_url" : "aeiou"
     },
+    "configpb_attributes" : "",
+    "markers" : [ "" ],
     "type" : "aeiou",
     "authorization_policy" : {
       "authz_rules" : [ {
@@ -4485,6 +4528,10 @@ font-style: italic;
   "active_standby_se_tag" : "aeiou",
   "nsx_securitygroup" : [ "aeiou" ],
   "vh_parent_vs_uuid" : "aeiou",
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "vsvip_cloud_config_cksum" : "aeiou",
   "east_west_placement" : true,
   "subnet" : "",
@@ -5249,110 +5296,6 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="virtualserviceUuidScaleoutstatusKeyvalGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /virtualservice/{uuid}/scaleoutstatus/keyval/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">virtualserviceUuidScaleoutstatusKeyvalGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="virtualserviceUuidScaleoutstatusKeyvalsummaryGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /virtualservice/{uuid}/scaleoutstatus/keyvalsummary/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">virtualserviceUuidScaleoutstatusKeyvalsummaryGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
   <div class="method"><a name="virtualserviceUuidSescaleoutstatusGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
@@ -5797,6 +5740,7 @@ font-style: italic;
     <li><a href="#Cif"><code>Cif</code></a></li>
     <li><a href="#ClientInsightsSampling"><code>ClientInsightsSampling</code></a></li>
     <li><a href="#ClientLogFilter"><code>ClientLogFilter</code></a></li>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#ConnectionClearFilter"><code>ConnectionClearFilter</code></a></li>
     <li><a href="#ContentRewriteProfile"><code>ContentRewriteProfile</code></a></li>
     <li><a href="#DiscoveredNetwork"><code>DiscoveredNetwork</code></a></li>
@@ -5840,6 +5784,7 @@ font-style: italic;
     <li><a href="#RateProfile"><code>RateProfile</code></a></li>
     <li><a href="#ReplaceStringVar"><code>ReplaceStringVar</code></a></li>
     <li><a href="#RetryPlacementParams"><code>RetryPlacementParams</code></a></li>
+    <li><a href="#RoleFilterMatchLabel"><code>RoleFilterMatchLabel</code></a></li>
     <li><a href="#SAMLSPConfig"><code>SAMLSPConfig</code></a></li>
     <li><a href="#SSLCacheFilter"><code>SSLCacheFilter</code></a></li>
     <li><a href="#SSLProfileSelector"><code>SSLProfileSelector</code></a></li>
@@ -6004,6 +5949,12 @@ font-style: italic;
 <div class="param">index </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of index. format: int32</div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the object. </div>
 <div class="param">uri (optional)</div><div class="param-desc"><span class="param-type"><a href="#StringMatch">StringMatch</a></span> Placeholder for description of property uri of obj type ClientLogFilter field type str  type object </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6377,6 +6328,13 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3 class="field-label"><a name="RoleFilterMatchLabel">RoleFilterMatchLabel</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key for filter match. Field introduced in 20.1.3. </div>
+<div class="param">values (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Values for filter match. Multiple values will be evaluated as OR. Example  key &#x3D; value1 OR key &#x3D; value2. Behavior for match is key &#x3D; * if this field is empty. Field introduced in 20.1.3. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="SAMLSPConfig">SAMLSPConfig</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">cookie_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP cookie name for authenticated session. Field introduced in 18.2.3. </div>
@@ -6408,7 +6366,9 @@ font-style: italic;
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
 <div class="param">authentication_policy </div><div class="param-desc"><span class="param-type"><a href="#AuthenticationPolicy">AuthenticationPolicy</a></span> Authentication Policy Settings. Field introduced in 18.2.1. </div>
 <div class="param">authorization_policy (optional)</div><div class="param-desc"><span class="param-type"><a href="#AuthorizationPolicy">AuthorizationPolicy</a></span> Authorization Policy Settings. Field introduced in 18.2.5. </div>
-<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed. </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
+<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. </div>
+<div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. </div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the SSO Policy. Field introduced in 18.2.3. </div>
 <div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the Tenant. It is a reference to an object of type Tenant. Field introduced in 18.2.3. </div>
 <div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> SSO Policy Type. Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT, SSO_TYPE_LDAP. Field introduced in 18.2.5. </div>
@@ -6552,6 +6512,7 @@ font-style: italic;
 <div class="param">cloud_config_cksum (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Checksum of cloud configuration for VS. Internally set by cloud connector. </div>
 <div class="param">cloud_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Cloud. </div>
 <div class="param">cloud_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed in Basic(Allowed values- CLOUD_NONE,CLOUD_NSXT) edition, Essentials(Allowed values- CLOUD_NONE,CLOUD_VCENTER) edition, Enterprise edition. </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
 <div class="param">connections_rate_limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#RateProfile">RateProfile</a></span> Rate limit the incoming connections to this virtual service. </div>
 <div class="param">content_rewrite (optional)</div><div class="param-desc"><span class="param-type"><a href="#ContentRewriteProfile">ContentRewriteProfile</a></span> Profile used to match and rewrite strings in request and/or response body. </div>
 <div class="param">created_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Creator name. </div>
@@ -6581,9 +6542,10 @@ font-style: italic;
 <div class="param">ipam_network_subnet (optional)</div><div class="param-desc"><span class="param-type"><a href="#IPNetworkSubnet">IPNetworkSubnet</a></span> Subnet and/or Network for allocating VirtualService IP by IPAM Provider module. Field deprecated in 17.1.1. </div>
 <div class="param">jwt_config (optional)</div><div class="param-desc"><span class="param-type"><a href="#JWTValidationVsConfig">JWTValidationVsConfig</a></span> Application-specific config for JWT validation. Field introduced in 20.1.3. </div>
 <div class="param">l4_policies (optional)</div><div class="param-desc"><span class="param-type"><a href="#L4Policies">array[L4Policies]</a></span> L4 Policies applied to the data traffic of the Virtual Service. Field introduced in 17.2.7. </div>
-<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed. </div>
+<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. </div>
 <div class="param">ldap_vs_config (optional)</div><div class="param-desc"><span class="param-type"><a href="#LDAPVSConfig">LDAPVSConfig</a></span> Application-specific LDAP config. Field introduced in 21.1.1. </div>
 <div class="param">limit_doser (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Limit potential DoS attackers who exceed max_cps_per_client significantly to a fraction of max_cps_per_client for a while. </div>
+<div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. </div>
 <div class="param">max_cps_per_client (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum connections per second per client IP. Allowed values are 10-1000. Special values are 0- &#39;unlimited&#39;. format: int32</div>
 <div class="param">microservice_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Microservice representing the virtual service. It is a reference to an object of type MicroService. </div>
 <div class="param">min_pools_up (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Minimum number of UP pools to mark VS up. Field introduced in 18.2.1, 17.2.12. format: int32</div>

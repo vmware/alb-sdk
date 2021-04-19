@@ -1,3 +1,7 @@
+<!-- 
+	Copyright 2021 VMware, Inc.
+	SPDX-License-Identifier: Apache License 2.0
+-->
 <!doctype html>
 <html>
   <head>
@@ -259,6 +263,9 @@ font-style: italic;
     "tenant_ref" : "aeiou",
     "jwks_keys" : "aeiou",
     "name" : "aeiou",
+    "configpb_attributes" : {
+      "version" : 123456789
+    },
     "uuid" : "aeiou",
     "issuer" : "aeiou",
     "url" : "aeiou",
@@ -320,6 +327,9 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "jwks_keys" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "uuid" : "aeiou",
   "issuer" : "aeiou",
   "url" : "aeiou",
@@ -452,6 +462,9 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "jwks_keys" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "uuid" : "aeiou",
   "issuer" : "aeiou",
   "url" : "aeiou",
@@ -524,6 +537,9 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "jwks_keys" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "uuid" : "aeiou",
   "issuer" : "aeiou",
   "url" : "aeiou",
@@ -596,6 +612,9 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "jwks_keys" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "uuid" : "aeiou",
   "issuer" : "aeiou",
   "url" : "aeiou",
@@ -625,14 +644,22 @@ font-style: italic;
 
   <h2>Table of Contents</h2>
   <ol>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#JWTServerProfile"><code>JWTServerProfile</code></a></li>
     <li><a href="#JWTServerProfileApiResponse"><code>JWTServerProfileApiResponse</code></a></li>
   </ol>
 
   <div class="model">
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="JWTServerProfile">JWTServerProfile</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
 <div class="param">issuer </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Uniquely identifiable name of the Token Issuer. Field introduced in 20.1.3. </div>
 <div class="param">jwks_keys </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> JWKS key set used for validating the JWT. Field introduced in 20.1.3. </div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the JWT Profile. Field introduced in 20.1.3. </div>

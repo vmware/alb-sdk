@@ -1,3 +1,7 @@
+<!-- 
+	Copyright 2021 VMware, Inc.
+	SPDX-License-Identifier: Apache License 2.0
+-->
 <!doctype html>
 <html>
   <head>
@@ -258,6 +262,9 @@ font-style: italic;
   "results" : [ {
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
+    "configpb_attributes" : {
+      "version" : 123456789
+    },
     "uuid" : "aeiou",
     "url" : "aeiou",
     "_last_modified" : "aeiou"
@@ -317,6 +324,9 @@ font-style: italic;
     <pre class="example"><code>{
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
@@ -447,6 +457,9 @@ font-style: italic;
     <pre class="example"><code>{
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
@@ -517,6 +530,9 @@ font-style: italic;
     <pre class="example"><code>{
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
@@ -587,6 +603,9 @@ font-style: italic;
     <pre class="example"><code>{
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
@@ -615,14 +634,22 @@ font-style: italic;
 
   <h2>Table of Contents</h2>
   <ol>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#TestSeDatastoreLevel3"><code>TestSeDatastoreLevel3</code></a></li>
     <li><a href="#TestSeDatastoreLevel3ApiResponse"><code>TestSeDatastoreLevel3ApiResponse</code></a></li>
   </ol>
 
   <div class="model">
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="TestSeDatastoreLevel3">TestSeDatastoreLevel3</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the object. </div>
 <div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Field introduced in 18.2.6. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>

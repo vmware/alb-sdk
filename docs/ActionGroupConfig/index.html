@@ -1,3 +1,7 @@
+<!-- 
+	Copyright 2021 VMware, Inc.
+	SPDX-License-Identifier: Apache License 2.0
+-->
 <!doctype html>
 <html>
   <head>
@@ -268,6 +272,9 @@ font-style: italic;
     "snmp_trap_profile_ref" : "aeiou",
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
+    "configpb_attributes" : {
+      "version" : 123456789
+    },
     "email_config_ref" : "aeiou"
   } ]
 }</code></pre>
@@ -335,6 +342,9 @@ font-style: italic;
   "snmp_trap_profile_ref" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "email_config_ref" : "aeiou"
 }</code></pre>
 
@@ -473,6 +483,9 @@ font-style: italic;
   "snmp_trap_profile_ref" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "email_config_ref" : "aeiou"
 }</code></pre>
 
@@ -551,6 +564,9 @@ font-style: italic;
   "snmp_trap_profile_ref" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "email_config_ref" : "aeiou"
 }</code></pre>
 
@@ -629,6 +645,9 @@ font-style: italic;
   "snmp_trap_profile_ref" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "email_config_ref" : "aeiou"
 }</code></pre>
 
@@ -657,6 +676,7 @@ font-style: italic;
   <ol>
     <li><a href="#ActionGroupConfig"><code>ActionGroupConfig</code></a></li>
     <li><a href="#ActionGroupConfigApiResponse"><code>ActionGroupConfigApiResponse</code></a></li>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
   </ol>
 
   <div class="model">
@@ -665,6 +685,7 @@ font-style: italic;
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
 <div class="param">action_script_config_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> reference of the action script configuration to be used. It is a reference to an object of type AlertScriptConfig. </div>
 <div class="param">autoscale_trigger_notification (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Trigger Notification to AutoScale Manager. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
 <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> User defined description for the object. </div>
 <div class="param">email_config_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Select the Email Notification configuration to use when sending alerts via email. It is a reference to an object of type AlertEmailConfig. </div>
 <div class="param">external_only </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Generate Alert only to external destinations. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. </div>
@@ -683,6 +704,12 @@ font-style: italic;
       <div class="param">count </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
 <div class="param">results </div><div class="param-desc"><span class="param-type"><a href="#ActionGroupConfig">array[ActionGroupConfig]</a></span>  </div>
 <div class="param">next (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
     </div>  <!-- field-items -->
   </div>
   </body>

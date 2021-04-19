@@ -1,3 +1,7 @@
+<!-- 
+	Copyright 2021 VMware, Inc.
+	SPDX-License-Identifier: Apache License 2.0
+-->
 <!doctype html>
 <html>
   <head>
@@ -290,6 +294,9 @@ font-style: italic;
       "password" : "aeiou",
       "username" : "aeiou"
     },
+    "configpb_attributes" : {
+      "version" : 123456789
+    },
     "oci_credentials" : {
       "pass_phrase" : "aeiou",
       "key_content" : "aeiou",
@@ -382,6 +389,9 @@ font-style: italic;
   "vcenter_credentials" : {
     "password" : "aeiou",
     "username" : "aeiou"
+  },
+  "configpb_attributes" : {
+    "version" : 123456789
   },
   "oci_credentials" : {
     "pass_phrase" : "aeiou",
@@ -547,6 +557,9 @@ font-style: italic;
     "password" : "aeiou",
     "username" : "aeiou"
   },
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "oci_credentials" : {
     "pass_phrase" : "aeiou",
     "key_content" : "aeiou",
@@ -650,6 +663,9 @@ font-style: italic;
   "vcenter_credentials" : {
     "password" : "aeiou",
     "username" : "aeiou"
+  },
+  "configpb_attributes" : {
+    "version" : 123456789
   },
   "oci_credentials" : {
     "pass_phrase" : "aeiou",
@@ -755,6 +771,9 @@ font-style: italic;
     "password" : "aeiou",
     "username" : "aeiou"
   },
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "oci_credentials" : {
     "pass_phrase" : "aeiou",
     "key_content" : "aeiou",
@@ -849,6 +868,7 @@ font-style: italic;
     <li><a href="#CloudConnectorUser"><code>CloudConnectorUser</code></a></li>
     <li><a href="#CloudConnectorUserApiResponse"><code>CloudConnectorUserApiResponse</code></a></li>
     <li><a href="#CloudConnectorUserTestParams"><code>CloudConnectorUserTestParams</code></a></li>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#GCPCredentials"><code>GCPCredentials</code></a></li>
     <li><a href="#NsxtCredentials"><code>NsxtCredentials</code></a></li>
     <li><a href="#OCICredentials"><code>OCICredentials</code></a></li>
@@ -878,6 +898,7 @@ font-style: italic;
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
 <div class="param">azure_serviceprincipal (optional)</div><div class="param-desc"><span class="param-type"><a href="#AzureServicePrincipalCredentials">AzureServicePrincipalCredentials</a></span>  Field introduced in 17.2.1. Allowed in Basic edition, Essentials edition, Enterprise edition. </div>
 <div class="param">azure_userpass (optional)</div><div class="param-desc"><span class="param-type"><a href="#AzureUserPassCredentials">AzureUserPassCredentials</a></span>  Field introduced in 17.2.1. Allowed in Basic edition, Essentials edition, Enterprise edition. </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
 <div class="param">gcp_credentials (optional)</div><div class="param-desc"><span class="param-type"><a href="#GCPCredentials">GCPCredentials</a></span> Credentials for Google Cloud Platform. Field introduced in 18.2.1. Allowed in Basic edition, Essentials edition, Enterprise edition. </div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the object. </div>
 <div class="param">nsxt_credentials (optional)</div><div class="param-desc"><span class="param-type"><a href="#NsxtCredentials">NsxtCredentials</a></span> Credentials to talk to NSX-T manager. Field introduced in 20.1.1. Allowed in Essentials edition, Enterprise edition. </div>
@@ -904,6 +925,12 @@ font-style: italic;
     <h3 class="field-label"><a name="CloudConnectorUserTestParams">CloudConnectorUserTestParams</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">host (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> host of CloudConnectorUserTestParams. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

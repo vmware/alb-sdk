@@ -1,3 +1,7 @@
+<!-- 
+	Copyright 2021 VMware, Inc.
+	SPDX-License-Identifier: Apache License 2.0
+-->
 <!doctype html>
 <html>
   <head>
@@ -260,6 +264,9 @@ font-style: italic;
     "date" : "aeiou",
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
+    "configpb_attributes" : {
+      "version" : 123456789
+    },
     "description" : "aeiou",
     "uuid" : "aeiou",
     "is_federated" : true,
@@ -322,6 +329,9 @@ font-style: italic;
   "date" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "description" : "aeiou",
   "uuid" : "aeiou",
   "is_federated" : true,
@@ -455,6 +465,9 @@ font-style: italic;
   "date" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "description" : "aeiou",
   "uuid" : "aeiou",
   "is_federated" : true,
@@ -528,6 +541,9 @@ font-style: italic;
   "date" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "description" : "aeiou",
   "uuid" : "aeiou",
   "is_federated" : true,
@@ -653,6 +669,9 @@ font-style: italic;
   "date" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "description" : "aeiou",
   "uuid" : "aeiou",
   "is_federated" : true,
@@ -683,14 +702,22 @@ font-style: italic;
 
   <h2>Table of Contents</h2>
   <ol>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#FederationCheckpoint"><code>FederationCheckpoint</code></a></li>
     <li><a href="#FederationCheckpointApiResponse"><code>FederationCheckpointApiResponse</code></a></li>
   </ol>
 
   <div class="model">
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="FederationCheckpoint">FederationCheckpoint</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
 <div class="param">date (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Date when the checkpoint was created. Field introduced in 20.1.1. </div>
 <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Description for this checkpoint. Field introduced in 20.1.1. </div>
 <div class="param">is_federated (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> This field describes the object&#39;s replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines. If the field is set to true, then the object is replicated across the federation. Field introduced in 20.1.1. </div>
