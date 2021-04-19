@@ -6,7 +6,7 @@
 swagger: '2.0'
 info:
     version: '21.1.1'
-    title: Avi BackupConfiguration Object API
+    title: Avi LabelGroup Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
@@ -14,8 +14,8 @@ info:
     description: |
         CLI
         ```
-        - show backupconfiguration <key>
-        - configure backupconfiguration <key>
+        - configure labelgroup <key>
+        - show labelgroup <key>
         ```
 
 
@@ -25,7 +25,7 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /backupconfiguration:
+    /labelgroup:
         get:
             consumes:
                 -   application/json
@@ -89,7 +89,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/BackupConfigurationApiResponse"
+                        $ref: "#/definitions/LabelGroupApiResponse"
                 401:
                     description: log in failed
         post:
@@ -120,20 +120,20 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: BackupConfiguration object creation
+                    description: LabelGroup object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/BackupConfiguration"
+                        $ref: "#/definitions/LabelGroup"
             security:
                 - basicAuth: []
             responses:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/BackupConfiguration"
+                        $ref: "#/definitions/LabelGroup"
                 401:
                     description: log in failed
-    /backupconfiguration/{uuid}:
+    /labelgroup/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -194,7 +194,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/BackupConfiguration"
+                        $ref: "#/definitions/LabelGroup"
                 401:
                     description: log in failed
         put:
@@ -230,10 +230,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: BackupConfiguration object creation
+                    description: LabelGroup object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/BackupConfiguration"
+                        $ref: "#/definitions/LabelGroup"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -245,7 +245,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/BackupConfiguration"
+                        $ref: "#/definitions/LabelGroup"
                 401:
                     description: log in failed
         patch:
@@ -281,10 +281,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: BackupConfiguration object creation
+                    description: LabelGroup object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/BackupConfiguration"
+                        $ref: "#/definitions/LabelGroup"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -296,7 +296,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/BackupConfiguration"
+                        $ref: "#/definitions/LabelGroup"
                 401:
                     description: log in failed
         delete:
@@ -347,7 +347,15 @@ paths:
 
 
 definitions:
-    BackupConfiguration:
+    ConfigPbAttributes:
+        type: object
+        properties:
+            version:
+                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
+                type: integer
+                default: 1
+                format: int64
+    LabelGroup:
         type: object
         required:
             -   name
@@ -356,61 +364,25 @@ definitions:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
                 readOnly: True
                 type: string
-            aws_access_key:
-                description: "AWS Access Key ID. Field introduced in 18.2.3. Allowed in Basic edition, Essentials edition, Enterprise edition."
-                type: string
-            aws_bucket_id:
-                description: "AWS bucket. Field introduced in 18.2.3. Allowed in Basic edition, Essentials edition, Enterprise edition."
-                type: string
-            aws_secret_access:
-                description: "AWS Secret Access Key. Field introduced in 18.2.3. Allowed in Basic edition, Essentials edition, Enterprise edition."
-                type: string
-            backup_file_prefix:
-                description: "Prefix of the exported configuration file. Field introduced in 17.1.1."
-                type: string
-            backup_passphrase:
-                description: "Default passphrase for configuration export and periodic backup."
-                type: string
             configpb_attributes:
                 description: "Protobuf versioning for config pbs. Field introduced in 21.1.1."
                 $ref: '#/definitions/ConfigPbAttributes'
-            maximum_backups_stored:
-                description: "Rotate the backup files based on this count. Allowed values are 1-20."
-                type: integer
-                default: 4
-                format: int32
+            labels:
+                description: "List of allowed or suggested labels for the label group. Field introduced in 20.1.5."
+                type: array
+                items:
+                    $ref: '#/definitions/RoleMatchOperationMatchLabel'
             name:
-                description: "Name of backup configuration."
+                description: "Name of the Label Group. Field introduced in 20.1.5."
                 type: string
-            remote_directory:
-                description: "Directory at remote destination with write permission for ssh user."
-                type: string
-            remote_hostname:
-                description: "Remote Destination."
-                type: string
-            save_local:
-                description: "Local Backup."
-                type: boolean
-            ssh_user_ref:
-                description: "Access Credentials for remote destination. It is a reference to an object of type CloudConnectorUser."
-                type: string
-            tenant_ref:
-                description: " It is a reference to an object of type Tenant."
-                type: string
-            upload_to_remote_host:
-                description: "Remote Backup."
-                type: boolean
-            upload_to_s3:
-                description: "Cloud Backup. Field introduced in 18.2.3. Allowed in Basic edition, Essentials edition, Enterprise edition."
-                type: boolean
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "Unique object identifier of the object."
+                description: "UUID of the Label Group. Field introduced in 20.1.5."
                 type: string
-    BackupConfigurationApiResponse:
+    LabelGroupApiResponse:
         type: object
         required:
             - count
@@ -422,14 +394,31 @@ definitions:
             results:
                 type: array
                 items:
-                    $ref: "#/definitions/BackupConfiguration"
+                    $ref: "#/definitions/LabelGroup"
             next:
                 type: string
-    ConfigPbAttributes:
+    RoleFilterMatchLabel:
         type: object
+        required:
+            -   key
         properties:
-            version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
-                type: integer
-                default: 1
-                format: int64
+            key:
+                description: "Key for filter match. Field introduced in 20.1.3."
+                type: string
+            values:
+                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3."
+                type: array
+                items:
+                    type: string
+    RoleMatchOperationMatchLabel:
+        type: object
+        required:
+            -   match_label
+        properties:
+            match_label:
+                description: "List of labels allowed for the tenant. Field introduced in 20.1.5."
+                $ref: '#/definitions/RoleFilterMatchLabel'
+            match_operation:
+                description: "Label match operation criteria. Enum options - ROLE_FILTER_EQUALS, ROLE_FILTER_DOES_NOT_EQUAL, ROLE_FILTER_GLOB_MATCH, ROLE_FILTER_GLOB_DOES_NOT_MATCH. Field introduced in 20.1.5."
+                type: string
+                default: "ROLE_FILTER_EQUALS"

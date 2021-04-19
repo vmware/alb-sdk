@@ -283,6 +283,17 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object",
+            "properties": {
+                "version": {
+                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.",
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int64"
+                }
+            }
+        },
         "DosThreshold": {
             "type": "object",
             "required": [
@@ -593,6 +604,18 @@
                     "default": 300,
                     "format": "int32"
                 },
+                "sc_dns_q_batch_dequeue_limit": {
+                    "description": "Max elements to dequeue in one shot from the Q by the statecache thread. Allowed values are 1-10000. Field introduced in 20.1.5.",
+                    "type": "integer",
+                    "default": 100,
+                    "format": "int32"
+                },
+                "sc_dns_q_max_size": {
+                    "description": "Max elements in the dns queue between seagent main and the statecache thread. Allowed values are 1-10000. Field introduced in 20.1.5.",
+                    "type": "integer",
+                    "default": 4096,
+                    "format": "int32"
+                },
                 "sc_shard_cleanup_max_time": {
                     "description": "Max time to wait by the statecache thread before cleaning up connection to the controller shard. Allowed values are 1-1000000. Field introduced in 18.2.5. Unit is SECONDS.",
                     "type": "integer",
@@ -869,6 +892,10 @@
                     "description": "UNIX time since epoch in microseconds. Units(MICROSECONDS).",
                     "readOnly": true,
                     "type": "string"
+                },
+                "configpb_attributes": {
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1.",
+                    "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "se_agent_properties": {
                     "description": "Placeholder for description of property se_agent_properties of obj type SeProperties field type str  type object",
@@ -1579,5 +1606,9 @@
                 }
             }
         }
-    }
+    },
+    "_comment": [
+        "Copyright 2021 VMware, Inc.",
+        "SPDX-License-Identifier: Apache License 2.0"
+    ]
 }

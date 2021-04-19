@@ -502,6 +502,17 @@
         }
     },
     "definitions": {
+        "ConfigPbAttributes": {
+            "type": "object",
+            "properties": {
+                "version": {
+                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.",
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int64"
+                }
+            }
+        },
         "IpAddr": {
             "type": "object",
             "required": [
@@ -551,6 +562,10 @@
                     "description": "UNIX time since epoch in microseconds. Units(MICROSECONDS).",
                     "readOnly": true,
                     "type": "string"
+                },
+                "configpb_attributes": {
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1.",
+                    "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "description": {
                     "description": "A short description of this ruleset. Field introduced in 18.1.1.",
@@ -715,11 +730,11 @@
                     "type": "string"
                 },
                 "rule_id": {
-                    "description": "Identifier (id) for a rule per Modsec language. All SecRule and SecAction directives require an id. It is extracted from the id action in a ModSec rule. Rules within a single WAF Policy are required to have unique rule_ids. Field introduced in 17.2.2.",
+                    "description": "Identifier (id) for a rule per Modsec language. All SecRule and SecAction directives require an id. It is extracted from the id action in a Modsec rule. Rules within a single WAF Policy are required to have unique rule_ids. Field introduced in 17.2.2.",
                     "type": "string"
                 },
                 "tags": {
-                    "description": "Tags for WAF rule as per Modsec language. They are extracted from the tag action in a ModSec rule. Field introduced in 18.1.3. Maximum of 64 items allowed.",
+                    "description": "Tags for WAF rule as per Modsec language. They are extracted from the tag actions in a Modsec rule. This field is generated from the rule itself and cannot be set by the user. Field introduced in 18.1.3. Maximum of 64 items allowed.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -769,5 +784,9 @@
                 }
             }
         }
-    }
+    },
+    "_comment": [
+        "Copyright 2021 VMware, Inc.",
+        "SPDX-License-Identifier: Apache License 2.0"
+    ]
 }
