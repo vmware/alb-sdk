@@ -1,3 +1,7 @@
+<!-- 
+	Copyright 2021 VMware, Inc.
+	SPDX-License-Identifier: Apache License 2.0
+-->
 <!doctype html>
 <html>
   <head>
@@ -180,7 +184,7 @@ font-style: italic;
   </head>
   <body>
   <h1>Avi UpgradeStatusInfo Object API</h1>
-    <div class="app-desc">CLI ``` - show upgrade status detail ``` </div>
+    <div class="app-desc">CLI ``` - show upgrade status detail - show upgrade status detail include_history ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
     <div class="app-desc">Version: 21.1.1</div>
@@ -1617,7 +1621,7 @@ font-style: italic;
 <div class="param">params (optional)</div><div class="param-desc"><span class="param-type"><a href="#UpgradeOpsParam">UpgradeOpsParam</a></span> Parameters associated with the Upgrade operation. Field introduced in 18.2.6. </div>
 <div class="param">patch_image_path (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Image path of current patch image. Field introduced in 18.2.10, 20.1.1. </div>
 <div class="param">patch_image_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Image uuid for identifying the current patch.Example  Base-image is 18.2.6 and a patch 6p1 is applied, then this field will indicate the 6p1 value. . It is a reference to an object of type Image. Field introduced in 18.2.6. </div>
-<div class="param">patch_list (optional)</div><div class="param-desc"><span class="param-type"><a href="#PatchData">array[PatchData]</a></span> List of patches applied to this node. Example  Base-image is 18.2.6 and a patch 6p1 is applied, then a patch 6p5 applied, this field will indicate the [{&#39;6p1&#39;, &#39;6p1_image_uuid&#39;}, {&#39;6p5&#39;, &#39;6p5_image_uuid&#39;}] value. Field introduced in 18.2.8, 20.1.1. </div>
+<div class="param">patch_list (optional)</div><div class="param-desc"><span class="param-type"><a href="#PatchData">array[PatchData]</a></span> List of patches applied to this node. Example  Base-image is 18.2.6 and a patch 6p1 is applied, then a patch 6p5 applied. This field will indicate the [{&#39;6p1&#39;, &#39;6p1_image_uuid&#39;}, {&#39;6p5&#39;, &#39;6p5_image_uuid&#39;}] value. Field introduced in 18.2.8, 20.1.1. </div>
 <div class="param">patch_reboot (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Flag for patch op with reboot. Field introduced in 18.2.10, 20.1.1. </div>
 <div class="param">patch_version (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Current patch version applied to this node. Example  Base-image is 18.2.6 and a patch 6p1 is applied, then this field will indicate the 6p1 value. . Field introduced in 18.2.6. </div>
 <div class="param">prev_image_path (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Image path of previous base image. Field introduced in 18.2.10, 20.1.1. </div>

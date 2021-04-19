@@ -1,3 +1,7 @@
+<!-- 
+	Copyright 2021 VMware, Inc.
+	SPDX-License-Identifier: Apache License 2.0
+-->
 <!doctype html>
 <html>
   <head>
@@ -303,7 +307,14 @@ font-style: italic;
     },
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
+    "configpb_attributes" : {
+      "version" : 123456789
+    },
     "description" : "aeiou",
+    "markers" : [ {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    } ],
     "uuid" : "aeiou",
     "url" : "aeiou",
     "_last_modified" : "aeiou",
@@ -411,7 +422,14 @@ font-style: italic;
   },
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "description" : "aeiou",
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou",
@@ -590,7 +608,14 @@ font-style: italic;
   },
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "description" : "aeiou",
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou",
@@ -709,7 +734,14 @@ font-style: italic;
   },
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "description" : "aeiou",
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou",
@@ -828,7 +860,14 @@ font-style: italic;
   },
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "description" : "aeiou",
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou",
@@ -913,17 +952,25 @@ font-style: italic;
 
   <h2>Table of Contents</h2>
   <ol>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#DsrProfile"><code>DsrProfile</code></a></li>
     <li><a href="#KeyValue"><code>KeyValue</code></a></li>
     <li><a href="#NetworkProfile"><code>NetworkProfile</code></a></li>
     <li><a href="#NetworkProfileApiResponse"><code>NetworkProfileApiResponse</code></a></li>
     <li><a href="#NetworkProfileUnion"><code>NetworkProfileUnion</code></a></li>
+    <li><a href="#RoleFilterMatchLabel"><code>RoleFilterMatchLabel</code></a></li>
     <li><a href="#TCPFastPathProfile"><code>TCPFastPathProfile</code></a></li>
     <li><a href="#TCPProxyProfile"><code>TCPProxyProfile</code></a></li>
     <li><a href="#UDPFastPathProfile"><code>UDPFastPathProfile</code></a></li>
     <li><a href="#UDPProxyProfile"><code>UDPProxyProfile</code></a></li>
   </ol>
 
+  <div class="model">
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
+    </div>  <!-- field-items -->
+  </div>
   <div class="model">
     <h3 class="field-label"><a name="DsrProfile">DsrProfile</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
@@ -942,9 +989,11 @@ font-style: italic;
     <h3 class="field-label"><a name="NetworkProfile">NetworkProfile</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
 <div class="param">connection_mirror (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> When enabled, Avi mirrors all TCP fastpath connections to standby. Applicable only in Legacy HA Mode. Field introduced in 18.1.3,18.2.1. </div>
 <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> User defined description for the object. </div>
-<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed. </div>
+<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. </div>
+<div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. </div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of the network profile. </div>
 <div class="param">profile </div><div class="param-desc"><span class="param-type"><a href="#NetworkProfileUnion">NetworkProfileUnion</a></span> Placeholder for description of property profile of obj type NetworkProfile field type str  type object </div>
 <div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. </div>
@@ -968,6 +1017,13 @@ font-style: italic;
 <div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Configure one of either proxy or fast path profiles. Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY. Allowed in Basic(Allowed values- PROTOCOL_TYPE_TCP_PROXY,PROTOCOL_TYPE_TCP_FAST_PATH,PROTOCOL_TYPE_UDP_FAST_PATH) edition, Essentials(Allowed values- PROTOCOL_TYPE_TCP_FAST_PATH,PROTOCOL_TYPE_UDP_FAST_PATH) edition, Enterprise edition. </div>
 <div class="param">udp_fast_path_profile (optional)</div><div class="param-desc"><span class="param-type"><a href="#UDPFastPathProfile">UDPFastPathProfile</a></span> Placeholder for description of property udp_fast_path_profile of obj type NetworkProfileUnion field type str  type object </div>
 <div class="param">udp_proxy_profile (optional)</div><div class="param-desc"><span class="param-type"><a href="#UDPProxyProfile">UDPProxyProfile</a></span> Configure UDP Proxy network profile. Field introduced in 17.2.8, 18.1.3, 18.2.1. Allowed in Basic edition, Essentials edition, Enterprise edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="RoleFilterMatchLabel">RoleFilterMatchLabel</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key for filter match. Field introduced in 20.1.3. </div>
+<div class="param">values (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Values for filter match. Multiple values will be evaluated as OR. Example  key &#x3D; value1 OR key &#x3D; value2. Behavior for match is key &#x3D; * if this field is empty. Field introduced in 20.1.3. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

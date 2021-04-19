@@ -1,3 +1,7 @@
+<!-- 
+	Copyright 2021 VMware, Inc.
+	SPDX-License-Identifier: Apache License 2.0
+-->
 <!doctype html>
 <html>
   <head>
@@ -264,6 +268,9 @@ font-style: italic;
     } ],
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
+    "configpb_attributes" : {
+      "version" : 123456789
+    },
     "uuid" : "aeiou",
     "url" : "aeiou",
     "_last_modified" : "aeiou",
@@ -330,6 +337,9 @@ font-style: italic;
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou",
@@ -467,6 +477,9 @@ font-style: italic;
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou",
@@ -544,6 +557,9 @@ font-style: italic;
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou",
@@ -621,6 +637,9 @@ font-style: italic;
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou",
@@ -650,15 +669,23 @@ font-style: italic;
 
   <h2>Table of Contents</h2>
   <ol>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#CustomIpamDnsProfile"><code>CustomIpamDnsProfile</code></a></li>
     <li><a href="#CustomIpamDnsProfileApiResponse"><code>CustomIpamDnsProfileApiResponse</code></a></li>
     <li><a href="#CustomParams"><code>CustomParams</code></a></li>
   </ol>
 
   <div class="model">
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="CustomIpamDnsProfile">CustomIpamDnsProfile</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the Custom IPAM DNS Profile. Field introduced in 17.1.1. </div>
 <div class="param">script_params (optional)</div><div class="param-desc"><span class="param-type"><a href="#CustomParams">array[CustomParams]</a></span> Parameters that are always passed to the IPAM/DNS script. Field introduced in 17.1.1. </div>
 <div class="param">script_uri </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Script URI of form controller //ipamdnsscripts/&lt;file-name&gt;. Field introduced in 17.1.1. </div>
