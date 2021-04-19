@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // IPReputationDB IP reputation d b
 // swagger:model IPReputationDB
@@ -14,14 +15,20 @@ type IPReputationDB struct {
 	// IP reputation DB base file. It is a reference to an object of type FileObject. Field introduced in 20.1.1. Maximum of 1 items allowed.
 	BaseFileRefs []string `json:"base_file_refs,omitempty"`
 
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
+
 	// Description. Field introduced in 20.1.1.
 	Description *string `json:"description,omitempty"`
 
 	// IP reputation DB incremental update files. It is a reference to an object of type FileObject. Field introduced in 20.1.1.
 	IncrementalFileRefs []string `json:"incremental_file_refs,omitempty"`
 
-	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed.
+	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed.
 	Labels []*KeyValue `json:"labels,omitempty"`
+
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// IP reputation DB name. Field introduced in 20.1.1.
 	// Required: true

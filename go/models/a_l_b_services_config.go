@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // ALBServicesConfig a l b services config
 // swagger:model ALBServicesConfig
@@ -17,6 +18,9 @@ type ALBServicesConfig struct {
 
 	// Information about the default contact for this controller cluster. Field introduced in 20.1.1.
 	AssetContact *ALBServicesUser `json:"asset_contact,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// Information about the portal features opted in for controller. Field introduced in 20.1.1.
 	// Required: true

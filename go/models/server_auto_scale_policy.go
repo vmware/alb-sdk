@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // ServerAutoScalePolicy server auto scale policy
 // swagger:model ServerAutoScalePolicy
@@ -10,6 +11,9 @@ type ServerAutoScalePolicy struct {
 	// UNIX time since epoch in microseconds. Units(MICROSECONDS).
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// Delay in minutes after which a down server will be removed from Pool. Value 0 disables this functionality. Field introduced in 20.1.3.
 	DelayForServerGarbageCollection *int32 `json:"delay_for_server_garbage_collection,omitempty"`
@@ -26,8 +30,11 @@ type ServerAutoScalePolicy struct {
 	// Minimum extra capacity as percentage of load used by the intelligent scheme. Scaleout is triggered when available capacity is less than this margin. Allowed values are 1-99.
 	IntelligentScaleoutMargin *int32 `json:"intelligent_scaleout_margin,omitempty"`
 
-	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.3. Maximum of 4 items allowed.
+	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.3. Maximum of 4 items allowed.
 	Labels []*KeyValue `json:"labels,omitempty"`
+
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// Maximum number of servers to scalein simultaneously. The actual number of servers to scalein is chosen such that target number of servers is always more than or equal to the min_size.
 	MaxScaleinAdjustmentStep *int32 `json:"max_scalein_adjustment_step,omitempty"`

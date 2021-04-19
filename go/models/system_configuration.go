@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // SystemConfiguration system configuration
 // swagger:model SystemConfiguration
@@ -16,6 +17,9 @@ type SystemConfiguration struct {
 
 	// Common criteria mode's current state. Field introduced in 20.1.3.
 	CommonCriteriaMode *bool `json:"common_criteria_mode,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// Specifies the default license tier which would be used by new Clouds. Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS. Field introduced in 17.2.5. Allowed in Basic edition, Essentials edition, Enterprise edition. Special default for Basic edition is BASIC, Essentials edition is ESSENTIALS, Enterprise is ENTERPRISE.
 	DefaultLicenseTier *string `json:"default_license_tier,omitempty"`

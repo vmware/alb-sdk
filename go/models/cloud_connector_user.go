@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // CloudConnectorUser cloud connector user
 // swagger:model CloudConnectorUser
@@ -16,6 +17,9 @@ type CloudConnectorUser struct {
 
 	//  Field introduced in 17.2.1. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	AzureUserpass *AzureUserPassCredentials `json:"azure_userpass,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// Credentials for Google Cloud Platform. Field introduced in 18.2.1. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	GcpCredentials *GCPCredentials `json:"gcp_credentials,omitempty"`

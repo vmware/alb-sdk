@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // StateCacheMgrDebugFilter state cache mgr debug filter
 // swagger:model StateCacheMgrDebugFilter

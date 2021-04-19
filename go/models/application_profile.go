@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // ApplicationProfile application profile
 // swagger:model ApplicationProfile
@@ -13,6 +14,9 @@ type ApplicationProfile struct {
 
 	// Checksum of application profiles. Internally set by cloud connector. Field introduced in 17.2.14, 18.1.5, 18.2.1.
 	CloudConfigCksum *string `json:"cloud_config_cksum,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// Name of the application profile creator. Field introduced in 17.2.14, 18.1.5, 18.2.1.
 	CreatedBy *string `json:"created_by,omitempty"`
@@ -28,6 +32,9 @@ type ApplicationProfile struct {
 
 	// Specifies the HTTP application proxy profile parameters.
 	HTTPProfile *HTTPApplicationProfile `json:"http_profile,omitempty"`
+
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// The name of the application profile.
 	// Required: true

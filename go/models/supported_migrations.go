@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // SupportedMigrations supported migrations
 // swagger:model SupportedMigrations
@@ -46,7 +47,7 @@ type SupportedMigrations struct {
 	// Minimum  number of cores required for se. Field introduced in 18.2.10, 20.1.2. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	SeMinCores *int32 `json:"se_min_cores,omitempty"`
 
-	// Minimum space required(in GB) on se for this image installation. Field introduced in 18.2.6. Unit is GB.
+	// Minimum space required(in GB) on se for this image installation for non-fips mode(+1 GB for fips mode). Field introduced in 18.2.6. Unit is GB.
 	SeMinFreeDiskSize *int32 `json:"se_min_free_disk_size,omitempty"`
 
 	// Minimum  memory required(in GB) for se. Field introduced in 18.2.10, 20.1.2. Unit is GB. Allowed in Basic edition, Essentials edition, Enterprise edition.

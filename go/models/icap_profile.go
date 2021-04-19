@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // IcapProfile icap profile
 // swagger:model IcapProfile
@@ -23,6 +24,9 @@ type IcapProfile struct {
 	// The cloud where this object belongs to. This must match the cloud referenced in the pool group below. It is a reference to an object of type Cloud. Field introduced in 20.1.1.
 	CloudRef *string `json:"cloud_ref,omitempty"`
 
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
+
 	// A description for this ICAP profile. Field introduced in 20.1.1.
 	Description *string `json:"description,omitempty"`
 
@@ -35,6 +39,9 @@ type IcapProfile struct {
 	// Name of the ICAP profile. Field introduced in 20.1.1.
 	// Required: true
 	Name *string `json:"name"`
+
+	// NSXDefender specific ICAP configurations. Field introduced in 21.1.1.
+	NsxDefenderConfig *IcapNsxDefenderConfig `json:"nsx_defender_config,omitempty"`
 
 	// The pool group which is used to connect to ICAP servers. It is a reference to an object of type PoolGroup. Field introduced in 20.1.1.
 	// Required: true

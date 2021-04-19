@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // Cloud cloud
 // swagger:model Cloud
@@ -29,6 +30,9 @@ type Cloud struct {
 	// Placeholder for description of property cloudstack_configuration of obj type Cloud field type str  type object
 	CloudstackConfiguration *CloudStackConfiguration `json:"cloudstack_configuration,omitempty"`
 
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
+
 	// Custom tags for all Avi created resources in the cloud infrastructure. Field introduced in 17.1.5.
 	CustomTags []*CustomTag `json:"custom_tags,omitempty"`
 
@@ -40,6 +44,9 @@ type Cloud struct {
 
 	// By default, pool member FQDNs are resolved on the Controller. When this is set, pool member FQDNs are instead resolved on Service Engines in this cloud. This is useful in scenarios where pool member FQDNs can only be resolved from Service Engines and not from the Controller. Field introduced in 18.2.6. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
 	DNSResolutionOnSe *bool `json:"dns_resolution_on_se,omitempty"`
+
+	// DNS resolver for the cloud. Field introduced in 20.1.5. Maximum of 1 items allowed.
+	DNSResolvers []*DNSResolver `json:"dns_resolvers,omitempty"`
 
 	// Placeholder for description of property docker_configuration of obj type Cloud field type str  type object
 	DockerConfiguration *DockerConfiguration `json:"docker_configuration,omitempty"`

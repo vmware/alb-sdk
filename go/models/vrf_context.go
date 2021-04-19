@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // VrfContext vrf context
 // swagger:model VrfContext
@@ -23,6 +24,9 @@ type VrfContext struct {
 	//  It is a reference to an object of type Cloud.
 	CloudRef *string `json:"cloud_ref,omitempty"`
 
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
+
 	// Configure debug flags for VRF. Field introduced in 17.1.1.
 	Debugvrfcontext *DebugVrfContext `json:"debugvrfcontext,omitempty"`
 
@@ -35,11 +39,14 @@ type VrfContext struct {
 	// Configure ping based heartbeat check for all default gateways in service engines of vrf. Field introduced in 17.1.1.
 	InternalGatewayMonitor *InternalGatewayMonitor `json:"internal_gateway_monitor,omitempty"`
 
-	// Key/value labels which can be used for Object Access Policy permission scoping. Field introduced in 18.2.7, 20.1.1.
+	// Key/value labels which can be used for Object Access Policy permission scoping. Field deprecated in 20.1.5. Field introduced in 18.2.7, 20.1.1.
 	Labels []*KeyValue `json:"labels,omitempty"`
 
 	// Enable LLDP. Field introduced in 18.2.10, 20.1.1. Allowed in Basic(Allowed values- true) edition, Essentials(Allowed values- true) edition, Enterprise edition.
 	LldpEnable *bool `json:"lldp_enable,omitempty"`
+
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// Name of the object.
 	// Required: true
