@@ -1,3 +1,6 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 from pkg_resources import parse_version
 from avi.migrationtools.config_patch import ConfigPatch
 from avi.migrationtools.vs_filter import filter_for_vs

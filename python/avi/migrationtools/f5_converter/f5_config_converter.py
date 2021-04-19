@@ -1,3 +1,6 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 import logging
 import avi.migrationtools.f5_converter.converter_constants as conv_const
 import os

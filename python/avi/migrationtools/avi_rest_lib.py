@@ -1,3 +1,6 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 from avi.sdk.avi_api import ApiSession
 import logging
 from requests.packages import urllib3
