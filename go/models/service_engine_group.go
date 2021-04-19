@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // ServiceEngineGroup service engine group
 // swagger:model ServiceEngineGroup
@@ -82,6 +83,9 @@ type ServiceEngineGroup struct {
 
 	// Enable config debugs on all cores of SE. Field introduced in 17.2.13,18.1.5,18.2.1.
 	ConfigDebugsOnAllCores *bool `json:"config_debugs_on_all_cores,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// Percentage of memory for connection state. This will come at the expense of memory used for HTTP in-memory cache. Allowed values are 10-90. Unit is PERCENT.
 	ConnectionMemoryPercentage *int32 `json:"connection_memory_percentage,omitempty"`

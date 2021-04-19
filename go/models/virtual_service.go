@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // VirtualService virtual service
 // swagger:model VirtualService
@@ -74,6 +75,9 @@ type VirtualService struct {
 
 	//  Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed in Basic(Allowed values- CLOUD_NONE,CLOUD_NSXT) edition, Essentials(Allowed values- CLOUD_NONE,CLOUD_VCENTER) edition, Enterprise edition.
 	CloudType *string `json:"cloud_type,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// Rate limit the incoming connections to this virtual service.
 	ConnectionsRateLimit *RateProfile `json:"connections_rate_limit,omitempty"`
@@ -162,7 +166,7 @@ type VirtualService struct {
 	// L4 Policies applied to the data traffic of the Virtual Service. Field introduced in 17.2.7.
 	L4Policies []*L4Policies `json:"l4_policies,omitempty"`
 
-	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed.
+	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed.
 	Labels []*KeyValue `json:"labels,omitempty"`
 
 	// Application-specific LDAP config. Field introduced in 21.1.1.
@@ -170,6 +174,9 @@ type VirtualService struct {
 
 	// Limit potential DoS attackers who exceed max_cps_per_client significantly to a fraction of max_cps_per_client for a while.
 	LimitDoser *bool `json:"limit_doser,omitempty"`
+
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// Maximum connections per second per client IP. Allowed values are 10-1000. Special values are 0- 'unlimited'.
 	MaxCpsPerClient *int32 `json:"max_cps_per_client,omitempty"`

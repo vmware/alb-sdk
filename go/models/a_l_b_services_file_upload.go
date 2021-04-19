@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // ALBServicesFileUpload a l b services file upload
 // swagger:model ALBServicesFileUpload
@@ -13,6 +14,9 @@ type ALBServicesFileUpload struct {
 
 	// Salesforce alphanumeric CaseID to attach uploaded file to. Field introduced in 18.2.6.
 	CaseID *string `json:"case_id,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// Error reported during file upload. Field introduced in 18.2.6.
 	// Read Only: true

@@ -1,8 +1,5 @@
-/***************************************************************************
- * ------------------------------------------------------------------------
- * Copyright 2020 VMware, Inc.  All rights reserved. VMware Confidential
- * ------------------------------------------------------------------------
- */
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 
 package clients
 
@@ -70,6 +67,7 @@ type AviClient struct {
 	JWTServerProfile                *JWTServerProfileClient
 	JobEntry                        *JobEntryClient
 	L4PolicySet                     *L4PolicySetClient
+	LabelGroup                      *LabelGroupClient
 	LicenseLedgerDetails            *LicenseLedgerDetailsClient
 	LogControllerMapping            *LogControllerMappingClient
 	MicroService                    *MicroServiceClient
@@ -207,6 +205,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.JWTServerProfile = NewJWTServerProfileClient(aviSession)
 	aviClient.JobEntry = NewJobEntryClient(aviSession)
 	aviClient.L4PolicySet = NewL4PolicySetClient(aviSession)
+	aviClient.LabelGroup = NewLabelGroupClient(aviSession)
 	aviClient.LicenseLedgerDetails = NewLicenseLedgerDetailsClient(aviSession)
 	aviClient.LogControllerMapping = NewLogControllerMappingClient(aviSession)
 	aviClient.MicroService = NewMicroServiceClient(aviSession)

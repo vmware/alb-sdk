@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // Role role
 // swagger:model Role
@@ -10,6 +11,12 @@ type Role struct {
 	// UNIX time since epoch in microseconds. Units(MICROSECONDS).
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
+
+	// Allow access to unlabelled objects. Field introduced in 20.1.5.
+	AllowUnlabelledAccess *bool `json:"allow_unlabelled_access,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// Filters for granular object access control based on object labels. Multiple filters are merged using the AND operator. If empty, all objects according to the privileges will be accessible to the user. Field introduced in 20.1.3. Maximum of 4 items allowed.
 	Filters []*RoleFilter `json:"filters,omitempty"`

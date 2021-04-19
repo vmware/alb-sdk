@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // GslbGeoDbProfile gslb geo db profile
 // swagger:model GslbGeoDbProfile
@@ -10,6 +11,9 @@ type GslbGeoDbProfile struct {
 	// UNIX time since epoch in microseconds. Units(MICROSECONDS).
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	//  Field introduced in 17.1.1.
 	Description *string `json:"description,omitempty"`
@@ -20,8 +24,11 @@ type GslbGeoDbProfile struct {
 	// This field indicates that this object is replicated across GSLB federation. Field introduced in 17.1.3.
 	IsFederated *bool `json:"is_federated,omitempty"`
 
-	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed.
+	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed.
 	Labels []*KeyValue `json:"labels,omitempty"`
+
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// A user-friendly name for the geodb profile. Field introduced in 17.1.1.
 	// Required: true

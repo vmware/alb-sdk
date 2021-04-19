@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // AnalyticsProfile analytics profile
 // swagger:model AnalyticsProfile
@@ -46,6 +47,9 @@ type AnalyticsProfile struct {
 
 	// Configure to stream logs to an external server. Field introduced in 17.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	ClientLogStreamingConfig *ClientLogStreamingConfig `json:"client_log_streaming_config,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// A connection between client and Avi is considered lossy when more than this percentage of out of order packets are received. Allowed values are 1-100. Unit is PERCENT. Allowed in Basic(Allowed values- 50) edition, Essentials(Allowed values- 50) edition, Enterprise edition.
 	ConnLossyOooThreshold *int32 `json:"conn_lossy_ooo_threshold,omitempty"`
@@ -249,8 +253,11 @@ type AnalyticsProfile struct {
 	// Penalty for allowing weak signature algorithm(s). Allowed values are 0-5. Allowed in Basic(Allowed values- 1.0) edition, Essentials(Allowed values- 1.0) edition, Enterprise edition.
 	HsSecurityWeakSignatureAlgoPenalty *float64 `json:"hs_security_weak_signature_algo_penalty,omitempty"`
 
-	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed.
+	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed.
 	Labels []*KeyValue `json:"labels,omitempty"`
+
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// The name of the analytics profile.
 	// Required: true

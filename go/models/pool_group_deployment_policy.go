@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // PoolGroupDeploymentPolicy pool group deployment policy
 // swagger:model PoolGroupDeploymentPolicy
@@ -14,14 +15,20 @@ type PoolGroupDeploymentPolicy struct {
 	// It will automatically disable old production pools once there is a new production candidate.
 	AutoDisableOldProdPools *bool `json:"auto_disable_old_prod_pools,omitempty"`
 
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
+
 	// User defined description for the object.
 	Description *string `json:"description,omitempty"`
 
 	// Duration of evaluation period for automatic deployment. Allowed values are 60-86400. Unit is SEC.
 	EvaluationDuration *int32 `json:"evaluation_duration,omitempty"`
 
-	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed.
+	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed.
 	Labels []*KeyValue `json:"labels,omitempty"`
+
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// The name of the pool group deployment policy.
 	// Required: true

@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // HTTPPolicySet HTTP policy set
 // swagger:model HTTPPolicySet
@@ -13,6 +14,9 @@ type HTTPPolicySet struct {
 
 	// Checksum of cloud configuration for Pool. Internally set by cloud connector.
 	CloudConfigCksum *string `json:"cloud_config_cksum,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// Creator name.
 	CreatedBy *string `json:"created_by,omitempty"`
@@ -38,8 +42,11 @@ type HTTPPolicySet struct {
 	// Placeholder for description of property is_internal_policy of obj type HTTPPolicySet field type str  type boolean
 	IsInternalPolicy *bool `json:"is_internal_policy,omitempty"`
 
-	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed.
+	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed.
 	Labels []*KeyValue `json:"labels,omitempty"`
+
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// Name of the HTTP Policy Set.
 	// Required: true
