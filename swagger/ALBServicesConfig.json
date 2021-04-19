@@ -568,6 +568,10 @@
                     "description": "Information about the default contact for this controller cluster. Field introduced in 20.1.1.",
                     "$ref": "#/definitions/ALBServicesUser"
                 },
+                "configpb_attributes": {
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1.",
+                    "$ref": "#/definitions/ConfigPbAttributes"
+                },
                 "feature_opt_in_status": {
                     "description": "Information about the portal features opted in for controller. Field introduced in 20.1.1.",
                     "$ref": "#/definitions/PortalFeatureOptIn"
@@ -687,6 +691,17 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object",
+            "properties": {
+                "version": {
+                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.",
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int64"
+                }
+            }
+        },
         "IpReputationConfig": {
             "type": "object",
             "properties": {
@@ -779,5 +794,9 @@
                 }
             }
         }
-    }
+    },
+    "_comment": [
+        "Copyright 2021 VMware, Inc.",
+        "SPDX-License-Identifier: Apache License 2.0"
+    ]
 }

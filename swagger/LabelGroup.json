@@ -2,13 +2,13 @@
     "swagger": "2.0",
     "info": {
         "version": "21.1.1",
-        "title": "Avi ActionGroupConfig Object API",
+        "title": "Avi LabelGroup Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure actiongroupconfig <key>\n- show actiongroupconfig <key>\n```\n"
+        "description": "CLI\n```\n- configure labelgroup <key>\n- show labelgroup <key>\n```\n"
     },
     "securityDefinitions": {
         "basicAuth": {
@@ -18,7 +18,7 @@
     },
     "basePath": "/api",
     "paths": {
-        "/actiongroupconfig": {
+        "/labelgroup": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -110,7 +110,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ActionGroupConfigApiResponse"
+                            "$ref": "#/definitions/LabelGroupApiResponse"
                         }
                     },
                     "401": {
@@ -157,10 +157,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "ActionGroupConfig object creation",
+                        "description": "LabelGroup object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ActionGroupConfig"
+                            "$ref": "#/definitions/LabelGroup"
                         }
                     }
                 ],
@@ -173,7 +173,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ActionGroupConfig"
+                            "$ref": "#/definitions/LabelGroup"
                         }
                     },
                     "401": {
@@ -182,7 +182,7 @@
                 }
             }
         },
-        "/actiongroupconfig/{uuid}": {
+        "/labelgroup/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -269,7 +269,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ActionGroupConfig"
+                            "$ref": "#/definitions/LabelGroup"
                         }
                     },
                     "401": {
@@ -323,10 +323,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "ActionGroupConfig object creation",
+                        "description": "LabelGroup object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ActionGroupConfig"
+                            "$ref": "#/definitions/LabelGroup"
                         }
                     },
                     {
@@ -346,7 +346,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ActionGroupConfig"
+                            "$ref": "#/definitions/LabelGroup"
                         }
                     },
                     "401": {
@@ -400,10 +400,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "ActionGroupConfig object creation",
+                        "description": "LabelGroup object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ActionGroupConfig"
+                            "$ref": "#/definitions/LabelGroup"
                         }
                     },
                     {
@@ -423,7 +423,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ActionGroupConfig"
+                            "$ref": "#/definitions/LabelGroup"
                         }
                     },
                     "401": {
@@ -502,11 +502,20 @@
         }
     },
     "definitions": {
-        "ActionGroupConfig": {
+        "ConfigPbAttributes": {
+            "type": "object",
+            "properties": {
+                "version": {
+                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.",
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int64"
+                }
+            }
+        },
+        "LabelGroup": {
             "type": "object",
             "required": [
-                "external_only",
-                "level",
                 "name"
             ],
             "properties": {
@@ -515,49 +524,19 @@
                     "readOnly": true,
                     "type": "string"
                 },
-                "action_script_config_ref": {
-                    "description": "reference of the action script configuration to be used. It is a reference to an object of type AlertScriptConfig.",
-                    "type": "string"
-                },
-                "autoscale_trigger_notification": {
-                    "description": "Trigger Notification to AutoScale Manager. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
-                    "type": "boolean"
-                },
                 "configpb_attributes": {
                     "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
-                "description": {
-                    "description": "User defined description for the object.",
-                    "type": "string"
-                },
-                "email_config_ref": {
-                    "description": "Select the Email Notification configuration to use when sending alerts via email. It is a reference to an object of type AlertEmailConfig.",
-                    "type": "string"
-                },
-                "external_only": {
-                    "description": "Generate Alert only to external destinations. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
-                    "type": "boolean"
-                },
-                "level": {
-                    "description": "When an alert is generated, mark its priority via the Alert Level. Enum options - ALERT_LOW, ALERT_MEDIUM, ALERT_HIGH.",
-                    "type": "string",
-                    "default": "ALERT_LOW"
+                "labels": {
+                    "description": "List of allowed or suggested labels for the label group. Field introduced in 20.1.5.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RoleMatchOperationMatchLabel"
+                    }
                 },
                 "name": {
-                    "description": "Name of the object.",
-                    "type": "string"
-                },
-                "snmp_trap_profile_ref": {
-                    "description": "Select the SNMP Trap Notification to use when sending alerts via SNMP Trap. It is a reference to an object of type SnmpTrapProfile.",
-                    "type": "string"
-                },
-                "syslog_config_ref": {
-                    "description": "Select the Syslog Notification configuration to use when sending alerts via Syslog. It is a reference to an object of type AlertSyslogConfig.",
-                    "type": "string"
-                },
-                "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant.",
+                    "description": "Name of the Label Group. Field introduced in 20.1.5.",
                     "type": "string"
                 },
                 "url": {
@@ -566,12 +545,12 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "Unique object identifier of the object.",
+                    "description": "UUID of the Label Group. Field introduced in 20.1.5.",
                     "type": "string"
                 }
             }
         },
-        "ActionGroupConfigApiResponse": {
+        "LabelGroupApiResponse": {
             "type": "object",
             "required": [
                 "count",
@@ -585,7 +564,7 @@
                 "results": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/ActionGroupConfig"
+                        "$ref": "#/definitions/LabelGroup"
                     }
                 },
                 "next": {
@@ -593,14 +572,39 @@
                 }
             }
         },
-        "ConfigPbAttributes": {
+        "RoleFilterMatchLabel": {
             "type": "object",
+            "required": [
+                "key"
+            ],
             "properties": {
-                "version": {
-                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.",
-                    "type": "integer",
-                    "default": 1,
-                    "format": "int64"
+                "key": {
+                    "description": "Key for filter match. Field introduced in 20.1.3.",
+                    "type": "string"
+                },
+                "values": {
+                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "RoleMatchOperationMatchLabel": {
+            "type": "object",
+            "required": [
+                "match_label"
+            ],
+            "properties": {
+                "match_label": {
+                    "description": "List of labels allowed for the tenant. Field introduced in 20.1.5.",
+                    "$ref": "#/definitions/RoleFilterMatchLabel"
+                },
+                "match_operation": {
+                    "description": "Label match operation criteria. Enum options - ROLE_FILTER_EQUALS, ROLE_FILTER_DOES_NOT_EQUAL, ROLE_FILTER_GLOB_MATCH, ROLE_FILTER_GLOB_DOES_NOT_MATCH. Field introduced in 20.1.5.",
+                    "type": "string",
+                    "default": "ROLE_FILTER_EQUALS"
                 }
             }
         }
