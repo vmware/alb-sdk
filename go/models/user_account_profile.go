@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // UserAccountProfile user account profile
 // swagger:model UserAccountProfile
@@ -13,6 +14,9 @@ type UserAccountProfile struct {
 
 	// Lock timeout period (in minutes). Default is 30 minutes. Unit is MIN.
 	AccountLockTimeout *int32 `json:"account_lock_timeout,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// The time period after which credentials expire. Default is 180 days. Unit is DAYS.
 	CredentialsTimeoutThreshold *int32 `json:"credentials_timeout_threshold,omitempty"`

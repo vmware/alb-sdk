@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // ControllerProperties controller properties
 // swagger:model ControllerProperties
@@ -59,6 +60,9 @@ type ControllerProperties struct {
 	// Period for cluster ip gratuitous arp job. Unit is MIN.
 	ClusterIPGratuitousArpPeriod *int32 `json:"cluster_ip_gratuitous_arp_period,omitempty"`
 
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
+
 	// Period for consistency check job. Field introduced in 18.1.1. Unit is MIN.
 	ConsistencyCheckTimeoutPeriod *int32 `json:"consistency_check_timeout_period,omitempty"`
 
@@ -91,6 +95,9 @@ type ControllerProperties struct {
 
 	// Enable/Disable Memory Balancer. Field introduced in 17.2.8.
 	EnableMemoryBalancer *bool `json:"enable_memory_balancer,omitempty"`
+
+	// Enable printing of cached logs inside Resource Manager. Used for debugging purposes only. Field introduced in 21.1.1.
+	EnableResmgrLogCachePrint *bool `json:"enable_resmgr_log_cache_print,omitempty"`
 
 	//  Unit is SEC.
 	FatalErrorLeaseTime *int32 `json:"fatal_error_lease_time,omitempty"`

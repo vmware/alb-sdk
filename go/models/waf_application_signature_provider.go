@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // WafApplicationSignatureProvider waf application signature provider
 // swagger:model WafApplicationSignatureProvider
@@ -14,6 +15,9 @@ type WafApplicationSignatureProvider struct {
 	// Available application names and the ruleset version, when the rules for an application changed the last time. Field introduced in 20.1.1.
 	// Read Only: true
 	AvailableApplications []*WafApplicationSignatureAppVersion `json:"available_applications,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// The error message indicating why the last update check failed. Field deprecated in 20.1.3. Field introduced in 20.1.1.
 	// Read Only: true

@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // Webhook webhook
 // swagger:model Webhook
@@ -13,6 +14,9 @@ type Webhook struct {
 
 	// Callback URL for the Webhook. Field introduced in 17.1.1.
 	CallbackURL *string `json:"callback_url,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	//  Field introduced in 17.1.1.
 	Description *string `json:"description,omitempty"`

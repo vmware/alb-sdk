@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // PoolGroup pool group
 // swagger:model PoolGroup
@@ -16,6 +17,9 @@ type PoolGroup struct {
 
 	//  It is a reference to an object of type Cloud.
 	CloudRef *string `json:"cloud_ref,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// Name of the user who created the object.
 	CreatedBy *string `json:"created_by,omitempty"`
@@ -35,8 +39,11 @@ type PoolGroup struct {
 	// Whether an implicit set of priority labels is generated. Field introduced in 17.1.9,17.2.3.
 	ImplicitPriorityLabels *bool `json:"implicit_priority_labels,omitempty"`
 
-	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed.
+	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed.
 	Labels []*KeyValue `json:"labels,omitempty"`
+
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// List of pool group members object of type PoolGroupMember.
 	Members []*PoolGroupMember `json:"members,omitempty"`

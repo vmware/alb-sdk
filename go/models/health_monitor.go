@@ -1,7 +1,8 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 package models
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 // HealthMonitor health monitor
 // swagger:model HealthMonitor
@@ -16,6 +17,9 @@ type HealthMonitor struct {
 
 	// Authentication information for username/password. Field introduced in 20.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	Authentication *HealthMonitorAuthInfo `json:"authentication,omitempty"`
+
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
 	// User defined description for the object.
 	Description *string `json:"description,omitempty"`
@@ -46,6 +50,9 @@ type HealthMonitor struct {
 
 	// This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.  If the field is set to true, then the object is replicated across the federation.  . Field introduced in 17.1.3. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
 	IsFederated *bool `json:"is_federated,omitempty"`
+
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// Use this port instead of the port defined for the server in the Pool. If the monitor succeeds to this port, the load balanced traffic will still be sent to the port of the server defined within the Pool. Allowed values are 1-65535. Special values are 0 - 'Use server port'.
 	MonitorPort *int32 `json:"monitor_port,omitempty"`

@@ -1,13 +1,9 @@
-/***************************************************************************
- * ------------------------------------------------------------------------
- * Copyright 2020 VMware, Inc.  All rights reserved. VMware Confidential
- * ------------------------------------------------------------------------
- */
+// Copyright 2019 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
 
 package clients
 
 // This file is auto-generated.
-// Please contact avi-sdk@avinetworks.com for any change requests.
 
 import (
 	"github.com/vmware/alb-sdk/go/models"
