@@ -5,7 +5,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Avi VIPGNameInfo Object API</title>
+    <title>Avi LabelGroup Object API</title>
     <style type="text/css">
       body { 
 	font-family: Trebuchet MS, sans-serif;
@@ -183,8 +183,8 @@ font-style: italic;
     </style>
   </head>
   <body>
-  <h1>Avi VIPGNameInfo Object API</h1>
-    <div class="app-desc">CLI ``` - show vcenter networks ``` </div>
+  <h1>Avi LabelGroup Object API</h1>
+    <div class="app-desc">CLI ``` - configure labelgroup <key> - show labelgroup <key> ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
     <div class="app-desc">Version: 21.1.1</div>
@@ -202,19 +202,19 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#vimgrvcenternetworksGet"><code><span class="http-method">get</span> /vimgrvcenternetworks</code></a></li>
-  <li><a href="#vimgrvcenternetworksPost"><code><span class="http-method">post</span> /vimgrvcenternetworks</code></a></li>
-  <li><a href="#vimgrvcenternetworksUuidDelete"><code><span class="http-method">delete</span> /vimgrvcenternetworks/{uuid}</code></a></li>
-  <li><a href="#vimgrvcenternetworksUuidGet"><code><span class="http-method">get</span> /vimgrvcenternetworks/{uuid}</code></a></li>
-  <li><a href="#vimgrvcenternetworksUuidPatch"><code><span class="http-method">patch</span> /vimgrvcenternetworks/{uuid}</code></a></li>
-  <li><a href="#vimgrvcenternetworksUuidPut"><code><span class="http-method">put</span> /vimgrvcenternetworks/{uuid}</code></a></li>
+  <li><a href="#labelgroupGet"><code><span class="http-method">get</span> /labelgroup</code></a></li>
+  <li><a href="#labelgroupPost"><code><span class="http-method">post</span> /labelgroup</code></a></li>
+  <li><a href="#labelgroupUuidDelete"><code><span class="http-method">delete</span> /labelgroup/{uuid}</code></a></li>
+  <li><a href="#labelgroupUuidGet"><code><span class="http-method">get</span> /labelgroup/{uuid}</code></a></li>
+  <li><a href="#labelgroupUuidPatch"><code><span class="http-method">patch</span> /labelgroup/{uuid}</code></a></li>
+  <li><a href="#labelgroupUuidPut"><code><span class="http-method">put</span> /labelgroup/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="vimgrvcenternetworksGet"/>
+  <div class="method"><a name="labelgroupGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /vimgrvcenternetworks</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrvcenternetworksGet</span>)</div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /labelgroup</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">labelgroupGet</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -248,7 +248,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#VIPGNameInfoApiResponse">VIPGNameInfoApiResponse</a>
+      <a href="#LabelGroupApiResponse">LabelGroupApiResponse</a>
       
     </div>
 
@@ -260,12 +260,20 @@ font-style: italic;
   "next" : "aeiou",
   "count" : 123,
   "results" : [ {
-    "tenant_ref" : "aeiou",
     "name" : "aeiou",
+    "configpb_attributes" : {
+      "version" : 123456789
+    },
     "uuid" : "aeiou",
     "url" : "aeiou",
     "_last_modified" : "aeiou",
-    "managed_object_id" : "aeiou"
+    "labels" : [ {
+      "match_label" : {
+        "values" : [ "aeiou" ],
+        "key" : "aeiou"
+      },
+      "match_operation" : "aeiou"
+    } ]
   } ]
 }</code></pre>
 
@@ -279,17 +287,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#VIPGNameInfoApiResponse">VIPGNameInfoApiResponse</a>
+        <a href="#LabelGroupApiResponse">LabelGroupApiResponse</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="vimgrvcenternetworksPost"/>
+  <div class="method"><a name="labelgroupPost"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /vimgrvcenternetworks</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrvcenternetworksPost</span>)</div>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /labelgroup</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">labelgroupPost</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -303,7 +311,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; VIPGNameInfo object creation </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; LabelGroup object creation </div>
     </div>  <!-- field-items -->
 
 
@@ -311,7 +319,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#VIPGNameInfo">VIPGNameInfo</a>
+      <a href="#LabelGroup">LabelGroup</a>
       
     </div>
 
@@ -320,12 +328,20 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou",
-  "managed_object_id" : "aeiou"
+  "labels" : [ {
+    "match_label" : {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    },
+    "match_operation" : "aeiou"
+  } ]
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -338,17 +354,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#VIPGNameInfo">VIPGNameInfo</a>
+        <a href="#LabelGroup">LabelGroup</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="vimgrvcenternetworksUuidDelete"/>
+  <div class="method"><a name="labelgroupUuidDelete"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /vimgrvcenternetworks/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrvcenternetworksUuidDelete</span>)</div>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /labelgroup/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">labelgroupUuidDelete</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -402,11 +418,11 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="vimgrvcenternetworksUuidGet"/>
+  <div class="method"><a name="labelgroupUuidGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /vimgrvcenternetworks/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrvcenternetworksUuidGet</span>)</div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /labelgroup/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">labelgroupUuidGet</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -442,7 +458,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#VIPGNameInfo">VIPGNameInfo</a>
+      <a href="#LabelGroup">LabelGroup</a>
       
     </div>
 
@@ -451,12 +467,20 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou",
-  "managed_object_id" : "aeiou"
+  "labels" : [ {
+    "match_label" : {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    },
+    "match_operation" : "aeiou"
+  } ]
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -469,17 +493,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#VIPGNameInfo">VIPGNameInfo</a>
+        <a href="#LabelGroup">LabelGroup</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="vimgrvcenternetworksUuidPatch"/>
+  <div class="method"><a name="labelgroupUuidPatch"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /vimgrvcenternetworks/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrvcenternetworksUuidPatch</span>)</div>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /labelgroup/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">labelgroupUuidPatch</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -499,7 +523,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; VIPGNameInfo object creation </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; LabelGroup object creation </div>
     </div>  <!-- field-items -->
 
 
@@ -513,7 +537,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#VIPGNameInfo">VIPGNameInfo</a>
+      <a href="#LabelGroup">LabelGroup</a>
       
     </div>
 
@@ -522,12 +546,20 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou",
-  "managed_object_id" : "aeiou"
+  "labels" : [ {
+    "match_label" : {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    },
+    "match_operation" : "aeiou"
+  } ]
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -540,17 +572,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#VIPGNameInfo">VIPGNameInfo</a>
+        <a href="#LabelGroup">LabelGroup</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="vimgrvcenternetworksUuidPut"/>
+  <div class="method"><a name="labelgroupUuidPut"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /vimgrvcenternetworks/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrvcenternetworksUuidPut</span>)</div>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /labelgroup/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">labelgroupUuidPut</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -570,7 +602,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; VIPGNameInfo object creation </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; LabelGroup object creation </div>
     </div>  <!-- field-items -->
 
 
@@ -584,7 +616,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#VIPGNameInfo">VIPGNameInfo</a>
+      <a href="#LabelGroup">LabelGroup</a>
       
     </div>
 
@@ -593,12 +625,20 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou",
-  "managed_object_id" : "aeiou"
+  "labels" : [ {
+    "match_label" : {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    },
+    "match_operation" : "aeiou"
+  } ]
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -611,7 +651,7 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#VIPGNameInfo">VIPGNameInfo</a>
+        <a href="#LabelGroup">LabelGroup</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
@@ -624,27 +664,50 @@ font-style: italic;
 
   <h2>Table of Contents</h2>
   <ol>
-    <li><a href="#VIPGNameInfo"><code>VIPGNameInfo</code></a></li>
-    <li><a href="#VIPGNameInfoApiResponse"><code>VIPGNameInfoApiResponse</code></a></li>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
+    <li><a href="#LabelGroup"><code>LabelGroup</code></a></li>
+    <li><a href="#LabelGroupApiResponse"><code>LabelGroupApiResponse</code></a></li>
+    <li><a href="#RoleFilterMatchLabel"><code>RoleFilterMatchLabel</code></a></li>
+    <li><a href="#RoleMatchOperationMatchLabel"><code>RoleMatchOperationMatchLabel</code></a></li>
   </ol>
 
   <div class="model">
-    <h3 class="field-label"><a name="VIPGNameInfo">VIPGNameInfo</a> <a class="up" href="#__Models">Up</a></h3>
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
-<div class="param">managed_object_id </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> managed_object_id of VIPGNameInfo. </div>
-<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the object. </div>
-<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. </div>
-<div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
-<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Unique object identifier of the object. </div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
-    <h3 class="field-label"><a name="VIPGNameInfoApiResponse">VIPGNameInfoApiResponse</a> <a class="up" href="#__Models">Up</a></h3>
+    <h3 class="field-label"><a name="LabelGroup">LabelGroup</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
+<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleMatchOperationMatchLabel">array[RoleMatchOperationMatchLabel]</a></span> List of allowed or suggested labels for the label group. Field introduced in 20.1.5. </div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the Label Group. Field introduced in 20.1.5. </div>
+<div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the Label Group. Field introduced in 20.1.5. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="LabelGroupApiResponse">LabelGroupApiResponse</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">count </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
-<div class="param">results </div><div class="param-desc"><span class="param-type"><a href="#VIPGNameInfo">array[VIPGNameInfo]</a></span>  </div>
+<div class="param">results </div><div class="param-desc"><span class="param-type"><a href="#LabelGroup">array[LabelGroup]</a></span>  </div>
 <div class="param">next (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="RoleFilterMatchLabel">RoleFilterMatchLabel</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key for filter match. Field introduced in 20.1.3. </div>
+<div class="param">values (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Values for filter match. Multiple values will be evaluated as OR. Example  key &#x3D; value1 OR key &#x3D; value2. Behavior for match is key &#x3D; * if this field is empty. Field introduced in 20.1.3. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="RoleMatchOperationMatchLabel">RoleMatchOperationMatchLabel</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">match_label </div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">RoleFilterMatchLabel</a></span> List of labels allowed for the tenant. Field introduced in 20.1.5. </div>
+<div class="param">match_operation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Label match operation criteria. Enum options - ROLE_FILTER_EQUALS, ROLE_FILTER_DOES_NOT_EQUAL, ROLE_FILTER_GLOB_MATCH, ROLE_FILTER_GLOB_DOES_NOT_MATCH. Field introduced in 20.1.5. </div>
     </div>  <!-- field-items -->
   </div>
   </body>

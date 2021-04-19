@@ -1,3 +1,7 @@
+<!-- 
+	Copyright 2021 VMware, Inc.
+	SPDX-License-Identifier: Apache License 2.0
+-->
 <!doctype html>
 <html>
   <head>
@@ -269,6 +273,9 @@ font-style: italic;
     } ],
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
+    "configpb_attributes" : {
+      "version" : 123456789
+    },
     "description" : "aeiou",
     "uuid" : "aeiou",
     "url" : "aeiou",
@@ -339,6 +346,9 @@ font-style: italic;
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "description" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
@@ -538,6 +548,9 @@ font-style: italic;
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "description" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
@@ -619,6 +632,9 @@ font-style: italic;
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "description" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
@@ -700,6 +716,9 @@ font-style: italic;
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "description" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
@@ -733,12 +752,14 @@ font-style: italic;
     <li><a href="#AlertSyslogConfigApiResponse"><code>AlertSyslogConfigApiResponse</code></a></li>
     <li><a href="#AlertSyslogServer"><code>AlertSyslogServer</code></a></li>
     <li><a href="#AlertTestSyslogSnmpParams"><code>AlertTestSyslogSnmpParams</code></a></li>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
   </ol>
 
   <div class="model">
     <h3 class="field-label"><a name="AlertSyslogConfig">AlertSyslogConfig</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
 <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> User defined description for alert syslog config. </div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A user-friendly name of the syslog notification. </div>
 <div class="param">syslog_servers (optional)</div><div class="param-desc"><span class="param-type"><a href="#AlertSyslogServer">array[AlertSyslogServer]</a></span> The list of syslog servers. </div>
@@ -773,6 +794,12 @@ font-style: italic;
     <div class="field-items">
       <div class="param">text </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The contents of the Syslog message/SNMP Trap contents. </div>
 <div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Unique object identifier of the object. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
     </div>  <!-- field-items -->
   </div>
   </body>

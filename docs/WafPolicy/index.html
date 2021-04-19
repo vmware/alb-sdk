@@ -1,3 +1,7 @@
+<!-- 
+	Copyright 2021 VMware, Inc.
+	SPDX-License-Identifier: Apache License 2.0
+-->
 <!doctype html>
 <html>
   <head>
@@ -366,6 +370,9 @@ font-style: italic;
       "sampling_percent" : 123,
       "max_params" : 123
     },
+    "configpb_attributes" : {
+      "version" : 123456789
+    },
     "post_crs_groups" : [ "" ],
     "min_confidence" : "aeiou",
     "waf_crs_ref" : "aeiou",
@@ -437,6 +444,10 @@ font-style: italic;
       "index" : 123,
       "rules" : [ "" ],
       "exclude_list" : [ "" ]
+    } ],
+    "markers" : [ {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
     } ],
     "enable_app_learning" : true,
     "paranoia_level" : "aeiou"
@@ -604,6 +615,9 @@ font-style: italic;
     "sampling_percent" : 123,
     "max_params" : 123
   },
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "post_crs_groups" : [ "" ],
   "min_confidence" : "aeiou",
   "waf_crs_ref" : "aeiou",
@@ -675,6 +689,10 @@ font-style: italic;
     "index" : 123,
     "rules" : [ "" ],
     "exclude_list" : [ "" ]
+  } ],
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
   } ],
   "enable_app_learning" : true,
   "paranoia_level" : "aeiou"
@@ -913,6 +931,9 @@ font-style: italic;
     "sampling_percent" : 123,
     "max_params" : 123
   },
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "post_crs_groups" : [ "" ],
   "min_confidence" : "aeiou",
   "waf_crs_ref" : "aeiou",
@@ -984,6 +1005,10 @@ font-style: italic;
     "index" : 123,
     "rules" : [ "" ],
     "exclude_list" : [ "" ]
+  } ],
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
   } ],
   "enable_app_learning" : true,
   "paranoia_level" : "aeiou"
@@ -1162,6 +1187,9 @@ font-style: italic;
     "sampling_percent" : 123,
     "max_params" : 123
   },
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "post_crs_groups" : [ "" ],
   "min_confidence" : "aeiou",
   "waf_crs_ref" : "aeiou",
@@ -1233,6 +1261,10 @@ font-style: italic;
     "index" : 123,
     "rules" : [ "" ],
     "exclude_list" : [ "" ]
+  } ],
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
   } ],
   "enable_app_learning" : true,
   "paranoia_level" : "aeiou"
@@ -1411,6 +1443,9 @@ font-style: italic;
     "sampling_percent" : 123,
     "max_params" : 123
   },
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "post_crs_groups" : [ "" ],
   "min_confidence" : "aeiou",
   "waf_crs_ref" : "aeiou",
@@ -1483,6 +1518,10 @@ font-style: italic;
     "rules" : [ "" ],
     "exclude_list" : [ "" ]
   } ],
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "enable_app_learning" : true,
   "paranoia_level" : "aeiou"
 }</code></pre>
@@ -1514,6 +1553,7 @@ font-style: italic;
     <li><a href="#AppLearningParams"><code>AppLearningParams</code></a></li>
     <li><a href="#BotClassification"><code>BotClassification</code></a></li>
     <li><a href="#BotDetectionMatch"><code>BotDetectionMatch</code></a></li>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#CookieMatch"><code>CookieMatch</code></a></li>
     <li><a href="#GeoMatch"><code>GeoMatch</code></a></li>
     <li><a href="#HTTPVersionMatch"><code>HTTPVersionMatch</code></a></li>
@@ -1531,6 +1571,7 @@ font-style: italic;
     <li><a href="#PortMatch"><code>PortMatch</code></a></li>
     <li><a href="#ProtocolMatch"><code>ProtocolMatch</code></a></li>
     <li><a href="#QueryMatch"><code>QueryMatch</code></a></li>
+    <li><a href="#RoleFilterMatchLabel"><code>RoleFilterMatchLabel</code></a></li>
     <li><a href="#WafApplicationSignatures"><code>WafApplicationSignatures</code></a></li>
     <li><a href="#WafExcludeListEntry"><code>WafExcludeListEntry</code></a></li>
     <li><a href="#WafExclusionType"><code>WafExclusionType</code></a></li>
@@ -1578,6 +1619,12 @@ font-style: italic;
     <div class="field-items">
       <div class="param">classifications (optional)</div><div class="param-desc"><span class="param-type"><a href="#BotClassification">array[BotClassification]</a></span> Bot classification types. Field introduced in 21.1.1. </div>
 <div class="param">match_operation </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1724,6 +1771,13 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3 class="field-label"><a name="RoleFilterMatchLabel">RoleFilterMatchLabel</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key for filter match. Field introduced in 20.1.3. </div>
+<div class="param">values (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Values for filter match. Multiple values will be evaluated as OR. Example  key &#x3D; value1 OR key &#x3D; value2. Behavior for match is key &#x3D; * if this field is empty. Field introduced in 20.1.3. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="WafApplicationSignatures">WafApplicationSignatures</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">provider_ref </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The external provide for the rules. It is a reference to an object of type WafApplicationSignatureProvider. Field introduced in 20.1.1. </div>
@@ -1768,6 +1822,7 @@ font-style: italic;
 <div class="param">allowlist (optional)</div><div class="param-desc"><span class="param-type"><a href="#WafPolicyAllowlist">WafPolicyAllowlist</a></span> A set of rules which describe conditions under which the request will bypass the WAF. This will be processed in the request header phase before any other WAF related code. Field introduced in 20.1.3. </div>
 <div class="param">application_signatures (optional)</div><div class="param-desc"><span class="param-type"><a href="#WafApplicationSignatures">WafApplicationSignatures</a></span> Application Specific Signatures. Field introduced in 20.1.1. </div>
 <div class="param">confidence_override (optional)</div><div class="param-desc"><span class="param-type"><a href="#AppLearningConfidenceOverride">AppLearningConfidenceOverride</a></span> Configure thresholds for confidence labels. Field introduced in 20.1.1. </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
 <div class="param">created_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Creator name. Field introduced in 17.2.4. </div>
 <div class="param">crs_groups (optional)</div><div class="param-desc"><span class="param-type"><a href="#WafRuleGroup">array[WafRuleGroup]</a></span> WAF Rules are categorized in to groups based on their characterization. These groups are system created with CRS groups. Field introduced in 17.2.1. </div>
 <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 17.2.1. </div>
@@ -1776,9 +1831,10 @@ font-style: italic;
 <div class="param">enable_regex_learning (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable dynamic regex generation for positive security model rules. This is an experimental feature and shouldn&#39;t be used in production. Field introduced in 20.1.1. </div>
 <div class="param">failure_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> WAF Policy failure mode. This can be &#39;Open&#39; or &#39;Closed&#39;. Enum options - WAF_FAILURE_MODE_OPEN, WAF_FAILURE_MODE_CLOSED. Field introduced in 18.1.2. </div>
 <div class="param">geo_db_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Geo Location Mapping Database used by this WafPolicy. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. </div>
-<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed. </div>
+<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. </div>
 <div class="param">learning (optional)</div><div class="param-desc"><span class="param-type"><a href="#WafLearning">WafLearning</a></span> Configure parameters for WAF learning. Field deprecated in 18.2.3. Field introduced in 18.1.2. </div>
 <div class="param">learning_params (optional)</div><div class="param-desc"><span class="param-type"><a href="#AppLearningParams">AppLearningParams</a></span> Parameters for tuning Application learning. Field introduced in 20.1.1. </div>
+<div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. </div>
 <div class="param">min_confidence (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Minimum confidence label required for auto rule updates. Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE. Field introduced in 20.1.1. </div>
 <div class="param">mode </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> WAF Policy mode. This can be detection or enforcement. It can be overwritten by rules if allow_mode_delegation is set. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 17.2.1. </div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 17.2.1. </div>
@@ -1856,8 +1912,8 @@ font-style: italic;
 <div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> User-friendly optional name for a rule. Field introduced in 17.2.1. </div>
 <div class="param">phase (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The execution phase where this rule will be executed. Enum options - WAF_PHASE_CONNECTION, WAF_PHASE_REQUEST_HEADER, WAF_PHASE_REQUEST_BODY, WAF_PHASE_RESPONSE_HEADER, WAF_PHASE_RESPONSE_BODY, WAF_PHASE_LOGGING. Field introduced in 20.1.1. </div>
 <div class="param">rule </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Rule as per Modsec language. Field introduced in 17.2.1. </div>
-<div class="param">rule_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Identifier (id) for a rule per Modsec language. All SecRule and SecAction directives require an id. It is extracted from the id action in a ModSec rule. Rules within a single WAF Policy are required to have unique rule_ids. Field introduced in 17.2.2. </div>
-<div class="param">tags (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Tags for WAF rule as per Modsec language. They are extracted from the tag action in a ModSec rule. Field introduced in 18.1.3. Maximum of 64 items allowed. </div>
+<div class="param">rule_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Identifier (id) for a rule per Modsec language. All SecRule and SecAction directives require an id. It is extracted from the id action in a Modsec rule. Rules within a single WAF Policy are required to have unique rule_ids. Field introduced in 17.2.2. </div>
+<div class="param">tags (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Tags for WAF rule as per Modsec language. They are extracted from the tag actions in a Modsec rule. This field is generated from the rule itself and cannot be set by the user. Field introduced in 18.1.3. Maximum of 64 items allowed. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
