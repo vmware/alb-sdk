@@ -502,6 +502,17 @@
         }
     },
     "definitions": {
+        "ConfigPbAttributes": {
+            "type": "object",
+            "properties": {
+                "version": {
+                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.",
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int64"
+                }
+            }
+        },
         "Scheduler": {
             "type": "object",
             "required": [
@@ -516,6 +527,10 @@
                 "backup_config_ref": {
                     "description": "Backup Configuration to be executed by this scheduler. It is a reference to an object of type BackupConfiguration.",
                     "type": "string"
+                },
+                "configpb_attributes": {
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1.",
+                    "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "enabled": {
                     "description": "Placeholder for description of property enabled of obj type Scheduler field type str  type boolean",
@@ -593,5 +608,9 @@
                 }
             }
         }
-    }
+    },
+    "_comment": [
+        "Copyright 2021 VMware, Inc.",
+        "SPDX-License-Identifier: Apache License 2.0"
+    ]
 }
