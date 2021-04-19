@@ -1,3 +1,7 @@
+<!-- 
+	Copyright 2021 VMware, Inc.
+	SPDX-License-Identifier: Apache License 2.0
+-->
 <!doctype html>
 <html>
   <head>
@@ -303,7 +307,14 @@ font-style: italic;
     "tenant_ref" : "aeiou",
     "is_internal_policy" : true,
     "name" : "aeiou",
+    "configpb_attributes" : {
+      "version" : 123456789
+    },
     "description" : "aeiou",
+    "markers" : [ {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    } ],
     "created_by" : "aeiou",
     "uuid" : "aeiou",
     "url" : "aeiou",
@@ -413,7 +424,14 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "is_internal_policy" : true,
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "description" : "aeiou",
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "created_by" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
@@ -594,7 +612,14 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "is_internal_policy" : true,
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "description" : "aeiou",
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "created_by" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
@@ -715,7 +740,14 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "is_internal_policy" : true,
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "description" : "aeiou",
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "created_by" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
@@ -836,7 +868,14 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "is_internal_policy" : true,
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "description" : "aeiou",
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "created_by" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
@@ -870,6 +909,7 @@ font-style: italic;
 
   <h2>Table of Contents</h2>
   <ol>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#IpAddr"><code>IpAddr</code></a></li>
     <li><a href="#IpAddrMatch"><code>IpAddrMatch</code></a></li>
     <li><a href="#IpAddrPrefix"><code>IpAddrPrefix</code></a></li>
@@ -885,8 +925,15 @@ font-style: italic;
     <li><a href="#L4RulePortMatch"><code>L4RulePortMatch</code></a></li>
     <li><a href="#L4RuleProtocolMatch"><code>L4RuleProtocolMatch</code></a></li>
     <li><a href="#PortRange"><code>PortRange</code></a></li>
+    <li><a href="#RoleFilterMatchLabel"><code>RoleFilterMatchLabel</code></a></li>
   </ol>
 
+  <div class="model">
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
+    </div>  <!-- field-items -->
+  </div>
   <div class="model">
     <h3 class="field-label"><a name="IpAddr">IpAddr</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
@@ -935,11 +982,13 @@ font-style: italic;
     <h3 class="field-label"><a name="L4PolicySet">L4PolicySet</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
 <div class="param">created_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Creator name. Field introduced in 17.2.7. </div>
 <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 17.2.7. </div>
 <div class="param">is_internal_policy (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Field introduced in 17.2.7. </div>
 <div class="param">l4_connection_policy (optional)</div><div class="param-desc"><span class="param-type"><a href="#L4ConnectionPolicy">L4ConnectionPolicy</a></span> Policy to apply when a new transport connection is setup. Field introduced in 17.2.7. </div>
-<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed. </div>
+<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. </div>
+<div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. </div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the L4 Policy Set. Field introduced in 17.2.7. </div>
 <div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Field introduced in 17.2.7. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
@@ -1006,6 +1055,13 @@ font-style: italic;
     <div class="field-items">
       <div class="param">end </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> TCP/UDP port range end (inclusive). Allowed values are 1-65535. format: int32</div>
 <div class="param">start </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> TCP/UDP port range start (inclusive). Allowed values are 1-65535. format: int32</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="RoleFilterMatchLabel">RoleFilterMatchLabel</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key for filter match. Field introduced in 20.1.3. </div>
+<div class="param">values (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Values for filter match. Multiple values will be evaluated as OR. Example  key &#x3D; value1 OR key &#x3D; value2. Behavior for match is key &#x3D; * if this field is empty. Field introduced in 20.1.3. </div>
     </div>  <!-- field-items -->
   </div>
   </body>

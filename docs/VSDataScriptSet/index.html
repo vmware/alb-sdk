@@ -1,3 +1,7 @@
+<!-- 
+	Copyright 2021 VMware, Inc.
+	SPDX-License-Identifier: Apache License 2.0
+-->
 <!doctype html>
 <html>
   <head>
@@ -271,6 +275,9 @@ font-style: italic;
     "protocol_parser_refs" : [ "aeiou" ],
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
+    "configpb_attributes" : {
+      "version" : 123456789
+    },
     "rate_limiters" : [ {
       "period" : 123,
       "count" : 123,
@@ -279,6 +286,10 @@ font-style: italic;
     } ],
     "pool_group_refs" : [ "aeiou" ],
     "ipgroup_refs" : [ "aeiou" ],
+    "markers" : [ {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    } ],
     "datascript" : [ {
       "evt" : "aeiou",
       "script" : "aeiou"
@@ -353,6 +364,9 @@ font-style: italic;
   "protocol_parser_refs" : [ "aeiou" ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "rate_limiters" : [ {
     "period" : 123,
     "count" : 123,
@@ -361,6 +375,10 @@ font-style: italic;
   } ],
   "pool_group_refs" : [ "aeiou" ],
   "ipgroup_refs" : [ "aeiou" ],
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "datascript" : [ {
     "evt" : "aeiou",
     "script" : "aeiou"
@@ -506,6 +524,9 @@ font-style: italic;
   "protocol_parser_refs" : [ "aeiou" ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "rate_limiters" : [ {
     "period" : 123,
     "count" : 123,
@@ -514,6 +535,10 @@ font-style: italic;
   } ],
   "pool_group_refs" : [ "aeiou" ],
   "ipgroup_refs" : [ "aeiou" ],
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "datascript" : [ {
     "evt" : "aeiou",
     "script" : "aeiou"
@@ -599,6 +624,9 @@ font-style: italic;
   "protocol_parser_refs" : [ "aeiou" ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "rate_limiters" : [ {
     "period" : 123,
     "count" : 123,
@@ -607,6 +635,10 @@ font-style: italic;
   } ],
   "pool_group_refs" : [ "aeiou" ],
   "ipgroup_refs" : [ "aeiou" ],
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "datascript" : [ {
     "evt" : "aeiou",
     "script" : "aeiou"
@@ -692,6 +724,9 @@ font-style: italic;
   "protocol_parser_refs" : [ "aeiou" ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "rate_limiters" : [ {
     "period" : 123,
     "count" : 123,
@@ -700,6 +735,10 @@ font-style: italic;
   } ],
   "pool_group_refs" : [ "aeiou" ],
   "ipgroup_refs" : [ "aeiou" ],
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "datascript" : [ {
     "evt" : "aeiou",
     "script" : "aeiou"
@@ -730,13 +769,21 @@ font-style: italic;
 
   <h2>Table of Contents</h2>
   <ol>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#KeyValue"><code>KeyValue</code></a></li>
     <li><a href="#RateLimiter"><code>RateLimiter</code></a></li>
+    <li><a href="#RoleFilterMatchLabel"><code>RoleFilterMatchLabel</code></a></li>
     <li><a href="#VSDataScript"><code>VSDataScript</code></a></li>
     <li><a href="#VSDataScriptSet"><code>VSDataScriptSet</code></a></li>
     <li><a href="#VSDataScriptSetApiResponse"><code>VSDataScriptSetApiResponse</code></a></li>
   </ol>
 
+  <div class="model">
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
+    </div>  <!-- field-items -->
+  </div>
   <div class="model">
     <h3 class="field-label"><a name="KeyValue">KeyValue</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
@@ -754,6 +801,13 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3 class="field-label"><a name="RoleFilterMatchLabel">RoleFilterMatchLabel</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key for filter match. Field introduced in 20.1.3. </div>
+<div class="param">values (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Values for filter match. Multiple values will be evaluated as OR. Example  key &#x3D; value1 OR key &#x3D; value2. Behavior for match is key &#x3D; * if this field is empty. Field introduced in 20.1.3. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="VSDataScript">VSDataScript</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">evt </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Event triggering execution of datascript. Enum options - VS_DATASCRIPT_EVT_HTTP_REQ, VS_DATASCRIPT_EVT_HTTP_RESP, VS_DATASCRIPT_EVT_HTTP_RESP_DATA, VS_DATASCRIPT_EVT_HTTP_LB_FAILED, VS_DATASCRIPT_EVT_HTTP_REQ_DATA, VS_DATASCRIPT_EVT_HTTP_RESP_FAILED, VS_DATASCRIPT_EVT_HTTP_LB_DONE, VS_DATASCRIPT_EVT_HTTP_AUTH, VS_DATASCRIPT_EVT_HTTP_POST_AUTH, VS_DATASCRIPT_EVT_TCP_CLIENT_ACCEPT, VS_DATASCRIPT_EVT_SSL_HANDSHAKE_DONE, VS_DATASCRIPT_EVT_DNS_REQ, VS_DATASCRIPT_EVT_DNS_RESP, VS_DATASCRIPT_EVT_L4_REQUEST, VS_DATASCRIPT_EVT_L4_RESPONSE, VS_DATASCRIPT_EVT_MAX. Allowed in Basic(Allowed values- VS_DATASCRIPT_EVT_HTTP_REQ) edition, Enterprise edition. </div>
@@ -764,13 +818,15 @@ font-style: italic;
     <h3 class="field-label"><a name="VSDataScriptSet">VSDataScriptSet</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
 <div class="param">created_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Creator name. Field introduced in 17.1.11,17.2.4. </div>
 <div class="param">datascript (optional)</div><div class="param-desc"><span class="param-type"><a href="#VSDataScript">array[VSDataScript]</a></span> DataScripts to execute. </div>
 <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> User defined description for the object. </div>
 <div class="param">geo_db_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Geo Location Mapping Database used by this DataScriptSet. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. </div>
 <div class="param">ip_reputation_db_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> IP reputation database that can be used by DataScript functions. It is a reference to an object of type IPReputationDB. Field introduced in 20.1.3. </div>
 <div class="param">ipgroup_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> UUID of IP Groups that could be referred by VSDataScriptSet objects. It is a reference to an object of type IpAddrGroup. </div>
-<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field introduced in 20.1.2. Maximum of 4 items allowed. </div>
+<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. </div>
+<div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. </div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name for the virtual service datascript collection. </div>
 <div class="param">pool_group_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> UUID of pool groups that could be referred by VSDataScriptSet objects. It is a reference to an object of type PoolGroup. </div>
 <div class="param">pool_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> UUID of pools that could be referred by VSDataScriptSet objects. It is a reference to an object of type Pool. </div>

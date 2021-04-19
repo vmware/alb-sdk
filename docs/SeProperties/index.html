@@ -1,3 +1,7 @@
+<!-- 
+	Copyright 2021 VMware, Inc.
+	SPDX-License-Identifier: Apache License 2.0
+-->
 <!doctype html>
 <html>
   <head>
@@ -437,6 +441,9 @@ font-style: italic;
     "log_agent_compress_logs" : true,
     "lbaction_num_requests_to_dispatch" : 123
   },
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "se_agent_properties" : {
     "debug_mode" : true,
     "controller_echo_rpc_aggressive_timeout" : 123,
@@ -453,7 +460,9 @@ font-style: italic;
       "sc_shard_cleanup_max_time" : 123,
       "sc_states_flush_interval" : 123,
       "sc_thread_q_max_size" : 123,
+      "sc_dns_q_batch_dequeue_limit" : 123,
       "sc_batch_buffer_flush_limit" : 123,
+      "sc_dns_q_max_size" : 123,
       "sc_thread_q_batch_dequeue_limit" : 123
     },
     "controller_echo_miss_aggressive_limit" : 123,
@@ -731,6 +740,9 @@ font-style: italic;
     "log_agent_compress_logs" : true,
     "lbaction_num_requests_to_dispatch" : 123
   },
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "se_agent_properties" : {
     "debug_mode" : true,
     "controller_echo_rpc_aggressive_timeout" : 123,
@@ -747,7 +759,9 @@ font-style: italic;
       "sc_shard_cleanup_max_time" : 123,
       "sc_states_flush_interval" : 123,
       "sc_thread_q_max_size" : 123,
+      "sc_dns_q_batch_dequeue_limit" : 123,
       "sc_batch_buffer_flush_limit" : 123,
+      "sc_dns_q_max_size" : 123,
       "sc_thread_q_batch_dequeue_limit" : 123
     },
     "controller_echo_miss_aggressive_limit" : 123,
@@ -1025,6 +1039,9 @@ font-style: italic;
     "log_agent_compress_logs" : true,
     "lbaction_num_requests_to_dispatch" : 123
   },
+  "configpb_attributes" : {
+    "version" : 123456789
+  },
   "se_agent_properties" : {
     "debug_mode" : true,
     "controller_echo_rpc_aggressive_timeout" : 123,
@@ -1041,7 +1058,9 @@ font-style: italic;
       "sc_shard_cleanup_max_time" : 123,
       "sc_states_flush_interval" : 123,
       "sc_thread_q_max_size" : 123,
+      "sc_dns_q_batch_dequeue_limit" : 123,
       "sc_batch_buffer_flush_limit" : 123,
+      "sc_dns_q_max_size" : 123,
       "sc_thread_q_batch_dequeue_limit" : 123
     },
     "controller_echo_miss_aggressive_limit" : 123,
@@ -1099,6 +1118,7 @@ font-style: italic;
   <h2>Table of Contents</h2>
   <ol>
     <li><a href="#AppHdr"><code>AppHdr</code></a></li>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#DosThreshold"><code>DosThreshold</code></a></li>
     <li><a href="#DosThresholdProfile"><code>DosThresholdProfile</code></a></li>
     <li><a href="#IpAddr"><code>IpAddr</code></a></li>
@@ -1121,6 +1141,12 @@ font-style: italic;
       <div class="param">hdr_match_case </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - SENSITIVE, INSENSITIVE. </div>
 <div class="param">hdr_name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> hdr_name of AppHdr. </div>
 <div class="param">hdr_string_op </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Allowed in Basic(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Essentials(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Enterprise edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1202,6 +1228,8 @@ font-style: italic;
     <h3 class="field-label"><a name="SeAgentStateCacheProperties">SeAgentStateCacheProperties</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">sc_batch_buffer_flush_limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Max elements to flush in one shot from the internal buffer by the statecache thread. Allowed values are 1-10000. Field introduced in 18.2.5. format: int32</div>
+<div class="param">sc_dns_q_batch_dequeue_limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Max elements to dequeue in one shot from the Q by the statecache thread. Allowed values are 1-10000. Field introduced in 20.1.5. format: int32</div>
+<div class="param">sc_dns_q_max_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Max elements in the dns queue between seagent main and the statecache thread. Allowed values are 1-10000. Field introduced in 20.1.5. format: int32</div>
 <div class="param">sc_shard_cleanup_max_time (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Max time to wait by the statecache thread before cleaning up connection to the controller shard. Allowed values are 1-1000000. Field introduced in 18.2.5. Unit is SECONDS. format: int32</div>
 <div class="param">sc_state_ring_batch_dequeue_limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Max elements to dequeue in one shot from the state_ring by the statecache thread. Allowed values are 1-10000. Field introduced in 18.2.5. format: int32</div>
 <div class="param">sc_states_flush_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Interval for update of operational states to controller. Allowed values are 1-10000. Field introduced in 18.2.5. Unit is MILLISECONDS. format: int32</div>
@@ -1266,6 +1294,7 @@ font-style: italic;
     <h3 class="field-label"><a name="SeProperties">SeProperties</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
 <div class="param">se_agent_properties (optional)</div><div class="param-desc"><span class="param-type"><a href="#SeAgentProperties">SeAgentProperties</a></span> Placeholder for description of property se_agent_properties of obj type SeProperties field type str  type object </div>
 <div class="param">se_bootup_properties (optional)</div><div class="param-desc"><span class="param-type"><a href="#SeBootupProperties">SeBootupProperties</a></span> Placeholder for description of property se_bootup_properties of obj type SeProperties field type str  type object </div>
 <div class="param">se_runtime_properties (optional)</div><div class="param-desc"><span class="param-type"><a href="#SeRuntimeProperties">SeRuntimeProperties</a></span> Placeholder for description of property se_runtime_properties of obj type SeProperties field type str  type object </div>
