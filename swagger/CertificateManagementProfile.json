@@ -514,6 +514,10 @@
                     "readOnly": true,
                     "type": "string"
                 },
+                "configpb_attributes": {
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1.",
+                    "$ref": "#/definitions/ConfigPbAttributes"
+                },
                 "name": {
                     "description": "Name of the PKI Profile.",
                     "type": "string"
@@ -570,6 +574,17 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object",
+            "properties": {
+                "version": {
+                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.",
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int64"
+                }
+            }
+        },
         "CustomParams": {
             "type": "object",
             "required": [
@@ -594,5 +609,9 @@
                 }
             }
         }
-    }
+    },
+    "_comment": [
+        "Copyright 2021 VMware, Inc.",
+        "SPDX-License-Identifier: Apache License 2.0"
+    ]
 }
