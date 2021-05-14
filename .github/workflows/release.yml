@@ -46,7 +46,6 @@ jobs:
             JAVA_VERSION=$JAVA_VERSION.RELEASE
           fi
           echo "Java version: $JAVA_VERSION"
-          JAVA_VERSION="20.1.4-SNAPSHOT"
           echo ::set-output name=JAVA_VERSION::$(JAVA_VERSION)
 
       - name: Publish JAVA
@@ -82,7 +81,7 @@ jobs:
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.TWINE_TEST_TOKEN }}
-          TWINE_REPOSITORY: testpypi
+          TWINE_REPOSITORY: pypi
 
       - name: update release
         id: update_release
