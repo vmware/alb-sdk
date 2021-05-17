@@ -80,7 +80,7 @@ jobs:
           mv dist/avimigrationtools-$AVI_VERSION.tar.gz ../avimigrationtools-$AVI_VERSION.tar.gz
         env:
           TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.TWINE_TEST_TOKEN }}
+          TWINE_PASSWORD: ${{ secrets.TWINE_TOKEN }}
           TWINE_REPOSITORY: pypi
 
       - name: update release
