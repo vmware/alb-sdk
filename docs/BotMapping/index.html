@@ -271,6 +271,8 @@ font-style: italic;
         "op" : "aeiou",
         "client_classes" : [ "aeiou" ]
       },
+      "name" : "aeiou",
+      "index" : 123,
       "type_matcher" : {
         "op" : "aeiou",
         "client_types" : [ "aeiou" ]
@@ -350,6 +352,8 @@ font-style: italic;
       "op" : "aeiou",
       "client_classes" : [ "aeiou" ]
     },
+    "name" : "aeiou",
+    "index" : 123,
     "type_matcher" : {
       "op" : "aeiou",
       "client_types" : [ "aeiou" ]
@@ -500,6 +504,8 @@ font-style: italic;
       "op" : "aeiou",
       "client_classes" : [ "aeiou" ]
     },
+    "name" : "aeiou",
+    "index" : 123,
     "type_matcher" : {
       "op" : "aeiou",
       "client_types" : [ "aeiou" ]
@@ -590,6 +596,8 @@ font-style: italic;
       "op" : "aeiou",
       "client_classes" : [ "aeiou" ]
     },
+    "name" : "aeiou",
+    "index" : 123,
     "type_matcher" : {
       "op" : "aeiou",
       "client_types" : [ "aeiou" ]
@@ -680,6 +688,8 @@ font-style: italic;
       "op" : "aeiou",
       "client_classes" : [ "aeiou" ]
     },
+    "name" : "aeiou",
+    "index" : 123,
     "type_matcher" : {
       "op" : "aeiou",
       "client_types" : [ "aeiou" ]
@@ -731,7 +741,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="BotClassMatcher">BotClassMatcher</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">client_classes (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> The list of client classes. Enum options - HUMAN_CLIENT, BOT_CLIENT. Field introduced in 21.1.1. </div>
+      <div class="param">client_classes (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> The list of client classes. Enum options - HUMAN_CLIENT, BOT_CLIENT. Field introduced in 21.1.1. Minimum of 1 items required. </div>
 <div class="param">op (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The match operation. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. </div>
     </div>  <!-- field-items -->
   </div>
@@ -747,10 +757,10 @@ font-style: italic;
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
 <div class="param">mapping_rules (optional)</div><div class="param-desc"><span class="param-type"><a href="#BotMappingRule">array[BotMappingRule]</a></span> Rules for bot classification. Field introduced in 21.1.1. Minimum of 1 items required. </div>
-<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of this mapping. Field introduced in 21.1.1. </div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of this mapping. Field introduced in 21.1.1. </div>
 <div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The unique identifier of the tenant to which this mapping belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
-<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A unique identifier of this mapping. Field introduced in 21.1.1. </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A unique identifier for this mapping. Field introduced in 21.1.1. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -765,16 +775,18 @@ font-style: italic;
     <h3 class="field-label"><a name="BotMappingRule">BotMappingRule</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">class_matcher (optional)</div><div class="param-desc"><span class="param-type"><a href="#BotClassMatcher">BotClassMatcher</a></span> How to match the BotClientClass. Field introduced in 21.1.1. </div>
-<div class="param">classification (optional)</div><div class="param-desc"><span class="param-type"><a href="#BotClassification">BotClassification</a></span> The assigned classification for this client. Field introduced in 21.1.1. </div>
-<div class="param">component_matcher (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The component for which this mapping is used. Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION. Field introduced in 21.1.1. </div>
+<div class="param">classification </div><div class="param-desc"><span class="param-type"><a href="#BotClassification">BotClassification</a></span> The assigned classification for this client. Field introduced in 21.1.1. </div>
+<div class="param">component_matcher </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The component for which this mapping is used. Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION. Field introduced in 21.1.1. </div>
 <div class="param">identifier_matcher (optional)</div><div class="param-desc"><span class="param-type"><a href="#StringMatch">StringMatch</a></span> The list of bot identifier names and how they&#39;re matched. Field introduced in 21.1.1. </div>
+<div class="param">index </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Rules are processed in order of this index field. Field introduced in 21.1.1. format: int32</div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A name describing the rule in a short form. Field introduced in 21.1.1. </div>
 <div class="param">type_matcher (optional)</div><div class="param-desc"><span class="param-type"><a href="#BotTypeMatcher">BotTypeMatcher</a></span> How to match the BotClientType. Field introduced in 21.1.1. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="BotTypeMatcher">BotTypeMatcher</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">client_types (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> The list of client types. Enum options - WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE, CLOUD_SOURCE. Field introduced in 21.1.1. </div>
+      <div class="param">client_types (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> The list of client types. Enum options - WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION. Field introduced in 21.1.1. Minimum of 1 items required. </div>
 <div class="param">op (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The match operation. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. </div>
     </div>  <!-- field-items -->
   </div>

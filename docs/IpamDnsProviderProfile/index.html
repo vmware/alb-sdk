@@ -304,13 +304,18 @@ font-style: italic;
       "key" : "aeiou"
     } ],
     "custom_profile" : {
-      "usable_subnets" : [ {
-        "ip_addr" : {
-          "addr" : "aeiou",
-          "type" : "aeiou"
+      "usable_alloc_subnets" : [ {
+        "subnet" : {
+          "ip_addr" : {
+            "addr" : "aeiou",
+            "type" : "aeiou"
+          },
+          "mask" : 123
         },
-        "mask" : 123
+        "network_id" : "aeiou",
+        "subnet6" : ""
       } ],
+      "usable_subnets" : [ "" ],
       "dynamic_params" : [ {
         "is_sensitive" : true,
         "is_dynamic" : true,
@@ -504,13 +509,18 @@ font-style: italic;
     "key" : "aeiou"
   } ],
   "custom_profile" : {
-    "usable_subnets" : [ {
-      "ip_addr" : {
-        "addr" : "aeiou",
-        "type" : "aeiou"
+    "usable_alloc_subnets" : [ {
+      "subnet" : {
+        "ip_addr" : {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        },
+        "mask" : 123
       },
-      "mask" : 123
+      "network_id" : "aeiou",
+      "subnet6" : ""
     } ],
+    "usable_subnets" : [ "" ],
     "dynamic_params" : [ {
       "is_sensitive" : true,
       "is_dynamic" : true,
@@ -775,13 +785,18 @@ font-style: italic;
     "key" : "aeiou"
   } ],
   "custom_profile" : {
-    "usable_subnets" : [ {
-      "ip_addr" : {
-        "addr" : "aeiou",
-        "type" : "aeiou"
+    "usable_alloc_subnets" : [ {
+      "subnet" : {
+        "ip_addr" : {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        },
+        "mask" : 123
       },
-      "mask" : 123
+      "network_id" : "aeiou",
+      "subnet6" : ""
     } ],
+    "usable_subnets" : [ "" ],
     "dynamic_params" : [ {
       "is_sensitive" : true,
       "is_dynamic" : true,
@@ -986,13 +1001,18 @@ font-style: italic;
     "key" : "aeiou"
   } ],
   "custom_profile" : {
-    "usable_subnets" : [ {
-      "ip_addr" : {
-        "addr" : "aeiou",
-        "type" : "aeiou"
+    "usable_alloc_subnets" : [ {
+      "subnet" : {
+        "ip_addr" : {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        },
+        "mask" : 123
       },
-      "mask" : 123
+      "network_id" : "aeiou",
+      "subnet6" : ""
     } ],
+    "usable_subnets" : [ "" ],
     "dynamic_params" : [ {
       "is_sensitive" : true,
       "is_dynamic" : true,
@@ -1197,13 +1217,18 @@ font-style: italic;
     "key" : "aeiou"
   } ],
   "custom_profile" : {
-    "usable_subnets" : [ {
-      "ip_addr" : {
-        "addr" : "aeiou",
-        "type" : "aeiou"
+    "usable_alloc_subnets" : [ {
+      "subnet" : {
+        "ip_addr" : {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        },
+        "mask" : 123
       },
-      "mask" : 123
+      "network_id" : "aeiou",
+      "subnet6" : ""
     } ],
+    "usable_subnets" : [ "" ],
     "dynamic_params" : [ {
       "is_sensitive" : true,
       "is_dynamic" : true,
@@ -1328,6 +1353,7 @@ font-style: italic;
     <li><a href="#AzureServicePrincipalCredentials"><code>AzureServicePrincipalCredentials</code></a></li>
     <li><a href="#AzureUserPassCredentials"><code>AzureUserPassCredentials</code></a></li>
     <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
+    <li><a href="#CustomIpamSubnet"><code>CustomIpamSubnet</code></a></li>
     <li><a href="#CustomParams"><code>CustomParams</code></a></li>
     <li><a href="#DnsServiceDomain"><code>DnsServiceDomain</code></a></li>
     <li><a href="#InfobloxSubnet"><code>InfobloxSubnet</code></a></li>
@@ -1379,6 +1405,14 @@ font-style: italic;
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="CustomIpamSubnet">CustomIpamSubnet</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">network_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Network to use for Custom IPAM IP allocation. Field introduced in 21.1.1. </div>
+<div class="param">subnet (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrPrefix">IpAddrPrefix</a></span> IPv4 subnet to use for Custom IPAM IP allocation. Field introduced in 21.1.1. </div>
+<div class="param">subnet6 (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrPrefix">IpAddrPrefix</a></span> IPv6 subnet to use for Custom IPAM IP allocation. Field introduced in 21.1.1. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1458,8 +1492,9 @@ font-style: italic;
     <div class="field-items">
       <div class="param">custom_ipam_dns_profile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type CustomIpamDnsProfile. Field introduced in 17.1.1. </div>
 <div class="param">dynamic_params (optional)</div><div class="param-desc"><span class="param-type"><a href="#CustomParams">array[CustomParams]</a></span> Custom parameters that will passed to the IPAM/DNS provider including but not limited to provider credentials and API version. Field introduced in 17.1.1. </div>
+<div class="param">usable_alloc_subnets (optional)</div><div class="param-desc"><span class="param-type"><a href="#CustomIpamSubnet">array[CustomIpamSubnet]</a></span> Networks or Subnets to use for Custom IPAM IP allocation. Field introduced in 21.1.1. </div>
 <div class="param">usable_domains (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Usable domains. Field introduced in 17.2.2. </div>
-<div class="param">usable_subnets (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrPrefix">array[IpAddrPrefix]</a></span> Usable subnets. Field introduced in 17.2.2. </div>
+<div class="param">usable_subnets (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrPrefix">array[IpAddrPrefix]</a></span> Usable subnets. Field deprecated in 21.1.1. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
