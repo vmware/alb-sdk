@@ -5,7 +5,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Avi SecureChannelToken Object API</title>
+    <title>Avi BotIPReputationTypeMapping Object API</title>
     <style type="text/css">
       body { 
 	font-family: Trebuchet MS, sans-serif;
@@ -183,8 +183,8 @@ font-style: italic;
     </style>
   </head>
   <body>
-  <h1>Avi SecureChannelToken Object API</h1>
-    <div class="app-desc">CLI ``` - show securechanneltoken <key> ``` </div>
+  <h1>Avi BotIPReputationTypeMapping Object API</h1>
+    <div class="app-desc">CLI ``` - configure botipreputationtypemapping <key> - show botipreputationtypemapping <key> ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
     <div class="app-desc">Version: 21.1.1</div>
@@ -202,19 +202,19 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#securechanneltokenGet"><code><span class="http-method">get</span> /securechanneltoken</code></a></li>
-  <li><a href="#securechanneltokenPost"><code><span class="http-method">post</span> /securechanneltoken</code></a></li>
-  <li><a href="#securechanneltokenUuidDelete"><code><span class="http-method">delete</span> /securechanneltoken/{uuid}</code></a></li>
-  <li><a href="#securechanneltokenUuidGet"><code><span class="http-method">get</span> /securechanneltoken/{uuid}</code></a></li>
-  <li><a href="#securechanneltokenUuidPatch"><code><span class="http-method">patch</span> /securechanneltoken/{uuid}</code></a></li>
-  <li><a href="#securechanneltokenUuidPut"><code><span class="http-method">put</span> /securechanneltoken/{uuid}</code></a></li>
+  <li><a href="#botipreputationtypemappingGet"><code><span class="http-method">get</span> /botipreputationtypemapping</code></a></li>
+  <li><a href="#botipreputationtypemappingPost"><code><span class="http-method">post</span> /botipreputationtypemapping</code></a></li>
+  <li><a href="#botipreputationtypemappingUuidDelete"><code><span class="http-method">delete</span> /botipreputationtypemapping/{uuid}</code></a></li>
+  <li><a href="#botipreputationtypemappingUuidGet"><code><span class="http-method">get</span> /botipreputationtypemapping/{uuid}</code></a></li>
+  <li><a href="#botipreputationtypemappingUuidPatch"><code><span class="http-method">patch</span> /botipreputationtypemapping/{uuid}</code></a></li>
+  <li><a href="#botipreputationtypemappingUuidPut"><code><span class="http-method">put</span> /botipreputationtypemapping/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="securechanneltokenGet"/>
+  <div class="method"><a name="botipreputationtypemappingGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /securechanneltoken</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">securechanneltokenGet</span>)</div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /botipreputationtypemapping</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">botipreputationtypemappingGet</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -248,7 +248,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#SecureChannelTokenApiResponse">SecureChannelTokenApiResponse</a>
+      <a href="#BotIPReputationTypeMappingApiResponse">BotIPReputationTypeMappingApiResponse</a>
       
     </div>
 
@@ -260,14 +260,16 @@ font-style: italic;
   "next" : "aeiou",
   "count" : 123,
   "results" : [ {
-    "metadata" : [ {
-      "val" : "aeiou",
-      "key" : "aeiou"
+    "ip_reputation_mappings" : [ {
+      "bot_identification" : {
+        "identifier" : "aeiou",
+        "type" : "aeiou",
+        "class" : "aeiou"
+      },
+      "ip_reputation_type" : "aeiou"
     } ],
+    "tenant_ref" : "aeiou",
     "name" : "aeiou",
-    "in_use" : true,
-    "expiry_time" : 1.3579000000000001069366817318950779736042022705078125,
-    "node_uuid" : "aeiou",
     "uuid" : "aeiou",
     "url" : "aeiou",
     "_last_modified" : "aeiou"
@@ -284,17 +286,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#SecureChannelTokenApiResponse">SecureChannelTokenApiResponse</a>
+        <a href="#BotIPReputationTypeMappingApiResponse">BotIPReputationTypeMappingApiResponse</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="securechanneltokenPost"/>
+  <div class="method"><a name="botipreputationtypemappingPost"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /securechanneltoken</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">securechanneltokenPost</span>)</div>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /botipreputationtypemapping</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">botipreputationtypemappingPost</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -308,7 +310,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; SecureChannelToken object creation </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; BotIPReputationTypeMapping object creation </div>
     </div>  <!-- field-items -->
 
 
@@ -316,7 +318,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#SecureChannelToken">SecureChannelToken</a>
+      <a href="#BotIPReputationTypeMapping">BotIPReputationTypeMapping</a>
       
     </div>
 
@@ -325,14 +327,16 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "metadata" : [ {
-    "val" : "aeiou",
-    "key" : "aeiou"
+  "ip_reputation_mappings" : [ {
+    "bot_identification" : {
+      "identifier" : "aeiou",
+      "type" : "aeiou",
+      "class" : "aeiou"
+    },
+    "ip_reputation_type" : "aeiou"
   } ],
+  "tenant_ref" : "aeiou",
   "name" : "aeiou",
-  "in_use" : true,
-  "expiry_time" : 1.3579000000000001069366817318950779736042022705078125,
-  "node_uuid" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
@@ -348,17 +352,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#SecureChannelToken">SecureChannelToken</a>
+        <a href="#BotIPReputationTypeMapping">BotIPReputationTypeMapping</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="securechanneltokenUuidDelete"/>
+  <div class="method"><a name="botipreputationtypemappingUuidDelete"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /securechanneltoken/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">securechanneltokenUuidDelete</span>)</div>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /botipreputationtypemapping/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">botipreputationtypemappingUuidDelete</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -412,11 +416,11 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="securechanneltokenUuidGet"/>
+  <div class="method"><a name="botipreputationtypemappingUuidGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /securechanneltoken/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">securechanneltokenUuidGet</span>)</div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /botipreputationtypemapping/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">botipreputationtypemappingUuidGet</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -452,7 +456,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#SecureChannelToken">SecureChannelToken</a>
+      <a href="#BotIPReputationTypeMapping">BotIPReputationTypeMapping</a>
       
     </div>
 
@@ -461,14 +465,16 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "metadata" : [ {
-    "val" : "aeiou",
-    "key" : "aeiou"
+  "ip_reputation_mappings" : [ {
+    "bot_identification" : {
+      "identifier" : "aeiou",
+      "type" : "aeiou",
+      "class" : "aeiou"
+    },
+    "ip_reputation_type" : "aeiou"
   } ],
+  "tenant_ref" : "aeiou",
   "name" : "aeiou",
-  "in_use" : true,
-  "expiry_time" : 1.3579000000000001069366817318950779736042022705078125,
-  "node_uuid" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
@@ -484,17 +490,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#SecureChannelToken">SecureChannelToken</a>
+        <a href="#BotIPReputationTypeMapping">BotIPReputationTypeMapping</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="securechanneltokenUuidPatch"/>
+  <div class="method"><a name="botipreputationtypemappingUuidPatch"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /securechanneltoken/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">securechanneltokenUuidPatch</span>)</div>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /botipreputationtypemapping/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">botipreputationtypemappingUuidPatch</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -514,7 +520,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; SecureChannelToken object creation </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; BotIPReputationTypeMapping object creation </div>
     </div>  <!-- field-items -->
 
 
@@ -528,7 +534,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#SecureChannelToken">SecureChannelToken</a>
+      <a href="#BotIPReputationTypeMapping">BotIPReputationTypeMapping</a>
       
     </div>
 
@@ -537,14 +543,16 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "metadata" : [ {
-    "val" : "aeiou",
-    "key" : "aeiou"
+  "ip_reputation_mappings" : [ {
+    "bot_identification" : {
+      "identifier" : "aeiou",
+      "type" : "aeiou",
+      "class" : "aeiou"
+    },
+    "ip_reputation_type" : "aeiou"
   } ],
+  "tenant_ref" : "aeiou",
   "name" : "aeiou",
-  "in_use" : true,
-  "expiry_time" : 1.3579000000000001069366817318950779736042022705078125,
-  "node_uuid" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
@@ -560,17 +568,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#SecureChannelToken">SecureChannelToken</a>
+        <a href="#BotIPReputationTypeMapping">BotIPReputationTypeMapping</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="securechanneltokenUuidPut"/>
+  <div class="method"><a name="botipreputationtypemappingUuidPut"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /securechanneltoken/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">securechanneltokenUuidPut</span>)</div>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /botipreputationtypemapping/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">botipreputationtypemappingUuidPut</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -590,7 +598,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; SecureChannelToken object creation </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; BotIPReputationTypeMapping object creation </div>
     </div>  <!-- field-items -->
 
 
@@ -604,7 +612,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#SecureChannelToken">SecureChannelToken</a>
+      <a href="#BotIPReputationTypeMapping">BotIPReputationTypeMapping</a>
       
     </div>
 
@@ -613,14 +621,16 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "metadata" : [ {
-    "val" : "aeiou",
-    "key" : "aeiou"
+  "ip_reputation_mappings" : [ {
+    "bot_identification" : {
+      "identifier" : "aeiou",
+      "type" : "aeiou",
+      "class" : "aeiou"
+    },
+    "ip_reputation_type" : "aeiou"
   } ],
+  "tenant_ref" : "aeiou",
   "name" : "aeiou",
-  "in_use" : true,
-  "expiry_time" : 1.3579000000000001069366817318950779736042022705078125,
-  "node_uuid" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
@@ -636,7 +646,7 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#SecureChannelToken">SecureChannelToken</a>
+        <a href="#BotIPReputationTypeMapping">BotIPReputationTypeMapping</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
@@ -649,37 +659,44 @@ font-style: italic;
 
   <h2>Table of Contents</h2>
   <ol>
-    <li><a href="#SecureChannelMetadata"><code>SecureChannelMetadata</code></a></li>
-    <li><a href="#SecureChannelToken"><code>SecureChannelToken</code></a></li>
-    <li><a href="#SecureChannelTokenApiResponse"><code>SecureChannelTokenApiResponse</code></a></li>
+    <li><a href="#BotIPReputationTypeMapping"><code>BotIPReputationTypeMapping</code></a></li>
+    <li><a href="#BotIPReputationTypeMappingApiResponse"><code>BotIPReputationTypeMappingApiResponse</code></a></li>
+    <li><a href="#BotIdentification"><code>BotIdentification</code></a></li>
+    <li><a href="#IPReputationTypeMapping"><code>IPReputationTypeMapping</code></a></li>
   </ol>
 
   <div class="model">
-    <h3 class="field-label"><a name="SecureChannelMetadata">SecureChannelMetadata</a> <a class="up" href="#__Models">Up</a></h3>
-    <div class="field-items">
-      <div class="param">key (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> key of SecureChannelMetadata. </div>
-<div class="param">val (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> val of SecureChannelMetadata. </div>
-    </div>  <!-- field-items -->
-  </div>
-  <div class="model">
-    <h3 class="field-label"><a name="SecureChannelToken">SecureChannelToken</a> <a class="up" href="#__Models">Up</a></h3>
+    <h3 class="field-label"><a name="BotIPReputationTypeMapping">BotIPReputationTypeMapping</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
-<div class="param">expiry_time (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> Expiry time for auth_token. format: double</div>
-<div class="param">in_use (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Whether this auth_token is used by some node(SE/controller). Field introduced in 21.1.1. </div>
-<div class="param">metadata (optional)</div><div class="param-desc"><span class="param-type"><a href="#SecureChannelMetadata">array[SecureChannelMetadata]</a></span> Metadata associated with auth_token. </div>
-<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Auth_token used for SE/controller authorization. </div>
-<div class="param">node_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Deprecated  Uuid of SE or controller who is using this auth_token. Field deprecated in 21.1.1. </div>
+<div class="param">ip_reputation_mappings (optional)</div><div class="param-desc"><span class="param-type"><a href="#IPReputationTypeMapping">array[IPReputationTypeMapping]</a></span> Map every IPReputationType to a bot type (can be unknown). Field introduced in 21.1.1. </div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of this mapping. Field introduced in 21.1.1. </div>
+<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The unique identifier of the tenant to which this mapping belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
-<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Auth_token used for SE/controller authorization. </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A unique identifier of this mapping. Field introduced in 21.1.1. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
-    <h3 class="field-label"><a name="SecureChannelTokenApiResponse">SecureChannelTokenApiResponse</a> <a class="up" href="#__Models">Up</a></h3>
+    <h3 class="field-label"><a name="BotIPReputationTypeMappingApiResponse">BotIPReputationTypeMappingApiResponse</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">count </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
-<div class="param">results </div><div class="param-desc"><span class="param-type"><a href="#SecureChannelToken">array[SecureChannelToken]</a></span>  </div>
+<div class="param">results </div><div class="param-desc"><span class="param-type"><a href="#BotIPReputationTypeMapping">array[BotIPReputationTypeMapping]</a></span>  </div>
 <div class="param">next (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="BotIdentification">BotIdentification</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">class (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The Bot Client Class of this identification. Enum options - HUMAN_CLIENT, BOT_CLIENT. Field introduced in 21.1.1. </div>
+<div class="param">identifier (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A free-form string to identify the client. Field introduced in 21.1.1. </div>
+<div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The Bot Client Type of this identification. Enum options - WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION. Field introduced in 21.1.1. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="IPReputationTypeMapping">IPReputationTypeMapping</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">bot_identification </div><div class="param-desc"><span class="param-type"><a href="#BotIdentification">BotIdentification</a></span> The Bot Identification to which the IP reputation type is mapped. Field introduced in 21.1.1. </div>
+<div class="param">ip_reputation_type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The type of IP reputation that is mapped to a Bot Identification. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 21.1.1. </div>
     </div>  <!-- field-items -->
   </div>
   </body>

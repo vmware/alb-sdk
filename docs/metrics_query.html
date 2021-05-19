@@ -10490,5 +10490,309 @@ Stats for ICAP server.
 </tr>
 </table>
 </div>
+<h2 class='text-primary'> Bot Metrics </h2>
+<div class='container-fluid'>
+<p>
+Stats for Bot Detection Policy.
+</p>
+<table class='table table-bordered table-striped'>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Units</th>
+<th>Anomaly Detection</th>
+<th>Anomaly Models</th>
+<th>Priority</th>
+</tr>
+<tr>
+<td> bot.avg_all_bots </td>
+<td> Average number of requests which were classified as any BOT type (not HUMAN or UNKNOWN). </td>
+<td> PER_SECOND </td>
+<td> False </td>
+<td>  </td>
+<td> False </td>
+</tr>
+<tr>
+<td> bot.avg_bad_bot </td>
+<td> Averaged value of request per second which were classified as BAD_BOT. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.avg_bypassed </td>
+<td> Averaged number of requests per second for which bot detection was bypassed via allow_list. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.avg_dangerous_bot </td>
+<td> Averaged value of request per second which were classified as DANGEROUS_BOT. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.avg_evaluate_ip_location </td>
+<td> Averaged number of requests per second for which IP network location was evaluated. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.avg_evaluate_ip_reputation </td>
+<td> Averaged number of requests per second for which IP reputation was evaluated. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.avg_evaluate_user_agent </td>
+<td> Averaged number of requests per second for which user agent was evaluated. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.avg_good_bot </td>
+<td> Averaged value of requests per second which were classified as GOOD_BOT. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.avg_human </td>
+<td> Averaged value of requests per second which were classified as HUMAN. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.avg_requests </td>
+<td> Averaged number of requests per second which are executing the Bot Policy. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.avg_unknown </td>
+<td> Averaged value of requests per second which were classified as UNKNOWN_CLIENT. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.avg_user_defined_bot </td>
+<td> Averaged value of requests per second which were classified as USER_DEFINED_BOT. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.max_all_bots </td>
+<td> Maximum value of requests per second which were classified as any BOT type (not HUMAN or UNKNOWN). </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> False </td>
+</tr>
+<tr>
+<td> bot.max_bad_bot </td>
+<td> Maximum value of request per second which were classified as BAD_BOT. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.max_bypassed </td>
+<td> Maximum number of requests per second for which bot detection was bypassed via allow_list. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.max_dangerous_bot </td>
+<td> Maximum value of requests per second which were classified as DANGEROUS_BOT. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.max_evaluate_ip_location </td>
+<td> Maximum number of requests per second for which IP network location was evaluated. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.max_evaluate_ip_reputation </td>
+<td> Maximum number of requests per second for which IP reputation was evaluated. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.max_evaluate_user_agent </td>
+<td> Maximum number of requests per second for which user agent was evaluated. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.max_good_bot </td>
+<td> Maximum value of requests per second which were classified as GOOD_BOT. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.max_human </td>
+<td> Maximum value of requests per second which were classified as HUMAN. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.max_requests </td>
+<td> Maximum number of requests per second which are executing the Bot Policy. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.max_unknown </td>
+<td> Maximum value of requests per second which were classified as UNKNOWN_CLIENT. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.max_user_defined_bot </td>
+<td> Maximum value of requests per second which were classified as USER_DEFINED_BOT. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.sum_all_bots </td>
+<td> Total number of requests which were classified as any BOT type (not HUMAN or UNKNOWN). </td>
+<td> METRIC_COUNT </td>
+<td> False </td>
+<td>  </td>
+<td> False </td>
+</tr>
+<tr>
+<td> bot.sum_bad_bot </td>
+<td> Total number of request which were classified as BAD_BOT. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.sum_bypassed </td>
+<td> Total number of requests per second for which bot detection was bypassed via allow_list. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.sum_dangerous_bot </td>
+<td> Total number of requests which were classified as DANGEROUS_BOT. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.sum_evaluate_ip_location </td>
+<td> Total number of requests per second for which IP network location was evaluated. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.sum_evaluate_ip_reputation </td>
+<td> Total number of requests per second for which IP reputation was evaluated. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.sum_evaluate_user_agent </td>
+<td> Total number of requests per second for which user agent was evaluated. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.sum_good_bot </td>
+<td> Total number of requests which were classified as GOOD_BOT. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.sum_human </td>
+<td> Total number of requests which were classified as HUMAN. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.sum_requests </td>
+<td> Total number of requests per second which are executing the Bot Policy. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.sum_unknown </td>
+<td> Total number of requests which were classified as UNKNOWN_CLIENT. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> bot.sum_user_defined_bot </td>
+<td> Total number of requests which were classified as USER_DEFINED_BOT. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+</table>
+</div>
 </body>
 </html></body
