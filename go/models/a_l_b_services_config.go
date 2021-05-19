@@ -55,7 +55,7 @@ type ALBServicesConfig struct {
 	// By default, use system proxy configuration.If true, use split proxy configuration. Field introduced in 20.1.1.
 	UseSplitProxy *bool `json:"use_split_proxy,omitempty"`
 
-	// Secure the controller to PULSE communication over TLS. Field introduced in 20.1.3.
+	// Secure the controller to PULSE communication over TLS. Field introduced in 20.1.3. Allowed in Basic edition, Enterprise edition.
 	UseTLS *bool `json:"use_tls,omitempty"`
 
 	//  Field introduced in 18.2.6.

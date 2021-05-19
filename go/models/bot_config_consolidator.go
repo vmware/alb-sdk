@@ -19,16 +19,16 @@ type BotConfigConsolidator struct {
 	// Required: true
 	Name *string `json:"name"`
 
-	// Script that consolidates results from all components. Field introduced in 21.1.1.
+	// Script that consolidates results from all Bot decision components. Field introduced in 21.1.1.
 	Script *string `json:"script,omitempty"`
 
-	// The unique identifier of the tenant to which this mapping belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1.
+	// The unique identifier of the tenant to which this consolidator belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
 	// url
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// A unique identifier to this consolidator. Field introduced in 21.1.1.
+	// A unique identifier for this consolidator. Field introduced in 21.1.1.
 	UUID *string `json:"uuid,omitempty"`
 }

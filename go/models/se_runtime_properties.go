@@ -92,61 +92,61 @@ type SeRuntimeProperties struct {
 	// Maximum retries per request in the request queue.
 	LbactionRqPerRequestMaxRetries *int32 `json:"lbaction_rq_per_request_max_retries,omitempty"`
 
-	// Flag to indicate if log files are compressed upon full on the Service Engine.
+	// Deprecated in 21.1.1. Flag to indicate if log files are compressed upon full on the Service Engine.
 	LogAgentCompressLogs *bool `json:"log_agent_compress_logs,omitempty"`
 
-	// Log-agent test property used to simulate slow TCP connections. Unit is BYTES.
+	// [DEPRECATED]Log-agent test property used to simulate slow TCP connections. Field deprecated in 21.1.1.
 	LogAgentConnSendBufferSize *int32 `json:"log_agent_conn_send_buffer_size,omitempty"`
 
-	// Maximum size of data sent by log-agent to Controller over the TCP connection. Unit is BYTES.
+	// [DEPRECATED]Maximum size of data sent by log-agent to Controller over the TCP connection. Field deprecated in 21.1.1.
 	LogAgentExportMsgBufferSize *int32 `json:"log_agent_export_msg_buffer_size,omitempty"`
 
-	// Time log-agent waits before sending data to the Controller. Unit is MILLISECONDS.
+	// [DEPRECATED]Time log-agent waits before sending data to the Controller. Field deprecated in 21.1.1.
 	LogAgentExportWaitTime *int32 `json:"log_agent_export_wait_time,omitempty"`
 
-	// Maximum application log file size before rollover.
+	// Deprecated in 21.1.1. Maximum application log file size before rollover.
 	LogAgentFileSzAppl *int32 `json:"log_agent_file_sz_appl,omitempty"`
 
-	// Maximum connection log file size before rollover.
+	// Deprecated in 21.1.1. Maximum connection log file size before rollover.
 	LogAgentFileSzConn *int32 `json:"log_agent_file_sz_conn,omitempty"`
 
-	// Maximum debug log file size before rollover.
+	// Deprecated in 21.1.1. Maximum debug log file size before rollover.
 	LogAgentFileSzDebug *int32 `json:"log_agent_file_sz_debug,omitempty"`
 
-	// Maximum event log file size before rollover.
+	// Deprecated in 21.1.1. Maximum event log file size before rollover.
 	LogAgentFileSzEvent *int32 `json:"log_agent_file_sz_event,omitempty"`
 
-	// Minimum storage allocated for logs irrespective of memory and cores. Unit is MB.
+	//  Deprecated in 21.1.1. Minimum storage allocated for logs irrespective of memory and cores. Unit is MB.
 	LogAgentLogStorageMinSz *int32 `json:"log_agent_log_storage_min_sz,omitempty"`
 
-	// Maximum number of Virtual Service log files maintained for significant logs on the Service Engine.
+	// [DEPRECATED] Maximum number of Virtual Service log files maintained for significant logs on the Service Engine. Field deprecated in 21.1.1.
 	LogAgentMaxActiveAdfFilesPerVs *int32 `json:"log_agent_max_active_adf_files_per_vs,omitempty"`
 
-	// Maximum concurrent rsync requests initiated from log-agent to the Controller.
+	// Deprecated in 21.1.1. Maximum concurrent rsync requests initiated from log-agent to the Controller.
 	LogAgentMaxConcurrentRsync *int32 `json:"log_agent_max_concurrent_rsync,omitempty"`
 
-	// Maximum size of serialized log message on the Service Engine.
+	// [DEPRECATED] Maximum size of serialized log message on the Service Engine. Field deprecated in 21.1.1.
 	LogAgentMaxLogmessageProtoSz *int32 `json:"log_agent_max_logmessage_proto_sz,omitempty"`
 
-	// Excess percentage threshold of disk size to trigger cleanup of logs on the Service Engine.
+	// Deprecated in 21.1.1. Excess percentage threshold of disk size to trigger cleanup of logs on the Service Engine.
 	LogAgentMaxStorageExcessPercent *int32 `json:"log_agent_max_storage_excess_percent,omitempty"`
 
-	// Maximum storage on the disk not allocated for logs on the Service Engine.
+	// Deprecated in 21.1.1. Maximum storage on the disk not allocated for logs on the Service Engine.
 	LogAgentMaxStorageIgnorePercent *float32 `json:"log_agent_max_storage_ignore_percent,omitempty"`
 
-	// Minimum storage allocated to any given VirtualService on the Service Engine.
+	// Deprecated in 21.1.1. Minimum storage allocated to any given VirtualService on the Service Engine.
 	LogAgentMinStoragePerVs *int32 `json:"log_agent_min_storage_per_vs,omitempty"`
 
-	// Time interval log-agent pauses between logs obtained from the dataplane. Unit is MILLISECONDS.
+	// [DEPRECATED]Time interval log-agent pauses between logs obtained from the dataplane. Field deprecated in 21.1.1.
 	LogAgentPauseInterval *int32 `json:"log_agent_pause_interval,omitempty"`
 
-	// Internal timer to stall log-agent and prevent it from hogging CPU cycles on the Service Engine. Unit is MILLISECONDS.
+	// Deprecated in 21.1.1. Internal timer to stall log-agent and prevent it from hogging CPU cycles on the Service Engine. Unit is MILLISECONDS.
 	LogAgentSleepInterval *int32 `json:"log_agent_sleep_interval,omitempty"`
 
-	// Timeout to purge unknown Virtual Service logs from the Service Engine. Unit is SEC.
+	// Deprecated in 21.1.1. Timeout to purge unknown Virtual Service logs from the Service Engine. Unit is SEC.
 	LogAgentUnknownVsTimer *int32 `json:"log_agent_unknown_vs_timer,omitempty"`
 
-	// Maximum number of file names in a log message.
+	// Deprecated in 21.1.1. Maximum number of file names in a log message.
 	LogMessageMaxFileListSize *int32 `json:"log_message_max_file_list_size,omitempty"`
 
 	// Deprecated. Field deprecated in 17.1.1. Unit is MBPS.
@@ -218,10 +218,10 @@ type SeRuntimeProperties struct {
 	// Number of jiffies between polling interface state.
 	SeDpIfStatePollInterval *int32 `json:"se_dp_if_state_poll_interval,omitempty"`
 
-	// Internal buffer full indicator on the Service Engine beyond which the unfiltered logs are abandoned.
+	// Deprecated in 21.1.1. Internal buffer full indicator on the Service Engine beyond which the unfiltered logs are abandoned.
 	SeDpLogNfEnqueuePercent *int32 `json:"se_dp_log_nf_enqueue_percent,omitempty"`
 
-	// Internal buffer full indicator on the Service Engine beyond which the user filtered logs are abandoned.
+	// Deprecated in 21.1.1. Internal buffer full indicator on the Service Engine beyond which the user filtered logs are abandoned.
 	SeDpLogUdfEnqueuePercent *int32 `json:"se_dp_log_udf_enqueue_percent,omitempty"`
 
 	// Deprecated. Field deprecated in 18.2.5. Field introduced in 17.1.1.

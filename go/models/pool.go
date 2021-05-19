@@ -112,7 +112,7 @@ type Pool struct {
 	// Enable common name check for server certificate. If enabled and no explicit domain name is specified, Avi will use the incoming host header to do the match.
 	HostCheckEnabled *bool `json:"host_check_enabled,omitempty"`
 
-	// HTTP2 pool properties. Field introduced in 21.1.1.
+	// HTTP2 pool properties. Field introduced in 21.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	Http2Properties *Http2PoolProperties `json:"http2_properties,omitempty"`
 
 	// Ignore the server port in building the load balancing state.Applicable only for consistent hash load balancing algorithm or Disable Port translation (use_service_port) use cases. Field introduced in 20.1.1.

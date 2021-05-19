@@ -11,6 +11,12 @@ type BotConfigIPLocation struct {
 	// If this is enabled, IP location information is used to determine if a client is a known search engine bot, comes from the cloud, etc. Field introduced in 21.1.1.
 	Enabled *bool `json:"enabled,omitempty"`
 
-	// The UUID of the Geo-IP databse to use. It is a reference to an object of type GeoDB. Field introduced in 21.1.1.
+	// The UUID of the Geo-IP database to use. It is a reference to an object of type GeoDB. Field introduced in 21.1.1.
 	IPLocationDbRef *string `json:"ip_location_db_ref,omitempty"`
+
+	// The system-defined cloud providers. It is a reference to an object of type StringGroup. Field introduced in 21.1.1.
+	SystemCloudProvidersRef *string `json:"system_cloud_providers_ref,omitempty"`
+
+	// The system-defined search engines. It is a reference to an object of type StringGroup. Field introduced in 21.1.1.
+	SystemSearchEnginesRef *string `json:"system_search_engines_ref,omitempty"`
 }

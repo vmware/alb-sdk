@@ -17,6 +17,9 @@ type EmailConfiguration struct {
 	// When set, disables TLS on the connection to the mail server. Field introduced in 17.2.12, 18.1.3, 18.2.1.
 	DisableTLS *bool `json:"disable_tls,omitempty"`
 
+	// Timezone for timestamps in alert emails. Enum options - UTC, AFRICA_ABIDJAN, AFRICA_ACCRA, AFRICA_ADDIS_ABABA, AFRICA_ALGIERS, AFRICA_ASMARA, AFRICA_ASMERA, AFRICA_BAMAKO, AFRICA_BANGUI, AFRICA_BANJUL, AFRICA_BISSAU, AFRICA_BLANTYRE, AFRICA_BRAZZAVILLE, AFRICA_BUJUMBURA, AFRICA_CAIRO, AFRICA_CASABLANCA, AFRICA_CEUTA, AFRICA_CONAKRY, AFRICA_DAKAR, AFRICA_DAR_ES_SALAAM.... Field introduced in 21.1.1.
+	EmailTimezone *string `json:"email_timezone,omitempty"`
+
 	// Email address in From field.
 	FromEmail *string `json:"from_email,omitempty"`
 

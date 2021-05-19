@@ -8,7 +8,7 @@ package models
 // swagger:model BotClassMatcher
 type BotClassMatcher struct {
 
-	// The list of client classes. Enum options - HUMAN_CLIENT, BOT_CLIENT. Field introduced in 21.1.1.
+	// The list of client classes. Enum options - HUMAN_CLIENT, BOT_CLIENT. Field introduced in 21.1.1. Minimum of 1 items required.
 	ClientClasses []string `json:"client_classes,omitempty"`
 
 	// The match operation. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1.

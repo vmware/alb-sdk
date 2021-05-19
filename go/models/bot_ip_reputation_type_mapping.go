@@ -4,16 +4,16 @@ package models
 
 // This file is auto-generated.
 
-// BotMapping bot mapping
-// swagger:model BotMapping
-type BotMapping struct {
+// BotIPReputationTypeMapping bot IP reputation type mapping
+// swagger:model BotIPReputationTypeMapping
+type BotIPReputationTypeMapping struct {
 
 	// UNIX time since epoch in microseconds. Units(MICROSECONDS).
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Rules for bot classification. Field introduced in 21.1.1. Minimum of 1 items required.
-	MappingRules []*BotMappingRule `json:"mapping_rules,omitempty"`
+	// Map every IPReputationType to a bot type (can be unknown). Field introduced in 21.1.1.
+	IPReputationMappings []*IPReputationTypeMapping `json:"ip_reputation_mappings,omitempty"`
 
 	// The name of this mapping. Field introduced in 21.1.1.
 	// Required: true
@@ -26,6 +26,6 @@ type BotMapping struct {
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// A unique identifier for this mapping. Field introduced in 21.1.1.
+	// A unique identifier of this mapping. Field introduced in 21.1.1.
 	UUID *string `json:"uuid,omitempty"`
 }
