@@ -32,10 +32,10 @@ type SeBootupProperties struct {
 	// Number of reserved L7 listener connections per core.
 	L7ResvdListenConnsPerCore *int32 `json:"l7_resvd_listen_conns_per_core,omitempty"`
 
-	// Enable debug logs by default on Service Engine. This includes all other debugging logs. Debug logs can also be explcitly enabled from the CLI shell.
+	// Deprecated in 21.1.1. Enable debug logs by default on Service Engine. This includes all other debugging logs. Debug logs can also be explcitly enabled from the CLI shell.
 	LogAgentDebugEnabled *bool `json:"log_agent_debug_enabled,omitempty"`
 
-	// Enable trace logs by default on Service Engine. Configuration operations are logged along with other important logs by Service Engine.
+	// Deprecated in 21.1.1. Enable trace logs by default on Service Engine. Configuration operations are logged along with other important logs by Service Engine.
 	LogAgentTraceEnabled *bool `json:"log_agent_trace_enabled,omitempty"`
 
 	// Placeholder for description of property se_dp_compression of obj type SeBootupProperties field type str  type object
@@ -53,7 +53,7 @@ type SeBootupProperties struct {
 	// Determines if SE-SE IPC messages use SE interface IP instead of VIP    Note  This field has been moved to se_group properties 20.1.3 onwards.    0        Automatically determine based on hypervisor type    1        Use SE interface IP unconditionally    ~[0,1]   Don't use SE interface IP.
 	SeL3EncapIpc *int32 `json:"se_l3_encap_ipc,omitempty"`
 
-	// Internal flag that blocks dataplane until all application logs are flushed to log-agent process.
+	// Deprecated in 21.1.1. Internal flag that blocks dataplane until all application logs are flushed to log-agent process.
 	SeLogBufferAppBlockingDequeue *bool `json:"se_log_buffer_app_blocking_dequeue,omitempty"`
 
 	// Internal application log buffer size to use on Service Engine. Can be fine tuned for better performance of data plane in specific environments. Unit is WORD.
@@ -62,13 +62,13 @@ type SeBootupProperties struct {
 	// Number of internal buffer chunks to use on Service Engine. Can be fine tuned for better performance of data plane in specific environments. Unit is BYTES.
 	SeLogBufferChunkCount *int32 `json:"se_log_buffer_chunk_count,omitempty"`
 
-	// Internal flag that blocks dataplane until all connection logs are flushed to log-agent process.
+	// Deprecated in 21.1.1. Internal flag that blocks dataplane until all connection logs are flushed to log-agent process.
 	SeLogBufferConnBlockingDequeue *bool `json:"se_log_buffer_conn_blocking_dequeue,omitempty"`
 
 	// Internal connection log buffer size to use on Service Engine. Can be fine tuned for better performance of data plane in specific environments. Unit is WORD.
 	SeLogBufferConnlogSize *int32 `json:"se_log_buffer_connlog_size,omitempty"`
 
-	// Internal flag that blocks dataplane until all outstanding events are flushed to log-agent process.
+	// Deprecated in 21.1.1. Internal flag that blocks dataplane until all outstanding events are flushed to log-agent process.
 	SeLogBufferEventsBlockingDequeue *bool `json:"se_log_buffer_events_blocking_dequeue,omitempty"`
 
 	// Internal events buffer size to use on Service Engine. Can be fine tuned for better performance of data plane in specific environments. Unit is WORD.

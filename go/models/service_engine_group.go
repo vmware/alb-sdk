@@ -117,6 +117,9 @@ type ServiceEngineGroup struct {
 	// Number of instructions before datascript times out. Allowed values are 0-100000000. Field introduced in 18.2.3.
 	DatascriptTimeout *int64 `json:"datascript_timeout,omitempty"`
 
+	// If activated, IPv6 address and route discovery are deactivated.Requires SE reboot. Field introduced in 21.1.1.
+	DeactivateIPV6Discovery *bool `json:"deactivate_ipv6_discovery,omitempty"`
+
 	// Dedicate the core that handles packet receive/transmit from the network to just the dispatching function. Don't use it for TCP/IP and SSL functions.
 	DedicatedDispatcherCore *bool `json:"dedicated_dispatcher_core,omitempty"`
 
@@ -309,11 +312,56 @@ type ServiceEngineGroup struct {
 	// If no license type is specified then default license enforcement for the cloud type is chosen. Enum options - LIC_BACKEND_SERVERS, LIC_SOCKETS, LIC_CORES, LIC_HOSTS, LIC_SE_BANDWIDTH, LIC_METERED_SE_BANDWIDTH. Field introduced in 17.2.5.
 	LicenseType *string `json:"license_type,omitempty"`
 
+	// Flag to indicate if log files are compressed upon full on the Service Engine. Field introduced in 21.1.1.
+	LogAgentCompressLogs *bool `json:"log_agent_compress_logs,omitempty"`
+
+	// Enable debug logs by default on Service Engine. This includes all other debugging logs. Debug logs can also be explcitly enabled from the CLI shell. Field introduced in 21.1.1.
+	LogAgentDebugEnabled *bool `json:"log_agent_debug_enabled,omitempty"`
+
+	// Maximum application log file size before rollover. Field introduced in 21.1.1.
+	LogAgentFileSzAppl *int32 `json:"log_agent_file_sz_appl,omitempty"`
+
+	// Maximum connection log file size before rollover. Field introduced in 21.1.1.
+	LogAgentFileSzConn *int32 `json:"log_agent_file_sz_conn,omitempty"`
+
+	// Maximum debug log file size before rollover. Field introduced in 21.1.1.
+	LogAgentFileSzDebug *int32 `json:"log_agent_file_sz_debug,omitempty"`
+
+	// Maximum event log file size before rollover. Field introduced in 21.1.1.
+	LogAgentFileSzEvent *int32 `json:"log_agent_file_sz_event,omitempty"`
+
+	// Minimum storage allocated for logs irrespective of memory and cores. Field introduced in 21.1.1. Unit is MB.
+	LogAgentLogStorageMinSz *int32 `json:"log_agent_log_storage_min_sz,omitempty"`
+
+	// Maximum concurrent rsync requests initiated from log-agent to the Controller. Field introduced in 21.1.1.
+	LogAgentMaxConcurrentRsync *int32 `json:"log_agent_max_concurrent_rsync,omitempty"`
+
+	// Excess percentage threshold of disk size to trigger cleanup of logs on the Service Engine. Field introduced in 21.1.1.
+	LogAgentMaxStorageExcessPercent *int32 `json:"log_agent_max_storage_excess_percent,omitempty"`
+
+	// Maximum storage on the disk not allocated for logs on the Service Engine. Field introduced in 21.1.1.
+	LogAgentMaxStorageIgnorePercent *float32 `json:"log_agent_max_storage_ignore_percent,omitempty"`
+
+	// Minimum storage allocated to any given VirtualService on the Service Engine. Field introduced in 21.1.1.
+	LogAgentMinStoragePerVs *int32 `json:"log_agent_min_storage_per_vs,omitempty"`
+
+	// Internal timer to stall log-agent and prevent it from hogging CPU cycles on the Service Engine. Field introduced in 21.1.1. Unit is MILLISECONDS.
+	LogAgentSleepInterval *int32 `json:"log_agent_sleep_interval,omitempty"`
+
+	// Enable trace logs by default on Service Engine. Configuration operations are logged along with other important logs by Service Engine. Field introduced in 21.1.1.
+	LogAgentTraceEnabled *bool `json:"log_agent_trace_enabled,omitempty"`
+
+	// Timeout to purge unknown Virtual Service logs from the Service Engine. Field introduced in 21.1.1. Unit is SEC.
+	LogAgentUnknownVsTimer *int32 `json:"log_agent_unknown_vs_timer,omitempty"`
+
 	// Maximum disk capacity (in MB) to be allocated to an SE. This is exclusively used for debug and log data. Unit is MB.
 	LogDisksz *int32 `json:"log_disksz,omitempty"`
 
 	// SE will log memory allocation related failure to the se_trace file, wherever available. Field introduced in 20.1.2. Allowed in Basic(Allowed values- true) edition, Essentials(Allowed values- true) edition, Enterprise edition.
 	LogMallocFailure *bool `json:"log_malloc_failure,omitempty"`
+
+	// Maximum number of file names in a log message. Field introduced in 21.1.1.
+	LogMessageMaxFileListSize *int32 `json:"log_message_max_file_list_size,omitempty"`
 
 	// Maximum number of external health monitors that can run concurrently in a service engine. This helps control the CPU and memory use by external health monitors. Special values are 0- 'Value will be internally calculated based on cpu and memory'. Field introduced in 18.2.7.
 	MaxConcurrentExternalHm *int32 `json:"max_concurrent_external_hm,omitempty"`
@@ -499,6 +547,12 @@ type ServiceEngineGroup struct {
 	// Number of CPUs for non se-dp tasks in SE datapath isolation mode. Translates Total cpus minus 'num_non_dp_cpus' for datapath use.Requires SE reboot. Allowed values are 1-8. Special values are 0- 'auto'. Field introduced in 20.1.4.
 	SeDpIsolationNumNonDpCpus *int32 `json:"se_dp_isolation_num_non_dp_cpus,omitempty"`
 
+	// Internal buffer full indicator on the Service Engine beyond which the unfiltered logs are abandoned. Field introduced in 21.1.1.
+	SeDpLogNfEnqueuePercent *int32 `json:"se_dp_log_nf_enqueue_percent,omitempty"`
+
+	// Internal buffer full indicator on the Service Engine beyond which the user filtered logs are abandoned. Field introduced in 21.1.1.
+	SeDpLogUdfEnqueuePercent *int32 `json:"se_dp_log_udf_enqueue_percent,omitempty"`
+
 	// The highest supported SE-SE Heartbeat protocol version. This version is reported by Secondary SE to Primary SE in Heartbeat response messages. Allowed values are 1-3. Field introduced in 20.1.1.
 	SeDpMaxHbVersion *int32 `json:"se_dp_max_hb_version,omitempty"`
 
@@ -546,6 +600,15 @@ type ServiceEngineGroup struct {
 
 	// Determines if SE-SE IPC messages use SE interface IP instead of VIP        0        Automatically determine based on hypervisor type    1        Use SE interface IP unconditionally    ~[0,1]   Don't use SE interface IPRequires SE Reboot. Field introduced in 20.1.3.
 	SeL3EncapIpc *int32 `json:"se_l3_encap_ipc,omitempty"`
+
+	// Internal flag that blocks dataplane until all application logs are flushed to log-agent process. Field introduced in 21.1.1.
+	SeLogBufferAppBlockingDequeue *bool `json:"se_log_buffer_app_blocking_dequeue,omitempty"`
+
+	// Internal flag that blocks dataplane until all connection logs are flushed to log-agent process. Field introduced in 21.1.1.
+	SeLogBufferConnBlockingDequeue *bool `json:"se_log_buffer_conn_blocking_dequeue,omitempty"`
+
+	// Internal flag that blocks dataplane until all outstanding events are flushed to log-agent process. Field introduced in 21.1.1.
+	SeLogBufferEventsBlockingDequeue *bool `json:"se_log_buffer_events_blocking_dequeue,omitempty"`
 
 	// Enable or disable Large Receive Optimization for vnics. Requires SE Reboot. Field introduced in 18.2.5.
 	SeLro *bool `json:"se_lro,omitempty"`
@@ -694,6 +757,9 @@ type ServiceEngineGroup struct {
 
 	// Enables the use of hyper-threaded cores on SE. Requires SE Reboot. Field introduced in 20.1.1.
 	UseHyperthreadedCores *bool `json:"use_hyperthreaded_cores,omitempty"`
+
+	// Enable legacy model of netlink notifications. Field introduced in 21.1.1.
+	UseLegacyNetlink *bool `json:"use_legacy_netlink,omitempty"`
 
 	// Enable InterSE Objsyc distribution framework. Field introduced in 20.1.3. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	UseObjsync *bool `json:"use_objsync,omitempty"`

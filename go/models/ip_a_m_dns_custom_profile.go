@@ -14,9 +14,12 @@ type IPAMDNSCustomProfile struct {
 	// Custom parameters that will passed to the IPAM/DNS provider including but not limited to provider credentials and API version. Field introduced in 17.1.1.
 	DynamicParams []*CustomParams `json:"dynamic_params,omitempty"`
 
+	// Networks or Subnets to use for Custom IPAM IP allocation. Field introduced in 21.1.1.
+	UsableAllocSubnets []*CustomIPAMSubnet `json:"usable_alloc_subnets,omitempty"`
+
 	// Usable domains. Field introduced in 17.2.2.
 	UsableDomains []string `json:"usable_domains,omitempty"`
 
-	// Usable subnets. Field introduced in 17.2.2.
+	// Usable subnets. Field deprecated in 21.1.1.
 	UsableSubnets []*IPAddrPrefix `json:"usable_subnets,omitempty"`
 }

@@ -9,8 +9,7 @@ package models
 type Tier1LogicalRouterInfo struct {
 
 	// Overlay segment path. Example- /infra/segments/Seg-Web-T1-01. Field introduced in 20.1.1.
-	// Required: true
-	SegmentID *string `json:"segment_id"`
+	SegmentID *string `json:"segment_id,omitempty"`
 
 	// Tier1 logical router path. Example- /infra/tier-1s/T1-01. Field introduced in 20.1.1.
 	// Required: true

@@ -8,6 +8,9 @@ package models
 // swagger:model RmAddVnic
 type RmAddVnic struct {
 
+	// mac_addr associated with the network. Field introduced in 21.1.1.
+	MacAddr *string `json:"mac_addr,omitempty"`
+
 	// network_name of RmAddVnic.
 	NetworkName *string `json:"network_name,omitempty"`
 

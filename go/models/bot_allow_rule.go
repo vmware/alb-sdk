@@ -8,10 +8,18 @@ package models
 // swagger:model BotAllowRule
 type BotAllowRule struct {
 
-	// The action to take. Enum options - BYPASS, CONTINUE. Field introduced in 21.1.1.
+	// The action to take. Enum options - BOT_ACTION_BYPASS, BOT_ACTION_CONTINUE. Field introduced in 21.1.1.
 	// Required: true
 	Action *string `json:"action"`
 
-	// The conditions to match, combined by logical AND. Field introduced in 21.1.1.
-	Conditions []*MatchTarget `json:"conditions,omitempty"`
+	// The condition to match. Field introduced in 21.1.1.
+	// Required: true
+	Condition *MatchTarget `json:"condition"`
+
+	// Rules are processed in order of this index field. Field introduced in 21.1.1.
+	// Required: true
+	Index *int32 `json:"index"`
+
+	// A name describing the rule in a short form. Field introduced in 21.1.1.
+	Name *string `json:"name,omitempty"`
 }

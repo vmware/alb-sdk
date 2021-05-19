@@ -12,23 +12,26 @@ type SecureChannelToken struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Expiry time for secure channel.
+	// Expiry time for auth_token.
 	ExpiryTime *float64 `json:"expiry_time,omitempty"`
 
-	// Placeholder for description of property metadata of obj type SecureChannelToken field type str  type object
+	// Whether this auth_token is used by some node(SE/controller). Field introduced in 21.1.1.
+	InUse *bool `json:"in_use,omitempty"`
+
+	// Metadata associated with auth_token.
 	Metadata []*SecureChannelMetadata `json:"metadata,omitempty"`
 
-	// Name of the object.
+	// Auth_token used for SE/controller authorization.
 	// Required: true
 	Name *string `json:"name"`
 
-	// Unique object identifier of node.
+	// Deprecated  Uuid of SE or controller who is using this auth_token. Field deprecated in 21.1.1.
 	NodeUUID *string `json:"node_uuid,omitempty"`
 
 	// url
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// Unique object identifier of the object.
+	// Auth_token used for SE/controller authorization.
 	UUID *string `json:"uuid,omitempty"`
 }

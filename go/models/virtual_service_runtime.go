@@ -8,7 +8,7 @@ package models
 // swagger:model VirtualServiceRuntime
 type VirtualServiceRuntime struct {
 
-	// Placeholder for description of property apic_extension of obj type VirtualServiceRuntime field type str  type object
+	//  Field deprecated in 21.1.1.
 	ApicExtension *VsApicExtension `json:"apic_extension,omitempty"`
 
 	// controller_ip of VirtualServiceRuntime.

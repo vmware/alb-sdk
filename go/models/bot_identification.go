@@ -14,6 +14,6 @@ type BotIdentification struct {
 	// A free-form *string to identify the client. Field introduced in 21.1.1.
 	Identifier *string `json:"identifier,omitempty"`
 
-	// The Bot Client Type of this identification. Enum options - WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE, CLOUD_SOURCE. Field introduced in 21.1.1.
+	// The Bot Client Type of this identification. Enum options - WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION. Field introduced in 21.1.1.
 	Type *string `json:"type,omitempty"`
 }
