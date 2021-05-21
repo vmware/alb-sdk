@@ -279,6 +279,7 @@ font-style: italic;
   "uuid" : "aeiou",
   "consistency_check_timeout_period" : 123,
   "fatal_error_lease_time" : 123,
+  "enable_per_process_stop" : true,
   "dummy" : 123,
   "secure_channel_se_token_timeout" : 123,
   "vs_se_attach_ip_fail" : 123,
@@ -436,6 +437,7 @@ font-style: italic;
   "uuid" : "aeiou",
   "consistency_check_timeout_period" : 123,
   "fatal_error_lease_time" : 123,
+  "enable_per_process_stop" : true,
   "dummy" : 123,
   "secure_channel_se_token_timeout" : 123,
   "vs_se_attach_ip_fail" : 123,
@@ -593,6 +595,7 @@ font-style: italic;
   "uuid" : "aeiou",
   "consistency_check_timeout_period" : 123,
   "fatal_error_lease_time" : 123,
+  "enable_per_process_stop" : true,
   "dummy" : 123,
   "secure_channel_se_token_timeout" : 123,
   "vs_se_attach_ip_fail" : 123,
@@ -735,6 +738,7 @@ font-style: italic;
 <div class="param">edit_system_limits (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Allow editing of system limits. Keep in mind that these system limits have been carefully selected based on rigorous testing in our testig environments. Modifying these limits could destabilize your cluster. Do this at your own risk!. Field introduced in 20.1.1. </div>
 <div class="param">enable_api_sharding (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> This setting enables the controller leader to shard API requests to the followers (if any). Field introduced in 18.1.5, 18.2.1. </div>
 <div class="param">enable_memory_balancer (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable/Disable Memory Balancer. Field introduced in 17.2.8. </div>
+<div class="param">enable_per_process_stop (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable stopping of individual processes if process cross the given threshold limit, even when the total controller memory usage is belowits threshold limit. Field introduced in 21.1.1. </div>
 <div class="param">enable_resmgr_log_cache_print (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable printing of cached logs inside Resource Manager. Used for debugging purposes only. Field introduced in 21.1.1. </div>
 <div class="param">fatal_error_lease_time (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Unit is SEC. format: int32</div>
 <div class="param">federated_datastore_cleanup_duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Federated datastore will not cleanup diffs unless they are at least this duration in the past. Field introduced in 20.1.1. Unit is HOURS. format: int64</div>
