@@ -276,10 +276,20 @@ font-style: italic;
     "scaleout_cooldown" : 123,
     "scalein_alertconfig_refs" : [ "aeiou" ],
     "max_scalein_adjustment_step" : 123,
+    "scheduled_scalings" : [ {
+      "autoscaling_duration" : 123,
+      "end_date" : "aeiou",
+      "recurrence" : "aeiou",
+      "desired_capacity" : 123,
+      "cron_expression" : "aeiou",
+      "enable" : true,
+      "schedule_max_step" : 123,
+      "start_date" : "aeiou"
+    } ],
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
     "configpb_attributes" : {
-      "version" : 123456789
+      "version" : 123
     },
     "intelligent_scalein_margin" : 123,
     "min_size" : 123,
@@ -360,10 +370,20 @@ font-style: italic;
   "scaleout_cooldown" : 123,
   "scalein_alertconfig_refs" : [ "aeiou" ],
   "max_scalein_adjustment_step" : 123,
+  "scheduled_scalings" : [ {
+    "autoscaling_duration" : 123,
+    "end_date" : "aeiou",
+    "recurrence" : "aeiou",
+    "desired_capacity" : 123,
+    "cron_expression" : "aeiou",
+    "enable" : true,
+    "schedule_max_step" : 123,
+    "start_date" : "aeiou"
+  } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123456789
+    "version" : 123
   },
   "intelligent_scalein_margin" : 123,
   "min_size" : 123,
@@ -515,10 +535,20 @@ font-style: italic;
   "scaleout_cooldown" : 123,
   "scalein_alertconfig_refs" : [ "aeiou" ],
   "max_scalein_adjustment_step" : 123,
+  "scheduled_scalings" : [ {
+    "autoscaling_duration" : 123,
+    "end_date" : "aeiou",
+    "recurrence" : "aeiou",
+    "desired_capacity" : 123,
+    "cron_expression" : "aeiou",
+    "enable" : true,
+    "schedule_max_step" : 123,
+    "start_date" : "aeiou"
+  } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123456789
+    "version" : 123
   },
   "intelligent_scalein_margin" : 123,
   "min_size" : 123,
@@ -610,10 +640,20 @@ font-style: italic;
   "scaleout_cooldown" : 123,
   "scalein_alertconfig_refs" : [ "aeiou" ],
   "max_scalein_adjustment_step" : 123,
+  "scheduled_scalings" : [ {
+    "autoscaling_duration" : 123,
+    "end_date" : "aeiou",
+    "recurrence" : "aeiou",
+    "desired_capacity" : 123,
+    "cron_expression" : "aeiou",
+    "enable" : true,
+    "schedule_max_step" : 123,
+    "start_date" : "aeiou"
+  } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123456789
+    "version" : 123
   },
   "intelligent_scalein_margin" : 123,
   "min_size" : 123,
@@ -705,10 +745,20 @@ font-style: italic;
   "scaleout_cooldown" : 123,
   "scalein_alertconfig_refs" : [ "aeiou" ],
   "max_scalein_adjustment_step" : 123,
+  "scheduled_scalings" : [ {
+    "autoscaling_duration" : 123,
+    "end_date" : "aeiou",
+    "recurrence" : "aeiou",
+    "desired_capacity" : 123,
+    "cron_expression" : "aeiou",
+    "enable" : true,
+    "schedule_max_step" : 123,
+    "start_date" : "aeiou"
+  } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123456789
+    "version" : 123
   },
   "intelligent_scalein_margin" : 123,
   "min_size" : 123,
@@ -747,6 +797,7 @@ font-style: italic;
     <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#KeyValue"><code>KeyValue</code></a></li>
     <li><a href="#RoleFilterMatchLabel"><code>RoleFilterMatchLabel</code></a></li>
+    <li><a href="#ScheduledScaling"><code>ScheduledScaling</code></a></li>
     <li><a href="#ServerAutoScalePolicy"><code>ServerAutoScalePolicy</code></a></li>
     <li><a href="#ServerAutoScalePolicyApiResponse"><code>ServerAutoScalePolicyApiResponse</code></a></li>
   </ol>
@@ -754,7 +805,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -772,6 +823,19 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3 class="field-label"><a name="ScheduledScaling">ScheduledScaling</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">autoscaling_duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Scheduled autoscale duration (in hours). Allowed values are 1-24. Field introduced in 21.1.1. Unit is HOURS. format: int32</div>
+<div class="param">cron_expression (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The cron expression describing desired time for the scheduled autoscale. Field introduced in 21.1.1. </div>
+<div class="param">desired_capacity (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Desired number of servers during Schedule intervals, it may cause scale-in or scale-out based on the value. Field introduced in 21.1.1. format: int32</div>
+<div class="param">enable (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enables the scheduled autoscaling. Field introduced in 21.1.1. </div>
+<div class="param">end_date (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Scheduled autoscale end date in ISO8601 format, said day will be included in schedule and have to be in future and greater than start date. Field introduced in 21.1.1. </div>
+<div class="param">recurrence </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Frequency of the Scheduled autoscale. Enum options - ONCE, EVERY_DAY, EVERY_WEEK, EVERY_MONTH. Field introduced in 21.1.1. </div>
+<div class="param">schedule_max_step (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of simultaneous scale-in/out servers for scheduled autoscale. If this value is 0, regular autoscale policy dictates this. . Field introduced in 21.1.1. format: int32</div>
+<div class="param">start_date (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Scheduled autoscale start date in ISO8601 format, said day will be included in schedule and have to be in future. Field introduced in 21.1.1. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="ServerAutoScalePolicy">ServerAutoScalePolicy</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
@@ -779,19 +843,20 @@ font-style: italic;
 <div class="param">delay_for_server_garbage_collection (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Delay in minutes after which a down server will be removed from Pool. Value 0 disables this functionality. Field introduced in 20.1.3. format: int32</div>
 <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> User defined description for the object. </div>
 <div class="param">intelligent_autoscale (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Use Avi intelligent autoscale algorithm where autoscale is performed by comparing load on the pool against estimated capacity of all the servers. </div>
-<div class="param">intelligent_scalein_margin (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum extra capacity as percentage of load used by the intelligent scheme. Scalein is triggered when available capacity is more than this margin. Allowed values are 1-99. format: int32</div>
-<div class="param">intelligent_scaleout_margin (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Minimum extra capacity as percentage of load used by the intelligent scheme. Scaleout is triggered when available capacity is less than this margin. Allowed values are 1-99. format: int32</div>
+<div class="param">intelligent_scalein_margin (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum extra capacity as percentage of load used by the intelligent scheme. Scale-in is triggered when available capacity is more than this margin. Allowed values are 1-99. format: int32</div>
+<div class="param">intelligent_scaleout_margin (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Minimum extra capacity as percentage of load used by the intelligent scheme. Scale-out is triggered when available capacity is less than this margin. Allowed values are 1-99. format: int32</div>
 <div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.3. Maximum of 4 items allowed. </div>
 <div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. </div>
-<div class="param">max_scalein_adjustment_step (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of servers to scalein simultaneously. The actual number of servers to scalein is chosen such that target number of servers is always more than or equal to the min_size. format: int32</div>
-<div class="param">max_scaleout_adjustment_step (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of servers to scaleout simultaneously. The actual number of servers to scaleout is chosen such that target number of servers is always less than or equal to the max_size. format: int32</div>
-<div class="param">max_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of servers after scaleout. Allowed values are 0-400. format: int32</div>
+<div class="param">max_scalein_adjustment_step (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of servers to scale-in simultaneously. The actual number of servers to scale-in is chosen such that target number of servers is always more than or equal to the min_size. format: int32</div>
+<div class="param">max_scaleout_adjustment_step (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of servers to scale-out simultaneously. The actual number of servers to scale-out is chosen such that target number of servers is always less than or equal to the max_size. format: int32</div>
+<div class="param">max_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of servers after scale-out. Allowed values are 0-400. format: int32</div>
 <div class="param">min_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> No scale-in happens once number of operationally up servers reach min_servers. Allowed values are 0-400. format: int32</div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the object. </div>
-<div class="param">scalein_alertconfig_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Trigger scalein when alerts due to any of these Alert configurations are raised. It is a reference to an object of type AlertConfig. </div>
-<div class="param">scalein_cooldown (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Cooldown period during which no new scalein is triggered to allow previous scalein to successfully complete. Unit is SEC. format: int32</div>
-<div class="param">scaleout_alertconfig_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Trigger scaleout when alerts due to any of these Alert configurations are raised. It is a reference to an object of type AlertConfig. </div>
-<div class="param">scaleout_cooldown (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Cooldown period during which no new scaleout is triggered to allow previous scaleout to successfully complete. Unit is SEC. format: int32</div>
+<div class="param">scalein_alertconfig_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Trigger scale-in when alerts due to any of these Alert configurations are raised. It is a reference to an object of type AlertConfig. </div>
+<div class="param">scalein_cooldown (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Cooldown period during which no new scale-in is triggered to allow previous scale-in to successfully complete. Unit is SEC. format: int32</div>
+<div class="param">scaleout_alertconfig_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Trigger scale-out when alerts due to any of these Alert configurations are raised. It is a reference to an object of type AlertConfig. </div>
+<div class="param">scaleout_cooldown (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Cooldown period during which no new scale-out is triggered to allow previous scale-out to successfully complete. Unit is SEC. format: int32</div>
+<div class="param">scheduled_scalings (optional)</div><div class="param-desc"><span class="param-type"><a href="#ScheduledScaling">array[ScheduledScaling]</a></span> Schedule-based scale-in/out policy. During schedule intervals, metrics based autoscale is not enabled and number of servers will be solely derived from ScheduleScale policy. Field introduced in 21.1.1. Maximum of 1 items allowed. </div>
 <div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
 <div class="param">use_predicted_load (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Use predicted load rather than current load. </div>

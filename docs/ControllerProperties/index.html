@@ -288,7 +288,7 @@ font-style: italic;
   "vs_key_rotate_period" : 123,
   "shared_ssl_certificates" : true,
   "configpb_attributes" : {
-    "version" : 123456789
+    "version" : 123
   },
   "seupgrade_segroup_min_dead_timeout" : 123,
   "se_vnic_cooldown" : 123,
@@ -445,7 +445,7 @@ font-style: italic;
   "vs_key_rotate_period" : 123,
   "shared_ssl_certificates" : true,
   "configpb_attributes" : {
-    "version" : 123456789
+    "version" : 123
   },
   "seupgrade_segroup_min_dead_timeout" : 123,
   "se_vnic_cooldown" : 123,
@@ -602,7 +602,7 @@ font-style: italic;
   "vs_key_rotate_period" : 123,
   "shared_ssl_certificates" : true,
   "configpb_attributes" : {
-    "version" : 123456789
+    "version" : 123
   },
   "seupgrade_segroup_min_dead_timeout" : 123,
   "se_vnic_cooldown" : 123,
@@ -700,7 +700,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -779,7 +779,7 @@ font-style: italic;
 <div class="param">user_agent_cache_config (optional)</div><div class="param-desc"><span class="param-type"><a href="#UserAgentCacheConfig">UserAgentCacheConfig</a></span> Configuration for User-Agent Cache used in Bot Management. Field introduced in 21.1.1. </div>
 <div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Unique object identifier of the object. </div>
 <div class="param">vnic_op_fail_time (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Unit is SEC. format: int32</div>
-<div class="param">vs_apic_scaleout_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time to wait for the scaled out SE to become ready before marking the scaleout done, applies to APIC configuration only. Unit is SEC. format: int32</div>
+<div class="param">vs_apic_scaleout_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time to wait for the scaled out SE to become ready before marking the scaleout done, applies to APIC configuration only. Field deprecated in 21.1.1. Unit is SEC. format: int32</div>
 <div class="param">vs_awaiting_se_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Unit is SEC. format: int32</div>
 <div class="param">vs_key_rotate_period (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Period for rotate VS keys job. Allowed values are 1-1051200. Special values are 0 - &#39;Disabled&#39;. Unit is MIN. format: int32</div>
 <div class="param">vs_scaleout_ready_check_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Interval for checking scaleout_ready status while controller is waiting for ScaleOutReady RPC from the Service Engine. Field introduced in 18.2.2. Unit is SEC. format: int32</div>

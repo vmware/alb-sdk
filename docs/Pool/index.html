@@ -344,6 +344,7 @@ font-style: italic;
     "inline_health_monitor" : true,
     "default_server_port" : 123,
     "resolve_pool_by_dns" : true,
+    "server_disable_type" : "aeiou",
     "lookup_server_by_name" : true,
     "fewest_tasks_feedback_delay" : 123,
     "sni_enabled" : true,
@@ -357,7 +358,7 @@ font-style: italic;
     "cloud_ref" : "aeiou",
     "tier1_lr" : "aeiou",
     "configpb_attributes" : {
-      "version" : 123456789
+      "version" : 123
     },
     "analytics_policy" : {
       "enable_realtime_metrics" : true
@@ -610,6 +611,7 @@ font-style: italic;
   "inline_health_monitor" : true,
   "default_server_port" : 123,
   "resolve_pool_by_dns" : true,
+  "server_disable_type" : "aeiou",
   "lookup_server_by_name" : true,
   "fewest_tasks_feedback_delay" : 123,
   "sni_enabled" : true,
@@ -623,7 +625,7 @@ font-style: italic;
   "cloud_ref" : "aeiou",
   "tier1_lr" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123456789
+    "version" : 123
   },
   "analytics_policy" : {
     "enable_realtime_metrics" : true
@@ -1109,6 +1111,7 @@ font-style: italic;
   "inline_health_monitor" : true,
   "default_server_port" : 123,
   "resolve_pool_by_dns" : true,
+  "server_disable_type" : "aeiou",
   "lookup_server_by_name" : true,
   "fewest_tasks_feedback_delay" : 123,
   "sni_enabled" : true,
@@ -1122,7 +1125,7 @@ font-style: italic;
   "cloud_ref" : "aeiou",
   "tier1_lr" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123456789
+    "version" : 123
   },
   "analytics_policy" : {
     "enable_realtime_metrics" : true
@@ -1646,6 +1649,7 @@ font-style: italic;
   "inline_health_monitor" : true,
   "default_server_port" : 123,
   "resolve_pool_by_dns" : true,
+  "server_disable_type" : "aeiou",
   "lookup_server_by_name" : true,
   "fewest_tasks_feedback_delay" : 123,
   "sni_enabled" : true,
@@ -1659,7 +1663,7 @@ font-style: italic;
   "cloud_ref" : "aeiou",
   "tier1_lr" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123456789
+    "version" : 123
   },
   "analytics_policy" : {
     "enable_realtime_metrics" : true
@@ -1975,6 +1979,7 @@ font-style: italic;
   "inline_health_monitor" : true,
   "default_server_port" : 123,
   "resolve_pool_by_dns" : true,
+  "server_disable_type" : "aeiou",
   "lookup_server_by_name" : true,
   "fewest_tasks_feedback_delay" : 123,
   "sni_enabled" : true,
@@ -1988,7 +1993,7 @@ font-style: italic;
   "cloud_ref" : "aeiou",
   "tier1_lr" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123456789
+    "version" : 123
   },
   "analytics_policy" : {
     "enable_realtime_metrics" : true
@@ -2955,7 +2960,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -3144,7 +3149,7 @@ font-style: italic;
 <div class="param">ab_priority (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Priority of this pool in a A-B pool pair. Internally used. Field deprecated in 18.1.2. format: int32</div>
 <div class="param">analytics_policy (optional)</div><div class="param-desc"><span class="param-type"><a href="#PoolAnalyticsPolicy">PoolAnalyticsPolicy</a></span> Determines analytics settings for the pool. Field introduced in 18.1.5, 18.2.1. </div>
 <div class="param">analytics_profile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Specifies settings related to analytics. It is a reference to an object of type AnalyticsProfile. Field introduced in 18.1.4,18.2.1. </div>
-<div class="param">apic_epg_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Synchronize Cisco APIC EPG members with pool servers. </div>
+<div class="param">apic_epg_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Synchronize Cisco APIC EPG members with pool servers. Field deprecated in 21.1.1. </div>
 <div class="param">append_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Allows the option to append port to hostname in the host header while sending a request to the server. By default, port is appended for non-default ports. This setting will apply for Pool&#39;s &#39;Rewrite Host Header to Server Name&#39;, &#39;Rewrite Host Header to SNI&#39; features and Server&#39;s &#39;Rewrite Host Header&#39; settings as well as HTTP healthmonitors attached to pools. Enum options - NON_DEFAULT_80_443, NEVER, ALWAYS. Field introduced in 21.1.1. </div>
 <div class="param">application_persistence_profile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Persistence will ensure the same user sticks to the same server for a desired duration of time. It is a reference to an object of type ApplicationPersistenceProfile. </div>
 <div class="param">autoscale_launch_config_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> If configured then Avi will trigger orchestration of pool server creation and deletion. It is a reference to an object of type AutoScaleLaunchConfig. </div>
@@ -3201,6 +3206,7 @@ font-style: italic;
 <div class="param">routing_pool (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable to do routing when this pool is selected to send traffic. No servers present in routing pool. Field introduced in 20.1.1. </div>
 <div class="param">server_auto_scale (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Server AutoScale. Not used anymore. Field deprecated in 18.1.2. </div>
 <div class="param">server_count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Field deprecated in 18.2.1. format: int32</div>
+<div class="param">server_disable_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Server graceful disable timeout behaviour. Enum options - DISALLOW_NEW_CONNECTION, ALLOW_NEW_CONNECTION_IF_PERSISTENCE_PRESENT. Field introduced in 21.1.1. </div>
 <div class="param">server_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Fully qualified DNS hostname which will be used in the TLS SNI extension in server connections if SNI is enabled. If no value is specified, Avi will use the incoming host header instead. </div>
 <div class="param">server_reselect (optional)</div><div class="param-desc"><span class="param-type"><a href="#HTTPServerReselect">HTTPServerReselect</a></span> Server reselect configuration for HTTP requests. </div>
 <div class="param">server_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Server timeout value specifies the time within which a server connection needs to be established and a request-response exchange completes between AVI and the server. Value of 0 results in using default timeout of 60 minutes. Allowed values are 0-3600000. Field introduced in 18.1.5,18.2.1. Unit is MILLISECONDS. format: int32</div>
@@ -3309,7 +3315,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ServerScaleInParams">ServerScaleInParams</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">reason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Reason for the manual scalein. </div>
+      <div class="param">reason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Reason for the manual scale-in. </div>
 <div class="param">servers (optional)</div><div class="param-desc"><span class="param-type"><a href="#ServerId">array[ServerId]</a></span> List of server IDs that should be scaled in. </div>
 <div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Unique object identifier of the object. </div>
     </div>  <!-- field-items -->
@@ -3317,7 +3323,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ServerScaleOutParams">ServerScaleOutParams</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">reason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Reason for the manual scaleout. </div>
+      <div class="param">reason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Reason for the manual scale-out. </div>
 <div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Unique object identifier of the object. </div>
     </div>  <!-- field-items -->
   </div>
