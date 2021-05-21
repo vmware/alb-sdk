@@ -291,7 +291,7 @@ font-style: italic;
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
     "configpb_attributes" : {
-      "version" : 123456789
+      "version" : 123
     },
     "country_codes" : [ "aeiou" ],
     "markers" : [ {
@@ -384,7 +384,7 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123456789
+    "version" : 123
   },
   "country_codes" : [ "aeiou" ],
   "markers" : [ {
@@ -548,7 +548,7 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123456789
+    "version" : 123
   },
   "country_codes" : [ "aeiou" ],
   "markers" : [ {
@@ -652,7 +652,7 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123456789
+    "version" : 123
   },
   "country_codes" : [ "aeiou" ],
   "markers" : [ {
@@ -756,7 +756,7 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123456789
+    "version" : 123
   },
   "country_codes" : [ "aeiou" ],
   "markers" : [ {
@@ -803,7 +803,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int64</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -818,7 +818,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
 <div class="param">addrs (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">array[IpAddr]</a></span> Configure IP address(es). </div>
-<div class="param">apic_epg_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Populate IP addresses from members of this Cisco APIC EPG. </div>
+<div class="param">apic_epg_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Populate IP addresses from members of this Cisco APIC EPG. Field deprecated in 21.1.1. </div>
 <div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
 <div class="param">country_codes (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Populate the IP address ranges from the geo database for this country. </div>
 <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> User defined description for the object. </div>
