@@ -15,7 +15,7 @@ type VIMgrVcenterRuntime struct {
 	// api_version of VIMgrVcenterRuntime.
 	APIVersion *string `json:"api_version,omitempty"`
 
-	// Placeholder for description of property apic_mode of obj type VIMgrVcenterRuntime field type str  type boolean
+	//  Field deprecated in 21.1.1.
 	ApicMode *bool `json:"apic_mode,omitempty"`
 
 	//  It is a reference to an object of type Cloud.

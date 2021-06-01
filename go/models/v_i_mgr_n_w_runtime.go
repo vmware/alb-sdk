@@ -15,7 +15,7 @@ type VIMgrNWRuntime struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// apic_vrf_context of VIMgrNWRuntime.
+	//  Field deprecated in 21.1.1.
 	ApicVrfContext *string `json:"apic_vrf_context,omitempty"`
 
 	// Placeholder for description of property auto_expand of obj type VIMgrNWRuntime field type str  type boolean

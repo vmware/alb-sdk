@@ -9,7 +9,8 @@ package models
 type CustomIPAMSubnet struct {
 
 	// Network to use for Custom IPAM IP allocation. Field introduced in 21.1.1.
-	NetworkID *string `json:"network_id,omitempty"`
+	// Required: true
+	NetworkID *string `json:"network_id"`
 
 	// IPv4 subnet to use for Custom IPAM IP allocation. Field introduced in 21.1.1.
 	Subnet *IPAddrPrefix `json:"subnet,omitempty"`

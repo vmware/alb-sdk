@@ -8,7 +8,7 @@ package models
 // swagger:model ServerScaleInParams
 type ServerScaleInParams struct {
 
-	// Reason for the manual scalein.
+	// Reason for the manual scale-in.
 	Reason *string `json:"reason,omitempty"`
 
 	// List of server IDs that should be scaled in.

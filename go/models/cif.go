@@ -8,18 +8,18 @@ package models
 // swagger:model Cif
 type Cif struct {
 
-	// adapter of Cif.
+	//  Field deprecated in 21.1.1.
 	Adapter *string `json:"adapter,omitempty"`
 
-	// cif of Cif.
+	//  Field deprecated in 21.1.1.
 	Cif *string `json:"cif,omitempty"`
 
-	// mac_address of Cif.
+	//  Field deprecated in 21.1.1.
 	MacAddress *string `json:"mac_address,omitempty"`
 
-	// resources of Cif.
+	//  Field deprecated in 21.1.1.
 	Resources []string `json:"resources,omitempty"`
 
-	// Unique object identifier of se.
+	//  Field deprecated in 21.1.1.
 	SeUUID *string `json:"se_uuid,omitempty"`
 }

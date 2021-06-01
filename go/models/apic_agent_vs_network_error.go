@@ -8,15 +8,15 @@ package models
 // swagger:model ApicAgentVsNetworkError
 type ApicAgentVsNetworkError struct {
 
-	// pool_name of ApicAgentVsNetworkError.
+	//  Field deprecated in 21.1.1.
 	PoolName *string `json:"pool_name,omitempty"`
 
-	// pool_network of ApicAgentVsNetworkError.
+	//  Field deprecated in 21.1.1.
 	PoolNetwork *string `json:"pool_network,omitempty"`
 
-	// vs_name of ApicAgentVsNetworkError.
+	//  Field deprecated in 21.1.1.
 	VsName *string `json:"vs_name,omitempty"`
 
-	// vs_network of ApicAgentVsNetworkError.
+	//  Field deprecated in 21.1.1.
 	VsNetwork *string `json:"vs_network,omitempty"`
 }

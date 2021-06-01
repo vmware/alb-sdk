@@ -544,7 +544,7 @@ type ServiceEngineGroup struct {
 	// Toggle support to run SE datapath instances in isolation on exclusive CPUs. This improves latency and performance. However, this could reduce the total number of se_dp instances created on that SE instance. Supported for >= 8 CPUs. Requires SE reboot. Field introduced in 20.1.4.
 	SeDpIsolation *bool `json:"se_dp_isolation,omitempty"`
 
-	// Number of CPUs for non se-dp tasks in SE datapath isolation mode. Translates Total cpus minus 'num_non_dp_cpus' for datapath use.Requires SE reboot. Allowed values are 1-8. Special values are 0- 'auto'. Field introduced in 20.1.4.
+	// Number of CPUs for non se-dp tasks in SE datapath isolation mode. Translates Total cpus minus 'num_non_dp_cpus' for datapath use. It is recommended to reserve an even number of CPUs for hyper-threaded processors. Requires SE reboot. Allowed values are 1-8. Special values are 0- 'auto'. Field introduced in 20.1.4.
 	SeDpIsolationNumNonDpCpus *int32 `json:"se_dp_isolation_num_non_dp_cpus,omitempty"`
 
 	// Internal buffer full indicator on the Service Engine beyond which the unfiltered logs are abandoned. Field introduced in 21.1.1.

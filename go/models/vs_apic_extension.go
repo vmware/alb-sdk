@@ -8,16 +8,16 @@ package models
 // swagger:model VsApicExtension
 type VsApicExtension struct {
 
-	// Unique object identifier of se.
+	//  Field deprecated in 21.1.1.
 	SeUUID *string `json:"se_uuid,omitempty"`
 
-	// Unique object identifier of txn.
+	//  Field deprecated in 21.1.1.
 	// Required: true
 	TxnUUID *string `json:"txn_uuid"`
 
-	// Unique object identifier of the object.
+	//  Field deprecated in 21.1.1.
 	UUID *string `json:"uuid,omitempty"`
 
-	// Placeholder for description of property vnic of obj type VsApicExtension field type str  type object
+	//  Field deprecated in 21.1.1.
 	Vnic []*VsSeVnic `json:"vnic,omitempty"`
 }

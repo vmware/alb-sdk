@@ -96,6 +96,9 @@ type ControllerProperties struct {
 	// Enable/Disable Memory Balancer. Field introduced in 17.2.8.
 	EnableMemoryBalancer *bool `json:"enable_memory_balancer,omitempty"`
 
+	// Enable stopping of individual processes if process cross the given threshold limit, even when the total controller memory usage is belowits threshold limit. Field introduced in 21.1.1.
+	EnablePerProcessStop *bool `json:"enable_per_process_stop,omitempty"`
+
 	// Enable printing of cached logs inside Resource Manager. Used for debugging purposes only. Field introduced in 21.1.1.
 	EnableResmgrLogCachePrint *bool `json:"enable_resmgr_log_cache_print,omitempty"`
 
@@ -229,7 +232,7 @@ type ControllerProperties struct {
 	//  Unit is SEC.
 	VnicOpFailTime *int32 `json:"vnic_op_fail_time,omitempty"`
 
-	// Time to wait for the scaled out SE to become ready before marking the scaleout done, applies to APIC configuration only. Unit is SEC.
+	// Time to wait for the scaled out SE to become ready before marking the scaleout done, applies to APIC configuration only. Field deprecated in 21.1.1. Unit is SEC.
 	VsApicScaleoutTimeout *int32 `json:"vs_apic_scaleout_timeout,omitempty"`
 
 	//  Unit is SEC.

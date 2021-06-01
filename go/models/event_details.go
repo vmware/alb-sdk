@@ -29,13 +29,13 @@ type EventDetails struct {
 	// Placeholder for description of property api_version_deprecated of obj type EventDetails field type str  type object
 	APIVersionDeprecated *APIVersionDeprecated `json:"api_version_deprecated,omitempty"`
 
-	// Placeholder for description of property apic_agent_bd_vrf_details of obj type EventDetails field type str  type object
+	//  Field deprecated in 21.1.1.
 	ApicAgentBdVrfDetails *ApicAgentBridgeDomainVrfChange `json:"apic_agent_bd_vrf_details,omitempty"`
 
-	// Placeholder for description of property apic_agent_generic_details of obj type EventDetails field type str  type object
+	//  Field deprecated in 21.1.1.
 	ApicAgentGenericDetails *ApicAgentGenericEventDetails `json:"apic_agent_generic_details,omitempty"`
 
-	// Placeholder for description of property apic_agent_vs_network_error of obj type EventDetails field type str  type object
+	//  Field deprecated in 21.1.1.
 	ApicAgentVsNetworkError *ApicAgentVsNetworkError `json:"apic_agent_vs_network_error,omitempty"`
 
 	// Placeholder for description of property app_signature_event_data of obj type EventDetails field type str  type object
@@ -224,6 +224,9 @@ type EventDetails struct {
 	// Placeholder for description of property disc_summary of obj type EventDetails field type str  type object
 	DiscSummary *VinfraDiscSummaryDetails `json:"disc_summary,omitempty"`
 
+	// Placeholder for description of property dns_query_error of obj type EventDetails field type str  type object
+	DNSQueryError *DNSQueryError `json:"dns_query_error,omitempty"`
+
 	// Placeholder for description of property dns_sync_info of obj type EventDetails field type str  type object
 	DNSSyncInfo *DNSVsSyncInfo `json:"dns_sync_info,omitempty"`
 
@@ -232,6 +235,9 @@ type EventDetails struct {
 
 	// Placeholder for description of property dos_attack_event_details of obj type EventDetails field type str  type object
 	DosAttackEventDetails *DosAttackEventDetails `json:"dos_attack_event_details,omitempty"`
+
+	// False positive details. Field introduced in 21.1.1.
+	FalsePositiveDetails *FalsePositiveDetails `json:"false_positive_details,omitempty"`
 
 	// Placeholder for description of property gcp_cloud_router_info of obj type EventDetails field type str  type object
 	GcpCloudRouterInfo *GCPCloudRouterUpdate `json:"gcp_cloud_router_info,omitempty"`

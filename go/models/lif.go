@@ -8,15 +8,15 @@ package models
 // swagger:model Lif
 type Lif struct {
 
-	// Placeholder for description of property cifs of obj type Lif field type str  type object
+	//  Field deprecated in 21.1.1.
 	Cifs []*Cif `json:"cifs,omitempty"`
 
-	// lif of Lif.
+	//  Field deprecated in 21.1.1.
 	Lif *string `json:"lif,omitempty"`
 
-	// lif_label of Lif.
+	//  Field deprecated in 21.1.1.
 	LifLabel *string `json:"lif_label,omitempty"`
 
-	// subnet of Lif.
+	//  Field deprecated in 21.1.1.
 	Subnet *string `json:"subnet,omitempty"`
 }

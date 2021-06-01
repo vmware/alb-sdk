@@ -4,9 +4,9 @@ package models
 
 // This file is auto-generated.
 
-// APICLifsRuntimeAPIResponse API c lifs runtime Api response
-// swagger:model APICLifsRuntimeApiResponse
-type APICLifsRuntimeAPIResponse struct {
+// InventoryFaultConfigAPIResponse inventory fault config Api response
+// swagger:model InventoryFaultConfigApiResponse
+type InventoryFaultConfigAPIResponse struct {
 
 	// count
 	// Required: true
@@ -17,5 +17,5 @@ type APICLifsRuntimeAPIResponse struct {
 
 	// results
 	// Required: true
-	Results []*APICLifsRuntime `json:"results,omitempty"`
+	Results []*InventoryFaultConfig `json:"results,omitempty"`
 }
