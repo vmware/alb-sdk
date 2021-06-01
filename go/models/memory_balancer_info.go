@@ -8,16 +8,19 @@ package models
 // swagger:model MemoryBalancerInfo
 type MemoryBalancerInfo struct {
 
-	// Child Process information.
+	// Child process information.
 	Child []*ChildProcessInfo `json:"child,omitempty"`
 
-	// Controller memory.
+	// Current controller memory usage.
 	ControllerMemory *int32 `json:"controller_memory,omitempty"`
 
-	// Limit on the memory (in MB) for the Process.
+	// Holder for debug message. Field introduced in 21.1.1.
+	DebugMessage *string `json:"debug_message,omitempty"`
+
+	// Limit on the memory (in KB) for the Process.
 	Limit *int32 `json:"limit,omitempty"`
 
-	// Amount of memory (in MB) used by the Process.
+	// Amount of memory (in KB) used by the Process.
 	MemoryUsed *int32 `json:"memory_used,omitempty"`
 
 	// PID of the Process.
@@ -25,4 +28,13 @@ type MemoryBalancerInfo struct {
 
 	// Name of the Process.
 	Process *string `json:"process,omitempty"`
+
+	// Current mode of the process. Enum options - REGULAR, DEBUG, DEGRADED, STOP. Field introduced in 21.1.1.
+	ProcessMode *string `json:"process_mode,omitempty"`
+
+	// Current usage trend of the process. Enum options - UPWARD, DOWNWARD, NEUTRAL. Field introduced in 21.1.1.
+	ProcessTrend *string `json:"process_trend,omitempty"`
+
+	// Percent usage of the process limit. Field introduced in 21.1.1.
+	ThresholdPercent *float64 `json:"threshold_percent,omitempty"`
 }

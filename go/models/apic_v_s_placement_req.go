@@ -8,21 +8,21 @@ package models
 // swagger:model ApicVSPlacementReq
 type ApicVSPlacementReq struct {
 
-	// graph of ApicVSPlacementReq.
+	//  Field deprecated in 21.1.1.
 	Graph *string `json:"graph,omitempty"`
 
-	// Placeholder for description of property lifs of obj type ApicVSPlacementReq field type str  type object
+	//  Field deprecated in 21.1.1.
 	Lifs []*Lif `json:"lifs,omitempty"`
 
-	// Placeholder for description of property network_rel of obj type ApicVSPlacementReq field type str  type object
+	//  Field deprecated in 21.1.1.
 	NetworkRel []*APICNetworkRel `json:"network_rel,omitempty"`
 
-	// tenant_name of ApicVSPlacementReq.
+	//  Field deprecated in 21.1.1.
 	TenantName *string `json:"tenant_name,omitempty"`
 
-	// vdev of ApicVSPlacementReq.
+	//  Field deprecated in 21.1.1.
 	Vdev *string `json:"vdev,omitempty"`
 
-	// vgrp of ApicVSPlacementReq.
+	//  Field deprecated in 21.1.1.
 	Vgrp *string `json:"vgrp,omitempty"`
 }

@@ -30,8 +30,11 @@ type WafPolicy struct {
 	// Creator name. Field introduced in 17.2.4.
 	CreatedBy *string `json:"created_by,omitempty"`
 
-	// WAF Rules are categorized in to groups based on their characterization. These groups are system created with CRS groups. Field introduced in 17.2.1.
+	// This entry is deprecated. If you want to change the property of a CRS group or rule (enabled, mode, exclusions), please use the crs_overrides field instead. Field deprecated in 20.1.6. Field introduced in 17.2.1.
 	CrsGroups []*WafRuleGroup `json:"crs_groups,omitempty"`
+
+	// Override attributes for CRS rules. Field introduced in 20.1.6.
+	CrsOverrides []*WafRuleGroupOverrides `json:"crs_overrides,omitempty"`
 
 	//  Field introduced in 17.2.1.
 	Description *string `json:"description,omitempty"`
@@ -85,6 +88,9 @@ type WafPolicy struct {
 
 	// WAF Rules are categorized in to groups based on their characterization. These groups are created by the user and will be  enforced before the CRS groups. Field introduced in 17.2.1.
 	PreCrsGroups []*WafRuleGroup `json:"pre_crs_groups,omitempty"`
+
+	// A resolved version of waf_crs_ref with waf_crs_overrides applied. Field introduced in 20.1.6.
+	ResolvedCrsGroups []*WafRuleGroup `json:"resolved_crs_groups,omitempty"`
 
 	//  It is a reference to an object of type Tenant. Field introduced in 17.2.1.
 	TenantRef *string `json:"tenant_ref,omitempty"`

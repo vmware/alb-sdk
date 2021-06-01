@@ -39,8 +39,6 @@ func TestCreateCloud(t *testing.T) {
 	cloudobj.LicenseType = &lt
 	ltier := "ENTERPRISE_18"
 	cloudobj.LicenseTier = &ltier
-	am := false
-	cloudobj.ApicMode = &am
 	mtu := (int32)(1300)
 	cloudobj.Mtu = &mtu
 

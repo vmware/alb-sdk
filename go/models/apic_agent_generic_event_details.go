@@ -8,36 +8,36 @@ package models
 // swagger:model ApicAgentGenericEventDetails
 type ApicAgentGenericEventDetails struct {
 
-	// contract_graphs of ApicAgentGenericEventDetails.
+	//  Field deprecated in 21.1.1.
 	ContractGraphs []string `json:"contract_graphs,omitempty"`
 
-	// lif_cif_attachment of ApicAgentGenericEventDetails.
+	//  Field deprecated in 21.1.1.
 	LifCifAttachment []string `json:"lif_cif_attachment,omitempty"`
 
-	// lifs of ApicAgentGenericEventDetails.
+	//  Field deprecated in 21.1.1.
 	Lifs []string `json:"lifs,omitempty"`
 
-	// networks of ApicAgentGenericEventDetails.
+	//  Field deprecated in 21.1.1.
 	Networks []string `json:"networks,omitempty"`
 
-	// Unique object identifier of se.
+	//  Field deprecated in 21.1.1.
 	SeUUID *string `json:"se_uuid,omitempty"`
 
-	// service_engine_vnics of ApicAgentGenericEventDetails.
+	//  Field deprecated in 21.1.1.
 	ServiceEngineVnics []string `json:"service_engine_vnics,omitempty"`
 
-	// tenant_name of ApicAgentGenericEventDetails.
+	//  Field deprecated in 21.1.1.
 	TenantName *string `json:"tenant_name,omitempty"`
 
-	// Unique object identifier of tenant.
+	//  Field deprecated in 21.1.1.
 	TenantUUID *string `json:"tenant_uuid,omitempty"`
 
-	// vnic_network_attachment of ApicAgentGenericEventDetails.
+	//  Field deprecated in 21.1.1.
 	VnicNetworkAttachment []string `json:"vnic_network_attachment,omitempty"`
 
-	// vs_name of ApicAgentGenericEventDetails.
+	//  Field deprecated in 21.1.1.
 	VsName *string `json:"vs_name,omitempty"`
 
-	// Unique object identifier of vs.
+	//  Field deprecated in 21.1.1.
 	VsUUID *string `json:"vs_uuid,omitempty"`
 }

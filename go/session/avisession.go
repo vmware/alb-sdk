@@ -1166,6 +1166,15 @@ func (avisess *AviSession) PostRaw(uri string, payload interface{}) ([]byte, err
 	return avisess.fetchBody("POST", uri, resp)
 }
 
+// PutRaw performs a POST API call and returns raw data
+func (avisess *AviSession) PutRaw(uri string, payload interface{}) ([]byte, error) {
+	resp, rerror := avisess.restRequest("PUT", uri, payload, "", nil)
+	if rerror != nil || resp == nil {
+		return nil, rerror
+	}
+	return avisess.fetchBody("PUT", uri, resp)
+}
+
 // GetMultipartRaw performs a GET API call and returns multipart raw data (File Download)
 // The verb input is ignored and kept only for backwards compatibility
 func (avisess *AviSession) GetMultipartRaw(verb string, uri string, file_loc_ptr *os.File, options ...ApiOptionsParams) error {

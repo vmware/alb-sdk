@@ -8,7 +8,7 @@ package models
 // swagger:model ServerScaleOutParams
 type ServerScaleOutParams struct {
 
-	// Reason for the manual scaleout.
+	// Reason for the manual scale-out.
 	Reason *string `json:"reason,omitempty"`
 
 	// Unique object identifier of the object.

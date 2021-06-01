@@ -8,18 +8,18 @@ package models
 // swagger:model ApicAgentBridgeDomainVrfChange
 type ApicAgentBridgeDomainVrfChange struct {
 
-	// bridge_domain of ApicAgentBridgeDomainVrfChange.
+	//  Field deprecated in 21.1.1.
 	BridgeDomain *string `json:"bridge_domain,omitempty"`
 
-	// new_vrf of ApicAgentBridgeDomainVrfChange.
+	//  Field deprecated in 21.1.1.
 	NewVrf *string `json:"new_vrf,omitempty"`
 
-	// old_vrf of ApicAgentBridgeDomainVrfChange.
+	//  Field deprecated in 21.1.1.
 	OldVrf *string `json:"old_vrf,omitempty"`
 
-	// pool_list of ApicAgentBridgeDomainVrfChange.
+	//  Field deprecated in 21.1.1.
 	PoolList []string `json:"pool_list,omitempty"`
 
-	// vs_list of ApicAgentBridgeDomainVrfChange.
+	//  Field deprecated in 21.1.1.
 	VsList []string `json:"vs_list,omitempty"`
 }

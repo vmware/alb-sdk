@@ -8,12 +8,12 @@ package models
 // swagger:model APICNetworkRel
 type APICNetworkRel struct {
 
-	// connector of APICNetworkRel.
+	//  Field deprecated in 21.1.1.
 	Connector *string `json:"connector,omitempty"`
 
-	// rel_key of APICNetworkRel.
+	//  Field deprecated in 21.1.1.
 	RelKey *string `json:"rel_key,omitempty"`
 
-	// target_network of APICNetworkRel.
+	//  Field deprecated in 21.1.1.
 	TargetNetwork *string `json:"target_network,omitempty"`
 }

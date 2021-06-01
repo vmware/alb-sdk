@@ -9,5 +9,5 @@ package models
 type ConfigPbAttributes struct {
 
 	// Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.
-	Version *int64 `json:"version,omitempty"`
+	Version *int32 `json:"version,omitempty"`
 }

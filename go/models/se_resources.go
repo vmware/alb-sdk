@@ -25,7 +25,7 @@ type SeResources struct {
 	// Required: true
 	Memory *int32 `json:"memory"`
 
-	// Indicates the number of datapath processes spawned. Field introduced in 20.1.1.
+	// Indicates the number of active datapath processes. Field introduced in 20.1.1.
 	NumDatapathProcesses *int32 `json:"num_datapath_processes,omitempty"`
 
 	// Number of num_vcpus.

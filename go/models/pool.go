@@ -27,7 +27,7 @@ type Pool struct {
 	// Specifies settings related to analytics. It is a reference to an object of type AnalyticsProfile. Field introduced in 18.1.4,18.2.1.
 	AnalyticsProfileRef *string `json:"analytics_profile_ref,omitempty"`
 
-	// Synchronize Cisco APIC EPG members with pool servers.
+	// Synchronize Cisco APIC EPG members with pool servers. Field deprecated in 21.1.1.
 	ApicEpgName *string `json:"apic_epg_name,omitempty"`
 
 	// Allows the option to append port to hostname in the host header while sending a request to the server. By default, port is appended for non-default ports. This setting will apply for Pool's 'Rewrite Host Header to Server Name', 'Rewrite Host Header to SNI' features and Server's 'Rewrite Host Header' settings as well as HTTP healthmonitors attached to pools. Enum options - NON_DEFAULT_80_443, NEVER, ALWAYS. Field introduced in 21.1.1.
@@ -200,13 +200,16 @@ type Pool struct {
 	//  Field deprecated in 18.2.1.
 	ServerCount *int32 `json:"server_count,omitempty"`
 
+	// Server graceful disable timeout behaviour. Enum options - DISALLOW_NEW_CONNECTION, ALLOW_NEW_CONNECTION_IF_PERSISTENCE_PRESENT. Field introduced in 21.1.1.
+	ServerDisableType *string `json:"server_disable_type,omitempty"`
+
 	// Fully qualified DNS hostname which will be used in the TLS SNI extension in server connections if SNI is enabled. If no value is specified, Avi will use the incoming host header instead.
 	ServerName *string `json:"server_name,omitempty"`
 
 	// Server reselect configuration for HTTP requests.
 	ServerReselect *HttpserverReselect `json:"server_reselect,omitempty"`
 
-	// Server timeout value specifies the time within which a server connection needs to be established and a request-response exchange completes between AVI and the server. Value of 0 results in using default timeout of 60 minutes. Allowed values are 0-3600000. Field introduced in 18.1.5,18.2.1. Unit is MILLISECONDS.
+	// Server timeout value specifies the time within which a server connection needs to be established and a request-response exchange completes between AVI and the server. Value of 0 results in using default timeout of 60 minutes. Allowed values are 0-21600000. Field introduced in 18.1.5,18.2.1. Unit is MILLISECONDS.
 	ServerTimeout *int32 `json:"server_timeout,omitempty"`
 
 	// The pool directs load balanced traffic to this list of destination servers. The servers can be configured by IP address, name, network or via IP Address Group. Maximum of 5000 items allowed.

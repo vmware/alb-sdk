@@ -12,7 +12,13 @@ type WafApplicationSignatures struct {
 	// Required: true
 	ProviderRef *string `json:"provider_ref"`
 
-	// The active application specific rules. You can change attributes like enabled, waf mode and exclusions, but not the rules itself. To change the rules, you can change the tags or the rule provider. Field introduced in 20.1.1.
+	// A resolved version of the active application specific rules together with the overrides. Field introduced in 20.1.6.
+	ResolvedRules []*WafRule `json:"resolved_rules,omitempty"`
+
+	// Override attributes of application signature rules. Field introduced in 20.1.6.
+	RuleOverrides []*WafRuleOverrides `json:"rule_overrides,omitempty"`
+
+	// This entry is deprecated. If you want to deactivate a certain rule, please use the rule_overrides field instead. Field deprecated in 20.1.6. Field introduced in 20.1.1.
 	Rules []*WafRule `json:"rules,omitempty"`
 
 	// The version in use of the provided ruleset. Field introduced in 20.1.1.

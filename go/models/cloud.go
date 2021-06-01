@@ -12,10 +12,10 @@ type Cloud struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Placeholder for description of property apic_configuration of obj type Cloud field type str  type object
+	//  Field deprecated in 21.1.1.
 	ApicConfiguration *APICConfiguration `json:"apic_configuration,omitempty"`
 
-	//  Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
+	//  Field deprecated in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
 	ApicMode *bool `json:"apic_mode,omitempty"`
 
 	// CloudConnector polling interval in seconds for external autoscale groups, minimum 60 seconds. Allowed values are 60-3600. Field introduced in 18.2.2. Unit is SECONDS. Allowed in Basic(Allowed values- 60) edition, Essentials(Allowed values- 60) edition, Enterprise edition.
@@ -91,7 +91,7 @@ type Cloud struct {
 	// Required: true
 	Name *string `json:"name"`
 
-	// Configuration parameters for NSX Manager. Field introduced in 17.1.1.
+	// Configuration parameters for NSX Manager. Field deprecated in 21.1.1. Field introduced in 17.1.1.
 	NsxConfiguration *NsxConfiguration `json:"nsx_configuration,omitempty"`
 
 	// NSX-T Cloud Platform Configuration. Field introduced in 20.1.1. Allowed in Essentials edition, Enterprise edition.
