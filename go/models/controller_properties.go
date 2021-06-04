@@ -48,6 +48,9 @@ type ControllerProperties struct {
 	// Use Ansible for SE creation in baremetal. Field introduced in 17.2.2.
 	BmUseAnsible *bool `json:"bm_use_ansible,omitempty"`
 
+	// Enforce VsVip FQDN syntax checks. Field introduced in 20.1.6.
+	CheckVsvipFqdnSyntax *bool `json:"check_vsvip_fqdn_syntax,omitempty"`
+
 	// Period for auth token cleanup job. Field introduced in 18.1.1. Unit is MIN.
 	CleanupExpiredAuthtokenTimeoutPeriod *int32 `json:"cleanup_expired_authtoken_timeout_period,omitempty"`
 
@@ -99,7 +102,7 @@ type ControllerProperties struct {
 	// Enable stopping of individual processes if process cross the given threshold limit, even when the total controller memory usage is belowits threshold limit. Field introduced in 21.1.1.
 	EnablePerProcessStop *bool `json:"enable_per_process_stop,omitempty"`
 
-	// Enable printing of cached logs inside Resource Manager. Used for debugging purposes only. Field introduced in 21.1.1.
+	// Enable printing of cached logs inside Resource Manager. Used for debugging purposes only. Field introduced in 20.1.6.
 	EnableResmgrLogCachePrint *bool `json:"enable_resmgr_log_cache_print,omitempty"`
 
 	//  Unit is SEC.

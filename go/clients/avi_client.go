@@ -64,7 +64,6 @@ type AviClient struct {
 	IcapProfile                     *IcapProfileClient
 	Image                           *ImageClient
 	InventoryFaultConfig            *InventoryFaultConfigClient
-	JWTProfile                      *JWTProfileClient
 	JWTServerProfile                *JWTServerProfileClient
 	JobEntry                        *JobEntryClient
 	L4PolicySet                     *L4PolicySetClient
@@ -204,7 +203,6 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.IcapProfile = NewIcapProfileClient(aviSession)
 	aviClient.Image = NewImageClient(aviSession)
 	aviClient.InventoryFaultConfig = NewInventoryFaultConfigClient(aviSession)
-	aviClient.JWTProfile = NewJWTProfileClient(aviSession)
 	aviClient.JWTServerProfile = NewJWTServerProfileClient(aviSession)
 	aviClient.JobEntry = NewJobEntryClient(aviSession)
 	aviClient.L4PolicySet = NewL4PolicySetClient(aviSession)

@@ -15,6 +15,9 @@ type JWTServerProfile struct {
 	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
+	// This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster.  If the field is set to true, then the object is replicated across the federation.  . Field introduced in 20.1.6.
+	IsFederated *bool `json:"is_federated,omitempty"`
+
 	// Uniquely identifiable name of the Token Issuer. Field introduced in 20.1.3.
 	// Required: true
 	Issuer *string `json:"issuer"`
