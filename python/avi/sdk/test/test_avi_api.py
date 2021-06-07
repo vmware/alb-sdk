@@ -21,6 +21,7 @@ import vcr
 import copy
 from datetime import timedelta
 from parameterized import parameterized
+from base64 import b64encode
 
 gSAMPLE_CONFIG = None
 api = None
@@ -841,10 +842,29 @@ class Test(unittest.TestCase):
     def test_basic_auth(self):
         basic_vs_cfg = gSAMPLE_CONFIG["BasicVS"]
         vs_obj = basic_vs_cfg["vs_obj"]
-        headers = {
-            'X-Avi-Version': login_info.get("api_version", gapi_version),
-            'Authorization': 'Basic YWRtaW46YXZpMTIzJCU='
-        }
+        try:
+            username = login_info.get("admin", "admin")
+            password = login_info.get("password", "fr3sca$%^")
+            api = ApiSession.get_session(login_info.get('controller_ip'), username,
+                        password, tenant=login_info.get("tenant", "admin"),
+                        tenant_uuid=login_info.get("tenant_uuid", None),
+                        api_version=login_info.get("api_version", gapi_version),
+                        verify=False)
+            resp = api.get('systemconfiguration', tenant='admin')
+            res = resp.json()
+            res['portal_configuration']['allow_basic_authentication'] = True
+            sysresp = api.put('systemconfiguration', data=res, tenant='admin')
+            assert sysresp.status_code == 200
+            ApiSession.clear_cached_sessions()
+            headers = {
+                "X-Avi-Version": login_info.get("api_version", gapi_version),
+                "Authorization": "Basic {}".format(b64encode(bytes("{}:{}".format(username, password), encoding="utf8")).decode("ascii"))
+            }
+        except Exception as e:
+            headers = {
+                'X-Avi-Version': login_info.get("api_version", gapi_version),
+                'Authorization': 'Basic YWRtaW46YXZpMTIzJCU='
+            }
         aviapi = ApiSession(controller_ip=login_info.get('controller_ip'), username=login_info.get('username'),
                          api_version=login_info.get("api_version", gapi_version), user_hdrs=headers)
 
