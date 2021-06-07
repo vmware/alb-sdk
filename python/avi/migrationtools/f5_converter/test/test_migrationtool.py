@@ -532,8 +532,7 @@ class TestF5Converter:
                 skip_pki=True)
 
     @pytest.mark.skip_travis
-    @pytest.mark.TCID1_48_1497_27_0
-    def test_reboot_clean_v10_17_1_1(self, cleanup):
+    def test_reboot_clean_v10_17_1_1_before_upload_config(self, cleanup):
         """""
         Verify Controller v17.1.1 is running and clean reboot avi api.
         After controller setup completed, upload the AviInternal
