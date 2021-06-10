@@ -304,6 +304,10 @@ font-style: italic;
         "description" : "aeiou"
       } ]
     } ],
+    "markers" : [ {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    } ],
     "uuid" : "aeiou",
     "version" : "aeiou",
     "url" : "aeiou",
@@ -405,6 +409,10 @@ font-style: italic;
       },
       "description" : "aeiou"
     } ]
+  } ],
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
   } ],
   "uuid" : "aeiou",
   "version" : "aeiou",
@@ -579,6 +587,10 @@ font-style: italic;
       "description" : "aeiou"
     } ]
   } ],
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "uuid" : "aeiou",
   "version" : "aeiou",
   "url" : "aeiou",
@@ -691,6 +703,10 @@ font-style: italic;
       },
       "description" : "aeiou"
     } ]
+  } ],
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
   } ],
   "uuid" : "aeiou",
   "version" : "aeiou",
@@ -805,6 +821,10 @@ font-style: italic;
       "description" : "aeiou"
     } ]
   } ],
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
   "uuid" : "aeiou",
   "version" : "aeiou",
   "url" : "aeiou",
@@ -837,6 +857,7 @@ font-style: italic;
     <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#IpAddr"><code>IpAddr</code></a></li>
     <li><a href="#IpAddrPrefix"><code>IpAddrPrefix</code></a></li>
+    <li><a href="#RoleFilterMatchLabel"><code>RoleFilterMatchLabel</code></a></li>
     <li><a href="#WafCRS"><code>WafCRS</code></a></li>
     <li><a href="#WafCRSApiResponse"><code>WafCRSApiResponse</code></a></li>
     <li><a href="#WafExcludeListEntry"><code>WafExcludeListEntry</code></a></li>
@@ -866,6 +887,13 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3 class="field-label"><a name="RoleFilterMatchLabel">RoleFilterMatchLabel</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key for filter match. Field introduced in 20.1.3. </div>
+<div class="param">values (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Values for filter match. Multiple values will be evaluated as OR. Example  key &#x3D; value1 OR key &#x3D; value2. Behavior for match is key &#x3D; * if this field is empty. Field introduced in 20.1.3. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="WafCRS">WafCRS</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
@@ -873,6 +901,7 @@ font-style: italic;
 <div class="param">description </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A short description of this ruleset. Field introduced in 18.1.1. </div>
 <div class="param">groups (optional)</div><div class="param-desc"><span class="param-type"><a href="#WafRuleGroup">array[WafRuleGroup]</a></span> WAF Rules are sorted in groups based on their characterization. Field introduced in 18.1.1. Maximum of 64 items allowed. </div>
 <div class="param">integrity </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Integrity protection value. Field introduced in 18.2.1. </div>
+<div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.6. </div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of this ruleset object. Field introduced in 18.2.1. </div>
 <div class="param">release_date </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The release date of this version in RFC 3339 / ISO 8601 format. Field introduced in 18.1.1. </div>
 <div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 18.2.1. </div>
