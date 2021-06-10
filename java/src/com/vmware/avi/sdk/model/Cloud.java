@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Cloud extends AviRestResource  {
     @JsonProperty("apic_configuration")
-    private APICConfiguration apicConfiguration = null;
+    private APICConfiguration apicConfiguration;
 
     @JsonProperty("apic_mode")
-    private Boolean apicMode = false;
+    private Boolean apicMode;
 
     @JsonProperty("autoscale_polling_interval")
     private Integer autoscalePollingInterval = 60;
@@ -97,7 +97,7 @@ public class Cloud extends AviRestResource  {
     private String name = null;
 
     @JsonProperty("nsx_configuration")
-    private NsxConfiguration nsxConfiguration = null;
+    private NsxConfiguration nsxConfiguration;
 
     @JsonProperty("nsxt_configuration")
     private NsxtConfiguration nsxtConfiguration = null;
@@ -151,8 +151,7 @@ public class Cloud extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property apic_configuration of obj type cloud field type str  type ref.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return apicConfiguration
      */
     public APICConfiguration getApicConfiguration() {
@@ -161,8 +160,7 @@ public class Cloud extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property apic_configuration of obj type cloud field type str  type ref.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param apicConfiguration set the apicConfiguration.
      */
     public void setApicConfiguration(APICConfiguration apicConfiguration) {
@@ -171,8 +169,8 @@ public class Cloud extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Field deprecated in 21.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return apicMode
      */
     public Boolean getApicMode() {
@@ -181,8 +179,8 @@ public class Cloud extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
+     * Field deprecated in 21.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param apicMode set the apicMode.
      */
     public void setApicMode(Boolean  apicMode) {
@@ -737,8 +735,8 @@ public class Cloud extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Configuration parameters for nsx manager.
+     * Field deprecated in 21.1.1.
      * Field introduced in 17.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxConfiguration
      */
     public NsxConfiguration getNsxConfiguration() {
@@ -748,8 +746,8 @@ public class Cloud extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Configuration parameters for nsx manager.
+     * Field deprecated in 21.1.1.
      * Field introduced in 17.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxConfiguration set the nsxConfiguration.
      */
     public void setNsxConfiguration(NsxConfiguration nsxConfiguration) {

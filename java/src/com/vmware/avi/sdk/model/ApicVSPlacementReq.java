@@ -22,29 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ApicVSPlacementReq  {
     @JsonProperty("graph")
-    private String graph = null;
+    private String graph;
 
     @JsonProperty("lifs")
-    private List<Lif> lifs = null;
+    private List<Lif> lifs;
 
     @JsonProperty("network_rel")
-    private List<APICNetworkRel> networkRel = null;
+    private List<APICNetworkRel> networkRel;
 
     @JsonProperty("tenant_name")
-    private String tenantName = null;
+    private String tenantName;
 
     @JsonProperty("vdev")
-    private String vdev = null;
+    private String vdev;
 
     @JsonProperty("vgrp")
-    private String vgrp = null;
+    private String vgrp;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property graph of obj type apicvsplacementreq field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return graph
      */
     public String getGraph() {
@@ -53,8 +52,7 @@ public class ApicVSPlacementReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property graph of obj type apicvsplacementreq field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param graph set the graph.
      */
     public void setGraph(String  graph) {
@@ -62,8 +60,7 @@ public class ApicVSPlacementReq  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property lifs of obj type apicvsplacementreq field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return lifs
      */
     public List<Lif> getLifs() {
@@ -72,8 +69,7 @@ public class ApicVSPlacementReq  {
 
     /**
      * This is the setter method. this will set the lifs
-     * Placeholder for description of property lifs of obj type apicvsplacementreq field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return lifs
      */
     public void setLifs(List<Lif>  lifs) {
@@ -82,8 +78,7 @@ public class ApicVSPlacementReq  {
 
     /**
      * This is the setter method this will set the lifs
-     * Placeholder for description of property lifs of obj type apicvsplacementreq field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return lifs
      */
     public ApicVSPlacementReq addLifsItem(Lif lifsItem) {
@@ -95,8 +90,7 @@ public class ApicVSPlacementReq  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property network_rel of obj type apicvsplacementreq field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return networkRel
      */
     public List<APICNetworkRel> getNetworkRel() {
@@ -105,8 +99,7 @@ public class ApicVSPlacementReq  {
 
     /**
      * This is the setter method. this will set the networkRel
-     * Placeholder for description of property network_rel of obj type apicvsplacementreq field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return networkRel
      */
     public void setNetworkRel(List<APICNetworkRel>  networkRel) {
@@ -115,8 +108,7 @@ public class ApicVSPlacementReq  {
 
     /**
      * This is the setter method this will set the networkRel
-     * Placeholder for description of property network_rel of obj type apicvsplacementreq field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return networkRel
      */
     public ApicVSPlacementReq addNetworkRelItem(APICNetworkRel networkRelItem) {
@@ -129,8 +121,7 @@ public class ApicVSPlacementReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property tenant_name of obj type apicvsplacementreq field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return tenantName
      */
     public String getTenantName() {
@@ -139,8 +130,7 @@ public class ApicVSPlacementReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property tenant_name of obj type apicvsplacementreq field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param tenantName set the tenantName.
      */
     public void setTenantName(String  tenantName) {
@@ -149,8 +139,7 @@ public class ApicVSPlacementReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vdev of obj type apicvsplacementreq field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return vdev
      */
     public String getVdev() {
@@ -159,8 +148,7 @@ public class ApicVSPlacementReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vdev of obj type apicvsplacementreq field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param vdev set the vdev.
      */
     public void setVdev(String  vdev) {
@@ -169,8 +157,7 @@ public class ApicVSPlacementReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vgrp of obj type apicvsplacementreq field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return vgrp
      */
     public String getVgrp() {
@@ -179,8 +166,7 @@ public class ApicVSPlacementReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vgrp of obj type apicvsplacementreq field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param vgrp set the vgrp.
      */
     public void setVgrp(String  vgrp) {

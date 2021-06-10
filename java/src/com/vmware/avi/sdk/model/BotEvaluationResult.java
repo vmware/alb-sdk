@@ -85,7 +85,7 @@ public class BotEvaluationResult  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * The resultion bot identification.
+     * The resulting bot identification.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return identification
@@ -96,7 +96,7 @@ public class BotEvaluationResult  {
 
     /**
      * This is the setter method to the attribute.
-     * The resultion bot identification.
+     * The resulting bot identification.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param identification set the identification.

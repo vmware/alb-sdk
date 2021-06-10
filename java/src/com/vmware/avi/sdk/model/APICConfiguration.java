@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class APICConfiguration  {
     @JsonProperty("apic_admin_tenant")
-    private String apicAdminTenant = "common";
+    private String apicAdminTenant;
 
     @JsonProperty("apic_domain")
-    private String apicDomain = null;
+    private String apicDomain;
 
     @JsonProperty("apic_name")
-    private List<String> apicName = null;
+    private List<String> apicName;
 
     @JsonProperty("apic_password")
-    private String apicPassword = null;
+    private String apicPassword;
 
     @JsonProperty("apic_product")
     private String apicProduct;
 
     @JsonProperty("apic_username")
-    private String apicUsername = null;
+    private String apicUsername;
 
     @JsonProperty("apic_vendor")
     private String apicVendor;
@@ -49,7 +49,7 @@ public class APICConfiguration  {
     private String aviControllerUsername;
 
     @JsonProperty("context_aware")
-    private String contextAware = "SINGLE_CONTEXT";
+    private String contextAware;
 
     @JsonProperty("deployment")
     private String deployment;
@@ -61,7 +61,7 @@ public class APICConfiguration  {
     private String minor;
 
     @JsonProperty("se_tunnel_mode")
-    private Boolean seTunnelMode = true;
+    private Boolean seTunnelMode;
 
     @JsonProperty("version")
     private String version;
@@ -71,7 +71,7 @@ public class APICConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of the avi specific tenant created within apic.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "common".
+     * Field deprecated in 21.1.1.
      * @return apicAdminTenant
      */
     public String getApicAdminTenant() {
@@ -81,7 +81,7 @@ public class APICConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Name of the avi specific tenant created within apic.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "common".
+     * Field deprecated in 21.1.1.
      * @param apicAdminTenant set the apicAdminTenant.
      */
     public void setApicAdminTenant(String  apicAdminTenant) {
@@ -91,7 +91,7 @@ public class APICConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Vcenter's virtual machine manager domain within apic.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return apicDomain
      */
     public String getApicDomain() {
@@ -101,7 +101,7 @@ public class APICConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Vcenter's virtual machine manager domain within apic.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param apicDomain set the apicDomain.
      */
     public void setApicDomain(String  apicDomain) {
@@ -110,7 +110,7 @@ public class APICConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * The hostname or ip address of the apic controller.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return apicName
      */
     public List<String> getApicName() {
@@ -120,7 +120,7 @@ public class APICConfiguration  {
     /**
      * This is the setter method. this will set the apicName
      * The hostname or ip address of the apic controller.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return apicName
      */
     public void setApicName(List<String>  apicName) {
@@ -130,7 +130,7 @@ public class APICConfiguration  {
     /**
      * This is the setter method this will set the apicName
      * The hostname or ip address of the apic controller.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return apicName
      */
     public APICConfiguration addApicNameItem(String apicNameItem) {
@@ -144,7 +144,7 @@ public class APICConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * The password avi vantage will use when authenticating with apic.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return apicPassword
      */
     public String getApicPassword() {
@@ -154,7 +154,7 @@ public class APICConfiguration  {
     /**
      * This is the setter method to the attribute.
      * The password avi vantage will use when authenticating with apic.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param apicPassword set the apicPassword.
      */
     public void setApicPassword(String  apicPassword) {
@@ -182,7 +182,7 @@ public class APICConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * The username avi vantage will use when authenticating with apic.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return apicUsername
      */
     public String getApicUsername() {
@@ -192,7 +192,7 @@ public class APICConfiguration  {
     /**
      * This is the setter method to the attribute.
      * The username avi vantage will use when authenticating with apic.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param apicUsername set the apicUsername.
      */
     public void setApicUsername(String  apicUsername) {
@@ -261,7 +261,7 @@ public class APICConfiguration  {
      * This is the getter method this will return the attribute value.
      * Context aware for supporting service graphs across vrfs.
      * Enum options - SINGLE_CONTEXT, MULTI_CONTEXT.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "SINGLE_CONTEXT".
+     * Field deprecated in 21.1.1.
      * @return contextAware
      */
     public String getContextAware() {
@@ -272,7 +272,7 @@ public class APICConfiguration  {
      * This is the setter method to the attribute.
      * Context aware for supporting service graphs across vrfs.
      * Enum options - SINGLE_CONTEXT, MULTI_CONTEXT.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "SINGLE_CONTEXT".
+     * Field deprecated in 21.1.1.
      * @param contextAware set the contextAware.
      */
     public void setContextAware(String  contextAware) {
@@ -343,8 +343,8 @@ public class APICConfiguration  {
      * This is the getter method this will return the attribute value.
      * Determines if dsr from secondary se is active or not  false   dsr active.
      * Please ensure that apic bd's endpoint dataplane learning is disabled true    disable dsr unconditionally.
+     * Field deprecated in 21.1.1.
      * Field introduced in 17.2.10,18.1.2.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return seTunnelMode
      */
     public Boolean getSeTunnelMode() {
@@ -355,8 +355,8 @@ public class APICConfiguration  {
      * This is the setter method to the attribute.
      * Determines if dsr from secondary se is active or not  false   dsr active.
      * Please ensure that apic bd's endpoint dataplane learning is disabled true    disable dsr unconditionally.
+     * Field deprecated in 21.1.1.
      * Field introduced in 17.2.10,18.1.2.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param seTunnelMode set the seTunnelMode.
      */
     public void setSeTunnelMode(Boolean  seTunnelMode) {

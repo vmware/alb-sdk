@@ -22,23 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ApicAgentVsNetworkError  {
     @JsonProperty("pool_name")
-    private String poolName = null;
+    private String poolName;
 
     @JsonProperty("pool_network")
-    private String poolNetwork = null;
+    private String poolNetwork;
 
     @JsonProperty("vs_name")
-    private String vsName = null;
+    private String vsName;
 
     @JsonProperty("vs_network")
-    private String vsNetwork = null;
+    private String vsNetwork;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property pool_name of obj type apicagentvsnetworkerror field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return poolName
      */
     public String getPoolName() {
@@ -47,8 +46,7 @@ public class ApicAgentVsNetworkError  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property pool_name of obj type apicagentvsnetworkerror field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param poolName set the poolName.
      */
     public void setPoolName(String  poolName) {
@@ -57,8 +55,7 @@ public class ApicAgentVsNetworkError  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property pool_network of obj type apicagentvsnetworkerror field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return poolNetwork
      */
     public String getPoolNetwork() {
@@ -67,8 +64,7 @@ public class ApicAgentVsNetworkError  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property pool_network of obj type apicagentvsnetworkerror field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param poolNetwork set the poolNetwork.
      */
     public void setPoolNetwork(String  poolNetwork) {
@@ -77,8 +73,7 @@ public class ApicAgentVsNetworkError  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vs_name of obj type apicagentvsnetworkerror field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return vsName
      */
     public String getVsName() {
@@ -87,8 +82,7 @@ public class ApicAgentVsNetworkError  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vs_name of obj type apicagentvsnetworkerror field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param vsName set the vsName.
      */
     public void setVsName(String  vsName) {
@@ -97,8 +91,7 @@ public class ApicAgentVsNetworkError  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vs_network of obj type apicagentvsnetworkerror field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return vsNetwork
      */
     public String getVsNetwork() {
@@ -107,8 +100,7 @@ public class ApicAgentVsNetworkError  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vs_network of obj type apicagentvsnetworkerror field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param vsNetwork set the vsNetwork.
      */
     public void setVsNetwork(String  vsNetwork) {

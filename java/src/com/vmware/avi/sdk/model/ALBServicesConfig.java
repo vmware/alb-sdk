@@ -313,6 +313,7 @@ public class ALBServicesConfig extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Secure the controller to pulse communication over tls.
      * Field introduced in 20.1.3.
+     * Allowed in basic edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return useTls
      */
@@ -324,6 +325,7 @@ public class ALBServicesConfig extends AviRestResource  {
      * This is the setter method to the attribute.
      * Secure the controller to pulse communication over tls.
      * Field introduced in 20.1.3.
+     * Allowed in basic edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param useTls set the useTls.
      */

@@ -24,6 +24,9 @@ public class GCPSeGroupConfig  {
     @JsonProperty("backend_data_vpc_network_name")
     private String backendDataVpcNetworkName = null;
 
+    @JsonProperty("backend_data_vpc_project_id")
+    private String backendDataVpcProjectId = null;
+
     @JsonProperty("backend_data_vpc_subnet_name")
     private String backendDataVpcSubnetName = null;
 
@@ -49,6 +52,30 @@ public class GCPSeGroupConfig  {
      */
     public void setBackendDataVpcNetworkName(String  backendDataVpcNetworkName) {
         this.backendDataVpcNetworkName = backendDataVpcNetworkName;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Project id of the service engine backend data network.
+     * By default, service engine project id will be used.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return backendDataVpcProjectId
+     */
+    public String getBackendDataVpcProjectId() {
+        return backendDataVpcProjectId;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Project id of the service engine backend data network.
+     * By default, service engine project id will be used.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param backendDataVpcProjectId set the backendDataVpcProjectId.
+     */
+    public void setBackendDataVpcProjectId(String  backendDataVpcProjectId) {
+        this.backendDataVpcProjectId = backendDataVpcProjectId;
     }
 
     /**
@@ -84,7 +111,8 @@ public class GCPSeGroupConfig  {
       }
       GCPSeGroupConfig objGCPSeGroupConfig = (GCPSeGroupConfig) o;
       return   Objects.equals(this.backendDataVpcNetworkName, objGCPSeGroupConfig.backendDataVpcNetworkName)&&
-  Objects.equals(this.backendDataVpcSubnetName, objGCPSeGroupConfig.backendDataVpcSubnetName);
+  Objects.equals(this.backendDataVpcSubnetName, objGCPSeGroupConfig.backendDataVpcSubnetName)&&
+  Objects.equals(this.backendDataVpcProjectId, objGCPSeGroupConfig.backendDataVpcProjectId);
     }
 
     @Override
@@ -92,6 +120,7 @@ public class GCPSeGroupConfig  {
       StringBuilder sb = new StringBuilder();
       sb.append("class GCPSeGroupConfig {\n");
                   sb.append("    backendDataVpcNetworkName: ").append(toIndentedString(backendDataVpcNetworkName)).append("\n");
+                        sb.append("    backendDataVpcProjectId: ").append(toIndentedString(backendDataVpcProjectId)).append("\n");
                         sb.append("    backendDataVpcSubnetName: ").append(toIndentedString(backendDataVpcSubnetName)).append("\n");
                   sb.append("}");
       return sb.toString();

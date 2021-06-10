@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NsxConfiguration  {
     @JsonProperty("avi_nsx_prefix")
-    private String aviNsxPrefix = null;
+    private String aviNsxPrefix;
 
     @JsonProperty("nsx_manager_name")
-    private String nsxManagerName = null;
+    private String nsxManagerName;
 
     @JsonProperty("nsx_manager_password")
-    private String nsxManagerPassword = null;
+    private String nsxManagerPassword;
 
     @JsonProperty("nsx_manager_username")
-    private String nsxManagerUsername = null;
+    private String nsxManagerUsername;
 
     @JsonProperty("nsx_poll_time")
-    private Integer nsxPollTime = 300;
+    private Integer nsxPollTime;
 
 
 
@@ -42,8 +42,8 @@ public class NsxConfiguration  {
      * This is the getter method this will return the attribute value.
      * This prefix will be added to the names of all nsx objects created by avi controller.
      * It should be unique across all the avi controller clusters.
+     * Field deprecated in 21.1.1.
      * Field introduced in 17.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return aviNsxPrefix
      */
     public String getAviNsxPrefix() {
@@ -54,8 +54,8 @@ public class NsxConfiguration  {
      * This is the setter method to the attribute.
      * This prefix will be added to the names of all nsx objects created by avi controller.
      * It should be unique across all the avi controller clusters.
+     * Field deprecated in 21.1.1.
      * Field introduced in 17.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param aviNsxPrefix set the aviNsxPrefix.
      */
     public void setAviNsxPrefix(String  aviNsxPrefix) {
@@ -65,8 +65,8 @@ public class NsxConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * The hostname or ip address of the nsx mgr.
+     * Field deprecated in 21.1.1.
      * Field introduced in 17.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxManagerName
      */
     public String getNsxManagerName() {
@@ -76,8 +76,8 @@ public class NsxConfiguration  {
     /**
      * This is the setter method to the attribute.
      * The hostname or ip address of the nsx mgr.
+     * Field deprecated in 21.1.1.
      * Field introduced in 17.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxManagerName set the nsxManagerName.
      */
     public void setNsxManagerName(String  nsxManagerName) {
@@ -87,8 +87,8 @@ public class NsxConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * The password avi vantage will use when authenticating with nsx mgr.
+     * Field deprecated in 21.1.1.
      * Field introduced in 17.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxManagerPassword
      */
     public String getNsxManagerPassword() {
@@ -98,8 +98,8 @@ public class NsxConfiguration  {
     /**
      * This is the setter method to the attribute.
      * The password avi vantage will use when authenticating with nsx mgr.
+     * Field deprecated in 21.1.1.
      * Field introduced in 17.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxManagerPassword set the nsxManagerPassword.
      */
     public void setNsxManagerPassword(String  nsxManagerPassword) {
@@ -109,8 +109,8 @@ public class NsxConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * The username avi vantage will use when authenticating with nsx mgr.
+     * Field deprecated in 21.1.1.
      * Field introduced in 17.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxManagerUsername
      */
     public String getNsxManagerUsername() {
@@ -120,8 +120,8 @@ public class NsxConfiguration  {
     /**
      * This is the setter method to the attribute.
      * The username avi vantage will use when authenticating with nsx mgr.
+     * Field deprecated in 21.1.1.
      * Field introduced in 17.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxManagerUsername set the nsxManagerUsername.
      */
     public void setNsxManagerUsername(String  nsxManagerUsername) {
@@ -131,9 +131,9 @@ public class NsxConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * The interval (in secs) with which avi controller polls the nsx manager for updates.
+     * Field deprecated in 21.1.1.
      * Field introduced in 17.1.1.
      * Unit is seconds.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @return nsxPollTime
      */
     public Integer getNsxPollTime() {
@@ -143,9 +143,9 @@ public class NsxConfiguration  {
     /**
      * This is the setter method to the attribute.
      * The interval (in secs) with which avi controller polls the nsx manager for updates.
+     * Field deprecated in 21.1.1.
      * Field introduced in 17.1.1.
      * Unit is seconds.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @param nsxPollTime set the nsxPollTime.
      */
     public void setNsxPollTime(Integer  nsxPollTime) {

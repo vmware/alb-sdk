@@ -35,7 +35,6 @@ public class AlertRuleMetric  {
     /**
      * This is the getter method this will return the attribute value.
      * Evaluation window for the metrics.
-     * Allowed values are 600-86400.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return duration
@@ -47,7 +46,6 @@ public class AlertRuleMetric  {
     /**
      * This is the setter method to the attribute.
      * Evaluation window for the metrics.
-     * Allowed values are 600-86400.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param duration set the duration.

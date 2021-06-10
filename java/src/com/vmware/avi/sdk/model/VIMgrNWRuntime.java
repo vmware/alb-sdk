@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VIMgrNWRuntime extends AviRestResource  {
     @JsonProperty("apic_vrf_context")
-    private String apicVrfContext = null;
+    private String apicVrfContext;
 
     @JsonProperty("auto_expand")
     private Boolean autoExpand = null;
@@ -94,8 +94,7 @@ public class VIMgrNWRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property apic_vrf_context of obj type vimgrnwruntime field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return apicVrfContext
      */
     public String getApicVrfContext() {
@@ -104,8 +103,7 @@ public class VIMgrNWRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property apic_vrf_context of obj type vimgrnwruntime field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param apicVrfContext set the apicVrfContext.
      */
     public void setApicVrfContext(String  apicVrfContext) {

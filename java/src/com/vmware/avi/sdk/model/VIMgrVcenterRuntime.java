@@ -25,7 +25,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
     private String apiVersion = null;
 
     @JsonProperty("apic_mode")
-    private Boolean apicMode = false;
+    private Boolean apicMode;
 
     @JsonProperty("cloud_ref")
     private String cloudRef = null;
@@ -132,8 +132,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property apic_mode of obj type vimgrvcenterruntime field type str  type boolean.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Field deprecated in 21.1.1.
      * @return apicMode
      */
     public Boolean getApicMode() {
@@ -142,8 +141,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property apic_mode of obj type vimgrvcenterruntime field type str  type boolean.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Field deprecated in 21.1.1.
      * @param apicMode set the apicMode.
      */
     public void setApicMode(Boolean  apicMode) {

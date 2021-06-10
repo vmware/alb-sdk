@@ -27,6 +27,9 @@ public class Webhook extends AviRestResource  {
     @JsonProperty("description")
     private String description = null;
 
+    @JsonProperty("markers")
+    private List<RoleFilterMatchLabel> markers = null;
+
     @JsonProperty("name")
     private String name = null;
 
@@ -84,6 +87,42 @@ public class Webhook extends AviRestResource  {
      */
     public void setDescription(String  description) {
         this.description = description;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.6.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public List<RoleFilterMatchLabel> getMarkers() {
+        return markers;
+    }
+
+    /**
+     * This is the setter method. this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.6.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public void setMarkers(List<RoleFilterMatchLabel>  markers) {
+        this.markers = markers;
+    }
+
+    /**
+     * This is the setter method this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.6.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public Webhook addMarkersItem(RoleFilterMatchLabel markersItem) {
+      if (this.markers == null) {
+        this.markers = new ArrayList<RoleFilterMatchLabel>();
+      }
+      this.markers.add(markersItem);
+      return this;
     }
 
     /**
@@ -205,6 +244,7 @@ public class Webhook extends AviRestResource  {
   Objects.equals(this.name, objWebhook.name)&&
   Objects.equals(this.callbackUrl, objWebhook.callbackUrl)&&
   Objects.equals(this.verificationToken, objWebhook.verificationToken)&&
+  Objects.equals(this.markers, objWebhook.markers)&&
   Objects.equals(this.description, objWebhook.description)&&
   Objects.equals(this.tenantRef, objWebhook.tenantRef);
     }
@@ -215,6 +255,7 @@ public class Webhook extends AviRestResource  {
       sb.append("class Webhook {\n");
                   sb.append("    callbackUrl: ").append(toIndentedString(callbackUrl)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+                        sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

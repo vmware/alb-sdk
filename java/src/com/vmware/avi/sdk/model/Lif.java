@@ -22,22 +22,21 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Lif  {
     @JsonProperty("cifs")
-    private List<Cif> cifs = null;
+    private List<Cif> cifs;
 
     @JsonProperty("lif")
-    private String lif = null;
+    private String lif;
 
     @JsonProperty("lif_label")
-    private String lifLabel = null;
+    private String lifLabel;
 
     @JsonProperty("subnet")
-    private String subnet = null;
+    private String subnet;
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cifs of obj type lif field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return cifs
      */
     public List<Cif> getCifs() {
@@ -46,8 +45,7 @@ public class Lif  {
 
     /**
      * This is the setter method. this will set the cifs
-     * Placeholder for description of property cifs of obj type lif field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return cifs
      */
     public void setCifs(List<Cif>  cifs) {
@@ -56,8 +54,7 @@ public class Lif  {
 
     /**
      * This is the setter method this will set the cifs
-     * Placeholder for description of property cifs of obj type lif field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return cifs
      */
     public Lif addCifsItem(Cif cifsItem) {
@@ -70,8 +67,7 @@ public class Lif  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property lif of obj type lif field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return lif
      */
     public String getLif() {
@@ -80,8 +76,7 @@ public class Lif  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property lif of obj type lif field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param lif set the lif.
      */
     public void setLif(String  lif) {
@@ -90,8 +85,7 @@ public class Lif  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property lif_label of obj type lif field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return lifLabel
      */
     public String getLifLabel() {
@@ -100,8 +94,7 @@ public class Lif  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property lif_label of obj type lif field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param lifLabel set the lifLabel.
      */
     public void setLifLabel(String  lifLabel) {
@@ -110,8 +103,7 @@ public class Lif  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property subnet of obj type lif field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return subnet
      */
     public String getSubnet() {
@@ -120,8 +112,7 @@ public class Lif  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property subnet of obj type lif field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param subnet set the subnet.
      */
     public void setSubnet(String  subnet) {

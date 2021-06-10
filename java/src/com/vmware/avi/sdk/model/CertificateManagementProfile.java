@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CertificateManagementProfile extends AviRestResource  {
+    @JsonProperty("markers")
+    private List<RoleFilterMatchLabel> markers = null;
+
     @JsonProperty("name")
     private String name = null;
 
@@ -43,6 +46,42 @@ public class CertificateManagementProfile extends AviRestResource  {
     private String uuid = null;
 
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.6.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public List<RoleFilterMatchLabel> getMarkers() {
+        return markers;
+    }
+
+    /**
+     * This is the setter method. this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.6.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public void setMarkers(List<RoleFilterMatchLabel>  markers) {
+        this.markers = markers;
+    }
+
+    /**
+     * This is the setter method this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.6.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public CertificateManagementProfile addMarkersItem(RoleFilterMatchLabel markersItem) {
+      if (this.markers == null) {
+        this.markers = new ArrayList<RoleFilterMatchLabel>();
+      }
+      this.markers.add(markersItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -211,6 +250,7 @@ public class CertificateManagementProfile extends AviRestResource  {
   Objects.equals(this.scriptParams, objCertificateManagementProfile.scriptParams)&&
   Objects.equals(this.scriptPath, objCertificateManagementProfile.scriptPath)&&
   Objects.equals(this.runScriptRef, objCertificateManagementProfile.runScriptRef)&&
+  Objects.equals(this.markers, objCertificateManagementProfile.markers)&&
   Objects.equals(this.tenantRef, objCertificateManagementProfile.tenantRef);
     }
 
@@ -218,7 +258,8 @@ public class CertificateManagementProfile extends AviRestResource  {
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class CertificateManagementProfile {\n");
-                  sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                  sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
+                        sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    runScriptRef: ").append(toIndentedString(runScriptRef)).append("\n");
                         sb.append("    scriptParams: ").append(toIndentedString(scriptParams)).append("\n");
                         sb.append("    scriptPath: ").append(toIndentedString(scriptPath)).append("\n");

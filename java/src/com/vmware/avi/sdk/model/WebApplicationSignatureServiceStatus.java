@@ -58,7 +58,7 @@ public class WebApplicationSignatureServiceStatus  {
      * This is the getter method this will return the attribute value.
      * The time when the application signature service last successfull attemped to update this object.
      * It will be not update, if an error occurs during an update attempt.
-     * In this case, the errror will be set.
+     * In this case, the error will be set.
      * Field introduced in 20.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return lastSuccessfulUpdateCheck
@@ -71,7 +71,7 @@ public class WebApplicationSignatureServiceStatus  {
      * This is the setter method to the attribute.
      * The time when the application signature service last successfull attemped to update this object.
      * It will be not update, if an error occurs during an update attempt.
-     * In this case, the errror will be set.
+     * In this case, the error will be set.
      * Field introduced in 20.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param lastSuccessfulUpdateCheck set the lastSuccessfulUpdateCheck.

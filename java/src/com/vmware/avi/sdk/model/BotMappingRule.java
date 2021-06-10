@@ -33,6 +33,12 @@ public class BotMappingRule  {
     @JsonProperty("identifier_matcher")
     private StringMatch identifierMatcher = null;
 
+    @JsonProperty("index")
+    private Integer index = null;
+
+    @JsonProperty("name")
+    private String name = null;
+
     @JsonProperty("type_matcher")
     private BotTypeMatcher typeMatcher = null;
 
@@ -130,6 +136,50 @@ public class BotMappingRule  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Rules are processed in order of this index field.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return index
+     */
+    public Integer getIndex() {
+        return index;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rules are processed in order of this index field.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param index set the index.
+     */
+    public void setIndex(Integer  index) {
+        this.index = index;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * A name describing the rule in a short form.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * A name describing the rule in a short form.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param name set the name.
+     */
+    public void setName(String  name) {
+        this.name = name;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * How to match the botclienttype.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -160,7 +210,9 @@ public class BotMappingRule  {
           return false;
       }
       BotMappingRule objBotMappingRule = (BotMappingRule) o;
-      return   Objects.equals(this.componentMatcher, objBotMappingRule.componentMatcher)&&
+      return   Objects.equals(this.index, objBotMappingRule.index)&&
+  Objects.equals(this.name, objBotMappingRule.name)&&
+  Objects.equals(this.componentMatcher, objBotMappingRule.componentMatcher)&&
   Objects.equals(this.classMatcher, objBotMappingRule.classMatcher)&&
   Objects.equals(this.typeMatcher, objBotMappingRule.typeMatcher)&&
   Objects.equals(this.identifierMatcher, objBotMappingRule.identifierMatcher)&&
@@ -175,6 +227,8 @@ public class BotMappingRule  {
                         sb.append("    classification: ").append(toIndentedString(classification)).append("\n");
                         sb.append("    componentMatcher: ").append(toIndentedString(componentMatcher)).append("\n");
                         sb.append("    identifierMatcher: ").append(toIndentedString(identifierMatcher)).append("\n");
+                        sb.append("    index: ").append(toIndentedString(index)).append("\n");
+                        sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    typeMatcher: ").append(toIndentedString(typeMatcher)).append("\n");
                   sb.append("}");
       return sb.toString();

@@ -308,6 +308,7 @@ public class SeBootupProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Enable debug logs by default on service engine.
      * This includes all other debugging logs.
      * Debug logs can also be explcitly enabled from the cli shell.
@@ -320,6 +321,7 @@ public class SeBootupProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Enable debug logs by default on service engine.
      * This includes all other debugging logs.
      * Debug logs can also be explcitly enabled from the cli shell.
@@ -332,6 +334,7 @@ public class SeBootupProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Enable trace logs by default on service engine.
      * Configuration operations are logged along with other important logs by service engine.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
@@ -343,6 +346,7 @@ public class SeBootupProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Enable trace logs by default on service engine.
      * Configuration operations are logged along with other important logs by service engine.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
@@ -462,6 +466,7 @@ public class SeBootupProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Internal flag that blocks dataplane until all application logs are flushed to log-agent process.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return seLogBufferAppBlockingDequeue
@@ -472,6 +477,7 @@ public class SeBootupProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Internal flag that blocks dataplane until all application logs are flushed to log-agent process.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param seLogBufferAppBlockingDequeue set the seLogBufferAppBlockingDequeue.
@@ -530,6 +536,7 @@ public class SeBootupProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Internal flag that blocks dataplane until all connection logs are flushed to log-agent process.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return seLogBufferConnBlockingDequeue
@@ -540,6 +547,7 @@ public class SeBootupProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Internal flag that blocks dataplane until all connection logs are flushed to log-agent process.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param seLogBufferConnBlockingDequeue set the seLogBufferConnBlockingDequeue.
@@ -574,6 +582,7 @@ public class SeBootupProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Internal flag that blocks dataplane until all outstanding events are flushed to log-agent process.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return seLogBufferEventsBlockingDequeue
@@ -584,6 +593,7 @@ public class SeBootupProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Internal flag that blocks dataplane until all outstanding events are flushed to log-agent process.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param seLogBufferEventsBlockingDequeue set the seLogBufferEventsBlockingDequeue.

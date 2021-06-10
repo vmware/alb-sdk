@@ -82,7 +82,7 @@ public class BotIdentification  {
      * This is the getter method this will return the attribute value.
      * The bot client type of this identification.
      * Enum options - WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE,
-     * CLOUD_SOURCE.
+     * CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
@@ -95,7 +95,7 @@ public class BotIdentification  {
      * This is the setter method to the attribute.
      * The bot client type of this identification.
      * Enum options - WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE,
-     * CLOUD_SOURCE.
+     * CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.

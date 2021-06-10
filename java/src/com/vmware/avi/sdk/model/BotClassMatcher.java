@@ -33,6 +33,7 @@ public class BotClassMatcher  {
      * The list of client classes.
      * Enum options - HUMAN_CLIENT, BOT_CLIENT.
      * Field introduced in 21.1.1.
+     * Minimum of 1 items required.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientClasses
      */
@@ -45,6 +46,7 @@ public class BotClassMatcher  {
      * The list of client classes.
      * Enum options - HUMAN_CLIENT, BOT_CLIENT.
      * Field introduced in 21.1.1.
+     * Minimum of 1 items required.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientClasses
      */
@@ -57,6 +59,7 @@ public class BotClassMatcher  {
      * The list of client classes.
      * Enum options - HUMAN_CLIENT, BOT_CLIENT.
      * Field introduced in 21.1.1.
+     * Minimum of 1 items required.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientClasses
      */

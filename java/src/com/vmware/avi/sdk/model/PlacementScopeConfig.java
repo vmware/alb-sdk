@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PlacementScopeConfig  {
+    @JsonProperty("nsxt_clusters")
+    private NsxtClusters nsxtClusters = null;
+
     @JsonProperty("nsxt_datastores")
     private NsxtDatastores nsxtDatastores = null;
 
@@ -34,6 +37,28 @@ public class PlacementScopeConfig  {
     private String vcenterRef = null;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * List of transport node clusters include or exclude.
+     * Field introduced in 20.1.6.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return nsxtClusters
+     */
+    public NsxtClusters getNsxtClusters() {
+        return nsxtClusters;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * List of transport node clusters include or exclude.
+     * Field introduced in 20.1.6.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param nsxtClusters set the nsxtClusters.
+     */
+    public void setNsxtClusters(NsxtClusters nsxtClusters) {
+        this.nsxtClusters = nsxtClusters;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -140,14 +165,16 @@ public class PlacementScopeConfig  {
       return   Objects.equals(this.vcenterRef, objPlacementScopeConfig.vcenterRef)&&
   Objects.equals(this.vcenterFolder, objPlacementScopeConfig.vcenterFolder)&&
   Objects.equals(this.nsxtHosts, objPlacementScopeConfig.nsxtHosts)&&
-  Objects.equals(this.nsxtDatastores, objPlacementScopeConfig.nsxtDatastores);
+  Objects.equals(this.nsxtDatastores, objPlacementScopeConfig.nsxtDatastores)&&
+  Objects.equals(this.nsxtClusters, objPlacementScopeConfig.nsxtClusters);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class PlacementScopeConfig {\n");
-                  sb.append("    nsxtDatastores: ").append(toIndentedString(nsxtDatastores)).append("\n");
+                  sb.append("    nsxtClusters: ").append(toIndentedString(nsxtClusters)).append("\n");
+                        sb.append("    nsxtDatastores: ").append(toIndentedString(nsxtDatastores)).append("\n");
                         sb.append("    nsxtHosts: ").append(toIndentedString(nsxtHosts)).append("\n");
                         sb.append("    vcenterFolder: ").append(toIndentedString(vcenterFolder)).append("\n");
                         sb.append("    vcenterRef: ").append(toIndentedString(vcenterRef)).append("\n");

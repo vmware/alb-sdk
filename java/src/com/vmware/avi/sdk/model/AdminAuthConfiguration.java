@@ -24,6 +24,9 @@ public class AdminAuthConfiguration  {
     @JsonProperty("allow_local_user_login")
     private Boolean allowLocalUserLogin = true;
 
+    @JsonProperty("alternate_auth_configurations")
+    private List<AlternateAuthConfiguration> alternateAuthConfigurations = null;
+
     @JsonProperty("auth_profile_ref")
     private String authProfileRef = null;
 
@@ -52,6 +55,45 @@ public class AdminAuthConfiguration  {
      */
     public void setAllowLocalUserLogin(Boolean  allowLocalUserLogin) {
         this.allowLocalUserLogin = allowLocalUserLogin;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Secondary authentication mechanisms to be used.
+     * Field introduced in 20.1.6.
+     * Maximum of 1 items allowed.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return alternateAuthConfigurations
+     */
+    public List<AlternateAuthConfiguration> getAlternateAuthConfigurations() {
+        return alternateAuthConfigurations;
+    }
+
+    /**
+     * This is the setter method. this will set the alternateAuthConfigurations
+     * Secondary authentication mechanisms to be used.
+     * Field introduced in 20.1.6.
+     * Maximum of 1 items allowed.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return alternateAuthConfigurations
+     */
+    public void setAlternateAuthConfigurations(List<AlternateAuthConfiguration>  alternateAuthConfigurations) {
+        this.alternateAuthConfigurations = alternateAuthConfigurations;
+    }
+
+    /**
+     * This is the setter method this will set the alternateAuthConfigurations
+     * Secondary authentication mechanisms to be used.
+     * Field introduced in 20.1.6.
+     * Maximum of 1 items allowed.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return alternateAuthConfigurations
+     */
+    public AdminAuthConfiguration addAlternateAuthConfigurationsItem(AlternateAuthConfiguration alternateAuthConfigurationsItem) {
+      if (this.alternateAuthConfigurations == null) {
+        this.alternateAuthConfigurations = new ArrayList<AlternateAuthConfiguration>();
+      }
+      this.alternateAuthConfigurations.add(alternateAuthConfigurationsItem);
+      return this;
     }
 
     /**
@@ -119,7 +161,8 @@ public class AdminAuthConfiguration  {
       AdminAuthConfiguration objAdminAuthConfiguration = (AdminAuthConfiguration) o;
       return   Objects.equals(this.authProfileRef, objAdminAuthConfiguration.authProfileRef)&&
   Objects.equals(this.mappingRules, objAdminAuthConfiguration.mappingRules)&&
-  Objects.equals(this.allowLocalUserLogin, objAdminAuthConfiguration.allowLocalUserLogin);
+  Objects.equals(this.allowLocalUserLogin, objAdminAuthConfiguration.allowLocalUserLogin)&&
+  Objects.equals(this.alternateAuthConfigurations, objAdminAuthConfiguration.alternateAuthConfigurations);
     }
 
     @Override
@@ -127,6 +170,7 @@ public class AdminAuthConfiguration  {
       StringBuilder sb = new StringBuilder();
       sb.append("class AdminAuthConfiguration {\n");
                   sb.append("    allowLocalUserLogin: ").append(toIndentedString(allowLocalUserLogin)).append("\n");
+                        sb.append("    alternateAuthConfigurations: ").append(toIndentedString(alternateAuthConfigurations)).append("\n");
                         sb.append("    authProfileRef: ").append(toIndentedString(authProfileRef)).append("\n");
                         sb.append("    mappingRules: ").append(toIndentedString(mappingRules)).append("\n");
                   sb.append("}");

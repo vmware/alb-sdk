@@ -57,6 +57,9 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("bm_use_ansible")
     private Boolean bmUseAnsible = true;
 
+    @JsonProperty("check_vsvip_fqdn_syntax")
+    private Boolean checkVsvipFqdnSyntax = true;
+
     @JsonProperty("cleanup_expired_authtoken_timeout_period")
     private Integer cleanupExpiredAuthtokenTimeoutPeriod = 60;
 
@@ -101,6 +104,9 @@ public class ControllerProperties extends AviRestResource  {
 
     @JsonProperty("enable_memory_balancer")
     private Boolean enableMemoryBalancer = true;
+
+    @JsonProperty("enable_per_process_stop")
+    private Boolean enablePerProcessStop = false;
 
     @JsonProperty("fatal_error_lease_time")
     private Integer fatalErrorLeaseTime = 120;
@@ -232,7 +238,7 @@ public class ControllerProperties extends AviRestResource  {
     private Integer vnicOpFailTime = 180;
 
     @JsonProperty("vs_apic_scaleout_timeout")
-    private Integer vsApicScaleoutTimeout = 360;
+    private Integer vsApicScaleoutTimeout;
 
     @JsonProperty("vs_awaiting_se_timeout")
     private Integer vsAwaitingSeTimeout = 60;
@@ -537,6 +543,30 @@ public class ControllerProperties extends AviRestResource  {
      */
     public void setBmUseAnsible(Boolean  bmUseAnsible) {
         this.bmUseAnsible = bmUseAnsible;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enforce vsvip fqdn syntax checks.
+     * Field introduced in 20.1.6.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return checkVsvipFqdnSyntax
+     */
+    public Boolean getCheckVsvipFqdnSyntax() {
+        return checkVsvipFqdnSyntax;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enforce vsvip fqdn syntax checks.
+     * Field introduced in 20.1.6.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param checkVsvipFqdnSyntax set the checkVsvipFqdnSyntax.
+     */
+    public void setCheckVsvipFqdnSyntax(Boolean  checkVsvipFqdnSyntax) {
+        this.checkVsvipFqdnSyntax = checkVsvipFqdnSyntax;
     }
 
     /**
@@ -889,6 +919,30 @@ public class ControllerProperties extends AviRestResource  {
      */
     public void setEnableMemoryBalancer(Boolean  enableMemoryBalancer) {
         this.enableMemoryBalancer = enableMemoryBalancer;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enable stopping of individual processes if process cross the given threshold limit, even when the total controller memory usage is belowits
+     * threshold limit.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return enablePerProcessStop
+     */
+    public Boolean getEnablePerProcessStop() {
+        return enablePerProcessStop;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable stopping of individual processes if process cross the given threshold limit, even when the total controller memory usage is belowits
+     * threshold limit.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param enablePerProcessStop set the enablePerProcessStop.
+     */
+    public void setEnablePerProcessStop(Boolean  enablePerProcessStop) {
+        this.enablePerProcessStop = enablePerProcessStop;
     }
 
     /**
@@ -1879,8 +1933,8 @@ public class ControllerProperties extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Time to wait for the scaled out se to become ready before marking the scaleout done, applies to apic configuration only.
+     * Field deprecated in 21.1.1.
      * Unit is sec.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 360.
      * @return vsApicScaleoutTimeout
      */
     public Integer getVsApicScaleoutTimeout() {
@@ -1890,8 +1944,8 @@ public class ControllerProperties extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Time to wait for the scaled out se to become ready before marking the scaleout done, applies to apic configuration only.
+     * Field deprecated in 21.1.1.
      * Unit is sec.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 360.
      * @param vsApicScaleoutTimeout set the vsApicScaleoutTimeout.
      */
     public void setVsApicScaleoutTimeout(Integer  vsApicScaleoutTimeout) {
@@ -2226,7 +2280,9 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.seVnicGcWaitTime, objControllerProperties.seVnicGcWaitTime)&&
   Objects.equals(this.resmgrLogCachingPeriod, objControllerProperties.resmgrLogCachingPeriod)&&
   Objects.equals(this.userAgentCacheConfig, objControllerProperties.userAgentCacheConfig)&&
-  Objects.equals(this.delOfflineSeAfterRebootDelay, objControllerProperties.delOfflineSeAfterRebootDelay);
+  Objects.equals(this.delOfflineSeAfterRebootDelay, objControllerProperties.delOfflineSeAfterRebootDelay)&&
+  Objects.equals(this.enablePerProcessStop, objControllerProperties.enablePerProcessStop)&&
+  Objects.equals(this.checkVsvipFqdnSyntax, objControllerProperties.checkVsvipFqdnSyntax);
     }
 
     @Override
@@ -2245,6 +2301,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    attachIpRetryInterval: ").append(toIndentedString(attachIpRetryInterval)).append("\n");
                         sb.append("    attachIpRetryLimit: ").append(toIndentedString(attachIpRetryLimit)).append("\n");
                         sb.append("    bmUseAnsible: ").append(toIndentedString(bmUseAnsible)).append("\n");
+                        sb.append("    checkVsvipFqdnSyntax: ").append(toIndentedString(checkVsvipFqdnSyntax)).append("\n");
                         sb.append("    cleanupExpiredAuthtokenTimeoutPeriod: ").append(toIndentedString(cleanupExpiredAuthtokenTimeoutPeriod)).append("\n");
                         sb.append("    cleanupSessionsTimeoutPeriod: ").append(toIndentedString(cleanupSessionsTimeoutPeriod)).append("\n");
                         sb.append("    cloudReconcile: ").append(toIndentedString(cloudReconcile)).append("\n");
@@ -2260,6 +2317,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    editSystemLimits: ").append(toIndentedString(editSystemLimits)).append("\n");
                         sb.append("    enableApiSharding: ").append(toIndentedString(enableApiSharding)).append("\n");
                         sb.append("    enableMemoryBalancer: ").append(toIndentedString(enableMemoryBalancer)).append("\n");
+                        sb.append("    enablePerProcessStop: ").append(toIndentedString(enablePerProcessStop)).append("\n");
                         sb.append("    fatalErrorLeaseTime: ").append(toIndentedString(fatalErrorLeaseTime)).append("\n");
                         sb.append("    federatedDatastoreCleanupDuration: ").append(toIndentedString(federatedDatastoreCleanupDuration)).append("\n");
                         sb.append("    fileObjectCleanupPeriod: ").append(toIndentedString(fileObjectCleanupPeriod)).append("\n");

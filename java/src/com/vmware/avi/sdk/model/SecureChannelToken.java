@@ -24,6 +24,9 @@ public class SecureChannelToken extends AviRestResource  {
     @JsonProperty("expiry_time")
     private Float expiryTime = null;
 
+    @JsonProperty("in_use")
+    private Boolean inUse = false;
+
     @JsonProperty("metadata")
     private List<SecureChannelMetadata> metadata = null;
 
@@ -31,7 +34,7 @@ public class SecureChannelToken extends AviRestResource  {
     private String name = null;
 
     @JsonProperty("node_uuid")
-    private String nodeUuid = null;
+    private String nodeUuid;
 
     @JsonProperty("url")
     private String url = "url";
@@ -43,7 +46,7 @@ public class SecureChannelToken extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Expiry time for secure channel.
+     * Expiry time for auth_token.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return expiryTime
      */
@@ -53,16 +56,38 @@ public class SecureChannelToken extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Expiry time for secure channel.
+     * Expiry time for auth_token.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param expiryTime set the expiryTime.
      */
     public void setExpiryTime(Float  expiryTime) {
         this.expiryTime = expiryTime;
     }
+
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property metadata of obj type securechanneltoken field type str  type array.
+     * Whether this auth_token is used by some node(se/controller).
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return inUse
+     */
+    public Boolean getInUse() {
+        return inUse;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Whether this auth_token is used by some node(se/controller).
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param inUse set the inUse.
+     */
+    public void setInUse(Boolean  inUse) {
+        this.inUse = inUse;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Metadata associated with auth_token.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metadata
      */
@@ -72,7 +97,7 @@ public class SecureChannelToken extends AviRestResource  {
 
     /**
      * This is the setter method. this will set the metadata
-     * Placeholder for description of property metadata of obj type securechanneltoken field type str  type array.
+     * Metadata associated with auth_token.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metadata
      */
@@ -82,7 +107,7 @@ public class SecureChannelToken extends AviRestResource  {
 
     /**
      * This is the setter method this will set the metadata
-     * Placeholder for description of property metadata of obj type securechanneltoken field type str  type array.
+     * Metadata associated with auth_token.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metadata
      */
@@ -96,7 +121,7 @@ public class SecureChannelToken extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the object.
+     * Auth_token used for se/controller authorization.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -106,7 +131,7 @@ public class SecureChannelToken extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the object.
+     * Auth_token used for se/controller authorization.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -116,8 +141,8 @@ public class SecureChannelToken extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of node.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Deprecated  uuid of se or controller who is using this auth_token.
+     * Field deprecated in 21.1.1.
      * @return nodeUuid
      */
     public String getNodeUuid() {
@@ -126,8 +151,8 @@ public class SecureChannelToken extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of node.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Deprecated  uuid of se or controller who is using this auth_token.
+     * Field deprecated in 21.1.1.
      * @param nodeUuid set the nodeUuid.
      */
     public void setNodeUuid(String  nodeUuid) {
@@ -153,7 +178,7 @@ public class SecureChannelToken extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of the object.
+     * Auth_token used for se/controller authorization.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -163,7 +188,7 @@ public class SecureChannelToken extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of the object.
+     * Auth_token used for se/controller authorization.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -185,7 +210,8 @@ public class SecureChannelToken extends AviRestResource  {
   Objects.equals(this.name, objSecureChannelToken.name)&&
   Objects.equals(this.expiryTime, objSecureChannelToken.expiryTime)&&
   Objects.equals(this.nodeUuid, objSecureChannelToken.nodeUuid)&&
-  Objects.equals(this.metadata, objSecureChannelToken.metadata);
+  Objects.equals(this.metadata, objSecureChannelToken.metadata)&&
+  Objects.equals(this.inUse, objSecureChannelToken.inUse);
     }
 
     @Override
@@ -193,6 +219,7 @@ public class SecureChannelToken extends AviRestResource  {
       StringBuilder sb = new StringBuilder();
       sb.append("class SecureChannelToken {\n");
                   sb.append("    expiryTime: ").append(toIndentedString(expiryTime)).append("\n");
+                        sb.append("    inUse: ").append(toIndentedString(inUse)).append("\n");
                         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    nodeUuid: ").append(toIndentedString(nodeUuid)).append("\n");
