@@ -11,6 +11,9 @@ type AdminAuthConfiguration struct {
 	// Allow any user created locally to login with local credentials. Field introduced in 17.1.1.
 	AllowLocalUserLogin *bool `json:"allow_local_user_login,omitempty"`
 
+	// Secondary authentication mechanisms to be used. Field introduced in 20.1.6. Maximum of 1 items allowed.
+	AlternateAuthConfigurations []*AlternateAuthConfiguration `json:"alternate_auth_configurations,omitempty"`
+
 	//  It is a reference to an object of type AuthProfile.
 	AuthProfileRef *string `json:"auth_profile_ref,omitempty"`
 

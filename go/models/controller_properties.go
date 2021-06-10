@@ -48,7 +48,7 @@ type ControllerProperties struct {
 	// Use Ansible for SE creation in baremetal. Field introduced in 17.2.2.
 	BmUseAnsible *bool `json:"bm_use_ansible,omitempty"`
 
-	// Enforce VsVip FQDN syntax checks. Field introduced in 20.1.6.
+	// Enforce VsVip FQDN syntax checks. Field introduced in 20.1.6. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	CheckVsvipFqdnSyntax *bool `json:"check_vsvip_fqdn_syntax,omitempty"`
 
 	// Period for auth token cleanup job. Field introduced in 18.1.1. Unit is MIN.
