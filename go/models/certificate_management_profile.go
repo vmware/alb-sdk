@@ -15,6 +15,9 @@ type CertificateManagementProfile struct {
 	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.6.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
+
 	// Name of the PKI Profile.
 	// Required: true
 	Name *string `json:"name"`

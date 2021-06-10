@@ -15,16 +15,20 @@ type JWTServerProfile struct {
 	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
+	// JWT Auth configuration for profile_type CONTROLLER_INTERNAL_AUTH. Field introduced in 20.1.6.
+	ControllerInternalAuth *ControllerInternalAuth `json:"controller_internal_auth,omitempty"`
+
 	// This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster.  If the field is set to true, then the object is replicated across the federation.  . Field introduced in 20.1.6.
 	IsFederated *bool `json:"is_federated,omitempty"`
 
-	// Uniquely identifiable name of the Token Issuer. Field introduced in 20.1.3.
-	// Required: true
-	Issuer *string `json:"issuer"`
+	// Uniquely identifiable name of the Token Issuer, only allowed with profile_type CLIENT_AUTH. Field introduced in 20.1.3.
+	Issuer *string `json:"issuer,omitempty"`
 
-	// JWKS key set used for validating the JWT. Field introduced in 20.1.3.
-	// Required: true
-	JwksKeys *string `json:"jwks_keys"`
+	// JWKS key set used for validating the JWT, only allowed with profile_type CLIENT_AUTH. Field introduced in 20.1.3.
+	JwksKeys *string `json:"jwks_keys,omitempty"`
+
+	// Type of JWT Server profile which defines the usage type. Enum options - CLIENT_AUTH, CONTROLLER_INTERNAL_AUTH. Field introduced in 20.1.6.
+	JwtProfileType *string `json:"jwt_profile_type,omitempty"`
 
 	// Name of the JWT Profile. Field introduced in 20.1.3.
 	// Required: true
