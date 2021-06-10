@@ -1,4 +1,4 @@
-name: Publish package to the Maven Central Repository
+name: Publish SDK package
 # Controls when the action will run. 
 on:
   release:
@@ -9,7 +9,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -30,11 +30,10 @@ jobs:
           python-version: 3.8
 
       - name: Get the version
-        id: get_version
+        id: get_sdk_version
         run: | 
-          echo ::set-output name=TAG_VERSION::$(echo ${GITHUB_REF##*/} | cut -d - -f 2)
-          echo ::set-output name=AVI_VERSION::$(python ./python/version.py)
-          JAVA_VERSION=${{ steps.get_version.outputs.TAG_VERSION }}
+          echo "::set-output name=AVI_VERSION::$(python ./python/version.py)"
+          JAVA_VERSION=$(echo ${GITHUB_REF##*/} | cut -d - -f 2)
           if [[ "$JAVA_VERSION" == *"post"* ]]; then
             echo "Java version post"
             JAVA_VERSION="${JAVA_VERSION/post/\.}"
@@ -45,17 +44,21 @@ jobs:
             echo "Java version Release"
             JAVA_VERSION=$JAVA_VERSION.RELEASE
           fi
-          echo "Java version: $JAVA_VERSION"
-          echo ::set-output name=JAVA_VERSION::$(JAVA_VERSION)
+          echo "Java version ${JAVA_VERSION}"
+          echo "::set-output name=JAVA_RELEASE_VERSION::${JAVA_VERSION}"
 
       - name: Publish JAVA
         run: |
+          echo "Publish Java Version ${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}"
+          echo "Publish AVI VERSION ${{ steps.get_sdk_version.outputs.AVI_VERSION }}"
           cd java
-          mvn versions:set -DnewVersion=${{ steps.get_version.outputs.JAVA_VERSION }}
+          mvn versions:set -DnewVersion=${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}
           mvn clean --batch-mode deploy -DskipTests -Dgpg.passphrase=${{ secrets.AVISDK_PGP_PASSPHRASE }} -Denv.MAVEN_USERNAME=${{ secrets.OSSRH_USERNAME }} -Denv.MAVEN_PASSWORD=${{ secrets.OSSRH_TOKEN }}
           cd ..
-          cp java/target/avisdk-${{ steps.get_version.outputs.JAVA_VERSION }}.jar .
-          cp java/target/avisdk-${{ steps.get_version.outputs.JAVA_VERSION }}-javadoc.jar .
+          ls java/target/
+          cp java/target/avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}.jar .
+          cp java/target/avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-javadoc.jar .
+          cp java/target/avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-sources.jar .
 
       # Installs and upgrades pip, installs other dependencies and installs the package from setup.py
       - name: "Installs and upgrades pip, installs other dependencies and installs the package from setup.py"
@@ -64,9 +67,13 @@ jobs:
           # Upgrade pip
           python3 -m pip install --upgrade pip
           # Install build deps
-          python3 -m pip install setuptools wheel twine
+          python3 -m pip install wheel twine setuptools==47.1.1
+          sudo apt-get install debhelper
+          sudo apt-get install python-all
+          sudo apt-get install python3-all
           # If requirements.txt exists, install from it
           cd python
+          mkdir dist
           ./create_sdk_pip_packages.sh sdk
           ./create_sdk_pip_packages.sh migrationtools
           ./create_sdk_pypi.sh sdk
@@ -75,9 +82,8 @@ jobs:
           ls dist/
           mv dist/avimigrationtools-$AVI_VERSION.tar.gz ../avimigrationtools-$AVI_VERSION.tar.gz
           mv dist/avisdk-$AVI_VERSION.tar.gz ../avisdk-$AVI_VERSION.tar.gz
-          mv dist/python-avisdk_0_all.deb ../avisdk-$AVI_VERSION.deb
+          #mv dist/python-avisdk_0_all.deb ../avisdk-$AVI_VERSION.deb
           mv dist/avisdk-$AVI_VERSION-1.noarch.rpm ../avisdk-$AVI_VERSION.rpm
-          mv dist/avimigrationtools-$AVI_VERSION.tar.gz ../avimigrationtools-$AVI_VERSION.tar.gz
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.TWINE_TOKEN }}
@@ -95,8 +101,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.github_token }}
         with:
           upload_url: ${{ steps.update_release.outputs.upload_url }}
-          asset_path: avisdk-${{ steps.get_version.outputs.AVI_VERSION }}.tar.gz
-          asset_name: pip-package-avisdk-${{ steps.get_version.outputs.AVI_VERSION }}
+          asset_path: avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
+          asset_name: pip-package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}
           asset_content_type: application/gzip
       
       - name: Upload Avi Migration Tools pip package
@@ -105,19 +111,19 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.github_token }}
         with:
           upload_url: ${{ steps.update_release.outputs.upload_url }}
-          asset_path: avimigrationtools-${{ steps.get_version.outputs.AVI_VERSION }}.tar.gz
-          asset_name: pip-package-avimigrationtools-${{ steps.get_version.outputs.AVI_VERSION }}
+          asset_path: avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
+          asset_name: pip-package-avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}
           asset_content_type: application/gzip
         
-      - name: Upload Avi API SDK debian package
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.github_token }}
-        with:
-          upload_url: ${{ steps.update_release.outputs.upload_url }}
-          asset_path: avisdk-${{ steps.get_version.outputs.AVI_VERSION }}.deb
-          asset_name: debian-package-avisdk-${{ steps.get_version.outputs.AVI_VERSION }}
-          asset_content_type: application/vnd.debian.binary-package
+      #- name: Upload Avi API SDK debian package
+      #  uses: actions/upload-release-asset@v1
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.github_token }}
+      #  with:
+      #    upload_url: ${{ steps.update_release.outputs.upload_url }}
+      #    asset_path: avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.deb
+      #    asset_name: debian-package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}
+      #    asset_content_type: application/vnd.debian.binary-package
 
       - name: Upload Avi API SDK rpm package
         uses: actions/upload-release-asset@v1
@@ -125,8 +131,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.github_token }}
         with:
           upload_url: ${{ steps.update_release.outputs.upload_url }}
-          asset_path: avisdk-${{ steps.get_version.outputs.AVI_VERSION }}.rpm
-          asset_name: rpm--package-avisdk-${{ steps.get_version.outputs.AVI_VERSION }}
+          asset_path: avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.rpm
+          asset_name: rpm--package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}
           asset_content_type: application/x-rpm
       
       - name: Upload Avi API SDK Java package
@@ -135,8 +141,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.github_token }}
         with:
           upload_url: ${{ steps.update_release.outputs.upload_url }}
-          asset_path: avisdk-${{ steps.get_version.outputs.JAVA_VERSION }}.jar
-          asset_name: jar-Java-avisdk-${{ steps.get_version.outputs.JAVA_VERSION }}
+          asset_path: avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}.jar
+          asset_name: jar-Java-avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}
           asset_content_type: application/java-archive
 
       - name: Upload Avi API SDK Javadoc package
@@ -145,6 +151,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.github_token }}
         with:
           upload_url: ${{ steps.update_release.outputs.upload_url }}
-          asset_path: avisdk-${{ steps.get_version.outputs.JAVA_VERSION }}.jar
-          asset_name: jar-java-avisdk-${{ steps.get_version.outputs.JAVA_VERSION }}
+          asset_path: avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-javadoc.jar
+          asset_name: jar-java-avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-javadoc
+          asset_content_type: application/java-archive
+
+      - name: Upload Avi API SDK Java sources package
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.github_token }}
+        with:
+          upload_url: ${{ steps.update_release.outputs.upload_url }}
+          asset_path: avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-sources.jar
+          asset_name: jar-java-avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-javasources
           asset_content_type: application/java-archive
