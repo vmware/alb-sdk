@@ -639,7 +639,7 @@
                     "type": "string"
                 },
                 "apic_vrf_context": {
-                    "description": "apic_vrf_context of VIMgrNWRuntime.",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "string"
                 },
                 "auto_expand": {

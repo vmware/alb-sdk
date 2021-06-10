@@ -518,6 +518,13 @@
                     "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
+                "markers": {
+                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.6.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RoleFilterMatchLabel"
+                    }
+                },
                 "name": {
                     "description": "Name of the PKI Profile.",
                     "type": "string"
@@ -581,7 +588,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int64"
+                    "format": "int32"
                 }
             }
         },
@@ -606,6 +613,25 @@
                 "value": {
                     "description": "value of CustomParams.",
                     "type": "string"
+                }
+            }
+        },
+        "RoleFilterMatchLabel": {
+            "type": "object",
+            "required": [
+                "key"
+            ],
+            "properties": {
+                "key": {
+                    "description": "Key for filter match. Field introduced in 20.1.3.",
+                    "type": "string"
+                },
+                "values": {
+                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             }
         }

@@ -362,7 +362,7 @@ definitions:
         type: object
         properties:
             client_classes:
-                description: "The list of client classes. Enum options - HUMAN_CLIENT, BOT_CLIENT. Field introduced in 21.1.1."
+                description: "The list of client classes. Enum options - HUMAN_CLIENT, BOT_CLIENT. Field introduced in 21.1.1. Minimum of 1 items required."
                 type: array
                 items:
                     type: string
@@ -372,6 +372,8 @@ definitions:
                 default: "IS_IN"
     BotMapping:
         type: object
+        required:
+            -   name
         properties:
             _last_modified:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
@@ -393,7 +395,7 @@ definitions:
                 readOnly: True
                 type: string
             uuid:
-                description: "A unique identifier of this mapping. Field introduced in 21.1.1."
+                description: "A unique identifier for this mapping. Field introduced in 21.1.1."
                 type: string
     BotMappingApiResponse:
         type: object
@@ -412,6 +414,10 @@ definitions:
                 type: string
     BotMappingRule:
         type: object
+        required:
+            -   classification
+            -   component_matcher
+            -   index
         properties:
             class_matcher:
                 description: "How to match the BotClientClass. Field introduced in 21.1.1."
@@ -425,6 +431,13 @@ definitions:
             identifier_matcher:
                 description: "The list of bot identifier names and how they're matched. Field introduced in 21.1.1."
                 $ref: '#/definitions/StringMatch'
+            index:
+                description: "Rules are processed in order of this index field. Field introduced in 21.1.1."
+                type: integer
+                format: int32
+            name:
+                description: "A name describing the rule in a short form. Field introduced in 21.1.1."
+                type: string
             type_matcher:
                 description: "How to match the BotClientType. Field introduced in 21.1.1."
                 $ref: '#/definitions/BotTypeMatcher'
@@ -432,7 +445,7 @@ definitions:
         type: object
         properties:
             client_types:
-                description: "The list of client types. Enum options - WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE, CLOUD_SOURCE. Field introduced in 21.1.1."
+                description: "The list of client types. Enum options - WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION. Field introduced in 21.1.1. Minimum of 1 items required."
                 type: array
                 items:
                     type: string

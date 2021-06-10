@@ -613,7 +613,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int64"
+                    "format": "int32"
                 }
             }
         },
@@ -843,7 +843,7 @@
                     "type": "string"
                 },
                 "reputation_types": {
-                    "description": "IP reputation type. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 20.1.1. Minimum of 1 items required.",
+                    "description": "IP reputation type. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 20.1.1. Minimum of 1 items required.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1078,8 +1078,22 @@
                     "description": "The external provide for the rules. It is a reference to an object of type WafApplicationSignatureProvider. Field introduced in 20.1.1.",
                     "type": "string"
                 },
+                "resolved_rules": {
+                    "description": "A resolved version of the active application specific rules together with the overrides. Field introduced in 20.1.6.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/WafRule"
+                    }
+                },
+                "rule_overrides": {
+                    "description": "Override attributes of application signature rules. Field introduced in 20.1.6.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/WafRuleOverrides"
+                    }
+                },
                 "rules": {
-                    "description": "The active application specific rules. You can change attributes like enabled, waf mode and exclusions, but not the rules itself. To change the rules, you can change the tags or the rule provider. Field introduced in 20.1.1.",
+                    "description": "This entry is deprecated. If you want to deactivate a certain rule, please use the rule_overrides field instead. Field deprecated in 20.1.6. Field introduced in 20.1.1.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafRule"
@@ -1215,10 +1229,17 @@
                     "type": "string"
                 },
                 "crs_groups": {
-                    "description": "WAF Rules are categorized in to groups based on their characterization. These groups are system created with CRS groups. Field introduced in 17.2.1.",
+                    "description": "This entry is deprecated. If you want to change the property of a CRS group or rule (enabled, mode, exclusions), please use the crs_overrides field instead. Field deprecated in 20.1.6. Field introduced in 17.2.1.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafRuleGroup"
+                    }
+                },
+                "crs_overrides": {
+                    "description": "Override attributes for CRS rules. Field introduced in 20.1.6.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/WafRuleGroupOverrides"
                     }
                 },
                 "description": {
@@ -1301,6 +1322,13 @@
                 },
                 "pre_crs_groups": {
                     "description": "WAF Rules are categorized in to groups based on their characterization. These groups are created by the user and will be  enforced before the CRS groups. Field introduced in 17.2.1.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/WafRuleGroup"
+                    }
+                },
+                "resolved_crs_groups": {
+                    "description": "A resolved version of waf_crs_ref with waf_crs_overrides applied. Field introduced in 20.1.6.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafRuleGroup"
@@ -1581,6 +1609,67 @@
                     "items": {
                         "$ref": "#/definitions/WafRule"
                     }
+                }
+            }
+        },
+        "WafRuleGroupOverrides": {
+            "type": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "enable": {
+                    "description": "Override the enable flag for this group. Field introduced in 20.1.6.",
+                    "type": "boolean"
+                },
+                "exclude_list": {
+                    "description": "Replace the exclude list for this group. Field introduced in 20.1.6. Maximum of 64 items allowed.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/WafExcludeListEntry"
+                    }
+                },
+                "mode": {
+                    "description": "Override the waf mode for this group.. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 20.1.6.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name of the group where attributes or rules are overridden. Field introduced in 20.1.6.",
+                    "type": "string"
+                },
+                "rule_overrides": {
+                    "description": "Rule specific overrides. Field introduced in 20.1.6. Maximum of 1024 items allowed.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/WafRuleOverrides"
+                    }
+                }
+            }
+        },
+        "WafRuleOverrides": {
+            "type": "object",
+            "required": [
+                "rule_id"
+            ],
+            "properties": {
+                "enable": {
+                    "description": "Override the enable flag for this rule. Field introduced in 20.1.6.",
+                    "type": "boolean"
+                },
+                "exclude_list": {
+                    "description": "Replace the exclude list for this rule. Field introduced in 20.1.6. Maximum of 64 items allowed.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/WafExcludeListEntry"
+                    }
+                },
+                "mode": {
+                    "description": "Override the waf mode for this rule. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 20.1.6.",
+                    "type": "string"
+                },
+                "rule_id": {
+                    "description": "The rule_id of the rule where attributes are overridden. Field introduced in 20.1.6.",
+                    "type": "string"
                 }
             }
         }

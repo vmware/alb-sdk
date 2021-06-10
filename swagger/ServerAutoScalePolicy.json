@@ -509,7 +509,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int64"
+                    "format": "int32"
                 }
             }
         },
@@ -548,6 +548,52 @@
                 }
             }
         },
+        "ScheduledScaling": {
+            "type": "object",
+            "required": [
+                "recurrence"
+            ],
+            "properties": {
+                "autoscaling_duration": {
+                    "description": "Scheduled autoscale duration (in hours). Allowed values are 1-24. Field introduced in 21.1.1. Unit is HOURS.",
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int32"
+                },
+                "cron_expression": {
+                    "description": "The cron expression describing desired time for the scheduled autoscale. Field introduced in 21.1.1.",
+                    "type": "string"
+                },
+                "desired_capacity": {
+                    "description": "Desired number of servers during Schedule intervals, it may cause scale-in or scale-out based on the value. Field introduced in 21.1.1.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "enable": {
+                    "description": "Enables the scheduled autoscaling. Field introduced in 21.1.1.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "end_date": {
+                    "description": "Scheduled autoscale end date in ISO8601 format, said day will be included in schedule and have to be in future and greater than start date. Field introduced in 21.1.1.",
+                    "type": "string"
+                },
+                "recurrence": {
+                    "description": "Frequency of the Scheduled autoscale. Enum options - ONCE, EVERY_DAY, EVERY_WEEK, EVERY_MONTH. Field introduced in 21.1.1.",
+                    "type": "string"
+                },
+                "schedule_max_step": {
+                    "description": "Maximum number of simultaneous scale-in/out servers for scheduled autoscale. If this value is 0, regular autoscale policy dictates this. . Field introduced in 21.1.1.",
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int32"
+                },
+                "start_date": {
+                    "description": "Scheduled autoscale start date in ISO8601 format, said day will be included in schedule and have to be in future. Field introduced in 21.1.1.",
+                    "type": "string"
+                }
+            }
+        },
         "ServerAutoScalePolicy": {
             "type": "object",
             "required": [
@@ -577,13 +623,13 @@
                     "type": "boolean"
                 },
                 "intelligent_scalein_margin": {
-                    "description": "Maximum extra capacity as percentage of load used by the intelligent scheme. Scalein is triggered when available capacity is more than this margin. Allowed values are 1-99.",
+                    "description": "Maximum extra capacity as percentage of load used by the intelligent scheme. Scale-in is triggered when available capacity is more than this margin. Allowed values are 1-99.",
                     "type": "integer",
                     "default": 40,
                     "format": "int32"
                 },
                 "intelligent_scaleout_margin": {
-                    "description": "Minimum extra capacity as percentage of load used by the intelligent scheme. Scaleout is triggered when available capacity is less than this margin. Allowed values are 1-99.",
+                    "description": "Minimum extra capacity as percentage of load used by the intelligent scheme. Scale-out is triggered when available capacity is less than this margin. Allowed values are 1-99.",
                     "type": "integer",
                     "default": 20,
                     "format": "int32"
@@ -603,19 +649,19 @@
                     }
                 },
                 "max_scalein_adjustment_step": {
-                    "description": "Maximum number of servers to scalein simultaneously. The actual number of servers to scalein is chosen such that target number of servers is always more than or equal to the min_size.",
+                    "description": "Maximum number of servers to scale-in simultaneously. The actual number of servers to scale-in is chosen such that target number of servers is always more than or equal to the min_size.",
                     "type": "integer",
                     "default": 1,
                     "format": "int32"
                 },
                 "max_scaleout_adjustment_step": {
-                    "description": "Maximum number of servers to scaleout simultaneously. The actual number of servers to scaleout is chosen such that target number of servers is always less than or equal to the max_size.",
+                    "description": "Maximum number of servers to scale-out simultaneously. The actual number of servers to scale-out is chosen such that target number of servers is always less than or equal to the max_size.",
                     "type": "integer",
                     "default": 1,
                     "format": "int32"
                 },
                 "max_size": {
-                    "description": "Maximum number of servers after scaleout. Allowed values are 0-400.",
+                    "description": "Maximum number of servers after scale-out. Allowed values are 0-400.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -629,30 +675,37 @@
                     "type": "string"
                 },
                 "scalein_alertconfig_refs": {
-                    "description": "Trigger scalein when alerts due to any of these Alert configurations are raised. It is a reference to an object of type AlertConfig.",
+                    "description": "Trigger scale-in when alerts due to any of these Alert configurations are raised. It is a reference to an object of type AlertConfig.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "scalein_cooldown": {
-                    "description": "Cooldown period during which no new scalein is triggered to allow previous scalein to successfully complete. Unit is SEC.",
+                    "description": "Cooldown period during which no new scale-in is triggered to allow previous scale-in to successfully complete. Unit is SEC.",
                     "type": "integer",
                     "default": 300,
                     "format": "int32"
                 },
                 "scaleout_alertconfig_refs": {
-                    "description": "Trigger scaleout when alerts due to any of these Alert configurations are raised. It is a reference to an object of type AlertConfig.",
+                    "description": "Trigger scale-out when alerts due to any of these Alert configurations are raised. It is a reference to an object of type AlertConfig.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "scaleout_cooldown": {
-                    "description": "Cooldown period during which no new scaleout is triggered to allow previous scaleout to successfully complete. Unit is SEC.",
+                    "description": "Cooldown period during which no new scale-out is triggered to allow previous scale-out to successfully complete. Unit is SEC.",
                     "type": "integer",
                     "default": 300,
                     "format": "int32"
+                },
+                "scheduled_scalings": {
+                    "description": "Schedule-based scale-in/out policy. During schedule intervals, metrics based autoscale is not enabled and number of servers will be solely derived from ScheduleScale policy. Field introduced in 21.1.1. Maximum of 1 items allowed.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ScheduledScaling"
+                    }
                 },
                 "tenant_ref": {
                     "description": " It is a reference to an object of type Tenant.",

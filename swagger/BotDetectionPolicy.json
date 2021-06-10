@@ -517,19 +517,27 @@
         "BotAllowRule": {
             "type": "object",
             "required": [
-                "action"
+                "action",
+                "condition",
+                "index"
             ],
             "properties": {
                 "action": {
-                    "description": "The action to take. Enum options - BYPASS, CONTINUE. Field introduced in 21.1.1.",
+                    "description": "The action to take. Enum options - BOT_ACTION_BYPASS, BOT_ACTION_CONTINUE. Field introduced in 21.1.1.",
                     "type": "string"
                 },
-                "conditions": {
-                    "description": "The conditions to match, combined by logical AND. Field introduced in 21.1.1.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/MatchTarget"
-                    }
+                "condition": {
+                    "description": "The condition to match. Field introduced in 21.1.1.",
+                    "$ref": "#/definitions/MatchTarget"
+                },
+                "index": {
+                    "description": "Rules are processed in order of this index field. Field introduced in 21.1.1.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "description": "A name describing the rule in a short form. Field introduced in 21.1.1.",
+                    "type": "string"
                 }
             }
         },
@@ -558,7 +566,15 @@
                     "default": true
                 },
                 "ip_location_db_ref": {
-                    "description": "The UUID of the Geo-IP databse to use. It is a reference to an object of type GeoDB. Field introduced in 21.1.1.",
+                    "description": "The UUID of the Geo-IP database to use. It is a reference to an object of type GeoDB. Field introduced in 21.1.1.",
+                    "type": "string"
+                },
+                "system_cloud_providers_ref": {
+                    "description": "The system-defined cloud providers. It is a reference to an object of type StringGroup. Field introduced in 21.1.1.",
+                    "type": "string"
+                },
+                "system_search_engines_ref": {
+                    "description": "The system-defined search engines. It is a reference to an object of type StringGroup. Field introduced in 21.1.1.",
                     "type": "string"
                 }
             }
@@ -575,12 +591,9 @@
                     "description": "The UUID of the IP reputation DB to use. It is a reference to an object of type IPReputationDB. Field introduced in 21.1.1.",
                     "type": "string"
                 },
-                "ip_reputation_mappings": {
-                    "description": "Map every IPReputationType to a bot type (can be unknown). Field introduced in 21.1.1.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/IPReputationTypeMapping"
-                    }
+                "system_ip_reputation_mapping_ref": {
+                    "description": "The system-provided mapping from IP reputation types to Bot types. It is a reference to an object of type BotIPReputationTypeMapping. Field introduced in 21.1.1.",
+                    "type": "string"
                 }
             }
         },
@@ -631,17 +644,6 @@
                     "description": "Allow the user to skip BotManagement for selected requests. Field introduced in 21.1.1.",
                     "$ref": "#/definitions/BotAllowList"
                 },
-                "bot_mapping_uuids": {
-                    "description": "System- and User-defined rules for classification. Field introduced in 21.1.1.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "consolidator_ref": {
-                    "description": "The installation provides an updated ruleset for consolidating the results of different decider phases. It is a reference to an object of type BotConfigConsolidator. Field introduced in 21.1.1.",
-                    "type": "string"
-                },
                 "description": {
                     "description": "Human-readable description of this Bot Detection Policy. Field introduced in 21.1.1.",
                     "type": "string"
@@ -658,6 +660,14 @@
                     "description": "The name of this Bot Detection Policy. Field introduced in 21.1.1.",
                     "type": "string"
                 },
+                "system_bot_mapping_ref": {
+                    "description": "System-defined rules for classification. It is a reference to an object of type BotMapping. Field introduced in 21.1.1.",
+                    "type": "string"
+                },
+                "system_consolidator_ref": {
+                    "description": "The installation provides an updated ruleset for consolidating the results of different decider phases. It is a reference to an object of type BotConfigConsolidator. Field introduced in 21.1.1.",
+                    "type": "string"
+                },
                 "tenant_ref": {
                     "description": "The unique identifier of the tenant to which this policy belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1.",
                     "type": "string"
@@ -670,6 +680,14 @@
                 "user_agent_detector": {
                     "description": "The User-Agent configuration used in this policy. Field introduced in 21.1.1.",
                     "$ref": "#/definitions/BotConfigUserAgent"
+                },
+                "user_bot_mapping_ref": {
+                    "description": "User-defined rules for classification. These are applied before the system classification rules. If a rule matches, processing terminates and the system-defined rules will not run. It is a reference to an object of type BotMapping. Field introduced in 21.1.1.",
+                    "type": "string"
+                },
+                "user_consolidator_ref": {
+                    "description": "The user-provided ruleset for consolidating the results of different decider phases. This runs before the system consolidator. If it successfully sets a consolidation, the system consolidator will not change it. It is a reference to an object of type BotConfigConsolidator. Field introduced in 21.1.1.",
+                    "type": "string"
                 },
                 "uuid": {
                     "description": "A unique identifier to this Bot Detection Policy. Field introduced in 21.1.1.",
@@ -695,23 +713,6 @@
                     }
                 },
                 "next": {
-                    "type": "string"
-                }
-            }
-        },
-        "BotIdentification": {
-            "type": "object",
-            "properties": {
-                "class": {
-                    "description": "The Bot Client Class of this identification. Enum options - HUMAN_CLIENT, BOT_CLIENT. Field introduced in 21.1.1.",
-                    "type": "string"
-                },
-                "identifier": {
-                    "description": "A free-form string to identify the client. Field introduced in 21.1.1.",
-                    "type": "string"
-                },
-                "type": {
-                    "description": "The Bot Client Type of this identification. Enum options - WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE, CLOUD_SOURCE. Field introduced in 21.1.1.",
                     "type": "string"
                 }
             }
@@ -931,23 +932,6 @@
                 }
             }
         },
-        "IPReputationTypeMapping": {
-            "type": "object",
-            "required": [
-                "bot_identification",
-                "ip_reputation_type"
-            ],
-            "properties": {
-                "bot_identification": {
-                    "description": "The Bot Identification to which the IP reputation type is mapped. Field introduced in 21.1.1.",
-                    "$ref": "#/definitions/BotIdentification"
-                },
-                "ip_reputation_type": {
-                    "description": "The type of IP reputation that is mapped to a Bot Identification. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 21.1.1.",
-                    "type": "string"
-                }
-            }
-        },
         "IPReputationTypeMatch": {
             "type": "object",
             "required": [
@@ -959,7 +943,7 @@
                     "type": "string"
                 },
                 "reputation_types": {
-                    "description": "IP reputation type. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 20.1.1. Minimum of 1 items required.",
+                    "description": "IP reputation type. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 20.1.1. Minimum of 1 items required.",
                     "type": "array",
                     "items": {
                         "type": "string"

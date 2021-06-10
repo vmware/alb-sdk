@@ -3930,6 +3930,69 @@
                     }
                 }
             }
+        },
+        "/virtualservice/{uuid}/botstats/": {
+            "get": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -3990,15 +4053,15 @@
             "type": "object",
             "properties": {
                 "connector": {
-                    "description": "connector of APICNetworkRel.",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "string"
                 },
                 "rel_key": {
-                    "description": "rel_key of APICNetworkRel.",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "string"
                 },
                 "target_network": {
-                    "description": "target_network of APICNetworkRel.",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "string"
                 }
             }
@@ -4007,33 +4070,33 @@
             "type": "object",
             "properties": {
                 "graph": {
-                    "description": "graph of ApicVSPlacementReq.",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "string"
                 },
                 "lifs": {
-                    "description": "Placeholder for description of property lifs of obj type ApicVSPlacementReq field type str  type object",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/Lif"
                     }
                 },
                 "network_rel": {
-                    "description": "Placeholder for description of property network_rel of obj type ApicVSPlacementReq field type str  type object",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/APICNetworkRel"
                     }
                 },
                 "tenant_name": {
-                    "description": "tenant_name of ApicVSPlacementReq.",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "string"
                 },
                 "vdev": {
-                    "description": "vdev of ApicVSPlacementReq.",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "string"
                 },
                 "vgrp": {
-                    "description": "vgrp of ApicVSPlacementReq.",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "string"
                 }
             }
@@ -4262,26 +4325,26 @@
             "type": "object",
             "properties": {
                 "adapter": {
-                    "description": "adapter of Cif.",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "string"
                 },
                 "cif": {
-                    "description": "cif of Cif.",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "string"
                 },
                 "mac_address": {
-                    "description": "mac_address of Cif.",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "string"
                 },
                 "resources": {
-                    "description": "resources of Cif.",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "se_uuid": {
-                    "description": "Unique object identifier of se.",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "string"
                 }
             }
@@ -4351,7 +4414,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int64"
+                    "format": "int32"
                 }
             }
         },
@@ -5161,22 +5224,22 @@
             "type": "object",
             "properties": {
                 "cifs": {
-                    "description": "Placeholder for description of property cifs of obj type Lif field type str  type object",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/Cif"
                     }
                 },
                 "lif": {
-                    "description": "lif of Lif.",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "string"
                 },
                 "lif_label": {
-                    "description": "lif_label of Lif.",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "string"
                 },
                 "subnet": {
-                    "description": "subnet of Lif.",
+                    "description": " Field deprecated in 21.1.1.",
                     "type": "string"
                 }
             }
@@ -5275,7 +5338,7 @@
                     "format": "int32"
                 },
                 "max_throughput": {
-                    "description": "The maximum throughput per second for all clients allowed through the client side of the Virtual Service.",
+                    "description": "The maximum throughput per second for all clients allowed through the client side of the Virtual Service per SE.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -5927,7 +5990,7 @@
                     "type": "string"
                 },
                 "apic_contract_graph": {
-                    "description": "The name of the Contract/Graph associated with the Virtual Service. Should be in the <Contract name> <Graph name> format. This is applicable only for Service Integration mode with Cisco APIC Controller . Field introduced in 17.2.12,18.1.2. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "description": "The name of the Contract/Graph associated with the Virtual Service. Should be in the <Contract name> <Graph name> format. This is applicable only for Service Integration mode with Cisco APIC Controller . Field deprecated in 21.1.1. Field introduced in 17.2.12,18.1.2. Allowed in Basic edition, Essentials edition, Enterprise edition.",
                     "type": "string"
                 },
                 "application_profile_ref": {
@@ -6077,7 +6140,7 @@
                     "default": true
                 },
                 "error_page_profile_ref": {
-                    "description": "Error Page Profile to be used for this virtualservice.This profile is used to send the custom error page to the client generated by the proxy. It is a reference to an object of type ErrorPageProfile. Field introduced in 17.2.4. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "description": "Error Page Profile to be used for this virtualservice.This profile is used to send the custom error page to the client generated by the proxy. It is a reference to an object of type ErrorPageProfile. Field introduced in 17.2.4.",
                     "type": "string"
                 },
                 "floating_ip": {

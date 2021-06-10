@@ -391,7 +391,21 @@ definitions:
                 description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
                 type: integer
                 default: 1
-                format: int64
+                format: int32
+    CustomIpamSubnet:
+        type: object
+        required:
+            -   network_id
+        properties:
+            network_id:
+                description: "Network to use for Custom IPAM IP allocation. Field introduced in 21.1.1."
+                type: string
+            subnet:
+                description: "IPv4 subnet to use for Custom IPAM IP allocation. Field introduced in 21.1.1."
+                $ref: '#/definitions/IpAddrPrefix'
+            subnet6:
+                description: "IPv6 subnet to use for Custom IPAM IP allocation. Field introduced in 21.1.1."
+                $ref: '#/definitions/IpAddrPrefix'
     CustomParams:
         type: object
         required:
@@ -569,13 +583,18 @@ definitions:
                 type: array
                 items:
                     $ref: '#/definitions/CustomParams'
+            usable_alloc_subnets:
+                description: "Networks or Subnets to use for Custom IPAM IP allocation. Field introduced in 21.1.1."
+                type: array
+                items:
+                    $ref: '#/definitions/CustomIpamSubnet'
             usable_domains:
                 description: "Usable domains. Field introduced in 17.2.2."
                 type: array
                 items:
                     type: string
             usable_subnets:
-                description: "Usable subnets. Field introduced in 17.2.2."
+                description: "Usable subnets. Field deprecated in 21.1.1."
                 type: array
                 items:
                     $ref: '#/definitions/IpAddrPrefix'

@@ -2046,7 +2046,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int64"
+                    "format": "int32"
                 }
             }
         },
@@ -2565,7 +2565,7 @@
                     "type": "string"
                 },
                 "apic_epg_name": {
-                    "description": "Synchronize Cisco APIC EPG members with pool servers.",
+                    "description": "Synchronize Cisco APIC EPG members with pool servers. Field deprecated in 21.1.1.",
                     "type": "string"
                 },
                 "append_port": {
@@ -2702,7 +2702,7 @@
                     "type": "boolean"
                 },
                 "http2_properties": {
-                    "description": "HTTP2 pool properties. Field introduced in 21.1.1.",
+                    "description": "HTTP2 pool properties. Field introduced in 21.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition.",
                     "$ref": "#/definitions/HTTP2PoolProperties"
                 },
                 "ignore_server_port": {
@@ -2843,6 +2843,11 @@
                     "type": "integer",
                     "format": "int32"
                 },
+                "server_disable_type": {
+                    "description": "Server graceful disable timeout behaviour. Enum options - DISALLOW_NEW_CONNECTION, ALLOW_NEW_CONNECTION_IF_PERSISTENCE_PRESENT. Field introduced in 21.1.1.",
+                    "type": "string",
+                    "default": "DISALLOW_NEW_CONNECTION"
+                },
                 "server_name": {
                     "description": "Fully qualified DNS hostname which will be used in the TLS SNI extension in server connections if SNI is enabled. If no value is specified, Avi will use the incoming host header instead.",
                     "type": "string"
@@ -2852,7 +2857,7 @@
                     "$ref": "#/definitions/HTTPServerReselect"
                 },
                 "server_timeout": {
-                    "description": "Server timeout value specifies the time within which a server connection needs to be established and a request-response exchange completes between AVI and the server. Value of 0 results in using default timeout of 60 minutes. Allowed values are 0-3600000. Field introduced in 18.1.5,18.2.1. Unit is MILLISECONDS.",
+                    "description": "Server timeout value specifies the time within which a server connection needs to be established and a request-response exchange completes between AVI and the server. Value of 0 results in using default timeout of 60 minutes. Allowed values are 0-21600000. Field introduced in 18.1.5,18.2.1. Unit is MILLISECONDS.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -3196,7 +3201,7 @@
             "type": "object",
             "properties": {
                 "reason": {
-                    "description": "Reason for the manual scalein.",
+                    "description": "Reason for the manual scale-in.",
                     "type": "string"
                 },
                 "servers": {
@@ -3216,7 +3221,7 @@
             "type": "object",
             "properties": {
                 "reason": {
-                    "description": "Reason for the manual scaleout.",
+                    "description": "Reason for the manual scale-out.",
                     "type": "string"
                 },
                 "uuid": {
