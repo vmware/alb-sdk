@@ -432,7 +432,7 @@ definitions:
                 description: "By default, use system proxy configuration.If true, use split proxy configuration. Field introduced in 20.1.1."
                 type: boolean
             use_tls:
-                description: "Secure the controller to PULSE communication over TLS. Field introduced in 20.1.3."
+                description: "Secure the controller to PULSE communication over TLS. Field introduced in 20.1.3. Allowed in Basic edition, Enterprise edition."
                 type: boolean
                 default: True
             uuid:
@@ -493,7 +493,7 @@ definitions:
                 description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
                 type: integer
                 default: 1
-                format: int64
+                format: int32
     IpReputationConfig:
         type: object
         properties:

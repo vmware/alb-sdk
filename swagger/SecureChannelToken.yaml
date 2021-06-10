@@ -14,7 +14,7 @@ info:
     description: |
         CLI
         ```
-        - show securechanneltoken
+        - show securechanneltoken <key>
         ```
 
 
@@ -24,7 +24,7 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /securechannel:
+    /securechanneltoken:
         get:
             consumes:
                 -   application/json
@@ -132,7 +132,7 @@ paths:
                         $ref: "#/definitions/SecureChannelToken"
                 401:
                     description: log in failed
-    /securechannel/{uuid}:
+    /securechanneltoken/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -365,26 +365,29 @@ definitions:
                 readOnly: True
                 type: string
             expiry_time:
-                description: "Expiry time for secure channel."
+                description: "Expiry time for auth_token."
                 type: number
                 format: double
+            in_use:
+                description: "Whether this auth_token is used by some node(SE/controller). Field introduced in 21.1.1."
+                type: boolean
             metadata:
-                description: "Placeholder for description of property metadata of obj type SecureChannelToken field type str  type object"
+                description: "Metadata associated with auth_token."
                 type: array
                 items:
                     $ref: '#/definitions/SecureChannelMetadata'
             name:
-                description: "Name of the object."
+                description: "Auth_token used for SE/controller authorization."
                 type: string
             node_uuid:
-                description: "Unique object identifier of node."
+                description: "Deprecated  Uuid of SE or controller who is using this auth_token. Field deprecated in 21.1.1."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "Unique object identifier of the object."
+                description: "Auth_token used for SE/controller authorization."
                 type: string
     SecureChannelTokenApiResponse:
         type: object

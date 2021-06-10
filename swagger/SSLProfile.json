@@ -509,7 +509,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int64"
+                    "format": "int32"
                 }
             }
         },
@@ -639,7 +639,7 @@
                 "signature_algorithm": {
                     "description": "Signature Algorithms represented as defined by RFC5246-Section 7.4.1.4.1 andhttps //www.openssl.org/docs/man1.1.0/man3/SSL_CTX_set1_client_sigalgs_list.html. Field introduced in 21.1.1.",
                     "type": "string",
-                    "default": "ECDSA+SHA256:RSA+SHA256"
+                    "default": "auto"
                 },
                 "ssl_rating": {
                     "description": "Placeholder for description of property ssl_rating of obj type SSLProfile field type str  type object",

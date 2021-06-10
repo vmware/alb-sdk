@@ -1251,7 +1251,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int64"
+                    "format": "int32"
                 }
             }
         },
@@ -1320,6 +1320,11 @@
                 },
                 "bm_use_ansible": {
                     "description": "Use Ansible for SE creation in baremetal. Field introduced in 17.2.2.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "check_vsvip_fqdn_syntax": {
+                    "description": "Enforce VsVip FQDN syntax checks. Field introduced in 20.1.6. Allowed in Basic edition, Essentials edition, Enterprise edition.",
                     "type": "boolean",
                     "default": true
                 },
@@ -1411,8 +1416,12 @@
                     "type": "boolean",
                     "default": true
                 },
+                "enable_per_process_stop": {
+                    "description": "Enable stopping of individual processes if process cross the given threshold limit, even when the total controller memory usage is belowits threshold limit. Field introduced in 21.1.1.",
+                    "type": "boolean"
+                },
                 "enable_resmgr_log_cache_print": {
-                    "description": "Enable printing of cached logs inside Resource Manager. Used for debugging purposes only. Field introduced in 21.1.1.",
+                    "description": "Enable printing of cached logs inside Resource Manager. Used for debugging purposes only. Field introduced in 20.1.6.",
                     "type": "boolean"
                 },
                 "fatal_error_lease_time": {
@@ -1659,9 +1668,8 @@
                     "format": "int32"
                 },
                 "vs_apic_scaleout_timeout": {
-                    "description": "Time to wait for the scaled out SE to become ready before marking the scaleout done, applies to APIC configuration only. Unit is SEC.",
+                    "description": "Time to wait for the scaled out SE to become ready before marking the scaleout done, applies to APIC configuration only. Field deprecated in 21.1.1. Unit is SEC.",
                     "type": "integer",
-                    "default": 360,
                     "format": "int32"
                 },
                 "vs_awaiting_se_timeout": {

@@ -8,7 +8,7 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- show securechanneltoken\n```\n"
+        "description": "CLI\n```\n- show securechanneltoken <key>\n```\n"
     },
     "securityDefinitions": {
         "basicAuth": {
@@ -18,7 +18,7 @@
     },
     "basePath": "/api",
     "paths": {
-        "/securechannel": {
+        "/securechanneltoken": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -182,7 +182,7 @@
                 }
             }
         },
-        "/securechannel/{uuid}": {
+        "/securechanneltoken/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -527,23 +527,27 @@
                     "type": "string"
                 },
                 "expiry_time": {
-                    "description": "Expiry time for secure channel.",
+                    "description": "Expiry time for auth_token.",
                     "type": "number",
                     "format": "double"
                 },
+                "in_use": {
+                    "description": "Whether this auth_token is used by some node(SE/controller). Field introduced in 21.1.1.",
+                    "type": "boolean"
+                },
                 "metadata": {
-                    "description": "Placeholder for description of property metadata of obj type SecureChannelToken field type str  type object",
+                    "description": "Metadata associated with auth_token.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/SecureChannelMetadata"
                     }
                 },
                 "name": {
-                    "description": "Name of the object.",
+                    "description": "Auth_token used for SE/controller authorization.",
                     "type": "string"
                 },
                 "node_uuid": {
-                    "description": "Unique object identifier of node.",
+                    "description": "Deprecated  Uuid of SE or controller who is using this auth_token. Field deprecated in 21.1.1.",
                     "type": "string"
                 },
                 "url": {
@@ -552,7 +556,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "Unique object identifier of the object.",
+                    "description": "Auth_token used for SE/controller authorization.",
                     "type": "string"
                 }
             }

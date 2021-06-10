@@ -354,7 +354,7 @@ definitions:
                 description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
                 type: integer
                 default: 1
-                format: int64
+                format: int32
     IpAddr:
         type: object
         required:
@@ -380,6 +380,19 @@ definitions:
                 description: "Number of mask."
                 type: integer
                 format: int32
+    RoleFilterMatchLabel:
+        type: object
+        required:
+            -   key
+        properties:
+            key:
+                description: "Key for filter match. Field introduced in 20.1.3."
+                type: string
+            values:
+                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3."
+                type: array
+                items:
+                    type: string
     WafCRS:
         type: object
         required:
@@ -407,6 +420,11 @@ definitions:
             integrity:
                 description: "Integrity protection value. Field introduced in 18.2.1."
                 type: string
+            markers:
+                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.6."
+                type: array
+                items:
+                    $ref: '#/definitions/RoleFilterMatchLabel'
             name:
                 description: "The name of this ruleset object. Field introduced in 18.2.1."
                 type: string
