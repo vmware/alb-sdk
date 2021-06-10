@@ -25,7 +25,7 @@ public class IpAddrGroup extends AviRestResource  {
     private List<IpAddr> addrs = null;
 
     @JsonProperty("apic_epg_name")
-    private String apicEpgName = null;
+    private String apicEpgName;
 
     @JsonProperty("country_codes")
     private List<String> countryCodes = null;
@@ -104,7 +104,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Populate ip addresses from members of this cisco apic epg.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return apicEpgName
      */
     public String getApicEpgName() {
@@ -114,7 +114,7 @@ public class IpAddrGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Populate ip addresses from members of this cisco apic epg.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param apicEpgName set the apicEpgName.
      */
     public void setApicEpgName(String  apicEpgName) {

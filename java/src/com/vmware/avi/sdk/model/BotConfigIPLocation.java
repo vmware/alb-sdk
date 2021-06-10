@@ -27,6 +27,12 @@ public class BotConfigIPLocation  {
     @JsonProperty("ip_location_db_ref")
     private String ipLocationDbRef = null;
 
+    @JsonProperty("system_cloud_providers_ref")
+    private String systemCloudProvidersRef = null;
+
+    @JsonProperty("system_search_engines_ref")
+    private String systemSearchEnginesRef = null;
+
 
 
     /**
@@ -53,7 +59,7 @@ public class BotConfigIPLocation  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * The uuid of the geo-ip databse to use.
+     * The uuid of the geo-ip database to use.
      * It is a reference to an object of type geodb.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -65,7 +71,7 @@ public class BotConfigIPLocation  {
 
     /**
      * This is the setter method to the attribute.
-     * The uuid of the geo-ip databse to use.
+     * The uuid of the geo-ip database to use.
      * It is a reference to an object of type geodb.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -73,6 +79,54 @@ public class BotConfigIPLocation  {
      */
     public void setIpLocationDbRef(String  ipLocationDbRef) {
         this.ipLocationDbRef = ipLocationDbRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * The system-defined cloud providers.
+     * It is a reference to an object of type stringgroup.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return systemCloudProvidersRef
+     */
+    public String getSystemCloudProvidersRef() {
+        return systemCloudProvidersRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The system-defined cloud providers.
+     * It is a reference to an object of type stringgroup.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param systemCloudProvidersRef set the systemCloudProvidersRef.
+     */
+    public void setSystemCloudProvidersRef(String  systemCloudProvidersRef) {
+        this.systemCloudProvidersRef = systemCloudProvidersRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * The system-defined search engines.
+     * It is a reference to an object of type stringgroup.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return systemSearchEnginesRef
+     */
+    public String getSystemSearchEnginesRef() {
+        return systemSearchEnginesRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The system-defined search engines.
+     * It is a reference to an object of type stringgroup.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param systemSearchEnginesRef set the systemSearchEnginesRef.
+     */
+    public void setSystemSearchEnginesRef(String  systemSearchEnginesRef) {
+        this.systemSearchEnginesRef = systemSearchEnginesRef;
     }
 
 
@@ -86,7 +140,9 @@ public class BotConfigIPLocation  {
       }
       BotConfigIPLocation objBotConfigIPLocation = (BotConfigIPLocation) o;
       return   Objects.equals(this.enabled, objBotConfigIPLocation.enabled)&&
-  Objects.equals(this.ipLocationDbRef, objBotConfigIPLocation.ipLocationDbRef);
+  Objects.equals(this.ipLocationDbRef, objBotConfigIPLocation.ipLocationDbRef)&&
+  Objects.equals(this.systemCloudProvidersRef, objBotConfigIPLocation.systemCloudProvidersRef)&&
+  Objects.equals(this.systemSearchEnginesRef, objBotConfigIPLocation.systemSearchEnginesRef);
     }
 
     @Override
@@ -95,6 +151,8 @@ public class BotConfigIPLocation  {
       sb.append("class BotConfigIPLocation {\n");
                   sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
                         sb.append("    ipLocationDbRef: ").append(toIndentedString(ipLocationDbRef)).append("\n");
+                        sb.append("    systemCloudProvidersRef: ").append(toIndentedString(systemCloudProvidersRef)).append("\n");
+                        sb.append("    systemSearchEnginesRef: ").append(toIndentedString(systemSearchEnginesRef)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

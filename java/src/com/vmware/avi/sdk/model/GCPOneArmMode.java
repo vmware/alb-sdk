@@ -33,6 +33,9 @@ public class GCPOneArmMode  {
     @JsonProperty("management_vpc_network_name")
     private String managementVpcNetworkName = null;
 
+    @JsonProperty("management_vpc_project_id")
+    private String managementVpcProjectId = null;
+
     @JsonProperty("management_vpc_subnet_name")
     private String managementVpcSubnetName = null;
 
@@ -130,6 +133,30 @@ public class GCPOneArmMode  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Project id of the service engine management network.
+     * By default, service engine project id will be used.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return managementVpcProjectId
+     */
+    public String getManagementVpcProjectId() {
+        return managementVpcProjectId;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Project id of the service engine management network.
+     * By default, service engine project id will be used.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param managementVpcProjectId set the managementVpcProjectId.
+     */
+    public void setManagementVpcProjectId(String  managementVpcProjectId) {
+        this.managementVpcProjectId = managementVpcProjectId;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Service engine management network subnet name.
      * Field introduced in 18.2.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -164,7 +191,8 @@ public class GCPOneArmMode  {
   Objects.equals(this.dataVpcProjectId, objGCPOneArmMode.dataVpcProjectId)&&
   Objects.equals(this.managementVpcSubnetName, objGCPOneArmMode.managementVpcSubnetName)&&
   Objects.equals(this.dataVpcNetworkName, objGCPOneArmMode.dataVpcNetworkName)&&
-  Objects.equals(this.managementVpcNetworkName, objGCPOneArmMode.managementVpcNetworkName);
+  Objects.equals(this.managementVpcNetworkName, objGCPOneArmMode.managementVpcNetworkName)&&
+  Objects.equals(this.managementVpcProjectId, objGCPOneArmMode.managementVpcProjectId);
     }
 
     @Override
@@ -175,6 +203,7 @@ public class GCPOneArmMode  {
                         sb.append("    dataVpcProjectId: ").append(toIndentedString(dataVpcProjectId)).append("\n");
                         sb.append("    dataVpcSubnetName: ").append(toIndentedString(dataVpcSubnetName)).append("\n");
                         sb.append("    managementVpcNetworkName: ").append(toIndentedString(managementVpcNetworkName)).append("\n");
+                        sb.append("    managementVpcProjectId: ").append(toIndentedString(managementVpcProjectId)).append("\n");
                         sb.append("    managementVpcSubnetName: ").append(toIndentedString(managementVpcSubnetName)).append("\n");
                   sb.append("}");
       return sb.toString();

@@ -33,6 +33,9 @@ public class AuthProfile extends AviRestResource  {
     @JsonProperty("ldap")
     private LdapAuthSettings ldap = null;
 
+    @JsonProperty("markers")
+    private List<RoleFilterMatchLabel> markers = null;
+
     @JsonProperty("name")
     private String name = null;
 
@@ -141,6 +144,42 @@ public class AuthProfile extends AviRestResource  {
      */
     public void setLdap(LdapAuthSettings ldap) {
         this.ldap = ldap;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.6.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public List<RoleFilterMatchLabel> getMarkers() {
+        return markers;
+    }
+
+    /**
+     * This is the setter method. this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.6.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public void setMarkers(List<RoleFilterMatchLabel>  markers) {
+        this.markers = markers;
+    }
+
+    /**
+     * This is the setter method this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.6.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public AuthProfile addMarkersItem(RoleFilterMatchLabel markersItem) {
+      if (this.markers == null) {
+        this.markers = new ArrayList<RoleFilterMatchLabel>();
+      }
+      this.markers.add(markersItem);
+      return this;
     }
 
     /**
@@ -329,6 +368,7 @@ public class AuthProfile extends AviRestResource  {
   Objects.equals(this.saml, objAuthProfile.saml)&&
   Objects.equals(this.paAgentRef, objAuthProfile.paAgentRef)&&
   Objects.equals(this.jwtProfileRef, objAuthProfile.jwtProfileRef)&&
+  Objects.equals(this.markers, objAuthProfile.markers)&&
   Objects.equals(this.description, objAuthProfile.description)&&
   Objects.equals(this.tenantRef, objAuthProfile.tenantRef);
     }
@@ -341,6 +381,7 @@ public class AuthProfile extends AviRestResource  {
                         sb.append("    http: ").append(toIndentedString(http)).append("\n");
                         sb.append("    jwtProfileRef: ").append(toIndentedString(jwtProfileRef)).append("\n");
                         sb.append("    ldap: ").append(toIndentedString(ldap)).append("\n");
+                        sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    paAgentRef: ").append(toIndentedString(paAgentRef)).append("\n");
                         sb.append("    saml: ").append(toIndentedString(saml)).append("\n");

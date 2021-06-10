@@ -24,15 +24,21 @@ public class BotAllowRule  {
     @JsonProperty("action")
     private String action = null;
 
-    @JsonProperty("conditions")
-    private List<MatchTarget> conditions = null;
+    @JsonProperty("condition")
+    private MatchTarget condition = null;
+
+    @JsonProperty("index")
+    private Integer index = null;
+
+    @JsonProperty("name")
+    private String name = null;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
      * The action to take.
-     * Enum options - BYPASS, CONTINUE.
+     * Enum options - BOT_ACTION_BYPASS, BOT_ACTION_CONTINUE.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return action
@@ -44,7 +50,7 @@ public class BotAllowRule  {
     /**
      * This is the setter method to the attribute.
      * The action to take.
-     * Enum options - BYPASS, CONTINUE.
+     * Enum options - BOT_ACTION_BYPASS, BOT_ACTION_CONTINUE.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param action set the action.
@@ -52,41 +58,71 @@ public class BotAllowRule  {
     public void setAction(String  action) {
         this.action = action;
     }
+
     /**
      * This is the getter method this will return the attribute value.
-     * The conditions to match, combined by logical and.
+     * The condition to match.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return conditions
+     * @return condition
      */
-    public List<MatchTarget> getConditions() {
-        return conditions;
+    public MatchTarget getCondition() {
+        return condition;
     }
 
     /**
-     * This is the setter method. this will set the conditions
-     * The conditions to match, combined by logical and.
+     * This is the setter method to the attribute.
+     * The condition to match.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return conditions
+     * @param condition set the condition.
      */
-    public void setConditions(List<MatchTarget>  conditions) {
-        this.conditions = conditions;
+    public void setCondition(MatchTarget condition) {
+        this.condition = condition;
     }
 
     /**
-     * This is the setter method this will set the conditions
-     * The conditions to match, combined by logical and.
+     * This is the getter method this will return the attribute value.
+     * Rules are processed in order of this index field.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return conditions
+     * @return index
      */
-    public BotAllowRule addConditionsItem(MatchTarget conditionsItem) {
-      if (this.conditions == null) {
-        this.conditions = new ArrayList<MatchTarget>();
-      }
-      this.conditions.add(conditionsItem);
-      return this;
+    public Integer getIndex() {
+        return index;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rules are processed in order of this index field.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param index set the index.
+     */
+    public void setIndex(Integer  index) {
+        this.index = index;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * A name describing the rule in a short form.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * A name describing the rule in a short form.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param name set the name.
+     */
+    public void setName(String  name) {
+        this.name = name;
     }
 
 
@@ -99,7 +135,9 @@ public class BotAllowRule  {
           return false;
       }
       BotAllowRule objBotAllowRule = (BotAllowRule) o;
-      return   Objects.equals(this.conditions, objBotAllowRule.conditions)&&
+      return   Objects.equals(this.index, objBotAllowRule.index)&&
+  Objects.equals(this.name, objBotAllowRule.name)&&
+  Objects.equals(this.condition, objBotAllowRule.condition)&&
   Objects.equals(this.action, objBotAllowRule.action);
     }
 
@@ -108,7 +146,9 @@ public class BotAllowRule  {
       StringBuilder sb = new StringBuilder();
       sb.append("class BotAllowRule {\n");
                   sb.append("    action: ").append(toIndentedString(action)).append("\n");
-                        sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+                        sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
+                        sb.append("    index: ").append(toIndentedString(index)).append("\n");
+                        sb.append("    name: ").append(toIndentedString(name)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

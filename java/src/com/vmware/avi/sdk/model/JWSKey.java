@@ -37,8 +37,8 @@ public class JWSKey  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Algorithm that need to be used while signing/validation.
-     * Field introduced in 20.1.5.
+     * Algorithm that need to be used while signing/validation, allowed values  hs256, hs384, hs512.
+     * Field introduced in 20.1.6.
      * Default value when not specified in API or module is interpreted by Avi Controller as "HS256".
      * @return alg
      */
@@ -48,8 +48,8 @@ public class JWSKey  {
 
     /**
      * This is the setter method to the attribute.
-     * Algorithm that need to be used while signing/validation.
-     * Field introduced in 20.1.5.
+     * Algorithm that need to be used while signing/validation, allowed values  hs256, hs384, hs512.
+     * Field introduced in 20.1.6.
      * Default value when not specified in API or module is interpreted by Avi Controller as "HS256".
      * @param alg set the alg.
      */
@@ -59,8 +59,9 @@ public class JWSKey  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Secret jwk for signing.
-     * Field introduced in 20.1.5.
+     * Secret jwk for signing/validation, length of the key varies depending upon the type of algorithm used for key generation {hs256  32 bytes, hs384
+     * 48bytes, hs512  64 bytes}.
+     * Field introduced in 20.1.6.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return key
      */
@@ -70,8 +71,9 @@ public class JWSKey  {
 
     /**
      * This is the setter method to the attribute.
-     * Secret jwk for signing.
-     * Field introduced in 20.1.5.
+     * Secret jwk for signing/validation, length of the key varies depending upon the type of algorithm used for key generation {hs256  32 bytes, hs384
+     * 48bytes, hs512  64 bytes}.
+     * Field introduced in 20.1.6.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param key set the key.
      */
@@ -81,8 +83,8 @@ public class JWSKey  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique key id for the key.
-     * Field introduced in 20.1.5.
+     * Unique key id across all keys.
+     * Field introduced in 20.1.6.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return kid
      */
@@ -92,8 +94,8 @@ public class JWSKey  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique key id for the key.
-     * Field introduced in 20.1.5.
+     * Unique key id across all keys.
+     * Field introduced in 20.1.6.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param kid set the kid.
      */
@@ -103,8 +105,8 @@ public class JWSKey  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Secret key type/format.
-     * Field introduced in 20.1.5.
+     * Secret key type/format, allowed value  octet(oct).
+     * Field introduced in 20.1.6.
      * Default value when not specified in API or module is interpreted by Avi Controller as "oct".
      * @return kty
      */
@@ -114,8 +116,8 @@ public class JWSKey  {
 
     /**
      * This is the setter method to the attribute.
-     * Secret key type/format.
-     * Field introduced in 20.1.5.
+     * Secret key type/format, allowed value  octet(oct).
+     * Field introduced in 20.1.6.
      * Default value when not specified in API or module is interpreted by Avi Controller as "oct".
      * @param kty set the kty.
      */

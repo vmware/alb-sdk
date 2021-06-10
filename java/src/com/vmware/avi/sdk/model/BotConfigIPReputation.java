@@ -27,8 +27,8 @@ public class BotConfigIPReputation  {
     @JsonProperty("ip_reputation_db_ref")
     private String ipReputationDbRef = null;
 
-    @JsonProperty("ip_reputation_mappings")
-    private List<IPReputationTypeMapping> ipReputationMappings = null;
+    @JsonProperty("system_ip_reputation_mapping_ref")
+    private String systemIpReputationMappingRef = null;
 
 
 
@@ -77,41 +77,29 @@ public class BotConfigIPReputation  {
     public void setIpReputationDbRef(String  ipReputationDbRef) {
         this.ipReputationDbRef = ipReputationDbRef;
     }
+
     /**
      * This is the getter method this will return the attribute value.
-     * Map every ipreputationtype to a bot type (can be unknown).
+     * The system-provided mapping from ip reputation types to bot types.
+     * It is a reference to an object of type botipreputationtypemapping.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return ipReputationMappings
+     * @return systemIpReputationMappingRef
      */
-    public List<IPReputationTypeMapping> getIpReputationMappings() {
-        return ipReputationMappings;
+    public String getSystemIpReputationMappingRef() {
+        return systemIpReputationMappingRef;
     }
 
     /**
-     * This is the setter method. this will set the ipReputationMappings
-     * Map every ipreputationtype to a bot type (can be unknown).
+     * This is the setter method to the attribute.
+     * The system-provided mapping from ip reputation types to bot types.
+     * It is a reference to an object of type botipreputationtypemapping.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return ipReputationMappings
+     * @param systemIpReputationMappingRef set the systemIpReputationMappingRef.
      */
-    public void setIpReputationMappings(List<IPReputationTypeMapping>  ipReputationMappings) {
-        this.ipReputationMappings = ipReputationMappings;
-    }
-
-    /**
-     * This is the setter method this will set the ipReputationMappings
-     * Map every ipreputationtype to a bot type (can be unknown).
-     * Field introduced in 21.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return ipReputationMappings
-     */
-    public BotConfigIPReputation addIpReputationMappingsItem(IPReputationTypeMapping ipReputationMappingsItem) {
-      if (this.ipReputationMappings == null) {
-        this.ipReputationMappings = new ArrayList<IPReputationTypeMapping>();
-      }
-      this.ipReputationMappings.add(ipReputationMappingsItem);
-      return this;
+    public void setSystemIpReputationMappingRef(String  systemIpReputationMappingRef) {
+        this.systemIpReputationMappingRef = systemIpReputationMappingRef;
     }
 
 
@@ -126,7 +114,7 @@ public class BotConfigIPReputation  {
       BotConfigIPReputation objBotConfigIPReputation = (BotConfigIPReputation) o;
       return   Objects.equals(this.enabled, objBotConfigIPReputation.enabled)&&
   Objects.equals(this.ipReputationDbRef, objBotConfigIPReputation.ipReputationDbRef)&&
-  Objects.equals(this.ipReputationMappings, objBotConfigIPReputation.ipReputationMappings);
+  Objects.equals(this.systemIpReputationMappingRef, objBotConfigIPReputation.systemIpReputationMappingRef);
     }
 
     @Override
@@ -135,7 +123,7 @@ public class BotConfigIPReputation  {
       sb.append("class BotConfigIPReputation {\n");
                   sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
                         sb.append("    ipReputationDbRef: ").append(toIndentedString(ipReputationDbRef)).append("\n");
-                        sb.append("    ipReputationMappings: ").append(toIndentedString(ipReputationMappings)).append("\n");
+                        sb.append("    systemIpReputationMappingRef: ").append(toIndentedString(systemIpReputationMappingRef)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

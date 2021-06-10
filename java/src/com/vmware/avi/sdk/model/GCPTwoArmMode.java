@@ -24,6 +24,9 @@ public class GCPTwoArmMode  {
     @JsonProperty("backend_data_vpc_network_name")
     private String backendDataVpcNetworkName = null;
 
+    @JsonProperty("backend_data_vpc_project_id")
+    private String backendDataVpcProjectId = null;
+
     @JsonProperty("backend_data_vpc_subnet_name")
     private String backendDataVpcSubnetName = null;
 
@@ -38,6 +41,9 @@ public class GCPTwoArmMode  {
 
     @JsonProperty("management_vpc_network_name")
     private String managementVpcNetworkName = null;
+
+    @JsonProperty("management_vpc_project_id")
+    private String managementVpcProjectId = null;
 
     @JsonProperty("management_vpc_subnet_name")
     private String managementVpcSubnetName = null;
@@ -64,6 +70,30 @@ public class GCPTwoArmMode  {
      */
     public void setBackendDataVpcNetworkName(String  backendDataVpcNetworkName) {
         this.backendDataVpcNetworkName = backendDataVpcNetworkName;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Project id of the service engine backend data network.
+     * By default, service engine project id will be used.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return backendDataVpcProjectId
+     */
+    public String getBackendDataVpcProjectId() {
+        return backendDataVpcProjectId;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Project id of the service engine backend data network.
+     * By default, service engine project id will be used.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param backendDataVpcProjectId set the backendDataVpcProjectId.
+     */
+    public void setBackendDataVpcProjectId(String  backendDataVpcProjectId) {
+        this.backendDataVpcProjectId = backendDataVpcProjectId;
     }
 
     /**
@@ -180,6 +210,30 @@ public class GCPTwoArmMode  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Project id of the service engine management network.
+     * By default, service engine project id will be used.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return managementVpcProjectId
+     */
+    public String getManagementVpcProjectId() {
+        return managementVpcProjectId;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Project id of the service engine management network.
+     * By default, service engine project id will be used.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param managementVpcProjectId set the managementVpcProjectId.
+     */
+    public void setManagementVpcProjectId(String  managementVpcProjectId) {
+        this.managementVpcProjectId = managementVpcProjectId;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Service engine management network subnet name.
      * Field introduced in 18.2.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -216,7 +270,9 @@ public class GCPTwoArmMode  {
   Objects.equals(this.backendDataVpcSubnetName, objGCPTwoArmMode.backendDataVpcSubnetName)&&
   Objects.equals(this.frontendDataVpcNetworkName, objGCPTwoArmMode.frontendDataVpcNetworkName)&&
   Objects.equals(this.managementVpcNetworkName, objGCPTwoArmMode.managementVpcNetworkName)&&
-  Objects.equals(this.backendDataVpcNetworkName, objGCPTwoArmMode.backendDataVpcNetworkName);
+  Objects.equals(this.backendDataVpcNetworkName, objGCPTwoArmMode.backendDataVpcNetworkName)&&
+  Objects.equals(this.managementVpcProjectId, objGCPTwoArmMode.managementVpcProjectId)&&
+  Objects.equals(this.backendDataVpcProjectId, objGCPTwoArmMode.backendDataVpcProjectId);
     }
 
     @Override
@@ -224,11 +280,13 @@ public class GCPTwoArmMode  {
       StringBuilder sb = new StringBuilder();
       sb.append("class GCPTwoArmMode {\n");
                   sb.append("    backendDataVpcNetworkName: ").append(toIndentedString(backendDataVpcNetworkName)).append("\n");
+                        sb.append("    backendDataVpcProjectId: ").append(toIndentedString(backendDataVpcProjectId)).append("\n");
                         sb.append("    backendDataVpcSubnetName: ").append(toIndentedString(backendDataVpcSubnetName)).append("\n");
                         sb.append("    frontendDataVpcNetworkName: ").append(toIndentedString(frontendDataVpcNetworkName)).append("\n");
                         sb.append("    frontendDataVpcProjectId: ").append(toIndentedString(frontendDataVpcProjectId)).append("\n");
                         sb.append("    frontendDataVpcSubnetName: ").append(toIndentedString(frontendDataVpcSubnetName)).append("\n");
                         sb.append("    managementVpcNetworkName: ").append(toIndentedString(managementVpcNetworkName)).append("\n");
+                        sb.append("    managementVpcProjectId: ").append(toIndentedString(managementVpcProjectId)).append("\n");
                         sb.append("    managementVpcSubnetName: ").append(toIndentedString(managementVpcSubnetName)).append("\n");
                   sb.append("}");
       return sb.toString();

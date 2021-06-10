@@ -22,26 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ApicAgentBridgeDomainVrfChange  {
     @JsonProperty("bridge_domain")
-    private String bridgeDomain = null;
+    private String bridgeDomain;
 
     @JsonProperty("new_vrf")
-    private String newVrf = null;
+    private String newVrf;
 
     @JsonProperty("old_vrf")
-    private String oldVrf = null;
+    private String oldVrf;
 
     @JsonProperty("pool_list")
-    private List<String> poolList = null;
+    private List<String> poolList;
 
     @JsonProperty("vs_list")
-    private List<String> vsList = null;
+    private List<String> vsList;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property bridge_domain of obj type apicagentbridgedomainvrfchange field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return bridgeDomain
      */
     public String getBridgeDomain() {
@@ -50,8 +49,7 @@ public class ApicAgentBridgeDomainVrfChange  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property bridge_domain of obj type apicagentbridgedomainvrfchange field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param bridgeDomain set the bridgeDomain.
      */
     public void setBridgeDomain(String  bridgeDomain) {
@@ -60,8 +58,7 @@ public class ApicAgentBridgeDomainVrfChange  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property new_vrf of obj type apicagentbridgedomainvrfchange field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return newVrf
      */
     public String getNewVrf() {
@@ -70,8 +67,7 @@ public class ApicAgentBridgeDomainVrfChange  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property new_vrf of obj type apicagentbridgedomainvrfchange field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param newVrf set the newVrf.
      */
     public void setNewVrf(String  newVrf) {
@@ -80,8 +76,7 @@ public class ApicAgentBridgeDomainVrfChange  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property old_vrf of obj type apicagentbridgedomainvrfchange field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return oldVrf
      */
     public String getOldVrf() {
@@ -90,8 +85,7 @@ public class ApicAgentBridgeDomainVrfChange  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property old_vrf of obj type apicagentbridgedomainvrfchange field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param oldVrf set the oldVrf.
      */
     public void setOldVrf(String  oldVrf) {
@@ -99,8 +93,7 @@ public class ApicAgentBridgeDomainVrfChange  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property pool_list of obj type apicagentbridgedomainvrfchange field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return poolList
      */
     public List<String> getPoolList() {
@@ -109,8 +102,7 @@ public class ApicAgentBridgeDomainVrfChange  {
 
     /**
      * This is the setter method. this will set the poolList
-     * Placeholder for description of property pool_list of obj type apicagentbridgedomainvrfchange field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return poolList
      */
     public void setPoolList(List<String>  poolList) {
@@ -119,8 +111,7 @@ public class ApicAgentBridgeDomainVrfChange  {
 
     /**
      * This is the setter method this will set the poolList
-     * Placeholder for description of property pool_list of obj type apicagentbridgedomainvrfchange field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return poolList
      */
     public ApicAgentBridgeDomainVrfChange addPoolListItem(String poolListItem) {
@@ -132,8 +123,7 @@ public class ApicAgentBridgeDomainVrfChange  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vs_list of obj type apicagentbridgedomainvrfchange field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return vsList
      */
     public List<String> getVsList() {
@@ -142,8 +132,7 @@ public class ApicAgentBridgeDomainVrfChange  {
 
     /**
      * This is the setter method. this will set the vsList
-     * Placeholder for description of property vs_list of obj type apicagentbridgedomainvrfchange field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return vsList
      */
     public void setVsList(List<String>  vsList) {
@@ -152,8 +141,7 @@ public class ApicAgentBridgeDomainVrfChange  {
 
     /**
      * This is the setter method this will set the vsList
-     * Placeholder for description of property vs_list of obj type apicagentbridgedomainvrfchange field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return vsList
      */
     public ApicAgentBridgeDomainVrfChange addVsListItem(String vsListItem) {

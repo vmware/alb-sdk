@@ -109,13 +109,13 @@ public class SeRuntimeProperties  {
     private Boolean logAgentCompressLogs = true;
 
     @JsonProperty("log_agent_conn_send_buffer_size")
-    private Integer logAgentConnSendBufferSize = 16384;
+    private Integer logAgentConnSendBufferSize;
 
     @JsonProperty("log_agent_export_msg_buffer_size")
-    private Integer logAgentExportMsgBufferSize = 524288;
+    private Integer logAgentExportMsgBufferSize;
 
     @JsonProperty("log_agent_export_wait_time")
-    private Integer logAgentExportWaitTime = 100;
+    private Integer logAgentExportWaitTime;
 
     @JsonProperty("log_agent_file_sz_appl")
     private Integer logAgentFileSzAppl = 4;
@@ -133,13 +133,13 @@ public class SeRuntimeProperties  {
     private Integer logAgentLogStorageMinSz = 1024;
 
     @JsonProperty("log_agent_max_active_adf_files_per_vs")
-    private Integer logAgentMaxActiveAdfFilesPerVs = 100;
+    private Integer logAgentMaxActiveAdfFilesPerVs;
 
     @JsonProperty("log_agent_max_concurrent_rsync")
     private Integer logAgentMaxConcurrentRsync = 1024;
 
     @JsonProperty("log_agent_max_logmessage_proto_sz")
-    private Integer logAgentMaxLogmessageProtoSz = 65536;
+    private Integer logAgentMaxLogmessageProtoSz;
 
     @JsonProperty("log_agent_max_storage_excess_percent")
     private Integer logAgentMaxStorageExcessPercent = 110;
@@ -151,7 +151,7 @@ public class SeRuntimeProperties  {
     private Integer logAgentMinStoragePerVs = 10;
 
     @JsonProperty("log_agent_pause_interval")
-    private Integer logAgentPauseInterval = 0;
+    private Integer logAgentPauseInterval;
 
     @JsonProperty("log_agent_sleep_interval")
     private Integer logAgentSleepInterval = 10;
@@ -981,6 +981,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Flag to indicate if log files are compressed upon full on the service engine.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return logAgentCompressLogs
@@ -991,6 +992,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Flag to indicate if log files are compressed upon full on the service engine.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param logAgentCompressLogs set the logAgentCompressLogs.
@@ -1001,9 +1003,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Log-agent test property used to simulate slow tcp connections.
-     * Unit is bytes.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
+     * [deprecated]log-agent test property used to simulate slow tcp connections.
+     * Field deprecated in 21.1.1.
      * @return logAgentConnSendBufferSize
      */
     public Integer getLogAgentConnSendBufferSize() {
@@ -1012,9 +1013,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
-     * Log-agent test property used to simulate slow tcp connections.
-     * Unit is bytes.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 16384.
+     * [deprecated]log-agent test property used to simulate slow tcp connections.
+     * Field deprecated in 21.1.1.
      * @param logAgentConnSendBufferSize set the logAgentConnSendBufferSize.
      */
     public void setLogAgentConnSendBufferSize(Integer  logAgentConnSendBufferSize) {
@@ -1023,9 +1023,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Maximum size of data sent by log-agent to controller over the tcp connection.
-     * Unit is bytes.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 524288.
+     * [deprecated]maximum size of data sent by log-agent to controller over the tcp connection.
+     * Field deprecated in 21.1.1.
      * @return logAgentExportMsgBufferSize
      */
     public Integer getLogAgentExportMsgBufferSize() {
@@ -1034,9 +1033,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
-     * Maximum size of data sent by log-agent to controller over the tcp connection.
-     * Unit is bytes.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 524288.
+     * [deprecated]maximum size of data sent by log-agent to controller over the tcp connection.
+     * Field deprecated in 21.1.1.
      * @param logAgentExportMsgBufferSize set the logAgentExportMsgBufferSize.
      */
     public void setLogAgentExportMsgBufferSize(Integer  logAgentExportMsgBufferSize) {
@@ -1045,9 +1043,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Time log-agent waits before sending data to the controller.
-     * Unit is milliseconds.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+     * [deprecated]time log-agent waits before sending data to the controller.
+     * Field deprecated in 21.1.1.
      * @return logAgentExportWaitTime
      */
     public Integer getLogAgentExportWaitTime() {
@@ -1056,9 +1053,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
-     * Time log-agent waits before sending data to the controller.
-     * Unit is milliseconds.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+     * [deprecated]time log-agent waits before sending data to the controller.
+     * Field deprecated in 21.1.1.
      * @param logAgentExportWaitTime set the logAgentExportWaitTime.
      */
     public void setLogAgentExportWaitTime(Integer  logAgentExportWaitTime) {
@@ -1067,6 +1063,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Maximum application log file size before rollover.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @return logAgentFileSzAppl
@@ -1077,6 +1074,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Maximum application log file size before rollover.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @param logAgentFileSzAppl set the logAgentFileSzAppl.
@@ -1087,6 +1085,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Maximum connection log file size before rollover.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @return logAgentFileSzConn
@@ -1097,6 +1096,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Maximum connection log file size before rollover.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @param logAgentFileSzConn set the logAgentFileSzConn.
@@ -1107,6 +1107,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Maximum debug log file size before rollover.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @return logAgentFileSzDebug
@@ -1117,6 +1118,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Maximum debug log file size before rollover.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @param logAgentFileSzDebug set the logAgentFileSzDebug.
@@ -1127,6 +1129,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Maximum event log file size before rollover.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @return logAgentFileSzEvent
@@ -1137,6 +1140,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Maximum event log file size before rollover.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @param logAgentFileSzEvent set the logAgentFileSzEvent.
@@ -1147,6 +1151,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Minimum storage allocated for logs irrespective of memory and cores.
      * Unit is mb.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
@@ -1158,6 +1163,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Minimum storage allocated for logs irrespective of memory and cores.
      * Unit is mb.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
@@ -1169,8 +1175,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Maximum number of virtual service log files maintained for significant logs on the service engine.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+     * [deprecated] maximum number of virtual service log files maintained for significant logs on the service engine.
+     * Field deprecated in 21.1.1.
      * @return logAgentMaxActiveAdfFilesPerVs
      */
     public Integer getLogAgentMaxActiveAdfFilesPerVs() {
@@ -1179,8 +1185,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
-     * Maximum number of virtual service log files maintained for significant logs on the service engine.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+     * [deprecated] maximum number of virtual service log files maintained for significant logs on the service engine.
+     * Field deprecated in 21.1.1.
      * @param logAgentMaxActiveAdfFilesPerVs set the logAgentMaxActiveAdfFilesPerVs.
      */
     public void setLogAgentMaxActiveAdfFilesPerVs(Integer  logAgentMaxActiveAdfFilesPerVs) {
@@ -1189,6 +1195,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Maximum concurrent rsync requests initiated from log-agent to the controller.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
      * @return logAgentMaxConcurrentRsync
@@ -1199,6 +1206,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Maximum concurrent rsync requests initiated from log-agent to the controller.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
      * @param logAgentMaxConcurrentRsync set the logAgentMaxConcurrentRsync.
@@ -1209,8 +1217,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Maximum size of serialized log message on the service engine.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 65536.
+     * [deprecated] maximum size of serialized log message on the service engine.
+     * Field deprecated in 21.1.1.
      * @return logAgentMaxLogmessageProtoSz
      */
     public Integer getLogAgentMaxLogmessageProtoSz() {
@@ -1219,8 +1227,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
-     * Maximum size of serialized log message on the service engine.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 65536.
+     * [deprecated] maximum size of serialized log message on the service engine.
+     * Field deprecated in 21.1.1.
      * @param logAgentMaxLogmessageProtoSz set the logAgentMaxLogmessageProtoSz.
      */
     public void setLogAgentMaxLogmessageProtoSz(Integer  logAgentMaxLogmessageProtoSz) {
@@ -1229,6 +1237,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Excess percentage threshold of disk size to trigger cleanup of logs on the service engine.
      * Default value when not specified in API or module is interpreted by Avi Controller as 110.
      * @return logAgentMaxStorageExcessPercent
@@ -1239,6 +1248,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Excess percentage threshold of disk size to trigger cleanup of logs on the service engine.
      * Default value when not specified in API or module is interpreted by Avi Controller as 110.
      * @param logAgentMaxStorageExcessPercent set the logAgentMaxStorageExcessPercent.
@@ -1249,6 +1259,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Maximum storage on the disk not allocated for logs on the service engine.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.0f.
      * @return logAgentMaxStorageIgnorePercent
@@ -1259,6 +1270,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Maximum storage on the disk not allocated for logs on the service engine.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.0f.
      * @param logAgentMaxStorageIgnorePercent set the logAgentMaxStorageIgnorePercent.
@@ -1269,6 +1281,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Minimum storage allocated to any given virtualservice on the service engine.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return logAgentMinStoragePerVs
@@ -1279,6 +1292,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Minimum storage allocated to any given virtualservice on the service engine.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param logAgentMinStoragePerVs set the logAgentMinStoragePerVs.
@@ -1289,9 +1303,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Time interval log-agent pauses between logs obtained from the dataplane.
-     * Unit is milliseconds.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * [deprecated]time interval log-agent pauses between logs obtained from the dataplane.
+     * Field deprecated in 21.1.1.
      * @return logAgentPauseInterval
      */
     public Integer getLogAgentPauseInterval() {
@@ -1300,9 +1313,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
-     * Time interval log-agent pauses between logs obtained from the dataplane.
-     * Unit is milliseconds.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * [deprecated]time interval log-agent pauses between logs obtained from the dataplane.
+     * Field deprecated in 21.1.1.
      * @param logAgentPauseInterval set the logAgentPauseInterval.
      */
     public void setLogAgentPauseInterval(Integer  logAgentPauseInterval) {
@@ -1311,6 +1323,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Internal timer to stall log-agent and prevent it from hogging cpu cycles on the service engine.
      * Unit is milliseconds.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
@@ -1322,6 +1335,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Internal timer to stall log-agent and prevent it from hogging cpu cycles on the service engine.
      * Unit is milliseconds.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
@@ -1333,6 +1347,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Timeout to purge unknown virtual service logs from the service engine.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
@@ -1344,6 +1359,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Timeout to purge unknown virtual service logs from the service engine.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
@@ -1355,6 +1371,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Maximum number of file names in a log message.
      * Default value when not specified in API or module is interpreted by Avi Controller as 64.
      * @return logMessageMaxFileListSize
@@ -1365,6 +1382,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Maximum number of file names in a log message.
      * Default value when not specified in API or module is interpreted by Avi Controller as 64.
      * @param logMessageMaxFileListSize set the logMessageMaxFileListSize.
@@ -1861,6 +1879,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Internal buffer full indicator on the service engine beyond which the unfiltered logs are abandoned.
      * Default value when not specified in API or module is interpreted by Avi Controller as 70.
      * @return seDpLogNfEnqueuePercent
@@ -1871,6 +1890,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Internal buffer full indicator on the service engine beyond which the unfiltered logs are abandoned.
      * Default value when not specified in API or module is interpreted by Avi Controller as 70.
      * @param seDpLogNfEnqueuePercent set the seDpLogNfEnqueuePercent.
@@ -1881,6 +1901,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deprecated in 21.1.1.
      * Internal buffer full indicator on the service engine beyond which the user filtered logs are abandoned.
      * Default value when not specified in API or module is interpreted by Avi Controller as 90.
      * @return seDpLogUdfEnqueuePercent
@@ -1891,6 +1912,7 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
+     * Deprecated in 21.1.1.
      * Internal buffer full indicator on the service engine beyond which the user filtered logs are abandoned.
      * Default value when not specified in API or module is interpreted by Avi Controller as 90.
      * @param seDpLogUdfEnqueuePercent set the seDpLogUdfEnqueuePercent.

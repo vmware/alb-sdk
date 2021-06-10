@@ -27,6 +27,9 @@ public class MemoryBalancerInfo  {
     @JsonProperty("controller_memory")
     private Integer controllerMemory = null;
 
+    @JsonProperty("debug_message")
+    private String debugMessage = null;
+
     @JsonProperty("limit")
     private Integer limit = null;
 
@@ -38,6 +41,15 @@ public class MemoryBalancerInfo  {
 
     @JsonProperty("process")
     private String process = null;
+
+    @JsonProperty("process_mode")
+    private String processMode = null;
+
+    @JsonProperty("process_trend")
+    private String processTrend = null;
+
+    @JsonProperty("threshold_percent")
+    private Float thresholdPercent = null;
 
 
     /**
@@ -76,7 +88,7 @@ public class MemoryBalancerInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Controller memory.
+     * Current controller memory usage.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controllerMemory
      */
@@ -86,7 +98,7 @@ public class MemoryBalancerInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Controller memory.
+     * Current controller memory usage.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param controllerMemory set the controllerMemory.
      */
@@ -96,7 +108,29 @@ public class MemoryBalancerInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Limit on the memory (in mb) for the process.
+     * Holder for debug message.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return debugMessage
+     */
+    public String getDebugMessage() {
+        return debugMessage;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Holder for debug message.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param debugMessage set the debugMessage.
+     */
+    public void setDebugMessage(String  debugMessage) {
+        this.debugMessage = debugMessage;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Limit on the memory (in kb) for the process.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return limit
      */
@@ -106,7 +140,7 @@ public class MemoryBalancerInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Limit on the memory (in mb) for the process.
+     * Limit on the memory (in kb) for the process.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param limit set the limit.
      */
@@ -116,7 +150,7 @@ public class MemoryBalancerInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Amount of memory (in mb) used by the process.
+     * Amount of memory (in kb) used by the process.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return memoryUsed
      */
@@ -126,7 +160,7 @@ public class MemoryBalancerInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Amount of memory (in mb) used by the process.
+     * Amount of memory (in kb) used by the process.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param memoryUsed set the memoryUsed.
      */
@@ -174,6 +208,76 @@ public class MemoryBalancerInfo  {
         this.process = process;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Current mode of the process.
+     * Enum options - REGULAR, DEBUG, DEGRADED, STOP.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return processMode
+     */
+    public String getProcessMode() {
+        return processMode;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Current mode of the process.
+     * Enum options - REGULAR, DEBUG, DEGRADED, STOP.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param processMode set the processMode.
+     */
+    public void setProcessMode(String  processMode) {
+        this.processMode = processMode;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Current usage trend of the process.
+     * Enum options - UPWARD, DOWNWARD, NEUTRAL.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return processTrend
+     */
+    public String getProcessTrend() {
+        return processTrend;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Current usage trend of the process.
+     * Enum options - UPWARD, DOWNWARD, NEUTRAL.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param processTrend set the processTrend.
+     */
+    public void setProcessTrend(String  processTrend) {
+        this.processTrend = processTrend;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Percent usage of the process limit.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return thresholdPercent
+     */
+    public Float getThresholdPercent() {
+        return thresholdPercent;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Percent usage of the process limit.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param thresholdPercent set the thresholdPercent.
+     */
+    public void setThresholdPercent(Float  thresholdPercent) {
+        this.thresholdPercent = thresholdPercent;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -189,7 +293,11 @@ public class MemoryBalancerInfo  {
   Objects.equals(this.memoryUsed, objMemoryBalancerInfo.memoryUsed)&&
   Objects.equals(this.limit, objMemoryBalancerInfo.limit)&&
   Objects.equals(this.child, objMemoryBalancerInfo.child)&&
-  Objects.equals(this.controllerMemory, objMemoryBalancerInfo.controllerMemory);
+  Objects.equals(this.controllerMemory, objMemoryBalancerInfo.controllerMemory)&&
+  Objects.equals(this.processMode, objMemoryBalancerInfo.processMode)&&
+  Objects.equals(this.processTrend, objMemoryBalancerInfo.processTrend)&&
+  Objects.equals(this.thresholdPercent, objMemoryBalancerInfo.thresholdPercent)&&
+  Objects.equals(this.debugMessage, objMemoryBalancerInfo.debugMessage);
     }
 
     @Override
@@ -198,10 +306,14 @@ public class MemoryBalancerInfo  {
       sb.append("class MemoryBalancerInfo {\n");
                   sb.append("    child: ").append(toIndentedString(child)).append("\n");
                         sb.append("    controllerMemory: ").append(toIndentedString(controllerMemory)).append("\n");
+                        sb.append("    debugMessage: ").append(toIndentedString(debugMessage)).append("\n");
                         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
                         sb.append("    memoryUsed: ").append(toIndentedString(memoryUsed)).append("\n");
                         sb.append("    pid: ").append(toIndentedString(pid)).append("\n");
                         sb.append("    process: ").append(toIndentedString(process)).append("\n");
+                        sb.append("    processMode: ").append(toIndentedString(processMode)).append("\n");
+                        sb.append("    processTrend: ").append(toIndentedString(processTrend)).append("\n");
+                        sb.append("    thresholdPercent: ").append(toIndentedString(thresholdPercent)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

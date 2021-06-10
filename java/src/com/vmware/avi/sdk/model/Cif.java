@@ -22,26 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Cif  {
     @JsonProperty("adapter")
-    private String adapter = null;
+    private String adapter;
 
     @JsonProperty("cif")
-    private String cif = null;
+    private String cif;
 
     @JsonProperty("mac_address")
-    private String macAddress = null;
+    private String macAddress;
 
     @JsonProperty("resources")
-    private List<String> resources = null;
+    private List<String> resources;
 
     @JsonProperty("se_uuid")
-    private String seUuid = null;
+    private String seUuid;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property adapter of obj type cif field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return adapter
      */
     public String getAdapter() {
@@ -50,8 +49,7 @@ public class Cif  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property adapter of obj type cif field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param adapter set the adapter.
      */
     public void setAdapter(String  adapter) {
@@ -60,8 +58,7 @@ public class Cif  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cif of obj type cif field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return cif
      */
     public String getCif() {
@@ -70,8 +67,7 @@ public class Cif  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cif of obj type cif field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param cif set the cif.
      */
     public void setCif(String  cif) {
@@ -80,8 +76,7 @@ public class Cif  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property mac_address of obj type cif field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return macAddress
      */
     public String getMacAddress() {
@@ -90,8 +85,7 @@ public class Cif  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property mac_address of obj type cif field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param macAddress set the macAddress.
      */
     public void setMacAddress(String  macAddress) {
@@ -99,8 +93,7 @@ public class Cif  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property resources of obj type cif field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return resources
      */
     public List<String> getResources() {
@@ -109,8 +102,7 @@ public class Cif  {
 
     /**
      * This is the setter method. this will set the resources
-     * Placeholder for description of property resources of obj type cif field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return resources
      */
     public void setResources(List<String>  resources) {
@@ -119,8 +111,7 @@ public class Cif  {
 
     /**
      * This is the setter method this will set the resources
-     * Placeholder for description of property resources of obj type cif field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return resources
      */
     public Cif addResourcesItem(String resourcesItem) {
@@ -133,8 +124,7 @@ public class Cif  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of se.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return seUuid
      */
     public String getSeUuid() {
@@ -143,8 +133,7 @@ public class Cif  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of se.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param seUuid set the seUuid.
      */
     public void setSeUuid(String  seUuid) {

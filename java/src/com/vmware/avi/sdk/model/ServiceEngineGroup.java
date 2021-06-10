@@ -123,6 +123,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("datascript_timeout")
     private Integer datascriptTimeout = 1000000;
 
+    @JsonProperty("deactivate_ipv6_discovery")
+    private Boolean deactivateIpv6Discovery = null;
+
     @JsonProperty("dedicated_dispatcher_core")
     private Boolean dedicatedDispatcherCore = false;
 
@@ -312,11 +315,56 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("license_type")
     private String licenseType = null;
 
+    @JsonProperty("log_agent_compress_logs")
+    private Boolean logAgentCompressLogs = true;
+
+    @JsonProperty("log_agent_debug_enabled")
+    private Boolean logAgentDebugEnabled = false;
+
+    @JsonProperty("log_agent_file_sz_appl")
+    private Integer logAgentFileSzAppl = 4;
+
+    @JsonProperty("log_agent_file_sz_conn")
+    private Integer logAgentFileSzConn = 4;
+
+    @JsonProperty("log_agent_file_sz_debug")
+    private Integer logAgentFileSzDebug = 4;
+
+    @JsonProperty("log_agent_file_sz_event")
+    private Integer logAgentFileSzEvent = 4;
+
+    @JsonProperty("log_agent_log_storage_min_sz")
+    private Integer logAgentLogStorageMinSz = 1024;
+
+    @JsonProperty("log_agent_max_concurrent_rsync")
+    private Integer logAgentMaxConcurrentRsync = 1024;
+
+    @JsonProperty("log_agent_max_storage_excess_percent")
+    private Integer logAgentMaxStorageExcessPercent = 110;
+
+    @JsonProperty("log_agent_max_storage_ignore_percent")
+    private Float logAgentMaxStorageIgnorePercent = 20.0f;
+
+    @JsonProperty("log_agent_min_storage_per_vs")
+    private Integer logAgentMinStoragePerVs = 10;
+
+    @JsonProperty("log_agent_sleep_interval")
+    private Integer logAgentSleepInterval = 10;
+
+    @JsonProperty("log_agent_trace_enabled")
+    private Boolean logAgentTraceEnabled = true;
+
+    @JsonProperty("log_agent_unknown_vs_timer")
+    private Integer logAgentUnknownVsTimer = 1800;
+
     @JsonProperty("log_disksz")
     private Integer logDisksz = 10000;
 
     @JsonProperty("log_malloc_failure")
     private Boolean logMallocFailure = true;
+
+    @JsonProperty("log_message_max_file_list_size")
+    private Integer logMessageMaxFileListSize = 64;
 
     @JsonProperty("max_concurrent_external_hm")
     private Integer maxConcurrentExternalHm = null;
@@ -501,6 +549,12 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("se_dp_isolation_num_non_dp_cpus")
     private Integer seDpIsolationNumNonDpCpus = 0;
 
+    @JsonProperty("se_dp_log_nf_enqueue_percent")
+    private Integer seDpLogNfEnqueuePercent = 70;
+
+    @JsonProperty("se_dp_log_udf_enqueue_percent")
+    private Integer seDpLogUdfEnqueuePercent = 90;
+
     @JsonProperty("se_dp_max_hb_version")
     private Integer seDpMaxHbVersion = 3;
 
@@ -548,6 +602,15 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     @JsonProperty("se_l3_encap_ipc")
     private Integer seL3EncapIpc = 0;
+
+    @JsonProperty("se_log_buffer_app_blocking_dequeue")
+    private Boolean seLogBufferAppBlockingDequeue = false;
+
+    @JsonProperty("se_log_buffer_conn_blocking_dequeue")
+    private Boolean seLogBufferConnBlockingDequeue = false;
+
+    @JsonProperty("se_log_buffer_events_blocking_dequeue")
+    private Boolean seLogBufferEventsBlockingDequeue = true;
 
     @JsonProperty("se_lro")
     private Boolean seLro = true;
@@ -695,6 +758,9 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     @JsonProperty("use_hyperthreaded_cores")
     private Boolean useHyperthreadedCores = true;
+
+    @JsonProperty("use_legacy_netlink")
+    private Boolean useLegacyNetlink = false;
 
     @JsonProperty("use_objsync")
     private Boolean useObjsync = true;
@@ -1673,6 +1739,28 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setDatascriptTimeout(Integer  datascriptTimeout) {
         this.datascriptTimeout = datascriptTimeout;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * If activated, ipv6 address and route discovery are deactivated.requires se reboot.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return deactivateIpv6Discovery
+     */
+    public Boolean getDeactivateIpv6Discovery() {
+        return deactivateIpv6Discovery;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * If activated, ipv6 address and route discovery are deactivated.requires se reboot.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param deactivateIpv6Discovery set the deactivateIpv6Discovery.
+     */
+    public void setDeactivateIpv6Discovery(Boolean  deactivateIpv6Discovery) {
+        this.deactivateIpv6Discovery = deactivateIpv6Discovery;
     }
 
     /**
@@ -3234,6 +3322,326 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Flag to indicate if log files are compressed upon full on the service engine.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return logAgentCompressLogs
+     */
+    public Boolean getLogAgentCompressLogs() {
+        return logAgentCompressLogs;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Flag to indicate if log files are compressed upon full on the service engine.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param logAgentCompressLogs set the logAgentCompressLogs.
+     */
+    public void setLogAgentCompressLogs(Boolean  logAgentCompressLogs) {
+        this.logAgentCompressLogs = logAgentCompressLogs;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enable debug logs by default on service engine.
+     * This includes all other debugging logs.
+     * Debug logs can also be explcitly enabled from the cli shell.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return logAgentDebugEnabled
+     */
+    public Boolean getLogAgentDebugEnabled() {
+        return logAgentDebugEnabled;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable debug logs by default on service engine.
+     * This includes all other debugging logs.
+     * Debug logs can also be explcitly enabled from the cli shell.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param logAgentDebugEnabled set the logAgentDebugEnabled.
+     */
+    public void setLogAgentDebugEnabled(Boolean  logAgentDebugEnabled) {
+        this.logAgentDebugEnabled = logAgentDebugEnabled;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum application log file size before rollover.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+     * @return logAgentFileSzAppl
+     */
+    public Integer getLogAgentFileSzAppl() {
+        return logAgentFileSzAppl;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum application log file size before rollover.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+     * @param logAgentFileSzAppl set the logAgentFileSzAppl.
+     */
+    public void setLogAgentFileSzAppl(Integer  logAgentFileSzAppl) {
+        this.logAgentFileSzAppl = logAgentFileSzAppl;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum connection log file size before rollover.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+     * @return logAgentFileSzConn
+     */
+    public Integer getLogAgentFileSzConn() {
+        return logAgentFileSzConn;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum connection log file size before rollover.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+     * @param logAgentFileSzConn set the logAgentFileSzConn.
+     */
+    public void setLogAgentFileSzConn(Integer  logAgentFileSzConn) {
+        this.logAgentFileSzConn = logAgentFileSzConn;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum debug log file size before rollover.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+     * @return logAgentFileSzDebug
+     */
+    public Integer getLogAgentFileSzDebug() {
+        return logAgentFileSzDebug;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum debug log file size before rollover.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+     * @param logAgentFileSzDebug set the logAgentFileSzDebug.
+     */
+    public void setLogAgentFileSzDebug(Integer  logAgentFileSzDebug) {
+        this.logAgentFileSzDebug = logAgentFileSzDebug;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum event log file size before rollover.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+     * @return logAgentFileSzEvent
+     */
+    public Integer getLogAgentFileSzEvent() {
+        return logAgentFileSzEvent;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum event log file size before rollover.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+     * @param logAgentFileSzEvent set the logAgentFileSzEvent.
+     */
+    public void setLogAgentFileSzEvent(Integer  logAgentFileSzEvent) {
+        this.logAgentFileSzEvent = logAgentFileSzEvent;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Minimum storage allocated for logs irrespective of memory and cores.
+     * Field introduced in 21.1.1.
+     * Unit is mb.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
+     * @return logAgentLogStorageMinSz
+     */
+    public Integer getLogAgentLogStorageMinSz() {
+        return logAgentLogStorageMinSz;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Minimum storage allocated for logs irrespective of memory and cores.
+     * Field introduced in 21.1.1.
+     * Unit is mb.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
+     * @param logAgentLogStorageMinSz set the logAgentLogStorageMinSz.
+     */
+    public void setLogAgentLogStorageMinSz(Integer  logAgentLogStorageMinSz) {
+        this.logAgentLogStorageMinSz = logAgentLogStorageMinSz;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum concurrent rsync requests initiated from log-agent to the controller.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
+     * @return logAgentMaxConcurrentRsync
+     */
+    public Integer getLogAgentMaxConcurrentRsync() {
+        return logAgentMaxConcurrentRsync;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum concurrent rsync requests initiated from log-agent to the controller.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
+     * @param logAgentMaxConcurrentRsync set the logAgentMaxConcurrentRsync.
+     */
+    public void setLogAgentMaxConcurrentRsync(Integer  logAgentMaxConcurrentRsync) {
+        this.logAgentMaxConcurrentRsync = logAgentMaxConcurrentRsync;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Excess percentage threshold of disk size to trigger cleanup of logs on the service engine.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 110.
+     * @return logAgentMaxStorageExcessPercent
+     */
+    public Integer getLogAgentMaxStorageExcessPercent() {
+        return logAgentMaxStorageExcessPercent;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Excess percentage threshold of disk size to trigger cleanup of logs on the service engine.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 110.
+     * @param logAgentMaxStorageExcessPercent set the logAgentMaxStorageExcessPercent.
+     */
+    public void setLogAgentMaxStorageExcessPercent(Integer  logAgentMaxStorageExcessPercent) {
+        this.logAgentMaxStorageExcessPercent = logAgentMaxStorageExcessPercent;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum storage on the disk not allocated for logs on the service engine.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 20.0f.
+     * @return logAgentMaxStorageIgnorePercent
+     */
+    public Float getLogAgentMaxStorageIgnorePercent() {
+        return logAgentMaxStorageIgnorePercent;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum storage on the disk not allocated for logs on the service engine.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 20.0f.
+     * @param logAgentMaxStorageIgnorePercent set the logAgentMaxStorageIgnorePercent.
+     */
+    public void setLogAgentMaxStorageIgnorePercent(Float  logAgentMaxStorageIgnorePercent) {
+        this.logAgentMaxStorageIgnorePercent = logAgentMaxStorageIgnorePercent;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Minimum storage allocated to any given virtualservice on the service engine.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+     * @return logAgentMinStoragePerVs
+     */
+    public Integer getLogAgentMinStoragePerVs() {
+        return logAgentMinStoragePerVs;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Minimum storage allocated to any given virtualservice on the service engine.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+     * @param logAgentMinStoragePerVs set the logAgentMinStoragePerVs.
+     */
+    public void setLogAgentMinStoragePerVs(Integer  logAgentMinStoragePerVs) {
+        this.logAgentMinStoragePerVs = logAgentMinStoragePerVs;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Internal timer to stall log-agent and prevent it from hogging cpu cycles on the service engine.
+     * Field introduced in 21.1.1.
+     * Unit is milliseconds.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+     * @return logAgentSleepInterval
+     */
+    public Integer getLogAgentSleepInterval() {
+        return logAgentSleepInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Internal timer to stall log-agent and prevent it from hogging cpu cycles on the service engine.
+     * Field introduced in 21.1.1.
+     * Unit is milliseconds.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+     * @param logAgentSleepInterval set the logAgentSleepInterval.
+     */
+    public void setLogAgentSleepInterval(Integer  logAgentSleepInterval) {
+        this.logAgentSleepInterval = logAgentSleepInterval;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enable trace logs by default on service engine.
+     * Configuration operations are logged along with other important logs by service engine.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return logAgentTraceEnabled
+     */
+    public Boolean getLogAgentTraceEnabled() {
+        return logAgentTraceEnabled;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable trace logs by default on service engine.
+     * Configuration operations are logged along with other important logs by service engine.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param logAgentTraceEnabled set the logAgentTraceEnabled.
+     */
+    public void setLogAgentTraceEnabled(Boolean  logAgentTraceEnabled) {
+        this.logAgentTraceEnabled = logAgentTraceEnabled;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Timeout to purge unknown virtual service logs from the service engine.
+     * Field introduced in 21.1.1.
+     * Unit is sec.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
+     * @return logAgentUnknownVsTimer
+     */
+    public Integer getLogAgentUnknownVsTimer() {
+        return logAgentUnknownVsTimer;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Timeout to purge unknown virtual service logs from the service engine.
+     * Field introduced in 21.1.1.
+     * Unit is sec.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1800.
+     * @param logAgentUnknownVsTimer set the logAgentUnknownVsTimer.
+     */
+    public void setLogAgentUnknownVsTimer(Integer  logAgentUnknownVsTimer) {
+        this.logAgentUnknownVsTimer = logAgentUnknownVsTimer;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Maximum disk capacity (in mb) to be allocated to an se.
      * This is exclusively used for debug and log data.
      * Unit is mb.
@@ -3278,6 +3686,28 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setLogMallocFailure(Boolean  logMallocFailure) {
         this.logMallocFailure = logMallocFailure;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum number of file names in a log message.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 64.
+     * @return logMessageMaxFileListSize
+     */
+    public Integer getLogMessageMaxFileListSize() {
+        return logMessageMaxFileListSize;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum number of file names in a log message.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 64.
+     * @param logMessageMaxFileListSize set the logMessageMaxFileListSize.
+     */
+    public void setLogMessageMaxFileListSize(Integer  logMessageMaxFileListSize) {
+        this.logMessageMaxFileListSize = logMessageMaxFileListSize;
     }
 
     /**
@@ -4755,7 +5185,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Number of cpus for non se-dp tasks in se datapath isolation mode.
-     * Translates total cpus minus 'num_non_dp_cpus' for datapath use.requires se reboot.
+     * Translates total cpus minus 'num_non_dp_cpus' for datapath use.
+     * It is recommended to reserve an even number of cpus for hyper-threaded processors.
+     * Requires se reboot.
      * Allowed values are 1-8.
      * Special values are 0- 'auto'.
      * Field introduced in 20.1.4.
@@ -4769,7 +5201,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Number of cpus for non se-dp tasks in se datapath isolation mode.
-     * Translates total cpus minus 'num_non_dp_cpus' for datapath use.requires se reboot.
+     * Translates total cpus minus 'num_non_dp_cpus' for datapath use.
+     * It is recommended to reserve an even number of cpus for hyper-threaded processors.
+     * Requires se reboot.
      * Allowed values are 1-8.
      * Special values are 0- 'auto'.
      * Field introduced in 20.1.4.
@@ -4778,6 +5212,50 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setSeDpIsolationNumNonDpCpus(Integer  seDpIsolationNumNonDpCpus) {
         this.seDpIsolationNumNonDpCpus = seDpIsolationNumNonDpCpus;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Internal buffer full indicator on the service engine beyond which the unfiltered logs are abandoned.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 70.
+     * @return seDpLogNfEnqueuePercent
+     */
+    public Integer getSeDpLogNfEnqueuePercent() {
+        return seDpLogNfEnqueuePercent;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Internal buffer full indicator on the service engine beyond which the unfiltered logs are abandoned.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 70.
+     * @param seDpLogNfEnqueuePercent set the seDpLogNfEnqueuePercent.
+     */
+    public void setSeDpLogNfEnqueuePercent(Integer  seDpLogNfEnqueuePercent) {
+        this.seDpLogNfEnqueuePercent = seDpLogNfEnqueuePercent;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Internal buffer full indicator on the service engine beyond which the user filtered logs are abandoned.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 90.
+     * @return seDpLogUdfEnqueuePercent
+     */
+    public Integer getSeDpLogUdfEnqueuePercent() {
+        return seDpLogUdfEnqueuePercent;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Internal buffer full indicator on the service engine beyond which the user filtered logs are abandoned.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 90.
+     * @param seDpLogUdfEnqueuePercent set the seDpLogUdfEnqueuePercent.
+     */
+    public void setSeDpLogUdfEnqueuePercent(Integer  seDpLogUdfEnqueuePercent) {
+        this.seDpLogUdfEnqueuePercent = seDpLogUdfEnqueuePercent;
     }
 
     /**
@@ -5170,6 +5648,72 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setSeL3EncapIpc(Integer  seL3EncapIpc) {
         this.seL3EncapIpc = seL3EncapIpc;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Internal flag that blocks dataplane until all application logs are flushed to log-agent process.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return seLogBufferAppBlockingDequeue
+     */
+    public Boolean getSeLogBufferAppBlockingDequeue() {
+        return seLogBufferAppBlockingDequeue;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Internal flag that blocks dataplane until all application logs are flushed to log-agent process.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param seLogBufferAppBlockingDequeue set the seLogBufferAppBlockingDequeue.
+     */
+    public void setSeLogBufferAppBlockingDequeue(Boolean  seLogBufferAppBlockingDequeue) {
+        this.seLogBufferAppBlockingDequeue = seLogBufferAppBlockingDequeue;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Internal flag that blocks dataplane until all connection logs are flushed to log-agent process.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return seLogBufferConnBlockingDequeue
+     */
+    public Boolean getSeLogBufferConnBlockingDequeue() {
+        return seLogBufferConnBlockingDequeue;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Internal flag that blocks dataplane until all connection logs are flushed to log-agent process.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param seLogBufferConnBlockingDequeue set the seLogBufferConnBlockingDequeue.
+     */
+    public void setSeLogBufferConnBlockingDequeue(Boolean  seLogBufferConnBlockingDequeue) {
+        this.seLogBufferConnBlockingDequeue = seLogBufferConnBlockingDequeue;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Internal flag that blocks dataplane until all outstanding events are flushed to log-agent process.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return seLogBufferEventsBlockingDequeue
+     */
+    public Boolean getSeLogBufferEventsBlockingDequeue() {
+        return seLogBufferEventsBlockingDequeue;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Internal flag that blocks dataplane until all outstanding events are flushed to log-agent process.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param seLogBufferEventsBlockingDequeue set the seLogBufferEventsBlockingDequeue.
+     */
+    public void setSeLogBufferEventsBlockingDequeue(Boolean  seLogBufferEventsBlockingDequeue) {
+        this.seLogBufferEventsBlockingDequeue = seLogBufferEventsBlockingDequeue;
     }
 
     /**
@@ -6415,6 +6959,28 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Enable legacy model of netlink notifications.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return useLegacyNetlink
+     */
+    public Boolean getUseLegacyNetlink() {
+        return useLegacyNetlink;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable legacy model of netlink notifications.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param useLegacyNetlink set the useLegacyNetlink.
+     */
+    public void setUseLegacyNetlink(Boolean  useLegacyNetlink) {
+        this.useLegacyNetlink = useLegacyNetlink;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Enable interse objsyc distribution framework.
      * Field introduced in 20.1.3.
      * Allowed in basic edition, essentials edition, enterprise edition.
@@ -7476,7 +8042,29 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.lbactionNumRequestsToDispatch, objServiceEngineGroup.lbactionNumRequestsToDispatch)&&
   Objects.equals(this.lbactionRqPerRequestMaxRetries, objServiceEngineGroup.lbactionRqPerRequestMaxRetries)&&
   Objects.equals(this.userDefinedMetricAge, objServiceEngineGroup.userDefinedMetricAge)&&
-  Objects.equals(this.enableHsmLog, objServiceEngineGroup.enableHsmLog);
+  Objects.equals(this.enableHsmLog, objServiceEngineGroup.enableHsmLog)&&
+  Objects.equals(this.useLegacyNetlink, objServiceEngineGroup.useLegacyNetlink)&&
+  Objects.equals(this.logAgentTraceEnabled, objServiceEngineGroup.logAgentTraceEnabled)&&
+  Objects.equals(this.logAgentDebugEnabled, objServiceEngineGroup.logAgentDebugEnabled)&&
+  Objects.equals(this.seLogBufferAppBlockingDequeue, objServiceEngineGroup.seLogBufferAppBlockingDequeue)&&
+  Objects.equals(this.seLogBufferConnBlockingDequeue, objServiceEngineGroup.seLogBufferConnBlockingDequeue)&&
+  Objects.equals(this.seLogBufferEventsBlockingDequeue, objServiceEngineGroup.seLogBufferEventsBlockingDequeue)&&
+  Objects.equals(this.logAgentFileSzDebug, objServiceEngineGroup.logAgentFileSzDebug)&&
+  Objects.equals(this.logAgentFileSzConn, objServiceEngineGroup.logAgentFileSzConn)&&
+  Objects.equals(this.logAgentFileSzAppl, objServiceEngineGroup.logAgentFileSzAppl)&&
+  Objects.equals(this.logAgentFileSzEvent, objServiceEngineGroup.logAgentFileSzEvent)&&
+  Objects.equals(this.logAgentMinStoragePerVs, objServiceEngineGroup.logAgentMinStoragePerVs)&&
+  Objects.equals(this.logAgentMaxStorageIgnorePercent, objServiceEngineGroup.logAgentMaxStorageIgnorePercent)&&
+  Objects.equals(this.logAgentMaxStorageExcessPercent, objServiceEngineGroup.logAgentMaxStorageExcessPercent)&&
+  Objects.equals(this.seDpLogNfEnqueuePercent, objServiceEngineGroup.seDpLogNfEnqueuePercent)&&
+  Objects.equals(this.seDpLogUdfEnqueuePercent, objServiceEngineGroup.seDpLogUdfEnqueuePercent)&&
+  Objects.equals(this.logAgentCompressLogs, objServiceEngineGroup.logAgentCompressLogs)&&
+  Objects.equals(this.logAgentSleepInterval, objServiceEngineGroup.logAgentSleepInterval)&&
+  Objects.equals(this.logAgentUnknownVsTimer, objServiceEngineGroup.logAgentUnknownVsTimer)&&
+  Objects.equals(this.logAgentMaxConcurrentRsync, objServiceEngineGroup.logAgentMaxConcurrentRsync)&&
+  Objects.equals(this.logAgentLogStorageMinSz, objServiceEngineGroup.logAgentLogStorageMinSz)&&
+  Objects.equals(this.logMessageMaxFileListSize, objServiceEngineGroup.logMessageMaxFileListSize)&&
+  Objects.equals(this.deactivateIpv6Discovery, objServiceEngineGroup.deactivateIpv6Discovery);
     }
 
     @Override
@@ -7517,6 +8105,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    customTag: ").append(toIndentedString(customTag)).append("\n");
                         sb.append("    dataNetworkId: ").append(toIndentedString(dataNetworkId)).append("\n");
                         sb.append("    datascriptTimeout: ").append(toIndentedString(datascriptTimeout)).append("\n");
+                        sb.append("    deactivateIpv6Discovery: ").append(toIndentedString(deactivateIpv6Discovery)).append("\n");
                         sb.append("    dedicatedDispatcherCore: ").append(toIndentedString(dedicatedDispatcherCore)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
                         sb.append("    disableAviSecuritygroups: ").append(toIndentedString(disableAviSecuritygroups)).append("\n");
@@ -7580,8 +8169,23 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    leastLoadCoreSelection: ").append(toIndentedString(leastLoadCoreSelection)).append("\n");
                         sb.append("    licenseTier: ").append(toIndentedString(licenseTier)).append("\n");
                         sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
+                        sb.append("    logAgentCompressLogs: ").append(toIndentedString(logAgentCompressLogs)).append("\n");
+                        sb.append("    logAgentDebugEnabled: ").append(toIndentedString(logAgentDebugEnabled)).append("\n");
+                        sb.append("    logAgentFileSzAppl: ").append(toIndentedString(logAgentFileSzAppl)).append("\n");
+                        sb.append("    logAgentFileSzConn: ").append(toIndentedString(logAgentFileSzConn)).append("\n");
+                        sb.append("    logAgentFileSzDebug: ").append(toIndentedString(logAgentFileSzDebug)).append("\n");
+                        sb.append("    logAgentFileSzEvent: ").append(toIndentedString(logAgentFileSzEvent)).append("\n");
+                        sb.append("    logAgentLogStorageMinSz: ").append(toIndentedString(logAgentLogStorageMinSz)).append("\n");
+                        sb.append("    logAgentMaxConcurrentRsync: ").append(toIndentedString(logAgentMaxConcurrentRsync)).append("\n");
+                        sb.append("    logAgentMaxStorageExcessPercent: ").append(toIndentedString(logAgentMaxStorageExcessPercent)).append("\n");
+                        sb.append("    logAgentMaxStorageIgnorePercent: ").append(toIndentedString(logAgentMaxStorageIgnorePercent)).append("\n");
+                        sb.append("    logAgentMinStoragePerVs: ").append(toIndentedString(logAgentMinStoragePerVs)).append("\n");
+                        sb.append("    logAgentSleepInterval: ").append(toIndentedString(logAgentSleepInterval)).append("\n");
+                        sb.append("    logAgentTraceEnabled: ").append(toIndentedString(logAgentTraceEnabled)).append("\n");
+                        sb.append("    logAgentUnknownVsTimer: ").append(toIndentedString(logAgentUnknownVsTimer)).append("\n");
                         sb.append("    logDisksz: ").append(toIndentedString(logDisksz)).append("\n");
                         sb.append("    logMallocFailure: ").append(toIndentedString(logMallocFailure)).append("\n");
+                        sb.append("    logMessageMaxFileListSize: ").append(toIndentedString(logMessageMaxFileListSize)).append("\n");
                         sb.append("    maxConcurrentExternalHm: ").append(toIndentedString(maxConcurrentExternalHm)).append("\n");
                         sb.append("    maxCpuUsage: ").append(toIndentedString(maxCpuUsage)).append("\n");
                         sb.append("    maxMemoryPerMempool: ").append(toIndentedString(maxMemoryPerMempool)).append("\n");
@@ -7643,6 +8247,8 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    seDpHmDrops: ").append(toIndentedString(seDpHmDrops)).append("\n");
                         sb.append("    seDpIsolation: ").append(toIndentedString(seDpIsolation)).append("\n");
                         sb.append("    seDpIsolationNumNonDpCpus: ").append(toIndentedString(seDpIsolationNumNonDpCpus)).append("\n");
+                        sb.append("    seDpLogNfEnqueuePercent: ").append(toIndentedString(seDpLogNfEnqueuePercent)).append("\n");
+                        sb.append("    seDpLogUdfEnqueuePercent: ").append(toIndentedString(seDpLogUdfEnqueuePercent)).append("\n");
                         sb.append("    seDpMaxHbVersion: ").append(toIndentedString(seDpMaxHbVersion)).append("\n");
                         sb.append("    seDpVnicQueueStallEventSleep: ").append(toIndentedString(seDpVnicQueueStallEventSleep)).append("\n");
                         sb.append("    seDpVnicQueueStallThreshold: ").append(toIndentedString(seDpVnicQueueStallThreshold)).append("\n");
@@ -7659,6 +8265,9 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    seIpcUdpPort: ").append(toIndentedString(seIpcUdpPort)).append("\n");
                         sb.append("    seKniBurstFactor: ").append(toIndentedString(seKniBurstFactor)).append("\n");
                         sb.append("    seL3EncapIpc: ").append(toIndentedString(seL3EncapIpc)).append("\n");
+                        sb.append("    seLogBufferAppBlockingDequeue: ").append(toIndentedString(seLogBufferAppBlockingDequeue)).append("\n");
+                        sb.append("    seLogBufferConnBlockingDequeue: ").append(toIndentedString(seLogBufferConnBlockingDequeue)).append("\n");
+                        sb.append("    seLogBufferEventsBlockingDequeue: ").append(toIndentedString(seLogBufferEventsBlockingDequeue)).append("\n");
                         sb.append("    seLro: ").append(toIndentedString(seLro)).append("\n");
                         sb.append("    seMpRingRetryCount: ").append(toIndentedString(seMpRingRetryCount)).append("\n");
                         sb.append("    seMtu: ").append(toIndentedString(seMtu)).append("\n");
@@ -7707,6 +8316,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    upstreamReadTimeout: ").append(toIndentedString(upstreamReadTimeout)).append("\n");
                         sb.append("    upstreamSendTimeout: ").append(toIndentedString(upstreamSendTimeout)).append("\n");
                                     sb.append("    useHyperthreadedCores: ").append(toIndentedString(useHyperthreadedCores)).append("\n");
+                        sb.append("    useLegacyNetlink: ").append(toIndentedString(useLegacyNetlink)).append("\n");
                         sb.append("    useObjsync: ").append(toIndentedString(useObjsync)).append("\n");
                         sb.append("    useStandardAlb: ").append(toIndentedString(useStandardAlb)).append("\n");
                         sb.append("    userAgentCacheConfig: ").append(toIndentedString(userAgentCacheConfig)).append("\n");

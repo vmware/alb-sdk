@@ -142,7 +142,7 @@ public class BotMapping extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * A unique identifier of this mapping.
+     * A unique identifier for this mapping.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
@@ -153,7 +153,7 @@ public class BotMapping extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * A unique identifier of this mapping.
+     * A unique identifier for this mapping.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.

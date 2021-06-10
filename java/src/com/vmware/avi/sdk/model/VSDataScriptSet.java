@@ -48,6 +48,9 @@ public class VSDataScriptSet extends AviRestResource  {
     @JsonProperty("name")
     private String name = null;
 
+    @JsonProperty("pki_profile_refs")
+    private List<String> pkiProfileRefs = null;
+
     @JsonProperty("pool_group_refs")
     private List<String> poolGroupRefs = null;
 
@@ -59,6 +62,12 @@ public class VSDataScriptSet extends AviRestResource  {
 
     @JsonProperty("rate_limiters")
     private List<RateLimiter> rateLimiters = null;
+
+    @JsonProperty("ssl_key_certificate_refs")
+    private List<String> sslKeyCertificateRefs = null;
+
+    @JsonProperty("ssl_profile_refs")
+    private List<String> sslProfileRefs = null;
 
     @JsonProperty("string_group_refs")
     private List<String> stringGroupRefs = null;
@@ -332,6 +341,45 @@ public class VSDataScriptSet extends AviRestResource  {
     }
     /**
      * This is the getter method this will return the attribute value.
+     * Uuids of pkiprofile objects that could be referred by vsdatascriptset objects.
+     * It is a reference to an object of type pkiprofile.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return pkiProfileRefs
+     */
+    public List<String> getPkiProfileRefs() {
+        return pkiProfileRefs;
+    }
+
+    /**
+     * This is the setter method. this will set the pkiProfileRefs
+     * Uuids of pkiprofile objects that could be referred by vsdatascriptset objects.
+     * It is a reference to an object of type pkiprofile.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return pkiProfileRefs
+     */
+    public void setPkiProfileRefs(List<String>  pkiProfileRefs) {
+        this.pkiProfileRefs = pkiProfileRefs;
+    }
+
+    /**
+     * This is the setter method this will set the pkiProfileRefs
+     * Uuids of pkiprofile objects that could be referred by vsdatascriptset objects.
+     * It is a reference to an object of type pkiprofile.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return pkiProfileRefs
+     */
+    public VSDataScriptSet addPkiProfileRefsItem(String pkiProfileRefsItem) {
+      if (this.pkiProfileRefs == null) {
+        this.pkiProfileRefs = new ArrayList<String>();
+      }
+      this.pkiProfileRefs.add(pkiProfileRefsItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
      * Uuid of pool groups that could be referred by vsdatascriptset objects.
      * It is a reference to an object of type poolgroup.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -488,6 +536,84 @@ public class VSDataScriptSet extends AviRestResource  {
     }
     /**
      * This is the getter method this will return the attribute value.
+     * Uuids of sslkeyandcertificate objects that could be referred by vsdatascriptset objects.
+     * It is a reference to an object of type sslkeyandcertificate.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sslKeyCertificateRefs
+     */
+    public List<String> getSslKeyCertificateRefs() {
+        return sslKeyCertificateRefs;
+    }
+
+    /**
+     * This is the setter method. this will set the sslKeyCertificateRefs
+     * Uuids of sslkeyandcertificate objects that could be referred by vsdatascriptset objects.
+     * It is a reference to an object of type sslkeyandcertificate.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sslKeyCertificateRefs
+     */
+    public void setSslKeyCertificateRefs(List<String>  sslKeyCertificateRefs) {
+        this.sslKeyCertificateRefs = sslKeyCertificateRefs;
+    }
+
+    /**
+     * This is the setter method this will set the sslKeyCertificateRefs
+     * Uuids of sslkeyandcertificate objects that could be referred by vsdatascriptset objects.
+     * It is a reference to an object of type sslkeyandcertificate.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sslKeyCertificateRefs
+     */
+    public VSDataScriptSet addSslKeyCertificateRefsItem(String sslKeyCertificateRefsItem) {
+      if (this.sslKeyCertificateRefs == null) {
+        this.sslKeyCertificateRefs = new ArrayList<String>();
+      }
+      this.sslKeyCertificateRefs.add(sslKeyCertificateRefsItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Uuids of sslprofile objects that could be referred by vsdatascriptset objects.
+     * It is a reference to an object of type sslprofile.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sslProfileRefs
+     */
+    public List<String> getSslProfileRefs() {
+        return sslProfileRefs;
+    }
+
+    /**
+     * This is the setter method. this will set the sslProfileRefs
+     * Uuids of sslprofile objects that could be referred by vsdatascriptset objects.
+     * It is a reference to an object of type sslprofile.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sslProfileRefs
+     */
+    public void setSslProfileRefs(List<String>  sslProfileRefs) {
+        this.sslProfileRefs = sslProfileRefs;
+    }
+
+    /**
+     * This is the setter method this will set the sslProfileRefs
+     * Uuids of sslprofile objects that could be referred by vsdatascriptset objects.
+     * It is a reference to an object of type sslprofile.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sslProfileRefs
+     */
+    public VSDataScriptSet addSslProfileRefsItem(String sslProfileRefsItem) {
+      if (this.sslProfileRefs == null) {
+        this.sslProfileRefs = new ArrayList<String>();
+      }
+      this.sslProfileRefs.add(sslProfileRefsItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
      * Uuid of string groups that could be referred by vsdatascriptset objects.
      * It is a reference to an object of type stringgroup.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -605,7 +731,10 @@ public class VSDataScriptSet extends AviRestResource  {
   Objects.equals(this.description, objVSDataScriptSet.description)&&
   Objects.equals(this.tenantRef, objVSDataScriptSet.tenantRef)&&
   Objects.equals(this.rateLimiters, objVSDataScriptSet.rateLimiters)&&
-  Objects.equals(this.geoDbRef, objVSDataScriptSet.geoDbRef);
+  Objects.equals(this.geoDbRef, objVSDataScriptSet.geoDbRef)&&
+  Objects.equals(this.sslProfileRefs, objVSDataScriptSet.sslProfileRefs)&&
+  Objects.equals(this.sslKeyCertificateRefs, objVSDataScriptSet.sslKeyCertificateRefs)&&
+  Objects.equals(this.pkiProfileRefs, objVSDataScriptSet.pkiProfileRefs);
     }
 
     @Override
@@ -621,10 +750,13 @@ public class VSDataScriptSet extends AviRestResource  {
                         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                        sb.append("    pkiProfileRefs: ").append(toIndentedString(pkiProfileRefs)).append("\n");
                         sb.append("    poolGroupRefs: ").append(toIndentedString(poolGroupRefs)).append("\n");
                         sb.append("    poolRefs: ").append(toIndentedString(poolRefs)).append("\n");
                         sb.append("    protocolParserRefs: ").append(toIndentedString(protocolParserRefs)).append("\n");
                         sb.append("    rateLimiters: ").append(toIndentedString(rateLimiters)).append("\n");
+                        sb.append("    sslKeyCertificateRefs: ").append(toIndentedString(sslKeyCertificateRefs)).append("\n");
+                        sb.append("    sslProfileRefs: ").append(toIndentedString(sslProfileRefs)).append("\n");
                         sb.append("    stringGroupRefs: ").append(toIndentedString(stringGroupRefs)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

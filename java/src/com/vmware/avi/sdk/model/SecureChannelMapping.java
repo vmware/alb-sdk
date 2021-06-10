@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SecureChannelMapping extends AviRestResource  {
+    @JsonProperty("auth_token")
+    private String authToken = null;
+
     @JsonProperty("ip")
     private String ip = null;
 
@@ -31,7 +34,7 @@ public class SecureChannelMapping extends AviRestResource  {
     private String localIp = null;
 
     @JsonProperty("marked_for_delete")
-    private Boolean markedForDelete = null;
+    private Boolean markedForDelete = false;
 
     @JsonProperty("metadata")
     private List<SecureChannelMetadata> metadata = null;
@@ -58,7 +61,29 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ip of obj type securechannelmapping field type str  type string.
+     * Auth_token used for se authorization.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return authToken
+     */
+    public String getAuthToken() {
+        return authToken;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Auth_token used for se authorization.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param authToken set the authToken.
+     */
+    public void setAuthToken(String  authToken) {
+        this.authToken = authToken;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Ip of se.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip
      */
@@ -68,7 +93,7 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ip of obj type securechannelmapping field type str  type string.
+     * Ip of se.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip set the ip.
      */
@@ -78,7 +103,7 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property is_controller of obj type securechannelmapping field type str  type boolean.
+     * Whether this entry used for controller.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return isController
      */
@@ -88,7 +113,7 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property is_controller of obj type securechannelmapping field type str  type boolean.
+     * Whether this entry used for controller.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param isController set the isController.
      */
@@ -98,7 +123,7 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property local_ip of obj type securechannelmapping field type str  type string.
+     * Local ip on controller side reserved for se.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return localIp
      */
@@ -108,7 +133,7 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property local_ip of obj type securechannelmapping field type str  type string.
+     * Local ip on controller side reserved for se.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param localIp set the localIp.
      */
@@ -118,8 +143,8 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property marked_for_delete of obj type securechannelmapping field type str  type boolean.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Whether this entry is marked for delete (first step of deletion).
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return markedForDelete
      */
     public Boolean getMarkedForDelete() {
@@ -128,8 +153,8 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property marked_for_delete of obj type securechannelmapping field type str  type boolean.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Whether this entry is marked for delete (first step of deletion).
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param markedForDelete set the markedForDelete.
      */
     public void setMarkedForDelete(Boolean  markedForDelete) {
@@ -137,7 +162,7 @@ public class SecureChannelMapping extends AviRestResource  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Metadata associated with the securechanneltoken of the service engine.
+     * Metadata associated with auth_token.
      * Field introduced in 20.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metadata
@@ -148,7 +173,7 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the setter method. this will set the metadata
-     * Metadata associated with the securechanneltoken of the service engine.
+     * Metadata associated with auth_token.
      * Field introduced in 20.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metadata
@@ -159,7 +184,7 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the setter method this will set the metadata
-     * Metadata associated with the securechanneltoken of the service engine.
+     * Metadata associated with auth_token.
      * Field introduced in 20.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metadata
@@ -174,7 +199,7 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the object.
+     * Uuid of se.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -184,7 +209,7 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the object.
+     * Uuid of se.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -194,7 +219,7 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property pub_key of obj type securechannelmapping field type str  type string.
+     * Public key of se.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pubKey
      */
@@ -204,7 +229,7 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property pub_key of obj type securechannelmapping field type str  type string.
+     * Public key of se.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param pubKey set the pubKey.
      */
@@ -214,7 +239,7 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property pub_key_pem of obj type securechannelmapping field type str  type string.
+     * Public key pem of se.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pubKeyPem
      */
@@ -224,7 +249,7 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property pub_key_pem of obj type securechannelmapping field type str  type string.
+     * Public key pem of se.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param pubKeyPem set the pubKeyPem.
      */
@@ -234,6 +259,7 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Authorization status of current secure channel.
      * Enum options - SECURE_CHANNEL_NONE, SECURE_CHANNEL_CONNECTED, SECURE_CHANNEL_AUTH_SSH_SUCCESS, SECURE_CHANNEL_AUTH_SSH_FAILED,
      * SECURE_CHANNEL_AUTH_TOKEN_SUCCESS, SECURE_CHANNEL_AUTH_TOKEN_FAILED, SECURE_CHANNEL_AUTH_ERRORS, SECURE_CHANNEL_AUTH_IGNORED.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SECURE_CHANNEL_NONE".
@@ -245,6 +271,7 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
+     * Authorization status of current secure channel.
      * Enum options - SECURE_CHANNEL_NONE, SECURE_CHANNEL_CONNECTED, SECURE_CHANNEL_AUTH_SSH_SUCCESS, SECURE_CHANNEL_AUTH_SSH_FAILED,
      * SECURE_CHANNEL_AUTH_TOKEN_SUCCESS, SECURE_CHANNEL_AUTH_TOKEN_FAILED, SECURE_CHANNEL_AUTH_ERRORS, SECURE_CHANNEL_AUTH_IGNORED.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SECURE_CHANNEL_NONE".
@@ -273,7 +300,7 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of the object.
+     * Uuid of se.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -283,7 +310,7 @@ public class SecureChannelMapping extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of the object.
+     * Uuid of se.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -310,14 +337,16 @@ public class SecureChannelMapping extends AviRestResource  {
   Objects.equals(this.isController, objSecureChannelMapping.isController)&&
   Objects.equals(this.pubKey, objSecureChannelMapping.pubKey)&&
   Objects.equals(this.pubKeyPem, objSecureChannelMapping.pubKeyPem)&&
-  Objects.equals(this.metadata, objSecureChannelMapping.metadata);
+  Objects.equals(this.metadata, objSecureChannelMapping.metadata)&&
+  Objects.equals(this.authToken, objSecureChannelMapping.authToken);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class SecureChannelMapping {\n");
-                  sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+                  sb.append("    authToken: ").append(toIndentedString(authToken)).append("\n");
+                        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
                         sb.append("    isController: ").append(toIndentedString(isController)).append("\n");
                         sb.append("    localIp: ").append(toIndentedString(localIp)).append("\n");
                         sb.append("    markedForDelete: ").append(toIndentedString(markedForDelete)).append("\n");

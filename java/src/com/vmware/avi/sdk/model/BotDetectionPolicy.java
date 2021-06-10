@@ -24,12 +24,6 @@ public class BotDetectionPolicy extends AviRestResource  {
     @JsonProperty("allow_list")
     private BotAllowList allowList = null;
 
-    @JsonProperty("bot_mapping_uuids")
-    private List<String> botMappingUuids = null;
-
-    @JsonProperty("consolidator_ref")
-    private String consolidatorRef = null;
-
     @JsonProperty("description")
     private String description = null;
 
@@ -42,6 +36,12 @@ public class BotDetectionPolicy extends AviRestResource  {
     @JsonProperty("name")
     private String name = null;
 
+    @JsonProperty("system_bot_mapping_ref")
+    private String systemBotMappingRef = null;
+
+    @JsonProperty("system_consolidator_ref")
+    private String systemConsolidatorRef = null;
+
     @JsonProperty("tenant_ref")
     private String tenantRef = null;
 
@@ -50,6 +50,12 @@ public class BotDetectionPolicy extends AviRestResource  {
 
     @JsonProperty("user_agent_detector")
     private BotConfigUserAgent userAgentDetector = null;
+
+    @JsonProperty("user_bot_mapping_ref")
+    private String userBotMappingRef = null;
+
+    @JsonProperty("user_consolidator_ref")
+    private String userConsolidatorRef = null;
 
     @JsonProperty("uuid")
     private String uuid = null;
@@ -76,66 +82,6 @@ public class BotDetectionPolicy extends AviRestResource  {
      */
     public void setAllowList(BotAllowList allowList) {
         this.allowList = allowList;
-    }
-    /**
-     * This is the getter method this will return the attribute value.
-     * System- and user-defined rules for classification.
-     * Field introduced in 21.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return botMappingUuids
-     */
-    public List<String> getBotMappingUuids() {
-        return botMappingUuids;
-    }
-
-    /**
-     * This is the setter method. this will set the botMappingUuids
-     * System- and user-defined rules for classification.
-     * Field introduced in 21.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return botMappingUuids
-     */
-    public void setBotMappingUuids(List<String>  botMappingUuids) {
-        this.botMappingUuids = botMappingUuids;
-    }
-
-    /**
-     * This is the setter method this will set the botMappingUuids
-     * System- and user-defined rules for classification.
-     * Field introduced in 21.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return botMappingUuids
-     */
-    public BotDetectionPolicy addBotMappingUuidsItem(String botMappingUuidsItem) {
-      if (this.botMappingUuids == null) {
-        this.botMappingUuids = new ArrayList<String>();
-      }
-      this.botMappingUuids.add(botMappingUuidsItem);
-      return this;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * The installation provides an updated ruleset for consolidating the results of different decider phases.
-     * It is a reference to an object of type botconfigconsolidator.
-     * Field introduced in 21.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return consolidatorRef
-     */
-    public String getConsolidatorRef() {
-        return consolidatorRef;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * The installation provides an updated ruleset for consolidating the results of different decider phases.
-     * It is a reference to an object of type botconfigconsolidator.
-     * Field introduced in 21.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param consolidatorRef set the consolidatorRef.
-     */
-    public void setConsolidatorRef(String  consolidatorRef) {
-        this.consolidatorRef = consolidatorRef;
     }
 
     /**
@@ -228,6 +174,54 @@ public class BotDetectionPolicy extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * System-defined rules for classification.
+     * It is a reference to an object of type botmapping.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return systemBotMappingRef
+     */
+    public String getSystemBotMappingRef() {
+        return systemBotMappingRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * System-defined rules for classification.
+     * It is a reference to an object of type botmapping.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param systemBotMappingRef set the systemBotMappingRef.
+     */
+    public void setSystemBotMappingRef(String  systemBotMappingRef) {
+        this.systemBotMappingRef = systemBotMappingRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * The installation provides an updated ruleset for consolidating the results of different decider phases.
+     * It is a reference to an object of type botconfigconsolidator.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return systemConsolidatorRef
+     */
+    public String getSystemConsolidatorRef() {
+        return systemConsolidatorRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The installation provides an updated ruleset for consolidating the results of different decider phases.
+     * It is a reference to an object of type botconfigconsolidator.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param systemConsolidatorRef set the systemConsolidatorRef.
+     */
+    public void setSystemConsolidatorRef(String  systemConsolidatorRef) {
+        this.systemConsolidatorRef = systemConsolidatorRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * The unique identifier of the tenant to which this policy belongs.
      * It is a reference to an object of type tenant.
      * Field introduced in 21.1.1.
@@ -291,6 +285,62 @@ public class BotDetectionPolicy extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * User-defined rules for classification.
+     * These are applied before the system classification rules.
+     * If a rule matches, processing terminates and the system-defined rules will not run.
+     * It is a reference to an object of type botmapping.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return userBotMappingRef
+     */
+    public String getUserBotMappingRef() {
+        return userBotMappingRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * User-defined rules for classification.
+     * These are applied before the system classification rules.
+     * If a rule matches, processing terminates and the system-defined rules will not run.
+     * It is a reference to an object of type botmapping.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param userBotMappingRef set the userBotMappingRef.
+     */
+    public void setUserBotMappingRef(String  userBotMappingRef) {
+        this.userBotMappingRef = userBotMappingRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * The user-provided ruleset for consolidating the results of different decider phases.
+     * This runs before the system consolidator.
+     * If it successfully sets a consolidation, the system consolidator will not change it.
+     * It is a reference to an object of type botconfigconsolidator.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return userConsolidatorRef
+     */
+    public String getUserConsolidatorRef() {
+        return userConsolidatorRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The user-provided ruleset for consolidating the results of different decider phases.
+     * This runs before the system consolidator.
+     * If it successfully sets a consolidation, the system consolidator will not change it.
+     * It is a reference to an object of type botconfigconsolidator.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param userConsolidatorRef set the userConsolidatorRef.
+     */
+    public void setUserConsolidatorRef(String  userConsolidatorRef) {
+        this.userConsolidatorRef = userConsolidatorRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * A unique identifier to this bot detection policy.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -329,8 +379,10 @@ public class BotDetectionPolicy extends AviRestResource  {
   Objects.equals(this.ipReputationDetector, objBotDetectionPolicy.ipReputationDetector)&&
   Objects.equals(this.ipLocationDetector, objBotDetectionPolicy.ipLocationDetector)&&
   Objects.equals(this.userAgentDetector, objBotDetectionPolicy.userAgentDetector)&&
-  Objects.equals(this.consolidatorRef, objBotDetectionPolicy.consolidatorRef)&&
-  Objects.equals(this.botMappingUuids, objBotDetectionPolicy.botMappingUuids);
+  Objects.equals(this.userConsolidatorRef, objBotDetectionPolicy.userConsolidatorRef)&&
+  Objects.equals(this.systemConsolidatorRef, objBotDetectionPolicy.systemConsolidatorRef)&&
+  Objects.equals(this.userBotMappingRef, objBotDetectionPolicy.userBotMappingRef)&&
+  Objects.equals(this.systemBotMappingRef, objBotDetectionPolicy.systemBotMappingRef);
     }
 
     @Override
@@ -338,14 +390,16 @@ public class BotDetectionPolicy extends AviRestResource  {
       StringBuilder sb = new StringBuilder();
       sb.append("class BotDetectionPolicy {\n");
                   sb.append("    allowList: ").append(toIndentedString(allowList)).append("\n");
-                        sb.append("    botMappingUuids: ").append(toIndentedString(botMappingUuids)).append("\n");
-                        sb.append("    consolidatorRef: ").append(toIndentedString(consolidatorRef)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
                         sb.append("    ipLocationDetector: ").append(toIndentedString(ipLocationDetector)).append("\n");
                         sb.append("    ipReputationDetector: ").append(toIndentedString(ipReputationDetector)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                        sb.append("    systemBotMappingRef: ").append(toIndentedString(systemBotMappingRef)).append("\n");
+                        sb.append("    systemConsolidatorRef: ").append(toIndentedString(systemConsolidatorRef)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                                     sb.append("    userAgentDetector: ").append(toIndentedString(userAgentDetector)).append("\n");
+                        sb.append("    userBotMappingRef: ").append(toIndentedString(userBotMappingRef)).append("\n");
+                        sb.append("    userConsolidatorRef: ").append(toIndentedString(userConsolidatorRef)).append("\n");
                         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
       return sb.toString();

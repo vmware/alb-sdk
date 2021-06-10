@@ -22,20 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class APICNetworkRel  {
     @JsonProperty("connector")
-    private String connector = null;
+    private String connector;
 
     @JsonProperty("rel_key")
-    private String relKey = null;
+    private String relKey;
 
     @JsonProperty("target_network")
-    private String targetNetwork = null;
+    private String targetNetwork;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property connector of obj type apicnetworkrel field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return connector
      */
     public String getConnector() {
@@ -44,8 +43,7 @@ public class APICNetworkRel  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property connector of obj type apicnetworkrel field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param connector set the connector.
      */
     public void setConnector(String  connector) {
@@ -54,8 +52,7 @@ public class APICNetworkRel  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property rel_key of obj type apicnetworkrel field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return relKey
      */
     public String getRelKey() {
@@ -64,8 +61,7 @@ public class APICNetworkRel  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property rel_key of obj type apicnetworkrel field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param relKey set the relKey.
      */
     public void setRelKey(String  relKey) {
@@ -74,8 +70,7 @@ public class APICNetworkRel  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property target_network of obj type apicnetworkrel field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return targetNetwork
      */
     public String getTargetNetwork() {
@@ -84,8 +79,7 @@ public class APICNetworkRel  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property target_network of obj type apicnetworkrel field type str  type string.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param targetNetwork set the targetNetwork.
      */
     public void setTargetNetwork(String  targetNetwork) {

@@ -87,7 +87,7 @@ public class BotConfigConsolidator extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Script that consolidates results from all components.
+     * Script that consolidates results from all bot decision components.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return script
@@ -98,7 +98,7 @@ public class BotConfigConsolidator extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Script that consolidates results from all components.
+     * Script that consolidates results from all bot decision components.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param script set the script.
@@ -109,7 +109,7 @@ public class BotConfigConsolidator extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * The unique identifier of the tenant to which this mapping belongs.
+     * The unique identifier of the tenant to which this consolidator belongs.
      * It is a reference to an object of type tenant.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -121,7 +121,7 @@ public class BotConfigConsolidator extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * The unique identifier of the tenant to which this mapping belongs.
+     * The unique identifier of the tenant to which this consolidator belongs.
      * It is a reference to an object of type tenant.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -150,7 +150,7 @@ public class BotConfigConsolidator extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * A unique identifier to this consolidator.
+     * A unique identifier for this consolidator.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
@@ -161,7 +161,7 @@ public class BotConfigConsolidator extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * A unique identifier to this consolidator.
+     * A unique identifier for this consolidator.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.

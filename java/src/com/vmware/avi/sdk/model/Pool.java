@@ -37,7 +37,7 @@ public class Pool extends AviRestResource  {
     private String analyticsProfileRef = null;
 
     @JsonProperty("apic_epg_name")
-    private String apicEpgName = null;
+    private String apicEpgName;
 
     @JsonProperty("append_port")
     private String appendPort = "NON_DEFAULT_80_443";
@@ -201,6 +201,9 @@ public class Pool extends AviRestResource  {
     @JsonProperty("server_count")
     private Integer serverCount;
 
+    @JsonProperty("server_disable_type")
+    private String serverDisableType = "DISALLOW_NEW_CONNECTION";
+
     @JsonProperty("server_name")
     private String serverName = null;
 
@@ -356,7 +359,7 @@ public class Pool extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Synchronize cisco apic epg members with pool servers.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return apicEpgName
      */
     public String getApicEpgName() {
@@ -366,7 +369,7 @@ public class Pool extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Synchronize cisco apic epg members with pool servers.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param apicEpgName set the apicEpgName.
      */
     public void setApicEpgName(String  apicEpgName) {
@@ -1055,6 +1058,7 @@ public class Pool extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Http2 pool properties.
      * Field introduced in 21.1.1.
+     * Allowed in basic edition, essentials edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return http2Properties
      */
@@ -1066,6 +1070,7 @@ public class Pool extends AviRestResource  {
      * This is the setter method to the attribute.
      * Http2 pool properties.
      * Field introduced in 21.1.1.
+     * Allowed in basic edition, essentials edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param http2Properties set the http2Properties.
      */
@@ -1769,6 +1774,30 @@ public class Pool extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Server graceful disable timeout behaviour.
+     * Enum options - DISALLOW_NEW_CONNECTION, ALLOW_NEW_CONNECTION_IF_PERSISTENCE_PRESENT.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "DISALLOW_NEW_CONNECTION".
+     * @return serverDisableType
+     */
+    public String getServerDisableType() {
+        return serverDisableType;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Server graceful disable timeout behaviour.
+     * Enum options - DISALLOW_NEW_CONNECTION, ALLOW_NEW_CONNECTION_IF_PERSISTENCE_PRESENT.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "DISALLOW_NEW_CONNECTION".
+     * @param serverDisableType set the serverDisableType.
+     */
+    public void setServerDisableType(String  serverDisableType) {
+        this.serverDisableType = serverDisableType;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Fully qualified dns hostname which will be used in the tls sni extension in server connections if sni is enabled.
      * If no value is specified, avi will use the incoming host header instead.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -1814,7 +1843,7 @@ public class Pool extends AviRestResource  {
      * Server timeout value specifies the time within which a server connection needs to be established and a request-response exchange completes
      * between avi and the server.
      * Value of 0 results in using default timeout of 60 minutes.
-     * Allowed values are 0-3600000.
+     * Allowed values are 0-21600000.
      * Field introduced in 18.1.5,18.2.1.
      * Unit is milliseconds.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -1829,7 +1858,7 @@ public class Pool extends AviRestResource  {
      * Server timeout value specifies the time within which a server connection needs to be established and a request-response exchange completes
      * between avi and the server.
      * Value of 0 results in using default timeout of 60 minutes.
-     * Allowed values are 0-3600000.
+     * Allowed values are 0-21600000.
      * Field introduced in 18.1.5,18.2.1.
      * Unit is milliseconds.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -2183,7 +2212,8 @@ public class Pool extends AviRestResource  {
   Objects.equals(this.routingPool, objPool.routingPool)&&
   Objects.equals(this.tier1Lr, objPool.tier1Lr)&&
   Objects.equals(this.appendPort, objPool.appendPort)&&
-  Objects.equals(this.http2Properties, objPool.http2Properties);
+  Objects.equals(this.http2Properties, objPool.http2Properties)&&
+  Objects.equals(this.serverDisableType, objPool.serverDisableType);
     }
 
     @Override
@@ -2250,6 +2280,7 @@ public class Pool extends AviRestResource  {
                         sb.append("    routingPool: ").append(toIndentedString(routingPool)).append("\n");
                         sb.append("    serverAutoScale: ").append(toIndentedString(serverAutoScale)).append("\n");
                         sb.append("    serverCount: ").append(toIndentedString(serverCount)).append("\n");
+                        sb.append("    serverDisableType: ").append(toIndentedString(serverDisableType)).append("\n");
                         sb.append("    serverName: ").append(toIndentedString(serverName)).append("\n");
                         sb.append("    serverReselect: ").append(toIndentedString(serverReselect)).append("\n");
                         sb.append("    serverTimeout: ").append(toIndentedString(serverTimeout)).append("\n");

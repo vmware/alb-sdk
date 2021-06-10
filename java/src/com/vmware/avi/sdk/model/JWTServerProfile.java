@@ -21,11 +21,20 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class JWTServerProfile extends AviRestResource  {
+    @JsonProperty("controller_internal_auth")
+    private ControllerInternalAuth controllerInternalAuth = null;
+
+    @JsonProperty("is_federated")
+    private Boolean isFederated = false;
+
     @JsonProperty("issuer")
     private String issuer = null;
 
     @JsonProperty("jwks_keys")
     private String jwksKeys = null;
+
+    @JsonProperty("jwt_profile_type")
+    private String jwtProfileType = "CLIENT_AUTH";
 
     @JsonProperty("name")
     private String name = null;
@@ -43,7 +52,55 @@ public class JWTServerProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Uniquely identifiable name of the token issuer.
+     * Jwt auth configuration for profile_type controller_internal_auth.
+     * Field introduced in 20.1.6.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return controllerInternalAuth
+     */
+    public ControllerInternalAuth getControllerInternalAuth() {
+        return controllerInternalAuth;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Jwt auth configuration for profile_type controller_internal_auth.
+     * Field introduced in 20.1.6.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param controllerInternalAuth set the controllerInternalAuth.
+     */
+    public void setControllerInternalAuth(ControllerInternalAuth controllerInternalAuth) {
+        this.controllerInternalAuth = controllerInternalAuth;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * This field describes the object's replication scope.
+     * If the field is set to false, then the object is visible within the controller-cluster.
+     * If the field is set to true, then the object is replicated across the federation.
+     * Field introduced in 20.1.6.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return isFederated
+     */
+    public Boolean getIsFederated() {
+        return isFederated;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This field describes the object's replication scope.
+     * If the field is set to false, then the object is visible within the controller-cluster.
+     * If the field is set to true, then the object is replicated across the federation.
+     * Field introduced in 20.1.6.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param isFederated set the isFederated.
+     */
+    public void setIsFederated(Boolean  isFederated) {
+        this.isFederated = isFederated;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Uniquely identifiable name of the token issuer, only allowed with profile_type client_auth.
      * Field introduced in 20.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return issuer
@@ -54,7 +111,7 @@ public class JWTServerProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Uniquely identifiable name of the token issuer.
+     * Uniquely identifiable name of the token issuer, only allowed with profile_type client_auth.
      * Field introduced in 20.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param issuer set the issuer.
@@ -65,7 +122,7 @@ public class JWTServerProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Jwks key set used for validating the jwt.
+     * Jwks key set used for validating the jwt, only allowed with profile_type client_auth.
      * Field introduced in 20.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return jwksKeys
@@ -76,13 +133,37 @@ public class JWTServerProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Jwks key set used for validating the jwt.
+     * Jwks key set used for validating the jwt, only allowed with profile_type client_auth.
      * Field introduced in 20.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param jwksKeys set the jwksKeys.
      */
     public void setJwksKeys(String  jwksKeys) {
         this.jwksKeys = jwksKeys;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Type of jwt server profile which defines the usage type.
+     * Enum options - CLIENT_AUTH, CONTROLLER_INTERNAL_AUTH.
+     * Field introduced in 20.1.6.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "CLIENT_AUTH".
+     * @return jwtProfileType
+     */
+    public String getJwtProfileType() {
+        return jwtProfileType;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Type of jwt server profile which defines the usage type.
+     * Enum options - CLIENT_AUTH, CONTROLLER_INTERNAL_AUTH.
+     * Field introduced in 20.1.6.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "CLIENT_AUTH".
+     * @param jwtProfileType set the jwtProfileType.
+     */
+    public void setJwtProfileType(String  jwtProfileType) {
+        this.jwtProfileType = jwtProfileType;
     }
 
     /**
@@ -184,15 +265,21 @@ public class JWTServerProfile extends AviRestResource  {
   Objects.equals(this.name, objJWTServerProfile.name)&&
   Objects.equals(this.jwksKeys, objJWTServerProfile.jwksKeys)&&
   Objects.equals(this.issuer, objJWTServerProfile.issuer)&&
-  Objects.equals(this.tenantRef, objJWTServerProfile.tenantRef);
+  Objects.equals(this.tenantRef, objJWTServerProfile.tenantRef)&&
+  Objects.equals(this.isFederated, objJWTServerProfile.isFederated)&&
+  Objects.equals(this.jwtProfileType, objJWTServerProfile.jwtProfileType)&&
+  Objects.equals(this.controllerInternalAuth, objJWTServerProfile.controllerInternalAuth);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class JWTServerProfile {\n");
-                  sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
+                  sb.append("    controllerInternalAuth: ").append(toIndentedString(controllerInternalAuth)).append("\n");
+                        sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
+                        sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
                         sb.append("    jwksKeys: ").append(toIndentedString(jwksKeys)).append("\n");
+                        sb.append("    jwtProfileType: ").append(toIndentedString(jwtProfileType)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

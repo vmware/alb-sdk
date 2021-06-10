@@ -22,23 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VsApicExtension extends AviRestResource  {
     @JsonProperty("se_uuid")
-    private String seUuid = null;
+    private String seUuid;
 
     @JsonProperty("txn_uuid")
-    private String txnUuid = null;
+    private String txnUuid;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vnic")
-    private List<VsSeVnic> vnic = null;
+    private List<VsSeVnic> vnic;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of se.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return seUuid
      */
     public String getSeUuid() {
@@ -47,8 +46,7 @@ public class VsApicExtension extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of se.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param seUuid set the seUuid.
      */
     public void setSeUuid(String  seUuid) {
@@ -57,8 +55,7 @@ public class VsApicExtension extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of txn.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return txnUuid
      */
     public String getTxnUuid() {
@@ -67,8 +64,7 @@ public class VsApicExtension extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of txn.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param txnUuid set the txnUuid.
      */
     public void setTxnUuid(String  txnUuid) {
@@ -77,8 +73,7 @@ public class VsApicExtension extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of the object.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return uuid
      */
     public String getUuid() {
@@ -87,8 +82,7 @@ public class VsApicExtension extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of the object.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @param uuid set the uuid.
      */
     public void setUuid(String  uuid) {
@@ -96,8 +90,7 @@ public class VsApicExtension extends AviRestResource  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vnic of obj type vsapicextension field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return vnic
      */
     public List<VsSeVnic> getVnic() {
@@ -106,8 +99,7 @@ public class VsApicExtension extends AviRestResource  {
 
     /**
      * This is the setter method. this will set the vnic
-     * Placeholder for description of property vnic of obj type vsapicextension field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return vnic
      */
     public void setVnic(List<VsSeVnic>  vnic) {
@@ -116,8 +108,7 @@ public class VsApicExtension extends AviRestResource  {
 
     /**
      * This is the setter method this will set the vnic
-     * Placeholder for description of property vnic of obj type vsapicextension field type str  type array.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.1.
      * @return vnic
      */
     public VsApicExtension addVnicItem(VsSeVnic vnicItem) {
