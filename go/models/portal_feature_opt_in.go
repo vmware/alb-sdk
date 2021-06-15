@@ -23,6 +23,9 @@ type PortalFeatureOptIn struct {
 	// Enable to subscribe to IP reputation updates. This is a requirement for using IP reputation in the product. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
 	EnableIPReputation *bool `json:"enable_ip_reputation,omitempty"`
 
+	// Subscribe to upload Controller Metrics and System Information to Pulse Portal. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
+	EnableSysteminfoCollection *bool `json:"enable_systeminfo_collection,omitempty"`
+
 	// Enable event notifications when new CRS versions are available. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is True.
 	EnableWafSignaturesNotifications *bool `json:"enable_waf_signatures_notifications,omitempty"`
 }
