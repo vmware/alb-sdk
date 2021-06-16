@@ -372,7 +372,7 @@ type ServiceEngineGroup struct {
 	// Max bytes that can be allocated in a single mempool. Field introduced in 18.1.5. Unit is MB.
 	MaxMemoryPerMempool *int32 `json:"max_memory_per_mempool,omitempty"`
 
-	// Configures the maximum number of se_dp processes created on the SE, requires SE reboot. If not configured, defaults to the number of CPUs on the SE. This should only be used if user wants to limit the number of se_dps to less than the available CPUs on the SE. Allowed values are 1-128. Field introduced in 20.1.1. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.
+	// Configures the maximum number of se_dp processes that handles traffic. If not configured, defaults to the number of CPUs on the SE. If decreased, it will only take effect after SE reboot. Allowed values are 1-128. Field introduced in 20.1.1. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.
 	MaxNumSeDps *int32 `json:"max_num_se_dps,omitempty"`
 
 	// Applicable to Azure platform only. Maximum number of public IPs per Azure LB. . Field introduced in 17.2.12, 18.1.2.
