@@ -36,6 +36,9 @@ public class PortalFeatureOptIn  {
     @JsonProperty("enable_ip_reputation")
     private Boolean enableIpReputation = false;
 
+    @JsonProperty("enable_systeminfo_collection")
+    private Boolean enableSysteminfoCollection = false;
+
     @JsonProperty("enable_waf_signatures_notifications")
     private Boolean enableWafSignaturesNotifications = true;
 
@@ -167,6 +170,30 @@ public class PortalFeatureOptIn  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Subscribe to upload controller metrics and system information to pulse portal.
+     * Field introduced in 21.1.1.
+     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return enableSysteminfoCollection
+     */
+    public Boolean getEnableSysteminfoCollection() {
+        return enableSysteminfoCollection;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Subscribe to upload controller metrics and system information to pulse portal.
+     * Field introduced in 21.1.1.
+     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param enableSysteminfoCollection set the enableSysteminfoCollection.
+     */
+    public void setEnableSysteminfoCollection(Boolean  enableSysteminfoCollection) {
+        this.enableSysteminfoCollection = enableSysteminfoCollection;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Enable event notifications when new crs versions are available.
      * Field introduced in 20.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
@@ -206,7 +233,8 @@ public class PortalFeatureOptIn  {
   Objects.equals(this.enableAutoCaseCreationOnSystemFailure, objPortalFeatureOptIn.enableAutoCaseCreationOnSystemFailure)&&
   Objects.equals(this.enableAutoCaseCreationOnSeFailure, objPortalFeatureOptIn.enableAutoCaseCreationOnSeFailure)&&
   Objects.equals(this.enableIpReputation, objPortalFeatureOptIn.enableIpReputation)&&
-  Objects.equals(this.enableAppsignatureSync, objPortalFeatureOptIn.enableAppsignatureSync);
+  Objects.equals(this.enableAppsignatureSync, objPortalFeatureOptIn.enableAppsignatureSync)&&
+  Objects.equals(this.enableSysteminfoCollection, objPortalFeatureOptIn.enableSysteminfoCollection);
     }
 
     @Override
@@ -218,6 +246,7 @@ public class PortalFeatureOptIn  {
                         sb.append("    enableAutoCaseCreationOnSystemFailure: ").append(toIndentedString(enableAutoCaseCreationOnSystemFailure)).append("\n");
                         sb.append("    enableAutoDownloadWafSignatures: ").append(toIndentedString(enableAutoDownloadWafSignatures)).append("\n");
                         sb.append("    enableIpReputation: ").append(toIndentedString(enableIpReputation)).append("\n");
+                        sb.append("    enableSysteminfoCollection: ").append(toIndentedString(enableSysteminfoCollection)).append("\n");
                         sb.append("    enableWafSignaturesNotifications: ").append(toIndentedString(enableWafSignaturesNotifications)).append("\n");
                   sb.append("}");
       return sb.toString();
