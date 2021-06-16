@@ -3788,9 +3788,9 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Configures the maximum number of se_dp processes created on the se, requires se reboot.
+     * Configures the maximum number of se_dp processes that handles traffic.
      * If not configured, defaults to the number of cpus on the se.
-     * This should only be used if user wants to limit the number of se_dps to less than the available cpus on the se.
+     * If decreased, it will only take effect after se reboot.
      * Allowed values are 1-128.
      * Field introduced in 20.1.1.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
@@ -3803,9 +3803,9 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Configures the maximum number of se_dp processes created on the se, requires se reboot.
+     * Configures the maximum number of se_dp processes that handles traffic.
      * If not configured, defaults to the number of cpus on the se.
-     * This should only be used if user wants to limit the number of se_dps to less than the available cpus on the se.
+     * If decreased, it will only take effect after se reboot.
      * Allowed values are 1-128.
      * Field introduced in 20.1.1.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
