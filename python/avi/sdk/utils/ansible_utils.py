@@ -72,13 +72,13 @@ def ansible_return(module, rsp, changed, req=None, existing_obj=None,
     obj_val = rsp.json() if rsp else existing_obj
 
     if (obj_val and module.params.get("obj_username", None) and
-                "username" in obj_val):
+            "username" in obj_val):
         obj_val["obj_username"] = obj_val["username"]
     if (obj_val and module.params.get("obj_password", None) and
-                "password" in obj_val):
+            "password" in obj_val):
         obj_val["obj_password"] = obj_val["password"]
     if (obj_val and module.params.get("obj_state", None) and
-                "state" in obj_val):
+            "state" in obj_val):
         obj_val["obj_state"] = obj_val["state"]
     old_obj_val = existing_obj if changed and existing_obj else None
     api_context_val = api_context if disable_fact else None
@@ -148,18 +148,20 @@ def cleanup_absent_fields(obj):
         del obj[k]
     return obj
 
+
 def get_unicode_type():
     if sys.version_info < (3, 3):
         return unicode
     else:
         return str
 
-RE_REF_MATCH = re.compile('^/api/[\w/]+\?name\=[\w*]+[^#<>]*$')
+
+RE_REF_MATCH = re.compile(r'^/api/[\w/]+\?name\=[\w*]+[^#<>]*$')
 
 # if HTTP ref match then strip out the #name
 # HTTP_REF_MATCH = re.compile('https://[\w.0-9:-]+/api/[\w/\?.#&-]*$')
-HTTP_REF_MATCH = re.compile('https://[\w.0-9:-]+/api/.+')
-HTTP_REF_W_NAME_MATCH = re.compile('https://[\w.0-9:-]+/api/.*#.+')
+HTTP_REF_MATCH = re.compile(r'https://[\w.0-9:-]+/api/.+')
+HTTP_REF_W_NAME_MATCH = re.compile(r'https://[\w.0-9:-]+/api/.*#.+')
 
 
 def ref_n_str_cmp(x, y):
@@ -217,6 +219,7 @@ def ref_n_str_cmp(x, y):
         log.debug('x: %s y: %s y_name %s y_uuid %s',
                   x, y, y_name, y_uuid)
     return result
+
 
 def avi_obj_cmp(x, y, sensitive_fields=None):
     """
@@ -300,7 +303,7 @@ def avi_obj_cmp(x, y, sensitive_fields=None):
                 elif not v:
                     d_x_absent_ks.append(k)
             elif isinstance(v, list) and not v and k not in y:
-                    d_x_absent_ks.append(k)
+                d_x_absent_ks.append(k)
             # Added condition to check key in dict.
             elif isinstance(v, str) or (k in y and isinstance(y[k], str)):
                 # this is the case when ansible converts the dictionary into a
@@ -348,6 +351,7 @@ def get_api_context(module, api_creds):
 
 NO_UUID_OBJ = ['cluster', 'systemconfiguration']
 SKIP_DELETE_ERROR = ["Cannot delete system default object", "Method \'DELETE\' not allowed"]
+
 
 def avi_ansible_api(module, obj_type, sensitive_fields):
     """
@@ -594,5 +598,3 @@ def avi_common_argument_spec():
                              options=credentials_spec),
         api_context=dict(type='dict'),
         avi_disable_session_cache_as_fact=dict(default=False, type='bool'))
-
-
