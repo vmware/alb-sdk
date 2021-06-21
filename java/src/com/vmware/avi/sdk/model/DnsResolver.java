@@ -68,7 +68,7 @@ public class DnsResolver  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * If configured, this ttl overrides the ttl from responses if ttl < min_ttl.effectively ttl = max(recieved_ttl, min_ttl).
+     * If configured, the min_ttl overrides the ttl from responses when ttl < min_ttl,effectively ttl = max(recieved_ttl, min_ttl).
      * Allowed values are 5-2147483647.
      * Field introduced in 20.1.5.
      * Unit is sec.
@@ -81,7 +81,7 @@ public class DnsResolver  {
 
     /**
      * This is the setter method to the attribute.
-     * If configured, this ttl overrides the ttl from responses if ttl < min_ttl.effectively ttl = max(recieved_ttl, min_ttl).
+     * If configured, the min_ttl overrides the ttl from responses when ttl < min_ttl,effectively ttl = max(recieved_ttl, min_ttl).
      * Allowed values are 5-2147483647.
      * Field introduced in 20.1.5.
      * Unit is sec.
