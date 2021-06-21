@@ -33,7 +33,7 @@ type ServerAutoScalePolicy struct {
 	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.3. Maximum of 4 items allowed.
 	Labels []*KeyValue `json:"labels,omitempty"`
 
-	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// Maximum number of servers to scale-in simultaneously. The actual number of servers to scale-in is chosen such that target number of servers is always more than or equal to the min_size.

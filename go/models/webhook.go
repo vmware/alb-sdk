@@ -21,7 +21,7 @@ type Webhook struct {
 	//  Field introduced in 17.1.1.
 	Description *string `json:"description,omitempty"`
 
-	// List of labels to be used for granular RBAC. Field introduced in 20.1.6.
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.6. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// The name of the webhook profile. Field introduced in 17.1.1.
