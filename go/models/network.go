@@ -36,7 +36,7 @@ type Network struct {
 	// Key/value labels which can be used for Object Access Policy permission scoping. Field deprecated in 20.1.5. Field introduced in 18.2.7, 20.1.1.
 	Labels []*KeyValue `json:"labels,omitempty"`
 
-	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// Name of the object.

@@ -175,7 +175,7 @@ type VirtualService struct {
 	// Limit potential DoS attackers who exceed max_cps_per_client significantly to a fraction of max_cps_per_client for a while.
 	LimitDoser *bool `json:"limit_doser,omitempty"`
 
-	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// Maximum connections per second per client IP. Allowed values are 10-1000. Special values are 0- 'unlimited'.
