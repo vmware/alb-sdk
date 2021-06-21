@@ -240,6 +240,9 @@ public class Pool extends AviRestResource  {
     @JsonProperty("use_service_port")
     private Boolean useServicePort = false;
 
+    @JsonProperty("use_service_ssl_mode")
+    private Boolean useServiceSslMode = false;
+
     @JsonProperty("uuid")
     private String uuid = null;
 
@@ -384,6 +387,8 @@ public class Pool extends AviRestResource  {
      * settings as well as http healthmonitors attached to pools.
      * Enum options - NON_DEFAULT_80_443, NEVER, ALWAYS.
      * Field introduced in 21.1.1.
+     * Allowed in basic(allowed values- never) edition, essentials(allowed values- never) edition, enterprise edition.
+     * Special default for basic edition is never, essentials edition is never, enterprise is non_default_80_443.
      * Default value when not specified in API or module is interpreted by Avi Controller as "NON_DEFAULT_80_443".
      * @return appendPort
      */
@@ -399,6 +404,8 @@ public class Pool extends AviRestResource  {
      * settings as well as http healthmonitors attached to pools.
      * Enum options - NON_DEFAULT_80_443, NEVER, ALWAYS.
      * Field introduced in 21.1.1.
+     * Allowed in basic(allowed values- never) edition, essentials(allowed values- never) edition, enterprise edition.
+     * Special default for basic edition is never, essentials edition is never, enterprise is non_default_80_443.
      * Default value when not specified in API or module is interpreted by Avi Controller as "NON_DEFAULT_80_443".
      * @param appendPort set the appendPort.
      */
@@ -1323,6 +1330,7 @@ public class Pool extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.5.
+     * Allowed in basic edition, essentials edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -1334,6 +1342,7 @@ public class Pool extends AviRestResource  {
      * This is the setter method. this will set the markers
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.5.
+     * Allowed in basic edition, essentials edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -1345,6 +1354,7 @@ public class Pool extends AviRestResource  {
      * This is the setter method this will set the markers
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.5.
+     * Allowed in basic edition, essentials edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -2086,6 +2096,32 @@ public class Pool extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * This applies only when use_service_port is set to true.
+     * If enabled, ssl mode of the connection to the server is decided by the ssl mode on the virtualservice service port, on which the request was
+     * received.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return useServiceSslMode
+     */
+    public Boolean getUseServiceSslMode() {
+        return useServiceSslMode;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This applies only when use_service_port is set to true.
+     * If enabled, ssl mode of the connection to the server is decided by the ssl mode on the virtualservice service port, on which the request was
+     * received.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param useServiceSslMode set the useServiceSslMode.
+     */
+    public void setUseServiceSslMode(Boolean  useServiceSslMode) {
+        this.useServiceSslMode = useServiceSslMode;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Uuid of the pool.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
@@ -2213,7 +2249,8 @@ public class Pool extends AviRestResource  {
   Objects.equals(this.tier1Lr, objPool.tier1Lr)&&
   Objects.equals(this.appendPort, objPool.appendPort)&&
   Objects.equals(this.http2Properties, objPool.http2Properties)&&
-  Objects.equals(this.serverDisableType, objPool.serverDisableType);
+  Objects.equals(this.serverDisableType, objPool.serverDisableType)&&
+  Objects.equals(this.useServiceSslMode, objPool.useServiceSslMode);
     }
 
     @Override
@@ -2292,6 +2329,7 @@ public class Pool extends AviRestResource  {
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                         sb.append("    tier1Lr: ").append(toIndentedString(tier1Lr)).append("\n");
                                     sb.append("    useServicePort: ").append(toIndentedString(useServicePort)).append("\n");
+                        sb.append("    useServiceSslMode: ").append(toIndentedString(useServiceSslMode)).append("\n");
                         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                         sb.append("    vrfRef: ").append(toIndentedString(vrfRef)).append("\n");
                   sb.append("}");

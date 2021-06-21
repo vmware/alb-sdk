@@ -375,6 +375,8 @@ public class GslbSite  {
     /**
      * This is the getter method this will return the attribute value.
      * Name for the site controller cluster.
+     * After any changes to site name, references to gslb site name should be updated manually.
+     * Ex  site name used in dns policies or topology policies should be updated to use the new site name.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -385,6 +387,8 @@ public class GslbSite  {
     /**
      * This is the setter method to the attribute.
      * Name for the site controller cluster.
+     * After any changes to site name, references to gslb site name should be updated manually.
+     * Ex  site name used in dns policies or topology policies should be updated to use the new site name.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */

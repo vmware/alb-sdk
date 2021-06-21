@@ -65,7 +65,7 @@ public class AppLearningParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Maximum number of params to learn for an application.
+     * Maximum number of params programmed for an application.
      * Allowed values are 10-1000.
      * Field introduced in 18.2.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
@@ -77,7 +77,7 @@ public class AppLearningParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Maximum number of params to learn for an application.
+     * Maximum number of params programmed for an application.
      * Allowed values are 10-1000.
      * Field introduced in 18.2.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
@@ -89,7 +89,7 @@ public class AppLearningParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Maximum number of uri paths to learn for an application.
+     * Maximum number of uri paths programmed for an application.
      * Allowed values are 10-10000.
      * Field introduced in 18.2.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as 500.
@@ -101,7 +101,7 @@ public class AppLearningParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Maximum number of uri paths to learn for an application.
+     * Maximum number of uri paths programmed for an application.
      * Allowed values are 10-10000.
      * Field introduced in 18.2.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as 500.
