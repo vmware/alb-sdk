@@ -36,6 +36,9 @@ type DebugVirtualService struct {
 	// Placeholder for description of property flags of obj type DebugVirtualService field type str  type object
 	Flags []*DebugVsDataplane `json:"flags,omitempty"`
 
+	// Filters for latency audit. Supported only for ingress. Field introduced in 21.1.1.
+	LatencyAuditFilters *CaptureFilters `json:"latency_audit_filters,omitempty"`
+
 	// Name of the object.
 	// Required: true
 	Name *string `json:"name"`

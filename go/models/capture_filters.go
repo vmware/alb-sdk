@@ -29,6 +29,9 @@ type CaptureFilters struct {
 	// Source Port filter. Field introduced in 18.2.5.
 	SrcPort *int32 `json:"src_port,omitempty"`
 
+	// Source Port range end filter. If specified, the source port filter will be a range. The filter range will be between src_port and src_port_range_end. Field introduced in 21.1.1.
+	SrcPortRangeEnd *int32 `json:"src_port_range_end,omitempty"`
+
 	// TCP ACK flag filter. Field introduced in 18.2.5.
 	TCPAck *bool `json:"tcp_ack,omitempty"`
 
