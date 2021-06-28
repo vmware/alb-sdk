@@ -22,6 +22,9 @@ type MemoryBalancerRequest struct {
 	// Required: true
 	Name *string `json:"name"`
 
+	// UUID of Node. Field introduced in 21.1.1.
+	NodeUUID *string `json:"node_uuid,omitempty"`
+
 	// Current process information of the controller process. Field introduced in 21.1.1.
 	ProcessInfo *ProcessInfo `json:"process_info,omitempty"`
 
