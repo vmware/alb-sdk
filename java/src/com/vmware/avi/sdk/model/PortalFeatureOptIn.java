@@ -39,6 +39,9 @@ public class PortalFeatureOptIn  {
     @JsonProperty("enable_systeminfo_collection")
     private Boolean enableSysteminfoCollection = false;
 
+    @JsonProperty("enable_user_agent_db_sync")
+    private Boolean enableUserAgentDbSync = false;
+
     @JsonProperty("enable_waf_signatures_notifications")
     private Boolean enableWafSignaturesNotifications = true;
 
@@ -194,6 +197,30 @@ public class PortalFeatureOptIn  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Enable subscription to user-agent database used for bot management.
+     * Field introduced in 21.1.1.
+     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return enableUserAgentDbSync
+     */
+    public Boolean getEnableUserAgentDbSync() {
+        return enableUserAgentDbSync;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable subscription to user-agent database used for bot management.
+     * Field introduced in 21.1.1.
+     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param enableUserAgentDbSync set the enableUserAgentDbSync.
+     */
+    public void setEnableUserAgentDbSync(Boolean  enableUserAgentDbSync) {
+        this.enableUserAgentDbSync = enableUserAgentDbSync;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Enable event notifications when new crs versions are available.
      * Field introduced in 20.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
@@ -234,7 +261,8 @@ public class PortalFeatureOptIn  {
   Objects.equals(this.enableAutoCaseCreationOnSeFailure, objPortalFeatureOptIn.enableAutoCaseCreationOnSeFailure)&&
   Objects.equals(this.enableIpReputation, objPortalFeatureOptIn.enableIpReputation)&&
   Objects.equals(this.enableAppsignatureSync, objPortalFeatureOptIn.enableAppsignatureSync)&&
-  Objects.equals(this.enableSysteminfoCollection, objPortalFeatureOptIn.enableSysteminfoCollection);
+  Objects.equals(this.enableSysteminfoCollection, objPortalFeatureOptIn.enableSysteminfoCollection)&&
+  Objects.equals(this.enableUserAgentDbSync, objPortalFeatureOptIn.enableUserAgentDbSync);
     }
 
     @Override
@@ -247,6 +275,7 @@ public class PortalFeatureOptIn  {
                         sb.append("    enableAutoDownloadWafSignatures: ").append(toIndentedString(enableAutoDownloadWafSignatures)).append("\n");
                         sb.append("    enableIpReputation: ").append(toIndentedString(enableIpReputation)).append("\n");
                         sb.append("    enableSysteminfoCollection: ").append(toIndentedString(enableSysteminfoCollection)).append("\n");
+                        sb.append("    enableUserAgentDbSync: ").append(toIndentedString(enableUserAgentDbSync)).append("\n");
                         sb.append("    enableWafSignaturesNotifications: ").append(toIndentedString(enableWafSignaturesNotifications)).append("\n");
                   sb.append("}");
       return sb.toString();

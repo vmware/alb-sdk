@@ -27,6 +27,9 @@ public class MemoryBalancerRequest extends AviRestResource  {
     @JsonProperty("name")
     private String name = null;
 
+    @JsonProperty("node_uuid")
+    private String nodeUuid = null;
+
     @JsonProperty("process_info")
     private ProcessInfo processInfo = null;
 
@@ -89,6 +92,28 @@ public class MemoryBalancerRequest extends AviRestResource  {
      */
     public void setName(String  name) {
         this.name = name;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Uuid of node.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return nodeUuid
+     */
+    public String getNodeUuid() {
+        return nodeUuid;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Uuid of node.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param nodeUuid set the nodeUuid.
+     */
+    public void setNodeUuid(String  nodeUuid) {
+        this.nodeUuid = nodeUuid;
     }
 
     /**
@@ -236,6 +261,7 @@ public class MemoryBalancerRequest extends AviRestResource  {
   Objects.equals(this.processInfo, objMemoryBalancerRequest.processInfo)&&
   Objects.equals(this.processInstance, objMemoryBalancerRequest.processInstance)&&
   Objects.equals(this.controllerInfo, objMemoryBalancerRequest.controllerInfo)&&
+  Objects.equals(this.nodeUuid, objMemoryBalancerRequest.nodeUuid)&&
   Objects.equals(this.tenantRef, objMemoryBalancerRequest.tenantRef);
     }
 
@@ -245,6 +271,7 @@ public class MemoryBalancerRequest extends AviRestResource  {
       sb.append("class MemoryBalancerRequest {\n");
                   sb.append("    controllerInfo: ").append(toIndentedString(controllerInfo)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                        sb.append("    nodeUuid: ").append(toIndentedString(nodeUuid)).append("\n");
                         sb.append("    processInfo: ").append(toIndentedString(processInfo)).append("\n");
                         sb.append("    processInstance: ").append(toIndentedString(processInstance)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");

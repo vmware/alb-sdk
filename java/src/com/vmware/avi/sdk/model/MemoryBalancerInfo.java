@@ -88,7 +88,7 @@ public class MemoryBalancerInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Current controller memory usage.
+     * Current controller memory (in gb) usage.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controllerMemory
      */
@@ -98,7 +98,7 @@ public class MemoryBalancerInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Current controller memory usage.
+     * Current controller memory (in gb) usage.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param controllerMemory set the controllerMemory.
      */

@@ -57,6 +57,9 @@ public class ALBServicesConfig extends AviRestResource  {
     @JsonProperty("use_tls")
     private Boolean useTls = true;
 
+    @JsonProperty("user_agent_db_config")
+    private UserAgentDBConfig userAgentDbConfig = null;
+
     @JsonProperty("uuid")
     private String uuid = null;
 
@@ -335,6 +338,30 @@ public class ALBServicesConfig extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Default values to be used for user agent db service.
+     * Field introduced in 21.1.1.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return userAgentDbConfig
+     */
+    public UserAgentDBConfig getUserAgentDbConfig() {
+        return userAgentDbConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Default values to be used for user agent db service.
+     * Field introduced in 21.1.1.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param userAgentDbConfig set the userAgentDbConfig.
+     */
+    public void setUserAgentDbConfig(UserAgentDBConfig userAgentDbConfig) {
+        this.userAgentDbConfig = userAgentDbConfig;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Field introduced in 18.2.6.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
@@ -374,7 +401,8 @@ public class ALBServicesConfig extends AviRestResource  {
   Objects.equals(this.ipReputationConfig, objALBServicesConfig.ipReputationConfig)&&
   Objects.equals(this.useTls, objALBServicesConfig.useTls)&&
   Objects.equals(this.mode, objALBServicesConfig.mode)&&
-  Objects.equals(this.appSignatureConfig, objALBServicesConfig.appSignatureConfig);
+  Objects.equals(this.appSignatureConfig, objALBServicesConfig.appSignatureConfig)&&
+  Objects.equals(this.userAgentDbConfig, objALBServicesConfig.userAgentDbConfig);
     }
 
     @Override
@@ -392,6 +420,7 @@ public class ALBServicesConfig extends AviRestResource  {
                         sb.append("    splitProxyConfiguration: ").append(toIndentedString(splitProxyConfiguration)).append("\n");
                                     sb.append("    useSplitProxy: ").append(toIndentedString(useSplitProxy)).append("\n");
                         sb.append("    useTls: ").append(toIndentedString(useTls)).append("\n");
+                        sb.append("    userAgentDbConfig: ").append(toIndentedString(userAgentDbConfig)).append("\n");
                         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
       return sb.toString();
