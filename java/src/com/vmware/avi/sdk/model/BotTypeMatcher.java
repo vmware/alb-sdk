@@ -31,8 +31,8 @@ public class BotTypeMatcher  {
     /**
      * This is the getter method this will return the attribute value.
      * The list of client types.
-     * Enum options - WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE,
-     * CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION.
+     * Enum options - UNDETERMINED_CLIENT_TYPE, WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER,
+     * DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION.
      * Field introduced in 21.1.1.
      * Minimum of 1 items required.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -45,8 +45,8 @@ public class BotTypeMatcher  {
     /**
      * This is the setter method. this will set the clientTypes
      * The list of client types.
-     * Enum options - WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE,
-     * CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION.
+     * Enum options - UNDETERMINED_CLIENT_TYPE, WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER,
+     * DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION.
      * Field introduced in 21.1.1.
      * Minimum of 1 items required.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -59,8 +59,8 @@ public class BotTypeMatcher  {
     /**
      * This is the setter method this will set the clientTypes
      * The list of client types.
-     * Enum options - WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE,
-     * CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION.
+     * Enum options - UNDETERMINED_CLIENT_TYPE, WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER,
+     * DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION.
      * Field introduced in 21.1.1.
      * Minimum of 1 items required.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.

@@ -423,6 +423,9 @@ public class EventDetails  {
     @JsonProperty("se_hb_recovered_event_details")
     private SeHbRecoveredEventDetails seHbRecoveredEventDetails = null;
 
+    @JsonProperty("se_high_ingress_proc_latency_event_details")
+    private SeHighIngressProcLatencyEventDetails seHighIngressProcLatencyEventDetails = null;
+
     @JsonProperty("se_hm_gs_details")
     private SeHmEventGSDetails seHmGsDetails = null;
 
@@ -3306,6 +3309,26 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return seHighIngressProcLatencyEventDetails
+     */
+    public SeHighIngressProcLatencyEventDetails getSeHighIngressProcLatencyEventDetails() {
+        return seHighIngressProcLatencyEventDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param seHighIngressProcLatencyEventDetails set the seHighIngressProcLatencyEventDetails.
+     */
+    public void setSeHighIngressProcLatencyEventDetails(SeHighIngressProcLatencyEventDetails seHighIngressProcLatencyEventDetails) {
+        this.seHighIngressProcLatencyEventDetails = seHighIngressProcLatencyEventDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Placeholder for description of property se_hm_gs_details of obj type eventdetails field type str  type ref.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seHmGsDetails
@@ -4642,6 +4665,7 @@ public class EventDetails  {
   Objects.equals(this.seBgpPeerDownDetails, objEventDetails.seBgpPeerDownDetails)&&
   Objects.equals(this.seVsPktBufHighEventDetails, objEventDetails.seVsPktBufHighEventDetails)&&
   Objects.equals(this.seDiscontinuousTimeChangeEventDetails, objEventDetails.seDiscontinuousTimeChangeEventDetails)&&
+  Objects.equals(this.seHighIngressProcLatencyEventDetails, objEventDetails.seHighIngressProcLatencyEventDetails)&&
   Objects.equals(this.seHmPoolDetails, objEventDetails.seHmPoolDetails)&&
   Objects.equals(this.seHmVsDetails, objEventDetails.seHmVsDetails)&&
   Objects.equals(this.sePersistenceDetails, objEventDetails.sePersistenceDetails)&&
@@ -4913,6 +4937,7 @@ public class EventDetails  {
                         sb.append("    seGeoDbDetails: ").append(toIndentedString(seGeoDbDetails)).append("\n");
                         sb.append("    seHbEventDetails: ").append(toIndentedString(seHbEventDetails)).append("\n");
                         sb.append("    seHbRecoveredEventDetails: ").append(toIndentedString(seHbRecoveredEventDetails)).append("\n");
+                        sb.append("    seHighIngressProcLatencyEventDetails: ").append(toIndentedString(seHighIngressProcLatencyEventDetails)).append("\n");
                         sb.append("    seHmGsDetails: ").append(toIndentedString(seHmGsDetails)).append("\n");
                         sb.append("    seHmGsgroupDetails: ").append(toIndentedString(seHmGsgroupDetails)).append("\n");
                         sb.append("    seHmPoolDetails: ").append(toIndentedString(seHmPoolDetails)).append("\n");

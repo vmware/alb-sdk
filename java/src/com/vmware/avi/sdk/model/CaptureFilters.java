@@ -42,6 +42,9 @@ public class CaptureFilters  {
     @JsonProperty("src_port")
     private Integer srcPort = null;
 
+    @JsonProperty("src_port_range_end")
+    private Integer srcPortRangeEnd = 0;
+
     @JsonProperty("tcp_ack")
     private Boolean tcpAck = null;
 
@@ -224,6 +227,32 @@ public class CaptureFilters  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Source port range end filter.
+     * If specified, the source port filter will be a range.
+     * The filter range will be between src_port and src_port_range_end.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @return srcPortRangeEnd
+     */
+    public Integer getSrcPortRangeEnd() {
+        return srcPortRangeEnd;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Source port range end filter.
+     * If specified, the source port filter will be a range.
+     * The filter range will be between src_port and src_port_range_end.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @param srcPortRangeEnd set the srcPortRangeEnd.
+     */
+    public void setSrcPortRangeEnd(Integer  srcPortRangeEnd) {
+        this.srcPortRangeEnd = srcPortRangeEnd;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Tcp ack flag filter.
      * Field introduced in 18.2.5.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -330,7 +359,8 @@ public class CaptureFilters  {
   Objects.equals(this.tcpAck, objCaptureFilters.tcpAck)&&
   Objects.equals(this.tcpFin, objCaptureFilters.tcpFin)&&
   Objects.equals(this.tcpPush, objCaptureFilters.tcpPush)&&
-  Objects.equals(this.captureIpc, objCaptureFilters.captureIpc);
+  Objects.equals(this.captureIpc, objCaptureFilters.captureIpc)&&
+  Objects.equals(this.srcPortRangeEnd, objCaptureFilters.srcPortRangeEnd);
     }
 
     @Override
@@ -344,6 +374,7 @@ public class CaptureFilters  {
                         sb.append("    ethProto: ").append(toIndentedString(ethProto)).append("\n");
                         sb.append("    ipProto: ").append(toIndentedString(ipProto)).append("\n");
                         sb.append("    srcPort: ").append(toIndentedString(srcPort)).append("\n");
+                        sb.append("    srcPortRangeEnd: ").append(toIndentedString(srcPortRangeEnd)).append("\n");
                         sb.append("    tcpAck: ").append(toIndentedString(tcpAck)).append("\n");
                         sb.append("    tcpFin: ").append(toIndentedString(tcpFin)).append("\n");
                         sb.append("    tcpPush: ").append(toIndentedString(tcpPush)).append("\n");

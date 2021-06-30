@@ -261,6 +261,9 @@ public class AnalyticsProfile extends AviRestResource  {
     @JsonProperty("labels")
     private List<KeyValue> labels;
 
+    @JsonProperty("latency_audit_props")
+    private LatencyAuditProperties latencyAuditProps = null;
+
     @JsonProperty("markers")
     private List<RoleFilterMatchLabel> markers = null;
 
@@ -2277,6 +2280,28 @@ public class AnalyticsProfile extends AviRestResource  {
       this.labels.add(labelsItem);
       return this;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Influence the audit of ingress latency and connection establishement time.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return latencyAuditProps
+     */
+    public LatencyAuditProperties getLatencyAuditProps() {
+        return latencyAuditProps;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Influence the audit of ingress latency and connection establishement time.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param latencyAuditProps set the latencyAuditProps.
+     */
+    public void setLatencyAuditProps(LatencyAuditProperties latencyAuditProps) {
+        this.latencyAuditProps = latencyAuditProps;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * List of labels to be used for granular rbac.
@@ -2639,7 +2664,8 @@ public class AnalyticsProfile extends AviRestResource  {
   Objects.equals(this.enableServerAnalytics, objAnalyticsProfile.enableServerAnalytics)&&
   Objects.equals(this.enableSeAnalytics, objAnalyticsProfile.enableSeAnalytics)&&
   Objects.equals(this.enableOndemandMetrics, objAnalyticsProfile.enableOndemandMetrics)&&
-  Objects.equals(this.markers, objAnalyticsProfile.markers);
+  Objects.equals(this.markers, objAnalyticsProfile.markers)&&
+  Objects.equals(this.latencyAuditProps, objAnalyticsProfile.latencyAuditProps);
     }
 
     @Override
@@ -2726,6 +2752,7 @@ public class AnalyticsProfile extends AviRestResource  {
                         sb.append("    hsSecurityTls13Score: ").append(toIndentedString(hsSecurityTls13Score)).append("\n");
                         sb.append("    hsSecurityWeakSignatureAlgoPenalty: ").append(toIndentedString(hsSecurityWeakSignatureAlgoPenalty)).append("\n");
                         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+                        sb.append("    latencyAuditProps: ").append(toIndentedString(latencyAuditProps)).append("\n");
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    ondemandMetricsIdleTimeout: ").append(toIndentedString(ondemandMetricsIdleTimeout)).append("\n");
