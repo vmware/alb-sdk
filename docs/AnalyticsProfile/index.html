@@ -392,6 +392,12 @@ font-style: italic;
     "hs_security_ssl30_score" : 1.3579000000000001069366817318950779736042022705078125,
     "conn_server_lossy_timeo_rexmt_threshold" : 123,
     "tenant_ref" : "aeiou",
+    "latency_audit_props" : {
+      "latency_audit_mode" : "aeiou",
+      "conn_est_audit_mode" : "aeiou",
+      "conn_est_threshold" : 123,
+      "latency_threshold" : 123
+    },
     "hs_pscore_traffic_threshold_l4_server" : 1.3579000000000001069366817318950779736042022705078125,
     "hs_security_certscore_le07d" : 1.3579000000000001069366817318950779736042022705078125,
     "markers" : [ {
@@ -584,6 +590,12 @@ font-style: italic;
   "hs_security_ssl30_score" : 1.3579000000000001069366817318950779736042022705078125,
   "conn_server_lossy_timeo_rexmt_threshold" : 123,
   "tenant_ref" : "aeiou",
+  "latency_audit_props" : {
+    "latency_audit_mode" : "aeiou",
+    "conn_est_audit_mode" : "aeiou",
+    "conn_est_threshold" : 123,
+    "latency_threshold" : 123
+  },
   "hs_pscore_traffic_threshold_l4_server" : 1.3579000000000001069366817318950779736042022705078125,
   "hs_security_certscore_le07d" : 1.3579000000000001069366817318950779736042022705078125,
   "markers" : [ {
@@ -847,6 +859,12 @@ font-style: italic;
   "hs_security_ssl30_score" : 1.3579000000000001069366817318950779736042022705078125,
   "conn_server_lossy_timeo_rexmt_threshold" : 123,
   "tenant_ref" : "aeiou",
+  "latency_audit_props" : {
+    "latency_audit_mode" : "aeiou",
+    "conn_est_audit_mode" : "aeiou",
+    "conn_est_threshold" : 123,
+    "latency_threshold" : 123
+  },
   "hs_pscore_traffic_threshold_l4_server" : 1.3579000000000001069366817318950779736042022705078125,
   "hs_security_certscore_le07d" : 1.3579000000000001069366817318950779736042022705078125,
   "markers" : [ {
@@ -1050,6 +1068,12 @@ font-style: italic;
   "hs_security_ssl30_score" : 1.3579000000000001069366817318950779736042022705078125,
   "conn_server_lossy_timeo_rexmt_threshold" : 123,
   "tenant_ref" : "aeiou",
+  "latency_audit_props" : {
+    "latency_audit_mode" : "aeiou",
+    "conn_est_audit_mode" : "aeiou",
+    "conn_est_threshold" : 123,
+    "latency_threshold" : 123
+  },
   "hs_pscore_traffic_threshold_l4_server" : 1.3579000000000001069366817318950779736042022705078125,
   "hs_security_certscore_le07d" : 1.3579000000000001069366817318950779736042022705078125,
   "markers" : [ {
@@ -1253,6 +1277,12 @@ font-style: italic;
   "hs_security_ssl30_score" : 1.3579000000000001069366817318950779736042022705078125,
   "conn_server_lossy_timeo_rexmt_threshold" : 123,
   "tenant_ref" : "aeiou",
+  "latency_audit_props" : {
+    "latency_audit_mode" : "aeiou",
+    "conn_est_audit_mode" : "aeiou",
+    "conn_est_threshold" : 123,
+    "latency_threshold" : 123
+  },
   "hs_pscore_traffic_threshold_l4_server" : 1.3579000000000001069366817318950779736042022705078125,
   "hs_security_certscore_le07d" : 1.3579000000000001069366817318950779736042022705078125,
   "markers" : [ {
@@ -1345,6 +1375,7 @@ font-style: italic;
     <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#HTTPStatusRange"><code>HTTPStatusRange</code></a></li>
     <li><a href="#KeyValue"><code>KeyValue</code></a></li>
+    <li><a href="#LatencyAuditProperties"><code>LatencyAuditProperties</code></a></li>
     <li><a href="#RoleFilterMatchLabel"><code>RoleFilterMatchLabel</code></a></li>
     <li><a href="#SensitiveFieldRule"><code>SensitiveFieldRule</code></a></li>
     <li><a href="#SensitiveLogProfile"><code>SensitiveLogProfile</code></a></li>
@@ -1437,7 +1468,8 @@ font-style: italic;
 <div class="param">hs_security_tls13_score (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> Score assigned when supporting TLS1.3 encryption protocol. Allowed values are 0-5. Field introduced in 18.2.6. Allowed in Basic(Allowed values- 5.0) edition, Essentials(Allowed values- 5.0) edition, Enterprise edition. format: double</div>
 <div class="param">hs_security_weak_signature_algo_penalty (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> Penalty for allowing weak signature algorithm(s). Allowed values are 0-5. Allowed in Basic(Allowed values- 1.0) edition, Essentials(Allowed values- 1.0) edition, Enterprise edition. format: double</div>
 <div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. </div>
-<div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. </div>
+<div class="param">latency_audit_props (optional)</div><div class="param-desc"><span class="param-type"><a href="#LatencyAuditProperties">LatencyAuditProperties</a></span> Influence the audit of ingress latency and connection establishement time. Field introduced in 21.1.1. </div>
+<div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition. </div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of the analytics profile. </div>
 <div class="param">ondemand_metrics_idle_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> This flag sets the time duration of no live data traffic after which Virtual Service metrics processing is suspended. It is applicable only when enable_ondemand_metrics is set to false. Field introduced in 18.1.1. Unit is SECONDS. format: int32</div>
 <div class="param">ranges (optional)</div><div class="param-desc"><span class="param-type"><a href="#HTTPStatusRange">array[HTTPStatusRange]</a></span> List of HTTP status code ranges to be excluded from being classified as an error. </div>
@@ -1503,6 +1535,15 @@ font-style: italic;
     <div class="field-items">
       <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key. </div>
 <div class="param">value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Value. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="LatencyAuditProperties">LatencyAuditProperties</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">conn_est_audit_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Audit TCP connection establishment time. Enum options - LATENCY_AUDIT_OFF, LATENCY_AUDIT_ON, LATENCY_AUDIT_ON_WITH_SIG. Field introduced in 21.1.1. </div>
+<div class="param">conn_est_threshold (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum threshold for connection establishment time. Field introduced in 21.1.1. Unit is MILLISECONDS. format: int32</div>
+<div class="param">latency_audit_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Audit dispatcher to proxy latency. Enum options - LATENCY_AUDIT_OFF, LATENCY_AUDIT_ON, LATENCY_AUDIT_ON_WITH_SIG. Field introduced in 21.1.1. </div>
+<div class="param">latency_threshold (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum latency threshold between dispatcher and proxy. Field introduced in 21.1.1. Unit is MILLISECONDS. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
