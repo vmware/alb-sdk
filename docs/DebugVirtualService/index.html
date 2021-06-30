@@ -276,6 +276,7 @@ font-style: italic;
         "absolute_size" : 123
       }
     },
+    "latency_audit_filters" : "",
     "flags" : [ {
       "flag" : "aeiou"
     } ],
@@ -289,6 +290,7 @@ font-style: italic;
       "tcp_ack" : true,
       "tcp_syn" : true,
       "tcp_fin" : true,
+      "src_port_range_end" : 123,
       "dst_port_start" : 123,
       "tcp_push" : true,
       "capture_ip" : {
@@ -404,6 +406,7 @@ font-style: italic;
       "absolute_size" : 123
     }
   },
+  "latency_audit_filters" : "",
   "flags" : [ {
     "flag" : "aeiou"
   } ],
@@ -417,6 +420,7 @@ font-style: italic;
     "tcp_ack" : true,
     "tcp_syn" : true,
     "tcp_fin" : true,
+    "src_port_range_end" : 123,
     "dst_port_start" : 123,
     "tcp_push" : true,
     "capture_ip" : {
@@ -603,6 +607,7 @@ font-style: italic;
       "absolute_size" : 123
     }
   },
+  "latency_audit_filters" : "",
   "flags" : [ {
     "flag" : "aeiou"
   } ],
@@ -616,6 +621,7 @@ font-style: italic;
     "tcp_ack" : true,
     "tcp_syn" : true,
     "tcp_fin" : true,
+    "src_port_range_end" : 123,
     "dst_port_start" : 123,
     "tcp_push" : true,
     "capture_ip" : {
@@ -742,6 +748,7 @@ font-style: italic;
       "absolute_size" : 123
     }
   },
+  "latency_audit_filters" : "",
   "flags" : [ {
     "flag" : "aeiou"
   } ],
@@ -755,6 +762,7 @@ font-style: italic;
     "tcp_ack" : true,
     "tcp_syn" : true,
     "tcp_fin" : true,
+    "src_port_range_end" : 123,
     "dst_port_start" : 123,
     "tcp_push" : true,
     "capture_ip" : {
@@ -881,6 +889,7 @@ font-style: italic;
       "absolute_size" : 123
     }
   },
+  "latency_audit_filters" : "",
   "flags" : [ {
     "flag" : "aeiou"
   } ],
@@ -894,6 +903,7 @@ font-style: italic;
     "tcp_ack" : true,
     "tcp_syn" : true,
     "tcp_fin" : true,
+    "src_port_range_end" : 123,
     "dst_port_start" : 123,
     "tcp_push" : true,
     "capture_ip" : {
@@ -1001,6 +1011,7 @@ font-style: italic;
 <div class="param">eth_proto (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Ethernet Proto filter. Enum options - ETH_TYPE_IPV4. Field introduced in 18.2.5. </div>
 <div class="param">ip_proto (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> IP Proto filter. Support for TCP only for now. Enum options - IP_TYPE_TCP. Field introduced in 18.2.5. </div>
 <div class="param">src_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Source Port filter. Field introduced in 18.2.5. format: int32</div>
+<div class="param">src_port_range_end (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Source Port range end filter. If specified, the source port filter will be a range. The filter range will be between src_port and src_port_range_end. Field introduced in 21.1.1. format: int32</div>
 <div class="param">tcp_ack (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> TCP ACK flag filter. Field introduced in 18.2.5. </div>
 <div class="param">tcp_fin (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> TCP FIN flag filter. Field introduced in 18.2.5. </div>
 <div class="param">tcp_push (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> TCP PUSH flag filter. Field introduced in 18.2.5. </div>
@@ -1051,6 +1062,7 @@ font-style: italic;
 <div class="param">debug_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#DebugIpAddr">DebugIpAddr</a></span> Filters all packets of a complete transaction (client and server side), based on client ip. </div>
 <div class="param">dns_options (optional)</div><div class="param-desc"><span class="param-type"><a href="#DebugDnsOptions">DebugDnsOptions</a></span> Dns debug options. Field introduced in 18.2.1. </div>
 <div class="param">flags (optional)</div><div class="param-desc"><span class="param-type"><a href="#DebugVsDataplane">array[DebugVsDataplane]</a></span> Placeholder for description of property flags of obj type DebugVirtualService field type str  type object </div>
+<div class="param">latency_audit_filters (optional)</div><div class="param-desc"><span class="param-type"><a href="#CaptureFilters">CaptureFilters</a></span> Filters for latency audit. Supported only for ingress. Field introduced in 21.1.1. </div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the object. </div>
 <div class="param">objsync (optional)</div><div class="param-desc"><span class="param-type"><a href="#DebugVirtualServiceObjSync">DebugVirtualServiceObjSync</a></span> Object sync debug options. Field introduced in 20.1.3. </div>
 <div class="param">resync_flows (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> This option re-synchronizes flows between Active-Standby service engines for all the virtual services placed on them. It should be used with caution because as it can cause a flood between Active-Standby. Field introduced in 18.1.3,18.2.1. </div>

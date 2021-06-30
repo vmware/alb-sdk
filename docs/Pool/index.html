@@ -383,6 +383,7 @@ font-style: italic;
       },
       "network_ref" : "aeiou"
     } ],
+    "use_service_ssl_mode" : true,
     "autoscale_networks" : [ "aeiou" ],
     "enable_http2" : true,
     "created_by" : "aeiou",
@@ -650,6 +651,7 @@ font-style: italic;
     },
     "network_ref" : "aeiou"
   } ],
+  "use_service_ssl_mode" : true,
   "autoscale_networks" : [ "aeiou" ],
   "enable_http2" : true,
   "created_by" : "aeiou",
@@ -1150,6 +1152,7 @@ font-style: italic;
     },
     "network_ref" : "aeiou"
   } ],
+  "use_service_ssl_mode" : true,
   "autoscale_networks" : [ "aeiou" ],
   "enable_http2" : true,
   "created_by" : "aeiou",
@@ -1688,6 +1691,7 @@ font-style: italic;
     },
     "network_ref" : "aeiou"
   } ],
+  "use_service_ssl_mode" : true,
   "autoscale_networks" : [ "aeiou" ],
   "enable_http2" : true,
   "created_by" : "aeiou",
@@ -2018,6 +2022,7 @@ font-style: italic;
     },
     "network_ref" : "aeiou"
   } ],
+  "use_service_ssl_mode" : true,
   "autoscale_networks" : [ "aeiou" ],
   "enable_http2" : true,
   "created_by" : "aeiou",
@@ -3150,7 +3155,7 @@ font-style: italic;
 <div class="param">analytics_policy (optional)</div><div class="param-desc"><span class="param-type"><a href="#PoolAnalyticsPolicy">PoolAnalyticsPolicy</a></span> Determines analytics settings for the pool. Field introduced in 18.1.5, 18.2.1. </div>
 <div class="param">analytics_profile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Specifies settings related to analytics. It is a reference to an object of type AnalyticsProfile. Field introduced in 18.1.4,18.2.1. </div>
 <div class="param">apic_epg_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Synchronize Cisco APIC EPG members with pool servers. Field deprecated in 21.1.1. </div>
-<div class="param">append_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Allows the option to append port to hostname in the host header while sending a request to the server. By default, port is appended for non-default ports. This setting will apply for Pool&#39;s &#39;Rewrite Host Header to Server Name&#39;, &#39;Rewrite Host Header to SNI&#39; features and Server&#39;s &#39;Rewrite Host Header&#39; settings as well as HTTP healthmonitors attached to pools. Enum options - NON_DEFAULT_80_443, NEVER, ALWAYS. Field introduced in 21.1.1. </div>
+<div class="param">append_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Allows the option to append port to hostname in the host header while sending a request to the server. By default, port is appended for non-default ports. This setting will apply for Pool&#39;s &#39;Rewrite Host Header to Server Name&#39;, &#39;Rewrite Host Header to SNI&#39; features and Server&#39;s &#39;Rewrite Host Header&#39; settings as well as HTTP healthmonitors attached to pools. Enum options - NON_DEFAULT_80_443, NEVER, ALWAYS. Field introduced in 21.1.1. Allowed in Basic(Allowed values- NEVER) edition, Essentials(Allowed values- NEVER) edition, Enterprise edition. Special default for Basic edition is NEVER, Essentials edition is NEVER, Enterprise is NON_DEFAULT_80_443. </div>
 <div class="param">application_persistence_profile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Persistence will ensure the same user sticks to the same server for a desired duration of time. It is a reference to an object of type ApplicationPersistenceProfile. </div>
 <div class="param">autoscale_launch_config_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> If configured then Avi will trigger orchestration of pool server creation and deletion. It is a reference to an object of type AutoScaleLaunchConfig. </div>
 <div class="param">autoscale_networks (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Network Ids for the launch configuration. </div>
@@ -3187,7 +3192,7 @@ font-style: italic;
 <div class="param">lb_algorithm_core_nonaffinity (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Degree of non-affinity for core affinity based server selection. Allowed values are 1-65535. Field introduced in 17.1.3. Allowed in Basic(Allowed values- 2) edition, Essentials(Allowed values- 2) edition, Enterprise edition. format: int32</div>
 <div class="param">lb_algorithm_hash (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criteria used as a key for determining the hash between the client and  server. Enum options - LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS, LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT, LB_ALGORITHM_CONSISTENT_HASH_URI, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_HEADER, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_STRING, LB_ALGORITHM_CONSISTENT_HASH_CALLID. Allowed in Basic(Allowed values- LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS) edition, Essentials(Allowed values- LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS) edition, Enterprise edition. </div>
 <div class="param">lookup_server_by_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Allow server lookup by name. Field introduced in 17.1.11,17.2.4. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. </div>
-<div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. </div>
+<div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition. </div>
 <div class="param">max_concurrent_connections_per_server (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The maximum number of concurrent connections allowed to each server within the pool. NOTE  applied value will be no less than the number of service engines that the pool is placed on. If set to 0, no limit is applied. format: int32</div>
 <div class="param">max_conn_rate_per_server (optional)</div><div class="param-desc"><span class="param-type"><a href="#RateProfile">RateProfile</a></span> Rate Limit connections to each server. </div>
 <div class="param">min_health_monitors_up (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Minimum number of health monitors in UP state to mark server UP. Field introduced in 18.2.1, 17.2.12. Allowed in Basic edition, Essentials edition, Enterprise edition. format: int32</div>
@@ -3219,6 +3224,7 @@ font-style: italic;
 <div class="param">tier1_lr (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This tier1_lr field should be set same as VirtualService associated for NSX-T. Field introduced in 20.1.1. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
 <div class="param">use_service_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Do not translate the client&#39;s destination port when sending the connection to the server.  The pool or servers specified service port will still be used for health monitoring. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. </div>
+<div class="param">use_service_ssl_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> This applies only when use_service_port is set to true. If enabled, SSL mode of the connection to the server is decided by the SSL mode on the Virtualservice service port, on which the request was received. Field introduced in 21.1.1. </div>
 <div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the pool. </div>
 <div class="param">vrf_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Virtual Routing Context that the pool is bound to. This is used to provide the isolation of the set of networks the pool is attached to. The pool inherits the Virtual Routing Conext of the Virtual Service, and this field is used only internally, and is set by pb-transform. It is a reference to an object of type VrfContext. </div>
     </div>  <!-- field-items -->
