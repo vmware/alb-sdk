@@ -58,6 +58,10 @@ type ALBServicesConfig struct {
 	// Secure the controller to PULSE communication over TLS. Field introduced in 20.1.3. Allowed in Basic edition, Enterprise edition.
 	UseTLS *bool `json:"use_tls,omitempty"`
 
+	// Default values to be used for user agent DB Service. Field introduced in 21.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition.
+	// Required: true
+	UserAgentDbConfig *UserAgentDBConfig `json:"user_agent_db_config"`
+
 	//  Field introduced in 18.2.6.
 	UUID *string `json:"uuid,omitempty"`
 }

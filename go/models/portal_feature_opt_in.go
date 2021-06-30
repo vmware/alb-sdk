@@ -26,6 +26,9 @@ type PortalFeatureOptIn struct {
 	// Subscribe to upload Controller Metrics and System Information to Pulse Portal. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
 	EnableSysteminfoCollection *bool `json:"enable_systeminfo_collection,omitempty"`
 
+	// Enable subscription to User-Agent database used for Bot Management. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
+	EnableUserAgentDbSync *bool `json:"enable_user_agent_db_sync,omitempty"`
+
 	// Enable event notifications when new CRS versions are available. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is True.
 	EnableWafSignaturesNotifications *bool `json:"enable_waf_signatures_notifications,omitempty"`
 }
