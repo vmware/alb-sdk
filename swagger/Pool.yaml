@@ -1745,7 +1745,7 @@ definitions:
                 description: "Synchronize Cisco APIC EPG members with pool servers. Field deprecated in 21.1.1."
                 type: string
             append_port:
-                description: "Allows the option to append port to hostname in the host header while sending a request to the server. By default, port is appended for non-default ports. This setting will apply for Pool's 'Rewrite Host Header to Server Name', 'Rewrite Host Header to SNI' features and Server's 'Rewrite Host Header' settings as well as HTTP healthmonitors attached to pools. Enum options - NON_DEFAULT_80_443, NEVER, ALWAYS. Field introduced in 21.1.1."
+                description: "Allows the option to append port to hostname in the host header while sending a request to the server. By default, port is appended for non-default ports. This setting will apply for Pool's 'Rewrite Host Header to Server Name', 'Rewrite Host Header to SNI' features and Server's 'Rewrite Host Header' settings as well as HTTP healthmonitors attached to pools. Enum options - NON_DEFAULT_80_443, NEVER, ALWAYS. Field introduced in 21.1.1. Allowed in Basic(Allowed values- NEVER) edition, Essentials(Allowed values- NEVER) edition, Enterprise edition. Special default for Basic edition is NEVER, Essentials edition is NEVER, Enterprise is NON_DEFAULT_80_443."
                 type: string
                 default: "NON_DEFAULT_80_443"
             application_persistence_profile_ref:
@@ -1884,7 +1884,7 @@ definitions:
                 description: "Allow server lookup by name. Field introduced in 17.1.11,17.2.4. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
                 type: boolean
             markers:
-                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5."
+                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition."
                 type: array
                 items:
                     $ref: '#/definitions/RoleFilterMatchLabel'
@@ -1998,6 +1998,9 @@ definitions:
                 type: string
             use_service_port:
                 description: "Do not translate the client's destination port when sending the connection to the server.  The pool or servers specified service port will still be used for health monitoring. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
+                type: boolean
+            use_service_ssl_mode:
+                description: "This applies only when use_service_port is set to true. If enabled, SSL mode of the connection to the server is decided by the SSL mode on the Virtualservice service port, on which the request was received. Field introduced in 21.1.1."
                 type: boolean
             uuid:
                 description: "UUID of the pool."

@@ -393,6 +393,10 @@ definitions:
                 description: "Source Port filter. Field introduced in 18.2.5."
                 type: integer
                 format: int32
+            src_port_range_end:
+                description: "Source Port range end filter. If specified, the source port filter will be a range. The filter range will be between src_port and src_port_range_end. Field introduced in 21.1.1."
+                type: integer
+                format: int32
             tcp_ack:
                 description: "TCP ACK flag filter. Field introduced in 18.2.5."
                 type: boolean
@@ -511,6 +515,9 @@ definitions:
                 type: array
                 items:
                     $ref: '#/definitions/DebugVsDataplane'
+            latency_audit_filters:
+                description: "Filters for latency audit. Supported only for ingress. Field introduced in 21.1.1."
+                $ref: '#/definitions/CaptureFilters'
             name:
                 description: "Name of the object."
                 type: string

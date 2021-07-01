@@ -540,13 +540,13 @@
                     "default": true
                 },
                 "max_params": {
-                    "description": "Maximum number of params to learn for an application. Allowed values are 10-1000. Field introduced in 18.2.3.",
+                    "description": "Maximum number of params programmed for an application. Allowed values are 10-1000. Field introduced in 18.2.3.",
                     "type": "integer",
                     "default": 100,
                     "format": "int32"
                 },
                 "max_uris": {
-                    "description": "Maximum number of URI paths to learn for an application. Allowed values are 10-10000. Field introduced in 18.2.3.",
+                    "description": "Maximum number of URI paths programmed for an application. Allowed values are 10-10000. Field introduced in 18.2.3.",
                     "type": "integer",
                     "default": 500,
                     "format": "int32"
@@ -1284,7 +1284,7 @@
                     "$ref": "#/definitions/AppLearningParams"
                 },
                 "markers": {
-                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5.",
+                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/RoleFilterMatchLabel"

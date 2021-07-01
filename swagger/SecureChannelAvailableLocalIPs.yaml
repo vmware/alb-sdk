@@ -360,15 +360,16 @@ definitions:
                 type: integer
                 format: int32
             free_controller_ips:
-                description: "free_controller_ips of SecureChannelAvailableLocalIPs."
+                description: " Field deprecated in 21.1.1."
                 type: array
                 items:
                     type: string
             free_ips:
-                description: "free_ips of SecureChannelAvailableLocalIPs."
+                description: "Number of free_ips."
                 type: array
                 items:
-                    type: string
+                    type: integer
+                format: int32
             name:
                 description: "Name of the object."
                 type: string

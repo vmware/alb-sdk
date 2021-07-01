@@ -506,7 +506,7 @@
             "type": "object",
             "properties": {
                 "class": {
-                    "description": "The Bot Client Class of this identification. Enum options - HUMAN_CLIENT, BOT_CLIENT. Field introduced in 21.1.1.",
+                    "description": "The Bot Client Class of this identification. Enum options - UNDETERMINED_CLIENT, HUMAN_CLIENT, BOT_CLIENT. Field introduced in 21.1.1.",
                     "type": "string"
                 },
                 "identifier": {
@@ -514,7 +514,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "description": "The Bot Client Type of this identification. Enum options - WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION. Field introduced in 21.1.1.",
+                    "description": "The Bot Client Type of this identification. Enum options - UNDETERMINED_CLIENT_TYPE, WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION. Field introduced in 21.1.1.",
                     "type": "string"
                 }
             }

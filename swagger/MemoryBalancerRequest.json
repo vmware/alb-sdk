@@ -546,6 +546,10 @@
                     "description": "Name of controller process. Field introduced in 21.1.1.",
                     "type": "string"
                 },
+                "node_uuid": {
+                    "description": "UUID of Node. Field introduced in 21.1.1.",
+                    "type": "string"
+                },
                 "process_info": {
                     "description": "Current process information of the controller process. Field introduced in 21.1.1.",
                     "$ref": "#/definitions/ProcessInfo"
