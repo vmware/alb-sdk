@@ -1011,8 +1011,12 @@
                         "$ref": "#/definitions/KeyValue"
                     }
                 },
+                "latency_audit_props": {
+                    "description": "Influence the audit of ingress latency and connection establishement time. Field introduced in 21.1.1.",
+                    "$ref": "#/definitions/LatencyAuditProperties"
+                },
                 "markers": {
-                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5.",
+                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/RoleFilterMatchLabel"
@@ -1218,6 +1222,29 @@
                 "value": {
                     "description": "Value.",
                     "type": "string"
+                }
+            }
+        },
+        "LatencyAuditProperties": {
+            "type": "object",
+            "properties": {
+                "conn_est_audit_mode": {
+                    "description": "Audit TCP connection establishment time. Enum options - LATENCY_AUDIT_OFF, LATENCY_AUDIT_ON, LATENCY_AUDIT_ON_WITH_SIG. Field introduced in 21.1.1.",
+                    "type": "string"
+                },
+                "conn_est_threshold": {
+                    "description": "Maximum threshold for connection establishment time. Field introduced in 21.1.1. Unit is MILLISECONDS.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "latency_audit_mode": {
+                    "description": "Audit dispatcher to proxy latency. Enum options - LATENCY_AUDIT_OFF, LATENCY_AUDIT_ON, LATENCY_AUDIT_ON_WITH_SIG. Field introduced in 21.1.1.",
+                    "type": "string"
+                },
+                "latency_threshold": {
+                    "description": "Maximum latency threshold between dispatcher and proxy. Field introduced in 21.1.1. Unit is MILLISECONDS.",
+                    "type": "integer",
+                    "format": "int32"
                 }
             }
         },

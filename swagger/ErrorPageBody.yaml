@@ -381,7 +381,7 @@ definitions:
                 items:
                     $ref: '#/definitions/KeyValue'
             markers:
-                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5."
+                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition."
                 type: array
                 items:
                     $ref: '#/definitions/RoleFilterMatchLabel'

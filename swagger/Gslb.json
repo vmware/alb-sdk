@@ -1010,7 +1010,7 @@
                     "default": "GSLB_PASSIVE_MEMBER"
                 },
                 "name": {
-                    "description": "Name for the Site Controller Cluster.",
+                    "description": "Name for the Site Controller Cluster. After any changes to site name, references to GSLB site name should be updated manually. Ex  Site name used in DNS policies or Topology policies should be updated to use the new site name.",
                     "type": "string"
                 },
                 "password": {
