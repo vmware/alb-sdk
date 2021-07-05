@@ -27,6 +27,9 @@ public class UserAgentCacheConfig  {
     @JsonProperty("controller_cache_size")
     private Integer controllerCacheSize = 300000;
 
+    @JsonProperty("max_upstream_queries")
+    private Integer maxUpstreamQueries = 5;
+
     @JsonProperty("max_wait_time")
     private Integer maxWaitTime = 60;
 
@@ -99,6 +102,30 @@ public class UserAgentCacheConfig  {
      */
     public void setControllerCacheSize(Integer  controllerCacheSize) {
         this.controllerCacheSize = controllerCacheSize;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * How often at most to query controller for a given user-agent.
+     * Allowed values are 2-100.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * @return maxUpstreamQueries
+     */
+    public Integer getMaxUpstreamQueries() {
+        return maxUpstreamQueries;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * How often at most to query controller for a given user-agent.
+     * Allowed values are 2-100.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * @param maxUpstreamQueries set the maxUpstreamQueries.
+     */
+    public void setMaxUpstreamQueries(Integer  maxUpstreamQueries) {
+        this.maxUpstreamQueries = maxUpstreamQueries;
     }
 
     /**
@@ -304,7 +331,8 @@ public class UserAgentCacheConfig  {
   Objects.equals(this.batchSize, objUserAgentCacheConfig.batchSize)&&
   Objects.equals(this.maxWaitTime, objUserAgentCacheConfig.maxWaitTime)&&
   Objects.equals(this.upstreamUpdateInterval, objUserAgentCacheConfig.upstreamUpdateInterval)&&
-  Objects.equals(this.numEntriesUpstreamUpdate, objUserAgentCacheConfig.numEntriesUpstreamUpdate);
+  Objects.equals(this.numEntriesUpstreamUpdate, objUserAgentCacheConfig.numEntriesUpstreamUpdate)&&
+  Objects.equals(this.maxUpstreamQueries, objUserAgentCacheConfig.maxUpstreamQueries);
     }
 
     @Override
@@ -313,6 +341,7 @@ public class UserAgentCacheConfig  {
       sb.append("class UserAgentCacheConfig {\n");
                   sb.append("    batchSize: ").append(toIndentedString(batchSize)).append("\n");
                         sb.append("    controllerCacheSize: ").append(toIndentedString(controllerCacheSize)).append("\n");
+                        sb.append("    maxUpstreamQueries: ").append(toIndentedString(maxUpstreamQueries)).append("\n");
                         sb.append("    maxWaitTime: ").append(toIndentedString(maxWaitTime)).append("\n");
                         sb.append("    numEntriesUpstreamUpdate: ").append(toIndentedString(numEntriesUpstreamUpdate)).append("\n");
                         sb.append("    percentReservedForBadBots: ").append(toIndentedString(percentReservedForBadBots)).append("\n");
