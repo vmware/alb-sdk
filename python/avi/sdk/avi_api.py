@@ -78,10 +78,12 @@ class AviServerError(APIError):
     def __init__(self, arg, rsp=None):
         super(AviServerError, self).__init__(arg, rsp)
 
+
 class AviMultipartUploadError(Exception):
     def __init__(self, arg, rsp=None):
         self.args = [arg]
         self.rsp = rsp
+
 
 class APINotImplemented(Exception):
     pass
@@ -198,7 +200,7 @@ class ApiSession(Session):
     # At anytime the pid of the process changes then it would create
     # a new cache for that process.
     AVI_SLUG = 'Slug'
-    SESSION_CACHE_EXPIRY = 20*60
+    SESSION_CACHE_EXPIRY = 20 * 60
     SHARED_USER_HDRS = ['X-CSRFToken', 'Session-Id', 'Referer', 'Content-Type']
     MAX_API_RETRIES = 3
 
@@ -452,7 +454,7 @@ class ApiSession(Session):
                 api_version=api_version, data_log=data_log,
                 avi_credentials=avi_credentials,
                 lazy_authentication=lazy_authentication,
-                max_api_retries=max_api_retries, user_hdrs=user_hdrs )
+                max_api_retries=max_api_retries, user_hdrs=user_hdrs)
         return user_session
 
     def reset_session(self):
@@ -487,7 +489,7 @@ class ApiSession(Session):
         err = None
         try:
             rsp = super(ApiSession, self).post(
-                self.prefix+"/login", body, timeout=self.timeout,
+                self.prefix + "/login", body, timeout=self.timeout,
                 verify=self.verify)
 
             if rsp.status_code == 200:
@@ -980,9 +982,9 @@ class ApiSession(Session):
             yield resp['results']
         else:
             # For apis returning single object eg. api/cluster
-             yield [resp]
+            yield [resp]
 
-        page = 2 # Initialized to 2 for new page requests
+        page = 2  # Initialized to 2 for new page requests
         while resp.get('next', None) is not None:
             kwargs['params']['page'] = page
             resp = self.get(*args, **kwargs).json()
@@ -999,8 +1001,7 @@ class ApiSession(Session):
         Irrespective of page_size the method will yield only one object for
         each iteration.
 
-        :param obj_type: Type of object that needs to be fetched from
-			Avi Controller. Ex: pool, virtualservice
+        :param obj_type: Type of object that needs to be fetched from Avi Controller. Ex: pool, virtualservice
         :param tenant: overrides the tenant used during session creation.
         :param tenant_uuid: overrides the tenant or tenant_uuid during session
             creation.
@@ -1009,8 +1010,7 @@ class ApiSession(Session):
             parameters.
         :param api_version: overrides x-avi-header in request header during
             session creation.
-        :param **kwargs: Accepts any other params accepted by Session class get
-			method.
+        :param **kwargs: Accepts any other params accepted by Session class get method.
 
         Yields objects of type obj_type one by one. Example
 
@@ -1025,7 +1025,7 @@ class ApiSession(Session):
         u'uuid': u'<uuid>'}
         """
         if params is None:
-            params={}
+            params = {}
 
         if params.get('page_size', None) is None:
             params['page_size'] = 100
@@ -1033,9 +1033,9 @@ class ApiSession(Session):
         page_size = params.get('page_size')
         if int(page_size) > 200:
             raise ValueError('page_size cannot be more than 200')
-        pages_iter =  self._paginator(obj_type, tenant=tenant, params=params,
-                                      tenant_uuid=tenant_uuid, timeout=timeout,
-                                      api_version=api_version, **kwargs)
+        pages_iter = self._paginator(obj_type, tenant=tenant, params=params,
+                                     tenant_uuid=tenant_uuid, timeout=timeout,
+                                     api_version=api_version, **kwargs)
         for page in pages_iter:
             for obj in page:
                 yield obj
@@ -1056,11 +1056,11 @@ class ApiSession(Session):
         This function returns the full url from relative path and uuid.
         """
         if path == 'logout':
-            return self.prefix+'/'+path
+            return self.prefix + '/' + path
         elif uuid:
-            return self.prefix+'/api/'+path+'/'+uuid
+            return self.prefix + '/api/' + path + '/' + uuid
         else:
-            return self.prefix+'/api/'+path
+            return self.prefix + '/api/' + path
 
     def _get_uuid_by_name(self, path, name, tenant='admin',
                           tenant_uuid='', api_version=None):
