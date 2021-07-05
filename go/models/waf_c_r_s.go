@@ -26,7 +26,7 @@ type WafCRS struct {
 	// Required: true
 	Integrity *string `json:"integrity"`
 
-	// List of labels to be used for granular RBAC. Field introduced in 20.1.6.
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.6. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// The name of this ruleset object. Field introduced in 18.2.1.

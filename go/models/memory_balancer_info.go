@@ -11,7 +11,7 @@ type MemoryBalancerInfo struct {
 	// Child process information.
 	Child []*ChildProcessInfo `json:"child,omitempty"`
 
-	// Current controller memory usage.
+	// Current controller memory (in GB) usage.
 	ControllerMemory *int32 `json:"controller_memory,omitempty"`
 
 	// Holder for debug message. Field introduced in 21.1.1.

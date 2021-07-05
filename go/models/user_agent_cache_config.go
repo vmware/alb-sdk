@@ -14,6 +14,9 @@ type UserAgentCacheConfig struct {
 	// The number of User-Agent entries to cache on the Controller. Allowed values are 500-10000000. Field introduced in 21.1.1.
 	ControllerCacheSize *int32 `json:"controller_cache_size,omitempty"`
 
+	// How often at most to query controller for a given User-Agent. Allowed values are 2-100. Field introduced in 21.1.1.
+	MaxUpstreamQueries *int32 `json:"max_upstream_queries,omitempty"`
+
 	// The time interval in seconds after which to make a request to the Controller, even if the 'batch_size' hasn't been reached yet. Field introduced in 21.1.1. Unit is SEC.
 	MaxWaitTime *int32 `json:"max_wait_time,omitempty"`
 

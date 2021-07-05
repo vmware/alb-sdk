@@ -27,7 +27,7 @@ type StringGroup struct {
 	// Enable the longest match, default is the shortest match. Field introduced in 18.2.8.
 	LongestMatch *bool `json:"longest_match,omitempty"`
 
-	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// Name of the *string group.

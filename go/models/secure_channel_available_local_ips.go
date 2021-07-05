@@ -15,11 +15,11 @@ type SecureChannelAvailableLocalIps struct {
 	// Number of end.
 	End *int32 `json:"end,omitempty"`
 
-	// free_controller_ips of SecureChannelAvailableLocalIPs.
+	//  Field deprecated in 21.1.1.
 	FreeControllerIps []string `json:"free_controller_ips,omitempty"`
 
-	// free_ips of SecureChannelAvailableLocalIPs.
-	FreeIps []string `json:"free_ips,omitempty"`
+	// Number of free_ips.
+	FreeIps []int64 `json:"free_ips,omitempty,omitempty"`
 
 	// Name of the object.
 	// Required: true

@@ -21,6 +21,12 @@ type ApplicationLog struct {
 	//  Unit is MILLISECONDS.
 	AppResponseTime *int64 `json:"app_response_time,omitempty"`
 
+	// Average packet processing latency for the backend flow. Field introduced in 21.1.1.
+	AvgIngressLatencyBe *int32 `json:"avg_ingress_latency_be,omitempty"`
+
+	// Average packet processing latency for the frontend flow. Field introduced in 21.1.1.
+	AvgIngressLatencyFe *int32 `json:"avg_ingress_latency_fe,omitempty"`
+
 	//  Enum options - NOT_UPDATED, BY_CONTENT_REWRITE_PROFILE, BY_DATA_SCRIPT. Field introduced in 17.1.1.
 	BodyUpdated *string `json:"body_updated,omitempty"`
 
@@ -85,6 +91,12 @@ type ApplicationLog struct {
 	// Number of compression_percentage.
 	CompressionPercentage *int32 `json:"compression_percentage,omitempty"`
 
+	// TCP connection establishment time for the backend flow. Field introduced in 21.1.1.
+	ConnEstTimeBe *int32 `json:"conn_est_time_be,omitempty"`
+
+	// TCP connection establishment time for the frontend flow. Field introduced in 21.1.1.
+	ConnEstTimeFe *int32 `json:"conn_est_time_fe,omitempty"`
+
 	// Placeholder for description of property connection_error_info of obj type ApplicationLog field type str  type object
 	ConnectionErrorInfo *ConnErrorInfo `json:"connection_error_info,omitempty"`
 
@@ -148,6 +160,12 @@ type ApplicationLog struct {
 	// Number of log_id.
 	// Required: true
 	LogID *int32 `json:"log_id"`
+
+	// Maximum packet processing latency for the backend flow. Field introduced in 21.1.1.
+	MaxIngressLatencyBe *int32 `json:"max_ingress_latency_be,omitempty"`
+
+	// Maximum packet processing latency for the frontend flow. Field introduced in 21.1.1.
+	MaxIngressLatencyFe *int32 `json:"max_ingress_latency_fe,omitempty"`
 
 	// method of ApplicationLog.
 	Method *string `json:"method,omitempty"`

@@ -15,6 +15,12 @@ type ConnectionLog struct {
 	//  Unit is MILLISECONDS.
 	AverageTurntime *int32 `json:"average_turntime,omitempty"`
 
+	// Average packet processing latency for the backend flow. Field introduced in 21.1.1.
+	AvgIngressLatencyBe *int32 `json:"avg_ingress_latency_be,omitempty"`
+
+	// Average packet processing latency for the frontend flow. Field introduced in 21.1.1.
+	AvgIngressLatencyFe *int32 `json:"avg_ingress_latency_fe,omitempty"`
+
 	// Number of client_dest_port.
 	// Required: true
 	ClientDestPort *int32 `json:"client_dest_port"`
@@ -39,6 +45,12 @@ type ConnectionLog struct {
 	// Number of client_src_port.
 	// Required: true
 	ClientSrcPort *int32 `json:"client_src_port"`
+
+	// TCP connection establishment time for the backend flow. Field introduced in 21.1.1.
+	ConnEstTimeBe *int32 `json:"conn_est_time_be,omitempty"`
+
+	// TCP connection establishment time for the frontend flow. Field introduced in 21.1.1.
+	ConnEstTimeFe *int32 `json:"conn_est_time_fe,omitempty"`
 
 	// Placeholder for description of property connection_ended of obj type ConnectionLog field type str  type boolean
 	// Required: true
@@ -77,6 +89,12 @@ type ConnectionLog struct {
 	// Number of log_id.
 	// Required: true
 	LogID *int32 `json:"log_id"`
+
+	// Maximum packet processing latency for the backend flow. Field introduced in 21.1.1.
+	MaxIngressLatencyBe *int32 `json:"max_ingress_latency_be,omitempty"`
+
+	// Maximum packet processing latency for the frontend flow. Field introduced in 21.1.1.
+	MaxIngressLatencyFe *int32 `json:"max_ingress_latency_fe,omitempty"`
 
 	// microservice of ConnectionLog.
 	Microservice *string `json:"microservice,omitempty"`
