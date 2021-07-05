@@ -794,6 +794,12 @@
                     "default": 300000,
                     "format": "int32"
                 },
+                "max_upstream_queries": {
+                    "description": "How often at most to query controller for a given User-Agent. Allowed values are 2-100. Field introduced in 21.1.1.",
+                    "type": "integer",
+                    "default": 5,
+                    "format": "int32"
+                },
                 "max_wait_time": {
                     "description": "The time interval in seconds after which to make a request to the Controller, even if the 'batch_size' hasn't been reached yet. Field introduced in 21.1.1. Unit is SEC.",
                     "type": "integer",
