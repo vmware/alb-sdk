@@ -326,6 +326,7 @@ font-style: italic;
           "percent_reserved_for_good_bots" : 123,
           "percent_reserved_for_bad_bots" : 123,
           "percent_reserved_for_browsers" : 123,
+          "max_upstream_queries" : 123,
           "upstream_update_interval" : 123,
           "num_entries_upstream_update" : 123,
           "max_wait_time" : 123,
@@ -528,6 +529,7 @@ font-style: italic;
         "percent_reserved_for_good_bots" : 123,
         "percent_reserved_for_bad_bots" : 123,
         "percent_reserved_for_browsers" : 123,
+        "max_upstream_queries" : 123,
         "upstream_update_interval" : 123,
         "num_entries_upstream_update" : 123,
         "max_wait_time" : 123,
@@ -801,6 +803,7 @@ font-style: italic;
         "percent_reserved_for_good_bots" : 123,
         "percent_reserved_for_bad_bots" : 123,
         "percent_reserved_for_browsers" : 123,
+        "max_upstream_queries" : 123,
         "upstream_update_interval" : 123,
         "num_entries_upstream_update" : 123,
         "max_wait_time" : 123,
@@ -1014,6 +1017,7 @@ font-style: italic;
         "percent_reserved_for_good_bots" : 123,
         "percent_reserved_for_bad_bots" : 123,
         "percent_reserved_for_browsers" : 123,
+        "max_upstream_queries" : 123,
         "upstream_update_interval" : 123,
         "num_entries_upstream_update" : 123,
         "max_wait_time" : 123,
@@ -1227,6 +1231,7 @@ font-style: italic;
         "percent_reserved_for_good_bots" : 123,
         "percent_reserved_for_bad_bots" : 123,
         "percent_reserved_for_browsers" : 123,
+        "max_upstream_queries" : 123,
         "upstream_update_interval" : 123,
         "num_entries_upstream_update" : 123,
         "max_wait_time" : 123,
@@ -1395,6 +1400,7 @@ font-style: italic;
       "percent_reserved_for_good_bots" : 123,
       "percent_reserved_for_bad_bots" : 123,
       "percent_reserved_for_browsers" : 123,
+      "max_upstream_queries" : 123,
       "upstream_update_interval" : 123,
       "num_entries_upstream_update" : 123,
       "max_wait_time" : 123,
@@ -1549,6 +1555,7 @@ font-style: italic;
     "percent_reserved_for_good_bots" : 123,
     "percent_reserved_for_bad_bots" : 123,
     "percent_reserved_for_browsers" : 123,
+    "max_upstream_queries" : 123,
     "upstream_update_interval" : 123,
     "num_entries_upstream_update" : 123,
     "max_wait_time" : 123,
@@ -1774,6 +1781,7 @@ font-style: italic;
     "percent_reserved_for_good_bots" : 123,
     "percent_reserved_for_bad_bots" : 123,
     "percent_reserved_for_browsers" : 123,
+    "max_upstream_queries" : 123,
     "upstream_update_interval" : 123,
     "num_entries_upstream_update" : 123,
     "max_wait_time" : 123,
@@ -1939,6 +1947,7 @@ font-style: italic;
     "percent_reserved_for_good_bots" : 123,
     "percent_reserved_for_bad_bots" : 123,
     "percent_reserved_for_browsers" : 123,
+    "max_upstream_queries" : 123,
     "upstream_update_interval" : 123,
     "num_entries_upstream_update" : 123,
     "max_wait_time" : 123,
@@ -2104,6 +2113,7 @@ font-style: italic;
     "percent_reserved_for_good_bots" : 123,
     "percent_reserved_for_bad_bots" : 123,
     "percent_reserved_for_browsers" : 123,
+    "max_upstream_queries" : 123,
     "upstream_update_interval" : 123,
     "num_entries_upstream_update" : 123,
     "max_wait_time" : 123,
@@ -2426,6 +2436,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">batch_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> How many unknown User-Agents to batch up before querying Controller - unless max_wait_time is reached first. Allowed values are 1-500. Field introduced in 21.1.1. format: int32</div>
 <div class="param">controller_cache_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The number of User-Agent entries to cache on the Controller. Allowed values are 500-10000000. Field introduced in 21.1.1. format: int32</div>
+<div class="param">max_upstream_queries (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> How often at most to query controller for a given User-Agent. Allowed values are 2-100. Field introduced in 21.1.1. format: int32</div>
 <div class="param">max_wait_time (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The time interval in seconds after which to make a request to the Controller, even if the &#39;batch_size&#39; hasn&#39;t been reached yet. Field introduced in 21.1.1. Unit is SEC. format: int32</div>
 <div class="param">num_entries_upstream_update (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> How many BotUACacheResult elements to include in an upstream update message. Allowed values are 1-10000. Field introduced in 21.1.1. format: int32</div>
 <div class="param">percent_reserved_for_bad_bots (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> How much space to reserve in percent for known bad bots. Field introduced in 21.1.1. format: int32</div>
