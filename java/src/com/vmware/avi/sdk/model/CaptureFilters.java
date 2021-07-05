@@ -43,7 +43,7 @@ public class CaptureFilters  {
     private Integer srcPort = null;
 
     @JsonProperty("src_port_range_end")
-    private Integer srcPortRangeEnd = 0;
+    private Integer srcPortRangeEnd = null;
 
     @JsonProperty("tcp_ack")
     private Boolean tcpAck = null;
@@ -231,7 +231,7 @@ public class CaptureFilters  {
      * If specified, the source port filter will be a range.
      * The filter range will be between src_port and src_port_range_end.
      * Field introduced in 21.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return srcPortRangeEnd
      */
     public Integer getSrcPortRangeEnd() {
@@ -244,7 +244,7 @@ public class CaptureFilters  {
      * If specified, the source port filter will be a range.
      * The filter range will be between src_port and src_port_range_end.
      * Field introduced in 21.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param srcPortRangeEnd set the srcPortRangeEnd.
      */
     public void setSrcPortRangeEnd(Integer  srcPortRangeEnd) {
