@@ -27,7 +27,7 @@ type AuthProfile struct {
 	// LDAP server and directory settings.
 	Ldap *LdapAuthSettings `json:"ldap,omitempty"`
 
-	// List of labels to be used for granular RBAC. Field introduced in 20.1.6.
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.6. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// Name of the Auth Profile.

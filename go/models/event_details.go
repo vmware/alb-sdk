@@ -413,6 +413,9 @@ type EventDetails struct {
 	// Inter-SE datapath heartbeat recovered. One event is generated when heartbeat recovers. Field introduced in 20.1.1.
 	SeHbRecoveredEventDetails *SeHbRecoveredEventDetails `json:"se_hb_recovered_event_details,omitempty"`
 
+	//  Field introduced in 21.1.1.
+	SeHighIngressProcLatencyEventDetails *SeHighIngressProcLatencyEventDetails `json:"se_high_ingress_proc_latency_event_details,omitempty"`
+
 	// Placeholder for description of property se_hm_gs_details of obj type EventDetails field type str  type object
 	SeHmGsDetails *SeHmEventGSDetails `json:"se_hm_gs_details,omitempty"`
 

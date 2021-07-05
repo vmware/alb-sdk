@@ -45,7 +45,7 @@ type VrfContext struct {
 	// Enable LLDP. Field introduced in 18.2.10, 20.1.1. Allowed in Basic(Allowed values- true) edition, Essentials(Allowed values- true) edition, Enterprise edition.
 	LldpEnable *bool `json:"lldp_enable,omitempty"`
 
-	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// Name of the object.

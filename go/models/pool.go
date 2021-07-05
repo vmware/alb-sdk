@@ -30,7 +30,7 @@ type Pool struct {
 	// Synchronize Cisco APIC EPG members with pool servers. Field deprecated in 21.1.1.
 	ApicEpgName *string `json:"apic_epg_name,omitempty"`
 
-	// Allows the option to append port to hostname in the host header while sending a request to the server. By default, port is appended for non-default ports. This setting will apply for Pool's 'Rewrite Host Header to Server Name', 'Rewrite Host Header to SNI' features and Server's 'Rewrite Host Header' settings as well as HTTP healthmonitors attached to pools. Enum options - NON_DEFAULT_80_443, NEVER, ALWAYS. Field introduced in 21.1.1.
+	// Allows the option to append port to hostname in the host header while sending a request to the server. By default, port is appended for non-default ports. This setting will apply for Pool's 'Rewrite Host Header to Server Name', 'Rewrite Host Header to SNI' features and Server's 'Rewrite Host Header' settings as well as HTTP healthmonitors attached to pools. Enum options - NON_DEFAULT_80_443, NEVER, ALWAYS. Field introduced in 21.1.1. Allowed in Basic(Allowed values- NEVER) edition, Essentials(Allowed values- NEVER) edition, Enterprise edition. Special default for Basic edition is NEVER, Essentials edition is NEVER, Enterprise is NON_DEFAULT_80_443.
 	AppendPort *string `json:"append_port,omitempty"`
 
 	// Persistence will ensure the same user sticks to the same server for a desired duration of time. It is a reference to an object of type ApplicationPersistenceProfile.
@@ -142,7 +142,7 @@ type Pool struct {
 	// Allow server lookup by name. Field introduced in 17.1.11,17.2.4. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
 	LookupServerByName *bool `json:"lookup_server_by_name,omitempty"`
 
-	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// The maximum number of concurrent connections allowed to each server within the pool. NOTE  applied value will be no less than the number of service engines that the pool is placed on. If set to 0, no limit is applied.
@@ -239,6 +239,9 @@ type Pool struct {
 
 	// Do not translate the client's destination port when sending the connection to the server.  The pool or servers specified service port will still be used for health monitoring. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
 	UseServicePort *bool `json:"use_service_port,omitempty"`
+
+	// This applies only when use_service_port is set to true. If enabled, SSL mode of the connection to the server is decided by the SSL mode on the Virtualservice service port, on which the request was received. Field introduced in 21.1.1.
+	UseServiceSslMode *bool `json:"use_service_ssl_mode,omitempty"`
 
 	// UUID of the pool.
 	UUID *string `json:"uuid,omitempty"`

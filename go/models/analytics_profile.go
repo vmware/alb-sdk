@@ -256,7 +256,10 @@ type AnalyticsProfile struct {
 	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed.
 	Labels []*KeyValue `json:"labels,omitempty"`
 
-	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	// Influence the audit of ingress latency and connection establishement time. Field introduced in 21.1.1.
+	LatencyAuditProps *LatencyAuditProperties `json:"latency_audit_props,omitempty"`
+
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// The name of the analytics profile.

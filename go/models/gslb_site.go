@@ -39,7 +39,7 @@ type GslbSite struct {
 	// The site's member type  A leader is set to ACTIVE while allmembers are set to passive. . Enum options - GSLB_ACTIVE_MEMBER, GSLB_PASSIVE_MEMBER.
 	MemberType *string `json:"member_type,omitempty"`
 
-	// Name for the Site Controller Cluster.
+	// Name for the Site Controller Cluster. After any changes to site name, references to GSLB site name should be updated manually. Ex  Site name used in DNS policies or Topology policies should be updated to use the new site name.
 	// Required: true
 	Name *string `json:"name"`
 

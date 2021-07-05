@@ -33,7 +33,7 @@ type WafPolicyPSMGroup struct {
 	// Positive Security Model locations. These are used to partition the application name space. Field introduced in 18.2.3. Maximum of 16384 items allowed.
 	Locations []*WafPSMLocation `json:"locations,omitempty"`
 
-	// List of labels to be used for granular RBAC. Field introduced in 20.1.5.
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// If a rule in this group does not match the match_value pattern, this action will be executed. Allowed actions are WAF_ACTION_NO_OP and WAF_ACTION_BLOCK. Enum options - WAF_ACTION_NO_OP, WAF_ACTION_BLOCK, WAF_ACTION_ALLOW_PARAMETER. Field introduced in 18.2.3.
