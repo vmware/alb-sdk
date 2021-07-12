@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 
 urllib3.disable_warnings()
 
-AVICLONE_VERSION = [1, 3, 1]
+AVICLONE_VERSION = [1, 3, 2]
 
 # Try to obtain the terminal width to allow spprint() to wrap output neatly.
 # If unable to determine, assume terminal width is 70 characters
@@ -799,6 +799,8 @@ class AviClone:
                 ss_obj.pop('ca_certs', None)
                 ss_obj.pop('key_base64', None)
                 ss_obj.pop('certificate_base64', None)
+
+            ss_obj.pop('ocsp_error_status', None)
 
             valid_ref_objects = self.VALID_SSLCERT_REF_OBJECTS
 
