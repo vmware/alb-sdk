@@ -14,6 +14,9 @@ type MemoryBalancerInfo struct {
 	// Current controller memory (in GB) usage.
 	ControllerMemory *int32 `json:"controller_memory,omitempty"`
 
+	// Percent usage of total controller memory. Field introduced in 21.1.1.
+	ControllerMemoryUsagePercent *float64 `json:"controller_memory_usage_percent,omitempty"`
+
 	// Holder for debug message. Field introduced in 21.1.1.
 	DebugMessage *string `json:"debug_message,omitempty"`
 
