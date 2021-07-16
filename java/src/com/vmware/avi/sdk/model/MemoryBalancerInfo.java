@@ -27,6 +27,9 @@ public class MemoryBalancerInfo  {
     @JsonProperty("controller_memory")
     private Integer controllerMemory = null;
 
+    @JsonProperty("controller_memory_usage_percent")
+    private Float controllerMemoryUsagePercent = null;
+
     @JsonProperty("debug_message")
     private String debugMessage = null;
 
@@ -104,6 +107,28 @@ public class MemoryBalancerInfo  {
      */
     public void setControllerMemory(Integer  controllerMemory) {
         this.controllerMemory = controllerMemory;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Percent usage of total controller memory.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return controllerMemoryUsagePercent
+     */
+    public Float getControllerMemoryUsagePercent() {
+        return controllerMemoryUsagePercent;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Percent usage of total controller memory.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param controllerMemoryUsagePercent set the controllerMemoryUsagePercent.
+     */
+    public void setControllerMemoryUsagePercent(Float  controllerMemoryUsagePercent) {
+        this.controllerMemoryUsagePercent = controllerMemoryUsagePercent;
     }
 
     /**
@@ -297,7 +322,8 @@ public class MemoryBalancerInfo  {
   Objects.equals(this.processMode, objMemoryBalancerInfo.processMode)&&
   Objects.equals(this.processTrend, objMemoryBalancerInfo.processTrend)&&
   Objects.equals(this.thresholdPercent, objMemoryBalancerInfo.thresholdPercent)&&
-  Objects.equals(this.debugMessage, objMemoryBalancerInfo.debugMessage);
+  Objects.equals(this.debugMessage, objMemoryBalancerInfo.debugMessage)&&
+  Objects.equals(this.controllerMemoryUsagePercent, objMemoryBalancerInfo.controllerMemoryUsagePercent);
     }
 
     @Override
@@ -306,6 +332,7 @@ public class MemoryBalancerInfo  {
       sb.append("class MemoryBalancerInfo {\n");
                   sb.append("    child: ").append(toIndentedString(child)).append("\n");
                         sb.append("    controllerMemory: ").append(toIndentedString(controllerMemory)).append("\n");
+                        sb.append("    controllerMemoryUsagePercent: ").append(toIndentedString(controllerMemoryUsagePercent)).append("\n");
                         sb.append("    debugMessage: ").append(toIndentedString(debugMessage)).append("\n");
                         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
                         sb.append("    memoryUsed: ").append(toIndentedString(memoryUsed)).append("\n");
