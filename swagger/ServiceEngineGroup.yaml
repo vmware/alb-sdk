@@ -849,6 +849,19 @@ definitions:
                 type: integer
                 default: 16384
                 format: int64
+    RoleFilterMatchLabel:
+        type: object
+        required:
+            -   key
+        properties:
+            key:
+                description: "Key for filter match. Field introduced in 20.1.3."
+                type: string
+            values:
+                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3."
+                type: array
+                items:
+                    type: string
     SeGroupAnalyticsPolicy:
         type: object
         properties:
@@ -1046,7 +1059,7 @@ definitions:
                 description: "Distributes queue ownership among cores so multiple cores handle dispatcher duties. Requires SE Reboot. Deprecated from 18.2.8, instead use max_queues_per_vnic. Field introduced in 17.2.8. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
                 type: boolean
             distribute_vnics:
-                description: "Distributes vnic ownership among cores so multiple cores handle dispatcher duties.Requires SE Reboot. Field introduced in 18.2.5."
+                description: "Distributes vnic ownership among cores so multiple cores handle dispatcher duties.Requires SE Reboot. Field introduced in 18.2.5. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
                 type: boolean
             downstream_send_timeout:
                 description: "Timeout for downstream to become writable. Field introduced in 21.1.1. Unit is MILLISECONDS."
@@ -1339,6 +1352,11 @@ definitions:
                 type: integer
                 default: 64
                 format: int32
+            markers:
+                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.7. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                type: array
+                items:
+                    $ref: '#/definitions/RoleFilterMatchLabel'
             max_concurrent_external_hm:
                 description: "Maximum number of external health monitors that can run concurrently in a service engine. This helps control the CPU and memory use by external health monitors. Special values are 0- 'Value will be internally calculated based on cpu and memory'. Field introduced in 18.2.7."
                 type: integer
@@ -1363,7 +1381,7 @@ definitions:
                 default: 30
                 format: int32
             max_queues_per_vnic:
-                description: "Maximum number of queues per vnic Setting to '0' utilises all queues that are distributed across dispatcher cores. Allowed values are 0,1,2,4,8,16. Field introduced in 18.2.7, 20.1.1."
+                description: "Maximum number of queues per vnic Setting to '0' utilises all queues that are distributed across dispatcher cores. Allowed values are 0,1,2,4,8,16. Field introduced in 18.2.7, 20.1.1. Allowed in Basic(Allowed values- 1) edition, Essentials(Allowed values- 1) edition, Enterprise edition."
                 type: integer
                 default: 1
                 format: int32
@@ -1487,7 +1505,7 @@ definitions:
                 default: 20
                 format: int32
             num_dispatcher_cores:
-                description: "Number of dispatcher cores (0,1,2,4,8 or 16). If set to 0, then number of dispatcher cores is deduced automatically.Requires SE Reboot. Allowed values are 0,1,2,4,8,16. Field introduced in 17.2.12, 18.1.3, 18.2.1."
+                description: "Number of dispatcher cores (0,1,2,4,8 or 16). If set to 0, then number of dispatcher cores is deduced automatically.Requires SE Reboot. Allowed values are 0,1,2,4,8,16. Field introduced in 17.2.12, 18.1.3, 18.2.1. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition."
                 type: integer
                 format: int32
             num_flow_cores_sum_changes_to_ignore:
