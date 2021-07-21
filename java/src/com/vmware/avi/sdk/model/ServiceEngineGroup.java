@@ -366,6 +366,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("log_message_max_file_list_size")
     private Integer logMessageMaxFileListSize = 64;
 
+    @JsonProperty("markers")
+    private List<RoleFilterMatchLabel> markers = null;
+
     @JsonProperty("max_concurrent_external_hm")
     private Integer maxConcurrentExternalHm = null;
 
@@ -2023,6 +2026,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Distributes vnic ownership among cores so multiple cores handle dispatcher duties.requires se reboot.
      * Field introduced in 18.2.5.
+     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return distributeVnics
      */
@@ -2034,6 +2038,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Distributes vnic ownership among cores so multiple cores handle dispatcher duties.requires se reboot.
      * Field introduced in 18.2.5.
+     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param distributeVnics set the distributeVnics.
      */
@@ -3709,6 +3714,45 @@ public class ServiceEngineGroup extends AviRestResource  {
     public void setLogMessageMaxFileListSize(Integer  logMessageMaxFileListSize) {
         this.logMessageMaxFileListSize = logMessageMaxFileListSize;
     }
+    /**
+     * This is the getter method this will return the attribute value.
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.7.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public List<RoleFilterMatchLabel> getMarkers() {
+        return markers;
+    }
+
+    /**
+     * This is the setter method. this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.7.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public void setMarkers(List<RoleFilterMatchLabel>  markers) {
+        this.markers = markers;
+    }
+
+    /**
+     * This is the setter method this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 20.1.7.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public ServiceEngineGroup addMarkersItem(RoleFilterMatchLabel markersItem) {
+      if (this.markers == null) {
+        this.markers = new ArrayList<RoleFilterMatchLabel>();
+      }
+      this.markers.add(markersItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -3845,6 +3889,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Maximum number of queues per vnic setting to '0' utilises all queues that are distributed across dispatcher cores.
      * Allowed values are 0,1,2,4,8,16.
      * Field introduced in 18.2.7, 20.1.1.
+     * Allowed in basic(allowed values- 1) edition, essentials(allowed values- 1) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return maxQueuesPerVnic
      */
@@ -3857,6 +3902,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Maximum number of queues per vnic setting to '0' utilises all queues that are distributed across dispatcher cores.
      * Allowed values are 0,1,2,4,8,16.
      * Field introduced in 18.2.7, 20.1.1.
+     * Allowed in basic(allowed values- 1) edition, essentials(allowed values- 1) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param maxQueuesPerVnic set the maxQueuesPerVnic.
      */
@@ -4526,6 +4572,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * If set to 0, then number of dispatcher cores is deduced automatically.requires se reboot.
      * Allowed values are 0,1,2,4,8,16.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return numDispatcherCores
      */
@@ -4539,6 +4586,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * If set to 0, then number of dispatcher cores is deduced automatically.requires se reboot.
      * Allowed values are 0,1,2,4,8,16.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param numDispatcherCores set the numDispatcherCores.
      */
@@ -8064,7 +8112,8 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.logAgentMaxConcurrentRsync, objServiceEngineGroup.logAgentMaxConcurrentRsync)&&
   Objects.equals(this.logAgentLogStorageMinSz, objServiceEngineGroup.logAgentLogStorageMinSz)&&
   Objects.equals(this.logMessageMaxFileListSize, objServiceEngineGroup.logMessageMaxFileListSize)&&
-  Objects.equals(this.deactivateIpv6Discovery, objServiceEngineGroup.deactivateIpv6Discovery);
+  Objects.equals(this.deactivateIpv6Discovery, objServiceEngineGroup.deactivateIpv6Discovery)&&
+  Objects.equals(this.markers, objServiceEngineGroup.markers);
     }
 
     @Override
@@ -8186,6 +8235,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    logDisksz: ").append(toIndentedString(logDisksz)).append("\n");
                         sb.append("    logMallocFailure: ").append(toIndentedString(logMallocFailure)).append("\n");
                         sb.append("    logMessageMaxFileListSize: ").append(toIndentedString(logMessageMaxFileListSize)).append("\n");
+                        sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    maxConcurrentExternalHm: ").append(toIndentedString(maxConcurrentExternalHm)).append("\n");
                         sb.append("    maxCpuUsage: ").append(toIndentedString(maxCpuUsage)).append("\n");
                         sb.append("    maxMemoryPerMempool: ").append(toIndentedString(maxMemoryPerMempool)).append("\n");
