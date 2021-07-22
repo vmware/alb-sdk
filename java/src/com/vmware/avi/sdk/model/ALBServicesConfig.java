@@ -27,6 +27,9 @@ public class ALBServicesConfig extends AviRestResource  {
     @JsonProperty("asset_contact")
     private ALBServicesUser assetContact = null;
 
+    @JsonProperty("case_config")
+    private CaseConfig caseConfig = null;
+
     @JsonProperty("feature_opt_in_status")
     private PortalFeatureOptIn featureOptInStatus = null;
 
@@ -43,7 +46,7 @@ public class ALBServicesConfig extends AviRestResource  {
     private String portalUrl = null;
 
     @JsonProperty("proactive_support_defaults")
-    private ProactiveSupportDefaults proactiveSupportDefaults = null;
+    private ProactiveSupportDefaults proactiveSupportDefaults;
 
     @JsonProperty("split_proxy_configuration")
     private ProxyConfiguration splitProxyConfiguration = null;
@@ -62,6 +65,9 @@ public class ALBServicesConfig extends AviRestResource  {
 
     @JsonProperty("uuid")
     private String uuid = null;
+
+    @JsonProperty("waf_config")
+    private WafCrsConfig wafConfig = null;
 
 
 
@@ -109,6 +115,30 @@ public class ALBServicesConfig extends AviRestResource  {
      */
     public void setAssetContact(ALBServicesUser assetContact) {
         this.assetContact = assetContact;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Default values to be used for pulse case management.
+     * Field introduced in 21.1.1.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return caseConfig
+     */
+    public CaseConfig getCaseConfig() {
+        return caseConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Default values to be used for pulse case management.
+     * Field introduced in 21.1.1.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param caseConfig set the caseConfig.
+     */
+    public void setCaseConfig(CaseConfig caseConfig) {
+        this.caseConfig = caseConfig;
     }
 
     /**
@@ -231,9 +261,9 @@ public class ALBServicesConfig extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Default values to be used during proactive case creation and techsupport attachment.
+     * This field is deprecated.
+     * Field deprecated in 21.1.1.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return proactiveSupportDefaults
      */
     public ProactiveSupportDefaults getProactiveSupportDefaults() {
@@ -242,9 +272,9 @@ public class ALBServicesConfig extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Default values to be used during proactive case creation and techsupport attachment.
+     * This field is deprecated.
+     * Field deprecated in 21.1.1.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param proactiveSupportDefaults set the proactiveSupportDefaults.
      */
     public void setProactiveSupportDefaults(ProactiveSupportDefaults proactiveSupportDefaults) {
@@ -380,6 +410,30 @@ public class ALBServicesConfig extends AviRestResource  {
         this.uuid = uuid;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Default values to be used for pulse waf management.
+     * Field introduced in 21.1.1.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return wafConfig
+     */
+    public WafCrsConfig getWafConfig() {
+        return wafConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Default values to be used for pulse waf management.
+     * Field introduced in 21.1.1.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param wafConfig set the wafConfig.
+     */
+    public void setWafConfig(WafCrsConfig wafConfig) {
+        this.wafConfig = wafConfig;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -402,7 +456,9 @@ public class ALBServicesConfig extends AviRestResource  {
   Objects.equals(this.useTls, objALBServicesConfig.useTls)&&
   Objects.equals(this.mode, objALBServicesConfig.mode)&&
   Objects.equals(this.appSignatureConfig, objALBServicesConfig.appSignatureConfig)&&
-  Objects.equals(this.userAgentDbConfig, objALBServicesConfig.userAgentDbConfig);
+  Objects.equals(this.userAgentDbConfig, objALBServicesConfig.userAgentDbConfig)&&
+  Objects.equals(this.wafConfig, objALBServicesConfig.wafConfig)&&
+  Objects.equals(this.caseConfig, objALBServicesConfig.caseConfig);
     }
 
     @Override
@@ -411,6 +467,7 @@ public class ALBServicesConfig extends AviRestResource  {
       sb.append("class ALBServicesConfig {\n");
                   sb.append("    appSignatureConfig: ").append(toIndentedString(appSignatureConfig)).append("\n");
                         sb.append("    assetContact: ").append(toIndentedString(assetContact)).append("\n");
+                        sb.append("    caseConfig: ").append(toIndentedString(caseConfig)).append("\n");
                         sb.append("    featureOptInStatus: ").append(toIndentedString(featureOptInStatus)).append("\n");
                         sb.append("    ipReputationConfig: ").append(toIndentedString(ipReputationConfig)).append("\n");
                         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
@@ -422,6 +479,7 @@ public class ALBServicesConfig extends AviRestResource  {
                         sb.append("    useTls: ").append(toIndentedString(useTls)).append("\n");
                         sb.append("    userAgentDbConfig: ").append(toIndentedString(userAgentDbConfig)).append("\n");
                         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+                        sb.append("    wafConfig: ").append(toIndentedString(wafConfig)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
