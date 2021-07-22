@@ -20347,6 +20347,46 @@ paths:
                 401:
                     description: log in failed
     /cloud/{uuid}/gc/:
+        patch:
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                200:
+                    description: OK
+                    schema:
+                        type: string
+                401:
+                    description: log in failed
         put:
             consumes:
                 -   application/json
@@ -20381,46 +20421,6 @@ paths:
                         type: object
                         additionalProperties:
                             type: string
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        type: string
-                401:
-                    description: log in failed
-        patch:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -50544,12 +50544,13 @@ definitions:
         type: object
         required:
             -   app_signature_config
+            -   case_config
             -   feature_opt_in_status
             -   ip_reputation_config
             -   portal_url
-            -   proactive_support_defaults
             -   split_proxy_configuration
             -   user_agent_db_config
+            -   waf_config
         properties:
             _last_modified:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
@@ -50561,6 +50562,9 @@ definitions:
             asset_contact:
                 description: "Information about the default contact for this controller cluster. Field introduced in 20.1.1."
                 $ref: '#/definitions/ALBServicesUser'
+            case_config:
+                description: "Default values to be used for pulse case management. Field introduced in 21.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                $ref: '#/definitions/CaseConfig'
             configpb_attributes:
                 description: "Protobuf versioning for config pbs. Field introduced in 21.1.1."
                 $ref: '#/definitions/ConfigPbAttributes'
@@ -50582,9 +50586,6 @@ definitions:
             portal_url:
                 description: "The FQDN or IP address of the customer portal. Field introduced in 18.2.6."
                 type: string
-            proactive_support_defaults:
-                description: "Default values to be used during proactive case creation and techsupport attachment. Field introduced in 20.1.1."
-                $ref: '#/definitions/ProactiveSupportDefaults'
             split_proxy_configuration:
                 description: "Split proxy configuration to connect external pulse services. Field introduced in 20.1.1."
                 $ref: '#/definitions/ProxyConfiguration'
@@ -50605,6 +50606,9 @@ definitions:
             uuid:
                 description: " Field introduced in 18.2.6."
                 type: string
+            waf_config:
+                description: "Default values to be used for pulse waf management. Field introduced in 21.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                $ref: '#/definitions/WafCrsConfig'
     ALBServicesConfigApiResponse:
         type: object
         required:
@@ -53522,6 +53526,19 @@ definitions:
             vs_hb:
                 description: "Vs heart beat filter for SE IPC. Field introduced in 18.2.5."
                 type: boolean
+    CaseConfig:
+        type: object
+        properties:
+            enable_auto_case_creation_on_controller_failure:
+                description: "Enable pro-active support case creation when a controller failure occurs. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
+                type: boolean
+            enable_auto_case_creation_on_se_failure:
+                description: "Enable pro-active support case creation when a service engine failure occurs. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
+                type: boolean
+            enable_cleanup_of_attached_files:
+                description: "Enable cleanup of successfully attached files to support case. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is True."
+                type: boolean
+                default: True
     CC_AgentProperties:
         type: object
         properties:
@@ -65047,28 +65064,20 @@ definitions:
             enable_appsignature_sync:
                 description: "Enable to subscribe to automated Application Signature Rulesets updates. Field introduced in 20.1.4. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
                 type: boolean
-            enable_auto_case_creation_on_se_failure:
-                description: "Enable pro-active support case creation when a service engine failure occurs. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
-                type: boolean
-            enable_auto_case_creation_on_system_failure:
-                description: "Enable pro-active support case creation when a system failure occurs. Manual download will still be available in the customer portal. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
-                type: boolean
-            enable_auto_download_waf_signatures:
-                description: "Enable to automatically download new CRS version to the Controller. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
-                type: boolean
             enable_ip_reputation:
                 description: "Enable to subscribe to IP reputation updates. This is a requirement for using IP reputation in the product. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
                 type: boolean
-            enable_systeminfo_collection:
-                description: "Subscribe to upload Controller Metrics and System Information to Pulse Portal. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
+            enable_pulse_case_management:
+                description: "Enable Pulse Case Management. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is True."
                 type: boolean
+                default: True
+            enable_pulse_waf_management:
+                description: "Enable Pulse WAF Management. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is True."
+                type: boolean
+                default: True
             enable_user_agent_db_sync:
                 description: "Enable subscription to User-Agent database used for Bot Management. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
                 type: boolean
-            enable_waf_signatures_notifications:
-                description: "Enable event notifications when new CRS versions are available. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is True."
-                type: boolean
-                default: True
     PortMatch:
         type: object
         required:
@@ -74976,6 +74985,16 @@ definitions:
                     $ref: "#/definitions/WafCRS"
             next:
                 type: string
+    WafCrsConfig:
+        type: object
+        properties:
+            enable_auto_download_waf_signatures:
+                description: "Enable to automatically download new WAF signatures/CRS version to the Controller. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
+                type: boolean
+            enable_waf_signatures_notifications:
+                description: "Enable event notifications when new WAF signatures/CRS versions are available. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is True."
+                type: boolean
+                default: True
     WafDataFile:
         type: object
         required:
