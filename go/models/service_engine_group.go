@@ -153,7 +153,7 @@ type ServiceEngineGroup struct {
 	// Distributes queue ownership among cores so multiple cores handle dispatcher duties. Requires SE Reboot. Deprecated from 18.2.8, instead use max_queues_per_vnic. Field introduced in 17.2.8. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
 	DistributeQueues *bool `json:"distribute_queues,omitempty"`
 
-	// Distributes vnic ownership among cores so multiple cores handle dispatcher duties.Requires SE Reboot. Field introduced in 18.2.5.
+	// Distributes vnic ownership among cores so multiple cores handle dispatcher duties.Requires SE Reboot. Field introduced in 18.2.5. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
 	DistributeVnics *bool `json:"distribute_vnics,omitempty"`
 
 	// Timeout for downstream to become writable. Field introduced in 21.1.1. Unit is MILLISECONDS.
@@ -363,6 +363,9 @@ type ServiceEngineGroup struct {
 	// Maximum number of file names in a log message. Field introduced in 21.1.1.
 	LogMessageMaxFileListSize *int32 `json:"log_message_max_file_list_size,omitempty"`
 
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.7. Allowed in Basic edition, Essentials edition, Enterprise edition.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
+
 	// Maximum number of external health monitors that can run concurrently in a service engine. This helps control the CPU and memory use by external health monitors. Special values are 0- 'Value will be internally calculated based on cpu and memory'. Field introduced in 18.2.7.
 	MaxConcurrentExternalHm *int32 `json:"max_concurrent_external_hm,omitempty"`
 
@@ -378,7 +381,7 @@ type ServiceEngineGroup struct {
 	// Applicable to Azure platform only. Maximum number of public IPs per Azure LB. . Field introduced in 17.2.12, 18.1.2.
 	MaxPublicIpsPerLb *int32 `json:"max_public_ips_per_lb,omitempty"`
 
-	// Maximum number of queues per vnic Setting to '0' utilises all queues that are distributed across dispatcher cores. Allowed values are 0,1,2,4,8,16. Field introduced in 18.2.7, 20.1.1.
+	// Maximum number of queues per vnic Setting to '0' utilises all queues that are distributed across dispatcher cores. Allowed values are 0,1,2,4,8,16. Field introduced in 18.2.7, 20.1.1. Allowed in Basic(Allowed values- 1) edition, Essentials(Allowed values- 1) edition, Enterprise edition.
 	MaxQueuesPerVnic *int32 `json:"max_queues_per_vnic,omitempty"`
 
 	// Applicable to Azure platform only. Maximum number of rules per Azure LB. . Field introduced in 17.2.12, 18.1.2.
@@ -463,7 +466,7 @@ type ServiceEngineGroup struct {
 	// Dequeue interval for receive queue from NS HELPER. Allowed values are 1-1000. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	NsHelperDeqIntervalMsec *int32 `json:"ns_helper_deq_interval_msec,omitempty"`
 
-	// Number of dispatcher cores (0,1,2,4,8 or 16). If set to 0, then number of dispatcher cores is deduced automatically.Requires SE Reboot. Allowed values are 0,1,2,4,8,16. Field introduced in 17.2.12, 18.1.3, 18.2.1.
+	// Number of dispatcher cores (0,1,2,4,8 or 16). If set to 0, then number of dispatcher cores is deduced automatically.Requires SE Reboot. Allowed values are 0,1,2,4,8,16. Field introduced in 17.2.12, 18.1.3, 18.2.1. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.
 	NumDispatcherCores *int32 `json:"num_dispatcher_cores,omitempty"`
 
 	// Number of changes in num flow cores sum to ignore.
