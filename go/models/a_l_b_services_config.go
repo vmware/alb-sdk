@@ -19,6 +19,10 @@ type ALBServicesConfig struct {
 	// Information about the default contact for this controller cluster. Field introduced in 20.1.1.
 	AssetContact *ALBServicesUser `json:"asset_contact,omitempty"`
 
+	// Default values to be used for pulse case management. Field introduced in 21.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition.
+	// Required: true
+	CaseConfig *CaseConfig `json:"case_config"`
+
 	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
@@ -40,10 +44,6 @@ type ALBServicesConfig struct {
 	// Required: true
 	PortalURL *string `json:"portal_url"`
 
-	// Default values to be used during proactive case creation and techsupport attachment. Field introduced in 20.1.1.
-	// Required: true
-	ProactiveSupportDefaults *ProactiveSupportDefaults `json:"proactive_support_defaults"`
-
 	// Split proxy configuration to connect external pulse services. Field introduced in 20.1.1.
 	// Required: true
 	SplitProxyConfiguration *ProxyConfiguration `json:"split_proxy_configuration"`
@@ -64,4 +64,8 @@ type ALBServicesConfig struct {
 
 	//  Field introduced in 18.2.6.
 	UUID *string `json:"uuid,omitempty"`
+
+	// Default values to be used for pulse waf management. Field introduced in 21.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition.
+	// Required: true
+	WafConfig *WafCrsConfig `json:"waf_config"`
 }
