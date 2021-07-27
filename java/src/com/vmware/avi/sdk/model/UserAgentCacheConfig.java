@@ -131,6 +131,7 @@ public class UserAgentCacheConfig  {
     /**
      * This is the getter method this will return the attribute value.
      * The time interval in seconds after which to make a request to the controller, even if the 'batch_size' hasn't been reached yet.
+     * Allowed values are 20-100000.
      * Field introduced in 21.1.1.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
@@ -143,6 +144,7 @@ public class UserAgentCacheConfig  {
     /**
      * This is the setter method to the attribute.
      * The time interval in seconds after which to make a request to the controller, even if the 'batch_size' hasn't been reached yet.
+     * Allowed values are 20-100000.
      * Field introduced in 21.1.1.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
