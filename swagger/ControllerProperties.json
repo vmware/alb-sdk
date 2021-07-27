@@ -801,7 +801,7 @@
                     "format": "int32"
                 },
                 "max_wait_time": {
-                    "description": "The time interval in seconds after which to make a request to the Controller, even if the 'batch_size' hasn't been reached yet. Field introduced in 21.1.1. Unit is SEC.",
+                    "description": "The time interval in seconds after which to make a request to the Controller, even if the 'batch_size' hasn't been reached yet. Allowed values are 20-100000. Field introduced in 21.1.1. Unit is SEC.",
                     "type": "integer",
                     "default": 60,
                     "format": "int32"
