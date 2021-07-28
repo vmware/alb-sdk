@@ -27,6 +27,12 @@ public class WafPSMMatchElement  {
     @JsonProperty("index")
     private Integer index = null;
 
+    @JsonProperty("match_case")
+    private String matchCase = "INSENSITIVE";
+
+    @JsonProperty("match_op")
+    private String matchOp = "EQUALS";
+
     @JsonProperty("name")
     private String name = null;
 
@@ -77,6 +83,58 @@ public class WafPSMMatchElement  {
      */
     public void setIndex(Integer  index) {
         this.index = index;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Case sensitivity of match_op operation.
+     * Enum options - SENSITIVE, INSENSITIVE.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "INSENSITIVE".
+     * @return matchCase
+     */
+    public String getMatchCase() {
+        return matchCase;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Case sensitivity of match_op operation.
+     * Enum options - SENSITIVE, INSENSITIVE.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "INSENSITIVE".
+     * @param matchCase set the matchCase.
+     */
+    public void setMatchCase(String  matchCase) {
+        this.matchCase = matchCase;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * String operation to use for matching the sub_element.
+     * Default is equals.
+     * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
+     * REGEX_DOES_NOT_MATCH.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "EQUALS".
+     * @return matchOp
+     */
+    public String getMatchOp() {
+        return matchOp;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * String operation to use for matching the sub_element.
+     * Default is equals.
+     * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
+     * REGEX_DOES_NOT_MATCH.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "EQUALS".
+     * @param matchOp set the matchOp.
+     */
+    public void setMatchOp(String  matchOp) {
+        this.matchOp = matchOp;
     }
 
     /**
@@ -146,7 +204,9 @@ public class WafPSMMatchElement  {
       return   Objects.equals(this.index, objWafPSMMatchElement.index)&&
   Objects.equals(this.name, objWafPSMMatchElement.name)&&
   Objects.equals(this.subElement, objWafPSMMatchElement.subElement)&&
-  Objects.equals(this.excluded, objWafPSMMatchElement.excluded);
+  Objects.equals(this.excluded, objWafPSMMatchElement.excluded)&&
+  Objects.equals(this.matchOp, objWafPSMMatchElement.matchOp)&&
+  Objects.equals(this.matchCase, objWafPSMMatchElement.matchCase);
     }
 
     @Override
@@ -155,6 +215,8 @@ public class WafPSMMatchElement  {
       sb.append("class WafPSMMatchElement {\n");
                   sb.append("    excluded: ").append(toIndentedString(excluded)).append("\n");
                         sb.append("    index: ").append(toIndentedString(index)).append("\n");
+                        sb.append("    matchCase: ").append(toIndentedString(matchCase)).append("\n");
+                        sb.append("    matchOp: ").append(toIndentedString(matchOp)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    subElement: ").append(toIndentedString(subElement)).append("\n");
                   sb.append("}");
