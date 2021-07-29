@@ -451,10 +451,10 @@ type ServiceEngineGroup struct {
 	// Idle timeout in seconds for nat udp flows in response state. Allowed values are 1-3600. Field deprecated in 18.2.5. Field introduced in 18.2.5. Unit is SECONDS.
 	NatFlowUDPResponseTimeout *int32 `json:"nat_flow_udp_response_timeout,omitempty"`
 
-	// Number of threads to poll for netlink messages excluding the thread for default namespace. Requires SE Reboot. Allowed values are 1-32. Field introduced in 20.1.3.
+	// Number of threads to poll for netlink messages excluding the thread for default namespace. Requires SE Reboot. Allowed values are 1-32. Field introduced in 21.1.1.
 	NetlinkPollerThreads *int32 `json:"netlink_poller_threads,omitempty"`
 
-	// Socket buffer size for the netlink sockets. Requires SE Reboot. Allowed values are 1-128. Field introduced in 20.1.3. Unit is MEGA_BYTES.
+	// Socket buffer size for the netlink sockets. Requires SE Reboot. Allowed values are 1-128. Field introduced in 21.1.1. Unit is MEGA_BYTES.
 	NetlinkSockBufSize *int32 `json:"netlink_sock_buf_size,omitempty"`
 
 	// Free the connection stack. Field introduced in 21.1.1.
