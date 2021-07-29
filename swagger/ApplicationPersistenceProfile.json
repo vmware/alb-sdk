@@ -745,7 +745,7 @@
                     "type": "string"
                 },
                 "http_only": {
-                    "description": "Sets the HttpOnly attribute in the cookie. Setting this helps to prevent the client side scripts from accessing this cookie, if supported by browser. Field introduced in 20.1.5.",
+                    "description": "Sets the HttpOnly attribute in the cookie. Setting this helps to prevent the client side scripts from accessing this cookie, if supported by browser. Field introduced in 21.1.1.",
                     "type": "boolean"
                 },
                 "key": {
