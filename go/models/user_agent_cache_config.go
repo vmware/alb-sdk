@@ -17,7 +17,7 @@ type UserAgentCacheConfig struct {
 	// How often at most to query controller for a given User-Agent. Allowed values are 2-100. Field introduced in 21.1.1.
 	MaxUpstreamQueries *int32 `json:"max_upstream_queries,omitempty"`
 
-	// The time interval in seconds after which to make a request to the Controller, even if the 'batch_size' hasn't been reached yet. Field introduced in 21.1.1. Unit is SEC.
+	// The time interval in seconds after which to make a request to the Controller, even if the 'batch_size' hasn't been reached yet. Allowed values are 20-100000. Field introduced in 21.1.1. Unit is SEC.
 	MaxWaitTime *int32 `json:"max_wait_time,omitempty"`
 
 	// How many BotUACacheResult elements to include in an upstream update message. Allowed values are 1-10000. Field introduced in 21.1.1.
