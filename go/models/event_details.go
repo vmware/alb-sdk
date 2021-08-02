@@ -182,6 +182,9 @@ type EventDetails struct {
 	// Placeholder for description of property config_user_not_authrz_rule_details of obj type EventDetails field type str  type object
 	ConfigUserNotAuthrzRuleDetails *ConfigUserNotAuthrzByRule `json:"config_user_not_authrz_rule_details,omitempty"`
 
+	// Connection event. Field introduced in 21.1.3.
+	ConnectionEvent *ConnectionEventDetails `json:"connection_event,omitempty"`
+
 	// Placeholder for description of property container_cloud_batch_setup of obj type EventDetails field type str  type object
 	ContainerCloudBatchSetup *ContainerCloudBatchSetup `json:"container_cloud_batch_setup,omitempty"`
 
