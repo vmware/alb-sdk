@@ -557,7 +557,7 @@
                     "type": "string"
                 },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 20.1.6.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "controller_faults": {
