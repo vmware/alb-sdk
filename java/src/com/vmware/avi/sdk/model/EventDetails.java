@@ -192,6 +192,9 @@ public class EventDetails  {
     @JsonProperty("config_user_not_authrz_rule_details")
     private ConfigUserNotAuthrzByRule configUserNotAuthrzRuleDetails = null;
 
+    @JsonProperty("connection_event")
+    private ConnectionEventDetails connectionEvent = null;
+
     @JsonProperty("container_cloud_batch_setup")
     private ContainerCloudBatchSetup containerCloudBatchSetup = null;
 
@@ -1753,6 +1756,28 @@ public class EventDetails  {
      */
     public void setConfigUserNotAuthrzRuleDetails(ConfigUserNotAuthrzByRule configUserNotAuthrzRuleDetails) {
         this.configUserNotAuthrzRuleDetails = configUserNotAuthrzRuleDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Connection event.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return connectionEvent
+     */
+    public ConnectionEventDetails getConnectionEvent() {
+        return connectionEvent;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Connection event.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param connectionEvent set the connectionEvent.
+     */
+    public void setConnectionEvent(ConnectionEventDetails connectionEvent) {
+        this.connectionEvent = connectionEvent;
     }
 
     /**
@@ -4796,7 +4821,8 @@ public class EventDetails  {
   Objects.equals(this.secureKeyExchangeInfo, objEventDetails.secureKeyExchangeInfo)&&
   Objects.equals(this.logAgentEventDetails, objEventDetails.logAgentEventDetails)&&
   Objects.equals(this.databaseEventInfo, objEventDetails.databaseEventInfo)&&
-  Objects.equals(this.dnsQueryError, objEventDetails.dnsQueryError);
+  Objects.equals(this.dnsQueryError, objEventDetails.dnsQueryError)&&
+  Objects.equals(this.connectionEvent, objEventDetails.connectionEvent);
     }
 
     @Override
@@ -4860,6 +4886,7 @@ public class EventDetails  {
                         sb.append("    configUserLoginDetails: ").append(toIndentedString(configUserLoginDetails)).append("\n");
                         sb.append("    configUserLogoutDetails: ").append(toIndentedString(configUserLogoutDetails)).append("\n");
                         sb.append("    configUserNotAuthrzRuleDetails: ").append(toIndentedString(configUserNotAuthrzRuleDetails)).append("\n");
+                        sb.append("    connectionEvent: ").append(toIndentedString(connectionEvent)).append("\n");
                         sb.append("    containerCloudBatchSetup: ").append(toIndentedString(containerCloudBatchSetup)).append("\n");
                         sb.append("    containerCloudSetup: ").append(toIndentedString(containerCloudSetup)).append("\n");
                         sb.append("    containerCloudSevice: ").append(toIndentedString(containerCloudSevice)).append("\n");
