@@ -1,7 +1,9 @@
+#!/usr/bin/env python3
+
 # Copyright 2021 VMware, Inc.
 # SPDX-License-Identifier: Apache License 2.0
 
-#!/usr/bin/env python3
+
 import copy
 import logging
 from avi.migrationtools.f5_converter.conversion_util import F5Util
