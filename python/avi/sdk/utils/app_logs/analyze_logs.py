@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
+
 import logging
 from os import path, urandom
 import io

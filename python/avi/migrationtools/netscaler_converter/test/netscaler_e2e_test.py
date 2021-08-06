@@ -1,7 +1,9 @@
+#!/usr/bin/env python3
+
 # Copyright 2021 VMware, Inc.
 # SPDX-License-Identifier: Apache License 2.0
 
-#!/usr/bin/env python3
+
 import os
 
 from configparser import ConfigParser
