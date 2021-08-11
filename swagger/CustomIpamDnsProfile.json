@@ -541,7 +541,7 @@
                     }
                 },
                 "script_uri": {
-                    "description": "Script URI of form controller //ipamdnsscripts/<file-name>. Field introduced in 17.1.1.",
+                    "description": "Script URI of form controller //ipamdnsscripts/<file-name>, file-name must have a .py extension and conform to PEP8 naming convention. Field introduced in 17.1.1.",
                     "type": "string"
                 },
                 "tenant_ref": {
