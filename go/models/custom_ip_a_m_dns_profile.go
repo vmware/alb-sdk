@@ -22,7 +22,7 @@ type CustomIPAMDNSProfile struct {
 	// Parameters that are always passed to the IPAM/DNS script. Field introduced in 17.1.1.
 	ScriptParams []*CustomParams `json:"script_params,omitempty"`
 
-	// Script URI of form controller //ipamdnsscripts/<file-name>. Field introduced in 17.1.1.
+	// Script URI of form controller //ipamdnsscripts/<file-name>, file-name must have a .py extension and conform to PEP8 naming convention. Field introduced in 17.1.1.
 	// Required: true
 	ScriptURI *string `json:"script_uri"`
 
