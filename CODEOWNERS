@@ -1,0 +1,10 @@
+# These owners will be the default owners for everything in
+# the repo. Unless a later match takes precedence,
+*    @manojkumarjain
+
+# Each line is a file pattern followed by one or more owners.
+/python @gangaadhars @chaitanyaavi @manojkumarjain
+/python/avi/migrationtools @chaitanyaavi @manojkumarjain
+/python/avi/sdk/utils/ansible_utils.py @sabandi @manojkumarjain
+/go @mayank-avinetworks @manojkumarjain
+/java @chaitanyaavi @manojkumarjain
