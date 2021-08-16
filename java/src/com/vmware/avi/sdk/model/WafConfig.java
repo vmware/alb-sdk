@@ -48,6 +48,9 @@ public class WafConfig  {
     @JsonProperty("confidence_override")
     private AppLearningConfidenceOverride confidenceOverride;
 
+    @JsonProperty("content_type_mappings")
+    private List<WafContentTypeMapping> contentTypeMappings = null;
+
     @JsonProperty("cookie_format_version")
     private Integer cookieFormatVersion = 0;
 
@@ -380,6 +383,57 @@ public class WafConfig  {
      */
     public void setConfidenceOverride(AppLearningConfidenceOverride confidenceOverride) {
         this.confidenceOverride = confidenceOverride;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Waf content-types and their request body parsers.
+     * Use this field to configure which content-types should be handled by waf and which parser should be used.
+     * All content-types here are treated as 'allowed'.
+     * The order of entries matters.
+     * If the request's content-type matches an entry, its request body parser will run and no other parser will be invoked.
+     * Field introduced in 21.1.3.
+     * Maximum of 256 items allowed.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return contentTypeMappings
+     */
+    public List<WafContentTypeMapping> getContentTypeMappings() {
+        return contentTypeMappings;
+    }
+
+    /**
+     * This is the setter method. this will set the contentTypeMappings
+     * Waf content-types and their request body parsers.
+     * Use this field to configure which content-types should be handled by waf and which parser should be used.
+     * All content-types here are treated as 'allowed'.
+     * The order of entries matters.
+     * If the request's content-type matches an entry, its request body parser will run and no other parser will be invoked.
+     * Field introduced in 21.1.3.
+     * Maximum of 256 items allowed.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return contentTypeMappings
+     */
+    public void setContentTypeMappings(List<WafContentTypeMapping>  contentTypeMappings) {
+        this.contentTypeMappings = contentTypeMappings;
+    }
+
+    /**
+     * This is the setter method this will set the contentTypeMappings
+     * Waf content-types and their request body parsers.
+     * Use this field to configure which content-types should be handled by waf and which parser should be used.
+     * All content-types here are treated as 'allowed'.
+     * The order of entries matters.
+     * If the request's content-type matches an entry, its request body parser will run and no other parser will be invoked.
+     * Field introduced in 21.1.3.
+     * Maximum of 256 items allowed.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return contentTypeMappings
+     */
+    public WafConfig addContentTypeMappingsItem(WafContentTypeMapping contentTypeMappingsItem) {
+      if (this.contentTypeMappings == null) {
+        this.contentTypeMappings = new ArrayList<WafContentTypeMapping>();
+      }
+      this.contentTypeMappings.add(contentTypeMappingsItem);
+      return this;
     }
 
     /**
@@ -956,7 +1010,8 @@ public class WafConfig  {
   Objects.equals(this.regexRecursionLimit, objWafConfig.regexRecursionLimit)&&
   Objects.equals(this.xmlXxeProtection, objWafConfig.xmlXxeProtection)&&
   Objects.equals(this.statusHeaderName, objWafConfig.statusHeaderName)&&
-  Objects.equals(this.sendStatusHeader, objWafConfig.sendStatusHeader);
+  Objects.equals(this.sendStatusHeader, objWafConfig.sendStatusHeader)&&
+  Objects.equals(this.contentTypeMappings, objWafConfig.contentTypeMappings);
     }
 
     @Override
@@ -972,6 +1027,7 @@ public class WafConfig  {
                         sb.append("    clientNonfileUploadMaxBodySize: ").append(toIndentedString(clientNonfileUploadMaxBodySize)).append("\n");
                         sb.append("    clientRequestMaxBodySize: ").append(toIndentedString(clientRequestMaxBodySize)).append("\n");
                         sb.append("    confidenceOverride: ").append(toIndentedString(confidenceOverride)).append("\n");
+                        sb.append("    contentTypeMappings: ").append(toIndentedString(contentTypeMappings)).append("\n");
                         sb.append("    cookieFormatVersion: ").append(toIndentedString(cookieFormatVersion)).append("\n");
                         sb.append("    enableAutoRuleUpdates: ").append(toIndentedString(enableAutoRuleUpdates)).append("\n");
                         sb.append("    ignoreIncompleteRequestBodyError: ").append(toIndentedString(ignoreIncompleteRequestBodyError)).append("\n");
