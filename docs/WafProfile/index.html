@@ -303,6 +303,10 @@ font-style: italic;
       "allowed_http_versions" : [ "aeiou" ],
       "regex_match_limit" : 123,
       "response_body_default_action" : "aeiou",
+      "content_type_mappings" : [ {
+        "content_type" : "aeiou",
+        "request_body_parser" : "aeiou"
+      } ],
       "max_execution_time" : 123,
       "confidence_override" : {
         "confid_probable_value" : 123,
@@ -422,6 +426,10 @@ font-style: italic;
     "allowed_http_versions" : [ "aeiou" ],
     "regex_match_limit" : 123,
     "response_body_default_action" : "aeiou",
+    "content_type_mappings" : [ {
+      "content_type" : "aeiou",
+      "request_body_parser" : "aeiou"
+    } ],
     "max_execution_time" : 123,
     "confidence_override" : {
       "confid_probable_value" : 123,
@@ -612,6 +620,10 @@ font-style: italic;
     "allowed_http_versions" : [ "aeiou" ],
     "regex_match_limit" : 123,
     "response_body_default_action" : "aeiou",
+    "content_type_mappings" : [ {
+      "content_type" : "aeiou",
+      "request_body_parser" : "aeiou"
+    } ],
     "max_execution_time" : 123,
     "confidence_override" : {
       "confid_probable_value" : 123,
@@ -742,6 +754,10 @@ font-style: italic;
     "allowed_http_versions" : [ "aeiou" ],
     "regex_match_limit" : 123,
     "response_body_default_action" : "aeiou",
+    "content_type_mappings" : [ {
+      "content_type" : "aeiou",
+      "request_body_parser" : "aeiou"
+    } ],
     "max_execution_time" : 123,
     "confidence_override" : {
       "confid_probable_value" : 123,
@@ -872,6 +888,10 @@ font-style: italic;
     "allowed_http_versions" : [ "aeiou" ],
     "regex_match_limit" : 123,
     "response_body_default_action" : "aeiou",
+    "content_type_mappings" : [ {
+      "content_type" : "aeiou",
+      "request_body_parser" : "aeiou"
+    } ],
     "max_execution_time" : 123,
     "confidence_override" : {
       "confid_probable_value" : 123,
@@ -925,6 +945,7 @@ font-style: italic;
     <li><a href="#KeyValue"><code>KeyValue</code></a></li>
     <li><a href="#RoleFilterMatchLabel"><code>RoleFilterMatchLabel</code></a></li>
     <li><a href="#WafConfig"><code>WafConfig</code></a></li>
+    <li><a href="#WafContentTypeMapping"><code>WafContentTypeMapping</code></a></li>
     <li><a href="#WafDataFile"><code>WafDataFile</code></a></li>
     <li><a href="#WafProfile"><code>WafProfile</code></a></li>
     <li><a href="#WafProfileApiResponse"><code>WafProfileApiResponse</code></a></li>
@@ -982,6 +1003,7 @@ font-style: italic;
 <div class="param">client_nonfile_upload_max_body_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum size for the client request body for non-file uploads. Allowed values are 1-32768. Field deprecated in 18.1.5. Field introduced in 17.2.1. Unit is KB. format: int32</div>
 <div class="param">client_request_max_body_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum size for the client request body scanned by WAF. Allowed values are 1-32768. Field introduced in 18.1.5, 18.2.1. Unit is KB. format: int32</div>
 <div class="param">confidence_override (optional)</div><div class="param-desc"><span class="param-type"><a href="#AppLearningConfidenceOverride">AppLearningConfidenceOverride</a></span> Deprecated (Moved to WafPolicy). Configure thresholds for confidence labels. Field deprecated in 20.1.1. Field introduced in 18.2.3. </div>
+<div class="param">content_type_mappings (optional)</div><div class="param-desc"><span class="param-type"><a href="#WafContentTypeMapping">array[WafContentTypeMapping]</a></span> WAF Content-Types and their request body parsers. Use this field to configure which Content-Types should be handled by WAF and which parser should be used. All Content-Types here are treated as &#39;allowed&#39;. The order of entries matters. If the request&#39;s Content-Type matches an entry, its request body parser will run and no other parser will be invoked. Field introduced in 21.1.3. Maximum of 256 items allowed. </div>
 <div class="param">cookie_format_version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> 0  For Netscape Cookies. 1  For version 1 cookies. Allowed values are 0-1. Field introduced in 17.2.1. format: int32</div>
 <div class="param">enable_auto_rule_updates (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Deprecated (Moved to WafPolicy). Enable Application Learning based rule updates on the WAF Profile. Rules will be programmed in dedicated WAF learning group. Field deprecated in 20.1.1. Field introduced in 18.2.3. </div>
 <div class="param">ignore_incomplete_request_body_error (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Ignore request body parsing errors due to partial scanning. Field introduced in 18.1.5, 18.2.1. </div>
@@ -1002,6 +1024,13 @@ font-style: italic;
 <div class="param">status_code_for_rejected_requests (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP status code used by WAF Positive Security Model when rejecting a request. Enum options - HTTP_RESPONSE_CODE_0, HTTP_RESPONSE_CODE_100, HTTP_RESPONSE_CODE_101, HTTP_RESPONSE_CODE_200, HTTP_RESPONSE_CODE_201, HTTP_RESPONSE_CODE_202, HTTP_RESPONSE_CODE_203, HTTP_RESPONSE_CODE_204, HTTP_RESPONSE_CODE_205, HTTP_RESPONSE_CODE_206, HTTP_RESPONSE_CODE_300, HTTP_RESPONSE_CODE_301, HTTP_RESPONSE_CODE_302, HTTP_RESPONSE_CODE_303, HTTP_RESPONSE_CODE_304, HTTP_RESPONSE_CODE_305, HTTP_RESPONSE_CODE_307, HTTP_RESPONSE_CODE_400, HTTP_RESPONSE_CODE_401, HTTP_RESPONSE_CODE_402, HTTP_RESPONSE_CODE_403, HTTP_RESPONSE_CODE_404, HTTP_RESPONSE_CODE_405, HTTP_RESPONSE_CODE_406, HTTP_RESPONSE_CODE_407, HTTP_RESPONSE_CODE_408, HTTP_RESPONSE_CODE_409, HTTP_RESPONSE_CODE_410, HTTP_RESPONSE_CODE_411, HTTP_RESPONSE_CODE_412, HTTP_RESPONSE_CODE_413, HTTP_RESPONSE_CODE_414, HTTP_RESPONSE_CODE_415, HTTP_RESPONSE_CODE_416, HTTP_RESPONSE_CODE_417, HTTP_RESPONSE_CODE_426, HTTP_RESPONSE_CODE_470, HTTP_RESPONSE_CODE_475, HTTP_RESPONSE_CODE_500, HTTP_RESPONSE_CODE_501, HTTP_RESPONSE_CODE_502, HTTP_RESPONSE_CODE_503, HTTP_RESPONSE_CODE_504, HTTP_RESPONSE_CODE_505. Field introduced in 18.2.3. </div>
 <div class="param">status_header_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of the request header indicating WAF evaluation status to pool servers. Field introduced in 20.1.3. </div>
 <div class="param">xml_xxe_protection (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Block or flag XML requests referring to External Entities. Field introduced in 20.1.1. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="WafContentTypeMapping">WafContentTypeMapping</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">content_type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Request Content-Type. When it is equal to request Content-Type header value, the specified request_body_parser is used. Field introduced in 21.1.3. </div>
+<div class="param">request_body_parser </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Request body parser. Enum options - WAF_REQUEST_PARSER_URLENCODED, WAF_REQUEST_PARSER_MULTIPART, WAF_REQUEST_PARSER_JSON, WAF_REQUEST_PARSER_XML, WAF_REQUEST_PARSER_HANDLE_AS_STRING, WAF_REQUEST_PARSER_DO_NOT_PARSE. Field introduced in 21.1.3. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
