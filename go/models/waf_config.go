@@ -35,6 +35,9 @@ type WafConfig struct {
 	// Deprecated (Moved to WafPolicy). Configure thresholds for confidence labels. Field deprecated in 20.1.1. Field introduced in 18.2.3.
 	ConfidenceOverride *AppLearningConfidenceOverride `json:"confidence_override,omitempty"`
 
+	// WAF Content-Types and their request body parsers. Use this field to configure which Content-Types should be handled by WAF and which parser should be used. All Content-Types here are treated as 'allowed'. The order of entries matters. If the request's Content-Type matches an entry, its request body parser will run and no other parser will be invoked. Field introduced in 21.1.3. Maximum of 256 items allowed.
+	ContentTypeMappings []*WafContentTypeMapping `json:"content_type_mappings,omitempty"`
+
 	// 0  For Netscape Cookies. 1  For version 1 cookies. Allowed values are 0-1. Field introduced in 17.2.1.
 	CookieFormatVersion *int32 `json:"cookie_format_version,omitempty"`
 
