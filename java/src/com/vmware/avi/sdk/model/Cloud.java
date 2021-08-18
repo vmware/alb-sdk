@@ -87,6 +87,9 @@ public class Cloud extends AviRestResource  {
     @JsonProperty("linuxserver_configuration")
     private LinuxServerConfiguration linuxserverConfiguration = null;
 
+    @JsonProperty("maintenance_mode")
+    private Boolean maintenanceMode = false;
+
     @JsonProperty("mesos_configuration")
     private MesosConfiguration mesosConfiguration;
 
@@ -674,6 +677,28 @@ public class Cloud extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Cloud is in maintenance mode.
+     * Field introduced in 20.1.7,21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return maintenanceMode
+     */
+    public Boolean getMaintenanceMode() {
+        return maintenanceMode;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Cloud is in maintenance mode.
+     * Field introduced in 20.1.7,21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param maintenanceMode set the maintenanceMode.
+     */
+    public void setMaintenanceMode(Boolean  maintenanceMode) {
+        this.maintenanceMode = maintenanceMode;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Field deprecated in 18.2.2.
      * @return mesosConfiguration
      */
@@ -1138,6 +1163,7 @@ public class Cloud extends AviRestResource  {
   Objects.equals(this.ip6AutocfgEnabled, objCloud.ip6AutocfgEnabled)&&
   Objects.equals(this.dnsResolutionOnSe, objCloud.dnsResolutionOnSe)&&
   Objects.equals(this.enableVipOnAllInterfaces, objCloud.enableVipOnAllInterfaces)&&
+  Objects.equals(this.maintenanceMode, objCloud.maintenanceMode)&&
   Objects.equals(this.tenantRef, objCloud.tenantRef)&&
   Objects.equals(this.licenseTier, objCloud.licenseTier)&&
   Objects.equals(this.autoscalePollingInterval, objCloud.autoscalePollingInterval)&&
@@ -1172,6 +1198,7 @@ public class Cloud extends AviRestResource  {
                         sb.append("    licenseTier: ").append(toIndentedString(licenseTier)).append("\n");
                         sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
                         sb.append("    linuxserverConfiguration: ").append(toIndentedString(linuxserverConfiguration)).append("\n");
+                        sb.append("    maintenanceMode: ").append(toIndentedString(maintenanceMode)).append("\n");
                         sb.append("    mesosConfiguration: ").append(toIndentedString(mesosConfiguration)).append("\n");
                         sb.append("    mtu: ").append(toIndentedString(mtu)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
