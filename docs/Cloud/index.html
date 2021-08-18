@@ -270,6 +270,7 @@ font-style: italic;
   "count" : 123,
   "results" : [ {
     "autoscale_polling_interval" : 123,
+    "maintenance_mode" : true,
     "vtype" : "aeiou",
     "apic_configuration" : {
       "apic_admin_tenant" : "aeiou",
@@ -926,6 +927,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "autoscale_polling_interval" : 123,
+  "maintenance_mode" : true,
   "vtype" : "aeiou",
   "apic_configuration" : {
     "apic_admin_tenant" : "aeiou",
@@ -1815,6 +1817,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "autoscale_polling_interval" : 123,
+  "maintenance_mode" : true,
   "vtype" : "aeiou",
   "apic_configuration" : {
     "apic_admin_tenant" : "aeiou",
@@ -2586,6 +2589,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "autoscale_polling_interval" : 123,
+  "maintenance_mode" : true,
   "vtype" : "aeiou",
   "apic_configuration" : {
     "apic_admin_tenant" : "aeiou",
@@ -3201,6 +3205,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "autoscale_polling_interval" : 123,
+  "maintenance_mode" : true,
   "vtype" : "aeiou",
   "apic_configuration" : {
     "apic_admin_tenant" : "aeiou",
@@ -3998,6 +4003,7 @@ font-style: italic;
 <div class="param">license_tier (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Specifies the default license tier which would be used by new SE Groups. This field by default inherits the value from system configuration. Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS. Field introduced in 17.2.5. </div>
 <div class="param">license_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> If no license type is specified then default license enforcement for the cloud type is chosen. The default mappings are Container Cloud is Max Ses, OpenStack and VMware is cores and linux it is Sockets. Enum options - LIC_BACKEND_SERVERS, LIC_SOCKETS, LIC_CORES, LIC_HOSTS, LIC_SE_BANDWIDTH, LIC_METERED_SE_BANDWIDTH. </div>
 <div class="param">linuxserver_configuration (optional)</div><div class="param-desc"><span class="param-type"><a href="#LinuxServerConfiguration">LinuxServerConfiguration</a></span> Placeholder for description of property linuxserver_configuration of obj type Cloud field type str  type object </div>
+<div class="param">maintenance_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Cloud is in maintenance mode. Field introduced in 20.1.7,21.1.3. </div>
 <div class="param">mesos_configuration (optional)</div><div class="param-desc"><span class="param-type"><a href="#MesosConfiguration">MesosConfiguration</a></span>  Field deprecated in 18.2.2. </div>
 <div class="param">mtu (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> MTU setting for the cloud. Unit is BYTES. format: int32</div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the object. </div>
