@@ -52,7 +52,7 @@ public class PortalFeatureOptIn  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Enable to subscribe to automated application signature rulesets updates.
+     * Enable to receive application specific signature updates.
      * Field introduced in 20.1.4.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -64,7 +64,7 @@ public class PortalFeatureOptIn  {
 
     /**
      * This is the setter method to the attribute.
-     * Enable to subscribe to automated application signature rulesets updates.
+     * Enable to receive application specific signature updates.
      * Field introduced in 20.1.4.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -148,8 +148,7 @@ public class PortalFeatureOptIn  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Enable to subscribe to ip reputation updates.
-     * This is a requirement for using ip reputation in the product.
+     * Enable to receive ip reputation updates.
      * Field introduced in 20.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -161,8 +160,7 @@ public class PortalFeatureOptIn  {
 
     /**
      * This is the setter method to the attribute.
-     * Enable to subscribe to ip reputation updates.
-     * This is a requirement for using ip reputation in the product.
+     * Enable to receive ip reputation updates.
      * Field introduced in 20.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -200,7 +198,7 @@ public class PortalFeatureOptIn  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Enable pulse waf management.
+     * Enable to receive waf crs updates.
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
@@ -213,7 +211,7 @@ public class PortalFeatureOptIn  {
 
     /**
      * This is the setter method to the attribute.
-     * Enable pulse waf management.
+     * Enable to receive waf crs updates.
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
@@ -226,7 +224,7 @@ public class PortalFeatureOptIn  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Enable subscription to user-agent database used for bot management.
+     * Enable to receive bot management updates.
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -238,7 +236,7 @@ public class PortalFeatureOptIn  {
 
     /**
      * This is the setter method to the attribute.
-     * Enable subscription to user-agent database used for bot management.
+     * Enable to receive bot management updates.
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
