@@ -751,11 +751,11 @@
             "type": "object",
             "properties": {
                 "enable_appsignature_sync": {
-                    "description": "Enable to subscribe to automated Application Signature Rulesets updates. Field introduced in 20.1.4. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Enable to receive Application specific signature updates. Field introduced in 20.1.4. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
                     "type": "boolean"
                 },
                 "enable_ip_reputation": {
-                    "description": "Enable to subscribe to IP reputation updates. This is a requirement for using IP reputation in the product. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Enable to receive IP reputation updates. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
                     "type": "boolean"
                 },
                 "enable_pulse_case_management": {
@@ -764,12 +764,12 @@
                     "default": true
                 },
                 "enable_pulse_waf_management": {
-                    "description": "Enable Pulse WAF Management. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is True.",
+                    "description": "Enable to receive WAF CRS updates. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is True.",
                     "type": "boolean",
                     "default": true
                 },
                 "enable_user_agent_db_sync": {
-                    "description": "Enable subscription to User-Agent database used for Bot Management. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Enable to receive Bot Management updates. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
                     "type": "boolean"
                 }
             }
