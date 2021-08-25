@@ -215,6 +215,8 @@ font-style: italic;
   <li><a href="#cloudUuidHostsGet"><code><span class="http-method">get</span> /cloud/{uuid}/hosts/</code></a></li>
   <li><a href="#cloudUuidInternalsGet"><code><span class="http-method">get</span> /cloud/{uuid}/internals/</code></a></li>
   <li><a href="#cloudUuidPatch"><code><span class="http-method">patch</span> /cloud/{uuid}</code></a></li>
+  <li><a href="#cloudUuidPlacementIneligibleGet"><code><span class="http-method">get</span> /cloud/{uuid}/placement/ineligible/</code></a></li>
+  <li><a href="#cloudUuidPlacementSummaryGet"><code><span class="http-method">get</span> /cloud/{uuid}/placement/summary/</code></a></li>
   <li><a href="#cloudUuidPut"><code><span class="http-method">put</span> /cloud/{uuid}</code></a></li>
   <li><a href="#cloudUuidStatusGet"><code><span class="http-method">get</span> /cloud/{uuid}/status/</code></a></li>
   </ol>
@@ -3152,6 +3154,110 @@ font-style: italic;
     <h4 class="field-label">200</h4>
     OK
         <a href="#Cloud">Cloud</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="cloudUuidPlacementIneligibleGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud/{uuid}/placement/ineligible/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">cloudUuidPlacementIneligibleGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="cloudUuidPlacementSummaryGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud/{uuid}/placement/summary/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">cloudUuidPlacementSummaryGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
