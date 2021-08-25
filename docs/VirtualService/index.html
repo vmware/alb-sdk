@@ -242,7 +242,10 @@ font-style: italic;
   <li><a href="#virtualserviceUuidNetworksecuritypolicystatsGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/networksecuritypolicystats/</code></a></li>
   <li><a href="#virtualserviceUuidOutofbandstatsGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/outofbandstats/</code></a></li>
   <li><a href="#virtualserviceUuidPatch"><code><span class="http-method">patch</span> /virtualservice/{uuid}</code></a></li>
+  <li><a href="#virtualserviceUuidPlacementDetailGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/placement/detail/</code></a></li>
   <li><a href="#virtualserviceUuidPlacementGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/placement/</code></a></li>
+  <li><a href="#virtualserviceUuidPlacementStatusGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/placement/status/</code></a></li>
+  <li><a href="#virtualserviceUuidPlacementSummaryGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/placement/summary/</code></a></li>
   <li><a href="#virtualserviceUuidPut"><code><span class="http-method">put</span> /virtualservice/{uuid}</code></a></li>
   <li><a href="#virtualserviceUuidResyncPost"><code><span class="http-method">post</span> /virtualservice/{uuid}/resync</code></a></li>
   <li><a href="#virtualserviceUuidRetryplacementPost"><code><span class="http-method">post</span> /virtualservice/{uuid}/retryplacement</code></a></li>
@@ -4228,11 +4231,167 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
+  <div class="method"><a name="virtualserviceUuidPlacementDetailGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /virtualservice/{uuid}/placement/detail/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">virtualserviceUuidPlacementDetailGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
   <div class="method"><a name="virtualserviceUuidPlacementGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /virtualservice/{uuid}/placement/</code></pre></div>
     <div class="method-summary"> (<span class="nickname">virtualserviceUuidPlacementGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="virtualserviceUuidPlacementStatusGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /virtualservice/{uuid}/placement/status/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">virtualserviceUuidPlacementStatusGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="virtualserviceUuidPlacementSummaryGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /virtualservice/{uuid}/placement/summary/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">virtualserviceUuidPlacementSummaryGet</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
