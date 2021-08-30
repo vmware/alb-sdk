@@ -34,7 +34,7 @@ public class HardwareSecurityModule  {
     private HSMSafenetLuna sluna = null;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type = "HSM_TYPE_SAFENET_LUNA";
 
 
 
@@ -137,7 +137,7 @@ public class HardwareSecurityModule  {
      * This is the getter method this will return the attribute value.
      * Hsm type to use.
      * Enum options - HSM_TYPE_THALES_NETHSM, HSM_TYPE_SAFENET_LUNA, HSM_TYPE_AWS_CLOUDHSM.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "HSM_TYPE_SAFENET_LUNA".
      * @return type
      */
     public String getType() {
@@ -148,7 +148,7 @@ public class HardwareSecurityModule  {
      * This is the setter method to the attribute.
      * Hsm type to use.
      * Enum options - HSM_TYPE_THALES_NETHSM, HSM_TYPE_SAFENET_LUNA, HSM_TYPE_AWS_CLOUDHSM.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "HSM_TYPE_SAFENET_LUNA".
      * @param type set the type.
      */
     public void setType(String  type) {
