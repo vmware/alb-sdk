@@ -8,6 +8,9 @@ package models
 // swagger:model PlacementScopeConfig
 type PlacementScopeConfig struct {
 
+	// Cluster vSphere HA configuration. Field introduced in 20.1.7, 21.1.3.
+	Clusters []*ClusterHAConfig `json:"clusters,omitempty"`
+
 	// List of transport node clusters include or exclude. Field introduced in 20.1.6.
 	NsxtClusters *NsxtClusters `json:"nsxt_clusters,omitempty"`
 
