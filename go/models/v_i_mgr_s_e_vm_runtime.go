@@ -24,6 +24,12 @@ type VIMgrSEVMRuntime struct {
 	//  It is a reference to an object of type Cloud.
 	CloudRef *string `json:"cloud_ref,omitempty"`
 
+	// ServiceEngine deployed on cluster.Ex MOB  domain-c23. Field introduced in 20.1.7, 21.1.3.
+	ClusterID *string `json:"cluster_id,omitempty"`
+
+	// ServiceEngine added to cluster vmgroup. Field introduced in 20.1.7, 21.1.3.
+	ClusterVmgroup *string `json:"cluster_vmgroup,omitempty"`
+
 	// connection_state of VIMgrSEVMRuntime.
 	ConnectionState *string `json:"connection_state,omitempty"`
 
@@ -115,6 +121,12 @@ type VIMgrSEVMRuntime struct {
 	// Unique object identifier of vcenter_datacenter.
 	VcenterDatacenterUUID *string `json:"vcenter_datacenter_uuid,omitempty"`
 
+	// ServiceEngine host connection state in vCenter. Field introduced in 20.1.7, 21.1.3.
+	VcenterHostConnectionState *string `json:"vcenter_host_connection_state,omitempty"`
+
+	// VCenter Host HA state.Ex  election, fdmUnreachable, hostDown, initializationError, networkIsolated, uninitializationError, uninitialized. Field introduced in 20.1.7, 21.1.3.
+	VcenterHostHaState *string `json:"vcenter_host_ha_state,omitempty"`
+
 	// ServiceEngine instance uuid from vCenter. Field introduced in 20.1.1.
 	VcenterInstanceUUID *string `json:"vcenter_instance_uuid,omitempty"`
 
@@ -144,4 +156,10 @@ type VIMgrSEVMRuntime struct {
 
 	// Count of vcpus for each service engine VM. Field introduced in 18.2.2.
 	Vcpus *int32 `json:"vcpus,omitempty"`
+
+	// VSphere HA on cluster enabled or not. Field introduced in 20.1.7, 21.1.3.
+	VsphereHaEnabled *bool `json:"vsphere_ha_enabled,omitempty"`
+
+	// If this flag is set to True, vCenter vSphere HA handles ServiceEngine failure. This flag is set dynamiclly based on underlying ESX HA state(connected, hostDown..etc). Field introduced in 20.1.7, 21.1.3.
+	VsphereHaInprogress *bool `json:"vsphere_ha_inprogress,omitempty"`
 }
