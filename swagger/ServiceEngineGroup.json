@@ -997,6 +997,23 @@
                 }
             }
         },
+        "ClusterHAConfig": {
+            "type": "object",
+            "properties": {
+                "cluster_id": {
+                    "description": "Transport node cluster. Avi derives vSphere HA property from vCenter cluster.If vSphere HA enabled on vCenter cluster, vSphere will handle HA of ServiceEngine VMs in case of underlying ESX failure.Ex MOB  domain-c23. Field introduced in 20.1.7, 21.1.3.",
+                    "type": "string"
+                },
+                "override_vsphere_ha": {
+                    "description": "If this flag set to True, Avi handles ServiceEngine failure irrespective of vSphere HA enabled on vCenter cluster or not. Field introduced in 20.1.7, 21.1.3.",
+                    "type": "boolean"
+                },
+                "vmg_name": {
+                    "description": "Cluster VM Group name.VM Group name is unique inside cluster. Field introduced in 20.1.7, 21.1.3.",
+                    "type": "string"
+                }
+            }
+        },
         "ConfigPbAttributes": {
             "type": "object",
             "properties": {
@@ -1329,6 +1346,13 @@
                 "vcenter_ref"
             ],
             "properties": {
+                "clusters": {
+                    "description": "Cluster vSphere HA configuration. Field introduced in 20.1.7, 21.1.3.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ClusterHAConfig"
+                    }
+                },
                 "nsxt_clusters": {
                     "description": "List of transport node clusters include or exclude. Field introduced in 20.1.6.",
                     "$ref": "#/definitions/NsxtClusters"
