@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PlacementScopeConfig  {
+    @JsonProperty("clusters")
+    private List<ClusterHAConfig> clusters = null;
+
     @JsonProperty("nsxt_clusters")
     private NsxtClusters nsxtClusters = null;
 
@@ -37,6 +40,42 @@ public class PlacementScopeConfig  {
     private String vcenterRef = null;
 
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Cluster vsphere ha configuration.
+     * Field introduced in 20.1.7, 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return clusters
+     */
+    public List<ClusterHAConfig> getClusters() {
+        return clusters;
+    }
+
+    /**
+     * This is the setter method. this will set the clusters
+     * Cluster vsphere ha configuration.
+     * Field introduced in 20.1.7, 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return clusters
+     */
+    public void setClusters(List<ClusterHAConfig>  clusters) {
+        this.clusters = clusters;
+    }
+
+    /**
+     * This is the setter method this will set the clusters
+     * Cluster vsphere ha configuration.
+     * Field introduced in 20.1.7, 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return clusters
+     */
+    public PlacementScopeConfig addClustersItem(ClusterHAConfig clustersItem) {
+      if (this.clusters == null) {
+        this.clusters = new ArrayList<ClusterHAConfig>();
+      }
+      this.clusters.add(clustersItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -166,14 +205,16 @@ public class PlacementScopeConfig  {
   Objects.equals(this.vcenterFolder, objPlacementScopeConfig.vcenterFolder)&&
   Objects.equals(this.nsxtHosts, objPlacementScopeConfig.nsxtHosts)&&
   Objects.equals(this.nsxtDatastores, objPlacementScopeConfig.nsxtDatastores)&&
-  Objects.equals(this.nsxtClusters, objPlacementScopeConfig.nsxtClusters);
+  Objects.equals(this.nsxtClusters, objPlacementScopeConfig.nsxtClusters)&&
+  Objects.equals(this.clusters, objPlacementScopeConfig.clusters);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class PlacementScopeConfig {\n");
-                  sb.append("    nsxtClusters: ").append(toIndentedString(nsxtClusters)).append("\n");
+                  sb.append("    clusters: ").append(toIndentedString(clusters)).append("\n");
+                        sb.append("    nsxtClusters: ").append(toIndentedString(nsxtClusters)).append("\n");
                         sb.append("    nsxtDatastores: ").append(toIndentedString(nsxtDatastores)).append("\n");
                         sb.append("    nsxtHosts: ").append(toIndentedString(nsxtHosts)).append("\n");
                         sb.append("    vcenterFolder: ").append(toIndentedString(vcenterFolder)).append("\n");
