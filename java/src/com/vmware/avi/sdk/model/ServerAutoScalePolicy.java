@@ -504,8 +504,8 @@ public class ServerAutoScalePolicy extends AviRestResource  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Schedule-based scale-in/out policy.
-     * During schedule intervals, metrics based autoscale is not enabled and number of servers will be solely derived from schedulescale policy.
+     * Scheduled-based scale-in/out policy.
+     * During scheduled intervals, metrics based autoscale is not enabled and number of servers will be solely derived from schedulescale policy.
      * Field introduced in 21.1.1.
      * Maximum of 1 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -517,8 +517,8 @@ public class ServerAutoScalePolicy extends AviRestResource  {
 
     /**
      * This is the setter method. this will set the scheduledScalings
-     * Schedule-based scale-in/out policy.
-     * During schedule intervals, metrics based autoscale is not enabled and number of servers will be solely derived from schedulescale policy.
+     * Scheduled-based scale-in/out policy.
+     * During scheduled intervals, metrics based autoscale is not enabled and number of servers will be solely derived from schedulescale policy.
      * Field introduced in 21.1.1.
      * Maximum of 1 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -530,8 +530,8 @@ public class ServerAutoScalePolicy extends AviRestResource  {
 
     /**
      * This is the setter method this will set the scheduledScalings
-     * Schedule-based scale-in/out policy.
-     * During schedule intervals, metrics based autoscale is not enabled and number of servers will be solely derived from schedulescale policy.
+     * Scheduled-based scale-in/out policy.
+     * During scheduled intervals, metrics based autoscale is not enabled and number of servers will be solely derived from schedulescale policy.
      * Field introduced in 21.1.1.
      * Maximum of 1 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
