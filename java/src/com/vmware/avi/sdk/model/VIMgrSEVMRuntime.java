@@ -69,6 +69,9 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
     @JsonProperty("flavor")
     private String flavor = null;
 
+    @JsonProperty("gcp_se_project_id")
+    private String gcpSeProjectId = null;
+
     @JsonProperty("guest_nic")
     private List<VIMgrGuestNicRuntime> guestNic = null;
 
@@ -496,6 +499,30 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
      */
     public void setFlavor(String  flavor) {
         this.flavor = flavor;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Gcp project id in which se is created.
+     * This field is applicable for gcp cloud type only.
+     * Field introduced in 20.1.7, 21.1.2, 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return gcpSeProjectId
+     */
+    public String getGcpSeProjectId() {
+        return gcpSeProjectId;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Gcp project id in which se is created.
+     * This field is applicable for gcp cloud type only.
+     * Field introduced in 20.1.7, 21.1.2, 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param gcpSeProjectId set the gcpSeProjectId.
+     */
+    public void setGcpSeProjectId(String  gcpSeProjectId) {
+        this.gcpSeProjectId = gcpSeProjectId;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -1249,7 +1276,8 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
   Objects.equals(this.vcenterHostHaState, objVIMgrSEVMRuntime.vcenterHostHaState)&&
   Objects.equals(this.vsphereHaEnabled, objVIMgrSEVMRuntime.vsphereHaEnabled)&&
   Objects.equals(this.tenantRef, objVIMgrSEVMRuntime.tenantRef)&&
-  Objects.equals(this.cloudRef, objVIMgrSEVMRuntime.cloudRef);
+  Objects.equals(this.cloudRef, objVIMgrSEVMRuntime.cloudRef)&&
+  Objects.equals(this.gcpSeProjectId, objVIMgrSEVMRuntime.gcpSeProjectId);
     }
 
     @Override
@@ -1272,6 +1300,7 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
                         sb.append("    discoveryStatus: ").append(toIndentedString(discoveryStatus)).append("\n");
                         sb.append("    diskGb: ").append(toIndentedString(diskGb)).append("\n");
                         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
+                        sb.append("    gcpSeProjectId: ").append(toIndentedString(gcpSeProjectId)).append("\n");
                         sb.append("    guestNic: ").append(toIndentedString(guestNic)).append("\n");
                         sb.append("    host: ").append(toIndentedString(host)).append("\n");
                         sb.append("    hostRef: ").append(toIndentedString(hostRef)).append("\n");
