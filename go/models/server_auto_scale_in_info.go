@@ -40,4 +40,7 @@ type ServerAutoScaleInInfo struct {
 
 	// Placeholder for description of property scalein_server_candidates of obj type ServerAutoScaleInInfo field type str  type object
 	ScaleinServerCandidates []*ServerID `json:"scalein_server_candidates,omitempty"`
+
+	// Desired number of servers for scheduled autocale. Field introduced in 21.1.1.
+	ScheduledDesiredCapacity *int32 `json:"scheduled_desired_capacity,omitempty"`
 }

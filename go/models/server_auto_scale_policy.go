@@ -64,7 +64,7 @@ type ServerAutoScalePolicy struct {
 	// Cooldown period during which no new scale-out is triggered to allow previous scale-out to successfully complete. Unit is SEC.
 	ScaleoutCooldown *int32 `json:"scaleout_cooldown,omitempty"`
 
-	// Schedule-based scale-in/out policy. During schedule intervals, metrics based autoscale is not enabled and number of servers will be solely derived from ScheduleScale policy. Field introduced in 21.1.1. Maximum of 1 items allowed.
+	// Scheduled-based scale-in/out policy. During scheduled intervals, metrics based autoscale is not enabled and number of servers will be solely derived from ScheduleScale policy. Field introduced in 21.1.1. Maximum of 1 items allowed.
 	ScheduledScalings []*ScheduledScaling `json:"scheduled_scalings,omitempty"`
 
 	//  It is a reference to an object of type Tenant.
