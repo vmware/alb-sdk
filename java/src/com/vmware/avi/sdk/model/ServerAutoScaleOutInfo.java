@@ -48,6 +48,9 @@ public class ServerAutoScaleOutInfo  {
     @JsonProperty("reason_code")
     private String reasonCode = "SYSERR_SUCCESS";
 
+    @JsonProperty("scheduled_desired_capacity")
+    private Integer scheduledDesiredCapacity = null;
+
 
 
     /**
@@ -236,6 +239,28 @@ public class ServerAutoScaleOutInfo  {
         this.reasonCode = reasonCode;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Desired number of servers for scheduled autoscale.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return scheduledDesiredCapacity
+     */
+    public Integer getScheduledDesiredCapacity() {
+        return scheduledDesiredCapacity;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Desired number of servers for scheduled autoscale.
+     * Field introduced in 21.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param scheduledDesiredCapacity set the scheduledDesiredCapacity.
+     */
+    public void setScheduledDesiredCapacity(Integer  scheduledDesiredCapacity) {
+        this.scheduledDesiredCapacity = scheduledDesiredCapacity;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -254,7 +279,8 @@ public class ServerAutoScaleOutInfo  {
   Objects.equals(this.load, objServerAutoScaleOutInfo.load)&&
   Objects.equals(this.availableCapacity, objServerAutoScaleOutInfo.availableCapacity)&&
   Objects.equals(this.alertconfigRef, objServerAutoScaleOutInfo.alertconfigRef)&&
-  Objects.equals(this.alertconfigName, objServerAutoScaleOutInfo.alertconfigName);
+  Objects.equals(this.alertconfigName, objServerAutoScaleOutInfo.alertconfigName)&&
+  Objects.equals(this.scheduledDesiredCapacity, objServerAutoScaleOutInfo.scheduledDesiredCapacity);
     }
 
     @Override
@@ -270,6 +296,7 @@ public class ServerAutoScaleOutInfo  {
                         sb.append("    poolRef: ").append(toIndentedString(poolRef)).append("\n");
                         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
                         sb.append("    reasonCode: ").append(toIndentedString(reasonCode)).append("\n");
+                        sb.append("    scheduledDesiredCapacity: ").append(toIndentedString(scheduledDesiredCapacity)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
