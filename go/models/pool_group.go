@@ -24,6 +24,9 @@ type PoolGroup struct {
 	// Name of the user who created the object.
 	CreatedBy *string `json:"created_by,omitempty"`
 
+	// Deactivate primary pool for selection when down until it is activated by user via clear poolgroup command. Field introduced in 20.1.7, 21.1.2, 21.1.3.
+	DeactivatePrimaryPoolOnDown *bool `json:"deactivate_primary_pool_on_down,omitempty"`
+
 	// When setup autoscale manager will automatically promote new pools into production when deployment goals are met. It is a reference to an object of type PoolGroupDeploymentPolicy.
 	DeploymentPolicyRef *string `json:"deployment_policy_ref,omitempty"`
 
