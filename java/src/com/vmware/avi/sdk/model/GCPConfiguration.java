@@ -33,6 +33,9 @@ public class GCPConfiguration  {
     @JsonProperty("firewall_target_tags")
     private List<String> firewallTargetTags = null;
 
+    @JsonProperty("gcp_service_account_email")
+    private String gcpServiceAccountEmail = null;
+
     @JsonProperty("gcs_bucket_name")
     private String gcsBucketName = null;
 
@@ -161,6 +164,28 @@ public class GCPConfiguration  {
       }
       this.firewallTargetTags.add(firewallTargetTagsItem);
       return this;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Email of gcp service account to be associated to the service engines.
+     * Field introduced in 20.1.7, 21.1.2.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return gcpServiceAccountEmail
+     */
+    public String getGcpServiceAccountEmail() {
+        return gcpServiceAccountEmail;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Email of gcp service account to be associated to the service engines.
+     * Field introduced in 20.1.7, 21.1.2.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param gcpServiceAccountEmail set the gcpServiceAccountEmail.
+     */
+    public void setGcpServiceAccountEmail(String  gcpServiceAccountEmail) {
+        this.gcpServiceAccountEmail = gcpServiceAccountEmail;
     }
 
     /**
@@ -387,7 +412,8 @@ public class GCPConfiguration  {
   Objects.equals(this.gcsBucketName, objGCPConfiguration.gcsBucketName)&&
   Objects.equals(this.encryptionKeyId, objGCPConfiguration.encryptionKeyId)&&
   Objects.equals(this.vipAllocationStrategy, objGCPConfiguration.vipAllocationStrategy)&&
-  Objects.equals(this.encryptionKeys, objGCPConfiguration.encryptionKeys);
+  Objects.equals(this.encryptionKeys, objGCPConfiguration.encryptionKeys)&&
+  Objects.equals(this.gcpServiceAccountEmail, objGCPConfiguration.gcpServiceAccountEmail);
     }
 
     @Override
@@ -398,6 +424,7 @@ public class GCPConfiguration  {
                         sb.append("    encryptionKeyId: ").append(toIndentedString(encryptionKeyId)).append("\n");
                         sb.append("    encryptionKeys: ").append(toIndentedString(encryptionKeys)).append("\n");
                         sb.append("    firewallTargetTags: ").append(toIndentedString(firewallTargetTags)).append("\n");
+                        sb.append("    gcpServiceAccountEmail: ").append(toIndentedString(gcpServiceAccountEmail)).append("\n");
                         sb.append("    gcsBucketName: ").append(toIndentedString(gcsBucketName)).append("\n");
                         sb.append("    gcsProjectId: ").append(toIndentedString(gcsProjectId)).append("\n");
                         sb.append("    matchSeGroupSubnet: ").append(toIndentedString(matchSeGroupSubnet)).append("\n");
