@@ -2046,6 +2046,10 @@
                         "type": "string"
                     }
                 },
+                "gcp_service_account_email": {
+                    "description": "Email of GCP Service Account to be associated to the Service Engines. Field introduced in 20.1.7, 21.1.2.",
+                    "type": "string"
+                },
                 "gcs_bucket_name": {
                     "description": "Google Cloud Storage Bucket Name where Service Engine image will be uploaded. This image will be deleted once the image is created in Google compute images. By default, a bucket will be created if this field is not specified. Field introduced in 18.2.1.",
                     "type": "string"
@@ -2272,6 +2276,12 @@
                 "match_se_group_subnet": {
                     "description": "Match SE group subnets for VIP placement. Default is to not match SE group subnets. Field introduced in 18.2.9, 20.1.1.",
                     "type": "boolean"
+                },
+                "route_priority": {
+                    "description": "Priority of the routes created in GCP. Field introduced in 20.1.7, 21.1.2.",
+                    "type": "integer",
+                    "default": 2000,
+                    "format": "int32"
                 }
             }
         },
