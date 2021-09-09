@@ -20,6 +20,9 @@ type GCPConfiguration struct {
 	// Firewall rule network target tags which will be applied on Service Engines to allow ingress and egress traffic for Service Engines. Field introduced in 18.2.1.
 	FirewallTargetTags []string `json:"firewall_target_tags,omitempty"`
 
+	// Email of GCP Service Account to be associated to the Service Engines. Field introduced in 20.1.7, 21.1.2.
+	GcpServiceAccountEmail *string `json:"gcp_service_account_email,omitempty"`
+
 	// Google Cloud Storage Bucket Name where Service Engine image will be uploaded. This image will be deleted once the image is created in Google compute images. By default, a bucket will be created if this field is not specified. Field introduced in 18.2.1.
 	GcsBucketName *string `json:"gcs_bucket_name,omitempty"`
 
