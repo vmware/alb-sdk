@@ -381,8 +381,6 @@ definitions:
                     type: string
     ScheduledScaling:
         type: object
-        required:
-            -   recurrence
         properties:
             autoscaling_duration:
                 description: "Scheduled autoscale duration (in hours). Allowed values are 1-24. Field introduced in 21.1.1. Unit is HOURS."
