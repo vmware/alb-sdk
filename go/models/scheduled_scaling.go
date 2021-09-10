@@ -24,8 +24,7 @@ type ScheduledScaling struct {
 	EndDate *string `json:"end_date,omitempty"`
 
 	// Deprecated.Frequency of the Scheduled autoscale. Enum options - ONCE, EVERY_DAY, EVERY_WEEK, EVERY_MONTH. Field deprecated in 21.1.3. Field introduced in 21.1.1.
-	// Required: true
-	Recurrence *string `json:"recurrence"`
+	Recurrence *string `json:"recurrence,omitempty"`
 
 	// Maximum number of simultaneous scale-in/out servers for scheduled autoscale. If this value is 0, regular autoscale policy dictates this. . Field introduced in 21.1.1.
 	ScheduleMaxStep *int32 `json:"schedule_max_step,omitempty"`
