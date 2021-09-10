@@ -35,9 +35,9 @@ def add_allowlist_rule(waf_policy_obj):
     }
     index = 0
     waf_policy_obj.setdefault("whitelist", {}).setdefault("rules", [])
-    for rule in waf_policy_obj["whitelist"]["rules"]:
+    for rule in waf_policy_obj["whitelist"]["rules"][:]:
         if rule["name"] == "allowlist-start-with-ice":
-            return
+            waf_policy_obj["whitelist"]["rules"].remove(rule)
         if rule["index"]>index:
             index = rule["index"]
     allowlist_rule["index"] = index+1
@@ -82,6 +82,7 @@ def add_pre_crs_group(waf_policy_obj):
     for pre_crs in waf_policy_obj["pre_crs_groups"]:
         if pre_crs["name"] == "VDI_409_ENFORCE_XML":
             pre_crs["rules"] = xml_rule
+            pre_crs["enable"] = True
             return
         if pre_crs["index"] > index:
             index = pre_crs["index"]
