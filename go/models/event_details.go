@@ -572,6 +572,9 @@ type EventDetails struct {
 	// Placeholder for description of property vcenter_disc_failure of obj type EventDetails field type str  type object
 	VcenterDiscFailure *VinfraVcenterDiscoveryFailure `json:"vcenter_disc_failure,omitempty"`
 
+	// Vcenter Image event details. Field introduced in 21.1.3.
+	VcenterImgDetails *VcenterImageDetails `json:"vcenter_img_details,omitempty"`
+
 	// Placeholder for description of property vcenter_network_limit of obj type EventDetails field type str  type object
 	VcenterNetworkLimit *VinfraVcenterNetworkLimit `json:"vcenter_network_limit,omitempty"`
 
