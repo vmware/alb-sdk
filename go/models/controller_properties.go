@@ -265,6 +265,15 @@ type ControllerProperties struct {
 	//  Unit is SEC.
 	VsSeVnicIPFail *int32 `json:"vs_se_vnic_ip_fail,omitempty"`
 
+	// vSphere HA monitor detection timeout. If vsphere_ha_enabled is true and the controller is not able to reach the SE, placement will wait for this duration for vsphere_ha_inprogress to be marked true before taking corrective action. Field introduced in 20.1.7, 21.1.3. Unit is SEC.
+	VsphereHaDetectionTimeout *int32 `json:"vsphere_ha_detection_timeout,omitempty"`
+
+	// vSphere HA monitor recovery timeout. Once vsphere_ha_inprogress is set to true (meaning host failure detected and vSphere HA will recover the Service Engine), placement will wait for at least this duration for the SE to reconnect to the controller before taking corrective action. Field introduced in 20.1.7, 21.1.3. Unit is SEC.
+	VsphereHaRecoveryTimeout *int32 `json:"vsphere_ha_recovery_timeout,omitempty"`
+
+	// vSphere HA monitor timer interval for sending cc_check_se_status to Cloud Connector. Field introduced in 20.1.7, 21.1.3. Unit is SEC.
+	VsphereHaTimerInterval *int32 `json:"vsphere_ha_timer_interval,omitempty"`
+
 	//  Unit is SEC.
 	WarmstartSeReconnectWaitTime *int32 `json:"warmstart_se_reconnect_wait_time,omitempty"`
 

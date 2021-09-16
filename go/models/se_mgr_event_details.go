@@ -65,4 +65,10 @@ type SeMgrEventDetails struct {
 
 	// Unique object identifier of vs.
 	VsUUID []string `json:"vs_uuid,omitempty"`
+
+	// vSphere HA on cluster enabled. Field introduced in 20.1.7, 21.1.3.
+	VsphereHaEnabled *bool `json:"vsphere_ha_enabled,omitempty"`
+
+	// This flag is set to true when Cloud Connector has detected an ESX host failure. This flag is set to false when the SE connects back to the controller, or when vSphere HA recovery timeout has occurred. Field introduced in 20.1.7, 21.1.3.
+	VsphereHaInprogress *bool `json:"vsphere_ha_inprogress,omitempty"`
 }

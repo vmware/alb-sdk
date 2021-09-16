@@ -26,7 +26,7 @@ type HTTPApplicationProfile struct {
 	// Maximum size in Kbytes of a single HTTP header in the client request. Allowed values are 1-64. Unit is KB. Allowed in Basic(Allowed values- 12) edition, Essentials(Allowed values- 12) edition, Enterprise edition.
 	ClientMaxHeaderSize *int32 `json:"client_max_header_size,omitempty"`
 
-	// Maximum size in Kbytes of all the client HTTP request headers. Allowed values are 1-256. Unit is KB.
+	// Maximum size in Kbytes of all the client HTTP request headers.This value can be overriden by client_max_header_size if that is larger. Allowed values are 1-256. Unit is KB.
 	ClientMaxRequestSize *int32 `json:"client_max_request_size,omitempty"`
 
 	// HTTP Compression settings to use with this HTTP Profile.
