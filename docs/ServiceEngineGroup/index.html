@@ -3087,9 +3087,9 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ClusterHAConfig">ClusterHAConfig</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">cluster_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Transport node cluster. Avi derives vSphere HA property from vCenter cluster.If vSphere HA enabled on vCenter cluster, vSphere will handle HA of ServiceEngine VMs in case of underlying ESX failure.Ex MOB  domain-c23. Field introduced in 20.1.7, 21.1.3. </div>
-<div class="param">override_vsphere_ha (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If this flag set to True, Avi handles ServiceEngine failure irrespective of vSphere HA enabled on vCenter cluster or not. Field introduced in 20.1.7, 21.1.3. </div>
-<div class="param">vmg_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Cluster VM Group name.VM Group name is unique inside cluster. Field introduced in 20.1.7, 21.1.3. </div>
+      <div class="param">cluster_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Transport node cluster. Avi derives vSphere HA property from vCenter cluster.If vSphere HA enabled on vCenter cluster, vSphere will handle HA of ServiceEngine VMs in case of underlying ESX failure.Ex MOB  domain-c23. Field introduced in 20.1.7, 21.1.3. Allowed in Basic edition, Enterprise edition. </div>
+<div class="param">override_vsphere_ha (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If this flag set to True, Avi handles ServiceEngine failure irrespective of vSphere HA enabled on vCenter cluster or not. Field introduced in 20.1.7, 21.1.3. Allowed in Basic edition, Enterprise edition. </div>
+<div class="param">vmg_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Cluster VM Group name.VM Group name is unique inside cluster. Field introduced in 20.1.7, 21.1.3. Allowed in Basic edition, Enterprise edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -3190,8 +3190,8 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="NsxtClusters">NsxtClusters</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">cluster_ids (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> List of transport node clusters. Field introduced in 20.1.6. </div>
-<div class="param">include (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Include or Exclude. Field introduced in 20.1.6. </div>
+      <div class="param">cluster_ids (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> List of transport node clusters. Field introduced in 20.1.6. Allowed in Basic edition, Enterprise edition. </div>
+<div class="param">include (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Include or Exclude. Field introduced in 20.1.6. Allowed in Basic edition, Enterprise edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -3219,8 +3219,8 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="PlacementScopeConfig">PlacementScopeConfig</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">clusters (optional)</div><div class="param-desc"><span class="param-type"><a href="#ClusterHAConfig">array[ClusterHAConfig]</a></span> Cluster vSphere HA configuration. Field introduced in 20.1.7, 21.1.3. </div>
-<div class="param">nsxt_clusters (optional)</div><div class="param-desc"><span class="param-type"><a href="#NsxtClusters">NsxtClusters</a></span> List of transport node clusters include or exclude. Field introduced in 20.1.6. </div>
+      <div class="param">clusters (optional)</div><div class="param-desc"><span class="param-type"><a href="#ClusterHAConfig">array[ClusterHAConfig]</a></span> Cluster vSphere HA configuration. Field introduced in 20.1.7, 21.1.3. Allowed in Basic edition, Enterprise edition. </div>
+<div class="param">nsxt_clusters (optional)</div><div class="param-desc"><span class="param-type"><a href="#NsxtClusters">NsxtClusters</a></span> List of transport node clusters include or exclude. Field introduced in 20.1.6. Allowed in Basic edition, Enterprise edition. </div>
 <div class="param">nsxt_datastores (optional)</div><div class="param-desc"><span class="param-type"><a href="#NsxtDatastores">NsxtDatastores</a></span> List of shared datastores to include or exclude. Field introduced in 20.1.2. Allowed in Basic edition, Enterprise edition. </div>
 <div class="param">nsxt_hosts (optional)</div><div class="param-desc"><span class="param-type"><a href="#NsxtHosts">NsxtHosts</a></span> List of transport nodes include or exclude. Field introduced in 20.1.1. </div>
 <div class="param">vcenter_folder (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Folder to place all the Service Engine virtual machines in vCenter. Field introduced in 20.1.1. </div>
