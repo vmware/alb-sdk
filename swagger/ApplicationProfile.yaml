@@ -787,7 +787,7 @@ definitions:
                 default: 12
                 format: int32
             client_max_request_size:
-                description: "Maximum size in Kbytes of all the client HTTP request headers. Allowed values are 1-256. Unit is KB."
+                description: "Maximum size in Kbytes of all the client HTTP request headers.This value can be overriden by client_max_header_size if that is larger. Allowed values are 1-256. Unit is KB."
                 type: integer
                 default: 48
                 format: int32
