@@ -286,6 +286,7 @@ font-style: italic;
   "vs_se_attach_ip_fail" : 123,
   "seupgrade_fabric_pool_size" : 123,
   "async_patch_request_cleanup_duration" : 123,
+  "vsphere_ha_recovery_timeout" : 123,
   "max_dead_se_in_grp" : 123,
   "vs_key_rotate_period" : 123,
   "shared_ssl_certificates" : true,
@@ -297,6 +298,7 @@ font-style: italic;
   "safenet_hsm_version" : "aeiou",
   "secure_channel_cleanup_timeout" : 123,
   "vs_apic_scaleout_timeout" : 123,
+  "vsphere_ha_timer_interval" : 123,
   "crashed_se_reboot" : 123,
   "bm_use_ansible" : true,
   "process_locked_useraccounts_timeout_period" : 123,
@@ -304,6 +306,7 @@ font-style: italic;
   "cluster_ip_gratuitous_arp_period" : 123,
   "controller_resource_info_collection_period" : 123,
   "max_pcap_per_tenant" : 123,
+  "vsphere_ha_detection_timeout" : 123,
   "del_offline_se_after_reboot_delay" : 123,
   "dead_se_detection_timer" : 123,
   "resmgr_log_caching_period" : 123,
@@ -446,6 +449,7 @@ font-style: italic;
   "vs_se_attach_ip_fail" : 123,
   "seupgrade_fabric_pool_size" : 123,
   "async_patch_request_cleanup_duration" : 123,
+  "vsphere_ha_recovery_timeout" : 123,
   "max_dead_se_in_grp" : 123,
   "vs_key_rotate_period" : 123,
   "shared_ssl_certificates" : true,
@@ -457,6 +461,7 @@ font-style: italic;
   "safenet_hsm_version" : "aeiou",
   "secure_channel_cleanup_timeout" : 123,
   "vs_apic_scaleout_timeout" : 123,
+  "vsphere_ha_timer_interval" : 123,
   "crashed_se_reboot" : 123,
   "bm_use_ansible" : true,
   "process_locked_useraccounts_timeout_period" : 123,
@@ -464,6 +469,7 @@ font-style: italic;
   "cluster_ip_gratuitous_arp_period" : 123,
   "controller_resource_info_collection_period" : 123,
   "max_pcap_per_tenant" : 123,
+  "vsphere_ha_detection_timeout" : 123,
   "del_offline_se_after_reboot_delay" : 123,
   "dead_se_detection_timer" : 123,
   "resmgr_log_caching_period" : 123,
@@ -606,6 +612,7 @@ font-style: italic;
   "vs_se_attach_ip_fail" : 123,
   "seupgrade_fabric_pool_size" : 123,
   "async_patch_request_cleanup_duration" : 123,
+  "vsphere_ha_recovery_timeout" : 123,
   "max_dead_se_in_grp" : 123,
   "vs_key_rotate_period" : 123,
   "shared_ssl_certificates" : true,
@@ -617,6 +624,7 @@ font-style: italic;
   "safenet_hsm_version" : "aeiou",
   "secure_channel_cleanup_timeout" : 123,
   "vs_apic_scaleout_timeout" : 123,
+  "vsphere_ha_timer_interval" : 123,
   "crashed_se_reboot" : 123,
   "bm_use_ansible" : true,
   "process_locked_useraccounts_timeout_period" : 123,
@@ -624,6 +632,7 @@ font-style: italic;
   "cluster_ip_gratuitous_arp_period" : 123,
   "controller_resource_info_collection_period" : 123,
   "max_pcap_per_tenant" : 123,
+  "vsphere_ha_detection_timeout" : 123,
   "del_offline_se_after_reboot_delay" : 123,
   "dead_se_detection_timer" : 123,
   "resmgr_log_caching_period" : 123,
@@ -800,6 +809,9 @@ font-style: italic;
 <div class="param">vs_se_ping_fail (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Unit is SEC. format: int32</div>
 <div class="param">vs_se_vnic_fail (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Unit is SEC. format: int32</div>
 <div class="param">vs_se_vnic_ip_fail (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Unit is SEC. format: int32</div>
+<div class="param">vsphere_ha_detection_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> vSphere HA monitor detection timeout. If vsphere_ha_enabled is true and the controller is not able to reach the SE, placement will wait for this duration for vsphere_ha_inprogress to be marked true before taking corrective action. Field introduced in 20.1.7, 21.1.3. Unit is SEC. format: int32</div>
+<div class="param">vsphere_ha_recovery_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> vSphere HA monitor recovery timeout. Once vsphere_ha_inprogress is set to true (meaning host failure detected and vSphere HA will recover the Service Engine), placement will wait for at least this duration for the SE to reconnect to the controller before taking corrective action. Field introduced in 20.1.7, 21.1.3. Unit is SEC. format: int32</div>
+<div class="param">vsphere_ha_timer_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> vSphere HA monitor timer interval for sending cc_check_se_status to Cloud Connector. Field introduced in 20.1.7, 21.1.3. Unit is SEC. format: int32</div>
 <div class="param">warmstart_se_reconnect_wait_time (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Unit is SEC. format: int32</div>
 <div class="param">warmstart_vs_resync_wait_time (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Timeout for warmstart VS resync. Field introduced in 18.1.4, 18.2.1. Unit is SEC. format: int32</div>
     </div>  <!-- field-items -->
