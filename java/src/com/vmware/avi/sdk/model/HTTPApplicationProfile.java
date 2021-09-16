@@ -348,7 +348,7 @@ public class HTTPApplicationProfile  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Maximum size in kbytes of all the client http request headers.
+     * Maximum size in kbytes of all the client http request headers.this value can be overriden by client_max_header_size if that is larger.
      * Allowed values are 1-256.
      * Unit is kb.
      * Default value when not specified in API or module is interpreted by Avi Controller as 48.
@@ -360,7 +360,7 @@ public class HTTPApplicationProfile  {
 
     /**
      * This is the setter method to the attribute.
-     * Maximum size in kbytes of all the client http request headers.
+     * Maximum size in kbytes of all the client http request headers.this value can be overriden by client_max_header_size if that is larger.
      * Allowed values are 1-256.
      * Unit is kb.
      * Default value when not specified in API or module is interpreted by Avi Controller as 48.

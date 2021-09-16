@@ -78,6 +78,12 @@ public class SeMgrEventDetails  {
     @JsonProperty("vs_uuid")
     private List<String> vsUuid = null;
 
+    @JsonProperty("vsphere_ha_enabled")
+    private Boolean vsphereHaEnabled = null;
+
+    @JsonProperty("vsphere_ha_inprogress")
+    private Boolean vsphereHaInprogress = null;
+
 
 
     /**
@@ -486,6 +492,52 @@ public class SeMgrEventDetails  {
       return this;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Vsphere ha on cluster enabled.
+     * Field introduced in 20.1.7, 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return vsphereHaEnabled
+     */
+    public Boolean getVsphereHaEnabled() {
+        return vsphereHaEnabled;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Vsphere ha on cluster enabled.
+     * Field introduced in 20.1.7, 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param vsphereHaEnabled set the vsphereHaEnabled.
+     */
+    public void setVsphereHaEnabled(Boolean  vsphereHaEnabled) {
+        this.vsphereHaEnabled = vsphereHaEnabled;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * This flag is set to true when cloud connector has detected an esx host failure.
+     * This flag is set to false when the se connects back to the controller, or when vsphere ha recovery timeout has occurred.
+     * Field introduced in 20.1.7, 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return vsphereHaInprogress
+     */
+    public Boolean getVsphereHaInprogress() {
+        return vsphereHaInprogress;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This flag is set to true when cloud connector has detected an esx host failure.
+     * This flag is set to false when the se connects back to the controller, or when vsphere ha recovery timeout has occurred.
+     * Field introduced in 20.1.7, 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param vsphereHaInprogress set the vsphereHaInprogress.
+     */
+    public void setVsphereHaInprogress(Boolean  vsphereHaInprogress) {
+        this.vsphereHaInprogress = vsphereHaInprogress;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -514,7 +566,9 @@ public class SeMgrEventDetails  {
   Objects.equals(this.oldMgmtIp, objSeMgrEventDetails.oldMgmtIp)&&
   Objects.equals(this.newMgmtIp, objSeMgrEventDetails.newMgmtIp)&&
   Objects.equals(this.oldMgmtIp6, objSeMgrEventDetails.oldMgmtIp6)&&
-  Objects.equals(this.newMgmtIp6, objSeMgrEventDetails.newMgmtIp6);
+  Objects.equals(this.newMgmtIp6, objSeMgrEventDetails.newMgmtIp6)&&
+  Objects.equals(this.vsphereHaEnabled, objSeMgrEventDetails.vsphereHaEnabled)&&
+  Objects.equals(this.vsphereHaInprogress, objSeMgrEventDetails.vsphereHaInprogress);
     }
 
     @Override
@@ -540,6 +594,8 @@ public class SeMgrEventDetails  {
                         sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
                         sb.append("    vsName: ").append(toIndentedString(vsName)).append("\n");
                         sb.append("    vsUuid: ").append(toIndentedString(vsUuid)).append("\n");
+                        sb.append("    vsphereHaEnabled: ").append(toIndentedString(vsphereHaEnabled)).append("\n");
+                        sb.append("    vsphereHaInprogress: ").append(toIndentedString(vsphereHaInprogress)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
