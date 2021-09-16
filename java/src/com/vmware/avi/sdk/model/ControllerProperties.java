@@ -267,6 +267,15 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("vs_se_vnic_ip_fail")
     private Integer vsSeVnicIpFail = 120;
 
+    @JsonProperty("vsphere_ha_detection_timeout")
+    private Integer vsphereHaDetectionTimeout = 120;
+
+    @JsonProperty("vsphere_ha_recovery_timeout")
+    private Integer vsphereHaRecoveryTimeout = 480;
+
+    @JsonProperty("vsphere_ha_timer_interval")
+    private Integer vsphereHaTimerInterval = 20;
+
     @JsonProperty("warmstart_se_reconnect_wait_time")
     private Integer warmstartSeReconnectWaitTime = 480;
 
@@ -2148,6 +2157,86 @@ public class ControllerProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Vsphere ha monitor detection timeout.
+     * If vsphere_ha_enabled is true and the controller is not able to reach the se, placement will wait for this duration for vsphere_ha_inprogress to
+     * be marked true before taking corrective action.
+     * Field introduced in 20.1.7, 21.1.3.
+     * Unit is sec.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 120.
+     * @return vsphereHaDetectionTimeout
+     */
+    public Integer getVsphereHaDetectionTimeout() {
+        return vsphereHaDetectionTimeout;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Vsphere ha monitor detection timeout.
+     * If vsphere_ha_enabled is true and the controller is not able to reach the se, placement will wait for this duration for vsphere_ha_inprogress to
+     * be marked true before taking corrective action.
+     * Field introduced in 20.1.7, 21.1.3.
+     * Unit is sec.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 120.
+     * @param vsphereHaDetectionTimeout set the vsphereHaDetectionTimeout.
+     */
+    public void setVsphereHaDetectionTimeout(Integer  vsphereHaDetectionTimeout) {
+        this.vsphereHaDetectionTimeout = vsphereHaDetectionTimeout;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Vsphere ha monitor recovery timeout.
+     * Once vsphere_ha_inprogress is set to true (meaning host failure detected and vsphere ha will recover the service engine), placement will wait for
+     * at least this duration for the se to reconnect to the controller before taking corrective action.
+     * Field introduced in 20.1.7, 21.1.3.
+     * Unit is sec.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 480.
+     * @return vsphereHaRecoveryTimeout
+     */
+    public Integer getVsphereHaRecoveryTimeout() {
+        return vsphereHaRecoveryTimeout;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Vsphere ha monitor recovery timeout.
+     * Once vsphere_ha_inprogress is set to true (meaning host failure detected and vsphere ha will recover the service engine), placement will wait for
+     * at least this duration for the se to reconnect to the controller before taking corrective action.
+     * Field introduced in 20.1.7, 21.1.3.
+     * Unit is sec.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 480.
+     * @param vsphereHaRecoveryTimeout set the vsphereHaRecoveryTimeout.
+     */
+    public void setVsphereHaRecoveryTimeout(Integer  vsphereHaRecoveryTimeout) {
+        this.vsphereHaRecoveryTimeout = vsphereHaRecoveryTimeout;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Vsphere ha monitor timer interval for sending cc_check_se_status to cloud connector.
+     * Field introduced in 20.1.7, 21.1.3.
+     * Unit is sec.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 20.
+     * @return vsphereHaTimerInterval
+     */
+    public Integer getVsphereHaTimerInterval() {
+        return vsphereHaTimerInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Vsphere ha monitor timer interval for sending cc_check_se_status to cloud connector.
+     * Field introduced in 20.1.7, 21.1.3.
+     * Unit is sec.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 20.
+     * @param vsphereHaTimerInterval set the vsphereHaTimerInterval.
+     */
+    public void setVsphereHaTimerInterval(Integer  vsphereHaTimerInterval) {
+        this.vsphereHaTimerInterval = vsphereHaTimerInterval;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as 480.
      * @return warmstartSeReconnectWaitTime
@@ -2282,7 +2371,10 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.userAgentCacheConfig, objControllerProperties.userAgentCacheConfig)&&
   Objects.equals(this.delOfflineSeAfterRebootDelay, objControllerProperties.delOfflineSeAfterRebootDelay)&&
   Objects.equals(this.enablePerProcessStop, objControllerProperties.enablePerProcessStop)&&
-  Objects.equals(this.checkVsvipFqdnSyntax, objControllerProperties.checkVsvipFqdnSyntax);
+  Objects.equals(this.checkVsvipFqdnSyntax, objControllerProperties.checkVsvipFqdnSyntax)&&
+  Objects.equals(this.vsphereHaTimerInterval, objControllerProperties.vsphereHaTimerInterval)&&
+  Objects.equals(this.vsphereHaDetectionTimeout, objControllerProperties.vsphereHaDetectionTimeout)&&
+  Objects.equals(this.vsphereHaRecoveryTimeout, objControllerProperties.vsphereHaRecoveryTimeout);
     }
 
     @Override
@@ -2370,6 +2462,9 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    vsSePingFail: ").append(toIndentedString(vsSePingFail)).append("\n");
                         sb.append("    vsSeVnicFail: ").append(toIndentedString(vsSeVnicFail)).append("\n");
                         sb.append("    vsSeVnicIpFail: ").append(toIndentedString(vsSeVnicIpFail)).append("\n");
+                        sb.append("    vsphereHaDetectionTimeout: ").append(toIndentedString(vsphereHaDetectionTimeout)).append("\n");
+                        sb.append("    vsphereHaRecoveryTimeout: ").append(toIndentedString(vsphereHaRecoveryTimeout)).append("\n");
+                        sb.append("    vsphereHaTimerInterval: ").append(toIndentedString(vsphereHaTimerInterval)).append("\n");
                         sb.append("    warmstartSeReconnectWaitTime: ").append(toIndentedString(warmstartSeReconnectWaitTime)).append("\n");
                         sb.append("    warmstartVsResyncWaitTime: ").append(toIndentedString(warmstartVsResyncWaitTime)).append("\n");
                   sb.append("}");
