@@ -15,7 +15,7 @@ type DebugServiceEngine struct {
 	// Action to be invoked at configured layer. Enum options - SE_BENCHMARK_MODE_DROP, SE_BENCHMARK_MODE_REFLECT. Field introduced in 20.1.3.
 	BenchmarkAction *string `json:"benchmark_action,omitempty"`
 
-	// Toggle and configure the layer to benchmark performance. This can be done at a specific point in the SE packet processing pipeline. Enum options - SE_BENCHMARK_LAYER_NONE, SE_BENCHMARK_LAYER_POST_VNIC_RX, SE_BENCHMARK_LAYER_POST_FT_LOOKUP, SE_BENCHMARK_LAYER_NSP_LOOKUP, SE_BENCHMARK_LAYER_PRE_PROXY_PUNT, SE_BENCHMARK_LAYER_POST_PROXY_PUNT, SE_BENCHMARK_LAYER_ETHER_INPUT, SE_BENCHMARK_LAYER_IP_INPUT, SE_BENCHMARK_LAYER_UDP_INPUT. Field introduced in 20.1.3.
+	// Toggle and configure the layer to benchmark performance. This can be done at a specific point in the SE packet processing pipeline. Enum options - SE_BENCHMARK_LAYER_NONE, SE_BENCHMARK_LAYER_POST_VNIC_RX, SE_BENCHMARK_LAYER_POST_FT_LOOKUP, SE_BENCHMARK_LAYER_NSP_LOOKUP, SE_BENCHMARK_LAYER_PRE_PROXY_PUNT, SE_BENCHMARK_LAYER_POST_PROXY_PUNT, SE_BENCHMARK_LAYER_ETHER_INPUT, SE_BENCHMARK_LAYER_IP_INPUT, SE_BENCHMARK_LAYER_UDP_INPUT, SE_BENCHMARK_LAYER_POST_L2_PROCESSING. Field introduced in 20.1.3.
 	BenchmarkLayer *string `json:"benchmark_layer,omitempty"`
 
 	// Configure different reflect modes. Enum options - SE_BENCHMARK_REFLECT_SWAP_L4, SE_BENCHMARK_REFLECT_SWAP_L2, SE_BENCHMARK_REFLECT_SWAP_L3. Field introduced in 20.1.3.
