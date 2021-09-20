@@ -107,7 +107,7 @@ public class DebugServiceEngine extends AviRestResource  {
      * This can be done at a specific point in the se packet processing pipeline.
      * Enum options - SE_BENCHMARK_LAYER_NONE, SE_BENCHMARK_LAYER_POST_VNIC_RX, SE_BENCHMARK_LAYER_POST_FT_LOOKUP, SE_BENCHMARK_LAYER_NSP_LOOKUP,
      * SE_BENCHMARK_LAYER_PRE_PROXY_PUNT, SE_BENCHMARK_LAYER_POST_PROXY_PUNT, SE_BENCHMARK_LAYER_ETHER_INPUT, SE_BENCHMARK_LAYER_IP_INPUT,
-     * SE_BENCHMARK_LAYER_UDP_INPUT.
+     * SE_BENCHMARK_LAYER_UDP_INPUT, SE_BENCHMARK_LAYER_POST_L2_PROCESSING.
      * Field introduced in 20.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SE_BENCHMARK_LAYER_NONE".
      * @return benchmarkLayer
@@ -122,7 +122,7 @@ public class DebugServiceEngine extends AviRestResource  {
      * This can be done at a specific point in the se packet processing pipeline.
      * Enum options - SE_BENCHMARK_LAYER_NONE, SE_BENCHMARK_LAYER_POST_VNIC_RX, SE_BENCHMARK_LAYER_POST_FT_LOOKUP, SE_BENCHMARK_LAYER_NSP_LOOKUP,
      * SE_BENCHMARK_LAYER_PRE_PROXY_PUNT, SE_BENCHMARK_LAYER_POST_PROXY_PUNT, SE_BENCHMARK_LAYER_ETHER_INPUT, SE_BENCHMARK_LAYER_IP_INPUT,
-     * SE_BENCHMARK_LAYER_UDP_INPUT.
+     * SE_BENCHMARK_LAYER_UDP_INPUT, SE_BENCHMARK_LAYER_POST_L2_PROCESSING.
      * Field introduced in 20.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SE_BENCHMARK_LAYER_NONE".
      * @param benchmarkLayer set the benchmarkLayer.
