@@ -1,7 +1,5 @@
 # VMware Advanced Load Balancer (formerly Avi) SDK and Utilities
 
-[![Build Status](https://travis-ci.org/vmware/alb-sdk.svg?branch=17.1.4_pytest)](https://travis-ci.org/vmware/alb-sdk)
-
 This repository includes API documentation, SDK and sample source to integrate
 into the Avi Solution. Avi SDK provides the following tools and utilities:
 
