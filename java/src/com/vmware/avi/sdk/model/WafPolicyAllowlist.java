@@ -29,7 +29,6 @@ public class WafPolicyAllowlist  {
      * This is the getter method this will return the attribute value.
      * Rules to bypass waf.
      * Field introduced in 20.1.3.
-     * Maximum of 1024 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */
@@ -41,7 +40,6 @@ public class WafPolicyAllowlist  {
      * This is the setter method. this will set the rules
      * Rules to bypass waf.
      * Field introduced in 20.1.3.
-     * Maximum of 1024 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */
@@ -53,7 +51,6 @@ public class WafPolicyAllowlist  {
      * This is the setter method this will set the rules
      * Rules to bypass waf.
      * Field introduced in 20.1.3.
-     * Maximum of 1024 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */

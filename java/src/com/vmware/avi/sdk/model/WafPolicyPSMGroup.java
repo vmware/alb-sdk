@@ -197,7 +197,6 @@ public class WafPolicyPSMGroup extends AviRestResource  {
      * Positive security model locations.
      * These are used to partition the application name space.
      * Field introduced in 18.2.3.
-     * Maximum of 16384 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return locations
      */
@@ -210,7 +209,6 @@ public class WafPolicyPSMGroup extends AviRestResource  {
      * Positive security model locations.
      * These are used to partition the application name space.
      * Field introduced in 18.2.3.
-     * Maximum of 16384 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return locations
      */
@@ -223,7 +221,6 @@ public class WafPolicyPSMGroup extends AviRestResource  {
      * Positive security model locations.
      * These are used to partition the application name space.
      * Field introduced in 18.2.3.
-     * Maximum of 16384 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return locations
      */

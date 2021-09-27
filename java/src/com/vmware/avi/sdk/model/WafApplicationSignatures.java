@@ -162,7 +162,6 @@ public class WafApplicationSignatures  {
      * This is the getter method this will return the attribute value.
      * List of applications for which we use the rules from the wafapplicationsignatureprovider.
      * Field introduced in 20.1.1.
-     * Maximum of 8 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return selectedApplications
      */
@@ -174,7 +173,6 @@ public class WafApplicationSignatures  {
      * This is the setter method. this will set the selectedApplications
      * List of applications for which we use the rules from the wafapplicationsignatureprovider.
      * Field introduced in 20.1.1.
-     * Maximum of 8 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return selectedApplications
      */
@@ -186,7 +184,6 @@ public class WafApplicationSignatures  {
      * This is the setter method this will set the selectedApplications
      * List of applications for which we use the rules from the wafapplicationsignatureprovider.
      * Field introduced in 20.1.1.
-     * Maximum of 8 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return selectedApplications
      */
