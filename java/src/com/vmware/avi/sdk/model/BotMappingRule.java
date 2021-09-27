@@ -30,6 +30,9 @@ public class BotMappingRule  {
     @JsonProperty("component_matcher")
     private String componentMatcher = null;
 
+    @JsonProperty("conditions")
+    private List<MatchTarget> conditions = null;
+
     @JsonProperty("identifier_matcher")
     private StringMatch identifierMatcher = null;
 
@@ -110,6 +113,42 @@ public class BotMappingRule  {
      */
     public void setComponentMatcher(String  componentMatcher) {
         this.componentMatcher = componentMatcher;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * The conditions to match, combined by logical and.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return conditions
+     */
+    public List<MatchTarget> getConditions() {
+        return conditions;
+    }
+
+    /**
+     * This is the setter method. this will set the conditions
+     * The conditions to match, combined by logical and.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return conditions
+     */
+    public void setConditions(List<MatchTarget>  conditions) {
+        this.conditions = conditions;
+    }
+
+    /**
+     * This is the setter method this will set the conditions
+     * The conditions to match, combined by logical and.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return conditions
+     */
+    public BotMappingRule addConditionsItem(MatchTarget conditionsItem) {
+      if (this.conditions == null) {
+        this.conditions = new ArrayList<MatchTarget>();
+      }
+      this.conditions.add(conditionsItem);
+      return this;
     }
 
     /**
@@ -216,7 +255,8 @@ public class BotMappingRule  {
   Objects.equals(this.classMatcher, objBotMappingRule.classMatcher)&&
   Objects.equals(this.typeMatcher, objBotMappingRule.typeMatcher)&&
   Objects.equals(this.identifierMatcher, objBotMappingRule.identifierMatcher)&&
-  Objects.equals(this.classification, objBotMappingRule.classification);
+  Objects.equals(this.classification, objBotMappingRule.classification)&&
+  Objects.equals(this.conditions, objBotMappingRule.conditions);
     }
 
     @Override
@@ -226,6 +266,7 @@ public class BotMappingRule  {
                   sb.append("    classMatcher: ").append(toIndentedString(classMatcher)).append("\n");
                         sb.append("    classification: ").append(toIndentedString(classification)).append("\n");
                         sb.append("    componentMatcher: ").append(toIndentedString(componentMatcher)).append("\n");
+                        sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
                         sb.append("    identifierMatcher: ").append(toIndentedString(identifierMatcher)).append("\n");
                         sb.append("    index: ").append(toIndentedString(index)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
