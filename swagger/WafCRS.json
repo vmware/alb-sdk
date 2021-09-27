@@ -760,7 +760,7 @@
                     "type": "string"
                 },
                 "tags": {
-                    "description": "Tags for WAF rule as per Modsec language. They are extracted from the tag actions in a Modsec rule. This field is generated from the rule itself and cannot be set by the user. Field introduced in 18.1.3. Maximum of 64 items allowed.",
+                    "description": "Tags for WAF rule as per Modsec language. They are extracted from the tag action in a ModSec rule. Field introduced in 18.1.3.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -802,7 +802,7 @@
                     "type": "string"
                 },
                 "rules": {
-                    "description": "Rules as per Modsec language. Field introduced in 17.2.1. Maximum of 1024 items allowed.",
+                    "description": "Rules as per Modsec language. Field introduced in 17.2.1.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafRule"
