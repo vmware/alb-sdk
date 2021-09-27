@@ -42,6 +42,6 @@ type WafRule struct {
 	// Identifier (id) for a rule per Modsec language. All SecRule and SecAction directives require an id. It is extracted from the id action in a Modsec rule. Rules within a single WAF Policy are required to have unique rule_ids. Field introduced in 17.2.2.
 	RuleID *string `json:"rule_id,omitempty"`
 
-	// Tags for WAF rule as per Modsec language. They are extracted from the tag actions in a Modsec rule. This field is generated from the rule itself and cannot be set by the user. Field introduced in 18.1.3. Maximum of 64 items allowed.
+	// Tags for WAF rule as per Modsec language. They are extracted from the tag action in a ModSec rule. Field introduced in 18.1.3.
 	Tags []string `json:"tags,omitempty"`
 }
