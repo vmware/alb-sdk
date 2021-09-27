@@ -16,8 +16,10 @@ type BotMappingRule struct {
 	Classification *BotClassification `json:"classification"`
 
 	// The component for which this mapping is used. Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION. Field introduced in 21.1.1.
-	// Required: true
-	ComponentMatcher *string `json:"component_matcher"`
+	ComponentMatcher *string `json:"component_matcher,omitempty"`
+
+	// The conditions to match, combined by logical AND. Field introduced in 21.1.3.
+	Conditions []*MatchTarget `json:"conditions,omitempty"`
 
 	// The list of bot identifier names and how they're matched. Field introduced in 21.1.1.
 	IdentifierMatcher *StringMatch `json:"identifier_matcher,omitempty"`

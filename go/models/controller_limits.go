@@ -61,4 +61,7 @@ type ControllerLimits struct {
 
 	// Maximum number of serviceengine per virtualservice in layer 2 scaleout mode. Field introduced in 20.1.1.
 	VsL2Scaleout *int32 `json:"vs_l2_scaleout,omitempty"`
+
+	// WAF system limits. Field introduced in 21.1.3.
+	WafLimits *WAFLimits `json:"waf_limits,omitempty"`
 }

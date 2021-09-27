@@ -26,6 +26,6 @@ type WafRuleGroup struct {
 	// Required: true
 	Name *string `json:"name"`
 
-	// Rules as per Modsec language. Field introduced in 17.2.1. Maximum of 1024 items allowed.
+	// Rules as per Modsec language. Field introduced in 17.2.1.
 	Rules []*WafRule `json:"rules,omitempty"`
 }
