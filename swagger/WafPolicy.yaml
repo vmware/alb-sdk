@@ -782,7 +782,7 @@ definitions:
                 readOnly: True
                 type: string
             selected_applications:
-                description: "List of applications for which we use the rules from the WafApplicationSignatureProvider. Field introduced in 20.1.1. Maximum of 8 items allowed."
+                description: "List of applications for which we use the rules from the WafApplicationSignatureProvider. Field introduced in 20.1.1."
                 type: array
                 items:
                     type: string
@@ -990,7 +990,7 @@ definitions:
         type: object
         properties:
             rules:
-                description: "Rules to bypass WAF. Field introduced in 20.1.3. Maximum of 1024 items allowed."
+                description: "Rules to bypass WAF. Field introduced in 20.1.3."
                 type: array
                 items:
                     $ref: '#/definitions/WafPolicyAllowlistRule'
@@ -1072,7 +1072,7 @@ definitions:
         type: object
         properties:
             group_refs:
-                description: "These groups should be used to separate different levels of concern. The order of the groups matters, one group may mark parts of the request as valid, so that subsequent groups will not check these parts. It is a reference to an object of type WafPolicyPSMGroup. Field introduced in 18.2.3. Maximum of 64 items allowed."
+                description: "These groups should be used to separate different levels of concern. The order of the groups matters, one group may mark parts of the request as valid, so that subsequent groups will not check these parts. It is a reference to an object of type WafPolicyPSMGroup. Field introduced in 18.2.3."
                 type: array
                 items:
                     type: string
@@ -1119,7 +1119,7 @@ definitions:
                 description: "Identifier (id) for a rule per Modsec language. All SecRule and SecAction directives require an id. It is extracted from the id action in a Modsec rule. Rules within a single WAF Policy are required to have unique rule_ids. Field introduced in 17.2.2."
                 type: string
             tags:
-                description: "Tags for WAF rule as per Modsec language. They are extracted from the tag actions in a Modsec rule. This field is generated from the rule itself and cannot be set by the user. Field introduced in 18.1.3. Maximum of 64 items allowed."
+                description: "Tags for WAF rule as per Modsec language. They are extracted from the tag action in a ModSec rule. Field introduced in 18.1.3."
                 type: array
                 items:
                     type: string
@@ -1150,7 +1150,7 @@ definitions:
                 description: " Field introduced in 17.2.1."
                 type: string
             rules:
-                description: "Rules as per Modsec language. Field introduced in 17.2.1. Maximum of 1024 items allowed."
+                description: "Rules as per Modsec language. Field introduced in 17.2.1."
                 type: array
                 items:
                     $ref: '#/definitions/WafRule'

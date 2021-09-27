@@ -641,7 +641,7 @@
                     }
                 },
                 "allowed_request_content_types": {
-                    "description": "WAF allowed Content Types. Field introduced in 17.2.1. Maximum of 64 items allowed.",
+                    "description": "WAF allowed Content Types. Field introduced in 17.2.1.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -744,14 +744,14 @@
                     "default": "phase:3,deny,status:403,log,auditlog"
                 },
                 "restricted_extensions": {
-                    "description": "WAF Restricted File Extensions. Field introduced in 17.2.1. Maximum of 256 items allowed.",
+                    "description": "WAF Restricted File Extensions. Field introduced in 17.2.1.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "restricted_headers": {
-                    "description": "WAF Restricted HTTP Headers. Field introduced in 17.2.1. Maximum of 64 items allowed.",
+                    "description": "WAF Restricted HTTP Headers. Field introduced in 17.2.1.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -768,7 +768,7 @@
                     "format": "int32"
                 },
                 "static_extensions": {
-                    "description": "WAF Static File Extensions. GET and HEAD requests with no query args and one of these extensions are allowed and not checked by the ruleset. Field introduced in 17.2.5. Maximum of 64 items allowed.",
+                    "description": "WAF Static File Extensions. GET and HEAD requests with no query args and one of these extensions are allowed and not checked by the ruleset. Field introduced in 17.2.5.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -855,7 +855,7 @@
                     "type": "string"
                 },
                 "files": {
-                    "description": "List of Data Files Used for WAF Rules. Field introduced in 17.2.1. Maximum of 64 items allowed.",
+                    "description": "List of Data Files Used for WAF Rules. Field introduced in 17.2.1.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafDataFile"

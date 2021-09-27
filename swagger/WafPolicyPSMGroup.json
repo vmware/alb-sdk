@@ -664,7 +664,7 @@
                     }
                 },
                 "locations": {
-                    "description": "Positive Security Model locations. These are used to partition the application name space. Field introduced in 18.2.3. Maximum of 16384 items allowed.",
+                    "description": "Positive Security Model locations. These are used to partition the application name space. Field introduced in 18.2.3.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafPSMLocation"
@@ -748,7 +748,7 @@
                     "type": "string"
                 },
                 "rules": {
-                    "description": "A list of rules which should be applied on this location. Field introduced in 18.2.3. Maximum of 1024 items allowed.",
+                    "description": "A list of rules which should be applied on this location. Field introduced in 18.2.3.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafPSMRule"
@@ -837,7 +837,7 @@
                     "default": "INSENSITIVE"
                 },
                 "match_elements": {
-                    "description": "The match elements, for example ARGS id or ARGS|!ARGS password. Field introduced in 18.2.3. Maximum of 64 items allowed.",
+                    "description": "The match elements, for example ARGS id or ARGS|!ARGS password. Field introduced in 18.2.3.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/WafPSMMatchElement"
