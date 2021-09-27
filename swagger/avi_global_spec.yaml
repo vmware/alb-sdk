@@ -53910,7 +53910,6 @@ definitions:
         type: object
         required:
             -   classification
-            -   component_matcher
             -   index
         properties:
             class_matcher:
@@ -53922,6 +53921,11 @@ definitions:
             component_matcher:
                 description: "The component for which this mapping is used. Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION. Field introduced in 21.1.1."
                 type: string
+            conditions:
+                description: "The conditions to match, combined by logical AND. Field introduced in 21.1.3."
+                type: array
+                items:
+                    $ref: '#/definitions/MatchTarget'
             identifier_matcher:
                 description: "The list of bot identifier names and how they're matched. Field introduced in 21.1.1."
                 $ref: '#/definitions/StringMatch'
@@ -55221,6 +55225,9 @@ definitions:
                 description: "Maximum number of serviceengine per virtualservice in layer 2 scaleout mode. Field introduced in 20.1.1."
                 type: integer
                 format: int32
+            waf_limits:
+                description: "WAF system limits. Field introduced in 21.1.3."
+                $ref: '#/definitions/WAFLimits'
     ControllerPortalAsset:
         type: object
         properties:
@@ -75414,7 +75421,7 @@ definitions:
                 readOnly: True
                 type: string
             selected_applications:
-                description: "List of applications for which we use the rules from the WafApplicationSignatureProvider. Field introduced in 20.1.1. Maximum of 8 items allowed."
+                description: "List of applications for which we use the rules from the WafApplicationSignatureProvider. Field introduced in 20.1.1."
                 type: array
                 items:
                     type: string
@@ -75437,7 +75444,7 @@ definitions:
                 items:
                     type: string
             allowed_request_content_types:
-                description: "WAF allowed Content Types. Field introduced in 17.2.1. Maximum of 64 items allowed."
+                description: "WAF allowed Content Types. Field introduced in 17.2.1."
                 type: array
                 items:
                     type: string
@@ -75518,12 +75525,12 @@ definitions:
                 type: string
                 default: "phase:3,deny,status:403,log,auditlog"
             restricted_extensions:
-                description: "WAF Restricted File Extensions. Field introduced in 17.2.1. Maximum of 256 items allowed."
+                description: "WAF Restricted File Extensions. Field introduced in 17.2.1."
                 type: array
                 items:
                     type: string
             restricted_headers:
-                description: "WAF Restricted HTTP Headers. Field introduced in 17.2.1. Maximum of 64 items allowed."
+                description: "WAF Restricted HTTP Headers. Field introduced in 17.2.1."
                 type: array
                 items:
                     type: string
@@ -75536,7 +75543,7 @@ definitions:
                 default: 128
                 format: int32
             static_extensions:
-                description: "WAF Static File Extensions. GET and HEAD requests with no query args and one of these extensions are allowed and not checked by the ruleset. Field introduced in 17.2.5. Maximum of 64 items allowed."
+                description: "WAF Static File Extensions. GET and HEAD requests with no query args and one of these extensions are allowed and not checked by the ruleset. Field introduced in 17.2.5."
                 type: array
                 items:
                     type: string
@@ -75713,6 +75720,65 @@ definitions:
                 description: "Sampling percent of the requests subjected to WAF learning. Allowed values are 1-100. Field deprecated in 18.2.3. Field introduced in 18.1.2. Unit is PERCENT."
                 type: integer
                 format: int32
+    WAFLimits:
+        type: object
+        properties:
+            num_allowed_content_types:
+                description: "Number of WAF allowed Content Types. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_allowlist_policy_rules:
+                description: "Number of rules used in WAF allowlist policy. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_applications:
+                description: "Number of applications for which we use rules from sig provider. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_data_files:
+                description: "Number of datafiles used in WAF. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_pre_post_crs_groups:
+                description: "Number of pre, post CRS groups. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_psm_groups:
+                description: "Number of total PSM groups in WAF. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_psm_match_elements:
+                description: "Number of match elements used in WAF PSM. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_psm_match_rules_per_loc:
+                description: "Number of match rules per location. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_psm_total_locations:
+                description: "Number of locations used in WAF PSM. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_restricted_extensions:
+                description: "Number of restricted extensions in WAF. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_restricted_headers:
+                description: "Number of restricted HTTP headers in WAF. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_rule_tags:
+                description: "Number of tags for waf rule . Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_rules_per_rulegroup:
+                description: "Number of rules as per modsec language. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_static_extensions:
+                description: "Number of restricted static extensions in WAF. Field introduced in 21.1.3."
+                type: integer
+                format: int32
     WafPolicy:
         type: object
         required:
@@ -75860,7 +75926,7 @@ definitions:
         type: object
         properties:
             rules:
-                description: "Rules to bypass WAF. Field introduced in 20.1.3. Maximum of 1024 items allowed."
+                description: "Rules to bypass WAF. Field introduced in 20.1.3."
                 type: array
                 items:
                     $ref: '#/definitions/WafPolicyAllowlistRule'
@@ -75930,7 +75996,7 @@ definitions:
                 items:
                     $ref: '#/definitions/KeyValue'
             locations:
-                description: "Positive Security Model locations. These are used to partition the application name space. Field introduced in 18.2.3. Maximum of 16384 items allowed."
+                description: "Positive Security Model locations. These are used to partition the application name space. Field introduced in 18.2.3."
                 type: array
                 items:
                     $ref: '#/definitions/WafPSMLocation'
@@ -76015,7 +76081,7 @@ definitions:
         type: object
         properties:
             group_refs:
-                description: "These groups should be used to separate different levels of concern. The order of the groups matters, one group may mark parts of the request as valid, so that subsequent groups will not check these parts. It is a reference to an object of type WafPolicyPSMGroup. Field introduced in 18.2.3. Maximum of 64 items allowed."
+                description: "These groups should be used to separate different levels of concern. The order of the groups matters, one group may mark parts of the request as valid, so that subsequent groups will not check these parts. It is a reference to an object of type WafPolicyPSMGroup. Field introduced in 18.2.3."
                 type: array
                 items:
                     type: string
@@ -76039,7 +76105,7 @@ definitions:
                 description: " Field introduced in 17.2.1."
                 type: string
             files:
-                description: "List of Data Files Used for WAF Rules. Field introduced in 17.2.1. Maximum of 64 items allowed."
+                description: "List of Data Files Used for WAF Rules. Field introduced in 17.2.1."
                 type: array
                 items:
                     $ref: '#/definitions/WafDataFile'
@@ -76101,7 +76167,7 @@ definitions:
                 description: "User defined name for this location, it must be unique in the group. Field introduced in 18.2.3."
                 type: string
             rules:
-                description: "A list of rules which should be applied on this location. Field introduced in 18.2.3. Maximum of 1024 items allowed."
+                description: "A list of rules which should be applied on this location. Field introduced in 18.2.3."
                 type: array
                 items:
                     $ref: '#/definitions/WafPSMRule'
@@ -76167,7 +76233,7 @@ definitions:
                 type: string
                 default: "INSENSITIVE"
             match_elements:
-                description: "The match elements, for example ARGS id or ARGS|!ARGS password. Field introduced in 18.2.3. Maximum of 64 items allowed."
+                description: "The match elements, for example ARGS id or ARGS|!ARGS password. Field introduced in 18.2.3."
                 type: array
                 items:
                     $ref: '#/definitions/WafPSMMatchElement'
@@ -76240,7 +76306,7 @@ definitions:
                 description: "Identifier (id) for a rule per Modsec language. All SecRule and SecAction directives require an id. It is extracted from the id action in a Modsec rule. Rules within a single WAF Policy are required to have unique rule_ids. Field introduced in 17.2.2."
                 type: string
             tags:
-                description: "Tags for WAF rule as per Modsec language. They are extracted from the tag actions in a Modsec rule. This field is generated from the rule itself and cannot be set by the user. Field introduced in 18.1.3. Maximum of 64 items allowed."
+                description: "Tags for WAF rule as per Modsec language. They are extracted from the tag action in a ModSec rule. Field introduced in 18.1.3."
                 type: array
                 items:
                     type: string
@@ -76271,7 +76337,7 @@ definitions:
                 description: " Field introduced in 17.2.1."
                 type: string
             rules:
-                description: "Rules as per Modsec language. Field introduced in 17.2.1. Maximum of 1024 items allowed."
+                description: "Rules as per Modsec language. Field introduced in 17.2.1."
                 type: array
                 items:
                     $ref: '#/definitions/WafRule'
