@@ -203,7 +203,6 @@ public class WafConfig  {
      * This is the getter method this will return the attribute value.
      * Waf allowed content types.
      * Field introduced in 17.2.1.
-     * Maximum of 64 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return allowedRequestContentTypes
      */
@@ -215,7 +214,6 @@ public class WafConfig  {
      * This is the setter method. this will set the allowedRequestContentTypes
      * Waf allowed content types.
      * Field introduced in 17.2.1.
-     * Maximum of 64 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return allowedRequestContentTypes
      */
@@ -227,7 +225,6 @@ public class WafConfig  {
      * This is the setter method this will set the allowedRequestContentTypes
      * Waf allowed content types.
      * Field introduced in 17.2.1.
-     * Maximum of 64 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return allowedRequestContentTypes
      */
@@ -733,7 +730,6 @@ public class WafConfig  {
      * This is the getter method this will return the attribute value.
      * Waf restricted file extensions.
      * Field introduced in 17.2.1.
-     * Maximum of 256 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return restrictedExtensions
      */
@@ -745,7 +741,6 @@ public class WafConfig  {
      * This is the setter method. this will set the restrictedExtensions
      * Waf restricted file extensions.
      * Field introduced in 17.2.1.
-     * Maximum of 256 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return restrictedExtensions
      */
@@ -757,7 +752,6 @@ public class WafConfig  {
      * This is the setter method this will set the restrictedExtensions
      * Waf restricted file extensions.
      * Field introduced in 17.2.1.
-     * Maximum of 256 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return restrictedExtensions
      */
@@ -772,7 +766,6 @@ public class WafConfig  {
      * This is the getter method this will return the attribute value.
      * Waf restricted http headers.
      * Field introduced in 17.2.1.
-     * Maximum of 64 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return restrictedHeaders
      */
@@ -784,7 +777,6 @@ public class WafConfig  {
      * This is the setter method. this will set the restrictedHeaders
      * Waf restricted http headers.
      * Field introduced in 17.2.1.
-     * Maximum of 64 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return restrictedHeaders
      */
@@ -796,7 +788,6 @@ public class WafConfig  {
      * This is the setter method this will set the restrictedHeaders
      * Waf restricted http headers.
      * Field introduced in 17.2.1.
-     * Maximum of 64 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return restrictedHeaders
      */
@@ -860,7 +851,6 @@ public class WafConfig  {
      * Waf static file extensions.
      * Get and head requests with no query args and one of these extensions are allowed and not checked by the ruleset.
      * Field introduced in 17.2.5.
-     * Maximum of 64 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return staticExtensions
      */
@@ -873,7 +863,6 @@ public class WafConfig  {
      * Waf static file extensions.
      * Get and head requests with no query args and one of these extensions are allowed and not checked by the ruleset.
      * Field introduced in 17.2.5.
-     * Maximum of 64 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return staticExtensions
      */
@@ -886,7 +875,6 @@ public class WafConfig  {
      * Waf static file extensions.
      * Get and head requests with no query args and one of these extensions are allowed and not checked by the ruleset.
      * Field introduced in 17.2.5.
-     * Maximum of 64 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return staticExtensions
      */

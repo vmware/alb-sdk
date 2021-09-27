@@ -75,6 +75,9 @@ public class ControllerLimits  {
     @JsonProperty("vs_l2_scaleout")
     private Integer vsL2Scaleout = null;
 
+    @JsonProperty("waf_limits")
+    private WAFLimits wafLimits = null;
+
 
 
     /**
@@ -504,6 +507,28 @@ public class ControllerLimits  {
         this.vsL2Scaleout = vsL2Scaleout;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Waf system limits.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return wafLimits
+     */
+    public WAFLimits getWafLimits() {
+        return wafLimits;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Waf system limits.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param wafLimits set the wafLimits.
+     */
+    public void setWafLimits(WAFLimits wafLimits) {
+        this.wafLimits = wafLimits;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -529,6 +554,7 @@ public class ControllerLimits  {
   Objects.equals(this.vsL2Scaleout, objControllerLimits.vsL2Scaleout)&&
   Objects.equals(this.vsBgpScaleout, objControllerLimits.vsBgpScaleout)&&
   Objects.equals(this.gatewayMonPerVrf, objControllerLimits.gatewayMonPerVrf)&&
+  Objects.equals(this.wafLimits, objControllerLimits.wafLimits)&&
   Objects.equals(this.l7Limits, objControllerLimits.l7Limits)&&
   Objects.equals(this.controllerSizingLimits, objControllerLimits.controllerSizingLimits)&&
   Objects.equals(this.controllerCloudLimits, objControllerLimits.controllerCloudLimits);
@@ -556,6 +582,7 @@ public class ControllerLimits  {
                         sb.append("    stringsPerStringgroup: ").append(toIndentedString(stringsPerStringgroup)).append("\n");
                         sb.append("    vsBgpScaleout: ").append(toIndentedString(vsBgpScaleout)).append("\n");
                         sb.append("    vsL2Scaleout: ").append(toIndentedString(vsL2Scaleout)).append("\n");
+                        sb.append("    wafLimits: ").append(toIndentedString(wafLimits)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

@@ -175,7 +175,6 @@ public class WafRuleGroup  {
      * This is the getter method this will return the attribute value.
      * Rules as per modsec language.
      * Field introduced in 17.2.1.
-     * Maximum of 1024 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */
@@ -187,7 +186,6 @@ public class WafRuleGroup  {
      * This is the setter method. this will set the rules
      * Rules as per modsec language.
      * Field introduced in 17.2.1.
-     * Maximum of 1024 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */
@@ -199,7 +197,6 @@ public class WafRuleGroup  {
      * This is the setter method this will set the rules
      * Rules as per modsec language.
      * Field introduced in 17.2.1.
-     * Maximum of 1024 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */

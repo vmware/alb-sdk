@@ -155,7 +155,6 @@ public class WafPSMRule  {
      * This is the getter method this will return the attribute value.
      * The match elements, for example args id or args|!args password.
      * Field introduced in 18.2.3.
-     * Maximum of 64 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matchElements
      */
@@ -167,7 +166,6 @@ public class WafPSMRule  {
      * This is the setter method. this will set the matchElements
      * The match elements, for example args id or args|!args password.
      * Field introduced in 18.2.3.
-     * Maximum of 64 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matchElements
      */
@@ -179,7 +177,6 @@ public class WafPSMRule  {
      * This is the setter method this will set the matchElements
      * The match elements, for example args id or args|!args password.
      * Field introduced in 18.2.3.
-     * Maximum of 64 items allowed.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matchElements
      */
