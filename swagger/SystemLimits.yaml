@@ -441,6 +441,9 @@ definitions:
                 description: "Maximum number of serviceengine per virtualservice in layer 2 scaleout mode. Field introduced in 20.1.1."
                 type: integer
                 format: int32
+            waf_limits:
+                description: "WAF system limits. Field introduced in 21.1.3."
+                $ref: '#/definitions/WAFLimits'
     ControllerSize:
         type: object
         properties:
@@ -652,3 +655,62 @@ definitions:
                     $ref: "#/definitions/SystemLimits"
             next:
                 type: string
+    WAFLimits:
+        type: object
+        properties:
+            num_allowed_content_types:
+                description: "Number of WAF allowed Content Types. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_allowlist_policy_rules:
+                description: "Number of rules used in WAF allowlist policy. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_applications:
+                description: "Number of applications for which we use rules from sig provider. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_data_files:
+                description: "Number of datafiles used in WAF. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_pre_post_crs_groups:
+                description: "Number of pre, post CRS groups. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_psm_groups:
+                description: "Number of total PSM groups in WAF. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_psm_match_elements:
+                description: "Number of match elements used in WAF PSM. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_psm_match_rules_per_loc:
+                description: "Number of match rules per location. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_psm_total_locations:
+                description: "Number of locations used in WAF PSM. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_restricted_extensions:
+                description: "Number of restricted extensions in WAF. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_restricted_headers:
+                description: "Number of restricted HTTP headers in WAF. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_rule_tags:
+                description: "Number of tags for waf rule . Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_rules_per_rulegroup:
+                description: "Number of rules as per modsec language. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            num_static_extensions:
+                description: "Number of restricted static extensions in WAF. Field introduced in 21.1.3."
+                type: integer
+                format: int32
