@@ -21,7 +21,7 @@ type WafPSMRule struct {
 	// The field match_value_pattern regular expression is case sensitive. Enum options - SENSITIVE, INSENSITIVE. Field introduced in 18.2.3.
 	MatchCase *string `json:"match_case,omitempty"`
 
-	// The match elements, for example ARGS id or ARGS|!ARGS password. Field introduced in 18.2.3. Maximum of 64 items allowed.
+	// The match elements, for example ARGS id or ARGS|!ARGS password. Field introduced in 18.2.3.
 	MatchElements []*WafPSMMatchElement `json:"match_elements,omitempty"`
 
 	// The maximum allowed length of the match_value. If this is not set, the length will not be checked. Field introduced in 18.2.3.
