@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CaseConfig  {
+    @JsonProperty("category")
+    private String category = "ALB_SUPPORT_CATEGORY";
+
     @JsonProperty("enable_auto_case_creation_on_controller_failure")
     private Boolean enableAutoCaseCreationOnControllerFailure = false;
 
@@ -31,6 +34,30 @@ public class CaseConfig  {
     private Boolean enableCleanupOfAttachedFiles = true;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Service category.
+     * Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "ALB_SUPPORT_CATEGORY".
+     * @return category
+     */
+    public String getCategory() {
+        return category;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Service category.
+     * Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "ALB_SUPPORT_CATEGORY".
+     * @param category set the category.
+     */
+    public void setCategory(String  category) {
+        this.category = category;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -118,14 +145,16 @@ public class CaseConfig  {
       CaseConfig objCaseConfig = (CaseConfig) o;
       return   Objects.equals(this.enableAutoCaseCreationOnControllerFailure, objCaseConfig.enableAutoCaseCreationOnControllerFailure)&&
   Objects.equals(this.enableAutoCaseCreationOnSeFailure, objCaseConfig.enableAutoCaseCreationOnSeFailure)&&
-  Objects.equals(this.enableCleanupOfAttachedFiles, objCaseConfig.enableCleanupOfAttachedFiles);
+  Objects.equals(this.enableCleanupOfAttachedFiles, objCaseConfig.enableCleanupOfAttachedFiles)&&
+  Objects.equals(this.category, objCaseConfig.category);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class CaseConfig {\n");
-                  sb.append("    enableAutoCaseCreationOnControllerFailure: ").append(toIndentedString(enableAutoCaseCreationOnControllerFailure)).append("\n");
+                  sb.append("    category: ").append(toIndentedString(category)).append("\n");
+                        sb.append("    enableAutoCaseCreationOnControllerFailure: ").append(toIndentedString(enableAutoCaseCreationOnControllerFailure)).append("\n");
                         sb.append("    enableAutoCaseCreationOnSeFailure: ").append(toIndentedString(enableAutoCaseCreationOnSeFailure)).append("\n");
                         sb.append("    enableCleanupOfAttachedFiles: ").append(toIndentedString(enableCleanupOfAttachedFiles)).append("\n");
                   sb.append("}");
