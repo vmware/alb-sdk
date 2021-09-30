@@ -698,12 +698,22 @@
                     "type": "integer",
                     "default": 1440,
                     "format": "int32"
+                },
+                "category": {
+                    "description": "Service category. Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY. Field introduced in 21.1.3.",
+                    "type": "string",
+                    "default": "ALB_THREAT_INTELLIGENCE_CATEGORY"
                 }
             }
         },
         "CaseConfig": {
             "type": "object",
             "properties": {
+                "category": {
+                    "description": "Service category. Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY. Field introduced in 21.1.3.",
+                    "type": "string",
+                    "default": "ALB_SUPPORT_CATEGORY"
+                },
                 "enable_auto_case_creation_on_controller_failure": {
                     "description": "Enable pro-active support case creation when a controller failure occurs. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
                     "type": "boolean"
@@ -733,6 +743,11 @@
         "IpReputationConfig": {
             "type": "object",
             "properties": {
+                "category": {
+                    "description": "Service category. Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY. Field introduced in 21.1.3.",
+                    "type": "string",
+                    "default": "ALB_THREAT_INTELLIGENCE_CATEGORY"
+                },
                 "ip_reputation_file_object_expiry_duration": {
                     "description": "IP reputation db file object expiry duration in days. Allowed values are 1-7. Field introduced in 20.1.1. Unit is DAYS.",
                     "type": "integer",
@@ -827,12 +842,22 @@
                     "type": "integer",
                     "default": 500,
                     "format": "int32"
+                },
+                "category": {
+                    "description": "Service category. Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY. Field introduced in 21.1.3.",
+                    "type": "string",
+                    "default": "ALB_THREAT_INTELLIGENCE_CATEGORY"
                 }
             }
         },
         "WafCrsConfig": {
             "type": "object",
             "properties": {
+                "category": {
+                    "description": "Service category. Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY. Field introduced in 21.1.3.",
+                    "type": "string",
+                    "default": "ALB_THREAT_INTELLIGENCE_CATEGORY"
+                },
                 "enable_auto_download_waf_signatures": {
                     "description": "Enable to automatically download new WAF signatures/CRS version to the Controller. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
                     "type": "boolean"
