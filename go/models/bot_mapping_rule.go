@@ -19,7 +19,7 @@ type BotMappingRule struct {
 	ComponentMatcher *string `json:"component_matcher,omitempty"`
 
 	// The conditions to match, combined by logical AND. Field introduced in 21.1.3.
-	Conditions []*MatchTarget `json:"conditions,omitempty"`
+	Condition *MatchTarget `json:"condition,omitempty"`
 
 	// The list of bot identifier names and how they're matched. Field introduced in 21.1.1.
 	IdentifierMatcher *StringMatch `json:"identifier_matcher,omitempty"`
