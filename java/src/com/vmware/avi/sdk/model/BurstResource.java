@@ -87,7 +87,7 @@ public class BurstResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
+     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, SAAS.
      * Field introduced in 17.2.5.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseTier
@@ -98,7 +98,7 @@ public class BurstResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
+     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, SAAS.
      * Field introduced in 17.2.5.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseTier set the licenseTier.
