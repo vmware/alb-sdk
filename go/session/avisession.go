@@ -279,7 +279,7 @@ const DEFAULT_API_RETRY_INTERVAL = 500
 
 //NewAviSession initiates a session to AviController and returns it
 func NewAviSession(host string, username string, options ...func(*AviSession) error) (*AviSession, error) {
-	if flag.Parsed() == false {
+	if !flag.Parsed() {
 		flag.Parse()
 	}
 	avisess := &AviSession{
@@ -342,7 +342,7 @@ func NewAviSession(host string, username string, options ...func(*AviSession) er
 }
 
 func (avisess *AviSession) initiateSession() error {
-	if avisess.insecure == true {
+	if avisess.insecure {
 		glog.Warning("Strict certificate verification is *DISABLED*")
 	}
 
@@ -350,12 +350,18 @@ func (avisess *AviSession) initiateSession() error {
 	if avisess.isTokenAuth() {
 		switch {
 		case avisess.refreshAuthToken != nil:
-			avisess.setAuthToken(avisess.refreshAuthToken())
+			err := avisess.setAuthToken(avisess.refreshAuthToken())
+			if err != nil {
+				return err
+			}
 		case avisess.refreshAuthTokenV2 != nil:
 			if token, err := avisess.refreshAuthTokenV2(); err != nil {
 				return err
 			} else {
-				avisess.setAuthToken(token)
+				err := avisess.setAuthToken(token)
+				if err != nil {
+					return err
+				}
 			}
 		}
 	}
@@ -650,7 +656,10 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 	}
 
 	if avisess.lazyAuthentication && avisess.sessionid == "" && !(uri == "" || uri == "login") {
-		avisess.initiateSession()
+		err := avisess.initiateSession()
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	var payloadIO io.Reader
@@ -702,7 +711,7 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 	if retryReq {
 		if !avisess.disableControllerStatusCheck {
 			check, httpResp, err := avisess.CheckControllerStatus()
-			if check == false {
+			if !check {
 				if resp != nil && resp.Body != nil {
 					glog.Infof("Body is not nil, close it.")
 					resp.Body.Close()
@@ -787,7 +796,10 @@ func (avisess *AviSession) restMultipartUploadRequest(verb string, uri string, f
 	}
 
 	if avisess.lazyAuthentication && avisess.sessionid == "" && !(uri == "" || uri == "login") {
-		avisess.initiateSession()
+		err := avisess.initiateSession()
+		if err != nil {
+			return err
+		}
 	}
 
 	errorResult := AviError{Verb: verb, Url: url}
@@ -865,7 +877,7 @@ func (avisess *AviSession) restMultipartUploadRequest(verb string, uri string, f
 
 	if retryReq {
 		check, _, err := avisess.CheckControllerStatus()
-		if check == false {
+		if !check {
 			glog.Errorf("restMultipartUploadRequest Error during checking controller state")
 			return err
 		}
@@ -944,7 +956,7 @@ func (avisess *AviSession) restMultipartDownloadRequest(verb string, uri string,
 
 	if retryReq {
 		check, _, err := avisess.CheckControllerStatus()
-		if check == false {
+		if !check {
 			glog.Errorf("restMultipartDownloadRequest Error during checking controller state")
 			return err
 		}
@@ -1349,6 +1361,9 @@ func getOptions(options []ApiOptionsParams) (*ApiOptions, error) {
 // GetObject performs GET and return object data
 func (avisess *AviSession) GetObject(obj string, options ...ApiOptionsParams) error {
 	opts, err := getOptions(options)
+	if err != nil {
+		return err
+	}
 	uri, err := avisess.GetUri(obj, options...)
 	if err != nil {
 		return err
@@ -1409,7 +1424,10 @@ func (avisess *AviSession) Logout() error {
 }
 
 func (avisess *AviSession) ResetPassword(password string) error {
-	avisess.Logout()
+	err := avisess.Logout()
+	if err != nil {
+		return err
+	}
 	avisess.password = password
 	return nil
 }
