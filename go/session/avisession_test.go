@@ -3,9 +3,11 @@
 package session
 
 import (
+	"crypto/tls"
 	"encoding/json"
 	"errors"
 	"fmt"
+	stdhttp "net/http"
 	"os"
 	"os/exec"
 	"reflect"
@@ -679,6 +681,40 @@ func TestApiLazyAuthentication(t *testing.T) {
 		glog.Errorf("%v", err)
 		t.Fail()
 	}
+	var res interface{}
+	if err := avisess.Get("api/pool", &res); err != nil {
+		glog.Infof("Error: %v", err)
+		t.Fail()
+	}
+}
+
+func TestSetClient(t *testing.T) {
+	var avisess *AviSession
+	var err error
+	client := &stdhttp.Client{
+		Transport: &stdhttp.Transport{
+			TLSClientConfig: &tls.Config{
+				InsecureSkipVerify: true,
+			},
+		},
+		Timeout: 10 * time.Second,
+	}
+	if AVI_PASSWORD != "" {
+		avisess, err = NewAviSession(AVI_CONTROLLER, "admin",
+			SetPassword(AVI_PASSWORD), SetLazyAuthentication(true),
+			SetInsecure, SetClient(client))
+		if err != nil {
+			t.Fatal(err)
+		}
+	} else {
+		avisess, err = NewAviSession(AVI_CONTROLLER, "admin",
+			SetAuthToken(AVI_AUTH_TOKEN), SetLazyAuthentication(true),
+			SetInsecure, SetClient(client))
+		if err != nil {
+			t.Fatal(err)
+		}
+	}
+
 	var res interface{}
 	if err := avisess.Get("api/pool", &res); err != nil {
 		glog.Infof("Error: %v", err)
