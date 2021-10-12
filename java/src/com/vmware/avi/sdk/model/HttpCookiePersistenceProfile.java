@@ -33,6 +33,9 @@ public class HttpCookiePersistenceProfile  {
     @JsonProperty("http_only")
     private Boolean httpOnly = false;
 
+    @JsonProperty("is_persistent_cookie")
+    private Boolean isPersistentCookie = false;
+
     @JsonProperty("key")
     private List<HttpCookiePersistenceKey> key = null;
 
@@ -124,6 +127,34 @@ public class HttpCookiePersistenceProfile  {
     public void setHttpOnly(Boolean  httpOnly) {
         this.httpOnly = httpOnly;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * When true, the cookie used is a persistent cookie, i.e.
+     * The cookie shouldn't be used at the end of the timeout.
+     * By default, it is set to false, making the cookie a session cookie, which allows clients to use it even after the timeout, if the session is
+     * still open.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return isPersistentCookie
+     */
+    public Boolean getIsPersistentCookie() {
+        return isPersistentCookie;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * When true, the cookie used is a persistent cookie, i.e.
+     * The cookie shouldn't be used at the end of the timeout.
+     * By default, it is set to false, making the cookie a session cookie, which allows clients to use it even after the timeout, if the session is
+     * still open.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param isPersistentCookie set the isPersistentCookie.
+     */
+    public void setIsPersistentCookie(Boolean  isPersistentCookie) {
+        this.isPersistentCookie = isPersistentCookie;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Placeholder for description of property key of obj type httpcookiepersistenceprofile field type str  type array.
@@ -201,7 +232,8 @@ public class HttpCookiePersistenceProfile  {
   Objects.equals(this.key, objHttpCookiePersistenceProfile.key)&&
   Objects.equals(this.timeout, objHttpCookiePersistenceProfile.timeout)&&
   Objects.equals(this.alwaysSendCookie, objHttpCookiePersistenceProfile.alwaysSendCookie)&&
-  Objects.equals(this.httpOnly, objHttpCookiePersistenceProfile.httpOnly);
+  Objects.equals(this.httpOnly, objHttpCookiePersistenceProfile.httpOnly)&&
+  Objects.equals(this.isPersistentCookie, objHttpCookiePersistenceProfile.isPersistentCookie);
     }
 
     @Override
@@ -212,6 +244,7 @@ public class HttpCookiePersistenceProfile  {
                         sb.append("    cookieName: ").append(toIndentedString(cookieName)).append("\n");
                         sb.append("    encryptionKey: ").append(toIndentedString(encryptionKey)).append("\n");
                         sb.append("    httpOnly: ").append(toIndentedString(httpOnly)).append("\n");
+                        sb.append("    isPersistentCookie: ").append(toIndentedString(isPersistentCookie)).append("\n");
                         sb.append("    key: ").append(toIndentedString(key)).append("\n");
                         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
                   sb.append("}");

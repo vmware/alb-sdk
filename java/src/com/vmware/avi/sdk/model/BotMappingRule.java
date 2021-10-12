@@ -22,36 +22,36 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BotMappingRule  {
     @JsonProperty("class_matcher")
-    private BotClassMatcher classMatcher = null;
+    private BotClassMatcher classMatcher;
 
     @JsonProperty("classification")
     private BotClassification classification = null;
 
     @JsonProperty("component_matcher")
-    private String componentMatcher = null;
-
-    @JsonProperty("condition")
-    private MatchTarget condition = null;
+    private String componentMatcher;
 
     @JsonProperty("identifier_matcher")
-    private StringMatch identifierMatcher = null;
+    private StringMatch identifierMatcher;
 
     @JsonProperty("index")
     private Integer index = null;
+
+    @JsonProperty("match")
+    private BotMappingRuleMatchTarget match = null;
 
     @JsonProperty("name")
     private String name = null;
 
     @JsonProperty("type_matcher")
-    private BotTypeMatcher typeMatcher = null;
+    private BotTypeMatcher typeMatcher;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
      * How to match the botclientclass.
+     * Field deprecated in 21.1.3.
      * Field introduced in 21.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return classMatcher
      */
     public BotClassMatcher getClassMatcher() {
@@ -61,8 +61,8 @@ public class BotMappingRule  {
     /**
      * This is the setter method to the attribute.
      * How to match the botclientclass.
+     * Field deprecated in 21.1.3.
      * Field introduced in 21.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param classMatcher set the classMatcher.
      */
     public void setClassMatcher(BotClassMatcher classMatcher) {
@@ -95,8 +95,8 @@ public class BotMappingRule  {
      * This is the getter method this will return the attribute value.
      * The component for which this mapping is used.
      * Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION.
+     * Field deprecated in 21.1.3.
      * Field introduced in 21.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return componentMatcher
      */
     public String getComponentMatcher() {
@@ -107,8 +107,8 @@ public class BotMappingRule  {
      * This is the setter method to the attribute.
      * The component for which this mapping is used.
      * Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION.
+     * Field deprecated in 21.1.3.
      * Field introduced in 21.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param componentMatcher set the componentMatcher.
      */
     public void setComponentMatcher(String  componentMatcher) {
@@ -117,31 +117,9 @@ public class BotMappingRule  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * The conditions to match, combined by logical and.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return condition
-     */
-    public MatchTarget getCondition() {
-        return condition;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * The conditions to match, combined by logical and.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param condition set the condition.
-     */
-    public void setCondition(MatchTarget condition) {
-        this.condition = condition;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * The list of bot identifier names and how they're matched.
+     * Field deprecated in 21.1.3.
      * Field introduced in 21.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return identifierMatcher
      */
     public StringMatch getIdentifierMatcher() {
@@ -151,8 +129,8 @@ public class BotMappingRule  {
     /**
      * This is the setter method to the attribute.
      * The list of bot identifier names and how they're matched.
+     * Field deprecated in 21.1.3.
      * Field introduced in 21.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param identifierMatcher set the identifierMatcher.
      */
     public void setIdentifierMatcher(StringMatch identifierMatcher) {
@@ -183,6 +161,28 @@ public class BotMappingRule  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * How to match the request  all the specified properties must be fulfilled.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return match
+     */
+    public BotMappingRuleMatchTarget getMatch() {
+        return match;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * How to match the request  all the specified properties must be fulfilled.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param match set the match.
+     */
+    public void setMatch(BotMappingRuleMatchTarget match) {
+        this.match = match;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * A name describing the rule in a short form.
      * Field introduced in 21.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -206,8 +206,8 @@ public class BotMappingRule  {
     /**
      * This is the getter method this will return the attribute value.
      * How to match the botclienttype.
+     * Field deprecated in 21.1.3.
      * Field introduced in 21.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return typeMatcher
      */
     public BotTypeMatcher getTypeMatcher() {
@@ -217,8 +217,8 @@ public class BotMappingRule  {
     /**
      * This is the setter method to the attribute.
      * How to match the botclienttype.
+     * Field deprecated in 21.1.3.
      * Field introduced in 21.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param typeMatcher set the typeMatcher.
      */
     public void setTypeMatcher(BotTypeMatcher typeMatcher) {
@@ -242,7 +242,7 @@ public class BotMappingRule  {
   Objects.equals(this.typeMatcher, objBotMappingRule.typeMatcher)&&
   Objects.equals(this.identifierMatcher, objBotMappingRule.identifierMatcher)&&
   Objects.equals(this.classification, objBotMappingRule.classification)&&
-  Objects.equals(this.condition, objBotMappingRule.condition);
+  Objects.equals(this.match, objBotMappingRule.match);
     }
 
     @Override
@@ -252,9 +252,9 @@ public class BotMappingRule  {
                   sb.append("    classMatcher: ").append(toIndentedString(classMatcher)).append("\n");
                         sb.append("    classification: ").append(toIndentedString(classification)).append("\n");
                         sb.append("    componentMatcher: ").append(toIndentedString(componentMatcher)).append("\n");
-                        sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
                         sb.append("    identifierMatcher: ").append(toIndentedString(identifierMatcher)).append("\n");
                         sb.append("    index: ").append(toIndentedString(index)).append("\n");
+                        sb.append("    match: ").append(toIndentedString(match)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    typeMatcher: ").append(toIndentedString(typeMatcher)).append("\n");
                   sb.append("}");

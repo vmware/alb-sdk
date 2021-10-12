@@ -48,6 +48,9 @@ public class ALBServicesConfig extends AviRestResource  {
     @JsonProperty("proactive_support_defaults")
     private ProactiveSupportDefaults proactiveSupportDefaults;
 
+    @JsonProperty("saas_licensing_config")
+    private SaasLicensingInfo saasLicensingConfig = null;
+
     @JsonProperty("split_proxy_configuration")
     private ProxyConfiguration splitProxyConfiguration = null;
 
@@ -283,6 +286,30 @@ public class ALBServicesConfig extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Saas licensing configuration.
+     * Field introduced in 21.1.3.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return saasLicensingConfig
+     */
+    public SaasLicensingInfo getSaasLicensingConfig() {
+        return saasLicensingConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Saas licensing configuration.
+     * Field introduced in 21.1.3.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param saasLicensingConfig set the saasLicensingConfig.
+     */
+    public void setSaasLicensingConfig(SaasLicensingInfo saasLicensingConfig) {
+        this.saasLicensingConfig = saasLicensingConfig;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Split proxy configuration to connect external pulse services.
      * Field introduced in 20.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -322,7 +349,8 @@ public class ALBServicesConfig extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * By default, use system proxy configuration.if true, use split proxy configuration.
+     * By default, pulse uses proxy added in system configuration.
+     * If pulse needs to use a seperate proxy, set this flag to true and configure split proxy configuration.
      * Field introduced in 20.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useSplitProxy
@@ -333,7 +361,8 @@ public class ALBServicesConfig extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * By default, use system proxy configuration.if true, use split proxy configuration.
+     * By default, pulse uses proxy added in system configuration.
+     * If pulse needs to use a seperate proxy, set this flag to true and configure split proxy configuration.
      * Field introduced in 20.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useSplitProxy set the useSplitProxy.
@@ -458,7 +487,8 @@ public class ALBServicesConfig extends AviRestResource  {
   Objects.equals(this.appSignatureConfig, objALBServicesConfig.appSignatureConfig)&&
   Objects.equals(this.userAgentDbConfig, objALBServicesConfig.userAgentDbConfig)&&
   Objects.equals(this.wafConfig, objALBServicesConfig.wafConfig)&&
-  Objects.equals(this.caseConfig, objALBServicesConfig.caseConfig);
+  Objects.equals(this.caseConfig, objALBServicesConfig.caseConfig)&&
+  Objects.equals(this.saasLicensingConfig, objALBServicesConfig.saasLicensingConfig);
     }
 
     @Override
@@ -474,6 +504,7 @@ public class ALBServicesConfig extends AviRestResource  {
                         sb.append("    pollingInterval: ").append(toIndentedString(pollingInterval)).append("\n");
                         sb.append("    portalUrl: ").append(toIndentedString(portalUrl)).append("\n");
                         sb.append("    proactiveSupportDefaults: ").append(toIndentedString(proactiveSupportDefaults)).append("\n");
+                        sb.append("    saasLicensingConfig: ").append(toIndentedString(saasLicensingConfig)).append("\n");
                         sb.append("    splitProxyConfiguration: ").append(toIndentedString(splitProxyConfiguration)).append("\n");
                                     sb.append("    useSplitProxy: ").append(toIndentedString(useSplitProxy)).append("\n");
                         sb.append("    useTls: ").append(toIndentedString(useTls)).append("\n");

@@ -489,6 +489,9 @@ public class EventDetails  {
     @JsonProperty("sec_mgr_data_event")
     private SecMgrDataEvent secMgrDataEvent = null;
 
+    @JsonProperty("sec_mgr_ua_event_details")
+    private SecMgrUAEventDetails secMgrUaEventDetails = null;
+
     @JsonProperty("secure_key_exchange_info")
     private SecureKeyExchangeDetails secureKeyExchangeInfo = null;
 
@@ -3760,6 +3763,28 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Security-mgr ua cache event details.
+     * Field introduced in 21.1.2.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return secMgrUaEventDetails
+     */
+    public SecMgrUAEventDetails getSecMgrUaEventDetails() {
+        return secMgrUaEventDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Security-mgr ua cache event details.
+     * Field introduced in 21.1.2.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param secMgrUaEventDetails set the secMgrUaEventDetails.
+     */
+    public void setSecMgrUaEventDetails(SecMgrUAEventDetails secMgrUaEventDetails) {
+        this.secMgrUaEventDetails = secMgrUaEventDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Placeholder for description of property secure_key_exchange_info of obj type eventdetails field type str  type ref.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return secureKeyExchangeInfo
@@ -4862,6 +4887,7 @@ public class EventDetails  {
   Objects.equals(this.psmProgramDetails, objEventDetails.psmProgramDetails)&&
   Objects.equals(this.secMgrDataEvent, objEventDetails.secMgrDataEvent)&&
   Objects.equals(this.falsePositiveDetails, objEventDetails.falsePositiveDetails)&&
+  Objects.equals(this.secMgrUaEventDetails, objEventDetails.secMgrUaEventDetails)&&
   Objects.equals(this.cloudAsgNotifDetails, objEventDetails.cloudAsgNotifDetails)&&
   Objects.equals(this.cloudAutoscalingConfigFailureDetails, objEventDetails.cloudAutoscalingConfigFailureDetails)&&
   Objects.equals(this.cloudRouteNotifDetails, objEventDetails.cloudRouteNotifDetails)&&
@@ -5037,6 +5063,7 @@ public class EventDetails  {
                         sb.append("    seVsFaultEventDetails: ").append(toIndentedString(seVsFaultEventDetails)).append("\n");
                         sb.append("    seVsPktBufHighEventDetails: ").append(toIndentedString(seVsPktBufHighEventDetails)).append("\n");
                         sb.append("    secMgrDataEvent: ").append(toIndentedString(secMgrDataEvent)).append("\n");
+                        sb.append("    secMgrUaEventDetails: ").append(toIndentedString(secMgrUaEventDetails)).append("\n");
                         sb.append("    secureKeyExchangeInfo: ").append(toIndentedString(secureKeyExchangeInfo)).append("\n");
                         sb.append("    semigrateEventDetails: ").append(toIndentedString(semigrateEventDetails)).append("\n");
                         sb.append("    serverAutoscaleFailedInfo: ").append(toIndentedString(serverAutoscaleFailedInfo)).append("\n");
