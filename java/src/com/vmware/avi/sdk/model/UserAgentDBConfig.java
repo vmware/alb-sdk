@@ -58,7 +58,7 @@ public class UserAgentDBConfig  {
     /**
      * This is the getter method this will return the attribute value.
      * Service category.
-     * Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY.
+     * Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY, ALB_LICENSE_CATEGORY.
      * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as "ALB_THREAT_INTELLIGENCE_CATEGORY".
      * @return category
@@ -70,7 +70,7 @@ public class UserAgentDBConfig  {
     /**
      * This is the setter method to the attribute.
      * Service category.
-     * Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY.
+     * Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY, ALB_LICENSE_CATEGORY.
      * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as "ALB_THREAT_INTELLIGENCE_CATEGORY".
      * @param category set the category.
