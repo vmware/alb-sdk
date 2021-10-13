@@ -20,6 +20,9 @@ type PortalFeatureOptIn struct {
 	// Enable to receive WAF CRS updates. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is True.
 	EnablePulseWafManagement *bool `json:"enable_pulse_waf_management,omitempty"`
 
+	// Enable saas licensing. Field introduced in 21.1.3. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
+	EnableSaasLicensing *bool `json:"enable_saas_licensing,omitempty"`
+
 	// Enable to receive Bot Management updates. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
 	EnableUserAgentDbSync *bool `json:"enable_user_agent_db_sync,omitempty"`
 }

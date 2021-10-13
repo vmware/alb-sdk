@@ -479,6 +479,9 @@ type EventDetails struct {
 	// Placeholder for description of property sec_mgr_data_event of obj type EventDetails field type str  type object
 	SecMgrDataEvent *SecMgrDataEvent `json:"sec_mgr_data_event,omitempty"`
 
+	// Security-mgr UA Cache event details. Field introduced in 21.1.2.
+	SecMgrUaEventDetails *SecMgrUAEventDetails `json:"sec_mgr_ua_event_details,omitempty"`
+
 	// Placeholder for description of property secure_key_exchange_info of obj type EventDetails field type str  type object
 	SecureKeyExchangeInfo *SecureKeyExchangeDetails `json:"secure_key_exchange_info,omitempty"`
 

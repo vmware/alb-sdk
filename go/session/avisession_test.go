@@ -101,7 +101,7 @@ func getSessions(t *testing.T) []*AviSession {
 
 	aviVersion, ok := os.LookupEnv("AVI_VERSION")
 	if !ok {
-		aviVersion = "18.1.3"
+		aviVersion = "21.1.1"
 	}
 
 	var err error
@@ -565,11 +565,17 @@ func testTenantSwitch(t *testing.T, avisess *AviSession) {
 	if err != nil {
 		t.Errorf("Pool Creation failed: %s", err)
 	}
-
+	glog.Infof("Created Pool name %s", *tpool.Name)
 	var npool2 models.Pool
-	err = avisess.GetObject("pool", SetName("test-admin-pool"), SetOptTenant(tenant), SetResult(&npool2))
+	err = avisess.GetObject("pool", SetName(pname), SetOptTenant(tenant), SetResult(&npool2))
 	if err != nil {
 		t.Errorf("Pool Fecting failed: %s", err)
+	}
+
+	glog.Infof("Get Pool name %s uuid %s", *npool2.Name, *npool2.UUID)
+
+	if *npool2.Name != pname {
+		t.Errorf("Pool fetched did not match name %s", pname)
 	}
 
 	var npool3 models.Pool
@@ -585,35 +591,38 @@ func testTenantSwitch(t *testing.T, avisess *AviSession) {
 	var servers = make([]models.Server, 1)
 	servers[0] = server
 	patch["servers"] = servers
+	glog.Infof("Patching Pool name %s uuid %s", *npool2.Name, *npool2.UUID)
+
 	err = avisess.Patch("api/pool/"+*npool2.UUID, &patch, "add", &npool3, SetOptTenant(tenant))
 	if err != nil {
 		t.Errorf("Pool Patch failed %s", err)
 	}
-
 	// Test put before deleting the pool
+
+	err = avisess.GetObject("pool", SetName(pname), SetOptTenant(tenant), SetResult(&npool2))
+	if err != nil {
+		t.Errorf("Pool Fecting failed: %s", err)
+		t.Fail()
+	}
+
+	glog.Infof("Get Patched name %s uuid %s", *npool2.Name, *npool2.UUID)
+
+	// Trying to change the name
 	update_pool := "test-pool"
 	npool3.Name = &update_pool
 	var npool4 models.Pool
 	err = avisess.Put("api/pool/"+*npool3.UUID, &npool3, &npool4, SetOptTenant(tenant))
 	if err != nil {
-		t.Errorf("Pool Patch failed %s", err)
+		t.Errorf("Pool %s Patch failed %s", *npool3.UUID, err)
+		t.Fail()
+	}
+	if update_pool != *npool4.Name {
+		t.Errorf("Pool %s Put failed %s for name change %s", *npool3.UUID, err, update_pool)
+		t.Fail()
 	}
 
-	glog.Infof("npool: %+v err: %+v", npool3, err)
-	glog.Infof("name %v: ", npool3.Name)
-
-	// Test PutRaw before deleting the pool
-	raw_pool := "raw-pool"
-	npool4.Name = &raw_pool
-	resp, err := avisess.PutRaw("api/pool/"+*npool4.UUID, &npool4)
-	if err != nil {
-		t.Errorf("Pool Patch failed %s", err)
-	}
-	var poolResp interface{}
-	if err := json.Unmarshal(resp, &poolResp); err != nil {
-		t.Errorf("Error in Unmarshing poolResp: %+v", err)
-	}
-	glog.Infof("pool: %+v", poolResp)
+	//Trying out PUT Raw
+	glog.Infof("PUT Pool name %s uuid %s", *npool4.Name, *npool4.UUID)
 
 	uri := "api/pool/" + *npool3.UUID
 	err = avisess.DeleteObject(uri, SetOptTenant(tenant))

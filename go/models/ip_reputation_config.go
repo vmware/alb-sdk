@@ -8,7 +8,7 @@ package models
 // swagger:model IpReputationConfig
 type IPReputationConfig struct {
 
-	// Service category. Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY. Field introduced in 21.1.3.
+	// Service category. Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY, ALB_LICENSE_CATEGORY. Field introduced in 21.1.3.
 	Category *string `json:"category,omitempty"`
 
 	// IP reputation db file object expiry duration in days. Allowed values are 1-7. Field introduced in 20.1.1. Unit is DAYS.
