@@ -706,7 +706,7 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 	}
 
 	if !retryReq {
-		glog.Infof("Req for uri %v RespCode %v", url, resp.StatusCode)
+		glog.Infof("Req for %s uri %v tenant %s RespCode %v", verb, url, tenant, resp.StatusCode)
 		errorResult.HttpStatusCode = resp.StatusCode
 		avisess.collectCookiesFromResp(resp)
 

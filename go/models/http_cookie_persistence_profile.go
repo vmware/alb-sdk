@@ -20,6 +20,9 @@ type HTTPCookiePersistenceProfile struct {
 	// Sets the HttpOnly attribute in the cookie. Setting this helps to prevent the client side scripts from accessing this cookie, if supported by browser. Field introduced in 21.1.1.
 	HTTPOnly *bool `json:"http_only,omitempty"`
 
+	// When True, the cookie used is a persistent cookie, i.e. the cookie shouldn't be used at the end of the timeout. By default, it is set to false, making the cookie a session cookie, which allows clients to use it even after the timeout, if the session is still open. Field introduced in 21.1.3.
+	IsPersistentCookie *bool `json:"is_persistent_cookie,omitempty"`
+
 	// Placeholder for description of property key of obj type HttpCookiePersistenceProfile field type str  type object
 	Key []*HTTPCookiePersistenceKey `json:"key,omitempty"`
 
