@@ -78,6 +78,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("availability_zone_refs")
     private List<String> availabilityZoneRefs = null;
 
+    @JsonProperty("bgp_peer_monitor_failover_enabled")
+    private Boolean bgpPeerMonitorFailoverEnabled = false;
+
     @JsonProperty("bgp_state_update_interval")
     private Integer bgpStateUpdateInterval = 60;
 
@@ -1364,6 +1367,28 @@ public class ServiceEngineGroup extends AviRestResource  {
       }
       this.availabilityZoneRefs.add(availabilityZoneRefsItem);
       return this;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enable bgp peer monitoring based failover.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return bgpPeerMonitorFailoverEnabled
+     */
+    public Boolean getBgpPeerMonitorFailoverEnabled() {
+        return bgpPeerMonitorFailoverEnabled;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable bgp peer monitoring based failover.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param bgpPeerMonitorFailoverEnabled set the bgpPeerMonitorFailoverEnabled.
+     */
+    public void setBgpPeerMonitorFailoverEnabled(Boolean  bgpPeerMonitorFailoverEnabled) {
+        this.bgpPeerMonitorFailoverEnabled = bgpPeerMonitorFailoverEnabled;
     }
 
     /**
@@ -8113,7 +8138,8 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.logAgentLogStorageMinSz, objServiceEngineGroup.logAgentLogStorageMinSz)&&
   Objects.equals(this.logMessageMaxFileListSize, objServiceEngineGroup.logMessageMaxFileListSize)&&
   Objects.equals(this.deactivateIpv6Discovery, objServiceEngineGroup.deactivateIpv6Discovery)&&
-  Objects.equals(this.markers, objServiceEngineGroup.markers);
+  Objects.equals(this.markers, objServiceEngineGroup.markers)&&
+  Objects.equals(this.bgpPeerMonitorFailoverEnabled, objServiceEngineGroup.bgpPeerMonitorFailoverEnabled);
     }
 
     @Override
@@ -8139,6 +8165,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    autoRebalanceInterval: ").append(toIndentedString(autoRebalanceInterval)).append("\n");
                         sb.append("    autoRedistributeActiveStandbyLoad: ").append(toIndentedString(autoRedistributeActiveStandbyLoad)).append("\n");
                         sb.append("    availabilityZoneRefs: ").append(toIndentedString(availabilityZoneRefs)).append("\n");
+                        sb.append("    bgpPeerMonitorFailoverEnabled: ").append(toIndentedString(bgpPeerMonitorFailoverEnabled)).append("\n");
                         sb.append("    bgpStateUpdateInterval: ").append(toIndentedString(bgpStateUpdateInterval)).append("\n");
                         sb.append("    bufferSe: ").append(toIndentedString(bufferSe)).append("\n");
                         sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
