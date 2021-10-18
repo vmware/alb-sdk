@@ -5,7 +5,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Avi AlertObjectList Object API</title>
+    <title>Avi VsGs Object API</title>
     <style type="text/css">
       body { 
 	font-family: Trebuchet MS, sans-serif;
@@ -183,8 +183,8 @@ font-style: italic;
     </style>
   </head>
   <body>
-  <h1>Avi AlertObjectList Object API</h1>
-    <div class="app-desc">CLI ``` - configure alertobjectlist - show alertobjectlist ``` </div>
+  <h1>Avi VsGs Object API</h1>
+    <div class="app-desc">CLI ``` - show vsgs <key> ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
     <div class="app-desc">Version: 21.1.3</div>
@@ -202,19 +202,19 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#alertobjectlistGet"><code><span class="http-method">get</span> /alertobjectlist</code></a></li>
-  <li><a href="#alertobjectlistPost"><code><span class="http-method">post</span> /alertobjectlist</code></a></li>
-  <li><a href="#alertobjectlistUuidDelete"><code><span class="http-method">delete</span> /alertobjectlist/{uuid}</code></a></li>
-  <li><a href="#alertobjectlistUuidGet"><code><span class="http-method">get</span> /alertobjectlist/{uuid}</code></a></li>
-  <li><a href="#alertobjectlistUuidPatch"><code><span class="http-method">patch</span> /alertobjectlist/{uuid}</code></a></li>
-  <li><a href="#alertobjectlistUuidPut"><code><span class="http-method">put</span> /alertobjectlist/{uuid}</code></a></li>
+  <li><a href="#vsgsGet"><code><span class="http-method">get</span> /vsgs</code></a></li>
+  <li><a href="#vsgsPost"><code><span class="http-method">post</span> /vsgs</code></a></li>
+  <li><a href="#vsgsUuidDelete"><code><span class="http-method">delete</span> /vsgs/{uuid}</code></a></li>
+  <li><a href="#vsgsUuidGet"><code><span class="http-method">get</span> /vsgs/{uuid}</code></a></li>
+  <li><a href="#vsgsUuidPatch"><code><span class="http-method">patch</span> /vsgs/{uuid}</code></a></li>
+  <li><a href="#vsgsUuidPut"><code><span class="http-method">put</span> /vsgs/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="alertobjectlistGet"/>
+  <div class="method"><a name="vsgsGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /alertobjectlist</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertobjectlistGet</span>)</div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /vsgs</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">vsgsGet</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -248,7 +248,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#AlertObjectListApiResponse">AlertObjectListApiResponse</a>
+      <a href="#VsGsApiResponse">VsGsApiResponse</a>
       
     </div>
 
@@ -260,14 +260,17 @@ font-style: italic;
   "next" : "aeiou",
   "count" : 123,
   "results" : [ {
-    "objects" : [ "aeiou" ],
+    "geodb_uuid" : "aeiou",
+    "vs_uuid" : "aeiou",
+    "gslb_uuid" : "aeiou",
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
     "configpb_attributes" : {
       "version" : 123
     },
-    "source" : "aeiou",
+    "type" : "aeiou",
     "uuid" : "aeiou",
+    "gs_uuid" : "aeiou",
     "url" : "aeiou",
     "_last_modified" : "aeiou"
   } ]
@@ -283,17 +286,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#AlertObjectListApiResponse">AlertObjectListApiResponse</a>
+        <a href="#VsGsApiResponse">VsGsApiResponse</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="alertobjectlistPost"/>
+  <div class="method"><a name="vsgsPost"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /alertobjectlist</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertobjectlistPost</span>)</div>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /vsgs</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">vsgsPost</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -307,7 +310,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertObjectList object creation </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; VsGs object creation </div>
     </div>  <!-- field-items -->
 
 
@@ -315,7 +318,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#AlertObjectList">AlertObjectList</a>
+      <a href="#VsGs">VsGs</a>
       
     </div>
 
@@ -324,14 +327,17 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "objects" : [ "aeiou" ],
+  "geodb_uuid" : "aeiou",
+  "vs_uuid" : "aeiou",
+  "gslb_uuid" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
     "version" : 123
   },
-  "source" : "aeiou",
+  "type" : "aeiou",
   "uuid" : "aeiou",
+  "gs_uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
 }</code></pre>
@@ -346,17 +352,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#AlertObjectList">AlertObjectList</a>
+        <a href="#VsGs">VsGs</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="alertobjectlistUuidDelete"/>
+  <div class="method"><a name="vsgsUuidDelete"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /alertobjectlist/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertobjectlistUuidDelete</span>)</div>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /vsgs/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">vsgsUuidDelete</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -410,11 +416,11 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="alertobjectlistUuidGet"/>
+  <div class="method"><a name="vsgsUuidGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /alertobjectlist/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertobjectlistUuidGet</span>)</div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /vsgs/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">vsgsUuidGet</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -450,7 +456,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#AlertObjectList">AlertObjectList</a>
+      <a href="#VsGs">VsGs</a>
       
     </div>
 
@@ -459,14 +465,17 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "objects" : [ "aeiou" ],
+  "geodb_uuid" : "aeiou",
+  "vs_uuid" : "aeiou",
+  "gslb_uuid" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
     "version" : 123
   },
-  "source" : "aeiou",
+  "type" : "aeiou",
   "uuid" : "aeiou",
+  "gs_uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
 }</code></pre>
@@ -481,17 +490,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#AlertObjectList">AlertObjectList</a>
+        <a href="#VsGs">VsGs</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="alertobjectlistUuidPatch"/>
+  <div class="method"><a name="vsgsUuidPatch"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /alertobjectlist/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertobjectlistUuidPatch</span>)</div>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /vsgs/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">vsgsUuidPatch</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -511,7 +520,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertObjectList object creation </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; VsGs object creation </div>
     </div>  <!-- field-items -->
 
 
@@ -525,7 +534,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#AlertObjectList">AlertObjectList</a>
+      <a href="#VsGs">VsGs</a>
       
     </div>
 
@@ -534,14 +543,17 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "objects" : [ "aeiou" ],
+  "geodb_uuid" : "aeiou",
+  "vs_uuid" : "aeiou",
+  "gslb_uuid" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
     "version" : 123
   },
-  "source" : "aeiou",
+  "type" : "aeiou",
   "uuid" : "aeiou",
+  "gs_uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
 }</code></pre>
@@ -556,17 +568,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#AlertObjectList">AlertObjectList</a>
+        <a href="#VsGs">VsGs</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="alertobjectlistUuidPut"/>
+  <div class="method"><a name="vsgsUuidPut"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /alertobjectlist/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertobjectlistUuidPut</span>)</div>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /vsgs/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">vsgsUuidPut</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -586,7 +598,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertObjectList object creation </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; VsGs object creation </div>
     </div>  <!-- field-items -->
 
 
@@ -600,7 +612,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#AlertObjectList">AlertObjectList</a>
+      <a href="#VsGs">VsGs</a>
       
     </div>
 
@@ -609,14 +621,17 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "objects" : [ "aeiou" ],
+  "geodb_uuid" : "aeiou",
+  "vs_uuid" : "aeiou",
+  "gslb_uuid" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
     "version" : 123
   },
-  "source" : "aeiou",
+  "type" : "aeiou",
   "uuid" : "aeiou",
+  "gs_uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
 }</code></pre>
@@ -631,7 +646,7 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#AlertObjectList">AlertObjectList</a>
+        <a href="#VsGs">VsGs</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
@@ -644,36 +659,39 @@ font-style: italic;
 
   <h2>Table of Contents</h2>
   <ol>
-    <li><a href="#AlertObjectList"><code>AlertObjectList</code></a></li>
-    <li><a href="#AlertObjectListApiResponse"><code>AlertObjectListApiResponse</code></a></li>
     <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
+    <li><a href="#VsGs"><code>VsGs</code></a></li>
+    <li><a href="#VsGsApiResponse"><code>VsGsApiResponse</code></a></li>
   </ol>
 
-  <div class="model">
-    <h3 class="field-label"><a name="AlertObjectList">AlertObjectList</a> <a class="up" href="#__Models">Up</a></h3>
-    <div class="field-items">
-      <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
-<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
-<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the object. </div>
-<div class="param">objects (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span>  Enum options - VIRTUALSERVICE, POOL, HEALTHMONITOR, NETWORKPROFILE, APPLICATIONPROFILE, HTTPPOLICYSET, DNSPOLICY, SECURITYPOLICY, IPADDRGROUP, STRINGGROUP, SSLPROFILE, SSLKEYANDCERTIFICATE, NETWORKSECURITYPOLICY, APPLICATIONPERSISTENCEPROFILE, ANALYTICSPROFILE, VSDATASCRIPTSET, TENANT, PKIPROFILE, AUTHPROFILE, CLOUD, SERVERAUTOSCALEPOLICY, AUTOSCALELAUNCHCONFIG, MICROSERVICEGROUP, IPAMPROFILE, HARDWARESECURITYMODULEGROUP, POOLGROUP, PRIORITYLABELS, POOLGROUPDEPLOYMENTPOLICY, GSLBSERVICE, GSLBSERVICERUNTIME, SCHEDULER, GSLBGEODBPROFILE, GSLBAPPLICATIONPERSISTENCEPROFILE, TRAFFICCLONEPROFILE, VSVIP, WAFPOLICY, WAFPROFILE, ERRORPAGEPROFILE, ERRORPAGEBODY, L4POLICYSET, GSLBSERVICERUNTIMEBATCH, WAFPOLICYPSMGROUP, PINGACCESSAGENT, NETWORKSERVICE, NATPOLICY, SSOPOLICY, PROTOCOLPARSER, EXAMPLECHILD, TESTSEDATASTORELEVEL1, TESTSEDATASTORELEVEL2, TESTSEDATASTORELEVEL3, FILEOBJECT, IPREPUTATIONDB, FEDERATIONCHECKPOINT, ICAPPROFILE, DYNAMICDNSRECORD, JWTSERVERPROFILE, GEODB, BOTDETECTIONPOLICY, BOTMAPPING, BOTCONFIGCONSOLIDATOR, JWTPROFILE, BOTIPREPUTATIONTYPEMAPPING, AVIFALSEPOSITIVEDETECTION, VSGS, SERVICEENGINE, DEBUGSERVICEENGINE, DEBUGCONTROLLER, DEBUGVIRTUALSERVICE, SERVICEENGINEGROUP, SEPROPERTIES, NETWORK, CONTROLLERNODE, CONTROLLERPROPERTIES, SYSTEMCONFIGURATION, VRFCONTEXT, USER, ALERTCONFIG, ALERTSYSLOGCONFIG, ALERTEMAILCONFIG, ALERTTYPECONFIG, APPLICATION, ROLE, CLOUDPROPERTIES, SNMPTRAPPROFILE, ACTIONGROUPPROFILE, MICROSERVICE, ALERTPARAMS, ACTIONGROUPCONFIG, CLOUDCONNECTORUSER, GSLB, GSLBDNSUPDATE, GSLBSITEOPS, GLBMGRWARMSTART, IPAMDNSRECORD, GSLBDNSGSSTATUS, GSLBDNSGEOFILEOPS, GSLBDNSGEOUPDATE, GSLBDNSGEOCLUSTEROPS, GSLBDNSCLEANUP, GSLBSITEOPSRESYNC, IPAMDNSPROVIDERPROFILE, ALBSERVICESCONFIG, SYSTEMLIMITS, REPLICATIONOPERATION, VCENTERSERVER, AVAILABILITYZONE, TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME, MBSTATRUNTIME, IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME, CPUUSAGERUNTIME, L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME, SEAGENTGRAPHDBRUNTIME, SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME, DISPATCHERSTATRUNTIME, DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME, DISPATCHERREMOTETIMERLISTDUMPRUNTIME, METRICSAGENTMESSAGE, HEALTHMONITORSTATRUNTIME, METRICSENTITYRUNTIME, PERSISTENCEINTERNAL, HTTPPOLICYSETINTERNAL, DNSPOLICYINTERNAL, CONNECTIONDUMPRUNTIME, SHAREDDBSTATS, SHAREDDBSTATSCLEAR, ICMPSTATRUNTIME, ROUTETABLERUNTIME, VIRTUALMACHINE, POOLSERVER, SEVSLIST, MEMINFORUNTIME, RTERINGSTATRUNTIME, ALGOSTATRUNTIME, HEALTHMONITORRUNTIME, CPUSTATRUNTIME, SEVM, HOST, PORTGROUP, CLUSTER, DATACENTER, VCENTER, HTTPPOLICYSETSTATS, DNSPOLICYSTATS, METRICSSESTATS, RATELIMITERSTATRUNTIME, NETWORKSECURITYPOLICYSTATS, TCPCONNRUNTIME, POOLSTATS, CONNPOOLINTERNAL, CONNPOOLSTATS, VSHASHSHOWRUNTIME, SELOGSTATSRUNTIME, NETWORKSECURITYPOLICYDETAIL, LICENSERUNTIME, SERVERRUNTIME, METRICSRUNTIMESUMMARY, METRICSRUNTIMEDETAIL, DISPATCHERSEHMPROBETEMPDISABLERUNTIME, POOLDEBUG, VSLOGMGRMAP, SERUMINSERTIONSTATS, HTTPCACHE, HTTPCACHESTATS, SEDOSSTATRUNTIME, VSDOSSTATRUNTIME, SERVERUPDATEREQ, VSSCALEOUTLIST, SEMEMDISTRUNTIME, TCPCONNRUNTIMEDETAIL, SEUPGRADESTATUS, SEUPGRADEPREVIEW, SEFAULTINJECTEXHAUSTM, SEFAULTINJECTEXHAUSTMCL, SEFAULTINJECTEXHAUSTMCLSMALL, SEFAULTINJECTEXHAUSTCONN, SEHEADLESSONLINEREQ, SEUPGRADE, SEUPGRADESTATUSDETAIL, SERESERVEDVS, SERESERVEDVSCLEAR, VSCANDIDATESEHOSTLIST, SEGROUPUPGRADE, REBALANCE, SEGROUPREBALANCE, SEAUTHSTATSRUNTIME, AUTOSCALESTATE, VIRTUALSERVICEAUTHSTATS, NETWORKSECURITYPOLICYDOS, KEYVALINTERNAL, KEYVALSUMMARYINTERNAL, SERVERSTATEUPDATEINFO, CLTRACKINTERNAL, CLTRACKSUMMARYINTERNAL, MICROSERVICERUNTIME, SEMICROSERVICE, VIRTUALSERVICEANALYSIS, CLIENTINTERNAL, CLIENTSUMMARYINTERNAL, MICROSERVICEGROUPRUNTIME, BGPRUNTIME, REQUESTQUEUERUNTIME, MIGRATEALL, MIGRATEALLSTATUSSUMMARY, MIGRATEALLSTATUSDETAIL, INTERFACESUMMARYRUNTIME, INTERFACELACPRUNTIME, DNSTABLE, GSLBSERVICEDETAIL, GSLBSERVICEINTERNAL, GSLBSERVICEHMONSTAT, SETROLESREQUEST, TRAFFICCLONERUNTIME, GEOLOCATIONINFO, SEVSHBSTATRUNTIME, GEODBINTERNAL, GSLBSITEINTERNAL, WAFSTATS, USERDEFINEDDATASCRIPTCOUNTERS, LLDPRUNTIME, VSESSHARINGPOOL, NDTABLERUNTIME, IP6STATRUNTIME, ICMP6STATRUNTIME, SEVSSPLACEMENT, L4POLICYSETSTATS, L4POLICYSETINTERNAL, BGPDEBUGINFO, SHARD, CPUSTATRUNTIMEDETAIL, SEASSERTSTATRUNTIME, SEFAULTINJECTINFRA, SEAGENTASSERTSTATRUNTIME, SEDATASTORESTATUS, DIFFQUEUESTATUS, IP6ROUTETABLERUNTIME, SECURITYMGRSTATE, VIRTUALSERVICESESCALEOUTSTATUS, SHARDSERVERSTATUS, SEAGENTSHARDCLIENTRESOURCEMAP, SEAGENTCONSISTENTHASH, SEAGENTVNICDBHISTORY, SEAGENTSHARDCLIENTAPPMAP, SEAGENTSHARDCLIENTEVENTHISTORY, NATSTATRUNTIME, NATFLOWRUNTIME, SECUTIRYMGRRUNTIME, SSOPOLICYSTATS, SENETWORKSERVICERUNTIME, SEGEORUNTIME, NATPOLICYSTATS, SEFAULTRUNTIME, VIRTUALSERVICESCALEOUTSTATUS, VIRTUALSERVICESCALEOUTSTATUSDETAIL, SECURITYMGRLEARN, SECURITYMGRTOPN, SSLSESSIONCACHE, SEGEODETAILS, GSLBSERVICEALGOSTAT, HTTPCONNECTIONRUNTIME, HTTPCONNECTIONRUNTIMEDETAIL, REMOTESITEWATCHERSUMMARY, REMOTESITEWATCHEREVENT, IPREPUTATIONDBRUNTIME, SEFAULTINJECTEXHAUSTCFG, SEFAULTINJECTEXHAUSTSHMCFG, SEFAULTINJECTEXHAUSTSHMCONN, BGPRUNNINGCONFIG, BGPADVERTISEDROUTES, BGPPEERSTATUS, BFDSESSIONSTATUS, BGPPEERINFO, GSLBSITEOPSREPLICATIONPOLICYOPS, FEDERATEDDATASTORESTATUS, FEDERATEDDIFFQUEUESTATUS, ROUTESTATRUNTIME, ROUTEFLOWRUNTIME, NSXTSEGMENTRUNTIME, VIRTUALSERVICEICAPSTATS, KEYVALSUMMARYOBJSYNC, POOLOBJSYNC, KEYVALDISPATCH, SEAGENTOBJSYNCDETAILS, VIRTUALSERVICESCALEOUTSTATUSKEYVAL, VIRTUALSERVICESCALEOUTSTATUSKEYVALSUMMARY, VIRTUALSERVICEOUTOFBANDREQUESTSTATS, GEODBLOCATIONINFO, SEAGENTRESOLVDBRUNTIME, SEAGENTRESOLVDBRUNTIMESUMMARY, METRICSRUNTIMEDEBUG, BOTCLASSIFICATIONRESULTMETRICS, BOTUACACHERUNTIME, BOTUACACHESTATSRUNTIME, POOLGROUPRUNTIMEDETAIL, SECURITYMGRUACACHEQUERY, SECURITYMGRUACACHECLEAR, SECURITYMGRUACACHESUMMARY, GSLBADAPTIVERUNTIME, SERESOURCEPROTO, SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS, SEVIPPROTO, RMVRFPROTO, VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS, INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS, ENTITYCOUNTERS, TRANSACTIONSTATS, SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS, VIDATASTORE, VIHOSTRESOURCES, CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS, VIMGRVCENTERCLOUDRUNTIME, VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME, PLACEMENTGLOBALS, ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE, SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE, SECONSUMERSUMMARY, SECONSUMERDETAIL, SERESOURCESUMMARY, SERESOURCEDETAIL, PLACEMENTSYSTEMSUMMARY, APICCONFIGURATION, CIFTABLE, APICTRANSACTION, VIRTUALSERVICESTATEDBCACHESUMMARY, POOLSTATEDBCACHESUMMARY, SERVERSTATEDBCACHESUMMARY, APICAGENTINTERNAL, APICTRANSACTIONFLAP, APICGRAPHINSTANCES, APICEPGS, APICEPGEPS, APICDEVICEPKGVER, APICTENANTS, APICVMMDOMAINS, STATECACHESTATS, STATECACHECONFIG, STATECACHEINTERNAL, STATECACHEDNS, STATECACHECONFIGVERSION, NSXCONFIGURATION, NSXSGTABLE, NSXAGENTINTERNAL, NSXSGINFO, NSXSGIPS, NSXAGENTINTERNALCLI, NSXTAGENT, SERATELIMITINGRLINTERNAL, SERATELIMITINGMSFINTERNAL, ADAPTREPL, POOLGROUPENABLEPRIMARYPOOL, MAXOBJECTS. </div>
-<div class="param">source </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - CONN_LOGS, APP_LOGS, EVENT_LOGS, METRICS. </div>
-<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. </div>
-<div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
-<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Unique object identifier of the object. </div>
-    </div>  <!-- field-items -->
-  </div>
-  <div class="model">
-    <h3 class="field-label"><a name="AlertObjectListApiResponse">AlertObjectListApiResponse</a> <a class="up" href="#__Models">Up</a></h3>
-    <div class="field-items">
-      <div class="param">count </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
-<div class="param">results </div><div class="param-desc"><span class="param-type"><a href="#AlertObjectList">array[AlertObjectList]</a></span>  </div>
-<div class="param">next (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
-    </div>  <!-- field-items -->
-  </div>
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int32</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="VsGs">VsGs</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.3. </div>
+<div class="param">geodb_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Gslb GeoDB being associated using this object. Field introduced in 21.1.3. </div>
+<div class="param">gs_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Gslb Service being associated using this object. Field introduced in 21.1.3. </div>
+<div class="param">gslb_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Gslb being associated using this object. Field introduced in 21.1.3. </div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the VS-GS association object. Field introduced in 21.1.3. </div>
+<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tenant. It is a reference to an object of type Tenant. Field introduced in 21.1.3. </div>
+<div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of the VS-GS association object. Enum options - VSGS_TYPE_GSLB, VSGS_TYPE_GS, VSGS_TYPE_GEO_DB. Field introduced in 21.1.3. </div>
+<div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the VS-GS association object. Field introduced in 21.1.3. </div>
+<div class="param">vs_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Virtual Service being associated using this object. Field introduced in 21.1.3. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="VsGsApiResponse">VsGsApiResponse</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">count </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
+<div class="param">results </div><div class="param-desc"><span class="param-type"><a href="#VsGs">array[VsGs]</a></span>  </div>
+<div class="param">next (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
     </div>  <!-- field-items -->
   </div>
   </body>
