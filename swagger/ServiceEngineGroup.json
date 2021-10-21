@@ -2116,6 +2116,12 @@
                     "default": 10,
                     "format": "int32"
                 },
+                "max_skb_frags": {
+                    "description": "Maximum of number of 4 KB pages allocated to the Linux kernel GRO subsystem for packet coalescing. This parameter is limited to supported kernels only. Requires SE Reboot. Allowed values are 1-17. Field introduced in 21.1.3.",
+                    "type": "integer",
+                    "default": 17,
+                    "format": "int32"
+                },
                 "max_vs_per_se": {
                     "description": "Maximum number of Virtual Services that can be placed on a single Service Engine. Allowed values are 1-1000.",
                     "type": "integer",
