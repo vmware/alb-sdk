@@ -69,6 +69,9 @@ type ServiceEngineGroup struct {
 	// Availability zones for Virtual Service High Availability. It is a reference to an object of type AvailabilityZone. Field introduced in 20.1.1.
 	AvailabilityZoneRefs []string `json:"availability_zone_refs,omitempty"`
 
+	// Enable BGP peer monitoring based failover. Field introduced in 21.1.3.
+	BgpPeerMonitorFailoverEnabled *bool `json:"bgp_peer_monitor_failover_enabled,omitempty"`
+
 	// BGP peer state update interval. Allowed values are 5-100. Field introduced in 17.2.14,18.1.5,18.2.1. Unit is SEC.
 	BgpStateUpdateInterval *int32 `json:"bgp_state_update_interval,omitempty"`
 
@@ -392,6 +395,9 @@ type ServiceEngineGroup struct {
 
 	// Maximum number of Services Engines in this group. Allowed values are 0-1000.
 	MaxSe *int32 `json:"max_se,omitempty"`
+
+	// Maximum of number of 4 KB pages allocated to the Linux kernel GRO subsystem for packet coalescing. This parameter is limited to supported kernels only. Requires SE Reboot. Allowed values are 1-17. Field introduced in 21.1.3.
+	MaxSkbFrags *int32 `json:"max_skb_frags,omitempty"`
 
 	// Maximum number of Virtual Services that can be placed on a single Service Engine. Allowed values are 1-1000.
 	MaxVsPerSe *int32 `json:"max_vs_per_se,omitempty"`

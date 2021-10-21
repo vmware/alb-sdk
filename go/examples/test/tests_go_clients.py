@@ -101,3 +101,14 @@ def test_fileupload():
     LOG.info("executing command %s ", cmd)
     out = subprocess.check_output(shlex.split(cmd))
     LOG.info("playbook out %s ", out)
+
+def test_avisession():
+    '''
+    Test complete avisession test suite
+    ToDo: Create separate pytest test suite for avisession test cases
+    '''
+    cmd = PLAYBOOK_TEMPLATE.substitute(test_file='../../session/.')
+    LOG.info("executing command %s ", cmd)
+    out = subprocess.check_output(shlex.split(cmd))
+    LOG.info("playbook out %s ", out)
+    print("playbook out %s ", out)

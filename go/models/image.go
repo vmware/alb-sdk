@@ -24,12 +24,21 @@ type Image struct {
 	// It references the controller-patch associated with the Uber image. Field introduced in 18.2.8, 20.1.1.
 	ControllerPatchUUID *string `json:"controller_patch_uuid,omitempty"`
 
+	// Image events for image upload operation. Field introduced in 21.1.3.
+	Events []*ImageEventMap `json:"events,omitempty"`
+
+	// Status of the image. Field introduced in 21.1.3.
+	ImgState *ImageUploadOpsStatus `json:"img_state,omitempty"`
+
 	// This field describes the api migration related information. Field introduced in 18.2.6.
 	Migrations *SupportedMigrations `json:"migrations,omitempty"`
 
 	// Name of the image. Field introduced in 18.2.6.
 	// Required: true
 	Name *string `json:"name"`
+
+	// Image upload progress which holds value between 0-100. Allowed values are 0-100. Field introduced in 21.1.3. Unit is PERCENT.
+	Progress *int32 `json:"progress,omitempty"`
 
 	// SE package details. Field introduced in 18.2.6.
 	SeInfo *PackageDetails `json:"se_info,omitempty"`
@@ -40,11 +49,17 @@ type Image struct {
 	// It references the Service Engine patch associated with the Uber Image. Field introduced in 18.2.8, 20.1.1.
 	SePatchUUID *string `json:"se_patch_uuid,omitempty"`
 
-	// Status to check if the image is present. Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO, SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN, SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST.... Field introduced in 18.2.6.
+	// Status to check if the image is present. Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO, SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN, SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST.... Field deprecated in 21.1.3. Field introduced in 18.2.6.
 	Status *string `json:"status,omitempty"`
+
+	// Completed set of tasks for Image upload. Field introduced in 21.1.3.
+	TasksCompleted *int32 `json:"tasks_completed,omitempty"`
 
 	// Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 18.2.6.
 	TenantRef *string `json:"tenant_ref,omitempty"`
+
+	// Total number of tasks for Image upload. Field introduced in 21.1.3.
+	TotalTasks *int32 `json:"total_tasks,omitempty"`
 
 	// Type of the image patch/system. Enum options - IMAGE_TYPE_PATCH, IMAGE_TYPE_SYSTEM, IMAGE_TYPE_MUST_CHECK. Field introduced in 18.2.6.
 	Type *string `json:"type,omitempty"`

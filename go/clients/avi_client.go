@@ -132,6 +132,7 @@ type AviClient struct {
 	VSDataScriptSet                 *VSDataScriptSetClient
 	VirtualService                  *VirtualServiceClient
 	VrfContext                      *VrfContextClient
+	VsGs                            *VsGsClient
 	VsVip                           *VsVipClient
 	WafApplicationSignatureProvider *WafApplicationSignatureProviderClient
 	WafCRS                          *WafCRSClient
@@ -271,6 +272,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.VSDataScriptSet = NewVSDataScriptSetClient(aviSession)
 	aviClient.VirtualService = NewVirtualServiceClient(aviSession)
 	aviClient.VrfContext = NewVrfContextClient(aviSession)
+	aviClient.VsGs = NewVsGsClient(aviSession)
 	aviClient.VsVip = NewVsVipClient(aviSession)
 	aviClient.WafApplicationSignatureProvider = NewWafApplicationSignatureProviderClient(aviSession)
 	aviClient.WafCRS = NewWafCRSClient(aviSession)
