@@ -399,6 +399,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("max_se")
     private Integer maxSe = 10;
 
+    @JsonProperty("max_skb_frags")
+    private Integer maxSkbFrags = 17;
+
     @JsonProperty("max_vs_per_se")
     private Integer maxVsPerSe = 10;
 
@@ -4001,6 +4004,34 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setMaxSe(Integer  maxSe) {
         this.maxSe = maxSe;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum of number of 4 kb pages allocated to the linux kernel gro subsystem for packet coalescing.
+     * This parameter is limited to supported kernels only.
+     * Requires se reboot.
+     * Allowed values are 1-17.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 17.
+     * @return maxSkbFrags
+     */
+    public Integer getMaxSkbFrags() {
+        return maxSkbFrags;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum of number of 4 kb pages allocated to the linux kernel gro subsystem for packet coalescing.
+     * This parameter is limited to supported kernels only.
+     * Requires se reboot.
+     * Allowed values are 1-17.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 17.
+     * @param maxSkbFrags set the maxSkbFrags.
+     */
+    public void setMaxSkbFrags(Integer  maxSkbFrags) {
+        this.maxSkbFrags = maxSkbFrags;
     }
 
     /**
@@ -8139,7 +8170,8 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.logMessageMaxFileListSize, objServiceEngineGroup.logMessageMaxFileListSize)&&
   Objects.equals(this.deactivateIpv6Discovery, objServiceEngineGroup.deactivateIpv6Discovery)&&
   Objects.equals(this.markers, objServiceEngineGroup.markers)&&
-  Objects.equals(this.bgpPeerMonitorFailoverEnabled, objServiceEngineGroup.bgpPeerMonitorFailoverEnabled);
+  Objects.equals(this.bgpPeerMonitorFailoverEnabled, objServiceEngineGroup.bgpPeerMonitorFailoverEnabled)&&
+  Objects.equals(this.maxSkbFrags, objServiceEngineGroup.maxSkbFrags);
     }
 
     @Override
@@ -8272,6 +8304,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    maxRulesPerLb: ").append(toIndentedString(maxRulesPerLb)).append("\n");
                         sb.append("    maxScaleoutPerVs: ").append(toIndentedString(maxScaleoutPerVs)).append("\n");
                         sb.append("    maxSe: ").append(toIndentedString(maxSe)).append("\n");
+                        sb.append("    maxSkbFrags: ").append(toIndentedString(maxSkbFrags)).append("\n");
                         sb.append("    maxVsPerSe: ").append(toIndentedString(maxVsPerSe)).append("\n");
                         sb.append("    memReserve: ").append(toIndentedString(memReserve)).append("\n");
                         sb.append("    memoryForConfigUpdate: ").append(toIndentedString(memoryForConfigUpdate)).append("\n");
