@@ -325,7 +325,7 @@ and it supports several query options described in detail below.
 <td> client_ip </td>
 <td> IP Address </td>
 <td> eq,sw,ne </td>
-<td>  </td>
+<td> IPv4 address of the client. When true client IP feature is enabled, this will be derived from the header configured in the true client IP feature, if present in the request </td>
 </tr>
 <tr>
 <td> client_location </td>
@@ -1016,6 +1016,18 @@ and it supports several query options described in detail below.
 <td> Integer </td>
 <td> eq,lt,le,gt,ge,ne </td>
 <td> TCP connection establishment time for the backend flow. </td>
+</tr>
+<tr>
+<td> source_ip </td>
+<td> IP Address </td>
+<td> eq,sw,ne </td>
+<td> Source IP of the client connection to the VS. This can be different from client IP when true client IP feature is enabled. </td>
+</tr>
+<tr>
+<td> source_ip6 </td>
+<td> String </td>
+<td> eq,sw,ne,co,nc </td>
+<td> IPv6 address of the source of the client connection to the VS. This can be different from client IPv6 address when true client IP feature is enabled. </td>
 </tr>
 </table>
 </div>
