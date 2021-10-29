@@ -4339,9 +4339,6 @@
         },
         "AuthenticationPolicy": {
             "type": "object",
-            "required": [
-                "default_auth_profile_ref"
-            ],
             "properties": {
                 "auth_profile_ref": {
                     "description": "Auth Profile to use for validating users. It is a reference to an object of type AuthProfile. Field deprecated in 18.2.3. Field introduced in 18.2.1.",
@@ -5286,6 +5283,18 @@
                 }
             }
         },
+        "JWTValidationParams": {
+            "type": "object",
+            "required": [
+                "audience"
+            ],
+            "properties": {
+                "audience": {
+                    "description": "Audience parameter used for validation using JWT token. Field introduced in 21.1.3.",
+                    "type": "string"
+                }
+            }
+        },
         "JWTValidationVsConfig": {
             "type": "object",
             "required": [
@@ -5483,6 +5492,143 @@
                 "enabled": {
                     "description": "Enables real time metrics collection.  When deactivated, 6 hour view is the most granular the system will track.",
                     "type": "boolean"
+                }
+            }
+        },
+        "OAuthAppSettings": {
+            "type": "object",
+            "required": [
+                "client_id",
+                "client_secret"
+            ],
+            "properties": {
+                "client_id": {
+                    "description": "Application specific identifier. Field introduced in 21.1.3.",
+                    "type": "string"
+                },
+                "client_secret": {
+                    "description": "Application specific identifier secret. Field introduced in 21.1.3.",
+                    "type": "string"
+                },
+                "oidc_config": {
+                    "description": "OpenID Connect specific configuration. Field introduced in 21.1.3.",
+                    "$ref": "#/definitions/OIDCConfig"
+                },
+                "scopes": {
+                    "description": "Scope specified to give limited access to the app. Field introduced in 21.1.3.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "OAuthResourceServer": {
+            "type": "object",
+            "required": [
+                "access_type"
+            ],
+            "properties": {
+                "access_type": {
+                    "description": "Access token type. Enum options - ACCESS_TOKEN_TYPE_JWT, ACCESS_TOKEN_TYPE_OPAQUE. Field introduced in 21.1.3.",
+                    "type": "string",
+                    "default": "ACCESS_TOKEN_TYPE_JWT"
+                },
+                "jwt_params": {
+                    "description": "Validation parameters to be used when access token type is JWT. Field introduced in 21.1.3.",
+                    "$ref": "#/definitions/JWTValidationParams"
+                },
+                "opaque_token_params": {
+                    "description": "Validation parameters to be used when access token type is opaque. Field introduced in 21.1.3.",
+                    "$ref": "#/definitions/OpaqueTokenValidationParams"
+                }
+            }
+        },
+        "OAuthSettings": {
+            "type": "object",
+            "required": [
+                "auth_profile_ref"
+            ],
+            "properties": {
+                "app_settings": {
+                    "description": "Application-specific OAuth config. Field introduced in 21.1.3.",
+                    "$ref": "#/definitions/OAuthAppSettings"
+                },
+                "auth_profile_ref": {
+                    "description": "Auth Profile to use for validating users. It is a reference to an object of type AuthProfile. Field introduced in 21.1.3.",
+                    "type": "string"
+                },
+                "resource_server": {
+                    "description": "Resource Server OAuth config. Field introduced in 21.1.3.",
+                    "$ref": "#/definitions/OAuthResourceServer"
+                }
+            }
+        },
+        "OAuthVSConfig": {
+            "type": "object",
+            "properties": {
+                "cookie_name": {
+                    "description": "HTTP cookie name for authorized session. Field introduced in 21.1.3.",
+                    "type": "string"
+                },
+                "cookie_timeout": {
+                    "description": "HTTP cookie timeout for authorized session. Allowed values are 1-1440. Field introduced in 21.1.3. Unit is MIN.",
+                    "type": "integer",
+                    "default": 60,
+                    "format": "int32"
+                },
+                "key": {
+                    "description": "Key to generate the cookie. Field introduced in 21.1.3.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/HttpCookiePersistenceKey"
+                    }
+                },
+                "oauth_settings": {
+                    "description": "Application and IDP settings for OAuth/OIDC. Field introduced in 21.1.3. Maximum of 1 items allowed.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/OAuthSettings"
+                    }
+                },
+                "redirect_uri": {
+                    "description": "Redirect URI specified in the request to Authorization Server. Field introduced in 21.1.3.",
+                    "type": "string"
+                }
+            }
+        },
+        "OIDCConfig": {
+            "type": "object",
+            "properties": {
+                "oidc_enable": {
+                    "description": "Adds openid as one of the scopes enabling OpenID Connect flow. Field introduced in 21.1.3.",
+                    "type": "boolean"
+                },
+                "profile": {
+                    "description": "Fetch profile information by enabling profile scope. Field introduced in 21.1.3.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "userinfo": {
+                    "description": "Fetch profile information from Userinfo Endpoint. Field introduced in 21.1.3.",
+                    "type": "boolean"
+                }
+            }
+        },
+        "OpaqueTokenValidationParams": {
+            "type": "object",
+            "required": [
+                "server_id",
+                "server_secret"
+            ],
+            "properties": {
+                "server_id": {
+                    "description": "Resource server specific identifier used to validate against introspection endpoint when access token is opaque. Field introduced in 21.1.3.",
+                    "type": "string"
+                },
+                "server_secret": {
+                    "description": "Resource server specific password/secret. Field introduced in 21.1.3.",
+                    "type": "string"
                 }
             }
         },
@@ -5843,7 +5989,6 @@
         "SSOPolicy": {
             "type": "object",
             "required": [
-                "authentication_policy",
                 "name",
                 "type"
             ],
@@ -5888,7 +6033,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "description": "SSO Policy Type. Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT, SSO_TYPE_LDAP. Field introduced in 18.2.5.",
+                    "description": "SSO Policy Type. Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT, SSO_TYPE_LDAP, SSO_TYPE_OAUTH. Field introduced in 18.2.5.",
                     "type": "string",
                     "default": "SSO_TYPE_SAML"
                 },
@@ -6453,6 +6598,10 @@
                     "items": {
                         "type": "string"
                     }
+                },
+                "oauth_vs_config": {
+                    "description": "VirtualService specific OAuth config. Field introduced in 21.1.3.",
+                    "$ref": "#/definitions/OAuthVSConfig"
                 },
                 "performance_limits": {
                     "description": "Optional settings that determine performance limits like max connections or bandwdith etc.",
