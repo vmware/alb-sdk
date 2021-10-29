@@ -551,9 +551,6 @@
         },
         "AuthenticationPolicy": {
             "type": "object",
-            "required": [
-                "default_auth_profile_ref"
-            ],
             "properties": {
                 "auth_profile_ref": {
                     "description": "Auth Profile to use for validating users. It is a reference to an object of type AuthProfile. Field deprecated in 18.2.3. Field introduced in 18.2.1.",
@@ -1011,7 +1008,6 @@
         "SSOPolicy": {
             "type": "object",
             "required": [
-                "authentication_policy",
                 "name",
                 "type"
             ],
@@ -1056,7 +1052,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "description": "SSO Policy Type. Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT, SSO_TYPE_LDAP. Field introduced in 18.2.5.",
+                    "description": "SSO Policy Type. Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT, SSO_TYPE_LDAP, SSO_TYPE_OAUTH. Field introduced in 18.2.5.",
                     "type": "string",
                     "default": "SSO_TYPE_SAML"
                 },

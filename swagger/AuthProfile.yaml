@@ -380,6 +380,9 @@ definitions:
             name:
                 description: "Name of the Auth Profile."
                 type: string
+            oauth_profile:
+                description: "OAuth Profile - Common endpoint information. Field introduced in 21.1.3."
+                $ref: '#/definitions/OAuthProfile'
             pa_agent_ref:
                 description: "PingAccessAgent uuid. It is a reference to an object of type PingAccessAgent. Field introduced in 18.2.3. Allowed in Basic edition, Essentials edition, Enterprise edition."
                 type: string
@@ -393,7 +396,7 @@ definitions:
                 description: " It is a reference to an object of type Tenant."
                 type: string
             type:
-                description: "Type of the Auth Profile. Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT."
+                description: "Type of the Auth Profile. Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH."
                 type: string
             url:
                 description: "url"
@@ -556,6 +559,42 @@ definitions:
                     type: string
             user_id_attribute:
                 description: "LDAP user id attribute is the login attribute that uniquely identifies a single user record."
+                type: string
+    OAuthProfile:
+        type: object
+        required:
+            -   authorization_endpoint
+            -   token_endpoint
+        properties:
+            authorization_endpoint:
+                description: "URL of authorization server. Field introduced in 21.1.3."
+                type: string
+            introspection_endpoint:
+                description: "URL of token introspection server. Field introduced in 21.1.3."
+                type: string
+            issuer:
+                description: "Uniquely identifiable name of the Token Issuer. Field introduced in 21.1.3."
+                type: string
+            jwks_timeout:
+                description: "Lifetime of the cached JWKS keys. Field introduced in 21.1.3."
+                type: integer
+                format: int32
+            jwks_uri:
+                description: "JWKS URL of the endpoint that hosts the public keys that can be used to verify any JWT issued by the authorization server. Field introduced in 21.1.3."
+                type: string
+            oauth_resp_buffer_sz:
+                description: "Buffering size for the responses from the OAUTH enpoints. Field introduced in 21.1.3."
+                type: integer
+                default: 102400
+                format: int32
+            pool_ref:
+                description: "Pool object to interface with Authorization Server endpoints. It is a reference to an object of type Pool. Field introduced in 21.1.3."
+                type: string
+            token_endpoint:
+                description: "URL of token exchange server. Field introduced in 21.1.3."
+                type: string
+            userinfo_endpoint:
+                description: "URL of the Userinfo Endpoint. Field introduced in 21.1.3."
                 type: string
     RoleFilterMatchLabel:
         type: object
