@@ -325,6 +325,7 @@ font-style: italic;
           "vs_port" : "",
           "hdrs" : [ "" ],
           "version" : "",
+          "source_ip" : "",
           "path" : "",
           "rsp_hdrs" : [ "" ],
           "protocol" : "",
@@ -416,6 +417,7 @@ font-style: italic;
             "match_criteria" : "aeiou",
             "versions" : [ "aeiou" ]
           },
+          "source_ip" : "",
           "path" : {
             "match_criteria" : "aeiou",
             "string_group_refs" : [ "aeiou" ],
@@ -629,6 +631,7 @@ font-style: italic;
         "vs_port" : "",
         "hdrs" : [ "" ],
         "version" : "",
+        "source_ip" : "",
         "path" : "",
         "rsp_hdrs" : [ "" ],
         "protocol" : "",
@@ -720,6 +723,7 @@ font-style: italic;
           "match_criteria" : "aeiou",
           "versions" : [ "aeiou" ]
         },
+        "source_ip" : "",
         "path" : {
           "match_criteria" : "aeiou",
           "string_group_refs" : [ "aeiou" ],
@@ -1004,6 +1008,7 @@ font-style: italic;
         "vs_port" : "",
         "hdrs" : [ "" ],
         "version" : "",
+        "source_ip" : "",
         "path" : "",
         "rsp_hdrs" : [ "" ],
         "protocol" : "",
@@ -1095,6 +1100,7 @@ font-style: italic;
           "match_criteria" : "aeiou",
           "versions" : [ "aeiou" ]
         },
+        "source_ip" : "",
         "path" : {
           "match_criteria" : "aeiou",
           "string_group_refs" : [ "aeiou" ],
@@ -1319,6 +1325,7 @@ font-style: italic;
         "vs_port" : "",
         "hdrs" : [ "" ],
         "version" : "",
+        "source_ip" : "",
         "path" : "",
         "rsp_hdrs" : [ "" ],
         "protocol" : "",
@@ -1410,6 +1417,7 @@ font-style: italic;
           "match_criteria" : "aeiou",
           "versions" : [ "aeiou" ]
         },
+        "source_ip" : "",
         "path" : {
           "match_criteria" : "aeiou",
           "string_group_refs" : [ "aeiou" ],
@@ -1634,6 +1642,7 @@ font-style: italic;
         "vs_port" : "",
         "hdrs" : [ "" ],
         "version" : "",
+        "source_ip" : "",
         "path" : "",
         "rsp_hdrs" : [ "" ],
         "protocol" : "",
@@ -1725,6 +1734,7 @@ font-style: italic;
           "match_criteria" : "aeiou",
           "versions" : [ "aeiou" ]
         },
+        "source_ip" : "",
         "path" : {
           "match_criteria" : "aeiou",
           "string_group_refs" : [ "aeiou" ],
@@ -1960,7 +1970,7 @@ font-style: italic;
     <h3 class="field-label"><a name="HTTPHdrValue">HTTPHdrValue</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">val (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP header value or variable representing an HTTP header. </div>
-<div class="param">var (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Variable. Enum options - HTTP_POLICY_VAR_CLIENT_IP, HTTP_POLICY_VAR_VS_PORT, HTTP_POLICY_VAR_VS_IP, HTTP_POLICY_VAR_HTTP_HDR, HTTP_POLICY_VAR_SSL_CLIENT_FINGERPRINT, HTTP_POLICY_VAR_SSL_CLIENT_SERIAL, HTTP_POLICY_VAR_SSL_CLIENT_ISSUER, HTTP_POLICY_VAR_SSL_CLIENT_SUBJECT, HTTP_POLICY_VAR_SSL_CLIENT_RAW, HTTP_POLICY_VAR_SSL_PROTOCOL, HTTP_POLICY_VAR_SSL_SERVER_NAME, HTTP_POLICY_VAR_USER_NAME, HTTP_POLICY_VAR_SSL_CIPHER, HTTP_POLICY_VAR_REQUEST_ID, HTTP_POLICY_VAR_SSL_CLIENT_VERSION, HTTP_POLICY_VAR_SSL_CLIENT_SIGALG, HTTP_POLICY_VAR_SSL_CLIENT_NOTVALIDBEFORE, HTTP_POLICY_VAR_SSL_CLIENT_NOTVALIDAFTER, HTTP_POLICY_VAR_SSL_CLIENT_ESCAPED. </div>
+<div class="param">var (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Variable. Enum options - HTTP_POLICY_VAR_CLIENT_IP, HTTP_POLICY_VAR_VS_PORT, HTTP_POLICY_VAR_VS_IP, HTTP_POLICY_VAR_HTTP_HDR, HTTP_POLICY_VAR_SSL_CLIENT_FINGERPRINT, HTTP_POLICY_VAR_SSL_CLIENT_SERIAL, HTTP_POLICY_VAR_SSL_CLIENT_ISSUER, HTTP_POLICY_VAR_SSL_CLIENT_SUBJECT, HTTP_POLICY_VAR_SSL_CLIENT_RAW, HTTP_POLICY_VAR_SSL_PROTOCOL, HTTP_POLICY_VAR_SSL_SERVER_NAME, HTTP_POLICY_VAR_USER_NAME, HTTP_POLICY_VAR_SSL_CIPHER, HTTP_POLICY_VAR_REQUEST_ID, HTTP_POLICY_VAR_SSL_CLIENT_VERSION, HTTP_POLICY_VAR_SSL_CLIENT_SIGALG, HTTP_POLICY_VAR_SSL_CLIENT_NOTVALIDBEFORE, HTTP_POLICY_VAR_SSL_CLIENT_NOTVALIDAFTER, HTTP_POLICY_VAR_SSL_CLIENT_ESCAPED, HTTP_POLICY_VAR_SOURCE_IP. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -2218,13 +2228,14 @@ font-style: italic;
 <div class="param">client_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrMatch">IpAddrMatch</a></span> Configure client ip addresses. </div>
 <div class="param">cookie (optional)</div><div class="param-desc"><span class="param-type"><a href="#CookieMatch">CookieMatch</a></span> Configure HTTP cookie(s). </div>
 <div class="param">geo_matches (optional)</div><div class="param-desc"><span class="param-type"><a href="#GeoMatch">array[GeoMatch]</a></span> Configure the geo information. Field introduced in 21.1.1. Maximum of 1 items allowed. </div>
-<div class="param">hdrs (optional)</div><div class="param-desc"><span class="param-type"><a href="#HdrMatch">array[HdrMatch]</a></span> Configure HTTP header(s). </div>
+<div class="param">hdrs (optional)</div><div class="param-desc"><span class="param-type"><a href="#HdrMatch">array[HdrMatch]</a></span> Configure HTTP header(s). All configured headers must match. </div>
 <div class="param">host_hdr (optional)</div><div class="param-desc"><span class="param-type"><a href="#HostHdrMatch">HostHdrMatch</a></span> Configure the host header. </div>
 <div class="param">ip_reputation_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#IPReputationTypeMatch">IPReputationTypeMatch</a></span> Configure IP reputation. Field introduced in 20.1.3. </div>
 <div class="param">method (optional)</div><div class="param-desc"><span class="param-type"><a href="#MethodMatch">MethodMatch</a></span> Configure HTTP methods. </div>
 <div class="param">path (optional)</div><div class="param-desc"><span class="param-type"><a href="#PathMatch">PathMatch</a></span> Configure request paths. </div>
 <div class="param">protocol (optional)</div><div class="param-desc"><span class="param-type"><a href="#ProtocolMatch">ProtocolMatch</a></span> Configure the type of HTTP protocol. </div>
 <div class="param">query (optional)</div><div class="param-desc"><span class="param-type"><a href="#QueryMatch">QueryMatch</a></span> Configure request query. </div>
+<div class="param">source_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrMatch">IpAddrMatch</a></span> Configure source ip addresses. Field introduced in 21.1.3. </div>
 <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#HTTPVersionMatch">HTTPVersionMatch</a></span> Configure versions of the HTTP protocol. </div>
 <div class="param">vs_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#PortMatch">PortMatch</a></span> Configure virtual service ports. </div>
     </div>  <!-- field-items -->
@@ -2321,6 +2332,7 @@ font-style: italic;
 <div class="param">protocol (optional)</div><div class="param-desc"><span class="param-type"><a href="#ProtocolMatch">ProtocolMatch</a></span> Configure the type of HTTP protocol. </div>
 <div class="param">query (optional)</div><div class="param-desc"><span class="param-type"><a href="#QueryMatch">QueryMatch</a></span> Configure request query. </div>
 <div class="param">rsp_hdrs (optional)</div><div class="param-desc"><span class="param-type"><a href="#HdrMatch">array[HdrMatch]</a></span> Configure the HTTP headers in response. </div>
+<div class="param">source_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrMatch">IpAddrMatch</a></span> Configure source ip addresses. Field introduced in 21.1.3. </div>
 <div class="param">status (optional)</div><div class="param-desc"><span class="param-type"><a href="#HTTPStatusMatch">HTTPStatusMatch</a></span> Configure the HTTP status code(s). </div>
 <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#HTTPVersionMatch">HTTPVersionMatch</a></span> Configure versions of the HTTP protocol. </div>
 <div class="param">vs_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#PortMatch">PortMatch</a></span> Configure virtual service ports. </div>
