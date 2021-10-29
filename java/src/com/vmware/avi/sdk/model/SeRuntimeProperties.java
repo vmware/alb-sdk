@@ -274,7 +274,7 @@ public class SeRuntimeProperties  {
     private Integer seMetricsInterval = 60000;
 
     @JsonProperty("se_metrics_rt_enabled")
-    private Boolean seMetricsRtEnabled = true;
+    private Boolean seMetricsRtEnabled;
 
     @JsonProperty("se_metrics_rt_interval")
     private Integer seMetricsRtInterval = 1000;
@@ -2189,7 +2189,6 @@ public class SeRuntimeProperties  {
      * Enable or disable real time metrics irrespective of virtualservice or se group configuration.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return seMetricsRtEnabled
      */
     public Boolean getSeMetricsRtEnabled() {
@@ -2202,7 +2201,6 @@ public class SeRuntimeProperties  {
      * Enable or disable real time metrics irrespective of virtualservice or se group configuration.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param seMetricsRtEnabled set the seMetricsRtEnabled.
      */
     public void setSeMetricsRtEnabled(Boolean  seMetricsRtEnabled) {

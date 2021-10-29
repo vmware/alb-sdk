@@ -120,6 +120,7 @@ public class BotMappingRuleMatchTarget  {
     /**
      * This is the getter method this will return the attribute value.
      * Configure http header(s).
+     * All configured headers must match.
      * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hdrs
@@ -131,6 +132,7 @@ public class BotMappingRuleMatchTarget  {
     /**
      * This is the setter method. this will set the hdrs
      * Configure http header(s).
+     * All configured headers must match.
      * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hdrs
@@ -142,6 +144,7 @@ public class BotMappingRuleMatchTarget  {
     /**
      * This is the setter method this will set the hdrs
      * Configure http header(s).
+     * All configured headers must match.
      * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hdrs

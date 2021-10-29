@@ -31,7 +31,7 @@ public class CaseConfig  {
     private Boolean enableAutoCaseCreationOnSeFailure = false;
 
     @JsonProperty("enable_cleanup_of_attached_files")
-    private Boolean enableCleanupOfAttachedFiles = true;
+    private Boolean enableCleanupOfAttachedFiles;
 
 
 
@@ -113,7 +113,6 @@ public class CaseConfig  {
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enableCleanupOfAttachedFiles
      */
     public Boolean getEnableCleanupOfAttachedFiles() {
@@ -126,7 +125,6 @@ public class CaseConfig  {
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enableCleanupOfAttachedFiles set the enableCleanupOfAttachedFiles.
      */
     public void setEnableCleanupOfAttachedFiles(Boolean  enableCleanupOfAttachedFiles) {

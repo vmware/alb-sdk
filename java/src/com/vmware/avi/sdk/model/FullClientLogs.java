@@ -28,7 +28,7 @@ public class FullClientLogs  {
     private Integer duration = 30;
 
     @JsonProperty("enabled")
-    private Boolean enabled = false;
+    private Boolean enabled;
 
     @JsonProperty("throttle")
     private Integer throttle = 10;
@@ -89,7 +89,6 @@ public class FullClientLogs  {
      * When deactivated, only errors will be logged.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is false.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -102,7 +101,6 @@ public class FullClientLogs  {
      * When deactivated, only errors will be logged.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is false.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enabled set the enabled.
      */
     public void setEnabled(Boolean  enabled) {

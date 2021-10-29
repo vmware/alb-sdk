@@ -25,7 +25,7 @@ public class ProactiveSupportDefaults  {
     private Boolean attachCoreDump = false;
 
     @JsonProperty("attach_tech_support")
-    private Boolean attachTechSupport = true;
+    private Boolean attachTechSupport;
 
     @JsonProperty("case_severity")
     private String caseSeverity = "Severity 5";
@@ -62,7 +62,6 @@ public class ProactiveSupportDefaults  {
      * Field introduced in 20.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return attachTechSupport
      */
     public Boolean getAttachTechSupport() {
@@ -75,7 +74,6 @@ public class ProactiveSupportDefaults  {
      * Field introduced in 20.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param attachTechSupport set the attachTechSupport.
      */
     public void setAttachTechSupport(Boolean  attachTechSupport) {

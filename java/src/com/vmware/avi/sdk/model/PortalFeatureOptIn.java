@@ -37,10 +37,10 @@ public class PortalFeatureOptIn  {
     private Boolean enableIpReputation = false;
 
     @JsonProperty("enable_pulse_case_management")
-    private Boolean enablePulseCaseManagement = true;
+    private Boolean enablePulseCaseManagement;
 
     @JsonProperty("enable_pulse_waf_management")
-    private Boolean enablePulseWafManagement = true;
+    private Boolean enablePulseWafManagement;
 
     @JsonProperty("enable_saas_licensing")
     private Boolean enableSaasLicensing = false;
@@ -179,7 +179,6 @@ public class PortalFeatureOptIn  {
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enablePulseCaseManagement
      */
     public Boolean getEnablePulseCaseManagement() {
@@ -192,7 +191,6 @@ public class PortalFeatureOptIn  {
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enablePulseCaseManagement set the enablePulseCaseManagement.
      */
     public void setEnablePulseCaseManagement(Boolean  enablePulseCaseManagement) {
@@ -205,7 +203,6 @@ public class PortalFeatureOptIn  {
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enablePulseWafManagement
      */
     public Boolean getEnablePulseWafManagement() {
@@ -218,7 +215,6 @@ public class PortalFeatureOptIn  {
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enablePulseWafManagement set the enablePulseWafManagement.
      */
     public void setEnablePulseWafManagement(Boolean  enablePulseWafManagement) {

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HSMAwsCloudHsm  {
     @JsonProperty("client_config")
-    private String clientConfig = null;
+    private String clientConfig;
 
     @JsonProperty("cluster_cert")
     private String clusterCert = null;
@@ -37,14 +37,13 @@ public class HSMAwsCloudHsm  {
     private List<String> hsmIp = null;
 
     @JsonProperty("mgmt_config")
-    private String mgmtConfig = null;
+    private String mgmtConfig;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.2.7.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientConfig
      */
     public String getClientConfig() {
@@ -54,7 +53,6 @@ public class HSMAwsCloudHsm  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.2.7.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientConfig set the clientConfig.
      */
     public void setClientConfig(String  clientConfig) {
@@ -173,7 +171,6 @@ public class HSMAwsCloudHsm  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.2.7.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mgmtConfig
      */
     public String getMgmtConfig() {
@@ -183,7 +180,6 @@ public class HSMAwsCloudHsm  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.2.7.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mgmtConfig set the mgmtConfig.
      */
     public void setMgmtConfig(String  mgmtConfig) {

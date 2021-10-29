@@ -40,7 +40,7 @@ public class Pool extends AviRestResource  {
     private String apicEpgName;
 
     @JsonProperty("append_port")
-    private String appendPort = "NON_DEFAULT_80_443";
+    private String appendPort;
 
     @JsonProperty("application_persistence_profile_ref")
     private String applicationPersistenceProfileRef = null;
@@ -70,7 +70,7 @@ public class Pool extends AviRestResource  {
     private ConnPoolProperties connPoolProperties = null;
 
     @JsonProperty("connection_ramp_duration")
-    private Integer connectionRampDuration = 10;
+    private Integer connectionRampDuration;
 
     @JsonProperty("created_by")
     private String createdBy = null;
@@ -109,7 +109,7 @@ public class Pool extends AviRestResource  {
     private Integer gracefulDisableTimeout = 1;
 
     @JsonProperty("gslb_sp_enabled")
-    private Boolean gslbSpEnabled = null;
+    private Boolean gslbSpEnabled;
 
     @JsonProperty("health_monitor_refs")
     private List<String> healthMonitorRefs = null;
@@ -389,7 +389,6 @@ public class Pool extends AviRestResource  {
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- never) edition, essentials(allowed values- never) edition, enterprise edition.
      * Special default for basic edition is never, essentials edition is never, enterprise is non_default_80_443.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "NON_DEFAULT_80_443".
      * @return appendPort
      */
     public String getAppendPort() {
@@ -406,7 +405,6 @@ public class Pool extends AviRestResource  {
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- never) edition, essentials(allowed values- never) edition, enterprise edition.
      * Special default for basic edition is never, essentials edition is never, enterprise is non_default_80_443.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "NON_DEFAULT_80_443".
      * @param appendPort set the appendPort.
      */
     public void setAppendPort(String  appendPort) {
@@ -635,7 +633,6 @@ public class Pool extends AviRestResource  {
      * Unit is min.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Special default for basic edition is 0, essentials edition is 0, enterprise is 10.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return connectionRampDuration
      */
     public Integer getConnectionRampDuration() {
@@ -651,7 +648,6 @@ public class Pool extends AviRestResource  {
      * Unit is min.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Special default for basic edition is 0, essentials edition is 0, enterprise is 10.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param connectionRampDuration set the connectionRampDuration.
      */
     public void setConnectionRampDuration(Integer  connectionRampDuration) {
@@ -972,7 +968,6 @@ public class Pool extends AviRestResource  {
      * Indicates if the pool is a site-persistence pool.
      * Field introduced in 17.2.1.
      * Allowed in basic edition, essentials edition, enterprise edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gslbSpEnabled
      */
     public Boolean getGslbSpEnabled() {
@@ -984,7 +979,6 @@ public class Pool extends AviRestResource  {
      * Indicates if the pool is a site-persistence pool.
      * Field introduced in 17.2.1.
      * Allowed in basic edition, essentials edition, enterprise edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gslbSpEnabled set the gslbSpEnabled.
      */
     public void setGslbSpEnabled(Boolean  gslbSpEnabled) {
