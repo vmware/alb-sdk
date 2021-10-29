@@ -42,7 +42,9 @@ public class AviAuthorizationInterceptor implements ClientHttpRequestInterceptor
 	public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException{
 		LOGGER.info("__INIT__ Inside Interceptor..");
 		int numApiExecCount = 0;
-		if (null == this.aviCredentials.getSessionID() || this.aviCredentials.getSessionID().isEmpty()) {
+		if (!aviCredentials.getLazyAuthentication() &&
+				(null == this.aviCredentials.getSessionID() ||
+						this.aviCredentials.getSessionID().isEmpty())) {
 			AviRestUtils.authenticateSession(this.aviCredentials);
 		}
 		ClientHttpResponse response = null;

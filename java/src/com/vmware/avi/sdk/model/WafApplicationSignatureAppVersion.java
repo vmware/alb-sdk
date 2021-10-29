@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafApplicationSignatureAppVersion  {
     @JsonProperty("application")
-    private String application = null;
+    private String application;
 
     @JsonProperty("last_changed_ruleset_version")
-    private String lastChangedRulesetVersion = null;
+    private String lastChangedRulesetVersion;
 
     @JsonProperty("number_of_rules")
-    private Integer numberOfRules = null;
+    private Integer numberOfRules;
 
 
 
@@ -36,7 +36,6 @@ public class WafApplicationSignatureAppVersion  {
      * This is the getter method this will return the attribute value.
      * Name of an application in the rule set.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return application
      */
     public String getApplication() {
@@ -47,7 +46,6 @@ public class WafApplicationSignatureAppVersion  {
      * This is the setter method to the attribute.
      * Name of an application in the rule set.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param application set the application.
      */
     public void setApplication(String  application) {
@@ -58,7 +56,6 @@ public class WafApplicationSignatureAppVersion  {
      * This is the getter method this will return the attribute value.
      * The last version of the rule set when the rules corresponding to the application changed.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return lastChangedRulesetVersion
      */
     public String getLastChangedRulesetVersion() {
@@ -69,7 +66,6 @@ public class WafApplicationSignatureAppVersion  {
      * This is the setter method to the attribute.
      * The last version of the rule set when the rules corresponding to the application changed.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param lastChangedRulesetVersion set the lastChangedRulesetVersion.
      */
     public void setLastChangedRulesetVersion(String  lastChangedRulesetVersion) {
@@ -80,7 +76,6 @@ public class WafApplicationSignatureAppVersion  {
      * This is the getter method this will return the attribute value.
      * The number of rules available for this application.
      * Field introduced in 20.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numberOfRules
      */
     public Integer getNumberOfRules() {
@@ -91,7 +86,6 @@ public class WafApplicationSignatureAppVersion  {
      * This is the setter method to the attribute.
      * The number of rules available for this application.
      * Field introduced in 20.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numberOfRules set the numberOfRules.
      */
     public void setNumberOfRules(Integer  numberOfRules) {

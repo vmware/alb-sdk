@@ -16,12 +16,14 @@ import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.conn.HttpHostConnectException;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultServiceUnavailableRetryStrategy;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.SSLContexts;
 import org.apache.http.util.EntityUtils;
@@ -108,7 +110,7 @@ public class AviRestUtils {
 			return new RestTemplate(new HttpComponentsClientHttpRequestFactory(client));
 
 		} catch (Exception e) {
-			LOGGER.severe("Exception in creating rest template for AVI connection");
+            LOGGER.log(Level.SEVERE,"Exception in creating rest template for AVI connection", e);
 		}
 		return null;
 	}
@@ -155,7 +157,7 @@ public class AviRestUtils {
 
 	public static CloseableHttpClient buildHttpClient(AviCredentials creds) {
 		LOGGER.info("__INIT__ Inside buildHttpClient..");
-		CloseableHttpClient httpClient = null;
+		HttpClientBuilder clientBuilder;
 		if (!creds.getVerify()) {
 			SSLContext sslcontext = null;
 			try {
@@ -167,26 +169,32 @@ public class AviRestUtils {
 			SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslcontext,
 					(s, sslSession) -> true);
 			RequestConfig requestConfig = RequestConfig.custom().
-			setSocketTimeout(SOCKET_TIMEOUT).setConnectionRequestTimeout((creds.getTimeout())*1000).build();
-			httpClient = HttpClients.custom().setRetryHandler(retryHandler(creds))
-					.setSSLSocketFactory(sslConnectionSocketFactory)
-					.setServiceUnavailableRetryStrategy(new DefaultServiceUnavailableRetryStrategy(
-							creds.getNumApiRetries(), creds.getRetryWaitTime()))
-					.disableCookieManagement().setDefaultRequestConfig(requestConfig).build();
+					setSocketTimeout(SOCKET_TIMEOUT).
+					setConnectionRequestTimeout((creds.getTimeout())*1000).
+					setConnectTimeout((creds.getConnectionTimeout())*1000).
+					build();
+
+			clientBuilder = HttpClients.custom().
+					setSSLSocketFactory(sslConnectionSocketFactory).
+					setServiceUnavailableRetryStrategy(new DefaultServiceUnavailableRetryStrategy(creds.getNumApiRetries(),
+							creds.getRetryWaitTime())).
+					disableCookieManagement().setDefaultRequestConfig(requestConfig);
 		} else {
-			httpClient = HttpClients.custom().setRetryHandler(retryHandler(creds)).setServiceUnavailableRetryStrategy(
+			clientBuilder = HttpClients.custom().setServiceUnavailableRetryStrategy(
 					new DefaultServiceUnavailableRetryStrategy(creds.getNumApiRetries(), creds.getRetryWaitTime()))
-					.disableCookieManagement().build();
+					.disableCookieManagement();
 		}
+
+		clientBuilder.setRetryHandler(retryHandler(creds));
 		LOGGER.info("__DONE__ BuildHttpClient completed");
-		return httpClient;
+		return clientBuilder.build();
 	}
 
 	/**
 	 * This method authenticates user based on the credentials and update the
 	 * csrftoken and session id for this session.
 	 */
-	public static void authenticateSession(AviCredentials aviCredentials) {
+	public static void authenticateSession(AviCredentials aviCredentials) throws IOException {
 		LOGGER.info("__INIT__ Inside authentication session for.. " + aviCredentials.getUsername());
 		JSONObject body = new JSONObject();
 		body.put("username", aviCredentials.getUsername());
@@ -228,8 +236,11 @@ public class AviRestUtils {
 			aviCredentials.setCsrftoken(csrftoken);
 			aviCredentials.setSessionID(sessionCookie);
 			LOGGER.info("__DONE__ Authentication session success for:: " + aviCredentials.getUsername());
+		} catch (ConnectTimeoutException e){
+			throw e;
 		} catch (Exception e) {
 			e.printStackTrace();
+            throw e;
 		} finally {
 			if (null != httpClient) {
 				try {

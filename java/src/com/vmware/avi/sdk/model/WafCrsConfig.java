@@ -28,7 +28,7 @@ public class WafCrsConfig  {
     private Boolean enableAutoDownloadWafSignatures = false;
 
     @JsonProperty("enable_waf_signatures_notifications")
-    private Boolean enableWafSignaturesNotifications = true;
+    private Boolean enableWafSignaturesNotifications;
 
 
 
@@ -86,7 +86,6 @@ public class WafCrsConfig  {
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enableWafSignaturesNotifications
      */
     public Boolean getEnableWafSignaturesNotifications() {
@@ -99,7 +98,6 @@ public class WafCrsConfig  {
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enableWafSignaturesNotifications set the enableWafSignaturesNotifications.
      */
     public void setEnableWafSignaturesNotifications(Boolean  enableWafSignaturesNotifications) {

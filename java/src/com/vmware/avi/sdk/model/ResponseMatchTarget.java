@@ -51,6 +51,9 @@ public class ResponseMatchTarget  {
     @JsonProperty("rsp_hdrs")
     private List<HdrMatch> rspHdrs = null;
 
+    @JsonProperty("source_ip")
+    private IpAddrMatch sourceIp = null;
+
     @JsonProperty("status")
     private HTTPStatusMatch status = null;
 
@@ -290,6 +293,28 @@ public class ResponseMatchTarget  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Configure source ip addresses.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sourceIp
+     */
+    public IpAddrMatch getSourceIp() {
+        return sourceIp;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Configure source ip addresses.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sourceIp set the sourceIp.
+     */
+    public void setSourceIp(IpAddrMatch sourceIp) {
+        this.sourceIp = sourceIp;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Configure the http status code(s).
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return status
@@ -370,7 +395,8 @@ public class ResponseMatchTarget  {
   Objects.equals(this.hostHdr, objResponseMatchTarget.hostHdr)&&
   Objects.equals(this.locHdr, objResponseMatchTarget.locHdr)&&
   Objects.equals(this.status, objResponseMatchTarget.status)&&
-  Objects.equals(this.rspHdrs, objResponseMatchTarget.rspHdrs);
+  Objects.equals(this.rspHdrs, objResponseMatchTarget.rspHdrs)&&
+  Objects.equals(this.sourceIp, objResponseMatchTarget.sourceIp);
     }
 
     @Override
@@ -387,6 +413,7 @@ public class ResponseMatchTarget  {
                         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
                         sb.append("    query: ").append(toIndentedString(query)).append("\n");
                         sb.append("    rspHdrs: ").append(toIndentedString(rspHdrs)).append("\n");
+                        sb.append("    sourceIp: ").append(toIndentedString(sourceIp)).append("\n");
                         sb.append("    status: ").append(toIndentedString(status)).append("\n");
                         sb.append("    version: ").append(toIndentedString(version)).append("\n");
                         sb.append("    vsPort: ").append(toIndentedString(vsPort)).append("\n");

@@ -345,6 +345,12 @@ public class ApplicationLog  {
     @JsonProperty("sni_hostname")
     private String sniHostname = null;
 
+    @JsonProperty("source_ip")
+    private Integer sourceIp = null;
+
+    @JsonProperty("source_ip6")
+    private String sourceIp6 = null;
+
     @JsonProperty("spdy_version")
     private String spdyVersion = null;
 
@@ -735,7 +741,8 @@ public class ApplicationLog  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property client_ip of obj type applicationlog field type str  type integer.
+     * Ipv4 address of the client.
+     * When true client ip feature is enabled, this will be derived from the header configured in the true client ip feature, if present in the request.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientIp
      */
@@ -745,7 +752,8 @@ public class ApplicationLog  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property client_ip of obj type applicationlog field type str  type integer.
+     * Ipv4 address of the client.
+     * When true client ip feature is enabled, this will be derived from the header configured in the true client ip feature, if present in the request.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientIp set the clientIp.
      */
@@ -2691,6 +2699,54 @@ public class ApplicationLog  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Source ip of the client connection to the vs.
+     * This can be different from client ip when true client ip feature is enabled.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sourceIp
+     */
+    public Integer getSourceIp() {
+        return sourceIp;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Source ip of the client connection to the vs.
+     * This can be different from client ip when true client ip feature is enabled.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sourceIp set the sourceIp.
+     */
+    public void setSourceIp(Integer  sourceIp) {
+        this.sourceIp = sourceIp;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Ipv6 address of the source of the client connection to the vs.
+     * This can be different from client ipv6 address when true client ip feature is enabled.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sourceIp6
+     */
+    public String getSourceIp6() {
+        return sourceIp6;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Ipv6 address of the source of the client connection to the vs.
+     * This can be different from client ipv6 address when true client ip feature is enabled.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sourceIp6 set the sourceIp6.
+     */
+    public void setSourceIp6(String  sourceIp6) {
+        this.sourceIp6 = sourceIp6;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Placeholder for description of property spdy_version of obj type applicationlog field type str  type string.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return spdyVersion
@@ -3146,7 +3202,9 @@ public class ApplicationLog  {
   Objects.equals(this.connEstTimeFe, objApplicationLog.connEstTimeFe)&&
   Objects.equals(this.maxIngressLatencyBe, objApplicationLog.maxIngressLatencyBe)&&
   Objects.equals(this.avgIngressLatencyBe, objApplicationLog.avgIngressLatencyBe)&&
-  Objects.equals(this.connEstTimeBe, objApplicationLog.connEstTimeBe);
+  Objects.equals(this.connEstTimeBe, objApplicationLog.connEstTimeBe)&&
+  Objects.equals(this.sourceIp, objApplicationLog.sourceIp)&&
+  Objects.equals(this.sourceIp6, objApplicationLog.sourceIp6);
     }
 
     @Override
@@ -3261,6 +3319,8 @@ public class ApplicationLog  {
                         sb.append("    significant: ").append(toIndentedString(significant)).append("\n");
                         sb.append("    significantLog: ").append(toIndentedString(significantLog)).append("\n");
                         sb.append("    sniHostname: ").append(toIndentedString(sniHostname)).append("\n");
+                        sb.append("    sourceIp: ").append(toIndentedString(sourceIp)).append("\n");
+                        sb.append("    sourceIp6: ").append(toIndentedString(sourceIp6)).append("\n");
                         sb.append("    spdyVersion: ").append(toIndentedString(spdyVersion)).append("\n");
                         sb.append("    sslCipher: ").append(toIndentedString(sslCipher)).append("\n");
                         sb.append("    sslSessionId: ").append(toIndentedString(sslSessionId)).append("\n");

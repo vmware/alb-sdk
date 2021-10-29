@@ -82,10 +82,10 @@ public class SSLKeyAndCertificate extends AviRestResource  {
     private String ocspErrorStatus;
 
     @JsonProperty("ocsp_responder_url_list_from_certs")
-    private List<String> ocspResponderUrlListFromCerts = null;
+    private List<String> ocspResponderUrlListFromCerts;
 
     @JsonProperty("ocsp_response_info")
-    private OCSPResponseInfo ocspResponseInfo = null;
+    private OCSPResponseInfo ocspResponseInfo;
 
     @JsonProperty("status")
     private String status = "SSL_CERTIFICATE_FINISHED";
@@ -603,7 +603,6 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * This is an internal field to store the ocsp responder urls contained in the certificate.
      * Field introduced in 20.1.1.
      * Allowed in basic edition, essentials edition, enterprise edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ocspResponderUrlListFromCerts
      */
     public List<String> getOcspResponderUrlListFromCerts() {
@@ -615,7 +614,6 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * This is an internal field to store the ocsp responder urls contained in the certificate.
      * Field introduced in 20.1.1.
      * Allowed in basic edition, essentials edition, enterprise edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ocspResponderUrlListFromCerts
      */
     public void setOcspResponderUrlListFromCerts(List<String>  ocspResponderUrlListFromCerts) {
@@ -627,7 +625,6 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * This is an internal field to store the ocsp responder urls contained in the certificate.
      * Field introduced in 20.1.1.
      * Allowed in basic edition, essentials edition, enterprise edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ocspResponderUrlListFromCerts
      */
     public SSLKeyAndCertificate addOcspResponderUrlListFromCertsItem(String ocspResponderUrlListFromCertsItem) {
@@ -643,7 +640,6 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * Information related to ocsp response.
      * Field introduced in 20.1.1.
      * Allowed in basic edition, essentials edition, enterprise edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ocspResponseInfo
      */
     public OCSPResponseInfo getOcspResponseInfo() {
@@ -655,7 +651,6 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * Information related to ocsp response.
      * Field introduced in 20.1.1.
      * Allowed in basic edition, essentials edition, enterprise edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ocspResponseInfo set the ocspResponseInfo.
      */
     public void setOcspResponseInfo(OCSPResponseInfo ocspResponseInfo) {

@@ -28,7 +28,7 @@ public class SystemConfiguration extends AviRestResource  {
     private Boolean commonCriteriaMode = false;
 
     @JsonProperty("default_license_tier")
-    private String defaultLicenseTier = "ENTERPRISE";
+    private String defaultLicenseTier;
 
     @JsonProperty("dns_configuration")
     private DNSConfiguration dnsConfiguration = null;
@@ -138,7 +138,6 @@ public class SystemConfiguration extends AviRestResource  {
      * Field introduced in 17.2.5.
      * Allowed in basic edition, essentials edition, enterprise edition.
      * Special default for basic edition is basic, essentials edition is essentials, enterprise is enterprise.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "ENTERPRISE".
      * @return defaultLicenseTier
      */
     public String getDefaultLicenseTier() {
@@ -152,7 +151,6 @@ public class SystemConfiguration extends AviRestResource  {
      * Field introduced in 17.2.5.
      * Allowed in basic edition, essentials edition, enterprise edition.
      * Special default for basic edition is basic, essentials edition is essentials, enterprise is enterprise.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "ENTERPRISE".
      * @param defaultLicenseTier set the defaultLicenseTier.
      */
     public void setDefaultLicenseTier(String  defaultLicenseTier) {
