@@ -719,6 +719,7 @@ font-style: italic;
           },
           "manual" : {
             "tier1_lrs" : [ {
+              "locale_service" : "aeiou",
               "segment_id" : "aeiou",
               "tier1_lr_id" : "aeiou"
             } ]
@@ -772,12 +773,7 @@ font-style: italic;
       "management_network" : "aeiou",
       "vcenter_url" : "aeiou",
       "privilege" : "aeiou",
-      "content_lib" : {
-        "name" : "aeiou",
-        "id" : "aeiou"
-      },
       "deactivate_vm_discovery" : true,
-      "use_content_lib" : true,
       "username" : "aeiou"
     },
     "linuxserver_configuration" : {
@@ -1383,6 +1379,7 @@ font-style: italic;
         },
         "manual" : {
           "tier1_lrs" : [ {
+            "locale_service" : "aeiou",
             "segment_id" : "aeiou",
             "tier1_lr_id" : "aeiou"
           } ]
@@ -1436,12 +1433,7 @@ font-style: italic;
     "management_network" : "aeiou",
     "vcenter_url" : "aeiou",
     "privilege" : "aeiou",
-    "content_lib" : {
-      "name" : "aeiou",
-      "id" : "aeiou"
-    },
     "deactivate_vm_discovery" : true,
-    "use_content_lib" : true,
     "username" : "aeiou"
   },
   "linuxserver_configuration" : {
@@ -2280,6 +2272,7 @@ font-style: italic;
         },
         "manual" : {
           "tier1_lrs" : [ {
+            "locale_service" : "aeiou",
             "segment_id" : "aeiou",
             "tier1_lr_id" : "aeiou"
           } ]
@@ -2333,12 +2326,7 @@ font-style: italic;
     "management_network" : "aeiou",
     "vcenter_url" : "aeiou",
     "privilege" : "aeiou",
-    "content_lib" : {
-      "name" : "aeiou",
-      "id" : "aeiou"
-    },
     "deactivate_vm_discovery" : true,
-    "use_content_lib" : true,
     "username" : "aeiou"
   },
   "linuxserver_configuration" : {
@@ -3059,6 +3047,7 @@ font-style: italic;
         },
         "manual" : {
           "tier1_lrs" : [ {
+            "locale_service" : "aeiou",
             "segment_id" : "aeiou",
             "tier1_lr_id" : "aeiou"
           } ]
@@ -3112,12 +3101,7 @@ font-style: italic;
     "management_network" : "aeiou",
     "vcenter_url" : "aeiou",
     "privilege" : "aeiou",
-    "content_lib" : {
-      "name" : "aeiou",
-      "id" : "aeiou"
-    },
     "deactivate_vm_discovery" : true,
-    "use_content_lib" : true,
     "username" : "aeiou"
   },
   "linuxserver_configuration" : {
@@ -3786,6 +3770,7 @@ font-style: italic;
         },
         "manual" : {
           "tier1_lrs" : [ {
+            "locale_service" : "aeiou",
             "segment_id" : "aeiou",
             "tier1_lr_id" : "aeiou"
           } ]
@@ -3839,12 +3824,7 @@ font-style: italic;
     "management_network" : "aeiou",
     "vcenter_url" : "aeiou",
     "privilege" : "aeiou",
-    "content_lib" : {
-      "name" : "aeiou",
-      "id" : "aeiou"
-    },
     "deactivate_vm_discovery" : true,
-    "use_content_lib" : true,
     "username" : "aeiou"
   },
   "linuxserver_configuration" : {
@@ -3983,7 +3963,6 @@ font-style: italic;
     <li><a href="#CloudApiResponse"><code>CloudApiResponse</code></a></li>
     <li><a href="#CloudStackConfiguration"><code>CloudStackConfiguration</code></a></li>
     <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
-    <li><a href="#ContentLibConfig"><code>ContentLibConfig</code></a></li>
     <li><a href="#CustomTag"><code>CustomTag</code></a></li>
     <li><a href="#DataNetworkConfig"><code>DataNetworkConfig</code></a></li>
     <li><a href="#DnsResolver"><code>DnsResolver</code></a></li>
@@ -4192,13 +4171,6 @@ font-style: italic;
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int32</div>
-    </div>  <!-- field-items -->
-  </div>
-  <div class="model">
-    <h3 class="field-label"><a name="ContentLibConfig">ContentLibConfig</a> <a class="up" href="#__Models">Up</a></h3>
-    <div class="field-items">
-      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Content Library Id. Field introduced in 20.1.1. </div>
-<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Content Library name. Field introduced in 20.1.1. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -4810,21 +4782,20 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="Tier1LogicalRouterInfo">Tier1LogicalRouterInfo</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">segment_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Overlay segment path. Example- /infra/segments/Seg-Web-T1-01. Field introduced in 20.1.1. </div>
+      <div class="param">locale_service (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Locale-services configuration, holds T1 edge-cluster information. When VirtualService is enabled with preserve client IP, ServiceInsertion VirtualEndpoint will be created in this locale-service. By default Avi controller picks default locale-service on T1. If more than one locale-services are present, this will be used for resolving the same. Example locale-service path - /infra/tier-1s/London_Tier1Gateway1/locale-services/London_Tier1LocalServices-1. Field introduced in 21.1.3. </div>
+<div class="param">segment_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Overlay segment path. Example- /infra/segments/Seg-Web-T1-01. Field introduced in 20.1.1. </div>
 <div class="param">tier1_lr_id </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tier1 logical router path. Example- /infra/tier-1s/T1-01. Field introduced in 20.1.1. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="vCenterConfiguration">vCenterConfiguration</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">content_lib (optional)</div><div class="param-desc"><span class="param-type"><a href="#ContentLibConfig">ContentLibConfig</a></span> vCenter content library where Service Engine images are stored. Field introduced in 21.1.3. </div>
-<div class="param">datacenter (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Datacenter for virtual infrastructure discovery. </div>
+      <div class="param">datacenter (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Datacenter for virtual infrastructure discovery. </div>
 <div class="param">deactivate_vm_discovery (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If true, VM&#39;s on the vCenter will not be discovered.Set it to true if there are more than 10000 VMs in the datacenter. Field introduced in 20.1.5. </div>
 <div class="param">management_ip_subnet (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrPrefix">IpAddrPrefix</a></span> Management subnet to use for Avi Service Engines. </div>
 <div class="param">management_network (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Management network to use for Avi Service Engines. It is a reference to an object of type VIMgrNWRuntime. </div>
 <div class="param">password (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The password Avi Vantage will use when authenticating with vCenter. </div>
 <div class="param">privilege </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Set the access mode to vCenter as either Read, which allows Avi to discover networks and servers, or Write, which also allows Avi to create Service Engines and configure their network properties. Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS. </div>
-<div class="param">use_content_lib (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If false, Service Engine image will not be pushed to content library. Field introduced in 21.1.3. </div>
 <div class="param">username (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The username Avi Vantage will use when authenticating with vCenter. </div>
 <div class="param">vcenter_template_se_location (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Avi Service Engine Template in vCenter to be used for creating Service Engines. </div>
 <div class="param">vcenter_url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> vCenter hostname or IP address. </div>
