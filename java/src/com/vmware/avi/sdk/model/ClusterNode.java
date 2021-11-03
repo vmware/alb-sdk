@@ -24,6 +24,9 @@ public class ClusterNode  {
     @JsonProperty("categories")
     private List<String> categories = null;
 
+    @JsonProperty("interfaces")
+    private List<ControllerInterface> interfaces = null;
+
     @JsonProperty("ip")
     private IpAddr ip = null;
 
@@ -35,6 +38,9 @@ public class ClusterNode  {
 
     @JsonProperty("public_ip_or_name")
     private IpAddr publicIpOrName = null;
+
+    @JsonProperty("static_routes")
+    private List<StaticRoute> staticRoutes = null;
 
     @JsonProperty("vm_hostname")
     private String vmHostname = null;
@@ -86,6 +92,42 @@ public class ClusterNode  {
         this.categories = new ArrayList<String>();
       }
       this.categories.add(categoriesItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Interface details of the controller node.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return interfaces
+     */
+    public List<ControllerInterface> getInterfaces() {
+        return interfaces;
+    }
+
+    /**
+     * This is the setter method. this will set the interfaces
+     * Interface details of the controller node.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return interfaces
+     */
+    public void setInterfaces(List<ControllerInterface>  interfaces) {
+        this.interfaces = interfaces;
+    }
+
+    /**
+     * This is the setter method this will set the interfaces
+     * Interface details of the controller node.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return interfaces
+     */
+    public ClusterNode addInterfacesItem(ControllerInterface interfacesItem) {
+      if (this.interfaces == null) {
+        this.interfaces = new ArrayList<ControllerInterface>();
+      }
+      this.interfaces.add(interfacesItem);
       return this;
     }
 
@@ -171,6 +213,42 @@ public class ClusterNode  {
      */
     public void setPublicIpOrName(IpAddr publicIpOrName) {
         this.publicIpOrName = publicIpOrName;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Static routes configured on the controller node.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return staticRoutes
+     */
+    public List<StaticRoute> getStaticRoutes() {
+        return staticRoutes;
+    }
+
+    /**
+     * This is the setter method. this will set the staticRoutes
+     * Static routes configured on the controller node.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return staticRoutes
+     */
+    public void setStaticRoutes(List<StaticRoute>  staticRoutes) {
+        this.staticRoutes = staticRoutes;
+    }
+
+    /**
+     * This is the setter method this will set the staticRoutes
+     * Static routes configured on the controller node.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return staticRoutes
+     */
+    public ClusterNode addStaticRoutesItem(StaticRoute staticRoutesItem) {
+      if (this.staticRoutes == null) {
+        this.staticRoutes = new ArrayList<StaticRoute>();
+      }
+      this.staticRoutes.add(staticRoutesItem);
+      return this;
     }
 
     /**
@@ -271,7 +349,9 @@ public class ClusterNode  {
   Objects.equals(this.vmHostname, objClusterNode.vmHostname)&&
   Objects.equals(this.publicIpOrName, objClusterNode.publicIpOrName)&&
   Objects.equals(this.categories, objClusterNode.categories)&&
-  Objects.equals(this.password, objClusterNode.password);
+  Objects.equals(this.password, objClusterNode.password)&&
+  Objects.equals(this.interfaces, objClusterNode.interfaces)&&
+  Objects.equals(this.staticRoutes, objClusterNode.staticRoutes);
     }
 
     @Override
@@ -279,10 +359,12 @@ public class ClusterNode  {
       StringBuilder sb = new StringBuilder();
       sb.append("class ClusterNode {\n");
                   sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
+                        sb.append("    interfaces: ").append(toIndentedString(interfaces)).append("\n");
                         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    password: ").append(toIndentedString(password)).append("\n");
                         sb.append("    publicIpOrName: ").append(toIndentedString(publicIpOrName)).append("\n");
+                        sb.append("    staticRoutes: ").append(toIndentedString(staticRoutes)).append("\n");
                         sb.append("    vmHostname: ").append(toIndentedString(vmHostname)).append("\n");
                         sb.append("    vmMor: ").append(toIndentedString(vmMor)).append("\n");
                         sb.append("    vmName: ").append(toIndentedString(vmName)).append("\n");

@@ -21,9 +21,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class vCenterConfiguration  {
-    @JsonProperty("content_lib")
-    private ContentLibConfig contentLib = null;
-
     @JsonProperty("datacenter")
     private String datacenter = null;
 
@@ -42,9 +39,6 @@ public class vCenterConfiguration  {
     @JsonProperty("privilege")
     private String privilege = "WRITE_ACCESS";
 
-    @JsonProperty("use_content_lib")
-    private Boolean useContentLib = true;
-
     @JsonProperty("username")
     private String username = null;
 
@@ -55,28 +49,6 @@ public class vCenterConfiguration  {
     private String vcenterUrl = null;
 
 
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Vcenter content library where service engine images are stored.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return contentLib
-     */
-    public ContentLibConfig getContentLib() {
-        return contentLib;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Vcenter content library where service engine images are stored.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param contentLib set the contentLib.
-     */
-    public void setContentLib(ContentLibConfig contentLib) {
-        this.contentLib = contentLib;
-    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -208,28 +180,6 @@ public class vCenterConfiguration  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * If false, service engine image will not be pushed to content library.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
-     * @return useContentLib
-     */
-    public Boolean getUseContentLib() {
-        return useContentLib;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * If false, service engine image will not be pushed to content library.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
-     * @param useContentLib set the useContentLib.
-     */
-    public void setUseContentLib(Boolean  useContentLib) {
-        this.useContentLib = useContentLib;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * The username avi vantage will use when authenticating with vcenter.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return username
@@ -306,23 +256,19 @@ public class vCenterConfiguration  {
   Objects.equals(this.managementNetwork, objvCenterConfiguration.managementNetwork)&&
   Objects.equals(this.managementIpSubnet, objvCenterConfiguration.managementIpSubnet)&&
   Objects.equals(this.vcenterTemplateSeLocation, objvCenterConfiguration.vcenterTemplateSeLocation)&&
-  Objects.equals(this.deactivateVmDiscovery, objvCenterConfiguration.deactivateVmDiscovery)&&
-  Objects.equals(this.useContentLib, objvCenterConfiguration.useContentLib)&&
-  Objects.equals(this.contentLib, objvCenterConfiguration.contentLib);
+  Objects.equals(this.deactivateVmDiscovery, objvCenterConfiguration.deactivateVmDiscovery);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class vCenterConfiguration {\n");
-                  sb.append("    contentLib: ").append(toIndentedString(contentLib)).append("\n");
-                        sb.append("    datacenter: ").append(toIndentedString(datacenter)).append("\n");
+                  sb.append("    datacenter: ").append(toIndentedString(datacenter)).append("\n");
                         sb.append("    deactivateVmDiscovery: ").append(toIndentedString(deactivateVmDiscovery)).append("\n");
                         sb.append("    managementIpSubnet: ").append(toIndentedString(managementIpSubnet)).append("\n");
                         sb.append("    managementNetwork: ").append(toIndentedString(managementNetwork)).append("\n");
                         sb.append("    password: ").append(toIndentedString(password)).append("\n");
                         sb.append("    privilege: ").append(toIndentedString(privilege)).append("\n");
-                        sb.append("    useContentLib: ").append(toIndentedString(useContentLib)).append("\n");
                         sb.append("    username: ").append(toIndentedString(username)).append("\n");
                         sb.append("    vcenterTemplateSeLocation: ").append(toIndentedString(vcenterTemplateSeLocation)).append("\n");
                         sb.append("    vcenterUrl: ").append(toIndentedString(vcenterUrl)).append("\n");

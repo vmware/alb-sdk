@@ -24,9 +24,6 @@ public class UserAgentDBConfig  {
     @JsonProperty("allowed_batch_size")
     private Integer allowedBatchSize = 500;
 
-    @JsonProperty("category")
-    private String category = "ALB_THREAT_INTELLIGENCE_CATEGORY";
-
 
 
     /**
@@ -55,30 +52,6 @@ public class UserAgentDBConfig  {
         this.allowedBatchSize = allowedBatchSize;
     }
 
-    /**
-     * This is the getter method this will return the attribute value.
-     * Service category.
-     * Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY, ALB_LICENSE_CATEGORY.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "ALB_THREAT_INTELLIGENCE_CATEGORY".
-     * @return category
-     */
-    public String getCategory() {
-        return category;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Service category.
-     * Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY, ALB_LICENSE_CATEGORY.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "ALB_THREAT_INTELLIGENCE_CATEGORY".
-     * @param category set the category.
-     */
-    public void setCategory(String  category) {
-        this.category = category;
-    }
-
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -89,8 +62,7 @@ public class UserAgentDBConfig  {
           return false;
       }
       UserAgentDBConfig objUserAgentDBConfig = (UserAgentDBConfig) o;
-      return   Objects.equals(this.allowedBatchSize, objUserAgentDBConfig.allowedBatchSize)&&
-  Objects.equals(this.category, objUserAgentDBConfig.category);
+      return   Objects.equals(this.allowedBatchSize, objUserAgentDBConfig.allowedBatchSize);
     }
 
     @Override
@@ -98,7 +70,6 @@ public class UserAgentDBConfig  {
       StringBuilder sb = new StringBuilder();
       sb.append("class UserAgentDBConfig {\n");
                   sb.append("    allowedBatchSize: ").append(toIndentedString(allowedBatchSize)).append("\n");
-                        sb.append("    category: ").append(toIndentedString(category)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

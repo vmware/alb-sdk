@@ -75,6 +75,9 @@ public class ALBServicesCase  {
     @JsonProperty("last_modified_date")
     private String lastModifiedDate = null;
 
+    @JsonProperty("mode")
+    private String mode = null;
+
     @JsonProperty("patch_version")
     private String patchVersion = null;
 
@@ -485,6 +488,30 @@ public class ALBServicesCase  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Stores the alb services configuration mode.
+     * Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mode
+     */
+    public String getMode() {
+        return mode;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Stores the alb services configuration mode.
+     * Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param mode set the mode.
+     */
+    public void setMode(String  mode) {
+        this.mode = mode;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Field introduced in 18.2.6.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return patchVersion
@@ -657,7 +684,8 @@ public class ALBServicesCase  {
   Objects.equals(this.frUseCases, objALBServicesCase.frUseCases)&&
   Objects.equals(this.frCurrentSolution, objALBServicesCase.frCurrentSolution)&&
   Objects.equals(this.frBusinessJustification, objALBServicesCase.frBusinessJustification)&&
-  Objects.equals(this.frTiming, objALBServicesCase.frTiming);
+  Objects.equals(this.frTiming, objALBServicesCase.frTiming)&&
+  Objects.equals(this.mode, objALBServicesCase.mode);
     }
 
     @Override
@@ -682,6 +710,7 @@ public class ALBServicesCase  {
                         sb.append("    frUseCases: ").append(toIndentedString(frUseCases)).append("\n");
                         sb.append("    id: ").append(toIndentedString(id)).append("\n");
                         sb.append("    lastModifiedDate: ").append(toIndentedString(lastModifiedDate)).append("\n");
+                        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
                         sb.append("    patchVersion: ").append(toIndentedString(patchVersion)).append("\n");
                         sb.append("    severity: ").append(toIndentedString(severity)).append("\n");
                         sb.append("    status: ").append(toIndentedString(status)).append("\n");

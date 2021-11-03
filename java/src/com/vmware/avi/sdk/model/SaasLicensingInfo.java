@@ -21,68 +21,21 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SaasLicensingInfo  {
-    @JsonProperty("cache_service_units")
-    private Float cacheServiceUnits = 0.0f;
-
-    @JsonProperty("category")
-    private String category = "ALB_LICENSE_CATEGORY";
-
     @JsonProperty("max_service_units")
-    private Float maxServiceUnits = 1000.0f;
+    private Float maxServiceUnits = 0.0f;
+
+    @JsonProperty("reserve_service_units")
+    private Float reserveServiceUnits = 0.0f;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Minimum service units that always remain checked out on controller.
+     * Maximum service units limit for controller.
+     * Allowed values are 0-1000.
+     * Special values are 0 - 'infinite'.
      * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
-     * @return cacheServiceUnits
-     */
-    public Float getCacheServiceUnits() {
-        return cacheServiceUnits;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Minimum service units that always remain checked out on controller.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
-     * @param cacheServiceUnits set the cacheServiceUnits.
-     */
-    public void setCacheServiceUnits(Float  cacheServiceUnits) {
-        this.cacheServiceUnits = cacheServiceUnits;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Service category.
-     * Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY, ALB_LICENSE_CATEGORY.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "ALB_LICENSE_CATEGORY".
-     * @return category
-     */
-    public String getCategory() {
-        return category;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Service category.
-     * Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY, ALB_LICENSE_CATEGORY.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "ALB_LICENSE_CATEGORY".
-     * @param category set the category.
-     */
-    public void setCategory(String  category) {
-        this.category = category;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Maximum service units that controller can check out.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 1000.0f.
      * @return maxServiceUnits
      */
     public Float getMaxServiceUnits() {
@@ -91,13 +44,39 @@ public class SaasLicensingInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Maximum service units that controller can check out.
+     * Maximum service units limit for controller.
+     * Allowed values are 0-1000.
+     * Special values are 0 - 'infinite'.
      * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 1000.0f.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
      * @param maxServiceUnits set the maxServiceUnits.
      */
     public void setMaxServiceUnits(Float  maxServiceUnits) {
         this.maxServiceUnits = maxServiceUnits;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Minimum service units that always remain reserved on controller.
+     * Allowed values are 0-1000.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
+     * @return reserveServiceUnits
+     */
+    public Float getReserveServiceUnits() {
+        return reserveServiceUnits;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Minimum service units that always remain reserved on controller.
+     * Allowed values are 0-1000.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
+     * @param reserveServiceUnits set the reserveServiceUnits.
+     */
+    public void setReserveServiceUnits(Float  reserveServiceUnits) {
+        this.reserveServiceUnits = reserveServiceUnits;
     }
 
 
@@ -110,18 +89,16 @@ public class SaasLicensingInfo  {
           return false;
       }
       SaasLicensingInfo objSaasLicensingInfo = (SaasLicensingInfo) o;
-      return   Objects.equals(this.cacheServiceUnits, objSaasLicensingInfo.cacheServiceUnits)&&
-  Objects.equals(this.maxServiceUnits, objSaasLicensingInfo.maxServiceUnits)&&
-  Objects.equals(this.category, objSaasLicensingInfo.category);
+      return   Objects.equals(this.reserveServiceUnits, objSaasLicensingInfo.reserveServiceUnits)&&
+  Objects.equals(this.maxServiceUnits, objSaasLicensingInfo.maxServiceUnits);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class SaasLicensingInfo {\n");
-                  sb.append("    cacheServiceUnits: ").append(toIndentedString(cacheServiceUnits)).append("\n");
-                        sb.append("    category: ").append(toIndentedString(category)).append("\n");
-                        sb.append("    maxServiceUnits: ").append(toIndentedString(maxServiceUnits)).append("\n");
+                  sb.append("    maxServiceUnits: ").append(toIndentedString(maxServiceUnits)).append("\n");
+                        sb.append("    reserveServiceUnits: ").append(toIndentedString(reserveServiceUnits)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

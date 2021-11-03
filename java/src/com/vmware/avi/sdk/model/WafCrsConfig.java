@@ -21,9 +21,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafCrsConfig  {
-    @JsonProperty("category")
-    private String category = "ALB_THREAT_INTELLIGENCE_CATEGORY";
-
     @JsonProperty("enable_auto_download_waf_signatures")
     private Boolean enableAutoDownloadWafSignatures = false;
 
@@ -31,30 +28,6 @@ public class WafCrsConfig  {
     private Boolean enableWafSignaturesNotifications;
 
 
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Service category.
-     * Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY, ALB_LICENSE_CATEGORY.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "ALB_THREAT_INTELLIGENCE_CATEGORY".
-     * @return category
-     */
-    public String getCategory() {
-        return category;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Service category.
-     * Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY, ALB_LICENSE_CATEGORY.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "ALB_THREAT_INTELLIGENCE_CATEGORY".
-     * @param category set the category.
-     */
-    public void setCategory(String  category) {
-        this.category = category;
-    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -115,16 +88,14 @@ public class WafCrsConfig  {
       }
       WafCrsConfig objWafCrsConfig = (WafCrsConfig) o;
       return   Objects.equals(this.enableAutoDownloadWafSignatures, objWafCrsConfig.enableAutoDownloadWafSignatures)&&
-  Objects.equals(this.enableWafSignaturesNotifications, objWafCrsConfig.enableWafSignaturesNotifications)&&
-  Objects.equals(this.category, objWafCrsConfig.category);
+  Objects.equals(this.enableWafSignaturesNotifications, objWafCrsConfig.enableWafSignaturesNotifications);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class WafCrsConfig {\n");
-                  sb.append("    category: ").append(toIndentedString(category)).append("\n");
-                        sb.append("    enableAutoDownloadWafSignatures: ").append(toIndentedString(enableAutoDownloadWafSignatures)).append("\n");
+                  sb.append("    enableAutoDownloadWafSignatures: ").append(toIndentedString(enableAutoDownloadWafSignatures)).append("\n");
                         sb.append("    enableWafSignaturesNotifications: ").append(toIndentedString(enableWafSignaturesNotifications)).append("\n");
                   sb.append("}");
       return sb.toString();

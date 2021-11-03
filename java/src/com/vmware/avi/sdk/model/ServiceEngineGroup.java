@@ -78,6 +78,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("availability_zone_refs")
     private List<String> availabilityZoneRefs = null;
 
+    @JsonProperty("baremetal_dispatcher_handles_flows")
+    private Boolean baremetalDispatcherHandlesFlows = false;
+
     @JsonProperty("bgp_peer_monitor_failover_enabled")
     private Boolean bgpPeerMonitorFailoverEnabled = false;
 
@@ -276,8 +279,14 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("http_rum_min_content_length")
     private Integer httpRumMinContentLength = 64;
 
+    @JsonProperty("hybrid_rss_mode")
+    private Boolean hybridRssMode = false;
+
     @JsonProperty("hypervisor")
     private String hypervisor = null;
+
+    @JsonProperty("ignore_docker_mac_change")
+    private Boolean ignoreDockerMacChange = true;
 
     @JsonProperty("ignore_rtt_threshold")
     private Integer ignoreRttThreshold = 5000;
@@ -477,6 +486,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("num_dispatcher_cores")
     private Integer numDispatcherCores = 0;
 
+    @JsonProperty("num_dispatcher_queues")
+    private Integer numDispatcherQueues = 1;
+
     @JsonProperty("num_flow_cores_sum_changes_to_ignore")
     private Integer numFlowCoresSumChangesToIgnore = 8;
 
@@ -552,6 +564,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("se_dp_hm_drops")
     private Integer seDpHmDrops = 0;
 
+    @JsonProperty("se_dp_if_state_poll_interval")
+    private Integer seDpIfStatePollInterval = 10;
+
     @JsonProperty("se_dp_isolation")
     private Boolean seDpIsolation = false;
 
@@ -584,6 +599,12 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     @JsonProperty("se_dpdk_pmd")
     private Integer seDpdkPmd = 0;
+
+    @JsonProperty("se_dump_core_on_assert")
+    private Boolean seDumpCoreOnAssert = false;
+
+    @JsonProperty("se_emulated_cores")
+    private Integer seEmulatedCores = 0;
 
     @JsonProperty("se_flow_probe_retries")
     private Integer seFlowProbeRetries = 2;
@@ -632,6 +653,9 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     @JsonProperty("se_name_prefix")
     private String seNamePrefix = "Avi";
+
+    @JsonProperty("se_packet_buffer_max")
+    private Integer sePacketBufferMax = 0;
 
     @JsonProperty("se_pcap_lookahead")
     private Boolean sePcapLookahead = false;
@@ -1368,6 +1392,30 @@ public class ServiceEngineGroup extends AviRestResource  {
       }
       this.availabilityZoneRefs.add(availabilityZoneRefsItem);
       return this;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Control if dispatcher core also handles tcp flows in baremetal se.
+     * Field introduced in 21.1.3.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return baremetalDispatcherHandlesFlows
+     */
+    public Boolean getBaremetalDispatcherHandlesFlows() {
+        return baremetalDispatcherHandlesFlows;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Control if dispatcher core also handles tcp flows in baremetal se.
+     * Field introduced in 21.1.3.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param baremetalDispatcherHandlesFlows set the baremetalDispatcherHandlesFlows.
+     */
+    public void setBaremetalDispatcherHandlesFlows(Boolean  baremetalDispatcherHandlesFlows) {
+        this.baremetalDispatcherHandlesFlows = baremetalDispatcherHandlesFlows;
     }
 
     /**
@@ -3000,6 +3048,32 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Toggles se hybrid only mode of operation in dpdk mode with rss configured;where-in each se datapath instance operates as an independent
+     * standalonehybrid instance performing both dispatcher and proxy function.
+     * Requires reboot.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return hybridRssMode
+     */
+    public Boolean getHybridRssMode() {
+        return hybridRssMode;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Toggles se hybrid only mode of operation in dpdk mode with rss configured;where-in each se datapath instance operates as an independent
+     * standalonehybrid instance performing both dispatcher and proxy function.
+     * Requires reboot.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param hybridRssMode set the hybridRssMode.
+     */
+    public void setHybridRssMode(Boolean  hybridRssMode) {
+        this.hybridRssMode = hybridRssMode;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Override default hypervisor.
      * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -3018,6 +3092,30 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setHypervisor(String  hypervisor) {
         this.hypervisor = hypervisor;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Ignore docker mac change.
+     * Field introduced in 21.1.3.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return ignoreDockerMacChange
+     */
+    public Boolean getIgnoreDockerMacChange() {
+        return ignoreDockerMacChange;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Ignore docker mac change.
+     * Field introduced in 21.1.3.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param ignoreDockerMacChange set the ignoreDockerMacChange.
+     */
+    public void setIgnoreDockerMacChange(Boolean  ignoreDockerMacChange) {
+        this.ignoreDockerMacChange = ignoreDockerMacChange;
     }
 
     /**
@@ -4646,6 +4744,32 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Number of queues to each dispatcher.
+     * Allowed values are 2-8.
+     * Special values are 0 - 'auto-compute', 1 - 'single-queue'.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+     * @return numDispatcherQueues
+     */
+    public Integer getNumDispatcherQueues() {
+        return numDispatcherQueues;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Number of queues to each dispatcher.
+     * Allowed values are 2-8.
+     * Special values are 0 - 'auto-compute', 1 - 'single-queue'.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+     * @param numDispatcherQueues set the numDispatcherQueues.
+     */
+    public void setNumDispatcherQueues(Integer  numDispatcherQueues) {
+        this.numDispatcherQueues = numDispatcherQueues;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Number of changes in num flow cores sum to ignore.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @return numFlowCoresSumChangesToIgnore
@@ -5252,6 +5376,30 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Number of jiffies between polling interface state.
+     * Field introduced in 21.1.3.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+     * @return seDpIfStatePollInterval
+     */
+    public Integer getSeDpIfStatePollInterval() {
+        return seDpIfStatePollInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Number of jiffies between polling interface state.
+     * Field introduced in 21.1.3.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 10.
+     * @param seDpIfStatePollInterval set the seDpIfStatePollInterval.
+     */
+    public void setSeDpIfStatePollInterval(Integer  seDpIfStatePollInterval) {
+        this.seDpIfStatePollInterval = seDpIfStatePollInterval;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Toggle support to run se datapath instances in isolation on exclusive cpus.
      * This improves latency and performance.
      * However, this could reduce the total number of se_dp instances created on that se instance.
@@ -5516,6 +5664,56 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setSeDpdkPmd(Integer  seDpdkPmd) {
         this.seDpdkPmd = seDpdkPmd;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enable core dump on assert.
+     * Field introduced in 21.1.3.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return seDumpCoreOnAssert
+     */
+    public Boolean getSeDumpCoreOnAssert() {
+        return seDumpCoreOnAssert;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable core dump on assert.
+     * Field introduced in 21.1.3.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param seDumpCoreOnAssert set the seDumpCoreOnAssert.
+     */
+    public void setSeDumpCoreOnAssert(Boolean  seDumpCoreOnAssert) {
+        this.seDumpCoreOnAssert = seDumpCoreOnAssert;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Use this to emulate more/less cpus than is actually available.
+     * One datapath process is started for each core.
+     * Field introduced in 21.1.3.
+     * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @return seEmulatedCores
+     */
+    public Integer getSeEmulatedCores() {
+        return seEmulatedCores;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Use this to emulate more/less cpus than is actually available.
+     * One datapath process is started for each core.
+     * Field introduced in 21.1.3.
+     * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @param seEmulatedCores set the seEmulatedCores.
+     */
+    public void setSeEmulatedCores(Integer  seEmulatedCores) {
+        this.seEmulatedCores = seEmulatedCores;
     }
 
     /**
@@ -5906,6 +6104,32 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setSeNamePrefix(String  seNamePrefix) {
         this.seNamePrefix = seNamePrefix;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Internal use only.
+     * Used to artificially reduce the available number of packet buffers.
+     * Field introduced in 21.1.3.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @return sePacketBufferMax
+     */
+    public Integer getSePacketBufferMax() {
+        return sePacketBufferMax;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Internal use only.
+     * Used to artificially reduce the available number of packet buffers.
+     * Field introduced in 21.1.3.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @param sePacketBufferMax set the sePacketBufferMax.
+     */
+    public void setSePacketBufferMax(Integer  sePacketBufferMax) {
+        this.sePacketBufferMax = sePacketBufferMax;
     }
 
     /**
@@ -8139,6 +8363,12 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.lbactionRqPerRequestMaxRetries, objServiceEngineGroup.lbactionRqPerRequestMaxRetries)&&
   Objects.equals(this.userDefinedMetricAge, objServiceEngineGroup.userDefinedMetricAge)&&
   Objects.equals(this.enableHsmLog, objServiceEngineGroup.enableHsmLog)&&
+  Objects.equals(this.ignoreDockerMacChange, objServiceEngineGroup.ignoreDockerMacChange)&&
+  Objects.equals(this.seDumpCoreOnAssert, objServiceEngineGroup.seDumpCoreOnAssert)&&
+  Objects.equals(this.sePacketBufferMax, objServiceEngineGroup.sePacketBufferMax)&&
+  Objects.equals(this.seDpIfStatePollInterval, objServiceEngineGroup.seDpIfStatePollInterval)&&
+  Objects.equals(this.seEmulatedCores, objServiceEngineGroup.seEmulatedCores)&&
+  Objects.equals(this.baremetalDispatcherHandlesFlows, objServiceEngineGroup.baremetalDispatcherHandlesFlows)&&
   Objects.equals(this.useLegacyNetlink, objServiceEngineGroup.useLegacyNetlink)&&
   Objects.equals(this.logAgentTraceEnabled, objServiceEngineGroup.logAgentTraceEnabled)&&
   Objects.equals(this.logAgentDebugEnabled, objServiceEngineGroup.logAgentDebugEnabled)&&
@@ -8163,7 +8393,9 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.deactivateIpv6Discovery, objServiceEngineGroup.deactivateIpv6Discovery)&&
   Objects.equals(this.markers, objServiceEngineGroup.markers)&&
   Objects.equals(this.bgpPeerMonitorFailoverEnabled, objServiceEngineGroup.bgpPeerMonitorFailoverEnabled)&&
-  Objects.equals(this.maxSkbFrags, objServiceEngineGroup.maxSkbFrags);
+  Objects.equals(this.maxSkbFrags, objServiceEngineGroup.maxSkbFrags)&&
+  Objects.equals(this.hybridRssMode, objServiceEngineGroup.hybridRssMode)&&
+  Objects.equals(this.numDispatcherQueues, objServiceEngineGroup.numDispatcherQueues);
     }
 
     @Override
@@ -8189,6 +8421,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    autoRebalanceInterval: ").append(toIndentedString(autoRebalanceInterval)).append("\n");
                         sb.append("    autoRedistributeActiveStandbyLoad: ").append(toIndentedString(autoRedistributeActiveStandbyLoad)).append("\n");
                         sb.append("    availabilityZoneRefs: ").append(toIndentedString(availabilityZoneRefs)).append("\n");
+                        sb.append("    baremetalDispatcherHandlesFlows: ").append(toIndentedString(baremetalDispatcherHandlesFlows)).append("\n");
                         sb.append("    bgpPeerMonitorFailoverEnabled: ").append(toIndentedString(bgpPeerMonitorFailoverEnabled)).append("\n");
                         sb.append("    bgpStateUpdateInterval: ").append(toIndentedString(bgpStateUpdateInterval)).append("\n");
                         sb.append("    bufferSe: ").append(toIndentedString(bufferSe)).append("\n");
@@ -8255,7 +8488,9 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    hostGatewayMonitor: ").append(toIndentedString(hostGatewayMonitor)).append("\n");
                         sb.append("    httpRumConsoleLog: ").append(toIndentedString(httpRumConsoleLog)).append("\n");
                         sb.append("    httpRumMinContentLength: ").append(toIndentedString(httpRumMinContentLength)).append("\n");
+                        sb.append("    hybridRssMode: ").append(toIndentedString(hybridRssMode)).append("\n");
                         sb.append("    hypervisor: ").append(toIndentedString(hypervisor)).append("\n");
+                        sb.append("    ignoreDockerMacChange: ").append(toIndentedString(ignoreDockerMacChange)).append("\n");
                         sb.append("    ignoreRttThreshold: ").append(toIndentedString(ignoreRttThreshold)).append("\n");
                         sb.append("    ingressAccessData: ").append(toIndentedString(ingressAccessData)).append("\n");
                         sb.append("    ingressAccessMgmt: ").append(toIndentedString(ingressAccessMgmt)).append("\n");
@@ -8322,6 +8557,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    nonSignificantLogThrottle: ").append(toIndentedString(nonSignificantLogThrottle)).append("\n");
                         sb.append("    nsHelperDeqIntervalMsec: ").append(toIndentedString(nsHelperDeqIntervalMsec)).append("\n");
                         sb.append("    numDispatcherCores: ").append(toIndentedString(numDispatcherCores)).append("\n");
+                        sb.append("    numDispatcherQueues: ").append(toIndentedString(numDispatcherQueues)).append("\n");
                         sb.append("    numFlowCoresSumChangesToIgnore: ").append(toIndentedString(numFlowCoresSumChangesToIgnore)).append("\n");
                         sb.append("    objsyncConfig: ").append(toIndentedString(objsyncConfig)).append("\n");
                         sb.append("    objsyncPort: ").append(toIndentedString(objsyncPort)).append("\n");
@@ -8347,6 +8583,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    seDeprovisionDelay: ").append(toIndentedString(seDeprovisionDelay)).append("\n");
                         sb.append("    seDosProfile: ").append(toIndentedString(seDosProfile)).append("\n");
                         sb.append("    seDpHmDrops: ").append(toIndentedString(seDpHmDrops)).append("\n");
+                        sb.append("    seDpIfStatePollInterval: ").append(toIndentedString(seDpIfStatePollInterval)).append("\n");
                         sb.append("    seDpIsolation: ").append(toIndentedString(seDpIsolation)).append("\n");
                         sb.append("    seDpIsolationNumNonDpCpus: ").append(toIndentedString(seDpIsolationNumNonDpCpus)).append("\n");
                         sb.append("    seDpLogNfEnqueuePercent: ").append(toIndentedString(seDpLogNfEnqueuePercent)).append("\n");
@@ -8358,6 +8595,8 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    seDpVnicRestartOnQueueStallCount: ").append(toIndentedString(seDpVnicRestartOnQueueStallCount)).append("\n");
                         sb.append("    seDpVnicStallSeRestartWindow: ").append(toIndentedString(seDpVnicStallSeRestartWindow)).append("\n");
                         sb.append("    seDpdkPmd: ").append(toIndentedString(seDpdkPmd)).append("\n");
+                        sb.append("    seDumpCoreOnAssert: ").append(toIndentedString(seDumpCoreOnAssert)).append("\n");
+                        sb.append("    seEmulatedCores: ").append(toIndentedString(seEmulatedCores)).append("\n");
                         sb.append("    seFlowProbeRetries: ").append(toIndentedString(seFlowProbeRetries)).append("\n");
                         sb.append("    seFlowProbeRetryTimer: ").append(toIndentedString(seFlowProbeRetryTimer)).append("\n");
                         sb.append("    seFlowProbeTimer: ").append(toIndentedString(seFlowProbeTimer)).append("\n");
@@ -8374,6 +8613,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    seMpRingRetryCount: ").append(toIndentedString(seMpRingRetryCount)).append("\n");
                         sb.append("    seMtu: ").append(toIndentedString(seMtu)).append("\n");
                         sb.append("    seNamePrefix: ").append(toIndentedString(seNamePrefix)).append("\n");
+                        sb.append("    sePacketBufferMax: ").append(toIndentedString(sePacketBufferMax)).append("\n");
                         sb.append("    sePcapLookahead: ").append(toIndentedString(sePcapLookahead)).append("\n");
                         sb.append("    sePcapPktCount: ").append(toIndentedString(sePcapPktCount)).append("\n");
                         sb.append("    sePcapPktSz: ").append(toIndentedString(sePcapPktSz)).append("\n");

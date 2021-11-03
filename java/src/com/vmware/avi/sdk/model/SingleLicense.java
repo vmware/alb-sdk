@@ -21,8 +21,14 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SingleLicense  {
+    @JsonProperty("addons")
+    private List<String> addons = null;
+
     @JsonProperty("burst_cores")
     private Integer burstCores = null;
+
+    @JsonProperty("capacity")
+    private Float capacity = 0.0f;
 
     @JsonProperty("ccu")
     private Integer ccu = 0;
@@ -84,6 +90,9 @@ public class SingleLicense  {
     @JsonProperty("tier_type")
     private String tierType = null;
 
+    @JsonProperty("unit")
+    private String unit = "SERVICE_UNIT";
+
     @JsonProperty("valid_until")
     private String validUntil = null;
 
@@ -91,6 +100,45 @@ public class SingleLicense  {
     private String version = null;
 
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Features supported by the add-on license.
+     * Enum options - LICENSE_UNKNOWN_ADDON, LICENSE_LEGACY_ADDON.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return addons
+     */
+    public List<String> getAddons() {
+        return addons;
+    }
+
+    /**
+     * This is the setter method. this will set the addons
+     * Features supported by the add-on license.
+     * Enum options - LICENSE_UNKNOWN_ADDON, LICENSE_LEGACY_ADDON.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return addons
+     */
+    public void setAddons(List<String>  addons) {
+        this.addons = addons;
+    }
+
+    /**
+     * This is the setter method this will set the addons
+     * Features supported by the add-on license.
+     * Enum options - LICENSE_UNKNOWN_ADDON, LICENSE_LEGACY_ADDON.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return addons
+     */
+    public SingleLicense addAddonsItem(String addonsItem) {
+      if (this.addons == null) {
+        this.addons = new ArrayList<String>();
+      }
+      this.addons.add(addonsItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -112,6 +160,28 @@ public class SingleLicense  {
      */
     public void setBurstCores(Integer  burstCores) {
         this.burstCores = burstCores;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total licensing capacity available for all the resoures available in a single license.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
+     * @return capacity
+     */
+    public Float getCapacity() {
+        return capacity;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total licensing capacity available for all the resoures available in a single license.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
+     * @param capacity set the capacity.
+     */
+    public void setCapacity(Float  capacity) {
+        this.capacity = capacity;
     }
 
     /**
@@ -572,6 +642,30 @@ public class SingleLicense  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Units in which resources will be licensed.
+     * Enum options - UNNOWN_UNIT, SERVICE_UNIT, LEGACY_ADDON_UNIT.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "SERVICE_UNIT".
+     * @return unit
+     */
+    public String getUnit() {
+        return unit;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Units in which resources will be licensed.
+     * Enum options - UNNOWN_UNIT, SERVICE_UNIT, LEGACY_ADDON_UNIT.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "SERVICE_UNIT".
+     * @param unit set the unit.
+     */
+    public void setUnit(String  unit) {
+        this.unit = unit;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Placeholder for description of property valid_until of obj type singlelicense field type str  type string.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return validUntil
@@ -642,14 +736,19 @@ public class SingleLicense  {
   Objects.equals(this.serviceCores, objSingleLicense.serviceCores)&&
   Objects.equals(this.cpuCores, objSingleLicense.cpuCores)&&
   Objects.equals(this.expired, objSingleLicense.expired)&&
-  Objects.equals(this.ccu, objSingleLicense.ccu);
+  Objects.equals(this.ccu, objSingleLicense.ccu)&&
+  Objects.equals(this.addons, objSingleLicense.addons)&&
+  Objects.equals(this.capacity, objSingleLicense.capacity)&&
+  Objects.equals(this.unit, objSingleLicense.unit);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class SingleLicense {\n");
-                  sb.append("    burstCores: ").append(toIndentedString(burstCores)).append("\n");
+                  sb.append("    addons: ").append(toIndentedString(addons)).append("\n");
+                        sb.append("    burstCores: ").append(toIndentedString(burstCores)).append("\n");
+                        sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
                         sb.append("    ccu: ").append(toIndentedString(ccu)).append("\n");
                         sb.append("    cores: ").append(toIndentedString(cores)).append("\n");
                         sb.append("    cpuCores: ").append(toIndentedString(cpuCores)).append("\n");
@@ -670,6 +769,7 @@ public class SingleLicense  {
                         sb.append("    sockets: ").append(toIndentedString(sockets)).append("\n");
                         sb.append("    startOn: ").append(toIndentedString(startOn)).append("\n");
                         sb.append("    tierType: ").append(toIndentedString(tierType)).append("\n");
+                        sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
                         sb.append("    validUntil: ").append(toIndentedString(validUntil)).append("\n");
                         sb.append("    version: ").append(toIndentedString(version)).append("\n");
                   sb.append("}");

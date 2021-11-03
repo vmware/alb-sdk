@@ -33,6 +33,9 @@ public class ApplicationLog  {
     @JsonProperty("app_response_time")
     private Integer appResponseTime = null;
 
+    @JsonProperty("auth_status")
+    private String authStatus = "AUTH_STATUS_NO_AUTHENTICATION";
+
     @JsonProperty("avg_ingress_latency_be")
     private Integer avgIngressLatencyBe = null;
 
@@ -185,6 +188,9 @@ public class ApplicationLog  {
 
     @JsonProperty("ntlm_log")
     private NtlmLog ntlmLog = null;
+
+    @JsonProperty("oauth_log")
+    private OauthLog oauthLog = null;
 
     @JsonProperty("ocsp_status_resp_sent")
     private Boolean ocspStatusRespSent = false;
@@ -479,6 +485,32 @@ public class ApplicationLog  {
      */
     public void setAppResponseTime(Integer  appResponseTime) {
         this.appResponseTime = appResponseTime;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Set the session authentication status.
+     * Enum options - AUTH_STATUS_NO_AUTHENTICATION, AUTH_STATUS_AUTHENTICATION_SUCCESS, AUTH_STATUS_AUTHENTICATION_FAILURE, AUTH_STATUS_UNAUTHORIZED,
+     * AUTH_STATUS_AUTHENTICATED_REQUEST, AUTH_STATUS_AUTHZ_FAILED.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_STATUS_NO_AUTHENTICATION".
+     * @return authStatus
+     */
+    public String getAuthStatus() {
+        return authStatus;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Set the session authentication status.
+     * Enum options - AUTH_STATUS_NO_AUTHENTICATION, AUTH_STATUS_AUTHENTICATION_SUCCESS, AUTH_STATUS_AUTHENTICATION_FAILURE, AUTH_STATUS_UNAUTHORIZED,
+     * AUTH_STATUS_AUTHENTICATED_REQUEST, AUTH_STATUS_AUTHZ_FAILED.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_STATUS_NO_AUTHENTICATION".
+     * @param authStatus set the authStatus.
+     */
+    public void setAuthStatus(String  authStatus) {
+        this.authStatus = authStatus;
     }
 
     /**
@@ -1563,6 +1595,28 @@ public class ApplicationLog  {
      */
     public void setNtlmLog(NtlmLog ntlmLog) {
         this.ntlmLog = ntlmLog;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Logs related to oauth requests.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return oauthLog
+     */
+    public OauthLog getOauthLog() {
+        return oauthLog;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Logs related to oauth requests.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param oauthLog set the oauthLog.
+     */
+    public void setOauthLog(OauthLog oauthLog) {
+        this.oauthLog = oauthLog;
     }
 
     /**
@@ -3204,7 +3258,9 @@ public class ApplicationLog  {
   Objects.equals(this.avgIngressLatencyBe, objApplicationLog.avgIngressLatencyBe)&&
   Objects.equals(this.connEstTimeBe, objApplicationLog.connEstTimeBe)&&
   Objects.equals(this.sourceIp, objApplicationLog.sourceIp)&&
-  Objects.equals(this.sourceIp6, objApplicationLog.sourceIp6);
+  Objects.equals(this.sourceIp6, objApplicationLog.sourceIp6)&&
+  Objects.equals(this.oauthLog, objApplicationLog.oauthLog)&&
+  Objects.equals(this.authStatus, objApplicationLog.authStatus);
     }
 
     @Override
@@ -3215,6 +3271,7 @@ public class ApplicationLog  {
                         sb.append("    allRequestHeaders: ").append(toIndentedString(allRequestHeaders)).append("\n");
                         sb.append("    allResponseHeaders: ").append(toIndentedString(allResponseHeaders)).append("\n");
                         sb.append("    appResponseTime: ").append(toIndentedString(appResponseTime)).append("\n");
+                        sb.append("    authStatus: ").append(toIndentedString(authStatus)).append("\n");
                         sb.append("    avgIngressLatencyBe: ").append(toIndentedString(avgIngressLatencyBe)).append("\n");
                         sb.append("    avgIngressLatencyFe: ").append(toIndentedString(avgIngressLatencyFe)).append("\n");
                         sb.append("    bodyUpdated: ").append(toIndentedString(bodyUpdated)).append("\n");
@@ -3266,6 +3323,7 @@ public class ApplicationLog  {
                         sb.append("    microserviceName: ").append(toIndentedString(microserviceName)).append("\n");
                         sb.append("    networkSecurityPolicyRuleName: ").append(toIndentedString(networkSecurityPolicyRuleName)).append("\n");
                         sb.append("    ntlmLog: ").append(toIndentedString(ntlmLog)).append("\n");
+                        sb.append("    oauthLog: ").append(toIndentedString(oauthLog)).append("\n");
                         sb.append("    ocspStatusRespSent: ").append(toIndentedString(ocspStatusRespSent)).append("\n");
                         sb.append("    oobLog: ").append(toIndentedString(oobLog)).append("\n");
                         sb.append("    paaLog: ").append(toIndentedString(paaLog)).append("\n");

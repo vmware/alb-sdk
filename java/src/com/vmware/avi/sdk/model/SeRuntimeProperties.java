@@ -407,7 +407,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Control if dispatcher core also handles tcp flows in baremetal se.
+     * Deprecated in 21.1.3.
+     * Use config in serviceenginegroup instead.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return baremetalDispatcherHandlesFlows
      */
@@ -417,7 +418,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
-     * Control if dispatcher core also handles tcp flows in baremetal se.
+     * Deprecated in 21.1.3.
+     * Use config in serviceenginegroup instead.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param baremetalDispatcherHandlesFlows set the baremetalDispatcherHandlesFlows.
      */
@@ -1859,7 +1861,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Number of jiffies between polling interface state.
+     * Deprecated in 21.1.3.
+     * Use config in serviceenginegroup instead.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return seDpIfStatePollInterval
      */
@@ -1869,7 +1872,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
-     * Number of jiffies between polling interface state.
+     * Deprecated in 21.1.3.
+     * Use config in serviceenginegroup instead.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param seDpIfStatePollInterval set the seDpIfStatePollInterval.
      */
@@ -2033,7 +2037,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Enable core dump on assert.
+     * Deprecated in 21.1.3.
+     * Use config in serviceenginegroup instead.
      * Field introduced in 18.1.3, 18.2.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return seDumpCoreOnAssert
@@ -2044,7 +2049,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
-     * Enable core dump on assert.
+     * Deprecated in 21.1.3.
+     * Use config in serviceenginegroup instead.
      * Field introduced in 18.1.3, 18.2.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param seDumpCoreOnAssert set the seDumpCoreOnAssert.
@@ -2233,8 +2239,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Internal use only.
-     * Used to artificially reduce the available number of packet buffers.
+     * Deprecated in 21.1.3.
+     * Use config in serviceenginegroup instead.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return sePacketBufferMax
      */
@@ -2244,8 +2250,8 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the setter method to the attribute.
-     * Internal use only.
-     * Used to artificially reduce the available number of packet buffers.
+     * Deprecated in 21.1.3.
+     * Use config in serviceenginegroup instead.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param sePacketBufferMax set the sePacketBufferMax.
      */

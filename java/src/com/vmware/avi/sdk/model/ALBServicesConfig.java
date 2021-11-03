@@ -191,7 +191,7 @@ public class ALBServicesConfig extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Mode helps log collection and upload.
-     * Enum options - SALESFORCE, SYSTEST, MYVMWARE.
+     * Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE.
      * Field introduced in 20.1.2.
      * Allowed in basic(allowed values- salesforce,myvmware,systest) edition, essentials(allowed values- salesforce,myvmware,systest) edition,
      * enterprise edition.
@@ -205,7 +205,7 @@ public class ALBServicesConfig extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Mode helps log collection and upload.
-     * Enum options - SALESFORCE, SYSTEST, MYVMWARE.
+     * Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE.
      * Field introduced in 20.1.2.
      * Allowed in basic(allowed values- salesforce,myvmware,systest) edition, essentials(allowed values- salesforce,myvmware,systest) edition,
      * enterprise edition.

@@ -21,9 +21,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IpReputationConfig  {
-    @JsonProperty("category")
-    private String category = "ALB_THREAT_INTELLIGENCE_CATEGORY";
-
     @JsonProperty("ip_reputation_file_object_expiry_duration")
     private Integer ipReputationFileObjectExpiryDuration = 3;
 
@@ -31,30 +28,6 @@ public class IpReputationConfig  {
     private Integer ipReputationSyncInterval = 60;
 
 
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Service category.
-     * Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY, ALB_LICENSE_CATEGORY.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "ALB_THREAT_INTELLIGENCE_CATEGORY".
-     * @return category
-     */
-    public String getCategory() {
-        return category;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Service category.
-     * Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY, ALB_LICENSE_CATEGORY.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "ALB_THREAT_INTELLIGENCE_CATEGORY".
-     * @param category set the category.
-     */
-    public void setCategory(String  category) {
-        this.category = category;
-    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -121,16 +94,14 @@ public class IpReputationConfig  {
       }
       IpReputationConfig objIpReputationConfig = (IpReputationConfig) o;
       return   Objects.equals(this.ipReputationSyncInterval, objIpReputationConfig.ipReputationSyncInterval)&&
-  Objects.equals(this.ipReputationFileObjectExpiryDuration, objIpReputationConfig.ipReputationFileObjectExpiryDuration)&&
-  Objects.equals(this.category, objIpReputationConfig.category);
+  Objects.equals(this.ipReputationFileObjectExpiryDuration, objIpReputationConfig.ipReputationFileObjectExpiryDuration);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class IpReputationConfig {\n");
-                  sb.append("    category: ").append(toIndentedString(category)).append("\n");
-                        sb.append("    ipReputationFileObjectExpiryDuration: ").append(toIndentedString(ipReputationFileObjectExpiryDuration)).append("\n");
+                  sb.append("    ipReputationFileObjectExpiryDuration: ").append(toIndentedString(ipReputationFileObjectExpiryDuration)).append("\n");
                         sb.append("    ipReputationSyncInterval: ").append(toIndentedString(ipReputationSyncInterval)).append("\n");
                   sb.append("}");
       return sb.toString();

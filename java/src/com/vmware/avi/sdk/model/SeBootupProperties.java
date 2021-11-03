@@ -398,8 +398,8 @@ public class SeBootupProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Use this to emulate more/less cpus than is actually available.
-     * One datapath process is started for each core.
+     * Deprecated in 21.1.3.
+     * Use config in serviceenginegroup instead.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return seEmulatedCores
@@ -410,8 +410,8 @@ public class SeBootupProperties  {
 
     /**
      * This is the setter method to the attribute.
-     * Use this to emulate more/less cpus than is actually available.
-     * One datapath process is started for each core.
+     * Deprecated in 21.1.3.
+     * Use config in serviceenginegroup instead.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param seEmulatedCores set the seEmulatedCores.
