@@ -379,7 +379,7 @@ definitions:
                 type: integer
                 format: int32
             ignore_docker_mac_change:
-                description: "Placeholder for description of property ignore_docker_mac_change of obj type SeAgentProperties field type str  type boolean"
+                description: "Deprecated in 21.1.3. Use config in ServiceEngineGroup instead."
                 type: boolean
                 default: True
             ns_helper_deq_interval_msec:
@@ -597,7 +597,7 @@ definitions:
                 type: integer
                 format: int32
             se_emulated_cores:
-                description: "Use this to emulate more/less cpus than is actually available. One datapath process is started for each core. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition."
+                description: "Deprecated in 21.1.3. Use config in ServiceEngineGroup instead. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition."
                 type: integer
                 format: int32
             se_ip_encap_ipc:
@@ -803,7 +803,7 @@ definitions:
                 items:
                     $ref: '#/definitions/AppHdr'
             baremetal_dispatcher_handles_flows:
-                description: "Control if dispatcher core also handles TCP flows in baremetal SE."
+                description: "Deprecated in 21.1.3. Use config in ServiceEngineGroup instead."
                 type: boolean
             connections_lossy_log_rate_limiter_threshold:
                 description: "Rate limit on maximum adf lossy log to pushper second. Allowed in Basic(Allowed values- 1000) edition, Essentials(Allowed values- 1000) edition, Enterprise edition."
@@ -1093,7 +1093,7 @@ definitions:
                 type: integer
                 format: int32
             se_dp_if_state_poll_interval:
-                description: "Number of jiffies between polling interface state."
+                description: "Deprecated in 21.1.3. Use config in ServiceEngineGroup instead."
                 type: integer
                 default: 10
                 format: int32
@@ -1128,7 +1128,7 @@ definitions:
                 type: integer
                 format: int32
             se_dump_core_on_assert:
-                description: "Enable core dump on assert. Field introduced in 18.1.3, 18.2.1."
+                description: "Deprecated in 21.1.3. Use config in ServiceEngineGroup instead. Field introduced in 18.1.3, 18.2.1."
                 type: boolean
             se_handle_interface_routes:
                 description: "Accept/ignore interface routes (i.e, no next hop IP address)."
@@ -1166,7 +1166,7 @@ definitions:
                 default: 1000
                 format: int32
             se_packet_buffer_max:
-                description: "Internal use only. Used to artificially reduce the available number of packet buffers."
+                description: "Deprecated in 21.1.3. Use config in ServiceEngineGroup instead."
                 type: integer
                 format: int32
             se_random_tcp_drops:
