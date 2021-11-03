@@ -1552,6 +1552,10 @@
                         "type": "string"
                     }
                 },
+                "baremetal_dispatcher_handles_flows": {
+                    "description": "Control if dispatcher core also handles TCP flows in baremetal SE. Field introduced in 21.1.3. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "type": "boolean"
+                },
                 "bgp_peer_monitor_failover_enabled": {
                     "description": "Enable BGP peer monitoring based failover. Field introduced in 21.1.3.",
                     "type": "boolean"
@@ -1881,9 +1885,18 @@
                     "default": 64,
                     "format": "int32"
                 },
+                "hybrid_rss_mode": {
+                    "description": "Toggles SE hybrid only mode of operation in DPDK mode with RSS configured;where-in each SE datapath instance operates as an independent standalonehybrid instance performing both dispatcher and proxy function. Requires reboot. Field introduced in 21.1.3.",
+                    "type": "boolean"
+                },
                 "hypervisor": {
                     "description": "Override default hypervisor. Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.",
                     "type": "string"
+                },
+                "ignore_docker_mac_change": {
+                    "description": "Ignore docker mac change. Field introduced in 21.1.3. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "type": "boolean",
+                    "default": true
                 },
                 "ignore_rtt_threshold": {
                     "description": "Ignore RTT samples if it is above threshold. Field introduced in 17.1.6,17.2.2. Unit is MILLISECONDS.",
@@ -2255,6 +2268,12 @@
                     "type": "integer",
                     "format": "int32"
                 },
+                "num_dispatcher_queues": {
+                    "description": "Number of queues to each dispatcher. Allowed values are 2-8. Special values are 0 - 'auto-compute', 1 - 'single-queue'. Field introduced in 21.1.3.",
+                    "type": "integer",
+                    "default": 1,
+                    "format": "int32"
+                },
                 "num_flow_cores_sum_changes_to_ignore": {
                     "description": "Number of changes in num flow cores sum to ignore.",
                     "type": "integer",
@@ -2380,6 +2399,12 @@
                     "type": "integer",
                     "format": "int32"
                 },
+                "se_dp_if_state_poll_interval": {
+                    "description": "Number of jiffies between polling interface state. Field introduced in 21.1.3. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "type": "integer",
+                    "default": 10,
+                    "format": "int32"
+                },
                 "se_dp_isolation": {
                     "description": "Toggle support to run SE datapath instances in isolation on exclusive CPUs. This improves latency and performance. However, this could reduce the total number of se_dp instances created on that SE instance. Supported for >= 8 CPUs. Requires SE reboot. Field introduced in 20.1.4.",
                     "type": "boolean"
@@ -2438,6 +2463,15 @@
                 },
                 "se_dpdk_pmd": {
                     "description": "Determines if DPDK pool mode driver should be used or not   0  Automatically determine based on hypervisor/NIC type 1  Unconditionally use DPDK poll mode driver 2  Don't use DPDK poll mode driver.Requires SE Reboot. Allowed values are 0-2. Field introduced in 18.1.3.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "se_dump_core_on_assert": {
+                    "description": "Enable core dump on assert. Field introduced in 21.1.3. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "type": "boolean"
+                },
+                "se_emulated_cores": {
+                    "description": "Use this to emulate more/less cpus than is actually available. One datapath process is started for each core. Field introduced in 21.1.3. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -2520,6 +2554,11 @@
                     "description": "Prefix to use for virtual machine name of Service Engines.",
                     "type": "string",
                     "default": "Avi"
+                },
+                "se_packet_buffer_max": {
+                    "description": "Internal use only. Used to artificially reduce the available number of packet buffers. Field introduced in 21.1.3. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "type": "integer",
+                    "format": "int32"
                 },
                 "se_pcap_lookahead": {
                     "description": "Enables lookahead mode of packet receive in PCAP mode. Introduced to overcome an issue with hv_netvsc driver. Lookahead mode attempts to ensure that application and kernel's view of the receive rings are consistent. Field introduced in 18.2.3.",
