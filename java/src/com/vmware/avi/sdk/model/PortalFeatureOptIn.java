@@ -42,9 +42,6 @@ public class PortalFeatureOptIn  {
     @JsonProperty("enable_pulse_waf_management")
     private Boolean enablePulseWafManagement;
 
-    @JsonProperty("enable_saas_licensing")
-    private Boolean enableSaasLicensing = false;
-
     @JsonProperty("enable_user_agent_db_sync")
     private Boolean enableUserAgentDbSync = false;
 
@@ -223,30 +220,6 @@ public class PortalFeatureOptIn  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Enable saas licensing.
-     * Field introduced in 21.1.3.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
-     * @return enableSaasLicensing
-     */
-    public Boolean getEnableSaasLicensing() {
-        return enableSaasLicensing;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Enable saas licensing.
-     * Field introduced in 21.1.3.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
-     * @param enableSaasLicensing set the enableSaasLicensing.
-     */
-    public void setEnableSaasLicensing(Boolean  enableSaasLicensing) {
-        this.enableSaasLicensing = enableSaasLicensing;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Enable to receive bot management updates.
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
@@ -313,8 +286,7 @@ public class PortalFeatureOptIn  {
   Objects.equals(this.enableAppsignatureSync, objPortalFeatureOptIn.enableAppsignatureSync)&&
   Objects.equals(this.enableUserAgentDbSync, objPortalFeatureOptIn.enableUserAgentDbSync)&&
   Objects.equals(this.enablePulseWafManagement, objPortalFeatureOptIn.enablePulseWafManagement)&&
-  Objects.equals(this.enablePulseCaseManagement, objPortalFeatureOptIn.enablePulseCaseManagement)&&
-  Objects.equals(this.enableSaasLicensing, objPortalFeatureOptIn.enableSaasLicensing);
+  Objects.equals(this.enablePulseCaseManagement, objPortalFeatureOptIn.enablePulseCaseManagement);
     }
 
     @Override
@@ -328,7 +300,6 @@ public class PortalFeatureOptIn  {
                         sb.append("    enableIpReputation: ").append(toIndentedString(enableIpReputation)).append("\n");
                         sb.append("    enablePulseCaseManagement: ").append(toIndentedString(enablePulseCaseManagement)).append("\n");
                         sb.append("    enablePulseWafManagement: ").append(toIndentedString(enablePulseWafManagement)).append("\n");
-                        sb.append("    enableSaasLicensing: ").append(toIndentedString(enableSaasLicensing)).append("\n");
                         sb.append("    enableUserAgentDbSync: ").append(toIndentedString(enableUserAgentDbSync)).append("\n");
                         sb.append("    enableWafSignaturesNotifications: ").append(toIndentedString(enableWafSignaturesNotifications)).append("\n");
                   sb.append("}");

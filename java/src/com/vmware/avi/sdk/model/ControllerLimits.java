@@ -36,6 +36,9 @@ public class ControllerLimits  {
     @JsonProperty("gateway_mon_per_vrf")
     private Integer gatewayMonPerVrf = null;
 
+    @JsonProperty("ipaddress_limits")
+    private IPAddrLimits ipaddressLimits = null;
+
     @JsonProperty("ips_per_ipgroup")
     private Integer ipsPerIpgroup = null;
 
@@ -56,6 +59,9 @@ public class ControllerLimits  {
 
     @JsonProperty("rules_per_httppolicy")
     private Integer rulesPerHttppolicy;
+
+    @JsonProperty("rules_per_nat_policy")
+    private Integer rulesPerNatPolicy = null;
 
     @JsonProperty("rules_per_networksecuritypolicy")
     private Integer rulesPerNetworksecuritypolicy = null;
@@ -223,6 +229,28 @@ public class ControllerLimits  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Ip address limits.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return ipaddressLimits
+     */
+    public IPAddrLimits getIpaddressLimits() {
+        return ipaddressLimits;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Ip address limits.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param ipaddressLimits set the ipaddressLimits.
+     */
+    public void setIpaddressLimits(IPAddrLimits ipaddressLimits) {
+        this.ipaddressLimits = ipaddressLimits;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Maximum number of ip's per ipaddrgroup.
      * Field introduced in 20.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -373,6 +401,28 @@ public class ControllerLimits  {
      */
     public void setRulesPerHttppolicy(Integer  rulesPerHttppolicy) {
         this.rulesPerHttppolicy = rulesPerHttppolicy;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum number of nat rules in nat policy.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return rulesPerNatPolicy
+     */
+    public Integer getRulesPerNatPolicy() {
+        return rulesPerNatPolicy;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum number of nat rules in nat policy.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param rulesPerNatPolicy set the rulesPerNatPolicy.
+     */
+    public void setRulesPerNatPolicy(Integer  rulesPerNatPolicy) {
+        this.rulesPerNatPolicy = rulesPerNatPolicy;
     }
 
     /**
@@ -555,6 +605,8 @@ public class ControllerLimits  {
   Objects.equals(this.vsBgpScaleout, objControllerLimits.vsBgpScaleout)&&
   Objects.equals(this.gatewayMonPerVrf, objControllerLimits.gatewayMonPerVrf)&&
   Objects.equals(this.wafLimits, objControllerLimits.wafLimits)&&
+  Objects.equals(this.rulesPerNatPolicy, objControllerLimits.rulesPerNatPolicy)&&
+  Objects.equals(this.ipaddressLimits, objControllerLimits.ipaddressLimits)&&
   Objects.equals(this.l7Limits, objControllerLimits.l7Limits)&&
   Objects.equals(this.controllerSizingLimits, objControllerLimits.controllerSizingLimits)&&
   Objects.equals(this.controllerCloudLimits, objControllerLimits.controllerCloudLimits);
@@ -569,6 +621,7 @@ public class ControllerLimits  {
                         sb.append("    controllerSizingLimits: ").append(toIndentedString(controllerSizingLimits)).append("\n");
                         sb.append("    defaultRoutesPerVrfcontext: ").append(toIndentedString(defaultRoutesPerVrfcontext)).append("\n");
                         sb.append("    gatewayMonPerVrf: ").append(toIndentedString(gatewayMonPerVrf)).append("\n");
+                        sb.append("    ipaddressLimits: ").append(toIndentedString(ipaddressLimits)).append("\n");
                         sb.append("    ipsPerIpgroup: ").append(toIndentedString(ipsPerIpgroup)).append("\n");
                         sb.append("    l7Limits: ").append(toIndentedString(l7Limits)).append("\n");
                         sb.append("    poolgroupsPerVirtualservice: ").append(toIndentedString(poolgroupsPerVirtualservice)).append("\n");
@@ -576,6 +629,7 @@ public class ControllerLimits  {
                         sb.append("    poolsPerVirtualservice: ").append(toIndentedString(poolsPerVirtualservice)).append("\n");
                         sb.append("    routesPerVrfcontext: ").append(toIndentedString(routesPerVrfcontext)).append("\n");
                         sb.append("    rulesPerHttppolicy: ").append(toIndentedString(rulesPerHttppolicy)).append("\n");
+                        sb.append("    rulesPerNatPolicy: ").append(toIndentedString(rulesPerNatPolicy)).append("\n");
                         sb.append("    rulesPerNetworksecuritypolicy: ").append(toIndentedString(rulesPerNetworksecuritypolicy)).append("\n");
                         sb.append("    serversPerPool: ").append(toIndentedString(serversPerPool)).append("\n");
                         sb.append("    sniChildrenPerParent: ").append(toIndentedString(sniChildrenPerParent)).append("\n");
