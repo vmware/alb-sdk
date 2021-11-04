@@ -2497,7 +2497,6 @@ definitions:
             se_spawn_rate:
                 description: "New SE spawn rate per minute. Field deprecated in 17.2.13,18.1.5,18.2.1."
                 type: integer
-                default: 25
                 format: int32
             se_volume:
                 description: "Host volume to be used as a disk for Avi SE, This is a disruptive change."
