@@ -1,0 +1,954 @@
+<!-- 
+	Copyright 2021 VMware, Inc.
+	SPDX-License-Identifier: Apache License 2.0
+-->
+<!doctype html>
+<html>
+  <head>
+    <title>Avi StatediffSnapshot Object API</title>
+    <style type="text/css">
+      body { 
+	font-family: Trebuchet MS, sans-serif;
+	font-size: 15px;
+	color: #444;
+	margin-right: 24px;
+}
+
+h1	{
+	font-size: 25px;
+}
+h2	{
+	font-size: 20px;
+}
+h3	{
+	font-size: 16px;
+	font-weight: bold;
+}
+hr	{
+	height: 1px;
+	border: 0;
+	color: #ddd;
+	background-color: #ddd;
+	display: none;
+}
+
+.app-desc {
+  clear: both;
+  margin-left: 20px;
+}
+.param-name {
+  width: 100%;
+}
+.license-info {
+  margin-left: 20px;
+}
+
+.license-url {
+  margin-left: 20px;
+}
+
+.model {
+  margin: 0 0 0px 20px;
+}
+
+.method {
+  margin-left: 20px;
+}
+
+.method-notes	{
+	margin: 10px 0 20px 0;
+	font-size: 90%;
+	color: #555;
+}
+
+pre {
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.http-method {
+ text-transform: uppercase;
+}
+
+pre.get {
+  background-color: #0f6ab4;
+}
+
+pre.post {
+  background-color: #10a54a;
+}
+
+pre.put {
+  background-color: #c5862b;
+}
+
+pre.delete {
+  background-color: #a41e22;
+}
+
+.huge	{
+	color: #fff;
+}
+
+pre.example {
+  background-color: #f3f3f3;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+code {
+  white-space: pre;
+}
+
+.nickname {
+  font-weight: bold;
+}
+
+.method-path {
+  font-size: 1.5em;
+  background-color: #0f6ab4;
+}
+
+.up {
+  float:right;
+}
+
+.parameter {
+  width: 500px;
+}
+
+.param {
+  width: 500px;
+  padding: 10px 0 0 20px;
+  font-weight: bold;
+}
+
+.param-desc {
+  width: 700px;
+  padding: 0 0 0 20px;
+  color: #777;
+}
+
+.param-type {
+  font-style: italic;
+}
+
+.param-enum-header {
+width: 700px;
+padding: 0 0 0 60px;
+color: #777;
+font-weight: bold;
+}
+
+.param-enum {
+width: 700px;
+padding: 0 0 0 80px;
+color: #777;
+font-style: italic;
+}
+
+.field-label {
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.field-items	{
+	padding: 0 0 15px 0;
+	margin-bottom: 15px;
+}
+
+.return-type {
+  clear: both;
+  padding-bottom: 10px;
+}
+
+.param-header {
+  font-weight: bold;
+}
+
+.method-tags {
+  text-align: right;
+}
+
+.method-tag {
+  background: none repeat scroll 0% 0% #24A600;
+  border-radius: 3px;
+  padding: 2px 10px;
+  margin: 2px;
+  color: #FFF;
+  display: inline-block;
+  text-decoration: none;
+}
+    </style>
+  </head>
+  <body>
+  <h1>Avi StatediffSnapshot Object API</h1>
+    <div class="app-desc">CLI ``` - show state-diff <key> ``` </div>
+    <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
+    <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
+    <div class="app-desc">Version: 21.1.3</div>
+    <div class="app-desc">BasePath:/api</div>
+    <div class="license-info">All rights reserved</div>
+    <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+    <ol>
+      <li>HTTP Basic Authentication</li>
+    </ol>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h2>Table of Contents </h2>
+  <div class="method-summary"></div>
+  <ol>
+  <li><a href="#statediffoperationGet"><code><span class="http-method">get</span> /statediffoperation</code></a></li>
+  <li><a href="#statediffoperationPost"><code><span class="http-method">post</span> /statediffoperation</code></a></li>
+  <li><a href="#statediffoperationUuidDelete"><code><span class="http-method">delete</span> /statediffoperation/{uuid}</code></a></li>
+  <li><a href="#statediffoperationUuidGet"><code><span class="http-method">get</span> /statediffoperation/{uuid}</code></a></li>
+  <li><a href="#statediffoperationUuidPatch"><code><span class="http-method">patch</span> /statediffoperation/{uuid}</code></a></li>
+  <li><a href="#statediffoperationUuidPut"><code><span class="http-method">put</span> /statediffoperation/{uuid}</code></a></li>
+  </ol>
+
+  <div class="method"><a name="statediffoperationGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /statediffoperation</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">statediffoperationGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#StatediffSnapshotApiResponse">StatediffSnapshotApiResponse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "next" : "aeiou",
+  "count" : 123,
+  "results" : [ {
+    "gslb_uuid" : "aeiou",
+    "se_group_name" : "aeiou",
+    "vs_name" : "aeiou",
+    "pre_snapshot" : {
+      "poolsnapshot" : "",
+      "vssnapshot" : "",
+      "gssnapshot" : "",
+      "sesnapshot" : ""
+    },
+    "se_group_uuid" : "aeiou",
+    "se_name" : "aeiou",
+    "uuid" : "aeiou",
+    "pool_name" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou",
+    "gslb_name" : "aeiou",
+    "vs_uuid" : "aeiou",
+    "statediff_operation_ref" : "aeiou",
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "configpb_attributes" : {
+      "version" : 123
+    },
+    "snapshot_type" : "aeiou",
+    "pool_uuid" : "aeiou",
+    "post_snapshot" : {
+      "poolsnapshot" : {
+        "oper_status" : ""
+      },
+      "vssnapshot" : {
+        "oper_status" : ""
+      },
+      "gssnapshot" : {
+        "oper_status" : {
+          "reason_code" : 123456789,
+          "reason" : [ "aeiou" ],
+          "last_changed_time" : {
+            "usecs" : 123456789,
+            "secs" : 123456789
+          },
+          "state" : "aeiou",
+          "reason_code_string" : "aeiou"
+        }
+      },
+      "sesnapshot" : {
+        "oper_status" : ""
+      }
+    },
+    "se_uuid" : "aeiou"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#StatediffSnapshotApiResponse">StatediffSnapshotApiResponse</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="statediffoperationPost"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /statediffoperation</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">statediffoperationPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; StatediffSnapshot object creation </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#StatediffSnapshot">StatediffSnapshot</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "gslb_uuid" : "aeiou",
+  "se_group_name" : "aeiou",
+  "vs_name" : "aeiou",
+  "pre_snapshot" : {
+    "poolsnapshot" : "",
+    "vssnapshot" : "",
+    "gssnapshot" : "",
+    "sesnapshot" : ""
+  },
+  "se_group_uuid" : "aeiou",
+  "se_name" : "aeiou",
+  "uuid" : "aeiou",
+  "pool_name" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "gslb_name" : "aeiou",
+  "vs_uuid" : "aeiou",
+  "statediff_operation_ref" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123
+  },
+  "snapshot_type" : "aeiou",
+  "pool_uuid" : "aeiou",
+  "post_snapshot" : {
+    "poolsnapshot" : {
+      "oper_status" : ""
+    },
+    "vssnapshot" : {
+      "oper_status" : ""
+    },
+    "gssnapshot" : {
+      "oper_status" : {
+        "reason_code" : 123456789,
+        "reason" : [ "aeiou" ],
+        "last_changed_time" : {
+          "usecs" : 123456789,
+          "secs" : 123456789
+        },
+        "state" : "aeiou",
+        "reason_code_string" : "aeiou"
+      }
+    },
+    "sesnapshot" : {
+      "oper_status" : ""
+    }
+  },
+  "se_uuid" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#StatediffSnapshot">StatediffSnapshot</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="statediffoperationUuidDelete"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /statediffoperation/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">statediffoperationUuidDelete</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="statediffoperationUuidGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /statediffoperation/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">statediffoperationUuidGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#StatediffSnapshot">StatediffSnapshot</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "gslb_uuid" : "aeiou",
+  "se_group_name" : "aeiou",
+  "vs_name" : "aeiou",
+  "pre_snapshot" : {
+    "poolsnapshot" : "",
+    "vssnapshot" : "",
+    "gssnapshot" : "",
+    "sesnapshot" : ""
+  },
+  "se_group_uuid" : "aeiou",
+  "se_name" : "aeiou",
+  "uuid" : "aeiou",
+  "pool_name" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "gslb_name" : "aeiou",
+  "vs_uuid" : "aeiou",
+  "statediff_operation_ref" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123
+  },
+  "snapshot_type" : "aeiou",
+  "pool_uuid" : "aeiou",
+  "post_snapshot" : {
+    "poolsnapshot" : {
+      "oper_status" : ""
+    },
+    "vssnapshot" : {
+      "oper_status" : ""
+    },
+    "gssnapshot" : {
+      "oper_status" : {
+        "reason_code" : 123456789,
+        "reason" : [ "aeiou" ],
+        "last_changed_time" : {
+          "usecs" : 123456789,
+          "secs" : 123456789
+        },
+        "state" : "aeiou",
+        "reason_code_string" : "aeiou"
+      }
+    },
+    "sesnapshot" : {
+      "oper_status" : ""
+    }
+  },
+  "se_uuid" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#StatediffSnapshot">StatediffSnapshot</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="statediffoperationUuidPatch"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /statediffoperation/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">statediffoperationUuidPatch</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; StatediffSnapshot object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#StatediffSnapshot">StatediffSnapshot</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "gslb_uuid" : "aeiou",
+  "se_group_name" : "aeiou",
+  "vs_name" : "aeiou",
+  "pre_snapshot" : {
+    "poolsnapshot" : "",
+    "vssnapshot" : "",
+    "gssnapshot" : "",
+    "sesnapshot" : ""
+  },
+  "se_group_uuid" : "aeiou",
+  "se_name" : "aeiou",
+  "uuid" : "aeiou",
+  "pool_name" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "gslb_name" : "aeiou",
+  "vs_uuid" : "aeiou",
+  "statediff_operation_ref" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123
+  },
+  "snapshot_type" : "aeiou",
+  "pool_uuid" : "aeiou",
+  "post_snapshot" : {
+    "poolsnapshot" : {
+      "oper_status" : ""
+    },
+    "vssnapshot" : {
+      "oper_status" : ""
+    },
+    "gssnapshot" : {
+      "oper_status" : {
+        "reason_code" : 123456789,
+        "reason" : [ "aeiou" ],
+        "last_changed_time" : {
+          "usecs" : 123456789,
+          "secs" : 123456789
+        },
+        "state" : "aeiou",
+        "reason_code_string" : "aeiou"
+      }
+    },
+    "sesnapshot" : {
+      "oper_status" : ""
+    }
+  },
+  "se_uuid" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#StatediffSnapshot">StatediffSnapshot</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="statediffoperationUuidPut"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /statediffoperation/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">statediffoperationUuidPut</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; StatediffSnapshot object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#StatediffSnapshot">StatediffSnapshot</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "gslb_uuid" : "aeiou",
+  "se_group_name" : "aeiou",
+  "vs_name" : "aeiou",
+  "pre_snapshot" : {
+    "poolsnapshot" : "",
+    "vssnapshot" : "",
+    "gssnapshot" : "",
+    "sesnapshot" : ""
+  },
+  "se_group_uuid" : "aeiou",
+  "se_name" : "aeiou",
+  "uuid" : "aeiou",
+  "pool_name" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "gslb_name" : "aeiou",
+  "vs_uuid" : "aeiou",
+  "statediff_operation_ref" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123
+  },
+  "snapshot_type" : "aeiou",
+  "pool_uuid" : "aeiou",
+  "post_snapshot" : {
+    "poolsnapshot" : {
+      "oper_status" : ""
+    },
+    "vssnapshot" : {
+      "oper_status" : ""
+    },
+    "gssnapshot" : {
+      "oper_status" : {
+        "reason_code" : 123456789,
+        "reason" : [ "aeiou" ],
+        "last_changed_time" : {
+          "usecs" : 123456789,
+          "secs" : 123456789
+        },
+        "state" : "aeiou",
+        "reason_code_string" : "aeiou"
+      }
+    },
+    "sesnapshot" : {
+      "oper_status" : ""
+    }
+  },
+  "se_uuid" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#StatediffSnapshot">StatediffSnapshot</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+
+  <div class="up"><a href="#__Models">Up</a></div>
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h2>Table of Contents</h2>
+  <ol>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
+    <li><a href="#FbGsInfo"><code>FbGsInfo</code></a></li>
+    <li><a href="#FbPoolInfo"><code>FbPoolInfo</code></a></li>
+    <li><a href="#FbSeInfo"><code>FbSeInfo</code></a></li>
+    <li><a href="#FbVsInfo"><code>FbVsInfo</code></a></li>
+    <li><a href="#OperationalStatus"><code>OperationalStatus</code></a></li>
+    <li><a href="#postsnapshot"><code>postsnapshot</code></a></li>
+    <li><a href="#presnapshot"><code>presnapshot</code></a></li>
+    <li><a href="#StatediffSnapshot"><code>StatediffSnapshot</code></a></li>
+    <li><a href="#StatediffSnapshotApiResponse"><code>StatediffSnapshotApiResponse</code></a></li>
+    <li><a href="#TimeStamp"><code>TimeStamp</code></a></li>
+  </ol>
+
+  <div class="model">
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int32</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="FbGsInfo">FbGsInfo</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">oper_status (optional)</div><div class="param-desc"><span class="param-type"><a href="#OperationalStatus">OperationalStatus</a></span> FB snapshot data. Field introduced in 21.1.3. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="FbPoolInfo">FbPoolInfo</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">oper_status (optional)</div><div class="param-desc"><span class="param-type"><a href="#OperationalStatus">OperationalStatus</a></span> FB snapshot data. Field introduced in 21.1.3. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="FbSeInfo">FbSeInfo</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">oper_status (optional)</div><div class="param-desc"><span class="param-type"><a href="#OperationalStatus">OperationalStatus</a></span> FB snapshot data. Field introduced in 21.1.3. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="FbVsInfo">FbVsInfo</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">oper_status (optional)</div><div class="param-desc"><span class="param-type"><a href="#OperationalStatus">OperationalStatus</a></span> FB snapshot data. Field introduced in 21.1.3. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="OperationalStatus">OperationalStatus</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">last_changed_time (optional)</div><div class="param-desc"><span class="param-type"><a href="#TimeStamp">TimeStamp</a></span> Placeholder for description of property last_changed_time of obj type OperationalStatus field type str  type object </div>
+<div class="param">reason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> reason of OperationalStatus. </div>
+<div class="param">reason_code (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Number of reason_code. format: int64</div>
+<div class="param">reason_code_string (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> reason_code_string of OperationalStatus. </div>
+<div class="param">state (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING, OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING, OPER_FAILED, OPER_UNAVAIL. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="postsnapshot">postsnapshot</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">gssnapshot (optional)</div><div class="param-desc"><span class="param-type"><a href="#FbGsInfo">FbGsInfo</a></span> FB Gs snapshot data. Field introduced in 21.1.3. </div>
+<div class="param">poolsnapshot (optional)</div><div class="param-desc"><span class="param-type"><a href="#FbPoolInfo">FbPoolInfo</a></span> FB Pool snapshot data. Field introduced in 21.1.3. </div>
+<div class="param">sesnapshot (optional)</div><div class="param-desc"><span class="param-type"><a href="#FbSeInfo">FbSeInfo</a></span> FB SE snapshot data. Field introduced in 21.1.3. </div>
+<div class="param">vssnapshot (optional)</div><div class="param-desc"><span class="param-type"><a href="#FbVsInfo">FbVsInfo</a></span> FB VS snapshot data. Field introduced in 21.1.3. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="presnapshot">presnapshot</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">gssnapshot (optional)</div><div class="param-desc"><span class="param-type"><a href="#FbGsInfo">FbGsInfo</a></span> FB Gs snapshot data. Field introduced in 21.1.3. </div>
+<div class="param">poolsnapshot (optional)</div><div class="param-desc"><span class="param-type"><a href="#FbPoolInfo">FbPoolInfo</a></span> FB Pool snapshot data. Field introduced in 21.1.3. </div>
+<div class="param">sesnapshot (optional)</div><div class="param-desc"><span class="param-type"><a href="#FbSeInfo">FbSeInfo</a></span> FB SE snapshot data. Field introduced in 21.1.3. </div>
+<div class="param">vssnapshot (optional)</div><div class="param-desc"><span class="param-type"><a href="#FbVsInfo">FbVsInfo</a></span> FB VS snapshot data. Field introduced in 21.1.3. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="StatediffSnapshot">StatediffSnapshot</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
+<div class="param">gslb_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of GSLB object. Field introduced in 21.1.3. </div>
+<div class="param">gslb_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Reference to base gslb object. Field introduced in 21.1.3. </div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of Statediff operation. Field introduced in 21.1.3. </div>
+<div class="param">pool_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of POOL object. Field introduced in 21.1.3. </div>
+<div class="param">pool_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Reference to base pool object. Field introduced in 21.1.3. </div>
+<div class="param">post_snapshot (optional)</div><div class="param-desc"><span class="param-type"><a href="#postsnapshot">postsnapshot</a></span> Post-Upgrade snapshot for VS. Field introduced in 21.1.3. </div>
+<div class="param">pre_snapshot (optional)</div><div class="param-desc"><span class="param-type"><a href="#presnapshot">presnapshot</a></span> Pre-Upgrade snapshot for VS. Field introduced in 21.1.3. </div>
+<div class="param">se_group_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of SEG object. Field introduced in 21.1.3. </div>
+<div class="param">se_group_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Reference to base SEG object. Field introduced in 21.1.3. </div>
+<div class="param">se_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of SEG object. Field introduced in 21.1.3. </div>
+<div class="param">se_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Reference to base SE object. Field introduced in 21.1.3. </div>
+<div class="param">snapshot_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of snapshot eg. VS_SNAPSHOT, SE_SNAPSHOT etc. Enum options - FB_VS_SNAPSHOT, FB_SE_SNAPSHOT, FB_GSLB_SNAPSHOT, FB_POOL_SNAPSHOT. Field introduced in 21.1.3. </div>
+<div class="param">statediff_operation_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Statediff Operation uuid for identifying the operation. It is a reference to an object of type StatediffOperation. Field introduced in 21.1.3. </div>
+<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 21.1.3. </div>
+<div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> unique identifier for Statediff entry. Field introduced in 21.1.3. </div>
+<div class="param">vs_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of VS object. Field introduced in 21.1.3. </div>
+<div class="param">vs_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Reference to base VS object. Field introduced in 21.1.3. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="StatediffSnapshotApiResponse">StatediffSnapshotApiResponse</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">count </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
+<div class="param">results </div><div class="param-desc"><span class="param-type"><a href="#StatediffSnapshot">array[StatediffSnapshot]</a></span>  </div>
+<div class="param">next (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="TimeStamp">TimeStamp</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">secs </div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Number of secs. format: int64</div>
+<div class="param">usecs </div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Number of usecs. format: int64</div>
+    </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>
