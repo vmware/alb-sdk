@@ -45,6 +45,9 @@ public class OpsHistory  {
     @JsonProperty("state")
     private UpgradeOpsState state = null;
 
+    @JsonProperty("statediff_ref")
+    private String statediffRef = null;
+
     @JsonProperty("upgrade_events")
     private List<EventMap> upgradeEvents = null;
 
@@ -246,6 +249,30 @@ public class OpsHistory  {
     public void setState(UpgradeOpsState state) {
         this.state = state;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Record of pre/post snapshot captured for current upgrade operation.
+     * It is a reference to an object of type statediffoperation.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return statediffRef
+     */
+    public String getStatediffRef() {
+        return statediffRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Record of pre/post snapshot captured for current upgrade operation.
+     * It is a reference to an object of type statediffoperation.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param statediffRef set the statediffRef.
+     */
+    public void setStatediffRef(String  statediffRef) {
+        this.statediffRef = statediffRef;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Controller events for upgrade operation.
@@ -324,7 +351,8 @@ public class OpsHistory  {
   Objects.equals(this.seUpgradeEvents, objOpsHistory.seUpgradeEvents)&&
   Objects.equals(this.startTime, objOpsHistory.startTime)&&
   Objects.equals(this.endTime, objOpsHistory.endTime)&&
-  Objects.equals(this.duration, objOpsHistory.duration);
+  Objects.equals(this.duration, objOpsHistory.duration)&&
+  Objects.equals(this.statediffRef, objOpsHistory.statediffRef);
     }
 
     @Override
@@ -339,6 +367,7 @@ public class OpsHistory  {
                         sb.append("    segStatus: ").append(toIndentedString(segStatus)).append("\n");
                         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
                         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+                        sb.append("    statediffRef: ").append(toIndentedString(statediffRef)).append("\n");
                         sb.append("    upgradeEvents: ").append(toIndentedString(upgradeEvents)).append("\n");
                         sb.append("    version: ").append(toIndentedString(version)).append("\n");
                   sb.append("}");
