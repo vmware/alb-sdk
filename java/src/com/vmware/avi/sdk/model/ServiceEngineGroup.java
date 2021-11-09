@@ -303,6 +303,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("iptables")
     private List<IptableRuleSet> iptables = null;
 
+    @JsonProperty("kni_allowed_server_ports")
+    private List<KniPortRange> kniAllowedServerPorts = null;
+
     @JsonProperty("l7_conns_per_core")
     private Integer l7ConnsPerCore = 16384;
 
@@ -3243,6 +3246,42 @@ public class ServiceEngineGroup extends AviRestResource  {
         this.iptables = new ArrayList<IptableRuleSet>();
       }
       this.iptables.add(iptablesItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Port ranges for any servers running in inband linuxserver clouds.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return kniAllowedServerPorts
+     */
+    public List<KniPortRange> getKniAllowedServerPorts() {
+        return kniAllowedServerPorts;
+    }
+
+    /**
+     * This is the setter method. this will set the kniAllowedServerPorts
+     * Port ranges for any servers running in inband linuxserver clouds.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return kniAllowedServerPorts
+     */
+    public void setKniAllowedServerPorts(List<KniPortRange>  kniAllowedServerPorts) {
+        this.kniAllowedServerPorts = kniAllowedServerPorts;
+    }
+
+    /**
+     * This is the setter method this will set the kniAllowedServerPorts
+     * Port ranges for any servers running in inband linuxserver clouds.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return kniAllowedServerPorts
+     */
+    public ServiceEngineGroup addKniAllowedServerPortsItem(KniPortRange kniAllowedServerPortsItem) {
+      if (this.kniAllowedServerPorts == null) {
+        this.kniAllowedServerPorts = new ArrayList<KniPortRange>();
+      }
+      this.kniAllowedServerPorts.add(kniAllowedServerPortsItem);
       return this;
     }
 
@@ -8395,7 +8434,8 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.bgpPeerMonitorFailoverEnabled, objServiceEngineGroup.bgpPeerMonitorFailoverEnabled)&&
   Objects.equals(this.maxSkbFrags, objServiceEngineGroup.maxSkbFrags)&&
   Objects.equals(this.hybridRssMode, objServiceEngineGroup.hybridRssMode)&&
-  Objects.equals(this.numDispatcherQueues, objServiceEngineGroup.numDispatcherQueues);
+  Objects.equals(this.numDispatcherQueues, objServiceEngineGroup.numDispatcherQueues)&&
+  Objects.equals(this.kniAllowedServerPorts, objServiceEngineGroup.kniAllowedServerPorts);
     }
 
     @Override
@@ -8496,6 +8536,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    ingressAccessMgmt: ").append(toIndentedString(ingressAccessMgmt)).append("\n");
                         sb.append("    instanceFlavor: ").append(toIndentedString(instanceFlavor)).append("\n");
                         sb.append("    iptables: ").append(toIndentedString(iptables)).append("\n");
+                        sb.append("    kniAllowedServerPorts: ").append(toIndentedString(kniAllowedServerPorts)).append("\n");
                         sb.append("    l7ConnsPerCore: ").append(toIndentedString(l7ConnsPerCore)).append("\n");
                         sb.append("    l7ResvdListenConnsPerCore: ").append(toIndentedString(l7ResvdListenConnsPerCore)).append("\n");
                         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");

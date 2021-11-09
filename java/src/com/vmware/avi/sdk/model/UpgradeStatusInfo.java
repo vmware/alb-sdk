@@ -129,6 +129,9 @@ public class UpgradeStatusInfo extends AviRestResource  {
     @JsonProperty("state")
     private UpgradeOpsState state = null;
 
+    @JsonProperty("statediff_ref")
+    private String statediffRef = null;
+
     @JsonProperty("system")
     private Boolean system = null;
 
@@ -1052,6 +1055,30 @@ public class UpgradeStatusInfo extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Record of pre/post snapshot captured for current upgrade operation.
+     * It is a reference to an object of type statediffoperation.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return statediffRef
+     */
+    public String getStatediffRef() {
+        return statediffRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Record of pre/post snapshot captured for current upgrade operation.
+     * It is a reference to an object of type statediffoperation.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param statediffRef set the statediffRef.
+     */
+    public void setStatediffRef(String  statediffRef) {
+        this.statediffRef = statediffRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Flag is set only in the cluster if the upgrade is initiated as a system-upgrade.
      * Field introduced in 18.2.6.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -1314,7 +1341,8 @@ public class UpgradeStatusInfo extends AviRestResource  {
   Objects.equals(this.objCloudRef, objUpgradeStatusInfo.objCloudRef)&&
   Objects.equals(this.seUpgradeEvents, objUpgradeStatusInfo.seUpgradeEvents)&&
   Objects.equals(this.history, objUpgradeStatusInfo.history)&&
-  Objects.equals(this.fipsMode, objUpgradeStatusInfo.fipsMode);
+  Objects.equals(this.fipsMode, objUpgradeStatusInfo.fipsMode)&&
+  Objects.equals(this.statediffRef, objUpgradeStatusInfo.statediffRef);
     }
 
     @Override
@@ -1357,6 +1385,7 @@ public class UpgradeStatusInfo extends AviRestResource  {
                         sb.append("    segStatus: ").append(toIndentedString(segStatus)).append("\n");
                         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
                         sb.append("    state: ").append(toIndentedString(state)).append("\n");
+                        sb.append("    statediffRef: ").append(toIndentedString(statediffRef)).append("\n");
                         sb.append("    system: ").append(toIndentedString(system)).append("\n");
                         sb.append("    tasksCompleted: ").append(toIndentedString(tasksCompleted)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
