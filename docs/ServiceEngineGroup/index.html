@@ -366,6 +366,10 @@ font-style: italic;
     "host_attribute_key" : "aeiou",
     "accelerated_networking" : true,
     "app_cache_threshold" : 123,
+    "kni_allowed_server_ports" : [ {
+      "protocol" : "aeiou",
+      "range" : ""
+    } ],
     "instance_flavor" : "aeiou",
     "disable_se_memory_check" : true,
     "log_agent_trace_enabled" : true,
@@ -850,6 +854,10 @@ font-style: italic;
   "host_attribute_key" : "aeiou",
   "accelerated_networking" : true,
   "app_cache_threshold" : 123,
+  "kni_allowed_server_ports" : [ {
+    "protocol" : "aeiou",
+    "range" : ""
+  } ],
   "instance_flavor" : "aeiou",
   "disable_se_memory_check" : true,
   "log_agent_trace_enabled" : true,
@@ -1405,6 +1413,10 @@ font-style: italic;
   "host_attribute_key" : "aeiou",
   "accelerated_networking" : true,
   "app_cache_threshold" : 123,
+  "kni_allowed_server_ports" : [ {
+    "protocol" : "aeiou",
+    "range" : ""
+  } ],
   "instance_flavor" : "aeiou",
   "disable_se_memory_check" : true,
   "log_agent_trace_enabled" : true,
@@ -1900,6 +1912,10 @@ font-style: italic;
   "host_attribute_key" : "aeiou",
   "accelerated_networking" : true,
   "app_cache_threshold" : 123,
+  "kni_allowed_server_ports" : [ {
+    "protocol" : "aeiou",
+    "range" : ""
+  } ],
   "instance_flavor" : "aeiou",
   "disable_se_memory_check" : true,
   "log_agent_trace_enabled" : true,
@@ -2551,6 +2567,10 @@ font-style: italic;
   "host_attribute_key" : "aeiou",
   "accelerated_networking" : true,
   "app_cache_threshold" : 123,
+  "kni_allowed_server_ports" : [ {
+    "protocol" : "aeiou",
+    "range" : ""
+  } ],
   "instance_flavor" : "aeiou",
   "disable_se_memory_check" : true,
   "log_agent_trace_enabled" : true,
@@ -3085,6 +3105,7 @@ font-style: italic;
     <li><a href="#IptableRule"><code>IptableRule</code></a></li>
     <li><a href="#IptableRuleSet"><code>IptableRuleSet</code></a></li>
     <li><a href="#KeyValue"><code>KeyValue</code></a></li>
+    <li><a href="#KniPortRange"><code>KniPortRange</code></a></li>
     <li><a href="#MetricsEventThreshold"><code>MetricsEventThreshold</code></a></li>
     <li><a href="#MetricsRealTimeUpdate"><code>MetricsRealTimeUpdate</code></a></li>
     <li><a href="#NsxtClusters"><code>NsxtClusters</code></a></li>
@@ -3220,6 +3241,13 @@ font-style: italic;
     <div class="field-items">
       <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key. </div>
 <div class="param">value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Value. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="KniPortRange">KniPortRange</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">protocol </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Protocol associated with port range. Enum options - KNI_PROTO_TCP, KNI_PROTO_UDP. Field introduced in 21.1.3. </div>
+<div class="param">range </div><div class="param-desc"><span class="param-type"><a href="#PortRange">PortRange</a></span> Port range to be allowed to KNI. Field introduced in 21.1.3. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -3404,6 +3432,7 @@ font-style: italic;
 <div class="param">instance_flavor (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Instance/Flavor name for SE instance. </div>
 <div class="param">instance_flavor_info (optional)</div><div class="param-desc"><span class="param-type"><a href="#CloudFlavor">CloudFlavor</a></span> Additional information associated with instance_flavor. Field introduced in 20.1.1. </div>
 <div class="param">iptables (optional)</div><div class="param-desc"><span class="param-type"><a href="#IptableRuleSet">array[IptableRuleSet]</a></span> Iptable Rules. Maximum of 128 items allowed. </div>
+<div class="param">kni_allowed_server_ports (optional)</div><div class="param-desc"><span class="param-type"><a href="#KniPortRange">array[KniPortRange]</a></span> Port ranges for any servers running in inband LinuxServer clouds. Field introduced in 21.1.3. </div>
 <div class="param">l7_conns_per_core (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of L7 connections that can be cached per core. Field introduced in 21.1.1. format: int32</div>
 <div class="param">l7_resvd_listen_conns_per_core (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of reserved L7 listener connections per core. Field introduced in 21.1.1. format: int32</div>
 <div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Labels associated with this SE group. Field introduced in 20.1.1. Maximum of 1 items allowed. </div>
