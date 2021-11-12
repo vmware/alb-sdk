@@ -14,7 +14,7 @@ info:
     description: |
         CLI
         ```
-        - show vsgs <key>
+        - show vsgs
         ```
 
 
