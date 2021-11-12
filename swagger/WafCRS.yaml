@@ -14,8 +14,8 @@ info:
     description: |
         CLI
         ```
-        - show wafcrs <key>
         - configure wafcrs <key>
+        - show wafcrs <key>
         ```
 
 
