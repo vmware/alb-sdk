@@ -172,7 +172,7 @@ public class ControllerProperties extends AviRestResource  {
     private Integer seFailoverAttemptInterval = 300;
 
     @JsonProperty("se_from_marketplace")
-    private String seFromMarketplace = "IMAGE";
+    private String seFromMarketplace = "IMAGE_SE";
 
     @JsonProperty("se_offline_del")
     private Integer seOfflineDel = 172000;
@@ -1436,9 +1436,9 @@ public class ControllerProperties extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * This setting decides whether se is to be deployed from the cloud marketplace or to be created by the controller.
      * The setting is applicable only when byol license is selected.
-     * Enum options - MARKETPLACE, IMAGE.
+     * Enum options - MARKETPLACE, IMAGE_SE.
      * Field introduced in 18.1.4, 18.2.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "IMAGE".
+     * Default value when not specified in API or module is interpreted by Avi Controller as "IMAGE_SE".
      * @return seFromMarketplace
      */
     public String getSeFromMarketplace() {
@@ -1449,9 +1449,9 @@ public class ControllerProperties extends AviRestResource  {
      * This is the setter method to the attribute.
      * This setting decides whether se is to be deployed from the cloud marketplace or to be created by the controller.
      * The setting is applicable only when byol license is selected.
-     * Enum options - MARKETPLACE, IMAGE.
+     * Enum options - MARKETPLACE, IMAGE_SE.
      * Field introduced in 18.1.4, 18.2.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "IMAGE".
+     * Default value when not specified in API or module is interpreted by Avi Controller as "IMAGE_SE".
      * @param seFromMarketplace set the seFromMarketplace.
      */
     public void setSeFromMarketplace(String  seFromMarketplace) {
