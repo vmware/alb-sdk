@@ -580,7 +580,7 @@
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "feature_opt_in_status": {
-                    "description": "Information about the portal features opted in for controller. Field introduced in 20.1.1.",
+                    "description": "Information about the portal features opted in for controller. Field introduced in 20.1.1. Allowed in Enterprise edition, Enterprise edition.",
                     "$ref": "#/definitions/PortalFeatureOptIn"
                 },
                 "ip_reputation_config": {
@@ -756,20 +756,20 @@
             "type": "object",
             "properties": {
                 "enable_appsignature_sync": {
-                    "description": "Enable to receive Application specific signature updates. Field introduced in 20.1.4. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Enable to receive Application specific signature updates. Field introduced in 20.1.4. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise(Allowed values- false) edition, Enterprise edition.",
                     "type": "boolean"
                 },
                 "enable_ip_reputation": {
-                    "description": "Enable to receive IP reputation updates. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Enable to receive IP reputation updates. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise(Allowed values- false) edition, Enterprise edition.",
                     "type": "boolean"
                 },
                 "enable_pulse_case_management": {
-                    "description": "Enable Pulse Case Management. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is True.",
+                    "description": "Enable Pulse Case Management. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise edition is false, Enterprise is True.",
                     "type": "boolean",
                     "default": true
                 },
                 "enable_pulse_waf_management": {
-                    "description": "Enable to receive WAF CRS updates. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is True.",
+                    "description": "Enable to receive WAF CRS updates. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise edition is false, Enterprise is True.",
                     "type": "boolean",
                     "default": true
                 },
@@ -854,7 +854,7 @@
             "type": "object",
             "properties": {
                 "enable_auto_download_waf_signatures": {
-                    "description": "Enable to automatically download new WAF signatures/CRS version to the Controller. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Enable to automatically download new WAF signatures/CRS version to the Controller. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise(Allowed values- false) edition, Enterprise edition.",
                     "type": "boolean"
                 },
                 "enable_waf_signatures_notifications": {
