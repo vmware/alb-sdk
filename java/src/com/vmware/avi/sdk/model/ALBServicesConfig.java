@@ -148,6 +148,7 @@ public class ALBServicesConfig extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Information about the portal features opted in for controller.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return featureOptInStatus
      */
@@ -159,6 +160,7 @@ public class ALBServicesConfig extends AviRestResource  {
      * This is the setter method to the attribute.
      * Information about the portal features opted in for controller.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param featureOptInStatus set the featureOptInStatus.
      */
