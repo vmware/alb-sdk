@@ -287,6 +287,8 @@ font-style: italic;
   "seupgrade_fabric_pool_size" : 123,
   "async_patch_request_cleanup_duration" : 123,
   "vsphere_ha_recovery_timeout" : 123,
+  "detach_ip_retry_interval" : 123,
+  "detach_ip_timeout" : 123,
   "max_dead_se_in_grp" : 123,
   "vs_key_rotate_period" : 123,
   "shared_ssl_certificates" : true,
@@ -302,6 +304,7 @@ font-style: italic;
   "crashed_se_reboot" : 123,
   "bm_use_ansible" : true,
   "process_locked_useraccounts_timeout_period" : 123,
+  "detach_ip_retry_limit" : 123,
   "appviewx_compat_mode" : true,
   "cluster_ip_gratuitous_arp_period" : 123,
   "controller_resource_info_collection_period" : 123,
@@ -450,6 +453,8 @@ font-style: italic;
   "seupgrade_fabric_pool_size" : 123,
   "async_patch_request_cleanup_duration" : 123,
   "vsphere_ha_recovery_timeout" : 123,
+  "detach_ip_retry_interval" : 123,
+  "detach_ip_timeout" : 123,
   "max_dead_se_in_grp" : 123,
   "vs_key_rotate_period" : 123,
   "shared_ssl_certificates" : true,
@@ -465,6 +470,7 @@ font-style: italic;
   "crashed_se_reboot" : 123,
   "bm_use_ansible" : true,
   "process_locked_useraccounts_timeout_period" : 123,
+  "detach_ip_retry_limit" : 123,
   "appviewx_compat_mode" : true,
   "cluster_ip_gratuitous_arp_period" : 123,
   "controller_resource_info_collection_period" : 123,
@@ -613,6 +619,8 @@ font-style: italic;
   "seupgrade_fabric_pool_size" : 123,
   "async_patch_request_cleanup_duration" : 123,
   "vsphere_ha_recovery_timeout" : 123,
+  "detach_ip_retry_interval" : 123,
+  "detach_ip_timeout" : 123,
   "max_dead_se_in_grp" : 123,
   "vs_key_rotate_period" : 123,
   "shared_ssl_certificates" : true,
@@ -628,6 +636,7 @@ font-style: italic;
   "crashed_se_reboot" : 123,
   "bm_use_ansible" : true,
   "process_locked_useraccounts_timeout_period" : 123,
+  "detach_ip_retry_limit" : 123,
   "appviewx_compat_mode" : true,
   "cluster_ip_gratuitous_arp_period" : 123,
   "controller_resource_info_collection_period" : 123,
@@ -749,6 +758,9 @@ font-style: italic;
 <div class="param">dead_se_detection_timer (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Unit is SEC. format: int32</div>
 <div class="param">default_minimum_api_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Minimum api timeout value.If this value is not 60, it will be the default timeout for all APIs that do not have a specific timeout.If an API has a specific timeout but is less than this value, this value will become the new timeout. Allowed values are 60-3600. Field introduced in 18.2.6. Unit is SEC. format: int32</div>
 <div class="param">del_offline_se_after_reboot_delay (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The amount of time the controller will wait before deleting an offline SE after it has been rebooted. For unresponsive SEs, the total time will be  unresponsive_se_reboot + del_offline_se_after_reboot_delay. For crashed SEs, the total time will be crashed_se_reboot + del_offline_se_after_reboot_delay. Field introduced in 20.1.5. Unit is SEC. format: int32</div>
+<div class="param">detach_ip_retry_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Amount of time to wait after last Detach IP failure before attempting next Detach IP retry. Field introduced in 21.1.3. Unit is SEC. format: int32</div>
+<div class="param">detach_ip_retry_limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of Detach IP retries. Field introduced in 21.1.3. format: int32</div>
+<div class="param">detach_ip_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time to wait before marking Detach IP as failed. Field introduced in 21.1.3. Unit is SEC. format: int32</div>
 <div class="param">dns_refresh_period (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Period for refresh pool and gslb DNS job. Unit is MIN. Allowed in Basic(Allowed values- 60) edition, Essentials(Allowed values- 60) edition, Enterprise edition. format: int32</div>
 <div class="param">dummy (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of dummy. format: int32</div>
 <div class="param">edit_system_limits (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Allow editing of system limits. Keep in mind that these system limits have been carefully selected based on rigorous testing in our testig environments. Modifying these limits could destabilize your cluster. Do this at your own risk!. Field introduced in 20.1.1. </div>
