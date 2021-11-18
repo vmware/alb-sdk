@@ -54,6 +54,9 @@ public class EventDetails  {
     @JsonProperty("app_signature_event_data")
     private AppSignatureEventData appSignatureEventData = null;
 
+    @JsonProperty("attach_ip_status_details")
+    private AttachIpStatusEventDetails attachIpStatusDetails = null;
+
     @JsonProperty("avg_uptime_change_details")
     private AvgUptimeChangeDetails avgUptimeChangeDetails = null;
 
@@ -230,6 +233,9 @@ public class EventDetails  {
 
     @JsonProperty("delete_se_details")
     private RmDeleteSeEventDetails deleteSeDetails = null;
+
+    @JsonProperty("detach_ip_status_details")
+    private DetachIpStatusEventDetails detachIpStatusDetails = null;
 
     @JsonProperty("disable_se_migrate_details")
     private DisableSeMigrateEventDetails disableSeMigrateDetails = null;
@@ -636,6 +642,9 @@ public class EventDetails  {
     @JsonProperty("vs_scaleout_details")
     private VsScaleOutEventDetails vsScaleoutDetails = null;
 
+    @JsonProperty("vs_switchover_details")
+    private VsSwitchoverEventDetails vsSwitchoverDetails = null;
+
 
 
     /**
@@ -850,6 +859,28 @@ public class EventDetails  {
      */
     public void setAppSignatureEventData(AppSignatureEventData appSignatureEventData) {
         this.appSignatureEventData = appSignatureEventData;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Details for attach ip status.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return attachIpStatusDetails
+     */
+    public AttachIpStatusEventDetails getAttachIpStatusDetails() {
+        return attachIpStatusDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Details for attach ip status.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param attachIpStatusDetails set the attachIpStatusDetails.
+     */
+    public void setAttachIpStatusDetails(AttachIpStatusEventDetails attachIpStatusDetails) {
+        this.attachIpStatusDetails = attachIpStatusDetails;
     }
 
     /**
@@ -2038,6 +2069,28 @@ public class EventDetails  {
      */
     public void setDeleteSeDetails(RmDeleteSeEventDetails deleteSeDetails) {
         this.deleteSeDetails = deleteSeDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Details for detach ip status.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return detachIpStatusDetails
+     */
+    public DetachIpStatusEventDetails getDetachIpStatusDetails() {
+        return detachIpStatusDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Details for detach ip status.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param detachIpStatusDetails set the detachIpStatusDetails.
+     */
+    public void setDetachIpStatusDetails(DetachIpStatusEventDetails detachIpStatusDetails) {
+        this.detachIpStatusDetails = detachIpStatusDetails;
     }
 
     /**
@@ -4764,6 +4817,28 @@ public class EventDetails  {
         this.vsScaleoutDetails = vsScaleoutDetails;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Details for primary switchover status.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return vsSwitchoverDetails
+     */
+    public VsSwitchoverEventDetails getVsSwitchoverDetails() {
+        return vsSwitchoverDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Details for primary switchover status.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param vsSwitchoverDetails set the vsSwitchoverDetails.
+     */
+    public void setVsSwitchoverDetails(VsSwitchoverEventDetails vsSwitchoverDetails) {
+        this.vsSwitchoverDetails = vsSwitchoverDetails;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -4797,6 +4872,8 @@ public class EventDetails  {
   Objects.equals(this.hostUnavailDetails, objEventDetails.hostUnavailDetails)&&
   Objects.equals(this.switchoverDetails, objEventDetails.switchoverDetails)&&
   Objects.equals(this.switchoverFailDetails, objEventDetails.switchoverFailDetails)&&
+  Objects.equals(this.attachIpStatusDetails, objEventDetails.attachIpStatusDetails)&&
+  Objects.equals(this.detachIpStatusDetails, objEventDetails.detachIpStatusDetails)&&
   Objects.equals(this.vsFsmDetails, objEventDetails.vsFsmDetails)&&
   Objects.equals(this.vsPoolNwFltrDetails, objEventDetails.vsPoolNwFltrDetails)&&
   Objects.equals(this.vsScaleoutDetails, objEventDetails.vsScaleoutDetails)&&
@@ -4805,6 +4882,7 @@ public class EventDetails  {
   Objects.equals(this.vsErrorDetails, objEventDetails.vsErrorDetails)&&
   Objects.equals(this.vsAwaitingseDetails, objEventDetails.vsAwaitingseDetails)&&
   Objects.equals(this.vsInitialplacementDetails, objEventDetails.vsInitialplacementDetails)&&
+  Objects.equals(this.vsSwitchoverDetails, objEventDetails.vsSwitchoverDetails)&&
   Objects.equals(this.upgradeStatusInfo, objEventDetails.upgradeStatusInfo)&&
   Objects.equals(this.allSeupgradeEventDetails, objEventDetails.allSeupgradeEventDetails)&&
   Objects.equals(this.seupgradeEventDetails, objEventDetails.seupgradeEventDetails)&&
@@ -4996,6 +5074,7 @@ public class EventDetails  {
                         sb.append("    apicAgentGenericDetails: ").append(toIndentedString(apicAgentGenericDetails)).append("\n");
                         sb.append("    apicAgentVsNetworkError: ").append(toIndentedString(apicAgentVsNetworkError)).append("\n");
                         sb.append("    appSignatureEventData: ").append(toIndentedString(appSignatureEventData)).append("\n");
+                        sb.append("    attachIpStatusDetails: ").append(toIndentedString(attachIpStatusDetails)).append("\n");
                         sb.append("    avgUptimeChangeDetails: ").append(toIndentedString(avgUptimeChangeDetails)).append("\n");
                         sb.append("    awsAsgDeletionDetails: ").append(toIndentedString(awsAsgDeletionDetails)).append("\n");
                         sb.append("    awsAsgNotifDetails: ").append(toIndentedString(awsAsgNotifDetails)).append("\n");
@@ -5055,6 +5134,7 @@ public class EventDetails  {
                         sb.append("    csInfraDetails: ").append(toIndentedString(csInfraDetails)).append("\n");
                         sb.append("    databaseEventInfo: ").append(toIndentedString(databaseEventInfo)).append("\n");
                         sb.append("    deleteSeDetails: ").append(toIndentedString(deleteSeDetails)).append("\n");
+                        sb.append("    detachIpStatusDetails: ").append(toIndentedString(detachIpStatusDetails)).append("\n");
                         sb.append("    disableSeMigrateDetails: ").append(toIndentedString(disableSeMigrateDetails)).append("\n");
                         sb.append("    discSummary: ").append(toIndentedString(discSummary)).append("\n");
                         sb.append("    dnsQueryError: ").append(toIndentedString(dnsQueryError)).append("\n");
@@ -5190,6 +5270,7 @@ public class EventDetails  {
                         sb.append("    vsPoolNwFltrDetails: ").append(toIndentedString(vsPoolNwFltrDetails)).append("\n");
                         sb.append("    vsScaleinDetails: ").append(toIndentedString(vsScaleinDetails)).append("\n");
                         sb.append("    vsScaleoutDetails: ").append(toIndentedString(vsScaleoutDetails)).append("\n");
+                        sb.append("    vsSwitchoverDetails: ").append(toIndentedString(vsSwitchoverDetails)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

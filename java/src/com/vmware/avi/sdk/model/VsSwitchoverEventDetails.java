@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The VsInitialPlacementEventDetails is a POJO class extends AviRestResource that used for creating
- * VsInitialPlacementEventDetails.
+ * The VsSwitchoverEventDetails is a POJO class extends AviRestResource that used for creating
+ * VsSwitchoverEventDetails.
  *
  * @version 1.0
  * @since 
@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class VsInitialPlacementEventDetails  {
+public class VsSwitchoverEventDetails  {
     @JsonProperty("error_message")
     private String errorMessage = null;
 
@@ -46,7 +46,8 @@ public class VsInitialPlacementEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property error_message of obj type vsinitialplacementeventdetails field type str  type string.
+     * Error messages associated with this event.
+     * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorMessage
      */
@@ -56,7 +57,8 @@ public class VsInitialPlacementEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property error_message of obj type vsinitialplacementeventdetails field type str  type string.
+     * Error messages associated with this event.
+     * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorMessage set the errorMessage.
      */
@@ -66,7 +68,8 @@ public class VsInitialPlacementEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ip of obj type vsinitialplacementeventdetails field type str  type string.
+     * Vip ipv4 address.
+     * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip
      */
@@ -76,7 +79,8 @@ public class VsInitialPlacementEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ip of obj type vsinitialplacementeventdetails field type str  type string.
+     * Vip ipv4 address.
+     * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip set the ip.
      */
@@ -108,7 +112,8 @@ public class VsInitialPlacementEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property rpc_status of obj type vsinitialplacementeventdetails field type str  type integer.
+     * Status of event.
+     * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rpcStatus
      */
@@ -118,7 +123,8 @@ public class VsInitialPlacementEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property rpc_status of obj type vsinitialplacementeventdetails field type str  type integer.
+     * Status of event.
+     * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rpcStatus set the rpcStatus.
      */
@@ -127,7 +133,8 @@ public class VsInitialPlacementEventDetails  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_assigned of obj type vsinitialplacementeventdetails field type str  type array.
+     * List of serviceengine assigned to this virtual service.
+     * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seAssigned
      */
@@ -137,7 +144,8 @@ public class VsInitialPlacementEventDetails  {
 
     /**
      * This is the setter method. this will set the seAssigned
-     * Placeholder for description of property se_assigned of obj type vsinitialplacementeventdetails field type str  type array.
+     * List of serviceengine assigned to this virtual service.
+     * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seAssigned
      */
@@ -147,11 +155,12 @@ public class VsInitialPlacementEventDetails  {
 
     /**
      * This is the setter method this will set the seAssigned
-     * Placeholder for description of property se_assigned of obj type vsinitialplacementeventdetails field type str  type array.
+     * List of serviceengine assigned to this virtual service.
+     * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seAssigned
      */
-    public VsInitialPlacementEventDetails addSeAssignedItem(VipSeAssigned seAssignedItem) {
+    public VsSwitchoverEventDetails addSeAssignedItem(VipSeAssigned seAssignedItem) {
       if (this.seAssigned == null) {
         this.seAssigned = new ArrayList<VipSeAssigned>();
       }
@@ -161,7 +170,8 @@ public class VsInitialPlacementEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_requested of obj type vsinitialplacementeventdetails field type str  type ref.
+     * Resources requested/assigned to this virtual service.
+     * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seRequested
      */
@@ -171,7 +181,8 @@ public class VsInitialPlacementEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_requested of obj type vsinitialplacementeventdetails field type str  type ref.
+     * Resources requested/assigned to this virtual service.
+     * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seRequested set the seRequested.
      */
@@ -181,7 +192,8 @@ public class VsInitialPlacementEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of vs.
+     * Virtual service uuid.
+     * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsUuid
      */
@@ -191,7 +203,8 @@ public class VsInitialPlacementEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of vs.
+     * Virtual service uuid.
+     * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsUuid set the vsUuid.
      */
@@ -208,20 +221,20 @@ public class VsInitialPlacementEventDetails  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      VsInitialPlacementEventDetails objVsInitialPlacementEventDetails = (VsInitialPlacementEventDetails) o;
-      return   Objects.equals(this.vsUuid, objVsInitialPlacementEventDetails.vsUuid)&&
-  Objects.equals(this.seRequested, objVsInitialPlacementEventDetails.seRequested)&&
-  Objects.equals(this.seAssigned, objVsInitialPlacementEventDetails.seAssigned)&&
-  Objects.equals(this.rpcStatus, objVsInitialPlacementEventDetails.rpcStatus)&&
-  Objects.equals(this.errorMessage, objVsInitialPlacementEventDetails.errorMessage)&&
-  Objects.equals(this.ip, objVsInitialPlacementEventDetails.ip)&&
-  Objects.equals(this.ip6, objVsInitialPlacementEventDetails.ip6);
+      VsSwitchoverEventDetails objVsSwitchoverEventDetails = (VsSwitchoverEventDetails) o;
+      return   Objects.equals(this.vsUuid, objVsSwitchoverEventDetails.vsUuid)&&
+  Objects.equals(this.seRequested, objVsSwitchoverEventDetails.seRequested)&&
+  Objects.equals(this.seAssigned, objVsSwitchoverEventDetails.seAssigned)&&
+  Objects.equals(this.rpcStatus, objVsSwitchoverEventDetails.rpcStatus)&&
+  Objects.equals(this.errorMessage, objVsSwitchoverEventDetails.errorMessage)&&
+  Objects.equals(this.ip, objVsSwitchoverEventDetails.ip)&&
+  Objects.equals(this.ip6, objVsSwitchoverEventDetails.ip6);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class VsInitialPlacementEventDetails {\n");
+      sb.append("class VsSwitchoverEventDetails {\n");
                   sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
                         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
                         sb.append("    ip6: ").append(toIndentedString(ip6)).append("\n");
