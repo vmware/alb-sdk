@@ -306,6 +306,21 @@ definitions:
                 type: integer
                 default: 300
                 format: int32
+            detach_ip_retry_interval:
+                description: "Amount of time to wait after last Detach IP failure before attempting next Detach IP retry. Field introduced in 21.1.3. Unit is SEC."
+                type: integer
+                default: 60
+                format: int32
+            detach_ip_retry_limit:
+                description: "Maximum number of Detach IP retries. Field introduced in 21.1.3."
+                type: integer
+                default: 4
+                format: int32
+            detach_ip_timeout:
+                description: "Time to wait before marking Detach IP as failed. Field introduced in 21.1.3. Unit is SEC."
+                type: integer
+                default: 300
+                format: int32
             dns_refresh_period:
                 description: "Period for refresh pool and gslb DNS job. Unit is MIN. Allowed in Basic(Allowed values- 60) edition, Essentials(Allowed values- 60) edition, Enterprise edition."
                 type: integer
