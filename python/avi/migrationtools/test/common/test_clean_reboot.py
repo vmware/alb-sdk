@@ -45,7 +45,7 @@ def clean_reboot(controller_ip, username, password, version, licensefile_path):
 
 
 def set_default_password(controller_ip, username):
-    api = ApiSession.get_session(controller_ip, username, password=os.environ['default_password'], api_version='17.2.8')
+    api = ApiSession.get_session(controller_ip, username, password=os.environ['default_password'])
     passData = {
         "username": "admin",
         "password": "admin",

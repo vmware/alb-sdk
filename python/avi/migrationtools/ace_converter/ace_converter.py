@@ -225,7 +225,7 @@ Optional:
     parser.add_argument('--cloud_name', help='cloud name for auto upload',
                         default='Default-Cloud')
 
-    parser.add_argument('--controller_version', default='17.1.1',
+    parser.add_argument('--controller_version', default='18.2.6',
                         help='Specify the particular version')
 
     parser.add_argument('-f', '--input_file',

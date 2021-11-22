@@ -606,7 +606,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--controller_version',
         help='Target Avi controller version',
-        default='17.2.1')
+        default='18.2.6')
     args = parser.parse_args()
 
     with open(args.config_file, "r+") as f:

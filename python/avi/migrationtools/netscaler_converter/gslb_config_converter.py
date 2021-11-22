@@ -19,7 +19,7 @@ def get_vip_cluster_map(sites):
     for site in sites:
         session = ApiSession.get_session(
             site['ip_addresses'][0]['addr'], site['username'], site['password'])
-        resp = session.get('virtualservice', api_version='17.1.1')
+        resp = session.get('virtualservice', api_version='18.2.6')
         vs_list = json.loads(resp.text)['results']
         for vs in vs_list:
             vip_map.update(create_map_for_vs(vs, vip_map, site))

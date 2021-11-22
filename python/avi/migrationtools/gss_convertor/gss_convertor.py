@@ -237,7 +237,7 @@ Optional:
     parser.add_argument('-t', '--tenant', default='admin',
                         help='Out file name')
 
-    parser.add_argument('--version', default='17.2',
+    parser.add_argument('--version', default='18.2.6',
                         help='Specify the particular version')
 
     pargs = parser.parse_args()

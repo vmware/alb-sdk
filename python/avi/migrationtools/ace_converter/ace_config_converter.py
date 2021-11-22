@@ -21,7 +21,7 @@ LOG = logging.getLogger(__name__)
 class ConfigConverter(object):
     """ Configuration conversion happens here """
 
-    def __init__(self, parsed_output, enable_vs=False, version='17.1.1',
+    def __init__(self, parsed_output, enable_vs=False, version='18.2.6',
                  input_folder_loc=None, tenant=None, cloud=None, vrf=None, segroup=None):
         """ Create Some common Objects over here """
         LOG.debug("Config conversion started")

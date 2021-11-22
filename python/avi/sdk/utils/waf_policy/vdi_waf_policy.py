@@ -14,6 +14,20 @@ SYSTEM_WAF_POLICY_VDI='System-WAF-Policy-VDI'
 
 logger = logging.getLogger(__name__)
 
+def get_latest_crs(api):
+    resp = api.get("wafcrs/")
+    if resp.status_code not in range(200, 300):
+        logger.error('Error : %s' % resp.text)
+        exit(0)
+    waf_crses = json.loads(resp.text)["results"]
+    latest_crs = waf_crses[0]
+    latest_date = waf_crses[0]["version"]
+    for waf_crs in waf_crses:
+        if waf_crs["version"]>latest_date:
+            latest_date = waf_crs["version"]
+            latest_crs = waf_crs
+    return latest_crs
+
 def add_allowlist_rule(waf_policy_obj):
     #add a allowlist rule to allow request with uri beginning with /ice/
     allowlist_rule={
@@ -89,28 +103,13 @@ def add_pre_crs_group(waf_policy_obj):
     pre_crs_group["index"] = index + 1
     waf_policy_obj["pre_crs_groups"].append(pre_crs_group)
 
-def get_crs(api):
-    tested_crs = "CRS-2021-1"
-    resp = api.get("wafcrs?name=" + tested_crs)
-    if resp.status_code not in range(200, 300):
-        if resp.status_code == 404:
-            logger.error("Controller does not have CRS %s, please install first." % tested_crs)
-            return None
-        logger.error('Error : %s', resp.text)
-        exit(0)
-
-    waf_crs = json.loads(resp.text)["results"]
-    return waf_crs[0]
-
 def create_vdi_waf_policy(api, args):
     waf_policy_obj = {
         "name": SYSTEM_WAF_POLICY_VDI,
         "mode": "WAF_MODE_DETECTION_ONLY",
         "waf_profile_ref": "/api/wafprofile?name=System-WAF-Profile"
     }
-    waf_crs = get_crs(api)
-    if waf_crs is None:
-        return
+    waf_crs = get_latest_crs(api)
     waf_policy_obj["waf_crs_ref"]="/api/wafcrs?name="+waf_crs["name"]
     waf_policy_obj["crs_groups"] = list()
     for group in waf_crs["groups"]:
