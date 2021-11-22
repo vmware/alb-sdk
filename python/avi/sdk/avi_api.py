@@ -144,7 +144,7 @@ class AviCredentials(object):
     controller = ''
     username = ''
     password = ''
-    api_version = '16.4.4'
+    api_version = '18.2.6'
     tenant = None
     tenant_uuid = None
     token = None
@@ -173,7 +173,7 @@ class AviCredentials(object):
         if m.params['password']:
             self.password = m.params['password']
         if (m.params['api_version'] and
-                (m.params['api_version'] != '16.4.4')):
+                (m.params['api_version'] != '18.2.6')):
             self.api_version = m.params['api_version']
         if m.params['tenant']:
             self.tenant = m.params['tenant']

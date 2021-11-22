@@ -290,7 +290,7 @@ if __name__ == "__main__":
                         help='controller ip for auto upload')
     parser.add_argument('--controller_version',
                         help='Target Avi controller version',
-                        default='17.1.1')
+                        default='18.2.6')
     parser.add_argument('--cloud_name', help='cloud name for auto upload',
                         default='Default-Cloud')
     parser.add_argument('-f', '--ns_config_file',
