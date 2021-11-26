@@ -228,6 +228,8 @@ font-style: italic;
   <li><a href="#poolUuidRuntimeServerHmonstatGet"><code><span class="http-method">get</span> /pool/{uuid}/runtime/server/hmonstat/</code></a></li>
   <li><a href="#poolUuidRuntimeServerInternalGet"><code><span class="http-method">get</span> /pool/{uuid}/runtime/server/internal/</code></a></li>
   <li><a href="#poolUuidRuntimeStatsClearPost"><code><span class="http-method">post</span> /pool/{uuid}/runtime/stats/clear</code></a></li>
+  <li><a href="#poolUuidRuntimeVsServiceServerMapKvGet"><code><span class="http-method">get</span> /pool/{uuid}/runtime/vs/service/server/map/kv/</code></a></li>
+  <li><a href="#poolUuidRuntimeVsServiceServerMapTableGet"><code><span class="http-method">get</span> /pool/{uuid}/runtime/vs/service/server/map/table/</code></a></li>
   <li><a href="#poolUuidScaleinPost"><code><span class="http-method">post</span> /pool/{uuid}/scalein</code></a></li>
   <li><a href="#poolUuidScaleoutPost"><code><span class="http-method">post</span> /pool/{uuid}/scaleout</code></a></li>
   <li><a href="#poolUuidVsGet"><code><span class="http-method">get</span> /pool/{uuid}/vs/</code></a></li>
@@ -487,6 +489,10 @@ font-style: italic;
         "backup_pool_ref" : "aeiou"
       },
       "type" : "aeiou"
+    },
+    "horizon_profile" : {
+      "blast_port" : 123,
+      "pcoip_port" : 123
     },
     "max_conn_rate_per_server" : {
       "rate_limiter" : {
@@ -755,6 +761,10 @@ font-style: italic;
       "backup_pool_ref" : "aeiou"
     },
     "type" : "aeiou"
+  },
+  "horizon_profile" : {
+    "blast_port" : 123,
+    "pcoip_port" : 123
   },
   "max_conn_rate_per_server" : {
     "rate_limiter" : {
@@ -1256,6 +1266,10 @@ font-style: italic;
       "backup_pool_ref" : "aeiou"
     },
     "type" : "aeiou"
+  },
+  "horizon_profile" : {
+    "blast_port" : 123,
+    "pcoip_port" : 123
   },
   "max_conn_rate_per_server" : {
     "rate_limiter" : {
@@ -1796,6 +1810,10 @@ font-style: italic;
     },
     "type" : "aeiou"
   },
+  "horizon_profile" : {
+    "blast_port" : 123,
+    "pcoip_port" : 123
+  },
   "max_conn_rate_per_server" : {
     "rate_limiter" : {
       "period" : 123,
@@ -2126,6 +2144,10 @@ font-style: italic;
       "backup_pool_ref" : "aeiou"
     },
     "type" : "aeiou"
+  },
+  "horizon_profile" : {
+    "blast_port" : 123,
+    "pcoip_port" : 123
   },
   "max_conn_rate_per_server" : {
     "rate_limiter" : {
@@ -2742,6 +2764,110 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
+  <div class="method"><a name="poolUuidRuntimeVsServiceServerMapKvGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/vs/service/server/map/kv/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">poolUuidRuntimeVsServiceServerMapKvGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="poolUuidRuntimeVsServiceServerMapTableGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/vs/service/server/map/table/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">poolUuidRuntimeVsServiceServerMapTableGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
   <div class="method"><a name="poolUuidScaleinPost"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
@@ -2933,6 +3059,7 @@ font-style: italic;
     <li><a href="#HTTPReselectRespCode"><code>HTTPReselectRespCode</code></a></li>
     <li><a href="#HTTPServerReselect"><code>HTTPServerReselect</code></a></li>
     <li><a href="#HTTPStatusRange"><code>HTTPStatusRange</code></a></li>
+    <li><a href="#HorizonProfile"><code>HorizonProfile</code></a></li>
     <li><a href="#HttpCacheObjFilter"><code>HttpCacheObjFilter</code></a></li>
     <li><a href="#IpAddr"><code>IpAddr</code></a></li>
     <li><a href="#IpAddrPrefix"><code>IpAddrPrefix</code></a></li>
@@ -3088,6 +3215,13 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3 class="field-label"><a name="HorizonProfile">HorizonProfile</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">blast_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Horizon blast port of the UAG server. Field introduced in 21.1.3. format: int32</div>
+<div class="param">pcoip_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Horizon pcoip port of the UAG server. Field introduced in 21.1.3. format: int32</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="HttpCacheObjFilter">HttpCacheObjFilter</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">key (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP cache object&#39;s exact key. </div>
@@ -3181,6 +3315,7 @@ font-style: italic;
 <div class="param">graceful_disable_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Used to gracefully disable a server. Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled. Allowed values are 1-7200. Special values are 0 - &#39;Immediate&#39;, -1 - &#39;Infinite&#39;. Unit is MIN. format: int32</div>
 <div class="param">gslb_sp_enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Indicates if the pool is a site-persistence pool. . Field introduced in 17.2.1. Allowed in Basic edition, Essentials edition, Enterprise edition. </div>
 <div class="param">health_monitor_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Verify server health by applying one or more health monitors.  Active monitors generate synthetic traffic from each Service Engine and mark a server up or down based on the response. The Passive monitor listens only to client to server communication. It raises or lowers the ratio of traffic destined to a server based on successful responses. It is a reference to an object of type HealthMonitor. Maximum of 50 items allowed. </div>
+<div class="param">horizon_profile (optional)</div><div class="param-desc"><span class="param-type"><a href="#HorizonProfile">HorizonProfile</a></span> Horizon UAG configuration. Field introduced in 21.1.3. </div>
 <div class="param">host_check_enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable common name check for server certificate. If enabled and no explicit domain name is specified, Avi will use the incoming host header to do the match. </div>
 <div class="param">http2_properties (optional)</div><div class="param-desc"><span class="param-type"><a href="#HTTP2PoolProperties">HTTP2PoolProperties</a></span> HTTP2 pool properties. Field introduced in 21.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition. </div>
 <div class="param">ignore_server_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Ignore the server port in building the load balancing state.Applicable only for consistent hash load balancing algorithm or Disable Port translation (use_service_port) use cases. Field introduced in 20.1.1. </div>
