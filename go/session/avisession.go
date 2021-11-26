@@ -276,7 +276,7 @@ type AviSession struct {
 	disableControllerStatusCheck bool
 }
 
-const DEFAULT_AVI_VERSION = "17.1.2"
+const DEFAULT_AVI_VERSION = "18.2.6"
 const DEFAULT_API_TIMEOUT = time.Duration(60 * time.Second)
 const DEFAULT_API_TENANT = "admin"
 const DEFAULT_MAX_API_RETRIES = 3
