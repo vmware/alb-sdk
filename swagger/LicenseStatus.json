@@ -584,6 +584,10 @@
                     "description": "Status of saas licensing subscription. Field introduced in 21.1.3.",
                     "type": "boolean"
                 },
+                "expired": {
+                    "description": "Saas license expiry status. Field introduced in 21.1.3.",
+                    "type": "boolean"
+                },
                 "message": {
                     "description": "Message. Field introduced in 21.1.3.",
                     "type": "string"
