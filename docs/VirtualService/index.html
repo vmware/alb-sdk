@@ -400,6 +400,18 @@ font-style: italic;
       "request_rewrite_enabled" : true,
       "rsp_match_replace_pair" : [ "" ],
       "rewritable_content_ref" : "aeiou",
+      "rsp_rewrite_rules" : [ {
+        "enable" : true,
+        "name" : "aeiou",
+        "index" : 123,
+        "pairs" : [ {
+          "replacement_string" : "",
+          "search_string" : {
+            "val" : "aeiou",
+            "type" : "aeiou"
+          }
+        } ]
+      } ],
       "response_rewrite_enabled" : true
     },
     "type" : "aeiou",
@@ -653,6 +665,7 @@ font-style: italic;
       "port" : 123,
       "port_range_end" : 123,
       "enable_http2" : true,
+      "horizon_internal_ports" : true,
       "enable_ssl" : true,
       "override_application_profile_ref" : "aeiou"
     } ],
@@ -937,6 +950,18 @@ font-style: italic;
     "request_rewrite_enabled" : true,
     "rsp_match_replace_pair" : [ "" ],
     "rewritable_content_ref" : "aeiou",
+    "rsp_rewrite_rules" : [ {
+      "enable" : true,
+      "name" : "aeiou",
+      "index" : 123,
+      "pairs" : [ {
+        "replacement_string" : "",
+        "search_string" : {
+          "val" : "aeiou",
+          "type" : "aeiou"
+        }
+      } ]
+    } ],
     "response_rewrite_enabled" : true
   },
   "type" : "aeiou",
@@ -1190,6 +1215,7 @@ font-style: italic;
     "port" : 123,
     "port_range_end" : 123,
     "enable_http2" : true,
+    "horizon_internal_ports" : true,
     "enable_ssl" : true,
     "override_application_profile_ref" : "aeiou"
   } ],
@@ -2279,6 +2305,18 @@ font-style: italic;
     "request_rewrite_enabled" : true,
     "rsp_match_replace_pair" : [ "" ],
     "rewritable_content_ref" : "aeiou",
+    "rsp_rewrite_rules" : [ {
+      "enable" : true,
+      "name" : "aeiou",
+      "index" : 123,
+      "pairs" : [ {
+        "replacement_string" : "",
+        "search_string" : {
+          "val" : "aeiou",
+          "type" : "aeiou"
+        }
+      } ]
+    } ],
     "response_rewrite_enabled" : true
   },
   "type" : "aeiou",
@@ -2532,6 +2570,7 @@ font-style: italic;
     "port" : 123,
     "port_range_end" : 123,
     "enable_http2" : true,
+    "horizon_internal_ports" : true,
     "enable_ssl" : true,
     "override_application_profile_ref" : "aeiou"
   } ],
@@ -3873,6 +3912,18 @@ font-style: italic;
     "request_rewrite_enabled" : true,
     "rsp_match_replace_pair" : [ "" ],
     "rewritable_content_ref" : "aeiou",
+    "rsp_rewrite_rules" : [ {
+      "enable" : true,
+      "name" : "aeiou",
+      "index" : 123,
+      "pairs" : [ {
+        "replacement_string" : "",
+        "search_string" : {
+          "val" : "aeiou",
+          "type" : "aeiou"
+        }
+      } ]
+    } ],
     "response_rewrite_enabled" : true
   },
   "type" : "aeiou",
@@ -4126,6 +4177,7 @@ font-style: italic;
     "port" : 123,
     "port_range_end" : 123,
     "enable_http2" : true,
+    "horizon_internal_ports" : true,
     "enable_ssl" : true,
     "override_application_profile_ref" : "aeiou"
   } ],
@@ -4629,6 +4681,18 @@ font-style: italic;
     "request_rewrite_enabled" : true,
     "rsp_match_replace_pair" : [ "" ],
     "rewritable_content_ref" : "aeiou",
+    "rsp_rewrite_rules" : [ {
+      "enable" : true,
+      "name" : "aeiou",
+      "index" : 123,
+      "pairs" : [ {
+        "replacement_string" : "",
+        "search_string" : {
+          "val" : "aeiou",
+          "type" : "aeiou"
+        }
+      } ]
+    } ],
     "response_rewrite_enabled" : true
   },
   "type" : "aeiou",
@@ -4882,6 +4946,7 @@ font-style: italic;
     "port" : 123,
     "port_range_end" : 123,
     "enable_http2" : true,
+    "horizon_internal_ports" : true,
     "enable_ssl" : true,
     "override_application_profile_ref" : "aeiou"
   } ],
@@ -6149,11 +6214,14 @@ font-style: italic;
     <li><a href="#ReplaceStringVar"><code>ReplaceStringVar</code></a></li>
     <li><a href="#RetryPlacementParams"><code>RetryPlacementParams</code></a></li>
     <li><a href="#RoleFilterMatchLabel"><code>RoleFilterMatchLabel</code></a></li>
+    <li><a href="#RspContentRewriteRule"><code>RspContentRewriteRule</code></a></li>
     <li><a href="#SAMLSPConfig"><code>SAMLSPConfig</code></a></li>
     <li><a href="#SSLCacheFilter"><code>SSLCacheFilter</code></a></li>
     <li><a href="#SSLProfileSelector"><code>SSLProfileSelector</code></a></li>
     <li><a href="#SSOPolicy"><code>SSOPolicy</code></a></li>
     <li><a href="#SSOPolicyApiResponse"><code>SSOPolicyApiResponse</code></a></li>
+    <li><a href="#SearchReplacePair"><code>SearchReplacePair</code></a></li>
+    <li><a href="#SearchStringVar"><code>SearchStringVar</code></a></li>
     <li><a href="#Service"><code>Service</code></a></li>
     <li><a href="#ServicePoolSelector"><code>ServicePoolSelector</code></a></li>
     <li><a href="#SidebandProfile"><code>SidebandProfile</code></a></li>
@@ -6331,11 +6399,12 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ContentRewriteProfile">ContentRewriteProfile</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">req_match_replace_pair (optional)</div><div class="param-desc"><span class="param-type"><a href="#MatchReplacePair">array[MatchReplacePair]</a></span> Strings to be matched and replaced with on the request body. This should be configured when request_rewrite_enabled is set to true. This is currently not supported. </div>
-<div class="param">request_rewrite_enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable rewrite on request body. This is not currently supported. </div>
-<div class="param">response_rewrite_enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable rewrite on response body. </div>
+      <div class="param">req_match_replace_pair (optional)</div><div class="param-desc"><span class="param-type"><a href="#MatchReplacePair">array[MatchReplacePair]</a></span> Strings to be matched and replaced with on the request body. This should be configured when request_rewrite_enabled is set to true. This is currently not supported. Field deprecated in 21.1.3. </div>
+<div class="param">request_rewrite_enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable rewrite on request body. This is not currently supported. Field deprecated in 21.1.3. </div>
+<div class="param">response_rewrite_enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable rewrite on response body. Field deprecated in 21.1.3. </div>
 <div class="param">rewritable_content_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Rewrite only content types listed in this string group. Content types not present in this list are not rewritten. It is a reference to an object of type StringGroup. </div>
-<div class="param">rsp_match_replace_pair (optional)</div><div class="param-desc"><span class="param-type"><a href="#MatchReplacePair">array[MatchReplacePair]</a></span> Strings to be matched and replaced with on the response body. This should be configured when response_rewrite_enabled is set to true. </div>
+<div class="param">rsp_match_replace_pair (optional)</div><div class="param-desc"><span class="param-type"><a href="#MatchReplacePair">array[MatchReplacePair]</a></span> Strings to be matched and replaced with on the response body. This should be configured when response_rewrite_enabled is set to true. Field deprecated in 21.1.3. </div>
+<div class="param">rsp_rewrite_rules (optional)</div><div class="param-desc"><span class="param-type"><a href="#RspContentRewriteRule">array[RspContentRewriteRule]</a></span> Content Rewrite rules to be enabled on theresponse body. Field introduced in 21.1.3. Maximum of 1 items allowed. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6616,8 +6685,8 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="MatchReplacePair">MatchReplacePair</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">match_string </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> String to be matched. </div>
-<div class="param">replacement_string (optional)</div><div class="param-desc"><span class="param-type"><a href="#ReplaceStringVar">ReplaceStringVar</a></span> Replacement string. </div>
+      <div class="param">match_string (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> String to be matched. Field deprecated in 21.1.3. </div>
+<div class="param">replacement_string (optional)</div><div class="param-desc"><span class="param-type"><a href="#ReplaceStringVar">ReplaceStringVar</a></span> Replacement string. Field deprecated in 21.1.3. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6735,8 +6804,8 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ReplaceStringVar">ReplaceStringVar</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of replacement string - can be a variable exposed from datascript, value of an HTTP header or a custom user-input literal string. Enum options - DATASCRIPT_VAR, HTTP_HEADER_VAR, LITERAL_STRING. </div>
-<div class="param">val (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Value of the replacement string - name of variable exposed from datascript, name of the HTTP header or a custom user-input literal string. </div>
+      <div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of replacement string - can be a variable exposed from datascript, value of an HTTP variable, a custom user-input literal string, or a string with all three combined. Enum options - DATASCRIPT_VAR, AVI_VAR, LITERAL_STRING, COMBINATION_STRING. </div>
+<div class="param">val (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Value of the replacement string - name of variable exposed from datascript, name of the HTTP header, a custom user-input literal string, or a string with all three combined. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6752,6 +6821,15 @@ font-style: italic;
     <div class="field-items">
       <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key for filter match. Field introduced in 20.1.3. </div>
 <div class="param">values (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Values for filter match. Multiple values will be evaluated as OR. Example  key &#x3D; value1 OR key &#x3D; value2. Behavior for match is key &#x3D; * if this field is empty. Field introduced in 20.1.3. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="RspContentRewriteRule">RspContentRewriteRule</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">enable (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable rewrite rule on response body. Field introduced in 21.1.3. </div>
+<div class="param">index (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Index of the response rewrite rule. Field introduced in 21.1.3. format: int32</div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the response rewrite rule. Field introduced in 21.1.3. </div>
+<div class="param">pairs (optional)</div><div class="param-desc"><span class="param-type"><a href="#SearchReplacePair">array[SearchReplacePair]</a></span> List of search-and-replace string pairs for the response body. For eg. Strings &#39;foo&#39; and &#39;bar&#39;, where all searches of &#39;foo&#39; in the response body will be replaced with &#39;bar&#39;. Field introduced in 21.1.3. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6805,10 +6883,25 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3 class="field-label"><a name="SearchReplacePair">SearchReplacePair</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">replacement_string (optional)</div><div class="param-desc"><span class="param-type"><a href="#ReplaceStringVar">ReplaceStringVar</a></span> String to replace the searched value. Field introduced in 21.1.3. </div>
+<div class="param">search_string </div><div class="param-desc"><span class="param-type"><a href="#SearchStringVar">SearchStringVar</a></span> String to search for in the body. Field introduced in 21.1.3. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="SearchStringVar">SearchStringVar</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of search string - can be a variable exposed from datascript, value of an HTTP variable, a custom user-input literal string, or a regular expression. Enum options - SEARCH_DATASCRIPT_VAR, SEARCH_AVI_VAR, SEARCH_LITERAL_STRING, SEARCH_REGEX. Field introduced in 21.1.3. </div>
+<div class="param">val </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Value of search string - can be a variable exposed from datascript, value of an HTTP variable, a custom user-input literal string, or a regular expression. Field introduced in 21.1.3. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="Service">Service</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">enable_http2 (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable HTTP2 on this port. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. </div>
 <div class="param">enable_ssl (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable SSL termination and offload for traffic from clients. </div>
+<div class="param">horizon_internal_ports (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Used for Horizon deployemnt. If set used for L7 redirect. Field introduced in 21.1.3. </div>
 <div class="param">override_application_profile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Enable application layer specific features for the this specific service. It is a reference to an object of type ApplicationProfile. Field introduced in 17.2.4. Allowed in Basic edition, Essentials edition, Enterprise edition. </div>
 <div class="param">override_network_profile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Override the network profile for this specific service port. It is a reference to an object of type NetworkProfile. </div>
 <div class="param">port </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The Virtual Service&#39;s port number. Allowed values are 0-65535. format: int32</div>
