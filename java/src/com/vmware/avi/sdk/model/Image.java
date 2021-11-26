@@ -33,6 +33,12 @@ public class Image extends AviRestResource  {
     @JsonProperty("controller_patch_uuid")
     private String controllerPatchUuid = null;
 
+    @JsonProperty("duration")
+    private Integer duration = null;
+
+    @JsonProperty("end_time")
+    private String endTime = null;
+
     @JsonProperty("events")
     private List<ImageEventMap> events = null;
 
@@ -56,6 +62,9 @@ public class Image extends AviRestResource  {
 
     @JsonProperty("se_patch_uuid")
     private String sePatchUuid = null;
+
+    @JsonProperty("start_time")
+    private String startTime = null;
 
     @JsonProperty("status")
     private String status;
@@ -183,6 +192,52 @@ public class Image extends AviRestResource  {
      */
     public void setControllerPatchUuid(String  controllerPatchUuid) {
         this.controllerPatchUuid = controllerPatchUuid;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Time taken to upload the image in seconds.
+     * Field introduced in 21.1.3.
+     * Unit is sec.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return duration
+     */
+    public Integer getDuration() {
+        return duration;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Time taken to upload the image in seconds.
+     * Field introduced in 21.1.3.
+     * Unit is sec.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param duration set the duration.
+     */
+    public void setDuration(Integer  duration) {
+        this.duration = duration;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Image upload end time.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return endTime
+     */
+    public String getEndTime() {
+        return endTime;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Image upload end time.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param endTime set the endTime.
+     */
+    public void setEndTime(String  endTime) {
+        this.endTime = endTime;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -377,6 +432,28 @@ public class Image extends AviRestResource  {
      */
     public void setSePatchUuid(String  sePatchUuid) {
         this.sePatchUuid = sePatchUuid;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Image upload start time.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return startTime
+     */
+    public String getStartTime() {
+        return startTime;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Image upload start time.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param startTime set the startTime.
+     */
+    public void setStartTime(String  startTime) {
+        this.startTime = startTime;
     }
 
     /**
@@ -588,6 +665,9 @@ public class Image extends AviRestResource  {
   Objects.equals(this.tasksCompleted, objImage.tasksCompleted)&&
   Objects.equals(this.totalTasks, objImage.totalTasks)&&
   Objects.equals(this.progress, objImage.progress)&&
+  Objects.equals(this.startTime, objImage.startTime)&&
+  Objects.equals(this.endTime, objImage.endTime)&&
+  Objects.equals(this.duration, objImage.duration)&&
   Objects.equals(this.tenantRef, objImage.tenantRef);
     }
 
@@ -599,6 +679,8 @@ public class Image extends AviRestResource  {
                         sb.append("    controllerInfo: ").append(toIndentedString(controllerInfo)).append("\n");
                         sb.append("    controllerPatchName: ").append(toIndentedString(controllerPatchName)).append("\n");
                         sb.append("    controllerPatchUuid: ").append(toIndentedString(controllerPatchUuid)).append("\n");
+                        sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+                        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
                         sb.append("    events: ").append(toIndentedString(events)).append("\n");
                         sb.append("    imgState: ").append(toIndentedString(imgState)).append("\n");
                         sb.append("    migrations: ").append(toIndentedString(migrations)).append("\n");
@@ -607,6 +689,7 @@ public class Image extends AviRestResource  {
                         sb.append("    seInfo: ").append(toIndentedString(seInfo)).append("\n");
                         sb.append("    sePatchName: ").append(toIndentedString(sePatchName)).append("\n");
                         sb.append("    sePatchUuid: ").append(toIndentedString(sePatchUuid)).append("\n");
+                        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
                         sb.append("    status: ").append(toIndentedString(status)).append("\n");
                         sb.append("    tasksCompleted: ").append(toIndentedString(tasksCompleted)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");

@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The ConfigVersionStatus is a POJO class extends AviRestResource that used for creating
- * ConfigVersionStatus.
+ * The AdaptReplEventInfo is a POJO class extends AviRestResource that used for creating
+ * AdaptReplEventInfo.
  *
  * @version 1.0
  * @since 
@@ -20,84 +20,82 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ConfigVersionStatus  {
-    @JsonProperty("event_type")
-    private String eventType = null;
+public class AdaptReplEventInfo  {
+    @JsonProperty("obj_info")
+    private ConfigVersionStatus objInfo = null;
 
-    @JsonProperty("obj_name")
-    private String objName = null;
+    @JsonProperty("reason")
+    private String reason = null;
 
-    @JsonProperty("obj_uuid")
-    private String objUuid = null;
+    @JsonProperty("recommendation")
+    private String recommendation = null;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Type of replication event.
-     * Enum options - DNSVS, OBJECT_CONFIG_VERSION.
+     * Object config version info.
      * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return eventType
+     * @return objInfo
      */
-    public String getEventType() {
-        return eventType;
+    public ConfigVersionStatus getObjInfo() {
+        return objInfo;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Type of replication event.
-     * Enum options - DNSVS, OBJECT_CONFIG_VERSION.
+     * Object config version info.
      * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param eventType set the eventType.
+     * @param objInfo set the objInfo.
      */
-    public void setEventType(String  eventType) {
-        this.eventType = eventType;
+    public void setObjInfo(ConfigVersionStatus objInfo) {
+        this.objInfo = objInfo;
     }
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of config object.
+     * Reason for the replication issues.
      * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return objName
+     * @return reason
      */
-    public String getObjName() {
-        return objName;
+    public String getReason() {
+        return reason;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Name of config object.
+     * Reason for the replication issues.
      * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param objName set the objName.
+     * @param reason set the reason.
      */
-    public void setObjName(String  objName) {
-        this.objName = objName;
+    public void setReason(String  reason) {
+        this.reason = reason;
     }
 
     /**
      * This is the getter method this will return the attribute value.
-     * Uuid of config object.
+     * Recommended way to resolve replication issue.
      * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return objUuid
+     * @return recommendation
      */
-    public String getObjUuid() {
-        return objUuid;
+    public String getRecommendation() {
+        return recommendation;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Uuid of config object.
+     * Recommended way to resolve replication issue.
      * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param objUuid set the objUuid.
+     * @param recommendation set the recommendation.
      */
-    public void setObjUuid(String  objUuid) {
-        this.objUuid = objUuid;
+    public void setRecommendation(String  recommendation) {
+        this.recommendation = recommendation;
     }
 
 
@@ -109,19 +107,19 @@ public class ConfigVersionStatus  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      ConfigVersionStatus objConfigVersionStatus = (ConfigVersionStatus) o;
-      return   Objects.equals(this.objName, objConfigVersionStatus.objName)&&
-  Objects.equals(this.objUuid, objConfigVersionStatus.objUuid)&&
-  Objects.equals(this.eventType, objConfigVersionStatus.eventType);
+      AdaptReplEventInfo objAdaptReplEventInfo = (AdaptReplEventInfo) o;
+      return   Objects.equals(this.objInfo, objAdaptReplEventInfo.objInfo)&&
+  Objects.equals(this.reason, objAdaptReplEventInfo.reason)&&
+  Objects.equals(this.recommendation, objAdaptReplEventInfo.recommendation);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class ConfigVersionStatus {\n");
-                  sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
-                        sb.append("    objName: ").append(toIndentedString(objName)).append("\n");
-                        sb.append("    objUuid: ").append(toIndentedString(objUuid)).append("\n");
+      sb.append("class AdaptReplEventInfo {\n");
+                  sb.append("    objInfo: ").append(toIndentedString(objInfo)).append("\n");
+                        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+                        sb.append("    recommendation: ").append(toIndentedString(recommendation)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
