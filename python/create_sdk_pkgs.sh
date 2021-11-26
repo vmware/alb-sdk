@@ -1,5 +1,11 @@
 #!/bin/bash
 
+############################################################################
+# ========================================================================
+# Copyright 2021 VMware, Inc.  All rights reserved. VMware Confidential
+# ========================================================================
+###
+
 cp avi/sdk/setup.py .
 cp avi/sdk/MANIFEST.in .
 AVI_PIP_VERSION=`python3 version.py`
