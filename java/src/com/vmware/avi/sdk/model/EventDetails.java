@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class EventDetails  {
+    @JsonProperty("adaptrepl_event")
+    private AdaptReplEventInfo adaptreplEvent = null;
+
     @JsonProperty("add_networks_details")
     private RmAddNetworksEventDetails addNetworksDetails = null;
 
@@ -646,6 +649,30 @@ public class EventDetails  {
     private VsSwitchoverEventDetails vsSwitchoverDetails = null;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Adaptive replication event e.g.
+     * Dns vs, config version.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return adaptreplEvent
+     */
+    public AdaptReplEventInfo getAdaptreplEvent() {
+        return adaptreplEvent;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Adaptive replication event e.g.
+     * Dns vs, config version.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param adaptreplEvent set the adaptreplEvent.
+     */
+    public void setAdaptreplEvent(AdaptReplEventInfo adaptreplEvent) {
+        this.adaptreplEvent = adaptreplEvent;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -5056,14 +5083,16 @@ public class EventDetails  {
   Objects.equals(this.logAgentEventDetails, objEventDetails.logAgentEventDetails)&&
   Objects.equals(this.databaseEventInfo, objEventDetails.databaseEventInfo)&&
   Objects.equals(this.dnsQueryError, objEventDetails.dnsQueryError)&&
-  Objects.equals(this.connectionEvent, objEventDetails.connectionEvent);
+  Objects.equals(this.connectionEvent, objEventDetails.connectionEvent)&&
+  Objects.equals(this.adaptreplEvent, objEventDetails.adaptreplEvent);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class EventDetails {\n");
-                  sb.append("    addNetworksDetails: ").append(toIndentedString(addNetworksDetails)).append("\n");
+                  sb.append("    adaptreplEvent: ").append(toIndentedString(adaptreplEvent)).append("\n");
+                        sb.append("    addNetworksDetails: ").append(toIndentedString(addNetworksDetails)).append("\n");
                         sb.append("    albservicesCaseDetails: ").append(toIndentedString(albservicesCaseDetails)).append("\n");
                         sb.append("    albservicesFileUploadDetails: ").append(toIndentedString(albservicesFileUploadDetails)).append("\n");
                         sb.append("    albservicesStatusDetails: ").append(toIndentedString(albservicesStatusDetails)).append("\n");

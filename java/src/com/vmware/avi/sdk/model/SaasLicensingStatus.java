@@ -27,6 +27,9 @@ public class SaasLicensingStatus  {
     @JsonProperty("enabled")
     private Boolean enabled = null;
 
+    @JsonProperty("expired")
+    private Boolean expired = null;
+
     @JsonProperty("message")
     private String message = null;
 
@@ -80,6 +83,28 @@ public class SaasLicensingStatus  {
      */
     public void setEnabled(Boolean  enabled) {
         this.enabled = enabled;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Saas license expiry status.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return expired
+     */
+    public Boolean getExpired() {
+        return expired;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Saas license expiry status.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param expired set the expired.
+     */
+    public void setExpired(Boolean  expired) {
+        this.expired = expired;
     }
 
     /**
@@ -162,7 +187,8 @@ public class SaasLicensingStatus  {
   Objects.equals(this.enabled, objSaasLicensingStatus.enabled)&&
   Objects.equals(this.reserveServiceUnits, objSaasLicensingStatus.reserveServiceUnits)&&
   Objects.equals(this.connected, objSaasLicensingStatus.connected)&&
-  Objects.equals(this.message, objSaasLicensingStatus.message);
+  Objects.equals(this.message, objSaasLicensingStatus.message)&&
+  Objects.equals(this.expired, objSaasLicensingStatus.expired);
     }
 
     @Override
@@ -171,6 +197,7 @@ public class SaasLicensingStatus  {
       sb.append("class SaasLicensingStatus {\n");
                   sb.append("    connected: ").append(toIndentedString(connected)).append("\n");
                         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+                        sb.append("    expired: ").append(toIndentedString(expired)).append("\n");
                         sb.append("    message: ").append(toIndentedString(message)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    reserveServiceUnits: ").append(toIndentedString(reserveServiceUnits)).append("\n");

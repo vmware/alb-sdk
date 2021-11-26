@@ -114,6 +114,9 @@ public class Pool extends AviRestResource  {
     @JsonProperty("health_monitor_refs")
     private List<String> healthMonitorRefs = null;
 
+    @JsonProperty("horizon_profile")
+    private HorizonProfile horizonProfile = null;
+
     @JsonProperty("host_check_enabled")
     private Boolean hostCheckEnabled = false;
 
@@ -1031,6 +1034,28 @@ public class Pool extends AviRestResource  {
       }
       this.healthMonitorRefs.add(healthMonitorRefsItem);
       return this;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Horizon uag configuration.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return horizonProfile
+     */
+    public HorizonProfile getHorizonProfile() {
+        return horizonProfile;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Horizon uag configuration.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param horizonProfile set the horizonProfile.
+     */
+    public void setHorizonProfile(HorizonProfile horizonProfile) {
+        this.horizonProfile = horizonProfile;
     }
 
     /**
@@ -2244,7 +2269,8 @@ public class Pool extends AviRestResource  {
   Objects.equals(this.appendPort, objPool.appendPort)&&
   Objects.equals(this.http2Properties, objPool.http2Properties)&&
   Objects.equals(this.serverDisableType, objPool.serverDisableType)&&
-  Objects.equals(this.useServiceSslMode, objPool.useServiceSslMode);
+  Objects.equals(this.useServiceSslMode, objPool.useServiceSslMode)&&
+  Objects.equals(this.horizonProfile, objPool.horizonProfile);
     }
 
     @Override
@@ -2282,6 +2308,7 @@ public class Pool extends AviRestResource  {
                         sb.append("    gracefulDisableTimeout: ").append(toIndentedString(gracefulDisableTimeout)).append("\n");
                         sb.append("    gslbSpEnabled: ").append(toIndentedString(gslbSpEnabled)).append("\n");
                         sb.append("    healthMonitorRefs: ").append(toIndentedString(healthMonitorRefs)).append("\n");
+                        sb.append("    horizonProfile: ").append(toIndentedString(horizonProfile)).append("\n");
                         sb.append("    hostCheckEnabled: ").append(toIndentedString(hostCheckEnabled)).append("\n");
                         sb.append("    http2Properties: ").append(toIndentedString(http2Properties)).append("\n");
                         sb.append("    ignoreServerPort: ").append(toIndentedString(ignoreServerPort)).append("\n");

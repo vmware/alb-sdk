@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The ReplaceStringVar is a POJO class extends AviRestResource that used for creating
- * ReplaceStringVar.
+ * The SearchStringVar is a POJO class extends AviRestResource that used for creating
+ * SearchStringVar.
  *
  * @version 1.0
  * @since 
@@ -20,9 +20,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ReplaceStringVar  {
+public class SearchStringVar  {
     @JsonProperty("type")
-    private String type = "LITERAL_STRING";
+    private String type = "SEARCH_LITERAL_STRING";
 
     @JsonProperty("val")
     private String val = null;
@@ -31,10 +31,11 @@ public class ReplaceStringVar  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Type of replacement string - can be a variable exposed from datascript, value of an http variable, a custom user-input literal string, or a
-     * string with all three combined.
-     * Enum options - DATASCRIPT_VAR, AVI_VAR, LITERAL_STRING, COMBINATION_STRING.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "LITERAL_STRING".
+     * Type of search string - can be a variable exposed from datascript, value of an http variable, a custom user-input literal string, or a regular
+     * expression.
+     * Enum options - SEARCH_DATASCRIPT_VAR, SEARCH_AVI_VAR, SEARCH_LITERAL_STRING, SEARCH_REGEX.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "SEARCH_LITERAL_STRING".
      * @return type
      */
     public String getType() {
@@ -43,10 +44,11 @@ public class ReplaceStringVar  {
 
     /**
      * This is the setter method to the attribute.
-     * Type of replacement string - can be a variable exposed from datascript, value of an http variable, a custom user-input literal string, or a
-     * string with all three combined.
-     * Enum options - DATASCRIPT_VAR, AVI_VAR, LITERAL_STRING, COMBINATION_STRING.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "LITERAL_STRING".
+     * Type of search string - can be a variable exposed from datascript, value of an http variable, a custom user-input literal string, or a regular
+     * expression.
+     * Enum options - SEARCH_DATASCRIPT_VAR, SEARCH_AVI_VAR, SEARCH_LITERAL_STRING, SEARCH_REGEX.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "SEARCH_LITERAL_STRING".
      * @param type set the type.
      */
     public void setType(String  type) {
@@ -55,8 +57,9 @@ public class ReplaceStringVar  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Value of the replacement string - name of variable exposed from datascript, name of the http header, a custom user-input literal string, or a
-     * string with all three combined.
+     * Value of search string - can be a variable exposed from datascript, value of an http variable, a custom user-input literal string, or a regular
+     * expression.
+     * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return val
      */
@@ -66,8 +69,9 @@ public class ReplaceStringVar  {
 
     /**
      * This is the setter method to the attribute.
-     * Value of the replacement string - name of variable exposed from datascript, name of the http header, a custom user-input literal string, or a
-     * string with all three combined.
+     * Value of search string - can be a variable exposed from datascript, value of an http variable, a custom user-input literal string, or a regular
+     * expression.
+     * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param val set the val.
      */
@@ -84,15 +88,15 @@ public class ReplaceStringVar  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      ReplaceStringVar objReplaceStringVar = (ReplaceStringVar) o;
-      return   Objects.equals(this.type, objReplaceStringVar.type)&&
-  Objects.equals(this.val, objReplaceStringVar.val);
+      SearchStringVar objSearchStringVar = (SearchStringVar) o;
+      return   Objects.equals(this.type, objSearchStringVar.type)&&
+  Objects.equals(this.val, objSearchStringVar.val);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class ReplaceStringVar {\n");
+      sb.append("class SearchStringVar {\n");
                   sb.append("    type: ").append(toIndentedString(type)).append("\n");
                         sb.append("    val: ").append(toIndentedString(val)).append("\n");
                   sb.append("}");

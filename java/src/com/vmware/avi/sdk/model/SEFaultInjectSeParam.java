@@ -24,6 +24,9 @@ public class SEFaultInjectSeParam  {
     @JsonProperty("core")
     private Integer core = 1000;
 
+    @JsonProperty("obj_names")
+    private List<String> objNames = null;
+
     @JsonProperty("random_core")
     private Boolean randomCore = false;
 
@@ -55,6 +58,42 @@ public class SEFaultInjectSeParam  {
      */
     public void setCore(Integer  core) {
         this.core = core;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Inject fault on objects.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return objNames
+     */
+    public List<String> getObjNames() {
+        return objNames;
+    }
+
+    /**
+     * This is the setter method. this will set the objNames
+     * Inject fault on objects.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return objNames
+     */
+    public void setObjNames(List<String>  objNames) {
+        this.objNames = objNames;
+    }
+
+    /**
+     * This is the setter method this will set the objNames
+     * Inject fault on objects.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return objNames
+     */
+    public SEFaultInjectSeParam addObjNamesItem(String objNamesItem) {
+      if (this.objNames == null) {
+        this.objNames = new ArrayList<String>();
+      }
+      this.objNames.add(objNamesItem);
+      return this;
     }
 
     /**
@@ -142,7 +181,8 @@ public class SEFaultInjectSeParam  {
       return   Objects.equals(this.seAgentFault, objSEFaultInjectSeParam.seAgentFault)&&
   Objects.equals(this.seDpFault, objSEFaultInjectSeParam.seDpFault)&&
   Objects.equals(this.randomCore, objSEFaultInjectSeParam.randomCore)&&
-  Objects.equals(this.core, objSEFaultInjectSeParam.core);
+  Objects.equals(this.core, objSEFaultInjectSeParam.core)&&
+  Objects.equals(this.objNames, objSEFaultInjectSeParam.objNames);
     }
 
     @Override
@@ -150,6 +190,7 @@ public class SEFaultInjectSeParam  {
       StringBuilder sb = new StringBuilder();
       sb.append("class SEFaultInjectSeParam {\n");
                   sb.append("    core: ").append(toIndentedString(core)).append("\n");
+                        sb.append("    objNames: ").append(toIndentedString(objNames)).append("\n");
                         sb.append("    randomCore: ").append(toIndentedString(randomCore)).append("\n");
                         sb.append("    seAgentFault: ").append(toIndentedString(seAgentFault)).append("\n");
                         sb.append("    seDpFault: ").append(toIndentedString(seDpFault)).append("\n");
