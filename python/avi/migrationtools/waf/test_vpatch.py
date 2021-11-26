@@ -72,11 +72,13 @@ qualysweb_testfile = """<?xml version='1.0' encoding='UTF-8'?>
                             <HEADERS>
                                 <HEADER>
                                     <key>Referer</key>
-                                    <value><![CDATA[ http://demo.testfire.net/bank/login.aspx]]></value>
+                                    <value><![CDATA[ http://demo.testfire.net/bank/login.aspx
+]]></value>
                                 </HEADER>
                                 <HEADER>
                                     <key>Cookie</key>
-                                    <value><![CDATA[ lang=; amSessionId=132271899100; ASP.NET_SessionId=tskomp45ivi55r4530tp5g2a;]]></value>
+                                    <value><![CDATA[ lang=; amSessionId=132271899100; ASP.NET_SessionId=tskomp45ivi55r4530tp5g2a;
+]]></value>
                                 </HEADER>
                             </HEADERS>
                         </REQUEST>
@@ -125,11 +127,13 @@ PSNkbSk6KCgjY29udGFpbmVyPSNjb250ZXh0Wydjb20ub3BlbnN5bXBob24=
                             <HEADERS>
                                 <HEADER>
                                     <key>Referer</key>
-                                    <value><![CDATA[ http://demo.testfire.net/bank/login.aspx]]></value>
+                                    <value><![CDATA[ http://demo.testfire.net/bank/login.aspx
+]]></value>
                                 </HEADER>
                                 <HEADER>
                                     <key>Cookie</key>
-                                    <value><![CDATA[ lang=; amSessionId=132271899100; ASP.NET_SessionId=tskomp45ivi55r4530tp5g2a;]]></value>
+                                    <value><![CDATA[ lang=; amSessionId=132271899100; ASP.NET_SessionId=tskomp45ivi55r4530tp5g2a;
+]]></value>
                                 </HEADER>
                             </HEADERS>
                         </REQUEST>
