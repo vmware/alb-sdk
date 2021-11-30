@@ -90,7 +90,7 @@ public class Service  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Used for horizon deployemnt.
+     * Used for horizon deployment.
      * If set used for l7 redirect.
      * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -102,7 +102,7 @@ public class Service  {
 
     /**
      * This is the setter method to the attribute.
-     * Used for horizon deployemnt.
+     * Used for horizon deployment.
      * If set used for l7 redirect.
      * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
