@@ -5955,7 +5955,7 @@
                     "type": "boolean"
                 },
                 "horizon_internal_ports": {
-                    "description": "Used for Horizon deployemnt. If set used for L7 redirect. Field introduced in 21.1.3.",
+                    "description": "Used for Horizon deployment. If set used for L7 redirect. Field introduced in 21.1.3.",
                     "type": "boolean"
                 },
                 "override_application_profile_ref": {
