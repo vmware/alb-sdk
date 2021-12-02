@@ -23,6 +23,9 @@ type ControllerLimits struct {
 	// Maximum number of gateway monitors per vrfcontext. Field introduced in 21.1.1.
 	GatewayMonPerVrf *int32 `json:"gateway_mon_per_vrf,omitempty"`
 
+	// IP address limits. Field introduced in 21.1.3.
+	IpaddressLimits *IPAddrLimits `json:"ipaddress_limits,omitempty"`
+
 	// Maximum number of IP's per ipaddrgroup. Field introduced in 20.1.1.
 	IpsPerIpgroup *int32 `json:"ips_per_ipgroup,omitempty"`
 
@@ -43,6 +46,9 @@ type ControllerLimits struct {
 
 	// Maximum number of rules per httppolicy. Field deprecated in 21.1.1. Field introduced in 20.1.1.
 	RulesPerHttppolicy *int32 `json:"rules_per_httppolicy,omitempty"`
+
+	// Maximum number of nat rules in nat policy. Field introduced in 21.1.3.
+	RulesPerNatPolicy *int32 `json:"rules_per_nat_policy,omitempty"`
 
 	// Maximum number of rules per networksecuritypolicy. Field introduced in 20.1.1.
 	RulesPerNetworksecuritypolicy *int32 `json:"rules_per_networksecuritypolicy,omitempty"`

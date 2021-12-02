@@ -8,20 +8,38 @@ package models
 // swagger:model SeList
 type SeList struct {
 
+	// Vip is Active on Cloud. Field introduced in 21.1.3.
+	ActiveOnCloud *bool `json:"active_on_cloud,omitempty"`
+
+	// Vip is Active on this ServiceEngine. Field introduced in 21.1.3.
+	ActiveOnSe *bool `json:"active_on_se,omitempty"`
+
 	// This flag is set when scaling in an SE in admin down mode.
 	AdminDownRequested *bool `json:"admin_down_requested,omitempty"`
 
 	// Indicates if an SE is at the current version. This state will now be derived from SE Group runtime. Field deprecated in 18.1.5, 18.2.1.
 	AtCurrVer *bool `json:"at_curr_ver,omitempty"`
 
-	// This field indicates the status of programming network reachability to the Virtual Service IP in the cloud. Field introduced in 17.2.3.
+	// Attach IP is in progress. Field introduced in 21.1.3.
+	AttachIPInProgress *bool `json:"attach_ip_in_progress,omitempty"`
+
+	// This field indicates the status of programming network reachability to the Virtual Service IP in the cloud. Field deprecated in 21.1.3. Field introduced in 17.2.3.
 	AttachIPStatus *string `json:"attach_ip_status,omitempty"`
 
-	// This flag indicates if network reachability to the Virtual Service IP in the cloud has been successfully programmed. Field introduced in 17.2.3.
+	// This flag indicates if network reachability to the Virtual Service IP in the cloud has been successfully programmed. Field deprecated in 21.1.3. Field introduced in 17.2.3.
 	AttachIPSuccess *bool `json:"attach_ip_success,omitempty"`
+
+	// All attempts to program the Vip on Cloud have been made. Field introduced in 21.1.3.
+	CloudProgrammingDone *bool `json:"cloud_programming_done,omitempty"`
+
+	// Status of Vip on the Cloud. Field introduced in 21.1.3.
+	CloudProgrammingStatus *string `json:"cloud_programming_status,omitempty"`
 
 	// This flag is set when an SE is admin down or scaling in.
 	DeleteInProgress *bool `json:"delete_in_progress,omitempty"`
+
+	// Detach IP is in progress. Field introduced in 21.1.3.
+	DetachIPInProgress *bool `json:"detach_ip_in_progress,omitempty"`
 
 	// This field is not needed with the current implementation of Update RPCs to SEs. Field deprecated in 18.1.5, 18.2.1.
 	DownloadSelistOnly *bool `json:"download_selist_only,omitempty"`
@@ -70,6 +88,12 @@ type SeList struct {
 
 	// This flag is set when a VS is actively scaling out to this SE. Field introduced in 18.1.5, 18.2.1.
 	ScaleoutInProgress *bool `json:"scaleout_in_progress,omitempty"`
+
+	// All attempts to program the Vip on this ServiceEngine have been made. Field introduced in 21.1.3.
+	SeProgrammingDone *bool `json:"se_programming_done,omitempty"`
+
+	// Vip is awaiting response from this ServiceEngine. Field introduced in 21.1.3.
+	SeReadyInProgress *bool `json:"se_ready_in_progress,omitempty"`
 
 	//  It is a reference to an object of type ServiceEngine.
 	// Required: true

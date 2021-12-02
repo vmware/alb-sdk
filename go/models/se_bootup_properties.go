@@ -44,7 +44,7 @@ type SeBootupProperties struct {
 	// This field has been moved to se_group properties 18.1.2 onwards. Field deprecated in 18.1.3.
 	SeDpdkPmd *int32 `json:"se_dpdk_pmd,omitempty"`
 
-	// Use this to emulate more/less cpus than is actually available. One datapath process is started for each core. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.
+	// Deprecated in 21.1.3. Use config in ServiceEngineGroup instead. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.
 	SeEmulatedCores *int32 `json:"se_emulated_cores,omitempty"`
 
 	// Determines if SE-SE IPC messages are encapsulated in an IP header   Note  This field has been moved to se_group properties 20.1.3 onwards.    0        Automatically determine based on hypervisor type    1        Use IP encap unconditionally    ~[0,1]   Don't use IP encap.

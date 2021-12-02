@@ -8,9 +8,6 @@ package models
 // swagger:model vCenterConfiguration
 type VCenterConfiguration struct {
 
-	// vCenter content library where Service Engine images are stored. Field introduced in 21.1.3.
-	ContentLib *ContentLibConfig `json:"content_lib,omitempty"`
-
 	// Datacenter for virtual infrastructure discovery.
 	Datacenter *string `json:"datacenter,omitempty"`
 
@@ -29,9 +26,6 @@ type VCenterConfiguration struct {
 	// Set the access mode to vCenter as either Read, which allows Avi to discover networks and servers, or Write, which also allows Avi to create Service Engines and configure their network properties. Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
 	// Required: true
 	Privilege *string `json:"privilege"`
-
-	// If false, Service Engine image will not be pushed to content library. Field introduced in 21.1.3.
-	UseContentLib *bool `json:"use_content_lib,omitempty"`
 
 	// The username Avi Vantage will use when authenticating with vCenter.
 	Username *string `json:"username,omitempty"`

@@ -34,6 +34,9 @@ type AuthProfile struct {
 	// Required: true
 	Name *string `json:"name"`
 
+	// OAuth Profile - Common endpoint information. Field introduced in 21.1.3.
+	OauthProfile *OAuthProfile `json:"oauth_profile,omitempty"`
+
 	// PingAccessAgent uuid. It is a reference to an object of type PingAccessAgent. Field introduced in 18.2.3. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	PaAgentRef *string `json:"pa_agent_ref,omitempty"`
 
@@ -46,7 +49,7 @@ type AuthProfile struct {
 	//  It is a reference to an object of type Tenant.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
-	// Type of the Auth Profile. Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT.
+	// Type of the Auth Profile. Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT, AUTH_PROFILE_OAUTH.
 	// Required: true
 	Type *string `json:"type"`
 

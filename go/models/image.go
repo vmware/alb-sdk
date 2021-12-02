@@ -24,6 +24,12 @@ type Image struct {
 	// It references the controller-patch associated with the Uber image. Field introduced in 18.2.8, 20.1.1.
 	ControllerPatchUUID *string `json:"controller_patch_uuid,omitempty"`
 
+	// Time taken to upload the image in seconds. Field introduced in 21.1.3. Unit is SEC.
+	Duration *int32 `json:"duration,omitempty"`
+
+	// Image upload end time. Field introduced in 21.1.3.
+	EndTime *string `json:"end_time,omitempty"`
+
 	// Image events for image upload operation. Field introduced in 21.1.3.
 	Events []*ImageEventMap `json:"events,omitempty"`
 
@@ -48,6 +54,9 @@ type Image struct {
 
 	// It references the Service Engine patch associated with the Uber Image. Field introduced in 18.2.8, 20.1.1.
 	SePatchUUID *string `json:"se_patch_uuid,omitempty"`
+
+	// Image upload start time. Field introduced in 21.1.3.
+	StartTime *string `json:"start_time,omitempty"`
 
 	// Status to check if the image is present. Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO, SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN, SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST.... Field deprecated in 21.1.3. Field introduced in 18.2.6.
 	Status *string `json:"status,omitempty"`

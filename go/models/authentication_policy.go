@@ -21,8 +21,7 @@ type AuthenticationPolicy struct {
 	CookieTimeout *int32 `json:"cookie_timeout,omitempty"`
 
 	// Auth Profile to use for validating users. It is a reference to an object of type AuthProfile. Field introduced in 18.2.3.
-	// Required: true
-	DefaultAuthProfileRef *string `json:"default_auth_profile_ref"`
+	DefaultAuthProfileRef *string `json:"default_auth_profile_ref,omitempty"`
 
 	// Globally unique entityID for this node. Entity ID on the IDP should match this. Field deprecated in 18.2.3. Field introduced in 18.2.1.
 	EntityID *string `json:"entity_id,omitempty"`

@@ -8,10 +8,9 @@ package models
 // swagger:model MatchReplacePair
 type MatchReplacePair struct {
 
-	// String to be matched.
-	// Required: true
-	MatchString *string `json:"match_string"`
+	// String to be matched. Field deprecated in 21.1.3.
+	MatchString *string `json:"match_string,omitempty"`
 
-	// Replacement string.
+	// Replacement string. Field deprecated in 21.1.3.
 	ReplacementString *ReplaceStringVar `json:"replacement_string,omitempty"`
 }

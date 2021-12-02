@@ -84,6 +84,15 @@ type ControllerProperties struct {
 	// The amount of time the controller will wait before deleting an offline SE after it has been rebooted. For unresponsive SEs, the total time will be  unresponsive_se_reboot + del_offline_se_after_reboot_delay. For crashed SEs, the total time will be crashed_se_reboot + del_offline_se_after_reboot_delay. Field introduced in 20.1.5. Unit is SEC.
 	DelOfflineSeAfterRebootDelay *int32 `json:"del_offline_se_after_reboot_delay,omitempty"`
 
+	// Amount of time to wait after last Detach IP failure before attempting next Detach IP retry. Field introduced in 21.1.3. Unit is SEC.
+	DetachIPRetryInterval *int32 `json:"detach_ip_retry_interval,omitempty"`
+
+	// Maximum number of Detach IP retries. Field introduced in 21.1.3.
+	DetachIPRetryLimit *int32 `json:"detach_ip_retry_limit,omitempty"`
+
+	// Time to wait before marking Detach IP as failed. Field introduced in 21.1.3. Unit is SEC.
+	DetachIPTimeout *int32 `json:"detach_ip_timeout,omitempty"`
+
 	// Period for refresh pool and gslb DNS job. Unit is MIN. Allowed in Basic(Allowed values- 60) edition, Essentials(Allowed values- 60) edition, Enterprise edition.
 	DNSRefreshPeriod *int32 `json:"dns_refresh_period,omitempty"`
 
@@ -168,7 +177,7 @@ type ControllerProperties struct {
 	// Interval between attempting failovers to an SE. Unit is SEC.
 	SeFailoverAttemptInterval *int32 `json:"se_failover_attempt_interval,omitempty"`
 
-	// This setting decides whether SE is to be deployed from the cloud marketplace or to be created by the controller. The setting is applicable only when BYOL license is selected. Enum options - MARKETPLACE, IMAGE. Field introduced in 18.1.4, 18.2.1.
+	// This setting decides whether SE is to be deployed from the cloud marketplace or to be created by the controller. The setting is applicable only when BYOL license is selected. Enum options - MARKETPLACE, IMAGE_SE. Field introduced in 18.1.4, 18.2.1.
 	SeFromMarketplace *string `json:"se_from_marketplace,omitempty"`
 
 	//  Unit is SEC.

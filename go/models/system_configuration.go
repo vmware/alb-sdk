@@ -21,7 +21,10 @@ type SystemConfiguration struct {
 	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
-	// Specifies the default license tier which would be used by new Clouds. Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, SAAS. Field introduced in 17.2.5. Allowed in Basic edition, Essentials edition, Enterprise edition. Special default for Basic edition is BASIC, Essentials edition is ESSENTIALS, Enterprise is ENTERPRISE.
+	// Controller metrics event dynamic thresholds can be set here. CONTROLLER_CPU_HIGH and CONTROLLER_MEM_HIGH evets can take configured dynamic thresholds. Field introduced in 21.1.3.
+	ControllerAnalyticsPolicy *ControllerAnalyticsPolicy `json:"controller_analytics_policy,omitempty"`
+
+	// Specifies the default license tier which would be used by new Clouds. Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, SAAS. Field introduced in 17.2.5. Allowed in Basic edition, Essentials edition, Enterprise edition. Special default for Basic edition is BASIC, Essentials edition is ESSENTIALS, Enterprise is SAAS.
 	DefaultLicenseTier *string `json:"default_license_tier,omitempty"`
 
 	// Placeholder for description of property dns_configuration of obj type SystemConfiguration field type str  type object

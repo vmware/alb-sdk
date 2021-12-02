@@ -26,7 +26,7 @@ type ALBServicesConfig struct {
 	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
-	// Information about the portal features opted in for controller. Field introduced in 20.1.1.
+	// Information about the portal features opted in for controller. Field introduced in 20.1.1. Allowed in Enterprise edition, Enterprise edition.
 	// Required: true
 	FeatureOptInStatus *PortalFeatureOptIn `json:"feature_opt_in_status"`
 
@@ -34,7 +34,7 @@ type ALBServicesConfig struct {
 	// Required: true
 	IPReputationConfig *IPReputationConfig `json:"ip_reputation_config"`
 
-	// Mode helps log collection and upload. Enum options - SALESFORCE, SYSTEST, MYVMWARE. Field introduced in 20.1.2. Allowed in Basic(Allowed values- SALESFORCE,MYVMWARE,SYSTEST) edition, Essentials(Allowed values- SALESFORCE,MYVMWARE,SYSTEST) edition, Enterprise edition.
+	// Mode helps log collection and upload. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE. Field introduced in 20.1.2. Allowed in Basic(Allowed values- SALESFORCE,MYVMWARE,SYSTEST) edition, Essentials(Allowed values- SALESFORCE,MYVMWARE,SYSTEST) edition, Enterprise edition.
 	Mode *string `json:"mode,omitempty"`
 
 	// Time interval in minutes. Allowed values are 5-60. Field introduced in 18.2.6.
@@ -45,7 +45,8 @@ type ALBServicesConfig struct {
 	PortalURL *string `json:"portal_url"`
 
 	// Saas licensing configuration. Field introduced in 21.1.3. Allowed in Basic edition, Essentials edition, Enterprise edition.
-	SaasLicensingConfig *SaasLicensingInfo `json:"saas_licensing_config,omitempty"`
+	// Required: true
+	SaasLicensingConfig *SaasLicensingInfo `json:"saas_licensing_config"`
 
 	// Split proxy configuration to connect external pulse services. Field introduced in 20.1.1.
 	// Required: true

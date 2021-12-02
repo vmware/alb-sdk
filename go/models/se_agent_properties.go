@@ -65,7 +65,7 @@ type SeAgentProperties struct {
 	//  Unit is SEC.
 	HeadlessTimeoutSec *int32 `json:"headless_timeout_sec,omitempty"`
 
-	// Placeholder for description of property ignore_docker_mac_change of obj type SeAgentProperties field type str  type boolean
+	// Deprecated in 21.1.3. Use config in ServiceEngineGroup instead.
 	IgnoreDockerMacChange *bool `json:"ignore_docker_mac_change,omitempty"`
 
 	// Dequeue interval for receive queue from NS HELPER. Deprecated in 21.1.1. Use ns_helper_deq_interval_msec in ServiceEngineGroup instead. Allowed values are 1-1000. Field introduced in 17.2.13, 18.1.3, 18.2.1. Unit is MILLISECONDS.

@@ -14,6 +14,9 @@ type VsInitialPlacementEventDetails struct {
 	// ip of VsInitialPlacementEventDetails.
 	IP *string `json:"ip,omitempty"`
 
+	// VIP IPv6 address. Field introduced in 21.1.3.
+	Ip6 *string `json:"ip6,omitempty"`
+
 	// Number of rpc_status.
 	RPCStatus *int64 `json:"rpc_status,omitempty"`
 

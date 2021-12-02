@@ -11,6 +11,9 @@ type SEFaultInjectSeParam struct {
 	// Inject fault in specific core. Field introduced in 18.1.5,18.2.1.
 	Core *int32 `json:"core,omitempty"`
 
+	// Inject Fault on Objects. Field introduced in 21.1.3.
+	ObjNames []string `json:"obj_names,omitempty"`
+
 	// Inject fault in random no of cores. Field introduced in 18.1.5,18.2.1.
 	RandomCore *bool `json:"random_core,omitempty"`
 

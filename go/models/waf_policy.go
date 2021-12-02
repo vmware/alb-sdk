@@ -89,7 +89,7 @@ type WafPolicy struct {
 	// WAF Rules are categorized in to groups based on their characterization. These groups are created by the user and will be  enforced before the CRS groups. Field introduced in 17.2.1.
 	PreCrsGroups []*WafRuleGroup `json:"pre_crs_groups,omitempty"`
 
-	// A resolved version of waf_crs_ref with waf_crs_overrides applied. Field introduced in 20.1.6.
+	// A resolved version of waf_crs_ref with waf_crs_overrides applied. Field deprecated in 21.1.3. Field introduced in 20.1.6.
 	ResolvedCrsGroups []*WafRuleGroup `json:"resolved_crs_groups,omitempty"`
 
 	//  It is a reference to an object of type Tenant. Field introduced in 17.2.1.

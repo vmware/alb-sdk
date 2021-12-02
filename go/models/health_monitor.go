@@ -36,6 +36,12 @@ type HealthMonitor struct {
 	// Number of continuous failed health checks before the server is marked down. Allowed values are 1-50.
 	FailedChecks *int32 `json:"failed_checks,omitempty"`
 
+	// Health monitor for FTP. Field introduced in 21.1.3.
+	FtpMonitor *HealthMonitorFtp `json:"ftp_monitor,omitempty"`
+
+	// Health monitor for FTPS. Field introduced in 21.1.3.
+	FtpsMonitor *HealthMonitorFtp `json:"ftps_monitor,omitempty"`
+
 	// Placeholder for description of property http_monitor of obj type HealthMonitor field type str  type object
 	HTTPMonitor *HealthMonitorHTTP `json:"http_monitor,omitempty"`
 
@@ -50,6 +56,12 @@ type HealthMonitor struct {
 
 	// This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.  If the field is set to true, then the object is replicated across the federation.  . Field introduced in 17.1.3. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
 	IsFederated *bool `json:"is_federated,omitempty"`
+
+	// Health monitor for LDAP. Field introduced in 21.1.3.
+	LdapMonitor *HealthMonitorLdap `json:"ldap_monitor,omitempty"`
+
+	// Health monitor for LDAPS. Field introduced in 21.1.3.
+	LdapsMonitor *HealthMonitorLdap `json:"ldaps_monitor,omitempty"`
 
 	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
@@ -94,7 +106,7 @@ type HealthMonitor struct {
 	//  It is a reference to an object of type Tenant.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
-	// Type of the health monitor. Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP, HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS, HEALTH_MONITOR_SMTP, HEALTH_MONITOR_SMTPS, HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS. Allowed in Basic(Allowed values- HEALTH_MONITOR_PING,HEALTH_MONITOR_TCP,HEALTH_MONITOR_UDP,HEALTH_MONITOR_HTTP,HEALTH_MONITOR_HTTPS) edition, Essentials(Allowed values- HEALTH_MONITOR_PING,HEALTH_MONITOR_TCP,HEALTH_MONITOR_UDP) edition, Enterprise edition.
+	// Type of the health monitor. Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP, HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS, HEALTH_MONITOR_SMTP, HEALTH_MONITOR_SMTPS, HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS, HEALTH_MONITOR_FTP, HEALTH_MONITOR_FTPS, HEALTH_MONITOR_LDAP, HEALTH_MONITOR_LDAPS. Allowed in Basic(Allowed values- HEALTH_MONITOR_PING,HEALTH_MONITOR_TCP,HEALTH_MONITOR_UDP,HEALTH_MONITOR_HTTP,HEALTH_MONITOR_HTTPS) edition, Essentials(Allowed values- HEALTH_MONITOR_PING,HEALTH_MONITOR_TCP,HEALTH_MONITOR_UDP) edition, Enterprise edition.
 	// Required: true
 	Type *string `json:"type"`
 

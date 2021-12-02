@@ -32,6 +32,9 @@ type OpsHistory struct {
 	// Upgrade operation status. Field introduced in 20.1.4.
 	State *UpgradeOpsState `json:"state,omitempty"`
 
+	// Record of Pre/Post snapshot captured for current upgrade operation. It is a reference to an object of type StatediffOperation. Field introduced in 21.1.3.
+	StatediffRef *string `json:"statediff_ref,omitempty"`
+
 	// Controller events for Upgrade operation. Field introduced in 20.1.4.
 	UpgradeEvents []*EventMap `json:"upgrade_events,omitempty"`
 

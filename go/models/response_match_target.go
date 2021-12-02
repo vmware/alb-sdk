@@ -38,6 +38,9 @@ type ResponseMatchTarget struct {
 	// Configure the HTTP headers in response.
 	RspHdrs []*HdrMatch `json:"rsp_hdrs,omitempty"`
 
+	// Configure source ip addresses. Field introduced in 21.1.3.
+	SourceIP *IPAddrMatch `json:"source_ip,omitempty"`
+
 	// Configure the HTTP status code(s).
 	Status *HttpstatusMatch `json:"status,omitempty"`
 

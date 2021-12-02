@@ -62,6 +62,9 @@ type ALBServicesCase struct {
 	//  Field introduced in 18.2.6.
 	LastModifiedDate *string `json:"last_modified_date,omitempty"`
 
+	// Stores the ALB services configuration mode. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE. Field introduced in 21.1.3.
+	Mode *string `json:"mode,omitempty"`
+
 	//  Field introduced in 18.2.6.
 	PatchVersion *string `json:"patch_version,omitempty"`
 

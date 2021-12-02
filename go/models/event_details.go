@@ -8,6 +8,9 @@ package models
 // swagger:model EventDetails
 type EventDetails struct {
 
+	// Adaptive replication event e.g. DNS VS, config version. Field introduced in 21.1.3.
+	AdaptreplEvent *AdaptReplEventInfo `json:"adaptrepl_event,omitempty"`
+
 	// Placeholder for description of property add_networks_details of obj type EventDetails field type str  type object
 	AddNetworksDetails *RmAddNetworksEventDetails `json:"add_networks_details,omitempty"`
 
@@ -40,6 +43,9 @@ type EventDetails struct {
 
 	// Placeholder for description of property app_signature_event_data of obj type EventDetails field type str  type object
 	AppSignatureEventData *AppSignatureEventData `json:"app_signature_event_data,omitempty"`
+
+	// Details for Attach IP status. Field introduced in 21.1.3.
+	AttachIPStatusDetails *AttachIPStatusEventDetails `json:"attach_ip_status_details,omitempty"`
 
 	// Placeholder for description of property avg_uptime_change_details of obj type EventDetails field type str  type object
 	AvgUptimeChangeDetails *AvgUptimeChangeDetails `json:"avg_uptime_change_details,omitempty"`
@@ -221,6 +227,9 @@ type EventDetails struct {
 	// Placeholder for description of property delete_se_details of obj type EventDetails field type str  type object
 	DeleteSeDetails *RmDeleteSeEventDetails `json:"delete_se_details,omitempty"`
 
+	// Details for Detach IP status. Field introduced in 21.1.3.
+	DetachIPStatusDetails *DetachIPStatusEventDetails `json:"detach_ip_status_details,omitempty"`
+
 	// Placeholder for description of property disable_se_migrate_details of obj type EventDetails field type str  type object
 	DisableSeMigrateDetails *DisableSeMigrateEventDetails `json:"disable_se_migrate_details,omitempty"`
 
@@ -314,11 +323,23 @@ type EventDetails struct {
 	// Placeholder for description of property network_subnet_details of obj type EventDetails field type str  type object
 	NetworkSubnetDetails *NetworkSubnetInfo `json:"network_subnet_details,omitempty"`
 
+	// NSX-T ServiceInsertion VirtualEndpoint event. Field introduced in 21.1.3.
+	NsxtEndpointDetails *NsxtSIEndpointDetails `json:"nsxt_endpoint_details,omitempty"`
+
 	// Nsxt Image event. Field introduced in 20.1.1.
 	NsxtImgDetails *NsxtImageDetails `json:"nsxt_img_details,omitempty"`
 
 	// Nsxt cloud event. Field introduced in 20.1.1.
 	NsxtInfo *NsxtSetup `json:"nsxt_info,omitempty"`
+
+	// NSX-T ServiceInsertion RedirectPolicy event. Field introduced in 21.1.3.
+	NsxtPolicyDetails *NsxtSIpolicyDetails `json:"nsxt_policy_details,omitempty"`
+
+	// NSX-T ServiceInsertion RedirectRule event. Field introduced in 21.1.3.
+	NsxtRuleDetails *NsxtSIRuleDetails `json:"nsxt_rule_details,omitempty"`
+
+	// NSX-T ServiceInsertion Service event. Field introduced in 21.1.3.
+	NsxtServiceDetails *NsxtSIServiceDetails `json:"nsxt_service_details,omitempty"`
 
 	// Placeholder for description of property nw_subnet_clash_details of obj type EventDetails field type str  type object
 	NwSubnetClashDetails *NetworkSubnetClash `json:"nw_subnet_clash_details,omitempty"`
@@ -575,9 +596,6 @@ type EventDetails struct {
 	// Placeholder for description of property vcenter_disc_failure of obj type EventDetails field type str  type object
 	VcenterDiscFailure *VinfraVcenterDiscoveryFailure `json:"vcenter_disc_failure,omitempty"`
 
-	// Vcenter Image event details. Field introduced in 21.1.3.
-	VcenterImgDetails *VcenterImageDetails `json:"vcenter_img_details,omitempty"`
-
 	// Placeholder for description of property vcenter_network_limit of obj type EventDetails field type str  type object
 	VcenterNetworkLimit *VinfraVcenterNetworkLimit `json:"vcenter_network_limit,omitempty"`
 
@@ -616,4 +634,7 @@ type EventDetails struct {
 
 	// Placeholder for description of property vs_scaleout_details of obj type EventDetails field type str  type object
 	VsScaleoutDetails *VsScaleOutEventDetails `json:"vs_scaleout_details,omitempty"`
+
+	// Details for Primary Switchover status. Field introduced in 21.1.3.
+	VsSwitchoverDetails *VsSwitchoverEventDetails `json:"vs_switchover_details,omitempty"`
 }

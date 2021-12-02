@@ -11,6 +11,9 @@ type ClusterNode struct {
 	// Optional service categories that a node can be assigned (e.g. SYSTEM, INFRASTRUCTURE or ANALYTICS). Field introduced in 18.1.1.
 	Categories []string `json:"categories,omitempty"`
 
+	// Interface details of the controller node. Field introduced in 21.1.3.
+	Interfaces []*ControllerInterface `json:"interfaces,omitempty"`
+
 	// IP address of controller VM.
 	// Required: true
 	IP *IPAddr `json:"ip"`
@@ -23,6 +26,9 @@ type ClusterNode struct {
 
 	// Public IP address or hostname of the controller VM. Field introduced in 17.2.3.
 	PublicIPOrName *IPAddr `json:"public_ip_or_name,omitempty"`
+
+	// Static routes configured on the controller node. Field introduced in 21.1.3.
+	StaticRoutes []*StaticRoute `json:"static_routes,omitempty"`
 
 	// Hostname assigned to this controller VM.
 	VMHostname *string `json:"vm_hostname,omitempty"`

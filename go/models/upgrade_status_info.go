@@ -120,6 +120,9 @@ type UpgradeStatusInfo struct {
 	// Current status of the Upgrade operation. Field introduced in 18.2.6.
 	State *UpgradeOpsState `json:"state,omitempty"`
 
+	// Record of Pre/Post snapshot captured for current upgrade operation. It is a reference to an object of type StatediffOperation. Field introduced in 21.1.3.
+	StatediffRef *string `json:"statediff_ref,omitempty"`
+
 	// Flag is set only in the cluster if the upgrade is initiated as a system-upgrade. . Field introduced in 18.2.6.
 	System *bool `json:"system,omitempty"`
 
