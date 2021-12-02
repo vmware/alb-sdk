@@ -17,6 +17,9 @@ type SwitchoverEventDetails struct {
 	// ip6 of SwitchoverEventDetails.
 	Ip6 *string `json:"ip6,omitempty"`
 
+	// Reason for switchover. Field introduced in 21.1.3.
+	Reason *string `json:"reason,omitempty"`
+
 	// to_se_name of SwitchoverEventDetails.
 	ToSeName *string `json:"to_se_name,omitempty"`
 

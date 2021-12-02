@@ -109,6 +109,9 @@ type Pool struct {
 	// Verify server health by applying one or more health monitors.  Active monitors generate synthetic traffic from each Service Engine and mark a server up or down based on the response. The Passive monitor listens only to client to server communication. It raises or lowers the ratio of traffic destined to a server based on successful responses. It is a reference to an object of type HealthMonitor. Maximum of 50 items allowed.
 	HealthMonitorRefs []string `json:"health_monitor_refs,omitempty"`
 
+	// Horizon UAG configuration. Field introduced in 21.1.3.
+	HorizonProfile *HorizonProfile `json:"horizon_profile,omitempty"`
+
 	// Enable common name check for server certificate. If enabled and no explicit domain name is specified, Avi will use the incoming host header to do the match.
 	HostCheckEnabled *bool `json:"host_check_enabled,omitempty"`
 

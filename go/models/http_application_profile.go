@@ -164,8 +164,14 @@ type HTTPApplicationProfile struct {
 	// Enable common settings to increase the level of security for  virtual services running HTTP and HTTPS. For sites that are  HTTP only, these settings will have no effect. Field deprecated in 18.2.7.
 	SslEverywhereEnabled *bool `json:"ssl_everywhere_enabled,omitempty"`
 
+	// Detect client IP from user specified header at the configured index in the specified direction. Field introduced in 21.1.3.
+	TrueClientIP *TrueClientIPConfig `json:"true_client_ip,omitempty"`
+
 	// Use 'Keep-Alive' header timeout sent by application instead of sending the HTTP Keep-Alive Timeout. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
 	UseAppKeepaliveTimeout *bool `json:"use_app_keepalive_timeout,omitempty"`
+
+	// Detect client IP from user specified header. Field introduced in 21.1.3.
+	UseTrueClientIP *bool `json:"use_true_client_ip,omitempty"`
 
 	// Enable Websockets proxy for traffic from clients to the virtual service. Connections to this VS start in HTTP mode. If the client requests an Upgrade to Websockets, and the server responds back with success, then the connection is upgraded to WebSockets mode. .
 	WebsocketsEnabled *bool `json:"websockets_enabled,omitempty"`

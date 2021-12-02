@@ -11,6 +11,9 @@ type GslbServiceRuntime struct {
 	//  Field introduced in 17.1.3.
 	Checksum *string `json:"checksum,omitempty"`
 
+	// Fully qualified domain name of the GslbService. Field introduced in 21.1.3.
+	DomainNames []string `json:"domain_names,omitempty"`
+
 	// Placeholder for description of property flr_state of obj type GslbServiceRuntime field type str  type object
 	FlrState []*CfgState `json:"flr_state,omitempty"`
 

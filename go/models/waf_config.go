@@ -14,7 +14,7 @@ type WafConfig struct {
 	// WAF allowed HTTP methods. Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Field introduced in 17.2.1.
 	AllowedMethods []string `json:"allowed_methods,omitempty"`
 
-	// WAF allowed Content Types. Field introduced in 17.2.1.
+	// WAF allowed Content Types. Field deprecated in 21.1.3. Field introduced in 17.2.1.
 	AllowedRequestContentTypes []string `json:"allowed_request_content_types,omitempty"`
 
 	// Argument seperator. Field introduced in 17.2.1.

@@ -203,6 +203,9 @@ type VirtualService struct {
 	// A list of NSX Groups representing the Clients which can access the Virtual IP of the Virtual Service. Field introduced in 17.1.1.
 	NsxSecuritygroup []string `json:"nsx_securitygroup,omitempty"`
 
+	// VirtualService specific OAuth config. Field introduced in 21.1.3.
+	OauthVsConfig *OAuthVSConfig `json:"oauth_vs_config,omitempty"`
+
 	// Optional settings that determine performance limits like max connections or bandwdith etc.
 	PerformanceLimits *PerformanceLimits `json:"performance_limits,omitempty"`
 

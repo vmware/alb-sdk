@@ -8,7 +8,7 @@ package models
 // swagger:model MetricsEventThreshold
 type MetricsEventThreshold struct {
 
-	// Type of the metrics event threshold. This value will decide which metric rule (or rules) use configured thresholds. Enum options - THRESHOLD_TYPE_STATIC, SE_CPU_THRESHOLD, SE_MEM_THRESHOLD, SE_DISK_THRESHOLD. Field introduced in 20.1.3.
+	// Type of the metrics event threshold. This value will decide which metric rule (or rules) use configured thresholds. Enum options - THRESHOLD_TYPE_STATIC, SE_CPU_THRESHOLD, SE_MEM_THRESHOLD, SE_DISK_THRESHOLD, CONTROLLER_CPU_THRESHOLD, CONTROLLER_MEM_THRESHOLD, CONTROLLER_DISK_THRESHOLD. Field introduced in 20.1.3.
 	// Required: true
 	MetricsEventThresholdType *string `json:"metrics_event_threshold_type"`
 

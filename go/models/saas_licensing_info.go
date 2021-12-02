@@ -8,12 +8,9 @@ package models
 // swagger:model SaasLicensingInfo
 type SaasLicensingInfo struct {
 
-	// Minimum service units that always remain checked out on controller. Field introduced in 21.1.3.
-	CacheServiceUnits *float64 `json:"cache_service_units,omitempty"`
-
-	// Service category. Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY, ALB_LICENSE_CATEGORY. Field introduced in 21.1.3.
-	Category *string `json:"category,omitempty"`
-
-	// Maximum service units that controller can check out. Field introduced in 21.1.3.
+	// Maximum service units limit for controller. Allowed values are 0-1000. Special values are 0 - 'infinite'. Field introduced in 21.1.3.
 	MaxServiceUnits *float64 `json:"max_service_units,omitempty"`
+
+	// Minimum service units that always remain reserved on controller. Allowed values are 0-1000. Field introduced in 21.1.3.
+	ReserveServiceUnits *float64 `json:"reserve_service_units,omitempty"`
 }

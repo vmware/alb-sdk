@@ -12,6 +12,7 @@ type AviClient struct {
 	AviSession                      *session.AviSession
 	ALBServicesConfig               *ALBServicesConfigClient
 	ALBServicesFileUpload           *ALBServicesFileUploadClient
+	ALBServicesJob                  *ALBServicesJobClient
 	ActionGroupConfig               *ActionGroupConfigClient
 	Alert                           *AlertClient
 	AlertConfig                     *AlertConfigClient
@@ -69,6 +70,7 @@ type AviClient struct {
 	L4PolicySet                     *L4PolicySetClient
 	LabelGroup                      *LabelGroupClient
 	LicenseLedgerDetails            *LicenseLedgerDetailsClient
+	LicenseStatus                   *LicenseStatusClient
 	LogControllerMapping            *LogControllerMappingClient
 	MemoryBalancerRequest           *MemoryBalancerRequestClient
 	MicroService                    *MicroServiceClient
@@ -105,6 +107,8 @@ type AviClient struct {
 	ServiceEngineGroup              *ServiceEngineGroupClient
 	SiteVersion                     *SiteVersionClient
 	SnmpTrapProfile                 *SnmpTrapProfileClient
+	StatediffOperation              *StatediffOperationClient
+	StatediffSnapshot               *StatediffSnapshotClient
 	StringGroup                     *StringGroupClient
 	SystemConfiguration             *SystemConfigurationClient
 	SystemLimits                    *SystemLimitsClient
@@ -152,6 +156,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.AviSession = aviSession
 	aviClient.ALBServicesConfig = NewALBServicesConfigClient(aviSession)
 	aviClient.ALBServicesFileUpload = NewALBServicesFileUploadClient(aviSession)
+	aviClient.ALBServicesJob = NewALBServicesJobClient(aviSession)
 	aviClient.ActionGroupConfig = NewActionGroupConfigClient(aviSession)
 	aviClient.Alert = NewAlertClient(aviSession)
 	aviClient.AlertConfig = NewAlertConfigClient(aviSession)
@@ -209,6 +214,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.L4PolicySet = NewL4PolicySetClient(aviSession)
 	aviClient.LabelGroup = NewLabelGroupClient(aviSession)
 	aviClient.LicenseLedgerDetails = NewLicenseLedgerDetailsClient(aviSession)
+	aviClient.LicenseStatus = NewLicenseStatusClient(aviSession)
 	aviClient.LogControllerMapping = NewLogControllerMappingClient(aviSession)
 	aviClient.MemoryBalancerRequest = NewMemoryBalancerRequestClient(aviSession)
 	aviClient.MicroService = NewMicroServiceClient(aviSession)
@@ -245,6 +251,8 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.ServiceEngineGroup = NewServiceEngineGroupClient(aviSession)
 	aviClient.SiteVersion = NewSiteVersionClient(aviSession)
 	aviClient.SnmpTrapProfile = NewSnmpTrapProfileClient(aviSession)
+	aviClient.StatediffOperation = NewStatediffOperationClient(aviSession)
+	aviClient.StatediffSnapshot = NewStatediffSnapshotClient(aviSession)
 	aviClient.StringGroup = NewStringGroupClient(aviSession)
 	aviClient.SystemConfiguration = NewSystemConfigurationClient(aviSession)
 	aviClient.SystemLimits = NewSystemLimitsClient(aviSession)

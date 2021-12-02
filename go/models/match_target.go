@@ -20,7 +20,7 @@ type MatchTarget struct {
 	// Configure the geo information. Field introduced in 21.1.1. Maximum of 1 items allowed.
 	GeoMatches []*GeoMatch `json:"geo_matches,omitempty"`
 
-	// Configure HTTP header(s).
+	// Configure HTTP header(s). All configured headers must match.
 	Hdrs []*HdrMatch `json:"hdrs,omitempty"`
 
 	// Configure the host header.
@@ -40,6 +40,9 @@ type MatchTarget struct {
 
 	// Configure request query.
 	Query *QueryMatch `json:"query,omitempty"`
+
+	// Configure source ip addresses. Field introduced in 21.1.3.
+	SourceIP *IPAddrMatch `json:"source_ip,omitempty"`
 
 	// Configure versions of the HTTP protocol.
 	Version *HTTPVersionMatch `json:"version,omitempty"`

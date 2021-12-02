@@ -69,6 +69,9 @@ type ServiceEngineGroup struct {
 	// Availability zones for Virtual Service High Availability. It is a reference to an object of type AvailabilityZone. Field introduced in 20.1.1.
 	AvailabilityZoneRefs []string `json:"availability_zone_refs,omitempty"`
 
+	// Control if dispatcher core also handles TCP flows in baremetal SE. Field introduced in 21.1.3. Allowed in Basic edition, Essentials edition, Enterprise edition.
+	BaremetalDispatcherHandlesFlows *bool `json:"baremetal_dispatcher_handles_flows,omitempty"`
+
 	// Enable BGP peer monitoring based failover. Field introduced in 21.1.3.
 	BgpPeerMonitorFailoverEnabled *bool `json:"bgp_peer_monitor_failover_enabled,omitempty"`
 
@@ -270,8 +273,14 @@ type ServiceEngineGroup struct {
 	// Minimum response size content length to sample for client insights. Field introduced in 21.1.1. Allowed in Basic(Allowed values- 64) edition, Essentials(Allowed values- 64) edition, Enterprise edition.
 	HTTPRumMinContentLength *int32 `json:"http_rum_min_content_length,omitempty"`
 
+	// Toggles SE hybrid only mode of operation in DPDK mode with RSS configured;where-in each SE datapath instance operates as an independent standalonehybrid instance performing both dispatcher and proxy function. Requires reboot. Field introduced in 21.1.3.
+	HybridRssMode *bool `json:"hybrid_rss_mode,omitempty"`
+
 	// Override default hypervisor. Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
 	Hypervisor *string `json:"hypervisor,omitempty"`
+
+	// Ignore docker mac change. Field introduced in 21.1.3. Allowed in Basic edition, Essentials edition, Enterprise edition.
+	IgnoreDockerMacChange *bool `json:"ignore_docker_mac_change,omitempty"`
 
 	// Ignore RTT samples if it is above threshold. Field introduced in 17.1.6,17.2.2. Unit is MILLISECONDS.
 	IgnoreRttThreshold *int32 `json:"ignore_rtt_threshold,omitempty"`
@@ -290,6 +299,9 @@ type ServiceEngineGroup struct {
 
 	// Iptable Rules. Maximum of 128 items allowed.
 	Iptables []*IptableRuleSet `json:"iptables,omitempty"`
+
+	// Port ranges for any servers running in inband LinuxServer clouds. Field introduced in 21.1.3.
+	KniAllowedServerPorts []*KniPortRange `json:"kni_allowed_server_ports,omitempty"`
 
 	// Number of L7 connections that can be cached per core. Field introduced in 21.1.1.
 	L7ConnsPerCore *int32 `json:"l7_conns_per_core,omitempty"`
@@ -475,6 +487,9 @@ type ServiceEngineGroup struct {
 	// Number of dispatcher cores (0,1,2,4,8 or 16). If set to 0, then number of dispatcher cores is deduced automatically.Requires SE Reboot. Allowed values are 0,1,2,4,8,16. Field introduced in 17.2.12, 18.1.3, 18.2.1. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.
 	NumDispatcherCores *int32 `json:"num_dispatcher_cores,omitempty"`
 
+	// Number of queues to each dispatcher. Allowed values are 2-8. Special values are 0 - 'auto-compute', 1 - 'single-queue'. Field introduced in 21.1.3.
+	NumDispatcherQueues *int32 `json:"num_dispatcher_queues,omitempty"`
+
 	// Number of changes in num flow cores sum to ignore.
 	NumFlowCoresSumChangesToIgnore *int32 `json:"num_flow_cores_sum_changes_to_ignore,omitempty"`
 
@@ -550,6 +565,9 @@ type ServiceEngineGroup struct {
 	// Internal only. Used to simulate SE - SE HB failure. Field introduced in 20.1.3.
 	SeDpHmDrops *int32 `json:"se_dp_hm_drops,omitempty"`
 
+	// Number of jiffies between polling interface state. Field introduced in 21.1.3. Allowed in Basic edition, Essentials edition, Enterprise edition.
+	SeDpIfStatePollInterval *int32 `json:"se_dp_if_state_poll_interval,omitempty"`
+
 	// Toggle support to run SE datapath instances in isolation on exclusive CPUs. This improves latency and performance. However, this could reduce the total number of se_dp instances created on that SE instance. Supported for >= 8 CPUs. Requires SE reboot. Field introduced in 20.1.4.
 	SeDpIsolation *bool `json:"se_dp_isolation,omitempty"`
 
@@ -582,6 +600,12 @@ type ServiceEngineGroup struct {
 
 	// Determines if DPDK pool mode driver should be used or not   0  Automatically determine based on hypervisor/NIC type 1  Unconditionally use DPDK poll mode driver 2  Don't use DPDK poll mode driver.Requires SE Reboot. Allowed values are 0-2. Field introduced in 18.1.3.
 	SeDpdkPmd *int32 `json:"se_dpdk_pmd,omitempty"`
+
+	// Enable core dump on assert. Field introduced in 21.1.3. Allowed in Basic edition, Essentials edition, Enterprise edition.
+	SeDumpCoreOnAssert *bool `json:"se_dump_core_on_assert,omitempty"`
+
+	// Use this to emulate more/less cpus than is actually available. One datapath process is started for each core. Field introduced in 21.1.3. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.
+	SeEmulatedCores *int32 `json:"se_emulated_cores,omitempty"`
 
 	// Flow probe retry count if no replies are received.Requires SE Reboot. Allowed values are 0-5. Field introduced in 18.1.4, 18.2.1.
 	SeFlowProbeRetries *int32 `json:"se_flow_probe_retries,omitempty"`
@@ -630,6 +654,9 @@ type ServiceEngineGroup struct {
 
 	// Prefix to use for virtual machine name of Service Engines.
 	SeNamePrefix *string `json:"se_name_prefix,omitempty"`
+
+	// Internal use only. Used to artificially reduce the available number of packet buffers. Field introduced in 21.1.3. Allowed in Basic edition, Essentials edition, Enterprise edition.
+	SePacketBufferMax *int32 `json:"se_packet_buffer_max,omitempty"`
 
 	// Enables lookahead mode of packet receive in PCAP mode. Introduced to overcome an issue with hv_netvsc driver. Lookahead mode attempts to ensure that application and kernel's view of the receive rings are consistent. Field introduced in 18.2.3.
 	SePcapLookahead *bool `json:"se_pcap_lookahead,omitempty"`

@@ -14,6 +14,9 @@ type Service struct {
 	// Enable SSL termination and offload for traffic from clients.
 	EnableSsl *bool `json:"enable_ssl,omitempty"`
 
+	// Used for Horizon deployment. If set used for L7 redirect. Field introduced in 21.1.3.
+	HorizonInternalPorts *bool `json:"horizon_internal_ports,omitempty"`
+
 	// Enable application layer specific features for the this specific service. It is a reference to an object of type ApplicationProfile. Field introduced in 17.2.4. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	OverrideApplicationProfileRef *string `json:"override_application_profile_ref,omitempty"`
 

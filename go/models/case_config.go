@@ -8,9 +8,6 @@ package models
 // swagger:model CaseConfig
 type CaseConfig struct {
 
-	// Service category. Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY, ALB_LICENSE_CATEGORY. Field introduced in 21.1.3.
-	Category *string `json:"category,omitempty"`
-
 	// Enable pro-active support case creation when a controller failure occurs. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
 	EnableAutoCaseCreationOnControllerFailure *bool `json:"enable_auto_case_creation_on_controller_failure,omitempty"`
 

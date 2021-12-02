@@ -14,7 +14,7 @@ type SeRuntimeProperties struct {
 	// Placeholder for description of property app_headers of obj type SeRuntimeProperties field type str  type object
 	AppHeaders []*AppHdr `json:"app_headers,omitempty"`
 
-	// Control if dispatcher core also handles TCP flows in baremetal SE.
+	// Deprecated in 21.1.3. Use config in ServiceEngineGroup instead.
 	BaremetalDispatcherHandlesFlows *bool `json:"baremetal_dispatcher_handles_flows,omitempty"`
 
 	// Rate limit on maximum adf lossy log to pushper second. Allowed in Basic(Allowed values- 1000) edition, Essentials(Allowed values- 1000) edition, Enterprise edition.
@@ -215,7 +215,7 @@ type SeRuntimeProperties struct {
 	// Deprecated - This field has been moved to se_group properties 20.1.3 onwards. Internal only. Used to simulate SE - SE HB failure.
 	SeDpHmDrops *int32 `json:"se_dp_hm_drops,omitempty"`
 
-	// Number of jiffies between polling interface state.
+	// Deprecated in 21.1.3. Use config in ServiceEngineGroup instead.
 	SeDpIfStatePollInterval *int32 `json:"se_dp_if_state_poll_interval,omitempty"`
 
 	// Deprecated in 21.1.1. Internal buffer full indicator on the Service Engine beyond which the unfiltered logs are abandoned.
@@ -239,7 +239,7 @@ type SeRuntimeProperties struct {
 	// Deprecated. Field deprecated in 18.2.5. Field introduced in 17.1.14, 17.2.5, 18.1.1.
 	SeDpVnicStallSeRestartWindow *int32 `json:"se_dp_vnic_stall_se_restart_window,omitempty"`
 
-	// Enable core dump on assert. Field introduced in 18.1.3, 18.2.1.
+	// Deprecated in 21.1.3. Use config in ServiceEngineGroup instead. Field introduced in 18.1.3, 18.2.1.
 	SeDumpCoreOnAssert *bool `json:"se_dump_core_on_assert,omitempty"`
 
 	// Accept/ignore interface routes (i.e, no next hop IP address).
@@ -266,7 +266,7 @@ type SeRuntimeProperties struct {
 	// Internal use only. Frequency (ms) of realtime metrics updates from SE to controller. Unit is MILLISECONDS.
 	SeMetricsRtInterval *int32 `json:"se_metrics_rt_interval,omitempty"`
 
-	// Internal use only. Used to artificially reduce the available number of packet buffers.
+	// Deprecated in 21.1.3. Use config in ServiceEngineGroup instead.
 	SePacketBufferMax *int32 `json:"se_packet_buffer_max,omitempty"`
 
 	// Internal use only. If enabled, randomly packets are dropped.
