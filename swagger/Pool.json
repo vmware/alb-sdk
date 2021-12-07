@@ -3046,7 +3046,7 @@
                     "type": "string"
                 },
                 "use_service_port": {
-                    "description": "Do not translate the client's destination port when sending the connection to the server.  The pool or servers specified service port will still be used for health monitoring. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Do not translate the client's destination port when sending the connection to the server.  The pool or servers specified service port will still be used for health monitoring. Allowed in Essentials(Allowed values- false) edition, Enterprise edition.",
                     "type": "boolean"
                 },
                 "use_service_ssl_mode": {
