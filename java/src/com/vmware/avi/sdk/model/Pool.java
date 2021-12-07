@@ -2093,7 +2093,7 @@ public class Pool extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Do not translate the client's destination port when sending the connection to the server.
      * The pool or servers specified service port will still be used for health monitoring.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in essentials(allowed values- false) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useServicePort
      */
@@ -2105,7 +2105,7 @@ public class Pool extends AviRestResource  {
      * This is the setter method to the attribute.
      * Do not translate the client's destination port when sending the connection to the server.
      * The pool or servers specified service port will still be used for health monitoring.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in essentials(allowed values- false) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useServicePort set the useServicePort.
      */
