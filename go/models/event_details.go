@@ -314,6 +314,9 @@ type EventDetails struct {
 	// Placeholder for description of property metrics_db_queue_healthy_details of obj type EventDetails field type str  type object
 	MetricsDbQueueHealthyDetails *MetricsDbQueueHealthyEventDetails `json:"metrics_db_queue_healthy_details,omitempty"`
 
+	// Placeholder for description of property metrics_db_sync_failure_details of obj type EventDetails field type str  type object
+	MetricsDbSyncFailureDetails *MetricsDbSyncFailureEventDetails `json:"metrics_db_sync_failure_details,omitempty"`
+
 	// Placeholder for description of property mgmt_nw_change_details of obj type EventDetails field type str  type object
 	MgmtNwChangeDetails *VinfraMgmtNwChangeDetails `json:"mgmt_nw_change_details,omitempty"`
 
