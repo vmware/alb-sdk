@@ -324,6 +324,9 @@ public class EventDetails  {
     @JsonProperty("metrics_db_queue_healthy_details")
     private MetricsDbQueueHealthyEventDetails metricsDbQueueHealthyDetails = null;
 
+    @JsonProperty("metrics_db_sync_failure_details")
+    private MetricsDbSyncFailureEventDetails metricsDbSyncFailureDetails = null;
+
     @JsonProperty("mgmt_nw_change_details")
     private VinfraMgmtNwChangeDetails mgmtNwChangeDetails = null;
 
@@ -2684,6 +2687,26 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Placeholder for description of property metrics_db_sync_failure_details of obj type eventdetails field type str  type ref.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return metricsDbSyncFailureDetails
+     */
+    public MetricsDbSyncFailureEventDetails getMetricsDbSyncFailureDetails() {
+        return metricsDbSyncFailureDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Placeholder for description of property metrics_db_sync_failure_details of obj type eventdetails field type str  type ref.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param metricsDbSyncFailureDetails set the metricsDbSyncFailureDetails.
+     */
+    public void setMetricsDbSyncFailureDetails(MetricsDbSyncFailureEventDetails metricsDbSyncFailureDetails) {
+        this.metricsDbSyncFailureDetails = metricsDbSyncFailureDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Placeholder for description of property mgmt_nw_change_details of obj type eventdetails field type str  type ref.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mgmtNwChangeDetails
@@ -4990,6 +5013,7 @@ public class EventDetails  {
   Objects.equals(this.burstCheckoutDetails, objEventDetails.burstCheckoutDetails)&&
   Objects.equals(this.metricsDbQueueFullDetails, objEventDetails.metricsDbQueueFullDetails)&&
   Objects.equals(this.metricsDbQueueHealthyDetails, objEventDetails.metricsDbQueueHealthyDetails)&&
+  Objects.equals(this.metricsDbSyncFailureDetails, objEventDetails.metricsDbSyncFailureDetails)&&
   Objects.equals(this.osInfraDetails, objEventDetails.osInfraDetails)&&
   Objects.equals(this.osSeVmDetails, objEventDetails.osSeVmDetails)&&
   Objects.equals(this.osVnicDetails, objEventDetails.osVnicDetails)&&
@@ -5192,6 +5216,7 @@ public class EventDetails  {
                         sb.append("    metricsDbDiskDetails: ").append(toIndentedString(metricsDbDiskDetails)).append("\n");
                         sb.append("    metricsDbQueueFullDetails: ").append(toIndentedString(metricsDbQueueFullDetails)).append("\n");
                         sb.append("    metricsDbQueueHealthyDetails: ").append(toIndentedString(metricsDbQueueHealthyDetails)).append("\n");
+                        sb.append("    metricsDbSyncFailureDetails: ").append(toIndentedString(metricsDbSyncFailureDetails)).append("\n");
                         sb.append("    mgmtNwChangeDetails: ").append(toIndentedString(mgmtNwChangeDetails)).append("\n");
                         sb.append("    modifyNetworksDetails: ").append(toIndentedString(modifyNetworksDetails)).append("\n");
                         sb.append("    networkSubnetDetails: ").append(toIndentedString(networkSubnetDetails)).append("\n");
