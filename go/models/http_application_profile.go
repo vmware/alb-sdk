@@ -131,6 +131,9 @@ type HTTPApplicationProfile struct {
 	// Maximum requests per second per URI. Allowed values are 10-1000. Special values are 0- 'unlimited'.
 	MaxRpsURI *int32 `json:"max_rps_uri,omitempty"`
 
+	// Pass through X-ACCEL headers. Field introduced in 21.1.3.
+	PassThroughXAccelHeaders *bool `json:"pass_through_x_accel_headers,omitempty"`
+
 	// Select the PKI profile to be associated with the Virtual Service. This profile defines the Certificate Authority and Revocation List. It is a reference to an object of type PKIProfile.
 	PkiProfileRef *string `json:"pki_profile_ref,omitempty"`
 
