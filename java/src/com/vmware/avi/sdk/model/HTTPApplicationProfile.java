@@ -144,6 +144,9 @@ public class HTTPApplicationProfile  {
     @JsonProperty("max_rps_uri")
     private Integer maxRpsUri = 0;
 
+    @JsonProperty("pass_through_x_accel_headers")
+    private Boolean passThroughXAccelHeaders = false;
+
     @JsonProperty("pki_profile_ref")
     private String pkiProfileRef = null;
 
@@ -1238,6 +1241,28 @@ public class HTTPApplicationProfile  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Pass through x-accel headers.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return passThroughXAccelHeaders
+     */
+    public Boolean getPassThroughXAccelHeaders() {
+        return passThroughXAccelHeaders;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Pass through x-accel headers.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param passThroughXAccelHeaders set the passThroughXAccelHeaders.
+     */
+    public void setPassThroughXAccelHeaders(Boolean  passThroughXAccelHeaders) {
+        this.passThroughXAccelHeaders = passThroughXAccelHeaders;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Select the pki profile to be associated with the virtual service.
      * This profile defines the certificate authority and revocation list.
      * It is a reference to an object of type pkiprofile.
@@ -1718,7 +1743,8 @@ public class HTTPApplicationProfile  {
   Objects.equals(this.http2Profile, objHTTPApplicationProfile.http2Profile)&&
   Objects.equals(this.detectNtlmApp, objHTTPApplicationProfile.detectNtlmApp)&&
   Objects.equals(this.useTrueClientIp, objHTTPApplicationProfile.useTrueClientIp)&&
-  Objects.equals(this.trueClientIp, objHTTPApplicationProfile.trueClientIp);
+  Objects.equals(this.trueClientIp, objHTTPApplicationProfile.trueClientIp)&&
+  Objects.equals(this.passThroughXAccelHeaders, objHTTPApplicationProfile.passThroughXAccelHeaders);
     }
 
     @Override
@@ -1766,6 +1792,7 @@ public class HTTPApplicationProfile  {
                         sb.append("    maxRpsUnknownCip: ").append(toIndentedString(maxRpsUnknownCip)).append("\n");
                         sb.append("    maxRpsUnknownUri: ").append(toIndentedString(maxRpsUnknownUri)).append("\n");
                         sb.append("    maxRpsUri: ").append(toIndentedString(maxRpsUri)).append("\n");
+                        sb.append("    passThroughXAccelHeaders: ").append(toIndentedString(passThroughXAccelHeaders)).append("\n");
                         sb.append("    pkiProfileRef: ").append(toIndentedString(pkiProfileRef)).append("\n");
                         sb.append("    postAcceptTimeout: ").append(toIndentedString(postAcceptTimeout)).append("\n");
                         sb.append("    resetConnHttpOnSslPort: ").append(toIndentedString(resetConnHttpOnSslPort)).append("\n");
