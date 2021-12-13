@@ -599,7 +599,8 @@
             "required": [
                 "classification",
                 "index",
-                "match"
+                "match",
+                "name"
             ],
             "properties": {
                 "class_matcher": {
