@@ -132,6 +132,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("deactivate_ipv6_discovery")
     private Boolean deactivateIpv6Discovery = null;
 
+    @JsonProperty("deactivate_kni_filtering_at_dispatcher")
+    private Boolean deactivateKniFilteringAtDispatcher = null;
+
     @JsonProperty("dedicated_dispatcher_core")
     private Boolean dedicatedDispatcherCore = false;
 
@@ -1845,6 +1848,30 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Deactivate filtering of packets to kni interface.
+     * To be used under surveillance of avi support.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return deactivateKniFilteringAtDispatcher
+     */
+    public Boolean getDeactivateKniFilteringAtDispatcher() {
+        return deactivateKniFilteringAtDispatcher;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Deactivate filtering of packets to kni interface.
+     * To be used under surveillance of avi support.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param deactivateKniFilteringAtDispatcher set the deactivateKniFilteringAtDispatcher.
+     */
+    public void setDeactivateKniFilteringAtDispatcher(Boolean  deactivateKniFilteringAtDispatcher) {
+        this.deactivateKniFilteringAtDispatcher = deactivateKniFilteringAtDispatcher;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Dedicate the core that handles packet receive/transmit from the network to just the dispatching function.
      * Don't use it for tcp/ip and ssl functions.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -3438,7 +3465,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Specifies the license tier which would be used.
      * This field by default inherits the value from cloud.
-     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, SAAS.
+     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
      * Field introduced in 17.2.5.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseTier
@@ -3451,7 +3478,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Specifies the license tier which would be used.
      * This field by default inherits the value from cloud.
-     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, SAAS.
+     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
      * Field introduced in 17.2.5.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseTier set the licenseTier.
@@ -8435,7 +8462,8 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.maxSkbFrags, objServiceEngineGroup.maxSkbFrags)&&
   Objects.equals(this.hybridRssMode, objServiceEngineGroup.hybridRssMode)&&
   Objects.equals(this.numDispatcherQueues, objServiceEngineGroup.numDispatcherQueues)&&
-  Objects.equals(this.kniAllowedServerPorts, objServiceEngineGroup.kniAllowedServerPorts);
+  Objects.equals(this.kniAllowedServerPorts, objServiceEngineGroup.kniAllowedServerPorts)&&
+  Objects.equals(this.deactivateKniFilteringAtDispatcher, objServiceEngineGroup.deactivateKniFilteringAtDispatcher);
     }
 
     @Override
@@ -8479,6 +8507,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    dataNetworkId: ").append(toIndentedString(dataNetworkId)).append("\n");
                         sb.append("    datascriptTimeout: ").append(toIndentedString(datascriptTimeout)).append("\n");
                         sb.append("    deactivateIpv6Discovery: ").append(toIndentedString(deactivateIpv6Discovery)).append("\n");
+                        sb.append("    deactivateKniFilteringAtDispatcher: ").append(toIndentedString(deactivateKniFilteringAtDispatcher)).append("\n");
                         sb.append("    dedicatedDispatcherCore: ").append(toIndentedString(dedicatedDispatcherCore)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
                         sb.append("    disableAviSecuritygroups: ").append(toIndentedString(disableAviSecuritygroups)).append("\n");

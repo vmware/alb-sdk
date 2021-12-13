@@ -619,7 +619,7 @@ public class SingleLicense  {
     /**
      * This is the getter method this will return the attribute value.
      * Specifies the licensed tier.
-     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, SAAS.
+     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
      * Field introduced in 17.2.5.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tierType
@@ -631,7 +631,7 @@ public class SingleLicense  {
     /**
      * This is the setter method to the attribute.
      * Specifies the licensed tier.
-     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, SAAS.
+     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
      * Field introduced in 17.2.5.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tierType set the tierType.

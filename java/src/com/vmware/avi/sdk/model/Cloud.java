@@ -609,7 +609,7 @@ public class Cloud extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Specifies the default license tier which would be used by new se groups.
      * This field by default inherits the value from system configuration.
-     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, SAAS.
+     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
      * Field introduced in 17.2.5.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseTier
@@ -622,7 +622,7 @@ public class Cloud extends AviRestResource  {
      * This is the setter method to the attribute.
      * Specifies the default license tier which would be used by new se groups.
      * This field by default inherits the value from system configuration.
-     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, SAAS.
+     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
      * Field introduced in 17.2.5.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseTier set the licenseTier.

@@ -48,6 +48,9 @@ public class OauthLog  {
     @JsonProperty("token_refresh_subrequest")
     private OauthSubRequestLog tokenRefreshSubrequest = null;
 
+    @JsonProperty("userinfo_subrequest")
+    private OauthSubRequestLog userinfoSubrequest = null;
+
 
 
     /**
@@ -256,6 +259,28 @@ public class OauthLog  {
         this.tokenRefreshSubrequest = tokenRefreshSubrequest;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Subrequest info related to fetching userinfo from userinfo endpoint.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return userinfoSubrequest
+     */
+    public OauthSubRequestLog getUserinfoSubrequest() {
+        return userinfoSubrequest;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Subrequest info related to fetching userinfo from userinfo endpoint.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param userinfoSubrequest set the userinfoSubrequest.
+     */
+    public void setUserinfoSubrequest(OauthSubRequestLog userinfoSubrequest) {
+        this.userinfoSubrequest = userinfoSubrequest;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -274,7 +299,8 @@ public class OauthLog  {
   Objects.equals(this.isSessionCookieExpired, objOauthLog.isSessionCookieExpired)&&
   Objects.equals(this.authnRuleMatch, objOauthLog.authnRuleMatch)&&
   Objects.equals(this.authzRuleMatch, objOauthLog.authzRuleMatch)&&
-  Objects.equals(this.state, objOauthLog.state);
+  Objects.equals(this.state, objOauthLog.state)&&
+  Objects.equals(this.userinfoSubrequest, objOauthLog.userinfoSubrequest);
     }
 
     @Override
@@ -290,6 +316,7 @@ public class OauthLog  {
                         sb.append("    tokenExchangeSubrequest: ").append(toIndentedString(tokenExchangeSubrequest)).append("\n");
                         sb.append("    tokenIntrospectionSubrequest: ").append(toIndentedString(tokenIntrospectionSubrequest)).append("\n");
                         sb.append("    tokenRefreshSubrequest: ").append(toIndentedString(tokenRefreshSubrequest)).append("\n");
+                        sb.append("    userinfoSubrequest: ").append(toIndentedString(userinfoSubrequest)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
