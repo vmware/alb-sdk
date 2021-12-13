@@ -34,4 +34,7 @@ type OauthLog struct {
 
 	// Subrequest info related to refresh access Token flow. Field introduced in 21.1.3.
 	TokenRefreshSubrequest *OauthSubRequestLog `json:"token_refresh_subrequest,omitempty"`
+
+	// Subrequest info related to fetching userinfo from userinfo endpoint. Field introduced in 21.1.3.
+	UserinfoSubrequest *OauthSubRequestLog `json:"userinfo_subrequest,omitempty"`
 }

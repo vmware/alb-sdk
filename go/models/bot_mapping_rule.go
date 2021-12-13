@@ -30,7 +30,8 @@ type BotMappingRule struct {
 	Match *BotMappingRuleMatchTarget `json:"match"`
 
 	// A name describing the rule in a short form. Field introduced in 21.1.1.
-	Name *string `json:"name,omitempty"`
+	// Required: true
+	Name *string `json:"name"`
 
 	// How to match the BotClientType. Field deprecated in 21.1.3. Field introduced in 21.1.1.
 	TypeMatcher *BotTypeMatcher `json:"type_matcher,omitempty"`
