@@ -161,10 +161,10 @@ public class SystemConfiguration extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Specifies the default license tier which would be used by new clouds.
-     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, SAAS.
+     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
      * Field introduced in 17.2.5.
      * Allowed in basic edition, essentials edition, enterprise edition.
-     * Special default for basic edition is basic, essentials edition is essentials, enterprise is saas.
+     * Special default for basic edition is basic, essentials edition is essentials, enterprise is enterprise_with_cloud_services.
      * @return defaultLicenseTier
      */
     public String getDefaultLicenseTier() {
@@ -174,10 +174,10 @@ public class SystemConfiguration extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Specifies the default license tier which would be used by new clouds.
-     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, SAAS.
+     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
      * Field introduced in 17.2.5.
      * Allowed in basic edition, essentials edition, enterprise edition.
-     * Special default for basic edition is basic, essentials edition is essentials, enterprise is saas.
+     * Special default for basic edition is basic, essentials edition is essentials, enterprise is enterprise_with_cloud_services.
      * @param defaultLicenseTier set the defaultLicenseTier.
      */
     public void setDefaultLicenseTier(String  defaultLicenseTier) {
