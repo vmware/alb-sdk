@@ -559,6 +559,7 @@ font-style: italic;
     "num_dispatcher_queues" : 123,
     "buffer_se" : 123,
     "nat_flow_tcp_established_timeout" : 123,
+    "deactivate_kni_filtering_at_dispatcher" : true,
     "max_public_ips_per_lb" : 123,
     "mem_reserve" : true,
     "l7_conns_per_core" : 123,
@@ -1047,6 +1048,7 @@ font-style: italic;
   "num_dispatcher_queues" : 123,
   "buffer_se" : 123,
   "nat_flow_tcp_established_timeout" : 123,
+  "deactivate_kni_filtering_at_dispatcher" : true,
   "max_public_ips_per_lb" : 123,
   "mem_reserve" : true,
   "l7_conns_per_core" : 123,
@@ -1606,6 +1608,7 @@ font-style: italic;
   "num_dispatcher_queues" : 123,
   "buffer_se" : 123,
   "nat_flow_tcp_established_timeout" : 123,
+  "deactivate_kni_filtering_at_dispatcher" : true,
   "max_public_ips_per_lb" : 123,
   "mem_reserve" : true,
   "l7_conns_per_core" : 123,
@@ -2105,6 +2108,7 @@ font-style: italic;
   "num_dispatcher_queues" : 123,
   "buffer_se" : 123,
   "nat_flow_tcp_established_timeout" : 123,
+  "deactivate_kni_filtering_at_dispatcher" : true,
   "max_public_ips_per_lb" : 123,
   "mem_reserve" : true,
   "l7_conns_per_core" : 123,
@@ -2760,6 +2764,7 @@ font-style: italic;
   "num_dispatcher_queues" : 123,
   "buffer_se" : 123,
   "nat_flow_tcp_established_timeout" : 123,
+  "deactivate_kni_filtering_at_dispatcher" : true,
   "max_public_ips_per_lb" : 123,
   "mem_reserve" : true,
   "l7_conns_per_core" : 123,
@@ -3374,6 +3379,7 @@ font-style: italic;
 <div class="param">data_network_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Subnet used to spin up the data nic for Service Engines, used only for Azure cloud. Overrides the cloud level setting for Service Engine subnet. Field introduced in 18.2.3. </div>
 <div class="param">datascript_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Number of instructions before datascript times out. Allowed values are 0-100000000. Field introduced in 18.2.3. format: int64</div>
 <div class="param">deactivate_ipv6_discovery (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If activated, IPv6 address and route discovery are deactivated.Requires SE reboot. Field introduced in 21.1.1. </div>
+<div class="param">deactivate_kni_filtering_at_dispatcher (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Deactivate filtering of packets to KNI interface. To be used under surveillance of Avi Support. Field introduced in 21.1.3. </div>
 <div class="param">dedicated_dispatcher_core (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Dedicate the core that handles packet receive/transmit from the network to just the dispatching function. Don&#39;t use it for TCP/IP and SSL functions. </div>
 <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> User defined description for the object. </div>
 <div class="param">disable_avi_securitygroups (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> By default, Avi creates and manages security groups along with custom sg provided by user. Set this to True to disallow Avi to create and manage new security groups. Avi will only make use of custom security groups provided by user. This option is supported for AWS and OpenStack cloud types. Field introduced in 17.2.13,18.1.4,18.2.1. </div>
@@ -3439,7 +3445,7 @@ font-style: italic;
 <div class="param">lbaction_num_requests_to_dispatch (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of requests to dispatch from the request. queue at a regular interval. Field introduced in 21.1.1. format: int32</div>
 <div class="param">lbaction_rq_per_request_max_retries (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum retries per request in the request queue. Field introduced in 21.1.1. format: int32</div>
 <div class="param">least_load_core_selection (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Select core with least load for new flow. </div>
-<div class="param">license_tier (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Specifies the license tier which would be used. This field by default inherits the value from cloud. Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, SAAS. Field introduced in 17.2.5. </div>
+<div class="param">license_tier (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Specifies the license tier which would be used. This field by default inherits the value from cloud. Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES. Field introduced in 17.2.5. </div>
 <div class="param">license_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> If no license type is specified then default license enforcement for the cloud type is chosen. Enum options - LIC_BACKEND_SERVERS, LIC_SOCKETS, LIC_CORES, LIC_HOSTS, LIC_SE_BANDWIDTH, LIC_METERED_SE_BANDWIDTH. Field introduced in 17.2.5. </div>
 <div class="param">log_agent_compress_logs (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Flag to indicate if log files are compressed upon full on the Service Engine. Field introduced in 21.1.1. </div>
 <div class="param">log_agent_debug_enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable debug logs by default on Service Engine. This includes all other debugging logs. Debug logs can also be explcitly enabled from the CLI shell. Field introduced in 21.1.1. </div>
