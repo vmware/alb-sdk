@@ -12,9 +12,6 @@ type StatediffSnapshot struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.3.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Name of GSLB object. Field introduced in 21.1.3.
 	GslbName *string `json:"gslb_name,omitempty"`
 
