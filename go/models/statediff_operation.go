@@ -12,9 +12,6 @@ type StatediffOperation struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.3.
-	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
-
 	// Info for each Statediff event. Field introduced in 21.1.3.
 	Events []*StatediffEvent `json:"events,omitempty"`
 
