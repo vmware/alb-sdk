@@ -184,7 +184,7 @@ font-style: italic;
   </head>
   <body>
   <h1>Avi StatediffSnapshot Object API</h1>
-    <div class="app-desc">CLI ``` - show state-diff <key> ``` </div>
+    <div class="app-desc">CLI ``` - show statediff <key> ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
     <div class="app-desc">Version: 22.1.1</div>
@@ -280,9 +280,6 @@ font-style: italic;
     "statediff_operation_ref" : "aeiou",
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
-    "configpb_attributes" : {
-      "version" : 123
-    },
     "snapshot_type" : "aeiou",
     "pool_uuid" : "aeiou",
     "post_snapshot" : {
@@ -383,9 +380,6 @@ font-style: italic;
   "statediff_operation_ref" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
-  "configpb_attributes" : {
-    "version" : 123
-  },
   "snapshot_type" : "aeiou",
   "pool_uuid" : "aeiou",
   "post_snapshot" : {
@@ -557,9 +551,6 @@ font-style: italic;
   "statediff_operation_ref" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
-  "configpb_attributes" : {
-    "version" : 123
-  },
   "snapshot_type" : "aeiou",
   "pool_uuid" : "aeiou",
   "post_snapshot" : {
@@ -671,9 +662,6 @@ font-style: italic;
   "statediff_operation_ref" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
-  "configpb_attributes" : {
-    "version" : 123
-  },
   "snapshot_type" : "aeiou",
   "pool_uuid" : "aeiou",
   "post_snapshot" : {
@@ -785,9 +773,6 @@ font-style: italic;
   "statediff_operation_ref" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
-  "configpb_attributes" : {
-    "version" : 123
-  },
   "snapshot_type" : "aeiou",
   "pool_uuid" : "aeiou",
   "post_snapshot" : {
@@ -839,7 +824,6 @@ font-style: italic;
 
   <h2>Table of Contents</h2>
   <ol>
-    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#FbGsInfo"><code>FbGsInfo</code></a></li>
     <li><a href="#FbPoolInfo"><code>FbPoolInfo</code></a></li>
     <li><a href="#FbSeInfo"><code>FbSeInfo</code></a></li>
@@ -852,12 +836,6 @@ font-style: italic;
     <li><a href="#TimeStamp"><code>TimeStamp</code></a></li>
   </ol>
 
-  <div class="model">
-    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
-    <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int32</div>
-    </div>  <!-- field-items -->
-  </div>
   <div class="model">
     <h3 class="field-label"><a name="FbGsInfo">FbGsInfo</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
@@ -914,7 +892,6 @@ font-style: italic;
     <h3 class="field-label"><a name="StatediffSnapshot">StatediffSnapshot</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
-<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.3. </div>
 <div class="param">gslb_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of GSLB object. Field introduced in 21.1.3. </div>
 <div class="param">gslb_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Reference to base gslb object. Field introduced in 21.1.3. </div>
 <div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of Statediff operation. Field introduced in 21.1.3. </div>
