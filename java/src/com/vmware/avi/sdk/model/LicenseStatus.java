@@ -21,14 +21,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LicenseStatus extends AviRestResource  {
-    @JsonProperty("name")
-    private String name = null;
-
     @JsonProperty("saas_status")
     private SaasLicensingStatus saasStatus = null;
-
-    @JsonProperty("tenant_ref")
-    private String tenantRef = null;
 
     @JsonProperty("url")
     private String url = "url";
@@ -37,28 +31,6 @@ public class LicenseStatus extends AviRestResource  {
     private String uuid = null;
 
 
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Name.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Name.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param name set the name.
-     */
-    public void setName(String  name) {
-        this.name = name;
-    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -80,30 +52,6 @@ public class LicenseStatus extends AviRestResource  {
      */
     public void setSaasStatus(SaasLicensingStatus saasStatus) {
         this.saasStatus = saasStatus;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Tenant.
-     * It is a reference to an object of type tenant.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return tenantRef
-     */
-    public String getTenantRef() {
-        return tenantRef;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Tenant.
-     * It is a reference to an object of type tenant.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param tenantRef set the tenantRef.
-     */
-    public void setTenantRef(String  tenantRef) {
-        this.tenantRef = tenantRef;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -156,8 +104,6 @@ public class LicenseStatus extends AviRestResource  {
       }
       LicenseStatus objLicenseStatus = (LicenseStatus) o;
       return   Objects.equals(this.uuid, objLicenseStatus.uuid)&&
-  Objects.equals(this.name, objLicenseStatus.name)&&
-  Objects.equals(this.tenantRef, objLicenseStatus.tenantRef)&&
   Objects.equals(this.saasStatus, objLicenseStatus.saasStatus);
     }
 
@@ -165,9 +111,7 @@ public class LicenseStatus extends AviRestResource  {
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class LicenseStatus {\n");
-                  sb.append("    name: ").append(toIndentedString(name)).append("\n");
-                        sb.append("    saasStatus: ").append(toIndentedString(saasStatus)).append("\n");
-                        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+                  sb.append("    saasStatus: ").append(toIndentedString(saasStatus)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
       return sb.toString();

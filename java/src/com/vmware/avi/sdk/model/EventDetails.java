@@ -504,6 +504,9 @@ public class EventDetails  {
     @JsonProperty("se_vnic_up_event_details")
     private SeVnicUpEventDetails seVnicUpEventDetails = null;
 
+    @JsonProperty("se_vs_del_flows_disrupted")
+    private SeVsDelFlowsDisrupted seVsDelFlowsDisrupted = null;
+
     @JsonProperty("se_vs_fault_event_details")
     private SeVsFaultEventDetails seVsFaultEventDetails = null;
 
@@ -3903,6 +3906,28 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Vs flows disrupted when a vs was deleted from se.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return seVsDelFlowsDisrupted
+     */
+    public SeVsDelFlowsDisrupted getSeVsDelFlowsDisrupted() {
+        return seVsDelFlowsDisrupted;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Vs flows disrupted when a vs was deleted from se.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param seVsDelFlowsDisrupted set the seVsDelFlowsDisrupted.
+     */
+    public void setSeVsDelFlowsDisrupted(SeVsDelFlowsDisrupted seVsDelFlowsDisrupted) {
+        this.seVsDelFlowsDisrupted = seVsDelFlowsDisrupted;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Placeholder for description of property se_vs_fault_event_details of obj type eventdetails field type str  type ref.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seVsFaultEventDetails
@@ -4969,6 +4994,7 @@ public class EventDetails  {
   Objects.equals(this.seVsPktBufHighEventDetails, objEventDetails.seVsPktBufHighEventDetails)&&
   Objects.equals(this.seDiscontinuousTimeChangeEventDetails, objEventDetails.seDiscontinuousTimeChangeEventDetails)&&
   Objects.equals(this.seHighIngressProcLatencyEventDetails, objEventDetails.seHighIngressProcLatencyEventDetails)&&
+  Objects.equals(this.seVsDelFlowsDisrupted, objEventDetails.seVsDelFlowsDisrupted)&&
   Objects.equals(this.seHmPoolDetails, objEventDetails.seHmPoolDetails)&&
   Objects.equals(this.seHmVsDetails, objEventDetails.seHmVsDetails)&&
   Objects.equals(this.sePersistenceDetails, objEventDetails.sePersistenceDetails)&&
@@ -5276,6 +5302,7 @@ public class EventDetails  {
                         sb.append("    seVnicDownEventDetails: ").append(toIndentedString(seVnicDownEventDetails)).append("\n");
                         sb.append("    seVnicTxQueueStallEventDetails: ").append(toIndentedString(seVnicTxQueueStallEventDetails)).append("\n");
                         sb.append("    seVnicUpEventDetails: ").append(toIndentedString(seVnicUpEventDetails)).append("\n");
+                        sb.append("    seVsDelFlowsDisrupted: ").append(toIndentedString(seVsDelFlowsDisrupted)).append("\n");
                         sb.append("    seVsFaultEventDetails: ").append(toIndentedString(seVsFaultEventDetails)).append("\n");
                         sb.append("    seVsPktBufHighEventDetails: ").append(toIndentedString(seVsPktBufHighEventDetails)).append("\n");
                         sb.append("    secMgrDataEvent: ").append(toIndentedString(secMgrDataEvent)).append("\n");
