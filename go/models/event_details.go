@@ -494,6 +494,9 @@ type EventDetails struct {
 	// Placeholder for description of property se_vnic_up_event_details of obj type EventDetails field type str  type object
 	SeVnicUpEventDetails *SeVnicUpEventDetails `json:"se_vnic_up_event_details,omitempty"`
 
+	// VS Flows disrupted when a VS was deleted from SE. Field introduced in 22.1.1.
+	SeVsDelFlowsDisrupted *SeVsDelFlowsDisrupted `json:"se_vs_del_flows_disrupted,omitempty"`
+
 	// Placeholder for description of property se_vs_fault_event_details of obj type EventDetails field type str  type object
 	SeVsFaultEventDetails *SeVsFaultEventDetails `json:"se_vs_fault_event_details,omitempty"`
 
