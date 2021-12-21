@@ -15,15 +15,8 @@ type LicenseStatus struct {
 	// Protobuf versioning for config pbs. Field introduced in 21.1.3.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
-	// Name. Field introduced in 21.1.3.
-	// Required: true
-	Name *string `json:"name"`
-
 	// Saas licensing status. Field introduced in 21.1.3.
 	SaasStatus *SaasLicensingStatus `json:"saas_status,omitempty"`
-
-	// Tenant. It is a reference to an object of type Tenant. Field introduced in 21.1.3.
-	TenantRef *string `json:"tenant_ref,omitempty"`
 
 	// url
 	// Read Only: true
