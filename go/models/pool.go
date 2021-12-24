@@ -240,7 +240,7 @@ type Pool struct {
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// Do not translate the client's destination port when sending the connection to the server.  The pool or servers specified service port will still be used for health monitoring. Allowed in Essentials(Allowed values- false) edition, Enterprise edition.
+	// Do not translate the client's destination port when sending the connection to the server. Monitor port needs to be specified for health monitors. Allowed in Essentials(Allowed values- false) edition, Enterprise edition.
 	UseServicePort *bool `json:"use_service_port,omitempty"`
 
 	// This applies only when use_service_port is set to true. If enabled, SSL mode of the connection to the server is decided by the SSL mode on the Virtualservice service port, on which the request was received. Field introduced in 21.1.1.
