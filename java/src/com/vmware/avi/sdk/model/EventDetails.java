@@ -624,6 +624,9 @@ public class EventDetails  {
     @JsonProperty("vip_dns_info")
     private DNSRegisterInfo vipDnsInfo = null;
 
+    @JsonProperty("vip_symmetry_details")
+    private VipSymmetryDetails vipSymmetryDetails = null;
+
     @JsonProperty("vm_details")
     private VinfraVmDetails vmDetails = null;
 
@@ -4714,6 +4717,28 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Details for vip symmetry.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return vipSymmetryDetails
+     */
+    public VipSymmetryDetails getVipSymmetryDetails() {
+        return vipSymmetryDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Details for vip symmetry.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param vipSymmetryDetails set the vipSymmetryDetails.
+     */
+    public void setVipSymmetryDetails(VipSymmetryDetails vipSymmetryDetails) {
+        this.vipSymmetryDetails = vipSymmetryDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Placeholder for description of property vm_details of obj type eventdetails field type str  type ref.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vmDetails
@@ -4949,6 +4974,7 @@ public class EventDetails  {
   Objects.equals(this.switchoverFailDetails, objEventDetails.switchoverFailDetails)&&
   Objects.equals(this.attachIpStatusDetails, objEventDetails.attachIpStatusDetails)&&
   Objects.equals(this.detachIpStatusDetails, objEventDetails.detachIpStatusDetails)&&
+  Objects.equals(this.vipSymmetryDetails, objEventDetails.vipSymmetryDetails)&&
   Objects.equals(this.vsFsmDetails, objEventDetails.vsFsmDetails)&&
   Objects.equals(this.vsPoolNwFltrDetails, objEventDetails.vsPoolNwFltrDetails)&&
   Objects.equals(this.vsScaleoutDetails, objEventDetails.vsScaleoutDetails)&&
@@ -5342,6 +5368,7 @@ public class EventDetails  {
                         sb.append("    vcenterObjDeleteDetails: ").append(toIndentedString(vcenterObjDeleteDetails)).append("\n");
                         sb.append("    vipAutoscale: ").append(toIndentedString(vipAutoscale)).append("\n");
                         sb.append("    vipDnsInfo: ").append(toIndentedString(vipDnsInfo)).append("\n");
+                        sb.append("    vipSymmetryDetails: ").append(toIndentedString(vipSymmetryDetails)).append("\n");
                         sb.append("    vmDetails: ").append(toIndentedString(vmDetails)).append("\n");
                         sb.append("    vsAwaitingseDetails: ").append(toIndentedString(vsAwaitingseDetails)).append("\n");
                         sb.append("    vsErrorDetails: ").append(toIndentedString(vsErrorDetails)).append("\n");
