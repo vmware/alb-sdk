@@ -614,6 +614,9 @@ type EventDetails struct {
 	// Placeholder for description of property vip_dns_info of obj type EventDetails field type str  type object
 	VipDNSInfo *DNSRegisterInfo `json:"vip_dns_info,omitempty"`
 
+	// Details for VIP Symmetry. Field introduced in 21.1.3.
+	VipSymmetryDetails *VipSymmetryDetails `json:"vip_symmetry_details,omitempty"`
+
 	// Placeholder for description of property vm_details of obj type EventDetails field type str  type object
 	VMDetails *VinfraVMDetails `json:"vm_details,omitempty"`
 
