@@ -110,7 +110,7 @@ public class AviRestUtils {
 			return new RestTemplate(new HttpComponentsClientHttpRequestFactory(client));
 
 		} catch (Exception e) {
-            LOGGER.log(Level.SEVERE,"Exception in creating rest template for AVI connection", e);
+			LOGGER.severe("Exception in creating rest template for AVI connection");
 		}
 		return null;
 	}
