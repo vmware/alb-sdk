@@ -240,7 +240,7 @@ public class Gslb extends AviRestResource  {
      * Frequency with which errored messages are resynced to follower sites.
      * Value of 0 disables resync behavior.
      * Allowed values are 60-3600.
-     * Special values are 0 - 'disable'.
+     * Special values are 0 - disable.
      * Field introduced in 18.2.3.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
@@ -255,7 +255,7 @@ public class Gslb extends AviRestResource  {
      * Frequency with which errored messages are resynced to follower sites.
      * Value of 0 disables resync behavior.
      * Allowed values are 60-3600.
-     * Special values are 0 - 'disable'.
+     * Special values are 0 - disable.
      * Field introduced in 18.2.3.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.

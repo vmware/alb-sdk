@@ -194,7 +194,7 @@ public class HttpCookiePersistenceProfile  {
      * The maximum lifetime of any session cookie.
      * No value or 'zero' indicates no timeout.
      * Allowed values are 1-14400.
-     * Special values are 0- 'no timeout'.
+     * Special values are 0- no timeout.
      * Unit is min.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return timeout
@@ -208,7 +208,7 @@ public class HttpCookiePersistenceProfile  {
      * The maximum lifetime of any session cookie.
      * No value or 'zero' indicates no timeout.
      * Allowed values are 1-14400.
-     * Special values are 0- 'no timeout'.
+     * Special values are 0- no timeout.
      * Unit is min.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param timeout set the timeout.

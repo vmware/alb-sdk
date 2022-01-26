@@ -533,7 +533,7 @@ public class HealthMonitor extends AviRestResource  {
      * Use this port instead of the port defined for the server in the pool.
      * If the monitor succeeds to this port, the load balanced traffic will still be sent to the port of the server defined within the pool.
      * Allowed values are 1-65535.
-     * Special values are 0 - 'use server port'.
+     * Special values are 0 - use server port.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return monitorPort
      */
@@ -546,7 +546,7 @@ public class HealthMonitor extends AviRestResource  {
      * Use this port instead of the port defined for the server in the pool.
      * If the monitor succeeds to this port, the load balanced traffic will still be sent to the port of the server defined within the pool.
      * Allowed values are 1-65535.
-     * Special values are 0 - 'use server port'.
+     * Special values are 0 - use server port.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param monitorPort set the monitorPort.
      */

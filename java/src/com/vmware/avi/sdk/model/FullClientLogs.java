@@ -61,7 +61,7 @@ public class FullClientLogs  {
      * This is the getter method this will return the attribute value.
      * How long should the system capture all logs, measured in minutes.
      * Set to 0 for infinite.
-     * Special values are 0 - 'infinite'.
+     * Special values are 0 - infinite.
      * Unit is min.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @return duration
@@ -74,7 +74,7 @@ public class FullClientLogs  {
      * This is the setter method to the attribute.
      * How long should the system capture all logs, measured in minutes.
      * Set to 0 for infinite.
-     * Special values are 0 - 'infinite'.
+     * Special values are 0 - infinite.
      * Unit is min.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @param duration set the duration.

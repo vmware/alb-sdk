@@ -30,8 +30,8 @@ public class Image extends AviRestResource  {
     @JsonProperty("controller_patch_name")
     private String controllerPatchName = null;
 
-    @JsonProperty("controller_patch_uuid")
-    private String controllerPatchUuid = null;
+    @JsonProperty("controller_patch_ref")
+    private String controllerPatchRef = null;
 
     @JsonProperty("duration")
     private Integer duration = null;
@@ -60,8 +60,8 @@ public class Image extends AviRestResource  {
     @JsonProperty("se_patch_name")
     private String sePatchName = null;
 
-    @JsonProperty("se_patch_uuid")
-    private String sePatchUuid = null;
+    @JsonProperty("se_patch_ref")
+    private String sePatchRef = null;
 
     @JsonProperty("start_time")
     private String startTime = null;
@@ -175,23 +175,25 @@ public class Image extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It references the controller-patch associated with the uber image.
+     * It is a reference to an object of type image.
      * Field introduced in 18.2.8, 20.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return controllerPatchUuid
+     * @return controllerPatchRef
      */
-    public String getControllerPatchUuid() {
-        return controllerPatchUuid;
+    public String getControllerPatchRef() {
+        return controllerPatchRef;
     }
 
     /**
      * This is the setter method to the attribute.
      * It references the controller-patch associated with the uber image.
+     * It is a reference to an object of type image.
      * Field introduced in 18.2.8, 20.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param controllerPatchUuid set the controllerPatchUuid.
+     * @param controllerPatchRef set the controllerPatchRef.
      */
-    public void setControllerPatchUuid(String  controllerPatchUuid) {
-        this.controllerPatchUuid = controllerPatchUuid;
+    public void setControllerPatchRef(String  controllerPatchRef) {
+        this.controllerPatchRef = controllerPatchRef;
     }
 
     /**
@@ -415,23 +417,25 @@ public class Image extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It references the service engine patch associated with the uber image.
+     * It is a reference to an object of type image.
      * Field introduced in 18.2.8, 20.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return sePatchUuid
+     * @return sePatchRef
      */
-    public String getSePatchUuid() {
-        return sePatchUuid;
+    public String getSePatchRef() {
+        return sePatchRef;
     }
 
     /**
      * This is the setter method to the attribute.
      * It references the service engine patch associated with the uber image.
+     * It is a reference to an object of type image.
      * Field introduced in 18.2.8, 20.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param sePatchUuid set the sePatchUuid.
+     * @param sePatchRef set the sePatchRef.
      */
-    public void setSePatchUuid(String  sePatchUuid) {
-        this.sePatchUuid = sePatchUuid;
+    public void setSePatchRef(String  sePatchRef) {
+        this.sePatchRef = sePatchRef;
     }
 
     /**
@@ -655,8 +659,8 @@ public class Image extends AviRestResource  {
   Objects.equals(this.type, objImage.type)&&
   Objects.equals(this.status, objImage.status)&&
   Objects.equals(this.uberBundle, objImage.uberBundle)&&
-  Objects.equals(this.controllerPatchUuid, objImage.controllerPatchUuid)&&
-  Objects.equals(this.sePatchUuid, objImage.sePatchUuid)&&
+  Objects.equals(this.controllerPatchRef, objImage.controllerPatchRef)&&
+  Objects.equals(this.sePatchRef, objImage.sePatchRef)&&
   Objects.equals(this.cloudInfoValues, objImage.cloudInfoValues)&&
   Objects.equals(this.controllerPatchName, objImage.controllerPatchName)&&
   Objects.equals(this.sePatchName, objImage.sePatchName)&&
@@ -678,7 +682,7 @@ public class Image extends AviRestResource  {
                   sb.append("    cloudInfoValues: ").append(toIndentedString(cloudInfoValues)).append("\n");
                         sb.append("    controllerInfo: ").append(toIndentedString(controllerInfo)).append("\n");
                         sb.append("    controllerPatchName: ").append(toIndentedString(controllerPatchName)).append("\n");
-                        sb.append("    controllerPatchUuid: ").append(toIndentedString(controllerPatchUuid)).append("\n");
+                        sb.append("    controllerPatchRef: ").append(toIndentedString(controllerPatchRef)).append("\n");
                         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
                         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
                         sb.append("    events: ").append(toIndentedString(events)).append("\n");
@@ -688,7 +692,7 @@ public class Image extends AviRestResource  {
                         sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
                         sb.append("    seInfo: ").append(toIndentedString(seInfo)).append("\n");
                         sb.append("    sePatchName: ").append(toIndentedString(sePatchName)).append("\n");
-                        sb.append("    sePatchUuid: ").append(toIndentedString(sePatchUuid)).append("\n");
+                        sb.append("    sePatchRef: ").append(toIndentedString(sePatchRef)).append("\n");
                         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
                         sb.append("    status: ").append(toIndentedString(status)).append("\n");
                         sb.append("    tasksCompleted: ").append(toIndentedString(tasksCompleted)).append("\n");

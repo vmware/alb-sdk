@@ -324,8 +324,8 @@ public class VirtualService extends AviRestResource  {
     @JsonProperty("vh_matches")
     private List<VHMatch> vhMatches = null;
 
-    @JsonProperty("vh_parent_vs_uuid")
-    private String vhParentVsUuid = null;
+    @JsonProperty("vh_parent_vs_ref")
+    private String vhParentVsRef = null;
 
     @JsonProperty("vh_type")
     private String vhType;
@@ -1737,7 +1737,7 @@ public class VirtualService extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maximum connections per second per client ip.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return maxCpsPerClient
      */
@@ -1749,7 +1749,7 @@ public class VirtualService extends AviRestResource  {
      * This is the setter method to the attribute.
      * Maximum connections per second per client ip.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param maxCpsPerClient set the maxCpsPerClient.
      */
@@ -2955,21 +2955,23 @@ public class VirtualService extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Specifies the virtual service acting as virtual hosting (sni) parent.
+     * It is a reference to an object of type virtualservice.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return vhParentVsUuid
+     * @return vhParentVsRef
      */
-    public String getVhParentVsUuid() {
-        return vhParentVsUuid;
+    public String getVhParentVsRef() {
+        return vhParentVsRef;
     }
 
     /**
      * This is the setter method to the attribute.
      * Specifies the virtual service acting as virtual hosting (sni) parent.
+     * It is a reference to an object of type virtualservice.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param vhParentVsUuid set the vhParentVsUuid.
+     * @param vhParentVsRef set the vhParentVsRef.
      */
-    public void setVhParentVsUuid(String  vhParentVsUuid) {
-        this.vhParentVsUuid = vhParentVsUuid;
+    public void setVhParentVsRef(String  vhParentVsRef) {
+        this.vhParentVsRef = vhParentVsRef;
     }
 
     /**
@@ -3217,7 +3219,7 @@ public class VirtualService extends AviRestResource  {
   Objects.equals(this.maxCpsPerClient, objVirtualService.maxCpsPerClient)&&
   Objects.equals(this.limitDoser, objVirtualService.limitDoser)&&
   Objects.equals(this.type, objVirtualService.type)&&
-  Objects.equals(this.vhParentVsUuid, objVirtualService.vhParentVsUuid)&&
+  Objects.equals(this.vhParentVsRef, objVirtualService.vhParentVsRef)&&
   Objects.equals(this.vhDomainName, objVirtualService.vhDomainName)&&
   Objects.equals(this.availabilityZone, objVirtualService.availabilityZone)&&
   Objects.equals(this.autoAllocateIp, objVirtualService.autoAllocateIp)&&
@@ -3394,7 +3396,7 @@ public class VirtualService extends AviRestResource  {
                         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                         sb.append("    vhDomainName: ").append(toIndentedString(vhDomainName)).append("\n");
                         sb.append("    vhMatches: ").append(toIndentedString(vhMatches)).append("\n");
-                        sb.append("    vhParentVsUuid: ").append(toIndentedString(vhParentVsUuid)).append("\n");
+                        sb.append("    vhParentVsRef: ").append(toIndentedString(vhParentVsRef)).append("\n");
                         sb.append("    vhType: ").append(toIndentedString(vhType)).append("\n");
                         sb.append("    vip: ").append(toIndentedString(vip)).append("\n");
                         sb.append("    vrfContextRef: ").append(toIndentedString(vrfContextRef)).append("\n");

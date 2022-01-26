@@ -86,7 +86,7 @@ public class ClientLogFilter  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Special values are 0 - 'infinite'.
+     * Special values are 0 - infinite.
      * Unit is min.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @return duration
@@ -97,7 +97,7 @@ public class ClientLogFilter  {
 
     /**
      * This is the setter method to the attribute.
-     * Special values are 0 - 'infinite'.
+     * Special values are 0 - infinite.
      * Unit is min.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @param duration set the duration.

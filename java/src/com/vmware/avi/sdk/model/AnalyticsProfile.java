@@ -1543,7 +1543,7 @@ public class AnalyticsProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Skips health score computation of pool servers when number of servers in a pool is more than this setting.
      * Allowed values are 0-5000.
-     * Special values are 0- 'server health score is deactivated'.
+     * Special values are 0- server health score is deactivated.
      * Field introduced in 17.2.13, 18.1.4.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Special default for basic edition is 0, essentials edition is 0, enterprise is 20.
@@ -1557,7 +1557,7 @@ public class AnalyticsProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Skips health score computation of pool servers when number of servers in a pool is more than this setting.
      * Allowed values are 0-5000.
-     * Special values are 0- 'server health score is deactivated'.
+     * Special values are 0- server health score is deactivated.
      * Field introduced in 17.2.13, 18.1.4.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Special default for basic edition is 0, essentials edition is 0, enterprise is 20.

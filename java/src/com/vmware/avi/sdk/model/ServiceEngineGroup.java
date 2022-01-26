@@ -1065,7 +1065,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * A percent value of total se memory reserved for applicationcaching.
      * This is an se bootup property and requires se restart.requires se reboot.
      * Allowed values are 0 - 100.
-     * Special values are 0- 'disable'.
+     * Special values are 0- disable.
      * Field introduced in 18.2.3.
      * Unit is percent.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
@@ -1081,7 +1081,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * A percent value of total se memory reserved for applicationcaching.
      * This is an se bootup property and requires se restart.requires se reboot.
      * Allowed values are 0 - 100.
-     * Special values are 0- 'disable'.
+     * Special values are 0- disable.
      * Field introduced in 18.2.3.
      * Unit is percent.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
@@ -1096,7 +1096,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The max memory that can be allocated for the app cache.
      * This value will act as an upper bound on the cache size specified in app_cache_percent.
-     * Special values are 0- 'disable'.
+     * Special values are 0- disable.
      * Field introduced in 20.1.1.
      * Unit is gb.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
@@ -1110,7 +1110,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * The max memory that can be allocated for the app cache.
      * This value will act as an upper bound on the cache size specified in app_cache_percent.
-     * Special values are 0- 'disable'.
+     * Special values are 0- disable.
      * Field introduced in 20.1.1.
      * Unit is gb.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
@@ -3944,7 +3944,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maximum number of external health monitors that can run concurrently in a service engine.
      * This helps control the cpu and memory use by external health monitors.
-     * Special values are 0- 'value will be internally calculated based on cpu and memory'.
+     * Special values are 0- value will be internally calculated based on cpu and memory.
      * Field introduced in 18.2.7.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maxConcurrentExternalHm
@@ -3957,7 +3957,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Maximum number of external health monitors that can run concurrently in a service engine.
      * This helps control the cpu and memory use by external health monitors.
-     * Special values are 0- 'value will be internally calculated based on cpu and memory'.
+     * Special values are 0- value will be internally calculated based on cpu and memory.
      * Field introduced in 18.2.7.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param maxConcurrentExternalHm set the maxConcurrentExternalHm.
@@ -4812,7 +4812,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Number of queues to each dispatcher.
      * Allowed values are 2-8.
-     * Special values are 0 - 'auto-compute', 1 - 'single-queue'.
+     * Special values are 0 - auto-compute, 1 - single-queue.
      * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return numDispatcherQueues
@@ -4825,7 +4825,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Number of queues to each dispatcher.
      * Allowed values are 2-8.
-     * Special values are 0 - 'auto-compute', 1 - 'single-queue'.
+     * Special values are 0 - auto-compute, 1 - single-queue.
      * Field introduced in 21.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param numDispatcherQueues set the numDispatcherQueues.
@@ -5501,7 +5501,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * It is recommended to reserve an even number of cpus for hyper-threaded processors.
      * Requires se reboot.
      * Allowed values are 1-8.
-     * Special values are 0- 'auto'.
+     * Special values are 0- auto.
      * Field introduced in 20.1.4.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return seDpIsolationNumNonDpCpus
@@ -5517,7 +5517,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * It is recommended to reserve an even number of cpus for hyper-threaded processors.
      * Requires se reboot.
      * Allowed values are 1-8.
-     * Special values are 0- 'auto'.
+     * Special values are 0- auto.
      * Field introduced in 20.1.4.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param seDpIsolationNumNonDpCpus set the seDpIsolationNumNonDpCpus.
@@ -6304,7 +6304,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * May be used in conjunction with the configuration pcap_reinit_threshold.
      * (valid range   15 mins - 12 hours, 0 - disables).
      * Allowed values are 900-43200.
-     * Special values are 0- 'disable'.
+     * Special values are 0- disable.
      * Field introduced in 17.2.13, 18.1.3, 18.2.1.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -6320,7 +6320,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * May be used in conjunction with the configuration pcap_reinit_threshold.
      * (valid range   15 mins - 12 hours, 0 - disables).
      * Allowed values are 900-43200.
-     * Special values are 0- 'disable'.
+     * Special values are 0- disable.
      * Field introduced in 17.2.13, 18.1.3, 18.2.1.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -6797,7 +6797,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Configure the frequency in milliseconds of software transmit spillover queue flush when enabled.
      * This is necessary to flush any packets in the spillover queue in the absence of a packet transmit in the normal course of operation.
      * Allowed values are 50-500.
-     * Special values are 0- 'disable'.
+     * Special values are 0- disable.
      * Field introduced in 20.1.1.
      * Unit is milliseconds.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -6812,7 +6812,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Configure the frequency in milliseconds of software transmit spillover queue flush when enabled.
      * This is necessary to flush any packets in the spillover queue in the absence of a packet transmit in the normal course of operation.
      * Allowed values are 50-500.
-     * Special values are 0- 'disable'.
+     * Special values are 0- disable.
      * Field introduced in 20.1.1.
      * Unit is milliseconds.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
