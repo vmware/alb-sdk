@@ -271,6 +271,7 @@ font-style: italic;
     },
     "allow_mode_delegation" : true,
     "uuid" : "aeiou",
+    "bypass_static_extensions" : true,
     "_last_modified" : "aeiou",
     "allowlist" : {
       "rules" : [ {
@@ -532,6 +533,7 @@ font-style: italic;
   },
   "allow_mode_delegation" : true,
   "uuid" : "aeiou",
+  "bypass_static_extensions" : true,
   "_last_modified" : "aeiou",
   "allowlist" : {
     "rules" : [ {
@@ -864,6 +866,7 @@ font-style: italic;
   },
   "allow_mode_delegation" : true,
   "uuid" : "aeiou",
+  "bypass_static_extensions" : true,
   "_last_modified" : "aeiou",
   "allowlist" : {
     "rules" : [ {
@@ -1136,6 +1139,7 @@ font-style: italic;
   },
   "allow_mode_delegation" : true,
   "uuid" : "aeiou",
+  "bypass_static_extensions" : true,
   "_last_modified" : "aeiou",
   "allowlist" : {
     "rules" : [ {
@@ -1408,6 +1412,7 @@ font-style: italic;
   },
   "allow_mode_delegation" : true,
   "uuid" : "aeiou",
+  "bypass_static_extensions" : true,
   "_last_modified" : "aeiou",
   "allowlist" : {
     "rules" : [ {
@@ -1906,6 +1911,7 @@ font-style: italic;
 <div class="param">allow_mode_delegation (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Allow Rules to overwrite the policy mode. This must be set if the policy mode is set to enforcement. Field introduced in 18.1.5, 18.2.1. </div>
 <div class="param">allowlist (optional)</div><div class="param-desc"><span class="param-type"><a href="#WafPolicyAllowlist">WafPolicyAllowlist</a></span> A set of rules which describe conditions under which the request will bypass the WAF. This will be processed in the request header phase before any other WAF related code. Field introduced in 20.1.3. </div>
 <div class="param">application_signatures (optional)</div><div class="param-desc"><span class="param-type"><a href="#WafApplicationSignatures">WafApplicationSignatures</a></span> Application Specific Signatures. Field introduced in 20.1.1. </div>
+<div class="param">bypass_static_extensions (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable the functionality to bypass WAF for static file extensions. Field introduced in 22.1.1. </div>
 <div class="param">confidence_override (optional)</div><div class="param-desc"><span class="param-type"><a href="#AppLearningConfidenceOverride">AppLearningConfidenceOverride</a></span> Configure thresholds for confidence labels. Field introduced in 20.1.1. </div>
 <div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
 <div class="param">created_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Creator name. Field introduced in 17.2.4. </div>
