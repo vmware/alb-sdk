@@ -666,7 +666,7 @@
                     }
                 },
                 "monitor_port": {
-                    "description": "Use this port instead of the port defined for the server in the Pool. If the monitor succeeds to this port, the load balanced traffic will still be sent to the port of the server defined within the Pool. Allowed values are 1-65535. Special values are 0 - 'Use server port'.",
+                    "description": "Use this port instead of the port defined for the server in the Pool. If the monitor succeeds to this port, the load balanced traffic will still be sent to the port of the server defined within the Pool. Allowed values are 1-65535. Special values are 0 - Use server port.",
                     "type": "integer",
                     "format": "int32"
                 },

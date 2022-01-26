@@ -1478,11 +1478,11 @@ definitions:
                 default: 600000
                 format: int32
             upstream_connpool_conn_max_reuse:
-                description: "Maximum number of times a connection can be reused. Special values are 0- 'unlimited'. Field introduced in 18.2.1. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition."
+                description: "Maximum number of times a connection can be reused. Special values are 0- unlimited. Field introduced in 18.2.1. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition."
                 type: integer
                 format: int32
             upstream_connpool_server_max_cache:
-                description: "Maximum number of connections a server can cache. Special values are 0- 'unlimited'. Field introduced in 18.2.1."
+                description: "Maximum number of connections a server can cache. Special values are 0- unlimited. Field introduced in 18.2.1."
                 type: integer
                 format: int32
     DiscoveredNetwork:
@@ -1595,7 +1595,7 @@ definitions:
         type: object
         properties:
             max_http2_control_frames_per_connection:
-                description: "The max number of control frames that server can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- 'Unlimited control frames on a server side HTTP/2 connection'. Field introduced in 21.1.1."
+                description: "The max number of control frames that server can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- Unlimited control frames on a server side HTTP/2 connection. Field introduced in 21.1.1."
                 type: integer
                 format: int32
             max_http2_header_field_size:
@@ -1861,7 +1861,7 @@ definitions:
                 description: "Inline estimation of capacity of servers. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
                 type: boolean
             capacity_estimation_ttfb_thresh:
-                description: "The maximum time-to-first-byte of a server. Allowed values are 1-5000. Special values are 0 - 'Automatic'. Unit is MILLISECONDS. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition."
+                description: "The maximum time-to-first-byte of a server. Allowed values are 1-5000. Special values are 0 - Automatic. Unit is MILLISECONDS. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition."
                 type: integer
                 format: int32
             cloud_config_cksum:
@@ -1877,7 +1877,7 @@ definitions:
                 description: "Connnection pool properties. Field introduced in 18.2.1."
                 $ref: '#/definitions/ConnPoolProperties'
             connection_ramp_duration:
-                description: "Duration for which new connections will be gradually ramped up to a server recently brought online.  Useful for LB algorithms that are least connection based. Allowed values are 1-300. Special values are 0 - 'Immediate'. Unit is MIN. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition. Special default for Basic edition is 0, Essentials edition is 0, Enterprise is 10."
+                description: "Duration for which new connections will be gradually ramped up to a server recently brought online.  Useful for LB algorithms that are least connection based. Allowed values are 1-300. Special values are 0 - Immediate. Unit is MIN. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition. Special default for Basic edition is 0, Essentials edition is 0, Enterprise is 10."
                 type: integer
                 default: 10
                 format: int32
@@ -1925,7 +1925,7 @@ definitions:
                 default: 10
                 format: int32
             graceful_disable_timeout:
-                description: "Used to gracefully disable a server. Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled. Allowed values are 1-7200. Special values are 0 - 'Immediate', -1 - 'Infinite'. Unit is MIN."
+                description: "Used to gracefully disable a server. Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled. Allowed values are 1-7200. Special values are 0 - Immediate, -1 - Infinite. Unit is MIN."
                 type: integer
                 default: 1
                 format: int32
@@ -2176,11 +2176,11 @@ definitions:
                 description: "Action to perform upon rate limiting."
                 $ref: '#/definitions/RateLimiterAction'
             burst_sz:
-                description: "Maximum number of connections or requests or packets to be let through instantaneously. Allowed values are 10-2500. Special values are 0- 'automatic'. Field deprecated in 18.2.9."
+                description: "Maximum number of connections or requests or packets to be let through instantaneously. Allowed values are 10-2500. Special values are 0- automatic. Field deprecated in 18.2.9."
                 type: integer
                 format: int32
             count:
-                description: "Maximum number of connections or requests or packets. Allowed values are 1-1000000000. Special values are 0- 'unlimited'. Field deprecated in 18.2.9."
+                description: "Maximum number of connections or requests or packets. Allowed values are 1-1000000000. Special values are 0- unlimited. Field deprecated in 18.2.9."
                 type: integer
                 format: int32
             explicit_tracking:
@@ -2270,7 +2270,7 @@ definitions:
                 description: "(internal-use) This field is used internally by Avi, not editable by the user. It is a reference to an object of type VIMgrNWRuntime."
                 type: string
             port:
-                description: "Optionally specify the servers port number.  This will override the pool's default server port attribute. Allowed values are 1-65535. Special values are 0- 'use backend port in pool'."
+                description: "Optionally specify the servers port number.  This will override the pool's default server port attribute. Allowed values are 1-65535. Special values are 0- use backend port in pool."
                 type: integer
                 format: int32
             prst_hdr_val:
@@ -2357,7 +2357,7 @@ definitions:
             -   type
         properties:
             end_index:
-                description: "Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - 'end of string'."
+                description: "Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - end of string."
                 type: integer
                 format: int32
             start_index:
