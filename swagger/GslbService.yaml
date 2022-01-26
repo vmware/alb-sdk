@@ -481,7 +481,7 @@ definitions:
                 description: "Name of the GSLB service pool."
                 type: string
             priority:
-                description: "Priority of this pool of Members. The higher the number, the higher is the priority of the pool. The DNS Service chooses the pool with the highest priority that is operationally up. Allowed values are 0-100. Special values are 0 - 'Do not choose members from this pool.A priority of 0 is equivalent to disabling the pool.'."
+                description: "Priority of this pool of Members. The higher the number, the higher is the priority of the pool. The DNS Service chooses the pool with the highest priority that is operationally up. Allowed values are 0-100. Special values are 0 - Do not choose members from this pool.A priority of 0 is equivalent to disabling the pool.."
                 type: integer
                 default: 10
                 format: int32
@@ -601,14 +601,14 @@ definitions:
                 items:
                     $ref: '#/definitions/RoleFilterMatchLabel'
             min_members:
-                description: "The minimum number of members to distribute traffic to. Allowed values are 1-65535. Special values are 0 - 'Disable'. Field introduced in 17.2.4."
+                description: "The minimum number of members to distribute traffic to. Allowed values are 1-65535. Special values are 0 - Disable. Field introduced in 17.2.4."
                 type: integer
                 format: int32
             name:
                 description: "Name for the GSLB service."
                 type: string
             num_dns_ip:
-                description: "Number of IP addresses of this GSLB service to be returned by the DNS Service. Enter 0 to return all IP addresses. Allowed values are 1-20. Special values are 0- 'Return all IP addresses'."
+                description: "Number of IP addresses of this GSLB service to be returned by the DNS Service. Enter 0 to return all IP addresses. Allowed values are 1-20. Special values are 0- Return all IP addresses."
                 type: integer
                 format: int32
             pool_algorithm:

@@ -920,7 +920,7 @@
                     }
                 },
                 "min_servers": {
-                    "description": "The minimum number of servers to distribute traffic to. Allowed values are 1-65535. Special values are 0 - 'Disable'. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.",
+                    "description": "The minimum number of servers to distribute traffic to. Allowed values are 1-65535. Special values are 0 - Disable. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -992,7 +992,7 @@
                     "type": "string"
                 },
                 "ratio": {
-                    "description": "Ratio of selecting eligible pools in the pool group. . Allowed values are 1-1000. Special values are 0 - 'Do not select this pool for new connections'. Allowed in Basic(Allowed values- 1) edition, Essentials(Allowed values- 1) edition, Enterprise edition.",
+                    "description": "Ratio of selecting eligible pools in the pool group. . Allowed values are 1-1000. Special values are 0 - Do not select this pool for new connections. Allowed in Basic(Allowed values- 1) edition, Essentials(Allowed values- 1) edition, Enterprise edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "int32"

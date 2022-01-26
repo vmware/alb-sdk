@@ -920,7 +920,7 @@
                     "format": "int32"
                 },
                 "num_dns_ip": {
-                    "description": "Specifies the number of IP addresses returned by the DNS Service. Enter 0 to return all IP addresses. Allowed values are 1-20. Special values are 0- 'Return all IP addresses'.",
+                    "description": "Specifies the number of IP addresses returned by the DNS Service. Enter 0 to return all IP addresses. Allowed values are 1-20. Special values are 0- Return all IP addresses.",
                     "type": "integer",
                     "default": 1,
                     "format": "int32"
@@ -1027,13 +1027,13 @@
                     "format": "int32"
                 },
                 "max_http2_control_frames_per_connection": {
-                    "description": "The max number of control frames that client can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- 'Unlimited control frames on a client side HTTP/2 connection'. Field introduced in 18.2.10, 20.1.1.",
+                    "description": "The max number of control frames that client can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- Unlimited control frames on a client side HTTP/2 connection. Field introduced in 18.2.10, 20.1.1.",
                     "type": "integer",
                     "default": 1000,
                     "format": "int32"
                 },
                 "max_http2_empty_data_frames_per_connection": {
-                    "description": "The max number of empty data frames that client can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- 'Unlimited empty data frames over a client side HTTP/2 connection'. Field introduced in 18.2.10, 20.1.1.",
+                    "description": "The max number of empty data frames that client can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- Unlimited empty data frames over a client side HTTP/2 connection. Field introduced in 18.2.10, 20.1.1.",
                     "type": "integer",
                     "default": 1000,
                     "format": "int32"
@@ -1045,13 +1045,13 @@
                     "format": "int32"
                 },
                 "max_http2_queued_frames_to_client_per_connection": {
-                    "description": "The max number of frames that can be queued waiting to be sent over a client side HTTP/2 connection at any given time. '0' means unlimited. Allowed values are 0-10000. Special values are 0- 'Unlimited frames can be queued on a client side HTTP/2 connection'. Field introduced in 18.2.10, 20.1.1.",
+                    "description": "The max number of frames that can be queued waiting to be sent over a client side HTTP/2 connection at any given time. '0' means unlimited. Allowed values are 0-10000. Special values are 0- Unlimited frames can be queued on a client side HTTP/2 connection. Field introduced in 18.2.10, 20.1.1.",
                     "type": "integer",
                     "default": 1000,
                     "format": "int32"
                 },
                 "max_http2_requests_per_connection": {
-                    "description": "The maximum number of requests over a client side HTTP/2 connection. Allowed values are 0-10000. Special values are 0- 'Unlimited requests on a client side HTTP/2 connection'. Field introduced in 18.2.10, 20.1.1.",
+                    "description": "The maximum number of requests over a client side HTTP/2 connection. Allowed values are 0-10000. Special values are 0- Unlimited requests on a client side HTTP/2 connection. Field introduced in 18.2.10, 20.1.1.",
                     "type": "integer",
                     "default": 1000,
                     "format": "int32"
@@ -1171,7 +1171,7 @@
                     "type": "boolean"
                 },
                 "http_upstream_buffer_size": {
-                    "description": "Size of HTTP buffer in kB. Allowed values are 1-256. Special values are 0- 'Auto compute the size of buffer'. Field introduced in 20.1.1. Unit is KB. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.",
+                    "description": "Size of HTTP buffer in kB. Allowed values are 1-256. Special values are 0- Auto compute the size of buffer. Field introduced in 20.1.1. Unit is KB. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -1190,17 +1190,17 @@
                     "format": "int32"
                 },
                 "max_bad_rps_cip": {
-                    "description": "Maximum bad requests per second per client IP. Allowed values are 10-1000. Special values are 0- 'unlimited'.",
+                    "description": "Maximum bad requests per second per client IP. Allowed values are 10-1000. Special values are 0- unlimited.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "max_bad_rps_cip_uri": {
-                    "description": "Maximum bad requests per second per client IP and URI. Allowed values are 10-1000. Special values are 0- 'unlimited'.",
+                    "description": "Maximum bad requests per second per client IP and URI. Allowed values are 10-1000. Special values are 0- unlimited.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "max_bad_rps_uri": {
-                    "description": "Maximum bad requests per second per URI. Allowed values are 10-1000. Special values are 0- 'unlimited'.",
+                    "description": "Maximum bad requests per second per URI. Allowed values are 10-1000. Special values are 0- unlimited.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -1210,22 +1210,22 @@
                     "format": "int32"
                 },
                 "max_http2_control_frames_per_connection": {
-                    "description": "The max number of control frames that client can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- 'Unlimited control frames on a client side HTTP/2 connection'. Field deprecated in 18.2.10, 20.1.1. Field introduced in 18.2.6. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "description": "The max number of control frames that client can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- Unlimited control frames on a client side HTTP/2 connection. Field deprecated in 18.2.10, 20.1.1. Field introduced in 18.2.6. Allowed in Basic edition, Essentials edition, Enterprise edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "max_http2_empty_data_frames_per_connection": {
-                    "description": "The max number of empty data frames that client can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- 'Unlimited empty data frames over a client side HTTP/2 connection'. Field deprecated in 18.2.10, 20.1.1. Field introduced in 18.2.6. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "description": "The max number of empty data frames that client can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- Unlimited empty data frames over a client side HTTP/2 connection. Field deprecated in 18.2.10, 20.1.1. Field introduced in 18.2.6. Allowed in Basic edition, Essentials edition, Enterprise edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "max_http2_queued_frames_to_client_per_connection": {
-                    "description": "The max number of frames that can be queued waiting to be sent over a client side HTTP/2 connection at any given time. '0' means unlimited. Allowed values are 0-10000. Special values are 0- 'Unlimited frames can be queued on a client side HTTP/2 connection'. Field deprecated in 18.2.10, 20.1.1. Field introduced in 18.2.6. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "description": "The max number of frames that can be queued waiting to be sent over a client side HTTP/2 connection at any given time. '0' means unlimited. Allowed values are 0-10000. Special values are 0- Unlimited frames can be queued on a client side HTTP/2 connection. Field deprecated in 18.2.10, 20.1.1. Field introduced in 18.2.6. Allowed in Basic edition, Essentials edition, Enterprise edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "max_keepalive_requests": {
-                    "description": "The max number of HTTP requests that can be sent over a Keep-Alive connection. '0' means unlimited. Allowed values are 0-1000000. Special values are 0- 'Unlimited requests on a connection'. Field introduced in 18.2.5. Allowed in Basic(Allowed values- 100) edition, Essentials(Allowed values- 100) edition, Enterprise edition.",
+                    "description": "The max number of HTTP requests that can be sent over a Keep-Alive connection. '0' means unlimited. Allowed values are 0-1000000. Special values are 0- Unlimited requests on a connection. Field introduced in 18.2.5. Allowed in Basic(Allowed values- 100) edition, Essentials(Allowed values- 100) edition, Enterprise edition.",
                     "type": "integer",
                     "default": 100,
                     "format": "int32"
@@ -1237,27 +1237,27 @@
                     "format": "int32"
                 },
                 "max_rps_cip": {
-                    "description": "Maximum requests per second per client IP. Allowed values are 10-1000. Special values are 0- 'unlimited'.",
+                    "description": "Maximum requests per second per client IP. Allowed values are 10-1000. Special values are 0- unlimited.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "max_rps_cip_uri": {
-                    "description": "Maximum requests per second per client IP and URI. Allowed values are 10-1000. Special values are 0- 'unlimited'.",
+                    "description": "Maximum requests per second per client IP and URI. Allowed values are 10-1000. Special values are 0- unlimited.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "max_rps_unknown_cip": {
-                    "description": "Maximum unknown client IPs per second. Allowed values are 10-1000. Special values are 0- 'unlimited'.",
+                    "description": "Maximum unknown client IPs per second. Allowed values are 10-1000. Special values are 0- unlimited.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "max_rps_unknown_uri": {
-                    "description": "Maximum unknown URIs per second. Allowed values are 10-1000. Special values are 0- 'unlimited'.",
+                    "description": "Maximum unknown URIs per second. Allowed values are 10-1000. Special values are 0- unlimited.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "max_rps_uri": {
-                    "description": "Maximum requests per second per URI. Allowed values are 10-1000. Special values are 0- 'unlimited'.",
+                    "description": "Maximum requests per second per URI. Allowed values are 10-1000. Special values are 0- unlimited.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -1716,12 +1716,12 @@
                     "$ref": "#/definitions/RateLimiterAction"
                 },
                 "burst_sz": {
-                    "description": "Maximum number of connections or requests or packets to be let through instantaneously. Allowed values are 10-2500. Special values are 0- 'automatic'. Field deprecated in 18.2.9.",
+                    "description": "Maximum number of connections or requests or packets to be let through instantaneously. Allowed values are 10-2500. Special values are 0- automatic. Field deprecated in 18.2.9.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "count": {
-                    "description": "Maximum number of connections or requests or packets. Allowed values are 1-1000000000. Special values are 0- 'unlimited'. Field deprecated in 18.2.9.",
+                    "description": "Maximum number of connections or requests or packets. Allowed values are 1-1000000000. Special values are 0- unlimited. Field deprecated in 18.2.9.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -1883,7 +1883,7 @@
             ],
             "properties": {
                 "end_index": {
-                    "description": "Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - 'end of string'.",
+                    "description": "Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - end of string.",
                     "type": "integer",
                     "format": "int32"
                 },
