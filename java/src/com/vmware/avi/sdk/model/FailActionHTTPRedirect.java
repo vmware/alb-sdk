@@ -28,7 +28,7 @@ public class FailActionHTTPRedirect  {
     private String path = null;
 
     @JsonProperty("protocol")
-    private String protocol = "HTTPS";
+    private String protocol;
 
     @JsonProperty("query")
     private String query = null;
@@ -85,7 +85,6 @@ public class FailActionHTTPRedirect  {
      * Enum options - HTTP, HTTPS.
      * Allowed in basic(allowed values- http) edition, enterprise edition.
      * Special default for basic edition is http, enterprise is https.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "HTTPS".
      * @return protocol
      */
     public String getProtocol() {
@@ -97,7 +96,6 @@ public class FailActionHTTPRedirect  {
      * Enum options - HTTP, HTTPS.
      * Allowed in basic(allowed values- http) edition, enterprise edition.
      * Special default for basic edition is http, enterprise is https.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "HTTPS".
      * @param protocol set the protocol.
      */
     public void setProtocol(String  protocol) {

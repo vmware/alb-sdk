@@ -27,6 +27,9 @@ public class Service  {
     @JsonProperty("enable_ssl")
     private Boolean enableSsl = false;
 
+    @JsonProperty("horizon_internal_ports")
+    private Boolean horizonInternalPorts = false;
+
     @JsonProperty("override_application_profile_ref")
     private String overrideApplicationProfileRef = null;
 
@@ -83,6 +86,30 @@ public class Service  {
      */
     public void setEnableSsl(Boolean  enableSsl) {
         this.enableSsl = enableSsl;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Used for horizon deployment.
+     * If set used for l7 redirect.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return horizonInternalPorts
+     */
+    public Boolean getHorizonInternalPorts() {
+        return horizonInternalPorts;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Used for horizon deployment.
+     * If set used for l7 redirect.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param horizonInternalPorts set the horizonInternalPorts.
+     */
+    public void setHorizonInternalPorts(Boolean  horizonInternalPorts) {
+        this.horizonInternalPorts = horizonInternalPorts;
     }
 
     /**
@@ -159,7 +186,7 @@ public class Service  {
      * This is the getter method this will return the attribute value.
      * The end of the virtual service's port number range.
      * Allowed values are 1-65535.
-     * Special values are 0- 'single port'.
+     * Special values are 0- single port.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return portRangeEnd
      */
@@ -171,7 +198,7 @@ public class Service  {
      * This is the setter method to the attribute.
      * The end of the virtual service's port number range.
      * Allowed values are 1-65535.
-     * Special values are 0- 'single port'.
+     * Special values are 0- single port.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param portRangeEnd set the portRangeEnd.
      */
@@ -194,7 +221,8 @@ public class Service  {
   Objects.equals(this.overrideNetworkProfileRef, objService.overrideNetworkProfileRef)&&
   Objects.equals(this.portRangeEnd, objService.portRangeEnd)&&
   Objects.equals(this.overrideApplicationProfileRef, objService.overrideApplicationProfileRef)&&
-  Objects.equals(this.enableHttp2, objService.enableHttp2);
+  Objects.equals(this.enableHttp2, objService.enableHttp2)&&
+  Objects.equals(this.horizonInternalPorts, objService.horizonInternalPorts);
     }
 
     @Override
@@ -203,6 +231,7 @@ public class Service  {
       sb.append("class Service {\n");
                   sb.append("    enableHttp2: ").append(toIndentedString(enableHttp2)).append("\n");
                         sb.append("    enableSsl: ").append(toIndentedString(enableSsl)).append("\n");
+                        sb.append("    horizonInternalPorts: ").append(toIndentedString(horizonInternalPorts)).append("\n");
                         sb.append("    overrideApplicationProfileRef: ").append(toIndentedString(overrideApplicationProfileRef)).append("\n");
                         sb.append("    overrideNetworkProfileRef: ").append(toIndentedString(overrideNetworkProfileRef)).append("\n");
                         sb.append("    port: ").append(toIndentedString(port)).append("\n");

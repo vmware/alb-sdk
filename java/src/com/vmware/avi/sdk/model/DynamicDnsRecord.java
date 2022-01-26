@@ -431,7 +431,7 @@ public class DynamicDnsRecord extends AviRestResource  {
      * Specifies the number of records returned by the dns service.enter 0 to return all records.
      * Default is 0.
      * Allowed values are 0-20.
-     * Special values are 0- 'return all records'.
+     * Special values are 0- return all records.
      * Field introduced in 20.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numRecordsInResponse
@@ -445,7 +445,7 @@ public class DynamicDnsRecord extends AviRestResource  {
      * Specifies the number of records returned by the dns service.enter 0 to return all records.
      * Default is 0.
      * Allowed values are 0-20.
-     * Special values are 0- 'return all records'.
+     * Special values are 0- return all records.
      * Field introduced in 20.1.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numRecordsInResponse set the numRecordsInResponse.

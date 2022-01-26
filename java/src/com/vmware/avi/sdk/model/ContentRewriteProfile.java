@@ -22,19 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ContentRewriteProfile  {
     @JsonProperty("req_match_replace_pair")
-    private List<MatchReplacePair> reqMatchReplacePair = null;
+    private List<MatchReplacePair> reqMatchReplacePair;
 
     @JsonProperty("request_rewrite_enabled")
-    private Boolean requestRewriteEnabled = false;
+    private Boolean requestRewriteEnabled;
 
     @JsonProperty("response_rewrite_enabled")
-    private Boolean responseRewriteEnabled = false;
+    private Boolean responseRewriteEnabled;
 
     @JsonProperty("rewritable_content_ref")
     private String rewritableContentRef = null;
 
     @JsonProperty("rsp_match_replace_pair")
-    private List<MatchReplacePair> rspMatchReplacePair = null;
+    private List<MatchReplacePair> rspMatchReplacePair;
+
+    @JsonProperty("rsp_rewrite_rules")
+    private List<RspContentRewriteRule> rspRewriteRules = null;
 
 
     /**
@@ -42,7 +45,7 @@ public class ContentRewriteProfile  {
      * Strings to be matched and replaced with on the request body.
      * This should be configured when request_rewrite_enabled is set to true.
      * This is currently not supported.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.3.
      * @return reqMatchReplacePair
      */
     public List<MatchReplacePair> getReqMatchReplacePair() {
@@ -54,7 +57,7 @@ public class ContentRewriteProfile  {
      * Strings to be matched and replaced with on the request body.
      * This should be configured when request_rewrite_enabled is set to true.
      * This is currently not supported.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.3.
      * @return reqMatchReplacePair
      */
     public void setReqMatchReplacePair(List<MatchReplacePair>  reqMatchReplacePair) {
@@ -66,7 +69,7 @@ public class ContentRewriteProfile  {
      * Strings to be matched and replaced with on the request body.
      * This should be configured when request_rewrite_enabled is set to true.
      * This is currently not supported.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.3.
      * @return reqMatchReplacePair
      */
     public ContentRewriteProfile addReqMatchReplacePairItem(MatchReplacePair reqMatchReplacePairItem) {
@@ -81,7 +84,7 @@ public class ContentRewriteProfile  {
      * This is the getter method this will return the attribute value.
      * Enable rewrite on request body.
      * This is not currently supported.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Field deprecated in 21.1.3.
      * @return requestRewriteEnabled
      */
     public Boolean getRequestRewriteEnabled() {
@@ -92,7 +95,7 @@ public class ContentRewriteProfile  {
      * This is the setter method to the attribute.
      * Enable rewrite on request body.
      * This is not currently supported.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Field deprecated in 21.1.3.
      * @param requestRewriteEnabled set the requestRewriteEnabled.
      */
     public void setRequestRewriteEnabled(Boolean  requestRewriteEnabled) {
@@ -102,7 +105,7 @@ public class ContentRewriteProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Enable rewrite on response body.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Field deprecated in 21.1.3.
      * @return responseRewriteEnabled
      */
     public Boolean getResponseRewriteEnabled() {
@@ -112,7 +115,7 @@ public class ContentRewriteProfile  {
     /**
      * This is the setter method to the attribute.
      * Enable rewrite on response body.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Field deprecated in 21.1.3.
      * @param responseRewriteEnabled set the responseRewriteEnabled.
      */
     public void setResponseRewriteEnabled(Boolean  responseRewriteEnabled) {
@@ -146,7 +149,7 @@ public class ContentRewriteProfile  {
      * This is the getter method this will return the attribute value.
      * Strings to be matched and replaced with on the response body.
      * This should be configured when response_rewrite_enabled is set to true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.3.
      * @return rspMatchReplacePair
      */
     public List<MatchReplacePair> getRspMatchReplacePair() {
@@ -157,7 +160,7 @@ public class ContentRewriteProfile  {
      * This is the setter method. this will set the rspMatchReplacePair
      * Strings to be matched and replaced with on the response body.
      * This should be configured when response_rewrite_enabled is set to true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.3.
      * @return rspMatchReplacePair
      */
     public void setRspMatchReplacePair(List<MatchReplacePair>  rspMatchReplacePair) {
@@ -168,7 +171,7 @@ public class ContentRewriteProfile  {
      * This is the setter method this will set the rspMatchReplacePair
      * Strings to be matched and replaced with on the response body.
      * This should be configured when response_rewrite_enabled is set to true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Field deprecated in 21.1.3.
      * @return rspMatchReplacePair
      */
     public ContentRewriteProfile addRspMatchReplacePairItem(MatchReplacePair rspMatchReplacePairItem) {
@@ -176,6 +179,45 @@ public class ContentRewriteProfile  {
         this.rspMatchReplacePair = new ArrayList<MatchReplacePair>();
       }
       this.rspMatchReplacePair.add(rspMatchReplacePairItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Content rewrite rules to be enabled on theresponse body.
+     * Field introduced in 21.1.3.
+     * Maximum of 1 items allowed.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return rspRewriteRules
+     */
+    public List<RspContentRewriteRule> getRspRewriteRules() {
+        return rspRewriteRules;
+    }
+
+    /**
+     * This is the setter method. this will set the rspRewriteRules
+     * Content rewrite rules to be enabled on theresponse body.
+     * Field introduced in 21.1.3.
+     * Maximum of 1 items allowed.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return rspRewriteRules
+     */
+    public void setRspRewriteRules(List<RspContentRewriteRule>  rspRewriteRules) {
+        this.rspRewriteRules = rspRewriteRules;
+    }
+
+    /**
+     * This is the setter method this will set the rspRewriteRules
+     * Content rewrite rules to be enabled on theresponse body.
+     * Field introduced in 21.1.3.
+     * Maximum of 1 items allowed.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return rspRewriteRules
+     */
+    public ContentRewriteProfile addRspRewriteRulesItem(RspContentRewriteRule rspRewriteRulesItem) {
+      if (this.rspRewriteRules == null) {
+        this.rspRewriteRules = new ArrayList<RspContentRewriteRule>();
+      }
+      this.rspRewriteRules.add(rspRewriteRulesItem);
       return this;
     }
 
@@ -193,7 +235,8 @@ public class ContentRewriteProfile  {
   Objects.equals(this.requestRewriteEnabled, objContentRewriteProfile.requestRewriteEnabled)&&
   Objects.equals(this.responseRewriteEnabled, objContentRewriteProfile.responseRewriteEnabled)&&
   Objects.equals(this.reqMatchReplacePair, objContentRewriteProfile.reqMatchReplacePair)&&
-  Objects.equals(this.rspMatchReplacePair, objContentRewriteProfile.rspMatchReplacePair);
+  Objects.equals(this.rspMatchReplacePair, objContentRewriteProfile.rspMatchReplacePair)&&
+  Objects.equals(this.rspRewriteRules, objContentRewriteProfile.rspRewriteRules);
     }
 
     @Override
@@ -205,6 +248,7 @@ public class ContentRewriteProfile  {
                         sb.append("    responseRewriteEnabled: ").append(toIndentedString(responseRewriteEnabled)).append("\n");
                         sb.append("    rewritableContentRef: ").append(toIndentedString(rewritableContentRef)).append("\n");
                         sb.append("    rspMatchReplacePair: ").append(toIndentedString(rspMatchReplacePair)).append("\n");
+                        sb.append("    rspRewriteRules: ").append(toIndentedString(rspRewriteRules)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

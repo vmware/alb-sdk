@@ -34,7 +34,7 @@ public class PKIProfile extends AviRestResource  {
     private List<CRL> crls = null;
 
     @JsonProperty("ignore_peer_chain")
-    private Boolean ignorePeerChain = false;
+    private Boolean ignorePeerChain;
 
     @JsonProperty("is_federated")
     private Boolean isFederated = false;
@@ -174,7 +174,6 @@ public class PKIProfile extends AviRestResource  {
      * Instead, only the chain certs configured in the certificate authority section will be used to verify trust of the client's cert.
      * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
      * Special default for basic edition is true, essentials edition is true, enterprise is false.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return ignorePeerChain
      */
     public Boolean getIgnorePeerChain() {
@@ -187,7 +186,6 @@ public class PKIProfile extends AviRestResource  {
      * Instead, only the chain certs configured in the certificate authority section will be used to verify trust of the client's cert.
      * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
      * Special default for basic edition is true, essentials edition is true, enterprise is false.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param ignorePeerChain set the ignorePeerChain.
      */
     public void setIgnorePeerChain(Boolean  ignorePeerChain) {

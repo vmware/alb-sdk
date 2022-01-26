@@ -87,7 +87,7 @@ public class DnsRateProfile  {
      * Maximum number of connections or requests or packets per second.
      * It is deprecated because of adoption of new shared rate limiter protobuf.
      * Allowed values are 1-4294967295.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Field deprecated in 20.1.1.
      * Field introduced in 18.2.5.
      * @return count
@@ -101,7 +101,7 @@ public class DnsRateProfile  {
      * Maximum number of connections or requests or packets per second.
      * It is deprecated because of adoption of new shared rate limiter protobuf.
      * Allowed values are 1-4294967295.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Field deprecated in 20.1.1.
      * Field introduced in 18.2.5.
      * @param count set the count.

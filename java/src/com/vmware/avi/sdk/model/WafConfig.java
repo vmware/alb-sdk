@@ -28,7 +28,7 @@ public class WafConfig  {
     private List<String> allowedMethods = null;
 
     @JsonProperty("allowed_request_content_types")
-    private List<String> allowedRequestContentTypes = null;
+    private List<String> allowedRequestContentTypes;
 
     @JsonProperty("argument_separator")
     private String argumentSeparator = "&";
@@ -202,8 +202,8 @@ public class WafConfig  {
     /**
      * This is the getter method this will return the attribute value.
      * Waf allowed content types.
+     * Field deprecated in 21.1.3.
      * Field introduced in 17.2.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return allowedRequestContentTypes
      */
     public List<String> getAllowedRequestContentTypes() {
@@ -213,8 +213,8 @@ public class WafConfig  {
     /**
      * This is the setter method. this will set the allowedRequestContentTypes
      * Waf allowed content types.
+     * Field deprecated in 21.1.3.
      * Field introduced in 17.2.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return allowedRequestContentTypes
      */
     public void setAllowedRequestContentTypes(List<String>  allowedRequestContentTypes) {
@@ -224,8 +224,8 @@ public class WafConfig  {
     /**
      * This is the setter method this will set the allowedRequestContentTypes
      * Waf allowed content types.
+     * Field deprecated in 21.1.3.
      * Field introduced in 17.2.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return allowedRequestContentTypes
      */
     public WafConfig addAllowedRequestContentTypesItem(String allowedRequestContentTypesItem) {

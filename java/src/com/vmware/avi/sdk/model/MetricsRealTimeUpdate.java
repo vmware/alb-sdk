@@ -33,7 +33,7 @@ public class MetricsRealTimeUpdate  {
      * This is the getter method this will return the attribute value.
      * Real time metrics collection duration in minutes.
      * 0 for infinite.
-     * Special values are 0 - 'infinite'.
+     * Special values are 0 - infinite.
      * Unit is min.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @return duration
@@ -46,7 +46,7 @@ public class MetricsRealTimeUpdate  {
      * This is the setter method to the attribute.
      * Real time metrics collection duration in minutes.
      * 0 for infinite.
-     * Special values are 0 - 'infinite'.
+     * Special values are 0 - infinite.
      * Unit is min.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @param duration set the duration.

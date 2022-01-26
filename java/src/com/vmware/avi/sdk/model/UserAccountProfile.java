@@ -122,7 +122,7 @@ public class UserAccountProfile extends AviRestResource  {
      * Number of login attempts before lockout.
      * Default is 3 attempts.
      * Allowed values are 3-20.
-     * Special values are 0 - 'unlimited login attempts allowed.'.
+     * Special values are 0- unlimited login attempts allowed..
      * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @return maxLoginFailureCount
      */
@@ -135,7 +135,7 @@ public class UserAccountProfile extends AviRestResource  {
      * Number of login attempts before lockout.
      * Default is 3 attempts.
      * Allowed values are 3-20.
-     * Special values are 0 - 'unlimited login attempts allowed.'.
+     * Special values are 0- unlimited login attempts allowed..
      * Default value when not specified in API or module is interpreted by Avi Controller as 3.
      * @param maxLoginFailureCount set the maxLoginFailureCount.
      */

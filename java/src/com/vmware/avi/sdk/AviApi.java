@@ -427,7 +427,9 @@ public class AviApi {
 		if (userHeaders == null) {
 			this.restTemplate.delete(deleteUrl);
 		} else {
-			this.restTemplate.delete(deleteUrl, userHeaders);
+            HttpHeaders headers = setHeaders(userHeaders);
+			HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
+			this.restTemplate.exchange(deleteUrl, HttpMethod.DELETE, requestEntity, String.class);
 		}
 		LOGGER.info("__DONE__Executing DELETE is completed..");
 		return new JSONObject();

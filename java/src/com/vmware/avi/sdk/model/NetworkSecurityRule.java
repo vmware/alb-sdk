@@ -80,7 +80,7 @@ public class NetworkSecurityRule  {
      * This is the getter method this will return the attribute value.
      * Time in minutes after which rule will be deleted.
      * Allowed values are 1-4294967295.
-     * Special values are 0- 'blocked for ever'.
+     * Special values are 0- blocked for ever.
      * Unit is min.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -94,7 +94,7 @@ public class NetworkSecurityRule  {
      * This is the setter method to the attribute.
      * Time in minutes after which rule will be deleted.
      * Allowed values are 1-4294967295.
-     * Special values are 0- 'blocked for ever'.
+     * Special values are 0- blocked for ever.
      * Unit is min.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.

@@ -43,7 +43,7 @@ public class WafRule  {
     private String name = null;
 
     @JsonProperty("phase")
-    private String phase = null;
+    private String phase;
 
     @JsonProperty("rule")
     private String rule = null;
@@ -247,7 +247,6 @@ public class WafRule  {
      * Enum options - WAF_PHASE_CONNECTION, WAF_PHASE_REQUEST_HEADER, WAF_PHASE_REQUEST_BODY, WAF_PHASE_RESPONSE_HEADER, WAF_PHASE_RESPONSE_BODY,
      * WAF_PHASE_LOGGING.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return phase
      */
     public String getPhase() {
@@ -260,7 +259,6 @@ public class WafRule  {
      * Enum options - WAF_PHASE_CONNECTION, WAF_PHASE_REQUEST_HEADER, WAF_PHASE_REQUEST_BODY, WAF_PHASE_RESPONSE_HEADER, WAF_PHASE_RESPONSE_BODY,
      * WAF_PHASE_LOGGING.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param phase set the phase.
      */
     public void setPhase(String  phase) {

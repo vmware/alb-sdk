@@ -275,7 +275,7 @@ public class GslbPool  {
      * The higher the number, the higher is the priority of the pool.
      * The dns service chooses the pool with the highest priority that is operationally up.
      * Allowed values are 0-100.
-     * Special values are 0 - 'do not choose members from this pool.a priority of 0 is equivalent to disabling the pool.'.
+     * Special values are 0 - do not choose members from this pool.a priority of 0 is equivalent to disabling the pool..
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return priority
      */
@@ -289,7 +289,7 @@ public class GslbPool  {
      * The higher the number, the higher is the priority of the pool.
      * The dns service chooses the pool with the highest priority that is operationally up.
      * Allowed values are 0-100.
-     * Special values are 0 - 'do not choose members from this pool.a priority of 0 is equivalent to disabling the pool.'.
+     * Special values are 0 - do not choose members from this pool.a priority of 0 is equivalent to disabling the pool..
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param priority set the priority.
      */

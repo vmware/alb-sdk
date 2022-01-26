@@ -27,8 +27,11 @@ public class SystemConfiguration extends AviRestResource  {
     @JsonProperty("common_criteria_mode")
     private Boolean commonCriteriaMode = false;
 
+    @JsonProperty("controller_analytics_policy")
+    private ControllerAnalyticsPolicy controllerAnalyticsPolicy = null;
+
     @JsonProperty("default_license_tier")
-    private String defaultLicenseTier = "ENTERPRISE";
+    private String defaultLicenseTier;
 
     @JsonProperty("dns_configuration")
     private DNSConfiguration dnsConfiguration = null;
@@ -133,12 +136,35 @@ public class SystemConfiguration extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Controller metrics event dynamic thresholds can be set here.
+     * Controller_cpu_high and controller_mem_high evets can take configured dynamic thresholds.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return controllerAnalyticsPolicy
+     */
+    public ControllerAnalyticsPolicy getControllerAnalyticsPolicy() {
+        return controllerAnalyticsPolicy;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Controller metrics event dynamic thresholds can be set here.
+     * Controller_cpu_high and controller_mem_high evets can take configured dynamic thresholds.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param controllerAnalyticsPolicy set the controllerAnalyticsPolicy.
+     */
+    public void setControllerAnalyticsPolicy(ControllerAnalyticsPolicy controllerAnalyticsPolicy) {
+        this.controllerAnalyticsPolicy = controllerAnalyticsPolicy;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Specifies the default license tier which would be used by new clouds.
-     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, SAAS.
+     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
      * Field introduced in 17.2.5.
      * Allowed in basic edition, essentials edition, enterprise edition.
-     * Special default for basic edition is basic, essentials edition is essentials, enterprise is enterprise.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "ENTERPRISE".
+     * Special default for basic edition is basic, essentials edition is essentials, enterprise is enterprise_with_cloud_services.
      * @return defaultLicenseTier
      */
     public String getDefaultLicenseTier() {
@@ -148,11 +174,10 @@ public class SystemConfiguration extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Specifies the default license tier which would be used by new clouds.
-     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, SAAS.
+     * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
      * Field introduced in 17.2.5.
      * Allowed in basic edition, essentials edition, enterprise edition.
-     * Special default for basic edition is basic, essentials edition is essentials, enterprise is enterprise.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "ENTERPRISE".
+     * Special default for basic edition is basic, essentials edition is essentials, enterprise is enterprise_with_cloud_services.
      * @param defaultLicenseTier set the defaultLicenseTier.
      */
     public void setDefaultLicenseTier(String  defaultLicenseTier) {
@@ -630,7 +655,8 @@ public class SystemConfiguration extends AviRestResource  {
   Objects.equals(this.welcomeWorkflowComplete, objSystemConfiguration.welcomeWorkflowComplete)&&
   Objects.equals(this.fipsMode, objSystemConfiguration.fipsMode)&&
   Objects.equals(this.enableCors, objSystemConfiguration.enableCors)&&
-  Objects.equals(this.commonCriteriaMode, objSystemConfiguration.commonCriteriaMode);
+  Objects.equals(this.commonCriteriaMode, objSystemConfiguration.commonCriteriaMode)&&
+  Objects.equals(this.controllerAnalyticsPolicy, objSystemConfiguration.controllerAnalyticsPolicy);
     }
 
     @Override
@@ -639,6 +665,7 @@ public class SystemConfiguration extends AviRestResource  {
       sb.append("class SystemConfiguration {\n");
                   sb.append("    adminAuthConfiguration: ").append(toIndentedString(adminAuthConfiguration)).append("\n");
                         sb.append("    commonCriteriaMode: ").append(toIndentedString(commonCriteriaMode)).append("\n");
+                        sb.append("    controllerAnalyticsPolicy: ").append(toIndentedString(controllerAnalyticsPolicy)).append("\n");
                         sb.append("    defaultLicenseTier: ").append(toIndentedString(defaultLicenseTier)).append("\n");
                         sb.append("    dnsConfiguration: ").append(toIndentedString(dnsConfiguration)).append("\n");
                         sb.append("    dnsVirtualserviceRefs: ").append(toIndentedString(dnsVirtualserviceRefs)).append("\n");

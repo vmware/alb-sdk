@@ -31,7 +31,7 @@ public class DnsInfo  {
     private String fqdn = null;
 
     @JsonProperty("metadata")
-    private String metadata = null;
+    private String metadata;
 
     @JsonProperty("num_records_in_response")
     private Integer numRecordsInResponse = null;
@@ -118,7 +118,6 @@ public class DnsInfo  {
      * This is the getter method this will return the attribute value.
      * Any metadata associated with this record.
      * Field introduced in 17.2.2.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metadata
      */
     public String getMetadata() {
@@ -129,7 +128,6 @@ public class DnsInfo  {
      * This is the setter method to the attribute.
      * Any metadata associated with this record.
      * Field introduced in 17.2.2.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param metadata set the metadata.
      */
     public void setMetadata(String  metadata) {
@@ -142,7 +140,7 @@ public class DnsInfo  {
      * Enter 0 to return all records.
      * Default is 0.
      * Allowed values are 0-20.
-     * Special values are 0- 'return all records'.
+     * Special values are 0- return all records.
      * Field introduced in 17.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numRecordsInResponse
@@ -157,7 +155,7 @@ public class DnsInfo  {
      * Enter 0 to return all records.
      * Default is 0.
      * Allowed values are 0-20.
-     * Special values are 0- 'return all records'.
+     * Special values are 0- return all records.
      * Field introduced in 17.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numRecordsInResponse set the numRecordsInResponse.

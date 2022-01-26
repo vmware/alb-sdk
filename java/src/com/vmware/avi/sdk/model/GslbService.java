@@ -479,7 +479,7 @@ public class GslbService extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The minimum number of members to distribute traffic to.
      * Allowed values are 1-65535.
-     * Special values are 0 - 'disable'.
+     * Special values are 0 - disable.
      * Field introduced in 17.2.4.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return minMembers
@@ -492,7 +492,7 @@ public class GslbService extends AviRestResource  {
      * This is the setter method to the attribute.
      * The minimum number of members to distribute traffic to.
      * Allowed values are 1-65535.
-     * Special values are 0 - 'disable'.
+     * Special values are 0 - disable.
      * Field introduced in 17.2.4.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param minMembers set the minMembers.
@@ -526,7 +526,7 @@ public class GslbService extends AviRestResource  {
      * Number of ip addresses of this gslb service to be returned by the dns service.
      * Enter 0 to return all ip addresses.
      * Allowed values are 1-20.
-     * Special values are 0- 'return all ip addresses'.
+     * Special values are 0- return all ip addresses.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numDnsIp
      */
@@ -539,7 +539,7 @@ public class GslbService extends AviRestResource  {
      * Number of ip addresses of this gslb service to be returned by the dns service.
      * Enter 0 to return all ip addresses.
      * Allowed values are 1-20.
-     * Special values are 0- 'return all ip addresses'.
+     * Special values are 0- return all ip addresses.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numDnsIp set the numDnsIp.
      */

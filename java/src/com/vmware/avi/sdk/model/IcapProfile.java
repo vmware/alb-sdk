@@ -334,7 +334,8 @@ public class IcapProfile extends AviRestResource  {
      * The icap preview size as described in rfc 3507 section 4.5.
      * This should not exceed the size supported by the icap server.
      * If this is set to 0, only the http header will be sent to the icap server as a preview.
-     * To disable preview completely, set the enable-preview option to false.
+     * To disable preview completely, set the enable-preview option to false.if vendor is lastline, recommended preview size is 1000 bytes,minimum
+     * preview size is 10 bytes.
      * Allowed values are 0-5000.
      * Field introduced in 20.1.1.
      * Unit is bytes.
@@ -350,7 +351,8 @@ public class IcapProfile extends AviRestResource  {
      * The icap preview size as described in rfc 3507 section 4.5.
      * This should not exceed the size supported by the icap server.
      * If this is set to 0, only the http header will be sent to the icap server as a preview.
-     * To disable preview completely, set the enable-preview option to false.
+     * To disable preview completely, set the enable-preview option to false.if vendor is lastline, recommended preview size is 1000 bytes,minimum
+     * preview size is 10 bytes.
      * Allowed values are 0-5000.
      * Field introduced in 20.1.1.
      * Unit is bytes.

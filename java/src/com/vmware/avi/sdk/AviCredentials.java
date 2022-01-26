@@ -69,10 +69,12 @@ public class AviCredentials
      *            For check SSL is want.
      * @param retryConxnErrors
      *            Retry connection timeout.
+     * @param connectionTimeout
+     *            Connection timeout for socket
      */
     public AviCredentials(String controller, String username, String password, String tenant, String version,
             String tenantUuid, Integer port, Integer timeout, String sessionID, String csrftoken,
-            String token, Boolean verify, Boolean retryConxnErrors)
+            String token, Boolean verify, Boolean retryConxnErrors, Integer connectionTimeout)
     {
         this.controller = controller;
         this.username = username;
@@ -87,6 +89,7 @@ public class AviCredentials
         this.token = token;
         this.verify = verify;
         this.retryConxnErrors = retryConxnErrors;
+        this.connectionTimeout = connectionTimeout;
     }
 
     private String controller;
@@ -105,6 +108,7 @@ public class AviCredentials
     private Integer numApiRetries = 3;
     private Integer retryWaitTime = 5;
     private Boolean lazyAuthentication = false;
+    private Integer connectionTimeout = 60; // 1 min default
 
     /**
      * Gets the controller's IP.
@@ -442,12 +446,30 @@ public class AviCredentials
         this.lazyAuthentication = lazyAuthentication;
     }
 
+    /**
+     * Gets the connection timeout
+     * @return A Integer representing connection timeout.
+     */
+    public Integer getConnectionTimeout() {
+        return connectionTimeout;
+    }
+
+    /**
+     * Sets the connection timeout.
+     * @param connectionTimeout
+     *          A Integer containing connection timeout for socket.
+     */
+    public void setConnectionTimeout(Integer connectionTimeout) {
+        this.connectionTimeout = connectionTimeout;
+    }
+
 	@Override
 	public String toString() {
 		return "AviCredentials [controller=" + controller + ", username=" + username + ", password=" + password
 				+ ", tenant=" + tenant + ", version=" + version + ", tenantUuid=" + tenantUuid + ", port=" + port
-				+ ", timeout=" + timeout + ", sessionID=" + sessionID + ", csrftoken=" + csrftoken + ", token=" + token
-				+ ", verify=" + verify + ", retryConxnErrors=" + retryConxnErrors + ", numApiRetries=" + numApiRetries
+				+ ", timeout=" + timeout + ", connectionTimeout=" + connectionTimeout + ", sessionID=" + sessionID
+                + ", csrftoken=" + csrftoken + ", token=" + token + ", verify=" + verify
+                + ", retryConxnErrors=" + retryConxnErrors + ", numApiRetries=" + numApiRetries
 				+ ", retryWaitTime=" + retryWaitTime + ", lazyAuthentication=" + lazyAuthentication + "]";
 	}
 }

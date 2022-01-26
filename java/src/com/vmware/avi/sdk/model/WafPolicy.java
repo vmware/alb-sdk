@@ -30,6 +30,9 @@ public class WafPolicy extends AviRestResource  {
     @JsonProperty("application_signatures")
     private WafApplicationSignatures applicationSignatures = null;
 
+    @JsonProperty("bypass_static_extensions")
+    private Boolean bypassStaticExtensions = true;
+
     @JsonProperty("confidence_override")
     private AppLearningConfidenceOverride confidenceOverride = null;
 
@@ -178,6 +181,28 @@ public class WafPolicy extends AviRestResource  {
      */
     public void setApplicationSignatures(WafApplicationSignatures applicationSignatures) {
         this.applicationSignatures = applicationSignatures;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enable the functionality to bypass waf for static file extensions.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return bypassStaticExtensions
+     */
+    public Boolean getBypassStaticExtensions() {
+        return bypassStaticExtensions;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable the functionality to bypass waf for static file extensions.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param bypassStaticExtensions set the bypassStaticExtensions.
+     */
+    public void setBypassStaticExtensions(Boolean  bypassStaticExtensions) {
+        this.bypassStaticExtensions = bypassStaticExtensions;
     }
 
     /**
@@ -910,7 +935,8 @@ public class WafPolicy extends AviRestResource  {
   Objects.equals(this.allowlist, objWafPolicy.allowlist)&&
   Objects.equals(this.geoDbRef, objWafPolicy.geoDbRef)&&
   Objects.equals(this.markers, objWafPolicy.markers)&&
-  Objects.equals(this.crsOverrides, objWafPolicy.crsOverrides);
+  Objects.equals(this.crsOverrides, objWafPolicy.crsOverrides)&&
+  Objects.equals(this.bypassStaticExtensions, objWafPolicy.bypassStaticExtensions);
     }
 
     @Override
@@ -920,6 +946,7 @@ public class WafPolicy extends AviRestResource  {
                   sb.append("    allowModeDelegation: ").append(toIndentedString(allowModeDelegation)).append("\n");
                         sb.append("    allowlist: ").append(toIndentedString(allowlist)).append("\n");
                         sb.append("    applicationSignatures: ").append(toIndentedString(applicationSignatures)).append("\n");
+                        sb.append("    bypassStaticExtensions: ").append(toIndentedString(bypassStaticExtensions)).append("\n");
                         sb.append("    confidenceOverride: ").append(toIndentedString(confidenceOverride)).append("\n");
                         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
                         sb.append("    crsGroups: ").append(toIndentedString(crsGroups)).append("\n");

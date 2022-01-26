@@ -40,7 +40,7 @@ public class Pool extends AviRestResource  {
     private String apicEpgName;
 
     @JsonProperty("append_port")
-    private String appendPort = "NON_DEFAULT_80_443";
+    private String appendPort;
 
     @JsonProperty("application_persistence_profile_ref")
     private String applicationPersistenceProfileRef = null;
@@ -70,7 +70,7 @@ public class Pool extends AviRestResource  {
     private ConnPoolProperties connPoolProperties = null;
 
     @JsonProperty("connection_ramp_duration")
-    private Integer connectionRampDuration = 10;
+    private Integer connectionRampDuration;
 
     @JsonProperty("created_by")
     private String createdBy = null;
@@ -109,10 +109,13 @@ public class Pool extends AviRestResource  {
     private Integer gracefulDisableTimeout = 1;
 
     @JsonProperty("gslb_sp_enabled")
-    private Boolean gslbSpEnabled = null;
+    private Boolean gslbSpEnabled;
 
     @JsonProperty("health_monitor_refs")
     private List<String> healthMonitorRefs = null;
+
+    @JsonProperty("horizon_profile")
+    private HorizonProfile horizonProfile = null;
 
     @JsonProperty("host_check_enabled")
     private Boolean hostCheckEnabled = false;
@@ -389,7 +392,6 @@ public class Pool extends AviRestResource  {
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- never) edition, essentials(allowed values- never) edition, enterprise edition.
      * Special default for basic edition is never, essentials edition is never, enterprise is non_default_80_443.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "NON_DEFAULT_80_443".
      * @return appendPort
      */
     public String getAppendPort() {
@@ -406,7 +408,6 @@ public class Pool extends AviRestResource  {
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- never) edition, essentials(allowed values- never) edition, enterprise edition.
      * Special default for basic edition is never, essentials edition is never, enterprise is non_default_80_443.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "NON_DEFAULT_80_443".
      * @param appendPort set the appendPort.
      */
     public void setAppendPort(String  appendPort) {
@@ -538,7 +539,7 @@ public class Pool extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The maximum time-to-first-byte of a server.
      * Allowed values are 1-5000.
-     * Special values are 0 - 'automatic'.
+     * Special values are 0 - automatic.
      * Unit is milliseconds.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -552,7 +553,7 @@ public class Pool extends AviRestResource  {
      * This is the setter method to the attribute.
      * The maximum time-to-first-byte of a server.
      * Allowed values are 1-5000.
-     * Special values are 0 - 'automatic'.
+     * Special values are 0 - automatic.
      * Unit is milliseconds.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -631,11 +632,10 @@ public class Pool extends AviRestResource  {
      * Duration for which new connections will be gradually ramped up to a server recently brought online.
      * Useful for lb algorithms that are least connection based.
      * Allowed values are 1-300.
-     * Special values are 0 - 'immediate'.
+     * Special values are 0 - immediate.
      * Unit is min.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Special default for basic edition is 0, essentials edition is 0, enterprise is 10.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return connectionRampDuration
      */
     public Integer getConnectionRampDuration() {
@@ -647,11 +647,10 @@ public class Pool extends AviRestResource  {
      * Duration for which new connections will be gradually ramped up to a server recently brought online.
      * Useful for lb algorithms that are least connection based.
      * Allowed values are 1-300.
-     * Special values are 0 - 'immediate'.
+     * Special values are 0 - immediate.
      * Unit is min.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Special default for basic edition is 0, essentials edition is 0, enterprise is 10.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param connectionRampDuration set the connectionRampDuration.
      */
     public void setConnectionRampDuration(Integer  connectionRampDuration) {
@@ -944,7 +943,7 @@ public class Pool extends AviRestResource  {
      * Used to gracefully disable a server.
      * Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled.
      * Allowed values are 1-7200.
-     * Special values are 0 - 'immediate', -1 - 'infinite'.
+     * Special values are 0 - immediate, -1 - infinite.
      * Unit is min.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return gracefulDisableTimeout
@@ -958,7 +957,7 @@ public class Pool extends AviRestResource  {
      * Used to gracefully disable a server.
      * Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled.
      * Allowed values are 1-7200.
-     * Special values are 0 - 'immediate', -1 - 'infinite'.
+     * Special values are 0 - immediate, -1 - infinite.
      * Unit is min.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param gracefulDisableTimeout set the gracefulDisableTimeout.
@@ -972,7 +971,6 @@ public class Pool extends AviRestResource  {
      * Indicates if the pool is a site-persistence pool.
      * Field introduced in 17.2.1.
      * Allowed in basic edition, essentials edition, enterprise edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gslbSpEnabled
      */
     public Boolean getGslbSpEnabled() {
@@ -984,7 +982,6 @@ public class Pool extends AviRestResource  {
      * Indicates if the pool is a site-persistence pool.
      * Field introduced in 17.2.1.
      * Allowed in basic edition, essentials edition, enterprise edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gslbSpEnabled set the gslbSpEnabled.
      */
     public void setGslbSpEnabled(Boolean  gslbSpEnabled) {
@@ -1037,6 +1034,28 @@ public class Pool extends AviRestResource  {
       }
       this.healthMonitorRefs.add(healthMonitorRefsItem);
       return this;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Horizon uag configuration.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return horizonProfile
+     */
+    public HorizonProfile getHorizonProfile() {
+        return horizonProfile;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Horizon uag configuration.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param horizonProfile set the horizonProfile.
+     */
+    public void setHorizonProfile(HorizonProfile horizonProfile) {
+        this.horizonProfile = horizonProfile;
     }
 
     /**
@@ -2073,8 +2092,8 @@ public class Pool extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Do not translate the client's destination port when sending the connection to the server.
-     * The pool or servers specified service port will still be used for health monitoring.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Monitor port needs to be specified for health monitors.
+     * Allowed in essentials(allowed values- false) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useServicePort
      */
@@ -2085,8 +2104,8 @@ public class Pool extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Do not translate the client's destination port when sending the connection to the server.
-     * The pool or servers specified service port will still be used for health monitoring.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Monitor port needs to be specified for health monitors.
+     * Allowed in essentials(allowed values- false) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useServicePort set the useServicePort.
      */
@@ -2250,7 +2269,8 @@ public class Pool extends AviRestResource  {
   Objects.equals(this.appendPort, objPool.appendPort)&&
   Objects.equals(this.http2Properties, objPool.http2Properties)&&
   Objects.equals(this.serverDisableType, objPool.serverDisableType)&&
-  Objects.equals(this.useServiceSslMode, objPool.useServiceSslMode);
+  Objects.equals(this.useServiceSslMode, objPool.useServiceSslMode)&&
+  Objects.equals(this.horizonProfile, objPool.horizonProfile);
     }
 
     @Override
@@ -2288,6 +2308,7 @@ public class Pool extends AviRestResource  {
                         sb.append("    gracefulDisableTimeout: ").append(toIndentedString(gracefulDisableTimeout)).append("\n");
                         sb.append("    gslbSpEnabled: ").append(toIndentedString(gslbSpEnabled)).append("\n");
                         sb.append("    healthMonitorRefs: ").append(toIndentedString(healthMonitorRefs)).append("\n");
+                        sb.append("    horizonProfile: ").append(toIndentedString(horizonProfile)).append("\n");
                         sb.append("    hostCheckEnabled: ").append(toIndentedString(hostCheckEnabled)).append("\n");
                         sb.append("    http2Properties: ").append(toIndentedString(http2Properties)).append("\n");
                         sb.append("    ignoreServerPort: ").append(toIndentedString(ignoreServerPort)).append("\n");

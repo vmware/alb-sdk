@@ -100,7 +100,7 @@ public class AnalyticsProfile extends AviRestResource  {
     private Boolean enableAdaptiveConfig = true;
 
     @JsonProperty("enable_advanced_analytics")
-    private Boolean enableAdvancedAnalytics = true;
+    private Boolean enableAdvancedAnalytics;
 
     @JsonProperty("enable_ondemand_metrics")
     private Boolean enableOndemandMetrics = true;
@@ -172,7 +172,7 @@ public class AnalyticsProfile extends AviRestResource  {
     private Boolean excludeUnsupportedDnsQueryAsError = false;
 
     @JsonProperty("healthscore_max_server_limit")
-    private Integer healthscoreMaxServerLimit = 20;
+    private Integer healthscoreMaxServerLimit;
 
     @JsonProperty("hs_event_throttle_window")
     private Integer hsEventThrottleWindow = 1209600;
@@ -962,7 +962,6 @@ public class AnalyticsProfile extends AviRestResource  {
      * Field introduced in 17.2.13, 18.1.5, 18.2.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enableAdvancedAnalytics
      */
     public Boolean getEnableAdvancedAnalytics() {
@@ -977,7 +976,6 @@ public class AnalyticsProfile extends AviRestResource  {
      * Field introduced in 17.2.13, 18.1.5, 18.2.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enableAdvancedAnalytics set the enableAdvancedAnalytics.
      */
     public void setEnableAdvancedAnalytics(Boolean  enableAdvancedAnalytics) {
@@ -1545,11 +1543,10 @@ public class AnalyticsProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Skips health score computation of pool servers when number of servers in a pool is more than this setting.
      * Allowed values are 0-5000.
-     * Special values are 0- 'server health score is deactivated'.
+     * Special values are 0- server health score is deactivated.
      * Field introduced in 17.2.13, 18.1.4.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Special default for basic edition is 0, essentials edition is 0, enterprise is 20.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @return healthscoreMaxServerLimit
      */
     public Integer getHealthscoreMaxServerLimit() {
@@ -1560,11 +1557,10 @@ public class AnalyticsProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Skips health score computation of pool servers when number of servers in a pool is more than this setting.
      * Allowed values are 0-5000.
-     * Special values are 0- 'server health score is deactivated'.
+     * Special values are 0- server health score is deactivated.
      * Field introduced in 17.2.13, 18.1.4.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Special default for basic edition is 0, essentials edition is 0, enterprise is 20.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @param healthscoreMaxServerLimit set the healthscoreMaxServerLimit.
      */
     public void setHealthscoreMaxServerLimit(Integer  healthscoreMaxServerLimit) {

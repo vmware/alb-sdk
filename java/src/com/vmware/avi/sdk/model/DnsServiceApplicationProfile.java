@@ -425,7 +425,7 @@ public class DnsServiceApplicationProfile  {
      * Specifies the number of ip addresses returned by the dns service.
      * Enter 0 to return all ip addresses.
      * Allowed values are 1-20.
-     * Special values are 0- 'return all ip addresses'.
+     * Special values are 0- return all ip addresses.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return numDnsIp
      */
@@ -438,7 +438,7 @@ public class DnsServiceApplicationProfile  {
      * Specifies the number of ip addresses returned by the dns service.
      * Enter 0 to return all ip addresses.
      * Allowed values are 1-20.
-     * Special values are 0- 'return all ip addresses'.
+     * Special values are 0- return all ip addresses.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param numDnsIp set the numDnsIp.
      */

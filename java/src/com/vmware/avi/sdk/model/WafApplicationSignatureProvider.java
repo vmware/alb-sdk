@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafApplicationSignatureProvider extends AviRestResource  {
     @JsonProperty("available_applications")
-    private List<WafApplicationSignatureAppVersion> availableApplications = null;
+    private List<WafApplicationSignatureAppVersion> availableApplications;
 
     @JsonProperty("last_check_for_updates_error")
     private String lastCheckForUpdatesError;
@@ -37,7 +37,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
     private String name = null;
 
     @JsonProperty("ruleset_version")
-    private String rulesetVersion = null;
+    private String rulesetVersion;
 
     @JsonProperty("service_status")
     private WebApplicationSignatureServiceStatus serviceStatus = null;
@@ -56,7 +56,6 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Available application names and the ruleset version, when the rules for an application changed the last time.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return availableApplications
      */
     public List<WafApplicationSignatureAppVersion> getAvailableApplications() {
@@ -67,7 +66,6 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the setter method. this will set the availableApplications
      * Available application names and the ruleset version, when the rules for an application changed the last time.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return availableApplications
      */
     public void setAvailableApplications(List<WafApplicationSignatureAppVersion>  availableApplications) {
@@ -78,7 +76,6 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the setter method this will set the availableApplications
      * Available application names and the ruleset version, when the rules for an application changed the last time.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return availableApplications
      */
     public WafApplicationSignatureProvider addAvailableApplicationsItem(WafApplicationSignatureAppVersion availableApplicationsItem) {
@@ -181,7 +178,6 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Version of signatures.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rulesetVersion
      */
     public String getRulesetVersion() {
@@ -192,7 +188,6 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the setter method to the attribute.
      * Version of signatures.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rulesetVersion set the rulesetVersion.
      */
     public void setRulesetVersion(String  rulesetVersion) {

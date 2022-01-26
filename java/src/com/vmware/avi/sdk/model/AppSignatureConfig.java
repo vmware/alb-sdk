@@ -22,10 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AppSignatureConfig  {
     @JsonProperty("app_signature_sync_interval")
-    private Integer appSignatureSyncInterval = 1440;
-
-    @JsonProperty("category")
-    private String category = "ALB_THREAT_INTELLIGENCE_CATEGORY";
+    private Integer appSignatureSyncInterval;
 
 
 
@@ -37,7 +34,6 @@ public class AppSignatureConfig  {
      * Unit is min.
      * Allowed in basic edition, essentials edition, enterprise edition.
      * Special default for basic edition is 1440, essentials edition is 1440, enterprise is 1440.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 1440.
      * @return appSignatureSyncInterval
      */
     public Integer getAppSignatureSyncInterval() {
@@ -52,35 +48,10 @@ public class AppSignatureConfig  {
      * Unit is min.
      * Allowed in basic edition, essentials edition, enterprise edition.
      * Special default for basic edition is 1440, essentials edition is 1440, enterprise is 1440.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 1440.
      * @param appSignatureSyncInterval set the appSignatureSyncInterval.
      */
     public void setAppSignatureSyncInterval(Integer  appSignatureSyncInterval) {
         this.appSignatureSyncInterval = appSignatureSyncInterval;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Service category.
-     * Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "ALB_THREAT_INTELLIGENCE_CATEGORY".
-     * @return category
-     */
-    public String getCategory() {
-        return category;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Service category.
-     * Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "ALB_THREAT_INTELLIGENCE_CATEGORY".
-     * @param category set the category.
-     */
-    public void setCategory(String  category) {
-        this.category = category;
     }
 
 
@@ -93,8 +64,7 @@ public class AppSignatureConfig  {
           return false;
       }
       AppSignatureConfig objAppSignatureConfig = (AppSignatureConfig) o;
-      return   Objects.equals(this.appSignatureSyncInterval, objAppSignatureConfig.appSignatureSyncInterval)&&
-  Objects.equals(this.category, objAppSignatureConfig.category);
+      return   Objects.equals(this.appSignatureSyncInterval, objAppSignatureConfig.appSignatureSyncInterval);
     }
 
     @Override
@@ -102,7 +72,6 @@ public class AppSignatureConfig  {
       StringBuilder sb = new StringBuilder();
       sb.append("class AppSignatureConfig {\n");
                   sb.append("    appSignatureSyncInterval: ").append(toIndentedString(appSignatureSyncInterval)).append("\n");
-                        sb.append("    category: ").append(toIndentedString(category)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

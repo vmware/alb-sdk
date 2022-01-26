@@ -64,7 +64,7 @@ public class Network extends AviRestResource  {
     private Boolean vcenterDvs = true;
 
     @JsonProperty("vimgrnw_ref")
-    private String vimgrnwRef = null;
+    private String vimgrnwRef;
 
     @JsonProperty("vrf_context_ref")
     private String vrfContextRef = null;
@@ -417,7 +417,6 @@ public class Network extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type vimgrnwruntime.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vimgrnwRef
      */
     public String getVimgrnwRef() {
@@ -427,7 +426,6 @@ public class Network extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type vimgrnwruntime.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vimgrnwRef set the vimgrnwRef.
      */
     public void setVimgrnwRef(String  vimgrnwRef) {
