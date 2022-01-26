@@ -672,7 +672,6 @@ font-style: italic;
     "url" : "aeiou",
     "active_standby_se_tag" : "aeiou",
     "nsx_securitygroup" : [ "aeiou" ],
-    "vh_parent_vs_uuid" : "aeiou",
     "markers" : [ {
       "values" : [ "aeiou" ],
       "key" : "aeiou"
@@ -765,6 +764,7 @@ font-style: italic;
       "algorithm" : "aeiou"
     } ],
     "fqdn" : "aeiou",
+    "vh_parent_vs_ref" : "aeiou",
     "weight" : 123,
     "auto_allocate_floating_ip" : true,
     "ldap_vs_config" : {
@@ -1222,7 +1222,6 @@ font-style: italic;
   "url" : "aeiou",
   "active_standby_se_tag" : "aeiou",
   "nsx_securitygroup" : [ "aeiou" ],
-  "vh_parent_vs_uuid" : "aeiou",
   "markers" : [ {
     "values" : [ "aeiou" ],
     "key" : "aeiou"
@@ -1315,6 +1314,7 @@ font-style: italic;
     "algorithm" : "aeiou"
   } ],
   "fqdn" : "aeiou",
+  "vh_parent_vs_ref" : "aeiou",
   "weight" : 123,
   "auto_allocate_floating_ip" : true,
   "ldap_vs_config" : {
@@ -2577,7 +2577,6 @@ font-style: italic;
   "url" : "aeiou",
   "active_standby_se_tag" : "aeiou",
   "nsx_securitygroup" : [ "aeiou" ],
-  "vh_parent_vs_uuid" : "aeiou",
   "markers" : [ {
     "values" : [ "aeiou" ],
     "key" : "aeiou"
@@ -2670,6 +2669,7 @@ font-style: italic;
     "algorithm" : "aeiou"
   } ],
   "fqdn" : "aeiou",
+  "vh_parent_vs_ref" : "aeiou",
   "weight" : 123,
   "auto_allocate_floating_ip" : true,
   "ldap_vs_config" : {
@@ -4184,7 +4184,6 @@ font-style: italic;
   "url" : "aeiou",
   "active_standby_se_tag" : "aeiou",
   "nsx_securitygroup" : [ "aeiou" ],
-  "vh_parent_vs_uuid" : "aeiou",
   "markers" : [ {
     "values" : [ "aeiou" ],
     "key" : "aeiou"
@@ -4277,6 +4276,7 @@ font-style: italic;
     "algorithm" : "aeiou"
   } ],
   "fqdn" : "aeiou",
+  "vh_parent_vs_ref" : "aeiou",
   "weight" : 123,
   "auto_allocate_floating_ip" : true,
   "ldap_vs_config" : {
@@ -4953,7 +4953,6 @@ font-style: italic;
   "url" : "aeiou",
   "active_standby_se_tag" : "aeiou",
   "nsx_securitygroup" : [ "aeiou" ],
-  "vh_parent_vs_uuid" : "aeiou",
   "markers" : [ {
     "values" : [ "aeiou" ],
     "key" : "aeiou"
@@ -5046,6 +5045,7 @@ font-style: italic;
     "algorithm" : "aeiou"
   } ],
   "fqdn" : "aeiou",
+  "vh_parent_vs_ref" : "aeiou",
   "weight" : 123,
   "auto_allocate_floating_ip" : true,
   "ldap_vs_config" : {
@@ -6376,7 +6376,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">all_headers (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Placeholder for description of property all_headers of obj type ClientLogFilter field type str  type boolean </div>
 <div class="param">client_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrMatch">IpAddrMatch</a></span> Placeholder for description of property client_ip of obj type ClientLogFilter field type str  type object </div>
-<div class="param">duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Special values are 0 - &#39;infinite&#39;. Unit is MIN. format: int32</div>
+<div class="param">duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Special values are 0 - infinite. Unit is MIN. format: int32</div>
 <div class="param">enabled </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Placeholder for description of property enabled of obj type ClientLogFilter field type str  type boolean </div>
 <div class="param">index </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of index. format: int32</div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the object. </div>
@@ -6440,7 +6440,7 @@ font-style: italic;
 <div class="param">cname (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsCnameRdata">DnsCnameRdata</a></span> Canonical name in CNAME record. Field introduced in 17.2.1. </div>
 <div class="param">fqdn (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Fully qualified domain name. </div>
 <div class="param">metadata (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Any metadata associated with this record. Field introduced in 17.2.2. </div>
-<div class="param">num_records_in_response (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Specifies the number of records returned for this FQDN. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- &#39;Return all records&#39;. Field introduced in 17.1.1. format: int32</div>
+<div class="param">num_records_in_response (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Specifies the number of records returned for this FQDN. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 17.1.1. format: int32</div>
 <div class="param">ttl (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time to live for fqdn record. Default value is chosen from DNS profile for this cloud if no value provided. format: int32</div>
 <div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. </div>
     </div>  <!-- field-items -->
@@ -6480,7 +6480,7 @@ font-style: italic;
 <div class="param">metadata (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Internal metadata for the DNS record. Field introduced in 18.2.5. </div>
 <div class="param">mx_records (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsMxRdata">array[DnsMxRdata]</a></span> MX record. Field introduced in 18.2.9, 20.1.1. Maximum of 4 items allowed. </div>
 <div class="param">ns (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsNsRdata">array[DnsNsRdata]</a></span> Name Server information in NS record. Field introduced in 17.1.1. Maximum of 13 items allowed. </div>
-<div class="param">num_records_in_response (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Specifies the number of records returned by the DNS service. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- &#39;Return all records&#39;. Field introduced in 17.1.1. format: int32</div>
+<div class="param">num_records_in_response (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Specifies the number of records returned by the DNS service. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 17.1.1. format: int32</div>
 <div class="param">service_locator (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsSrvRdata">array[DnsSrvRdata]</a></span> Service locator info in SRV record. Maximum of 4 items allowed. </div>
 <div class="param">ttl (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time To Live for this DNS record. format: int32</div>
 <div class="param">txt_records (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsTxtRdata">array[DnsTxtRdata]</a></span> Text record. Field introduced in 18.2.9, 20.1.1. Maximum of 4 items allowed. </div>
@@ -6507,7 +6507,7 @@ font-style: italic;
     <h3 class="field-label"><a name="FullClientLogs">FullClientLogs</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">all_headers (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> [DEPRECATED] Log all headers. Please use the all_headers flag in AnalyticsPolicy. Field deprecated in 18.1.4, 18.2.1. </div>
-<div class="param">duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> How long should the system capture all logs, measured in minutes. Set to 0 for infinite. Special values are 0 - &#39;infinite&#39;. Unit is MIN. format: int32</div>
+<div class="param">duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> How long should the system capture all logs, measured in minutes. Set to 0 for infinite. Special values are 0 - infinite. Unit is MIN. format: int32</div>
 <div class="param">enabled </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Capture all client logs including connections and requests.  When deactivated, only errors will be logged. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is False. </div>
 <div class="param">throttle (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> This setting limits the number of non-significant logs generated per second for this VS on each SE. Default is 10 logs per second. Set it to zero (0) to deactivate throttling. Field introduced in 17.1.3. Unit is PER_SECOND. format: int32</div>
     </div>  <!-- field-items -->
@@ -6699,7 +6699,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="MetricsRealTimeUpdate">MetricsRealTimeUpdate</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Real time metrics collection duration in minutes. 0 for infinite. Special values are 0 - &#39;infinite&#39;. Unit is MIN. format: int32</div>
+      <div class="param">duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Real time metrics collection duration in minutes. 0 for infinite. Special values are 0 - infinite. Unit is MIN. format: int32</div>
 <div class="param">enabled </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enables real time metrics collection.  When deactivated, 6 hour view is the most granular the system will track. </div>
     </div>  <!-- field-items -->
   </div>
@@ -6791,8 +6791,8 @@ font-style: italic;
     <h3 class="field-label"><a name="RateProfile">RateProfile</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">action </div><div class="param-desc"><span class="param-type"><a href="#RateLimiterAction">RateLimiterAction</a></span> Action to perform upon rate limiting. </div>
-<div class="param">burst_sz (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections or requests or packets to be let through instantaneously. Allowed values are 10-2500. Special values are 0- &#39;automatic&#39;. Field deprecated in 18.2.9. format: int32</div>
-<div class="param">count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections or requests or packets. Allowed values are 1-1000000000. Special values are 0- &#39;unlimited&#39;. Field deprecated in 18.2.9. format: int32</div>
+<div class="param">burst_sz (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections or requests or packets to be let through instantaneously. Allowed values are 10-2500. Special values are 0- automatic. Field deprecated in 18.2.9. format: int32</div>
+<div class="param">count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections or requests or packets. Allowed values are 1-1000000000. Special values are 0- unlimited. Field deprecated in 18.2.9. format: int32</div>
 <div class="param">explicit_tracking (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Explicitly tracks an attacker across rate periods. </div>
 <div class="param">fine_grain (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable fine granularity. </div>
 <div class="param">http_cookie (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP cookie name. Field introduced in 17.1.1. </div>
@@ -6905,7 +6905,7 @@ font-style: italic;
 <div class="param">override_application_profile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Enable application layer specific features for the this specific service. It is a reference to an object of type ApplicationProfile. Field introduced in 17.2.4. Allowed in Basic edition, Essentials edition, Enterprise edition. </div>
 <div class="param">override_network_profile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Override the network profile for this specific service port. It is a reference to an object of type NetworkProfile. </div>
 <div class="param">port </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The Virtual Service&#39;s port number. Allowed values are 0-65535. format: int32</div>
-<div class="param">port_range_end (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The end of the Virtual Service&#39;s port number range. Allowed values are 1-65535. Special values are 0- &#39;single port&#39;. format: int32</div>
+<div class="param">port_range_end (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The end of the Virtual Service&#39;s port number range. Allowed values are 1-65535. Special values are 0- single port. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6914,7 +6914,7 @@ font-style: italic;
       <div class="param">service_pool_group_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type PoolGroup. </div>
 <div class="param">service_pool_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Pool. </div>
 <div class="param">service_port </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Pool based destination port. Allowed values are 1-65535. format: int32</div>
-<div class="param">service_port_range_end (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The end of the Service port number range. Allowed values are 1-65535. Special values are 0- &#39;single port&#39;. Field introduced in 17.2.4. format: int32</div>
+<div class="param">service_port_range_end (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The end of the Service port number range. Allowed values are 1-65535. Special values are 0- single port. Field introduced in 17.2.4. format: int32</div>
 <div class="param">service_protocol (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Destination protocol to match for the pool selection. If not specified, it will match any protocol. Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY. </div>
     </div>  <!-- field-items -->
   </div>
@@ -6943,7 +6943,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="URIParamToken">URIParamToken</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">end_index (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - &#39;end of string&#39;. format: int32</div>
+      <div class="param">end_index (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - end of string. format: int32</div>
 <div class="param">start_index (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Index of the starting token in the incoming URI. format: int32</div>
 <div class="param">str_value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Constant string to use as a token. </div>
 <div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Token type for constructing the URI. Enum options - URI_TOKEN_TYPE_HOST, URI_TOKEN_TYPE_PATH, URI_TOKEN_TYPE_STRING, URI_TOKEN_TYPE_STRING_GROUP, URI_TOKEN_TYPE_REGEX. </div>
@@ -7059,7 +7059,7 @@ font-style: italic;
 <div class="param">ldap_vs_config (optional)</div><div class="param-desc"><span class="param-type"><a href="#LDAPVSConfig">LDAPVSConfig</a></span> Application-specific LDAP config. Field introduced in 21.1.1. </div>
 <div class="param">limit_doser (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Limit potential DoS attackers who exceed max_cps_per_client significantly to a fraction of max_cps_per_client for a while. </div>
 <div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition. </div>
-<div class="param">max_cps_per_client (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum connections per second per client IP. Allowed values are 10-1000. Special values are 0- &#39;unlimited&#39;. format: int32</div>
+<div class="param">max_cps_per_client (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum connections per second per client IP. Allowed values are 10-1000. Special values are 0- unlimited. format: int32</div>
 <div class="param">microservice_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Microservice representing the virtual service. It is a reference to an object of type MicroService. </div>
 <div class="param">min_pools_up (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Minimum number of UP pools to mark VS up. Field introduced in 18.2.1, 17.2.12. format: int32</div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name for the Virtual Service. </div>
@@ -7106,7 +7106,7 @@ font-style: italic;
 <div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the VirtualService. </div>
 <div class="param">vh_domain_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> The exact name requested from the client&#39;s SNI-enabled TLS hello domain name field. If this is a match, the parent VS will forward the connection to this child VS. </div>
 <div class="param">vh_matches (optional)</div><div class="param-desc"><span class="param-type"><a href="#VHMatch">array[VHMatch]</a></span> Host and path match criteria to select this child VS. Field introduced in 20.1.3. </div>
-<div class="param">vh_parent_vs_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Specifies the Virtual Service acting as Virtual Hosting (SNI) parent. </div>
+<div class="param">vh_parent_vs_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Specifies the Virtual Service acting as Virtual Hosting (SNI) parent. It is a reference to an object of type VirtualService. </div>
 <div class="param">vh_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Specify if the Virtual Hosting VS is of type SNI or Enhanced. Enum options - VS_TYPE_VH_SNI, VS_TYPE_VH_ENHANCED. Field introduced in 20.1.3. Allowed in Basic(Allowed values- VS_TYPE_VH_ENHANCED) edition, Enterprise edition. Special default for Basic edition is VS_TYPE_VH_ENHANCED, Enterprise is VS_TYPE_VH_SNI. </div>
 <div class="param">vip (optional)</div><div class="param-desc"><span class="param-type"><a href="#Vip">array[Vip]</a></span> List of Virtual Service IPs. While creating a &#39;Shared VS&#39;,please use vsvip_ref to point to the shared entities. Field introduced in 17.1.1. </div>
 <div class="param">vrf_context_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Virtual Routing Context that the Virtual Service is bound to. This is used to provide the isolation of the set of networks the application is attached to. It is a reference to an object of type VrfContext. </div>
