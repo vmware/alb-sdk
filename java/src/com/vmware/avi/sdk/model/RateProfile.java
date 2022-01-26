@@ -74,7 +74,7 @@ public class RateProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum number of connections or requests or packets to be let through instantaneously.
      * Allowed values are 10-2500.
-     * Special values are 0- 'automatic'.
+     * Special values are 0- automatic.
      * Field deprecated in 18.2.9.
      * @return burstSz
      */
@@ -86,7 +86,7 @@ public class RateProfile  {
      * This is the setter method to the attribute.
      * Maximum number of connections or requests or packets to be let through instantaneously.
      * Allowed values are 10-2500.
-     * Special values are 0- 'automatic'.
+     * Special values are 0- automatic.
      * Field deprecated in 18.2.9.
      * @param burstSz set the burstSz.
      */
@@ -98,7 +98,7 @@ public class RateProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum number of connections or requests or packets.
      * Allowed values are 1-1000000000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Field deprecated in 18.2.9.
      * @return count
      */
@@ -110,7 +110,7 @@ public class RateProfile  {
      * This is the setter method to the attribute.
      * Maximum number of connections or requests or packets.
      * Allowed values are 1-1000000000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Field deprecated in 18.2.9.
      * @param count set the count.
      */

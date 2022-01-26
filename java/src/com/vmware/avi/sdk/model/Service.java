@@ -186,7 +186,7 @@ public class Service  {
      * This is the getter method this will return the attribute value.
      * The end of the virtual service's port number range.
      * Allowed values are 1-65535.
-     * Special values are 0- 'single port'.
+     * Special values are 0- single port.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return portRangeEnd
      */
@@ -198,7 +198,7 @@ public class Service  {
      * This is the setter method to the attribute.
      * The end of the virtual service's port number range.
      * Allowed values are 1-65535.
-     * Special values are 0- 'single port'.
+     * Special values are 0- single port.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param portRangeEnd set the portRangeEnd.
      */

@@ -451,7 +451,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Period for which asynchronous patch requests are queued.
      * Allowed values are 30-120.
-     * Special values are 0 - 'deactivated'.
+     * Special values are 0 - deactivated.
      * Field introduced in 18.2.11, 20.1.3.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -465,7 +465,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the setter method to the attribute.
      * Period for which asynchronous patch requests are queued.
      * Allowed values are 30-120.
-     * Special values are 0 - 'deactivated'.
+     * Special values are 0 - deactivated.
      * Field introduced in 18.2.11, 20.1.3.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -1257,7 +1257,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Period for rotate app persistence keys job.
      * Allowed values are 1-1051200.
-     * Special values are 0 - 'disabled'.
+     * Special values are 0 - disabled.
      * Unit is min.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -1271,7 +1271,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the setter method to the attribute.
      * Period for rotate app persistence keys job.
      * Allowed values are 1-1051200.
-     * Special values are 0 - 'disabled'.
+     * Special values are 0 - disabled.
      * Unit is min.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -2064,7 +2064,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Period for rotate vs keys job.
      * Allowed values are 1-1051200.
-     * Special values are 0 - 'disabled'.
+     * Special values are 0 - disabled.
      * Unit is min.
      * Default value when not specified in API or module is interpreted by Avi Controller as 360.
      * @return vsKeyRotatePeriod
@@ -2077,7 +2077,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the setter method to the attribute.
      * Period for rotate vs keys job.
      * Allowed values are 1-1051200.
-     * Special values are 0 - 'disabled'.
+     * Special values are 0 - disabled.
      * Unit is min.
      * Default value when not specified in API or module is interpreted by Avi Controller as 360.
      * @param vsKeyRotatePeriod set the vsKeyRotatePeriod.

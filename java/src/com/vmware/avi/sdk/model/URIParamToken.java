@@ -39,7 +39,7 @@ public class URIParamToken  {
      * This is the getter method this will return the attribute value.
      * Index of the ending token in the incoming uri.
      * Allowed values are 0-65534.
-     * Special values are 65535 - 'end of string'.
+     * Special values are 65535 - end of string.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return endIndex
      */
@@ -51,7 +51,7 @@ public class URIParamToken  {
      * This is the setter method to the attribute.
      * Index of the ending token in the incoming uri.
      * Allowed values are 0-65534.
-     * Special values are 65535 - 'end of string'.
+     * Special values are 65535 - end of string.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param endIndex set the endIndex.
      */

@@ -1172,7 +1172,7 @@ public class ApplicationLog  {
     /**
      * This is the getter method this will return the attribute value.
      * Grpc response status sent in the grpc trailer.
-     * Special values are -1- 'no grpc status recevied even though client sent content-type as application/grpc.'.
+     * Special values are -1- no grpc status recevied even though client sent content-type as application/grpc.
      * Field introduced in 20.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return grpcStatus
@@ -1184,7 +1184,7 @@ public class ApplicationLog  {
     /**
      * This is the setter method to the attribute.
      * Grpc response status sent in the grpc trailer.
-     * Special values are -1- 'no grpc status recevied even though client sent content-type as application/grpc.'.
+     * Special values are -1- no grpc status recevied even though client sent content-type as application/grpc.
      * Field introduced in 20.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param grpcStatus set the grpcStatus.

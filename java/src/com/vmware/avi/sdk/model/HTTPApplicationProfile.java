@@ -775,7 +775,7 @@ public class HTTPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Size of http buffer in kb.
      * Allowed values are 1-256.
-     * Special values are 0- 'auto compute the size of buffer'.
+     * Special values are 0- auto compute the size of buffer.
      * Field introduced in 20.1.1.
      * Unit is kb.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
@@ -790,7 +790,7 @@ public class HTTPApplicationProfile  {
      * This is the setter method to the attribute.
      * Size of http buffer in kb.
      * Allowed values are 1-256.
-     * Special values are 0- 'auto compute the size of buffer'.
+     * Special values are 0- auto compute the size of buffer.
      * Field introduced in 20.1.1.
      * Unit is kb.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
@@ -879,7 +879,7 @@ public class HTTPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum bad requests per second per client ip.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return maxBadRpsCip
      */
@@ -891,7 +891,7 @@ public class HTTPApplicationProfile  {
      * This is the setter method to the attribute.
      * Maximum bad requests per second per client ip.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param maxBadRpsCip set the maxBadRpsCip.
      */
@@ -903,7 +903,7 @@ public class HTTPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum bad requests per second per client ip and uri.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return maxBadRpsCipUri
      */
@@ -915,7 +915,7 @@ public class HTTPApplicationProfile  {
      * This is the setter method to the attribute.
      * Maximum bad requests per second per client ip and uri.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param maxBadRpsCipUri set the maxBadRpsCipUri.
      */
@@ -927,7 +927,7 @@ public class HTTPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum bad requests per second per uri.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return maxBadRpsUri
      */
@@ -939,7 +939,7 @@ public class HTTPApplicationProfile  {
      * This is the setter method to the attribute.
      * Maximum bad requests per second per uri.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param maxBadRpsUri set the maxBadRpsUri.
      */
@@ -978,7 +978,7 @@ public class HTTPApplicationProfile  {
      * The max number of control frames that client can send over an http/2 connection.
      * '0' means unlimited.
      * Allowed values are 0-10000.
-     * Special values are 0- 'unlimited control frames on a client side http/2 connection'.
+     * Special values are 0- unlimited control frames on a client side http/2 connection.
      * Field deprecated in 18.2.10, 20.1.1.
      * Field introduced in 18.2.6.
      * Allowed in basic edition, essentials edition, enterprise edition.
@@ -993,7 +993,7 @@ public class HTTPApplicationProfile  {
      * The max number of control frames that client can send over an http/2 connection.
      * '0' means unlimited.
      * Allowed values are 0-10000.
-     * Special values are 0- 'unlimited control frames on a client side http/2 connection'.
+     * Special values are 0- unlimited control frames on a client side http/2 connection.
      * Field deprecated in 18.2.10, 20.1.1.
      * Field introduced in 18.2.6.
      * Allowed in basic edition, essentials edition, enterprise edition.
@@ -1008,7 +1008,7 @@ public class HTTPApplicationProfile  {
      * The max number of empty data frames that client can send over an http/2 connection.
      * '0' means unlimited.
      * Allowed values are 0-10000.
-     * Special values are 0- 'unlimited empty data frames over a client side http/2 connection'.
+     * Special values are 0- unlimited empty data frames over a client side http/2 connection.
      * Field deprecated in 18.2.10, 20.1.1.
      * Field introduced in 18.2.6.
      * Allowed in basic edition, essentials edition, enterprise edition.
@@ -1023,7 +1023,7 @@ public class HTTPApplicationProfile  {
      * The max number of empty data frames that client can send over an http/2 connection.
      * '0' means unlimited.
      * Allowed values are 0-10000.
-     * Special values are 0- 'unlimited empty data frames over a client side http/2 connection'.
+     * Special values are 0- unlimited empty data frames over a client side http/2 connection.
      * Field deprecated in 18.2.10, 20.1.1.
      * Field introduced in 18.2.6.
      * Allowed in basic edition, essentials edition, enterprise edition.
@@ -1038,7 +1038,7 @@ public class HTTPApplicationProfile  {
      * The max number of frames that can be queued waiting to be sent over a client side http/2 connection at any given time.
      * '0' means unlimited.
      * Allowed values are 0-10000.
-     * Special values are 0- 'unlimited frames can be queued on a client side http/2 connection'.
+     * Special values are 0- unlimited frames can be queued on a client side http/2 connection.
      * Field deprecated in 18.2.10, 20.1.1.
      * Field introduced in 18.2.6.
      * Allowed in basic edition, essentials edition, enterprise edition.
@@ -1053,7 +1053,7 @@ public class HTTPApplicationProfile  {
      * The max number of frames that can be queued waiting to be sent over a client side http/2 connection at any given time.
      * '0' means unlimited.
      * Allowed values are 0-10000.
-     * Special values are 0- 'unlimited frames can be queued on a client side http/2 connection'.
+     * Special values are 0- unlimited frames can be queued on a client side http/2 connection.
      * Field deprecated in 18.2.10, 20.1.1.
      * Field introduced in 18.2.6.
      * Allowed in basic edition, essentials edition, enterprise edition.
@@ -1068,7 +1068,7 @@ public class HTTPApplicationProfile  {
      * The max number of http requests that can be sent over a keep-alive connection.
      * '0' means unlimited.
      * Allowed values are 0-1000000.
-     * Special values are 0- 'unlimited requests on a connection'.
+     * Special values are 0- unlimited requests on a connection.
      * Field introduced in 18.2.5.
      * Allowed in basic(allowed values- 100) edition, essentials(allowed values- 100) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
@@ -1083,7 +1083,7 @@ public class HTTPApplicationProfile  {
      * The max number of http requests that can be sent over a keep-alive connection.
      * '0' means unlimited.
      * Allowed values are 0-1000000.
-     * Special values are 0- 'unlimited requests on a connection'.
+     * Special values are 0- unlimited requests on a connection.
      * Field introduced in 18.2.5.
      * Allowed in basic(allowed values- 100) edition, essentials(allowed values- 100) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
@@ -1123,7 +1123,7 @@ public class HTTPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum requests per second per client ip.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return maxRpsCip
      */
@@ -1135,7 +1135,7 @@ public class HTTPApplicationProfile  {
      * This is the setter method to the attribute.
      * Maximum requests per second per client ip.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param maxRpsCip set the maxRpsCip.
      */
@@ -1147,7 +1147,7 @@ public class HTTPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum requests per second per client ip and uri.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return maxRpsCipUri
      */
@@ -1159,7 +1159,7 @@ public class HTTPApplicationProfile  {
      * This is the setter method to the attribute.
      * Maximum requests per second per client ip and uri.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param maxRpsCipUri set the maxRpsCipUri.
      */
@@ -1171,7 +1171,7 @@ public class HTTPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum unknown client ips per second.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return maxRpsUnknownCip
      */
@@ -1183,7 +1183,7 @@ public class HTTPApplicationProfile  {
      * This is the setter method to the attribute.
      * Maximum unknown client ips per second.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param maxRpsUnknownCip set the maxRpsUnknownCip.
      */
@@ -1195,7 +1195,7 @@ public class HTTPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum unknown uris per second.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return maxRpsUnknownUri
      */
@@ -1207,7 +1207,7 @@ public class HTTPApplicationProfile  {
      * This is the setter method to the attribute.
      * Maximum unknown uris per second.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param maxRpsUnknownUri set the maxRpsUnknownUri.
      */
@@ -1219,7 +1219,7 @@ public class HTTPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum requests per second per uri.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return maxRpsUri
      */
@@ -1231,7 +1231,7 @@ public class HTTPApplicationProfile  {
      * This is the setter method to the attribute.
      * Maximum requests per second per uri.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param maxRpsUri set the maxRpsUri.
      */

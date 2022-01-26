@@ -204,7 +204,7 @@ public class TCPProxyProfile  {
      * Max value is 3600 seconds, min is 5.
      * Set to 0 to allow infinite idle time.
      * Allowed values are 5-14400.
-     * Special values are 0 - 'infinite'.
+     * Special values are 0 - infinite.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as 600.
      * @return idleConnectionTimeout
@@ -219,7 +219,7 @@ public class TCPProxyProfile  {
      * Max value is 3600 seconds, min is 5.
      * Set to 0 to allow infinite idle time.
      * Allowed values are 5-14400.
-     * Special values are 0 - 'infinite'.
+     * Special values are 0 - infinite.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as 600.
      * @param idleConnectionTimeout set the idleConnectionTimeout.
@@ -277,7 +277,7 @@ public class TCPProxyProfile  {
      * Controls the value of the differentiated services code point field inserted in the ip header.
      * This has two options   set to a specific value, or pass through, which uses the incoming dscp value.
      * Allowed values are 0-63.
-     * Special values are max - 'passthrough'.
+     * Special values are max - passthrough.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return ipDscp
      */
@@ -290,7 +290,7 @@ public class TCPProxyProfile  {
      * Controls the value of the differentiated services code point field inserted in the ip header.
      * This has two options   set to a specific value, or pass through, which uses the incoming dscp value.
      * Allowed values are 0-63.
-     * Special values are max - 'passthrough'.
+     * Special values are max - passthrough.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param ipDscp set the ipDscp.
      */
@@ -350,7 +350,7 @@ public class TCPProxyProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum tcp segment size.
      * Allowed values are 512-9000.
-     * Special values are 0 - 'use interface mtu'.
+     * Special values are 0 - use interface mtu.
      * Unit is bytes.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maxSegmentSize
@@ -363,7 +363,7 @@ public class TCPProxyProfile  {
      * This is the setter method to the attribute.
      * Maximum tcp segment size.
      * Allowed values are 512-9000.
-     * Special values are 0 - 'use interface mtu'.
+     * Special values are 0 - use interface mtu.
      * Unit is bytes.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param maxSegmentSize set the maxSegmentSize.
@@ -548,7 +548,7 @@ public class TCPProxyProfile  {
      * This is the getter method this will return the attribute value.
      * The time (in millisec) to wait before closing a connection in the time_wait state.
      * Allowed values are 500-2000.
-     * Special values are 0 - 'immediate'.
+     * Special values are 0 - immediate.
      * Unit is milliseconds.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @return timeWaitDelay
@@ -561,7 +561,7 @@ public class TCPProxyProfile  {
      * This is the setter method to the attribute.
      * The time (in millisec) to wait before closing a connection in the time_wait state.
      * Allowed values are 500-2000.
-     * Special values are 0 - 'immediate'.
+     * Special values are 0 - immediate.
      * Unit is milliseconds.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @param timeWaitDelay set the timeWaitDelay.
