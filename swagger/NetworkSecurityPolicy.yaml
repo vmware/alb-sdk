@@ -595,7 +595,7 @@ definitions:
                 description: " Enum options - NETWORK_SECURITY_POLICY_ACTION_TYPE_ALLOW, NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY, NETWORK_SECURITY_POLICY_ACTION_TYPE_RATE_LIMIT. Allowed in Basic(Allowed values- NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY) edition, Essentials(Allowed values- NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY) edition, Enterprise edition."
                 type: string
             age:
-                description: "Time in minutes after which rule will be deleted. Allowed values are 1-4294967295. Special values are 0- 'blocked for ever'. Unit is MIN. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition."
+                description: "Time in minutes after which rule will be deleted. Allowed values are 1-4294967295. Special values are 0- blocked for ever. Unit is MIN. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition."
                 type: integer
                 format: int32
             created_by:

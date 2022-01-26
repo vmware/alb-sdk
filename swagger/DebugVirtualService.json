@@ -518,7 +518,7 @@
             "type": "object",
             "properties": {
                 "absolute_size": {
-                    "description": "Maximum size in MB. Set 0 for avi default size. Allowed values are 100-512000. Special values are 0 - 'AVI_DEFAULT'. Field introduced in 18.2.8. Unit is MB.",
+                    "description": "Maximum size in MB. Set 0 for avi default size. Allowed values are 100-512000. Special values are 0 - AVI_DEFAULT. Field introduced in 18.2.8. Unit is MB.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -796,7 +796,7 @@
                     "$ref": "#/definitions/CaptureFileSize"
                 },
                 "duration": {
-                    "description": "Number of minutes to capture packets. Use 0 to capture until manually stopped. Special values are 0 - 'infinite'. Unit is MIN.",
+                    "description": "Number of minutes to capture packets. Use 0 to capture until manually stopped. Special values are 0 - infinite. Unit is MIN.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -821,7 +821,7 @@
                     "default": true
                 },
                 "pkt_size": {
-                    "description": "Number of bytes of each packet to capture. Use 0 to capture the entire packet. Allowed values are 64-1514. Special values are 0 - 'full capture'. Unit is BYTES.",
+                    "description": "Number of bytes of each packet to capture. Use 0 to capture the entire packet. Allowed values are 64-1514. Special values are 0 - full capture. Unit is BYTES.",
                     "type": "integer",
                     "default": 128,
                     "format": "int32"
@@ -856,7 +856,7 @@
             ],
             "properties": {
                 "flag": {
-                    "description": " Enum options - DEBUG_VS_TCP_CONNECTION, DEBUG_VS_TCP_PKT, DEBUG_VS_TCP_APP, DEBUG_VS_TCP_APP_PKT, DEBUG_VS_TCP_RETRANSMIT, DEBUG_VS_TCP_TIMER, DEBUG_VS_TCP_CONN_ERROR, DEBUG_VS_TCP_PKT_ERROR, DEBUG_VS_TCP_REXMT, DEBUG_VS_TCP_ALL, DEBUG_VS_CREDIT, DEBUG_VS_PROXY_CONNECTION, DEBUG_VS_PROXY_PKT, DEBUG_VS_PROXY_ERR, DEBUG_VS_UDP, DEBUG_VS_UDP_PKT, DEBUG_VS_HM, DEBUG_VS_HM_ERR, DEBUG_VS_HM_PKT, DEBUG_VS_HTTP_CORE, DEBUG_VS_HTTP_ALL, DEBUG_VS_CONFIG, DEBUG_VS_EVENTS, DEBUG_VS_HTTP_RULES, DEBUG_VS_HM_EXT, DEBUG_VS_SSL, DEBUG_VS_WAF, DEBUG_VS_DNS, DEBUG_VS_PAA, DEBUG_VS_AUTH, DEBUG_VS_BOT, DEBUG_VS_ALL, DEBUG_VS_ERROR, DEBUG_VS_NONE.",
+                    "description": " Enum options - DEBUG_VS_TCP_CONNECTION, DEBUG_VS_TCP_PKT, DEBUG_VS_TCP_APP, DEBUG_VS_TCP_APP_PKT, DEBUG_VS_TCP_RETRANSMIT, DEBUG_VS_TCP_TIMER, DEBUG_VS_TCP_CONN_ERROR, DEBUG_VS_TCP_PKT_ERROR, DEBUG_VS_TCP_REXMT, DEBUG_VS_TCP_ALL, DEBUG_VS_CREDIT, DEBUG_VS_PROXY_CONNECTION, DEBUG_VS_PROXY_PKT, DEBUG_VS_PROXY_ERR, DEBUG_VS_UDP, DEBUG_VS_UDP_PKT, DEBUG_VS_HM, DEBUG_VS_HM_ERR, DEBUG_VS_HM_PKT, DEBUG_VS_HTTP_CORE, DEBUG_VS_HTTP_ALL, DEBUG_VS_CONFIG, DEBUG_VS_EVENTS, DEBUG_VS_HTTP_RULES, DEBUG_VS_HM_EXT, DEBUG_VS_SSL, DEBUG_VS_WAF, DEBUG_VS_DNS, DEBUG_VS_PAA, DEBUG_VS_AUTH, DEBUG_VS_BOT, DEBUG_VS_DATASCRIPT, DEBUG_VS_ALL, DEBUG_VS_ERROR, DEBUG_VS_NONE.",
                     "type": "string"
                 }
             }

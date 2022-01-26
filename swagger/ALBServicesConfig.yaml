@@ -589,7 +589,7 @@ definitions:
         type: object
         properties:
             max_service_units:
-                description: "Maximum service units limit for controller. Allowed values are 0-1000. Special values are 0 - 'infinite'. Field introduced in 21.1.3."
+                description: "Maximum service units limit for controller. Allowed values are 0-1000. Special values are 0 - infinite. Field introduced in 21.1.3."
                 type: number
                 format: double
             reserve_service_units:

@@ -228,7 +228,7 @@ definitions:
                 description: "Export configuration in appviewx compatibility mode. Field introduced in 17.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
                 type: boolean
             async_patch_merge_period:
-                description: "Period for which asynchronous patch requests are queued. Allowed values are 30-120. Special values are 0 - 'Deactivated'. Field introduced in 18.2.11, 20.1.3. Unit is SEC."
+                description: "Period for which asynchronous patch requests are queued. Allowed values are 30-120. Special values are 0 - Deactivated. Field introduced in 18.2.11, 20.1.3. Unit is SEC."
                 type: integer
                 format: int32
             async_patch_request_cleanup_duration:
@@ -396,7 +396,7 @@ definitions:
                 description: "Network and VrfContext objects from the admin tenant will not be shared to non-admin tenants unless admin permissions are granted. Field introduced in 18.2.7, 20.1.1."
                 type: boolean
             persistence_key_rotate_period:
-                description: "Period for rotate app persistence keys job. Allowed values are 1-1051200. Special values are 0 - 'Disabled'. Unit is MIN. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition."
+                description: "Period for rotate app persistence keys job. Allowed values are 1-1051200. Special values are 0 - Disabled. Unit is MIN. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition."
                 type: integer
                 format: int32
             portal_request_burst_limit:
@@ -556,7 +556,7 @@ definitions:
                 default: 60
                 format: int32
             vs_key_rotate_period:
-                description: "Period for rotate VS keys job. Allowed values are 1-1051200. Special values are 0 - 'Disabled'. Unit is MIN."
+                description: "Period for rotate VS keys job. Allowed values are 1-1051200. Special values are 0 - Disabled. Unit is MIN."
                 type: integer
                 default: 360
                 format: int32

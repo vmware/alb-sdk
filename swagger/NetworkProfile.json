@@ -754,7 +754,7 @@
                     "type": "boolean"
                 },
                 "session_idle_timeout": {
-                    "description": "The amount of time (in sec) for which a connection needs to be idle before it is eligible to be deleted. Allowed values are 5-14400. Special values are 0 - 'infinite'. Unit is SEC.",
+                    "description": "The amount of time (in sec) for which a connection needs to be idle before it is eligible to be deleted. Allowed values are 5-14400. Special values are 0 - infinite. Unit is SEC.",
                     "type": "integer",
                     "default": 300,
                     "format": "int32"
@@ -790,7 +790,7 @@
                     "format": "int32"
                 },
                 "idle_connection_timeout": {
-                    "description": "The duration for keepalive probes or session idle timeout. Max value is 3600 seconds, min is 5.  Set to 0 to allow infinite idle time. Allowed values are 5-14400. Special values are 0 - 'infinite'. Unit is SEC.",
+                    "description": "The duration for keepalive probes or session idle timeout. Max value is 3600 seconds, min is 5.  Set to 0 to allow infinite idle time. Allowed values are 5-14400. Special values are 0 - infinite. Unit is SEC.",
                     "type": "integer",
                     "default": 600,
                     "format": "int32"
@@ -805,7 +805,7 @@
                     "type": "boolean"
                 },
                 "ip_dscp": {
-                    "description": "Controls the value of the Differentiated Services Code Point field inserted in the IP header.  This has two options   Set to a specific value, or Pass Through, which uses the incoming DSCP value. Allowed values are 0-63. Special values are MAX - 'Passthrough'.",
+                    "description": "Controls the value of the Differentiated Services Code Point field inserted in the IP header.  This has two options   Set to a specific value, or Pass Through, which uses the incoming DSCP value. Allowed values are 0-63. Special values are MAX - Passthrough.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -821,7 +821,7 @@
                     "format": "int32"
                 },
                 "max_segment_size": {
-                    "description": "Maximum TCP segment size. Allowed values are 512-9000. Special values are 0 - 'Use Interface MTU'. Unit is BYTES.",
+                    "description": "Maximum TCP segment size. Allowed values are 512-9000. Special values are 0 - Use Interface MTU. Unit is BYTES.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -863,7 +863,7 @@
                     "format": "int32"
                 },
                 "time_wait_delay": {
-                    "description": "The time (in millisec) to wait before closing a connection in the TIME_WAIT state. Allowed values are 500-2000. Special values are 0 - 'immediate'. Unit is MILLISECONDS.",
+                    "description": "The time (in millisec) to wait before closing a connection in the TIME_WAIT state. Allowed values are 500-2000. Special values are 0 - immediate. Unit is MILLISECONDS.",
                     "type": "integer",
                     "default": 2000,
                     "format": "int32"
