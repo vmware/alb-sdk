@@ -11,7 +11,7 @@ type FullClientLogs struct {
 	// [DEPRECATED] Log all headers. Please use the all_headers flag in AnalyticsPolicy. Field deprecated in 18.1.4, 18.2.1.
 	AllHeaders *bool `json:"all_headers,omitempty"`
 
-	// How long should the system capture all logs, measured in minutes. Set to 0 for infinite. Special values are 0 - 'infinite'. Unit is MIN.
+	// How long should the system capture all logs, measured in minutes. Set to 0 for infinite. Special values are 0 - infinite. Unit is MIN.
 	Duration *int32 `json:"duration,omitempty"`
 
 	// Capture all client logs including connections and requests.  When deactivated, only errors will be logged. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is False.

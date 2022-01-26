@@ -33,7 +33,7 @@ type ControllerProperties struct {
 	// Export configuration in appviewx compatibility mode. Field introduced in 17.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
 	AppviewxCompatMode *bool `json:"appviewx_compat_mode,omitempty"`
 
-	// Period for which asynchronous patch requests are queued. Allowed values are 30-120. Special values are 0 - 'Deactivated'. Field introduced in 18.2.11, 20.1.3. Unit is SEC.
+	// Period for which asynchronous patch requests are queued. Allowed values are 30-120. Special values are 0 - Deactivated. Field introduced in 18.2.11, 20.1.3. Unit is SEC.
 	AsyncPatchMergePeriod *int32 `json:"async_patch_merge_period,omitempty"`
 
 	// Duration for which asynchronous patch requests should be kept, after being marked as SUCCESS or FAIL. Allowed values are 5-120. Field introduced in 18.2.11, 20.1.3. Unit is MIN.
@@ -144,7 +144,7 @@ type ControllerProperties struct {
 	// Network and VrfContext objects from the admin tenant will not be shared to non-admin tenants unless admin permissions are granted. Field introduced in 18.2.7, 20.1.1.
 	PermissionScopedSharedAdminNetworks *bool `json:"permission_scoped_shared_admin_networks,omitempty"`
 
-	// Period for rotate app persistence keys job. Allowed values are 1-1051200. Special values are 0 - 'Disabled'. Unit is MIN. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.
+	// Period for rotate app persistence keys job. Allowed values are 1-1051200. Special values are 0 - Disabled. Unit is MIN. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.
 	PersistenceKeyRotatePeriod *int32 `json:"persistence_key_rotate_period,omitempty"`
 
 	// Burst limit on number of incoming requests. 0 to disable. Field introduced in 20.1.1.
@@ -250,7 +250,7 @@ type ControllerProperties struct {
 	//  Unit is SEC.
 	VsAwaitingSeTimeout *int32 `json:"vs_awaiting_se_timeout,omitempty"`
 
-	// Period for rotate VS keys job. Allowed values are 1-1051200. Special values are 0 - 'Disabled'. Unit is MIN.
+	// Period for rotate VS keys job. Allowed values are 1-1051200. Special values are 0 - Disabled. Unit is MIN.
 	VsKeyRotatePeriod *int32 `json:"vs_key_rotate_period,omitempty"`
 
 	// Interval for checking scaleout_ready status while controller is waiting for ScaleOutReady RPC from the Service Engine. Field introduced in 18.2.2. Unit is SEC.

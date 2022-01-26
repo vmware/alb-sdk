@@ -44,7 +44,7 @@ type DNSServiceApplicationProfile struct {
 	// Specifies the TTL value (in seconds) for SOA (Start of Authority) (corresponding to a authoritative domain owned by this DNS Virtual Service) record's minimum TTL served by the DNS Virtual Service. Allowed values are 0-86400. Field introduced in 17.2.4. Unit is SEC.
 	NegativeCachingTTL *int32 `json:"negative_caching_ttl,omitempty"`
 
-	// Specifies the number of IP addresses returned by the DNS Service. Enter 0 to return all IP addresses. Allowed values are 1-20. Special values are 0- 'Return all IP addresses'.
+	// Specifies the number of IP addresses returned by the DNS Service. Enter 0 to return all IP addresses. Allowed values are 1-20. Special values are 0- Return all IP addresses.
 	NumDNSIP *int32 `json:"num_dns_ip,omitempty"`
 
 	// Specifies the TTL value (in seconds) for records served by DNS Service. Allowed values are 0-86400. Unit is SEC.

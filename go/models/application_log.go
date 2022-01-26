@@ -124,7 +124,7 @@ type ApplicationLog struct {
 	// The service called by the gRPC request. Field introduced in 20.1.1.
 	GrpcServiceName *string `json:"grpc_service_name,omitempty"`
 
-	// GRPC response status sent in the GRPC trailer. Special values are -1- 'No GRPC status recevied even though client sent content-type as application/grpc.'. Field introduced in 20.1.1.
+	// GRPC response status sent in the GRPC trailer. Special values are -1- No GRPC status recevied even though client sent content-type as application/grpc.. Field introduced in 20.1.1.
 	GrpcStatus *int32 `json:"grpc_status,omitempty"`
 
 	// The reason phrase corresponding to the gRPC status code. Enum options - GRPC_STATUS_CODE_OK, GRPC_STATUS_CODE_CANCELLED, GRPC_STATUS_CODE_UNKNOWN, GRPC_STATUS_CODE_INVALID_ARGUMENT, GRPC_STATUS_CODE_DEADLINE_EXCEEDED, GRPC_STATUS_CODE_NOT_FOUND, GRPC_STATUS_CODE_ALREADY_EXISTS, GRPC_STATUS_CODE_PERMISSION_DENIED, GRPC_STATUS_CODE_RESOURCE_EXHAUSTED, GRPC_STATUS_CODE_FAILED_PRECONDITION, GRPC_STATUS_CODE_STOPPED, GRPC_STATUS_CODE_OUT_OF_RANGE, GRPC_STATUS_CODE_UNIMPLEMENTED, GRPC_STATUS_CODE_INTERNAL, GRPC_STATUS_CODE_UNAVAILABLE, GRPC_STATUS_CODE_DATA_LOSS, GRPC_STATUS_CODE_UNAUTHENTICATED. Field introduced in 20.1.1.

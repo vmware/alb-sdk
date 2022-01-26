@@ -21,8 +21,8 @@ type Image struct {
 	// Mandatory Controller patch name that is applied along with this base image. Field introduced in 18.2.10, 20.1.1.
 	ControllerPatchName *string `json:"controller_patch_name,omitempty"`
 
-	// It references the controller-patch associated with the Uber image. Field introduced in 18.2.8, 20.1.1.
-	ControllerPatchUUID *string `json:"controller_patch_uuid,omitempty"`
+	// It references the controller-patch associated with the Uber image. It is a reference to an object of type Image. Field introduced in 18.2.8, 20.1.1.
+	ControllerPatchRef *string `json:"controller_patch_ref,omitempty"`
 
 	// Time taken to upload the image in seconds. Field introduced in 21.1.3. Unit is SEC.
 	Duration *int32 `json:"duration,omitempty"`
@@ -52,8 +52,8 @@ type Image struct {
 	// Mandatory ServiceEngine patch name that is applied along with this base image. Field introduced in 18.2.10, 20.1.1.
 	SePatchName *string `json:"se_patch_name,omitempty"`
 
-	// It references the Service Engine patch associated with the Uber Image. Field introduced in 18.2.8, 20.1.1.
-	SePatchUUID *string `json:"se_patch_uuid,omitempty"`
+	// It references the Service Engine patch associated with the Uber Image. It is a reference to an object of type Image. Field introduced in 18.2.8, 20.1.1.
+	SePatchRef *string `json:"se_patch_ref,omitempty"`
 
 	// Image upload start time. Field introduced in 21.1.3.
 	StartTime *string `json:"start_time,omitempty"`

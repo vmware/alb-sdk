@@ -21,6 +21,9 @@ type WafPolicy struct {
 	// Application Specific Signatures. Field introduced in 20.1.1.
 	ApplicationSignatures *WafApplicationSignatures `json:"application_signatures,omitempty"`
 
+	// Enable the functionality to bypass WAF for static file extensions. Field introduced in 22.1.1.
+	BypassStaticExtensions *bool `json:"bypass_static_extensions,omitempty"`
+
 	// Configure thresholds for confidence labels. Field introduced in 20.1.1.
 	ConfidenceOverride *AppLearningConfidenceOverride `json:"confidence_override,omitempty"`
 
