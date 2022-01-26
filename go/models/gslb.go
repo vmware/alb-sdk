@@ -33,7 +33,7 @@ type Gslb struct {
 	// Allows enable/disable of GslbService pool groups and pool members from the gslb follower members. Field introduced in 20.1.5.
 	EnableConfigByMembers *bool `json:"enable_config_by_members,omitempty"`
 
-	// Frequency with which errored messages are resynced to follower sites. Value of 0 disables resync behavior. Allowed values are 60-3600. Special values are 0 - 'Disable'. Field introduced in 18.2.3. Unit is SEC.
+	// Frequency with which errored messages are resynced to follower sites. Value of 0 disables resync behavior. Allowed values are 60-3600. Special values are 0 - Disable. Field introduced in 18.2.3. Unit is SEC.
 	ErrorResyncInterval *int32 `json:"error_resync_interval,omitempty"`
 
 	// This field indicates that this object is replicated across GSLB federation. Field introduced in 17.1.3.

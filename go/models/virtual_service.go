@@ -178,7 +178,7 @@ type VirtualService struct {
 	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
-	// Maximum connections per second per client IP. Allowed values are 10-1000. Special values are 0- 'unlimited'.
+	// Maximum connections per second per client IP. Allowed values are 10-1000. Special values are 0- unlimited.
 	MaxCpsPerClient *int32 `json:"max_cps_per_client,omitempty"`
 
 	// Microservice representing the virtual service. It is a reference to an object of type MicroService.
@@ -322,8 +322,8 @@ type VirtualService struct {
 	// Host and path match criteria to select this child VS. Field introduced in 20.1.3.
 	VhMatches []*VHMatch `json:"vh_matches,omitempty"`
 
-	// Specifies the Virtual Service acting as Virtual Hosting (SNI) parent.
-	VhParentVsUUID *string `json:"vh_parent_vs_uuid,omitempty"`
+	// Specifies the Virtual Service acting as Virtual Hosting (SNI) parent. It is a reference to an object of type VirtualService.
+	VhParentVsRef *string `json:"vh_parent_vs_ref,omitempty"`
 
 	// Specify if the Virtual Hosting VS is of type SNI or Enhanced. Enum options - VS_TYPE_VH_SNI, VS_TYPE_VH_ENHANCED. Field introduced in 20.1.3. Allowed in Basic(Allowed values- VS_TYPE_VH_ENHANCED) edition, Enterprise edition. Special default for Basic edition is VS_TYPE_VH_ENHANCED, Enterprise is VS_TYPE_VH_SNI.
 	VhType *string `json:"vh_type,omitempty"`

@@ -8,7 +8,7 @@ package models
 // swagger:model URIParamToken
 type URIParamToken struct {
 
-	// Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - 'end of string'.
+	// Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - end of string.
 	EndIndex *int32 `json:"end_index,omitempty"`
 
 	// Index of the starting token in the incoming URI.
