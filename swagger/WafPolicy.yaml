@@ -867,6 +867,10 @@ definitions:
             application_signatures:
                 description: "Application Specific Signatures. Field introduced in 20.1.1."
                 $ref: '#/definitions/WafApplicationSignatures'
+            bypass_static_extensions:
+                description: "Enable the functionality to bypass WAF for static file extensions. Field introduced in 22.1.1."
+                type: boolean
+                default: True
             confidence_override:
                 description: "Configure thresholds for confidence labels. Field introduced in 20.1.1."
                 $ref: '#/definitions/AppLearningConfidenceOverride'

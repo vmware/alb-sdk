@@ -4568,7 +4568,7 @@
                     "$ref": "#/definitions/IpAddrMatch"
                 },
                 "duration": {
-                    "description": " Special values are 0 - 'infinite'. Unit is MIN.",
+                    "description": " Special values are 0 - infinite. Unit is MIN.",
                     "type": "integer",
                     "default": 30,
                     "format": "int32"
@@ -4739,7 +4739,7 @@
                     "type": "string"
                 },
                 "num_records_in_response": {
-                    "description": "Specifies the number of records returned for this FQDN. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- 'Return all records'. Field introduced in 17.1.1.",
+                    "description": "Specifies the number of records returned for this FQDN. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 17.1.1.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -4874,7 +4874,7 @@
                     }
                 },
                 "num_records_in_response": {
-                    "description": "Specifies the number of records returned by the DNS service. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- 'Return all records'. Field introduced in 17.1.1.",
+                    "description": "Specifies the number of records returned by the DNS service. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 17.1.1.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -4958,7 +4958,7 @@
                     "type": "boolean"
                 },
                 "duration": {
-                    "description": "How long should the system capture all logs, measured in minutes. Set to 0 for infinite. Special values are 0 - 'infinite'. Unit is MIN.",
+                    "description": "How long should the system capture all logs, measured in minutes. Set to 0 for infinite. Special values are 0 - infinite. Unit is MIN.",
                     "type": "integer",
                     "default": 30,
                     "format": "int32"
@@ -5487,7 +5487,7 @@
             ],
             "properties": {
                 "duration": {
-                    "description": "Real time metrics collection duration in minutes. 0 for infinite. Special values are 0 - 'infinite'. Unit is MIN.",
+                    "description": "Real time metrics collection duration in minutes. 0 for infinite. Special values are 0 - infinite. Unit is MIN.",
                     "type": "integer",
                     "default": 30,
                     "format": "int32"
@@ -5746,12 +5746,12 @@
                     "$ref": "#/definitions/RateLimiterAction"
                 },
                 "burst_sz": {
-                    "description": "Maximum number of connections or requests or packets to be let through instantaneously. Allowed values are 10-2500. Special values are 0- 'automatic'. Field deprecated in 18.2.9.",
+                    "description": "Maximum number of connections or requests or packets to be let through instantaneously. Allowed values are 10-2500. Special values are 0- automatic. Field deprecated in 18.2.9.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "count": {
-                    "description": "Maximum number of connections or requests or packets. Allowed values are 1-1000000000. Special values are 0- 'unlimited'. Field deprecated in 18.2.9.",
+                    "description": "Maximum number of connections or requests or packets. Allowed values are 1-1000000000. Special values are 0- unlimited. Field deprecated in 18.2.9.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -5972,7 +5972,7 @@
                     "format": "int32"
                 },
                 "port_range_end": {
-                    "description": "The end of the Virtual Service's port number range. Allowed values are 1-65535. Special values are 0- 'single port'.",
+                    "description": "The end of the Virtual Service's port number range. Allowed values are 1-65535. Special values are 0- single port.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -5998,7 +5998,7 @@
                     "format": "int32"
                 },
                 "service_port_range_end": {
-                    "description": "The end of the Service port number range. Allowed values are 1-65535. Special values are 0- 'single port'. Field introduced in 17.2.4.",
+                    "description": "The end of the Service port number range. Allowed values are 1-65535. Special values are 0- single port. Field introduced in 17.2.4.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -6188,7 +6188,7 @@
             ],
             "properties": {
                 "end_index": {
-                    "description": "Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - 'end of string'.",
+                    "description": "Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - end of string.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -6629,7 +6629,7 @@
                     }
                 },
                 "max_cps_per_client": {
-                    "description": "Maximum connections per second per client IP. Allowed values are 10-1000. Special values are 0- 'unlimited'.",
+                    "description": "Maximum connections per second per client IP. Allowed values are 10-1000. Special values are 0- unlimited.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -6857,8 +6857,8 @@
                         "$ref": "#/definitions/VHMatch"
                     }
                 },
-                "vh_parent_vs_uuid": {
-                    "description": "Specifies the Virtual Service acting as Virtual Hosting (SNI) parent.",
+                "vh_parent_vs_ref": {
+                    "description": "Specifies the Virtual Service acting as Virtual Hosting (SNI) parent. It is a reference to an object of type VirtualService.",
                     "type": "string"
                 },
                 "vh_type": {

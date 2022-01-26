@@ -760,7 +760,7 @@
                     }
                 },
                 "timeout": {
-                    "description": "The maximum lifetime of any session cookie. No value or 'zero' indicates no timeout. Allowed values are 1-14400. Special values are 0- 'No Timeout'. Unit is MIN.",
+                    "description": "The maximum lifetime of any session cookie. No value or 'zero' indicates no timeout. Allowed values are 1-14400. Special values are 0- No Timeout. Unit is MIN.",
                     "type": "integer",
                     "format": "int32"
                 }
