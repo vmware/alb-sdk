@@ -86,7 +86,7 @@ public class ConnPoolProperties  {
     /**
      * This is the getter method this will return the attribute value.
      * Maximum number of times a connection can be reused.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Field introduced in 18.2.1.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -99,7 +99,7 @@ public class ConnPoolProperties  {
     /**
      * This is the setter method to the attribute.
      * Maximum number of times a connection can be reused.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Field introduced in 18.2.1.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -112,7 +112,7 @@ public class ConnPoolProperties  {
     /**
      * This is the getter method this will return the attribute value.
      * Maximum number of connections a server can cache.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Field introduced in 18.2.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return upstreamConnpoolServerMaxCache
@@ -124,7 +124,7 @@ public class ConnPoolProperties  {
     /**
      * This is the setter method to the attribute.
      * Maximum number of connections a server can cache.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Field introduced in 18.2.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param upstreamConnpoolServerMaxCache set the upstreamConnpoolServerMaxCache.

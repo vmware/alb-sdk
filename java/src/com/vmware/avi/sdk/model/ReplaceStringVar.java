@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ReplaceStringVar  {
     @JsonProperty("type")
-    private String type = null;
+    private String type = "LITERAL_STRING";
 
     @JsonProperty("val")
     private String val = null;
@@ -31,9 +31,10 @@ public class ReplaceStringVar  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Type of replacement string - can be a variable exposed from datascript, value of an http header or a custom user-input literal string.
-     * Enum options - DATASCRIPT_VAR, HTTP_HEADER_VAR, LITERAL_STRING.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Type of replacement string - can be a variable exposed from datascript, value of an http variable, a custom user-input literal string, or a
+     * string with all three combined.
+     * Enum options - DATASCRIPT_VAR, AVI_VAR, LITERAL_STRING, COMBINATION_STRING.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "LITERAL_STRING".
      * @return type
      */
     public String getType() {
@@ -42,9 +43,10 @@ public class ReplaceStringVar  {
 
     /**
      * This is the setter method to the attribute.
-     * Type of replacement string - can be a variable exposed from datascript, value of an http header or a custom user-input literal string.
-     * Enum options - DATASCRIPT_VAR, HTTP_HEADER_VAR, LITERAL_STRING.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Type of replacement string - can be a variable exposed from datascript, value of an http variable, a custom user-input literal string, or a
+     * string with all three combined.
+     * Enum options - DATASCRIPT_VAR, AVI_VAR, LITERAL_STRING, COMBINATION_STRING.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "LITERAL_STRING".
      * @param type set the type.
      */
     public void setType(String  type) {
@@ -53,7 +55,8 @@ public class ReplaceStringVar  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Value of the replacement string - name of variable exposed from datascript, name of the http header or a custom user-input literal string.
+     * Value of the replacement string - name of variable exposed from datascript, name of the http header, a custom user-input literal string, or a
+     * string with all three combined.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return val
      */
@@ -63,7 +66,8 @@ public class ReplaceStringVar  {
 
     /**
      * This is the setter method to the attribute.
-     * Value of the replacement string - name of variable exposed from datascript, name of the http header or a custom user-input literal string.
+     * Value of the replacement string - name of variable exposed from datascript, name of the http header, a custom user-input literal string, or a
+     * string with all three combined.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param val set the val.
      */

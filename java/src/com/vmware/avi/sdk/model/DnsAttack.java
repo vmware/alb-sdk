@@ -88,7 +88,7 @@ public class DnsAttack  {
      * This is the getter method this will return the attribute value.
      * Time in minutes after which mitigation will be deactivated.
      * Allowed values are 1-4294967295.
-     * Special values are 0- 'blocked for ever'.
+     * Special values are 0- blocked for ever.
      * Field introduced in 18.2.1.
      * Unit is min.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
@@ -102,7 +102,7 @@ public class DnsAttack  {
      * This is the setter method to the attribute.
      * Time in minutes after which mitigation will be deactivated.
      * Allowed values are 1-4294967295.
-     * Special values are 0- 'blocked for ever'.
+     * Special values are 0- blocked for ever.
      * Field introduced in 18.2.1.
      * Unit is min.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.

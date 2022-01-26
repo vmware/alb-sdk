@@ -380,7 +380,7 @@ public class DnsRecord  {
      * Enter 0 to return all records.
      * Default is 0.
      * Allowed values are 0-20.
-     * Special values are 0- 'return all records'.
+     * Special values are 0- return all records.
      * Field introduced in 17.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return numRecordsInResponse
@@ -395,7 +395,7 @@ public class DnsRecord  {
      * Enter 0 to return all records.
      * Default is 0.
      * Allowed values are 0-20.
-     * Special values are 0- 'return all records'.
+     * Special values are 0- return all records.
      * Field introduced in 17.1.1.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param numRecordsInResponse set the numRecordsInResponse.

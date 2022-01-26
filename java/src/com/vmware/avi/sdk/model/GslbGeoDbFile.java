@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbGeoDbFile  {
     @JsonProperty("checksum")
-    private String checksum = null;
+    private String checksum;
 
     @JsonProperty("file_id")
-    private String fileId = null;
+    private String fileId;
 
     @JsonProperty("filename")
     private String filename = null;
@@ -34,7 +34,7 @@ public class GslbGeoDbFile  {
     private String format = "GSLB_GEODB_FILE_FORMAT_AVI";
 
     @JsonProperty("timestamp")
-    private Integer timestamp = null;
+    private Integer timestamp;
 
 
 
@@ -42,7 +42,6 @@ public class GslbGeoDbFile  {
      * This is the getter method this will return the attribute value.
      * File checksum is internally computed.
      * Field introduced in 17.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return checksum
      */
     public String getChecksum() {
@@ -53,7 +52,6 @@ public class GslbGeoDbFile  {
      * This is the setter method to the attribute.
      * File checksum is internally computed.
      * Field introduced in 17.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param checksum set the checksum.
      */
     public void setChecksum(String  checksum) {
@@ -64,7 +62,6 @@ public class GslbGeoDbFile  {
      * This is the getter method this will return the attribute value.
      * System internal identifier for the file.
      * Field introduced in 17.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fileId
      */
     public String getFileId() {
@@ -75,7 +72,6 @@ public class GslbGeoDbFile  {
      * This is the setter method to the attribute.
      * System internal identifier for the file.
      * Field introduced in 17.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fileId set the fileId.
      */
     public void setFileId(String  fileId) {
@@ -134,7 +130,6 @@ public class GslbGeoDbFile  {
      * This is the getter method this will return the attribute value.
      * Internal timestamp associated with the file.
      * Field introduced in 17.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return timestamp
      */
     public Integer getTimestamp() {
@@ -145,7 +140,6 @@ public class GslbGeoDbFile  {
      * This is the setter method to the attribute.
      * Internal timestamp associated with the file.
      * Field introduced in 17.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param timestamp set the timestamp.
      */
     public void setTimestamp(Integer  timestamp) {

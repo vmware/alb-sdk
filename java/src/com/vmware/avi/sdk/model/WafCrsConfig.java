@@ -21,46 +21,20 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafCrsConfig  {
-    @JsonProperty("category")
-    private String category = "ALB_THREAT_INTELLIGENCE_CATEGORY";
-
     @JsonProperty("enable_auto_download_waf_signatures")
     private Boolean enableAutoDownloadWafSignatures = false;
 
     @JsonProperty("enable_waf_signatures_notifications")
-    private Boolean enableWafSignaturesNotifications = true;
+    private Boolean enableWafSignaturesNotifications;
 
 
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Service category.
-     * Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "ALB_THREAT_INTELLIGENCE_CATEGORY".
-     * @return category
-     */
-    public String getCategory() {
-        return category;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Service category.
-     * Enum options - ALB_THREAT_INTELLIGENCE_CATEGORY, ALB_SUPPORT_CATEGORY.
-     * Field introduced in 21.1.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "ALB_THREAT_INTELLIGENCE_CATEGORY".
-     * @param category set the category.
-     */
-    public void setCategory(String  category) {
-        this.category = category;
-    }
 
     /**
      * This is the getter method this will return the attribute value.
      * Enable to automatically download new waf signatures/crs version to the controller.
      * Field introduced in 21.1.1.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
+     * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableAutoDownloadWafSignatures
      */
@@ -72,7 +46,8 @@ public class WafCrsConfig  {
      * This is the setter method to the attribute.
      * Enable to automatically download new waf signatures/crs version to the controller.
      * Field introduced in 21.1.1.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
+     * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableAutoDownloadWafSignatures set the enableAutoDownloadWafSignatures.
      */
@@ -86,7 +61,6 @@ public class WafCrsConfig  {
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enableWafSignaturesNotifications
      */
     public Boolean getEnableWafSignaturesNotifications() {
@@ -99,7 +73,6 @@ public class WafCrsConfig  {
      * Field introduced in 21.1.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enableWafSignaturesNotifications set the enableWafSignaturesNotifications.
      */
     public void setEnableWafSignaturesNotifications(Boolean  enableWafSignaturesNotifications) {
@@ -117,16 +90,14 @@ public class WafCrsConfig  {
       }
       WafCrsConfig objWafCrsConfig = (WafCrsConfig) o;
       return   Objects.equals(this.enableAutoDownloadWafSignatures, objWafCrsConfig.enableAutoDownloadWafSignatures)&&
-  Objects.equals(this.enableWafSignaturesNotifications, objWafCrsConfig.enableWafSignaturesNotifications)&&
-  Objects.equals(this.category, objWafCrsConfig.category);
+  Objects.equals(this.enableWafSignaturesNotifications, objWafCrsConfig.enableWafSignaturesNotifications);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class WafCrsConfig {\n");
-                  sb.append("    category: ").append(toIndentedString(category)).append("\n");
-                        sb.append("    enableAutoDownloadWafSignatures: ").append(toIndentedString(enableAutoDownloadWafSignatures)).append("\n");
+                  sb.append("    enableAutoDownloadWafSignatures: ").append(toIndentedString(enableAutoDownloadWafSignatures)).append("\n");
                         sb.append("    enableWafSignaturesNotifications: ").append(toIndentedString(enableWafSignaturesNotifications)).append("\n");
                   sb.append("}");
       return sb.toString();

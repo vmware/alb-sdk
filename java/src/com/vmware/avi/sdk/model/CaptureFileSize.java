@@ -34,7 +34,7 @@ public class CaptureFileSize  {
      * Maximum size in mb.
      * Set 0 for avi default size.
      * Allowed values are 100-512000.
-     * Special values are 0 - 'avi_default'.
+     * Special values are 0 - avi_default.
      * Field introduced in 18.2.8.
      * Unit is mb.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -49,7 +49,7 @@ public class CaptureFileSize  {
      * Maximum size in mb.
      * Set 0 for avi default size.
      * Allowed values are 100-512000.
-     * Special values are 0 - 'avi_default'.
+     * Special values are 0 - avi_default.
      * Field introduced in 18.2.8.
      * Unit is mb.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.

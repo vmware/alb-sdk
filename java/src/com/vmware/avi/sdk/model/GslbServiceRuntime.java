@@ -24,6 +24,9 @@ public class GslbServiceRuntime extends AviRestResource  {
     @JsonProperty("checksum")
     private String checksum = null;
 
+    @JsonProperty("domain_names")
+    private List<String> domainNames = null;
+
     @JsonProperty("flr_state")
     private List<CfgState> flrState = null;
 
@@ -77,6 +80,42 @@ public class GslbServiceRuntime extends AviRestResource  {
      */
     public void setChecksum(String  checksum) {
         this.checksum = checksum;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Fully qualified domain name of the gslbservice.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return domainNames
+     */
+    public List<String> getDomainNames() {
+        return domainNames;
+    }
+
+    /**
+     * This is the setter method. this will set the domainNames
+     * Fully qualified domain name of the gslbservice.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return domainNames
+     */
+    public void setDomainNames(List<String>  domainNames) {
+        this.domainNames = domainNames;
+    }
+
+    /**
+     * This is the setter method this will set the domainNames
+     * Fully qualified domain name of the gslbservice.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return domainNames
+     */
+    public GslbServiceRuntime addDomainNamesItem(String domainNamesItem) {
+      if (this.domainNames == null) {
+        this.domainNames = new ArrayList<String>();
+      }
+      this.domainNames.add(domainNamesItem);
+      return this;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -347,6 +386,7 @@ public class GslbServiceRuntime extends AviRestResource  {
   Objects.equals(this.tenantName, objGslbServiceRuntime.tenantName)&&
   Objects.equals(this.checksum, objGslbServiceRuntime.checksum)&&
   Objects.equals(this.spOperStatus, objGslbServiceRuntime.spOperStatus)&&
+  Objects.equals(this.domainNames, objGslbServiceRuntime.domainNames)&&
   Objects.equals(this.sendStatus, objGslbServiceRuntime.sendStatus)&&
   Objects.equals(this.sendEvent, objGslbServiceRuntime.sendEvent);
     }
@@ -356,6 +396,7 @@ public class GslbServiceRuntime extends AviRestResource  {
       StringBuilder sb = new StringBuilder();
       sb.append("class GslbServiceRuntime {\n");
                   sb.append("    checksum: ").append(toIndentedString(checksum)).append("\n");
+                        sb.append("    domainNames: ").append(toIndentedString(domainNames)).append("\n");
                         sb.append("    flrState: ").append(toIndentedString(flrState)).append("\n");
                         sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
                         sb.append("    ldrState: ").append(toIndentedString(ldrState)).append("\n");

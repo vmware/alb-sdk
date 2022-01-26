@@ -90,6 +90,15 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("del_offline_se_after_reboot_delay")
     private Integer delOfflineSeAfterRebootDelay = 300;
 
+    @JsonProperty("detach_ip_retry_interval")
+    private Integer detachIpRetryInterval = 60;
+
+    @JsonProperty("detach_ip_retry_limit")
+    private Integer detachIpRetryLimit = 4;
+
+    @JsonProperty("detach_ip_timeout")
+    private Integer detachIpTimeout = 300;
+
     @JsonProperty("dns_refresh_period")
     private Integer dnsRefreshPeriod = 60;
 
@@ -172,7 +181,7 @@ public class ControllerProperties extends AviRestResource  {
     private Integer seFailoverAttemptInterval = 300;
 
     @JsonProperty("se_from_marketplace")
-    private String seFromMarketplace = "IMAGE";
+    private String seFromMarketplace = "IMAGE_SE";
 
     @JsonProperty("se_offline_del")
     private Integer seOfflineDel = 172000;
@@ -442,7 +451,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Period for which asynchronous patch requests are queued.
      * Allowed values are 30-120.
-     * Special values are 0 - 'deactivated'.
+     * Special values are 0 - deactivated.
      * Field introduced in 18.2.11, 20.1.3.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -456,7 +465,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the setter method to the attribute.
      * Period for which asynchronous patch requests are queued.
      * Allowed values are 30-120.
-     * Special values are 0 - 'deactivated'.
+     * Special values are 0 - deactivated.
      * Field introduced in 18.2.11, 20.1.3.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -812,6 +821,76 @@ public class ControllerProperties extends AviRestResource  {
      */
     public void setDelOfflineSeAfterRebootDelay(Integer  delOfflineSeAfterRebootDelay) {
         this.delOfflineSeAfterRebootDelay = delOfflineSeAfterRebootDelay;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Amount of time to wait after last detach ip failure before attempting next detach ip retry.
+     * Field introduced in 21.1.3.
+     * Unit is sec.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+     * @return detachIpRetryInterval
+     */
+    public Integer getDetachIpRetryInterval() {
+        return detachIpRetryInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Amount of time to wait after last detach ip failure before attempting next detach ip retry.
+     * Field introduced in 21.1.3.
+     * Unit is sec.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 60.
+     * @param detachIpRetryInterval set the detachIpRetryInterval.
+     */
+    public void setDetachIpRetryInterval(Integer  detachIpRetryInterval) {
+        this.detachIpRetryInterval = detachIpRetryInterval;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum number of detach ip retries.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+     * @return detachIpRetryLimit
+     */
+    public Integer getDetachIpRetryLimit() {
+        return detachIpRetryLimit;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum number of detach ip retries.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 4.
+     * @param detachIpRetryLimit set the detachIpRetryLimit.
+     */
+    public void setDetachIpRetryLimit(Integer  detachIpRetryLimit) {
+        this.detachIpRetryLimit = detachIpRetryLimit;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Time to wait before marking detach ip as failed.
+     * Field introduced in 21.1.3.
+     * Unit is sec.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 300.
+     * @return detachIpTimeout
+     */
+    public Integer getDetachIpTimeout() {
+        return detachIpTimeout;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Time to wait before marking detach ip as failed.
+     * Field introduced in 21.1.3.
+     * Unit is sec.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 300.
+     * @param detachIpTimeout set the detachIpTimeout.
+     */
+    public void setDetachIpTimeout(Integer  detachIpTimeout) {
+        this.detachIpTimeout = detachIpTimeout;
     }
 
     /**
@@ -1178,7 +1257,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Period for rotate app persistence keys job.
      * Allowed values are 1-1051200.
-     * Special values are 0 - 'disabled'.
+     * Special values are 0 - disabled.
      * Unit is min.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -1192,7 +1271,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the setter method to the attribute.
      * Period for rotate app persistence keys job.
      * Allowed values are 1-1051200.
-     * Special values are 0 - 'disabled'.
+     * Special values are 0 - disabled.
      * Unit is min.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -1436,9 +1515,9 @@ public class ControllerProperties extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * This setting decides whether se is to be deployed from the cloud marketplace or to be created by the controller.
      * The setting is applicable only when byol license is selected.
-     * Enum options - MARKETPLACE, IMAGE.
+     * Enum options - MARKETPLACE, IMAGE_SE.
      * Field introduced in 18.1.4, 18.2.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "IMAGE".
+     * Default value when not specified in API or module is interpreted by Avi Controller as "IMAGE_SE".
      * @return seFromMarketplace
      */
     public String getSeFromMarketplace() {
@@ -1449,9 +1528,9 @@ public class ControllerProperties extends AviRestResource  {
      * This is the setter method to the attribute.
      * This setting decides whether se is to be deployed from the cloud marketplace or to be created by the controller.
      * The setting is applicable only when byol license is selected.
-     * Enum options - MARKETPLACE, IMAGE.
+     * Enum options - MARKETPLACE, IMAGE_SE.
      * Field introduced in 18.1.4, 18.2.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "IMAGE".
+     * Default value when not specified in API or module is interpreted by Avi Controller as "IMAGE_SE".
      * @param seFromMarketplace set the seFromMarketplace.
      */
     public void setSeFromMarketplace(String  seFromMarketplace) {
@@ -1985,7 +2064,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Period for rotate vs keys job.
      * Allowed values are 1-1051200.
-     * Special values are 0 - 'disabled'.
+     * Special values are 0 - disabled.
      * Unit is min.
      * Default value when not specified in API or module is interpreted by Avi Controller as 360.
      * @return vsKeyRotatePeriod
@@ -1998,7 +2077,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the setter method to the attribute.
      * Period for rotate vs keys job.
      * Allowed values are 1-1051200.
-     * Special values are 0 - 'disabled'.
+     * Special values are 0 - disabled.
      * Unit is min.
      * Default value when not specified in API or module is interpreted by Avi Controller as 360.
      * @param vsKeyRotatePeriod set the vsKeyRotatePeriod.
@@ -2374,7 +2453,10 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.checkVsvipFqdnSyntax, objControllerProperties.checkVsvipFqdnSyntax)&&
   Objects.equals(this.vsphereHaTimerInterval, objControllerProperties.vsphereHaTimerInterval)&&
   Objects.equals(this.vsphereHaDetectionTimeout, objControllerProperties.vsphereHaDetectionTimeout)&&
-  Objects.equals(this.vsphereHaRecoveryTimeout, objControllerProperties.vsphereHaRecoveryTimeout);
+  Objects.equals(this.vsphereHaRecoveryTimeout, objControllerProperties.vsphereHaRecoveryTimeout)&&
+  Objects.equals(this.detachIpRetryInterval, objControllerProperties.detachIpRetryInterval)&&
+  Objects.equals(this.detachIpRetryLimit, objControllerProperties.detachIpRetryLimit)&&
+  Objects.equals(this.detachIpTimeout, objControllerProperties.detachIpTimeout);
     }
 
     @Override
@@ -2404,6 +2486,9 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    deadSeDetectionTimer: ").append(toIndentedString(deadSeDetectionTimer)).append("\n");
                         sb.append("    defaultMinimumApiTimeout: ").append(toIndentedString(defaultMinimumApiTimeout)).append("\n");
                         sb.append("    delOfflineSeAfterRebootDelay: ").append(toIndentedString(delOfflineSeAfterRebootDelay)).append("\n");
+                        sb.append("    detachIpRetryInterval: ").append(toIndentedString(detachIpRetryInterval)).append("\n");
+                        sb.append("    detachIpRetryLimit: ").append(toIndentedString(detachIpRetryLimit)).append("\n");
+                        sb.append("    detachIpTimeout: ").append(toIndentedString(detachIpTimeout)).append("\n");
                         sb.append("    dnsRefreshPeriod: ").append(toIndentedString(dnsRefreshPeriod)).append("\n");
                         sb.append("    dummy: ").append(toIndentedString(dummy)).append("\n");
                         sb.append("    editSystemLimits: ").append(toIndentedString(editSystemLimits)).append("\n");

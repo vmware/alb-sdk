@@ -547,7 +547,8 @@ public class SeAgentProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ignore_docker_mac_change of obj type seagentproperties field type str  type boolean.
+     * Deprecated in 21.1.3.
+     * Use config in serviceenginegroup instead.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return ignoreDockerMacChange
      */
@@ -557,7 +558,8 @@ public class SeAgentProperties  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ignore_docker_mac_change of obj type seagentproperties field type str  type boolean.
+     * Deprecated in 21.1.3.
+     * Use config in serviceenginegroup instead.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param ignoreDockerMacChange set the ignoreDockerMacChange.
      */

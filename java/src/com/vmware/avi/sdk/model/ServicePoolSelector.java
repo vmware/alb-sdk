@@ -104,7 +104,7 @@ public class ServicePoolSelector  {
      * This is the getter method this will return the attribute value.
      * The end of the service port number range.
      * Allowed values are 1-65535.
-     * Special values are 0- 'single port'.
+     * Special values are 0- single port.
      * Field introduced in 17.2.4.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return servicePortRangeEnd
@@ -117,7 +117,7 @@ public class ServicePoolSelector  {
      * This is the setter method to the attribute.
      * The end of the service port number range.
      * Allowed values are 1-65535.
-     * Special values are 0- 'single port'.
+     * Special values are 0- single port.
      * Field introduced in 17.2.4.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param servicePortRangeEnd set the servicePortRangeEnd.

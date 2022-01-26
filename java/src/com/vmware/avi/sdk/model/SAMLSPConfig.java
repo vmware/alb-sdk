@@ -40,7 +40,7 @@ public class SAMLSPConfig  {
     private String singleSignonUrl = null;
 
     @JsonProperty("sp_metadata")
-    private String spMetadata = null;
+    private String spMetadata;
 
     @JsonProperty("use_idp_session_timeout")
     private Boolean useIdpSessionTimeout = null;
@@ -205,7 +205,6 @@ public class SAMLSPConfig  {
      * This is the getter method this will return the attribute value.
      * Saml sp metadata for this application.
      * Field introduced in 18.2.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return spMetadata
      */
     public String getSpMetadata() {
@@ -216,7 +215,6 @@ public class SAMLSPConfig  {
      * This is the setter method to the attribute.
      * Saml sp metadata for this application.
      * Field introduced in 18.2.3.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param spMetadata set the spMetadata.
      */
     public void setSpMetadata(String  spMetadata) {

@@ -462,7 +462,7 @@ public class Server  {
      * Optionally specify the servers port number.
      * This will override the pool's default server port attribute.
      * Allowed values are 1-65535.
-     * Special values are 0- 'use backend port in pool'.
+     * Special values are 0- use backend port in pool.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
      */
@@ -475,7 +475,7 @@ public class Server  {
      * Optionally specify the servers port number.
      * This will override the pool's default server port attribute.
      * Allowed values are 1-65535.
-     * Special values are 0- 'use backend port in pool'.
+     * Special values are 0- use backend port in pool.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.
      */

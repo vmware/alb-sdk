@@ -79,7 +79,7 @@ public class HTTPApplicationProfile  {
     private Integer hstsMaxAge = 365;
 
     @JsonProperty("hsts_subdomains_enabled")
-    private Boolean hstsSubdomainsEnabled = true;
+    private Boolean hstsSubdomainsEnabled;
 
     @JsonProperty("http2_enabled")
     private Boolean http2Enabled;
@@ -144,6 +144,9 @@ public class HTTPApplicationProfile  {
     @JsonProperty("max_rps_uri")
     private Integer maxRpsUri = 0;
 
+    @JsonProperty("pass_through_x_accel_headers")
+    private Boolean passThroughXAccelHeaders = false;
+
     @JsonProperty("pki_profile_ref")
     private String pkiProfileRef = null;
 
@@ -177,8 +180,14 @@ public class HTTPApplicationProfile  {
     @JsonProperty("ssl_everywhere_enabled")
     private Boolean sslEverywhereEnabled;
 
+    @JsonProperty("true_client_ip")
+    private TrueClientIPConfig trueClientIp = null;
+
     @JsonProperty("use_app_keepalive_timeout")
     private Boolean useAppKeepaliveTimeout = false;
+
+    @JsonProperty("use_true_client_ip")
+    private Boolean useTrueClientIp = false;
 
     @JsonProperty("websockets_enabled")
     private Boolean websocketsEnabled = true;
@@ -672,7 +681,6 @@ public class HTTPApplicationProfile  {
      * Field introduced in 17.2.13, 18.1.4, 18.2.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return hstsSubdomainsEnabled
      */
     public Boolean getHstsSubdomainsEnabled() {
@@ -687,7 +695,6 @@ public class HTTPApplicationProfile  {
      * Field introduced in 17.2.13, 18.1.4, 18.2.1.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param hstsSubdomainsEnabled set the hstsSubdomainsEnabled.
      */
     public void setHstsSubdomainsEnabled(Boolean  hstsSubdomainsEnabled) {
@@ -768,7 +775,7 @@ public class HTTPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Size of http buffer in kb.
      * Allowed values are 1-256.
-     * Special values are 0- 'auto compute the size of buffer'.
+     * Special values are 0- auto compute the size of buffer.
      * Field introduced in 20.1.1.
      * Unit is kb.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
@@ -783,7 +790,7 @@ public class HTTPApplicationProfile  {
      * This is the setter method to the attribute.
      * Size of http buffer in kb.
      * Allowed values are 1-256.
-     * Special values are 0- 'auto compute the size of buffer'.
+     * Special values are 0- auto compute the size of buffer.
      * Field introduced in 20.1.1.
      * Unit is kb.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
@@ -872,7 +879,7 @@ public class HTTPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum bad requests per second per client ip.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return maxBadRpsCip
      */
@@ -884,7 +891,7 @@ public class HTTPApplicationProfile  {
      * This is the setter method to the attribute.
      * Maximum bad requests per second per client ip.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param maxBadRpsCip set the maxBadRpsCip.
      */
@@ -896,7 +903,7 @@ public class HTTPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum bad requests per second per client ip and uri.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return maxBadRpsCipUri
      */
@@ -908,7 +915,7 @@ public class HTTPApplicationProfile  {
      * This is the setter method to the attribute.
      * Maximum bad requests per second per client ip and uri.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param maxBadRpsCipUri set the maxBadRpsCipUri.
      */
@@ -920,7 +927,7 @@ public class HTTPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum bad requests per second per uri.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return maxBadRpsUri
      */
@@ -932,7 +939,7 @@ public class HTTPApplicationProfile  {
      * This is the setter method to the attribute.
      * Maximum bad requests per second per uri.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param maxBadRpsUri set the maxBadRpsUri.
      */
@@ -971,7 +978,7 @@ public class HTTPApplicationProfile  {
      * The max number of control frames that client can send over an http/2 connection.
      * '0' means unlimited.
      * Allowed values are 0-10000.
-     * Special values are 0- 'unlimited control frames on a client side http/2 connection'.
+     * Special values are 0- unlimited control frames on a client side http/2 connection.
      * Field deprecated in 18.2.10, 20.1.1.
      * Field introduced in 18.2.6.
      * Allowed in basic edition, essentials edition, enterprise edition.
@@ -986,7 +993,7 @@ public class HTTPApplicationProfile  {
      * The max number of control frames that client can send over an http/2 connection.
      * '0' means unlimited.
      * Allowed values are 0-10000.
-     * Special values are 0- 'unlimited control frames on a client side http/2 connection'.
+     * Special values are 0- unlimited control frames on a client side http/2 connection.
      * Field deprecated in 18.2.10, 20.1.1.
      * Field introduced in 18.2.6.
      * Allowed in basic edition, essentials edition, enterprise edition.
@@ -1001,7 +1008,7 @@ public class HTTPApplicationProfile  {
      * The max number of empty data frames that client can send over an http/2 connection.
      * '0' means unlimited.
      * Allowed values are 0-10000.
-     * Special values are 0- 'unlimited empty data frames over a client side http/2 connection'.
+     * Special values are 0- unlimited empty data frames over a client side http/2 connection.
      * Field deprecated in 18.2.10, 20.1.1.
      * Field introduced in 18.2.6.
      * Allowed in basic edition, essentials edition, enterprise edition.
@@ -1016,7 +1023,7 @@ public class HTTPApplicationProfile  {
      * The max number of empty data frames that client can send over an http/2 connection.
      * '0' means unlimited.
      * Allowed values are 0-10000.
-     * Special values are 0- 'unlimited empty data frames over a client side http/2 connection'.
+     * Special values are 0- unlimited empty data frames over a client side http/2 connection.
      * Field deprecated in 18.2.10, 20.1.1.
      * Field introduced in 18.2.6.
      * Allowed in basic edition, essentials edition, enterprise edition.
@@ -1031,7 +1038,7 @@ public class HTTPApplicationProfile  {
      * The max number of frames that can be queued waiting to be sent over a client side http/2 connection at any given time.
      * '0' means unlimited.
      * Allowed values are 0-10000.
-     * Special values are 0- 'unlimited frames can be queued on a client side http/2 connection'.
+     * Special values are 0- unlimited frames can be queued on a client side http/2 connection.
      * Field deprecated in 18.2.10, 20.1.1.
      * Field introduced in 18.2.6.
      * Allowed in basic edition, essentials edition, enterprise edition.
@@ -1046,7 +1053,7 @@ public class HTTPApplicationProfile  {
      * The max number of frames that can be queued waiting to be sent over a client side http/2 connection at any given time.
      * '0' means unlimited.
      * Allowed values are 0-10000.
-     * Special values are 0- 'unlimited frames can be queued on a client side http/2 connection'.
+     * Special values are 0- unlimited frames can be queued on a client side http/2 connection.
      * Field deprecated in 18.2.10, 20.1.1.
      * Field introduced in 18.2.6.
      * Allowed in basic edition, essentials edition, enterprise edition.
@@ -1061,7 +1068,7 @@ public class HTTPApplicationProfile  {
      * The max number of http requests that can be sent over a keep-alive connection.
      * '0' means unlimited.
      * Allowed values are 0-1000000.
-     * Special values are 0- 'unlimited requests on a connection'.
+     * Special values are 0- unlimited requests on a connection.
      * Field introduced in 18.2.5.
      * Allowed in basic(allowed values- 100) edition, essentials(allowed values- 100) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
@@ -1076,7 +1083,7 @@ public class HTTPApplicationProfile  {
      * The max number of http requests that can be sent over a keep-alive connection.
      * '0' means unlimited.
      * Allowed values are 0-1000000.
-     * Special values are 0- 'unlimited requests on a connection'.
+     * Special values are 0- unlimited requests on a connection.
      * Field introduced in 18.2.5.
      * Allowed in basic(allowed values- 100) edition, essentials(allowed values- 100) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
@@ -1116,7 +1123,7 @@ public class HTTPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum requests per second per client ip.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return maxRpsCip
      */
@@ -1128,7 +1135,7 @@ public class HTTPApplicationProfile  {
      * This is the setter method to the attribute.
      * Maximum requests per second per client ip.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param maxRpsCip set the maxRpsCip.
      */
@@ -1140,7 +1147,7 @@ public class HTTPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum requests per second per client ip and uri.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return maxRpsCipUri
      */
@@ -1152,7 +1159,7 @@ public class HTTPApplicationProfile  {
      * This is the setter method to the attribute.
      * Maximum requests per second per client ip and uri.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param maxRpsCipUri set the maxRpsCipUri.
      */
@@ -1164,7 +1171,7 @@ public class HTTPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum unknown client ips per second.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return maxRpsUnknownCip
      */
@@ -1176,7 +1183,7 @@ public class HTTPApplicationProfile  {
      * This is the setter method to the attribute.
      * Maximum unknown client ips per second.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param maxRpsUnknownCip set the maxRpsUnknownCip.
      */
@@ -1188,7 +1195,7 @@ public class HTTPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum unknown uris per second.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return maxRpsUnknownUri
      */
@@ -1200,7 +1207,7 @@ public class HTTPApplicationProfile  {
      * This is the setter method to the attribute.
      * Maximum unknown uris per second.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param maxRpsUnknownUri set the maxRpsUnknownUri.
      */
@@ -1212,7 +1219,7 @@ public class HTTPApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * Maximum requests per second per uri.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return maxRpsUri
      */
@@ -1224,12 +1231,34 @@ public class HTTPApplicationProfile  {
      * This is the setter method to the attribute.
      * Maximum requests per second per uri.
      * Allowed values are 10-1000.
-     * Special values are 0- 'unlimited'.
+     * Special values are 0- unlimited.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param maxRpsUri set the maxRpsUri.
      */
     public void setMaxRpsUri(Integer  maxRpsUri) {
         this.maxRpsUri = maxRpsUri;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Pass through x-accel headers.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return passThroughXAccelHeaders
+     */
+    public Boolean getPassThroughXAccelHeaders() {
+        return passThroughXAccelHeaders;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Pass through x-accel headers.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param passThroughXAccelHeaders set the passThroughXAccelHeaders.
+     */
+    public void setPassThroughXAccelHeaders(Boolean  passThroughXAccelHeaders) {
+        this.passThroughXAccelHeaders = passThroughXAccelHeaders;
     }
 
     /**
@@ -1488,6 +1517,28 @@ public class HTTPApplicationProfile  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Detect client ip from user specified header at the configured index in the specified direction.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return trueClientIp
+     */
+    public TrueClientIPConfig getTrueClientIp() {
+        return trueClientIp;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Detect client ip from user specified header at the configured index in the specified direction.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param trueClientIp set the trueClientIp.
+     */
+    public void setTrueClientIp(TrueClientIPConfig trueClientIp) {
+        this.trueClientIp = trueClientIp;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Use 'keep-alive' header timeout sent by application instead of sending the http keep-alive timeout.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -1506,6 +1557,28 @@ public class HTTPApplicationProfile  {
      */
     public void setUseAppKeepaliveTimeout(Boolean  useAppKeepaliveTimeout) {
         this.useAppKeepaliveTimeout = useAppKeepaliveTimeout;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Detect client ip from user specified header.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return useTrueClientIp
+     */
+    public Boolean getUseTrueClientIp() {
+        return useTrueClientIp;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Detect client ip from user specified header.
+     * Field introduced in 21.1.3.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param useTrueClientIp set the useTrueClientIp.
+     */
+    public void setUseTrueClientIp(Boolean  useTrueClientIp) {
+        this.useTrueClientIp = useTrueClientIp;
     }
 
     /**
@@ -1668,7 +1741,10 @@ public class HTTPApplicationProfile  {
   Objects.equals(this.httpUpstreamBufferSize, objHTTPApplicationProfile.httpUpstreamBufferSize)&&
   Objects.equals(this.enableChunkMerge, objHTTPApplicationProfile.enableChunkMerge)&&
   Objects.equals(this.http2Profile, objHTTPApplicationProfile.http2Profile)&&
-  Objects.equals(this.detectNtlmApp, objHTTPApplicationProfile.detectNtlmApp);
+  Objects.equals(this.detectNtlmApp, objHTTPApplicationProfile.detectNtlmApp)&&
+  Objects.equals(this.useTrueClientIp, objHTTPApplicationProfile.useTrueClientIp)&&
+  Objects.equals(this.trueClientIp, objHTTPApplicationProfile.trueClientIp)&&
+  Objects.equals(this.passThroughXAccelHeaders, objHTTPApplicationProfile.passThroughXAccelHeaders);
     }
 
     @Override
@@ -1716,6 +1792,7 @@ public class HTTPApplicationProfile  {
                         sb.append("    maxRpsUnknownCip: ").append(toIndentedString(maxRpsUnknownCip)).append("\n");
                         sb.append("    maxRpsUnknownUri: ").append(toIndentedString(maxRpsUnknownUri)).append("\n");
                         sb.append("    maxRpsUri: ").append(toIndentedString(maxRpsUri)).append("\n");
+                        sb.append("    passThroughXAccelHeaders: ").append(toIndentedString(passThroughXAccelHeaders)).append("\n");
                         sb.append("    pkiProfileRef: ").append(toIndentedString(pkiProfileRef)).append("\n");
                         sb.append("    postAcceptTimeout: ").append(toIndentedString(postAcceptTimeout)).append("\n");
                         sb.append("    resetConnHttpOnSslPort: ").append(toIndentedString(resetConnHttpOnSslPort)).append("\n");
@@ -1727,7 +1804,9 @@ public class HTTPApplicationProfile  {
                         sb.append("    sslClientCertificateAction: ").append(toIndentedString(sslClientCertificateAction)).append("\n");
                         sb.append("    sslClientCertificateMode: ").append(toIndentedString(sslClientCertificateMode)).append("\n");
                         sb.append("    sslEverywhereEnabled: ").append(toIndentedString(sslEverywhereEnabled)).append("\n");
+                        sb.append("    trueClientIp: ").append(toIndentedString(trueClientIp)).append("\n");
                         sb.append("    useAppKeepaliveTimeout: ").append(toIndentedString(useAppKeepaliveTimeout)).append("\n");
+                        sb.append("    useTrueClientIp: ").append(toIndentedString(useTrueClientIp)).append("\n");
                         sb.append("    websocketsEnabled: ").append(toIndentedString(websocketsEnabled)).append("\n");
                         sb.append("    xForwardedProtoEnabled: ").append(toIndentedString(xForwardedProtoEnabled)).append("\n");
                         sb.append("    xffAlternateName: ").append(toIndentedString(xffAlternateName)).append("\n");

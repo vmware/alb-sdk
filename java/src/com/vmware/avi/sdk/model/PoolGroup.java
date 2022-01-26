@@ -392,7 +392,7 @@ public class PoolGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The minimum number of servers to distribute traffic to.
      * Allowed values are 1-65535.
-     * Special values are 0 - 'disable'.
+     * Special values are 0 - disable.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return minServers
@@ -405,7 +405,7 @@ public class PoolGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * The minimum number of servers to distribute traffic to.
      * Allowed values are 1-65535.
-     * Special values are 0 - 'disable'.
+     * Special values are 0 - disable.
      * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param minServers set the minServers.

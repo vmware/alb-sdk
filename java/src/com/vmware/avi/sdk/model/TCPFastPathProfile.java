@@ -84,7 +84,7 @@ public class TCPFastPathProfile  {
      * This is the getter method this will return the attribute value.
      * The amount of time (in sec) for which a connection needs to be idle before it is eligible to be deleted.
      * Allowed values are 5-14400.
-     * Special values are 0 - 'infinite'.
+     * Special values are 0 - infinite.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @return sessionIdleTimeout
@@ -97,7 +97,7 @@ public class TCPFastPathProfile  {
      * This is the setter method to the attribute.
      * The amount of time (in sec) for which a connection needs to be idle before it is eligible to be deleted.
      * Allowed values are 5-14400.
-     * Special values are 0 - 'infinite'.
+     * Special values are 0 - infinite.
      * Unit is sec.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @param sessionIdleTimeout set the sessionIdleTimeout.

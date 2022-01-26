@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ClientLogConfiguration  {
     @JsonProperty("enable_significant_log_collection")
-    private Boolean enableSignificantLogCollection = true;
+    private Boolean enableSignificantLogCollection;
 
     @JsonProperty("filtered_log_processing")
     private String filteredLogProcessing = "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND";
@@ -43,7 +43,6 @@ public class ClientLogConfiguration  {
      * Users can deactivate this flag to turn off default significant log collection.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enableSignificantLogCollection
      */
     public Boolean getEnableSignificantLogCollection() {
@@ -58,7 +57,6 @@ public class ClientLogConfiguration  {
      * Users can deactivate this flag to turn off default significant log collection.
      * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
      * Special default for basic edition is false, essentials edition is false, enterprise is true.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enableSignificantLogCollection set the enableSignificantLogCollection.
      */
     public void setEnableSignificantLogCollection(Boolean  enableSignificantLogCollection) {

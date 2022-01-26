@@ -31,7 +31,7 @@ public class WafApplicationSignatures  {
     private List<WafRule> rules;
 
     @JsonProperty("ruleset_version")
-    private String rulesetVersion = null;
+    private String rulesetVersion;
 
     @JsonProperty("selected_applications")
     private List<String> selectedApplications = null;
@@ -141,7 +141,6 @@ public class WafApplicationSignatures  {
      * This is the getter method this will return the attribute value.
      * The version in use of the provided ruleset.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rulesetVersion
      */
     public String getRulesetVersion() {
@@ -152,7 +151,6 @@ public class WafApplicationSignatures  {
      * This is the setter method to the attribute.
      * The version in use of the provided ruleset.
      * Field introduced in 20.1.1.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rulesetVersion set the rulesetVersion.
      */
     public void setRulesetVersion(String  rulesetVersion) {

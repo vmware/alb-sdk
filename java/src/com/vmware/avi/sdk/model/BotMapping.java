@@ -41,7 +41,6 @@ public class BotMapping extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Rules for bot classification.
      * Field introduced in 21.1.1.
-     * Minimum of 1 items required.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mappingRules
      */
@@ -53,7 +52,6 @@ public class BotMapping extends AviRestResource  {
      * This is the setter method. this will set the mappingRules
      * Rules for bot classification.
      * Field introduced in 21.1.1.
-     * Minimum of 1 items required.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mappingRules
      */
@@ -65,7 +63,6 @@ public class BotMapping extends AviRestResource  {
      * This is the setter method this will set the mappingRules
      * Rules for bot classification.
      * Field introduced in 21.1.1.
-     * Minimum of 1 items required.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mappingRules
      */
