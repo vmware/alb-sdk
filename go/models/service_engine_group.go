@@ -33,10 +33,10 @@ type ServiceEngineGroup struct {
 	// Allow SEs to be created using burst license. Field introduced in 17.2.5.
 	AllowBurst *bool `json:"allow_burst,omitempty"`
 
-	// A percent value of total SE memory reserved for applicationcaching. This is an SE bootup property and requires SE restart.Requires SE Reboot. Allowed values are 0 - 100. Special values are 0- 'disable'. Field introduced in 18.2.3. Unit is PERCENT. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition. Special default for Basic edition is 0, Essentials edition is 0, Enterprise is 10.
+	// A percent value of total SE memory reserved for applicationcaching. This is an SE bootup property and requires SE restart.Requires SE Reboot. Allowed values are 0 - 100. Special values are 0- disable. Field introduced in 18.2.3. Unit is PERCENT. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition. Special default for Basic edition is 0, Essentials edition is 0, Enterprise is 10.
 	AppCachePercent *int32 `json:"app_cache_percent,omitempty"`
 
-	// The max memory that can be allocated for the app cache. This value will act as an upper bound on the cache size specified in app_cache_percent. Special values are 0- 'disable'. Field introduced in 20.1.1. Unit is GB.
+	// The max memory that can be allocated for the app cache. This value will act as an upper bound on the cache size specified in app_cache_percent. Special values are 0- disable. Field introduced in 20.1.1. Unit is GB.
 	AppCacheThreshold *int32 `json:"app_cache_threshold,omitempty"`
 
 	// A percent value of total SE memory reserved for Application learning. This is an SE bootup property and requires SE restart. Allowed values are 0 - 10. Field introduced in 18.2.3. Unit is PERCENT.
@@ -384,7 +384,7 @@ type ServiceEngineGroup struct {
 	// List of labels to be used for granular RBAC. Field introduced in 20.1.7. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
-	// Maximum number of external health monitors that can run concurrently in a service engine. This helps control the CPU and memory use by external health monitors. Special values are 0- 'Value will be internally calculated based on cpu and memory'. Field introduced in 18.2.7.
+	// Maximum number of external health monitors that can run concurrently in a service engine. This helps control the CPU and memory use by external health monitors. Special values are 0- Value will be internally calculated based on cpu and memory. Field introduced in 18.2.7.
 	MaxConcurrentExternalHm *int32 `json:"max_concurrent_external_hm,omitempty"`
 
 	// When CPU usage on an SE exceeds this threshold, Virtual Services hosted on this SE may be rebalanced to other SEs to reduce load. A new SE may be created as part of this process. Allowed values are 40-90. Unit is PERCENT.
@@ -490,7 +490,7 @@ type ServiceEngineGroup struct {
 	// Number of dispatcher cores (0,1,2,4,8 or 16). If set to 0, then number of dispatcher cores is deduced automatically.Requires SE Reboot. Allowed values are 0,1,2,4,8,16. Field introduced in 17.2.12, 18.1.3, 18.2.1. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.
 	NumDispatcherCores *int32 `json:"num_dispatcher_cores,omitempty"`
 
-	// Number of queues to each dispatcher. Allowed values are 2-8. Special values are 0 - 'auto-compute', 1 - 'single-queue'. Field introduced in 21.1.3.
+	// Number of queues to each dispatcher. Allowed values are 2-8. Special values are 0 - auto-compute, 1 - single-queue. Field introduced in 21.1.3.
 	NumDispatcherQueues *int32 `json:"num_dispatcher_queues,omitempty"`
 
 	// Number of changes in num flow cores sum to ignore.
@@ -574,7 +574,7 @@ type ServiceEngineGroup struct {
 	// Toggle support to run SE datapath instances in isolation on exclusive CPUs. This improves latency and performance. However, this could reduce the total number of se_dp instances created on that SE instance. Supported for >= 8 CPUs. Requires SE reboot. Field introduced in 20.1.4.
 	SeDpIsolation *bool `json:"se_dp_isolation,omitempty"`
 
-	// Number of CPUs for non se-dp tasks in SE datapath isolation mode. Translates Total cpus minus 'num_non_dp_cpus' for datapath use. It is recommended to reserve an even number of CPUs for hyper-threaded processors. Requires SE reboot. Allowed values are 1-8. Special values are 0- 'auto'. Field introduced in 20.1.4.
+	// Number of CPUs for non se-dp tasks in SE datapath isolation mode. Translates Total cpus minus 'num_non_dp_cpus' for datapath use. It is recommended to reserve an even number of CPUs for hyper-threaded processors. Requires SE reboot. Allowed values are 1-8. Special values are 0- auto. Field introduced in 20.1.4.
 	SeDpIsolationNumNonDpCpus *int32 `json:"se_dp_isolation_num_non_dp_cpus,omitempty"`
 
 	// Internal buffer full indicator on the Service Engine beyond which the unfiltered logs are abandoned. Field introduced in 21.1.1.
@@ -673,7 +673,7 @@ type ServiceEngineGroup struct {
 	// Bypass the kernel's traffic control layer, to deliver packets directly to the driver. Enabling this feature results in egress packets not being captured in host tcpdump. Note   brief packet reordering or loss may occur upon toggle. Field introduced in 18.2.6.
 	SePcapQdiscBypass *bool `json:"se_pcap_qdisc_bypass,omitempty"`
 
-	// Frequency in seconds at which periodically a PCAP reinit check is triggered. May be used in conjunction with the configuration pcap_reinit_threshold. (Valid range   15 mins - 12 hours, 0 - disables). Allowed values are 900-43200. Special values are 0- 'disable'. Field introduced in 17.2.13, 18.1.3, 18.2.1. Unit is SEC.
+	// Frequency in seconds at which periodically a PCAP reinit check is triggered. May be used in conjunction with the configuration pcap_reinit_threshold. (Valid range   15 mins - 12 hours, 0 - disables). Allowed values are 900-43200. Special values are 0- disable. Field introduced in 17.2.13, 18.1.3, 18.2.1. Unit is SEC.
 	SePcapReinitFrequency *int32 `json:"se_pcap_reinit_frequency,omitempty"`
 
 	// Threshold for input packet receive errors in PCAP mode exceeding which a PCAP reinit is triggered. If not set, an unconditional reinit is performed. This value is checked every pcap_reinit_frequency interval. Field introduced in 17.2.13, 18.1.3, 18.2.1. Unit is METRIC_COUNT.
@@ -733,7 +733,7 @@ type ServiceEngineGroup struct {
 	// Determines if DPDK library should be used or not   0  Automatically determine based on hypervisor type 1  Use DPDK if PCAP is not enabled 2  Don't use DPDK. Allowed values are 0-2. Field introduced in 18.1.3.
 	SeUseDpdk *int32 `json:"se_use_dpdk,omitempty"`
 
-	// Configure the frequency in milliseconds of software transmit spillover queue flush when enabled. This is necessary to flush any packets in the spillover queue in the absence of a packet transmit in the normal course of operation. Allowed values are 50-500. Special values are 0- 'disable'. Field introduced in 20.1.1. Unit is MILLISECONDS.
+	// Configure the frequency in milliseconds of software transmit spillover queue flush when enabled. This is necessary to flush any packets in the spillover queue in the absence of a packet transmit in the normal course of operation. Allowed values are 50-500. Special values are 0- disable. Field introduced in 20.1.1. Unit is MILLISECONDS.
 	SeVnicTxSwQueueFlushFrequency *int32 `json:"se_vnic_tx_sw_queue_flush_frequency,omitempty"`
 
 	// Configure the size of software transmit spillover queue when enabled. Requires SE Reboot. Allowed values are 128-2048. Field introduced in 20.1.1.

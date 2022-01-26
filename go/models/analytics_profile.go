@@ -165,7 +165,7 @@ type AnalyticsProfile struct {
 	// Exclude unsupported dns queries from the list of errors. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
 	ExcludeUnsupportedDNSQueryAsError *bool `json:"exclude_unsupported_dns_query_as_error,omitempty"`
 
-	// Skips health score computation of pool servers when number of servers in a pool is more than this setting. Allowed values are 0-5000. Special values are 0- 'server health score is deactivated'. Field introduced in 17.2.13, 18.1.4. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition. Special default for Basic edition is 0, Essentials edition is 0, Enterprise is 20.
+	// Skips health score computation of pool servers when number of servers in a pool is more than this setting. Allowed values are 0-5000. Special values are 0- server health score is deactivated. Field introduced in 17.2.13, 18.1.4. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition. Special default for Basic edition is 0, Essentials edition is 0, Enterprise is 20.
 	HealthscoreMaxServerLimit *int32 `json:"healthscore_max_server_limit,omitempty"`
 
 	// Time window (in secs) within which only unique health change events should occur. Allowed in Basic(Allowed values- 1209600) edition, Essentials(Allowed values- 1209600) edition, Enterprise edition.

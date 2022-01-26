@@ -77,7 +77,7 @@ type HTTPApplicationProfile struct {
 	// Client requests received via HTTP will be redirected to HTTPS. Allowed in Essentials(Allowed values- false) edition, Enterprise edition.
 	HTTPToHTTPS *bool `json:"http_to_https,omitempty"`
 
-	// Size of HTTP buffer in kB. Allowed values are 1-256. Special values are 0- 'Auto compute the size of buffer'. Field introduced in 20.1.1. Unit is KB. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.
+	// Size of HTTP buffer in kB. Allowed values are 1-256. Special values are 0- Auto compute the size of buffer. Field introduced in 20.1.1. Unit is KB. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.
 	HTTPUpstreamBufferSize *int32 `json:"http_upstream_buffer_size,omitempty"`
 
 	// Mark HTTP cookies as HTTPonly.  This helps mitigate cross site scripting attacks as browsers will not allow these cookies to be read by third parties, such as javascript. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
@@ -89,46 +89,46 @@ type HTTPApplicationProfile struct {
 	// The max idle time allowed between HTTP requests over a Keep-alive connection. Allowed values are 10-100000000. Unit is MILLISECONDS. Allowed in Essentials(Allowed values- 30000) edition, Enterprise edition.
 	KeepaliveTimeout *int32 `json:"keepalive_timeout,omitempty"`
 
-	// Maximum bad requests per second per client IP. Allowed values are 10-1000. Special values are 0- 'unlimited'.
+	// Maximum bad requests per second per client IP. Allowed values are 10-1000. Special values are 0- unlimited.
 	MaxBadRpsCip *int32 `json:"max_bad_rps_cip,omitempty"`
 
-	// Maximum bad requests per second per client IP and URI. Allowed values are 10-1000. Special values are 0- 'unlimited'.
+	// Maximum bad requests per second per client IP and URI. Allowed values are 10-1000. Special values are 0- unlimited.
 	MaxBadRpsCipURI *int32 `json:"max_bad_rps_cip_uri,omitempty"`
 
-	// Maximum bad requests per second per URI. Allowed values are 10-1000. Special values are 0- 'unlimited'.
+	// Maximum bad requests per second per URI. Allowed values are 10-1000. Special values are 0- unlimited.
 	MaxBadRpsURI *int32 `json:"max_bad_rps_uri,omitempty"`
 
 	// The max number of concurrent streams over a client side HTTP/2 connection. Allowed values are 1-256. Field deprecated in 18.2.10, 20.1.1. Field introduced in 18.2.6. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	MaxHttp2ConcurrentStreamsPerConnection *int32 `json:"max_http2_concurrent_streams_per_connection,omitempty"`
 
-	// The max number of control frames that client can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- 'Unlimited control frames on a client side HTTP/2 connection'. Field deprecated in 18.2.10, 20.1.1. Field introduced in 18.2.6. Allowed in Basic edition, Essentials edition, Enterprise edition.
+	// The max number of control frames that client can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- Unlimited control frames on a client side HTTP/2 connection. Field deprecated in 18.2.10, 20.1.1. Field introduced in 18.2.6. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	MaxHttp2ControlFramesPerConnection *int32 `json:"max_http2_control_frames_per_connection,omitempty"`
 
-	// The max number of empty data frames that client can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- 'Unlimited empty data frames over a client side HTTP/2 connection'. Field deprecated in 18.2.10, 20.1.1. Field introduced in 18.2.6. Allowed in Basic edition, Essentials edition, Enterprise edition.
+	// The max number of empty data frames that client can send over an HTTP/2 connection. '0' means unlimited. Allowed values are 0-10000. Special values are 0- Unlimited empty data frames over a client side HTTP/2 connection. Field deprecated in 18.2.10, 20.1.1. Field introduced in 18.2.6. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	MaxHttp2EmptyDataFramesPerConnection *int32 `json:"max_http2_empty_data_frames_per_connection,omitempty"`
 
-	// The max number of frames that can be queued waiting to be sent over a client side HTTP/2 connection at any given time. '0' means unlimited. Allowed values are 0-10000. Special values are 0- 'Unlimited frames can be queued on a client side HTTP/2 connection'. Field deprecated in 18.2.10, 20.1.1. Field introduced in 18.2.6. Allowed in Basic edition, Essentials edition, Enterprise edition.
+	// The max number of frames that can be queued waiting to be sent over a client side HTTP/2 connection at any given time. '0' means unlimited. Allowed values are 0-10000. Special values are 0- Unlimited frames can be queued on a client side HTTP/2 connection. Field deprecated in 18.2.10, 20.1.1. Field introduced in 18.2.6. Allowed in Basic edition, Essentials edition, Enterprise edition.
 	MaxHttp2QueuedFramesToClientPerConnection *int32 `json:"max_http2_queued_frames_to_client_per_connection,omitempty"`
 
-	// The max number of HTTP requests that can be sent over a Keep-Alive connection. '0' means unlimited. Allowed values are 0-1000000. Special values are 0- 'Unlimited requests on a connection'. Field introduced in 18.2.5. Allowed in Basic(Allowed values- 100) edition, Essentials(Allowed values- 100) edition, Enterprise edition.
+	// The max number of HTTP requests that can be sent over a Keep-Alive connection. '0' means unlimited. Allowed values are 0-1000000. Special values are 0- Unlimited requests on a connection. Field introduced in 18.2.5. Allowed in Basic(Allowed values- 100) edition, Essentials(Allowed values- 100) edition, Enterprise edition.
 	MaxKeepaliveRequests *int32 `json:"max_keepalive_requests,omitempty"`
 
 	// Maximum size in Kbytes of all the HTTP response headers. Allowed values are 1-256. Unit is KB. Allowed in Basic(Allowed values- 48) edition, Essentials(Allowed values- 48) edition, Enterprise edition.
 	MaxResponseHeadersSize *int32 `json:"max_response_headers_size,omitempty"`
 
-	// Maximum requests per second per client IP. Allowed values are 10-1000. Special values are 0- 'unlimited'.
+	// Maximum requests per second per client IP. Allowed values are 10-1000. Special values are 0- unlimited.
 	MaxRpsCip *int32 `json:"max_rps_cip,omitempty"`
 
-	// Maximum requests per second per client IP and URI. Allowed values are 10-1000. Special values are 0- 'unlimited'.
+	// Maximum requests per second per client IP and URI. Allowed values are 10-1000. Special values are 0- unlimited.
 	MaxRpsCipURI *int32 `json:"max_rps_cip_uri,omitempty"`
 
-	// Maximum unknown client IPs per second. Allowed values are 10-1000. Special values are 0- 'unlimited'.
+	// Maximum unknown client IPs per second. Allowed values are 10-1000. Special values are 0- unlimited.
 	MaxRpsUnknownCip *int32 `json:"max_rps_unknown_cip,omitempty"`
 
-	// Maximum unknown URIs per second. Allowed values are 10-1000. Special values are 0- 'unlimited'.
+	// Maximum unknown URIs per second. Allowed values are 10-1000. Special values are 0- unlimited.
 	MaxRpsUnknownURI *int32 `json:"max_rps_unknown_uri,omitempty"`
 
-	// Maximum requests per second per URI. Allowed values are 10-1000. Special values are 0- 'unlimited'.
+	// Maximum requests per second per URI. Allowed values are 10-1000. Special values are 0- unlimited.
 	MaxRpsURI *int32 `json:"max_rps_uri,omitempty"`
 
 	// Pass through X-ACCEL headers. Field introduced in 21.1.3.

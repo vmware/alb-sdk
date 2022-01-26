@@ -15,7 +15,7 @@ type DNSRateProfile struct {
 	// Maximum number of connections or requests or packets to be rate limited instantaneously. Field deprecated in 20.1.1. Field introduced in 18.2.5.
 	BurstSize *int32 `json:"burst_size,omitempty"`
 
-	// Maximum number of connections or requests or packets per second. It is deprecated because of adoption of new shared rate limiter protobuf. Allowed values are 1-4294967295. Special values are 0- 'unlimited'. Field deprecated in 20.1.1. Field introduced in 18.2.5.
+	// Maximum number of connections or requests or packets per second. It is deprecated because of adoption of new shared rate limiter protobuf. Allowed values are 1-4294967295. Special values are 0- unlimited. Field deprecated in 20.1.1. Field introduced in 18.2.5.
 	Count *int32 `json:"count,omitempty"`
 
 	// Enable fine granularity. Field deprecated in 20.1.1. Field introduced in 18.2.5.
