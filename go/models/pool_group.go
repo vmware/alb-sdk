@@ -51,7 +51,7 @@ type PoolGroup struct {
 	// List of pool group members object of type PoolGroupMember.
 	Members []*PoolGroupMember `json:"members,omitempty"`
 
-	// The minimum number of servers to distribute traffic to. Allowed values are 1-65535. Special values are 0 - 'Disable'. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.
+	// The minimum number of servers to distribute traffic to. Allowed values are 1-65535. Special values are 0 - Disable. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.
 	MinServers *int32 `json:"min_servers,omitempty"`
 
 	// The name of the pool group.

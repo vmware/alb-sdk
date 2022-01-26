@@ -47,7 +47,7 @@ type IcapProfile struct {
 	// Required: true
 	PoolGroupRef *string `json:"pool_group_ref"`
 
-	// The ICAP preview size as described in RFC 3507 section 4.5. This should not exceed the size supported by the ICAP server. If this is set to 0, only the HTTP header will be sent to the ICAP server as a preview. To disable preview completely, set the enable-preview option to false. Allowed values are 0-5000. Field introduced in 20.1.1. Unit is BYTES.
+	// The ICAP preview size as described in RFC 3507 section 4.5. This should not exceed the size supported by the ICAP server. If this is set to 0, only the HTTP header will be sent to the ICAP server as a preview. To disable preview completely, set the enable-preview option to false.If vendor is LASTLINE, recommended preview size is 1000 bytes,minimum preview size is 10 bytes. Allowed values are 0-5000. Field introduced in 20.1.1. Unit is BYTES.
 	PreviewSize *int32 `json:"preview_size,omitempty"`
 
 	// Maximum time, client's request will be paused for ICAP processing. If this timeout is exceeded, the request to the ICAP server will be aborted and the configured fail action is executed. Allowed values are 50-3600000. Field introduced in 20.1.1. Unit is MILLISECONDS.

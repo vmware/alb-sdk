@@ -38,7 +38,7 @@ type DNSRecord struct {
 	// Name Server information in NS record. Field introduced in 17.1.1. Maximum of 13 items allowed.
 	Ns []*DNSNsRdata `json:"ns,omitempty"`
 
-	// Specifies the number of records returned by the DNS service. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- 'Return all records'. Field introduced in 17.1.1.
+	// Specifies the number of records returned by the DNS service. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 17.1.1.
 	NumRecordsInResponse *int32 `json:"num_records_in_response,omitempty"`
 
 	// Service locator info in SRV record. Maximum of 4 items allowed.

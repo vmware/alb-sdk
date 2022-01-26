@@ -51,7 +51,7 @@ type Server struct {
 	// (internal-use) This field is used internally by Avi, not editable by the user. It is a reference to an object of type VIMgrNWRuntime.
 	NwRef *string `json:"nw_ref,omitempty"`
 
-	// Optionally specify the servers port number.  This will override the pool's default server port attribute. Allowed values are 1-65535. Special values are 0- 'use backend port in pool'.
+	// Optionally specify the servers port number.  This will override the pool's default server port attribute. Allowed values are 1-65535. Special values are 0- use backend port in pool.
 	Port *int32 `json:"port,omitempty"`
 
 	// Header value for custom header persistence. .

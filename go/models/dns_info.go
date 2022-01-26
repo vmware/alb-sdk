@@ -21,7 +21,7 @@ type DNSInfo struct {
 	// Read Only: true
 	Metadata *string `json:"metadata,omitempty"`
 
-	// Specifies the number of records returned for this FQDN. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- 'Return all records'. Field introduced in 17.1.1.
+	// Specifies the number of records returned for this FQDN. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 17.1.1.
 	NumRecordsInResponse *int32 `json:"num_records_in_response,omitempty"`
 
 	// Time to live for fqdn record. Default value is chosen from DNS profile for this cloud if no value provided.
