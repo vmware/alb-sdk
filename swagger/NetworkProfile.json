@@ -584,7 +584,7 @@
             ],
             "properties": {
                 "dsr_encap_type": {
-                    "description": "Encapsulation type to use when DSR is L3. Enum options - ENCAP_IPINIP. Field introduced in 18.2.3.",
+                    "description": "Encapsulation type to use when DSR is L3. Enum options - ENCAP_IPINIP, ENCAP_GRE. Field introduced in 18.2.3.",
                     "type": "string",
                     "default": "ENCAP_IPINIP"
                 },
