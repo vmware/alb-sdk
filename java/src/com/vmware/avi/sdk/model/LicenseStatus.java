@@ -24,6 +24,9 @@ public class LicenseStatus extends AviRestResource  {
     @JsonProperty("saas_status")
     private SaasLicensingStatus saasStatus = null;
 
+    @JsonProperty("service_update")
+    private LicenseServiceUpdate serviceUpdate = null;
+
     @JsonProperty("url")
     private String url = "url";
 
@@ -52,6 +55,28 @@ public class LicenseStatus extends AviRestResource  {
      */
     public void setSaasStatus(SaasLicensingStatus saasStatus) {
         this.saasStatus = saasStatus;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Pulse license service update.
+     * Field introduced in 21.1.4.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return serviceUpdate
+     */
+    public LicenseServiceUpdate getServiceUpdate() {
+        return serviceUpdate;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Pulse license service update.
+     * Field introduced in 21.1.4.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param serviceUpdate set the serviceUpdate.
+     */
+    public void setServiceUpdate(LicenseServiceUpdate serviceUpdate) {
+        this.serviceUpdate = serviceUpdate;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -104,7 +129,8 @@ public class LicenseStatus extends AviRestResource  {
       }
       LicenseStatus objLicenseStatus = (LicenseStatus) o;
       return   Objects.equals(this.uuid, objLicenseStatus.uuid)&&
-  Objects.equals(this.saasStatus, objLicenseStatus.saasStatus);
+  Objects.equals(this.saasStatus, objLicenseStatus.saasStatus)&&
+  Objects.equals(this.serviceUpdate, objLicenseStatus.serviceUpdate);
     }
 
     @Override
@@ -112,6 +138,7 @@ public class LicenseStatus extends AviRestResource  {
       StringBuilder sb = new StringBuilder();
       sb.append("class LicenseStatus {\n");
                   sb.append("    saasStatus: ").append(toIndentedString(saasStatus)).append("\n");
+                        sb.append("    serviceUpdate: ").append(toIndentedString(serviceUpdate)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
       return sb.toString();
