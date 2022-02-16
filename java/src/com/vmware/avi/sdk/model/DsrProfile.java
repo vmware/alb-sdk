@@ -32,7 +32,7 @@ public class DsrProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Encapsulation type to use when dsr is l3.
-     * Enum options - ENCAP_IPINIP.
+     * Enum options - ENCAP_IPINIP, ENCAP_GRE.
      * Field introduced in 18.2.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as "ENCAP_IPINIP".
      * @return dsrEncapType
@@ -44,7 +44,7 @@ public class DsrProfile  {
     /**
      * This is the setter method to the attribute.
      * Encapsulation type to use when dsr is l3.
-     * Enum options - ENCAP_IPINIP.
+     * Enum options - ENCAP_IPINIP, ENCAP_GRE.
      * Field introduced in 18.2.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as "ENCAP_IPINIP".
      * @param dsrEncapType set the dsrEncapType.
