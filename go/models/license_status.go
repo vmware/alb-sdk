@@ -18,6 +18,9 @@ type LicenseStatus struct {
 	// Saas licensing status. Field introduced in 21.1.3.
 	SaasStatus *SaasLicensingStatus `json:"saas_status,omitempty"`
 
+	// Pulse license service update. Field introduced in 21.1.4.
+	ServiceUpdate *LicenseServiceUpdate `json:"service_update,omitempty"`
+
 	// url
 	// Read Only: true
 	URL *string `json:"url,omitempty"`

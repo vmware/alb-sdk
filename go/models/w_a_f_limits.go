@@ -11,6 +11,9 @@ type WAFLimits struct {
 	// Number of WAF allowed Content Types. Field introduced in 21.1.3.
 	NumAllowedContentTypes *int32 `json:"num_allowed_content_types,omitempty"`
 
+	// Number of allowed request content type character sets in WAF. Field introduced in 22.1.1.
+	NumAllowedRequestContentTypeCharsets *int32 `json:"num_allowed_request_content_type_charsets,omitempty"`
+
 	// Number of rules used in WAF allowlist policy. Field introduced in 21.1.3.
 	NumAllowlistPolicyRules *int32 `json:"num_allowlist_policy_rules,omitempty"`
 

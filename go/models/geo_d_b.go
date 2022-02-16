@@ -16,7 +16,6 @@ type GeoDB struct {
 	Description *string `json:"description,omitempty"`
 
 	// Geo Database files. Field introduced in 21.1.1.
-	// Required: true
 	Files []*GeoDBFile `json:"files,omitempty"`
 
 	// This field indicates that this object is replicated across GSLB federation. Field introduced in 21.1.1.
