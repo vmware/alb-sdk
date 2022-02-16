@@ -568,7 +568,6 @@
         "GeoDB": {
             "type": "object",
             "required": [
-                "files",
                 "name"
             ],
             "properties": {
