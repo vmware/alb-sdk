@@ -392,7 +392,6 @@ definitions:
     GeoDB:
         type: object
         required:
-            -   files
             -   name
         properties:
             _last_modified:
