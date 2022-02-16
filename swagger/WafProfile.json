@@ -640,6 +640,13 @@
                         "type": "string"
                     }
                 },
+                "allowed_request_content_type_charsets": {
+                    "description": "Allowed request content type character sets in WAF. Field introduced in 22.1.1.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "allowed_request_content_types": {
                     "description": "WAF allowed Content Types. Field deprecated in 21.1.3. Field introduced in 17.2.1.",
                     "type": "array",
