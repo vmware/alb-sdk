@@ -5785,6 +5785,70 @@ VSERVER DNS metrics
 <td> True </td>
 </tr>
 <tr>
+<td> dns_client.avg_udp_dns_response_any_to_well_known_ports </td>
+<td> Rate of responses sent to well known ports for requests of type ANY, where the response size goes beyond a threshold. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> dns_client.avg_udp_dns_response_dnskey_to_well_known_ports </td>
+<td> Number of responses sent to well known ports for requests of type DNSKEY, where the response size goes beyond a threshold. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> dns_client.avg_udp_dns_response_rrsig_to_well_known_ports </td>
+<td> Number of responses sent to well known ports for requests of type RRSIG, where the response size goes beyond a threshold. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> dns_client.avg_udp_dns_response_size_any_to_well_known_ports </td>
+<td> Bytes per second of responses sent to well known ports for requests of type ANY, where the response size goes beyond a threshold. </td>
+<td> BYTES_PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> dns_client.avg_udp_dns_response_size_dnskey_to_well_known_ports </td>
+<td> Bytes per second of responses sent to well known ports for requests of type DNSKEY, where the response size goes beyond a threshold. </td>
+<td> BYTES_PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> dns_client.avg_udp_dns_response_size_rrsig_to_well_known_ports </td>
+<td> Bytes per second of responses sent to well known ports for requests of type RRSIG, where the response size goes beyond a threshold. </td>
+<td> BYTES_PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> dns_client.avg_udp_dns_response_size_txt_to_well_known_ports </td>
+<td> Bytes per second of responses sent to well known ports for requests of type TXT, where the response size goes beyond a threshold. </td>
+<td> BYTES_PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> dns_client.avg_udp_dns_response_txt_to_well_known_ports </td>
+<td> Number of responses sent to well known ports for requests of type TXT, where the response size goes beyond a threshold. </td>
+<td> PER_SECOND </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
 <td> dns_client.avg_udp_passthrough_errors </td>
 <td> Rate of UDP passthrough DNS errored requests per second </td>
 <td> PER_SECOND </td>
