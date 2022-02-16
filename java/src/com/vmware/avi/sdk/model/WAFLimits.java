@@ -24,6 +24,9 @@ public class WAFLimits  {
     @JsonProperty("num_allowed_content_types")
     private Integer numAllowedContentTypes = null;
 
+    @JsonProperty("num_allowed_request_content_type_charsets")
+    private Integer numAllowedRequestContentTypeCharsets = null;
+
     @JsonProperty("num_allowlist_policy_rules")
     private Integer numAllowlistPolicyRules = null;
 
@@ -85,6 +88,28 @@ public class WAFLimits  {
      */
     public void setNumAllowedContentTypes(Integer  numAllowedContentTypes) {
         this.numAllowedContentTypes = numAllowedContentTypes;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Number of allowed request content type character sets in waf.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return numAllowedRequestContentTypeCharsets
+     */
+    public Integer getNumAllowedRequestContentTypeCharsets() {
+        return numAllowedRequestContentTypeCharsets;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Number of allowed request content type character sets in waf.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param numAllowedRequestContentTypeCharsets set the numAllowedRequestContentTypeCharsets.
+     */
+    public void setNumAllowedRequestContentTypeCharsets(Integer  numAllowedRequestContentTypeCharsets) {
+        this.numAllowedRequestContentTypeCharsets = numAllowedRequestContentTypeCharsets;
     }
 
     /**
@@ -396,7 +421,8 @@ public class WAFLimits  {
   Objects.equals(this.numApplications, objWAFLimits.numApplications)&&
   Objects.equals(this.numRulesPerRulegroup, objWAFLimits.numRulesPerRulegroup)&&
   Objects.equals(this.numRuleTags, objWAFLimits.numRuleTags)&&
-  Objects.equals(this.numPrePostCrsGroups, objWAFLimits.numPrePostCrsGroups);
+  Objects.equals(this.numPrePostCrsGroups, objWAFLimits.numPrePostCrsGroups)&&
+  Objects.equals(this.numAllowedRequestContentTypeCharsets, objWAFLimits.numAllowedRequestContentTypeCharsets);
     }
 
     @Override
@@ -404,6 +430,7 @@ public class WAFLimits  {
       StringBuilder sb = new StringBuilder();
       sb.append("class WAFLimits {\n");
                   sb.append("    numAllowedContentTypes: ").append(toIndentedString(numAllowedContentTypes)).append("\n");
+                        sb.append("    numAllowedRequestContentTypeCharsets: ").append(toIndentedString(numAllowedRequestContentTypeCharsets)).append("\n");
                         sb.append("    numAllowlistPolicyRules: ").append(toIndentedString(numAllowlistPolicyRules)).append("\n");
                         sb.append("    numApplications: ").append(toIndentedString(numApplications)).append("\n");
                         sb.append("    numDataFiles: ").append(toIndentedString(numDataFiles)).append("\n");

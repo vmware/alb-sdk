@@ -126,6 +126,12 @@ public class EventDetails  {
     @JsonProperty("cc_vnic_details")
     private CloudVnicChange ccVnicDetails = null;
 
+    @JsonProperty("central_license_refresh_details")
+    private CentralLicenseRefreshDetails centralLicenseRefreshDetails = null;
+
+    @JsonProperty("central_license_subscription_details")
+    private CentralLicenseSubscriptionDetails centralLicenseSubscriptionDetails = null;
+
     @JsonProperty("cloud_asg_notif_details")
     private CloudASGNotifDetails cloudAsgNotifDetails = null;
 
@@ -1359,6 +1365,50 @@ public class EventDetails  {
      */
     public void setCcVnicDetails(CloudVnicChange ccVnicDetails) {
         this.ccVnicDetails = ccVnicDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Central license refresh details.
+     * Field introduced in 21.1.4.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return centralLicenseRefreshDetails
+     */
+    public CentralLicenseRefreshDetails getCentralLicenseRefreshDetails() {
+        return centralLicenseRefreshDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Central license refresh details.
+     * Field introduced in 21.1.4.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param centralLicenseRefreshDetails set the centralLicenseRefreshDetails.
+     */
+    public void setCentralLicenseRefreshDetails(CentralLicenseRefreshDetails centralLicenseRefreshDetails) {
+        this.centralLicenseRefreshDetails = centralLicenseRefreshDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Central license subscription details.
+     * Field introduced in 21.1.4.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return centralLicenseSubscriptionDetails
+     */
+    public CentralLicenseSubscriptionDetails getCentralLicenseSubscriptionDetails() {
+        return centralLicenseSubscriptionDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Central license subscription details.
+     * Field introduced in 21.1.4.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param centralLicenseSubscriptionDetails set the centralLicenseSubscriptionDetails.
+     */
+    public void setCentralLicenseSubscriptionDetails(CentralLicenseSubscriptionDetails centralLicenseSubscriptionDetails) {
+        this.centralLicenseSubscriptionDetails = centralLicenseSubscriptionDetails;
     }
 
     /**
@@ -5154,6 +5204,8 @@ public class EventDetails  {
   Objects.equals(this.seReconcileDetails, objEventDetails.seReconcileDetails)&&
   Objects.equals(this.controllerLicenseReconcileDetails, objEventDetails.controllerLicenseReconcileDetails)&&
   Objects.equals(this.licenseTierSwitchDetails, objEventDetails.licenseTierSwitchDetails)&&
+  Objects.equals(this.centralLicenseSubscriptionDetails, objEventDetails.centralLicenseSubscriptionDetails)&&
+  Objects.equals(this.centralLicenseRefreshDetails, objEventDetails.centralLicenseRefreshDetails)&&
   Objects.equals(this.genericAuditComplianceEventInfo, objEventDetails.genericAuditComplianceEventInfo)&&
   Objects.equals(this.secureKeyExchangeInfo, objEventDetails.secureKeyExchangeInfo)&&
   Objects.equals(this.logAgentEventDetails, objEventDetails.logAgentEventDetails)&&
@@ -5202,6 +5254,8 @@ public class EventDetails  {
                         sb.append("    ccTenantDelDetails: ").append(toIndentedString(ccTenantDelDetails)).append("\n");
                         sb.append("    ccVipUpdateDetails: ").append(toIndentedString(ccVipUpdateDetails)).append("\n");
                         sb.append("    ccVnicDetails: ").append(toIndentedString(ccVnicDetails)).append("\n");
+                        sb.append("    centralLicenseRefreshDetails: ").append(toIndentedString(centralLicenseRefreshDetails)).append("\n");
+                        sb.append("    centralLicenseSubscriptionDetails: ").append(toIndentedString(centralLicenseSubscriptionDetails)).append("\n");
                         sb.append("    cloudAsgNotifDetails: ").append(toIndentedString(cloudAsgNotifDetails)).append("\n");
                         sb.append("    cloudAutoscalingConfigFailureDetails: ").append(toIndentedString(cloudAutoscalingConfigFailureDetails)).append("\n");
                         sb.append("    cloudRouteNotifDetails: ").append(toIndentedString(cloudRouteNotifDetails)).append("\n");
