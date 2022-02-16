@@ -27,6 +27,9 @@ public class WafConfig  {
     @JsonProperty("allowed_methods")
     private List<String> allowedMethods = null;
 
+    @JsonProperty("allowed_request_content_type_charsets")
+    private List<String> allowedRequestContentTypeCharsets = null;
+
     @JsonProperty("allowed_request_content_types")
     private List<String> allowedRequestContentTypes;
 
@@ -197,6 +200,42 @@ public class WafConfig  {
         this.allowedMethods = new ArrayList<String>();
       }
       this.allowedMethods.add(allowedMethodsItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Allowed request content type character sets in waf.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return allowedRequestContentTypeCharsets
+     */
+    public List<String> getAllowedRequestContentTypeCharsets() {
+        return allowedRequestContentTypeCharsets;
+    }
+
+    /**
+     * This is the setter method. this will set the allowedRequestContentTypeCharsets
+     * Allowed request content type character sets in waf.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return allowedRequestContentTypeCharsets
+     */
+    public void setAllowedRequestContentTypeCharsets(List<String>  allowedRequestContentTypeCharsets) {
+        this.allowedRequestContentTypeCharsets = allowedRequestContentTypeCharsets;
+    }
+
+    /**
+     * This is the setter method this will set the allowedRequestContentTypeCharsets
+     * Allowed request content type character sets in waf.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return allowedRequestContentTypeCharsets
+     */
+    public WafConfig addAllowedRequestContentTypeCharsetsItem(String allowedRequestContentTypeCharsetsItem) {
+      if (this.allowedRequestContentTypeCharsets == null) {
+        this.allowedRequestContentTypeCharsets = new ArrayList<String>();
+      }
+      this.allowedRequestContentTypeCharsets.add(allowedRequestContentTypeCharsetsItem);
       return this;
     }
     /**
@@ -999,7 +1038,8 @@ public class WafConfig  {
   Objects.equals(this.xmlXxeProtection, objWafConfig.xmlXxeProtection)&&
   Objects.equals(this.statusHeaderName, objWafConfig.statusHeaderName)&&
   Objects.equals(this.sendStatusHeader, objWafConfig.sendStatusHeader)&&
-  Objects.equals(this.contentTypeMappings, objWafConfig.contentTypeMappings);
+  Objects.equals(this.contentTypeMappings, objWafConfig.contentTypeMappings)&&
+  Objects.equals(this.allowedRequestContentTypeCharsets, objWafConfig.allowedRequestContentTypeCharsets);
     }
 
     @Override
@@ -1008,6 +1048,7 @@ public class WafConfig  {
       sb.append("class WafConfig {\n");
                   sb.append("    allowedHttpVersions: ").append(toIndentedString(allowedHttpVersions)).append("\n");
                         sb.append("    allowedMethods: ").append(toIndentedString(allowedMethods)).append("\n");
+                        sb.append("    allowedRequestContentTypeCharsets: ").append(toIndentedString(allowedRequestContentTypeCharsets)).append("\n");
                         sb.append("    allowedRequestContentTypes: ").append(toIndentedString(allowedRequestContentTypes)).append("\n");
                         sb.append("    argumentSeparator: ").append(toIndentedString(argumentSeparator)).append("\n");
                         sb.append("    bufferResponseBodyForInspection: ").append(toIndentedString(bufferResponseBodyForInspection)).append("\n");
