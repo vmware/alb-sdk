@@ -27,6 +27,9 @@ public class UserAccountProfile extends AviRestResource  {
     @JsonProperty("credentials_timeout_threshold")
     private Integer credentialsTimeoutThreshold = 180;
 
+    @JsonProperty("login_failure_count_expiry_window")
+    private Integer loginFailureCountExpiryWindow = 0;
+
     @JsonProperty("max_concurrent_sessions")
     private Integer maxConcurrentSessions = 0;
 
@@ -93,6 +96,32 @@ public class UserAccountProfile extends AviRestResource  {
      */
     public void setCredentialsTimeoutThreshold(Integer  credentialsTimeoutThreshold) {
         this.credentialsTimeoutThreshold = credentialsTimeoutThreshold;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * The configurable time window beyond which we need to pop all the login failure timestamps from the login_failure_timestamps.
+     * Special values are 0 - do not reset login_failure_counts on the basis of time.
+     * Field introduced in 22.1.1.
+     * Unit is min.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @return loginFailureCountExpiryWindow
+     */
+    public Integer getLoginFailureCountExpiryWindow() {
+        return loginFailureCountExpiryWindow;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The configurable time window beyond which we need to pop all the login failure timestamps from the login_failure_timestamps.
+     * Special values are 0 - do not reset login_failure_counts on the basis of time.
+     * Field introduced in 22.1.1.
+     * Unit is min.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @param loginFailureCountExpiryWindow set the loginFailureCountExpiryWindow.
+     */
+    public void setLoginFailureCountExpiryWindow(Integer  loginFailureCountExpiryWindow) {
+        this.loginFailureCountExpiryWindow = loginFailureCountExpiryWindow;
     }
 
     /**
@@ -238,7 +267,8 @@ public class UserAccountProfile extends AviRestResource  {
   Objects.equals(this.maxLoginFailureCount, objUserAccountProfile.maxLoginFailureCount)&&
   Objects.equals(this.accountLockTimeout, objUserAccountProfile.accountLockTimeout)&&
   Objects.equals(this.maxConcurrentSessions, objUserAccountProfile.maxConcurrentSessions)&&
-  Objects.equals(this.credentialsTimeoutThreshold, objUserAccountProfile.credentialsTimeoutThreshold);
+  Objects.equals(this.credentialsTimeoutThreshold, objUserAccountProfile.credentialsTimeoutThreshold)&&
+  Objects.equals(this.loginFailureCountExpiryWindow, objUserAccountProfile.loginFailureCountExpiryWindow);
     }
 
     @Override
@@ -247,6 +277,7 @@ public class UserAccountProfile extends AviRestResource  {
       sb.append("class UserAccountProfile {\n");
                   sb.append("    accountLockTimeout: ").append(toIndentedString(accountLockTimeout)).append("\n");
                         sb.append("    credentialsTimeoutThreshold: ").append(toIndentedString(credentialsTimeoutThreshold)).append("\n");
+                        sb.append("    loginFailureCountExpiryWindow: ").append(toIndentedString(loginFailureCountExpiryWindow)).append("\n");
                         sb.append("    maxConcurrentSessions: ").append(toIndentedString(maxConcurrentSessions)).append("\n");
                         sb.append("    maxLoginFailureCount: ").append(toIndentedString(maxLoginFailureCount)).append("\n");
                         sb.append("    maxPasswordHistoryCount: ").append(toIndentedString(maxPasswordHistoryCount)).append("\n");
