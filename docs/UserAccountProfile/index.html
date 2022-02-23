@@ -260,6 +260,7 @@ font-style: italic;
   "next" : "aeiou",
   "count" : 123,
   "results" : [ {
+    "login_failure_count_expiry_window" : 123,
     "max_password_history_count" : 123,
     "credentials_timeout_threshold" : 123,
     "max_concurrent_sessions" : 123,
@@ -326,6 +327,7 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
+  "login_failure_count_expiry_window" : 123,
   "max_password_history_count" : 123,
   "credentials_timeout_threshold" : 123,
   "max_concurrent_sessions" : 123,
@@ -463,6 +465,7 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
+  "login_failure_count_expiry_window" : 123,
   "max_password_history_count" : 123,
   "credentials_timeout_threshold" : 123,
   "max_concurrent_sessions" : 123,
@@ -540,6 +543,7 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
+  "login_failure_count_expiry_window" : 123,
   "max_password_history_count" : 123,
   "credentials_timeout_threshold" : 123,
   "max_concurrent_sessions" : 123,
@@ -617,6 +621,7 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
+  "login_failure_count_expiry_window" : 123,
   "max_password_history_count" : 123,
   "credentials_timeout_threshold" : 123,
   "max_concurrent_sessions" : 123,
@@ -672,6 +677,7 @@ font-style: italic;
 <div class="param">account_lock_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Lock timeout period (in minutes). Default is 30 minutes. Unit is MIN. format: int32</div>
 <div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
 <div class="param">credentials_timeout_threshold (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The time period after which credentials expire. Default is 180 days. Unit is DAYS. format: int32</div>
+<div class="param">login_failure_count_expiry_window (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The configurable time window beyond which we need to pop all the login failure timestamps from the login_failure_timestamps. Special values are 0 - Do not reset login_failure_counts on the basis of time.. Field introduced in 22.1.1. Unit is MIN. format: int32</div>
 <div class="param">max_concurrent_sessions (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of concurrent sessions allowed. There are unlimited sessions by default. format: int32</div>
 <div class="param">max_login_failure_count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of login attempts before lockout. Default is 3 attempts. Allowed values are 3-20. Special values are 0- Unlimited login attempts allowed.. format: int32</div>
 <div class="param">max_password_history_count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of passwords to be maintained in the password history. Default is 4 passwords. format: int32</div>
