@@ -39,6 +39,9 @@ public class UserActivity extends AviRestResource  {
     @JsonProperty("logged_in")
     private Boolean loggedIn = null;
 
+    @JsonProperty("login_failure_timestamps")
+    private List<String> loginFailureTimestamps = null;
+
     @JsonProperty("name")
     private String name = null;
 
@@ -172,6 +175,42 @@ public class UserActivity extends AviRestResource  {
     public void setLoggedIn(Boolean  loggedIn) {
         this.loggedIn = loggedIn;
     }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Its a queue that store the timestamps for past login_failures.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return loginFailureTimestamps
+     */
+    public List<String> getLoginFailureTimestamps() {
+        return loginFailureTimestamps;
+    }
+
+    /**
+     * This is the setter method. this will set the loginFailureTimestamps
+     * Its a queue that store the timestamps for past login_failures.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return loginFailureTimestamps
+     */
+    public void setLoginFailureTimestamps(List<String>  loginFailureTimestamps) {
+        this.loginFailureTimestamps = loginFailureTimestamps;
+    }
+
+    /**
+     * This is the setter method this will set the loginFailureTimestamps
+     * Its a queue that store the timestamps for past login_failures.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return loginFailureTimestamps
+     */
+    public UserActivity addLoginFailureTimestampsItem(String loginFailureTimestampsItem) {
+      if (this.loginFailureTimestamps == null) {
+        this.loginFailureTimestamps = new ArrayList<String>();
+      }
+      this.loginFailureTimestamps.add(loginFailureTimestampsItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -281,7 +320,8 @@ public class UserActivity extends AviRestResource  {
   Objects.equals(this.lastLoginTimestamp, objUserActivity.lastLoginTimestamp)&&
   Objects.equals(this.loggedIn, objUserActivity.loggedIn)&&
   Objects.equals(this.concurrentSessions, objUserActivity.concurrentSessions)&&
-  Objects.equals(this.lastPasswordUpdate, objUserActivity.lastPasswordUpdate);
+  Objects.equals(this.lastPasswordUpdate, objUserActivity.lastPasswordUpdate)&&
+  Objects.equals(this.loginFailureTimestamps, objUserActivity.loginFailureTimestamps);
     }
 
     @Override
@@ -294,6 +334,7 @@ public class UserActivity extends AviRestResource  {
                         sb.append("    lastLoginTimestamp: ").append(toIndentedString(lastLoginTimestamp)).append("\n");
                         sb.append("    lastPasswordUpdate: ").append(toIndentedString(lastPasswordUpdate)).append("\n");
                         sb.append("    loggedIn: ").append(toIndentedString(loggedIn)).append("\n");
+                        sb.append("    loginFailureTimestamps: ").append(toIndentedString(loginFailureTimestamps)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    previousPassword: ").append(toIndentedString(previousPassword)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
