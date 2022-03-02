@@ -38,7 +38,10 @@ public class ConnPoolProperties  {
     /**
      * This is the getter method this will return the attribute value.
      * Connection idle timeout.
+     * Allowed values are 0-86400000.
+     * Special values are 0- infinite idle time.
      * Field introduced in 18.2.1.
+     * Unit is milliseconds.
      * Allowed in basic(allowed values- 60000) edition, essentials(allowed values- 60000) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
      * @return upstreamConnpoolConnIdleTmo
@@ -50,7 +53,10 @@ public class ConnPoolProperties  {
     /**
      * This is the setter method to the attribute.
      * Connection idle timeout.
+     * Allowed values are 0-86400000.
+     * Special values are 0- infinite idle time.
      * Field introduced in 18.2.1.
+     * Unit is milliseconds.
      * Allowed in basic(allowed values- 60000) edition, essentials(allowed values- 60000) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
      * @param upstreamConnpoolConnIdleTmo set the upstreamConnpoolConnIdleTmo.
@@ -62,7 +68,10 @@ public class ConnPoolProperties  {
     /**
      * This is the getter method this will return the attribute value.
      * Connection life timeout.
+     * Allowed values are 0-86400000.
+     * Special values are 0- infinite life time.
      * Field introduced in 18.2.1.
+     * Unit is milliseconds.
      * Allowed in basic(allowed values- 600000) edition, essentials(allowed values- 600000) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 600000.
      * @return upstreamConnpoolConnLifeTmo
@@ -74,7 +83,10 @@ public class ConnPoolProperties  {
     /**
      * This is the setter method to the attribute.
      * Connection life timeout.
+     * Allowed values are 0-86400000.
+     * Special values are 0- infinite life time.
      * Field introduced in 18.2.1.
+     * Unit is milliseconds.
      * Allowed in basic(allowed values- 600000) edition, essentials(allowed values- 600000) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 600000.
      * @param upstreamConnpoolConnLifeTmo set the upstreamConnpoolConnLifeTmo.
