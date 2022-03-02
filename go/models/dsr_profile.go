@@ -8,7 +8,7 @@ package models
 // swagger:model DsrProfile
 type DsrProfile struct {
 
-	// Encapsulation type to use when DSR is L3. Enum options - ENCAP_IPINIP. Field introduced in 18.2.3.
+	// Encapsulation type to use when DSR is L3. Enum options - ENCAP_IPINIP, ENCAP_GRE. Field introduced in 18.2.3.
 	// Required: true
 	DsrEncapType *string `json:"dsr_encap_type"`
 
