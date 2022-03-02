@@ -48,6 +48,12 @@ public class SupportedMigrations  {
     @JsonProperty("min_supported_api_version")
     private String minSupportedApiVersion = null;
 
+    @JsonProperty("podman_controller_host_min_free_disk_size")
+    private Integer podmanControllerHostMinFreeDiskSize = 24;
+
+    @JsonProperty("podman_se_host_min_free_disk_size")
+    private Integer podmanSeHostMinFreeDiskSize = 12;
+
     @JsonProperty("rollback_controller_disk_space")
     private Integer rollbackControllerDiskSpace = 2;
 
@@ -288,6 +294,54 @@ public class SupportedMigrations  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Minimum space required(in gb) on podman controller host for this image installation.
+     * Field introduced in 21.1.4.
+     * Unit is gb.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 24.
+     * @return podmanControllerHostMinFreeDiskSize
+     */
+    public Integer getPodmanControllerHostMinFreeDiskSize() {
+        return podmanControllerHostMinFreeDiskSize;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Minimum space required(in gb) on podman controller host for this image installation.
+     * Field introduced in 21.1.4.
+     * Unit is gb.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 24.
+     * @param podmanControllerHostMinFreeDiskSize set the podmanControllerHostMinFreeDiskSize.
+     */
+    public void setPodmanControllerHostMinFreeDiskSize(Integer  podmanControllerHostMinFreeDiskSize) {
+        this.podmanControllerHostMinFreeDiskSize = podmanControllerHostMinFreeDiskSize;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Minimum space required(in gb) on podman se host for this image installation.
+     * Field introduced in 21.1.4.
+     * Unit is gb.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 12.
+     * @return podmanSeHostMinFreeDiskSize
+     */
+    public Integer getPodmanSeHostMinFreeDiskSize() {
+        return podmanSeHostMinFreeDiskSize;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Minimum space required(in gb) on podman se host for this image installation.
+     * Field introduced in 21.1.4.
+     * Unit is gb.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 12.
+     * @param podmanSeHostMinFreeDiskSize set the podmanSeHostMinFreeDiskSize.
+     */
+    public void setPodmanSeHostMinFreeDiskSize(Integer  podmanSeHostMinFreeDiskSize) {
+        this.podmanSeHostMinFreeDiskSize = podmanSeHostMinFreeDiskSize;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Minimum space required(in gb) on controller for rollback.
      * Field introduced in 18.2.6.
      * Unit is gb.
@@ -520,7 +574,9 @@ public class SupportedMigrations  {
   Objects.equals(this.controllerMinMemory, objSupportedMigrations.controllerMinMemory)&&
   Objects.equals(this.controllerMinCores, objSupportedMigrations.controllerMinCores)&&
   Objects.equals(this.controllerMinDockerVersion, objSupportedMigrations.controllerMinDockerVersion)&&
-  Objects.equals(this.minSupportedApiVersion, objSupportedMigrations.minSupportedApiVersion);
+  Objects.equals(this.minSupportedApiVersion, objSupportedMigrations.minSupportedApiVersion)&&
+  Objects.equals(this.podmanControllerHostMinFreeDiskSize, objSupportedMigrations.podmanControllerHostMinFreeDiskSize)&&
+  Objects.equals(this.podmanSeHostMinFreeDiskSize, objSupportedMigrations.podmanSeHostMinFreeDiskSize);
     }
 
     @Override
@@ -536,6 +592,8 @@ public class SupportedMigrations  {
                         sb.append("    controllerMinTotalDisk: ").append(toIndentedString(controllerMinTotalDisk)).append("\n");
                         sb.append("    maxActiveVersions: ").append(toIndentedString(maxActiveVersions)).append("\n");
                         sb.append("    minSupportedApiVersion: ").append(toIndentedString(minSupportedApiVersion)).append("\n");
+                        sb.append("    podmanControllerHostMinFreeDiskSize: ").append(toIndentedString(podmanControllerHostMinFreeDiskSize)).append("\n");
+                        sb.append("    podmanSeHostMinFreeDiskSize: ").append(toIndentedString(podmanSeHostMinFreeDiskSize)).append("\n");
                         sb.append("    rollbackControllerDiskSpace: ").append(toIndentedString(rollbackControllerDiskSpace)).append("\n");
                         sb.append("    rollbackSeDiskSpace: ").append(toIndentedString(rollbackSeDiskSpace)).append("\n");
                         sb.append("    seHostMinFreeDiskSize: ").append(toIndentedString(seHostMinFreeDiskSize)).append("\n");

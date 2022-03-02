@@ -68,6 +68,12 @@ public class AviAuthorizationInterceptor implements ClientHttpRequestInterceptor
 			response = execution.execute(request, body);
 
 			int responseCode = response.getRawStatusCode();
+			String requestUri = request.getURI().getPath();
+			if(responseCode == 200 && requestUri.contains("useraccount")){
+				LOGGER.info("Inside clearing the user session...");
+				AviRestUtils.clearSession(this.aviCredentials);
+				LOGGER.info("Clear session execution completed");
+			}
 
 			if (Arrays.asList(419, 401).contains(responseCode)) {
 				numApiExecCount++;
