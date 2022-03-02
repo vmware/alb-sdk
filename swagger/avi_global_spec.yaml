@@ -22084,46 +22084,6 @@ paths:
                 401:
                     description: log in failed
     /cloud/{uuid}/gc/:
-        patch:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        type: string
-                401:
-                    description: log in failed
         put:
             consumes:
                 -   application/json
@@ -22158,6 +22118,46 @@ paths:
                         type: object
                         additionalProperties:
                             type: string
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                200:
+                    description: OK
+                    schema:
+                        type: string
+                401:
+                    description: log in failed
+        patch:
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -56593,12 +56593,12 @@ definitions:
         type: object
         properties:
             upstream_connpool_conn_idle_tmo:
-                description: "Connection idle timeout. Field introduced in 18.2.1. Allowed in Basic(Allowed values- 60000) edition, Essentials(Allowed values- 60000) edition, Enterprise edition."
+                description: "Connection idle timeout. Allowed values are 0-86400000. Special values are 0- Infinite idle time.. Field introduced in 18.2.1. Unit is MILLISECONDS. Allowed in Basic(Allowed values- 60000) edition, Essentials(Allowed values- 60000) edition, Enterprise edition."
                 type: integer
                 default: 60000
                 format: int32
             upstream_connpool_conn_life_tmo:
-                description: "Connection life timeout. Field introduced in 18.2.1. Allowed in Basic(Allowed values- 600000) edition, Essentials(Allowed values- 600000) edition, Enterprise edition."
+                description: "Connection life timeout. Allowed values are 0-86400000. Special values are 0- Infinite life time.. Field introduced in 18.2.1. Unit is MILLISECONDS. Allowed in Basic(Allowed values- 600000) edition, Essentials(Allowed values- 600000) edition, Enterprise edition."
                 type: integer
                 default: 600000
                 format: int32
@@ -73448,6 +73448,16 @@ definitions:
             min_supported_api_version:
                 description: "Minimum supported API version. Field introduced in 21.1.1."
                 type: string
+            podman_controller_host_min_free_disk_size:
+                description: "Minimum space required(in GB) on podman controller host for this image installation. Field introduced in 21.1.4. Unit is GB."
+                type: integer
+                default: 24
+                format: int32
+            podman_se_host_min_free_disk_size:
+                description: "Minimum space required(in GB) on podman se host for this image installation. Field introduced in 21.1.4. Unit is GB."
+                type: integer
+                default: 12
+                format: int32
             rollback_controller_disk_space:
                 description: "Minimum space required(in GB) on controller for rollback. Field introduced in 18.2.6. Unit is GB."
                 type: integer
