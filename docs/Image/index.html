@@ -294,6 +294,7 @@ font-style: italic;
       "se_min_total_disk" : 123,
       "min_supported_api_version" : "aeiou",
       "controller_min_cores" : 123,
+      "podman_controller_host_min_free_disk_size" : 123,
       "se_min_free_disk_size" : 123,
       "api_version" : "aeiou",
       "controller_min_memory" : 123,
@@ -303,7 +304,8 @@ font-style: italic;
       "versions" : [ "aeiou" ],
       "max_active_versions" : 123,
       "controller_host_min_free_disk_size" : 123,
-      "controller_min_free_disk_size" : 123
+      "controller_min_free_disk_size" : 123,
+      "podman_se_host_min_free_disk_size" : 123
     },
     "tasks_completed" : 123,
     "controller_info" : {
@@ -439,6 +441,7 @@ font-style: italic;
     "se_min_total_disk" : 123,
     "min_supported_api_version" : "aeiou",
     "controller_min_cores" : 123,
+    "podman_controller_host_min_free_disk_size" : 123,
     "se_min_free_disk_size" : 123,
     "api_version" : "aeiou",
     "controller_min_memory" : 123,
@@ -448,7 +451,8 @@ font-style: italic;
     "versions" : [ "aeiou" ],
     "max_active_versions" : 123,
     "controller_host_min_free_disk_size" : 123,
-    "controller_min_free_disk_size" : 123
+    "controller_min_free_disk_size" : 123,
+    "podman_se_host_min_free_disk_size" : 123
   },
   "tasks_completed" : 123,
   "controller_info" : {
@@ -655,6 +659,7 @@ font-style: italic;
     "se_min_total_disk" : 123,
     "min_supported_api_version" : "aeiou",
     "controller_min_cores" : 123,
+    "podman_controller_host_min_free_disk_size" : 123,
     "se_min_free_disk_size" : 123,
     "api_version" : "aeiou",
     "controller_min_memory" : 123,
@@ -664,7 +669,8 @@ font-style: italic;
     "versions" : [ "aeiou" ],
     "max_active_versions" : 123,
     "controller_host_min_free_disk_size" : 123,
-    "controller_min_free_disk_size" : 123
+    "controller_min_free_disk_size" : 123,
+    "podman_se_host_min_free_disk_size" : 123
   },
   "tasks_completed" : 123,
   "controller_info" : {
@@ -811,6 +817,7 @@ font-style: italic;
     "se_min_total_disk" : 123,
     "min_supported_api_version" : "aeiou",
     "controller_min_cores" : 123,
+    "podman_controller_host_min_free_disk_size" : 123,
     "se_min_free_disk_size" : 123,
     "api_version" : "aeiou",
     "controller_min_memory" : 123,
@@ -820,7 +827,8 @@ font-style: italic;
     "versions" : [ "aeiou" ],
     "max_active_versions" : 123,
     "controller_host_min_free_disk_size" : 123,
-    "controller_min_free_disk_size" : 123
+    "controller_min_free_disk_size" : 123,
+    "podman_se_host_min_free_disk_size" : 123
   },
   "tasks_completed" : 123,
   "controller_info" : {
@@ -967,6 +975,7 @@ font-style: italic;
     "se_min_total_disk" : 123,
     "min_supported_api_version" : "aeiou",
     "controller_min_cores" : 123,
+    "podman_controller_host_min_free_disk_size" : 123,
     "se_min_free_disk_size" : 123,
     "api_version" : "aeiou",
     "controller_min_memory" : 123,
@@ -976,7 +985,8 @@ font-style: italic;
     "versions" : [ "aeiou" ],
     "max_active_versions" : 123,
     "controller_host_min_free_disk_size" : 123,
-    "controller_min_free_disk_size" : 123
+    "controller_min_free_disk_size" : 123,
+    "podman_se_host_min_free_disk_size" : 123
   },
   "tasks_completed" : 123,
   "controller_info" : {
@@ -1200,6 +1210,8 @@ font-style: italic;
 <div class="param">controller_min_total_disk (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Minimum space required(in GB) for Controller. Field introduced in 18.2.10, 20.1.2. Unit is GB. Allowed in Basic edition, Essentials edition, Enterprise edition. format: int32</div>
 <div class="param">max_active_versions (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Supported active versions for this image. Field introduced in 18.2.6. format: int32</div>
 <div class="param">min_supported_api_version (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Minimum supported API version. Field introduced in 21.1.1. </div>
+<div class="param">podman_controller_host_min_free_disk_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Minimum space required(in GB) on podman controller host for this image installation. Field introduced in 21.1.4. Unit is GB. format: int32</div>
+<div class="param">podman_se_host_min_free_disk_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Minimum space required(in GB) on podman se host for this image installation. Field introduced in 21.1.4. Unit is GB. format: int32</div>
 <div class="param">rollback_controller_disk_space (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Minimum space required(in GB) on controller for rollback. Field introduced in 18.2.6. Unit is GB. format: int32</div>
 <div class="param">rollback_se_disk_space (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Minimum space required(in GB) on se for rollback. Field introduced in 18.2.6. Unit is GB. format: int32</div>
 <div class="param">se_host_min_free_disk_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Minimum space required(in GB) on se host for this image installation. Field introduced in 18.2.6. Unit is GB. format: int32</div>
