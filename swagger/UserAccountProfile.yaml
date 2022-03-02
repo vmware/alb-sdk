@@ -377,6 +377,10 @@ definitions:
                 type: integer
                 default: 180
                 format: int32
+            login_failure_count_expiry_window:
+                description: "The configurable time window beyond which we need to pop all the login failure timestamps from the login_failure_timestamps. Special values are 0 - Do not reset login_failure_counts on the basis of time.. Field introduced in 22.1.1. Unit is MIN."
+                type: integer
+                format: int32
             max_concurrent_sessions:
                 description: "Maximum number of concurrent sessions allowed. There are unlimited sessions by default."
                 type: integer
