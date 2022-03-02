@@ -35,6 +35,12 @@ type SupportedMigrations struct {
 	// Minimum supported API version. Field introduced in 21.1.1.
 	MinSupportedAPIVersion *string `json:"min_supported_api_version,omitempty"`
 
+	// Minimum space required(in GB) on podman controller host for this image installation. Field introduced in 21.1.4. Unit is GB.
+	PodmanControllerHostMinFreeDiskSize *int32 `json:"podman_controller_host_min_free_disk_size,omitempty"`
+
+	// Minimum space required(in GB) on podman se host for this image installation. Field introduced in 21.1.4. Unit is GB.
+	PodmanSeHostMinFreeDiskSize *int32 `json:"podman_se_host_min_free_disk_size,omitempty"`
+
 	// Minimum space required(in GB) on controller for rollback. Field introduced in 18.2.6. Unit is GB.
 	RollbackControllerDiskSpace *int32 `json:"rollback_controller_disk_space,omitempty"`
 
