@@ -30,6 +30,9 @@ type UserActivity struct {
 	// Indicates whether the user is logged in or not.
 	LoggedIn *bool `json:"logged_in,omitempty"`
 
+	// Its a queue that store the timestamps for past login_failures. Field introduced in 22.1.1.
+	LoginFailureTimestamps []string `json:"login_failure_timestamps,omitempty"`
+
 	// Name of the user this object refers to.
 	Name *string `json:"name,omitempty"`
 

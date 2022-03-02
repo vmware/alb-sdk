@@ -1386,9 +1386,9 @@ func (avisess *AviSession) GetObject(obj string, options ...ApiOptionsParams) er
 		return json.Unmarshal(res.Results, &opts.result)
 	}
 	if res.Count == 0 {
-		return errors.New("No object of type " + obj + " with name " + opts.name + "is found")
+		return errors.New("No object of type " + obj + " with name " + opts.name + " is found")
 	} else if res.Count > 1 {
-		return errors.New("More than one object of type " + obj + " with name " + opts.name + "is found")
+		return errors.New("More than one object of type " + obj + " with name " + opts.name + " is found")
 	}
 	elems := make([]json.RawMessage, 1)
 	err = json.Unmarshal(res.Results, &elems)
