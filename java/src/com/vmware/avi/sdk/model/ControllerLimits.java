@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ControllerLimits  {
+    @JsonProperty("bot_limits")
+    private BOTLimits botLimits = null;
+
     @JsonProperty("certificates_per_virtualservice")
     private Integer certificatesPerVirtualservice = null;
 
@@ -85,6 +88,28 @@ public class ControllerLimits  {
     private WAFLimits wafLimits = null;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Bot system limits.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return botLimits
+     */
+    public BOTLimits getBotLimits() {
+        return botLimits;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Bot system limits.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param botLimits set the botLimits.
+     */
+    public void setBotLimits(BOTLimits botLimits) {
+        this.botLimits = botLimits;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -607,6 +632,7 @@ public class ControllerLimits  {
   Objects.equals(this.wafLimits, objControllerLimits.wafLimits)&&
   Objects.equals(this.rulesPerNatPolicy, objControllerLimits.rulesPerNatPolicy)&&
   Objects.equals(this.ipaddressLimits, objControllerLimits.ipaddressLimits)&&
+  Objects.equals(this.botLimits, objControllerLimits.botLimits)&&
   Objects.equals(this.l7Limits, objControllerLimits.l7Limits)&&
   Objects.equals(this.controllerSizingLimits, objControllerLimits.controllerSizingLimits)&&
   Objects.equals(this.controllerCloudLimits, objControllerLimits.controllerCloudLimits);
@@ -616,7 +642,8 @@ public class ControllerLimits  {
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class ControllerLimits {\n");
-                  sb.append("    certificatesPerVirtualservice: ").append(toIndentedString(certificatesPerVirtualservice)).append("\n");
+                  sb.append("    botLimits: ").append(toIndentedString(botLimits)).append("\n");
+                        sb.append("    certificatesPerVirtualservice: ").append(toIndentedString(certificatesPerVirtualservice)).append("\n");
                         sb.append("    controllerCloudLimits: ").append(toIndentedString(controllerCloudLimits)).append("\n");
                         sb.append("    controllerSizingLimits: ").append(toIndentedString(controllerSizingLimits)).append("\n");
                         sb.append("    defaultRoutesPerVrfcontext: ").append(toIndentedString(defaultRoutesPerVrfcontext)).append("\n");
