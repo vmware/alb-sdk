@@ -8,6 +8,9 @@ package models
 // swagger:model ControllerLimits
 type ControllerLimits struct {
 
+	// BOT system limits. Field introduced in 22.1.1.
+	BotLimits *BOTLimits `json:"bot_limits,omitempty"`
+
 	// Maximum number of certificates per virtualservice. Field introduced in 20.1.1.
 	CertificatesPerVirtualservice *int32 `json:"certificates_per_virtualservice,omitempty"`
 
