@@ -312,6 +312,11 @@ font-style: italic;
         "num_vrfs" : 123
       } ],
       "pools_per_poolgroup" : 123,
+      "bot_limits" : {
+        "mapping_rules" : 123,
+        "allow_rules" : 123,
+        "hdrs" : 123
+      },
       "l7_limits" : {
         "http_policies_per_vs" : 123,
         "num_matches_per_rule" : 123,
@@ -465,6 +470,11 @@ font-style: italic;
       "num_vrfs" : 123
     } ],
     "pools_per_poolgroup" : 123,
+    "bot_limits" : {
+      "mapping_rules" : 123,
+      "allow_rules" : 123,
+      "hdrs" : 123
+    },
     "l7_limits" : {
       "http_policies_per_vs" : 123,
       "num_matches_per_rule" : 123,
@@ -689,6 +699,11 @@ font-style: italic;
       "num_vrfs" : 123
     } ],
     "pools_per_poolgroup" : 123,
+    "bot_limits" : {
+      "mapping_rules" : 123,
+      "allow_rules" : 123,
+      "hdrs" : 123
+    },
     "l7_limits" : {
       "http_policies_per_vs" : 123,
       "num_matches_per_rule" : 123,
@@ -853,6 +868,11 @@ font-style: italic;
       "num_vrfs" : 123
     } ],
     "pools_per_poolgroup" : 123,
+    "bot_limits" : {
+      "mapping_rules" : 123,
+      "allow_rules" : 123,
+      "hdrs" : 123
+    },
     "l7_limits" : {
       "http_policies_per_vs" : 123,
       "num_matches_per_rule" : 123,
@@ -1017,6 +1037,11 @@ font-style: italic;
       "num_vrfs" : 123
     } ],
     "pools_per_poolgroup" : 123,
+    "bot_limits" : {
+      "mapping_rules" : 123,
+      "allow_rules" : 123,
+      "hdrs" : 123
+    },
     "l7_limits" : {
       "http_policies_per_vs" : 123,
       "num_matches_per_rule" : 123,
@@ -1089,6 +1114,7 @@ font-style: italic;
 
   <h2>Table of Contents</h2>
   <ol>
+    <li><a href="#BOTLimits"><code>BOTLimits</code></a></li>
     <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
     <li><a href="#ControllerCloudLimits"><code>ControllerCloudLimits</code></a></li>
     <li><a href="#ControllerLimits"><code>ControllerLimits</code></a></li>
@@ -1105,6 +1131,14 @@ font-style: italic;
   </ol>
 
   <div class="model">
+    <h3 class="field-label"><a name="BOTLimits">BOTLimits</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">allow_rules (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of rules to control which requests undergo BOT detection. Field introduced in 22.1.1. format: int32</div>
+<div class="param">hdrs (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of configurable HTTP header(s). Field introduced in 22.1.1. format: int32</div>
+<div class="param">mapping_rules (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of rules in a BotMapping object. Field introduced in 22.1.1. format: int32</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int32</div>
@@ -1120,7 +1154,8 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ControllerLimits">ControllerLimits</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">certificates_per_virtualservice (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of certificates per virtualservice. Field introduced in 20.1.1. format: int32</div>
+      <div class="param">bot_limits (optional)</div><div class="param-desc"><span class="param-type"><a href="#BOTLimits">BOTLimits</a></span> BOT system limits. Field introduced in 22.1.1. </div>
+<div class="param">certificates_per_virtualservice (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of certificates per virtualservice. Field introduced in 20.1.1. format: int32</div>
 <div class="param">controller_cloud_limits (optional)</div><div class="param-desc"><span class="param-type"><a href="#ControllerCloudLimits">array[ControllerCloudLimits]</a></span> Controller system limits specific to cloud type for all controller sizes. Field introduced in 20.1.1. </div>
 <div class="param">controller_sizing_limits (optional)</div><div class="param-desc"><span class="param-type"><a href="#ControllerSizingLimits">array[ControllerSizingLimits]</a></span> Controller system limits specific to controller sizing. Field introduced in 20.1.1. Maximum of 4 items allowed. </div>
 <div class="param">default_routes_per_vrfcontext (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of default routes per vrfcontext. Field introduced in 20.1.1. format: int32</div>
