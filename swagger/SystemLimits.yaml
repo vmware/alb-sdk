@@ -347,6 +347,21 @@ paths:
 
 
 definitions:
+    BOTLimits:
+        type: object
+        properties:
+            allow_rules:
+                description: "Maximum number of rules to control which requests undergo BOT detection. Field introduced in 22.1.1."
+                type: integer
+                format: int32
+            hdrs:
+                description: "Maximum number of configurable HTTP header(s). Field introduced in 22.1.1."
+                type: integer
+                format: int32
+            mapping_rules:
+                description: "Maximum number of rules in a BotMapping object. Field introduced in 22.1.1."
+                type: integer
+                format: int32
     ConfigPbAttributes:
         type: object
         properties:
@@ -368,6 +383,9 @@ definitions:
     ControllerLimits:
         type: object
         properties:
+            bot_limits:
+                description: "BOT system limits. Field introduced in 22.1.1."
+                $ref: '#/definitions/BOTLimits'
             certificates_per_virtualservice:
                 description: "Maximum number of certificates per virtualservice. Field introduced in 20.1.1."
                 type: integer
