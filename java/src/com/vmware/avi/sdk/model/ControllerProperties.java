@@ -171,6 +171,9 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("resmgr_log_caching_period")
     private Integer resmgrLogCachingPeriod = 21600;
 
+    @JsonProperty("restrict_cloud_read_access")
+    private Boolean restrictCloudReadAccess = false;
+
     @JsonProperty("safenet_hsm_version")
     private String safenetHsmVersion = null;
 
@@ -1449,6 +1452,28 @@ public class ControllerProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Restrict read access to cloud.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return restrictCloudReadAccess
+     */
+    public Boolean getRestrictCloudReadAccess() {
+        return restrictCloudReadAccess;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Restrict read access to cloud.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param restrictCloudReadAccess set the restrictCloudReadAccess.
+     */
+    public void setRestrictCloudReadAccess(Boolean  restrictCloudReadAccess) {
+        this.restrictCloudReadAccess = restrictCloudReadAccess;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Version of the safenet package installed on the controller.
      * Field introduced in 16.5.2,17.2.3.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -2456,7 +2481,8 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.vsphereHaRecoveryTimeout, objControllerProperties.vsphereHaRecoveryTimeout)&&
   Objects.equals(this.detachIpRetryInterval, objControllerProperties.detachIpRetryInterval)&&
   Objects.equals(this.detachIpRetryLimit, objControllerProperties.detachIpRetryLimit)&&
-  Objects.equals(this.detachIpTimeout, objControllerProperties.detachIpTimeout);
+  Objects.equals(this.detachIpTimeout, objControllerProperties.detachIpTimeout)&&
+  Objects.equals(this.restrictCloudReadAccess, objControllerProperties.restrictCloudReadAccess);
     }
 
     @Override
@@ -2513,6 +2539,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    processPkiProfileTimeoutPeriod: ").append(toIndentedString(processPkiProfileTimeoutPeriod)).append("\n");
                         sb.append("    queryHostFail: ").append(toIndentedString(queryHostFail)).append("\n");
                         sb.append("    resmgrLogCachingPeriod: ").append(toIndentedString(resmgrLogCachingPeriod)).append("\n");
+                        sb.append("    restrictCloudReadAccess: ").append(toIndentedString(restrictCloudReadAccess)).append("\n");
                         sb.append("    safenetHsmVersion: ").append(toIndentedString(safenetHsmVersion)).append("\n");
                         sb.append("    seCreateTimeout: ").append(toIndentedString(seCreateTimeout)).append("\n");
                         sb.append("    seFailoverAttemptInterval: ").append(toIndentedString(seFailoverAttemptInterval)).append("\n");
