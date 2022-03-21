@@ -41,6 +41,9 @@ type WafLog struct {
 	// Latency (in microseconds) in WAF Response Header Phase. Field introduced in 17.2.2.
 	LatencyResponseHeaderPhase *int64 `json:"latency_response_header_phase,omitempty"`
 
+	// The total memory (in bytes) consumed by WAF to process this request. Field introduced in 22.1.1. Unit is BYTES.
+	MemoryAllocated *int64 `json:"memory_allocated,omitempty"`
+
 	// Set to true if there are Positive Security Model rules in the policy. Field introduced in 18.2.3.
 	PsmConfigured *bool `json:"psm_configured,omitempty"`
 
