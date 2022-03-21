@@ -29,6 +29,9 @@ type HTTPApplicationProfile struct {
 	// Maximum size in Kbytes of all the client HTTP request headers.This value can be overriden by client_max_header_size if that is larger. Allowed values are 1-256. Unit is KB.
 	ClientMaxRequestSize *int32 `json:"client_max_request_size,omitempty"`
 
+	// If enabled, the client's TLS fingerprint will be collected and included in the Application Log. Field introduced in 22.1.1.
+	CollectClientTLSFingerprint *bool `json:"collect_client_tls_fingerprint,omitempty"`
+
 	// HTTP Compression settings to use with this HTTP Profile.
 	CompressionProfile *CompressionProfile `json:"compression_profile,omitempty"`
 

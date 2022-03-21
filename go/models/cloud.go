@@ -84,6 +84,9 @@ type Cloud struct {
 	// Cloud is in maintenance mode. Field introduced in 20.1.7,21.1.3.
 	MaintenanceMode *bool `json:"maintenance_mode,omitempty"`
 
+	// List of labels to be used for granular RBAC. Field introduced in 22.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
+
 	//  Field deprecated in 18.2.2.
 	MesosConfiguration *MesosConfiguration `json:"mesos_configuration,omitempty"`
 
