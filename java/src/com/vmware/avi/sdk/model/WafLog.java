@@ -54,6 +54,9 @@ public class WafLog  {
     @JsonProperty("latency_response_header_phase")
     private Integer latencyResponseHeaderPhase = null;
 
+    @JsonProperty("memory_allocated")
+    private Integer memoryAllocated = null;
+
     @JsonProperty("psm_configured")
     private Boolean psmConfigured = false;
 
@@ -360,6 +363,30 @@ public class WafLog  {
      */
     public void setLatencyResponseHeaderPhase(Integer  latencyResponseHeaderPhase) {
         this.latencyResponseHeaderPhase = latencyResponseHeaderPhase;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * The total memory (in bytes) consumed by waf to process this request.
+     * Field introduced in 22.1.1.
+     * Unit is bytes.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return memoryAllocated
+     */
+    public Integer getMemoryAllocated() {
+        return memoryAllocated;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The total memory (in bytes) consumed by waf to process this request.
+     * Field introduced in 22.1.1.
+     * Unit is bytes.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param memoryAllocated set the memoryAllocated.
+     */
+    public void setMemoryAllocated(Integer  memoryAllocated) {
+        this.memoryAllocated = memoryAllocated;
     }
 
     /**
@@ -701,7 +728,8 @@ public class WafLog  {
   Objects.equals(this.allowlistProcessed, objWafLog.allowlistProcessed)&&
   Objects.equals(this.rulesProcessed, objWafLog.rulesProcessed)&&
   Objects.equals(this.psmProcessed, objWafLog.psmProcessed)&&
-  Objects.equals(this.applicationRulesProcessed, objWafLog.applicationRulesProcessed);
+  Objects.equals(this.applicationRulesProcessed, objWafLog.applicationRulesProcessed)&&
+  Objects.equals(this.memoryAllocated, objWafLog.memoryAllocated);
     }
 
     @Override
@@ -719,6 +747,7 @@ public class WafLog  {
                         sb.append("    latencyRequestHeaderPhase: ").append(toIndentedString(latencyRequestHeaderPhase)).append("\n");
                         sb.append("    latencyResponseBodyPhase: ").append(toIndentedString(latencyResponseBodyPhase)).append("\n");
                         sb.append("    latencyResponseHeaderPhase: ").append(toIndentedString(latencyResponseHeaderPhase)).append("\n");
+                        sb.append("    memoryAllocated: ").append(toIndentedString(memoryAllocated)).append("\n");
                         sb.append("    psmConfigured: ").append(toIndentedString(psmConfigured)).append("\n");
                         sb.append("    psmExecuted: ").append(toIndentedString(psmExecuted)).append("\n");
                         sb.append("    psmLogs: ").append(toIndentedString(psmLogs)).append("\n");
