@@ -14,9 +14,8 @@ info:
     description: |
         CLI
         ```
-        - show pkiprofile <key>
-        - delete pkiprofile <key>
         - configure pkiprofile <key>
+        - show pkiprofile <key>
         ```
 
 
