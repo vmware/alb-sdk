@@ -1543,6 +1543,10 @@
                     "default": 21600,
                     "format": "int32"
                 },
+                "restrict_cloud_read_access": {
+                    "description": "Restrict read access to cloud. Field introduced in 22.1.1.",
+                    "type": "boolean"
+                },
                 "safenet_hsm_version": {
                     "description": "Version of the safenet package installed on the controller. Field introduced in 16.5.2,17.2.3.",
                     "type": "string"

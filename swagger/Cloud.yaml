@@ -1092,6 +1092,11 @@ definitions:
             maintenance_mode:
                 description: "Cloud is in maintenance mode. Field introduced in 20.1.7,21.1.3."
                 type: boolean
+            markers:
+                description: "List of labels to be used for granular RBAC. Field introduced in 22.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                type: array
+                items:
+                    $ref: '#/definitions/RoleFilterMatchLabel'
             mesos_configuration:
                 description: " Field deprecated in 18.2.2."
                 $ref: '#/definitions/MesosConfiguration'
@@ -2717,6 +2722,19 @@ definitions:
             use_controller_image:
                 description: "If true, use controller generated SE docker image via fileservice, else use docker repository image as defined by docker_registry_se."
                 type: boolean
+    RoleFilterMatchLabel:
+        type: object
+        required:
+            -   key
+        properties:
+            key:
+                description: "Key for filter match. Field introduced in 20.1.3."
+                type: string
+            values:
+                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3."
+                type: array
+                items:
+                    type: string
     RouteInfo:
         type: object
         required:
