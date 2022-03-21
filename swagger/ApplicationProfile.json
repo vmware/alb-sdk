@@ -1098,6 +1098,10 @@
                     "default": 48,
                     "format": "int32"
                 },
+                "collect_client_tls_fingerprint": {
+                    "description": "If enabled, the client's TLS fingerprint will be collected and included in the Application Log. Field introduced in 22.1.1.",
+                    "type": "boolean"
+                },
                 "compression_profile": {
                     "description": "HTTP Compression settings to use with this HTTP Profile.",
                     "$ref": "#/definitions/CompressionProfile"

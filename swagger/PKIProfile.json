@@ -8,7 +8,7 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- show pkiprofile <key>\n- delete pkiprofile <key>\n- configure pkiprofile <key>\n```\n"
+        "description": "CLI\n```\n- configure pkiprofile <key>\n- show pkiprofile <key>\n```\n"
     },
     "securityDefinitions": {
         "basicAuth": {
