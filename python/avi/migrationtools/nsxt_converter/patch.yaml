@@ -1,0 +1,17 @@
+VirtualService: #Object to match
+  - match_name: ".*" #Wildcard to match all names
+    patch:
+      enabled: True #Enable Virtual Service
+
+ApplicationProfile: #Object to match
+  - match_name_in_list: #Application profiles to match
+    - prefix-default-http-lb-app-profile
+    patch:
+      http_profile:
+        xff_enabled: true #Enable X-Forwarded-For header insertion
+
+Pool:
+  - match_name_regex: ".*10"
+    patch:
+      lb_algorithm: LB_ALGORITHM_ROUND_ROBIN
+

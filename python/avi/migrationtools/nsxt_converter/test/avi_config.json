@@ -1,0 +1,234 @@
+{
+    "ApplicationProfile": [
+        {
+            "name": "prefix-default-http-lb-app-profile",
+            "tenant_ref": "/api/tenant/?name=admin",
+            "type": "APPLICATION_PROFILE_TYPE_HTTP",
+            "http_profile": {
+                "xff_enabled": true,
+                "http_to_https": false,
+                "keepalive_timeout": 15,
+                "client_max_header_size": 64,
+                "keepalive_header": false,
+                "max_response_headers_size": 256,
+                "detect_ntlm_app": false
+            }
+        }
+    ],
+    "NetworkProfile": [
+        {
+            "name": "prefix-default-tcp-lb-app-profile",
+            "profile": {
+                "type": "PROTOCOL_TYPE_TCP_FAST_PATH",
+                "tcp_fast_path_profile": {
+                    "session_idle_timeout": 1800
+                }
+            }
+        }
+    ],
+    "SSLProfile": [],
+    "PKIProfile": [],
+    "SSLKeyAndCertificate": [
+        {
+            "name": "prefix-l7-vs-auto_created",
+            "tenant_ref": "/api/tenant/?name=admin",
+            "key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCroPmLSsz9HyR8\nCT6hpN7QU5LoQtD02Fwqb4hnl0Xvbee42bdEpKAd1c7pzXa8deSZ8KzUTMiBJmLb\n82EM/n8a7gS3AOtVrtr7yl7fpNTBTJz8wZ2wtx/n5Fj3iM+lWBVuvocEpdQxDAB7\nv8J1BypPCE+jCj1DpNIl38BDjL/SRWdaVO2Hiook7h733oYlsSe/y6r3kCl22KMH\ndEeawGNe5QL2g5qlGGBiiWQonuW8vbfCIY2MKjL4TGuOq69loASBqEiu8jEKN7UW\nD0QvGx7mx+4ktFQRuYl9WtLnnDkpPK7J18IeINUCeSOmQsBckXNDZelwYpfYF1WJ\ndIIWNXm1AgMBAAECggEALQEUDot5vzIIXiIKc1aJOrV/gznqExoc6N/AM/G92+/E\n4HrujKhieBBVpodDCF4dqKQsnarYtMz9BVIHc+HUMJqTT+2EyD4GnBnP0PMm+tz9\nGWYn1GvgiO0eyyHr2R6E2DpLq1NUldvg0JJTCl7roDe8sjMAJ5mzpUzL3KqurhMo\n9ccbe9sR7M+wQ+CI0IKfqpaX7KfRcGytfTEVQkl/iwriTdS618PjTcanfEj461gz\nIDpTsviM0v9Jj40QxjCL2UffhNQZFzZI1an5U3dfA9bLR2uVrnwkQREue1futXE0\n1QIP64mGjwb2zqWp92QBb4yN+TDcfCSQoQ+pjCaqDQKBgQDWrzphSv+Rkr3lKHiX\nCXyH/AjEpqjK8FhAH1SCw1QqCUg56H13m+sa+qNgK0wx8o/KR9FXRuQdQmPbKCQF\npddMUQU3vFIAN0FmBMMjYzTJEQSxWlFjC9oXWQNe/PqFrlbbDBvOuEh2uxW17IZt\ntz6dN+VHrPVaTIawLfKHKBUK1wKBgQDMqIpbzs4wLqeAribWDaFK/85czP9KvSuz\nKELE/CWSRk6hzmJ8hyW/S7bsVZ+666paVirK5AJpfxY+dMMJWjp4YAM+C2eZbJYa\n7goqZfdPdMIS4geUFNEefmpg2xaUdaP29CsYoXSHcfSVq15Bf7W1Sy+hdFAQBVCq\n/nViJvv6UwKBgCDYoHsASYfRRsKH5aNeLTJ1CjZkNVEPYsE0ye5Tyk3AK8/IVWH2\ndgsjq9lr5nWB4iQVxt6ulvovDS4bvx8qF32yq7SyWG12BsiAFAcXB513wBsOcYNQ\n7eZClTR0SjQnz1wmRx7irRuVViYGcS7aKXdOdQL5YHSXXsgXz5KEPGvzAoGBAJJ2\nR1X+gTagHMWNXEOxy2019kQZfNXK3ZxAQtBgNq8g26MWZQsDWPM2xzkI6d/GScqO\ngd9jH4rKJWwa+X0W8mM1KvzbApAc0quBEQtYn41gXIdQ9OV3pFRzWcPo5pbmPao9\nAR6GZTONTOFTm4e6UprkrLiZ2bYtZ5aHtg/BIHD7AoGAM+DGveHOQh6/cDMJPnqt\n1YR21oDD57i5oYRvxQY/PsemwOLmsbaPJd9uRgb+dZ6IfwX5+fAn0P3VCAQr5dPl\nQX4+6QlJzWqLbd6t++pXZ2XNz5kohKenTRMKuBriSM4q+OxMlu2suVHHlRuafM0u\nI6sWkM2rr0MGMqa0/KrC1vI=\n-----END PRIVATE KEY-----\n",
+            "certificate": {
+                "certificate": "-----BEGIN CERTIFICATE-----\nMIIDAzCCAesCAgPoMA0GCSqGSIb3DQEBCwUAMEcxCzAJBgNVBAYTAlVTMRUwEwYD\nVQQKDAxBdmkgTmV0d29ya3MxITAfBgNVBAMMGGFnYXJ3YWxtZS1hMDEudm13YXJl\nLmNvbTAeFw0yMjAyMDcwNTM4NDlaFw0zMjAyMDUwNTM4NDlaMEcxCzAJBgNVBAYT\nAlVTMRUwEwYDVQQKDAxBdmkgTmV0d29ya3MxITAfBgNVBAMMGGFnYXJ3YWxtZS1h\nMDEudm13YXJlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKug\n+YtKzP0fJHwJPqGk3tBTkuhC0PTYXCpviGeXRe9t57jZt0SkoB3VzunNdrx15Jnw\nrNRMyIEmYtvzYQz+fxruBLcA61Wu2vvKXt+k1MFMnPzBnbC3H+fkWPeIz6VYFW6+\nhwSl1DEMAHu/wnUHKk8IT6MKPUOk0iXfwEOMv9JFZ1pU7YeKiiTuHvfehiWxJ7/L\nqveQKXbYowd0R5rAY17lAvaDmqUYYGKJZCie5by9t8IhjYwqMvhMa46rr2WgBIGo\nSK7yMQo3tRYPRC8bHubH7iS0VBG5iX1a0uecOSk8rsnXwh4g1QJ5I6ZCwFyRc0Nl\n6XBil9gXVYl0ghY1ebUCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAgBkPt4G+3Xdl\nATstXLEYquukchQ1a2D87En7W63SZOeIutGF3cOJN78YlBAw4hddhvHsspEucoyo\ngSvdnKUbMeIMZK858fEU7k2iUYcY1BUnUyQwHSUGAafr2XR3ddEpplGB0ec6oVjL\nNnnwD/PKiQ/9L6dQEPmFA3X1D+/Dpof+znn37VbIYIwxLDsMtgbkwT0xA0iu21Ay\nhsc25kmwZz6lATZMPWvZnkHbE0frjg4i172sgZU2YHUGSViv0hbzSN3xSwNaNpGL\nA50AgRfa7K8brIAQVT4+bhQ8bwg9hjgyb8ogUEKLGvGfcvb8LPXM0psvbCvimRy5\nmLCYenKYcA==\n-----END CERTIFICATE-----\n"
+            },
+            "type": "SSL_CERTIFICATE_TYPE_VIRTUALSERVICE"
+        },
+        {
+            "name": "prefix-l7-pool-auto_created",
+            "tenant_ref": "/api/tenant/?name=admin",
+            "key": "-----BEGIN PRIVATE KEY-----\nMIIEwAIBADANBgkqhkiG9w0BAQEFAASCBKowggSmAgEAAoIBAQCsX2fN6wYZ6iZg\nNJ/vqznKfA44fYU9YflRmvwY81cLn1m0f1L9MEy7vIYeH3qklfuD8A71soiENpuz\nas8LmySeP+Vqj5SHuMnDWwacMjufTvrQN7g1dZBQJ5B4weKLwNfVoSNPCy5urifW\nkihX1dk+ZwKBZawM8gCa7AQe8ab3HWJfUqK46kk7vbG54wo0pGudnSTzsPO8iFHa\n0a6JkxCbPlCojMXYBuHyddfRcOio6jhsNM4mxESVbUev8ws3ew4aQnLTccvJerVp\nZiTPSL4x8eKP+939XGf/x6TBIub0q7E05miNsfLOMlTd5JsIFm5RxXM5dXwNkPwR\n2w8Qb3I7AgMBAAECggEBAJkLLFM8NPKVXvVURBy73lfVxZqKd96EOqUmAmb0x3he\nR3tnAPwkAj09qabdNDsln2cJoX6swWECS0QFtUcMvHp1KPBwAuRuQVXeYAQW5bEQ\nosh0cG2msDc6qZ9OJiMHWZsnsv3fY56Jqn1sz70M9hHdy++vog7sX3Ut0IrY6/HD\nBCFYP/vJ9FlqDR90cLm4I7QqdoKpAUCM9S2qWfz7pzNfUJM/AWz/hYqzrZmtqT3x\nTc+u3snczXpVeUmw5FSJNkjNV3PJ0m6EcPWjLY3JlClywKedkbAc1ayog+HvbyoH\nOwDhA9adSu2CKcu0yKR6wgIXy/vYy+ASslqjFFZUTMECgYEA1PkHNcXf/CBJ8YqF\n2k4ihRRQLegcS3sArrSphcqBl0mtXoN4GX26UCf21hAYAYtbk7+ThF5/PBe+F0Xq\n8tfIVxRDg6CKgoTQXct4e6eDziTbt8h3BUPtpia8n6+UiNcCg0HPbM6EisX+4XMq\n77Uu3qnfO7apydWExytOGr3KMokCgYEAzzKJb4A9NkSEAA9CFc98OkjUQ+ivjC4b\n/+ExHj5CpGu0uR2aeAiRuA6hdnFHbr75QPoBigMjH911PXnFuUjrWdUcIOiZOo4A\nc8PIBZyW6PaeWYt23jChm6K+QR7Ge7WgtdMCIF7Akp/x4h5WiZUqBLKAxacP3181\ntb+L/bJJ3aMCgYEAp1F+eKCc+Fflv/40au438JWk6GwSzro0Lw2AobwXU+RucHKZ\nSG2ekprTMhoywgPaTpmUK8qR64Q7s80aaO9eVgt1f1QBfckaapYQchWJV8tdU2YL\nG/fiHUcRqeMnrto8/yIU9EbLmrszI6x3bxvJVuXem+tGOWumhVNgaWHyGQECgYEA\njhUcs85fq3AOiK/t5GD00k8Q6ESO5PTVlIFLGm8dafzF4E9RltBhhLLbvAnwLxxc\ndlc6aPa/xmEpvW9czDMZ2O9Pq611Lfckjj4KUvbPcY90hPkjGTiGCeDu0F8XQswJ\nGcZJ5gKz0ZhG2YVuWEhmmPQDZAas1sNGZIympeD10DsCgYEA0NQVQwKRlG+0pwOl\nz35PhS29YGIffvoc3vXKdDU/A1CeI+9UNKGsT01r5NM/sk6Cxugv1bH7s64hyZwG\n+LzjIV4C/OlRREXZZzn+ZiAgp1y5qHkAFgYW9k+q1aXp5wEwD467NtyrsMOKKb9d\nc9NcY7fVJiNcCpumuCH7Gz52VuE=\n-----END PRIVATE KEY-----\n",
+            "certificate": {
+                "certificate": "-----BEGIN CERTIFICATE-----\nMIIDAzCCAesCAgPoMA0GCSqGSIb3DQEBCwUAMEcxCzAJBgNVBAYTAlVTMRUwEwYD\nVQQKDAxBdmkgTmV0d29ya3MxITAfBgNVBAMMGGFnYXJ3YWxtZS1hMDEudm13YXJl\nLmNvbTAeFw0yMjAyMDcwNTM4NDlaFw0zMjAyMDUwNTM4NDlaMEcxCzAJBgNVBAYT\nAlVTMRUwEwYDVQQKDAxBdmkgTmV0d29ya3MxITAfBgNVBAMMGGFnYXJ3YWxtZS1h\nMDEudm13YXJlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKxf\nZ83rBhnqJmA0n++rOcp8Djh9hT1h+VGa/BjzVwufWbR/Uv0wTLu8hh4feqSV+4Pw\nDvWyiIQ2m7NqzwubJJ4/5WqPlIe4ycNbBpwyO59O+tA3uDV1kFAnkHjB4ovA19Wh\nI08LLm6uJ9aSKFfV2T5nAoFlrAzyAJrsBB7xpvcdYl9SorjqSTu9sbnjCjSka52d\nJPOw87yIUdrRromTEJs+UKiMxdgG4fJ119Fw6KjqOGw0zibERJVtR6/zCzd7DhpC\nctNxy8l6tWlmJM9IvjHx4o/73f1cZ//HpMEi5vSrsTTmaI2x8s4yVN3kmwgWblHF\nczl1fA2Q/BHbDxBvcjsCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAiuu4mCFiKfX6\nRPSew6jyOB0uK4PvrIeOcyKxbHWf0irbVfopMf4S2b2aaMHREQ6rj46DljLzvWhA\no3pZaZLbuxcFuf8X184ogwYmy0BkDMB0dG6tr/ZhxRgJB+7zeA/2dkBaFMQgR+oX\n4A93vL+8bJqyIiGodj67Nbjy+Vts8KZwSGREsop872HBhjNx+UaNMNXqrs5Y5R6m\n/IJkCqucPq7JW5JTewhdNfZzs1RKDprB6GNNZO1gwvYMdGkKGs5SurX0RO35v94x\nEFax9nXh2Zj92DENWyRv33W9c5iPEVBuZhNKPJnyNqeJ1YrbGLgOgB6MJmvtYzsH\nG6NYTBBshA==\n-----END CERTIFICATE-----\n"
+            },
+            "type": "SSL_CERTIFICATE_TYPE_VIRTUALSERVICE"
+        }
+    ],
+    "ApplicationPersistenceProfile": [
+        {
+            "name": "prefix-default-source-ip-lb-persistence-profile",
+            "ip_persistence_profile": {
+                "ip_persistent_timeout": 300
+            },
+            "tenant_ref": "/api/tenant/?name=admin",
+            "persistence_type": "PERSISTENCE_TYPE_CLIENT_IP_ADDRESS"
+        }
+    ],
+    "HealthMonitor": [
+        {
+            "name": "prefix-default-http-lb-monitor",
+            "failed_checks": 3,
+            "receive_timeout": 5,
+            "send_interval": 5,
+            "successful_checks": 3,
+            "monitor_port": 80,
+            "tenant_ref": "/api/tenant/?name=admin",
+            "type": "HEALTH_MONITOR_HTTP",
+            "http_monitor": {
+                "http_request": "/",
+                "http_request_body": null,
+                "http_response": null,
+                "http_response_code": [
+                    "HTTP_2XX",
+                    "HTTP_3XX"
+                ]
+            }
+        },
+        {
+            "name": "prefix-default-https-lb-monitor",
+            "failed_checks": 3,
+            "receive_timeout": 5,
+            "send_interval": 5,
+            "successful_checks": 3,
+            "monitor_port": 443,
+            "tenant_ref": "/api/tenant/?name=admin",
+            "type": "HEALTH_MONITOR_HTTPS",
+            "https_monitor": {
+                "http_request": "/",
+                "http_request_body": null,
+                "http_response": null,
+                "http_response_code": [
+                    "HTTP_2XX",
+                    "HTTP_3XX"
+                ]
+            }
+        }
+    ],
+    "IpAddrGroup": [],
+    "Pool": [
+        {
+            "name": "prefix-l4-pool",
+            "servers": [
+                {
+                    "ip": {
+                        "addr": "192.168.0.1",
+                        "type": "V4"
+                    },
+                    "description": "server",
+                    "port": 80,
+                    "ratio": 1,
+                    "enabled": true
+                }
+            ],
+            "lb_algorithm": "LB_ALGORITHM_ROUND_ROBIN",
+            "cloud_ref": "/api/cloud/?tenant=admin&name=nsxt_cloud_overlay",
+            "tenant_ref": "/api/tenant/?name=admin",
+            "conn_pool_properties": {
+                "upstream_connpool_server_max_cache": 6
+            },
+            "min_servers_up": 1,
+            "health_monitor_refs": [
+                "/api/healthmonitor/?tenant=admin&name=prefix-default-http-lb-monitor"
+            ],
+            "persistence_profile_ref": "/api/applicationpersistenceprofile/?tenant=admin&name=prefix-default-source-ip-lb-persistence-profile",
+            "default_port": 80,
+            "tier1_lr": "/infra/tier-1s/London_Tier1Gateway1"
+        },
+        {
+            "name": "prefix-l7-pool",
+            "servers": [
+                {
+                    "ip": {
+                        "addr": "192.168.0.2",
+                        "type": "V4"
+                    },
+                    "description": "server",
+                    "port": 80,
+                    "ratio": 1,
+                    "enabled": true
+                }
+            ],
+            "lb_algorithm": "LB_ALGORITHM_ROUND_ROBIN",
+            "cloud_ref": "/api/cloud/?tenant=admin&name=nsxt_cloud_overlay",
+            "tenant_ref": "/api/tenant/?name=admin",
+            "conn_pool_properties": {
+                "upstream_connpool_server_max_cache": 6
+            },
+            "min_servers_up": 1,
+            "health_monitor_refs": [
+                "/api/healthmonitor/?tenant=admin&name=prefix-default-https-lb-monitor"
+            ],
+            "ssl_key_and_certificate_ref": "/api/sslkeyandcertificate/?tenant=admin&name=prefix-l7-pool-auto_created",
+            "persistence_profile_ref": "/api/applicationpersistenceprofile/?tenant=admin&name=prefix-default-source-ip-lb-persistence-profile",
+            "default_port": 8080,
+            "tier1_lr": "/infra/tier-1s/London_Tier1Gateway1"
+        }
+    ],
+    "VirtualService": [
+        {
+            "name": "prefix-l4-vs",
+            "enabled": true,
+            "cloud_ref": "/api/cloud/?tenant=admin&name=nsxt_cloud_overlay",
+            "tenant_ref": "/api/tenant/?name=admin",
+            "vsvip_ref": "/api/vsvip/?name=prefix-l4-vs-vsvip&cloud=nsxt_cloud_overlay",
+            "services": [
+                {
+                    "port": 80,
+                    "enable_ssl": false
+                }
+            ],
+            "network_profile_ref": "/api/networkprofile/?tenant=admin&name=prefix-default-tcp-lb-app-profile",
+            "application_profile_ref": "/api/applicationprofile/?tenant=admin&name=System-L4-Application",
+            "performance_limits": {
+                "max_concurrent_connections": 1000
+            },
+            "pool_ref": "/api/pool/?tenant=admin&name=prefix-l4-pool&cloud=nsxt_cloud_overlay"
+        },
+        {
+            "name": "prefix-l7-vs",
+            "enabled": true,
+            "cloud_ref": "/api/cloud/?tenant=admin&name=nsxt_cloud_overlay",
+            "tenant_ref": "/api/tenant/?name=admin",
+            "vsvip_ref": "/api/vsvip/?name=prefix-l7-vs-vsvip&cloud=nsxt_cloud_overlay",
+            "services": [
+                {
+                    "port": 80,
+                    "enable_ssl": true
+                }
+            ],
+            "application_profile_ref": "/api/applicationprofile/?tenant=admin&name=prefix-default-http-lb-app-profile",
+            "network_profile_ref": "/api/networkprofile/?tenant=admin&name=System-TCP-Proxy",
+            "performance_limits": {
+                "max_concurrent_connections": 100
+            },
+            "ssl_key_and_certificate_refs": [
+                "/api/sslkeyandcertificate/?tenant=admin&name=prefix-l7-vs-auto_created"
+            ],
+            "pool_ref": "/api/pool/?tenant=admin&name=prefix-l7-pool&cloud=nsxt_cloud_overlay"
+        }
+    ],
+    "VsVip": [
+        {
+            "name": "prefix-l4-vs-vsvip",
+            "tier1_lr": "/infra/tier-1s/London_Tier1Gateway1",
+            "cloud_ref": "/api/cloud/?tenant=admin&name=nsxt_cloud_overlay",
+            "vip": [
+                {
+                    "vip_id": "1",
+                    "ip_address": {
+                        "addr": "10.10.0.1",
+                        "type": "V4"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "prefix-l7-vs-vsvip",
+            "tier1_lr": "/infra/tier-1s/London_Tier1Gateway1",
+            "cloud_ref": "/api/cloud/?tenant=admin&name=nsxt_cloud_overlay",
+            "vip": [
+                {
+                    "vip_id": "1",
+                    "ip_address": {
+                        "addr": "10.10.0.2",
+                        "type": "V4"
+                    }
+                }
+            ]
+        }
+    ]
+}
