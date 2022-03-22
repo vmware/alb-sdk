@@ -88,7 +88,7 @@ def wait_until_node_ready(session, interval=10, timeout=9000):
     iters = int(timeout / interval)
     for count in range(0, iters):
         try:
-            data = session.get('cluster/runtime')
+            data = session.get('cluster/runtime&treat_invalid_session_as_unauthenticated=true')
         except Exception as e:
             print("cluster api runtime exception %s" % e)
             pass
