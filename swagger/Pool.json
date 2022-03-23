@@ -3102,7 +3102,7 @@
             ],
             "properties": {
                 "burst_sz": {
-                    "description": "Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9.",
+                    "description": "Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9. Allowed in Basic(Allowed values- 0) edition, Enterprise edition.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -3117,7 +3117,7 @@
                     "type": "string"
                 },
                 "period": {
-                    "description": "Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC.",
+                    "description": "Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC. Allowed in Basic(Allowed values- 1) edition, Enterprise edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "int32"
@@ -3136,12 +3136,12 @@
                     "$ref": "#/definitions/HTTPRedirectAction"
                 },
                 "status_code": {
-                    "description": "HTTP status code for Local Response rate limit action. Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.",
+                    "description": "HTTP status code for Local Response rate limit action. Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501. Allowed in Basic(Allowed values- HTTP_LOCAL_RESPONSE_STATUS_CODE_429) edition, Enterprise edition.",
                     "type": "string",
                     "default": "HTTP_LOCAL_RESPONSE_STATUS_CODE_429"
                 },
                 "type": {
-                    "description": "Type of action to be enforced upon hitting the rate limit. Enum options - RL_ACTION_NONE, RL_ACTION_DROP_CONN, RL_ACTION_RESET_CONN, RL_ACTION_CLOSE_CONN, RL_ACTION_LOCAL_RSP, RL_ACTION_REDIRECT.",
+                    "description": "Type of action to be enforced upon hitting the rate limit. Enum options - RL_ACTION_NONE, RL_ACTION_DROP_CONN, RL_ACTION_RESET_CONN, RL_ACTION_CLOSE_CONN, RL_ACTION_LOCAL_RSP, RL_ACTION_REDIRECT. Allowed in Basic(Allowed values- RL_ACTION_NONE,RL_ACTION_DROP_CONN) edition, Enterprise edition.",
                     "type": "string",
                     "default": "RL_ACTION_NONE"
                 }
@@ -3168,19 +3168,19 @@
                     "format": "int32"
                 },
                 "explicit_tracking": {
-                    "description": "Explicitly tracks an attacker across rate periods.",
+                    "description": "Explicitly tracks an attacker across rate periods. Allowed in Basic(Allowed values- false) edition, Enterprise edition.",
                     "type": "boolean"
                 },
                 "fine_grain": {
-                    "description": "Enable fine granularity.",
+                    "description": "Enable fine granularity. Allowed in Basic(Allowed values- false) edition, Enterprise edition.",
                     "type": "boolean"
                 },
                 "http_cookie": {
-                    "description": "HTTP cookie name. Field introduced in 17.1.1.",
+                    "description": "HTTP cookie name. Field introduced in 17.1.1. Allowed in Basic edition, Enterprise edition.",
                     "type": "string"
                 },
                 "http_header": {
-                    "description": "HTTP header name. Field introduced in 17.1.1.",
+                    "description": "HTTP header name. Field introduced in 17.1.1. Allowed in Basic edition, Enterprise edition.",
                     "type": "string"
                 },
                 "period": {
