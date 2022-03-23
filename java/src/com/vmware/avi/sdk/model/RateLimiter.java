@@ -41,6 +41,7 @@ public class RateLimiter  {
      * If this is less than count, it will have no effect.
      * Allowed values are 0-1000000000.
      * Field introduced in 18.2.9.
+     * Allowed in basic(allowed values- 0) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return burstSz
      */
@@ -54,6 +55,7 @@ public class RateLimiter  {
      * If this is less than count, it will have no effect.
      * Allowed values are 0-1000000000.
      * Field introduced in 18.2.9.
+     * Allowed in basic(allowed values- 0) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param burstSz set the burstSz.
      */
@@ -115,6 +117,7 @@ public class RateLimiter  {
      * Allowed values are 1-1000000000.
      * Field introduced in 18.2.9.
      * Unit is sec.
+     * Allowed in basic(allowed values- 1) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return period
      */
@@ -128,6 +131,7 @@ public class RateLimiter  {
      * Allowed values are 1-1000000000.
      * Field introduced in 18.2.9.
      * Unit is sec.
+     * Allowed in basic(allowed values- 1) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param period set the period.
      */
