@@ -90,6 +90,9 @@ public class Cloud extends AviRestResource  {
     @JsonProperty("maintenance_mode")
     private Boolean maintenanceMode = false;
 
+    @JsonProperty("markers")
+    private List<RoleFilterMatchLabel> markers = null;
+
     @JsonProperty("mesos_configuration")
     private MesosConfiguration mesosConfiguration;
 
@@ -696,6 +699,45 @@ public class Cloud extends AviRestResource  {
     public void setMaintenanceMode(Boolean  maintenanceMode) {
         this.maintenanceMode = maintenanceMode;
     }
+    /**
+     * This is the getter method this will return the attribute value.
+     * List of labels to be used for granular rbac.
+     * Field introduced in 22.1.1.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public List<RoleFilterMatchLabel> getMarkers() {
+        return markers;
+    }
+
+    /**
+     * This is the setter method. this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 22.1.1.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public void setMarkers(List<RoleFilterMatchLabel>  markers) {
+        this.markers = markers;
+    }
+
+    /**
+     * This is the setter method this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 22.1.1.
+     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public Cloud addMarkersItem(RoleFilterMatchLabel markersItem) {
+      if (this.markers == null) {
+        this.markers = new ArrayList<RoleFilterMatchLabel>();
+      }
+      this.markers.add(markersItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -1169,7 +1211,8 @@ public class Cloud extends AviRestResource  {
   Objects.equals(this.autoscalePollingInterval, objCloud.autoscalePollingInterval)&&
   Objects.equals(this.seGroupTemplateRef, objCloud.seGroupTemplateRef)&&
   Objects.equals(this.vmcDeployment, objCloud.vmcDeployment)&&
-  Objects.equals(this.dnsResolvers, objCloud.dnsResolvers);
+  Objects.equals(this.dnsResolvers, objCloud.dnsResolvers)&&
+  Objects.equals(this.markers, objCloud.markers);
     }
 
     @Override
@@ -1199,6 +1242,7 @@ public class Cloud extends AviRestResource  {
                         sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
                         sb.append("    linuxserverConfiguration: ").append(toIndentedString(linuxserverConfiguration)).append("\n");
                         sb.append("    maintenanceMode: ").append(toIndentedString(maintenanceMode)).append("\n");
+                        sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    mesosConfiguration: ").append(toIndentedString(mesosConfiguration)).append("\n");
                         sb.append("    mtu: ").append(toIndentedString(mtu)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");

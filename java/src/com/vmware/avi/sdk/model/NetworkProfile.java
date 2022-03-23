@@ -55,6 +55,7 @@ public class NetworkProfile extends AviRestResource  {
      * When enabled, avi mirrors all tcp fastpath connections to standby.
      * Applicable only in legacy ha mode.
      * Field introduced in 18.1.3,18.2.1.
+     * Allowed in essentials(allowed values- false) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return connectionMirror
      */
@@ -67,6 +68,7 @@ public class NetworkProfile extends AviRestResource  {
      * When enabled, avi mirrors all tcp fastpath connections to standby.
      * Applicable only in legacy ha mode.
      * Field introduced in 18.1.3,18.2.1.
+     * Allowed in essentials(allowed values- false) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param connectionMirror set the connectionMirror.
      */
