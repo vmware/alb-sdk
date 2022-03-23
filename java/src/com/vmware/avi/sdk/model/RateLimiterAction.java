@@ -80,6 +80,7 @@ public class RateLimiterAction  {
      * Http status code for local response rate limit action.
      * Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403,
      * HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.
+     * Allowed in basic(allowed values- http_local_response_status_code_429) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_LOCAL_RESPONSE_STATUS_CODE_429".
      * @return statusCode
      */
@@ -92,6 +93,7 @@ public class RateLimiterAction  {
      * Http status code for local response rate limit action.
      * Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403,
      * HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501.
+     * Allowed in basic(allowed values- http_local_response_status_code_429) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "HTTP_LOCAL_RESPONSE_STATUS_CODE_429".
      * @param statusCode set the statusCode.
      */
@@ -103,6 +105,7 @@ public class RateLimiterAction  {
      * This is the getter method this will return the attribute value.
      * Type of action to be enforced upon hitting the rate limit.
      * Enum options - RL_ACTION_NONE, RL_ACTION_DROP_CONN, RL_ACTION_RESET_CONN, RL_ACTION_CLOSE_CONN, RL_ACTION_LOCAL_RSP, RL_ACTION_REDIRECT.
+     * Allowed in basic(allowed values- rl_action_none,rl_action_drop_conn) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "RL_ACTION_NONE".
      * @return type
      */
@@ -114,6 +117,7 @@ public class RateLimiterAction  {
      * This is the setter method to the attribute.
      * Type of action to be enforced upon hitting the rate limit.
      * Enum options - RL_ACTION_NONE, RL_ACTION_DROP_CONN, RL_ACTION_RESET_CONN, RL_ACTION_CLOSE_CONN, RL_ACTION_LOCAL_RSP, RL_ACTION_REDIRECT.
+     * Allowed in basic(allowed values- rl_action_none,rl_action_drop_conn) edition, enterprise edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "RL_ACTION_NONE".
      * @param type set the type.
      */

@@ -42,6 +42,9 @@ public class HTTPApplicationProfile  {
     @JsonProperty("client_max_request_size")
     private Integer clientMaxRequestSize = 48;
 
+    @JsonProperty("collect_client_tls_fingerprint")
+    private Boolean collectClientTlsFingerprint = false;
+
     @JsonProperty("compression_profile")
     private CompressionProfile compressionProfile = null;
 
@@ -377,6 +380,28 @@ public class HTTPApplicationProfile  {
      */
     public void setClientMaxRequestSize(Integer  clientMaxRequestSize) {
         this.clientMaxRequestSize = clientMaxRequestSize;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * If enabled, the client's tls fingerprint will be collected and included in the application log.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return collectClientTlsFingerprint
+     */
+    public Boolean getCollectClientTlsFingerprint() {
+        return collectClientTlsFingerprint;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * If enabled, the client's tls fingerprint will be collected and included in the application log.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param collectClientTlsFingerprint set the collectClientTlsFingerprint.
+     */
+    public void setCollectClientTlsFingerprint(Boolean  collectClientTlsFingerprint) {
+        this.collectClientTlsFingerprint = collectClientTlsFingerprint;
     }
 
     /**
@@ -1744,7 +1769,8 @@ public class HTTPApplicationProfile  {
   Objects.equals(this.detectNtlmApp, objHTTPApplicationProfile.detectNtlmApp)&&
   Objects.equals(this.useTrueClientIp, objHTTPApplicationProfile.useTrueClientIp)&&
   Objects.equals(this.trueClientIp, objHTTPApplicationProfile.trueClientIp)&&
-  Objects.equals(this.passThroughXAccelHeaders, objHTTPApplicationProfile.passThroughXAccelHeaders);
+  Objects.equals(this.passThroughXAccelHeaders, objHTTPApplicationProfile.passThroughXAccelHeaders)&&
+  Objects.equals(this.collectClientTlsFingerprint, objHTTPApplicationProfile.collectClientTlsFingerprint);
     }
 
     @Override
@@ -1758,6 +1784,7 @@ public class HTTPApplicationProfile  {
                         sb.append("    clientMaxBodySize: ").append(toIndentedString(clientMaxBodySize)).append("\n");
                         sb.append("    clientMaxHeaderSize: ").append(toIndentedString(clientMaxHeaderSize)).append("\n");
                         sb.append("    clientMaxRequestSize: ").append(toIndentedString(clientMaxRequestSize)).append("\n");
+                        sb.append("    collectClientTlsFingerprint: ").append(toIndentedString(collectClientTlsFingerprint)).append("\n");
                         sb.append("    compressionProfile: ").append(toIndentedString(compressionProfile)).append("\n");
                         sb.append("    connectionMultiplexingEnabled: ").append(toIndentedString(connectionMultiplexingEnabled)).append("\n");
                         sb.append("    detectNtlmApp: ").append(toIndentedString(detectNtlmApp)).append("\n");

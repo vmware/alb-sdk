@@ -69,6 +69,9 @@ public class ApplicationLog  {
     @JsonProperty("client_device")
     private String clientDevice = null;
 
+    @JsonProperty("client_finger_prints")
+    private ClientFingerPrints clientFingerPrints = null;
+
     @JsonProperty("client_insights")
     private String clientInsights = null;
 
@@ -745,6 +748,28 @@ public class ApplicationLog  {
      */
     public void setClientDevice(String  clientDevice) {
         this.clientDevice = clientDevice;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * The fingerprints for this client.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return clientFingerPrints
+     */
+    public ClientFingerPrints getClientFingerPrints() {
+        return clientFingerPrints;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The fingerprints for this client.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param clientFingerPrints set the clientFingerPrints.
+     */
+    public void setClientFingerPrints(ClientFingerPrints clientFingerPrints) {
+        this.clientFingerPrints = clientFingerPrints;
     }
 
     /**
@@ -3260,7 +3285,8 @@ public class ApplicationLog  {
   Objects.equals(this.sourceIp, objApplicationLog.sourceIp)&&
   Objects.equals(this.sourceIp6, objApplicationLog.sourceIp6)&&
   Objects.equals(this.oauthLog, objApplicationLog.oauthLog)&&
-  Objects.equals(this.authStatus, objApplicationLog.authStatus);
+  Objects.equals(this.authStatus, objApplicationLog.authStatus)&&
+  Objects.equals(this.clientFingerPrints, objApplicationLog.clientFingerPrints);
     }
 
     @Override
@@ -3283,6 +3309,7 @@ public class ApplicationLog  {
                         sb.append("    clientCipherList: ").append(toIndentedString(clientCipherList)).append("\n");
                         sb.append("    clientDestPort: ").append(toIndentedString(clientDestPort)).append("\n");
                         sb.append("    clientDevice: ").append(toIndentedString(clientDevice)).append("\n");
+                        sb.append("    clientFingerPrints: ").append(toIndentedString(clientFingerPrints)).append("\n");
                         sb.append("    clientInsights: ").append(toIndentedString(clientInsights)).append("\n");
                         sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
                         sb.append("    clientIp6: ").append(toIndentedString(clientIp6)).append("\n");
