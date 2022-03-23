@@ -3381,10 +3381,10 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="RateLimiter">RateLimiter</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">burst_sz (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9. format: int32</div>
+      <div class="param">burst_sz (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9. Allowed in Basic(Allowed values- 0) edition, Enterprise edition. format: int32</div>
 <div class="param">count </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections, requests or packets permitted each period. Allowed values are 1-1000000000. Field introduced in 18.2.9. format: int32</div>
 <div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Identifier for Rate Limit. Constructed according to context. Field introduced in 18.2.9. </div>
-<div class="param">period </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC. format: int32</div>
+<div class="param">period </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC. Allowed in Basic(Allowed values- 1) edition, Enterprise edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -3392,8 +3392,8 @@ font-style: italic;
     <div class="field-items">
       <div class="param">file (optional)</div><div class="param-desc"><span class="param-type"><a href="#HTTPLocalFile">HTTPLocalFile</a></span> File to be used for HTTP Local response rate limit action. </div>
 <div class="param">redirect (optional)</div><div class="param-desc"><span class="param-type"><a href="#HTTPRedirectAction">HTTPRedirectAction</a></span> Parameters for HTTP Redirect rate limit action. </div>
-<div class="param">status_code (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP status code for Local Response rate limit action. Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501. </div>
-<div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of action to be enforced upon hitting the rate limit. Enum options - RL_ACTION_NONE, RL_ACTION_DROP_CONN, RL_ACTION_RESET_CONN, RL_ACTION_CLOSE_CONN, RL_ACTION_LOCAL_RSP, RL_ACTION_REDIRECT. </div>
+<div class="param">status_code (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP status code for Local Response rate limit action. Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501. Allowed in Basic(Allowed values- HTTP_LOCAL_RESPONSE_STATUS_CODE_429) edition, Enterprise edition. </div>
+<div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of action to be enforced upon hitting the rate limit. Enum options - RL_ACTION_NONE, RL_ACTION_DROP_CONN, RL_ACTION_RESET_CONN, RL_ACTION_CLOSE_CONN, RL_ACTION_LOCAL_RSP, RL_ACTION_REDIRECT. Allowed in Basic(Allowed values- RL_ACTION_NONE,RL_ACTION_DROP_CONN) edition, Enterprise edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -3402,10 +3402,10 @@ font-style: italic;
       <div class="param">action </div><div class="param-desc"><span class="param-type"><a href="#RateLimiterAction">RateLimiterAction</a></span> Action to perform upon rate limiting. </div>
 <div class="param">burst_sz (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections or requests or packets to be let through instantaneously. Allowed values are 10-2500. Special values are 0- automatic. Field deprecated in 18.2.9. format: int32</div>
 <div class="param">count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections or requests or packets. Allowed values are 1-1000000000. Special values are 0- unlimited. Field deprecated in 18.2.9. format: int32</div>
-<div class="param">explicit_tracking (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Explicitly tracks an attacker across rate periods. </div>
-<div class="param">fine_grain (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable fine granularity. </div>
-<div class="param">http_cookie (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP cookie name. Field introduced in 17.1.1. </div>
-<div class="param">http_header (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP header name. Field introduced in 17.1.1. </div>
+<div class="param">explicit_tracking (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Explicitly tracks an attacker across rate periods. Allowed in Basic(Allowed values- false) edition, Enterprise edition. </div>
+<div class="param">fine_grain (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable fine granularity. Allowed in Basic(Allowed values- false) edition, Enterprise edition. </div>
+<div class="param">http_cookie (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP cookie name. Field introduced in 17.1.1. Allowed in Basic edition, Enterprise edition. </div>
+<div class="param">http_header (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP header name. Field introduced in 17.1.1. Allowed in Basic edition, Enterprise edition. </div>
 <div class="param">period (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time value in seconds to enforce rate count. Allowed values are 1-300. Field deprecated in 18.2.9. Unit is SEC. format: int32</div>
 <div class="param">rate_limiter (optional)</div><div class="param-desc"><span class="param-type"><a href="#RateLimiter">RateLimiter</a></span> The rate limiter configuration for this rate profile. Field introduced in 18.2.9. </div>
     </div>  <!-- field-items -->
