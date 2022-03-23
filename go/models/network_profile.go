@@ -15,7 +15,7 @@ type NetworkProfile struct {
 	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
-	// When enabled, Avi mirrors all TCP fastpath connections to standby. Applicable only in Legacy HA Mode. Field introduced in 18.1.3,18.2.1.
+	// When enabled, Avi mirrors all TCP fastpath connections to standby. Applicable only in Legacy HA Mode. Field introduced in 18.1.3,18.2.1. Allowed in Essentials(Allowed values- false) edition, Enterprise edition.
 	ConnectionMirror *bool `json:"connection_mirror,omitempty"`
 
 	// User defined description for the object.
