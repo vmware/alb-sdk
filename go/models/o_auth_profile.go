@@ -28,7 +28,8 @@ type OAuthProfile struct {
 	OauthRespBufferSz *int32 `json:"oauth_resp_buffer_sz,omitempty"`
 
 	// Pool object to interface with Authorization Server endpoints. It is a reference to an object of type Pool. Field introduced in 21.1.3.
-	PoolRef *string `json:"pool_ref,omitempty"`
+	// Required: true
+	PoolRef *string `json:"pool_ref"`
 
 	// URL of token exchange server. Field introduced in 21.1.3.
 	// Required: true
