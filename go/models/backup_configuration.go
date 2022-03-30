@@ -40,6 +40,9 @@ type BackupConfiguration struct {
 	// Directory at remote destination with write permission for ssh user.
 	RemoteDirectory *string `json:"remote_directory,omitempty"`
 
+	// Remote file transfer protocol type. Enum options - SCP, SFTP. Field introduced in 22.1.1. Allowed in Basic(Allowed values- SCP,SFTP) edition, Enterprise edition.
+	RemoteFileTransferProtocol *string `json:"remote_file_transfer_protocol,omitempty"`
+
 	// Remote Destination.
 	RemoteHostname *string `json:"remote_hostname,omitempty"`
 
