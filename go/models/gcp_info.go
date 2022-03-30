@@ -11,6 +11,9 @@ type GcpInfo struct {
 	// Hostname of this SE.
 	Hostname *string `json:"hostname,omitempty"`
 
+	// Instance type of this SE. Field introduced in 22.1.1.
+	MachineType *string `json:"machine_type,omitempty"`
+
 	// Network this SE is assigned.
 	// Required: true
 	Network *string `json:"network"`
