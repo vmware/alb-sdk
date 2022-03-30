@@ -795,6 +795,7 @@
             "type": "object",
             "required": [
                 "authorization_endpoint",
+                "pool_ref",
                 "token_endpoint"
             ],
             "properties": {
