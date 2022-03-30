@@ -24,6 +24,9 @@ public class GcpInfo  {
     @JsonProperty("hostname")
     private String hostname = null;
 
+    @JsonProperty("machine_type")
+    private String machineType = null;
+
     @JsonProperty("network")
     private String network = null;
 
@@ -56,6 +59,28 @@ public class GcpInfo  {
      */
     public void setHostname(String  hostname) {
         this.hostname = hostname;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Instance type of this se.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return machineType
+     */
+    public String getMachineType() {
+        return machineType;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Instance type of this se.
+     * Field introduced in 22.1.1.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param machineType set the machineType.
+     */
+    public void setMachineType(String  machineType) {
+        this.machineType = machineType;
     }
 
     /**
@@ -152,7 +177,8 @@ public class GcpInfo  {
   Objects.equals(this.zone, objGcpInfo.zone)&&
   Objects.equals(this.network, objGcpInfo.network)&&
   Objects.equals(this.subnet, objGcpInfo.subnet)&&
-  Objects.equals(this.hostname, objGcpInfo.hostname);
+  Objects.equals(this.hostname, objGcpInfo.hostname)&&
+  Objects.equals(this.machineType, objGcpInfo.machineType);
     }
 
     @Override
@@ -160,6 +186,7 @@ public class GcpInfo  {
       StringBuilder sb = new StringBuilder();
       sb.append("class GcpInfo {\n");
                   sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
+                        sb.append("    machineType: ").append(toIndentedString(machineType)).append("\n");
                         sb.append("    network: ").append(toIndentedString(network)).append("\n");
                         sb.append("    project: ").append(toIndentedString(project)).append("\n");
                         sb.append("    subnet: ").append(toIndentedString(subnet)).append("\n");
