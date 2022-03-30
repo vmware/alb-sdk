@@ -45,6 +45,9 @@ public class BackupConfiguration extends AviRestResource  {
     @JsonProperty("remote_directory")
     private String remoteDirectory = null;
 
+    @JsonProperty("remote_file_transfer_protocol")
+    private String remoteFileTransferProtocol = "SCP";
+
     @JsonProperty("remote_hostname")
     private String remoteHostname = null;
 
@@ -249,6 +252,32 @@ public class BackupConfiguration extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Remote file transfer protocol type.
+     * Enum options - SCP, SFTP.
+     * Field introduced in 22.1.1.
+     * Allowed in basic(allowed values- scp,sftp) edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "SCP".
+     * @return remoteFileTransferProtocol
+     */
+    public String getRemoteFileTransferProtocol() {
+        return remoteFileTransferProtocol;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Remote file transfer protocol type.
+     * Enum options - SCP, SFTP.
+     * Field introduced in 22.1.1.
+     * Allowed in basic(allowed values- scp,sftp) edition, enterprise edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "SCP".
+     * @param remoteFileTransferProtocol set the remoteFileTransferProtocol.
+     */
+    public void setRemoteFileTransferProtocol(String  remoteFileTransferProtocol) {
+        this.remoteFileTransferProtocol = remoteFileTransferProtocol;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Remote destination.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return remoteHostname
@@ -434,6 +463,7 @@ public class BackupConfiguration extends AviRestResource  {
   Objects.equals(this.awsAccessKey, objBackupConfiguration.awsAccessKey)&&
   Objects.equals(this.awsSecretAccess, objBackupConfiguration.awsSecretAccess)&&
   Objects.equals(this.awsBucketId, objBackupConfiguration.awsBucketId)&&
+  Objects.equals(this.remoteFileTransferProtocol, objBackupConfiguration.remoteFileTransferProtocol)&&
   Objects.equals(this.tenantRef, objBackupConfiguration.tenantRef);
     }
 
@@ -449,6 +479,7 @@ public class BackupConfiguration extends AviRestResource  {
                         sb.append("    maximumBackupsStored: ").append(toIndentedString(maximumBackupsStored)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    remoteDirectory: ").append(toIndentedString(remoteDirectory)).append("\n");
+                        sb.append("    remoteFileTransferProtocol: ").append(toIndentedString(remoteFileTransferProtocol)).append("\n");
                         sb.append("    remoteHostname: ").append(toIndentedString(remoteHostname)).append("\n");
                         sb.append("    saveLocal: ").append(toIndentedString(saveLocal)).append("\n");
                         sb.append("    sshUserRef: ").append(toIndentedString(sshUserRef)).append("\n");
