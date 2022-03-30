@@ -277,6 +277,7 @@ font-style: italic;
     "configpb_attributes" : {
       "version" : 123
     },
+    "remote_file_transfer_protocol" : "aeiou",
     "upload_to_s3" : true,
     "upload_to_remote_host" : true,
     "maximum_backups_stored" : 123
@@ -351,6 +352,7 @@ font-style: italic;
   "configpb_attributes" : {
     "version" : 123
   },
+  "remote_file_transfer_protocol" : "aeiou",
   "upload_to_s3" : true,
   "upload_to_remote_host" : true,
   "maximum_backups_stored" : 123
@@ -496,6 +498,7 @@ font-style: italic;
   "configpb_attributes" : {
     "version" : 123
   },
+  "remote_file_transfer_protocol" : "aeiou",
   "upload_to_s3" : true,
   "upload_to_remote_host" : true,
   "maximum_backups_stored" : 123
@@ -581,6 +584,7 @@ font-style: italic;
   "configpb_attributes" : {
     "version" : 123
   },
+  "remote_file_transfer_protocol" : "aeiou",
   "upload_to_s3" : true,
   "upload_to_remote_host" : true,
   "maximum_backups_stored" : 123
@@ -666,6 +670,7 @@ font-style: italic;
   "configpb_attributes" : {
     "version" : 123
   },
+  "remote_file_transfer_protocol" : "aeiou",
   "upload_to_s3" : true,
   "upload_to_remote_host" : true,
   "maximum_backups_stored" : 123
@@ -712,6 +717,7 @@ font-style: italic;
 <div class="param">maximum_backups_stored (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Rotate the backup files based on this count. Allowed values are 1-20. format: int32</div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of backup configuration. </div>
 <div class="param">remote_directory (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Directory at remote destination with write permission for ssh user. </div>
+<div class="param">remote_file_transfer_protocol (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Remote file transfer protocol type. Enum options - SCP, SFTP. Field introduced in 22.1.1. Allowed in Basic(Allowed values- SCP,SFTP) edition, Enterprise edition. </div>
 <div class="param">remote_hostname (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Remote Destination. </div>
 <div class="param">save_local (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Local Backup. </div>
 <div class="param">ssh_user_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Access Credentials for remote destination. It is a reference to an object of type CloudConnectorUser. </div>
