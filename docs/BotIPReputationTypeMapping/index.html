@@ -669,11 +669,11 @@ font-style: italic;
     <h3 class="field-label"><a name="BotIPReputationTypeMapping">BotIPReputationTypeMapping</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
-<div class="param">ip_reputation_mappings (optional)</div><div class="param-desc"><span class="param-type"><a href="#IPReputationTypeMapping">array[IPReputationTypeMapping]</a></span> Map every IPReputationType to a bot type (can be unknown). Field introduced in 21.1.1. </div>
-<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of this mapping. Field introduced in 21.1.1. </div>
-<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The unique identifier of the tenant to which this mapping belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1. </div>
+<div class="param">ip_reputation_mappings (optional)</div><div class="param-desc"><span class="param-type"><a href="#IPReputationTypeMapping">array[IPReputationTypeMapping]</a></span> Map every IPReputationType to a bot type (can be unknown). Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of this mapping. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The unique identifier of the tenant to which this mapping belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
-<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A unique identifier of this mapping. Field introduced in 21.1.1. </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A unique identifier of this mapping. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -687,16 +687,16 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="BotIdentification">BotIdentification</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">class (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The Bot Client Class of this identification. Enum options - UNDETERMINED_CLIENT, HUMAN_CLIENT, BOT_CLIENT. Field introduced in 21.1.1. </div>
-<div class="param">identifier (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A free-form string to identify the client. Field introduced in 21.1.1. </div>
-<div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The Bot Client Type of this identification. Enum options - UNDETERMINED_CLIENT_TYPE, WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION. Field introduced in 21.1.1. </div>
+      <div class="param">class (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The Bot Client Class of this identification. Enum options - UNDETERMINED_CLIENT, HUMAN_CLIENT, BOT_CLIENT. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">identifier (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A free-form string to identify the client. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The Bot Client Type of this identification. Enum options - UNDETERMINED_CLIENT_TYPE, WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="IPReputationTypeMapping">IPReputationTypeMapping</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">bot_identification </div><div class="param-desc"><span class="param-type"><a href="#BotIdentification">BotIdentification</a></span> The Bot Identification to which the IP reputation type is mapped. Field introduced in 21.1.1. </div>
-<div class="param">ip_reputation_type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The type of IP reputation that is mapped to a Bot Identification. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 21.1.1. </div>
+      <div class="param">bot_identification </div><div class="param-desc"><span class="param-type"><a href="#BotIdentification">BotIdentification</a></span> The Bot Identification to which the IP reputation type is mapped. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ip_reputation_type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The type of IP reputation that is mapped to a Bot Identification. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   </body>

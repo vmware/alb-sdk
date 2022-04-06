@@ -1313,72 +1313,72 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsAAAARdata">DnsAAAARdata</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">ip6_address </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> IPv6 address for FQDN. Field introduced in 18.1.1. </div>
+      <div class="param">ip6_address </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> IPv6 address for FQDN. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsARdata">DnsARdata</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">ip_address </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> IP address for FQDN. </div>
+      <div class="param">ip_address </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> IP address for FQDN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsClientIpMatch">DnsClientIpMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">client_ip </div><div class="param-desc"><span class="param-type"><a href="#IpAddrMatch">IpAddrMatch</a></span> IP addresses to match against client IP. Field introduced in 17.1.6,17.2.2. </div>
-<div class="param">use_edns_client_subnet_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Use the IP address from the EDNS client subnet option, if available, as the source IP address of the client. It should be noted that the edns subnet IP may not be a /32 IP address. Field introduced in 17.1.6,17.2.2. </div>
+      <div class="param">client_ip </div><div class="param-desc"><span class="param-type"><a href="#IpAddrMatch">IpAddrMatch</a></span> IP addresses to match against client IP. Field introduced in 17.1.6,17.2.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">use_edns_client_subnet_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Use the IP address from the EDNS client subnet option, if available, as the source IP address of the client. It should be noted that the edns subnet IP may not be a /32 IP address. Field introduced in 17.1.6,17.2.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsClientPortMatch">DnsClientPortMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">client_ports </div><div class="param-desc"><span class="param-type"><a href="#PortMatchGeneric">PortMatchGeneric</a></span> Port number to match against client port number in request. Field introduced in 21.1.1. </div>
+      <div class="param">client_ports </div><div class="param-desc"><span class="param-type"><a href="#PortMatchGeneric">PortMatchGeneric</a></span> Port number to match against client port number in request. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsCnameRdata">DnsCnameRdata</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">cname </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Canonical name. </div>
+      <div class="param">cname </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Canonical name. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsGeoLocationMatch">DnsGeoLocationMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">geolocation_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Geographical location of the client IP to be used in the match. This location is of the format Country/State/City e.g. US/CA/Santa Clara. Field introduced in 17.1.5. </div>
-<div class="param">geolocation_tag (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Geolocation tag for the client IP. This could be any string value for the client IP, e.g. client IPs from US East Coast geolocation would be tagged as &#39;East Coast&#39;. Field introduced in 17.1.5. </div>
-<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for matching the client IP&#39;s geographical location. Enum options - IS_IN, IS_NOT_IN. Field introduced in 17.1.5. </div>
-<div class="param">use_edns_client_subnet_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Use the IP address from the EDNS client subnet option, if available, to derive geo location of the DNS query. Field introduced in 17.1.5. </div>
+      <div class="param">geolocation_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Geographical location of the client IP to be used in the match. This location is of the format Country/State/City e.g. US/CA/Santa Clara. Field introduced in 17.1.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">geolocation_tag (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Geolocation tag for the client IP. This could be any string value for the client IP, e.g. client IPs from US East Coast geolocation would be tagged as &#39;East Coast&#39;. Field introduced in 17.1.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for matching the client IP&#39;s geographical location. Enum options - IS_IN, IS_NOT_IN. Field introduced in 17.1.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">use_edns_client_subnet_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Use the IP address from the EDNS client subnet option, if available, to derive geo location of the DNS query. Field introduced in 17.1.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsNsRdata">DnsNsRdata</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">ip6_address (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> IPv6 address for Name Server. Field introduced in 18.1.1. </div>
-<div class="param">ip_address (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> IP address for Name Server. Field introduced in 17.1.1. </div>
-<div class="param">nsname </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name Server name. Field introduced in 17.1.1. </div>
+      <div class="param">ip6_address (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> IPv6 address for Name Server. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ip_address (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> IP address for Name Server. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">nsname </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name Server name. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsPolicy">DnsPolicy</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
-<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
-<div class="param">created_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Creator name. Field introduced in 17.1.1. </div>
-<div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 17.1.1. </div>
-<div class="param">internal (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> The DNS policy is created and modified by internal modules only. This should not be modified by users. Field introduced in 21.1.1. </div>
-<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. </div>
-<div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition. </div>
-<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the DNS Policy. Field introduced in 17.1.1. </div>
-<div class="param">rule (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRule">array[DnsRule]</a></span> DNS rules. Field introduced in 17.1.1. </div>
-<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Field introduced in 17.1.1. </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">created_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Creator name. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">internal (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> The DNS policy is created and modified by internal modules only. This should not be modified by users. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the DNS Policy. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">rule (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRule">array[DnsRule]</a></span> DNS rules. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
-<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the DNS Policy. Field introduced in 17.1.1. </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the DNS Policy. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1392,199 +1392,199 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="DnsQueryNameMatch">DnsQueryNameMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for string matching the DNS query domain name in the question section. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Field introduced in 17.1.1. Allowed in Basic(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Essentials(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Enterprise edition. </div>
-<div class="param">query_domain_names (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Domain name to match against that specified in the question section of the DNS query. Field introduced in 17.1.1. </div>
-<div class="param">string_group_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> UUID of the string group(s) for matching against DNS query domain name in the question section. It is a reference to an object of type StringGroup. Field introduced in 17.1.1. </div>
+      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for string matching the DNS query domain name in the question section. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Basic(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Enterprise with Cloud Services edition. </div>
+<div class="param">query_domain_names (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Domain name to match against that specified in the question section of the DNS query. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">string_group_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> UUID of the string group(s) for matching against DNS query domain name in the question section. It is a reference to an object of type StringGroup. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsQueryTypeMatch">DnsQueryTypeMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for matching the DNS query typein the question section. Enum options - IS_IN, IS_NOT_IN. Field introduced in 17.1.1. </div>
-<div class="param">query_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> DNS query types in the request query . Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Field introduced in 17.1.1. </div>
+      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for matching the DNS query typein the question section. Enum options - IS_IN, IS_NOT_IN. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">query_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> DNS query types in the request query . Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsRateLimiter">DnsRateLimiter</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">action </div><div class="param-desc"><span class="param-type"><a href="#DnsRuleRLAction">DnsRuleRLAction</a></span> Action to perform upon rate limiting. Field introduced in 20.1.1. </div>
-<div class="param">rate_limiter_object </div><div class="param-desc"><span class="param-type"><a href="#RateLimiter">RateLimiter</a></span> Rate limiting object. Field introduced in 20.1.1. </div>
+      <div class="param">action </div><div class="param-desc"><span class="param-type"><a href="#DnsRuleRLAction">DnsRuleRLAction</a></span> Action to perform upon rate limiting. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">rate_limiter_object </div><div class="param-desc"><span class="param-type"><a href="#RateLimiter">RateLimiter</a></span> Rate limiting object. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsRateProfile">DnsRateProfile</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">action </div><div class="param-desc"><span class="param-type"><a href="#DnsRuleRLAction">DnsRuleRLAction</a></span> Action to perform upon rate limiting. Field deprecated in 20.1.1. Field introduced in 18.2.5. </div>
-<div class="param">burst_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections or requests or packets to be rate limited instantaneously. Field deprecated in 20.1.1. Field introduced in 18.2.5. format: int32</div>
-<div class="param">count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections or requests or packets per second. It is deprecated because of adoption of new shared rate limiter protobuf. Allowed values are 1-4294967295. Special values are 0- unlimited. Field deprecated in 20.1.1. Field introduced in 18.2.5. format: int32</div>
-<div class="param">fine_grain (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable fine granularity. Field deprecated in 20.1.1. Field introduced in 18.2.5. </div>
-<div class="param">period (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time value in seconds to enforce rate count. Allowed values are 1-300. Field deprecated in 20.1.1. Field introduced in 18.2.5. Unit is SEC. format: int32</div>
+      <div class="param">action </div><div class="param-desc"><span class="param-type"><a href="#DnsRuleRLAction">DnsRuleRLAction</a></span> Action to perform upon rate limiting. Field deprecated in 20.1.1. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">burst_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections or requests or packets to be rate limited instantaneously. Field deprecated in 20.1.1. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections or requests or packets per second. It is deprecated because of adoption of new shared rate limiter protobuf. Allowed values are 1-4294967295. Special values are 0- unlimited. Field deprecated in 20.1.1. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">fine_grain (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable fine granularity. Field deprecated in 20.1.1. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">period (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time value in seconds to enforce rate count. Allowed values are 1-300. Field deprecated in 20.1.1. Field introduced in 18.2.5. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsRrSet">DnsRrSet</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">cname (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsCnameRdata">DnsCnameRdata</a></span> Canonical name in CNAME record. Field introduced in 17.2.12, 18.1.2. </div>
-<div class="param">fqdn </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Fully Qualified Domain Name. Field introduced in 17.2.12, 18.1.2. </div>
-<div class="param">ip6_addresses (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsAAAARdata">array[DnsAAAARdata]</a></span> IPv6 address in AAAA record. Field introduced in 18.1.2. </div>
-<div class="param">ip_addresses (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsARdata">array[DnsARdata]</a></span> IP address in A record. Field introduced in 17.2.12, 18.1.2. </div>
-<div class="param">nses (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsNsRdata">array[DnsNsRdata]</a></span> Name Server information in NS record. Field introduced in 17.2.12, 18.1.2. </div>
-<div class="param">ttl </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time To Live for this DNS record. Allowed values are 0-2147483647. Field introduced in 17.2.12, 18.1.2. format: int32</div>
-<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Field introduced in 17.2.12, 18.1.2. </div>
+      <div class="param">cname (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsCnameRdata">DnsCnameRdata</a></span> Canonical name in CNAME record. Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">fqdn </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Fully Qualified Domain Name. Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ip6_addresses (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsAAAARdata">array[DnsAAAARdata]</a></span> IPv6 address in AAAA record. Field introduced in 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ip_addresses (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsARdata">array[DnsARdata]</a></span> IP address in A record. Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">nses (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsNsRdata">array[DnsNsRdata]</a></span> Name Server information in NS record. Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ttl </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time To Live for this DNS record. Allowed values are 0-2147483647. Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsRule">DnsRule</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">action (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRuleAction">DnsRuleAction</a></span> Action to be performed upon successful matching. Field introduced in 17.1.1. </div>
-<div class="param">enable (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable or disable the rule. Field introduced in 17.1.1. </div>
-<div class="param">index </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Index of the rule. Field introduced in 17.1.1. format: int32</div>
-<div class="param">log (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Log DNS query upon rule match. Field introduced in 17.1.1. </div>
-<div class="param">match (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRuleMatchTarget">DnsRuleMatchTarget</a></span> Add match criteria to the rule. Field introduced in 17.1.1. </div>
-<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the rule. Field introduced in 17.1.1. </div>
+      <div class="param">action (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRuleAction">DnsRuleAction</a></span> Action to be performed upon successful matching. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">enable (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable or disable the rule. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">index </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Index of the rule. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">log (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Log DNS query upon rule match. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">match (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRuleMatchTarget">DnsRuleMatchTarget</a></span> Add match criteria to the rule. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the rule. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsRuleAction">DnsRuleAction</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">allow (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRuleActionAllowDrop">DnsRuleActionAllowDrop</a></span> Allow or drop the DNS query. Field introduced in 17.1.1. </div>
-<div class="param">dns_rate_limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRateProfile">DnsRateProfile</a></span> Rate limits the DNS requests. Field deprecated in 20.1.1. Field introduced in 18.2.5. </div>
-<div class="param">dns_rate_limiter (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRateLimiter">DnsRateLimiter</a></span> Rate limits the DNS requests. Field introduced in 20.1.1. </div>
-<div class="param">gslb_site_selection (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRuleActionGslbSiteSelection">DnsRuleActionGslbSiteSelection</a></span> Select a specific GSLB site for the DNS query. This action should be used only when GSLB services have been configured for the DNS virtual service. Field introduced in 17.1.5. </div>
-<div class="param">pool_switching (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRuleActionPoolSwitching">DnsRuleActionPoolSwitching</a></span> Select a pool or pool group for the passthrough DNS query which cannot be served locally but could be served by upstream servers. Field introduced in 18.1.3, 17.2.12. </div>
-<div class="param">response (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRuleActionResponse">DnsRuleActionResponse</a></span> Generate a response for the DNS query. Field introduced in 17.1.1. </div>
+      <div class="param">allow (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRuleActionAllowDrop">DnsRuleActionAllowDrop</a></span> Allow or drop the DNS query. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">dns_rate_limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRateProfile">DnsRateProfile</a></span> Rate limits the DNS requests. Field deprecated in 20.1.1. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">dns_rate_limiter (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRateLimiter">DnsRateLimiter</a></span> Rate limits the DNS requests. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">gslb_site_selection (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRuleActionGslbSiteSelection">DnsRuleActionGslbSiteSelection</a></span> Select a specific GSLB site for the DNS query. This action should be used only when GSLB services have been configured for the DNS virtual service. Field introduced in 17.1.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">pool_switching (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRuleActionPoolSwitching">DnsRuleActionPoolSwitching</a></span> Select a pool or pool group for the passthrough DNS query which cannot be served locally but could be served by upstream servers. Field introduced in 18.1.3, 17.2.12. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">response (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRuleActionResponse">DnsRuleActionResponse</a></span> Generate a response for the DNS query. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsRuleActionAllowDrop">DnsRuleActionAllowDrop</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">allow (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Allow the DNS query. Field introduced in 17.1.1. </div>
-<div class="param">reset_conn (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Reset the TCP connection of the DNS query, if allow is set to false to drop the query. Field introduced in 17.1.1. </div>
+      <div class="param">allow (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Allow the DNS query. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">reset_conn (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Reset the TCP connection of the DNS query, if allow is set to false to drop the query. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsRuleActionGslbSiteSelection">DnsRuleActionGslbSiteSelection</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">fallback_site_names (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> GSLB fallback sites to use in case the desired site is down. Field introduced in 17.2.5. Maximum of 64 items allowed. </div>
-<div class="param">is_site_preferred (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> When set to true, GSLB site is a preferred site. This setting comes into play when the site is down, as well as no configured fallback site is available (all fallback sites are also down), then any one available site is selected based on the default algorithm for GSLB pool member selection. Field introduced in 17.2.5. </div>
-<div class="param">site_name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> GSLB site name. Field introduced in 17.1.5. </div>
+      <div class="param">fallback_site_names (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> GSLB fallback sites to use in case the desired site is down. Field introduced in 17.2.5. Maximum of 64 items allowed. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">is_site_preferred (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> When set to true, GSLB site is a preferred site. This setting comes into play when the site is down, as well as no configured fallback site is available (all fallback sites are also down), then any one available site is selected based on the default algorithm for GSLB pool member selection. Field introduced in 17.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">site_name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> GSLB site name. Field introduced in 17.1.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsRuleActionPoolSwitching">DnsRuleActionPoolSwitching</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">pool_group_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Reference of the pool group to serve the passthrough DNS query which cannot be served locally. It is a reference to an object of type PoolGroup. Field introduced in 18.1.3, 17.2.12. </div>
-<div class="param">pool_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Reference of the pool to serve the passthrough DNS query which cannot be served locally. It is a reference to an object of type Pool. Field introduced in 18.1.3, 17.2.12. </div>
+      <div class="param">pool_group_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Reference of the pool group to serve the passthrough DNS query which cannot be served locally. It is a reference to an object of type PoolGroup. Field introduced in 18.1.3, 17.2.12. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">pool_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Reference of the pool to serve the passthrough DNS query which cannot be served locally. It is a reference to an object of type Pool. Field introduced in 18.1.3, 17.2.12. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsRuleActionResponse">DnsRuleActionResponse</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">authoritative (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> DNS response is authoritative. Field introduced in 17.1.1. </div>
-<div class="param">rcode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> DNS response code. Enum options - DNS_RCODE_NOERROR, DNS_RCODE_FORMERR, DNS_RCODE_SERVFAIL, DNS_RCODE_NXDOMAIN, DNS_RCODE_NOTIMP, DNS_RCODE_REFUSED, DNS_RCODE_YXDOMAIN, DNS_RCODE_YXRRSET, DNS_RCODE_NXRRSET, DNS_RCODE_NOTAUTH, DNS_RCODE_NOTZONE. Field introduced in 17.1.1. </div>
-<div class="param">resource_record_sets (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRuleDnsRrSet">array[DnsRuleDnsRrSet]</a></span> DNS resource record sets - (resource record set share the DNS domain name, type, and class). Field introduced in 17.2.12, 18.1.2. </div>
-<div class="param">truncation (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> DNS response is truncated. Field introduced in 17.1.1. </div>
+      <div class="param">authoritative (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> DNS response is authoritative. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">rcode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> DNS response code. Enum options - DNS_RCODE_NOERROR, DNS_RCODE_FORMERR, DNS_RCODE_SERVFAIL, DNS_RCODE_NXDOMAIN, DNS_RCODE_NOTIMP, DNS_RCODE_REFUSED, DNS_RCODE_YXDOMAIN, DNS_RCODE_YXRRSET, DNS_RCODE_NXRRSET, DNS_RCODE_NOTAUTH, DNS_RCODE_NOTZONE. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">resource_record_sets (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRuleDnsRrSet">array[DnsRuleDnsRrSet]</a></span> DNS resource record sets - (resource record set share the DNS domain name, type, and class). Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">truncation (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> DNS response is truncated. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsRuleDnsRrSet">DnsRuleDnsRrSet</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">resource_record_set </div><div class="param-desc"><span class="param-type"><a href="#DnsRrSet">DnsRrSet</a></span> DNS resource record set - (records in the resource record set share the DNS domain name, type, and class). Field introduced in 17.2.12, 18.1.2. </div>
-<div class="param">section (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> DNS message section for the resource record set. Enum options - DNS_MESSAGE_SECTION_QUESTION, DNS_MESSAGE_SECTION_ANSWER, DNS_MESSAGE_SECTION_AUTHORITY, DNS_MESSAGE_SECTION_ADDITIONAL. Field introduced in 17.2.12, 18.1.2. </div>
+      <div class="param">resource_record_set </div><div class="param-desc"><span class="param-type"><a href="#DnsRrSet">DnsRrSet</a></span> DNS resource record set - (records in the resource record set share the DNS domain name, type, and class). Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">section (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> DNS message section for the resource record set. Enum options - DNS_MESSAGE_SECTION_QUESTION, DNS_MESSAGE_SECTION_ANSWER, DNS_MESSAGE_SECTION_AUTHORITY, DNS_MESSAGE_SECTION_ADDITIONAL. Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsRuleMatchTarget">DnsRuleMatchTarget</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">client_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrMatch">IpAddrMatch</a></span> IP addresses to match against client IP. From 17.1.6 release onwards, IP addresses needs to be configured in the client_ip_address field of this message. Field deprecated in 17.1.6,17.2.2. Field introduced in 17.1.1. </div>
-<div class="param">client_ip_address (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsClientIpMatch">DnsClientIpMatch</a></span> IP addresses to match against client IP or the EDNS client subnet IP. Field introduced in 17.1.6,17.2.2. </div>
-<div class="param">client_port_numbers (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsClientPortMatch">DnsClientPortMatch</a></span> Port number to match against client port number. Field introduced in 21.1.1. </div>
-<div class="param">geo_location (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsGeoLocationMatch">DnsGeoLocationMatch</a></span> Geographical location attribute to match against that of the client IP. Field introduced in 17.1.5. </div>
-<div class="param">protocol (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsTransportProtocolMatch">DnsTransportProtocolMatch</a></span> DNS transport protocol match. Field introduced in 17.1.1. </div>
-<div class="param">query_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsQueryNameMatch">DnsQueryNameMatch</a></span> Domain names to match against query name. Field introduced in 17.1.1. </div>
-<div class="param">query_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsQueryTypeMatch">DnsQueryTypeMatch</a></span> DNS query types to match against request query type. Field introduced in 17.1.1. </div>
+      <div class="param">client_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrMatch">IpAddrMatch</a></span> IP addresses to match against client IP. From 17.1.6 release onwards, IP addresses needs to be configured in the client_ip_address field of this message. Field deprecated in 17.1.6,17.2.2. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">client_ip_address (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsClientIpMatch">DnsClientIpMatch</a></span> IP addresses to match against client IP or the EDNS client subnet IP. Field introduced in 17.1.6,17.2.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">client_port_numbers (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsClientPortMatch">DnsClientPortMatch</a></span> Port number to match against client port number. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">geo_location (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsGeoLocationMatch">DnsGeoLocationMatch</a></span> Geographical location attribute to match against that of the client IP. Field introduced in 17.1.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">protocol (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsTransportProtocolMatch">DnsTransportProtocolMatch</a></span> DNS transport protocol match. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">query_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsQueryNameMatch">DnsQueryNameMatch</a></span> Domain names to match against query name. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">query_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsQueryTypeMatch">DnsQueryTypeMatch</a></span> DNS query types to match against request query type. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsRuleRLAction">DnsRuleRLAction</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of action to be enforced upon hitting the rate limit. Enum options - DNS_RL_ACTION_NONE, DNS_RL_ACTION_DROP_REQ. Field introduced in 18.2.5. </div>
+      <div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of action to be enforced upon hitting the rate limit. Enum options - DNS_RL_ACTION_NONE, DNS_RL_ACTION_DROP_REQ. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DnsTransportProtocolMatch">DnsTransportProtocolMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for matching the DNS transport protocol. Enum options - IS_IN, IS_NOT_IN. Field introduced in 17.1.1. </div>
-<div class="param">protocol </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Protocol to match against transport protocol used by DNS query. Enum options - DNS_OVER_UDP, DNS_OVER_TCP. Field introduced in 17.1.1. </div>
+      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for matching the DNS transport protocol. Enum options - IS_IN, IS_NOT_IN. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">protocol </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Protocol to match against transport protocol used by DNS query. Enum options - DNS_OVER_UDP, DNS_OVER_TCP. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="IpAddr">IpAddr</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">addr </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> IP address. </div>
-<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - V4, DNS, V6. </div>
+      <div class="param">addr </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - V4, DNS, V6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="IpAddrMatch">IpAddrMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">addrs (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">array[IpAddr]</a></span> IP address(es). </div>
-<div class="param">group_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> UUID of IP address group(s). It is a reference to an object of type IpAddrGroup. </div>
-<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for IP address matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. </div>
-<div class="param">prefixes (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrPrefix">array[IpAddrPrefix]</a></span> IP address prefix(es). </div>
-<div class="param">ranges (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrRange">array[IpAddrRange]</a></span> IP address range(s). </div>
+      <div class="param">addrs (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">array[IpAddr]</a></span> IP address(es). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">group_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> UUID of IP address group(s). It is a reference to an object of type IpAddrGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for IP address matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">prefixes (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrPrefix">array[IpAddrPrefix]</a></span> IP address prefix(es). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ranges (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrRange">array[IpAddrRange]</a></span> IP address range(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="IpAddrPrefix">IpAddrPrefix</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">ip_addr </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Placeholder for description of property ip_addr of obj type IpAddrPrefix field type str  type object </div>
-<div class="param">mask </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of mask. format: int32</div>
+      <div class="param">ip_addr </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span>  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">mask </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="IpAddrRange">IpAddrRange</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">begin </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Starting IP address of the range. </div>
-<div class="param">end </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Ending IP address of the range. </div>
+      <div class="param">begin </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Starting IP address of the range. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">end </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Ending IP address of the range. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="KeyValue">KeyValue</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key. </div>
-<div class="param">value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Value. </div>
+      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="PortMatchGeneric">PortMatchGeneric</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for src/dest port in a TCP/UDP packet. Enum options - IS_IN, IS_NOT_IN. Field introduced in 20.1.3. </div>
-<div class="param">ports (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">array[Integer]</a></span> Listening TCP port(s). Allowed values are 1-65535. Field introduced in 20.1.3. </div>
-<div class="param">ranges (optional)</div><div class="param-desc"><span class="param-type"><a href="#PortRange">array[PortRange]</a></span> A port range defined by a start and end, including both. Field introduced in 20.1.3. </div>
+      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for src/dest port in a TCP/UDP packet. Enum options - IS_IN, IS_NOT_IN. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ports (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">array[Integer]</a></span> Listening TCP port(s). Allowed values are 1-65535. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ranges (optional)</div><div class="param-desc"><span class="param-type"><a href="#PortRange">array[PortRange]</a></span> A port range defined by a start and end, including both. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="PortRange">PortRange</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">end </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> TCP/UDP port range end (inclusive). Allowed values are 1-65535. format: int32</div>
-<div class="param">start </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> TCP/UDP port range start (inclusive). Allowed values are 1-65535. format: int32</div>
+      <div class="param">end </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> TCP/UDP port range end (inclusive). Allowed values are 1-65535. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">start </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> TCP/UDP port range start (inclusive). Allowed values are 1-65535. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="RateLimiter">RateLimiter</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">burst_sz (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9. Allowed in Basic(Allowed values- 0) edition, Enterprise edition. format: int32</div>
-<div class="param">count </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections, requests or packets permitted each period. Allowed values are 1-1000000000. Field introduced in 18.2.9. format: int32</div>
-<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Identifier for Rate Limit. Constructed according to context. Field introduced in 18.2.9. </div>
-<div class="param">period </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC. Allowed in Basic(Allowed values- 1) edition, Enterprise edition. format: int32</div>
+      <div class="param">burst_sz (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9. Allowed in Enterprise with any value edition, Basic(Allowed values- 0) edition, Essentials edition, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">count </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections, requests or packets permitted each period. Allowed values are 1-1000000000. Field introduced in 18.2.9. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Identifier for Rate Limit. Constructed according to context. Field introduced in 18.2.9. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">period </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC. Allowed in Enterprise with any value edition, Basic(Allowed values- 1) edition, Essentials edition, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="RoleFilterMatchLabel">RoleFilterMatchLabel</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key for filter match. Field introduced in 20.1.3. </div>
-<div class="param">values (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Values for filter match. Multiple values will be evaluated as OR. Example  key &#x3D; value1 OR key &#x3D; value2. Behavior for match is key &#x3D; * if this field is empty. Field introduced in 20.1.3. </div>
+      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">values (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Values for filter match. Multiple values will be evaluated as OR. Example  key &#x3D; value1 OR key &#x3D; value2. Behavior for match is key &#x3D; * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   </body>
