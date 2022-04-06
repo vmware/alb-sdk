@@ -8,9 +8,9 @@ package models
 // swagger:model BotTypeMatcher
 type BotTypeMatcher struct {
 
-	// The list of client types. Enum options - UNDETERMINED_CLIENT_TYPE, WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION. Field introduced in 21.1.1. Minimum of 1 items required.
+	// The list of client types. Enum options - UNDETERMINED_CLIENT_TYPE, WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION. Field introduced in 21.1.1. Minimum of 1 items required. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	ClientTypes []string `json:"client_types,omitempty"`
 
-	// The match operation. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1.
+	// The match operation. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Op *string `json:"op,omitempty"`
 }

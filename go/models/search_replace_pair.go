@@ -8,10 +8,10 @@ package models
 // swagger:model SearchReplacePair
 type SearchReplacePair struct {
 
-	// String to replace the searched value. Field introduced in 21.1.3.
+	// String to replace the searched value. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	ReplacementString *ReplaceStringVar `json:"replacement_string,omitempty"`
 
-	// String to search for in the body. Field introduced in 21.1.3.
+	// String to search for in the body. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	// Required: true
 	SearchString *SearchStringVar `json:"search_string"`
 }

@@ -8,6 +8,6 @@ package models
 // swagger:model AutoScaleMesosSettings
 type AutoScaleMesosSettings struct {
 
-	// Apply scale-out even when there are deployments inprogress.
+	// Apply scale-out even when there are deployments inprogress. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Force *bool `json:"force,omitempty"`
 }

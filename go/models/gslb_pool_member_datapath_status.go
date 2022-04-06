@@ -8,12 +8,12 @@ package models
 // swagger:model GslbPoolMemberDatapathStatus
 type GslbPoolMemberDatapathStatus struct {
 
-	//  Field introduced in 17.1.1.
+	//  Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Location *GeoLocation `json:"location,omitempty"`
 
-	// Placeholder for description of property oper_status of obj type GslbPoolMemberDatapathStatus field type str  type object
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	OperStatus *OperationalStatus `json:"oper_status,omitempty"`
 
-	// Unique object identifier of site.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	SiteUUID *string `json:"site_uuid,omitempty"`
 }

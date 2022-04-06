@@ -12,20 +12,20 @@ type BotMapping struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Rules for bot classification. Field introduced in 21.1.1.
+	// Rules for bot classification. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	MappingRules []*BotMappingRule `json:"mapping_rules,omitempty"`
 
-	// The name of this mapping. Field introduced in 21.1.1.
+	// The name of this mapping. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 
-	// The unique identifier of the tenant to which this mapping belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1.
+	// The unique identifier of the tenant to which this mapping belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
 	// url
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// A unique identifier for this mapping. Field introduced in 21.1.1.
+	// A unique identifier for this mapping. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 }

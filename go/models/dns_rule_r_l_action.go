@@ -8,6 +8,6 @@ package models
 // swagger:model DnsRuleRLAction
 type DNSRuleRLAction struct {
 
-	// Type of action to be enforced upon hitting the rate limit. Enum options - DNS_RL_ACTION_NONE, DNS_RL_ACTION_DROP_REQ. Field introduced in 18.2.5.
+	// Type of action to be enforced upon hitting the rate limit. Enum options - DNS_RL_ACTION_NONE, DNS_RL_ACTION_DROP_REQ. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Type *string `json:"type,omitempty"`
 }

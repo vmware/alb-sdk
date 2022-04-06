@@ -8,24 +8,24 @@ package models
 // swagger:model GcpInfo
 type GcpInfo struct {
 
-	// Hostname of this SE.
+	// Hostname of this SE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Hostname *string `json:"hostname,omitempty"`
 
-	// Instance type of this SE. Field introduced in 22.1.1.
+	// Instance type of this SE. Field introduced in 22.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	MachineType *string `json:"machine_type,omitempty"`
 
-	// Network this SE is assigned.
+	// Network this SE is assigned. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Network *string `json:"network"`
 
-	// Project this SE belongs to.
+	// Project this SE belongs to. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Project *string `json:"project"`
 
-	// Subnet assigned to this SE.
+	// Subnet assigned to this SE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Subnet *string `json:"subnet,omitempty"`
 
-	// Zone this SE is part of.
+	// Zone this SE is part of. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Zone *string `json:"zone"`
 }

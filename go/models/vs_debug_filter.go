@@ -8,9 +8,9 @@ package models
 // swagger:model VsDebugFilter
 type VsDebugFilter struct {
 
-	// Name of the object.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
-	// Unique object identifier of se.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	SeUUID *string `json:"se_uuid,omitempty"`
 }

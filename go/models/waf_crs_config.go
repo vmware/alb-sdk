@@ -8,9 +8,9 @@ package models
 // swagger:model WafCrsConfig
 type WafCrsConfig struct {
 
-	// Enable to automatically download new WAF signatures/CRS version to the Controller. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise(Allowed values- false) edition, Enterprise edition.
+	// Enable to automatically download new WAF signatures/CRS version to the Controller. Field introduced in 21.1.1. Allowed in Enterprise edition only with addon license edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition.
 	EnableAutoDownloadWafSignatures *bool `json:"enable_auto_download_waf_signatures,omitempty"`
 
-	// Enable event notifications when new WAF signatures/CRS versions are available. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is True.
+	// Enable event notifications when new WAF signatures/CRS versions are available. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is True.
 	EnableWafSignaturesNotifications *bool `json:"enable_waf_signatures_notifications,omitempty"`
 }

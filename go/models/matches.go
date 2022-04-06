@@ -8,9 +8,9 @@ package models
 // swagger:model Matches
 type Matches struct {
 
-	// Matches in signature rule. Field introduced in 21.1.1.
+	// Matches in signature rule. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	MatchElement *string `json:"match_element,omitempty"`
 
-	// Match value in signature rule. Field introduced in 21.1.1.
+	// Match value in signature rule. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	MatchValue *string `json:"match_value,omitempty"`
 }

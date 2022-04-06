@@ -8,15 +8,15 @@ package models
 // swagger:model VinfraVcenterNetworkLimit
 type VinfraVcenterNetworkLimit struct {
 
-	// additional_reason of VinfraVcenterNetworkLimit.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	AdditionalReason *string `json:"additional_reason"`
 
-	// Number of current.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Current *int64 `json:"current"`
 
-	// Number of limit.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Limit *int64 `json:"limit"`
 }

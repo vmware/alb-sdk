@@ -8,6 +8,6 @@ package models
 // swagger:model CentralLicenseSubscriptionDetails
 type CentralLicenseSubscriptionDetails struct {
 
-	// Message. Field introduced in 21.1.4.
+	// Message. Field introduced in 21.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Message *string `json:"message,omitempty"`
 }

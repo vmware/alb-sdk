@@ -8,9 +8,9 @@ package models
 // swagger:model HealthMonitorImap
 type HealthMonitorImap struct {
 
-	// Folder to access. Field introduced in 21.1.1.
+	// Folder to access. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Folder *string `json:"folder,omitempty"`
 
-	// SSL attributes for IMAPS monitor. Field introduced in 21.1.1.
+	// SSL attributes for IMAPS monitor. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	SslAttributes *HealthMonitorSSlattributes `json:"ssl_attributes,omitempty"`
 }

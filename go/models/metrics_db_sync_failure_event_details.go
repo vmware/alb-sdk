@@ -8,12 +8,12 @@ package models
 // swagger:model MetricsDbSyncFailureEventDetails
 type MetricsDbSyncFailureEventDetails struct {
 
-	// Name of the node responsible for this event.
+	// Name of the node responsible for this event. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	NodeName *string `json:"node_name,omitempty"`
 
-	// Name of the process responsible for this event.
+	// Name of the process responsible for this event. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	ProcessName *string `json:"process_name,omitempty"`
 
-	// Timestamp at which this event occurred.
+	// Timestamp at which this event occurred. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Timestamp *string `json:"timestamp,omitempty"`
 }

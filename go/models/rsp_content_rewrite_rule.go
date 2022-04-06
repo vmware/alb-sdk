@@ -8,15 +8,15 @@ package models
 // swagger:model RspContentRewriteRule
 type RspContentRewriteRule struct {
 
-	// Enable rewrite rule on response body. Field introduced in 21.1.3.
+	// Enable rewrite rule on response body. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Enable *bool `json:"enable,omitempty"`
 
-	// Index of the response rewrite rule. Field introduced in 21.1.3.
+	// Index of the response rewrite rule. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Index *int32 `json:"index,omitempty"`
 
-	// Name of the response rewrite rule. Field introduced in 21.1.3.
+	// Name of the response rewrite rule. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
-	// List of search-and-replace *string pairs for the response body. For eg. Strings 'foo' and 'bar', where all searches of 'foo' in the response body will be replaced with 'bar'. Field introduced in 21.1.3.
+	// List of search-and-replace *string pairs for the response body. For eg. Strings 'foo' and 'bar', where all searches of 'foo' in the response body will be replaced with 'bar'. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Pairs []*SearchReplacePair `json:"pairs,omitempty"`
 }

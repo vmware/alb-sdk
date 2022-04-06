@@ -8,9 +8,9 @@ package models
 // swagger:model NsxtDatastores
 type NsxtDatastores struct {
 
-	// List of shared datastores. Field introduced in 20.1.2. Allowed in Basic edition, Enterprise edition.
+	// List of shared datastores. Field introduced in 20.1.2. Allowed in Enterprise with any value edition, Basic with any value edition, Enterprise with Cloud Services edition.
 	DsIds []string `json:"ds_ids,omitempty"`
 
-	// Include or Exclude. Field introduced in 20.1.2. Allowed in Basic edition, Enterprise edition.
+	// Include or Exclude. Field introduced in 20.1.2. Allowed in Enterprise with any value edition, Basic with any value edition, Enterprise with Cloud Services edition.
 	Include *bool `json:"include,omitempty"`
 }

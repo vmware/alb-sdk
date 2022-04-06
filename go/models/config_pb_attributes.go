@@ -8,6 +8,6 @@ package models
 // swagger:model ConfigPbAttributes
 type ConfigPbAttributes struct {
 
-	// Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.
+	// Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition.
 	Version *int32 `json:"version,omitempty"`
 }

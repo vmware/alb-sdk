@@ -8,7 +8,7 @@ package models
 // swagger:model RediscoverVcenterParam
 type RediscoverVcenterParam struct {
 
-	// cloud of RediscoverVcenterParam.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Cloud *string `json:"cloud"`
 }

@@ -8,9 +8,9 @@ package models
 // swagger:model ReplaceStringVar
 type ReplaceStringVar struct {
 
-	// Type of replacement *string - can be a variable exposed from datascript, value of an HTTP variable, a custom user-input literal string, or a *string with all three combined. Enum options - DATASCRIPT_VAR, AVI_VAR, LITERAL_STRING, COMBINATION_STRING.
+	// Type of replacement *string - can be a variable exposed from datascript, value of an HTTP variable, a custom user-input literal string, or a *string with all three combined. Enum options - DATASCRIPT_VAR, AVI_VAR, LITERAL_STRING, COMBINATION_STRING. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Type *string `json:"type,omitempty"`
 
-	// Value of the replacement *string - name of variable exposed from datascript, name of the HTTP header, a custom user-input literal string, or a *string with all three combined.
+	// Value of the replacement *string - name of variable exposed from datascript, name of the HTTP header, a custom user-input literal string, or a *string with all three combined. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Val *string `json:"val,omitempty"`
 }

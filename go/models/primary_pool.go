@@ -8,7 +8,7 @@ package models
 // swagger:model PrimaryPool
 type PrimaryPool struct {
 
-	// Pool's ID. Field introduced in 20.1.7, 21.1.2, 21.1.3.
+	// Pool's ID. Field introduced in 20.1.7, 21.1.2, 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	// Required: true
 	PoolUUID *string `json:"pool_uuid"`
 }

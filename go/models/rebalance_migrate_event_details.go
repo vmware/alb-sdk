@@ -8,10 +8,10 @@ package models
 // swagger:model RebalanceMigrateEventDetails
 type RebalanceMigrateEventDetails struct {
 
-	// Placeholder for description of property migrate_params of obj type RebalanceMigrateEventDetails field type str  type object
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	MigrateParams *VsMigrateParams `json:"migrate_params,omitempty"`
 
-	// Unique object identifier of vs.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	VsUUID *string `json:"vs_uuid"`
 }

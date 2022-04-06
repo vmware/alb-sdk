@@ -12,22 +12,22 @@ type SeProperties struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
-	// Placeholder for description of property se_agent_properties of obj type SeProperties field type str  type object
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	SeAgentProperties *SeAgentProperties `json:"se_agent_properties,omitempty"`
 
-	// Placeholder for description of property se_bootup_properties of obj type SeProperties field type str  type object
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	SeBootupProperties *SeBootupProperties `json:"se_bootup_properties,omitempty"`
 
-	// Placeholder for description of property se_runtime_properties of obj type SeProperties field type str  type object
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	SeRuntimeProperties *SeRuntimeProperties `json:"se_runtime_properties,omitempty"`
 
 	// url
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// Unique object identifier of the object.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 }

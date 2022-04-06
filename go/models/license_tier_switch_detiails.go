@@ -8,15 +8,15 @@ package models
 // swagger:model LicenseTierSwitchDetiails
 type LicenseTierSwitchDetiails struct {
 
-	// destination_tier of LicenseTierSwitchDetiails.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	DestinationTier *string `json:"destination_tier,omitempty"`
 
-	// reason of LicenseTierSwitchDetiails.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Reason *string `json:"reason,omitempty"`
 
-	// source_tier of LicenseTierSwitchDetiails.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	SourceTier *string `json:"source_tier,omitempty"`
 
-	// status of LicenseTierSwitchDetiails.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Status *string `json:"status,omitempty"`
 }

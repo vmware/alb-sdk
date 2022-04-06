@@ -8,6 +8,6 @@ package models
 // swagger:model IcapNsxDefenderConfig
 type IcapNsxDefenderConfig struct {
 
-	// URL to get details from NSXDefender using task_uuid for a particular request. Field introduced in 21.1.1.
+	// URL to get details from NSXDefender using task_uuid for a particular request. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	StatusURL *string `json:"status_url,omitempty"`
 }

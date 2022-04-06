@@ -8,30 +8,30 @@ package models
 // swagger:model SAMLSPConfig
 type SAMLSPConfig struct {
 
-	// HTTP cookie name for authenticated session. Field introduced in 18.2.3.
+	// HTTP cookie name for authenticated session. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	CookieName *string `json:"cookie_name,omitempty"`
 
-	// Cookie timeout in minutes. Allowed values are 1-1440. Field introduced in 18.2.3. Unit is MIN.
+	// Cookie timeout in minutes. Allowed values are 1-1440. Field introduced in 18.2.3. Unit is MIN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	CookieTimeout *int32 `json:"cookie_timeout,omitempty"`
 
-	// Globally unique SAML entityID for this node. The SAML application entity ID on the IDP should match this. Field introduced in 18.2.3.
+	// Globally unique SAML entityID for this node. The SAML application entity ID on the IDP should match this. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	EntityID *string `json:"entity_id"`
 
-	// Key to generate the cookie. Field introduced in 18.2.3.
+	// Key to generate the cookie. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Key []*HTTPCookiePersistenceKey `json:"key,omitempty"`
 
-	// SP will use this SSL certificate to sign requests going to the IdP and decrypt the assertions coming from IdP. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 18.2.3.
+	// SP will use this SSL certificate to sign requests going to the IdP and decrypt the assertions coming from IdP. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	SigningSslKeyAndCertificateRef *string `json:"signing_ssl_key_and_certificate_ref,omitempty"`
 
-	// SAML Single Signon URL to be programmed on the IDP. Field introduced in 18.2.3.
+	// SAML Single Signon URL to be programmed on the IDP. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	SingleSignonURL *string `json:"single_signon_url"`
 
-	// SAML SP metadata for this application. Field introduced in 18.2.3.
+	// SAML SP metadata for this application. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition.
 	// Read Only: true
 	SpMetadata *string `json:"sp_metadata,omitempty"`
 
-	// By enabling this field IdP can control how long the SP session can exist through the SessionNotOnOrAfter field in the AuthNStatement of SAML Response. Field introduced in 20.1.1.
+	// By enabling this field IdP can control how long the SP session can exist through the SessionNotOnOrAfter field in the AuthNStatement of SAML Response. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	UseIdpSessionTimeout *bool `json:"use_idp_session_timeout,omitempty"`
 }

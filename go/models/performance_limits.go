@@ -8,9 +8,9 @@ package models
 // swagger:model PerformanceLimits
 type PerformanceLimits struct {
 
-	// The maximum number of concurrent client conections allowed to the Virtual Service.
+	// The maximum number of concurrent client conections allowed to the Virtual Service. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	MaxConcurrentConnections *int32 `json:"max_concurrent_connections,omitempty"`
 
-	// The maximum throughput per second for all clients allowed through the client side of the Virtual Service per SE.
+	// The maximum throughput per second for all clients allowed through the client side of the Virtual Service per SE. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	MaxThroughput *int32 `json:"max_throughput,omitempty"`
 }

@@ -8,13 +8,13 @@ package models
 // swagger:model VsFsmEventDetails
 type VsFsmEventDetails struct {
 
-	// vip_id of VsFsmEventDetails.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	VipID *string `json:"vip_id,omitempty"`
 
-	// Placeholder for description of property vs_rt of obj type VsFsmEventDetails field type str  type object
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	VsRt *VirtualServiceRuntime `json:"vs_rt,omitempty"`
 
-	// Unique object identifier of vs.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	VsUUID *string `json:"vs_uuid"`
 }

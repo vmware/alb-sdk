@@ -8,11 +8,11 @@ package models
 // swagger:model OpaqueTokenValidationParams
 type OpaqueTokenValidationParams struct {
 
-	// Resource server specific identifier used to validate against introspection endpoint when access token is opaque. Field introduced in 21.1.3.
+	// Resource server specific identifier used to validate against introspection endpoint when access token is opaque. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	// Required: true
 	ServerID *string `json:"server_id"`
 
-	// Resource server specific password/secret. Field introduced in 21.1.3.
+	// Resource server specific password/secret. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	// Required: true
 	ServerSecret *string `json:"server_secret"`
 }
