@@ -58,7 +58,7 @@ public class MicroService extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property application_name of obj type microservice field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return applicationName
      */
@@ -68,7 +68,7 @@ public class MicroService extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property application_name of obj type microservice field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param applicationName set the applicationName.
      */
@@ -81,6 +81,7 @@ public class MicroService extends AviRestResource  {
      * Checksum of cloud configuration for microservice.
      * Internally set by cloud connector.
      * Field introduced in 17.2.8.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudConfigCksum
      */
@@ -93,6 +94,7 @@ public class MicroService extends AviRestResource  {
      * Checksum of cloud configuration for microservice.
      * Internally set by cloud connector.
      * Field introduced in 17.2.8.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudConfigCksum set the cloudConfigCksum.
      */
@@ -102,6 +104,7 @@ public class MicroService extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * The list of containers for this microservice.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return containers
      */
@@ -112,6 +115,7 @@ public class MicroService extends AviRestResource  {
     /**
      * This is the setter method. this will set the containers
      * The list of containers for this microservice.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return containers
      */
@@ -122,6 +126,7 @@ public class MicroService extends AviRestResource  {
     /**
      * This is the setter method this will set the containers
      * The list of containers for this microservice.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return containers
      */
@@ -136,6 +141,7 @@ public class MicroService extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Creator name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return createdBy
      */
@@ -146,6 +152,7 @@ public class MicroService extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Creator name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param createdBy set the createdBy.
      */
@@ -155,7 +162,7 @@ public class MicroService extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * User defined description for the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -165,7 +172,7 @@ public class MicroService extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * User defined description for the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -176,6 +183,7 @@ public class MicroService extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Flag to indicate if container ip list is provided by cloud connectorthis is applicable for overlay cases.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipList
      */
@@ -186,6 +194,7 @@ public class MicroService extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Flag to indicate if container ip list is provided by cloud connectorthis is applicable for overlay cases.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipList set the ipList.
      */
@@ -195,7 +204,7 @@ public class MicroService extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -205,7 +214,7 @@ public class MicroService extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -215,7 +224,7 @@ public class MicroService extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property orchestrator_name of obj type microservice field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return orchestratorName
      */
@@ -225,7 +234,7 @@ public class MicroService extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property orchestrator_name of obj type microservice field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param orchestratorName set the orchestratorName.
      */
@@ -236,6 +245,7 @@ public class MicroService extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -246,6 +256,7 @@ public class MicroService extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -272,7 +283,7 @@ public class MicroService extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -282,7 +293,7 @@ public class MicroService extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

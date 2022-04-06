@@ -34,7 +34,7 @@ public class PartitionInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property path of obj type partitioninfo field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return path
      */
@@ -44,7 +44,7 @@ public class PartitionInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property path of obj type partitioninfo field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param path set the path.
      */
@@ -54,7 +54,7 @@ public class PartitionInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property quota of obj type partitioninfo field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return quota
      */
@@ -64,7 +64,7 @@ public class PartitionInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property quota of obj type partitioninfo field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param quota set the quota.
      */
@@ -74,7 +74,7 @@ public class PartitionInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property size of obj type partitioninfo field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return size
      */
@@ -84,7 +84,7 @@ public class PartitionInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property size of obj type partitioninfo field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param size set the size.
      */

@@ -46,7 +46,7 @@ public class OpenStackLbPluginOp  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_id of obj type openstacklbpluginop field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccId
      */
@@ -56,7 +56,7 @@ public class OpenStackLbPluginOp  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_id of obj type openstacklbpluginop field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccId set the ccId.
      */
@@ -66,7 +66,7 @@ public class OpenStackLbPluginOp  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property command of obj type openstacklbpluginop field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return command
      */
@@ -76,7 +76,7 @@ public class OpenStackLbPluginOp  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property command of obj type openstacklbpluginop field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param command set the command.
      */
@@ -86,7 +86,7 @@ public class OpenStackLbPluginOp  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property detail of obj type openstacklbpluginop field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return detail
      */
@@ -96,7 +96,7 @@ public class OpenStackLbPluginOp  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property detail of obj type openstacklbpluginop field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param detail set the detail.
      */
@@ -106,7 +106,7 @@ public class OpenStackLbPluginOp  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property elapsed of obj type openstacklbpluginop field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return elapsed
      */
@@ -116,7 +116,7 @@ public class OpenStackLbPluginOp  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property elapsed of obj type openstacklbpluginop field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param elapsed set the elapsed.
      */
@@ -126,7 +126,7 @@ public class OpenStackLbPluginOp  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property id of obj type openstacklbpluginop field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return id
      */
@@ -136,7 +136,7 @@ public class OpenStackLbPluginOp  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property id of obj type openstacklbpluginop field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param id set the id.
      */
@@ -146,7 +146,7 @@ public class OpenStackLbPluginOp  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property prov of obj type openstacklbpluginop field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return prov
      */
@@ -156,7 +156,7 @@ public class OpenStackLbPluginOp  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property prov of obj type openstacklbpluginop field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param prov set the prov.
      */
@@ -166,7 +166,7 @@ public class OpenStackLbPluginOp  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property result of obj type openstacklbpluginop field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return result
      */
@@ -176,7 +176,7 @@ public class OpenStackLbPluginOp  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property result of obj type openstacklbpluginop field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param result set the result.
      */

@@ -36,6 +36,7 @@ public class FloatingIpSubnet extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Floatingip subnet name if available, else uuid.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -47,6 +48,7 @@ public class FloatingIpSubnet extends AviRestResource  {
      * This is the setter method to the attribute.
      * Floatingip subnet name if available, else uuid.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -58,6 +60,7 @@ public class FloatingIpSubnet extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Floatingip subnet prefix.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return prefix
      */
@@ -69,6 +72,7 @@ public class FloatingIpSubnet extends AviRestResource  {
      * This is the setter method to the attribute.
      * Floatingip subnet prefix.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param prefix set the prefix.
      */
@@ -80,6 +84,7 @@ public class FloatingIpSubnet extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Floatingip subnet uuid.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -91,6 +96,7 @@ public class FloatingIpSubnet extends AviRestResource  {
      * This is the setter method to the attribute.
      * Floatingip subnet uuid.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

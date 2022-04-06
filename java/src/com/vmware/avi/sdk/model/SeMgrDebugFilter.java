@@ -28,7 +28,7 @@ public class SeMgrDebugFilter  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -38,7 +38,7 @@ public class SeMgrDebugFilter  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */

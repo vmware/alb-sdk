@@ -54,6 +54,7 @@ public class LinuxServerConfiguration  {
      * This is the getter method this will return the attribute value.
      * Private docker registry for se image storage.
      * Field deprecated in 17.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return dockerRegistrySe
      */
     public DockerRegistry getDockerRegistrySe() {
@@ -64,6 +65,7 @@ public class LinuxServerConfiguration  {
      * This is the setter method to the attribute.
      * Private docker registry for se image storage.
      * Field deprecated in 17.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param dockerRegistrySe set the dockerRegistrySe.
      */
     public void setDockerRegistrySe(DockerRegistry dockerRegistrySe) {
@@ -71,7 +73,7 @@ public class LinuxServerConfiguration  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property hosts of obj type linuxserverconfiguration field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hosts
      */
@@ -81,7 +83,7 @@ public class LinuxServerConfiguration  {
 
     /**
      * This is the setter method. this will set the hosts
-     * Placeholder for description of property hosts of obj type linuxserverconfiguration field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hosts
      */
@@ -91,7 +93,7 @@ public class LinuxServerConfiguration  {
 
     /**
      * This is the setter method this will set the hosts
-     * Placeholder for description of property hosts of obj type linuxserverconfiguration field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hosts
      */
@@ -107,6 +109,7 @@ public class LinuxServerConfiguration  {
      * This is the getter method this will return the attribute value.
      * Flag to notify the se's in this cloud have an inband management interface, this can be overridden at se host level by setting host_attr attr_key
      * as se_inband_mgmt with value of true or false.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return seInbandMgmt
      */
@@ -118,6 +121,7 @@ public class LinuxServerConfiguration  {
      * This is the setter method to the attribute.
      * Flag to notify the se's in this cloud have an inband management interface, this can be overridden at se host level by setting host_attr attr_key
      * as se_inband_mgmt with value of true or false.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param seInbandMgmt set the seInbandMgmt.
      */
@@ -128,6 +132,7 @@ public class LinuxServerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Se client logs disk path for cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seLogDiskPath
      */
@@ -138,6 +143,7 @@ public class LinuxServerConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Se client logs disk path for cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seLogDiskPath set the seLogDiskPath.
      */
@@ -148,6 +154,7 @@ public class LinuxServerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Se client log disk size for cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return seLogDiskSizeGb
      */
@@ -158,6 +165,7 @@ public class LinuxServerConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Se client log disk size for cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param seLogDiskSizeGb set the seLogDiskSizeGb.
      */
@@ -168,6 +176,7 @@ public class LinuxServerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Se system logs disk path for cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seSysDiskPath
      */
@@ -178,6 +187,7 @@ public class LinuxServerConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Se system logs disk path for cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seSysDiskPath set the seSysDiskPath.
      */
@@ -188,6 +198,7 @@ public class LinuxServerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Se system logs disk size for cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return seSysDiskSizeGb
      */
@@ -198,6 +209,7 @@ public class LinuxServerConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Se system logs disk size for cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param seSysDiskSizeGb set the seSysDiskSizeGb.
      */
@@ -209,6 +221,7 @@ public class LinuxServerConfiguration  {
      * This is the getter method this will return the attribute value.
      * Parameters for ssh to hosts.
      * Field deprecated in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return sshAttr
      */
     public SSHSeDeployment getSshAttr() {
@@ -219,6 +232,7 @@ public class LinuxServerConfiguration  {
      * This is the setter method to the attribute.
      * Parameters for ssh to hosts.
      * Field deprecated in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param sshAttr set the sshAttr.
      */
     public void setSshAttr(SSHSeDeployment sshAttr) {
@@ -230,6 +244,7 @@ public class LinuxServerConfiguration  {
      * Cloud connector user uuid for ssh to hosts.
      * It is a reference to an object of type cloudconnectoruser.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sshUserRef
      */
@@ -242,6 +257,7 @@ public class LinuxServerConfiguration  {
      * Cloud connector user uuid for ssh to hosts.
      * It is a reference to an object of type cloudconnectoruser.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sshUserRef set the sshUserRef.
      */

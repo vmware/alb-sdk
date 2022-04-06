@@ -72,6 +72,7 @@ public class APICConfiguration  {
      * This is the getter method this will return the attribute value.
      * Name of the avi specific tenant created within apic.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return apicAdminTenant
      */
     public String getApicAdminTenant() {
@@ -82,6 +83,7 @@ public class APICConfiguration  {
      * This is the setter method to the attribute.
      * Name of the avi specific tenant created within apic.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param apicAdminTenant set the apicAdminTenant.
      */
     public void setApicAdminTenant(String  apicAdminTenant) {
@@ -92,6 +94,7 @@ public class APICConfiguration  {
      * This is the getter method this will return the attribute value.
      * Vcenter's virtual machine manager domain within apic.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return apicDomain
      */
     public String getApicDomain() {
@@ -102,6 +105,7 @@ public class APICConfiguration  {
      * This is the setter method to the attribute.
      * Vcenter's virtual machine manager domain within apic.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param apicDomain set the apicDomain.
      */
     public void setApicDomain(String  apicDomain) {
@@ -111,6 +115,7 @@ public class APICConfiguration  {
      * This is the getter method this will return the attribute value.
      * The hostname or ip address of the apic controller.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return apicName
      */
     public List<String> getApicName() {
@@ -121,6 +126,7 @@ public class APICConfiguration  {
      * This is the setter method. this will set the apicName
      * The hostname or ip address of the apic controller.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return apicName
      */
     public void setApicName(List<String>  apicName) {
@@ -131,6 +137,7 @@ public class APICConfiguration  {
      * This is the setter method this will set the apicName
      * The hostname or ip address of the apic controller.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return apicName
      */
     public APICConfiguration addApicNameItem(String apicNameItem) {
@@ -145,6 +152,7 @@ public class APICConfiguration  {
      * This is the getter method this will return the attribute value.
      * The password avi vantage will use when authenticating with apic.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return apicPassword
      */
     public String getApicPassword() {
@@ -155,6 +163,7 @@ public class APICConfiguration  {
      * This is the setter method to the attribute.
      * The password avi vantage will use when authenticating with apic.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param apicPassword set the apicPassword.
      */
     public void setApicPassword(String  apicPassword) {
@@ -164,6 +173,7 @@ public class APICConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 17.2.10,18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return apicProduct
      */
     public String getApicProduct() {
@@ -173,6 +183,7 @@ public class APICConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 17.2.10,18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param apicProduct set the apicProduct.
      */
     public void setApicProduct(String  apicProduct) {
@@ -183,6 +194,7 @@ public class APICConfiguration  {
      * This is the getter method this will return the attribute value.
      * The username avi vantage will use when authenticating with apic.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return apicUsername
      */
     public String getApicUsername() {
@@ -193,6 +205,7 @@ public class APICConfiguration  {
      * This is the setter method to the attribute.
      * The username avi vantage will use when authenticating with apic.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param apicUsername set the apicUsername.
      */
     public void setApicUsername(String  apicUsername) {
@@ -202,6 +215,7 @@ public class APICConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 17.2.10,18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return apicVendor
      */
     public String getApicVendor() {
@@ -211,6 +225,7 @@ public class APICConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 17.2.10,18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param apicVendor set the apicVendor.
      */
     public void setApicVendor(String  apicVendor) {
@@ -221,6 +236,7 @@ public class APICConfiguration  {
      * This is the getter method this will return the attribute value.
      * The password apic will use when authenticating with avi vantage.
      * Field deprecated in 17.2.10,18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return aviControllerPassword
      */
     public String getAviControllerPassword() {
@@ -231,6 +247,7 @@ public class APICConfiguration  {
      * This is the setter method to the attribute.
      * The password apic will use when authenticating with avi vantage.
      * Field deprecated in 17.2.10,18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param aviControllerPassword set the aviControllerPassword.
      */
     public void setAviControllerPassword(String  aviControllerPassword) {
@@ -241,6 +258,7 @@ public class APICConfiguration  {
      * This is the getter method this will return the attribute value.
      * The username apic will use when authenticating with avi vantage.
      * Field deprecated in 17.2.10,18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return aviControllerUsername
      */
     public String getAviControllerUsername() {
@@ -251,6 +269,7 @@ public class APICConfiguration  {
      * This is the setter method to the attribute.
      * The username apic will use when authenticating with avi vantage.
      * Field deprecated in 17.2.10,18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param aviControllerUsername set the aviControllerUsername.
      */
     public void setAviControllerUsername(String  aviControllerUsername) {
@@ -262,6 +281,7 @@ public class APICConfiguration  {
      * Context aware for supporting service graphs across vrfs.
      * Enum options - SINGLE_CONTEXT, MULTI_CONTEXT.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return contextAware
      */
     public String getContextAware() {
@@ -273,6 +293,7 @@ public class APICConfiguration  {
      * Context aware for supporting service graphs across vrfs.
      * Enum options - SINGLE_CONTEXT, MULTI_CONTEXT.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param contextAware set the contextAware.
      */
     public void setContextAware(String  contextAware) {
@@ -282,6 +303,7 @@ public class APICConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 17.2.10,18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return deployment
      */
     public String getDeployment() {
@@ -291,6 +313,7 @@ public class APICConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 17.2.10,18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param deployment set the deployment.
      */
     public void setDeployment(String  deployment) {
@@ -302,6 +325,7 @@ public class APICConfiguration  {
      * Use managed mode for apic service insertion.
      * Field deprecated in 17.2.10,18.1.2.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return managedMode
      */
     public Boolean getManagedMode() {
@@ -313,6 +337,7 @@ public class APICConfiguration  {
      * Use managed mode for apic service insertion.
      * Field deprecated in 17.2.10,18.1.2.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param managedMode set the managedMode.
      */
     public void setManagedMode(Boolean  managedMode) {
@@ -323,6 +348,7 @@ public class APICConfiguration  {
      * This is the getter method this will return the attribute value.
      * Avi device package minor version.
      * Field deprecated in 17.2.10,18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return minor
      */
     public String getMinor() {
@@ -333,6 +359,7 @@ public class APICConfiguration  {
      * This is the setter method to the attribute.
      * Avi device package minor version.
      * Field deprecated in 17.2.10,18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param minor set the minor.
      */
     public void setMinor(String  minor) {
@@ -345,6 +372,7 @@ public class APICConfiguration  {
      * Please ensure that apic bd's endpoint dataplane learning is disabled true    disable dsr unconditionally.
      * Field deprecated in 21.1.1.
      * Field introduced in 17.2.10,18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return seTunnelMode
      */
     public Boolean getSeTunnelMode() {
@@ -357,6 +385,7 @@ public class APICConfiguration  {
      * Please ensure that apic bd's endpoint dataplane learning is disabled true    disable dsr unconditionally.
      * Field deprecated in 21.1.1.
      * Field introduced in 17.2.10,18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param seTunnelMode set the seTunnelMode.
      */
     public void setSeTunnelMode(Boolean  seTunnelMode) {
@@ -367,6 +396,7 @@ public class APICConfiguration  {
      * This is the getter method this will return the attribute value.
      * Avi device package version.
      * Field deprecated in 17.2.10,18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return version
      */
     public String getVersion() {
@@ -377,6 +407,7 @@ public class APICConfiguration  {
      * This is the setter method to the attribute.
      * Avi device package version.
      * Field deprecated in 17.2.10,18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param version set the version.
      */
     public void setVersion(String  version) {

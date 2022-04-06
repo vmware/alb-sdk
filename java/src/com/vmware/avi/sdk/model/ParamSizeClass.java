@@ -32,6 +32,7 @@ public class ParamSizeClass  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hits
      */
@@ -42,6 +43,7 @@ public class ParamSizeClass  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hits set the hits.
      */
@@ -53,6 +55,7 @@ public class ParamSizeClass  {
      * This is the getter method this will return the attribute value.
      * Enum options - EMPTY, SMALL, MEDIUM, LARGE, UNLIMITED.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return len
      */
@@ -64,6 +67,7 @@ public class ParamSizeClass  {
      * This is the setter method to the attribute.
      * Enum options - EMPTY, SMALL, MEDIUM, LARGE, UNLIMITED.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param len set the len.
      */

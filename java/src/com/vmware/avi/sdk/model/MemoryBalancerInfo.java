@@ -58,6 +58,7 @@ public class MemoryBalancerInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Child process information.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return child
      */
@@ -68,6 +69,7 @@ public class MemoryBalancerInfo  {
     /**
      * This is the setter method. this will set the child
      * Child process information.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return child
      */
@@ -78,6 +80,7 @@ public class MemoryBalancerInfo  {
     /**
      * This is the setter method this will set the child
      * Child process information.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return child
      */
@@ -92,6 +95,7 @@ public class MemoryBalancerInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Current controller memory (in gb) usage.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controllerMemory
      */
@@ -102,6 +106,7 @@ public class MemoryBalancerInfo  {
     /**
      * This is the setter method to the attribute.
      * Current controller memory (in gb) usage.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param controllerMemory set the controllerMemory.
      */
@@ -113,6 +118,7 @@ public class MemoryBalancerInfo  {
      * This is the getter method this will return the attribute value.
      * Percent usage of total controller memory.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controllerMemoryUsagePercent
      */
@@ -124,6 +130,7 @@ public class MemoryBalancerInfo  {
      * This is the setter method to the attribute.
      * Percent usage of total controller memory.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param controllerMemoryUsagePercent set the controllerMemoryUsagePercent.
      */
@@ -135,6 +142,7 @@ public class MemoryBalancerInfo  {
      * This is the getter method this will return the attribute value.
      * Holder for debug message.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return debugMessage
      */
@@ -146,6 +154,7 @@ public class MemoryBalancerInfo  {
      * This is the setter method to the attribute.
      * Holder for debug message.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param debugMessage set the debugMessage.
      */
@@ -156,6 +165,7 @@ public class MemoryBalancerInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Limit on the memory (in kb) for the process.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return limit
      */
@@ -166,6 +176,7 @@ public class MemoryBalancerInfo  {
     /**
      * This is the setter method to the attribute.
      * Limit on the memory (in kb) for the process.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param limit set the limit.
      */
@@ -176,6 +187,7 @@ public class MemoryBalancerInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Amount of memory (in kb) used by the process.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return memoryUsed
      */
@@ -186,6 +198,7 @@ public class MemoryBalancerInfo  {
     /**
      * This is the setter method to the attribute.
      * Amount of memory (in kb) used by the process.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param memoryUsed set the memoryUsed.
      */
@@ -196,6 +209,7 @@ public class MemoryBalancerInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Pid of the process.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pid
      */
@@ -206,6 +220,7 @@ public class MemoryBalancerInfo  {
     /**
      * This is the setter method to the attribute.
      * Pid of the process.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param pid set the pid.
      */
@@ -216,6 +231,7 @@ public class MemoryBalancerInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of the process.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return process
      */
@@ -226,6 +242,7 @@ public class MemoryBalancerInfo  {
     /**
      * This is the setter method to the attribute.
      * Name of the process.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param process set the process.
      */
@@ -238,6 +255,7 @@ public class MemoryBalancerInfo  {
      * Current mode of the process.
      * Enum options - REGULAR, DEBUG, DEGRADED, STOP.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return processMode
      */
@@ -250,6 +268,7 @@ public class MemoryBalancerInfo  {
      * Current mode of the process.
      * Enum options - REGULAR, DEBUG, DEGRADED, STOP.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param processMode set the processMode.
      */
@@ -262,6 +281,7 @@ public class MemoryBalancerInfo  {
      * Current usage trend of the process.
      * Enum options - UPWARD, DOWNWARD, NEUTRAL.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return processTrend
      */
@@ -274,6 +294,7 @@ public class MemoryBalancerInfo  {
      * Current usage trend of the process.
      * Enum options - UPWARD, DOWNWARD, NEUTRAL.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param processTrend set the processTrend.
      */
@@ -285,6 +306,7 @@ public class MemoryBalancerInfo  {
      * This is the getter method this will return the attribute value.
      * Percent usage of the process limit.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return thresholdPercent
      */
@@ -296,6 +318,7 @@ public class MemoryBalancerInfo  {
      * This is the setter method to the attribute.
      * Percent usage of the process limit.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param thresholdPercent set the thresholdPercent.
      */

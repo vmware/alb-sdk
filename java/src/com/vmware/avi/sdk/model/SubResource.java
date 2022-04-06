@@ -33,6 +33,7 @@ public class SubResource  {
      * This is the getter method this will return the attribute value.
      * Allows modification of all fields except for the specified subresources.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return excludeSubresources
      */
@@ -44,6 +45,7 @@ public class SubResource  {
      * This is the setter method to the attribute.
      * Allows modification of all fields except for the specified subresources.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param excludeSubresources set the excludeSubresources.
      */
@@ -61,6 +63,7 @@ public class SubResource  {
      * SUBRESOURCE_GSLBSERVICE_GROUP_ENABLED, SUBRESOURCE_GSLBSERVICE_GROUP_MEMBERS, SUBRESOURCE_GSLBSERVICE_GROUP_MEMBER_ENABLED.
      * Field introduced in 20.1.5.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subresources
      */
@@ -79,6 +82,7 @@ public class SubResource  {
      * SUBRESOURCE_GSLBSERVICE_GROUP_ENABLED, SUBRESOURCE_GSLBSERVICE_GROUP_MEMBERS, SUBRESOURCE_GSLBSERVICE_GROUP_MEMBER_ENABLED.
      * Field introduced in 20.1.5.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subresources
      */
@@ -97,6 +101,7 @@ public class SubResource  {
      * SUBRESOURCE_GSLBSERVICE_GROUP_ENABLED, SUBRESOURCE_GSLBSERVICE_GROUP_MEMBERS, SUBRESOURCE_GSLBSERVICE_GROUP_MEMBER_ENABLED.
      * Field introduced in 20.1.5.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subresources
      */

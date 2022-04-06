@@ -46,6 +46,7 @@ public class SipLog  {
      * Server connection protocol type.
      * Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverProtocol
      */
@@ -58,6 +59,7 @@ public class SipLog  {
      * Server connection protocol type.
      * Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serverProtocol set the serverProtocol.
      */
@@ -69,6 +71,7 @@ public class SipLog  {
      * This is the getter method this will return the attribute value.
      * Sip callid header.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sipCallidHdr
      */
@@ -80,6 +83,7 @@ public class SipLog  {
      * This is the setter method to the attribute.
      * Sip callid header.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sipCallidHdr set the sipCallidHdr.
      */
@@ -91,6 +95,7 @@ public class SipLog  {
      * This is the getter method this will return the attribute value.
      * Client's sip contact header.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sipContactHdr
      */
@@ -102,6 +107,7 @@ public class SipLog  {
      * This is the setter method to the attribute.
      * Client's sip contact header.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sipContactHdr set the sipContactHdr.
      */
@@ -113,6 +119,7 @@ public class SipLog  {
      * This is the getter method this will return the attribute value.
      * Sip from header.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sipFromHdr
      */
@@ -124,6 +131,7 @@ public class SipLog  {
      * This is the setter method to the attribute.
      * Sip from header.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sipFromHdr set the sipFromHdr.
      */
@@ -134,6 +142,7 @@ public class SipLog  {
      * This is the getter method this will return the attribute value.
      * Sip messages.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sipMessages
      */
@@ -145,6 +154,7 @@ public class SipLog  {
      * This is the setter method. this will set the sipMessages
      * Sip messages.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sipMessages
      */
@@ -156,6 +166,7 @@ public class SipLog  {
      * This is the setter method this will set the sipMessages
      * Sip messages.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sipMessages
      */
@@ -171,6 +182,7 @@ public class SipLog  {
      * This is the getter method this will return the attribute value.
      * Sip to header.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sipToHdr
      */
@@ -182,6 +194,7 @@ public class SipLog  {
      * This is the setter method to the attribute.
      * Sip to header.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sipToHdr set the sipToHdr.
      */

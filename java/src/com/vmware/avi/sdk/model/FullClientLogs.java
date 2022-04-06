@@ -40,6 +40,7 @@ public class FullClientLogs  {
      * [deprecated] log all headers.
      * Please use the all_headers flag in analyticspolicy.
      * Field deprecated in 18.1.4, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return allHeaders
      */
     public Boolean getAllHeaders() {
@@ -51,6 +52,7 @@ public class FullClientLogs  {
      * [deprecated] log all headers.
      * Please use the all_headers flag in analyticspolicy.
      * Field deprecated in 18.1.4, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param allHeaders set the allHeaders.
      */
     public void setAllHeaders(Boolean  allHeaders) {
@@ -63,6 +65,7 @@ public class FullClientLogs  {
      * Set to 0 for infinite.
      * Special values are 0 - infinite.
      * Unit is min.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @return duration
      */
@@ -76,6 +79,7 @@ public class FullClientLogs  {
      * Set to 0 for infinite.
      * Special values are 0 - infinite.
      * Unit is min.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @param duration set the duration.
      */
@@ -87,8 +91,9 @@ public class FullClientLogs  {
      * This is the getter method this will return the attribute value.
      * Capture all client logs including connections and requests.
      * When deactivated, only errors will be logged.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-     * Special default for basic edition is false, essentials edition is false, enterprise is false.
+     * Allowed in enterprise with any value edition, essentials(allowed values- false) edition, basic(allowed values- false) edition, enterprise with
+     * cloud services edition.
+     * Special default for essentials edition is false, basic edition is false, enterprise is false.
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -99,8 +104,9 @@ public class FullClientLogs  {
      * This is the setter method to the attribute.
      * Capture all client logs including connections and requests.
      * When deactivated, only errors will be logged.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-     * Special default for basic edition is false, essentials edition is false, enterprise is false.
+     * Allowed in enterprise with any value edition, essentials(allowed values- false) edition, basic(allowed values- false) edition, enterprise with
+     * cloud services edition.
+     * Special default for essentials edition is false, basic edition is false, enterprise is false.
      * @param enabled set the enabled.
      */
     public void setEnabled(Boolean  enabled) {
@@ -114,6 +120,7 @@ public class FullClientLogs  {
      * Set it to zero (0) to deactivate throttling.
      * Field introduced in 17.1.3.
      * Unit is per_second.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return throttle
      */
@@ -128,6 +135,7 @@ public class FullClientLogs  {
      * Set it to zero (0) to deactivate throttling.
      * Field introduced in 17.1.3.
      * Unit is per_second.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param throttle set the throttle.
      */

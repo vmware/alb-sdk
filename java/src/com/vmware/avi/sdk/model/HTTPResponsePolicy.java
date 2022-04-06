@@ -28,6 +28,7 @@ public class HTTPResponsePolicy  {
     /**
      * This is the getter method this will return the attribute value.
      * Add rules to the http response policy.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */
@@ -38,6 +39,7 @@ public class HTTPResponsePolicy  {
     /**
      * This is the setter method. this will set the rules
      * Add rules to the http response policy.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */
@@ -48,6 +50,7 @@ public class HTTPResponsePolicy  {
     /**
      * This is the setter method this will set the rules
      * Add rules to the http response policy.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */

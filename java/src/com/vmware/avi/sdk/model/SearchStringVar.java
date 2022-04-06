@@ -35,6 +35,7 @@ public class SearchStringVar  {
      * expression.
      * Enum options - SEARCH_DATASCRIPT_VAR, SEARCH_AVI_VAR, SEARCH_LITERAL_STRING, SEARCH_REGEX.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SEARCH_LITERAL_STRING".
      * @return type
      */
@@ -48,6 +49,7 @@ public class SearchStringVar  {
      * expression.
      * Enum options - SEARCH_DATASCRIPT_VAR, SEARCH_AVI_VAR, SEARCH_LITERAL_STRING, SEARCH_REGEX.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SEARCH_LITERAL_STRING".
      * @param type set the type.
      */
@@ -60,6 +62,7 @@ public class SearchStringVar  {
      * Value of search string - can be a variable exposed from datascript, value of an http variable, a custom user-input literal string, or a regular
      * expression.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return val
      */
@@ -72,6 +75,7 @@ public class SearchStringVar  {
      * Value of search string - can be a variable exposed from datascript, value of an http variable, a custom user-input literal string, or a regular
      * expression.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param val set the val.
      */

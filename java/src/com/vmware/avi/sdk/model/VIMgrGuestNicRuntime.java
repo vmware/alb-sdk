@@ -58,7 +58,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property avi_internal_network of obj type vimgrguestnicruntime field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return aviInternalNetwork
      */
@@ -68,7 +68,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property avi_internal_network of obj type vimgrguestnicruntime field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param aviInternalNetwork set the aviInternalNetwork.
      */
@@ -78,7 +78,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property connected of obj type vimgrguestnicruntime field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return connected
      */
@@ -88,7 +88,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property connected of obj type vimgrguestnicruntime field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param connected set the connected.
      */
@@ -98,7 +98,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property del_pending of obj type vimgrguestnicruntime field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return delPending
      */
@@ -108,7 +108,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property del_pending of obj type vimgrguestnicruntime field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param delPending set the delPending.
      */
@@ -117,7 +117,7 @@ public class VIMgrGuestNicRuntime  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property guest_ip of obj type vimgrguestnicruntime field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return guestIp
      */
@@ -127,7 +127,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method. this will set the guestIp
-     * Placeholder for description of property guest_ip of obj type vimgrguestnicruntime field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return guestIp
      */
@@ -137,7 +137,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method this will set the guestIp
-     * Placeholder for description of property guest_ip of obj type vimgrguestnicruntime field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return guestIp
      */
@@ -151,7 +151,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property label of obj type vimgrguestnicruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "Unknown".
      * @return label
      */
@@ -161,7 +161,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property label of obj type vimgrguestnicruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "Unknown".
      * @param label set the label.
      */
@@ -171,7 +171,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property mac_addr of obj type vimgrguestnicruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return macAddr
      */
@@ -181,7 +181,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property mac_addr of obj type vimgrguestnicruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param macAddr set the macAddr.
      */
@@ -191,7 +191,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property mgmt_vnic of obj type vimgrguestnicruntime field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mgmtVnic
      */
@@ -201,7 +201,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property mgmt_vnic of obj type vimgrguestnicruntime field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mgmtVnic set the mgmtVnic.
      */
@@ -211,7 +211,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property network_name of obj type vimgrguestnicruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkName
      */
@@ -221,7 +221,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property network_name of obj type vimgrguestnicruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param networkName set the networkName.
      */
@@ -231,7 +231,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of network.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkUuid
      */
@@ -241,7 +241,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of network.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param networkUuid set the networkUuid.
      */
@@ -251,7 +251,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of os_port.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return osPortUuid
      */
@@ -261,7 +261,7 @@ public class VIMgrGuestNicRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of os_port.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param osPortUuid set the osPortUuid.
      */
@@ -273,6 +273,7 @@ public class VIMgrGuestNicRuntime  {
      * This is the getter method this will return the attribute value.
      * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
      * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -284,6 +285,7 @@ public class VIMgrGuestNicRuntime  {
      * This is the setter method to the attribute.
      * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
      * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */

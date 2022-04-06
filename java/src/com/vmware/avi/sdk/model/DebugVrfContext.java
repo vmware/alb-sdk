@@ -38,6 +38,7 @@ public class DebugVrfContext  {
      * Allowed values are 1-4.
      * Field introduced in 17.2.13,18.1.5,18.2.1.
      * Unit is seconds.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return commandBufferInterval
      */
@@ -51,6 +52,7 @@ public class DebugVrfContext  {
      * Allowed values are 1-4.
      * Field introduced in 17.2.13,18.1.5,18.2.1.
      * Unit is seconds.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param commandBufferInterval set the commandBufferInterval.
      */
@@ -64,6 +66,7 @@ public class DebugVrfContext  {
      * Allowed values are 1-32768.
      * Field introduced in 17.2.13,18.1.5,18.2.1.
      * Unit is bytes.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 32768.
      * @return commandBufferSize
      */
@@ -77,6 +80,7 @@ public class DebugVrfContext  {
      * Allowed values are 1-32768.
      * Field introduced in 17.2.13,18.1.5,18.2.1.
      * Unit is bytes.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 32768.
      * @param commandBufferSize set the commandBufferSize.
      */
@@ -86,6 +90,7 @@ public class DebugVrfContext  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return flags
      */
@@ -96,6 +101,7 @@ public class DebugVrfContext  {
     /**
      * This is the setter method. this will set the flags
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return flags
      */
@@ -106,6 +112,7 @@ public class DebugVrfContext  {
     /**
      * This is the setter method this will set the flags
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return flags
      */

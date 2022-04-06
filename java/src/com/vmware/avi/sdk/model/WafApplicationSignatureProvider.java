@@ -56,6 +56,8 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Available application names and the ruleset version, when the rules for an application changed the last time.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @return availableApplications
      */
     public List<WafApplicationSignatureAppVersion> getAvailableApplications() {
@@ -66,6 +68,8 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the setter method. this will set the availableApplications
      * Available application names and the ruleset version, when the rules for an application changed the last time.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @return availableApplications
      */
     public void setAvailableApplications(List<WafApplicationSignatureAppVersion>  availableApplications) {
@@ -76,6 +80,8 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the setter method this will set the availableApplications
      * Available application names and the ruleset version, when the rules for an application changed the last time.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @return availableApplications
      */
     public WafApplicationSignatureProvider addAvailableApplicationsItem(WafApplicationSignatureAppVersion availableApplicationsItem) {
@@ -91,6 +97,8 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * The error message indicating why the last update check failed.
      * Field deprecated in 20.1.3.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @return lastCheckForUpdatesError
      */
     public String getLastCheckForUpdatesError() {
@@ -102,6 +110,8 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * The error message indicating why the last update check failed.
      * Field deprecated in 20.1.3.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @param lastCheckForUpdatesError set the lastCheckForUpdatesError.
      */
     public void setLastCheckForUpdatesError(String  lastCheckForUpdatesError) {
@@ -113,6 +123,8 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * The last time that we checked for updates but did not get a result because of an error.
      * Field deprecated in 20.1.3.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @return lastFailedCheckForUpdates
      */
     public TimeStamp getLastFailedCheckForUpdates() {
@@ -124,6 +136,8 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * The last time that we checked for updates but did not get a result because of an error.
      * Field deprecated in 20.1.3.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @param lastFailedCheckForUpdates set the lastFailedCheckForUpdates.
      */
     public void setLastFailedCheckForUpdates(TimeStamp lastFailedCheckForUpdates) {
@@ -135,6 +149,8 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * The last time that we checked for updates sucessfully.
      * Field deprecated in 20.1.3.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @return lastSuccessfulCheckForUpdates
      */
     public TimeStamp getLastSuccessfulCheckForUpdates() {
@@ -146,6 +162,8 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * The last time that we checked for updates sucessfully.
      * Field deprecated in 20.1.3.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @param lastSuccessfulCheckForUpdates set the lastSuccessfulCheckForUpdates.
      */
     public void setLastSuccessfulCheckForUpdates(TimeStamp lastSuccessfulCheckForUpdates) {
@@ -156,6 +174,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of application specific ruleset provider.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -167,6 +186,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of application specific ruleset provider.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -178,6 +198,8 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Version of signatures.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @return rulesetVersion
      */
     public String getRulesetVersion() {
@@ -188,6 +210,8 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the setter method to the attribute.
      * Version of signatures.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @param rulesetVersion set the rulesetVersion.
      */
     public void setRulesetVersion(String  rulesetVersion) {
@@ -198,6 +222,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * If this object is managed by the application signatures update  service, this field contain the status of this syncronization.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceStatus
      */
@@ -209,6 +234,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the setter method to the attribute.
      * If this object is managed by the application signatures update  service, this field contain the status of this syncronization.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceStatus set the serviceStatus.
      */
@@ -220,6 +246,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -231,6 +258,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -258,6 +286,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -268,6 +297,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

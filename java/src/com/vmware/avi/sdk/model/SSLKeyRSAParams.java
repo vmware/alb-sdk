@@ -31,7 +31,7 @@ public class SSLKeyRSAParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property exponent of obj type sslkeyrsaparams field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 65537.
      * @return exponent
      */
@@ -41,7 +41,7 @@ public class SSLKeyRSAParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property exponent of obj type sslkeyrsaparams field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 65537.
      * @param exponent set the exponent.
      */
@@ -52,6 +52,7 @@ public class SSLKeyRSAParams  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - SSL_KEY_1024_BITS, SSL_KEY_2048_BITS, SSL_KEY_3072_BITS, SSL_KEY_4096_BITS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_KEY_2048_BITS".
      * @return keySize
      */
@@ -62,6 +63,7 @@ public class SSLKeyRSAParams  {
     /**
      * This is the setter method to the attribute.
      * Enum options - SSL_KEY_1024_BITS, SSL_KEY_2048_BITS, SSL_KEY_3072_BITS, SSL_KEY_4096_BITS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_KEY_2048_BITS".
      * @param keySize set the keySize.
      */

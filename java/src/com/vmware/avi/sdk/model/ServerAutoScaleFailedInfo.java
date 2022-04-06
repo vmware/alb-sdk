@@ -40,7 +40,7 @@ public class ServerAutoScaleFailedInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property num_scalein_servers of obj type serverautoscalefailedinfo field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numScaleinServers
      */
@@ -50,7 +50,7 @@ public class ServerAutoScaleFailedInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property num_scalein_servers of obj type serverautoscalefailedinfo field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numScaleinServers set the numScaleinServers.
      */
@@ -60,7 +60,7 @@ public class ServerAutoScaleFailedInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property num_servers_up of obj type serverautoscalefailedinfo field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numServersUp
      */
@@ -70,7 +70,7 @@ public class ServerAutoScaleFailedInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property num_servers_up of obj type serverautoscalefailedinfo field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numServersUp set the numServersUp.
      */
@@ -82,6 +82,7 @@ public class ServerAutoScaleFailedInfo  {
      * This is the getter method this will return the attribute value.
      * Uuid of the pool.
      * It is a reference to an object of type pool.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolRef
      */
@@ -93,6 +94,7 @@ public class ServerAutoScaleFailedInfo  {
      * This is the setter method to the attribute.
      * Uuid of the pool.
      * It is a reference to an object of type pool.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolRef set the poolRef.
      */
@@ -102,7 +104,7 @@ public class ServerAutoScaleFailedInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property reason of obj type serverautoscalefailedinfo field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -112,7 +114,7 @@ public class ServerAutoScaleFailedInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property reason of obj type serverautoscalefailedinfo field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -125,6 +127,7 @@ public class ServerAutoScaleFailedInfo  {
      * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
      * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
      * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SYSERR_SUCCESS".
      * @return reasonCode
      */
@@ -137,6 +140,7 @@ public class ServerAutoScaleFailedInfo  {
      * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
      * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
      * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SYSERR_SUCCESS".
      * @param reasonCode set the reasonCode.
      */

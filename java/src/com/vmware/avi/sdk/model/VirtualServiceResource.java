@@ -48,6 +48,7 @@ public class VirtualServiceResource  {
      * This is the getter method this will return the attribute value.
      * This field is not being used.
      * Field deprecated in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return isExclusive
      */
     public Boolean getIsExclusive() {
@@ -58,6 +59,7 @@ public class VirtualServiceResource  {
      * This is the setter method to the attribute.
      * This field is not being used.
      * Field deprecated in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param isExclusive set the isExclusive.
      */
     public void setIsExclusive(Boolean  isExclusive) {
@@ -66,7 +68,7 @@ public class VirtualServiceResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property memory of obj type virtualserviceresource field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return memory
      */
@@ -76,7 +78,7 @@ public class VirtualServiceResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property memory of obj type virtualserviceresource field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param memory set the memory.
      */
@@ -86,7 +88,7 @@ public class VirtualServiceResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property num_se of obj type virtualserviceresource field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numSe
      */
@@ -96,7 +98,7 @@ public class VirtualServiceResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property num_se of obj type virtualserviceresource field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numSe set the numSe.
      */
@@ -106,7 +108,7 @@ public class VirtualServiceResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property num_standby_se of obj type virtualserviceresource field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numStandbySe
      */
@@ -116,7 +118,7 @@ public class VirtualServiceResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property num_standby_se of obj type virtualserviceresource field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numStandbySe set the numStandbySe.
      */
@@ -126,7 +128,7 @@ public class VirtualServiceResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property num_vcpus of obj type virtualserviceresource field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numVcpus
      */
@@ -136,7 +138,7 @@ public class VirtualServiceResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property num_vcpus of obj type virtualserviceresource field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numVcpus set the numVcpus.
      */
@@ -149,6 +151,7 @@ public class VirtualServiceResource  {
      * Indicates if the primary se is being scaled in.
      * This state is now derived from the virtual service runtime.
      * Field deprecated in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return scaleinPrimary
      */
     public Boolean getScaleinPrimary() {
@@ -160,6 +163,7 @@ public class VirtualServiceResource  {
      * Indicates if the primary se is being scaled in.
      * This state is now derived from the virtual service runtime.
      * Field deprecated in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param scaleinPrimary set the scaleinPrimary.
      */
     public void setScaleinPrimary(Boolean  scaleinPrimary) {
@@ -171,6 +175,7 @@ public class VirtualServiceResource  {
      * Indicates which se is being scaled in.
      * This information is now derived from the virtual service runtime.
      * Field deprecated in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return scaleinSeUuid
      */
     public String getScaleinSeUuid() {
@@ -182,6 +187,7 @@ public class VirtualServiceResource  {
      * Indicates which se is being scaled in.
      * This information is now derived from the virtual service runtime.
      * Field deprecated in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param scaleinSeUuid set the scaleinSeUuid.
      */
     public void setScaleinSeUuid(String  scaleinSeUuid) {

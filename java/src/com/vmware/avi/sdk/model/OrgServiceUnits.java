@@ -36,6 +36,7 @@ public class OrgServiceUnits  {
      * This is the getter method this will return the attribute value.
      * Available service units on pulse portal.
      * Field introduced in 21.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return availableServiceUnits
      */
@@ -47,6 +48,7 @@ public class OrgServiceUnits  {
      * This is the setter method to the attribute.
      * Available service units on pulse portal.
      * Field introduced in 21.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param availableServiceUnits set the availableServiceUnits.
      */
@@ -58,6 +60,7 @@ public class OrgServiceUnits  {
      * This is the getter method this will return the attribute value.
      * Organization id.
      * Field introduced in 21.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return orgId
      */
@@ -69,6 +72,7 @@ public class OrgServiceUnits  {
      * This is the setter method to the attribute.
      * Organization id.
      * Field introduced in 21.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param orgId set the orgId.
      */
@@ -80,6 +84,7 @@ public class OrgServiceUnits  {
      * This is the getter method this will return the attribute value.
      * Used service units on pulse portal.
      * Field introduced in 21.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usedServiceUnits
      */
@@ -91,6 +96,7 @@ public class OrgServiceUnits  {
      * This is the setter method to the attribute.
      * Used service units on pulse portal.
      * Field introduced in 21.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param usedServiceUnits set the usedServiceUnits.
      */

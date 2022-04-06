@@ -28,6 +28,7 @@ public class SecurityMgrRuntime  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return thresholds
      */
@@ -38,6 +39,7 @@ public class SecurityMgrRuntime  {
     /**
      * This is the setter method. this will set the thresholds
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return thresholds
      */
@@ -48,6 +50,7 @@ public class SecurityMgrRuntime  {
     /**
      * This is the setter method this will set the thresholds
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return thresholds
      */

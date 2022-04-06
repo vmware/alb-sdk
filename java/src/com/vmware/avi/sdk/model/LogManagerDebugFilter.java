@@ -31,6 +31,7 @@ public class LogManagerDebugFilter  {
      * Uuid of the entity.
      * It is a reference to an object of type virtualservice.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return entityRef
      */
@@ -43,6 +44,7 @@ public class LogManagerDebugFilter  {
      * Uuid of the entity.
      * It is a reference to an object of type virtualservice.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param entityRef set the entityRef.
      */

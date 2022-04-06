@@ -33,6 +33,7 @@ public class GslbGeoDbEntry  {
      * This is the getter method this will return the attribute value.
      * This field describes the geodb file.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return file
      */
@@ -44,6 +45,7 @@ public class GslbGeoDbEntry  {
      * This is the setter method to the attribute.
      * This field describes the geodb file.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param file set the file.
      */
@@ -58,6 +60,7 @@ public class GslbGeoDbEntry  {
      * Higher the value, then greater is the priority.
      * Allowed values are 1-100.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return priority
      */
@@ -72,6 +75,7 @@ public class GslbGeoDbEntry  {
      * Higher the value, then greater is the priority.
      * Allowed values are 1-100.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param priority set the priority.
      */

@@ -33,6 +33,7 @@ public class IPReputationTypeMapping  {
      * This is the getter method this will return the attribute value.
      * The bot identification to which the ip reputation type is mapped.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return botIdentification
      */
@@ -44,6 +45,7 @@ public class IPReputationTypeMapping  {
      * This is the setter method to the attribute.
      * The bot identification to which the ip reputation type is mapped.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param botIdentification set the botIdentification.
      */
@@ -58,6 +60,7 @@ public class IPReputationTypeMapping  {
      * IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY,
      * IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipReputationType
      */
@@ -72,6 +75,7 @@ public class IPReputationTypeMapping  {
      * IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY,
      * IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipReputationType set the ipReputationType.
      */

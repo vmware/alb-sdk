@@ -48,6 +48,7 @@ public class CumulativeLicense  {
      * This is the getter method this will return the attribute value.
      * Total number of service engine cores for burst core based licenses.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return burstCores
      */
@@ -59,6 +60,7 @@ public class CumulativeLicense  {
      * This is the setter method to the attribute.
      * Total number of service engine cores for burst core based licenses.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param burstCores set the burstCores.
      */
@@ -70,6 +72,7 @@ public class CumulativeLicense  {
      * This is the getter method this will return the attribute value.
      * Total number of service engine cores for core based licenses.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cores
      */
@@ -81,6 +84,7 @@ public class CumulativeLicense  {
      * This is the setter method to the attribute.
      * Total number of service engine cores for core based licenses.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cores set the cores.
      */
@@ -92,6 +96,7 @@ public class CumulativeLicense  {
      * This is the getter method this will return the attribute value.
      * Total number of service engines for host based licenses.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maxSes
      */
@@ -103,6 +108,7 @@ public class CumulativeLicense  {
      * This is the setter method to the attribute.
      * Total number of service engines for host based licenses.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param maxSes set the maxSes.
      */
@@ -113,6 +119,7 @@ public class CumulativeLicense  {
      * This is the getter method this will return the attribute value.
      * Service engine bandwidth limits for bandwidth based licenses.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seBandwidthLimits
      */
@@ -124,6 +131,7 @@ public class CumulativeLicense  {
      * This is the setter method. this will set the seBandwidthLimits
      * Service engine bandwidth limits for bandwidth based licenses.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seBandwidthLimits
      */
@@ -135,6 +143,7 @@ public class CumulativeLicense  {
      * This is the setter method this will set the seBandwidthLimits
      * Service engine bandwidth limits for bandwidth based licenses.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seBandwidthLimits
      */
@@ -150,6 +159,7 @@ public class CumulativeLicense  {
      * This is the getter method this will return the attribute value.
      * Total number of service engine cores.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceCores
      */
@@ -161,6 +171,7 @@ public class CumulativeLicense  {
      * This is the setter method to the attribute.
      * Total number of service engine cores.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceCores set the serviceCores.
      */
@@ -172,6 +183,7 @@ public class CumulativeLicense  {
      * This is the getter method this will return the attribute value.
      * Total number of service engine sockets for socket based licenses.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sockets
      */
@@ -183,6 +195,7 @@ public class CumulativeLicense  {
      * This is the setter method to the attribute.
      * Total number of service engine sockets for socket based licenses.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sockets set the sockets.
      */
@@ -195,6 +208,7 @@ public class CumulativeLicense  {
      * Specifies the licensed tier.
      * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tierType
      */
@@ -207,6 +221,7 @@ public class CumulativeLicense  {
      * Specifies the licensed tier.
      * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tierType set the tierType.
      */

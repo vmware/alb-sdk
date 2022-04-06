@@ -42,6 +42,7 @@ public class VcenterClusterDetails  {
      * This is the getter method this will return the attribute value.
      * Cloud id.
      * Field introduced in 20.1.7, 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccId
      */
@@ -53,6 +54,7 @@ public class VcenterClusterDetails  {
      * This is the setter method to the attribute.
      * Cloud id.
      * Field introduced in 20.1.7, 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccId set the ccId.
      */
@@ -64,6 +66,7 @@ public class VcenterClusterDetails  {
      * This is the getter method this will return the attribute value.
      * Cluster name in vcenter.
      * Field introduced in 20.1.7, 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cluster
      */
@@ -75,6 +78,7 @@ public class VcenterClusterDetails  {
      * This is the setter method to the attribute.
      * Cluster name in vcenter.
      * Field introduced in 20.1.7, 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cluster set the cluster.
      */
@@ -86,6 +90,7 @@ public class VcenterClusterDetails  {
      * This is the getter method this will return the attribute value.
      * Error message.
      * Field introduced in 20.1.7, 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorString
      */
@@ -97,6 +102,7 @@ public class VcenterClusterDetails  {
      * This is the setter method to the attribute.
      * Error message.
      * Field introduced in 20.1.7, 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorString set the errorString.
      */
@@ -107,6 +113,7 @@ public class VcenterClusterDetails  {
      * This is the getter method this will return the attribute value.
      * Hosts in vcenter cluster.
      * Field introduced in 20.1.7, 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hosts
      */
@@ -118,6 +125,7 @@ public class VcenterClusterDetails  {
      * This is the setter method. this will set the hosts
      * Hosts in vcenter cluster.
      * Field introduced in 20.1.7, 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hosts
      */
@@ -129,6 +137,7 @@ public class VcenterClusterDetails  {
      * This is the setter method this will set the hosts
      * Hosts in vcenter cluster.
      * Field introduced in 20.1.7, 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hosts
      */
@@ -144,6 +153,7 @@ public class VcenterClusterDetails  {
      * This is the getter method this will return the attribute value.
      * Vc url.
      * Field introduced in 20.1.7, 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcUrl
      */
@@ -155,6 +165,7 @@ public class VcenterClusterDetails  {
      * This is the setter method to the attribute.
      * Vc url.
      * Field introduced in 20.1.7, 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcUrl set the vcUrl.
      */

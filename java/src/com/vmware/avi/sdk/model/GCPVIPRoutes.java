@@ -34,6 +34,7 @@ public class GCPVIPRoutes  {
      * Match se group subnets for vip placement.
      * Default is to not match se group subnets.
      * Field introduced in 18.2.9, 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return matchSeGroupSubnet
      */
@@ -46,6 +47,7 @@ public class GCPVIPRoutes  {
      * Match se group subnets for vip placement.
      * Default is to not match se group subnets.
      * Field introduced in 18.2.9, 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param matchSeGroupSubnet set the matchSeGroupSubnet.
      */
@@ -57,6 +59,7 @@ public class GCPVIPRoutes  {
      * This is the getter method this will return the attribute value.
      * Priority of the routes created in gcp.
      * Field introduced in 20.1.7, 21.1.2.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @return routePriority
      */
@@ -68,6 +71,7 @@ public class GCPVIPRoutes  {
      * This is the setter method to the attribute.
      * Priority of the routes created in gcp.
      * Field introduced in 20.1.7, 21.1.2.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @param routePriority set the routePriority.
      */

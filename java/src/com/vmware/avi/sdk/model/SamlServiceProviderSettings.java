@@ -51,6 +51,7 @@ public class SamlServiceProviderSettings  {
      * This is the getter method this will return the attribute value.
      * Fqdn if entity type is dns_fqdn.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fqdn
      */
@@ -62,6 +63,7 @@ public class SamlServiceProviderSettings  {
      * This is the setter method to the attribute.
      * Fqdn if entity type is dns_fqdn.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fqdn set the fqdn.
      */
@@ -73,6 +75,7 @@ public class SamlServiceProviderSettings  {
      * This is the getter method this will return the attribute value.
      * Service provider organization display name.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return orgDisplayName
      */
@@ -84,6 +87,7 @@ public class SamlServiceProviderSettings  {
      * This is the setter method to the attribute.
      * Service provider organization display name.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param orgDisplayName set the orgDisplayName.
      */
@@ -95,6 +99,7 @@ public class SamlServiceProviderSettings  {
      * This is the getter method this will return the attribute value.
      * Service provider organization name.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return orgName
      */
@@ -106,6 +111,7 @@ public class SamlServiceProviderSettings  {
      * This is the setter method to the attribute.
      * Service provider organization name.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param orgName set the orgName.
      */
@@ -117,6 +123,7 @@ public class SamlServiceProviderSettings  {
      * This is the getter method this will return the attribute value.
      * Service provider organization url.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return orgUrl
      */
@@ -128,6 +135,7 @@ public class SamlServiceProviderSettings  {
      * This is the setter method to the attribute.
      * Service provider organization url.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param orgUrl set the orgUrl.
      */
@@ -140,6 +148,7 @@ public class SamlServiceProviderSettings  {
      * Type of saml endpoint.
      * Enum options - AUTH_SAML_CLUSTER_VIP, AUTH_SAML_DNS_FQDN, AUTH_SAML_APP_VS.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return samlEntityType
      */
@@ -152,6 +161,7 @@ public class SamlServiceProviderSettings  {
      * Type of saml endpoint.
      * Enum options - AUTH_SAML_CLUSTER_VIP, AUTH_SAML_DNS_FQDN, AUTH_SAML_APP_VS.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param samlEntityType set the samlEntityType.
      */
@@ -162,6 +172,7 @@ public class SamlServiceProviderSettings  {
      * This is the getter method this will return the attribute value.
      * Service provider node information.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return spNodes
      */
@@ -173,6 +184,7 @@ public class SamlServiceProviderSettings  {
      * This is the setter method. this will set the spNodes
      * Service provider node information.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return spNodes
      */
@@ -184,6 +196,7 @@ public class SamlServiceProviderSettings  {
      * This is the setter method this will set the spNodes
      * Service provider node information.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return spNodes
      */
@@ -199,6 +212,7 @@ public class SamlServiceProviderSettings  {
      * This is the getter method this will return the attribute value.
      * Service provider technical contact email.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return techContactEmail
      */
@@ -210,6 +224,7 @@ public class SamlServiceProviderSettings  {
      * This is the setter method to the attribute.
      * Service provider technical contact email.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param techContactEmail set the techContactEmail.
      */
@@ -221,6 +236,7 @@ public class SamlServiceProviderSettings  {
      * This is the getter method this will return the attribute value.
      * Service provider technical contact name.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return techContactName
      */
@@ -232,6 +248,7 @@ public class SamlServiceProviderSettings  {
      * This is the setter method to the attribute.
      * Service provider technical contact name.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param techContactName set the techContactName.
      */

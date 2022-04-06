@@ -36,6 +36,8 @@ public class WafApplicationSignatureAppVersion  {
      * This is the getter method this will return the attribute value.
      * Name of an application in the rule set.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @return application
      */
     public String getApplication() {
@@ -46,6 +48,8 @@ public class WafApplicationSignatureAppVersion  {
      * This is the setter method to the attribute.
      * Name of an application in the rule set.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @param application set the application.
      */
     public void setApplication(String  application) {
@@ -56,6 +60,8 @@ public class WafApplicationSignatureAppVersion  {
      * This is the getter method this will return the attribute value.
      * The last version of the rule set when the rules corresponding to the application changed.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @return lastChangedRulesetVersion
      */
     public String getLastChangedRulesetVersion() {
@@ -66,6 +72,8 @@ public class WafApplicationSignatureAppVersion  {
      * This is the setter method to the attribute.
      * The last version of the rule set when the rules corresponding to the application changed.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @param lastChangedRulesetVersion set the lastChangedRulesetVersion.
      */
     public void setLastChangedRulesetVersion(String  lastChangedRulesetVersion) {
@@ -76,6 +84,8 @@ public class WafApplicationSignatureAppVersion  {
      * This is the getter method this will return the attribute value.
      * The number of rules available for this application.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @return numberOfRules
      */
     public Integer getNumberOfRules() {
@@ -86,6 +96,8 @@ public class WafApplicationSignatureAppVersion  {
      * This is the setter method to the attribute.
      * The number of rules available for this application.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @param numberOfRules set the numberOfRules.
      */
     public void setNumberOfRules(Integer  numberOfRules) {

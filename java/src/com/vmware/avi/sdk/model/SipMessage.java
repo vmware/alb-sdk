@@ -51,6 +51,7 @@ public class SipMessage  {
      * This is the getter method this will return the attribute value.
      * Contents up to first 128 bytes of a sip message for which could not be parsed.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return content
      */
@@ -62,6 +63,7 @@ public class SipMessage  {
      * This is the setter method to the attribute.
      * Contents up to first 128 bytes of a sip message for which could not be parsed.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param content set the content.
      */
@@ -73,6 +75,7 @@ public class SipMessage  {
      * This is the getter method this will return the attribute value.
      * Indicates if sip message is received from a client.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fromClient
      */
@@ -84,6 +87,7 @@ public class SipMessage  {
      * This is the setter method to the attribute.
      * Indicates if sip message is received from a client.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fromClient set the fromClient.
      */
@@ -95,6 +99,7 @@ public class SipMessage  {
      * This is the getter method this will return the attribute value.
      * Sip request method string.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return method
      */
@@ -106,6 +111,7 @@ public class SipMessage  {
      * This is the setter method to the attribute.
      * Sip request method string.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param method set the method.
      */
@@ -117,6 +123,7 @@ public class SipMessage  {
      * This is the getter method this will return the attribute value.
      * Sip message receive time stamp.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rcvTimestamp
      */
@@ -128,6 +135,7 @@ public class SipMessage  {
      * This is the setter method to the attribute.
      * Sip message receive time stamp.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rcvTimestamp set the rcvTimestamp.
      */
@@ -139,6 +147,7 @@ public class SipMessage  {
      * This is the getter method this will return the attribute value.
      * Sip message size before modifications.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rxBytes
      */
@@ -150,6 +159,7 @@ public class SipMessage  {
      * This is the setter method to the attribute.
      * Sip message size before modifications.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rxBytes set the rxBytes.
      */
@@ -161,6 +171,7 @@ public class SipMessage  {
      * This is the getter method this will return the attribute value.
      * Sip response status string.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return status
      */
@@ -172,6 +183,7 @@ public class SipMessage  {
      * This is the setter method to the attribute.
      * Sip response status string.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param status set the status.
      */
@@ -183,6 +195,7 @@ public class SipMessage  {
      * This is the getter method this will return the attribute value.
      * Sip response status code, 2xx response means success.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return statusCode
      */
@@ -194,6 +207,7 @@ public class SipMessage  {
      * This is the setter method to the attribute.
      * Sip response status code, 2xx response means success.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param statusCode set the statusCode.
      */
@@ -205,6 +219,7 @@ public class SipMessage  {
      * This is the getter method this will return the attribute value.
      * Sip message size post modifications.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return txBytes
      */
@@ -216,6 +231,7 @@ public class SipMessage  {
      * This is the setter method to the attribute.
      * Sip message size post modifications.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param txBytes set the txBytes.
      */

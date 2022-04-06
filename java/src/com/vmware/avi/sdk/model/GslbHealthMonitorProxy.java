@@ -35,6 +35,7 @@ public class GslbHealthMonitorProxy  {
      * The designated site for health monitor proxy can monitor public or private or all the members of a given site.
      * Enum options - GSLB_HEALTH_MONITOR_PROXY_ALL_MEMBERS, GSLB_HEALTH_MONITOR_PROXY_PRIVATE_MEMBERS.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_HEALTH_MONITOR_PROXY_PRIVATE_MEMBERS".
      * @return proxyType
      */
@@ -48,6 +49,7 @@ public class GslbHealthMonitorProxy  {
      * The designated site for health monitor proxy can monitor public or private or all the members of a given site.
      * Enum options - GSLB_HEALTH_MONITOR_PROXY_ALL_MEMBERS, GSLB_HEALTH_MONITOR_PROXY_PRIVATE_MEMBERS.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_HEALTH_MONITOR_PROXY_PRIVATE_MEMBERS".
      * @param proxyType set the proxyType.
      */
@@ -61,6 +63,7 @@ public class GslbHealthMonitorProxy  {
      * I.e.
      * It will be a health monitor proxy and monitor members of the current site.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return siteUuid
      */
@@ -74,6 +77,7 @@ public class GslbHealthMonitorProxy  {
      * I.e.
      * It will be a health monitor proxy and monitor members of the current site.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param siteUuid set the siteUuid.
      */

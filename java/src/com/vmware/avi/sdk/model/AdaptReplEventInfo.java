@@ -36,6 +36,7 @@ public class AdaptReplEventInfo  {
      * This is the getter method this will return the attribute value.
      * Object config version info.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objInfo
      */
@@ -47,6 +48,7 @@ public class AdaptReplEventInfo  {
      * This is the setter method to the attribute.
      * Object config version info.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param objInfo set the objInfo.
      */
@@ -58,6 +60,7 @@ public class AdaptReplEventInfo  {
      * This is the getter method this will return the attribute value.
      * Reason for the replication issues.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -69,6 +72,7 @@ public class AdaptReplEventInfo  {
      * This is the setter method to the attribute.
      * Reason for the replication issues.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -80,6 +84,7 @@ public class AdaptReplEventInfo  {
      * This is the getter method this will return the attribute value.
      * Recommended way to resolve replication issue.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return recommendation
      */
@@ -91,6 +96,7 @@ public class AdaptReplEventInfo  {
      * This is the setter method to the attribute.
      * Recommended way to resolve replication issue.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param recommendation set the recommendation.
      */

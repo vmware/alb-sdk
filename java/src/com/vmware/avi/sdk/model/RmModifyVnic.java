@@ -34,7 +34,7 @@ public class RmModifyVnic  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property mac_addr of obj type rmmodifyvnic field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return macAddr
      */
@@ -44,7 +44,7 @@ public class RmModifyVnic  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property mac_addr of obj type rmmodifyvnic field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param macAddr set the macAddr.
      */
@@ -54,7 +54,7 @@ public class RmModifyVnic  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property network_name of obj type rmmodifyvnic field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkName
      */
@@ -64,7 +64,7 @@ public class RmModifyVnic  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property network_name of obj type rmmodifyvnic field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param networkName set the networkName.
      */
@@ -74,7 +74,7 @@ public class RmModifyVnic  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of network.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkUuid
      */
@@ -84,7 +84,7 @@ public class RmModifyVnic  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of network.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param networkUuid set the networkUuid.
      */

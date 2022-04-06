@@ -34,7 +34,7 @@ public class vNICNetwork  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ctlr_alloc of obj type vnicnetwork field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return ctlrAlloc
      */
@@ -44,7 +44,7 @@ public class vNICNetwork  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ctlr_alloc of obj type vnicnetwork field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param ctlrAlloc set the ctlrAlloc.
      */
@@ -54,7 +54,7 @@ public class vNICNetwork  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ip of obj type vnicnetwork field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip
      */
@@ -64,7 +64,7 @@ public class vNICNetwork  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ip of obj type vnicnetwork field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip set the ip.
      */
@@ -75,6 +75,7 @@ public class vNICNetwork  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - DHCP, STATIC, VIP, DOCKER_HOST.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "DHCP".
      * @return mode
      */
@@ -85,6 +86,7 @@ public class vNICNetwork  {
     /**
      * This is the setter method to the attribute.
      * Enum options - DHCP, STATIC, VIP, DOCKER_HOST.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "DHCP".
      * @param mode set the mode.
      */

@@ -33,6 +33,7 @@ public class SSLProfileSelector  {
      * This is the getter method this will return the attribute value.
      * Configure client ip address groups.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientIpList
      */
@@ -44,6 +45,7 @@ public class SSLProfileSelector  {
      * This is the setter method to the attribute.
      * Configure client ip address groups.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientIpList set the clientIpList.
      */
@@ -56,6 +58,7 @@ public class SSLProfileSelector  {
      * Ssl profile for the client ip addresses listed.
      * It is a reference to an object of type sslprofile.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sslProfileRef
      */
@@ -68,6 +71,7 @@ public class SSLProfileSelector  {
      * Ssl profile for the client ip addresses listed.
      * It is a reference to an object of type sslprofile.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sslProfileRef set the sslProfileRef.
      */

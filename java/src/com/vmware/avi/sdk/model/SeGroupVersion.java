@@ -39,6 +39,7 @@ public class SeGroupVersion  {
      * This is the getter method this will return the attribute value.
      * Fips mode for service engine group.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fipsMode
      */
@@ -50,6 +51,7 @@ public class SeGroupVersion  {
      * This is the setter method to the attribute.
      * Fips mode for service engine group.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fipsMode set the fipsMode.
      */
@@ -61,6 +63,7 @@ public class SeGroupVersion  {
      * This is the getter method this will return the attribute value.
      * Name of the service engine group.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -72,6 +75,7 @@ public class SeGroupVersion  {
      * This is the setter method to the attribute.
      * Name of the service engine group.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -83,6 +87,7 @@ public class SeGroupVersion  {
      * This is the getter method this will return the attribute value.
      * Current patch version for the service engine group.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return patch
      */
@@ -94,6 +99,7 @@ public class SeGroupVersion  {
      * This is the setter method to the attribute.
      * Current patch version for the service engine group.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param patch set the patch.
      */
@@ -105,6 +111,7 @@ public class SeGroupVersion  {
      * This is the getter method this will return the attribute value.
      * Current base version for the service engine group.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return version
      */
@@ -116,6 +123,7 @@ public class SeGroupVersion  {
      * This is the setter method to the attribute.
      * Current base version for the service engine group.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param version set the version.
      */

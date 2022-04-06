@@ -89,6 +89,7 @@ public class TCPProxyProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Controls the our congestion window to send, normally it's 1 mss, if this option is turned on, we use 10 msses.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return aggressiveCongestionAvoidance
      */
@@ -99,6 +100,7 @@ public class TCPProxyProfile  {
     /**
      * This is the setter method to the attribute.
      * Controls the our congestion window to send, normally it's 1 mss, if this option is turned on, we use 10 msses.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param aggressiveCongestionAvoidance set the aggressiveCongestionAvoidance.
      */
@@ -111,6 +113,7 @@ public class TCPProxyProfile  {
      * Controls whether the windows are static or supports autogrowth.
      * Maximum that it can grow to is limited to 4mb.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return autoWindowGrowth
      */
@@ -123,6 +126,7 @@ public class TCPProxyProfile  {
      * Controls whether the windows are static or supports autogrowth.
      * Maximum that it can grow to is limited to 4mb.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param autoWindowGrowth set the autoWindowGrowth.
      */
@@ -133,7 +137,7 @@ public class TCPProxyProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Dynamically pick the relevant parameters for connections.
-     * Allowed in basic(allowed values- true) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic(allowed values- true) edition, essentials edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return automatic
      */
@@ -144,7 +148,7 @@ public class TCPProxyProfile  {
     /**
      * This is the setter method to the attribute.
      * Dynamically pick the relevant parameters for connections.
-     * Allowed in basic(allowed values- true) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic(allowed values- true) edition, essentials edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param automatic set the automatic.
      */
@@ -156,6 +160,7 @@ public class TCPProxyProfile  {
      * This is the getter method this will return the attribute value.
      * Controls the congestion control algorithm we use.
      * Enum options - CC_ALGO_NEW_RENO, CC_ALGO_CUBIC, CC_ALGO_HTCP.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "CC_ALGO_NEW_RENO".
      * @return ccAlgo
      */
@@ -167,6 +172,7 @@ public class TCPProxyProfile  {
      * This is the setter method to the attribute.
      * Controls the congestion control algorithm we use.
      * Enum options - CC_ALGO_NEW_RENO, CC_ALGO_CUBIC, CC_ALGO_HTCP.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "CC_ALGO_NEW_RENO".
      * @param ccAlgo set the ccAlgo.
      */
@@ -179,6 +185,7 @@ public class TCPProxyProfile  {
      * Congestion window scaling factor after recovery.
      * Allowed values are 0-8.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return congestionRecoveryScalingFactor
      */
@@ -191,6 +198,7 @@ public class TCPProxyProfile  {
      * Congestion window scaling factor after recovery.
      * Allowed values are 0-8.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param congestionRecoveryScalingFactor set the congestionRecoveryScalingFactor.
      */
@@ -206,6 +214,7 @@ public class TCPProxyProfile  {
      * Allowed values are 5-14400.
      * Special values are 0 - infinite.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 600.
      * @return idleConnectionTimeout
      */
@@ -221,6 +230,7 @@ public class TCPProxyProfile  {
      * Allowed values are 5-14400.
      * Special values are 0 - infinite.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 600.
      * @param idleConnectionTimeout set the idleConnectionTimeout.
      */
@@ -232,6 +242,7 @@ public class TCPProxyProfile  {
      * This is the getter method this will return the attribute value.
      * Controls the behavior of idle connections.
      * Enum options - KEEP_ALIVE, CLOSE_IDLE.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "KEEP_ALIVE".
      * @return idleConnectionType
      */
@@ -243,6 +254,7 @@ public class TCPProxyProfile  {
      * This is the setter method to the attribute.
      * Controls the behavior of idle connections.
      * Enum options - KEEP_ALIVE, CLOSE_IDLE.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "KEEP_ALIVE".
      * @param idleConnectionType set the idleConnectionType.
      */
@@ -254,6 +266,7 @@ public class TCPProxyProfile  {
      * This is the getter method this will return the attribute value.
      * A new syn is accepted from the same 4-tuple even if there is already a connection in time_wait state.
      * This is equivalent of setting time wait delay to 0.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return ignoreTimeWait
      */
@@ -265,6 +278,7 @@ public class TCPProxyProfile  {
      * This is the setter method to the attribute.
      * A new syn is accepted from the same 4-tuple even if there is already a connection in time_wait state.
      * This is equivalent of setting time wait delay to 0.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param ignoreTimeWait set the ignoreTimeWait.
      */
@@ -278,6 +292,7 @@ public class TCPProxyProfile  {
      * This has two options   set to a specific value, or pass through, which uses the incoming dscp value.
      * Allowed values are 0-63.
      * Special values are max - passthrough.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return ipDscp
      */
@@ -291,6 +306,7 @@ public class TCPProxyProfile  {
      * This has two options   set to a specific value, or pass through, which uses the incoming dscp value.
      * Allowed values are 0-63.
      * Special values are max - passthrough.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param ipDscp set the ipDscp.
      */
@@ -304,6 +320,7 @@ public class TCPProxyProfile  {
      * The interval for sending keepalive messages is 30s.
      * If a timeout is already configured in the network profile, this will not override it.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return keepaliveInHalfcloseState
      */
@@ -317,6 +334,7 @@ public class TCPProxyProfile  {
      * The interval for sending keepalive messages is 30s.
      * If a timeout is already configured in the network profile, this will not override it.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param keepaliveInHalfcloseState set the keepaliveInHalfcloseState.
      */
@@ -328,6 +346,7 @@ public class TCPProxyProfile  {
      * This is the getter method this will return the attribute value.
      * The number of attempts at retransmit before closing the connection.
      * Allowed values are 3-8.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @return maxRetransmissions
      */
@@ -339,6 +358,7 @@ public class TCPProxyProfile  {
      * This is the setter method to the attribute.
      * The number of attempts at retransmit before closing the connection.
      * Allowed values are 3-8.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @param maxRetransmissions set the maxRetransmissions.
      */
@@ -352,6 +372,7 @@ public class TCPProxyProfile  {
      * Allowed values are 512-9000.
      * Special values are 0 - use interface mtu.
      * Unit is bytes.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maxSegmentSize
      */
@@ -365,6 +386,7 @@ public class TCPProxyProfile  {
      * Allowed values are 512-9000.
      * Special values are 0 - use interface mtu.
      * Unit is bytes.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param maxSegmentSize set the maxSegmentSize.
      */
@@ -376,6 +398,7 @@ public class TCPProxyProfile  {
      * This is the getter method this will return the attribute value.
      * The maximum number of attempts at retransmitting a syn packet before giving up.
      * Allowed values are 3-8.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @return maxSynRetransmissions
      */
@@ -387,6 +410,7 @@ public class TCPProxyProfile  {
      * This is the setter method to the attribute.
      * The maximum number of attempts at retransmitting a syn packet before giving up.
      * Allowed values are 3-8.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 8.
      * @param maxSynRetransmissions set the maxSynRetransmissions.
      */
@@ -400,6 +424,7 @@ public class TCPProxyProfile  {
      * Allowed values are 50-5000.
      * Field introduced in 17.2.8.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return minRexmtTimeout
      */
@@ -413,6 +438,7 @@ public class TCPProxyProfile  {
      * Allowed values are 50-5000.
      * Field introduced in 17.2.8.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param minRexmtTimeout set the minRexmtTimeout.
      */
@@ -424,6 +450,7 @@ public class TCPProxyProfile  {
      * This is the getter method this will return the attribute value.
      * Consolidates small data packets to send clients fewer but larger packets.
      * Adversely affects real time protocols such as telnet or ssh.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return naglesAlgorithm
      */
@@ -435,6 +462,7 @@ public class TCPProxyProfile  {
      * This is the setter method to the attribute.
      * Consolidates small data packets to send clients fewer but larger packets.
      * Adversely affects real time protocols such as telnet or ssh.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param naglesAlgorithm set the naglesAlgorithm.
      */
@@ -447,6 +475,7 @@ public class TCPProxyProfile  {
      * Maximum number of tcp segments that can be queued for reassembly.
      * Configuring this to 0 disables the feature and provides unlimited queuing.
      * Field introduced in 17.2.13, 18.1.4, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return reassemblyQueueSize
      */
@@ -459,6 +488,7 @@ public class TCPProxyProfile  {
      * Maximum number of tcp segments that can be queued for reassembly.
      * Configuring this to 0 disables the feature and provides unlimited queuing.
      * Field introduced in 17.2.13, 18.1.4, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param reassemblyQueueSize set the reassemblyQueueSize.
      */
@@ -471,6 +501,7 @@ public class TCPProxyProfile  {
      * Size of the receive window.
      * Allowed values are 2-65536.
      * Unit is kb.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 64.
      * @return receiveWindow
      */
@@ -483,6 +514,7 @@ public class TCPProxyProfile  {
      * Size of the receive window.
      * Allowed values are 2-65536.
      * Unit is kb.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 64.
      * @param receiveWindow set the receiveWindow.
      */
@@ -498,6 +530,7 @@ public class TCPProxyProfile  {
      * The default value is 8 in public cloud platforms (aws, azure, gcp), and 3 in other environments.
      * Allowed values are 1-100.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reorderThreshold
      */
@@ -513,6 +546,7 @@ public class TCPProxyProfile  {
      * The default value is 8 in public cloud platforms (aws, azure, gcp), and 3 in other environments.
      * Allowed values are 1-100.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reorderThreshold set the reorderThreshold.
      */
@@ -525,6 +559,7 @@ public class TCPProxyProfile  {
      * Congestion window scaling factor during slow start.
      * Allowed values are 0-8.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return slowStartScalingFactor
      */
@@ -537,6 +572,7 @@ public class TCPProxyProfile  {
      * Congestion window scaling factor during slow start.
      * Allowed values are 0-8.
      * Field introduced in 17.2.12, 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param slowStartScalingFactor set the slowStartScalingFactor.
      */
@@ -550,6 +586,7 @@ public class TCPProxyProfile  {
      * Allowed values are 500-2000.
      * Special values are 0 - immediate.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @return timeWaitDelay
      */
@@ -563,6 +600,7 @@ public class TCPProxyProfile  {
      * Allowed values are 500-2000.
      * Special values are 0 - immediate.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @param timeWaitDelay set the timeWaitDelay.
      */
@@ -573,6 +611,7 @@ public class TCPProxyProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Use the interface mtu to calculate the tcp max segment size.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return useInterfaceMtu
      */
@@ -583,6 +622,7 @@ public class TCPProxyProfile  {
     /**
      * This is the setter method to the attribute.
      * Use the interface mtu to calculate the tcp max segment size.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param useInterfaceMtu set the useInterfaceMtu.
      */

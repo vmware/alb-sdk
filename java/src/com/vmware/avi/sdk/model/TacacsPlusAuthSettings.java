@@ -40,6 +40,7 @@ public class TacacsPlusAuthSettings  {
     /**
      * This is the getter method this will return the attribute value.
      * Tacacs+ authorization attribute value pairs.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authorizationAttrs
      */
@@ -50,6 +51,7 @@ public class TacacsPlusAuthSettings  {
     /**
      * This is the setter method. this will set the authorizationAttrs
      * Tacacs+ authorization attribute value pairs.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authorizationAttrs
      */
@@ -60,6 +62,7 @@ public class TacacsPlusAuthSettings  {
     /**
      * This is the setter method this will set the authorizationAttrs
      * Tacacs+ authorization attribute value pairs.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authorizationAttrs
      */
@@ -74,6 +77,7 @@ public class TacacsPlusAuthSettings  {
     /**
      * This is the getter method this will return the attribute value.
      * Tacacs+ server shared secret.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return password
      */
@@ -84,6 +88,7 @@ public class TacacsPlusAuthSettings  {
     /**
      * This is the setter method to the attribute.
      * Tacacs+ server shared secret.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param password set the password.
      */
@@ -94,6 +99,7 @@ public class TacacsPlusAuthSettings  {
     /**
      * This is the getter method this will return the attribute value.
      * Tacacs+ server listening port.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 49.
      * @return port
      */
@@ -104,6 +110,7 @@ public class TacacsPlusAuthSettings  {
     /**
      * This is the setter method to the attribute.
      * Tacacs+ server listening port.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 49.
      * @param port set the port.
      */
@@ -114,6 +121,7 @@ public class TacacsPlusAuthSettings  {
      * This is the getter method this will return the attribute value.
      * Tacacs+ server ip address or fqdn.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return server
      */
@@ -125,6 +133,7 @@ public class TacacsPlusAuthSettings  {
      * This is the setter method. this will set the server
      * Tacacs+ server ip address or fqdn.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return server
      */
@@ -136,6 +145,7 @@ public class TacacsPlusAuthSettings  {
      * This is the setter method this will set the server
      * Tacacs+ server ip address or fqdn.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return server
      */
@@ -153,6 +163,7 @@ public class TacacsPlusAuthSettings  {
      * Enum options - AUTH_TACACS_PLUS_SERVICE_NONE, AUTH_TACACS_PLUS_SERVICE_LOGIN, AUTH_TACACS_PLUS_SERVICE_ENABLE, AUTH_TACACS_PLUS_SERVICE_PPP,
      * AUTH_TACACS_PLUS_SERVICE_ARAP, AUTH_TACACS_PLUS_SERVICE_PT, AUTH_TACACS_PLUS_SERVICE_RCMD, AUTH_TACACS_PLUS_SERVICE_X25,
      * AUTH_TACACS_PLUS_SERVICE_NASI, AUTH_TACACS_PLUS_SERVICE_FWPROXY.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_TACACS_PLUS_SERVICE_LOGIN".
      * @return service
      */
@@ -166,6 +177,7 @@ public class TacacsPlusAuthSettings  {
      * Enum options - AUTH_TACACS_PLUS_SERVICE_NONE, AUTH_TACACS_PLUS_SERVICE_LOGIN, AUTH_TACACS_PLUS_SERVICE_ENABLE, AUTH_TACACS_PLUS_SERVICE_PPP,
      * AUTH_TACACS_PLUS_SERVICE_ARAP, AUTH_TACACS_PLUS_SERVICE_PT, AUTH_TACACS_PLUS_SERVICE_RCMD, AUTH_TACACS_PLUS_SERVICE_X25,
      * AUTH_TACACS_PLUS_SERVICE_NASI, AUTH_TACACS_PLUS_SERVICE_FWPROXY.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_TACACS_PLUS_SERVICE_LOGIN".
      * @param service set the service.
      */

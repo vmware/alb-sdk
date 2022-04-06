@@ -40,7 +40,7 @@ public class LicenseDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property backend_servers of obj type licensedetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return backendServers
      */
@@ -50,7 +50,7 @@ public class LicenseDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property backend_servers of obj type licensedetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param backendServers set the backendServers.
      */
@@ -60,7 +60,7 @@ public class LicenseDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property expiry_at of obj type licensedetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return expiryAt
      */
@@ -70,7 +70,7 @@ public class LicenseDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property expiry_at of obj type licensedetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param expiryAt set the expiryAt.
      */
@@ -80,7 +80,7 @@ public class LicenseDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property license_id of obj type licensedetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseId
      */
@@ -90,7 +90,7 @@ public class LicenseDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property license_id of obj type licensedetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseId set the licenseId.
      */
@@ -100,7 +100,7 @@ public class LicenseDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property license_type of obj type licensedetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseType
      */
@@ -110,7 +110,7 @@ public class LicenseDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property license_type of obj type licensedetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseType set the licenseType.
      */
@@ -120,7 +120,7 @@ public class LicenseDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -130,7 +130,7 @@ public class LicenseDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */

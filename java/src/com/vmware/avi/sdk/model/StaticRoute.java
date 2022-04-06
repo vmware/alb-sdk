@@ -46,6 +46,7 @@ public class StaticRoute  {
      * Disable the gateway monitor for default gateway.
      * They are monitored by default.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return disableGatewayMonitor
      */
@@ -58,6 +59,7 @@ public class StaticRoute  {
      * Disable the gateway monitor for default gateway.
      * They are monitored by default.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param disableGatewayMonitor set the disableGatewayMonitor.
      */
@@ -67,7 +69,7 @@ public class StaticRoute  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property if_name of obj type staticroute field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ifName
      */
@@ -77,7 +79,7 @@ public class StaticRoute  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property if_name of obj type staticroute field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ifName set the ifName.
      */
@@ -89,6 +91,7 @@ public class StaticRoute  {
      * Labels associated with this route.
      * Field introduced in 20.1.1.
      * Maximum of 1 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
@@ -101,6 +104,7 @@ public class StaticRoute  {
      * Labels associated with this route.
      * Field introduced in 20.1.1.
      * Maximum of 1 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
@@ -113,6 +117,7 @@ public class StaticRoute  {
      * Labels associated with this route.
      * Field introduced in 20.1.1.
      * Maximum of 1 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
@@ -126,7 +131,7 @@ public class StaticRoute  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property next_hop of obj type staticroute field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nextHop
      */
@@ -136,7 +141,7 @@ public class StaticRoute  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property next_hop of obj type staticroute field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nextHop set the nextHop.
      */
@@ -146,7 +151,7 @@ public class StaticRoute  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property prefix of obj type staticroute field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return prefix
      */
@@ -156,7 +161,7 @@ public class StaticRoute  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property prefix of obj type staticroute field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param prefix set the prefix.
      */
@@ -166,7 +171,7 @@ public class StaticRoute  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property route_id of obj type staticroute field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return routeId
      */
@@ -176,7 +181,7 @@ public class StaticRoute  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property route_id of obj type staticroute field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param routeId set the routeId.
      */

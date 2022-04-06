@@ -32,6 +32,7 @@ public class CC_Properties  {
     /**
      * This is the getter method this will return the attribute value.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @return rpcPollInterval
      */
@@ -42,6 +43,7 @@ public class CC_Properties  {
     /**
      * This is the setter method to the attribute.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @param rpcPollInterval set the rpcPollInterval.
      */
@@ -51,7 +53,7 @@ public class CC_Properties  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property rpc_queue_size of obj type cc_properties field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return rpcQueueSize
      */
@@ -61,7 +63,7 @@ public class CC_Properties  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property rpc_queue_size of obj type cc_properties field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param rpcQueueSize set the rpcQueueSize.
      */

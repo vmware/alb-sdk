@@ -37,6 +37,7 @@ public class TenantConfiguration  {
      * Controls the ownership of serviceengines.
      * Service engines can either be exclusively owned by each tenant or owned by the administrator and shared by all tenants.
      * When serviceengines are owned by the administrator, each tenant can have either read access or no access to their service engines.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return seInProviderContext
      */
@@ -49,6 +50,7 @@ public class TenantConfiguration  {
      * Controls the ownership of serviceengines.
      * Service engines can either be exclusively owned by each tenant or owned by the administrator and shared by all tenants.
      * When serviceengines are owned by the administrator, each tenant can have either read access or no access to their service engines.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param seInProviderContext set the seInProviderContext.
      */
@@ -58,7 +60,7 @@ public class TenantConfiguration  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property tenant_access_to_provider_se of obj type tenantconfiguration field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return tenantAccessToProviderSe
      */
@@ -68,7 +70,7 @@ public class TenantConfiguration  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property tenant_access_to_provider_se of obj type tenantconfiguration field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param tenantAccessToProviderSe set the tenantAccessToProviderSe.
      */
@@ -80,6 +82,7 @@ public class TenantConfiguration  {
      * This is the getter method this will return the attribute value.
      * When 'per tenant ip domain' is selected, each tenant gets its own routing domain that is not shared with any other tenant.
      * When 'share ip domain across all tenants' is selected, all tenants share the same routing domain.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return tenantVrf
      */
@@ -91,6 +94,7 @@ public class TenantConfiguration  {
      * This is the setter method to the attribute.
      * When 'per tenant ip domain' is selected, each tenant gets its own routing domain that is not shared with any other tenant.
      * When 'share ip domain across all tenants' is selected, all tenants share the same routing domain.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param tenantVrf set the tenantVrf.
      */

@@ -29,6 +29,7 @@ public class BotAllowList  {
      * This is the getter method this will return the attribute value.
      * Allow rules to control which requests undergo bot detection.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */
@@ -40,6 +41,7 @@ public class BotAllowList  {
      * This is the setter method. this will set the rules
      * Allow rules to control which requests undergo bot detection.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */
@@ -51,6 +53,7 @@ public class BotAllowList  {
      * This is the setter method this will set the rules
      * Allow rules to control which requests undergo bot detection.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */

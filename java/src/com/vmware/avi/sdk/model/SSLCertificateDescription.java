@@ -49,7 +49,7 @@ public class SSLCertificateDescription  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property common_name of obj type sslcertificatedescription field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return commonName
      */
@@ -59,7 +59,7 @@ public class SSLCertificateDescription  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property common_name of obj type sslcertificatedescription field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param commonName set the commonName.
      */
@@ -69,7 +69,7 @@ public class SSLCertificateDescription  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property country of obj type sslcertificatedescription field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return country
      */
@@ -79,7 +79,7 @@ public class SSLCertificateDescription  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property country of obj type sslcertificatedescription field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param country set the country.
      */
@@ -89,7 +89,7 @@ public class SSLCertificateDescription  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property distinguished_name of obj type sslcertificatedescription field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return distinguishedName
      */
@@ -99,7 +99,7 @@ public class SSLCertificateDescription  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property distinguished_name of obj type sslcertificatedescription field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param distinguishedName set the distinguishedName.
      */
@@ -109,7 +109,7 @@ public class SSLCertificateDescription  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property email_address of obj type sslcertificatedescription field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return emailAddress
      */
@@ -119,7 +119,7 @@ public class SSLCertificateDescription  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property email_address of obj type sslcertificatedescription field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param emailAddress set the emailAddress.
      */
@@ -129,7 +129,7 @@ public class SSLCertificateDescription  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property locality of obj type sslcertificatedescription field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return locality
      */
@@ -139,7 +139,7 @@ public class SSLCertificateDescription  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property locality of obj type sslcertificatedescription field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param locality set the locality.
      */
@@ -149,7 +149,7 @@ public class SSLCertificateDescription  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property organization of obj type sslcertificatedescription field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return organization
      */
@@ -159,7 +159,7 @@ public class SSLCertificateDescription  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property organization of obj type sslcertificatedescription field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param organization set the organization.
      */
@@ -169,7 +169,7 @@ public class SSLCertificateDescription  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property organization_unit of obj type sslcertificatedescription field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return organizationUnit
      */
@@ -179,7 +179,7 @@ public class SSLCertificateDescription  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property organization_unit of obj type sslcertificatedescription field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param organizationUnit set the organizationUnit.
      */
@@ -189,7 +189,7 @@ public class SSLCertificateDescription  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property state of obj type sslcertificatedescription field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return state
      */
@@ -199,7 +199,7 @@ public class SSLCertificateDescription  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property state of obj type sslcertificatedescription field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param state set the state.
      */

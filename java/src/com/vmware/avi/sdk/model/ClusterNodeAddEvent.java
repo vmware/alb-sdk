@@ -35,6 +35,7 @@ public class ClusterNodeAddEvent  {
     /**
      * This is the getter method this will return the attribute value.
      * Ip address of the controller vm.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip
      */
@@ -45,6 +46,7 @@ public class ClusterNodeAddEvent  {
     /**
      * This is the setter method to the attribute.
      * Ip address of the controller vm.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip set the ip.
      */
@@ -55,6 +57,7 @@ public class ClusterNodeAddEvent  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of controller node.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nodeName
      */
@@ -65,6 +68,7 @@ public class ClusterNodeAddEvent  {
     /**
      * This is the setter method to the attribute.
      * Name of controller node.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nodeName set the nodeName.
      */
@@ -76,6 +80,7 @@ public class ClusterNodeAddEvent  {
      * This is the getter method this will return the attribute value.
      * Role of the controller within the cluster.
      * Enum options - CLUSTER_LEADER, CLUSTER_FOLLOWER.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return role
      */
@@ -87,6 +92,7 @@ public class ClusterNodeAddEvent  {
      * This is the setter method to the attribute.
      * Role of the controller within the cluster.
      * Enum options - CLUSTER_LEADER, CLUSTER_FOLLOWER.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param role set the role.
      */

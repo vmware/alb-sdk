@@ -31,7 +31,7 @@ public class VIGuestvNicIPAddr  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ip_addr of obj type viguestvnicipaddr field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipAddr
      */
@@ -41,7 +41,7 @@ public class VIGuestvNicIPAddr  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ip_addr of obj type viguestvnicipaddr field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipAddr set the ipAddr.
      */
@@ -51,7 +51,7 @@ public class VIGuestvNicIPAddr  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property mask of obj type viguestvnicipaddr field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mask
      */
@@ -61,7 +61,7 @@ public class VIGuestvNicIPAddr  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property mask of obj type viguestvnicipaddr field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mask set the mask.
      */

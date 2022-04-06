@@ -33,6 +33,7 @@ public class CloudAutoscalingConfigFailureDetails  {
      * This is the getter method this will return the attribute value.
      * Cloud uuid.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccId
      */
@@ -44,6 +45,7 @@ public class CloudAutoscalingConfigFailureDetails  {
      * This is the setter method to the attribute.
      * Cloud uuid.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccId set the ccId.
      */
@@ -55,6 +57,7 @@ public class CloudAutoscalingConfigFailureDetails  {
      * This is the getter method this will return the attribute value.
      * Failure reason if autoscaling configuration fails.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorString
      */
@@ -66,6 +69,7 @@ public class CloudAutoscalingConfigFailureDetails  {
      * This is the setter method to the attribute.
      * Failure reason if autoscaling configuration fails.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorString set the errorString.
      */

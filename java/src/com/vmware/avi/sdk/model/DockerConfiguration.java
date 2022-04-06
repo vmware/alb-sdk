@@ -104,6 +104,7 @@ public class DockerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Sync frequency in seconds with frameworks.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @return appSyncFrequency
      */
@@ -114,6 +115,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Sync frequency in seconds with frameworks.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @param appSyncFrequency set the appSyncFrequency.
      */
@@ -125,6 +127,7 @@ public class DockerConfiguration  {
      * This is the getter method this will return the attribute value.
      * Uuid of the ucp ca tls cert and key.
      * It is a reference to an object of type sslkeyandcertificate.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return caTlsKeyAndCertificateRef
      */
@@ -136,6 +139,7 @@ public class DockerConfiguration  {
      * This is the setter method to the attribute.
      * Uuid of the ucp ca tls cert and key.
      * It is a reference to an object of type sslkeyandcertificate.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param caTlsKeyAndCertificateRef set the caTlsKeyAndCertificateRef.
      */
@@ -147,6 +151,7 @@ public class DockerConfiguration  {
      * This is the getter method this will return the attribute value.
      * Uuid of the client tls cert and key.
      * It is a reference to an object of type sslkeyandcertificate.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientTlsKeyAndCertificateRef
      */
@@ -158,6 +163,7 @@ public class DockerConfiguration  {
      * This is the setter method to the attribute.
      * Uuid of the client tls cert and key.
      * It is a reference to an object of type sslkeyandcertificate.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientTlsKeyAndCertificateRef set the clientTlsKeyAndCertificateRef.
      */
@@ -168,6 +174,7 @@ public class DockerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Perform container port matching to create a http virtualservice instead of a tcp/udp virtualservice.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return containerPortMatchHttpService
      */
@@ -178,6 +185,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Perform container port matching to create a http virtualservice instead of a tcp/udp virtualservice.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param containerPortMatchHttpService set the containerPortMatchHttpService.
      */
@@ -190,6 +198,7 @@ public class DockerConfiguration  {
      * Directory to mount to check for core dumps on service engines.
      * This will be mapped read only to /var/crash on any new service engines.
      * This is a disruptive change.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "/var/lib/systemd/coredump".
      * @return coredumpDirectory
      */
@@ -202,6 +211,7 @@ public class DockerConfiguration  {
      * Directory to mount to check for core dumps on service engines.
      * This will be mapped read only to /var/crash on any new service engines.
      * This is a disruptive change.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "/var/lib/systemd/coredump".
      * @param coredumpDirectory set the coredumpDirectory.
      */
@@ -212,6 +222,7 @@ public class DockerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Disable auto service sync for back end services.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return disableAutoBackendServiceSync
      */
@@ -222,6 +233,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Disable auto service sync for back end services.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param disableAutoBackendServiceSync set the disableAutoBackendServiceSync.
      */
@@ -232,6 +244,7 @@ public class DockerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Disable auto service sync for front end services.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return disableAutoFrontendServiceSync
      */
@@ -242,6 +255,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Disable auto service sync for front end services.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param disableAutoFrontendServiceSync set the disableAutoFrontendServiceSync.
      */
@@ -252,6 +266,7 @@ public class DockerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Disable se creation.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return disableAutoSeCreation
      */
@@ -262,6 +277,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Disable se creation.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param disableAutoSeCreation set the disableAutoSeCreation.
      */
@@ -272,6 +288,7 @@ public class DockerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Docker registry for serviceengine image.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dockerRegistrySe
      */
@@ -282,6 +299,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Docker registry for serviceengine image.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dockerRegistrySe set the dockerRegistrySe.
      */
@@ -291,7 +309,8 @@ public class DockerConfiguration  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Match against this prefix when placing east-west vss on ses .
+     * Match against this prefix when placing east-west vss on ses.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return eastWestPlacementSubnet
      */
@@ -301,7 +320,8 @@ public class DockerConfiguration  {
 
     /**
      * This is the setter method to the attribute.
-     * Match against this prefix when placing east-west vss on ses .
+     * Match against this prefix when placing east-west vss on ses.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param eastWestPlacementSubnet set the eastWestPlacementSubnet.
      */
@@ -312,6 +332,7 @@ public class DockerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Enable docker event subscription.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enableEventSubscription
      */
@@ -322,6 +343,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Enable docker event subscription.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enableEventSubscription set the enableEventSubscription.
      */
@@ -332,6 +354,7 @@ public class DockerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * For front end proxies, use container port as service port.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return feproxyContainerPortAsService
      */
@@ -342,6 +365,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method to the attribute.
      * For front end proxies, use container port as service port.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param feproxyContainerPortAsService set the feproxyContainerPortAsService.
      */
@@ -352,6 +376,7 @@ public class DockerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Enable proxy arp from host interface for front end  proxies.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return feproxyVipsEnableProxyArp
      */
@@ -362,6 +387,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Enable proxy arp from host interface for front end  proxies.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param feproxyVipsEnableProxyArp set the feproxyVipsEnableProxyArp.
      */
@@ -372,6 +398,7 @@ public class DockerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Optional fleet remote endpoint if fleet is used for se deployment.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fleetEndpoint
      */
@@ -382,6 +409,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Optional fleet remote endpoint if fleet is used for se deployment.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fleetEndpoint set the fleetEndpoint.
      */
@@ -392,6 +420,7 @@ public class DockerConfiguration  {
      * This is the getter method this will return the attribute value.
      * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
      * Defaults to 80.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpContainerPorts
      */
@@ -403,6 +432,7 @@ public class DockerConfiguration  {
      * This is the setter method. this will set the httpContainerPorts
      * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
      * Defaults to 80.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpContainerPorts
      */
@@ -414,6 +444,7 @@ public class DockerConfiguration  {
      * This is the setter method this will set the httpContainerPorts
      * List of container ports that create a http virtualservice instead of a tcp/udp virtualservice.
      * Defaults to 80.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpContainerPorts
      */
@@ -429,6 +460,7 @@ public class DockerConfiguration  {
      * This is the getter method this will return the attribute value.
      * Use fleet/ssh for se deployment.
      * Enum options - SE_CREATE_FLEET, SE_CREATE_SSH, SE_CREATE_POD.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SE_CREATE_SSH".
      * @return seDeploymentMethod
      */
@@ -440,6 +472,7 @@ public class DockerConfiguration  {
      * This is the setter method to the attribute.
      * Use fleet/ssh for se deployment.
      * Enum options - SE_CREATE_FLEET, SE_CREATE_SSH, SE_CREATE_POD.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SE_CREATE_SSH".
      * @param seDeploymentMethod set the seDeploymentMethod.
      */
@@ -449,6 +482,7 @@ public class DockerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Exclude hosts with attributes for se creation.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seExcludeAttributes
      */
@@ -459,6 +493,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method. this will set the seExcludeAttributes
      * Exclude hosts with attributes for se creation.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seExcludeAttributes
      */
@@ -469,6 +504,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method this will set the seExcludeAttributes
      * Exclude hosts with attributes for se creation.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seExcludeAttributes
      */
@@ -482,6 +518,7 @@ public class DockerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Create ses just on hosts with include attributes.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seIncludeAttributes
      */
@@ -492,6 +529,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method. this will set the seIncludeAttributes
      * Create ses just on hosts with include attributes.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seIncludeAttributes
      */
@@ -502,6 +540,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method this will set the seIncludeAttributes
      * Create ses just on hosts with include attributes.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seIncludeAttributes
      */
@@ -516,6 +555,7 @@ public class DockerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * New se spawn rate per minute.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 25.
      * @return seSpawnRate
      */
@@ -526,6 +566,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method to the attribute.
      * New se spawn rate per minute.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 25.
      * @param seSpawnRate set the seSpawnRate.
      */
@@ -536,6 +577,7 @@ public class DockerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Host volume to be used as a disk for avi se, this is a disruptive change.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "/opt/avi".
      * @return seVolume
      */
@@ -546,6 +588,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Host volume to be used as a disk for avi se, this is a disruptive change.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "/opt/avi".
      * @param seVolume set the seVolume.
      */
@@ -557,6 +600,7 @@ public class DockerConfiguration  {
      * This is the getter method this will return the attribute value.
      * Make service ports accessible on all host interfaces in addition to east-west vip and/or bridge ip.
      * Usually enabled aws clusters to export east-west services on host interface.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return servicesAccessibleAllInterfaces
      */
@@ -568,6 +612,7 @@ public class DockerConfiguration  {
      * This is the setter method to the attribute.
      * Make service ports accessible on all host interfaces in addition to east-west vip and/or bridge ip.
      * Usually enabled aws clusters to export east-west services on host interface.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param servicesAccessibleAllInterfaces set the servicesAccessibleAllInterfaces.
      */
@@ -579,6 +624,7 @@ public class DockerConfiguration  {
      * This is the getter method this will return the attribute value.
      * Parameters for ssh se deployment.
      * Field deprecated in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return sshSeDeployment
      */
     public SSHSeDeployment getSshSeDeployment() {
@@ -589,6 +635,7 @@ public class DockerConfiguration  {
      * This is the setter method to the attribute.
      * Parameters for ssh se deployment.
      * Field deprecated in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param sshSeDeployment set the sshSeDeployment.
      */
     public void setSshSeDeployment(SSHSeDeployment sshSeDeployment) {
@@ -600,6 +647,7 @@ public class DockerConfiguration  {
      * Cloud connector user uuid for ssh to hosts.
      * It is a reference to an object of type cloudconnectoruser.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sshUserRef
      */
@@ -612,6 +660,7 @@ public class DockerConfiguration  {
      * Cloud connector user uuid for ssh to hosts.
      * It is a reference to an object of type cloudconnectoruser.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sshUserRef set the sshUserRef.
      */
@@ -621,6 +670,7 @@ public class DockerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * List of docker ucp nodes; in case of a load balanced ucp cluster, use virtual ip of the cluster.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ucpNodes
      */
@@ -631,6 +681,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method. this will set the ucpNodes
      * List of docker ucp nodes; in case of a load balanced ucp cluster, use virtual ip of the cluster.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ucpNodes
      */
@@ -641,6 +692,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method this will set the ucpNodes
      * List of docker ucp nodes; in case of a load balanced ucp cluster, use virtual ip of the cluster.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ucpNodes
      */
@@ -656,6 +708,7 @@ public class DockerConfiguration  {
      * This is the getter method this will return the attribute value.
      * Use container ip address port for pool instead of host ip address hostport.
      * This mode is applicable if the container ip is reachable (not a private nated ip) from other hosts in a routed environment for containers.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useContainerIpPort
      */
@@ -667,6 +720,7 @@ public class DockerConfiguration  {
      * This is the setter method to the attribute.
      * Use container ip address port for pool instead of host ip address hostport.
      * This mode is applicable if the container ip is reachable (not a private nated ip) from other hosts in a routed environment for containers.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useContainerIpPort set the useContainerIpPort.
      */
@@ -677,6 +731,7 @@ public class DockerConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * If true, use controller generated se docker image via fileservice, else use docker repository image as defined by docker_registry_se.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useControllerImage
      */
@@ -687,6 +742,7 @@ public class DockerConfiguration  {
     /**
      * This is the setter method to the attribute.
      * If true, use controller generated se docker image via fileservice, else use docker repository image as defined by docker_registry_se.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useControllerImage set the useControllerImage.
      */

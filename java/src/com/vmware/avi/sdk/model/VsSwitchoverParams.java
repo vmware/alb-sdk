@@ -31,7 +31,7 @@ public class VsSwitchoverParams extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -41,7 +41,7 @@ public class VsSwitchoverParams extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -52,6 +52,7 @@ public class VsSwitchoverParams extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vipId
      */
@@ -62,6 +63,7 @@ public class VsSwitchoverParams extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vipId set the vipId.
      */

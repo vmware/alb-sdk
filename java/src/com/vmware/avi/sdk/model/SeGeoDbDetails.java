@@ -47,6 +47,7 @@ public class SeGeoDbDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Geo db file name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fileName
      */
@@ -57,6 +58,7 @@ public class SeGeoDbDetails  {
     /**
      * This is the setter method to the attribute.
      * Geo db file name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fileName set the fileName.
      */
@@ -67,6 +69,7 @@ public class SeGeoDbDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of the gslb geo db profile.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return geoDbProfileName
      */
@@ -77,6 +80,7 @@ public class SeGeoDbDetails  {
     /**
      * This is the setter method to the attribute.
      * Name of the gslb geo db profile.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param geoDbProfileName set the geoDbProfileName.
      */
@@ -88,6 +92,7 @@ public class SeGeoDbDetails  {
      * This is the getter method this will return the attribute value.
      * Uuid of the gslb geo db profile.
      * It is a reference to an object of type gslbgeodbprofile.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return geoDbProfileRef
      */
@@ -99,6 +104,7 @@ public class SeGeoDbDetails  {
      * This is the setter method to the attribute.
      * Uuid of the gslb geo db profile.
      * It is a reference to an object of type gslbgeodbprofile.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param geoDbProfileRef set the geoDbProfileRef.
      */
@@ -110,6 +116,7 @@ public class SeGeoDbDetails  {
      * This is the getter method this will return the attribute value.
      * Reason for gslb geo db failure.
      * Enum options - NO_ERROR, FILE_ERROR, FILE_FORMAT_ERROR, FILE_NO_RESOURCES.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -121,6 +128,7 @@ public class SeGeoDbDetails  {
      * This is the setter method to the attribute.
      * Reason for gslb geo db failure.
      * Enum options - NO_ERROR, FILE_ERROR, FILE_FORMAT_ERROR, FILE_NO_RESOURCES.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -132,6 +140,7 @@ public class SeGeoDbDetails  {
      * This is the getter method this will return the attribute value.
      * Uuid of the se responsible for this event.
      * It is a reference to an object of type serviceengine.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seRef
      */
@@ -143,6 +152,7 @@ public class SeGeoDbDetails  {
      * This is the setter method to the attribute.
      * Uuid of the se responsible for this event.
      * It is a reference to an object of type serviceengine.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seRef set the seRef.
      */
@@ -153,6 +163,7 @@ public class SeGeoDbDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Vip id.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vipId
      */
@@ -163,6 +174,7 @@ public class SeGeoDbDetails  {
     /**
      * This is the setter method to the attribute.
      * Vip id.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vipId set the vipId.
      */
@@ -174,6 +186,7 @@ public class SeGeoDbDetails  {
      * This is the getter method this will return the attribute value.
      * Virtual service name.
      * It is a reference to an object of type virtualservice.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return virtualService
      */
@@ -185,6 +198,7 @@ public class SeGeoDbDetails  {
      * This is the setter method to the attribute.
      * Virtual service name.
      * It is a reference to an object of type virtualservice.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param virtualService set the virtualService.
      */

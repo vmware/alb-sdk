@@ -40,6 +40,7 @@ public class LatencyAuditProperties  {
      * Audit tcp connection establishment time.
      * Enum options - LATENCY_AUDIT_OFF, LATENCY_AUDIT_ON, LATENCY_AUDIT_ON_WITH_SIG.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return connEstAuditMode
      */
@@ -52,6 +53,7 @@ public class LatencyAuditProperties  {
      * Audit tcp connection establishment time.
      * Enum options - LATENCY_AUDIT_OFF, LATENCY_AUDIT_ON, LATENCY_AUDIT_ON_WITH_SIG.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param connEstAuditMode set the connEstAuditMode.
      */
@@ -64,6 +66,7 @@ public class LatencyAuditProperties  {
      * Maximum threshold for connection establishment time.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return connEstThreshold
      */
@@ -76,6 +79,7 @@ public class LatencyAuditProperties  {
      * Maximum threshold for connection establishment time.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param connEstThreshold set the connEstThreshold.
      */
@@ -88,6 +92,7 @@ public class LatencyAuditProperties  {
      * Audit dispatcher to proxy latency.
      * Enum options - LATENCY_AUDIT_OFF, LATENCY_AUDIT_ON, LATENCY_AUDIT_ON_WITH_SIG.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return latencyAuditMode
      */
@@ -100,6 +105,7 @@ public class LatencyAuditProperties  {
      * Audit dispatcher to proxy latency.
      * Enum options - LATENCY_AUDIT_OFF, LATENCY_AUDIT_ON, LATENCY_AUDIT_ON_WITH_SIG.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param latencyAuditMode set the latencyAuditMode.
      */
@@ -112,6 +118,7 @@ public class LatencyAuditProperties  {
      * Maximum latency threshold between dispatcher and proxy.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return latencyThreshold
      */
@@ -124,6 +131,7 @@ public class LatencyAuditProperties  {
      * Maximum latency threshold between dispatcher and proxy.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param latencyThreshold set the latencyThreshold.
      */

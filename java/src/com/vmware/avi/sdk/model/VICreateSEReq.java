@@ -46,7 +46,7 @@ public class VICreateSEReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudUuid
      */
@@ -56,7 +56,7 @@ public class VICreateSEReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudUuid set the cloudUuid.
      */
@@ -66,7 +66,7 @@ public class VICreateSEReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cookie of obj type vicreatesereq field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cookie
      */
@@ -76,7 +76,7 @@ public class VICreateSEReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cookie of obj type vicreatesereq field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cookie set the cookie.
      */
@@ -86,7 +86,7 @@ public class VICreateSEReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of se_grp.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGrpUuid
      */
@@ -96,7 +96,7 @@ public class VICreateSEReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of se_grp.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGrpUuid set the seGrpUuid.
      */
@@ -106,7 +106,7 @@ public class VICreateSEReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_params of obj type vicreatesereq field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seParams
      */
@@ -116,7 +116,7 @@ public class VICreateSEReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_params of obj type vicreatesereq field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seParams set the seParams.
      */
@@ -126,7 +126,7 @@ public class VICreateSEReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantUuid
      */
@@ -136,7 +136,7 @@ public class VICreateSEReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantUuid set the tenantUuid.
      */
@@ -146,7 +146,7 @@ public class VICreateSEReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_admin of obj type vicreatesereq field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterAdmin
      */
@@ -156,7 +156,7 @@ public class VICreateSEReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_admin of obj type vicreatesereq field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterAdmin set the vcenterAdmin.
      */
@@ -165,7 +165,7 @@ public class VICreateSEReq  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_vnic_portgroups of obj type vicreatesereq field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterVnicPortgroups
      */
@@ -175,7 +175,7 @@ public class VICreateSEReq  {
 
     /**
      * This is the setter method. this will set the vcenterVnicPortgroups
-     * Placeholder for description of property vcenter_vnic_portgroups of obj type vicreatesereq field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterVnicPortgroups
      */
@@ -185,7 +185,7 @@ public class VICreateSEReq  {
 
     /**
      * This is the setter method this will set the vcenterVnicPortgroups
-     * Placeholder for description of property vcenter_vnic_portgroups of obj type vicreatesereq field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterVnicPortgroups
      */

@@ -32,6 +32,7 @@ public class NatPolicyAction  {
      * This is the getter method this will return the attribute value.
      * Pool of ip addresses used for nat.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return natInfo
      */
@@ -43,6 +44,7 @@ public class NatPolicyAction  {
      * This is the setter method. this will set the natInfo
      * Pool of ip addresses used for nat.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return natInfo
      */
@@ -54,6 +56,7 @@ public class NatPolicyAction  {
      * This is the setter method this will set the natInfo
      * Pool of ip addresses used for nat.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return natInfo
      */
@@ -70,6 +73,7 @@ public class NatPolicyAction  {
      * Nat action type.
      * Enum options - NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PORT.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -82,6 +86,7 @@ public class NatPolicyAction  {
      * Nat action type.
      * Enum options - NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PORT.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */

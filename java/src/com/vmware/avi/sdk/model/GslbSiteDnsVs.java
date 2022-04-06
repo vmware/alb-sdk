@@ -33,6 +33,7 @@ public class GslbSiteDnsVs  {
      * This is the getter method this will return the attribute value.
      * This field identifies the dns vs uuid for this site.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsVsUuid
      */
@@ -44,6 +45,7 @@ public class GslbSiteDnsVs  {
      * This is the setter method to the attribute.
      * This field identifies the dns vs uuid for this site.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dnsVsUuid set the dnsVsUuid.
      */
@@ -56,6 +58,7 @@ public class GslbSiteDnsVs  {
      * Gslbservice(s) whose fqdns map to one of the subdomains will be hosted on this dns vs.
      * If no subdomains are configured, then the default behavior is to host all the gslbservices on this dns vs.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return domainNames
      */
@@ -69,6 +72,7 @@ public class GslbSiteDnsVs  {
      * Gslbservice(s) whose fqdns map to one of the subdomains will be hosted on this dns vs.
      * If no subdomains are configured, then the default behavior is to host all the gslbservices on this dns vs.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return domainNames
      */
@@ -82,6 +86,7 @@ public class GslbSiteDnsVs  {
      * Gslbservice(s) whose fqdns map to one of the subdomains will be hosted on this dns vs.
      * If no subdomains are configured, then the default behavior is to host all the gslbservices on this dns vs.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return domainNames
      */

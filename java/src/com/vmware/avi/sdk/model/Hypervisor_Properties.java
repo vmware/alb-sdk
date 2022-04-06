@@ -35,6 +35,7 @@ public class Hypervisor_Properties  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return htype
      */
@@ -45,6 +46,7 @@ public class Hypervisor_Properties  {
     /**
      * This is the setter method to the attribute.
      * Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param htype set the htype.
      */
@@ -54,7 +56,7 @@ public class Hypervisor_Properties  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property max_ips_per_nic of obj type hypervisor_properties field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maxIpsPerNic
      */
@@ -64,7 +66,7 @@ public class Hypervisor_Properties  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property max_ips_per_nic of obj type hypervisor_properties field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param maxIpsPerNic set the maxIpsPerNic.
      */
@@ -74,7 +76,7 @@ public class Hypervisor_Properties  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property max_nics of obj type hypervisor_properties field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maxNics
      */
@@ -84,7 +86,7 @@ public class Hypervisor_Properties  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property max_nics of obj type hypervisor_properties field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param maxNics set the maxNics.
      */

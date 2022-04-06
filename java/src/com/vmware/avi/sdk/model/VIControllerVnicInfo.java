@@ -31,7 +31,7 @@ public class VIControllerVnicInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property portgroup of obj type vicontrollervnicinfo field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return portgroup
      */
@@ -41,7 +41,7 @@ public class VIControllerVnicInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property portgroup of obj type vicontrollervnicinfo field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param portgroup set the portgroup.
      */
@@ -50,7 +50,7 @@ public class VIControllerVnicInfo  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vnic_ip of obj type vicontrollervnicinfo field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vnicIp
      */
@@ -60,7 +60,7 @@ public class VIControllerVnicInfo  {
 
     /**
      * This is the setter method. this will set the vnicIp
-     * Placeholder for description of property vnic_ip of obj type vicontrollervnicinfo field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vnicIp
      */
@@ -70,7 +70,7 @@ public class VIControllerVnicInfo  {
 
     /**
      * This is the setter method this will set the vnicIp
-     * Placeholder for description of property vnic_ip of obj type vicontrollervnicinfo field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vnicIp
      */

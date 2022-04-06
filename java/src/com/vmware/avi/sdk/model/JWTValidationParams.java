@@ -30,6 +30,7 @@ public class JWTValidationParams  {
      * This is the getter method this will return the attribute value.
      * Audience parameter used for validation using jwt token.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return audience
      */
@@ -41,6 +42,7 @@ public class JWTValidationParams  {
      * This is the setter method to the attribute.
      * Audience parameter used for validation using jwt token.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param audience set the audience.
      */

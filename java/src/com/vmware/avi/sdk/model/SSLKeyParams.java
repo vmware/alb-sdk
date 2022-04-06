@@ -35,6 +35,7 @@ public class SSLKeyParams  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - SSL_KEY_ALGORITHM_RSA, SSL_KEY_ALGORITHM_EC.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_KEY_ALGORITHM_RSA".
      * @return algorithm
      */
@@ -45,6 +46,7 @@ public class SSLKeyParams  {
     /**
      * This is the setter method to the attribute.
      * Enum options - SSL_KEY_ALGORITHM_RSA, SSL_KEY_ALGORITHM_EC.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_KEY_ALGORITHM_RSA".
      * @param algorithm set the algorithm.
      */
@@ -54,7 +56,7 @@ public class SSLKeyParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ec_params of obj type sslkeyparams field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ecParams
      */
@@ -64,7 +66,7 @@ public class SSLKeyParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ec_params of obj type sslkeyparams field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ecParams set the ecParams.
      */
@@ -74,7 +76,7 @@ public class SSLKeyParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property rsa_params of obj type sslkeyparams field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rsaParams
      */
@@ -84,7 +86,7 @@ public class SSLKeyParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property rsa_params of obj type sslkeyparams field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rsaParams set the rsaParams.
      */

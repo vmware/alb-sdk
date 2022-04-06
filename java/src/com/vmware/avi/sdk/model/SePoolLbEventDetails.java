@@ -43,6 +43,7 @@ public class SePoolLbEventDetails  {
      * Reason code for load balancing failure.
      * Enum options - PERSISTENT_SERVER_INVALID, PERSISTENT_SERVER_DOWN, SRVR_DOWN, ADD_PENDING, SLOW_START_MAX_CONN, MAX_CONN, NO_LPORT, SUSPECT_STATE,
      * MAX_CONN_RATE, CAPEST_RAND_MAX_CONN, GET_NEXT.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return failureCode
      */
@@ -55,6 +56,7 @@ public class SePoolLbEventDetails  {
      * Reason code for load balancing failure.
      * Enum options - PERSISTENT_SERVER_INVALID, PERSISTENT_SERVER_DOWN, SRVR_DOWN, ADD_PENDING, SLOW_START_MAX_CONN, MAX_CONN, NO_LPORT, SUSPECT_STATE,
      * MAX_CONN_RATE, CAPEST_RAND_MAX_CONN, GET_NEXT.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param failureCode set the failureCode.
      */
@@ -66,6 +68,7 @@ public class SePoolLbEventDetails  {
      * This is the getter method this will return the attribute value.
      * Pool name.
      * It is a reference to an object of type pool.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pool
      */
@@ -77,6 +80,7 @@ public class SePoolLbEventDetails  {
      * This is the setter method to the attribute.
      * Pool name.
      * It is a reference to an object of type pool.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param pool set the pool.
      */
@@ -87,6 +91,7 @@ public class SePoolLbEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Reason for load balancing failure.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -97,6 +102,7 @@ public class SePoolLbEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Reason for load balancing failure.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -107,6 +113,7 @@ public class SePoolLbEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Uuid of event generator.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return srcUuid
      */
@@ -117,6 +124,7 @@ public class SePoolLbEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Uuid of event generator.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param srcUuid set the srcUuid.
      */
@@ -128,6 +136,7 @@ public class SePoolLbEventDetails  {
      * This is the getter method this will return the attribute value.
      * Virtual service name.
      * It is a reference to an object of type virtualservice.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return virtualService
      */
@@ -139,6 +148,7 @@ public class SePoolLbEventDetails  {
      * This is the setter method to the attribute.
      * Virtual service name.
      * It is a reference to an object of type virtualservice.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param virtualService set the virtualService.
      */

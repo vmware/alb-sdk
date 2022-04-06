@@ -30,6 +30,7 @@ public class ControllerPortalAsset  {
      * This is the getter method this will return the attribute value.
      * Asset id corresponding to this controller cluster, returned on a successful registration.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return assetId
      */
@@ -41,6 +42,7 @@ public class ControllerPortalAsset  {
      * This is the setter method to the attribute.
      * Asset id corresponding to this controller cluster, returned on a successful registration.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param assetId set the assetId.
      */

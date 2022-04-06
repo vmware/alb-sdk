@@ -45,6 +45,7 @@ public class TlsClientInfo  {
      * The list of cipher suites in the clienthello as integers.
      * For example, tls_ecdhe_ecdsa_with_aes_128_cbc_sha (0xc009) will be shown as 49161.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cipherSuites
      */
@@ -57,6 +58,7 @@ public class TlsClientInfo  {
      * The list of cipher suites in the clienthello as integers.
      * For example, tls_ecdhe_ecdsa_with_aes_128_cbc_sha (0xc009) will be shown as 49161.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cipherSuites
      */
@@ -69,6 +71,7 @@ public class TlsClientInfo  {
      * The list of cipher suites in the clienthello as integers.
      * For example, tls_ecdhe_ecdsa_with_aes_128_cbc_sha (0xc009) will be shown as 49161.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cipherSuites
      */
@@ -84,6 +87,7 @@ public class TlsClientInfo  {
      * The list of supported ec point formats in the clienthello as integers.
      * For example, uncompressed will be shown as 0 (zero).
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pointFormats
      */
@@ -96,6 +100,7 @@ public class TlsClientInfo  {
      * The list of supported ec point formats in the clienthello as integers.
      * For example, uncompressed will be shown as 0 (zero).
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pointFormats
      */
@@ -108,6 +113,7 @@ public class TlsClientInfo  {
      * The list of supported ec point formats in the clienthello as integers.
      * For example, uncompressed will be shown as 0 (zero).
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pointFormats
      */
@@ -123,6 +129,7 @@ public class TlsClientInfo  {
      * The list of tls supported groups in the clienthello as integers.
      * For example, secp256r1 will be shown as 23.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return supportedGroups
      */
@@ -135,6 +142,7 @@ public class TlsClientInfo  {
      * The list of tls supported groups in the clienthello as integers.
      * For example, secp256r1 will be shown as 23.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return supportedGroups
      */
@@ -147,6 +155,7 @@ public class TlsClientInfo  {
      * The list of tls supported groups in the clienthello as integers.
      * For example, secp256r1 will be shown as 23.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return supportedGroups
      */
@@ -162,6 +171,7 @@ public class TlsClientInfo  {
      * The list of tls extensions in the clienthello as integers.
      * For example, signature_algorithms will be shown as 13.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tlsExtensions
      */
@@ -174,6 +184,7 @@ public class TlsClientInfo  {
      * The list of tls extensions in the clienthello as integers.
      * For example, signature_algorithms will be shown as 13.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tlsExtensions
      */
@@ -186,6 +197,7 @@ public class TlsClientInfo  {
      * The list of tls extensions in the clienthello as integers.
      * For example, signature_algorithms will be shown as 13.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tlsExtensions
      */
@@ -201,6 +213,7 @@ public class TlsClientInfo  {
      * This is the getter method this will return the attribute value.
      * Indicates whether the clienthello contained grease ciphers, extensions or groups.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usesGrease
      */
@@ -212,6 +225,7 @@ public class TlsClientInfo  {
      * This is the setter method to the attribute.
      * Indicates whether the clienthello contained grease ciphers, extensions or groups.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param usesGrease set the usesGrease.
      */
@@ -224,6 +238,7 @@ public class TlsClientInfo  {
      * The tls version in the clienthello as integer.
      * For example, tlsv1.2 (0x0303) will be shown as 771.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return version
      */
@@ -236,6 +251,7 @@ public class TlsClientInfo  {
      * The tls version in the clienthello as integer.
      * For example, tlsv1.2 (0x0303) will be shown as 771.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param version set the version.
      */

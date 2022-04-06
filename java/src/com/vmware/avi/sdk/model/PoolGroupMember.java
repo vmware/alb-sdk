@@ -39,6 +39,7 @@ public class PoolGroupMember  {
      * This is the getter method this will return the attribute value.
      * Pool deployment state used with the pg deployment policy.
      * Enum options - EVALUATION_IN_PROGRESS, IN_SERVICE, OUT_OF_SERVICE, EVALUATION_FAILED.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return deploymentState
      */
@@ -50,6 +51,7 @@ public class PoolGroupMember  {
      * This is the setter method to the attribute.
      * Pool deployment state used with the pg deployment policy.
      * Enum options - EVALUATION_IN_PROGRESS, IN_SERVICE, OUT_OF_SERVICE, EVALUATION_FAILED.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param deploymentState set the deploymentState.
      */
@@ -61,6 +63,7 @@ public class PoolGroupMember  {
      * This is the getter method this will return the attribute value.
      * Uuid of the pool.
      * It is a reference to an object of type pool.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolRef
      */
@@ -72,6 +75,7 @@ public class PoolGroupMember  {
      * This is the setter method to the attribute.
      * Uuid of the pool.
      * It is a reference to an object of type pool.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolRef set the poolRef.
      */
@@ -83,6 +87,7 @@ public class PoolGroupMember  {
      * This is the getter method this will return the attribute value.
      * All pools with same label are treated similarly in a pool group.
      * A pool with a higher priority is selected, as long as the pool is eligible or an explicit policy chooses a different pool.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return priorityLabel
      */
@@ -94,6 +99,7 @@ public class PoolGroupMember  {
      * This is the setter method to the attribute.
      * All pools with same label are treated similarly in a pool group.
      * A pool with a higher priority is selected, as long as the pool is eligible or an explicit policy chooses a different pool.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param priorityLabel set the priorityLabel.
      */
@@ -106,7 +112,8 @@ public class PoolGroupMember  {
      * Ratio of selecting eligible pools in the pool group.
      * Allowed values are 1-1000.
      * Special values are 0 - do not select this pool for new connections.
-     * Allowed in basic(allowed values- 1) edition, essentials(allowed values- 1) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- 1) edition, basic(allowed values- 1) edition, enterprise with cloud
+     * services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return ratio
      */
@@ -119,7 +126,8 @@ public class PoolGroupMember  {
      * Ratio of selecting eligible pools in the pool group.
      * Allowed values are 1-1000.
      * Special values are 0 - do not select this pool for new connections.
-     * Allowed in basic(allowed values- 1) edition, essentials(allowed values- 1) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- 1) edition, basic(allowed values- 1) edition, enterprise with cloud
+     * services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param ratio set the ratio.
      */

@@ -33,6 +33,7 @@ public class ContentLibConfig  {
      * This is the getter method this will return the attribute value.
      * Content library id.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return id
      */
@@ -44,6 +45,7 @@ public class ContentLibConfig  {
      * This is the setter method to the attribute.
      * Content library id.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param id set the id.
      */
@@ -55,6 +57,7 @@ public class ContentLibConfig  {
      * This is the getter method this will return the attribute value.
      * Content library name.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -66,6 +69,7 @@ public class ContentLibConfig  {
      * This is the setter method to the attribute.
      * Content library name.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */

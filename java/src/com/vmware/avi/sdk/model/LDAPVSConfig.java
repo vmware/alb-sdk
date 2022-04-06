@@ -51,6 +51,7 @@ public class LDAPVSConfig  {
      * This is the getter method this will return the attribute value.
      * Basic authentication realm to present to a user along with the prompt for credentials.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return realm
      */
@@ -62,6 +63,7 @@ public class LDAPVSConfig  {
      * This is the setter method to the attribute.
      * Basic authentication realm to present to a user along with the prompt for credentials.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param realm set the realm.
      */
@@ -74,6 +76,7 @@ public class LDAPVSConfig  {
      * Default bind timeout enforced on connections to ldap server.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
      * @return seAuthLdapBindTimeout
      */
@@ -86,6 +89,7 @@ public class LDAPVSConfig  {
      * Default bind timeout enforced on connections to ldap server.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
      * @param seAuthLdapBindTimeout set the seAuthLdapBindTimeout.
      */
@@ -98,6 +102,7 @@ public class LDAPVSConfig  {
      * Size of ldap auth credentials cache used on the dataplane.
      * Field introduced in 21.1.1.
      * Unit is bytes.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100000.
      * @return seAuthLdapCacheSize
      */
@@ -110,6 +115,7 @@ public class LDAPVSConfig  {
      * Size of ldap auth credentials cache used on the dataplane.
      * Field introduced in 21.1.1.
      * Unit is bytes.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100000.
      * @param seAuthLdapCacheSize set the seAuthLdapCacheSize.
      */
@@ -122,6 +128,7 @@ public class LDAPVSConfig  {
      * Default connection timeout enforced on connections to ldap server.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @return seAuthLdapConnectTimeout
      */
@@ -134,6 +141,7 @@ public class LDAPVSConfig  {
      * Default connection timeout enforced on connections to ldap server.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @param seAuthLdapConnectTimeout set the seAuthLdapConnectTimeout.
      */
@@ -145,6 +153,7 @@ public class LDAPVSConfig  {
      * This is the getter method this will return the attribute value.
      * Number of concurrent connections to ldap server by a single basic auth ldap process.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return seAuthLdapConnsPerServer
      */
@@ -156,6 +165,7 @@ public class LDAPVSConfig  {
      * This is the setter method to the attribute.
      * Number of concurrent connections to ldap server by a single basic auth ldap process.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param seAuthLdapConnsPerServer set the seAuthLdapConnsPerServer.
      */
@@ -168,6 +178,7 @@ public class LDAPVSConfig  {
      * Default reconnect timeout enforced on connections to ldap server.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @return seAuthLdapReconnectTimeout
      */
@@ -180,6 +191,7 @@ public class LDAPVSConfig  {
      * Default reconnect timeout enforced on connections to ldap server.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @param seAuthLdapReconnectTimeout set the seAuthLdapReconnectTimeout.
      */
@@ -192,6 +204,7 @@ public class LDAPVSConfig  {
      * Default login or group search request timeout enforced on connections to ldap server.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @return seAuthLdapRequestTimeout
      */
@@ -204,6 +217,7 @@ public class LDAPVSConfig  {
      * Default login or group search request timeout enforced on connections to ldap server.
      * Field introduced in 21.1.1.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @param seAuthLdapRequestTimeout set the seAuthLdapRequestTimeout.
      */
@@ -215,6 +229,7 @@ public class LDAPVSConfig  {
      * This is the getter method this will return the attribute value.
      * If enabled, connections are always made to the first available ldap server in the list and will failover to subsequent servers.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return seAuthLdapServersFailoverOnly
      */
@@ -226,6 +241,7 @@ public class LDAPVSConfig  {
      * This is the setter method to the attribute.
      * If enabled, connections are always made to the first available ldap server in the list and will failover to subsequent servers.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param seAuthLdapServersFailoverOnly set the seAuthLdapServersFailoverOnly.
      */

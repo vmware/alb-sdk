@@ -39,6 +39,7 @@ public class OCICredentials  {
      * This is the getter method this will return the attribute value.
      * Api key with respect to the public key.
      * Field introduced in 18.2.1,18.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fingerprint
      */
@@ -50,6 +51,7 @@ public class OCICredentials  {
      * This is the setter method to the attribute.
      * Api key with respect to the public key.
      * Field introduced in 18.2.1,18.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fingerprint set the fingerprint.
      */
@@ -61,6 +63,7 @@ public class OCICredentials  {
      * This is the getter method this will return the attribute value.
      * Private key file (pem file) content.
      * Field introduced in 18.2.1,18.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return keyContent
      */
@@ -72,6 +75,7 @@ public class OCICredentials  {
      * This is the setter method to the attribute.
      * Private key file (pem file) content.
      * Field introduced in 18.2.1,18.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param keyContent set the keyContent.
      */
@@ -83,6 +87,7 @@ public class OCICredentials  {
      * This is the getter method this will return the attribute value.
      * Pass phrase for the key.
      * Field introduced in 18.2.1,18.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return passPhrase
      */
@@ -94,6 +99,7 @@ public class OCICredentials  {
      * This is the setter method to the attribute.
      * Pass phrase for the key.
      * Field introduced in 18.2.1,18.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param passPhrase set the passPhrase.
      */
@@ -105,6 +111,7 @@ public class OCICredentials  {
      * This is the getter method this will return the attribute value.
      * Oracle cloud id for the user.
      * Field introduced in 18.2.1,18.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return user
      */
@@ -116,6 +123,7 @@ public class OCICredentials  {
      * This is the setter method to the attribute.
      * Oracle cloud id for the user.
      * Field introduced in 18.2.1,18.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param user set the user.
      */

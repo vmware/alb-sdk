@@ -33,6 +33,7 @@ public class HealthMonitorImap  {
      * This is the getter method this will return the attribute value.
      * Folder to access.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return folder
      */
@@ -44,6 +45,7 @@ public class HealthMonitorImap  {
      * This is the setter method to the attribute.
      * Folder to access.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param folder set the folder.
      */
@@ -55,6 +57,7 @@ public class HealthMonitorImap  {
      * This is the getter method this will return the attribute value.
      * Ssl attributes for imaps monitor.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sslAttributes
      */
@@ -66,6 +69,7 @@ public class HealthMonitorImap  {
      * This is the setter method to the attribute.
      * Ssl attributes for imaps monitor.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sslAttributes set the sslAttributes.
      */

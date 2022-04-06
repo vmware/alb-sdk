@@ -37,7 +37,7 @@ public class VISeVmIpConfParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property default_gw of obj type visevmipconfparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return defaultGw
      */
@@ -47,7 +47,7 @@ public class VISeVmIpConfParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property default_gw of obj type visevmipconfparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param defaultGw set the defaultGw.
      */
@@ -57,7 +57,7 @@ public class VISeVmIpConfParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property mgmt_ip_addr of obj type visevmipconfparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mgmtIpAddr
      */
@@ -67,7 +67,7 @@ public class VISeVmIpConfParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property mgmt_ip_addr of obj type visevmipconfparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mgmtIpAddr set the mgmtIpAddr.
      */
@@ -78,6 +78,7 @@ public class VISeVmIpConfParams  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - VNIC_IP_TYPE_DHCP, VNIC_IP_TYPE_STATIC.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mgmtIpType
      */
@@ -88,6 +89,7 @@ public class VISeVmIpConfParams  {
     /**
      * This is the setter method to the attribute.
      * Enum options - VNIC_IP_TYPE_DHCP, VNIC_IP_TYPE_STATIC.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mgmtIpType set the mgmtIpType.
      */
@@ -97,7 +99,7 @@ public class VISeVmIpConfParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property mgmt_net_mask of obj type visevmipconfparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mgmtNetMask
      */
@@ -107,7 +109,7 @@ public class VISeVmIpConfParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property mgmt_net_mask of obj type visevmipconfparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mgmtNetMask set the mgmtNetMask.
      */
