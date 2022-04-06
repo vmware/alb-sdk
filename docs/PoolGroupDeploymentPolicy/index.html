@@ -745,43 +745,43 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="KeyValue">KeyValue</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key. </div>
-<div class="param">value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Value. </div>
+      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="PGDeploymentRule">PGDeploymentRule</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">metric_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> metric_id of PGDeploymentRule. </div>
-<div class="param">operator (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - CO_EQ, CO_GT, CO_GE, CO_LT, CO_LE, CO_NE. </div>
-<div class="param">threshold (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> metric threshold that is used as the pass fail. If it is not provided then it will simply compare it with current pool vs new pool. format: double</div>
+      <div class="param">metric_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">operator (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - CO_EQ, CO_GT, CO_GE, CO_LT, CO_LE, CO_NE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">threshold (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> metric threshold that is used as the pass fail. If it is not provided then it will simply compare it with current pool vs new pool. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: double</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="PoolGroupDeploymentPolicy">PoolGroupDeploymentPolicy</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
-<div class="param">auto_disable_old_prod_pools (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> It will automatically disable old production pools once there is a new production candidate. </div>
-<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
-<div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> User defined description for the object. </div>
-<div class="param">evaluation_duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Duration of evaluation period for automatic deployment. Allowed values are 60-86400. Unit is SEC. format: int32</div>
-<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. </div>
-<div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition. </div>
-<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of the pool group deployment policy. </div>
-<div class="param">rules (optional)</div><div class="param-desc"><span class="param-type"><a href="#PGDeploymentRule">array[PGDeploymentRule]</a></span> Placeholder for description of property rules of obj type PoolGroupDeploymentPolicy field type str  type object </div>
-<div class="param">scheme (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> deployment scheme. Enum options - BLUE_GREEN, CANARY. </div>
-<div class="param">target_test_traffic_ratio (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Target traffic ratio before pool is made production. Allowed values are 1-100. Unit is RATIO. format: int32</div>
-<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. </div>
-<div class="param">test_traffic_ratio_rampup (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Ratio of the traffic that is sent to the pool under test. test ratio of 100 means blue green. Allowed values are 1-100. format: int32</div>
+<div class="param">auto_disable_old_prod_pools (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> It will automatically disable old production pools once there is a new production candidate. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">evaluation_duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Duration of evaluation period for automatic deployment. Allowed values are 60-86400. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of the pool group deployment policy. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">rules (optional)</div><div class="param-desc"><span class="param-type"><a href="#PGDeploymentRule">array[PGDeploymentRule]</a></span>  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">scheme (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> deployment scheme. Enum options - BLUE_GREEN, CANARY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">target_test_traffic_ratio (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Target traffic ratio before pool is made production. Allowed values are 1-100. Unit is RATIO. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">test_traffic_ratio_rampup (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Ratio of the traffic that is sent to the pool under test. test ratio of 100 means blue green. Allowed values are 1-100. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
-<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the pool group deployment policy. </div>
-<div class="param">webhook_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Webhook configured with URL that Avi controller will pass back information about pool group, old and new pool information and current deployment rule results. It is a reference to an object of type Webhook. Field introduced in 17.1.1. </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the pool group deployment policy. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">webhook_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Webhook configured with URL that Avi controller will pass back information about pool group, old and new pool information and current deployment rule results. It is a reference to an object of type Webhook. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -795,8 +795,8 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="RoleFilterMatchLabel">RoleFilterMatchLabel</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key for filter match. Field introduced in 20.1.3. </div>
-<div class="param">values (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Values for filter match. Multiple values will be evaluated as OR. Example  key &#x3D; value1 OR key &#x3D; value2. Behavior for match is key &#x3D; * if this field is empty. Field introduced in 20.1.3. </div>
+      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">values (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Values for filter match. Multiple values will be evaluated as OR. Example  key &#x3D; value1 OR key &#x3D; value2. Behavior for match is key &#x3D; * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   </body>

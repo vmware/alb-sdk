@@ -1179,72 +1179,72 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="BotAllowList">BotAllowList</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">rules (optional)</div><div class="param-desc"><span class="param-type"><a href="#BotAllowRule">array[BotAllowRule]</a></span> Allow rules to control which requests undergo BOT detection. Field introduced in 21.1.1. </div>
+      <div class="param">rules (optional)</div><div class="param-desc"><span class="param-type"><a href="#BotAllowRule">array[BotAllowRule]</a></span> Allow rules to control which requests undergo BOT detection. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="BotAllowRule">BotAllowRule</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">action </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The action to take. Enum options - BOT_ACTION_BYPASS, BOT_ACTION_CONTINUE. Field introduced in 21.1.1. </div>
-<div class="param">condition </div><div class="param-desc"><span class="param-type"><a href="#MatchTarget">MatchTarget</a></span> The condition to match. Field introduced in 21.1.1. </div>
-<div class="param">index </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Rules are processed in order of this index field. Field introduced in 21.1.1. format: int32</div>
-<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A name describing the rule in a short form. Field introduced in 21.1.1. </div>
+      <div class="param">action </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The action to take. Enum options - BOT_ACTION_BYPASS, BOT_ACTION_CONTINUE. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">condition </div><div class="param-desc"><span class="param-type"><a href="#MatchTarget">MatchTarget</a></span> The condition to match. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">index </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Rules are processed in order of this index field. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A name describing the rule in a short form. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="BotClassification">BotClassification</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> One of the system-defined Bot classification types. Enum options - HUMAN, GOOD_BOT, BAD_BOT, DANGEROUS_BOT, USER_DEFINED_BOT, UNKNOWN_CLIENT. Field introduced in 21.1.1. </div>
-<div class="param">user_defined_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> If &#39;type&#39; has BotClassificationTypes value &#39;USER_DEFINED&#39;, this is the user-defined value. Field introduced in 21.1.1. </div>
+      <div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> One of the system-defined Bot classification types. Enum options - HUMAN, GOOD_BOT, BAD_BOT, DANGEROUS_BOT, USER_DEFINED_BOT, UNKNOWN_CLIENT. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">user_defined_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> If &#39;type&#39; has BotClassificationTypes value &#39;USER_DEFINED&#39;, this is the user-defined value. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="BotConfigIPLocation">BotConfigIPLocation</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If this is enabled, IP location information is used to determine if a client is a known search engine bot, comes from the cloud, etc. Field introduced in 21.1.1. </div>
-<div class="param">ip_location_db_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The UUID of the Geo-IP database to use. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. </div>
-<div class="param">system_cloud_providers_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The system-defined cloud providers. It is a reference to an object of type StringGroup. Field introduced in 21.1.1. </div>
-<div class="param">system_search_engines_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The system-defined search engines. It is a reference to an object of type StringGroup. Field introduced in 21.1.1. </div>
+      <div class="param">enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If this is enabled, IP location information is used to determine if a client is a known search engine bot, comes from the cloud, etc. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ip_location_db_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The UUID of the Geo-IP database to use. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">system_cloud_providers_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The system-defined cloud providers. It is a reference to an object of type StringGroup. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">system_search_engines_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The system-defined search engines. It is a reference to an object of type StringGroup. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="BotConfigIPReputation">BotConfigIPReputation</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Whether IP reputation-based Bot detection is enabled. Field introduced in 21.1.1. </div>
-<div class="param">ip_reputation_db_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The UUID of the IP reputation DB to use. It is a reference to an object of type IPReputationDB. Field introduced in 21.1.1. </div>
-<div class="param">system_ip_reputation_mapping_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The system-provided mapping from IP reputation types to Bot types. It is a reference to an object of type BotIPReputationTypeMapping. Field introduced in 21.1.1. </div>
+      <div class="param">enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Whether IP reputation-based Bot detection is enabled. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ip_reputation_db_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The UUID of the IP reputation DB to use. It is a reference to an object of type IPReputationDB. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">system_ip_reputation_mapping_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The system-provided mapping from IP reputation types to Bot types. It is a reference to an object of type BotIPReputationTypeMapping. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="BotConfigUserAgent">BotConfigUserAgent</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Whether User Agent-based Bot detection is enabled. Field introduced in 21.1.1. </div>
+      <div class="param">enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Whether User Agent-based Bot detection is enabled. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="BotDetectionMatch">BotDetectionMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">classifications (optional)</div><div class="param-desc"><span class="param-type"><a href="#BotClassification">array[BotClassification]</a></span> Bot classification types. Field introduced in 21.1.1. </div>
-<div class="param">match_operation </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. </div>
+      <div class="param">classifications (optional)</div><div class="param-desc"><span class="param-type"><a href="#BotClassification">array[BotClassification]</a></span> Bot classification types. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">match_operation </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="BotDetectionPolicy">BotDetectionPolicy</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
-<div class="param">allow_list (optional)</div><div class="param-desc"><span class="param-type"><a href="#BotAllowList">BotAllowList</a></span> Allow the user to skip BotManagement for selected requests. Field introduced in 21.1.1. </div>
-<div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Human-readable description of this Bot Detection Policy. Field introduced in 21.1.1. </div>
-<div class="param">ip_location_detector </div><div class="param-desc"><span class="param-type"><a href="#BotConfigIPLocation">BotConfigIPLocation</a></span> The IP location configuration used in this policy. Field introduced in 21.1.1. </div>
-<div class="param">ip_reputation_detector </div><div class="param-desc"><span class="param-type"><a href="#BotConfigIPReputation">BotConfigIPReputation</a></span> The IP reputation configuration used in this policy. Field introduced in 21.1.1. </div>
-<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of this Bot Detection Policy. Field introduced in 21.1.1. </div>
-<div class="param">system_bot_mapping_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> System-defined rules for classification. It is a reference to an object of type BotMapping. Field introduced in 21.1.1. </div>
-<div class="param">system_consolidator_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The installation provides an updated ruleset for consolidating the results of different decider phases. It is a reference to an object of type BotConfigConsolidator. Field introduced in 21.1.1. </div>
-<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The unique identifier of the tenant to which this policy belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1. </div>
+<div class="param">allow_list (optional)</div><div class="param-desc"><span class="param-type"><a href="#BotAllowList">BotAllowList</a></span> Allow the user to skip BotManagement for selected requests. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Human-readable description of this Bot Detection Policy. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ip_location_detector </div><div class="param-desc"><span class="param-type"><a href="#BotConfigIPLocation">BotConfigIPLocation</a></span> The IP location configuration used in this policy. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ip_reputation_detector </div><div class="param-desc"><span class="param-type"><a href="#BotConfigIPReputation">BotConfigIPReputation</a></span> The IP reputation configuration used in this policy. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of this Bot Detection Policy. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">system_bot_mapping_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> System-defined rules for classification. It is a reference to an object of type BotMapping. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">system_consolidator_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The installation provides an updated ruleset for consolidating the results of different decider phases. It is a reference to an object of type BotConfigConsolidator. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The unique identifier of the tenant to which this policy belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
-<div class="param">user_agent_detector </div><div class="param-desc"><span class="param-type"><a href="#BotConfigUserAgent">BotConfigUserAgent</a></span> The User-Agent configuration used in this policy. Field introduced in 21.1.1. </div>
-<div class="param">user_bot_mapping_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> User-defined rules for classification. These are applied before the system classification rules. If a rule matches, processing terminates and the system-defined rules will not run. It is a reference to an object of type BotMapping. Field introduced in 21.1.1. </div>
-<div class="param">user_consolidator_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The user-provided ruleset for consolidating the results of different decider phases. This runs before the system consolidator. If it successfully sets a consolidation, the system consolidator will not change it. It is a reference to an object of type BotConfigConsolidator. Field introduced in 21.1.1. </div>
-<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A unique identifier to this Bot Detection Policy. Field introduced in 21.1.1. </div>
+<div class="param">user_agent_detector </div><div class="param-desc"><span class="param-type"><a href="#BotConfigUserAgent">BotConfigUserAgent</a></span> The User-Agent configuration used in this policy. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">user_bot_mapping_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> User-defined rules for classification. These are applied before the system classification rules. If a rule matches, processing terminates and the system-defined rules will not run. It is a reference to an object of type BotMapping. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">user_consolidator_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The user-provided ruleset for consolidating the results of different decider phases. This runs before the system consolidator. If it successfully sets a consolidation, the system consolidator will not change it. It is a reference to an object of type BotConfigConsolidator. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A unique identifier to this Bot Detection Policy. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1258,138 +1258,138 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="CookieMatch">CookieMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">match_case (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. </div>
-<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for matching the cookie in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. </div>
-<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the cookie. </div>
-<div class="param">value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> String value in the cookie. </div>
+      <div class="param">match_case (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for matching the cookie in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the cookie. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> String value in the cookie. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="GeoMatch">GeoMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">attribute </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The Geo data type to match on. Enum options - ATTRIBUTE_IP_PREFIX, ATTRIBUTE_COUNTRY_CODE, ATTRIBUTE_COUNTRY_NAME, ATTRIBUTE_CONTINENT_CODE, ATTRIBUTE_CONTINENT_NAME, ATTRIBUTE_REGION_NAME, ATTRIBUTE_CITY_NAME, ATTRIBUTE_ISP_NAME, ATTRIBUTE_ORGANIZATION_NAME, ATTRIBUTE_AS_NUMBER, ATTRIBUTE_AS_NAME, ATTRIBUTE_LONGITUDE, ATTRIBUTE_LATITUDE, ATTRIBUTE_CUSTOM_1, ATTRIBUTE_CUSTOM_2, ATTRIBUTE_CUSTOM_3, ATTRIBUTE_CUSTOM_4, ATTRIBUTE_CUSTOM_5, ATTRIBUTE_CUSTOM_6, ATTRIBUTE_CUSTOM_7, ATTRIBUTE_CUSTOM_8, ATTRIBUTE_CUSTOM_9, ATTRIBUTE_USER_DEFINED_MAPPING. Field introduced in 21.1.1. </div>
-<div class="param">match_operation </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. </div>
-<div class="param">values </div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> The values to match. Field introduced in 21.1.1. </div>
+      <div class="param">attribute </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The Geo data type to match on. Enum options - ATTRIBUTE_IP_PREFIX, ATTRIBUTE_COUNTRY_CODE, ATTRIBUTE_COUNTRY_NAME, ATTRIBUTE_CONTINENT_CODE, ATTRIBUTE_CONTINENT_NAME, ATTRIBUTE_REGION_NAME, ATTRIBUTE_CITY_NAME, ATTRIBUTE_ISP_NAME, ATTRIBUTE_ORGANIZATION_NAME, ATTRIBUTE_AS_NUMBER, ATTRIBUTE_AS_NAME, ATTRIBUTE_LONGITUDE, ATTRIBUTE_LATITUDE, ATTRIBUTE_CUSTOM_1, ATTRIBUTE_CUSTOM_2, ATTRIBUTE_CUSTOM_3, ATTRIBUTE_CUSTOM_4, ATTRIBUTE_CUSTOM_5, ATTRIBUTE_CUSTOM_6, ATTRIBUTE_CUSTOM_7, ATTRIBUTE_CUSTOM_8, ATTRIBUTE_CUSTOM_9, ATTRIBUTE_USER_DEFINED_MAPPING. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">match_operation </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">values </div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> The values to match. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="HTTPVersionMatch">HTTPVersionMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for HTTP version matching the version used in the HTTP request. Enum options - IS_IN, IS_NOT_IN. </div>
-<div class="param">versions (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> HTTP protocol version. Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO. Minimum of 1 items required. Maximum of 8 items allowed. Allowed in Basic(Allowed values- ONE_ZERO,ONE_ONE) edition, Essentials(Allowed values- ONE_ZERO,ONE_ONE) edition, Enterprise edition. </div>
+      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for HTTP version matching the version used in the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">versions (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> HTTP protocol version. Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO. Minimum of 1 items required. Maximum of 8 items allowed. Allowed in Enterprise with any value edition, Essentials(Allowed values- ONE_ZERO,ONE_ONE) edition, Basic(Allowed values- ONE_ZERO,ONE_ONE) edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="HdrMatch">HdrMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">hdr </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the HTTP header whose value is to be matched. </div>
-<div class="param">match_case (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. </div>
-<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for matching headers in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. </div>
-<div class="param">value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> String values to match in the HTTP header. </div>
+      <div class="param">hdr </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the HTTP header whose value is to be matched. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">match_case (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for matching headers in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> String values to match in the HTTP header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="HostHdrMatch">HostHdrMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">match_case (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. </div>
-<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for the host header value match. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. </div>
-<div class="param">value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> String value(s) in the host header. </div>
+      <div class="param">match_case (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for the host header value match. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> String value(s) in the host header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="IPReputationTypeMatch">IPReputationTypeMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">match_operation </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 20.1.1. </div>
-<div class="param">reputation_types (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> IP reputation type. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 20.1.1. Minimum of 1 items required. </div>
+      <div class="param">match_operation </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">reputation_types (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> IP reputation type. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 20.1.1. Minimum of 1 items required. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="IpAddr">IpAddr</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">addr </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> IP address. </div>
-<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - V4, DNS, V6. </div>
+      <div class="param">addr </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - V4, DNS, V6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="IpAddrMatch">IpAddrMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">addrs (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">array[IpAddr]</a></span> IP address(es). </div>
-<div class="param">group_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> UUID of IP address group(s). It is a reference to an object of type IpAddrGroup. </div>
-<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for IP address matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. </div>
-<div class="param">prefixes (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrPrefix">array[IpAddrPrefix]</a></span> IP address prefix(es). </div>
-<div class="param">ranges (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrRange">array[IpAddrRange]</a></span> IP address range(s). </div>
+      <div class="param">addrs (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">array[IpAddr]</a></span> IP address(es). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">group_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> UUID of IP address group(s). It is a reference to an object of type IpAddrGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for IP address matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">prefixes (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrPrefix">array[IpAddrPrefix]</a></span> IP address prefix(es). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ranges (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrRange">array[IpAddrRange]</a></span> IP address range(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="IpAddrPrefix">IpAddrPrefix</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">ip_addr </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Placeholder for description of property ip_addr of obj type IpAddrPrefix field type str  type object </div>
-<div class="param">mask </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of mask. format: int32</div>
+      <div class="param">ip_addr </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span>  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">mask </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="IpAddrRange">IpAddrRange</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">begin </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Starting IP address of the range. </div>
-<div class="param">end </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Ending IP address of the range. </div>
+      <div class="param">begin </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Starting IP address of the range. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">end </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Ending IP address of the range. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="MatchTarget">MatchTarget</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">bot_detection_result (optional)</div><div class="param-desc"><span class="param-type"><a href="#BotDetectionMatch">BotDetectionMatch</a></span> Configure the bot classification result. Field introduced in 21.1.1. </div>
-<div class="param">client_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrMatch">IpAddrMatch</a></span> Configure client ip addresses. </div>
-<div class="param">cookie (optional)</div><div class="param-desc"><span class="param-type"><a href="#CookieMatch">CookieMatch</a></span> Configure HTTP cookie(s). </div>
-<div class="param">geo_matches (optional)</div><div class="param-desc"><span class="param-type"><a href="#GeoMatch">array[GeoMatch]</a></span> Configure the geo information. Field introduced in 21.1.1. Maximum of 1 items allowed. </div>
-<div class="param">hdrs (optional)</div><div class="param-desc"><span class="param-type"><a href="#HdrMatch">array[HdrMatch]</a></span> Configure HTTP header(s). All configured headers must match. </div>
-<div class="param">host_hdr (optional)</div><div class="param-desc"><span class="param-type"><a href="#HostHdrMatch">HostHdrMatch</a></span> Configure the host header. </div>
-<div class="param">ip_reputation_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#IPReputationTypeMatch">IPReputationTypeMatch</a></span> Configure IP reputation. Field introduced in 20.1.3. </div>
-<div class="param">method (optional)</div><div class="param-desc"><span class="param-type"><a href="#MethodMatch">MethodMatch</a></span> Configure HTTP methods. </div>
-<div class="param">path (optional)</div><div class="param-desc"><span class="param-type"><a href="#PathMatch">PathMatch</a></span> Configure request paths. </div>
-<div class="param">protocol (optional)</div><div class="param-desc"><span class="param-type"><a href="#ProtocolMatch">ProtocolMatch</a></span> Configure the type of HTTP protocol. </div>
-<div class="param">query (optional)</div><div class="param-desc"><span class="param-type"><a href="#QueryMatch">QueryMatch</a></span> Configure request query. </div>
-<div class="param">source_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrMatch">IpAddrMatch</a></span> Configure source ip addresses. Field introduced in 21.1.3. </div>
-<div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#HTTPVersionMatch">HTTPVersionMatch</a></span> Configure versions of the HTTP protocol. </div>
-<div class="param">vs_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#PortMatch">PortMatch</a></span> Configure virtual service ports. </div>
+      <div class="param">bot_detection_result (optional)</div><div class="param-desc"><span class="param-type"><a href="#BotDetectionMatch">BotDetectionMatch</a></span> Configure the bot classification result. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">client_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrMatch">IpAddrMatch</a></span> Configure client ip addresses. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">cookie (optional)</div><div class="param-desc"><span class="param-type"><a href="#CookieMatch">CookieMatch</a></span> Configure HTTP cookie(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">geo_matches (optional)</div><div class="param-desc"><span class="param-type"><a href="#GeoMatch">array[GeoMatch]</a></span> Configure the geo information. Field introduced in 21.1.1. Maximum of 1 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">hdrs (optional)</div><div class="param-desc"><span class="param-type"><a href="#HdrMatch">array[HdrMatch]</a></span> Configure HTTP header(s). All configured headers must match. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">host_hdr (optional)</div><div class="param-desc"><span class="param-type"><a href="#HostHdrMatch">HostHdrMatch</a></span> Configure the host header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ip_reputation_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#IPReputationTypeMatch">IPReputationTypeMatch</a></span> Configure IP reputation. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">method (optional)</div><div class="param-desc"><span class="param-type"><a href="#MethodMatch">MethodMatch</a></span> Configure HTTP methods. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">path (optional)</div><div class="param-desc"><span class="param-type"><a href="#PathMatch">PathMatch</a></span> Configure request paths. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">protocol (optional)</div><div class="param-desc"><span class="param-type"><a href="#ProtocolMatch">ProtocolMatch</a></span> Configure the type of HTTP protocol. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">query (optional)</div><div class="param-desc"><span class="param-type"><a href="#QueryMatch">QueryMatch</a></span> Configure request query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">source_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrMatch">IpAddrMatch</a></span> Configure source ip addresses. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#HTTPVersionMatch">HTTPVersionMatch</a></span> Configure versions of the HTTP protocol. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">vs_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#PortMatch">PortMatch</a></span> Configure virtual service ports. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="MethodMatch">MethodMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for HTTP method matching the method in the HTTP request. Enum options - IS_IN, IS_NOT_IN. </div>
-<div class="param">methods (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Configure HTTP method(s). Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Minimum of 1 items required. Maximum of 16 items allowed. Allowed in Basic(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS) edition, Essentials(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS) edition, Enterprise edition. </div>
+      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for HTTP method matching the method in the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">methods (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Configure HTTP method(s). Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Minimum of 1 items required. Maximum of 16 items allowed. Allowed in Enterprise with any value edition, Essentials(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS) edition, Basic(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS) edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="PathMatch">PathMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">match_case (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Case sensitivity to use for the matching. Enum options - SENSITIVE, INSENSITIVE. </div>
-<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for matching the path in the HTTP request URI. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Allowed in Basic(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Essentials(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Enterprise edition. </div>
-<div class="param">match_str (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> String values. </div>
-<div class="param">string_group_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> UUID of the string group(s). It is a reference to an object of type StringGroup. </div>
+      <div class="param">match_case (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Case sensitivity to use for the matching. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for matching the path in the HTTP request URI. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Allowed in Enterprise with any value edition, Essentials(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Basic(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Enterprise with Cloud Services edition. </div>
+<div class="param">match_str (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> String values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">string_group_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> UUID of the string group(s). It is a reference to an object of type StringGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="PortMatch">PortMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for port matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. </div>
-<div class="param">ports (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">array[Integer]</a></span> Listening TCP port(s). Allowed values are 1-65535. Minimum of 1 items required. </div>
+      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for port matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ports (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">array[Integer]</a></span> Listening TCP port(s). Allowed values are 1-65535. Minimum of 1 items required. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="ProtocolMatch">ProtocolMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for protocol matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. </div>
-<div class="param">protocols </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP or HTTPS protocol. Enum options - HTTP, HTTPS. </div>
+      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for protocol matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">protocols </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP or HTTPS protocol. Enum options - HTTP, HTTPS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="QueryMatch">QueryMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">match_case (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. </div>
-<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for matching the query in HTTP request URI. Enum options - QUERY_MATCH_CONTAINS. </div>
-<div class="param">match_str (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> String value(s). </div>
-<div class="param">string_group_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> UUID of the string group(s). It is a reference to an object of type StringGroup. </div>
+      <div class="param">match_case (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for matching the query in HTTP request URI. Enum options - QUERY_MATCH_CONTAINS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">match_str (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> String value(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">string_group_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> UUID of the string group(s). It is a reference to an object of type StringGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   </body>

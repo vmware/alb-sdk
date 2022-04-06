@@ -920,90 +920,90 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="IpAddr">IpAddr</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">addr </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> IP address. </div>
-<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - V4, DNS, V6. </div>
+      <div class="param">addr </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - V4, DNS, V6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="IpAddrMatch">IpAddrMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">addrs (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">array[IpAddr]</a></span> IP address(es). </div>
-<div class="param">group_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> UUID of IP address group(s). It is a reference to an object of type IpAddrGroup. </div>
-<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for IP address matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. </div>
-<div class="param">prefixes (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrPrefix">array[IpAddrPrefix]</a></span> IP address prefix(es). </div>
-<div class="param">ranges (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrRange">array[IpAddrRange]</a></span> IP address range(s). </div>
+      <div class="param">addrs (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">array[IpAddr]</a></span> IP address(es). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">group_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> UUID of IP address group(s). It is a reference to an object of type IpAddrGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for IP address matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">prefixes (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrPrefix">array[IpAddrPrefix]</a></span> IP address prefix(es). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ranges (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrRange">array[IpAddrRange]</a></span> IP address range(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="IpAddrPrefix">IpAddrPrefix</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">ip_addr </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Placeholder for description of property ip_addr of obj type IpAddrPrefix field type str  type object </div>
-<div class="param">mask </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of mask. format: int32</div>
+      <div class="param">ip_addr </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span>  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">mask </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="IpAddrRange">IpAddrRange</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">begin </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Starting IP address of the range. </div>
-<div class="param">end </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Ending IP address of the range. </div>
+      <div class="param">begin </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Starting IP address of the range. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">end </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Ending IP address of the range. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="KeyValue">KeyValue</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key. </div>
-<div class="param">value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Value. </div>
+      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="L4RuleProtocolMatch">L4RuleProtocolMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for transport protocol matching. Enum options - IS_IN, IS_NOT_IN. Field introduced in 17.2.7. </div>
-<div class="param">protocol </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Transport protocol to match. Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP. Field introduced in 17.2.7. </div>
+      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for transport protocol matching. Enum options - IS_IN, IS_NOT_IN. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">protocol </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Transport protocol to match. Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="NatAddrInfo">NatAddrInfo</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">nat_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Nat IP address. Field introduced in 18.2.3. </div>
-<div class="param">nat_ip_range (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrRange">IpAddrRange</a></span> Nat IP address range. Field introduced in 18.2.3. </div>
+      <div class="param">nat_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Nat IP address. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">nat_ip_range (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrRange">IpAddrRange</a></span> Nat IP address range. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="NatMatchTarget">NatMatchTarget</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">destination_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrMatch">IpAddrMatch</a></span> Destination IP of the packet. Field introduced in 18.2.3. </div>
-<div class="param">services (optional)</div><div class="param-desc"><span class="param-type"><a href="#ServiceMatch">ServiceMatch</a></span> Services like port-matching and protocol. Field introduced in 18.2.5. </div>
-<div class="param">source_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrMatch">IpAddrMatch</a></span> Source IP of the packet. Field introduced in 18.2.3. </div>
+      <div class="param">destination_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrMatch">IpAddrMatch</a></span> Destination IP of the packet. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">services (optional)</div><div class="param-desc"><span class="param-type"><a href="#ServiceMatch">ServiceMatch</a></span> Services like port-matching and protocol. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">source_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrMatch">IpAddrMatch</a></span> Source IP of the packet. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="NatPolicy">NatPolicy</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
-<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
-<div class="param">created_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Creator name. Field introduced in 18.2.3. </div>
-<div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 18.2.3. </div>
-<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. </div>
-<div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition. </div>
-<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the Nat policy. Field introduced in 18.2.3. </div>
-<div class="param">rules (optional)</div><div class="param-desc"><span class="param-type"><a href="#NatRule">array[NatRule]</a></span> Nat policy Rules. Field introduced in 18.2.3. </div>
-<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Field introduced in 18.2.3. </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">created_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Creator name. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the Nat policy. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">rules (optional)</div><div class="param-desc"><span class="param-type"><a href="#NatRule">array[NatRule]</a></span> Nat policy Rules. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
-<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the Nat policy. Field introduced in 18.2.3. </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the Nat policy. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="NatPolicyAction">NatPolicyAction</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">nat_info (optional)</div><div class="param-desc"><span class="param-type"><a href="#NatAddrInfo">array[NatAddrInfo]</a></span> Pool of IP Addresses used for Nat. Field introduced in 18.2.5. </div>
-<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Nat Action Type. Enum options - NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PORT. Field introduced in 18.2.5. </div>
+      <div class="param">nat_info (optional)</div><div class="param-desc"><span class="param-type"><a href="#NatAddrInfo">array[NatAddrInfo]</a></span> Pool of IP Addresses used for Nat. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Nat Action Type. Enum options - NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PORT. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1017,34 +1017,34 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="NatRule">NatRule</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">action </div><div class="param-desc"><span class="param-type"><a href="#NatPolicyAction">NatPolicyAction</a></span> Nat rule Action Information. Field introduced in 18.2.3. </div>
-<div class="param">created_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Creator name. Field introduced in 18.2.3. </div>
-<div class="param">enable </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Nat rule enable flag. Field introduced in 18.2.3. </div>
-<div class="param">index </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Nat rule Index. Field introduced in 18.2.3. format: int32</div>
-<div class="param">match </div><div class="param-desc"><span class="param-type"><a href="#NatMatchTarget">NatMatchTarget</a></span> Nat rule Match Criteria. Field introduced in 18.2.3. </div>
-<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Nat rule Name. Field introduced in 18.2.3. </div>
+      <div class="param">action </div><div class="param-desc"><span class="param-type"><a href="#NatPolicyAction">NatPolicyAction</a></span> Nat rule Action Information. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">created_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Creator name. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">enable </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Nat rule enable flag. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">index </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Nat rule Index. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">match </div><div class="param-desc"><span class="param-type"><a href="#NatMatchTarget">NatMatchTarget</a></span> Nat rule Match Criteria. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Nat rule Name. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="PortMatch">PortMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for port matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. </div>
-<div class="param">ports (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">array[Integer]</a></span> Listening TCP port(s). Allowed values are 1-65535. Minimum of 1 items required. </div>
+      <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for port matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ports (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">array[Integer]</a></span> Listening TCP port(s). Allowed values are 1-65535. Minimum of 1 items required. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="RoleFilterMatchLabel">RoleFilterMatchLabel</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key for filter match. Field introduced in 20.1.3. </div>
-<div class="param">values (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Values for filter match. Multiple values will be evaluated as OR. Example  key &#x3D; value1 OR key &#x3D; value2. Behavior for match is key &#x3D; * if this field is empty. Field introduced in 20.1.3. </div>
+      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">values (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Values for filter match. Multiple values will be evaluated as OR. Example  key &#x3D; value1 OR key &#x3D; value2. Behavior for match is key &#x3D; * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="ServiceMatch">ServiceMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">destination_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#PortMatch">PortMatch</a></span> Destination Port of the packet. Field introduced in 18.2.5. </div>
-<div class="param">protocol (optional)</div><div class="param-desc"><span class="param-type"><a href="#L4RuleProtocolMatch">L4RuleProtocolMatch</a></span> Protocol to match. Supported protocols are TCP, UDP and ICMP. Field introduced in 20.1.1. </div>
-<div class="param">source_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#PortMatch">PortMatch</a></span> Source Port of the packet. Field introduced in 18.2.5. </div>
+      <div class="param">destination_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#PortMatch">PortMatch</a></span> Destination Port of the packet. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">protocol (optional)</div><div class="param-desc"><span class="param-type"><a href="#L4RuleProtocolMatch">L4RuleProtocolMatch</a></span> Protocol to match. Supported protocols are TCP, UDP and ICMP. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">source_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#PortMatch">PortMatch</a></span> Source Port of the packet. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   </body>
