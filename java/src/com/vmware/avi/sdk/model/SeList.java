@@ -150,6 +150,7 @@ public class SeList  {
      * This is the getter method this will return the attribute value.
      * Vip is active on cloud.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return activeOnCloud
      */
@@ -161,6 +162,7 @@ public class SeList  {
      * This is the setter method to the attribute.
      * Vip is active on cloud.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param activeOnCloud set the activeOnCloud.
      */
@@ -172,6 +174,7 @@ public class SeList  {
      * This is the getter method this will return the attribute value.
      * Vip is active on this serviceengine.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return activeOnSe
      */
@@ -183,6 +186,7 @@ public class SeList  {
      * This is the setter method to the attribute.
      * Vip is active on this serviceengine.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param activeOnSe set the activeOnSe.
      */
@@ -193,6 +197,7 @@ public class SeList  {
     /**
      * This is the getter method this will return the attribute value.
      * This flag is set when scaling in an se in admin down mode.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return adminDownRequested
      */
@@ -203,6 +208,7 @@ public class SeList  {
     /**
      * This is the setter method to the attribute.
      * This flag is set when scaling in an se in admin down mode.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param adminDownRequested set the adminDownRequested.
      */
@@ -215,6 +221,7 @@ public class SeList  {
      * Indicates if an se is at the current version.
      * This state will now be derived from se group runtime.
      * Field deprecated in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return atCurrVer
      */
     public Boolean getAtCurrVer() {
@@ -226,6 +233,7 @@ public class SeList  {
      * Indicates if an se is at the current version.
      * This state will now be derived from se group runtime.
      * Field deprecated in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param atCurrVer set the atCurrVer.
      */
     public void setAtCurrVer(Boolean  atCurrVer) {
@@ -236,6 +244,7 @@ public class SeList  {
      * This is the getter method this will return the attribute value.
      * Attach ip is in progress.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return attachIpInProgress
      */
@@ -247,6 +256,7 @@ public class SeList  {
      * This is the setter method to the attribute.
      * Attach ip is in progress.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param attachIpInProgress set the attachIpInProgress.
      */
@@ -259,6 +269,7 @@ public class SeList  {
      * This field indicates the status of programming network reachability to the virtual service ip in the cloud.
      * Field deprecated in 21.1.3.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return attachIpStatus
      */
     public String getAttachIpStatus() {
@@ -270,6 +281,7 @@ public class SeList  {
      * This field indicates the status of programming network reachability to the virtual service ip in the cloud.
      * Field deprecated in 21.1.3.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param attachIpStatus set the attachIpStatus.
      */
     public void setAttachIpStatus(String  attachIpStatus) {
@@ -281,6 +293,7 @@ public class SeList  {
      * This flag indicates if network reachability to the virtual service ip in the cloud has been successfully programmed.
      * Field deprecated in 21.1.3.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return attachIpSuccess
      */
     public Boolean getAttachIpSuccess() {
@@ -292,6 +305,7 @@ public class SeList  {
      * This flag indicates if network reachability to the virtual service ip in the cloud has been successfully programmed.
      * Field deprecated in 21.1.3.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param attachIpSuccess set the attachIpSuccess.
      */
     public void setAttachIpSuccess(Boolean  attachIpSuccess) {
@@ -302,6 +316,7 @@ public class SeList  {
      * This is the getter method this will return the attribute value.
      * All attempts to program the vip on cloud have been made.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudProgrammingDone
      */
@@ -313,6 +328,7 @@ public class SeList  {
      * This is the setter method to the attribute.
      * All attempts to program the vip on cloud have been made.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudProgrammingDone set the cloudProgrammingDone.
      */
@@ -324,6 +340,7 @@ public class SeList  {
      * This is the getter method this will return the attribute value.
      * Status of vip on the cloud.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudProgrammingStatus
      */
@@ -335,6 +352,7 @@ public class SeList  {
      * This is the setter method to the attribute.
      * Status of vip on the cloud.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudProgrammingStatus set the cloudProgrammingStatus.
      */
@@ -345,6 +363,7 @@ public class SeList  {
     /**
      * This is the getter method this will return the attribute value.
      * This flag is set when an se is admin down or scaling in.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return deleteInProgress
      */
@@ -355,6 +374,7 @@ public class SeList  {
     /**
      * This is the setter method to the attribute.
      * This flag is set when an se is admin down or scaling in.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param deleteInProgress set the deleteInProgress.
      */
@@ -366,6 +386,7 @@ public class SeList  {
      * This is the getter method this will return the attribute value.
      * Detach ip is in progress.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return detachIpInProgress
      */
@@ -377,6 +398,7 @@ public class SeList  {
      * This is the setter method to the attribute.
      * Detach ip is in progress.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param detachIpInProgress set the detachIpInProgress.
      */
@@ -388,6 +410,7 @@ public class SeList  {
      * This is the getter method this will return the attribute value.
      * This field is not needed with the current implementation of update rpcs to ses.
      * Field deprecated in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return downloadSelistOnly
      */
     public Boolean getDownloadSelistOnly() {
@@ -398,6 +421,7 @@ public class SeList  {
      * This is the setter method to the attribute.
      * This field is not needed with the current implementation of update rpcs to ses.
      * Field deprecated in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param downloadSelistOnly set the downloadSelistOnly.
      */
     public void setDownloadSelistOnly(Boolean  downloadSelistOnly) {
@@ -405,7 +429,7 @@ public class SeList  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property floating_intf_ip of obj type selist field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return floatingIntfIp
      */
@@ -415,7 +439,7 @@ public class SeList  {
 
     /**
      * This is the setter method. this will set the floatingIntfIp
-     * Placeholder for description of property floating_intf_ip of obj type selist field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return floatingIntfIp
      */
@@ -425,7 +449,7 @@ public class SeList  {
 
     /**
      * This is the setter method this will set the floatingIntfIp
-     * Placeholder for description of property floating_intf_ip of obj type selist field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return floatingIntfIp
      */
@@ -443,6 +467,7 @@ public class SeList  {
      * No longer used, replaced by se datastore.
      * Field deprecated in 18.1.5, 18.2.1.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return geoDownload
      */
     public Boolean getGeoDownload() {
@@ -455,6 +480,7 @@ public class SeList  {
      * No longer used, replaced by se datastore.
      * Field deprecated in 18.1.5, 18.2.1.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param geoDownload set the geoDownload.
      */
     public void setGeoDownload(Boolean  geoDownload) {
@@ -467,6 +493,7 @@ public class SeList  {
      * No longer used, replaced by se datastore.
      * Field deprecated in 18.1.5, 18.2.1.
      * Field introduced in 17.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return geodbDownload
      */
     public Boolean getGeodbDownload() {
@@ -479,6 +506,7 @@ public class SeList  {
      * No longer used, replaced by se datastore.
      * Field deprecated in 18.1.5, 18.2.1.
      * Field introduced in 17.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param geodbDownload set the geodbDownload.
      */
     public void setGeodbDownload(Boolean  geodbDownload) {
@@ -491,6 +519,7 @@ public class SeList  {
      * No longer used, replaced by se datastore.
      * Field deprecated in 18.1.5, 18.2.1.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return gslbDownload
      */
     public Boolean getGslbDownload() {
@@ -503,6 +532,7 @@ public class SeList  {
      * No longer used, replaced by se datastore.
      * Field deprecated in 18.1.5, 18.2.1.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param gslbDownload set the gslbDownload.
      */
     public void setGslbDownload(Boolean  gslbDownload) {
@@ -514,6 +544,7 @@ public class SeList  {
      * Updated whenever this entry is created.
      * When the sees this has changed, it means that the se should disrupt, since there was a delete then create, not an update.
      * Field introduced in 18.1.5,18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return incarnation
      */
@@ -526,6 +557,7 @@ public class SeList  {
      * Updated whenever this entry is created.
      * When the sees this has changed, it means that the se should disrupt, since there was a delete then create, not an update.
      * Field introduced in 18.1.5,18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param incarnation set the incarnation.
      */
@@ -538,6 +570,7 @@ public class SeList  {
      * This flag was used to display the se connected state.
      * This state will now be derived from se group runtime.
      * Field deprecated in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return isConnected
      */
     public Boolean getIsConnected() {
@@ -549,6 +582,7 @@ public class SeList  {
      * This flag was used to display the se connected state.
      * This state will now be derived from se group runtime.
      * Field deprecated in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param isConnected set the isConnected.
      */
     public void setIsConnected(Boolean  isConnected) {
@@ -557,7 +591,7 @@ public class SeList  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property is_portchannel of obj type selist field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return isPortchannel
      */
@@ -567,7 +601,7 @@ public class SeList  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property is_portchannel of obj type selist field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param isPortchannel set the isPortchannel.
      */
@@ -577,7 +611,7 @@ public class SeList  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property is_primary of obj type selist field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return isPrimary
      */
@@ -587,7 +621,7 @@ public class SeList  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property is_primary of obj type selist field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param isPrimary set the isPrimary.
      */
@@ -597,7 +631,7 @@ public class SeList  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property is_standby of obj type selist field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return isStandby
      */
@@ -607,7 +641,7 @@ public class SeList  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property is_standby of obj type selist field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param isStandby set the isStandby.
      */
@@ -617,7 +651,7 @@ public class SeList  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property memory of obj type selist field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2001.
      * @return memory
      */
@@ -627,7 +661,7 @@ public class SeList  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property memory of obj type selist field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2001.
      * @param memory set the memory.
      */
@@ -639,6 +673,7 @@ public class SeList  {
      * This is the getter method this will return the attribute value.
      * Management ipv4 address of se.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mgmtIp
      */
@@ -650,6 +685,7 @@ public class SeList  {
      * This is the setter method to the attribute.
      * Management ipv4 address of se.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mgmtIp set the mgmtIp.
      */
@@ -661,6 +697,7 @@ public class SeList  {
      * This is the getter method this will return the attribute value.
      * Management ipv6 address of se.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mgmtIp6
      */
@@ -672,6 +709,7 @@ public class SeList  {
      * This is the setter method to the attribute.
      * Management ipv6 address of se.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mgmtIp6 set the mgmtIp6.
      */
@@ -683,6 +721,7 @@ public class SeList  {
      * This is the getter method this will return the attribute value.
      * This field is not needed with the current implementation of update rpcs to ses.
      * Field deprecated in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return pendingDownload
      */
     public Boolean getPendingDownload() {
@@ -693,6 +732,7 @@ public class SeList  {
      * This is the setter method to the attribute.
      * This field is not needed with the current implementation of update rpcs to ses.
      * Field deprecated in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param pendingDownload set the pendingDownload.
      */
     public void setPendingDownload(Boolean  pendingDownload) {
@@ -703,6 +743,7 @@ public class SeList  {
      * This is the getter method this will return the attribute value.
      * Se scaling in status is determined by delete_in_progress.
      * Field deprecated in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return scaleinInProgress
      */
     public Boolean getScaleinInProgress() {
@@ -713,6 +754,7 @@ public class SeList  {
      * This is the setter method to the attribute.
      * Se scaling in status is determined by delete_in_progress.
      * Field deprecated in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param scaleinInProgress set the scaleinInProgress.
      */
     public void setScaleinInProgress(Boolean  scaleinInProgress) {
@@ -723,6 +765,7 @@ public class SeList  {
      * This is the getter method this will return the attribute value.
      * This flag is set when a vs is actively scaling out to this se.
      * Field introduced in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return scaleoutInProgress
      */
@@ -734,6 +777,7 @@ public class SeList  {
      * This is the setter method to the attribute.
      * This flag is set when a vs is actively scaling out to this se.
      * Field introduced in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param scaleoutInProgress set the scaleoutInProgress.
      */
@@ -745,6 +789,7 @@ public class SeList  {
      * This is the getter method this will return the attribute value.
      * All attempts to program the vip on this serviceengine have been made.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seProgrammingDone
      */
@@ -756,6 +801,7 @@ public class SeList  {
      * This is the setter method to the attribute.
      * All attempts to program the vip on this serviceengine have been made.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seProgrammingDone set the seProgrammingDone.
      */
@@ -767,6 +813,7 @@ public class SeList  {
      * This is the getter method this will return the attribute value.
      * Vip is awaiting response from this serviceengine.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seReadyInProgress
      */
@@ -778,6 +825,7 @@ public class SeList  {
      * This is the setter method to the attribute.
      * Vip is awaiting response from this serviceengine.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seReadyInProgress set the seReadyInProgress.
      */
@@ -788,6 +836,7 @@ public class SeList  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type serviceengine.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seRef
      */
@@ -798,6 +847,7 @@ public class SeList  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type serviceengine.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seRef set the seRef.
      */
@@ -807,7 +857,7 @@ public class SeList  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property sec_idx of obj type selist field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return secIdx
      */
@@ -817,7 +867,7 @@ public class SeList  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property sec_idx of obj type selist field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param secIdx set the secIdx.
      */
@@ -827,7 +877,7 @@ public class SeList  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property snat_ip of obj type selist field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return snatIp
      */
@@ -837,7 +887,7 @@ public class SeList  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property snat_ip of obj type selist field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param snatIp set the snatIp.
      */
@@ -847,7 +897,7 @@ public class SeList  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcpus of obj type selist field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return vcpus
      */
@@ -857,7 +907,7 @@ public class SeList  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcpus of obj type selist field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param vcpus set the vcpus.
      */
@@ -870,6 +920,7 @@ public class SeList  {
      * Version of the se.
      * This state will now be derived from se group runtime.
      * Field deprecated in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return version
      */
     public String getVersion() {
@@ -881,6 +932,7 @@ public class SeList  {
      * Version of the se.
      * This state will now be derived from se group runtime.
      * Field deprecated in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param version set the version.
      */
     public void setVersion(String  version) {
@@ -890,6 +942,7 @@ public class SeList  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 128.
      * @return vip6SubnetMask
      */
@@ -900,6 +953,7 @@ public class SeList  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 128.
      * @param vip6SubnetMask set the vip6SubnetMask.
      */
@@ -909,7 +963,7 @@ public class SeList  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vip_intf_ip of obj type selist field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vipIntfIp
      */
@@ -919,7 +973,7 @@ public class SeList  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vip_intf_ip of obj type selist field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vipIntfIp set the vipIntfIp.
      */
@@ -928,7 +982,7 @@ public class SeList  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vip_intf_list of obj type selist field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vipIntfList
      */
@@ -938,7 +992,7 @@ public class SeList  {
 
     /**
      * This is the setter method. this will set the vipIntfList
-     * Placeholder for description of property vip_intf_list of obj type selist field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vipIntfList
      */
@@ -948,7 +1002,7 @@ public class SeList  {
 
     /**
      * This is the setter method this will set the vipIntfList
-     * Placeholder for description of property vip_intf_list of obj type selist field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vipIntfList
      */
@@ -962,7 +1016,7 @@ public class SeList  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vip_intf_mac of obj type selist field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vipIntfMac
      */
@@ -972,7 +1026,7 @@ public class SeList  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vip_intf_mac of obj type selist field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vipIntfMac set the vipIntfMac.
      */
@@ -982,7 +1036,7 @@ public class SeList  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vip_subnet_mask of obj type selist field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 32.
      * @return vipSubnetMask
      */
@@ -992,7 +1046,7 @@ public class SeList  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vip_subnet_mask of obj type selist field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 32.
      * @param vipSubnetMask set the vipSubnetMask.
      */
@@ -1002,7 +1056,7 @@ public class SeList  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vlan_id of obj type selist field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return vlanId
      */
@@ -1012,7 +1066,7 @@ public class SeList  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vlan_id of obj type selist field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param vlanId set the vlanId.
      */
@@ -1021,7 +1075,7 @@ public class SeList  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vnic of obj type selist field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vnic
      */
@@ -1031,7 +1085,7 @@ public class SeList  {
 
     /**
      * This is the setter method. this will set the vnic
-     * Placeholder for description of property vnic of obj type selist field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vnic
      */
@@ -1041,7 +1095,7 @@ public class SeList  {
 
     /**
      * This is the setter method this will set the vnic
-     * Placeholder for description of property vnic of obj type selist field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vnic
      */

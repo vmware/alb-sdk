@@ -33,6 +33,7 @@ public class MatchReplacePair  {
      * This is the getter method this will return the attribute value.
      * String to be matched.
      * Field deprecated in 21.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return matchString
      */
     public String getMatchString() {
@@ -43,6 +44,7 @@ public class MatchReplacePair  {
      * This is the setter method to the attribute.
      * String to be matched.
      * Field deprecated in 21.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param matchString set the matchString.
      */
     public void setMatchString(String  matchString) {
@@ -53,6 +55,7 @@ public class MatchReplacePair  {
      * This is the getter method this will return the attribute value.
      * Replacement string.
      * Field deprecated in 21.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return replacementString
      */
     public ReplaceStringVar getReplacementString() {
@@ -63,6 +66,7 @@ public class MatchReplacePair  {
      * This is the setter method to the attribute.
      * Replacement string.
      * Field deprecated in 21.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param replacementString set the replacementString.
      */
     public void setReplacementString(ReplaceStringVar replacementString) {

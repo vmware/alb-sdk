@@ -40,6 +40,7 @@ public class GslbDnsSeInfo extends AviRestResource  {
      * This field describes the fd download status to the se.
      * Field deprecated in 18.2.3.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return fdDownload
      */
     public GslbDownloadStatus getFdDownload() {
@@ -51,6 +52,7 @@ public class GslbDnsSeInfo extends AviRestResource  {
      * This field describes the fd download status to the se.
      * Field deprecated in 18.2.3.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param fdDownload set the fdDownload.
      */
     public void setFdDownload(GslbDownloadStatus fdDownload) {
@@ -62,6 +64,7 @@ public class GslbDnsSeInfo extends AviRestResource  {
      * Geo files queue for sequencing files to se.
      * Field deprecated in 18.2.3.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return fdInfo
      */
     public ConfigInfo getFdInfo() {
@@ -73,6 +76,7 @@ public class GslbDnsSeInfo extends AviRestResource  {
      * Geo files queue for sequencing files to se.
      * Field deprecated in 18.2.3.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param fdInfo set the fdInfo.
      */
     public void setFdInfo(ConfigInfo fdInfo) {
@@ -84,6 +88,7 @@ public class GslbDnsSeInfo extends AviRestResource  {
      * Service engine's fabric ip used to push geo files.
      * Field deprecated in 18.2.3.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return ip
      */
     public IpAddr getIp() {
@@ -95,6 +100,7 @@ public class GslbDnsSeInfo extends AviRestResource  {
      * Service engine's fabric ip used to push geo files.
      * Field deprecated in 18.2.3.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param ip set the ip.
      */
     public void setIp(IpAddr ip) {
@@ -106,6 +112,7 @@ public class GslbDnsSeInfo extends AviRestResource  {
      * Uuid of the service engine.
      * Field deprecated in 18.2.3.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return uuid
      */
     public String getUuid() {
@@ -117,6 +124,7 @@ public class GslbDnsSeInfo extends AviRestResource  {
      * Uuid of the service engine.
      * Field deprecated in 18.2.3.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param uuid set the uuid.
      */
     public void setUuid(String  uuid) {

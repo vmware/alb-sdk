@@ -36,7 +36,7 @@ public class IPPersistenceProfile  {
      * When set to 0, all requests are sent to the same server.
      * Allowed values are 0-128.
      * Field introduced in 18.2.7.
-     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipMask
      */
@@ -51,7 +51,7 @@ public class IPPersistenceProfile  {
      * When set to 0, all requests are sent to the same server.
      * Allowed values are 0-128.
      * Field introduced in 18.2.7.
-     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipMask set the ipMask.
      */
@@ -64,6 +64,7 @@ public class IPPersistenceProfile  {
      * The length of time after a client's connections have closed before expiring the client's persistence to a server.
      * Allowed values are 1-720.
      * Unit is min.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return ipPersistentTimeout
      */
@@ -76,6 +77,7 @@ public class IPPersistenceProfile  {
      * The length of time after a client's connections have closed before expiring the client's persistence to a server.
      * Allowed values are 1-720.
      * Unit is min.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param ipPersistentTimeout set the ipPersistentTimeout.
      */

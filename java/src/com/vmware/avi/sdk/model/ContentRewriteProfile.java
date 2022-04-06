@@ -46,6 +46,7 @@ public class ContentRewriteProfile  {
      * This should be configured when request_rewrite_enabled is set to true.
      * This is currently not supported.
      * Field deprecated in 21.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return reqMatchReplacePair
      */
     public List<MatchReplacePair> getReqMatchReplacePair() {
@@ -58,6 +59,7 @@ public class ContentRewriteProfile  {
      * This should be configured when request_rewrite_enabled is set to true.
      * This is currently not supported.
      * Field deprecated in 21.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return reqMatchReplacePair
      */
     public void setReqMatchReplacePair(List<MatchReplacePair>  reqMatchReplacePair) {
@@ -70,6 +72,7 @@ public class ContentRewriteProfile  {
      * This should be configured when request_rewrite_enabled is set to true.
      * This is currently not supported.
      * Field deprecated in 21.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return reqMatchReplacePair
      */
     public ContentRewriteProfile addReqMatchReplacePairItem(MatchReplacePair reqMatchReplacePairItem) {
@@ -85,6 +88,7 @@ public class ContentRewriteProfile  {
      * Enable rewrite on request body.
      * This is not currently supported.
      * Field deprecated in 21.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return requestRewriteEnabled
      */
     public Boolean getRequestRewriteEnabled() {
@@ -96,6 +100,7 @@ public class ContentRewriteProfile  {
      * Enable rewrite on request body.
      * This is not currently supported.
      * Field deprecated in 21.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param requestRewriteEnabled set the requestRewriteEnabled.
      */
     public void setRequestRewriteEnabled(Boolean  requestRewriteEnabled) {
@@ -106,6 +111,7 @@ public class ContentRewriteProfile  {
      * This is the getter method this will return the attribute value.
      * Enable rewrite on response body.
      * Field deprecated in 21.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return responseRewriteEnabled
      */
     public Boolean getResponseRewriteEnabled() {
@@ -116,6 +122,7 @@ public class ContentRewriteProfile  {
      * This is the setter method to the attribute.
      * Enable rewrite on response body.
      * Field deprecated in 21.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param responseRewriteEnabled set the responseRewriteEnabled.
      */
     public void setResponseRewriteEnabled(Boolean  responseRewriteEnabled) {
@@ -127,6 +134,7 @@ public class ContentRewriteProfile  {
      * Rewrite only content types listed in this string group.
      * Content types not present in this list are not rewritten.
      * It is a reference to an object of type stringgroup.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rewritableContentRef
      */
@@ -139,6 +147,7 @@ public class ContentRewriteProfile  {
      * Rewrite only content types listed in this string group.
      * Content types not present in this list are not rewritten.
      * It is a reference to an object of type stringgroup.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rewritableContentRef set the rewritableContentRef.
      */
@@ -150,6 +159,7 @@ public class ContentRewriteProfile  {
      * Strings to be matched and replaced with on the response body.
      * This should be configured when response_rewrite_enabled is set to true.
      * Field deprecated in 21.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return rspMatchReplacePair
      */
     public List<MatchReplacePair> getRspMatchReplacePair() {
@@ -161,6 +171,7 @@ public class ContentRewriteProfile  {
      * Strings to be matched and replaced with on the response body.
      * This should be configured when response_rewrite_enabled is set to true.
      * Field deprecated in 21.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return rspMatchReplacePair
      */
     public void setRspMatchReplacePair(List<MatchReplacePair>  rspMatchReplacePair) {
@@ -172,6 +183,7 @@ public class ContentRewriteProfile  {
      * Strings to be matched and replaced with on the response body.
      * This should be configured when response_rewrite_enabled is set to true.
      * Field deprecated in 21.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return rspMatchReplacePair
      */
     public ContentRewriteProfile addRspMatchReplacePairItem(MatchReplacePair rspMatchReplacePairItem) {
@@ -186,6 +198,7 @@ public class ContentRewriteProfile  {
      * Content rewrite rules to be enabled on theresponse body.
      * Field introduced in 21.1.3.
      * Maximum of 1 items allowed.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rspRewriteRules
      */
@@ -198,6 +211,7 @@ public class ContentRewriteProfile  {
      * Content rewrite rules to be enabled on theresponse body.
      * Field introduced in 21.1.3.
      * Maximum of 1 items allowed.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rspRewriteRules
      */
@@ -210,6 +224,7 @@ public class ContentRewriteProfile  {
      * Content rewrite rules to be enabled on theresponse body.
      * Field introduced in 21.1.3.
      * Maximum of 1 items allowed.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rspRewriteRules
      */

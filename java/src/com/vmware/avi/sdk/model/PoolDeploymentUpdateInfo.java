@@ -48,6 +48,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Pool deployment state used with the pg deployment policy.
      * Enum options - EVALUATION_IN_PROGRESS, IN_SERVICE, OUT_OF_SERVICE, EVALUATION_FAILED.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return deploymentState
      */
@@ -59,6 +60,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource  {
      * This is the setter method to the attribute.
      * Pool deployment state used with the pg deployment policy.
      * Enum options - EVALUATION_IN_PROGRESS, IN_SERVICE, OUT_OF_SERVICE, EVALUATION_FAILED.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param deploymentState set the deploymentState.
      */
@@ -70,6 +72,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Evaluation period for deployment update.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return evaluationDuration
      */
@@ -81,6 +84,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource  {
      * This is the setter method to the attribute.
      * Evaluation period for deployment update.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param evaluationDuration set the evaluationDuration.
      */
@@ -91,6 +95,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Operational traffic ratio for the pool.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ratio
      */
@@ -101,6 +106,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Operational traffic ratio for the pool.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ratio set the ratio.
      */
@@ -110,6 +116,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * List of results for each deployment rule.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return results
      */
@@ -120,6 +127,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource  {
     /**
      * This is the setter method. this will set the results
      * List of results for each deployment rule.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return results
      */
@@ -130,6 +138,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource  {
     /**
      * This is the setter method this will set the results
      * List of results for each deployment rule.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return results
      */
@@ -144,6 +153,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Member pool's id.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -154,6 +164,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Member pool's id.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -164,6 +175,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Reason returned in webhook callback when configured.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return webhookReason
      */
@@ -174,6 +186,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Reason returned in webhook callback when configured.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param webhookReason set the webhookReason.
      */
@@ -184,6 +197,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Result of webhook callback when configured.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return webhookResult
      */
@@ -194,6 +208,7 @@ public class PoolDeploymentUpdateInfo extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Result of webhook callback when configured.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param webhookResult set the webhookResult.
      */

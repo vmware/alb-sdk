@@ -43,6 +43,7 @@ public class StreamingSyslogConfig  {
      * Facility value, as defined in rfc5424, must be between 0 and 23 inclusive.
      * Allowed values are 0-23.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 16.
      * @return facility
      */
@@ -55,6 +56,7 @@ public class StreamingSyslogConfig  {
      * Facility value, as defined in rfc5424, must be between 0 and 23 inclusive.
      * Allowed values are 0-23.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 16.
      * @param facility set the facility.
      */
@@ -68,6 +70,7 @@ public class StreamingSyslogConfig  {
      * This must be between 0 and 7 inclusive.
      * Allowed values are 0-7.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return filteredLogSeverity
      */
@@ -81,6 +84,7 @@ public class StreamingSyslogConfig  {
      * This must be between 0 and 7 inclusive.
      * Allowed values are 0-7.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param filteredLogSeverity set the filteredLogSeverity.
      */
@@ -93,6 +97,7 @@ public class StreamingSyslogConfig  {
      * String to use as the hostname in the syslog messages.
      * This string can contain only printable ascii characters (hex 21 to hex 7e; no space allowed).
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "AviVantage".
      * @return hostname
      */
@@ -105,6 +110,7 @@ public class StreamingSyslogConfig  {
      * String to use as the hostname in the syslog messages.
      * This string can contain only printable ascii characters (hex 21 to hex 7e; no space allowed).
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "AviVantage".
      * @param hostname set the hostname.
      */
@@ -118,6 +124,7 @@ public class StreamingSyslogConfig  {
      * This must be between 0 and 7 inclusive.
      * Allowed values are 0-7.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 6.
      * @return nonSignificantLogSeverity
      */
@@ -131,6 +138,7 @@ public class StreamingSyslogConfig  {
      * This must be between 0 and 7 inclusive.
      * Allowed values are 0-7.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 6.
      * @param nonSignificantLogSeverity set the nonSignificantLogSeverity.
      */
@@ -144,6 +152,7 @@ public class StreamingSyslogConfig  {
      * This must be between 0 and 7 inclusive.
      * Allowed values are 0-7.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @return significantLogSeverity
      */
@@ -157,6 +166,7 @@ public class StreamingSyslogConfig  {
      * This must be between 0 and 7 inclusive.
      * Allowed values are 0-7.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @param significantLogSeverity set the significantLogSeverity.
      */

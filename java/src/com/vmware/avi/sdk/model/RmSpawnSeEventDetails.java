@@ -82,7 +82,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property availability_zone of obj type rmspawnseeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return availabilityZone
      */
@@ -92,7 +92,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property availability_zone of obj type rmspawnseeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param availabilityZone set the availabilityZone.
      */
@@ -102,7 +102,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cloud_name of obj type rmspawnseeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudName
      */
@@ -112,7 +112,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cloud_name of obj type rmspawnseeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudName set the cloudName.
      */
@@ -122,7 +122,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudUuid
      */
@@ -132,7 +132,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudUuid set the cloudUuid.
      */
@@ -143,6 +143,7 @@ public class RmSpawnSeEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.2.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return flavorName
      */
@@ -153,6 +154,7 @@ public class RmSpawnSeEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.2.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param flavorName set the flavorName.
      */
@@ -162,7 +164,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property host_name of obj type rmspawnseeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostName
      */
@@ -172,7 +174,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property host_name of obj type rmspawnseeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hostName set the hostName.
      */
@@ -182,7 +184,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of host.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostUuid
      */
@@ -192,7 +194,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of host.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hostUuid set the hostUuid.
      */
@@ -202,7 +204,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property memory of obj type rmspawnseeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return memory
      */
@@ -212,7 +214,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property memory of obj type rmspawnseeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param memory set the memory.
      */
@@ -221,7 +223,7 @@ public class RmSpawnSeEventDetails  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property network_names of obj type rmspawnseeventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkNames
      */
@@ -231,7 +233,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method. this will set the networkNames
-     * Placeholder for description of property network_names of obj type rmspawnseeventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkNames
      */
@@ -241,7 +243,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method this will set the networkNames
-     * Placeholder for description of property network_names of obj type rmspawnseeventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkNames
      */
@@ -254,7 +256,7 @@ public class RmSpawnSeEventDetails  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property networks of obj type rmspawnseeventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networks
      */
@@ -264,7 +266,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method. this will set the networks
-     * Placeholder for description of property networks of obj type rmspawnseeventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networks
      */
@@ -274,7 +276,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method this will set the networks
-     * Placeholder for description of property networks of obj type rmspawnseeventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networks
      */
@@ -288,7 +290,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property reason of obj type rmspawnseeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -298,7 +300,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property reason of obj type rmspawnseeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -308,7 +310,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_cookie of obj type rmspawnseeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seCookie
      */
@@ -318,7 +320,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_cookie of obj type rmspawnseeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seCookie set the seCookie.
      */
@@ -328,7 +330,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_grp_name of obj type rmspawnseeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGrpName
      */
@@ -338,7 +340,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_grp_name of obj type rmspawnseeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGrpName set the seGrpName.
      */
@@ -348,7 +350,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of se_grp.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGrpUuid
      */
@@ -358,7 +360,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of se_grp.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGrpUuid set the seGrpUuid.
      */
@@ -368,7 +370,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_name of obj type rmspawnseeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seName
      */
@@ -378,7 +380,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_name of obj type rmspawnseeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seName set the seName.
      */
@@ -388,7 +390,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of se.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seUuid
      */
@@ -398,7 +400,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of se.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seUuid set the seUuid.
      */
@@ -408,7 +410,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property status_code of obj type rmspawnseeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return statusCode
      */
@@ -418,7 +420,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property status_code of obj type rmspawnseeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param statusCode set the statusCode.
      */
@@ -428,7 +430,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcpus of obj type rmspawnseeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcpus
      */
@@ -438,7 +440,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcpus of obj type rmspawnseeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcpus set the vcpus.
      */
@@ -448,7 +450,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vs_name of obj type rmspawnseeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsName
      */
@@ -458,7 +460,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vs_name of obj type rmspawnseeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsName set the vsName.
      */
@@ -468,7 +470,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of vs.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsUuid
      */
@@ -478,7 +480,7 @@ public class RmSpawnSeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of vs.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsUuid set the vsUuid.
      */

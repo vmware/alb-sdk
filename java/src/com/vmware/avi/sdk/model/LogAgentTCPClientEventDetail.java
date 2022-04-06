@@ -38,6 +38,7 @@ public class LogAgentTCPClientEventDetail  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorCode
      */
@@ -48,6 +49,7 @@ public class LogAgentTCPClientEventDetail  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorCode set the errorCode.
      */
@@ -58,6 +60,7 @@ public class LogAgentTCPClientEventDetail  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorReason
      */
@@ -68,6 +71,7 @@ public class LogAgentTCPClientEventDetail  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorReason set the errorReason.
      */
@@ -78,6 +82,7 @@ public class LogAgentTCPClientEventDetail  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return host
      */
@@ -88,6 +93,7 @@ public class LogAgentTCPClientEventDetail  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param host set the host.
      */
@@ -98,6 +104,7 @@ public class LogAgentTCPClientEventDetail  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
      */
@@ -108,6 +115,7 @@ public class LogAgentTCPClientEventDetail  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.
      */

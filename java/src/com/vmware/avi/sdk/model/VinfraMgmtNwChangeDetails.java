@@ -34,7 +34,7 @@ public class VinfraMgmtNwChangeDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property existing_nw of obj type vinframgmtnwchangedetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return existingNw
      */
@@ -44,7 +44,7 @@ public class VinfraMgmtNwChangeDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property existing_nw of obj type vinframgmtnwchangedetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param existingNw set the existingNw.
      */
@@ -54,7 +54,7 @@ public class VinfraMgmtNwChangeDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property new_nw of obj type vinframgmtnwchangedetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return newNw
      */
@@ -64,7 +64,7 @@ public class VinfraMgmtNwChangeDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property new_nw of obj type vinframgmtnwchangedetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param newNw set the newNw.
      */
@@ -74,7 +74,7 @@ public class VinfraMgmtNwChangeDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter of obj type vinframgmtnwchangedetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenter
      */
@@ -84,7 +84,7 @@ public class VinfraMgmtNwChangeDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter of obj type vinframgmtnwchangedetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenter set the vcenter.
      */

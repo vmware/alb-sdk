@@ -37,6 +37,7 @@ public class IpCommunity  {
      * Field introduced in 17.1.3.
      * Minimum of 1 items required.
      * Maximum of 16 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return community
      */
@@ -50,6 +51,7 @@ public class IpCommunity  {
      * Field introduced in 17.1.3.
      * Minimum of 1 items required.
      * Maximum of 16 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return community
      */
@@ -63,6 +65,7 @@ public class IpCommunity  {
      * Field introduced in 17.1.3.
      * Minimum of 1 items required.
      * Maximum of 16 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return community
      */
@@ -78,6 +81,7 @@ public class IpCommunity  {
      * This is the getter method this will return the attribute value.
      * Beginning of ip address range.
      * Field introduced in 17.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipBegin
      */
@@ -89,6 +93,7 @@ public class IpCommunity  {
      * This is the setter method to the attribute.
      * Beginning of ip address range.
      * Field introduced in 17.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipBegin set the ipBegin.
      */
@@ -101,6 +106,7 @@ public class IpCommunity  {
      * End of ip address range.
      * Optional if ip_begin is the only ip address in specified ip range.
      * Field introduced in 17.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipEnd
      */
@@ -113,6 +119,7 @@ public class IpCommunity  {
      * End of ip address range.
      * Optional if ip_begin is the only ip address in specified ip range.
      * Field introduced in 17.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipEnd set the ipEnd.
      */

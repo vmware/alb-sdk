@@ -35,6 +35,7 @@ public class SensitiveLogProfile  {
      * This is the getter method this will return the attribute value.
      * Match sensitive header fields in http application log.
      * Field introduced in 17.2.10, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return headerFieldRules
      */
@@ -46,6 +47,7 @@ public class SensitiveLogProfile  {
      * This is the setter method. this will set the headerFieldRules
      * Match sensitive header fields in http application log.
      * Field introduced in 17.2.10, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return headerFieldRules
      */
@@ -57,6 +59,7 @@ public class SensitiveLogProfile  {
      * This is the setter method this will set the headerFieldRules
      * Match sensitive header fields in http application log.
      * Field introduced in 17.2.10, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return headerFieldRules
      */
@@ -73,6 +76,7 @@ public class SensitiveLogProfile  {
      * Query params from the uri are extracted and checked for matching sensitive parameter names.
      * A successful match will mask the parameter values in accordance with this rule action.
      * Field introduced in 20.1.7, 21.1.2.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uriQueryFieldRules
      */
@@ -86,6 +90,7 @@ public class SensitiveLogProfile  {
      * Query params from the uri are extracted and checked for matching sensitive parameter names.
      * A successful match will mask the parameter values in accordance with this rule action.
      * Field introduced in 20.1.7, 21.1.2.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uriQueryFieldRules
      */
@@ -99,6 +104,7 @@ public class SensitiveLogProfile  {
      * Query params from the uri are extracted and checked for matching sensitive parameter names.
      * A successful match will mask the parameter values in accordance with this rule action.
      * Field introduced in 20.1.7, 21.1.2.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uriQueryFieldRules
      */
@@ -113,6 +119,7 @@ public class SensitiveLogProfile  {
      * This is the getter method this will return the attribute value.
      * Match sensitive waf log fields in http application log.
      * Field introduced in 17.2.13, 18.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return wafFieldRules
      */
@@ -124,6 +131,7 @@ public class SensitiveLogProfile  {
      * This is the setter method. this will set the wafFieldRules
      * Match sensitive waf log fields in http application log.
      * Field introduced in 17.2.13, 18.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return wafFieldRules
      */
@@ -135,6 +143,7 @@ public class SensitiveLogProfile  {
      * This is the setter method this will set the wafFieldRules
      * Match sensitive waf log fields in http application log.
      * Field introduced in 17.2.13, 18.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return wafFieldRules
      */

@@ -46,7 +46,7 @@ public class NetworkRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -56,7 +56,7 @@ public class NetworkRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -67,6 +67,7 @@ public class NetworkRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Objects using static ips in this network.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objUuids
      */
@@ -78,6 +79,7 @@ public class NetworkRuntime extends AviRestResource  {
      * This is the setter method. this will set the objUuids
      * Objects using static ips in this network.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objUuids
      */
@@ -89,6 +91,7 @@ public class NetworkRuntime extends AviRestResource  {
      * This is the setter method this will set the objUuids
      * Objects using static ips in this network.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objUuids
      */
@@ -103,6 +106,7 @@ public class NetworkRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Use obj_uuids.
      * Field deprecated in 20.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return seUuid
      */
     public List<String> getSeUuid() {
@@ -113,6 +117,7 @@ public class NetworkRuntime extends AviRestResource  {
      * This is the setter method. this will set the seUuid
      * Use obj_uuids.
      * Field deprecated in 20.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return seUuid
      */
     public void setSeUuid(List<String>  seUuid) {
@@ -123,6 +128,7 @@ public class NetworkRuntime extends AviRestResource  {
      * This is the setter method this will set the seUuid
      * Use obj_uuids.
      * Field deprecated in 20.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return seUuid
      */
     public NetworkRuntime addSeUuidItem(String seUuidItem) {
@@ -134,7 +140,7 @@ public class NetworkRuntime extends AviRestResource  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property subnet_runtime of obj type networkruntime field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnetRuntime
      */
@@ -144,7 +150,7 @@ public class NetworkRuntime extends AviRestResource  {
 
     /**
      * This is the setter method. this will set the subnetRuntime
-     * Placeholder for description of property subnet_runtime of obj type networkruntime field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnetRuntime
      */
@@ -154,7 +160,7 @@ public class NetworkRuntime extends AviRestResource  {
 
     /**
      * This is the setter method this will set the subnetRuntime
-     * Placeholder for description of property subnet_runtime of obj type networkruntime field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnetRuntime
      */
@@ -169,6 +175,7 @@ public class NetworkRuntime extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -179,6 +186,7 @@ public class NetworkRuntime extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -205,7 +213,7 @@ public class NetworkRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -215,7 +223,7 @@ public class NetworkRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

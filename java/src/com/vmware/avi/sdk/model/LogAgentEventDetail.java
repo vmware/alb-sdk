@@ -37,6 +37,7 @@ public class LogAgentEventDetail  {
      * Protocol used for communication to the external entity.
      * Enum options - TCP_CONN.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return protocol
      */
@@ -49,6 +50,7 @@ public class LogAgentEventDetail  {
      * Protocol used for communication to the external entity.
      * Enum options - TCP_CONN.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param protocol set the protocol.
      */
@@ -60,6 +62,7 @@ public class LogAgentEventDetail  {
      * This is the getter method this will return the attribute value.
      * Event details for tcp connection event.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tcpDetail
      */
@@ -71,6 +74,7 @@ public class LogAgentEventDetail  {
      * This is the setter method to the attribute.
      * Event details for tcp connection event.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tcpDetail set the tcpDetail.
      */
@@ -83,6 +87,7 @@ public class LogAgentEventDetail  {
      * Type of log agent event.
      * Enum options - LOG_AGENT_CONNECTION_ERROR.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -95,6 +100,7 @@ public class LogAgentEventDetail  {
      * Type of log agent event.
      * Enum options - LOG_AGENT_CONNECTION_ERROR.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */

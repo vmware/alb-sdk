@@ -51,6 +51,7 @@ public class SAMLSPConfig  {
      * This is the getter method this will return the attribute value.
      * Http cookie name for authenticated session.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cookieName
      */
@@ -62,6 +63,7 @@ public class SAMLSPConfig  {
      * This is the setter method to the attribute.
      * Http cookie name for authenticated session.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cookieName set the cookieName.
      */
@@ -75,6 +77,7 @@ public class SAMLSPConfig  {
      * Allowed values are 1-1440.
      * Field introduced in 18.2.3.
      * Unit is min.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @return cookieTimeout
      */
@@ -88,6 +91,7 @@ public class SAMLSPConfig  {
      * Allowed values are 1-1440.
      * Field introduced in 18.2.3.
      * Unit is min.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @param cookieTimeout set the cookieTimeout.
      */
@@ -100,6 +104,7 @@ public class SAMLSPConfig  {
      * Globally unique saml entityid for this node.
      * The saml application entity id on the idp should match this.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return entityId
      */
@@ -112,6 +117,7 @@ public class SAMLSPConfig  {
      * Globally unique saml entityid for this node.
      * The saml application entity id on the idp should match this.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param entityId set the entityId.
      */
@@ -122,6 +128,7 @@ public class SAMLSPConfig  {
      * This is the getter method this will return the attribute value.
      * Key to generate the cookie.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return key
      */
@@ -133,6 +140,7 @@ public class SAMLSPConfig  {
      * This is the setter method. this will set the key
      * Key to generate the cookie.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return key
      */
@@ -144,6 +152,7 @@ public class SAMLSPConfig  {
      * This is the setter method this will set the key
      * Key to generate the cookie.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return key
      */
@@ -160,6 +169,7 @@ public class SAMLSPConfig  {
      * Sp will use this ssl certificate to sign requests going to the idp and decrypt the assertions coming from idp.
      * It is a reference to an object of type sslkeyandcertificate.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return signingSslKeyAndCertificateRef
      */
@@ -172,6 +182,7 @@ public class SAMLSPConfig  {
      * Sp will use this ssl certificate to sign requests going to the idp and decrypt the assertions coming from idp.
      * It is a reference to an object of type sslkeyandcertificate.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param signingSslKeyAndCertificateRef set the signingSslKeyAndCertificateRef.
      */
@@ -183,6 +194,7 @@ public class SAMLSPConfig  {
      * This is the getter method this will return the attribute value.
      * Saml single signon url to be programmed on the idp.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return singleSignonUrl
      */
@@ -194,6 +206,7 @@ public class SAMLSPConfig  {
      * This is the setter method to the attribute.
      * Saml single signon url to be programmed on the idp.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param singleSignonUrl set the singleSignonUrl.
      */
@@ -205,6 +218,8 @@ public class SAMLSPConfig  {
      * This is the getter method this will return the attribute value.
      * Saml sp metadata for this application.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @return spMetadata
      */
     public String getSpMetadata() {
@@ -215,6 +230,8 @@ public class SAMLSPConfig  {
      * This is the setter method to the attribute.
      * Saml sp metadata for this application.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @param spMetadata set the spMetadata.
      */
     public void setSpMetadata(String  spMetadata) {
@@ -226,6 +243,7 @@ public class SAMLSPConfig  {
      * By enabling this field idp can control how long the sp session can exist through the sessionnotonorafter field in the authnstatement of saml
      * response.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return useIdpSessionTimeout
      */
@@ -238,6 +256,7 @@ public class SAMLSPConfig  {
      * By enabling this field idp can control how long the sp session can exist through the sessionnotonorafter field in the authnstatement of saml
      * response.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param useIdpSessionTimeout set the useIdpSessionTimeout.
      */

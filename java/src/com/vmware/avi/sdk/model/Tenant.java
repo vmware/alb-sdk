@@ -55,7 +55,7 @@ public class Tenant extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property config_settings of obj type tenant field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return configSettings
      */
@@ -65,7 +65,7 @@ public class Tenant extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property config_settings of obj type tenant field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param configSettings set the configSettings.
      */
@@ -76,6 +76,7 @@ public class Tenant extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Creator of this tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return createdBy
      */
@@ -86,6 +87,7 @@ public class Tenant extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Creator of this tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param createdBy set the createdBy.
      */
@@ -95,7 +97,7 @@ public class Tenant extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * User defined description for the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -105,7 +107,7 @@ public class Tenant extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * User defined description for the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -118,6 +120,7 @@ public class Tenant extends AviRestResource  {
      * The referred label groups are enforced on the tenant if this is set to true.if this is set to false, the label groups are suggested for the
      * tenant.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enforceLabelGroup
      */
@@ -130,6 +133,7 @@ public class Tenant extends AviRestResource  {
      * The referred label groups are enforced on the tenant if this is set to true.if this is set to false, the label groups are suggested for the
      * tenant.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enforceLabelGroup set the enforceLabelGroup.
      */
@@ -142,6 +146,7 @@ public class Tenant extends AviRestResource  {
      * This is strictly enforced only if enforce_label_group is set to true.
      * It is a reference to an object of type labelgroup.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labelGroupRefs
      */
@@ -155,6 +160,7 @@ public class Tenant extends AviRestResource  {
      * This is strictly enforced only if enforce_label_group is set to true.
      * It is a reference to an object of type labelgroup.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labelGroupRefs
      */
@@ -168,6 +174,7 @@ public class Tenant extends AviRestResource  {
      * This is strictly enforced only if enforce_label_group is set to true.
      * It is a reference to an object of type labelgroup.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labelGroupRefs
      */
@@ -181,7 +188,7 @@ public class Tenant extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property local of obj type tenant field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return local
      */
@@ -191,7 +198,7 @@ public class Tenant extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property local of obj type tenant field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param local set the local.
      */
@@ -201,7 +208,7 @@ public class Tenant extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -211,7 +218,7 @@ public class Tenant extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -225,6 +232,7 @@ public class Tenant extends AviRestResource  {
      * Field deprecated in 20.1.5.
      * Field introduced in 20.1.2.
      * Maximum of 256 items allowed.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * @return suggestedObjectLabels
      */
     public List<TenantLabel> getSuggestedObjectLabels() {
@@ -238,6 +246,7 @@ public class Tenant extends AviRestResource  {
      * Field deprecated in 20.1.5.
      * Field introduced in 20.1.2.
      * Maximum of 256 items allowed.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * @return suggestedObjectLabels
      */
     public void setSuggestedObjectLabels(List<TenantLabel>  suggestedObjectLabels) {
@@ -251,6 +260,7 @@ public class Tenant extends AviRestResource  {
      * Field deprecated in 20.1.5.
      * Field introduced in 20.1.2.
      * Maximum of 256 items allowed.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * @return suggestedObjectLabels
      */
     public Tenant addSuggestedObjectLabelsItem(TenantLabel suggestedObjectLabelsItem) {
@@ -280,7 +290,7 @@ public class Tenant extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -290,7 +300,7 @@ public class Tenant extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

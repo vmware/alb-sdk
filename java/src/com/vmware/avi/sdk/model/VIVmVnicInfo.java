@@ -34,7 +34,7 @@ public class VIVmVnicInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property mac_addr of obj type vivmvnicinfo field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return macAddr
      */
@@ -44,7 +44,7 @@ public class VIVmVnicInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property mac_addr of obj type vivmvnicinfo field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param macAddr set the macAddr.
      */
@@ -54,7 +54,7 @@ public class VIVmVnicInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_portgroup of obj type vivmvnicinfo field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterPortgroup
      */
@@ -64,7 +64,7 @@ public class VIVmVnicInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_portgroup of obj type vivmvnicinfo field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterPortgroup set the vcenterPortgroup.
      */
@@ -75,6 +75,7 @@ public class VIVmVnicInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - VNIC_VSWITCH, VNIC_DVS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterVnicNw
      */
@@ -85,6 +86,7 @@ public class VIVmVnicInfo  {
     /**
      * This is the setter method to the attribute.
      * Enum options - VNIC_VSWITCH, VNIC_DVS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterVnicNw set the vcenterVnicNw.
      */

@@ -42,6 +42,7 @@ public class AlertScriptConfig extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * User defined alert action script.
      * Please refer to kb.avinetworks.com for more information.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return actionScript
      */
@@ -53,6 +54,7 @@ public class AlertScriptConfig extends AviRestResource  {
      * This is the setter method to the attribute.
      * User defined alert action script.
      * Please refer to kb.avinetworks.com for more information.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param actionScript set the actionScript.
      */
@@ -63,6 +65,7 @@ public class AlertScriptConfig extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * A user-friendly name of the script.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -73,6 +76,7 @@ public class AlertScriptConfig extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * A user-friendly name of the script.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -83,6 +87,7 @@ public class AlertScriptConfig extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -93,6 +98,7 @@ public class AlertScriptConfig extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -119,7 +125,7 @@ public class AlertScriptConfig extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -129,7 +135,7 @@ public class AlertScriptConfig extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

@@ -60,6 +60,7 @@ public class WafRule  {
      * This is the getter method this will return the attribute value.
      * Enable or disable waf rule group.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enable
      */
@@ -71,6 +72,7 @@ public class WafRule  {
      * This is the setter method to the attribute.
      * Enable or disable waf rule group.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enable set the enable.
      */
@@ -84,6 +86,7 @@ public class WafRule  {
      * If there are multiple excludelist entries, it will be 'logical or' of them.
      * Field introduced in 17.2.3.
      * Maximum of 64 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return excludeList
      */
@@ -98,6 +101,7 @@ public class WafRule  {
      * If there are multiple excludelist entries, it will be 'logical or' of them.
      * Field introduced in 17.2.3.
      * Maximum of 64 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return excludeList
      */
@@ -112,6 +116,7 @@ public class WafRule  {
      * If there are multiple excludelist entries, it will be 'logical or' of them.
      * Field introduced in 17.2.3.
      * Maximum of 64 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return excludeList
      */
@@ -129,6 +134,7 @@ public class WafRule  {
      * The behavior would be as if this rule operated in detection mode regardless of waf policy setting.
      * Field deprecated in 18.1.5.
      * Field introduced in 18.1.4.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return forceDetection
      */
     public Boolean getForceDetection() {
@@ -141,6 +147,7 @@ public class WafRule  {
      * The behavior would be as if this rule operated in detection mode regardless of waf policy setting.
      * Field deprecated in 18.1.5.
      * Field introduced in 18.1.4.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param forceDetection set the forceDetection.
      */
     public void setForceDetection(Boolean  forceDetection) {
@@ -150,6 +157,7 @@ public class WafRule  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return index
      */
@@ -160,6 +168,7 @@ public class WafRule  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param index set the index.
      */
@@ -171,6 +180,7 @@ public class WafRule  {
      * This is the getter method this will return the attribute value.
      * The rule field is sensitive and will not be displayed.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return isSensitive
      */
@@ -182,6 +192,7 @@ public class WafRule  {
      * This is the setter method to the attribute.
      * The rule field is sensitive and will not be displayed.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param isSensitive set the isSensitive.
      */
@@ -197,6 +208,7 @@ public class WafRule  {
      * This only takes effect if the policy allows delegation.
      * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT.
      * Field introduced in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mode
      */
@@ -212,6 +224,7 @@ public class WafRule  {
      * This only takes effect if the policy allows delegation.
      * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT.
      * Field introduced in 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mode set the mode.
      */
@@ -223,6 +236,7 @@ public class WafRule  {
      * This is the getter method this will return the attribute value.
      * User-friendly optional name for a rule.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -234,6 +248,7 @@ public class WafRule  {
      * This is the setter method to the attribute.
      * User-friendly optional name for a rule.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -247,6 +262,8 @@ public class WafRule  {
      * Enum options - WAF_PHASE_CONNECTION, WAF_PHASE_REQUEST_HEADER, WAF_PHASE_REQUEST_BODY, WAF_PHASE_RESPONSE_HEADER, WAF_PHASE_RESPONSE_BODY,
      * WAF_PHASE_LOGGING.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @return phase
      */
     public String getPhase() {
@@ -259,6 +276,8 @@ public class WafRule  {
      * Enum options - WAF_PHASE_CONNECTION, WAF_PHASE_REQUEST_HEADER, WAF_PHASE_REQUEST_BODY, WAF_PHASE_RESPONSE_HEADER, WAF_PHASE_RESPONSE_BODY,
      * WAF_PHASE_LOGGING.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @param phase set the phase.
      */
     public void setPhase(String  phase) {
@@ -269,6 +288,7 @@ public class WafRule  {
      * This is the getter method this will return the attribute value.
      * Rule as per modsec language.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rule
      */
@@ -280,6 +300,7 @@ public class WafRule  {
      * This is the setter method to the attribute.
      * Rule as per modsec language.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rule set the rule.
      */
@@ -294,6 +315,7 @@ public class WafRule  {
      * It is extracted from the id action in a modsec rule.
      * Rules within a single waf policy are required to have unique rule_ids.
      * Field introduced in 17.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ruleId
      */
@@ -308,6 +330,7 @@ public class WafRule  {
      * It is extracted from the id action in a modsec rule.
      * Rules within a single waf policy are required to have unique rule_ids.
      * Field introduced in 17.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ruleId set the ruleId.
      */
@@ -319,6 +342,7 @@ public class WafRule  {
      * Tags for waf rule as per modsec language.
      * They are extracted from the tag action in a modsec rule.
      * Field introduced in 18.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tags
      */
@@ -331,6 +355,7 @@ public class WafRule  {
      * Tags for waf rule as per modsec language.
      * They are extracted from the tag action in a modsec rule.
      * Field introduced in 18.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tags
      */
@@ -343,6 +368,7 @@ public class WafRule  {
      * Tags for waf rule as per modsec language.
      * They are extracted from the tag action in a modsec rule.
      * Field introduced in 18.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tags
      */

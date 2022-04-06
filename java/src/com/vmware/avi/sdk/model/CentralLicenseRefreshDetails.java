@@ -33,6 +33,7 @@ public class CentralLicenseRefreshDetails  {
      * This is the getter method this will return the attribute value.
      * Message.
      * Field introduced in 21.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return message
      */
@@ -44,6 +45,7 @@ public class CentralLicenseRefreshDetails  {
      * This is the setter method to the attribute.
      * Message.
      * Field introduced in 21.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param message set the message.
      */
@@ -55,6 +57,7 @@ public class CentralLicenseRefreshDetails  {
      * This is the getter method this will return the attribute value.
      * Service units.
      * Field introduced in 21.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceUnits
      */
@@ -66,6 +69,7 @@ public class CentralLicenseRefreshDetails  {
      * This is the setter method to the attribute.
      * Service units.
      * Field introduced in 21.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceUnits set the serviceUnits.
      */

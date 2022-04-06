@@ -39,6 +39,7 @@ public class HTTPSecurityActionRateProfile  {
      * This is the getter method this will return the attribute value.
      * The action to take when the rate limit has been reached.
      * Field introduced in 18.2.9.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return action
      */
@@ -50,6 +51,7 @@ public class HTTPSecurityActionRateProfile  {
      * This is the setter method to the attribute.
      * The action to take when the rate limit has been reached.
      * Field introduced in 18.2.9.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param action set the action.
      */
@@ -61,6 +63,7 @@ public class HTTPSecurityActionRateProfile  {
      * This is the getter method this will return the attribute value.
      * Rate limiting should be done on a per client ip basis.
      * Field introduced in 18.2.9.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return perClientIp
      */
@@ -72,6 +75,7 @@ public class HTTPSecurityActionRateProfile  {
      * This is the setter method to the attribute.
      * Rate limiting should be done on a per client ip basis.
      * Field introduced in 18.2.9.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param perClientIp set the perClientIp.
      */
@@ -83,6 +87,7 @@ public class HTTPSecurityActionRateProfile  {
      * This is the getter method this will return the attribute value.
      * Rate limiting should be done on a per request uri path basis.
      * Field introduced in 18.2.9.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return perUriPath
      */
@@ -94,6 +99,7 @@ public class HTTPSecurityActionRateProfile  {
      * This is the setter method to the attribute.
      * Rate limiting should be done on a per request uri path basis.
      * Field introduced in 18.2.9.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param perUriPath set the perUriPath.
      */
@@ -105,6 +111,7 @@ public class HTTPSecurityActionRateProfile  {
      * This is the getter method this will return the attribute value.
      * The rate limiter used when this action is triggered.
      * Field introduced in 18.2.9.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rateLimiter
      */
@@ -116,6 +123,7 @@ public class HTTPSecurityActionRateProfile  {
      * This is the setter method to the attribute.
      * The rate limiter used when this action is triggered.
      * Field introduced in 18.2.9.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rateLimiter set the rateLimiter.
      */

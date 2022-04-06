@@ -43,7 +43,7 @@ public class OpenstackLogin  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property admin_tenant of obj type openstacklogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "admin".
      * @return adminTenant
      */
@@ -53,7 +53,7 @@ public class OpenstackLogin  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property admin_tenant of obj type openstacklogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "admin".
      * @param adminTenant set the adminTenant.
      */
@@ -63,7 +63,7 @@ public class OpenstackLogin  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property auth_url of obj type openstacklogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authUrl
      */
@@ -73,7 +73,7 @@ public class OpenstackLogin  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property auth_url of obj type openstacklogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param authUrl set the authUrl.
      */
@@ -83,7 +83,7 @@ public class OpenstackLogin  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property keystone_host of obj type openstacklogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return keystoneHost
      */
@@ -93,7 +93,7 @@ public class OpenstackLogin  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property keystone_host of obj type openstacklogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param keystoneHost set the keystoneHost.
      */
@@ -103,7 +103,7 @@ public class OpenstackLogin  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property password of obj type openstacklogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return password
      */
@@ -113,7 +113,7 @@ public class OpenstackLogin  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property password of obj type openstacklogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param password set the password.
      */
@@ -123,7 +123,7 @@ public class OpenstackLogin  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property region of obj type openstacklogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return region
      */
@@ -133,7 +133,7 @@ public class OpenstackLogin  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property region of obj type openstacklogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param region set the region.
      */
@@ -143,7 +143,7 @@ public class OpenstackLogin  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property username of obj type openstacklogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return username
      */
@@ -153,7 +153,7 @@ public class OpenstackLogin  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property username of obj type openstacklogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param username set the username.
      */

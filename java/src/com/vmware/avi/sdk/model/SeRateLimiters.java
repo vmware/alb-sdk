@@ -44,6 +44,7 @@ public class SeRateLimiters  {
     /**
      * This is the getter method this will return the attribute value.
      * Rate limiter for arp packets in pps.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @return arpRl
      */
@@ -54,6 +55,7 @@ public class SeRateLimiters  {
     /**
      * This is the setter method to the attribute.
      * Rate limiter for arp packets in pps.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @param arpRl set the arpRl.
      */
@@ -64,6 +66,7 @@ public class SeRateLimiters  {
     /**
      * This is the getter method this will return the attribute value.
      * Default rate limiter in pps.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return defaultRl
      */
@@ -74,6 +77,7 @@ public class SeRateLimiters  {
     /**
      * This is the setter method to the attribute.
      * Default rate limiter in pps.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param defaultRl set the defaultRl.
      */
@@ -84,6 +88,7 @@ public class SeRateLimiters  {
     /**
      * This is the getter method this will return the attribute value.
      * Rate limiter for number of flow probes in pps.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 250.
      * @return flowProbeRl
      */
@@ -94,6 +99,7 @@ public class SeRateLimiters  {
     /**
      * This is the setter method to the attribute.
      * Rate limiter for number of flow probes in pps.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 250.
      * @param flowProbeRl set the flowProbeRl.
      */
@@ -104,6 +110,7 @@ public class SeRateLimiters  {
     /**
      * This is the getter method this will return the attribute value.
      * Rate limiter for icmp requests in pps.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @return icmpRl
      */
@@ -114,6 +121,7 @@ public class SeRateLimiters  {
     /**
      * This is the setter method to the attribute.
      * Rate limiter for icmp requests in pps.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @param icmpRl set the icmpRl.
      */
@@ -124,6 +132,7 @@ public class SeRateLimiters  {
     /**
      * This is the getter method this will return the attribute value.
      * Rate limiter for icmp response in pps.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @return icmpRspRl
      */
@@ -134,6 +143,7 @@ public class SeRateLimiters  {
     /**
      * This is the setter method to the attribute.
      * Rate limiter for icmp response in pps.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2000.
      * @param icmpRspRl set the icmpRspRl.
      */
@@ -144,6 +154,7 @@ public class SeRateLimiters  {
     /**
      * This is the getter method this will return the attribute value.
      * Rate limiter for number rst pkts sent in pps.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return rstRl
      */
@@ -154,6 +165,7 @@ public class SeRateLimiters  {
     /**
      * This is the setter method to the attribute.
      * Rate limiter for number rst pkts sent in pps.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param rstRl set the rstRl.
      */

@@ -28,7 +28,7 @@ public class CloudConnectorUserTestParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property host of obj type cloudconnectorusertestparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return host
      */
@@ -38,7 +38,7 @@ public class CloudConnectorUserTestParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property host of obj type cloudconnectorusertestparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param host set the host.
      */

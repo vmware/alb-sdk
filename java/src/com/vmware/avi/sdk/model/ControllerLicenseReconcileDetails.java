@@ -55,7 +55,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property new_available_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return newAvailableServiceCores
      */
@@ -65,7 +65,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property new_available_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param newAvailableServiceCores set the newAvailableServiceCores.
      */
@@ -75,7 +75,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property new_consumed_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return newConsumedServiceCores
      */
@@ -85,7 +85,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property new_consumed_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param newConsumedServiceCores set the newConsumedServiceCores.
      */
@@ -95,7 +95,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property new_escrow_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return newEscrowServiceCores
      */
@@ -105,7 +105,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property new_escrow_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param newEscrowServiceCores set the newEscrowServiceCores.
      */
@@ -115,7 +115,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property new_remaining_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return newRemainingServiceCores
      */
@@ -125,7 +125,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property new_remaining_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param newRemainingServiceCores set the newRemainingServiceCores.
      */
@@ -135,7 +135,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property old_available_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return oldAvailableServiceCores
      */
@@ -145,7 +145,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property old_available_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param oldAvailableServiceCores set the oldAvailableServiceCores.
      */
@@ -155,7 +155,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property old_consumed_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return oldConsumedServiceCores
      */
@@ -165,7 +165,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property old_consumed_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param oldConsumedServiceCores set the oldConsumedServiceCores.
      */
@@ -175,7 +175,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property old_escrow_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return oldEscrowServiceCores
      */
@@ -185,7 +185,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property old_escrow_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param oldEscrowServiceCores set the oldEscrowServiceCores.
      */
@@ -195,7 +195,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property old_remaining_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return oldRemainingServiceCores
      */
@@ -205,7 +205,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property old_remaining_service_cores of obj type controllerlicensereconciledetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param oldRemainingServiceCores set the oldRemainingServiceCores.
      */
@@ -215,7 +215,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantUuid
      */
@@ -225,7 +225,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantUuid set the tenantUuid.
      */
@@ -235,7 +235,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property tier of obj type controllerlicensereconciledetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tier
      */
@@ -245,7 +245,7 @@ public class ControllerLicenseReconcileDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property tier of obj type controllerlicensereconciledetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tier set the tier.
      */

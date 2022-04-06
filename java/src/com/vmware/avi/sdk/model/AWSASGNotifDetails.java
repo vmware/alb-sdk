@@ -49,7 +49,7 @@ public class AWSASGNotifDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property asg_name of obj type awsasgnotifdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return asgName
      */
@@ -59,7 +59,7 @@ public class AWSASGNotifDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property asg_name of obj type awsasgnotifdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param asgName set the asgName.
      */
@@ -69,7 +69,7 @@ public class AWSASGNotifDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_id of obj type awsasgnotifdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccId
      */
@@ -79,7 +79,7 @@ public class AWSASGNotifDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_id of obj type awsasgnotifdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccId set the ccId.
      */
@@ -89,7 +89,7 @@ public class AWSASGNotifDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property error_string of obj type awsasgnotifdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorString
      */
@@ -99,7 +99,7 @@ public class AWSASGNotifDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property error_string of obj type awsasgnotifdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorString set the errorString.
      */
@@ -109,7 +109,7 @@ public class AWSASGNotifDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property event_type of obj type awsasgnotifdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return eventType
      */
@@ -119,7 +119,7 @@ public class AWSASGNotifDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property event_type of obj type awsasgnotifdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param eventType set the eventType.
      */
@@ -129,7 +129,7 @@ public class AWSASGNotifDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property instance_id of obj type awsasgnotifdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return instanceId
      */
@@ -139,7 +139,7 @@ public class AWSASGNotifDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property instance_id of obj type awsasgnotifdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param instanceId set the instanceId.
      */
@@ -149,7 +149,7 @@ public class AWSASGNotifDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property instance_ip_addr of obj type awsasgnotifdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return instanceIpAddr
      */
@@ -159,7 +159,7 @@ public class AWSASGNotifDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property instance_ip_addr of obj type awsasgnotifdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param instanceIpAddr set the instanceIpAddr.
      */
@@ -172,6 +172,7 @@ public class AWSASGNotifDetails  {
      * Uuid of the pool.
      * It is a reference to an object of type pool.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolRef
      */
@@ -184,6 +185,7 @@ public class AWSASGNotifDetails  {
      * Uuid of the pool.
      * It is a reference to an object of type pool.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolRef set the poolRef.
      */
@@ -193,7 +195,7 @@ public class AWSASGNotifDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vpc_id of obj type awsasgnotifdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vpcId
      */
@@ -203,7 +205,7 @@ public class AWSASGNotifDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vpc_id of obj type awsasgnotifdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vpcId set the vpcId.
      */

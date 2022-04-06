@@ -84,6 +84,7 @@ public class AlertConfig extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The alert config will trigger the selected alert action, which can send notifications and execute a controlscript.
      * It is a reference to an object of type actiongroupconfig.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return actionGroupRef
      */
@@ -95,6 +96,7 @@ public class AlertConfig extends AviRestResource  {
      * This is the setter method to the attribute.
      * The alert config will trigger the selected alert action, which can send notifications and execute a controlscript.
      * It is a reference to an object of type actiongroupconfig.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param actionGroupRef set the actionGroupRef.
      */
@@ -105,6 +107,7 @@ public class AlertConfig extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * List of filters matching on events or client logs used for triggering alerts.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return alertRule
      */
@@ -115,6 +118,7 @@ public class AlertConfig extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * List of filters matching on events or client logs used for triggering alerts.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param alertRule set the alertRule.
      */
@@ -125,6 +129,7 @@ public class AlertConfig extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * This alert config applies to auto scale alerts.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return autoscaleAlert
      */
@@ -135,6 +140,7 @@ public class AlertConfig extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * This alert config applies to auto scale alerts.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param autoscaleAlert set the autoscaleAlert.
      */
@@ -147,6 +153,7 @@ public class AlertConfig extends AviRestResource  {
      * Determines whether an alert is raised immediately when event occurs (realtime) or after specified number of events occurs within rolling time
      * window.
      * Enum options - REALTIME, ROLLINGWINDOW, WATERMARK.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "REALTIME".
      * @return category
      */
@@ -159,6 +166,7 @@ public class AlertConfig extends AviRestResource  {
      * Determines whether an alert is raised immediately when event occurs (realtime) or after specified number of events occurs within rolling time
      * window.
      * Enum options - REALTIME, ROLLINGWINDOW, WATERMARK.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "REALTIME".
      * @param category set the category.
      */
@@ -169,6 +177,7 @@ public class AlertConfig extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * A custom description field.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -179,6 +188,7 @@ public class AlertConfig extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * A custom description field.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -189,6 +199,7 @@ public class AlertConfig extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Enable or disable this alert config from generating new alerts.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enabled
      */
@@ -199,6 +210,7 @@ public class AlertConfig extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Enable or disable this alert config from generating new alerts.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enabled set the enabled.
      */
@@ -212,6 +224,7 @@ public class AlertConfig extends AviRestResource  {
      * The original event triggering the alert remains in the event's log.
      * Allowed values are 1-31536000.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 86400.
      * @return expiryTime
      */
@@ -225,6 +238,7 @@ public class AlertConfig extends AviRestResource  {
      * The original event triggering the alert remains in the event's log.
      * Allowed values are 1-31536000.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 86400.
      * @param expiryTime set the expiryTime.
      */
@@ -235,6 +249,7 @@ public class AlertConfig extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of the alert configuration.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -245,6 +260,7 @@ public class AlertConfig extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Name of the alert configuration.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -255,6 +271,7 @@ public class AlertConfig extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Uuid of the resource for which alert was raised.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objUuid
      */
@@ -265,6 +282,7 @@ public class AlertConfig extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Uuid of the resource for which alert was raised.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param objUuid set the objUuid.
      */
@@ -279,6 +297,7 @@ public class AlertConfig extends AviRestResource  {
      * Enum options - VIRTUALSERVICE, POOL, HEALTHMONITOR, NETWORKPROFILE, APPLICATIONPROFILE, HTTPPOLICYSET, DNSPOLICY, SECURITYPOLICY, IPADDRGROUP,
      * STRINGGROUP, SSLPROFILE, SSLKEYANDCERTIFICATE, NETWORKSECURITYPOLICY, APPLICATIONPERSISTENCEPROFILE, ANALYTICSPROFILE, VSDATASCRIPTSET, TENANT,
      * PKIPROFILE, AUTHPROFILE, CLOUD...
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objectType
      */
@@ -293,6 +312,7 @@ public class AlertConfig extends AviRestResource  {
      * Enum options - VIRTUALSERVICE, POOL, HEALTHMONITOR, NETWORKPROFILE, APPLICATIONPROFILE, HTTPPOLICYSET, DNSPOLICY, SECURITYPOLICY, IPADDRGROUP,
      * STRINGGROUP, SSLPROFILE, SSLKEYANDCERTIFICATE, NETWORKSECURITYPOLICY, APPLICATIONPERSISTENCEPROFILE, ANALYTICSPROFILE, VSDATASCRIPTSET, TENANT,
      * PKIPROFILE, AUTHPROFILE, CLOUD...
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param objectType set the objectType.
      */
@@ -302,7 +322,7 @@ public class AlertConfig extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property recommendation of obj type alertconfig field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return recommendation
      */
@@ -312,7 +332,7 @@ public class AlertConfig extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property recommendation of obj type alertconfig field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param recommendation set the recommendation.
      */
@@ -325,6 +345,7 @@ public class AlertConfig extends AviRestResource  {
      * Only if the number of events is reached or exceeded within the time window will an alert be generated.
      * Allowed values are 1-31536000.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @return rollingWindow
      */
@@ -337,6 +358,7 @@ public class AlertConfig extends AviRestResource  {
      * Only if the number of events is reached or exceeded within the time window will an alert be generated.
      * Allowed values are 1-31536000.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @param rollingWindow set the rollingWindow.
      */
@@ -348,6 +370,7 @@ public class AlertConfig extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Signifies system events or the type of client logsused in this alert configuration.
      * Enum options - CONN_LOGS, APP_LOGS, EVENT_LOGS, METRICS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return source
      */
@@ -359,6 +382,7 @@ public class AlertConfig extends AviRestResource  {
      * This is the setter method to the attribute.
      * Signifies system events or the type of client logsused in this alert configuration.
      * Enum options - CONN_LOGS, APP_LOGS, EVENT_LOGS, METRICS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param source set the source.
      */
@@ -369,6 +393,7 @@ public class AlertConfig extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Summary of reason why alert is generated.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return summary
      */
@@ -379,6 +404,7 @@ public class AlertConfig extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Summary of reason why alert is generated.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param summary set the summary.
      */
@@ -389,6 +415,7 @@ public class AlertConfig extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -399,6 +426,7 @@ public class AlertConfig extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -410,6 +438,7 @@ public class AlertConfig extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * An alert is created only when the number of events meets or exceeds this number within the chosen time frame.
      * Allowed values are 1-65536.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return threshold
      */
@@ -421,6 +450,7 @@ public class AlertConfig extends AviRestResource  {
      * This is the setter method to the attribute.
      * An alert is created only when the number of events meets or exceeds this number within the chosen time frame.
      * Allowed values are 1-65536.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param threshold set the threshold.
      */
@@ -433,6 +463,7 @@ public class AlertConfig extends AviRestResource  {
      * Alerts are suppressed (throttled) for this duration of time since the last alert was raised for this alert config.
      * Allowed values are 0-31536000.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 600.
      * @return throttle
      */
@@ -445,6 +476,7 @@ public class AlertConfig extends AviRestResource  {
      * Alerts are suppressed (throttled) for this duration of time since the last alert was raised for this alert config.
      * Allowed values are 0-31536000.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 600.
      * @param throttle set the throttle.
      */
@@ -471,7 +503,7 @@ public class AlertConfig extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -481,7 +513,7 @@ public class AlertConfig extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

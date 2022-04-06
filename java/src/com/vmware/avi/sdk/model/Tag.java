@@ -32,6 +32,7 @@ public class Tag  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - AVI_DEFINED, USER_DEFINED, VCENTER_DEFINED.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "USER_DEFINED".
      * @return type
      */
@@ -42,6 +43,7 @@ public class Tag  {
     /**
      * This is the setter method to the attribute.
      * Enum options - AVI_DEFINED, USER_DEFINED, VCENTER_DEFINED.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "USER_DEFINED".
      * @param type set the type.
      */
@@ -51,7 +53,7 @@ public class Tag  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property value of obj type tag field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return value
      */
@@ -61,7 +63,7 @@ public class Tag  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property value of obj type tag field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param value set the value.
      */

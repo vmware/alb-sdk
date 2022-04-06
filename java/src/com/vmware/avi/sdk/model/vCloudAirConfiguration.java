@@ -51,6 +51,7 @@ public class vCloudAirConfiguration  {
      * This is the getter method this will return the attribute value.
      * Vcloudair access mode.
      * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "WRITE_ACCESS".
      * @return privilege
      */
@@ -62,6 +63,7 @@ public class vCloudAirConfiguration  {
      * This is the setter method to the attribute.
      * Vcloudair access mode.
      * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "WRITE_ACCESS".
      * @param privilege set the privilege.
      */
@@ -72,6 +74,7 @@ public class vCloudAirConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Vcloudair host address.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcaHost
      */
@@ -82,6 +85,7 @@ public class vCloudAirConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Vcloudair host address.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcaHost set the vcaHost.
      */
@@ -92,6 +96,7 @@ public class vCloudAirConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Vcloudair instance id.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcaInstance
      */
@@ -102,6 +107,7 @@ public class vCloudAirConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Vcloudair instance id.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcaInstance set the vcaInstance.
      */
@@ -112,6 +118,7 @@ public class vCloudAirConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Vcloudair management network.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcaMgmtNetwork
      */
@@ -122,6 +129,7 @@ public class vCloudAirConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Vcloudair management network.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcaMgmtNetwork set the vcaMgmtNetwork.
      */
@@ -132,6 +140,7 @@ public class vCloudAirConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Vcloudair orgnization id.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcaOrgnization
      */
@@ -142,6 +151,7 @@ public class vCloudAirConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Vcloudair orgnization id.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcaOrgnization set the vcaOrgnization.
      */
@@ -152,6 +162,7 @@ public class vCloudAirConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Vcloudair password.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcaPassword
      */
@@ -162,6 +173,7 @@ public class vCloudAirConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Vcloudair password.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcaPassword set the vcaPassword.
      */
@@ -172,6 +184,7 @@ public class vCloudAirConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Vcloudair username.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcaUsername
      */
@@ -182,6 +195,7 @@ public class vCloudAirConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Vcloudair username.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcaUsername set the vcaUsername.
      */
@@ -192,6 +206,7 @@ public class vCloudAirConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Vcloudair virtual data center name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcaVdc
      */
@@ -202,6 +217,7 @@ public class vCloudAirConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Vcloudair virtual data center name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcaVdc set the vcaVdc.
      */

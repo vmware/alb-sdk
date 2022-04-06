@@ -33,6 +33,7 @@ public class RoleMatchOperationMatchLabel  {
      * This is the getter method this will return the attribute value.
      * List of labels allowed for the tenant.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matchLabel
      */
@@ -44,6 +45,7 @@ public class RoleMatchOperationMatchLabel  {
      * This is the setter method to the attribute.
      * List of labels allowed for the tenant.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param matchLabel set the matchLabel.
      */
@@ -56,6 +58,7 @@ public class RoleMatchOperationMatchLabel  {
      * Label match operation criteria.
      * Enum options - ROLE_FILTER_EQUALS, ROLE_FILTER_DOES_NOT_EQUAL, ROLE_FILTER_GLOB_MATCH, ROLE_FILTER_GLOB_DOES_NOT_MATCH.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "ROLE_FILTER_EQUALS".
      * @return matchOperation
      */
@@ -68,6 +71,7 @@ public class RoleMatchOperationMatchLabel  {
      * Label match operation criteria.
      * Enum options - ROLE_FILTER_EQUALS, ROLE_FILTER_DOES_NOT_EQUAL, ROLE_FILTER_GLOB_MATCH, ROLE_FILTER_GLOB_DOES_NOT_MATCH.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "ROLE_FILTER_EQUALS".
      * @param matchOperation set the matchOperation.
      */

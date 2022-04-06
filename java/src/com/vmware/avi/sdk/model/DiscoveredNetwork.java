@@ -36,6 +36,7 @@ public class DiscoveredNetwork  {
      * This is the getter method this will return the attribute value.
      * Discovered network for this ip.
      * It is a reference to an object of type network.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkRef
      */
@@ -47,6 +48,7 @@ public class DiscoveredNetwork  {
      * This is the setter method to the attribute.
      * Discovered network for this ip.
      * It is a reference to an object of type network.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param networkRef set the networkRef.
      */
@@ -56,6 +58,7 @@ public class DiscoveredNetwork  {
     /**
      * This is the getter method this will return the attribute value.
      * Discovered subnet for this ip.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnet
      */
@@ -66,6 +69,7 @@ public class DiscoveredNetwork  {
     /**
      * This is the setter method. this will set the subnet
      * Discovered subnet for this ip.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnet
      */
@@ -76,6 +80,7 @@ public class DiscoveredNetwork  {
     /**
      * This is the setter method this will set the subnet
      * Discovered subnet for this ip.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnet
      */
@@ -90,6 +95,7 @@ public class DiscoveredNetwork  {
      * This is the getter method this will return the attribute value.
      * Discovered ipv6 subnet for this ip.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnet6
      */
@@ -101,6 +107,7 @@ public class DiscoveredNetwork  {
      * This is the setter method. this will set the subnet6
      * Discovered ipv6 subnet for this ip.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnet6
      */
@@ -112,6 +119,7 @@ public class DiscoveredNetwork  {
      * This is the setter method this will set the subnet6
      * Discovered ipv6 subnet for this ip.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnet6
      */

@@ -32,6 +32,7 @@ public class SSLExpireDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Number of days until certificate is expired.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return daysLeft
      */
@@ -42,6 +43,7 @@ public class SSLExpireDetails  {
     /**
      * This is the setter method to the attribute.
      * Number of days until certificate is expired.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param daysLeft set the daysLeft.
      */
@@ -52,6 +54,7 @@ public class SSLExpireDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of ssl certificate.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -62,6 +65,7 @@ public class SSLExpireDetails  {
     /**
      * This is the setter method to the attribute.
      * Name of ssl certificate.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */

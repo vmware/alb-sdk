@@ -60,6 +60,7 @@ public class ClusterNode  {
      * Optional service categories that a node can be assigned (e.g.
      * System, infrastructure or analytics).
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return categories
      */
@@ -72,6 +73,7 @@ public class ClusterNode  {
      * Optional service categories that a node can be assigned (e.g.
      * System, infrastructure or analytics).
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return categories
      */
@@ -84,6 +86,7 @@ public class ClusterNode  {
      * Optional service categories that a node can be assigned (e.g.
      * System, infrastructure or analytics).
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return categories
      */
@@ -98,6 +101,7 @@ public class ClusterNode  {
      * This is the getter method this will return the attribute value.
      * Interface details of the controller node.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return interfaces
      */
@@ -109,6 +113,7 @@ public class ClusterNode  {
      * This is the setter method. this will set the interfaces
      * Interface details of the controller node.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return interfaces
      */
@@ -120,6 +125,7 @@ public class ClusterNode  {
      * This is the setter method this will set the interfaces
      * Interface details of the controller node.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return interfaces
      */
@@ -134,6 +140,7 @@ public class ClusterNode  {
     /**
      * This is the getter method this will return the attribute value.
      * Ip address of controller vm.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip
      */
@@ -144,6 +151,7 @@ public class ClusterNode  {
     /**
      * This is the setter method to the attribute.
      * Ip address of controller vm.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip set the ip.
      */
@@ -153,7 +161,7 @@ public class ClusterNode  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "node".
      * @return name
      */
@@ -163,7 +171,7 @@ public class ClusterNode  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "node".
      * @param name set the name.
      */
@@ -175,6 +183,7 @@ public class ClusterNode  {
      * This is the getter method this will return the attribute value.
      * The password we will use when authenticating with this node (not persisted).
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return password
      */
@@ -186,6 +195,7 @@ public class ClusterNode  {
      * This is the setter method to the attribute.
      * The password we will use when authenticating with this node (not persisted).
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param password set the password.
      */
@@ -197,6 +207,7 @@ public class ClusterNode  {
      * This is the getter method this will return the attribute value.
      * Public ip address or hostname of the controller vm.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return publicIpOrName
      */
@@ -208,6 +219,7 @@ public class ClusterNode  {
      * This is the setter method to the attribute.
      * Public ip address or hostname of the controller vm.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param publicIpOrName set the publicIpOrName.
      */
@@ -218,6 +230,7 @@ public class ClusterNode  {
      * This is the getter method this will return the attribute value.
      * Static routes configured on the controller node.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return staticRoutes
      */
@@ -229,6 +242,7 @@ public class ClusterNode  {
      * This is the setter method. this will set the staticRoutes
      * Static routes configured on the controller node.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return staticRoutes
      */
@@ -240,6 +254,7 @@ public class ClusterNode  {
      * This is the setter method this will set the staticRoutes
      * Static routes configured on the controller node.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return staticRoutes
      */
@@ -254,6 +269,7 @@ public class ClusterNode  {
     /**
      * This is the getter method this will return the attribute value.
      * Hostname assigned to this controller vm.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vmHostname
      */
@@ -264,6 +280,7 @@ public class ClusterNode  {
     /**
      * This is the setter method to the attribute.
      * Hostname assigned to this controller vm.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vmHostname set the vmHostname.
      */
@@ -274,6 +291,7 @@ public class ClusterNode  {
     /**
      * This is the getter method this will return the attribute value.
      * Managed object reference of this controller vm.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vmMor
      */
@@ -284,6 +302,7 @@ public class ClusterNode  {
     /**
      * This is the setter method to the attribute.
      * Managed object reference of this controller vm.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vmMor set the vmMor.
      */
@@ -294,6 +313,7 @@ public class ClusterNode  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of the controller vm.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vmName
      */
@@ -304,6 +324,7 @@ public class ClusterNode  {
     /**
      * This is the setter method to the attribute.
      * Name of the controller vm.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vmName set the vmName.
      */
@@ -314,6 +335,7 @@ public class ClusterNode  {
     /**
      * This is the getter method this will return the attribute value.
      * Uuid on the controller vm.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vmUuid
      */
@@ -324,6 +346,7 @@ public class ClusterNode  {
     /**
      * This is the setter method to the attribute.
      * Uuid on the controller vm.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vmUuid set the vmUuid.
      */

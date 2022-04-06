@@ -40,7 +40,7 @@ public class VIAdminCredentials  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "root".
      * @return name
      */
@@ -50,7 +50,7 @@ public class VIAdminCredentials  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "root".
      * @param name set the name.
      */
@@ -60,7 +60,7 @@ public class VIAdminCredentials  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property password of obj type viadmincredentials field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "vmware".
      * @return password
      */
@@ -70,7 +70,7 @@ public class VIAdminCredentials  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property password of obj type viadmincredentials field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "vmware".
      * @param password set the password.
      */
@@ -81,6 +81,7 @@ public class VIAdminCredentials  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return privilege
      */
@@ -91,6 +92,7 @@ public class VIAdminCredentials  {
     /**
      * This is the setter method to the attribute.
      * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param privilege set the privilege.
      */
@@ -100,7 +102,7 @@ public class VIAdminCredentials  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_url of obj type viadmincredentials field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterUrl
      */
@@ -110,7 +112,7 @@ public class VIAdminCredentials  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_url of obj type viadmincredentials field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterUrl set the vcenterUrl.
      */
@@ -120,7 +122,7 @@ public class VIAdminCredentials  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vi_mgr_token of obj type viadmincredentials field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return viMgrToken
      */
@@ -130,7 +132,7 @@ public class VIAdminCredentials  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vi_mgr_token of obj type viadmincredentials field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param viMgrToken set the viMgrToken.
      */

@@ -55,7 +55,7 @@ public class LogControllerMapping extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property controller_ip of obj type logcontrollermapping field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controllerIp
      */
@@ -65,7 +65,7 @@ public class LogControllerMapping extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property controller_ip of obj type logcontrollermapping field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param controllerIp set the controllerIp.
      */
@@ -76,6 +76,7 @@ public class LogControllerMapping extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "METRICS_MGR_PORT_0".
      * @return metricsMgrPort
      */
@@ -86,6 +87,7 @@ public class LogControllerMapping extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "METRICS_MGR_PORT_0".
      * @param metricsMgrPort set the metricsMgrPort.
      */
@@ -95,7 +97,7 @@ public class LogControllerMapping extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of node.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nodeUuid
      */
@@ -105,7 +107,7 @@ public class LogControllerMapping extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of node.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nodeUuid set the nodeUuid.
      */
@@ -115,7 +117,7 @@ public class LogControllerMapping extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property prev_controller_ip of obj type logcontrollermapping field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return prevControllerIp
      */
@@ -125,7 +127,7 @@ public class LogControllerMapping extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property prev_controller_ip of obj type logcontrollermapping field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param prevControllerIp set the prevControllerIp.
      */
@@ -136,6 +138,7 @@ public class LogControllerMapping extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "METRICS_MGR_PORT_0".
      * @return prevMetricsMgrPort
      */
@@ -146,6 +149,7 @@ public class LogControllerMapping extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "METRICS_MGR_PORT_0".
      * @param prevMetricsMgrPort set the prevMetricsMgrPort.
      */
@@ -155,7 +159,7 @@ public class LogControllerMapping extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property static_mapping of obj type logcontrollermapping field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return staticMapping
      */
@@ -165,7 +169,7 @@ public class LogControllerMapping extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property static_mapping of obj type logcontrollermapping field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param staticMapping set the staticMapping.
      */
@@ -176,6 +180,7 @@ public class LogControllerMapping extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -186,6 +191,7 @@ public class LogControllerMapping extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -212,7 +218,7 @@ public class LogControllerMapping extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -222,7 +228,7 @@ public class LogControllerMapping extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -232,7 +238,7 @@ public class LogControllerMapping extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of vs.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsUuid
      */
@@ -242,7 +248,7 @@ public class LogControllerMapping extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of vs.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsUuid set the vsUuid.
      */

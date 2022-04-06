@@ -30,6 +30,7 @@ public class ControllerInfo  {
      * This is the getter method this will return the attribute value.
      * Total controller memory usage in gbs.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return currentControllerMemUsage
      */
@@ -41,6 +42,7 @@ public class ControllerInfo  {
      * This is the setter method to the attribute.
      * Total controller memory usage in gbs.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param currentControllerMemUsage set the currentControllerMemUsage.
      */

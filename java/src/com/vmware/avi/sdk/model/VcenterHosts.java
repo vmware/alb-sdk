@@ -31,6 +31,7 @@ public class VcenterHosts  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type vimgrhostruntime.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostRefs
      */
@@ -41,6 +42,7 @@ public class VcenterHosts  {
     /**
      * This is the setter method. this will set the hostRefs
      * It is a reference to an object of type vimgrhostruntime.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostRefs
      */
@@ -51,6 +53,7 @@ public class VcenterHosts  {
     /**
      * This is the setter method this will set the hostRefs
      * It is a reference to an object of type vimgrhostruntime.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostRefs
      */
@@ -64,7 +67,7 @@ public class VcenterHosts  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property include of obj type vcenterhosts field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return include
      */
@@ -74,7 +77,7 @@ public class VcenterHosts  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property include of obj type vcenterhosts field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param include set the include.
      */

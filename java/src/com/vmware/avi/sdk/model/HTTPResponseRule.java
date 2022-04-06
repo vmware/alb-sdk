@@ -50,6 +50,7 @@ public class HTTPResponseRule  {
     /**
      * This is the getter method this will return the attribute value.
      * Log all http headers upon rule match.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return allHeaders
      */
@@ -60,6 +61,7 @@ public class HTTPResponseRule  {
     /**
      * This is the setter method to the attribute.
      * Log all http headers upon rule match.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param allHeaders set the allHeaders.
      */
@@ -70,6 +72,7 @@ public class HTTPResponseRule  {
     /**
      * This is the getter method this will return the attribute value.
      * Enable or disable the rule.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enable
      */
@@ -80,6 +83,7 @@ public class HTTPResponseRule  {
     /**
      * This is the setter method to the attribute.
      * Enable or disable the rule.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enable set the enable.
      */
@@ -89,6 +93,7 @@ public class HTTPResponseRule  {
     /**
      * This is the getter method this will return the attribute value.
      * Http header rewrite action.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hdrAction
      */
@@ -99,6 +104,7 @@ public class HTTPResponseRule  {
     /**
      * This is the setter method. this will set the hdrAction
      * Http header rewrite action.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hdrAction
      */
@@ -109,6 +115,7 @@ public class HTTPResponseRule  {
     /**
      * This is the setter method this will set the hdrAction
      * Http header rewrite action.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hdrAction
      */
@@ -123,6 +130,7 @@ public class HTTPResponseRule  {
     /**
      * This is the getter method this will return the attribute value.
      * Index of the rule.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return index
      */
@@ -133,6 +141,7 @@ public class HTTPResponseRule  {
     /**
      * This is the setter method to the attribute.
      * Index of the rule.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param index set the index.
      */
@@ -143,6 +152,7 @@ public class HTTPResponseRule  {
     /**
      * This is the getter method this will return the attribute value.
      * Location header rewrite action.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return locHdrAction
      */
@@ -153,6 +163,7 @@ public class HTTPResponseRule  {
     /**
      * This is the setter method to the attribute.
      * Location header rewrite action.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param locHdrAction set the locHdrAction.
      */
@@ -163,6 +174,7 @@ public class HTTPResponseRule  {
     /**
      * This is the getter method this will return the attribute value.
      * Log http request upon rule match.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return log
      */
@@ -173,6 +185,7 @@ public class HTTPResponseRule  {
     /**
      * This is the setter method to the attribute.
      * Log http request upon rule match.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param log set the log.
      */
@@ -183,6 +196,7 @@ public class HTTPResponseRule  {
     /**
      * This is the getter method this will return the attribute value.
      * Add match criteria to the rule.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return match
      */
@@ -193,6 +207,7 @@ public class HTTPResponseRule  {
     /**
      * This is the setter method to the attribute.
      * Add match criteria to the rule.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param match set the match.
      */
@@ -203,6 +218,7 @@ public class HTTPResponseRule  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of the rule.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -213,6 +229,7 @@ public class HTTPResponseRule  {
     /**
      * This is the setter method to the attribute.
      * Name of the rule.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */

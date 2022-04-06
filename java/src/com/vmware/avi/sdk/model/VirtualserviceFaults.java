@@ -45,6 +45,7 @@ public class VirtualserviceFaults  {
      * This is the getter method this will return the attribute value.
      * Enable debug faults.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return debugFaults
      */
@@ -56,6 +57,7 @@ public class VirtualserviceFaults  {
      * This is the setter method to the attribute.
      * Enable debug faults.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param debugFaults set the debugFaults.
      */
@@ -67,6 +69,7 @@ public class VirtualserviceFaults  {
      * This is the getter method this will return the attribute value.
      * Enable pool server faults.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return poolServerFaults
      */
@@ -78,6 +81,7 @@ public class VirtualserviceFaults  {
      * This is the setter method to the attribute.
      * Enable pool server faults.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param poolServerFaults set the poolServerFaults.
      */
@@ -89,6 +93,7 @@ public class VirtualserviceFaults  {
      * This is the getter method this will return the attribute value.
      * Enable vs scaleout and scalein faults.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return scaleoutFaults
      */
@@ -100,6 +105,7 @@ public class VirtualserviceFaults  {
      * This is the setter method to the attribute.
      * Enable vs scaleout and scalein faults.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param scaleoutFaults set the scaleoutFaults.
      */
@@ -111,6 +117,7 @@ public class VirtualserviceFaults  {
      * This is the getter method this will return the attribute value.
      * Enable shared vip faults.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return sharedVipFaults
      */
@@ -122,6 +129,7 @@ public class VirtualserviceFaults  {
      * This is the setter method to the attribute.
      * Enable shared vip faults.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param sharedVipFaults set the sharedVipFaults.
      */
@@ -133,6 +141,7 @@ public class VirtualserviceFaults  {
      * This is the getter method this will return the attribute value.
      * Enable ssl certificate expiry faults.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return sslCertExpiryFaults
      */
@@ -144,6 +153,7 @@ public class VirtualserviceFaults  {
      * This is the setter method to the attribute.
      * Enable ssl certificate expiry faults.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param sslCertExpiryFaults set the sslCertExpiryFaults.
      */
@@ -155,6 +165,7 @@ public class VirtualserviceFaults  {
      * This is the getter method this will return the attribute value.
      * Enable ssl certificate status faults.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return sslCertStatusFaults
      */
@@ -166,6 +177,7 @@ public class VirtualserviceFaults  {
      * This is the setter method to the attribute.
      * Enable ssl certificate status faults.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param sslCertStatusFaults set the sslCertStatusFaults.
      */

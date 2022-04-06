@@ -33,6 +33,7 @@ public class AbPool  {
      * This is the getter method this will return the attribute value.
      * Pool configured as b pool for a/b testing.
      * It is a reference to an object of type pool.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolRef
      */
@@ -44,6 +45,7 @@ public class AbPool  {
      * This is the setter method to the attribute.
      * Pool configured as b pool for a/b testing.
      * It is a reference to an object of type pool.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolRef set the poolRef.
      */
@@ -55,6 +57,7 @@ public class AbPool  {
      * This is the getter method this will return the attribute value.
      * Ratio of traffic diverted to the b pool, for a/b testing.
      * Allowed values are 0-100.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return ratio
      */
@@ -66,6 +69,7 @@ public class AbPool  {
      * This is the setter method to the attribute.
      * Ratio of traffic diverted to the b pool, for a/b testing.
      * Allowed values are 0-100.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param ratio set the ratio.
      */

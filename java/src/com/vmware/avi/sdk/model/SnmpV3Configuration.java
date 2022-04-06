@@ -33,6 +33,7 @@ public class SnmpV3Configuration  {
      * This is the getter method this will return the attribute value.
      * Engine id of the avi controller snmp.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return engineId
      */
@@ -44,6 +45,7 @@ public class SnmpV3Configuration  {
      * This is the setter method to the attribute.
      * Engine id of the avi controller snmp.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param engineId set the engineId.
      */
@@ -55,6 +57,7 @@ public class SnmpV3Configuration  {
      * This is the getter method this will return the attribute value.
      * Snmp ver 3 user definition.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return user
      */
@@ -66,6 +69,7 @@ public class SnmpV3Configuration  {
      * This is the setter method to the attribute.
      * Snmp ver 3 user definition.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param user set the user.
      */

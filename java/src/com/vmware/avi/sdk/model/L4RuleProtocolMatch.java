@@ -34,6 +34,7 @@ public class L4RuleProtocolMatch  {
      * Criterion to use for transport protocol matching.
      * Enum options - IS_IN, IS_NOT_IN.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matchCriteria
      */
@@ -46,6 +47,7 @@ public class L4RuleProtocolMatch  {
      * Criterion to use for transport protocol matching.
      * Enum options - IS_IN, IS_NOT_IN.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param matchCriteria set the matchCriteria.
      */
@@ -58,6 +60,7 @@ public class L4RuleProtocolMatch  {
      * Transport protocol to match.
      * Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return protocol
      */
@@ -70,6 +73,7 @@ public class L4RuleProtocolMatch  {
      * Transport protocol to match.
      * Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param protocol set the protocol.
      */

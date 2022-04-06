@@ -43,7 +43,7 @@ public class SeMigrateEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property num_vs of obj type semigrateeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numVs
      */
@@ -53,7 +53,7 @@ public class SeMigrateEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property num_vs of obj type semigrateeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numVs set the numVs.
      */
@@ -62,7 +62,7 @@ public class SeMigrateEventDetails  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property reason of obj type semigrateeventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -72,7 +72,7 @@ public class SeMigrateEventDetails  {
 
     /**
      * This is the setter method. this will set the reason
-     * Placeholder for description of property reason of obj type semigrateeventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -82,7 +82,7 @@ public class SeMigrateEventDetails  {
 
     /**
      * This is the setter method this will set the reason
-     * Placeholder for description of property reason of obj type semigrateeventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -96,7 +96,7 @@ public class SeMigrateEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_name of obj type semigrateeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seName
      */
@@ -106,7 +106,7 @@ public class SeMigrateEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_name of obj type semigrateeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seName set the seName.
      */
@@ -116,7 +116,7 @@ public class SeMigrateEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of se.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seUuid
      */
@@ -126,7 +126,7 @@ public class SeMigrateEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of se.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seUuid set the seUuid.
      */
@@ -136,7 +136,7 @@ public class SeMigrateEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vs_name of obj type semigrateeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsName
      */
@@ -146,7 +146,7 @@ public class SeMigrateEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vs_name of obj type semigrateeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsName set the vsName.
      */
@@ -156,7 +156,7 @@ public class SeMigrateEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of vs.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsUuid
      */
@@ -166,7 +166,7 @@ public class SeMigrateEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of vs.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsUuid set the vsUuid.
      */

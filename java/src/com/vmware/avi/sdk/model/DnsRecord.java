@@ -78,6 +78,7 @@ public class DnsRecord  {
      * Default is round-robin.
      * Enum options - DNS_RECORD_RESPONSE_ROUND_ROBIN, DNS_RECORD_RESPONSE_CONSISTENT_HASH.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RECORD_RESPONSE_ROUND_ROBIN".
      * @return algorithm
      */
@@ -92,6 +93,7 @@ public class DnsRecord  {
      * Default is round-robin.
      * Enum options - DNS_RECORD_RESPONSE_ROUND_ROBIN, DNS_RECORD_RESPONSE_CONSISTENT_HASH.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RECORD_RESPONSE_ROUND_ROBIN".
      * @param algorithm set the algorithm.
      */
@@ -102,6 +104,7 @@ public class DnsRecord  {
     /**
      * This is the getter method this will return the attribute value.
      * Canonical name in cname record.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cname
      */
@@ -112,6 +115,7 @@ public class DnsRecord  {
     /**
      * This is the setter method to the attribute.
      * Canonical name in cname record.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cname set the cname.
      */
@@ -124,6 +128,7 @@ public class DnsRecord  {
      * Configured fqdns are delegated domains (i.e.
      * They represent a zone cut).
      * Field introduced in 17.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return delegated
      */
@@ -136,6 +141,7 @@ public class DnsRecord  {
      * Configured fqdns are delegated domains (i.e.
      * They represent a zone cut).
      * Field introduced in 17.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param delegated set the delegated.
      */
@@ -146,6 +152,7 @@ public class DnsRecord  {
     /**
      * This is the getter method this will return the attribute value.
      * Details of dns record.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -156,6 +163,7 @@ public class DnsRecord  {
     /**
      * This is the setter method to the attribute.
      * Details of dns record.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -166,6 +174,7 @@ public class DnsRecord  {
      * This is the getter method this will return the attribute value.
      * Fully qualified domain name.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fqdn
      */
@@ -177,6 +186,7 @@ public class DnsRecord  {
      * This is the setter method. this will set the fqdn
      * Fully qualified domain name.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fqdn
      */
@@ -188,6 +198,7 @@ public class DnsRecord  {
      * This is the setter method this will set the fqdn
      * Fully qualified domain name.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fqdn
      */
@@ -203,6 +214,7 @@ public class DnsRecord  {
      * Ipv6 address in aaaa record.
      * Field introduced in 18.1.1.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip6Address
      */
@@ -215,6 +227,7 @@ public class DnsRecord  {
      * Ipv6 address in aaaa record.
      * Field introduced in 18.1.1.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip6Address
      */
@@ -227,6 +240,7 @@ public class DnsRecord  {
      * Ipv6 address in aaaa record.
      * Field introduced in 18.1.1.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip6Address
      */
@@ -241,6 +255,7 @@ public class DnsRecord  {
      * This is the getter method this will return the attribute value.
      * Ip address in a record.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipAddress
      */
@@ -252,6 +267,7 @@ public class DnsRecord  {
      * This is the setter method. this will set the ipAddress
      * Ip address in a record.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipAddress
      */
@@ -263,6 +279,7 @@ public class DnsRecord  {
      * This is the setter method this will set the ipAddress
      * Ip address in a record.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipAddress
      */
@@ -278,6 +295,7 @@ public class DnsRecord  {
      * This is the getter method this will return the attribute value.
      * Internal metadata for the dns record.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metadata
      */
@@ -289,6 +307,7 @@ public class DnsRecord  {
      * This is the setter method to the attribute.
      * Internal metadata for the dns record.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param metadata set the metadata.
      */
@@ -300,6 +319,7 @@ public class DnsRecord  {
      * Mx record.
      * Field introduced in 18.2.9, 20.1.1.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mxRecords
      */
@@ -312,6 +332,7 @@ public class DnsRecord  {
      * Mx record.
      * Field introduced in 18.2.9, 20.1.1.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mxRecords
      */
@@ -324,6 +345,7 @@ public class DnsRecord  {
      * Mx record.
      * Field introduced in 18.2.9, 20.1.1.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mxRecords
      */
@@ -339,6 +361,7 @@ public class DnsRecord  {
      * Name server information in ns record.
      * Field introduced in 17.1.1.
      * Maximum of 13 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ns
      */
@@ -351,6 +374,7 @@ public class DnsRecord  {
      * Name server information in ns record.
      * Field introduced in 17.1.1.
      * Maximum of 13 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ns
      */
@@ -363,6 +387,7 @@ public class DnsRecord  {
      * Name server information in ns record.
      * Field introduced in 17.1.1.
      * Maximum of 13 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ns
      */
@@ -382,6 +407,7 @@ public class DnsRecord  {
      * Allowed values are 0-20.
      * Special values are 0- return all records.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return numRecordsInResponse
      */
@@ -397,6 +423,7 @@ public class DnsRecord  {
      * Allowed values are 0-20.
      * Special values are 0- return all records.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param numRecordsInResponse set the numRecordsInResponse.
      */
@@ -407,6 +434,7 @@ public class DnsRecord  {
      * This is the getter method this will return the attribute value.
      * Service locator info in srv record.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceLocator
      */
@@ -418,6 +446,7 @@ public class DnsRecord  {
      * This is the setter method. this will set the serviceLocator
      * Service locator info in srv record.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceLocator
      */
@@ -429,6 +458,7 @@ public class DnsRecord  {
      * This is the setter method this will set the serviceLocator
      * Service locator info in srv record.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceLocator
      */
@@ -443,6 +473,7 @@ public class DnsRecord  {
     /**
      * This is the getter method this will return the attribute value.
      * Time to live for this dns record.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ttl
      */
@@ -453,6 +484,7 @@ public class DnsRecord  {
     /**
      * This is the setter method to the attribute.
      * Time to live for this dns record.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ttl set the ttl.
      */
@@ -464,6 +496,7 @@ public class DnsRecord  {
      * Text record.
      * Field introduced in 18.2.9, 20.1.1.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return txtRecords
      */
@@ -476,6 +509,7 @@ public class DnsRecord  {
      * Text record.
      * Field introduced in 18.2.9, 20.1.1.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return txtRecords
      */
@@ -488,6 +522,7 @@ public class DnsRecord  {
      * Text record.
      * Field introduced in 18.2.9, 20.1.1.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return txtRecords
      */
@@ -505,6 +540,7 @@ public class DnsRecord  {
      * Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX,
      * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
      * DNS_RECORD_ANY.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -518,6 +554,7 @@ public class DnsRecord  {
      * Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX,
      * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
      * DNS_RECORD_ANY.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */
@@ -531,6 +568,7 @@ public class DnsRecord  {
      * request.
      * Default is false.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return wildcardMatch
      */
@@ -544,6 +582,7 @@ public class DnsRecord  {
      * request.
      * Default is false.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param wildcardMatch set the wildcardMatch.
      */

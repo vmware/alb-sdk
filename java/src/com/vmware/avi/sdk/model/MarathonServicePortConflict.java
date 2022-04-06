@@ -37,7 +37,7 @@ public class MarathonServicePortConflict  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property app_name of obj type marathonserviceportconflict field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return appName
      */
@@ -47,7 +47,7 @@ public class MarathonServicePortConflict  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property app_name of obj type marathonserviceportconflict field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param appName set the appName.
      */
@@ -57,7 +57,7 @@ public class MarathonServicePortConflict  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_id of obj type marathonserviceportconflict field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccId
      */
@@ -67,7 +67,7 @@ public class MarathonServicePortConflict  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_id of obj type marathonserviceportconflict field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccId set the ccId.
      */
@@ -77,7 +77,7 @@ public class MarathonServicePortConflict  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property marathon_url of obj type marathonserviceportconflict field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return marathonUrl
      */
@@ -87,7 +87,7 @@ public class MarathonServicePortConflict  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property marathon_url of obj type marathonserviceportconflict field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param marathonUrl set the marathonUrl.
      */
@@ -97,7 +97,7 @@ public class MarathonServicePortConflict  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property port of obj type marathonserviceportconflict field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
      */
@@ -107,7 +107,7 @@ public class MarathonServicePortConflict  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property port of obj type marathonserviceportconflict field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.
      */

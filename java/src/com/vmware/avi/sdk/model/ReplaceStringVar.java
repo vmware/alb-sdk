@@ -34,6 +34,7 @@ public class ReplaceStringVar  {
      * Type of replacement string - can be a variable exposed from datascript, value of an http variable, a custom user-input literal string, or a
      * string with all three combined.
      * Enum options - DATASCRIPT_VAR, AVI_VAR, LITERAL_STRING, COMBINATION_STRING.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "LITERAL_STRING".
      * @return type
      */
@@ -46,6 +47,7 @@ public class ReplaceStringVar  {
      * Type of replacement string - can be a variable exposed from datascript, value of an http variable, a custom user-input literal string, or a
      * string with all three combined.
      * Enum options - DATASCRIPT_VAR, AVI_VAR, LITERAL_STRING, COMBINATION_STRING.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "LITERAL_STRING".
      * @param type set the type.
      */
@@ -57,6 +59,7 @@ public class ReplaceStringVar  {
      * This is the getter method this will return the attribute value.
      * Value of the replacement string - name of variable exposed from datascript, name of the http header, a custom user-input literal string, or a
      * string with all three combined.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return val
      */
@@ -68,6 +71,7 @@ public class ReplaceStringVar  {
      * This is the setter method to the attribute.
      * Value of the replacement string - name of variable exposed from datascript, name of the http header, a custom user-input literal string, or a
      * string with all three combined.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param val set the val.
      */

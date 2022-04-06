@@ -35,6 +35,7 @@ public class SCServerStateInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return operStatus
      */
@@ -45,6 +46,7 @@ public class SCServerStateInfo  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param operStatus set the operStatus.
      */
@@ -55,6 +57,7 @@ public class SCServerStateInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverIp
      */
@@ -65,6 +68,7 @@ public class SCServerStateInfo  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serverIp set the serverIp.
      */
@@ -76,6 +80,7 @@ public class SCServerStateInfo  {
      * This is the getter method this will return the attribute value.
      * Allowed values are 1-65535.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverPort
      */
@@ -87,6 +92,7 @@ public class SCServerStateInfo  {
      * This is the setter method to the attribute.
      * Allowed values are 1-65535.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serverPort set the serverPort.
      */

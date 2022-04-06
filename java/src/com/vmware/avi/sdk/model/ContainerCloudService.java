@@ -40,7 +40,7 @@ public class ContainerCloudService  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_id of obj type containercloudservice field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccId
      */
@@ -50,7 +50,7 @@ public class ContainerCloudService  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_id of obj type containercloudservice field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccId set the ccId.
      */
@@ -60,7 +60,7 @@ public class ContainerCloudService  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property object of obj type containercloudservice field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return object
      */
@@ -70,7 +70,7 @@ public class ContainerCloudService  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property object of obj type containercloudservice field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param object set the object.
      */
@@ -80,7 +80,7 @@ public class ContainerCloudService  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property reason of obj type containercloudservice field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -90,7 +90,7 @@ public class ContainerCloudService  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property reason of obj type containercloudservice field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -100,7 +100,7 @@ public class ContainerCloudService  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property service of obj type containercloudservice field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return service
      */
@@ -110,7 +110,7 @@ public class ContainerCloudService  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property service of obj type containercloudservice field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param service set the service.
      */
@@ -120,7 +120,7 @@ public class ContainerCloudService  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property status of obj type containercloudservice field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return status
      */
@@ -130,7 +130,7 @@ public class ContainerCloudService  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property status of obj type containercloudservice field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param status set the status.
      */

@@ -46,7 +46,7 @@ public class CC_VnicInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property mac_address of obj type cc_vnicinfo field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return macAddress
      */
@@ -56,7 +56,7 @@ public class CC_VnicInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property mac_address of obj type cc_vnicinfo field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param macAddress set the macAddress.
      */
@@ -66,7 +66,7 @@ public class CC_VnicInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of network.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkUuid
      */
@@ -76,7 +76,7 @@ public class CC_VnicInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of network.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param networkUuid set the networkUuid.
      */
@@ -86,7 +86,7 @@ public class CC_VnicInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of port.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return portUuid
      */
@@ -96,7 +96,7 @@ public class CC_VnicInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of port.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param portUuid set the portUuid.
      */
@@ -109,6 +109,7 @@ public class CC_VnicInfo  {
      * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
      * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
      * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SYSERR_SUCCESS".
      * @return status
      */
@@ -121,6 +122,7 @@ public class CC_VnicInfo  {
      * Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
      * SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
      * SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SYSERR_SUCCESS".
      * @param status set the status.
      */
@@ -130,7 +132,7 @@ public class CC_VnicInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property status_string of obj type cc_vnicinfo field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return statusString
      */
@@ -140,7 +142,7 @@ public class CC_VnicInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property status_string of obj type cc_vnicinfo field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param statusString set the statusString.
      */
@@ -150,7 +152,7 @@ public class CC_VnicInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of subnet.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnetUuid
      */
@@ -160,7 +162,7 @@ public class CC_VnicInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of subnet.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subnetUuid set the subnetUuid.
      */
@@ -170,7 +172,7 @@ public class CC_VnicInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of vrf.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vrfUuid
      */
@@ -180,7 +182,7 @@ public class CC_VnicInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of vrf.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vrfUuid set the vrfUuid.
      */

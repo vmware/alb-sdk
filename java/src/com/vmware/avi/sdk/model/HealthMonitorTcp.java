@@ -39,6 +39,7 @@ public class HealthMonitorTcp  {
      * This is the getter method this will return the attribute value.
      * Match or look for this keyword in the first 2kb of server's response indicating server maintenance.
      * A successful match results in the server being marked down.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maintenanceResponse
      */
@@ -50,6 +51,7 @@ public class HealthMonitorTcp  {
      * This is the setter method to the attribute.
      * Match or look for this keyword in the first 2kb of server's response indicating server maintenance.
      * A successful match results in the server being marked down.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param maintenanceResponse set the maintenanceResponse.
      */
@@ -63,7 +65,8 @@ public class HealthMonitorTcp  {
      * fledged server side connection and the overhead and logs associated with it.
      * This method is light-weight as it makes use of listener in server's kernel layer to measure the health and a child socket or user thread is not
      * created on the server side.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- false) edition, basic(allowed values- false) edition, enterprise with
+     * cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return tcpHalfOpen
      */
@@ -77,7 +80,8 @@ public class HealthMonitorTcp  {
      * fledged server side connection and the overhead and logs associated with it.
      * This method is light-weight as it makes use of listener in server's kernel layer to measure the health and a child socket or user thread is not
      * created on the server side.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- false) edition, basic(allowed values- false) edition, enterprise with
+     * cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param tcpHalfOpen set the tcpHalfOpen.
      */
@@ -88,6 +92,7 @@ public class HealthMonitorTcp  {
     /**
      * This is the getter method this will return the attribute value.
      * Request data to send after completing the tcp handshake.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tcpRequest
      */
@@ -98,6 +103,7 @@ public class HealthMonitorTcp  {
     /**
      * This is the setter method to the attribute.
      * Request data to send after completing the tcp handshake.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tcpRequest set the tcpRequest.
      */
@@ -109,6 +115,7 @@ public class HealthMonitorTcp  {
      * This is the getter method this will return the attribute value.
      * Match for the desired keyword in the first 2kb of the server's tcp response.
      * If this field is left blank, no server response is required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tcpResponse
      */
@@ -120,6 +127,7 @@ public class HealthMonitorTcp  {
      * This is the setter method to the attribute.
      * Match for the desired keyword in the first 2kb of the server's tcp response.
      * If this field is left blank, no server response is required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tcpResponse set the tcpResponse.
      */

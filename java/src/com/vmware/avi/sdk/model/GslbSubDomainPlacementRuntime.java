@@ -38,6 +38,7 @@ public class GslbSubDomainPlacementRuntime  {
      * If placement allowed is true, then the fqdn/gslbservice will be placed on the dns-vs.
      * Otherwise, it shall not be placed on the dns-vs.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return placementAllowed
      */
@@ -51,6 +52,7 @@ public class GslbSubDomainPlacementRuntime  {
      * If placement allowed is true, then the fqdn/gslbservice will be placed on the dns-vs.
      * Otherwise, it shall not be placed on the dns-vs.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param placementAllowed set the placementAllowed.
      */
@@ -62,6 +64,7 @@ public class GslbSubDomainPlacementRuntime  {
      * This is the getter method this will return the attribute value.
      * This field identifies the subdomain.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subDomain
      */
@@ -73,6 +76,7 @@ public class GslbSubDomainPlacementRuntime  {
      * This is the setter method to the attribute.
      * This field identifies the subdomain.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subDomain set the subDomain.
      */
@@ -89,6 +93,7 @@ public class GslbSubDomainPlacementRuntime  {
      * If there is a configuration change where a.com is not placed on dns-vs-1 then the transition ops will be gslb_delete.
      * Enum options - GSLB_NONE, GSLB_CREATE, GSLB_UPDATE, GSLB_DELETE, GSLB_PURGE, GSLB_DECL.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_NONE".
      * @return transitionOps
      */
@@ -105,6 +110,7 @@ public class GslbSubDomainPlacementRuntime  {
      * If there is a configuration change where a.com is not placed on dns-vs-1 then the transition ops will be gslb_delete.
      * Enum options - GSLB_NONE, GSLB_CREATE, GSLB_UPDATE, GSLB_DELETE, GSLB_PURGE, GSLB_DECL.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "GSLB_NONE".
      * @param transitionOps set the transitionOps.
      */

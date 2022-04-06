@@ -54,8 +54,8 @@ public class NetworkSecurityRule  {
      * This is the getter method this will return the attribute value.
      * Enum options - NETWORK_SECURITY_POLICY_ACTION_TYPE_ALLOW, NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY,
      * NETWORK_SECURITY_POLICY_ACTION_TYPE_RATE_LIMIT.
-     * Allowed in basic(allowed values- network_security_policy_action_type_deny) edition, essentials(allowed values-
-     * network_security_policy_action_type_deny) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- network_security_policy_action_type_deny) edition, basic(allowed values-
+     * network_security_policy_action_type_deny) edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return action
      */
@@ -67,8 +67,8 @@ public class NetworkSecurityRule  {
      * This is the setter method to the attribute.
      * Enum options - NETWORK_SECURITY_POLICY_ACTION_TYPE_ALLOW, NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY,
      * NETWORK_SECURITY_POLICY_ACTION_TYPE_RATE_LIMIT.
-     * Allowed in basic(allowed values- network_security_policy_action_type_deny) edition, essentials(allowed values-
-     * network_security_policy_action_type_deny) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- network_security_policy_action_type_deny) edition, basic(allowed values-
+     * network_security_policy_action_type_deny) edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param action set the action.
      */
@@ -82,7 +82,8 @@ public class NetworkSecurityRule  {
      * Allowed values are 1-4294967295.
      * Special values are 0- blocked for ever.
      * Unit is min.
-     * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- 0) edition, basic(allowed values- 0) edition, enterprise with cloud
+     * services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return age
      */
@@ -96,7 +97,8 @@ public class NetworkSecurityRule  {
      * Allowed values are 1-4294967295.
      * Special values are 0- blocked for ever.
      * Unit is min.
-     * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- 0) edition, basic(allowed values- 0) edition, enterprise with cloud
+     * services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param age set the age.
      */
@@ -107,6 +109,7 @@ public class NetworkSecurityRule  {
     /**
      * This is the getter method this will return the attribute value.
      * Creator name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return createdBy
      */
@@ -117,6 +120,7 @@ public class NetworkSecurityRule  {
     /**
      * This is the setter method to the attribute.
      * Creator name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param createdBy set the createdBy.
      */
@@ -126,7 +130,7 @@ public class NetworkSecurityRule  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property enable of obj type networksecurityrule field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return enable
      */
@@ -136,7 +140,7 @@ public class NetworkSecurityRule  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property enable of obj type networksecurityrule field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param enable set the enable.
      */
@@ -146,7 +150,7 @@ public class NetworkSecurityRule  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property index of obj type networksecurityrule field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return index
      */
@@ -156,7 +160,7 @@ public class NetworkSecurityRule  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property index of obj type networksecurityrule field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param index set the index.
      */
@@ -166,7 +170,8 @@ public class NetworkSecurityRule  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- false) edition, basic(allowed values- false) edition, enterprise with
+     * cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return log
      */
@@ -176,7 +181,8 @@ public class NetworkSecurityRule  {
 
     /**
      * This is the setter method to the attribute.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- false) edition, basic(allowed values- false) edition, enterprise with
+     * cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param log set the log.
      */
@@ -186,7 +192,7 @@ public class NetworkSecurityRule  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property match of obj type networksecurityrule field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return match
      */
@@ -196,7 +202,7 @@ public class NetworkSecurityRule  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property match of obj type networksecurityrule field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param match set the match.
      */
@@ -206,7 +212,7 @@ public class NetworkSecurityRule  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -216,7 +222,7 @@ public class NetworkSecurityRule  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -226,7 +232,7 @@ public class NetworkSecurityRule  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property rl_param of obj type networksecurityrule field type str  type ref.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rlParam
      */
@@ -236,7 +242,7 @@ public class NetworkSecurityRule  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property rl_param of obj type networksecurityrule field type str  type ref.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rlParam set the rlParam.
      */

@@ -33,6 +33,7 @@ public class StaticIpRange  {
      * This is the getter method this will return the attribute value.
      * Ip range.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return range
      */
@@ -44,6 +45,7 @@ public class StaticIpRange  {
      * This is the setter method to the attribute.
      * Ip range.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param range set the range.
      */
@@ -56,6 +58,7 @@ public class StaticIpRange  {
      * Object type (vip only, service engine only, or both) which can use this ip range.
      * Enum options - STATIC_IPS_FOR_SE, STATIC_IPS_FOR_VIP, STATIC_IPS_FOR_VIP_AND_SE.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "STATIC_IPS_FOR_VIP_AND_SE".
      * @return type
      */
@@ -68,6 +71,7 @@ public class StaticIpRange  {
      * Object type (vip only, service engine only, or both) which can use this ip range.
      * Enum options - STATIC_IPS_FOR_SE, STATIC_IPS_FOR_VIP, STATIC_IPS_FOR_VIP_AND_SE.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "STATIC_IPS_FOR_VIP_AND_SE".
      * @param type set the type.
      */

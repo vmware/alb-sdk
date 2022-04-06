@@ -40,7 +40,7 @@ public class VCASetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_id of obj type vcasetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccId
      */
@@ -50,7 +50,7 @@ public class VCASetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_id of obj type vcasetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccId set the ccId.
      */
@@ -60,7 +60,7 @@ public class VCASetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property error_string of obj type vcasetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorString
      */
@@ -70,7 +70,7 @@ public class VCASetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property error_string of obj type vcasetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorString set the errorString.
      */
@@ -80,7 +80,7 @@ public class VCASetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property instance of obj type vcasetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return instance
      */
@@ -90,7 +90,7 @@ public class VCASetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property instance of obj type vcasetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param instance set the instance.
      */
@@ -101,6 +101,7 @@ public class VCASetup  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return privilege
      */
@@ -111,6 +112,7 @@ public class VCASetup  {
     /**
      * This is the setter method to the attribute.
      * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param privilege set the privilege.
      */
@@ -120,7 +122,7 @@ public class VCASetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property username of obj type vcasetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return username
      */
@@ -130,7 +132,7 @@ public class VCASetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property username of obj type vcasetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param username set the username.
      */

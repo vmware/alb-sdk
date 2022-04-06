@@ -44,6 +44,7 @@ public class GcpInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Hostname of this se.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostname
      */
@@ -54,6 +55,7 @@ public class GcpInfo  {
     /**
      * This is the setter method to the attribute.
      * Hostname of this se.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hostname set the hostname.
      */
@@ -65,6 +67,7 @@ public class GcpInfo  {
      * This is the getter method this will return the attribute value.
      * Instance type of this se.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return machineType
      */
@@ -76,6 +79,7 @@ public class GcpInfo  {
      * This is the setter method to the attribute.
      * Instance type of this se.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param machineType set the machineType.
      */
@@ -86,6 +90,7 @@ public class GcpInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Network this se is assigned.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return network
      */
@@ -96,6 +101,7 @@ public class GcpInfo  {
     /**
      * This is the setter method to the attribute.
      * Network this se is assigned.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param network set the network.
      */
@@ -106,6 +112,7 @@ public class GcpInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Project this se belongs to.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return project
      */
@@ -116,6 +123,7 @@ public class GcpInfo  {
     /**
      * This is the setter method to the attribute.
      * Project this se belongs to.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param project set the project.
      */
@@ -126,6 +134,7 @@ public class GcpInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Subnet assigned to this se.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnet
      */
@@ -136,6 +145,7 @@ public class GcpInfo  {
     /**
      * This is the setter method to the attribute.
      * Subnet assigned to this se.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subnet set the subnet.
      */
@@ -146,6 +156,7 @@ public class GcpInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Zone this se is part of.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return zone
      */
@@ -156,6 +167,7 @@ public class GcpInfo  {
     /**
      * This is the setter method to the attribute.
      * Zone this se is part of.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param zone set the zone.
      */

@@ -40,7 +40,7 @@ public class OpenStackIpChange  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property error_string of obj type openstackipchange field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorString
      */
@@ -50,7 +50,7 @@ public class OpenStackIpChange  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property error_string of obj type openstackipchange field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorString set the errorString.
      */
@@ -60,7 +60,7 @@ public class OpenStackIpChange  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ip of obj type openstackipchange field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip
      */
@@ -70,7 +70,7 @@ public class OpenStackIpChange  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ip of obj type openstackipchange field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip set the ip.
      */
@@ -80,7 +80,7 @@ public class OpenStackIpChange  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property mac_addr of obj type openstackipchange field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return macAddr
      */
@@ -90,7 +90,7 @@ public class OpenStackIpChange  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property mac_addr of obj type openstackipchange field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param macAddr set the macAddr.
      */
@@ -100,7 +100,7 @@ public class OpenStackIpChange  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of port.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return portUuid
      */
@@ -110,7 +110,7 @@ public class OpenStackIpChange  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of port.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param portUuid set the portUuid.
      */
@@ -120,7 +120,7 @@ public class OpenStackIpChange  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of se_vm.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seVmUuid
      */
@@ -130,7 +130,7 @@ public class OpenStackIpChange  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of se_vm.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seVmUuid set the seVmUuid.
      */

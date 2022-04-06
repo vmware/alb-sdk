@@ -45,6 +45,7 @@ public class AppLearningParams  {
      * This is the getter method this will return the attribute value.
      * Learn the params per uri path.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enablePerUriLearning
      */
@@ -56,6 +57,7 @@ public class AppLearningParams  {
      * This is the setter method to the attribute.
      * Learn the params per uri path.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enablePerUriLearning set the enablePerUriLearning.
      */
@@ -68,6 +70,7 @@ public class AppLearningParams  {
      * Maximum number of params programmed for an application.
      * Allowed values are 10-1000.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return maxParams
      */
@@ -80,6 +83,7 @@ public class AppLearningParams  {
      * Maximum number of params programmed for an application.
      * Allowed values are 10-1000.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param maxParams set the maxParams.
      */
@@ -92,6 +96,7 @@ public class AppLearningParams  {
      * Maximum number of uri paths programmed for an application.
      * Allowed values are 10-10000.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 500.
      * @return maxUris
      */
@@ -104,6 +109,7 @@ public class AppLearningParams  {
      * Maximum number of uri paths programmed for an application.
      * Allowed values are 10-10000.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 500.
      * @param maxUris set the maxUris.
      */
@@ -115,6 +121,7 @@ public class AppLearningParams  {
      * This is the getter method this will return the attribute value.
      * Minimum number of occurances required for a param to qualify for learning.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @return minHitsToLearn
      */
@@ -126,6 +133,7 @@ public class AppLearningParams  {
      * This is the setter method to the attribute.
      * Minimum number of occurances required for a param to qualify for learning.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @param minHitsToLearn set the minHitsToLearn.
      */
@@ -139,6 +147,7 @@ public class AppLearningParams  {
      * Allowed values are 1-100.
      * Field introduced in 18.2.3.
      * Unit is percent.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return samplingPercent
      */
@@ -152,6 +161,7 @@ public class AppLearningParams  {
      * Allowed values are 1-100.
      * Field introduced in 18.2.3.
      * Unit is percent.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param samplingPercent set the samplingPercent.
      */
@@ -165,6 +175,7 @@ public class AppLearningParams  {
      * Allowed values are 1-60.
      * Field introduced in 18.2.3.
      * Unit is min.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @return updateInterval
      */
@@ -178,6 +189,7 @@ public class AppLearningParams  {
      * Allowed values are 1-60.
      * Field introduced in 18.2.3.
      * Unit is min.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
      * @param updateInterval set the updateInterval.
      */

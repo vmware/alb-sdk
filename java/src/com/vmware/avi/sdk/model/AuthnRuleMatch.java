@@ -34,6 +34,7 @@ public class AuthnRuleMatch  {
      * Name of the executed authentication rule action.
      * Enum options - SKIP_AUTHENTICATION, USE_DEFAULT_AUTHENTICATION.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ruleAction
      */
@@ -46,6 +47,7 @@ public class AuthnRuleMatch  {
      * Name of the executed authentication rule action.
      * Enum options - SKIP_AUTHENTICATION, USE_DEFAULT_AUTHENTICATION.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ruleAction set the ruleAction.
      */
@@ -57,6 +59,7 @@ public class AuthnRuleMatch  {
      * This is the getter method this will return the attribute value.
      * Name of the matched authentication rule.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ruleName
      */
@@ -68,6 +71,7 @@ public class AuthnRuleMatch  {
      * This is the setter method to the attribute.
      * Name of the matched authentication rule.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ruleName set the ruleName.
      */

@@ -48,7 +48,7 @@ public class SeHmEventServerDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property app_info of obj type sehmeventserverdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return appInfo
      */
@@ -58,7 +58,7 @@ public class SeHmEventServerDetails  {
 
     /**
      * This is the setter method. this will set the appInfo
-     * Placeholder for description of property app_info of obj type sehmeventserverdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return appInfo
      */
@@ -68,7 +68,7 @@ public class SeHmEventServerDetails  {
 
     /**
      * This is the setter method this will set the appInfo
-     * Placeholder for description of property app_info of obj type sehmeventserverdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return appInfo
      */
@@ -83,6 +83,7 @@ public class SeHmEventServerDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Server description.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -93,6 +94,7 @@ public class SeHmEventServerDetails  {
     /**
      * This is the setter method to the attribute.
      * Server description.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -106,6 +108,7 @@ public class SeHmEventServerDetails  {
      * Enum options - ARP_UNRESOLVED, CONNECTION_REFUSED, CONNECTION_TIMEOUT, RESPONSE_CODE_MISMATCH, PAYLOAD_CONTENT_MISMATCH, SERVER_UNREACHABLE,
      * CONNECTION_RESET, CONNECTION_ERROR, HOST_ERROR, ADDRESS_ERROR, NO_PORT, PAYLOAD_TIMEOUT, NO_RESPONSE, NO_RESOURCES, SSL_ERROR, SSL_CERT_ERROR,
      * PORT_UNREACHABLE, SCRIPT_ERROR, OTHER_ERROR, SERVER_DISABLED...
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return failureCode
      */
@@ -119,6 +122,7 @@ public class SeHmEventServerDetails  {
      * Enum options - ARP_UNRESOLVED, CONNECTION_REFUSED, CONNECTION_TIMEOUT, RESPONSE_CODE_MISMATCH, PAYLOAD_CONTENT_MISMATCH, SERVER_UNREACHABLE,
      * CONNECTION_RESET, CONNECTION_ERROR, HOST_ERROR, ADDRESS_ERROR, NO_PORT, PAYLOAD_TIMEOUT, NO_RESPONSE, NO_RESOURCES, SSL_ERROR, SSL_CERT_ERROR,
      * PORT_UNREACHABLE, SCRIPT_ERROR, OTHER_ERROR, SERVER_DISABLED...
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param failureCode set the failureCode.
      */
@@ -129,6 +133,7 @@ public class SeHmEventServerDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Host name or vm name or dns name for the server.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostname
      */
@@ -139,6 +144,7 @@ public class SeHmEventServerDetails  {
     /**
      * This is the setter method to the attribute.
      * Host name or vm name or dns name for the server.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hostname set the hostname.
      */
@@ -149,6 +155,7 @@ public class SeHmEventServerDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Ip address of server.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip
      */
@@ -159,6 +166,7 @@ public class SeHmEventServerDetails  {
     /**
      * This is the setter method to the attribute.
      * Ip address of server.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip set the ip.
      */
@@ -170,6 +178,7 @@ public class SeHmEventServerDetails  {
      * This is the getter method this will return the attribute value.
      * Port override form the pool port.
      * If server port is not specified, the pool port is used.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
      */
@@ -181,6 +190,7 @@ public class SeHmEventServerDetails  {
      * This is the setter method to the attribute.
      * Port override form the pool port.
      * If server port is not specified, the pool port is used.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.
      */
@@ -189,7 +199,7 @@ public class SeHmEventServerDetails  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property shm of obj type sehmeventserverdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return shm
      */
@@ -199,7 +209,7 @@ public class SeHmEventServerDetails  {
 
     /**
      * This is the setter method. this will set the shm
-     * Placeholder for description of property shm of obj type sehmeventserverdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return shm
      */
@@ -209,7 +219,7 @@ public class SeHmEventServerDetails  {
 
     /**
      * This is the setter method this will set the shm
-     * Placeholder for description of property shm of obj type sehmeventserverdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return shm
      */
@@ -228,6 +238,7 @@ public class SeHmEventServerDetails  {
      * ADF_UDP_CONN_SETUP_FAILED_INTERNAL, ADF_UDP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_CLIENT_SENT_RESET, ADF_SERVER_SENT_RESET,
      * ADF_CLIENT_CONN_TIMEDOUT, ADF_SERVER_CONN_TIMEDOUT, ADF_USER_DELETE_OPERATION, ADF_CLIENT_REQUEST_TIMEOUT, ADF_CLIENT_CONN_ABORTED,
      * ADF_CLIENT_SSL_HANDSHAKE_FAILURE, ADF_CLIENT_CONN_FAILED, ADF_SERVER_CERTIFICATE_VERIFICATION_FAILED, ADF_SERVER_SIDE_SSL_HANDSHAKE_FAILED...
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sslErrorCode
      */
@@ -242,6 +253,7 @@ public class SeHmEventServerDetails  {
      * ADF_UDP_CONN_SETUP_FAILED_INTERNAL, ADF_UDP_SERVER_CONN_SETUP_FAILED_INTERNAL, ADF_CLIENT_SENT_RESET, ADF_SERVER_SENT_RESET,
      * ADF_CLIENT_CONN_TIMEDOUT, ADF_SERVER_CONN_TIMEDOUT, ADF_USER_DELETE_OPERATION, ADF_CLIENT_REQUEST_TIMEOUT, ADF_CLIENT_CONN_ABORTED,
      * ADF_CLIENT_SSL_HANDSHAKE_FAILURE, ADF_CLIENT_CONN_FAILED, ADF_SERVER_CERTIFICATE_VERIFICATION_FAILED, ADF_SERVER_SIDE_SSL_HANDSHAKE_FAILED...
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sslErrorCode set the sslErrorCode.
      */

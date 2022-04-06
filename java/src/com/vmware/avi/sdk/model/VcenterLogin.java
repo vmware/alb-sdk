@@ -40,7 +40,7 @@ public class VcenterLogin  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudUuid
      */
@@ -50,7 +50,7 @@ public class VcenterLogin  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudUuid set the cloudUuid.
      */
@@ -60,7 +60,7 @@ public class VcenterLogin  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property password of obj type vcenterlogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "vmware".
      * @return password
      */
@@ -70,7 +70,7 @@ public class VcenterLogin  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property password of obj type vcenterlogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "vmware".
      * @param password set the password.
      */
@@ -80,7 +80,7 @@ public class VcenterLogin  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property start_ts of obj type vcenterlogin field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return startTs
      */
@@ -90,7 +90,7 @@ public class VcenterLogin  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property start_ts of obj type vcenterlogin field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param startTs set the startTs.
      */
@@ -100,7 +100,7 @@ public class VcenterLogin  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property username of obj type vcenterlogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "root".
      * @return username
      */
@@ -110,7 +110,7 @@ public class VcenterLogin  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property username of obj type vcenterlogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "root".
      * @param username set the username.
      */
@@ -120,7 +120,7 @@ public class VcenterLogin  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_url of obj type vcenterlogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterUrl
      */
@@ -130,7 +130,7 @@ public class VcenterLogin  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_url of obj type vcenterlogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterUrl set the vcenterUrl.
      */

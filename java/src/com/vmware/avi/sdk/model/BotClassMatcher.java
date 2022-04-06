@@ -34,6 +34,7 @@ public class BotClassMatcher  {
      * Enum options - UNDETERMINED_CLIENT, HUMAN_CLIENT, BOT_CLIENT.
      * Field introduced in 21.1.1.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientClasses
      */
@@ -47,6 +48,7 @@ public class BotClassMatcher  {
      * Enum options - UNDETERMINED_CLIENT, HUMAN_CLIENT, BOT_CLIENT.
      * Field introduced in 21.1.1.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientClasses
      */
@@ -60,6 +62,7 @@ public class BotClassMatcher  {
      * Enum options - UNDETERMINED_CLIENT, HUMAN_CLIENT, BOT_CLIENT.
      * Field introduced in 21.1.1.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientClasses
      */
@@ -76,6 +79,7 @@ public class BotClassMatcher  {
      * The match operation.
      * Enum options - IS_IN, IS_NOT_IN.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "IS_IN".
      * @return op
      */
@@ -88,6 +92,7 @@ public class BotClassMatcher  {
      * The match operation.
      * Enum options - IS_IN, IS_NOT_IN.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "IS_IN".
      * @param op set the op.
      */

@@ -36,6 +36,7 @@ public class GslbDnsGeoUpdate  {
      * Gslbgeodbprofile object that is pushed on on a per dns basis.
      * Field deprecated in 18.1.5, 18.2.1.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return objInfo
      */
     public List<GslbObjectInfo> getObjInfo() {
@@ -47,6 +48,7 @@ public class GslbDnsGeoUpdate  {
      * Gslbgeodbprofile object that is pushed on on a per dns basis.
      * Field deprecated in 18.1.5, 18.2.1.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return objInfo
      */
     public void setObjInfo(List<GslbObjectInfo>  objInfo) {
@@ -58,6 +60,7 @@ public class GslbDnsGeoUpdate  {
      * Gslbgeodbprofile object that is pushed on on a per dns basis.
      * Field deprecated in 18.1.5, 18.2.1.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return objInfo
      */
     public GslbDnsGeoUpdate addObjInfoItem(GslbObjectInfo objInfoItem) {
@@ -73,6 +76,7 @@ public class GslbDnsGeoUpdate  {
      * Enum options - GSLB_NONE, GSLB_CREATE, GSLB_UPDATE, GSLB_DELETE, GSLB_PURGE, GSLB_DECL.
      * Field deprecated in 18.1.5, 18.2.1.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return ops
      */
     public String getOps() {
@@ -84,6 +88,7 @@ public class GslbDnsGeoUpdate  {
      * Enum options - GSLB_NONE, GSLB_CREATE, GSLB_UPDATE, GSLB_DELETE, GSLB_PURGE, GSLB_DECL.
      * Field deprecated in 18.1.5, 18.2.1.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param ops set the ops.
      */
     public void setOps(String  ops) {
@@ -93,6 +98,7 @@ public class GslbDnsGeoUpdate  {
      * This is the getter method this will return the attribute value.
      * Field deprecated in 18.1.5, 18.2.1.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return seList
      */
     public List<String> getSeList() {
@@ -103,6 +109,7 @@ public class GslbDnsGeoUpdate  {
      * This is the setter method. this will set the seList
      * Field deprecated in 18.1.5, 18.2.1.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return seList
      */
     public void setSeList(List<String>  seList) {
@@ -113,6 +120,7 @@ public class GslbDnsGeoUpdate  {
      * This is the setter method this will set the seList
      * Field deprecated in 18.1.5, 18.2.1.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return seList
      */
     public GslbDnsGeoUpdate addSeListItem(String seListItem) {

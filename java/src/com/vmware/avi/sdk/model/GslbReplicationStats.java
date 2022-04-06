@@ -36,6 +36,7 @@ public class GslbReplicationStats  {
      * This is the getter method this will return the attribute value.
      * Last config version acknowledged.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return acknowledgedVersion
      */
@@ -47,6 +48,7 @@ public class GslbReplicationStats  {
      * This is the setter method to the attribute.
      * Last config version acknowledged.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param acknowledgedVersion set the acknowledgedVersion.
      */
@@ -58,6 +60,7 @@ public class GslbReplicationStats  {
      * This is the getter method this will return the attribute value.
      * Number of pending objects.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pendingObjectCount
      */
@@ -69,6 +72,7 @@ public class GslbReplicationStats  {
      * This is the setter method to the attribute.
      * Number of pending objects.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param pendingObjectCount set the pendingObjectCount.
      */
@@ -81,6 +85,7 @@ public class GslbReplicationStats  {
      * Last config version received.
      * On leader, this represents the version received from federated datastore.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return receivedVersion
      */
@@ -93,6 +98,7 @@ public class GslbReplicationStats  {
      * Last config version received.
      * On leader, this represents the version received from federated datastore.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param receivedVersion set the receivedVersion.
      */

@@ -40,6 +40,7 @@ public class UpgradeOpsParam  {
      * Image uuid for identifying base image.
      * It is a reference to an object of type image.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return imageRef
      */
@@ -52,6 +53,7 @@ public class UpgradeOpsParam  {
      * Image uuid for identifying base image.
      * It is a reference to an object of type image.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param imageRef set the imageRef.
      */
@@ -64,6 +66,7 @@ public class UpgradeOpsParam  {
      * Image uuid for identifying patch.
      * It is a reference to an object of type image.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return patchRef
      */
@@ -76,6 +79,7 @@ public class UpgradeOpsParam  {
      * Image uuid for identifying patch.
      * It is a reference to an object of type image.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param patchRef set the patchRef.
      */
@@ -87,6 +91,7 @@ public class UpgradeOpsParam  {
      * This is the getter method this will return the attribute value.
      * This field identifies se group options that need to be applied during the upgrade operations.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupOptions
      */
@@ -98,6 +103,7 @@ public class UpgradeOpsParam  {
      * This is the setter method to the attribute.
      * This field identifies se group options that need to be applied during the upgrade operations.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGroupOptions set the seGroupOptions.
      */
@@ -109,6 +115,7 @@ public class UpgradeOpsParam  {
      * This is the getter method this will return the attribute value.
      * Apply options while resuming se group upgrade operations.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupResumeOptions
      */
@@ -120,6 +127,7 @@ public class UpgradeOpsParam  {
      * This is the setter method to the attribute.
      * Apply options while resuming se group upgrade operations.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGroupResumeOptions set the seGroupResumeOptions.
      */

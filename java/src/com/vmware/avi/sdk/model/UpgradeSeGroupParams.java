@@ -43,6 +43,7 @@ public class UpgradeSeGroupParams  {
      * Image uuid for identifying base image.
      * It is a reference to an object of type image.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return imageRef
      */
@@ -55,6 +56,7 @@ public class UpgradeSeGroupParams  {
      * Image uuid for identifying base image.
      * It is a reference to an object of type image.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param imageRef set the imageRef.
      */
@@ -66,6 +68,7 @@ public class UpgradeSeGroupParams  {
      * This is the getter method this will return the attribute value.
      * Se group options for the upgrade operations.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupOptions
      */
@@ -77,6 +80,7 @@ public class UpgradeSeGroupParams  {
      * This is the setter method to the attribute.
      * Se group options for the upgrade operations.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGroupOptions set the seGroupOptions.
      */
@@ -89,6 +93,7 @@ public class UpgradeSeGroupParams  {
      * It is a reference to an object of type serviceenginegroup.
      * Field introduced in 18.2.6.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupRefs
      */
@@ -102,6 +107,7 @@ public class UpgradeSeGroupParams  {
      * It is a reference to an object of type serviceenginegroup.
      * Field introduced in 18.2.6.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupRefs
      */
@@ -115,6 +121,7 @@ public class UpgradeSeGroupParams  {
      * It is a reference to an object of type serviceenginegroup.
      * Field introduced in 18.2.6.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupRefs
      */
@@ -131,6 +138,7 @@ public class UpgradeSeGroupParams  {
      * Image uuid for identifying se patch image.
      * It is a reference to an object of type image.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sePatchRef
      */
@@ -143,6 +151,7 @@ public class UpgradeSeGroupParams  {
      * Image uuid for identifying se patch image.
      * It is a reference to an object of type image.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sePatchRef set the sePatchRef.
      */
@@ -154,6 +163,7 @@ public class UpgradeSeGroupParams  {
      * This is the getter method this will return the attribute value.
      * This is flag when set as true skips few optional must checks.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return skipWarnings
      */
@@ -165,6 +175,7 @@ public class UpgradeSeGroupParams  {
      * This is the setter method to the attribute.
      * This is flag when set as true skips few optional must checks.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param skipWarnings set the skipWarnings.
      */

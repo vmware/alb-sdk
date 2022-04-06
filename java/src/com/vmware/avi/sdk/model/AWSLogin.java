@@ -43,7 +43,7 @@ public class AWSLogin  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property access_key_id of obj type awslogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return accessKeyId
      */
@@ -53,7 +53,7 @@ public class AWSLogin  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property access_key_id of obj type awslogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param accessKeyId set the accessKeyId.
      */
@@ -63,7 +63,7 @@ public class AWSLogin  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property iam_assume_role of obj type awslogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return iamAssumeRole
      */
@@ -73,7 +73,7 @@ public class AWSLogin  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property iam_assume_role of obj type awslogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param iamAssumeRole set the iamAssumeRole.
      */
@@ -84,6 +84,7 @@ public class AWSLogin  {
     /**
      * This is the getter method this will return the attribute value.
      * Aws region.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "us-west-1".
      * @return region
      */
@@ -94,6 +95,7 @@ public class AWSLogin  {
     /**
      * This is the setter method to the attribute.
      * Aws region.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "us-west-1".
      * @param region set the region.
      */
@@ -103,7 +105,7 @@ public class AWSLogin  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property secret_access_key of obj type awslogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return secretAccessKey
      */
@@ -113,7 +115,7 @@ public class AWSLogin  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property secret_access_key of obj type awslogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param secretAccessKey set the secretAccessKey.
      */
@@ -123,7 +125,7 @@ public class AWSLogin  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property use_iam_roles of obj type awslogin field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return useIamRoles
      */
@@ -133,7 +135,7 @@ public class AWSLogin  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property use_iam_roles of obj type awslogin field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param useIamRoles set the useIamRoles.
      */
@@ -143,7 +145,7 @@ public class AWSLogin  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vpc_id of obj type awslogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vpcId
      */
@@ -153,7 +155,7 @@ public class AWSLogin  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vpc_id of obj type awslogin field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vpcId set the vpcId.
      */

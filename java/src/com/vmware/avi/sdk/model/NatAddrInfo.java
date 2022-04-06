@@ -33,6 +33,7 @@ public class NatAddrInfo  {
      * This is the getter method this will return the attribute value.
      * Nat ip address.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return natIp
      */
@@ -44,6 +45,7 @@ public class NatAddrInfo  {
      * This is the setter method to the attribute.
      * Nat ip address.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param natIp set the natIp.
      */
@@ -55,6 +57,7 @@ public class NatAddrInfo  {
      * This is the getter method this will return the attribute value.
      * Nat ip address range.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return natIpRange
      */
@@ -66,6 +69,7 @@ public class NatAddrInfo  {
      * This is the setter method to the attribute.
      * Nat ip address range.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param natIpRange set the natIpRange.
      */

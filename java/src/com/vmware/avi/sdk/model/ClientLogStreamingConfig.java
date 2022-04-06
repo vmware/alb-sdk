@@ -51,6 +51,7 @@ public class ClientLogStreamingConfig  {
      * Multiple servers are supported by furnishing a comma-separated list of ip addresses or host names, for example, 11.11.11.11,23.12.12.4.
      * Optionally, a separate port can be specified for each external server in the list, for example, 11.11.11.11 234,12.12.12.12 343.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return externalServer
      */
@@ -65,6 +66,7 @@ public class ClientLogStreamingConfig  {
      * Multiple servers are supported by furnishing a comma-separated list of ip addresses or host names, for example, 11.11.11.11,23.12.12.4.
      * Optionally, a separate port can be specified for each external server in the list, for example, 11.11.11.11 234,12.12.12.12 343.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param externalServer set the externalServer.
      */
@@ -78,6 +80,7 @@ public class ClientLogStreamingConfig  {
      * If multiple external servers have been specified, the single port number specified here will apply to all those servers for which an explicit
      * port number has not been specified in the external server list.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 514.
      * @return externalServerPort
      */
@@ -91,6 +94,7 @@ public class ClientLogStreamingConfig  {
      * If multiple external servers have been specified, the single port number specified here will apply to all those servers for which an explicit
      * port number has not been specified in the external server list.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 514.
      * @param externalServerPort set the externalServerPort.
      */
@@ -103,6 +107,7 @@ public class ClientLogStreamingConfig  {
      * Configuration to specify the format of streamed logs.
      * By default, each log is encoded in json format.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return formatConfig
      */
@@ -115,6 +120,7 @@ public class ClientLogStreamingConfig  {
      * Configuration to specify the format of streamed logs.
      * By default, each log is encoded in json format.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param formatConfig set the formatConfig.
      */
@@ -128,6 +134,7 @@ public class ClientLogStreamingConfig  {
      * Default is logs_all, i.e., send all logs.
      * Enum options - LOGS_SIGNIFICANT_ONLY, LOGS_UDF_ONLY, LOGS_UDF_SIGNIFICANT, LOGS_ALL.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "LOGS_ALL".
      * @return logTypesToSend
      */
@@ -141,6 +148,7 @@ public class ClientLogStreamingConfig  {
      * Default is logs_all, i.e., send all logs.
      * Enum options - LOGS_SIGNIFICANT_ONLY, LOGS_UDF_ONLY, LOGS_UDF_SIGNIFICANT, LOGS_ALL.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "LOGS_ALL".
      * @param logTypesToSend set the logTypesToSend.
      */
@@ -154,6 +162,7 @@ public class ClientLogStreamingConfig  {
      * By default, 100 logs per second are streamed.
      * Set this to zero(0) to not enforce any limit.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return maxLogsPerSecond
      */
@@ -167,6 +176,7 @@ public class ClientLogStreamingConfig  {
      * By default, 100 logs per second are streamed.
      * Set this to zero(0) to not enforce any limit.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param maxLogsPerSecond set the maxLogsPerSecond.
      */
@@ -180,6 +190,7 @@ public class ClientLogStreamingConfig  {
      * Enum options - LOG_STREAMING_PROTOCOL_UDP, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_UDP, LOG_STREAMING_PROTOCOL_TCP,
      * LOG_STREAMING_PROTOCOL_SYSLOG_OVER_TCP, LOG_STREAMING_PROTOCOL_RAW_OVER_UDP, LOG_STREAMING_PROTOCOL_TLS, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_TLS.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "LOG_STREAMING_PROTOCOL_UDP".
      * @return protocol
      */
@@ -193,6 +204,7 @@ public class ClientLogStreamingConfig  {
      * Enum options - LOG_STREAMING_PROTOCOL_UDP, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_UDP, LOG_STREAMING_PROTOCOL_TCP,
      * LOG_STREAMING_PROTOCOL_SYSLOG_OVER_TCP, LOG_STREAMING_PROTOCOL_RAW_OVER_UDP, LOG_STREAMING_PROTOCOL_TLS, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_TLS.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "LOG_STREAMING_PROTOCOL_UDP".
      * @param protocol set the protocol.
      */
@@ -204,6 +216,7 @@ public class ClientLogStreamingConfig  {
      * This is the getter method this will return the attribute value.
      * Syslog configuration if a syslog-based protocol is specified for streaming.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return syslogConfig
      */
@@ -215,6 +228,7 @@ public class ClientLogStreamingConfig  {
      * This is the setter method to the attribute.
      * Syslog configuration if a syslog-based protocol is specified for streaming.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param syslogConfig set the syslogConfig.
      */

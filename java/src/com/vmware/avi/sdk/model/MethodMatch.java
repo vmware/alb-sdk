@@ -33,6 +33,7 @@ public class MethodMatch  {
      * This is the getter method this will return the attribute value.
      * Criterion to use for http method matching the method in the http request.
      * Enum options - IS_IN, IS_NOT_IN.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matchCriteria
      */
@@ -44,6 +45,7 @@ public class MethodMatch  {
      * This is the setter method to the attribute.
      * Criterion to use for http method matching the method in the http request.
      * Enum options - IS_IN, IS_NOT_IN.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param matchCriteria set the matchCriteria.
      */
@@ -58,8 +60,9 @@ public class MethodMatch  {
      * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
      * Minimum of 1 items required.
      * Maximum of 16 items allowed.
-     * Allowed in basic(allowed values- http_method_get,http_method_put,http_method_post,http_method_head,http_method_options) edition,
-     * essentials(allowed values- http_method_get,http_method_put,http_method_post,http_method_head,http_method_options) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values-
+     * http_method_get,http_method_put,http_method_post,http_method_head,http_method_options) edition, basic(allowed values-
+     * http_method_get,http_method_put,http_method_post,http_method_head,http_method_options) edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return methods
      */
@@ -75,8 +78,9 @@ public class MethodMatch  {
      * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
      * Minimum of 1 items required.
      * Maximum of 16 items allowed.
-     * Allowed in basic(allowed values- http_method_get,http_method_put,http_method_post,http_method_head,http_method_options) edition,
-     * essentials(allowed values- http_method_get,http_method_put,http_method_post,http_method_head,http_method_options) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values-
+     * http_method_get,http_method_put,http_method_post,http_method_head,http_method_options) edition, basic(allowed values-
+     * http_method_get,http_method_put,http_method_post,http_method_head,http_method_options) edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return methods
      */
@@ -92,8 +96,9 @@ public class MethodMatch  {
      * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
      * Minimum of 1 items required.
      * Maximum of 16 items allowed.
-     * Allowed in basic(allowed values- http_method_get,http_method_put,http_method_post,http_method_head,http_method_options) edition,
-     * essentials(allowed values- http_method_get,http_method_put,http_method_post,http_method_head,http_method_options) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values-
+     * http_method_get,http_method_put,http_method_post,http_method_head,http_method_options) edition, basic(allowed values-
+     * http_method_get,http_method_put,http_method_post,http_method_head,http_method_options) edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return methods
      */

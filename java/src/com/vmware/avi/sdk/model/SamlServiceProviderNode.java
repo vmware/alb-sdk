@@ -46,6 +46,7 @@ public class SamlServiceProviderNode  {
      * Globally unique entityid for this node.
      * Entity id on the idp should match this.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return entityId
      */
@@ -58,6 +59,7 @@ public class SamlServiceProviderNode  {
      * Globally unique entityid for this node.
      * Entity id on the idp should match this.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param entityId set the entityId.
      */
@@ -69,6 +71,7 @@ public class SamlServiceProviderNode  {
      * This is the getter method this will return the attribute value.
      * Refers to the cluster name identifier (virtual ip or fqdn).
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -80,6 +83,7 @@ public class SamlServiceProviderNode  {
      * This is the setter method to the attribute.
      * Refers to the cluster name identifier (virtual ip or fqdn).
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -92,6 +96,7 @@ public class SamlServiceProviderNode  {
      * Service provider signing certificate for metadata.
      * Field deprecated in 18.2.1.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return signingCert
      */
     public String getSigningCert() {
@@ -103,6 +108,7 @@ public class SamlServiceProviderNode  {
      * Service provider signing certificate for metadata.
      * Field deprecated in 18.2.1.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param signingCert set the signingCert.
      */
     public void setSigningCert(String  signingCert) {
@@ -114,6 +120,7 @@ public class SamlServiceProviderNode  {
      * Service provider signing key for metadata.
      * Field deprecated in 18.2.1.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return signingKey
      */
     public String getSigningKey() {
@@ -125,6 +132,7 @@ public class SamlServiceProviderNode  {
      * Service provider signing key for metadata.
      * Field deprecated in 18.2.1.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param signingKey set the signingKey.
      */
     public void setSigningKey(String  signingKey) {
@@ -136,6 +144,7 @@ public class SamlServiceProviderNode  {
      * Service engines will use this ssl certificate to sign assertions going to the idp.
      * It is a reference to an object of type sslkeyandcertificate.
      * Field introduced in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return signingSslKeyAndCertificateRef
      */
@@ -148,6 +157,7 @@ public class SamlServiceProviderNode  {
      * Service engines will use this ssl certificate to sign assertions going to the idp.
      * It is a reference to an object of type sslkeyandcertificate.
      * Field introduced in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param signingSslKeyAndCertificateRef set the signingSslKeyAndCertificateRef.
      */
@@ -159,6 +169,7 @@ public class SamlServiceProviderNode  {
      * This is the getter method this will return the attribute value.
      * Single signon url to be programmed on the idp.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return singleSignonUrl
      */
@@ -170,6 +181,7 @@ public class SamlServiceProviderNode  {
      * This is the setter method to the attribute.
      * Single signon url to be programmed on the idp.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param singleSignonUrl set the singleSignonUrl.
      */

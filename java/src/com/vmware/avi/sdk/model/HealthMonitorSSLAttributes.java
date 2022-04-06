@@ -40,6 +40,7 @@ public class HealthMonitorSSLAttributes  {
      * Pki profile used to validate the ssl certificate presented by a server.
      * It is a reference to an object of type pkiprofile.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pkiProfileRef
      */
@@ -52,6 +53,7 @@ public class HealthMonitorSSLAttributes  {
      * Pki profile used to validate the ssl certificate presented by a server.
      * It is a reference to an object of type pkiprofile.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param pkiProfileRef set the pkiProfileRef.
      */
@@ -63,6 +65,7 @@ public class HealthMonitorSSLAttributes  {
      * This is the getter method this will return the attribute value.
      * Fully qualified dns hostname which will be used in the tls sni extension in server connections indicating sni is enabled.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverName
      */
@@ -74,6 +77,7 @@ public class HealthMonitorSSLAttributes  {
      * This is the setter method to the attribute.
      * Fully qualified dns hostname which will be used in the tls sni extension in server connections indicating sni is enabled.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serverName set the serverName.
      */
@@ -86,6 +90,7 @@ public class HealthMonitorSSLAttributes  {
      * Service engines will present this ssl certificate to the server.
      * It is a reference to an object of type sslkeyandcertificate.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sslKeyAndCertificateRef
      */
@@ -98,6 +103,7 @@ public class HealthMonitorSSLAttributes  {
      * Service engines will present this ssl certificate to the server.
      * It is a reference to an object of type sslkeyandcertificate.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sslKeyAndCertificateRef set the sslKeyAndCertificateRef.
      */
@@ -110,6 +116,7 @@ public class HealthMonitorSSLAttributes  {
      * Ssl profile defines ciphers and ssl versions to be used for healthmonitor traffic to the back-end servers.
      * It is a reference to an object of type sslprofile.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sslProfileRef
      */
@@ -122,6 +129,7 @@ public class HealthMonitorSSLAttributes  {
      * Ssl profile defines ciphers and ssl versions to be used for healthmonitor traffic to the back-end servers.
      * It is a reference to an object of type sslprofile.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sslProfileRef set the sslProfileRef.
      */

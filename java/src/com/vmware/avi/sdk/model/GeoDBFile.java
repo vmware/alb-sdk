@@ -42,6 +42,7 @@ public class GeoDBFile  {
      * This is the getter method this will return the attribute value.
      * If set to false, this file is ignored.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enabled
      */
@@ -53,6 +54,7 @@ public class GeoDBFile  {
      * This is the setter method to the attribute.
      * If set to false, this file is ignored.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enabled set the enabled.
      */
@@ -66,6 +68,7 @@ public class GeoDBFile  {
      * Must be of type 'geodb'.
      * It is a reference to an object of type fileobject.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fileRef
      */
@@ -79,6 +82,7 @@ public class GeoDBFile  {
      * Must be of type 'geodb'.
      * It is a reference to an object of type fileobject.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fileRef set the fileRef.
      */
@@ -90,6 +94,7 @@ public class GeoDBFile  {
      * This is the getter method this will return the attribute value.
      * Priority of the file - larger number takes precedence.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return index
      */
@@ -101,6 +106,7 @@ public class GeoDBFile  {
      * This is the setter method to the attribute.
      * Priority of the file - larger number takes precedence.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param index set the index.
      */
@@ -112,6 +118,7 @@ public class GeoDBFile  {
      * This is the getter method this will return the attribute value.
      * Name of the file.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -123,6 +130,7 @@ public class GeoDBFile  {
      * This is the setter method to the attribute.
      * Name of the file.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -135,6 +143,7 @@ public class GeoDBFile  {
      * Source of the file data.
      * Enum options - VENDOR_USER_DEFINED, VENDOR_AVI_DEFINED.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vendor
      */
@@ -147,6 +156,7 @@ public class GeoDBFile  {
      * Source of the file data.
      * Enum options - VENDOR_USER_DEFINED, VENDOR_AVI_DEFINED.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vendor set the vendor.
      */

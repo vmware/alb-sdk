@@ -34,7 +34,7 @@ public class VsPoolNwFilterEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property filter of obj type vspoolnwfiltereventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return filter
      */
@@ -44,7 +44,7 @@ public class VsPoolNwFilterEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property filter of obj type vspoolnwfiltereventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param filter set the filter.
      */
@@ -54,7 +54,7 @@ public class VsPoolNwFilterEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -64,7 +64,7 @@ public class VsPoolNwFilterEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -74,7 +74,7 @@ public class VsPoolNwFilterEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property network of obj type vspoolnwfiltereventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return network
      */
@@ -84,7 +84,7 @@ public class VsPoolNwFilterEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property network of obj type vspoolnwfiltereventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param network set the network.
      */

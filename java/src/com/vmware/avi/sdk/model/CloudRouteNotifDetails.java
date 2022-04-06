@@ -39,6 +39,7 @@ public class CloudRouteNotifDetails  {
      * This is the getter method this will return the attribute value.
      * Cloud id.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccId
      */
@@ -50,6 +51,7 @@ public class CloudRouteNotifDetails  {
      * This is the setter method to the attribute.
      * Cloud id.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccId set the ccId.
      */
@@ -61,6 +63,7 @@ public class CloudRouteNotifDetails  {
      * This is the getter method this will return the attribute value.
      * Detailed reason for the route update notification.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -72,6 +75,7 @@ public class CloudRouteNotifDetails  {
      * This is the setter method to the attribute.
      * Detailed reason for the route update notification.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -83,6 +87,7 @@ public class CloudRouteNotifDetails  {
      * This is the getter method this will return the attribute value.
      * Name of route table for which update was performed.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return routeTable
      */
@@ -94,6 +99,7 @@ public class CloudRouteNotifDetails  {
      * This is the setter method to the attribute.
      * Name of route table for which update was performed.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param routeTable set the routeTable.
      */
@@ -104,6 +110,7 @@ public class CloudRouteNotifDetails  {
      * This is the getter method this will return the attribute value.
      * Names of routes for which update was performed.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return routes
      */
@@ -115,6 +122,7 @@ public class CloudRouteNotifDetails  {
      * This is the setter method. this will set the routes
      * Names of routes for which update was performed.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return routes
      */
@@ -126,6 +134,7 @@ public class CloudRouteNotifDetails  {
      * This is the setter method this will set the routes
      * Names of routes for which update was performed.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return routes
      */

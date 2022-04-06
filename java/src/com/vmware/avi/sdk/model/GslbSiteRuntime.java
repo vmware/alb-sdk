@@ -57,6 +57,7 @@ public class GslbSiteRuntime  {
      * This is the getter method this will return the attribute value.
      * This field shadows glb_cfg.clear_on_max_retries.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clearOnMaxRetries
      */
@@ -68,6 +69,7 @@ public class GslbSiteRuntime  {
      * This is the setter method to the attribute.
      * This field shadows glb_cfg.clear_on_max_retries.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clearOnMaxRetries set the clearOnMaxRetries.
      */
@@ -79,6 +81,7 @@ public class GslbSiteRuntime  {
      * This is the getter method this will return the attribute value.
      * This field tracks the glb-uuid.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return glbUuid
      */
@@ -90,6 +93,7 @@ public class GslbSiteRuntime  {
      * This is the setter method to the attribute.
      * This field tracks the glb-uuid.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param glbUuid set the glbUuid.
      */
@@ -101,6 +105,7 @@ public class GslbSiteRuntime  {
      * This is the getter method this will return the attribute value.
      * Carries replication stats for a given site.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return replicationStats
      */
@@ -112,6 +117,7 @@ public class GslbSiteRuntime  {
      * This is the setter method to the attribute.
      * Carries replication stats for a given site.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param replicationStats set the replicationStats.
      */
@@ -121,7 +127,7 @@ public class GslbSiteRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property rxed_site_hs of obj type gslbsiteruntime field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rxedSiteHs
      */
@@ -131,7 +137,7 @@ public class GslbSiteRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property rxed_site_hs of obj type gslbsiteruntime field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rxedSiteHs set the rxedSiteHs.
      */
@@ -144,6 +150,7 @@ public class GslbSiteRuntime  {
      * Frequency with which group members communicate.
      * This field shadows glb_cfg.send_interval.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sendInterval
      */
@@ -156,6 +163,7 @@ public class GslbSiteRuntime  {
      * Frequency with which group members communicate.
      * This field shadows glb_cfg.send_interval.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sendInterval set the sendInterval.
      */
@@ -165,7 +173,7 @@ public class GslbSiteRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property site_cfg of obj type gslbsiteruntime field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return siteCfg
      */
@@ -175,7 +183,7 @@ public class GslbSiteRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property site_cfg of obj type gslbsiteruntime field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param siteCfg set the siteCfg.
      */
@@ -185,7 +193,7 @@ public class GslbSiteRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property site_info of obj type gslbsiteruntime field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return siteInfo
      */
@@ -195,7 +203,7 @@ public class GslbSiteRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property site_info of obj type gslbsiteruntime field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param siteInfo set the siteInfo.
      */
@@ -205,7 +213,7 @@ public class GslbSiteRuntime  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property site_stats of obj type gslbsiteruntime field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return siteStats
      */
@@ -215,7 +223,7 @@ public class GslbSiteRuntime  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property site_stats of obj type gslbsiteruntime field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param siteStats set the siteStats.
      */
@@ -227,6 +235,7 @@ public class GslbSiteRuntime  {
      * This is the getter method this will return the attribute value.
      * Remap the tenant_uuid to its tenant-name so that we can use the tenant_name directly in remote-site ops.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantName
      */
@@ -238,6 +247,7 @@ public class GslbSiteRuntime  {
      * This is the setter method to the attribute.
      * Remap the tenant_uuid to its tenant-name so that we can use the tenant_name directly in remote-site ops.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantName set the tenantName.
      */
@@ -249,6 +259,7 @@ public class GslbSiteRuntime  {
      * This is the getter method this will return the attribute value.
      * This field shadows the glb_cfg.view_id.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return viewId
      */
@@ -260,6 +271,7 @@ public class GslbSiteRuntime  {
      * This is the setter method to the attribute.
      * This field shadows the glb_cfg.view_id.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param viewId set the viewId.
      */
