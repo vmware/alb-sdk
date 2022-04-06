@@ -33,6 +33,7 @@ public class IngAttribute  {
      * This is the getter method this will return the attribute value.
      * Attribute to match.
      * Field introduced in 17.2.15, 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return attribute
      */
@@ -44,6 +45,7 @@ public class IngAttribute  {
      * This is the setter method to the attribute.
      * Attribute to match.
      * Field introduced in 17.2.15, 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param attribute set the attribute.
      */
@@ -56,6 +58,7 @@ public class IngAttribute  {
      * Attribute value.
      * If not set, match any value.
      * Field introduced in 17.2.15, 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return value
      */
@@ -68,6 +71,7 @@ public class IngAttribute  {
      * Attribute value.
      * If not set, match any value.
      * Field introduced in 17.2.15, 18.1.5, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param value set the value.
      */

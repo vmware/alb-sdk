@@ -34,6 +34,7 @@ public class VssPlacement  {
      * Degree of core non-affinity for vs placement.
      * Allowed values are 1-256.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return coreNonaffinity
      */
@@ -46,6 +47,7 @@ public class VssPlacement  {
      * Degree of core non-affinity for vs placement.
      * Allowed values are 1-256.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param coreNonaffinity set the coreNonaffinity.
      */
@@ -58,6 +60,7 @@ public class VssPlacement  {
      * Number of sub-cores that comprise a cpu core.
      * Allowed values are 1-128.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @return numSubcores
      */
@@ -70,6 +73,7 @@ public class VssPlacement  {
      * Number of sub-cores that comprise a cpu core.
      * Allowed values are 1-128.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4.
      * @param numSubcores set the numSubcores.
      */

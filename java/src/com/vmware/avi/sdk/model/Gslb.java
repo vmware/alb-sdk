@@ -90,6 +90,7 @@ public class Gslb extends AviRestResource  {
      * Allowed values are 0-5.
      * Field introduced in 18.2.3.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return asyncInterval
      */
@@ -104,6 +105,7 @@ public class Gslb extends AviRestResource  {
      * Allowed values are 0-5.
      * Field introduced in 18.2.3.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param asyncInterval set the asyncInterval.
      */
@@ -116,6 +118,7 @@ public class Gslb extends AviRestResource  {
      * Max retries after which the remote site is treated as a fresh start.
      * In fresh start all the configs are downloaded.
      * Allowed values are 1-1024.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @return clearOnMaxRetries
      */
@@ -128,6 +131,7 @@ public class Gslb extends AviRestResource  {
      * Max retries after which the remote site is treated as a fresh start.
      * In fresh start all the configs are downloaded.
      * Allowed values are 1-1024.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @param clearOnMaxRetries set the clearOnMaxRetries.
      */
@@ -139,6 +143,7 @@ public class Gslb extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Group to specify if the client ip addresses are public or private.
      * Field introduced in 17.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientIpAddrGroup
      */
@@ -150,6 +155,7 @@ public class Gslb extends AviRestResource  {
      * This is the setter method to the attribute.
      * Group to specify if the client ip addresses are public or private.
      * Field introduced in 17.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientIpAddrGroup set the clientIpAddrGroup.
      */
@@ -159,7 +165,7 @@ public class Gslb extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * User defined description for the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -169,7 +175,7 @@ public class Gslb extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * User defined description for the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -180,6 +186,7 @@ public class Gslb extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Sub domain configuration for the gslb.
      * Gslb service's fqdn must be a match one of these subdomains.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsConfigs
      */
@@ -191,6 +198,7 @@ public class Gslb extends AviRestResource  {
      * This is the setter method. this will set the dnsConfigs
      * Sub domain configuration for the gslb.
      * Gslb service's fqdn must be a match one of these subdomains.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsConfigs
      */
@@ -202,6 +210,7 @@ public class Gslb extends AviRestResource  {
      * This is the setter method this will set the dnsConfigs
      * Sub domain configuration for the gslb.
      * Gslb service's fqdn must be a match one of these subdomains.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsConfigs
      */
@@ -217,6 +226,7 @@ public class Gslb extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Allows enable/disable of gslbservice pool groups and pool members from the gslb follower members.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableConfigByMembers
      */
@@ -228,6 +238,7 @@ public class Gslb extends AviRestResource  {
      * This is the setter method to the attribute.
      * Allows enable/disable of gslbservice pool groups and pool members from the gslb follower members.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableConfigByMembers set the enableConfigByMembers.
      */
@@ -243,6 +254,7 @@ public class Gslb extends AviRestResource  {
      * Special values are 0 - disable.
      * Field introduced in 18.2.3.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @return errorResyncInterval
      */
@@ -258,6 +270,7 @@ public class Gslb extends AviRestResource  {
      * Special values are 0 - disable.
      * Field introduced in 18.2.3.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @param errorResyncInterval set the errorResyncInterval.
      */
@@ -269,6 +282,7 @@ public class Gslb extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * This field indicates that this object is replicated across gslb federation.
      * Field introduced in 17.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return isFederated
      */
@@ -280,6 +294,7 @@ public class Gslb extends AviRestResource  {
      * This is the setter method to the attribute.
      * This field indicates that this object is replicated across gslb federation.
      * Field introduced in 17.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param isFederated set the isFederated.
      */
@@ -291,6 +306,7 @@ public class Gslb extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Mark this site as leader of gslb configuration.
      * This site is the one among the avi sites.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return leaderClusterUuid
      */
@@ -302,6 +318,7 @@ public class Gslb extends AviRestResource  {
      * This is the setter method to the attribute.
      * Mark this site as leader of gslb configuration.
      * This site is the one among the avi sites.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param leaderClusterUuid set the leaderClusterUuid.
      */
@@ -317,6 +334,7 @@ public class Gslb extends AviRestResource  {
      * upgraded.
      * This configuration programmatically blocks the leader from accepting new gslb configuration when member sites are undergoing upgrade.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return maintenanceMode
      */
@@ -332,6 +350,7 @@ public class Gslb extends AviRestResource  {
      * upgraded.
      * This configuration programmatically blocks the leader from accepting new gslb configuration when member sites are undergoing upgrade.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param maintenanceMode set the maintenanceMode.
      */
@@ -342,6 +361,7 @@ public class Gslb extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Name for the gslb object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -352,6 +372,7 @@ public class Gslb extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Name for the gslb object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -363,6 +384,7 @@ public class Gslb extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Policy for replicating configuration to the active follower sites.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return replicationPolicy
      */
@@ -374,6 +396,7 @@ public class Gslb extends AviRestResource  {
      * This is the setter method to the attribute.
      * Policy for replicating configuration to the active follower sites.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param replicationPolicy set the replicationPolicy.
      */
@@ -386,6 +409,7 @@ public class Gslb extends AviRestResource  {
      * Frequency with which group members communicate.
      * Allowed values are 1-3600.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 15.
      * @return sendInterval
      */
@@ -398,6 +422,7 @@ public class Gslb extends AviRestResource  {
      * Frequency with which group members communicate.
      * Allowed values are 1-3600.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 15.
      * @param sendInterval set the sendInterval.
      */
@@ -408,6 +433,7 @@ public class Gslb extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Select avi site member belonging to this gslb.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sites
      */
@@ -419,6 +445,7 @@ public class Gslb extends AviRestResource  {
      * This is the setter method. this will set the sites
      * Select avi site member belonging to this gslb.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sites
      */
@@ -430,6 +457,7 @@ public class Gslb extends AviRestResource  {
      * This is the setter method this will set the sites
      * Select avi site member belonging to this gslb.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sites
      */
@@ -444,6 +472,7 @@ public class Gslb extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -454,6 +483,7 @@ public class Gslb extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -465,6 +495,7 @@ public class Gslb extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * This field indicates tenant visibility for gs pool member selection across the gslb federated objects.
      * Field introduced in 18.2.12,20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return tenantScoped
      */
@@ -476,6 +507,7 @@ public class Gslb extends AviRestResource  {
      * This is the setter method to the attribute.
      * This field indicates tenant visibility for gs pool member selection across the gslb federated objects.
      * Field introduced in 18.2.12,20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param tenantScoped set the tenantScoped.
      */
@@ -486,6 +518,7 @@ public class Gslb extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Third party site member belonging to this gslb.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return thirdPartySites
      */
@@ -497,6 +530,7 @@ public class Gslb extends AviRestResource  {
      * This is the setter method. this will set the thirdPartySites
      * Third party site member belonging to this gslb.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return thirdPartySites
      */
@@ -508,6 +542,7 @@ public class Gslb extends AviRestResource  {
      * This is the setter method this will set the thirdPartySites
      * Third party site member belonging to this gslb.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return thirdPartySites
      */
@@ -539,6 +574,7 @@ public class Gslb extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Uuid of the gslb object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -549,6 +585,7 @@ public class Gslb extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Uuid of the gslb object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -560,6 +597,7 @@ public class Gslb extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The view-id is used in change-leader mode to differentiate partitioned groups while they have the same gslb namespace.
      * Each partitioned group will be able to operate independently by using the view-id.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return viewId
      */
@@ -571,6 +609,7 @@ public class Gslb extends AviRestResource  {
      * This is the setter method to the attribute.
      * The view-id is used in change-leader mode to differentiate partitioned groups while they have the same gslb namespace.
      * Each partitioned group will be able to operate independently by using the view-id.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param viewId set the viewId.
      */

@@ -55,6 +55,7 @@ public class MarathonConfiguration  {
      * Framework tag to be used in virtualservice name.
      * Default is framework name from mesos.
      * If this tag is altered atruntime, virtualservices will be deleted and re-created.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return frameworkTag
      */
@@ -67,6 +68,7 @@ public class MarathonConfiguration  {
      * Framework tag to be used in virtualservice name.
      * Default is framework name from mesos.
      * If this tag is altered atruntime, virtualservices will be deleted and re-created.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param frameworkTag set the frameworkTag.
      */
@@ -77,6 +79,7 @@ public class MarathonConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Password for marathon authentication.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return marathonPassword
      */
@@ -87,6 +90,7 @@ public class MarathonConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Password for marathon authentication.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param marathonPassword set the marathonPassword.
      */
@@ -97,6 +101,7 @@ public class MarathonConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Marathon api url of the form http //host port.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "http://leader.mesos:8080".
      * @return marathonUrl
      */
@@ -107,6 +112,7 @@ public class MarathonConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Marathon api url of the form http //host port.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "http://leader.mesos:8080".
      * @param marathonUrl set the marathonUrl.
      */
@@ -117,6 +123,7 @@ public class MarathonConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Username for marathon authentication.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return marathonUsername
      */
@@ -127,6 +134,7 @@ public class MarathonConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Username for marathon authentication.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param marathonUsername set the marathonUsername.
      */
@@ -137,6 +145,7 @@ public class MarathonConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Private port range allocated to this marathon framework instance.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return privatePortRange
      */
@@ -147,6 +156,7 @@ public class MarathonConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Private port range allocated to this marathon framework instance.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param privatePortRange set the privatePortRange.
      */
@@ -157,6 +167,7 @@ public class MarathonConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Public port range allocated to this marathon framework instance.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return publicPortRange
      */
@@ -167,6 +178,7 @@ public class MarathonConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Public port range allocated to this marathon framework instance.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param publicPortRange set the publicPortRange.
      */
@@ -179,6 +191,7 @@ public class MarathonConfiguration  {
      * Tenant to pin this marathon instance to.
      * If set, a tenant object will be created in avi bearing this name and all applications created in this marathon will be associated with this
      * tenant regardless of, if any, tenant configuration in marathon label for this application.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "admin".
      * @return tenant
      */
@@ -191,6 +204,7 @@ public class MarathonConfiguration  {
      * Tenant to pin this marathon instance to.
      * If set, a tenant object will be created in avi bearing this name and all applications created in this marathon will be associated with this
      * tenant regardless of, if any, tenant configuration in marathon label for this application.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "admin".
      * @param tenant set the tenant.
      */
@@ -202,6 +216,7 @@ public class MarathonConfiguration  {
      * This is the getter method this will return the attribute value.
      * Use token based authentication instead of basic authentication.
      * Token is refreshed every 5 minutes.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return useTokenAuth
      */
@@ -213,6 +228,7 @@ public class MarathonConfiguration  {
      * This is the setter method to the attribute.
      * Use token based authentication instead of basic authentication.
      * Token is refreshed every 5 minutes.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param useTokenAuth set the useTokenAuth.
      */
@@ -224,6 +240,7 @@ public class MarathonConfiguration  {
      * This is the getter method this will return the attribute value.
      * Tag vs name with framework name or framework_tag.
      * Useful in deployments with multiple frameworks.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return vsNameTagFramework
      */
@@ -235,6 +252,7 @@ public class MarathonConfiguration  {
      * This is the setter method to the attribute.
      * Tag vs name with framework name or framework_tag.
      * Useful in deployments with multiple frameworks.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param vsNameTagFramework set the vsNameTagFramework.
      */

@@ -63,6 +63,7 @@ public class BgpProfile  {
      * Community string either in aa nn format where aa, nn is within [1,65535] or local-as|no-advertise|no-export|internet.
      * Field introduced in 17.1.2.
      * Maximum of 16 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return community
      */
@@ -75,6 +76,7 @@ public class BgpProfile  {
      * Community string either in aa nn format where aa, nn is within [1,65535] or local-as|no-advertise|no-export|internet.
      * Field introduced in 17.1.2.
      * Maximum of 16 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return community
      */
@@ -87,6 +89,7 @@ public class BgpProfile  {
      * Community string either in aa nn format where aa, nn is within [1,65535] or local-as|no-advertise|no-export|internet.
      * Field introduced in 17.1.2.
      * Maximum of 16 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return community
      */
@@ -102,6 +105,7 @@ public class BgpProfile  {
      * This is the getter method this will return the attribute value.
      * Hold time for peers.
      * Allowed values are 3-7200.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 180.
      * @return holdTime
      */
@@ -113,6 +117,7 @@ public class BgpProfile  {
      * This is the setter method to the attribute.
      * Hold time for peers.
      * Allowed values are 3-7200.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 180.
      * @param holdTime set the holdTime.
      */
@@ -123,6 +128,7 @@ public class BgpProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Bgp peer type.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return ibgp
      */
@@ -133,6 +139,7 @@ public class BgpProfile  {
     /**
      * This is the setter method to the attribute.
      * Bgp peer type.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param ibgp set the ibgp.
      */
@@ -144,6 +151,7 @@ public class BgpProfile  {
      * Communities per ip address range.
      * Field introduced in 17.1.3.
      * Maximum of 1024 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipCommunities
      */
@@ -156,6 +164,7 @@ public class BgpProfile  {
      * Communities per ip address range.
      * Field introduced in 17.1.3.
      * Maximum of 1024 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipCommunities
      */
@@ -168,6 +177,7 @@ public class BgpProfile  {
      * Communities per ip address range.
      * Field introduced in 17.1.3.
      * Maximum of 1024 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipCommunities
      */
@@ -183,6 +193,7 @@ public class BgpProfile  {
      * This is the getter method this will return the attribute value.
      * Keepalive interval for peers.
      * Allowed values are 0-3600.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @return keepaliveInterval
      */
@@ -194,6 +205,7 @@ public class BgpProfile  {
      * This is the setter method to the attribute.
      * Keepalive interval for peers.
      * Allowed values are 0-3600.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @param keepaliveInterval set the keepaliveInterval.
      */
@@ -205,6 +217,7 @@ public class BgpProfile  {
      * This is the getter method this will return the attribute value.
      * Local autonomous system id.
      * Allowed values are 1-4294967295.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return localAs
      */
@@ -216,6 +229,7 @@ public class BgpProfile  {
      * This is the setter method to the attribute.
      * Local autonomous system id.
      * Allowed values are 1-4294967295.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param localAs set the localAs.
      */
@@ -228,6 +242,7 @@ public class BgpProfile  {
      * Local_pref to be used for routes advertised.
      * Applicable only over ibgp.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return localPreference
      */
@@ -240,6 +255,7 @@ public class BgpProfile  {
      * Local_pref to be used for routes advertised.
      * Applicable only over ibgp.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param localPreference set the localPreference.
      */
@@ -252,6 +268,7 @@ public class BgpProfile  {
      * Number of times the local as should be prepended additionally.
      * Allowed values are 1-10.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numAsPathPrepend
      */
@@ -264,6 +281,7 @@ public class BgpProfile  {
      * Number of times the local as should be prepended additionally.
      * Allowed values are 1-10.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numAsPathPrepend set the numAsPathPrepend.
      */
@@ -274,6 +292,7 @@ public class BgpProfile  {
      * This is the getter method this will return the attribute value.
      * Bgp peers.
      * Maximum of 128 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return peers
      */
@@ -285,6 +304,7 @@ public class BgpProfile  {
      * This is the setter method. this will set the peers
      * Bgp peers.
      * Maximum of 128 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return peers
      */
@@ -296,6 +316,7 @@ public class BgpProfile  {
      * This is the setter method this will set the peers
      * Bgp peers.
      * Maximum of 128 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return peers
      */
@@ -311,6 +332,7 @@ public class BgpProfile  {
      * Learning and advertising options for bgp peers.
      * Field introduced in 20.1.1.
      * Maximum of 128 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return routingOptions
      */
@@ -323,6 +345,7 @@ public class BgpProfile  {
      * Learning and advertising options for bgp peers.
      * Field introduced in 20.1.1.
      * Maximum of 128 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return routingOptions
      */
@@ -335,6 +358,7 @@ public class BgpProfile  {
      * Learning and advertising options for bgp peers.
      * Field introduced in 20.1.1.
      * Maximum of 128 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return routingOptions
      */
@@ -350,6 +374,7 @@ public class BgpProfile  {
      * This is the getter method this will return the attribute value.
      * Send community attribute to all peers.
      * Field introduced in 17.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return sendCommunity
      */
@@ -361,6 +386,7 @@ public class BgpProfile  {
      * This is the setter method to the attribute.
      * Send community attribute to all peers.
      * Field introduced in 17.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param sendCommunity set the sendCommunity.
      */
@@ -372,6 +398,7 @@ public class BgpProfile  {
      * This is the getter method this will return the attribute value.
      * Shutdown the bgp.
      * Field introduced in 17.2.4.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return shutdown
      */
@@ -383,6 +410,7 @@ public class BgpProfile  {
      * This is the setter method to the attribute.
      * Shutdown the bgp.
      * Field introduced in 17.2.4.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param shutdown set the shutdown.
      */

@@ -40,7 +40,7 @@ public class SeProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_agent_properties of obj type seproperties field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seAgentProperties
      */
@@ -50,7 +50,7 @@ public class SeProperties extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_agent_properties of obj type seproperties field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seAgentProperties set the seAgentProperties.
      */
@@ -60,7 +60,7 @@ public class SeProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_bootup_properties of obj type seproperties field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seBootupProperties
      */
@@ -70,7 +70,7 @@ public class SeProperties extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_bootup_properties of obj type seproperties field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seBootupProperties set the seBootupProperties.
      */
@@ -80,7 +80,7 @@ public class SeProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_runtime_properties of obj type seproperties field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seRuntimeProperties
      */
@@ -90,7 +90,7 @@ public class SeProperties extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_runtime_properties of obj type seproperties field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seRuntimeProperties set the seRuntimeProperties.
      */
@@ -117,7 +117,7 @@ public class SeProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "default".
      * @return uuid
      */
@@ -127,7 +127,7 @@ public class SeProperties extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "default".
      * @param uuid set the uuid.
      */

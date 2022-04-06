@@ -44,6 +44,7 @@ public class ApicVSPlacementReq  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return graph
      */
     public String getGraph() {
@@ -53,6 +54,7 @@ public class ApicVSPlacementReq  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param graph set the graph.
      */
     public void setGraph(String  graph) {
@@ -61,6 +63,7 @@ public class ApicVSPlacementReq  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return lifs
      */
     public List<Lif> getLifs() {
@@ -70,6 +73,7 @@ public class ApicVSPlacementReq  {
     /**
      * This is the setter method. this will set the lifs
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return lifs
      */
     public void setLifs(List<Lif>  lifs) {
@@ -79,6 +83,7 @@ public class ApicVSPlacementReq  {
     /**
      * This is the setter method this will set the lifs
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return lifs
      */
     public ApicVSPlacementReq addLifsItem(Lif lifsItem) {
@@ -91,6 +96,7 @@ public class ApicVSPlacementReq  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return networkRel
      */
     public List<APICNetworkRel> getNetworkRel() {
@@ -100,6 +106,7 @@ public class ApicVSPlacementReq  {
     /**
      * This is the setter method. this will set the networkRel
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return networkRel
      */
     public void setNetworkRel(List<APICNetworkRel>  networkRel) {
@@ -109,6 +116,7 @@ public class ApicVSPlacementReq  {
     /**
      * This is the setter method this will set the networkRel
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return networkRel
      */
     public ApicVSPlacementReq addNetworkRelItem(APICNetworkRel networkRelItem) {
@@ -122,6 +130,7 @@ public class ApicVSPlacementReq  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return tenantName
      */
     public String getTenantName() {
@@ -131,6 +140,7 @@ public class ApicVSPlacementReq  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param tenantName set the tenantName.
      */
     public void setTenantName(String  tenantName) {
@@ -140,6 +150,7 @@ public class ApicVSPlacementReq  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return vdev
      */
     public String getVdev() {
@@ -149,6 +160,7 @@ public class ApicVSPlacementReq  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param vdev set the vdev.
      */
     public void setVdev(String  vdev) {
@@ -158,6 +170,7 @@ public class ApicVSPlacementReq  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return vgrp
      */
     public String getVgrp() {
@@ -167,6 +180,7 @@ public class ApicVSPlacementReq  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param vgrp set the vgrp.
      */
     public void setVgrp(String  vgrp) {

@@ -32,6 +32,7 @@ public class DNSConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Search domain to use in dns lookup.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return searchDomain
      */
@@ -42,6 +43,7 @@ public class DNSConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Search domain to use in dns lookup.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param searchDomain set the searchDomain.
      */
@@ -51,6 +53,7 @@ public class DNSConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * List of dns server ip addresses.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverList
      */
@@ -61,6 +64,7 @@ public class DNSConfiguration  {
     /**
      * This is the setter method. this will set the serverList
      * List of dns server ip addresses.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverList
      */
@@ -71,6 +75,7 @@ public class DNSConfiguration  {
     /**
      * This is the setter method this will set the serverList
      * List of dns server ip addresses.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverList
      */

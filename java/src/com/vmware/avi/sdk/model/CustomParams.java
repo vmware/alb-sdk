@@ -37,7 +37,7 @@ public class CustomParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property is_dynamic of obj type customparams field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return isDynamic
      */
@@ -47,7 +47,7 @@ public class CustomParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property is_dynamic of obj type customparams field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param isDynamic set the isDynamic.
      */
@@ -57,7 +57,7 @@ public class CustomParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property is_sensitive of obj type customparams field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return isSensitive
      */
@@ -67,7 +67,7 @@ public class CustomParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property is_sensitive of obj type customparams field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param isSensitive set the isSensitive.
      */
@@ -77,7 +77,7 @@ public class CustomParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -87,7 +87,7 @@ public class CustomParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -97,7 +97,7 @@ public class CustomParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property value of obj type customparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return value
      */
@@ -107,7 +107,7 @@ public class CustomParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property value of obj type customparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param value set the value.
      */

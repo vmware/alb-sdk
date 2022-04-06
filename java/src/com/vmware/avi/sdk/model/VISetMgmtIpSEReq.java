@@ -49,7 +49,7 @@ public class VISetMgmtIpSEReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property admin of obj type visetmgmtipsereq field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return admin
      */
@@ -59,7 +59,7 @@ public class VISetMgmtIpSEReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property admin of obj type visetmgmtipsereq field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param admin set the admin.
      */
@@ -69,7 +69,7 @@ public class VISetMgmtIpSEReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property all_vnic_connected of obj type visetmgmtipsereq field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return allVnicConnected
      */
@@ -79,7 +79,7 @@ public class VISetMgmtIpSEReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property all_vnic_connected of obj type visetmgmtipsereq field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param allVnicConnected set the allVnicConnected.
      */
@@ -89,7 +89,7 @@ public class VISetMgmtIpSEReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudUuid
      */
@@ -99,7 +99,7 @@ public class VISetMgmtIpSEReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudUuid set the cloudUuid.
      */
@@ -109,7 +109,7 @@ public class VISetMgmtIpSEReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of dc.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dcUuid
      */
@@ -119,7 +119,7 @@ public class VISetMgmtIpSEReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of dc.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dcUuid set the dcUuid.
      */
@@ -129,7 +129,7 @@ public class VISetMgmtIpSEReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ip_params of obj type visetmgmtipsereq field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipParams
      */
@@ -139,7 +139,7 @@ public class VISetMgmtIpSEReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ip_params of obj type visetmgmtipsereq field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipParams set the ipParams.
      */
@@ -149,7 +149,7 @@ public class VISetMgmtIpSEReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property power_on of obj type visetmgmtipsereq field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return powerOn
      */
@@ -159,7 +159,7 @@ public class VISetMgmtIpSEReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property power_on of obj type visetmgmtipsereq field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param powerOn set the powerOn.
      */
@@ -169,7 +169,7 @@ public class VISetMgmtIpSEReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property rm_cookie of obj type visetmgmtipsereq field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rmCookie
      */
@@ -179,7 +179,7 @@ public class VISetMgmtIpSEReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property rm_cookie of obj type visetmgmtipsereq field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rmCookie set the rmCookie.
      */
@@ -189,7 +189,7 @@ public class VISetMgmtIpSEReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of sevm.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sevmUuid
      */
@@ -199,7 +199,7 @@ public class VISetMgmtIpSEReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of sevm.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sevmUuid set the sevmUuid.
      */

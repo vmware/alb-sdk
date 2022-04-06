@@ -81,6 +81,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of gslb object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gslbName
      */
@@ -92,6 +93,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of gslb object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gslbName set the gslbName.
      */
@@ -103,6 +105,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Reference to base gslb object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gslbUuid
      */
@@ -114,6 +117,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the setter method to the attribute.
      * Reference to base gslb object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gslbUuid set the gslbUuid.
      */
@@ -125,6 +129,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of statediff operation.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -136,6 +141,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of statediff operation.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -147,6 +153,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of pool object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolName
      */
@@ -158,6 +165,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of pool object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolName set the poolName.
      */
@@ -169,6 +177,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Reference to base pool object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolUuid
      */
@@ -180,6 +189,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the setter method to the attribute.
      * Reference to base pool object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolUuid set the poolUuid.
      */
@@ -191,6 +201,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Post-upgrade snapshot for vs.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return postSnapshot
      */
@@ -202,6 +213,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the setter method to the attribute.
      * Post-upgrade snapshot for vs.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param postSnapshot set the postSnapshot.
      */
@@ -213,6 +225,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Pre-upgrade snapshot for vs.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return preSnapshot
      */
@@ -224,6 +237,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the setter method to the attribute.
      * Pre-upgrade snapshot for vs.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param preSnapshot set the preSnapshot.
      */
@@ -235,6 +249,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of seg object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupName
      */
@@ -246,6 +261,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of seg object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGroupName set the seGroupName.
      */
@@ -257,6 +273,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Reference to base seg object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupUuid
      */
@@ -268,6 +285,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the setter method to the attribute.
      * Reference to base seg object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGroupUuid set the seGroupUuid.
      */
@@ -279,6 +297,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of seg object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seName
      */
@@ -290,6 +309,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of seg object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seName set the seName.
      */
@@ -301,6 +321,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Reference to base se object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seUuid
      */
@@ -312,6 +333,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the setter method to the attribute.
      * Reference to base se object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seUuid set the seUuid.
      */
@@ -325,6 +347,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * Vs_snapshot, se_snapshot etc.
      * Enum options - FB_VS_SNAPSHOT, FB_SE_SNAPSHOT, FB_GSLB_SNAPSHOT, FB_POOL_SNAPSHOT.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return snapshotType
      */
@@ -338,6 +361,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * Vs_snapshot, se_snapshot etc.
      * Enum options - FB_VS_SNAPSHOT, FB_SE_SNAPSHOT, FB_GSLB_SNAPSHOT, FB_POOL_SNAPSHOT.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param snapshotType set the snapshotType.
      */
@@ -350,6 +374,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * Statediff operation uuid for identifying the operation.
      * It is a reference to an object of type statediffoperation.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return statediffOperationRef
      */
@@ -362,6 +387,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * Statediff operation uuid for identifying the operation.
      * It is a reference to an object of type statediffoperation.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param statediffOperationRef set the statediffOperationRef.
      */
@@ -374,6 +400,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * Tenant that this object belongs to.
      * It is a reference to an object of type tenant.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -386,6 +413,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * Tenant that this object belongs to.
      * It is a reference to an object of type tenant.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -414,6 +442,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Unique identifier for statediff entry.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -425,6 +454,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the setter method to the attribute.
      * Unique identifier for statediff entry.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -436,6 +466,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of vs object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsName
      */
@@ -447,6 +478,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of vs object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsName set the vsName.
      */
@@ -458,6 +490,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Reference to base vs object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsUuid
      */
@@ -469,6 +502,7 @@ public class StatediffSnapshot extends AviRestResource  {
      * This is the setter method to the attribute.
      * Reference to base vs object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsUuid set the vsUuid.
      */

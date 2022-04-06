@@ -37,6 +37,7 @@ public class IcapOPSWATLog  {
      * Blocking reason for the content.
      * It is available only if content was scanned by icap server and some violations were found.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -49,6 +50,7 @@ public class IcapOPSWATLog  {
      * Blocking reason for the content.
      * It is available only if content was scanned by icap server and some violations were found.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -61,6 +63,7 @@ public class IcapOPSWATLog  {
      * Short description of the threat found in the content.
      * Available only if content was scanned by icap server and some violations were found.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return threatId
      */
@@ -73,6 +76,7 @@ public class IcapOPSWATLog  {
      * Short description of the threat found in the content.
      * Available only if content was scanned by icap server and some violations were found.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param threatId set the threatId.
      */
@@ -84,6 +88,7 @@ public class IcapOPSWATLog  {
      * Threat found in the content.
      * Available only if content was scanned by icap server and some violations were found.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return violations
      */
@@ -96,6 +101,7 @@ public class IcapOPSWATLog  {
      * Threat found in the content.
      * Available only if content was scanned by icap server and some violations were found.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return violations
      */
@@ -108,6 +114,7 @@ public class IcapOPSWATLog  {
      * Threat found in the content.
      * Available only if content was scanned by icap server and some violations were found.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return violations
      */

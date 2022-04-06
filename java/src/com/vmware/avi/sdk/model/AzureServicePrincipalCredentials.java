@@ -37,6 +37,7 @@ public class AzureServicePrincipalCredentials  {
      * Application id created for avi controller.
      * Required for application id based authentication only.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return applicationId
      */
@@ -49,6 +50,7 @@ public class AzureServicePrincipalCredentials  {
      * Application id created for avi controller.
      * Required for application id based authentication only.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param applicationId set the applicationId.
      */
@@ -61,6 +63,7 @@ public class AzureServicePrincipalCredentials  {
      * Authentication token created for the avi controller application.
      * Required for application id based authentication only.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authenticationToken
      */
@@ -73,6 +76,7 @@ public class AzureServicePrincipalCredentials  {
      * Authentication token created for the avi controller application.
      * Required for application id based authentication only.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param authenticationToken set the authenticationToken.
      */
@@ -85,6 +89,7 @@ public class AzureServicePrincipalCredentials  {
      * Tenant id for the subscription.
      * Required for application id based authentication only.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantId
      */
@@ -97,6 +102,7 @@ public class AzureServicePrincipalCredentials  {
      * Tenant id for the subscription.
      * Required for application id based authentication only.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantId set the tenantId.
      */

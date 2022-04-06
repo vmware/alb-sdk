@@ -33,6 +33,7 @@ public class HeaderInfoInURI  {
      * This is the getter method this will return the attribute value.
      * Header field name in hitted signature rule match_element.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return headerFieldName
      */
@@ -44,6 +45,7 @@ public class HeaderInfoInURI  {
      * This is the setter method to the attribute.
      * Header field name in hitted signature rule match_element.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param headerFieldName set the headerFieldName.
      */
@@ -55,6 +57,7 @@ public class HeaderInfoInURI  {
      * This is the getter method this will return the attribute value.
      * Header field value in hitted signature rule match_element.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return value
      */
@@ -66,6 +69,7 @@ public class HeaderInfoInURI  {
      * This is the setter method to the attribute.
      * Header field value in hitted signature rule match_element.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param value set the value.
      */

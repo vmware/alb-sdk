@@ -45,6 +45,7 @@ public class SaasLicensingStatus  {
      * This is the getter method this will return the attribute value.
      * Portal connectivity status.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return connected
      */
@@ -56,6 +57,7 @@ public class SaasLicensingStatus  {
      * This is the setter method to the attribute.
      * Portal connectivity status.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param connected set the connected.
      */
@@ -67,6 +69,7 @@ public class SaasLicensingStatus  {
      * This is the getter method this will return the attribute value.
      * Status of saas licensing subscription.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return enabled
      */
@@ -78,6 +81,7 @@ public class SaasLicensingStatus  {
      * This is the setter method to the attribute.
      * Status of saas licensing subscription.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param enabled set the enabled.
      */
@@ -89,6 +93,7 @@ public class SaasLicensingStatus  {
      * This is the getter method this will return the attribute value.
      * Saas license expiry status.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return expired
      */
@@ -100,6 +105,7 @@ public class SaasLicensingStatus  {
      * This is the setter method to the attribute.
      * Saas license expiry status.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param expired set the expired.
      */
@@ -111,6 +117,7 @@ public class SaasLicensingStatus  {
      * This is the getter method this will return the attribute value.
      * Message.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return message
      */
@@ -122,6 +129,7 @@ public class SaasLicensingStatus  {
      * This is the setter method to the attribute.
      * Message.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param message set the message.
      */
@@ -133,6 +141,7 @@ public class SaasLicensingStatus  {
      * This is the getter method this will return the attribute value.
      * Name.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -144,6 +153,7 @@ public class SaasLicensingStatus  {
      * This is the setter method to the attribute.
      * Name.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -155,6 +165,7 @@ public class SaasLicensingStatus  {
      * This is the getter method this will return the attribute value.
      * Service units reserved on controller.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reserveServiceUnits
      */
@@ -166,6 +177,7 @@ public class SaasLicensingStatus  {
      * This is the setter method to the attribute.
      * Service units reserved on controller.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reserveServiceUnits set the reserveServiceUnits.
      */

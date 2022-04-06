@@ -55,7 +55,7 @@ public class ServerConfig  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property def_port of obj type serverconfig field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return defPort
      */
@@ -65,7 +65,7 @@ public class ServerConfig  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property def_port of obj type serverconfig field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param defPort set the defPort.
      */
@@ -75,7 +75,7 @@ public class ServerConfig  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property hostname of obj type serverconfig field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostname
      */
@@ -85,7 +85,7 @@ public class ServerConfig  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property hostname of obj type serverconfig field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hostname set the hostname.
      */
@@ -95,7 +95,7 @@ public class ServerConfig  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ip_addr of obj type serverconfig field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipAddr
      */
@@ -105,7 +105,7 @@ public class ServerConfig  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ip_addr of obj type serverconfig field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipAddr set the ipAddr.
      */
@@ -115,7 +115,7 @@ public class ServerConfig  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property is_enabled of obj type serverconfig field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return isEnabled
      */
@@ -125,7 +125,7 @@ public class ServerConfig  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property is_enabled of obj type serverconfig field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param isEnabled set the isEnabled.
      */
@@ -138,6 +138,7 @@ public class ServerConfig  {
      * Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING,
      * OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING,
      * OPER_FAILED, OPER_UNAVAIL.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "OPER_UNAVAIL".
      * @return lastState
      */
@@ -150,6 +151,7 @@ public class ServerConfig  {
      * Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING,
      * OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING,
      * OPER_FAILED, OPER_UNAVAIL.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "OPER_UNAVAIL".
      * @param lastState set the lastState.
      */
@@ -160,6 +162,7 @@ public class ServerConfig  {
     /**
      * This is the getter method this will return the attribute value.
      * Virtualservice member in case this server is a member of gs group, and geo location available.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return location
      */
@@ -170,6 +173,7 @@ public class ServerConfig  {
     /**
      * This is the setter method to the attribute.
      * Virtualservice member in case this server is a member of gs group, and geo location available.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param location set the location.
      */
@@ -179,7 +183,7 @@ public class ServerConfig  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property oper_status of obj type serverconfig field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return operStatus
      */
@@ -189,7 +193,7 @@ public class ServerConfig  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property oper_status of obj type serverconfig field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param operStatus set the operStatus.
      */
@@ -199,7 +203,7 @@ public class ServerConfig  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property port of obj type serverconfig field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
      */
@@ -209,7 +213,7 @@ public class ServerConfig  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property port of obj type serverconfig field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.
      */
@@ -221,6 +225,7 @@ public class ServerConfig  {
      * This is the getter method this will return the attribute value.
      * If this is set, propogate this server state to other ses for this vs.
      * Applicable to eastwest vs and gs hm-sharding.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return propogateState
      */
@@ -232,6 +237,7 @@ public class ServerConfig  {
      * This is the setter method to the attribute.
      * If this is set, propogate this server state to other ses for this vs.
      * Applicable to eastwest vs and gs hm-sharding.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param propogateState set the propogateState.
      */
@@ -241,7 +247,7 @@ public class ServerConfig  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property timer_exists of obj type serverconfig field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return timerExists
      */
@@ -251,7 +257,7 @@ public class ServerConfig  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property timer_exists of obj type serverconfig field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param timerExists set the timerExists.
      */

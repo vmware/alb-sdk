@@ -58,6 +58,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return contractGraphs
      */
     public List<String> getContractGraphs() {
@@ -67,6 +68,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the setter method. this will set the contractGraphs
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return contractGraphs
      */
     public void setContractGraphs(List<String>  contractGraphs) {
@@ -76,6 +78,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the setter method this will set the contractGraphs
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return contractGraphs
      */
     public ApicAgentGenericEventDetails addContractGraphsItem(String contractGraphsItem) {
@@ -88,6 +91,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return lifCifAttachment
      */
     public List<String> getLifCifAttachment() {
@@ -97,6 +101,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the setter method. this will set the lifCifAttachment
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return lifCifAttachment
      */
     public void setLifCifAttachment(List<String>  lifCifAttachment) {
@@ -106,6 +111,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the setter method this will set the lifCifAttachment
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return lifCifAttachment
      */
     public ApicAgentGenericEventDetails addLifCifAttachmentItem(String lifCifAttachmentItem) {
@@ -118,6 +124,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return lifs
      */
     public List<String> getLifs() {
@@ -127,6 +134,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the setter method. this will set the lifs
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return lifs
      */
     public void setLifs(List<String>  lifs) {
@@ -136,6 +144,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the setter method this will set the lifs
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return lifs
      */
     public ApicAgentGenericEventDetails addLifsItem(String lifsItem) {
@@ -148,6 +157,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return networks
      */
     public List<String> getNetworks() {
@@ -157,6 +167,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the setter method. this will set the networks
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return networks
      */
     public void setNetworks(List<String>  networks) {
@@ -166,6 +177,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the setter method this will set the networks
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return networks
      */
     public ApicAgentGenericEventDetails addNetworksItem(String networksItem) {
@@ -179,6 +191,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return seUuid
      */
     public String getSeUuid() {
@@ -188,6 +201,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param seUuid set the seUuid.
      */
     public void setSeUuid(String  seUuid) {
@@ -196,6 +210,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return serviceEngineVnics
      */
     public List<String> getServiceEngineVnics() {
@@ -205,6 +220,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the setter method. this will set the serviceEngineVnics
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return serviceEngineVnics
      */
     public void setServiceEngineVnics(List<String>  serviceEngineVnics) {
@@ -214,6 +230,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the setter method this will set the serviceEngineVnics
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return serviceEngineVnics
      */
     public ApicAgentGenericEventDetails addServiceEngineVnicsItem(String serviceEngineVnicsItem) {
@@ -227,6 +244,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return tenantName
      */
     public String getTenantName() {
@@ -236,6 +254,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param tenantName set the tenantName.
      */
     public void setTenantName(String  tenantName) {
@@ -245,6 +264,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return tenantUuid
      */
     public String getTenantUuid() {
@@ -254,6 +274,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param tenantUuid set the tenantUuid.
      */
     public void setTenantUuid(String  tenantUuid) {
@@ -262,6 +283,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return vnicNetworkAttachment
      */
     public List<String> getVnicNetworkAttachment() {
@@ -271,6 +293,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the setter method. this will set the vnicNetworkAttachment
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return vnicNetworkAttachment
      */
     public void setVnicNetworkAttachment(List<String>  vnicNetworkAttachment) {
@@ -280,6 +303,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the setter method this will set the vnicNetworkAttachment
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return vnicNetworkAttachment
      */
     public ApicAgentGenericEventDetails addVnicNetworkAttachmentItem(String vnicNetworkAttachmentItem) {
@@ -293,6 +317,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return vsName
      */
     public String getVsName() {
@@ -302,6 +327,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param vsName set the vsName.
      */
     public void setVsName(String  vsName) {
@@ -311,6 +337,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return vsUuid
      */
     public String getVsUuid() {
@@ -320,6 +347,7 @@ public class ApicAgentGenericEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param vsUuid set the vsUuid.
      */
     public void setVsUuid(String  vsUuid) {

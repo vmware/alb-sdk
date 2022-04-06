@@ -37,6 +37,7 @@ public class WafRuleMatchData  {
      * The match_element is an internal variable.
      * It is not possible to add exclusions for this element.
      * Field introduced in 17.2.4.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return isInternal
      */
@@ -49,6 +50,7 @@ public class WafRuleMatchData  {
      * The match_element is an internal variable.
      * It is not possible to add exclusions for this element.
      * Field introduced in 17.2.4.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param isInternal set the isInternal.
      */
@@ -60,6 +62,7 @@ public class WafRuleMatchData  {
      * This is the getter method this will return the attribute value.
      * Field from a transaction that matches the rule, for instance if the request parameter is password=foobar, then match_element is args password.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matchElement
      */
@@ -71,6 +74,7 @@ public class WafRuleMatchData  {
      * This is the setter method to the attribute.
      * Field from a transaction that matches the rule, for instance if the request parameter is password=foobar, then match_element is args password.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param matchElement set the matchElement.
      */
@@ -82,6 +86,7 @@ public class WafRuleMatchData  {
      * This is the getter method this will return the attribute value.
      * Value for a field from a transaction that matches the rule, for instance if the request parameter is password=foobar, then match_value is foobar.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matchValue
      */
@@ -93,6 +98,7 @@ public class WafRuleMatchData  {
      * This is the setter method to the attribute.
      * Value for a field from a transaction that matches the rule, for instance if the request parameter is password=foobar, then match_value is foobar.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param matchValue set the matchValue.
      */

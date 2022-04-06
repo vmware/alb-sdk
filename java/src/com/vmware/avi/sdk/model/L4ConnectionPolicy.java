@@ -29,6 +29,7 @@ public class L4ConnectionPolicy  {
      * This is the getter method this will return the attribute value.
      * Rules to apply when a new transport connection is setup.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */
@@ -40,6 +41,7 @@ public class L4ConnectionPolicy  {
      * This is the setter method. this will set the rules
      * Rules to apply when a new transport connection is setup.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */
@@ -51,6 +53,7 @@ public class L4ConnectionPolicy  {
      * This is the setter method this will set the rules
      * Rules to apply when a new transport connection is setup.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rules
      */

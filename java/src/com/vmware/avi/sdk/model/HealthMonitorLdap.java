@@ -43,6 +43,7 @@ public class HealthMonitorLdap  {
      * Attributes which will be retrieved.
      * Commas can be used to delimit more than one attributes (example- cn,address,email).
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return attributes
      */
@@ -55,6 +56,7 @@ public class HealthMonitorLdap  {
      * Attributes which will be retrieved.
      * Commas can be used to delimit more than one attributes (example- cn,address,email).
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param attributes set the attributes.
      */
@@ -67,6 +69,7 @@ public class HealthMonitorLdap  {
      * Dn(distinguished name) of a directory entry.
      * Which will be starting point of the search.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return baseDn
      */
@@ -79,6 +82,7 @@ public class HealthMonitorLdap  {
      * Dn(distinguished name) of a directory entry.
      * Which will be starting point of the search.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param baseDn set the baseDn.
      */
@@ -90,6 +94,7 @@ public class HealthMonitorLdap  {
      * This is the getter method this will return the attribute value.
      * Filter to search entries in specified scope.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return filter
      */
@@ -101,6 +106,7 @@ public class HealthMonitorLdap  {
      * This is the setter method to the attribute.
      * Filter to search entries in specified scope.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param filter set the filter.
      */
@@ -113,6 +119,7 @@ public class HealthMonitorLdap  {
      * Search scope which can be base, one, sub.
      * Enum options - LDAP_BASE_MODE, LDAP_ONE_MODE, LDAP_SUB_MODE.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return scope
      */
@@ -125,6 +132,7 @@ public class HealthMonitorLdap  {
      * Search scope which can be base, one, sub.
      * Enum options - LDAP_BASE_MODE, LDAP_ONE_MODE, LDAP_SUB_MODE.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param scope set the scope.
      */
@@ -136,6 +144,7 @@ public class HealthMonitorLdap  {
      * This is the getter method this will return the attribute value.
      * Ssl attributes for ldaps monitor.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sslAttributes
      */
@@ -147,6 +156,7 @@ public class HealthMonitorLdap  {
      * This is the setter method to the attribute.
      * Ssl attributes for ldaps monitor.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sslAttributes set the sslAttributes.
      */

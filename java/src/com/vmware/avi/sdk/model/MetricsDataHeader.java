@@ -77,6 +77,7 @@ public class MetricsDataHeader  {
     /**
      * This is the getter method this will return the attribute value.
      * Metrics derivation info.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return derivationData
      */
@@ -87,6 +88,7 @@ public class MetricsDataHeader  {
     /**
      * This is the setter method to the attribute.
      * Metrics derivation info.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param derivationData set the derivationData.
      */
@@ -95,7 +97,7 @@ public class MetricsDataHeader  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property dimension_data of obj type metricsdataheader field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dimensionData
      */
@@ -105,7 +107,7 @@ public class MetricsDataHeader  {
 
     /**
      * This is the setter method. this will set the dimensionData
-     * Placeholder for description of property dimension_data of obj type metricsdataheader field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dimensionData
      */
@@ -115,7 +117,7 @@ public class MetricsDataHeader  {
 
     /**
      * This is the setter method this will set the dimensionData
-     * Placeholder for description of property dimension_data of obj type metricsdataheader field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dimensionData
      */
@@ -130,6 +132,7 @@ public class MetricsDataHeader  {
     /**
      * This is the getter method this will return the attribute value.
      * Entity uuid.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return entityUuid
      */
@@ -140,6 +143,7 @@ public class MetricsDataHeader  {
     /**
      * This is the setter method to the attribute.
      * Entity uuid.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param entityUuid set the entityUuid.
      */
@@ -149,7 +153,7 @@ public class MetricsDataHeader  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property metric_description of obj type metricsdataheader field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metricDescription
      */
@@ -159,7 +163,7 @@ public class MetricsDataHeader  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property metric_description of obj type metricsdataheader field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param metricDescription set the metricDescription.
      */
@@ -169,7 +173,7 @@ public class MetricsDataHeader  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property metrics_min_scale of obj type metricsdataheader field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metricsMinScale
      */
@@ -179,7 +183,7 @@ public class MetricsDataHeader  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property metrics_min_scale of obj type metricsdataheader field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param metricsMinScale set the metricsMinScale.
      */
@@ -189,7 +193,7 @@ public class MetricsDataHeader  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property metrics_sum_agg_invalid of obj type metricsdataheader field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return metricsSumAggInvalid
      */
@@ -199,7 +203,7 @@ public class MetricsDataHeader  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property metrics_sum_agg_invalid of obj type metricsdataheader field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param metricsSumAggInvalid set the metricsSumAggInvalid.
      */
@@ -210,6 +214,7 @@ public class MetricsDataHeader  {
      * This is the getter method this will return the attribute value.
      * Missing data intervals.
      * Data in these intervals are not used for stats calculation.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return missingIntervals
      */
@@ -221,6 +226,7 @@ public class MetricsDataHeader  {
      * This is the setter method. this will set the missingIntervals
      * Missing data intervals.
      * Data in these intervals are not used for stats calculation.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return missingIntervals
      */
@@ -232,6 +238,7 @@ public class MetricsDataHeader  {
      * This is the setter method this will set the missingIntervals
      * Missing data intervals.
      * Data in these intervals are not used for stats calculation.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return missingIntervals
      */
@@ -246,6 +253,7 @@ public class MetricsDataHeader  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of the column.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -256,6 +264,7 @@ public class MetricsDataHeader  {
     /**
      * This is the setter method to the attribute.
      * Name of the column.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -266,6 +275,7 @@ public class MetricsDataHeader  {
     /**
      * This is the getter method this will return the attribute value.
      * Object id of the series when object id was specified in the metric.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objId
      */
@@ -276,6 +286,7 @@ public class MetricsDataHeader  {
     /**
      * This is the setter method to the attribute.
      * Object id of the series when object id was specified in the metric.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param objId set the objId.
      */
@@ -289,6 +300,7 @@ public class MetricsDataHeader  {
      * Enum options - METRICS_OBJ_ID_TYPE_VIRTUALSERVICE, METRICS_OBJ_ID_TYPE_SERVER, METRICS_OBJ_ID_TYPE_POOL, METRICS_OBJ_ID_TYPE_SERVICEENGINE,
      * METRICS_OBJ_ID_TYPE_VIRTUALMACHINE, METRICS_OBJ_ID_TYPE_CONTROLLER, METRICS_OBJ_ID_TYPE_TENANT, METRICS_OBJ_ID_TYPE_CLUSTER,
      * METRICS_OBJ_ID_TYPE_SE_INTERFACE.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objIdType
      */
@@ -302,6 +314,7 @@ public class MetricsDataHeader  {
      * Enum options - METRICS_OBJ_ID_TYPE_VIRTUALSERVICE, METRICS_OBJ_ID_TYPE_SERVER, METRICS_OBJ_ID_TYPE_POOL, METRICS_OBJ_ID_TYPE_SERVICEENGINE,
      * METRICS_OBJ_ID_TYPE_VIRTUALMACHINE, METRICS_OBJ_ID_TYPE_CONTROLLER, METRICS_OBJ_ID_TYPE_TENANT, METRICS_OBJ_ID_TYPE_CLUSTER,
      * METRICS_OBJ_ID_TYPE_SE_INTERFACE.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param objIdType set the objIdType.
      */
@@ -312,6 +325,7 @@ public class MetricsDataHeader  {
     /**
      * This is the getter method this will return the attribute value.
      * Pool_id for the metric.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolUuid
      */
@@ -322,6 +336,7 @@ public class MetricsDataHeader  {
     /**
      * This is the setter method to the attribute.
      * Pool_id for the metric.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolUuid set the poolUuid.
      */
@@ -331,7 +346,7 @@ public class MetricsDataHeader  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property priority of obj type metricsdataheader field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return priority
      */
@@ -341,7 +356,7 @@ public class MetricsDataHeader  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property priority of obj type metricsdataheader field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param priority set the priority.
      */
@@ -352,6 +367,7 @@ public class MetricsDataHeader  {
     /**
      * This is the getter method this will return the attribute value.
      * Server ip port.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return server
      */
@@ -362,6 +378,7 @@ public class MetricsDataHeader  {
     /**
      * This is the setter method to the attribute.
      * Server ip port.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param server set the server.
      */
@@ -373,6 +390,7 @@ public class MetricsDataHeader  {
      * This is the getter method this will return the attribute value.
      * Service engine ref or uuid.
      * Field introduced in 17.2.8.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceengineUuid
      */
@@ -384,6 +402,7 @@ public class MetricsDataHeader  {
      * This is the setter method to the attribute.
      * Service engine ref or uuid.
      * Field introduced in 17.2.8.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceengineUuid set the serviceengineUuid.
      */
@@ -394,6 +413,7 @@ public class MetricsDataHeader  {
     /**
      * This is the getter method this will return the attribute value.
      * Statistics of the metric.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return statistics
      */
@@ -404,6 +424,7 @@ public class MetricsDataHeader  {
     /**
      * This is the setter method to the attribute.
      * Statistics of the metric.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param statistics set the statistics.
      */
@@ -414,6 +435,7 @@ public class MetricsDataHeader  {
     /**
      * This is the getter method this will return the attribute value.
      * Tenant ref or uuid.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantUuid
      */
@@ -424,6 +446,7 @@ public class MetricsDataHeader  {
     /**
      * This is the setter method to the attribute.
      * Tenant ref or uuid.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantUuid set the tenantUuid.
      */
@@ -436,6 +459,7 @@ public class MetricsDataHeader  {
      * Units of the column data.
      * Enum options - METRIC_COUNT, BITS_PER_SECOND, MILLISECONDS, SECONDS, PER_SECOND, BYTES, PERCENT, KILO_BYTES, KILO_BYTES_PER_SECOND,
      * BYTES_PER_SECOND, KILO_BITS_PER_SECOND, GIGA_BYTES, MEGA_BYTES, NORMALIZED, STRING, SEC, MIN, DAYS, KB, MB...
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "METRIC_COUNT".
      * @return units
      */
@@ -448,6 +472,7 @@ public class MetricsDataHeader  {
      * Units of the column data.
      * Enum options - METRIC_COUNT, BITS_PER_SECOND, MILLISECONDS, SECONDS, PER_SECOND, BYTES, PERCENT, KILO_BYTES, KILO_BYTES_PER_SECOND,
      * BYTES_PER_SECOND, KILO_BITS_PER_SECOND, GIGA_BYTES, MEGA_BYTES, NORMALIZED, STRING, SEC, MIN, DAYS, KB, MB...
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "METRIC_COUNT".
      * @param units set the units.
      */

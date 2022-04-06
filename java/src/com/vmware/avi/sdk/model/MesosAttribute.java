@@ -32,6 +32,7 @@ public class MesosAttribute  {
     /**
      * This is the getter method this will return the attribute value.
      * Attribute to match.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return attribute
      */
@@ -42,6 +43,7 @@ public class MesosAttribute  {
     /**
      * This is the setter method to the attribute.
      * Attribute to match.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param attribute set the attribute.
      */
@@ -53,6 +55,7 @@ public class MesosAttribute  {
      * This is the getter method this will return the attribute value.
      * Attribute value.
      * If not set, match any value.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return value
      */
@@ -64,6 +67,7 @@ public class MesosAttribute  {
      * This is the setter method to the attribute.
      * Attribute value.
      * If not set, match any value.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param value set the value.
      */

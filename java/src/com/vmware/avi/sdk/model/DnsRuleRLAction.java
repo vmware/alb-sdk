@@ -31,6 +31,7 @@ public class DnsRuleRLAction  {
      * Type of action to be enforced upon hitting the rate limit.
      * Enum options - DNS_RL_ACTION_NONE, DNS_RL_ACTION_DROP_REQ.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RL_ACTION_NONE".
      * @return type
      */
@@ -43,6 +44,7 @@ public class DnsRuleRLAction  {
      * Type of action to be enforced upon hitting the rate limit.
      * Enum options - DNS_RL_ACTION_NONE, DNS_RL_ACTION_DROP_REQ.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_RL_ACTION_NONE".
      * @param type set the type.
      */

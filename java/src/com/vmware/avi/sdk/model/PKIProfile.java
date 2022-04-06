@@ -64,6 +64,7 @@ public class PKIProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * List of certificate authorities (root and intermediate) trusted that is used for certificate validation.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return caCerts
      */
@@ -74,6 +75,7 @@ public class PKIProfile extends AviRestResource  {
     /**
      * This is the setter method. this will set the caCerts
      * List of certificate authorities (root and intermediate) trusted that is used for certificate validation.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return caCerts
      */
@@ -84,6 +86,7 @@ public class PKIProfile extends AviRestResource  {
     /**
      * This is the setter method this will set the caCerts
      * List of certificate authorities (root and intermediate) trusted that is used for certificate validation.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return caCerts
      */
@@ -98,6 +101,7 @@ public class PKIProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Creator name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return createdBy
      */
@@ -108,6 +112,7 @@ public class PKIProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Creator name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param createdBy set the createdBy.
      */
@@ -118,6 +123,7 @@ public class PKIProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * When enabled, avi will verify via crl checks that certificates in the trust chain have not been revoked.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return crlCheck
      */
@@ -128,6 +134,7 @@ public class PKIProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * When enabled, avi will verify via crl checks that certificates in the trust chain have not been revoked.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param crlCheck set the crlCheck.
      */
@@ -137,6 +144,7 @@ public class PKIProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Certificate revocation lists.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return crls
      */
@@ -147,6 +155,7 @@ public class PKIProfile extends AviRestResource  {
     /**
      * This is the setter method. this will set the crls
      * Certificate revocation lists.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return crls
      */
@@ -157,6 +166,7 @@ public class PKIProfile extends AviRestResource  {
     /**
      * This is the setter method this will set the crls
      * Certificate revocation lists.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return crls
      */
@@ -172,8 +182,9 @@ public class PKIProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * When enabled, avi will not trust intermediate and root certs presented by a client.
      * Instead, only the chain certs configured in the certificate authority section will be used to verify trust of the client's cert.
-     * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
-     * Special default for basic edition is true, essentials edition is true, enterprise is false.
+     * Allowed in enterprise with any value edition, essentials(allowed values- true) edition, basic(allowed values- true) edition, enterprise with
+     * cloud services edition.
+     * Special default for essentials edition is true, basic edition is true, enterprise is false.
      * @return ignorePeerChain
      */
     public Boolean getIgnorePeerChain() {
@@ -184,8 +195,9 @@ public class PKIProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * When enabled, avi will not trust intermediate and root certs presented by a client.
      * Instead, only the chain certs configured in the certificate authority section will be used to verify trust of the client's cert.
-     * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
-     * Special default for basic edition is true, essentials edition is true, enterprise is false.
+     * Allowed in enterprise with any value edition, essentials(allowed values- true) edition, basic(allowed values- true) edition, enterprise with
+     * cloud services edition.
+     * Special default for essentials edition is true, basic edition is true, enterprise is false.
      * @param ignorePeerChain set the ignorePeerChain.
      */
     public void setIgnorePeerChain(Boolean  ignorePeerChain) {
@@ -198,6 +210,7 @@ public class PKIProfile extends AviRestResource  {
      * If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
      * If the field is set to true, then the object is replicated across the federation.
      * Field introduced in 17.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return isFederated
      */
@@ -211,6 +224,7 @@ public class PKIProfile extends AviRestResource  {
      * If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
      * If the field is set to true, then the object is replicated across the federation.
      * Field introduced in 17.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param isFederated set the isFederated.
      */
@@ -224,6 +238,7 @@ public class PKIProfile extends AviRestResource  {
      * Field deprecated in 20.1.5.
      * Field introduced in 20.1.2.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * @return labels
      */
     public List<KeyValue> getLabels() {
@@ -237,6 +252,7 @@ public class PKIProfile extends AviRestResource  {
      * Field deprecated in 20.1.5.
      * Field introduced in 20.1.2.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * @return labels
      */
     public void setLabels(List<KeyValue>  labels) {
@@ -250,6 +266,7 @@ public class PKIProfile extends AviRestResource  {
      * Field deprecated in 20.1.5.
      * Field introduced in 20.1.2.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * @return labels
      */
     public PKIProfile addLabelsItem(KeyValue labelsItem) {
@@ -263,7 +280,8 @@ public class PKIProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.5.
-     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -275,7 +293,8 @@ public class PKIProfile extends AviRestResource  {
      * This is the setter method. this will set the markers
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.5.
-     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -287,7 +306,8 @@ public class PKIProfile extends AviRestResource  {
      * This is the setter method this will set the markers
      * List of labels to be used for granular rbac.
      * Field introduced in 20.1.5.
-     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
      */
@@ -302,6 +322,7 @@ public class PKIProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of the pki profile.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -312,6 +333,7 @@ public class PKIProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Name of the pki profile.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -322,6 +344,7 @@ public class PKIProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -332,6 +355,7 @@ public class PKIProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -358,7 +382,7 @@ public class PKIProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -368,7 +392,7 @@ public class PKIProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -380,7 +404,8 @@ public class PKIProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * When enabled, avi will only validate the revocation status of the leaf certificate using crl.
      * To enable validation for the entire chain, disable this option and provide all the relevant crls.
-     * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- true) edition, basic(allowed values- true) edition, enterprise with
+     * cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return validateOnlyLeafCrl
      */
@@ -392,7 +417,8 @@ public class PKIProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * When enabled, avi will only validate the revocation status of the leaf certificate using crl.
      * To enable validation for the entire chain, disable this option and provide all the relevant crls.
-     * Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- true) edition, basic(allowed values- true) edition, enterprise with
+     * cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param validateOnlyLeafCrl set the validateOnlyLeafCrl.
      */

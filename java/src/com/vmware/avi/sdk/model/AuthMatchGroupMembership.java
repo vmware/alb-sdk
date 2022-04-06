@@ -33,6 +33,7 @@ public class AuthMatchGroupMembership  {
      * This is the getter method this will return the attribute value.
      * Rule match criteria.
      * Enum options - AUTH_MATCH_CONTAINS, AUTH_MATCH_DOES_NOT_CONTAIN, AUTH_MATCH_REGEX.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return criteria
      */
@@ -44,6 +45,7 @@ public class AuthMatchGroupMembership  {
      * This is the setter method to the attribute.
      * Rule match criteria.
      * Enum options - AUTH_MATCH_CONTAINS, AUTH_MATCH_DOES_NOT_CONTAIN, AUTH_MATCH_REGEX.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param criteria set the criteria.
      */
@@ -52,7 +54,7 @@ public class AuthMatchGroupMembership  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property groups of obj type authmatchgroupmembership field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return groups
      */
@@ -62,7 +64,7 @@ public class AuthMatchGroupMembership  {
 
     /**
      * This is the setter method. this will set the groups
-     * Placeholder for description of property groups of obj type authmatchgroupmembership field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return groups
      */
@@ -72,7 +74,7 @@ public class AuthMatchGroupMembership  {
 
     /**
      * This is the setter method this will set the groups
-     * Placeholder for description of property groups of obj type authmatchgroupmembership field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return groups
      */

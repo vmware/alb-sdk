@@ -36,7 +36,7 @@ public class GslbServiceStatus extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property details of obj type gslbservicestatus field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return details
      */
@@ -46,7 +46,7 @@ public class GslbServiceStatus extends AviRestResource  {
 
     /**
      * This is the setter method. this will set the details
-     * Placeholder for description of property details of obj type gslbservicestatus field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return details
      */
@@ -56,7 +56,7 @@ public class GslbServiceStatus extends AviRestResource  {
 
     /**
      * This is the setter method this will set the details
-     * Placeholder for description of property details of obj type gslbservicestatus field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return details
      */
@@ -70,7 +70,7 @@ public class GslbServiceStatus extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property gs_runtime of obj type gslbservicestatus field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gsRuntime
      */
@@ -80,7 +80,7 @@ public class GslbServiceStatus extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property gs_runtime of obj type gslbservicestatus field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gsRuntime set the gsRuntime.
      */
@@ -90,7 +90,7 @@ public class GslbServiceStatus extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -100,7 +100,7 @@ public class GslbServiceStatus extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -110,7 +110,7 @@ public class GslbServiceStatus extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -120,7 +120,7 @@ public class GslbServiceStatus extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

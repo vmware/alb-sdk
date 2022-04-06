@@ -39,6 +39,7 @@ public class LicenseStatus extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Saas licensing status.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return saasStatus
      */
@@ -50,6 +51,7 @@ public class LicenseStatus extends AviRestResource  {
      * This is the setter method to the attribute.
      * Saas licensing status.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param saasStatus set the saasStatus.
      */
@@ -61,6 +63,7 @@ public class LicenseStatus extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Pulse license service update.
      * Field introduced in 21.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceUpdate
      */
@@ -72,6 +75,7 @@ public class LicenseStatus extends AviRestResource  {
      * This is the setter method to the attribute.
      * Pulse license service update.
      * Field introduced in 21.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceUpdate set the serviceUpdate.
      */
@@ -100,6 +104,7 @@ public class LicenseStatus extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -111,6 +116,7 @@ public class LicenseStatus extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

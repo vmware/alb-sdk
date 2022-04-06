@@ -45,6 +45,7 @@ public class BurstResource  {
      * This is the getter method this will return the attribute value.
      * License id against which this burst has been accounted.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return accountedLicenseId
      */
@@ -56,6 +57,7 @@ public class BurstResource  {
      * This is the setter method to the attribute.
      * License id against which this burst has been accounted.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param accountedLicenseId set the accountedLicenseId.
      */
@@ -67,6 +69,7 @@ public class BurstResource  {
      * This is the getter method this will return the attribute value.
      * Time utc of the last alert created for this burst resource.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return lastAlertTime
      */
@@ -78,6 +81,7 @@ public class BurstResource  {
      * This is the setter method to the attribute.
      * Time utc of the last alert created for this burst resource.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param lastAlertTime set the lastAlertTime.
      */
@@ -89,6 +93,7 @@ public class BurstResource  {
      * This is the getter method this will return the attribute value.
      * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseTier
      */
@@ -100,6 +105,7 @@ public class BurstResource  {
      * This is the setter method to the attribute.
      * Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseTier set the licenseTier.
      */
@@ -110,6 +116,7 @@ public class BurstResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seCookie
      */
@@ -120,6 +127,7 @@ public class BurstResource  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seCookie set the seCookie.
      */
@@ -131,6 +139,7 @@ public class BurstResource  {
      * This is the getter method this will return the attribute value.
      * Service engine which triggered the burst license usage.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seUuid
      */
@@ -142,6 +151,7 @@ public class BurstResource  {
      * This is the setter method to the attribute.
      * Service engine which triggered the burst license usage.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seUuid set the seUuid.
      */
@@ -153,6 +163,7 @@ public class BurstResource  {
      * This is the getter method this will return the attribute value.
      * Time utc when the burst license was put in use.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return startTime
      */
@@ -164,6 +175,7 @@ public class BurstResource  {
      * This is the setter method to the attribute.
      * Time utc when the burst license was put in use.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param startTime set the startTime.
      */

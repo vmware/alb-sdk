@@ -34,6 +34,7 @@ public class ACUserIdentity  {
      * User identity type for audit event (e.g.
      * Username, organization, component).
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -46,6 +47,7 @@ public class ACUserIdentity  {
      * User identity type for audit event (e.g.
      * Username, organization, component).
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */
@@ -58,6 +60,7 @@ public class ACUserIdentity  {
      * User identity value for audit event (e.g.
      * Somecompany, jane doe, secure-shell).
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return value
      */
@@ -70,6 +73,7 @@ public class ACUserIdentity  {
      * User identity value for audit event (e.g.
      * Somecompany, jane doe, secure-shell).
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param value set the value.
      */

@@ -31,6 +31,7 @@ public class NsxtTier1SegmentManualMode  {
      * Field introduced in 20.1.1.
      * Minimum of 1 items required.
      * Maximum of 128 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tier1Lrs
      */
@@ -44,6 +45,7 @@ public class NsxtTier1SegmentManualMode  {
      * Field introduced in 20.1.1.
      * Minimum of 1 items required.
      * Maximum of 128 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tier1Lrs
      */
@@ -57,6 +59,7 @@ public class NsxtTier1SegmentManualMode  {
      * Field introduced in 20.1.1.
      * Minimum of 1 items required.
      * Maximum of 128 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tier1Lrs
      */

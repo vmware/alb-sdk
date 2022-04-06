@@ -53,6 +53,7 @@ public class vCenterConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Datacenter for virtual infrastructure discovery.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return datacenter
      */
@@ -63,6 +64,7 @@ public class vCenterConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Datacenter for virtual infrastructure discovery.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param datacenter set the datacenter.
      */
@@ -74,6 +76,7 @@ public class vCenterConfiguration  {
      * This is the getter method this will return the attribute value.
      * If true, vm's on the vcenter will not be discovered.set it to true if there are more than 10000 vms in the datacenter.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return deactivateVmDiscovery
      */
@@ -85,6 +88,7 @@ public class vCenterConfiguration  {
      * This is the setter method to the attribute.
      * If true, vm's on the vcenter will not be discovered.set it to true if there are more than 10000 vms in the datacenter.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param deactivateVmDiscovery set the deactivateVmDiscovery.
      */
@@ -95,6 +99,7 @@ public class vCenterConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Management subnet to use for avi service engines.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return managementIpSubnet
      */
@@ -105,6 +110,7 @@ public class vCenterConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Management subnet to use for avi service engines.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param managementIpSubnet set the managementIpSubnet.
      */
@@ -116,6 +122,7 @@ public class vCenterConfiguration  {
      * This is the getter method this will return the attribute value.
      * Management network to use for avi service engines.
      * It is a reference to an object of type vimgrnwruntime.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return managementNetwork
      */
@@ -127,6 +134,7 @@ public class vCenterConfiguration  {
      * This is the setter method to the attribute.
      * Management network to use for avi service engines.
      * It is a reference to an object of type vimgrnwruntime.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param managementNetwork set the managementNetwork.
      */
@@ -137,6 +145,7 @@ public class vCenterConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * The password avi vantage will use when authenticating with vcenter.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return password
      */
@@ -147,6 +156,7 @@ public class vCenterConfiguration  {
     /**
      * This is the setter method to the attribute.
      * The password avi vantage will use when authenticating with vcenter.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param password set the password.
      */
@@ -159,6 +169,7 @@ public class vCenterConfiguration  {
      * Set the access mode to vcenter as either read, which allows avi to discover networks and servers, or write, which also allows avi to create
      * service engines and configure their network properties.
      * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "WRITE_ACCESS".
      * @return privilege
      */
@@ -171,6 +182,7 @@ public class vCenterConfiguration  {
      * Set the access mode to vcenter as either read, which allows avi to discover networks and servers, or write, which also allows avi to create
      * service engines and configure their network properties.
      * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "WRITE_ACCESS".
      * @param privilege set the privilege.
      */
@@ -181,6 +193,7 @@ public class vCenterConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * The username avi vantage will use when authenticating with vcenter.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return username
      */
@@ -191,6 +204,7 @@ public class vCenterConfiguration  {
     /**
      * This is the setter method to the attribute.
      * The username avi vantage will use when authenticating with vcenter.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param username set the username.
      */
@@ -201,6 +215,7 @@ public class vCenterConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Avi service engine template in vcenter to be used for creating service engines.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterTemplateSeLocation
      */
@@ -211,6 +226,7 @@ public class vCenterConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Avi service engine template in vcenter to be used for creating service engines.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterTemplateSeLocation set the vcenterTemplateSeLocation.
      */
@@ -221,6 +237,7 @@ public class vCenterConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Vcenter hostname or ip address.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterUrl
      */
@@ -231,6 +248,7 @@ public class vCenterConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Vcenter hostname or ip address.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterUrl set the vcenterUrl.
      */

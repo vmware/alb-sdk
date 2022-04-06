@@ -35,6 +35,7 @@ public class HTTPReselectRespCode  {
      * This is the getter method this will return the attribute value.
      * Http response code to be matched.
      * Allowed values are 400-599.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return codes
      */
@@ -46,6 +47,7 @@ public class HTTPReselectRespCode  {
      * This is the setter method. this will set the codes
      * Http response code to be matched.
      * Allowed values are 400-599.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return codes
      */
@@ -57,6 +59,7 @@ public class HTTPReselectRespCode  {
      * This is the setter method this will set the codes
      * Http response code to be matched.
      * Allowed values are 400-599.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return codes
      */
@@ -70,6 +73,7 @@ public class HTTPReselectRespCode  {
     /**
      * This is the getter method this will return the attribute value.
      * Http response code ranges to match.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ranges
      */
@@ -80,6 +84,7 @@ public class HTTPReselectRespCode  {
     /**
      * This is the setter method. this will set the ranges
      * Http response code ranges to match.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ranges
      */
@@ -90,6 +95,7 @@ public class HTTPReselectRespCode  {
     /**
      * This is the setter method this will set the ranges
      * Http response code ranges to match.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ranges
      */
@@ -104,6 +110,7 @@ public class HTTPReselectRespCode  {
      * This is the getter method this will return the attribute value.
      * Block of http response codes to match for server reselect.
      * Enum options - HTTP_RSP_4XX, HTTP_RSP_5XX.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return respCodeBlock
      */
@@ -115,6 +122,7 @@ public class HTTPReselectRespCode  {
      * This is the setter method. this will set the respCodeBlock
      * Block of http response codes to match for server reselect.
      * Enum options - HTTP_RSP_4XX, HTTP_RSP_5XX.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return respCodeBlock
      */
@@ -126,6 +134,7 @@ public class HTTPReselectRespCode  {
      * This is the setter method this will set the respCodeBlock
      * Block of http response codes to match for server reselect.
      * Enum options - HTTP_RSP_4XX, HTTP_RSP_5XX.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return respCodeBlock
      */

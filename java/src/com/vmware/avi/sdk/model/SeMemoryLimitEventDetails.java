@@ -57,6 +57,7 @@ public class SeMemoryLimitEventDetails  {
      * This is the getter method this will return the attribute value.
      * Current status of config memory.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return configMemoryStatus
      */
@@ -68,6 +69,7 @@ public class SeMemoryLimitEventDetails  {
      * This is the setter method to the attribute.
      * Current status of config memory.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param configMemoryStatus set the configMemoryStatus.
      */
@@ -79,6 +81,7 @@ public class SeMemoryLimitEventDetails  {
      * This is the getter method this will return the attribute value.
      * Heap config memory hard limit.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return heapConfigHardLimit
      */
@@ -90,6 +93,7 @@ public class SeMemoryLimitEventDetails  {
      * This is the setter method to the attribute.
      * Heap config memory hard limit.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param heapConfigHardLimit set the heapConfigHardLimit.
      */
@@ -101,6 +105,7 @@ public class SeMemoryLimitEventDetails  {
      * This is the getter method this will return the attribute value.
      * Heap config memory soft limit.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return heapConfigSoftLimit
      */
@@ -112,6 +117,7 @@ public class SeMemoryLimitEventDetails  {
      * This is the setter method to the attribute.
      * Heap config memory soft limit.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param heapConfigSoftLimit set the heapConfigSoftLimit.
      */
@@ -123,6 +129,7 @@ public class SeMemoryLimitEventDetails  {
      * This is the getter method this will return the attribute value.
      * Config memory usage in heap memory.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return heapConfigUsage
      */
@@ -134,6 +141,7 @@ public class SeMemoryLimitEventDetails  {
      * This is the setter method to the attribute.
      * Config memory usage in heap memory.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param heapConfigUsage set the heapConfigUsage.
      */
@@ -145,6 +153,7 @@ public class SeMemoryLimitEventDetails  {
      * This is the getter method this will return the attribute value.
      * Connection memory usage in heap memory.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return heapConnUsage
      */
@@ -156,6 +165,7 @@ public class SeMemoryLimitEventDetails  {
      * This is the setter method to the attribute.
      * Connection memory usage in heap memory.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param heapConnUsage set the heapConnUsage.
      */
@@ -168,6 +178,7 @@ public class SeMemoryLimitEventDetails  {
      * Uuid of the se responsible for this event.
      * It is a reference to an object of type serviceengine.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seRef
      */
@@ -180,6 +191,7 @@ public class SeMemoryLimitEventDetails  {
      * Uuid of the se responsible for this event.
      * It is a reference to an object of type serviceengine.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seRef set the seRef.
      */
@@ -191,6 +203,7 @@ public class SeMemoryLimitEventDetails  {
      * This is the getter method this will return the attribute value.
      * Current shm config memory hard limit.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return shmConfigHardLimit
      */
@@ -202,6 +215,7 @@ public class SeMemoryLimitEventDetails  {
      * This is the setter method to the attribute.
      * Current shm config memory hard limit.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param shmConfigHardLimit set the shmConfigHardLimit.
      */
@@ -213,6 +227,7 @@ public class SeMemoryLimitEventDetails  {
      * This is the getter method this will return the attribute value.
      * Current shm config memory soft limit.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return shmConfigSoftLimit
      */
@@ -224,6 +239,7 @@ public class SeMemoryLimitEventDetails  {
      * This is the setter method to the attribute.
      * Current shm config memory soft limit.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param shmConfigSoftLimit set the shmConfigSoftLimit.
      */
@@ -235,6 +251,7 @@ public class SeMemoryLimitEventDetails  {
      * This is the getter method this will return the attribute value.
      * Config memory usage in shared memory.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return shmConfigUsage
      */
@@ -246,6 +263,7 @@ public class SeMemoryLimitEventDetails  {
      * This is the setter method to the attribute.
      * Config memory usage in shared memory.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param shmConfigUsage set the shmConfigUsage.
      */
@@ -257,6 +275,7 @@ public class SeMemoryLimitEventDetails  {
      * This is the getter method this will return the attribute value.
      * Connection memory usage in shared memory.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return shmConnUsage
      */
@@ -268,6 +287,7 @@ public class SeMemoryLimitEventDetails  {
      * This is the setter method to the attribute.
      * Connection memory usage in shared memory.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param shmConnUsage set the shmConnUsage.
      */

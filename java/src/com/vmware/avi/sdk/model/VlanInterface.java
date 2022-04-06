@@ -49,7 +49,7 @@ public class VlanInterface  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property dhcp_enabled of obj type vlaninterface field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dhcpEnabled
      */
@@ -59,7 +59,7 @@ public class VlanInterface  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property dhcp_enabled of obj type vlaninterface field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dhcpEnabled set the dhcpEnabled.
      */
@@ -71,6 +71,7 @@ public class VlanInterface  {
      * This is the getter method this will return the attribute value.
      * Enable the interface.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enabled
      */
@@ -82,6 +83,7 @@ public class VlanInterface  {
      * This is the setter method to the attribute.
      * Enable the interface.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enabled set the enabled.
      */
@@ -91,7 +93,7 @@ public class VlanInterface  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property if_name of obj type vlaninterface field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ifName
      */
@@ -101,7 +103,7 @@ public class VlanInterface  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property if_name of obj type vlaninterface field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ifName set the ifName.
      */
@@ -113,6 +115,7 @@ public class VlanInterface  {
      * This is the getter method this will return the attribute value.
      * Enable ipv6 auto configuration.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip6AutocfgEnabled
      */
@@ -124,6 +127,7 @@ public class VlanInterface  {
      * This is the setter method to the attribute.
      * Enable ipv6 auto configuration.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip6AutocfgEnabled set the ip6AutocfgEnabled.
      */
@@ -133,7 +137,7 @@ public class VlanInterface  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property is_mgmt of obj type vlaninterface field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return isMgmt
      */
@@ -143,7 +147,7 @@ public class VlanInterface  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property is_mgmt of obj type vlaninterface field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param isMgmt set the isMgmt.
      */
@@ -155,6 +159,7 @@ public class VlanInterface  {
      * This is the getter method this will return the attribute value.
      * Vlan id.
      * Allowed values are 0-4096.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return vlanId
      */
@@ -166,6 +171,7 @@ public class VlanInterface  {
      * This is the setter method to the attribute.
      * Vlan id.
      * Allowed values are 0-4096.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param vlanId set the vlanId.
      */
@@ -174,7 +180,7 @@ public class VlanInterface  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vnic_networks of obj type vlaninterface field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vnicNetworks
      */
@@ -184,7 +190,7 @@ public class VlanInterface  {
 
     /**
      * This is the setter method. this will set the vnicNetworks
-     * Placeholder for description of property vnic_networks of obj type vlaninterface field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vnicNetworks
      */
@@ -194,7 +200,7 @@ public class VlanInterface  {
 
     /**
      * This is the setter method this will set the vnicNetworks
-     * Placeholder for description of property vnic_networks of obj type vlaninterface field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vnicNetworks
      */
@@ -209,6 +215,7 @@ public class VlanInterface  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type vrfcontext.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vrfRef
      */
@@ -219,6 +226,7 @@ public class VlanInterface  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type vrfcontext.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vrfRef set the vrfRef.
      */

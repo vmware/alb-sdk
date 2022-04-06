@@ -39,8 +39,8 @@ public class HTTPHdrAction  {
      * and a new header with the new value is added.
      * Remove  all the headers of the given name are removed.
      * Enum options - HTTP_ADD_HDR, HTTP_REMOVE_HDR, HTTP_REPLACE_HDR.
-     * Allowed in basic(allowed values- http_remove_hdr,http_replace_hdr) edition, essentials(allowed values- http_remove_hdr,http_replace_hdr) edition,
-     * enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- http_remove_hdr,http_replace_hdr) edition, basic(allowed values-
+     * http_remove_hdr,http_replace_hdr) edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return action
      */
@@ -55,8 +55,8 @@ public class HTTPHdrAction  {
      * and a new header with the new value is added.
      * Remove  all the headers of the given name are removed.
      * Enum options - HTTP_ADD_HDR, HTTP_REMOVE_HDR, HTTP_REPLACE_HDR.
-     * Allowed in basic(allowed values- http_remove_hdr,http_replace_hdr) edition, essentials(allowed values- http_remove_hdr,http_replace_hdr) edition,
-     * enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- http_remove_hdr,http_replace_hdr) edition, basic(allowed values-
+     * http_remove_hdr,http_replace_hdr) edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param action set the action.
      */
@@ -67,6 +67,7 @@ public class HTTPHdrAction  {
     /**
      * This is the getter method this will return the attribute value.
      * Cookie information.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cookie
      */
@@ -77,6 +78,7 @@ public class HTTPHdrAction  {
     /**
      * This is the setter method to the attribute.
      * Cookie information.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cookie set the cookie.
      */
@@ -87,6 +89,7 @@ public class HTTPHdrAction  {
     /**
      * This is the getter method this will return the attribute value.
      * Http header information.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hdr
      */
@@ -97,6 +100,7 @@ public class HTTPHdrAction  {
     /**
      * This is the setter method to the attribute.
      * Http header information.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hdr set the hdr.
      */

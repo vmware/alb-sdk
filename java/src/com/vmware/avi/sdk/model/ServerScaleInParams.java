@@ -35,6 +35,7 @@ public class ServerScaleInParams extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Reason for the manual scale-in.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -45,6 +46,7 @@ public class ServerScaleInParams extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Reason for the manual scale-in.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -54,6 +56,7 @@ public class ServerScaleInParams extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * List of server ids that should be scaled in.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return servers
      */
@@ -64,6 +67,7 @@ public class ServerScaleInParams extends AviRestResource  {
     /**
      * This is the setter method. this will set the servers
      * List of server ids that should be scaled in.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return servers
      */
@@ -74,6 +78,7 @@ public class ServerScaleInParams extends AviRestResource  {
     /**
      * This is the setter method this will set the servers
      * List of server ids that should be scaled in.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return servers
      */
@@ -87,7 +92,7 @@ public class ServerScaleInParams extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -97,7 +102,7 @@ public class ServerScaleInParams extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

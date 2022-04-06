@@ -31,6 +31,7 @@ public class WafPolicyWhitelist  {
      * Field deprecated in 20.1.3.
      * Field introduced in 18.2.3.
      * Maximum of 1024 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return rules
      */
     public List<WafPolicyWhitelistRule> getRules() {
@@ -43,6 +44,7 @@ public class WafPolicyWhitelist  {
      * Field deprecated in 20.1.3.
      * Field introduced in 18.2.3.
      * Maximum of 1024 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return rules
      */
     public void setRules(List<WafPolicyWhitelistRule>  rules) {
@@ -55,6 +57,7 @@ public class WafPolicyWhitelist  {
      * Field deprecated in 20.1.3.
      * Field introduced in 18.2.3.
      * Maximum of 1024 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return rules
      */
     public WafPolicyWhitelist addRulesItem(WafPolicyWhitelistRule rulesItem) {

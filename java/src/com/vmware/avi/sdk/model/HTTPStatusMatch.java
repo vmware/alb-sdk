@@ -36,6 +36,7 @@ public class HTTPStatusMatch  {
      * This is the getter method this will return the attribute value.
      * Criterion to use for matching the http response status code(s).
      * Enum options - IS_IN, IS_NOT_IN.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matchCriteria
      */
@@ -47,6 +48,7 @@ public class HTTPStatusMatch  {
      * This is the setter method to the attribute.
      * Criterion to use for matching the http response status code(s).
      * Enum options - IS_IN, IS_NOT_IN.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param matchCriteria set the matchCriteria.
      */
@@ -56,6 +58,7 @@ public class HTTPStatusMatch  {
     /**
      * This is the getter method this will return the attribute value.
      * Http response status code range(s).
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ranges
      */
@@ -66,6 +69,7 @@ public class HTTPStatusMatch  {
     /**
      * This is the setter method. this will set the ranges
      * Http response status code range(s).
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ranges
      */
@@ -76,6 +80,7 @@ public class HTTPStatusMatch  {
     /**
      * This is the setter method this will set the ranges
      * Http response status code range(s).
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ranges
      */
@@ -89,6 +94,7 @@ public class HTTPStatusMatch  {
     /**
      * This is the getter method this will return the attribute value.
      * Http response status code(s).
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return statusCodes
      */
@@ -99,6 +105,7 @@ public class HTTPStatusMatch  {
     /**
      * This is the setter method. this will set the statusCodes
      * Http response status code(s).
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return statusCodes
      */
@@ -109,6 +116,7 @@ public class HTTPStatusMatch  {
     /**
      * This is the setter method this will set the statusCodes
      * Http response status code(s).
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return statusCodes
      */

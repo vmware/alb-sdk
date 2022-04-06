@@ -36,7 +36,7 @@ public class TCPFastPathProfile  {
      * This is the getter method this will return the attribute value.
      * Dsr profile information.
      * Field introduced in 18.2.3.
-     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dsrProfile
      */
@@ -48,7 +48,7 @@ public class TCPFastPathProfile  {
      * This is the setter method to the attribute.
      * Dsr profile information.
      * Field introduced in 18.2.3.
-     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dsrProfile set the dsrProfile.
      */
@@ -60,7 +60,8 @@ public class TCPFastPathProfile  {
      * This is the getter method this will return the attribute value.
      * When enabled, avi will complete the 3-way handshake with the client before forwarding any packets to the server.
      * This will protect the server from syn flood and half open syn connections.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- false) edition, basic(allowed values- false) edition, enterprise with
+     * cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableSynProtection
      */
@@ -72,7 +73,8 @@ public class TCPFastPathProfile  {
      * This is the setter method to the attribute.
      * When enabled, avi will complete the 3-way handshake with the client before forwarding any packets to the server.
      * This will protect the server from syn flood and half open syn connections.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- false) edition, basic(allowed values- false) edition, enterprise with
+     * cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableSynProtection set the enableSynProtection.
      */
@@ -86,6 +88,7 @@ public class TCPFastPathProfile  {
      * Allowed values are 5-14400.
      * Special values are 0 - infinite.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @return sessionIdleTimeout
      */
@@ -99,6 +102,7 @@ public class TCPFastPathProfile  {
      * Allowed values are 5-14400.
      * Special values are 0 - infinite.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
      * @param sessionIdleTimeout set the sessionIdleTimeout.
      */

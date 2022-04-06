@@ -48,6 +48,7 @@ public class ProcessInfo  {
      * This is the getter method this will return the attribute value.
      * Current process id.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return currentProcessId
      */
@@ -59,6 +60,7 @@ public class ProcessInfo  {
      * This is the setter method to the attribute.
      * Current process id.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param currentProcessId set the currentProcessId.
      */
@@ -70,6 +72,7 @@ public class ProcessInfo  {
      * This is the getter method this will return the attribute value.
      * Total memory usage of process in kbs.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return currentProcessMemUsage
      */
@@ -81,6 +84,7 @@ public class ProcessInfo  {
      * This is the setter method to the attribute.
      * Total memory usage of process in kbs.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param currentProcessMemUsage set the currentProcessMemUsage.
      */
@@ -92,6 +96,7 @@ public class ProcessInfo  {
      * This is the getter method this will return the attribute value.
      * Number of times the process has been in current processmode.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return intimationCount
      */
@@ -103,6 +108,7 @@ public class ProcessInfo  {
      * This is the setter method to the attribute.
      * Number of times the process has been in current processmode.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param intimationCount set the intimationCount.
      */
@@ -114,6 +120,7 @@ public class ProcessInfo  {
      * This is the getter method this will return the attribute value.
      * Memory limit for process in kbs.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return memoryLimit
      */
@@ -125,6 +132,7 @@ public class ProcessInfo  {
      * This is the setter method to the attribute.
      * Memory limit for process in kbs.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param memoryLimit set the memoryLimit.
      */
@@ -137,6 +145,7 @@ public class ProcessInfo  {
      * Current usage trend of process memory.
      * Enum options - UPWARD, DOWNWARD, NEUTRAL.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return memoryTrendUsage
      */
@@ -149,6 +158,7 @@ public class ProcessInfo  {
      * Current usage trend of process memory.
      * Enum options - UPWARD, DOWNWARD, NEUTRAL.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param memoryTrendUsage set the memoryTrendUsage.
      */
@@ -161,6 +171,7 @@ public class ProcessInfo  {
      * Current mode of process.
      * Enum options - REGULAR, DEBUG, DEGRADED, STOP.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return processMode
      */
@@ -173,6 +184,7 @@ public class ProcessInfo  {
      * Current mode of process.
      * Enum options - REGULAR, DEBUG, DEGRADED, STOP.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param processMode set the processMode.
      */
@@ -184,6 +196,7 @@ public class ProcessInfo  {
      * This is the getter method this will return the attribute value.
      * Percentage of memory used out of given limits.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return thresholdPercent
      */
@@ -195,6 +208,7 @@ public class ProcessInfo  {
      * This is the setter method to the attribute.
      * Percentage of memory used out of given limits.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param thresholdPercent set the thresholdPercent.
      */

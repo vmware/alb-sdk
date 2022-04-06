@@ -35,6 +35,7 @@ public class ServerId  {
     /**
      * This is the getter method this will return the attribute value.
      * This is the external cloud uuid of the pool server.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return externalUuid
      */
@@ -45,6 +46,7 @@ public class ServerId  {
     /**
      * This is the setter method to the attribute.
      * This is the external cloud uuid of the pool server.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param externalUuid set the externalUuid.
      */
@@ -54,7 +56,7 @@ public class ServerId  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ip of obj type serverid field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip
      */
@@ -64,7 +66,7 @@ public class ServerId  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ip of obj type serverid field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip set the ip.
      */
@@ -74,7 +76,7 @@ public class ServerId  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property port of obj type serverid field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
      */
@@ -84,7 +86,7 @@ public class ServerId  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property port of obj type serverid field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.
      */

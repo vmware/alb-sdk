@@ -36,7 +36,7 @@ public class SeUpgradeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property notes of obj type seupgradeeventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return notes
      */
@@ -46,7 +46,7 @@ public class SeUpgradeEventDetails  {
 
     /**
      * This is the setter method. this will set the notes
-     * Placeholder for description of property notes of obj type seupgradeeventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return notes
      */
@@ -56,7 +56,7 @@ public class SeUpgradeEventDetails  {
 
     /**
      * This is the setter method this will set the notes
-     * Placeholder for description of property notes of obj type seupgradeeventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return notes
      */
@@ -70,7 +70,7 @@ public class SeUpgradeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property num_vs of obj type seupgradeeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numVs
      */
@@ -80,7 +80,7 @@ public class SeUpgradeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property num_vs of obj type seupgradeeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numVs set the numVs.
      */
@@ -90,7 +90,7 @@ public class SeUpgradeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of se_grp.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGrpUuid
      */
@@ -100,7 +100,7 @@ public class SeUpgradeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of se_grp.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGrpUuid set the seGrpUuid.
      */
@@ -110,7 +110,7 @@ public class SeUpgradeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of se.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seUuid
      */
@@ -120,7 +120,7 @@ public class SeUpgradeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of se.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seUuid set the seUuid.
      */

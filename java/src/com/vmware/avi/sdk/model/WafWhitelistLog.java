@@ -34,6 +34,7 @@ public class WafWhitelistLog  {
      * Enum options - WAF_POLICY_WHITELIST_ACTION_ALLOW, WAF_POLICY_WHITELIST_ACTION_DETECTION_MODE, WAF_POLICY_WHITELIST_ACTION_CONTINUE.
      * Field deprecated in 20.1.3.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return actions
      */
     public List<String> getActions() {
@@ -46,6 +47,7 @@ public class WafWhitelistLog  {
      * Enum options - WAF_POLICY_WHITELIST_ACTION_ALLOW, WAF_POLICY_WHITELIST_ACTION_DETECTION_MODE, WAF_POLICY_WHITELIST_ACTION_CONTINUE.
      * Field deprecated in 20.1.3.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return actions
      */
     public void setActions(List<String>  actions) {
@@ -58,6 +60,7 @@ public class WafWhitelistLog  {
      * Enum options - WAF_POLICY_WHITELIST_ACTION_ALLOW, WAF_POLICY_WHITELIST_ACTION_DETECTION_MODE, WAF_POLICY_WHITELIST_ACTION_CONTINUE.
      * Field deprecated in 20.1.3.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return actions
      */
     public WafWhitelistLog addActionsItem(String actionsItem) {
@@ -73,6 +76,7 @@ public class WafWhitelistLog  {
      * Name of the matched rule.
      * Field deprecated in 20.1.3.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return ruleName
      */
     public String getRuleName() {
@@ -84,6 +88,7 @@ public class WafWhitelistLog  {
      * Name of the matched rule.
      * Field deprecated in 20.1.3.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param ruleName set the ruleName.
      */
     public void setRuleName(String  ruleName) {

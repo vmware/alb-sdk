@@ -40,7 +40,7 @@ public class DataNetworkConfig  {
      * Nsxt tier1 segment configuration for avi service engine data path.
      * This should be set only when transport zone is of type overlay.
      * Field introduced in 20.1.5.
-     * Allowed in basic edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tier1SegmentConfig
      */
@@ -53,7 +53,7 @@ public class DataNetworkConfig  {
      * Nsxt tier1 segment configuration for avi service engine data path.
      * This should be set only when transport zone is of type overlay.
      * Field introduced in 20.1.5.
-     * Allowed in basic edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tier1SegmentConfig set the tier1SegmentConfig.
      */
@@ -66,7 +66,7 @@ public class DataNetworkConfig  {
      * Data transport zone path for avi service engines.
      * Example- /infra/sites/default/enforcement-points/default/transport-zones/xxx-xxx-xxxx.
      * Field introduced in 20.1.5.
-     * Allowed in basic edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return transportZone
      */
@@ -79,7 +79,7 @@ public class DataNetworkConfig  {
      * Data transport zone path for avi service engines.
      * Example- /infra/sites/default/enforcement-points/default/transport-zones/xxx-xxx-xxxx.
      * Field introduced in 20.1.5.
-     * Allowed in basic edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param transportZone set the transportZone.
      */
@@ -92,7 +92,7 @@ public class DataNetworkConfig  {
      * Data transport zone type overlay or vlan.
      * Enum options - OVERLAY, VLAN.
      * Field introduced in 20.1.5.
-     * Allowed in basic edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tzType
      */
@@ -105,7 +105,7 @@ public class DataNetworkConfig  {
      * Data transport zone type overlay or vlan.
      * Enum options - OVERLAY, VLAN.
      * Field introduced in 20.1.5.
-     * Allowed in basic edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tzType set the tzType.
      */
@@ -118,6 +118,7 @@ public class DataNetworkConfig  {
      * Example- /infra/segments/vlanls.
      * This should be set only when transport zone is of type vlan.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vlanSegments
      */
@@ -131,6 +132,7 @@ public class DataNetworkConfig  {
      * Example- /infra/segments/vlanls.
      * This should be set only when transport zone is of type vlan.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vlanSegments
      */
@@ -144,6 +146,7 @@ public class DataNetworkConfig  {
      * Example- /infra/segments/vlanls.
      * This should be set only when transport zone is of type vlan.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vlanSegments
      */

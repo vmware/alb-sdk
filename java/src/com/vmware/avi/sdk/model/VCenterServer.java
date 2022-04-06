@@ -52,6 +52,7 @@ public class VCenterServer extends AviRestResource  {
      * Vcenter belongs to cloud.
      * It is a reference to an object of type cloud.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudRef
      */
@@ -64,6 +65,7 @@ public class VCenterServer extends AviRestResource  {
      * Vcenter belongs to cloud.
      * It is a reference to an object of type cloud.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudRef set the cloudRef.
      */
@@ -75,6 +77,7 @@ public class VCenterServer extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Vcenter template to create service engine.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return contentLib
      */
@@ -86,6 +89,7 @@ public class VCenterServer extends AviRestResource  {
      * This is the setter method to the attribute.
      * Vcenter template to create service engine.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param contentLib set the contentLib.
      */
@@ -97,6 +101,7 @@ public class VCenterServer extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Availabilty zone where vcenter list belongs to.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -108,6 +113,7 @@ public class VCenterServer extends AviRestResource  {
      * This is the setter method to the attribute.
      * Availabilty zone where vcenter list belongs to.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -120,6 +126,7 @@ public class VCenterServer extends AviRestResource  {
      * Vcenter belongs to tenant.
      * It is a reference to an object of type tenant.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -132,6 +139,7 @@ public class VCenterServer extends AviRestResource  {
      * Vcenter belongs to tenant.
      * It is a reference to an object of type tenant.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -160,6 +168,7 @@ public class VCenterServer extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Vcenter config uuid.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -171,6 +180,7 @@ public class VCenterServer extends AviRestResource  {
      * This is the setter method to the attribute.
      * Vcenter config uuid.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -183,6 +193,7 @@ public class VCenterServer extends AviRestResource  {
      * Credentials to access vcenter.
      * It is a reference to an object of type cloudconnectoruser.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterCredentialsRef
      */
@@ -195,6 +206,7 @@ public class VCenterServer extends AviRestResource  {
      * Credentials to access vcenter.
      * It is a reference to an object of type cloudconnectoruser.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterCredentialsRef set the vcenterCredentialsRef.
      */
@@ -206,6 +218,7 @@ public class VCenterServer extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Vcenter hostname or ip address.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterUrl
      */
@@ -217,6 +230,7 @@ public class VCenterServer extends AviRestResource  {
      * This is the setter method to the attribute.
      * Vcenter hostname or ip address.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterUrl set the vcenterUrl.
      */

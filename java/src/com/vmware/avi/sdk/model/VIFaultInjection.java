@@ -43,6 +43,7 @@ public class VIFaultInjection  {
      * Enum options - INITIAL_VALUE, CREATE_SE, MODIFY_VNIC, VM_MONITOR, RESOURCE_MONITOR, PERF_MONITOR, SET_MGMT_IP, MODIFY_MGMT_IP, SIM_VM_BULK_NOTIF,
      * RESYNC_ERROR, SIMULATE_OVA_ERR, VCENTER_NO_OBJECTS, CREATE_VM_RUNTIME_ERR, VERSION_NULL_ERR, INVALID_LOGIN, DISC_PGNAME_ERR, DISC_DCDETAILS_ERR,
      * DISC_DC_ERR, DISC_HOST_ERR, DISC_CLUSTER_ERR...
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return api
      */
@@ -55,6 +56,7 @@ public class VIFaultInjection  {
      * Enum options - INITIAL_VALUE, CREATE_SE, MODIFY_VNIC, VM_MONITOR, RESOURCE_MONITOR, PERF_MONITOR, SET_MGMT_IP, MODIFY_MGMT_IP, SIM_VM_BULK_NOTIF,
      * RESYNC_ERROR, SIMULATE_OVA_ERR, VCENTER_NO_OBJECTS, CREATE_VM_RUNTIME_ERR, VERSION_NULL_ERR, INVALID_LOGIN, DISC_PGNAME_ERR, DISC_DCDETAILS_ERR,
      * DISC_DC_ERR, DISC_HOST_ERR, DISC_CLUSTER_ERR...
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param api set the api.
      */
@@ -65,6 +67,7 @@ public class VIFaultInjection  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudUuid
      */
@@ -75,6 +78,7 @@ public class VIFaultInjection  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudUuid set the cloudUuid.
      */
@@ -84,7 +88,7 @@ public class VIFaultInjection  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property count of obj type vifaultinjection field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return count
      */
@@ -94,7 +98,7 @@ public class VIFaultInjection  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property count of obj type vifaultinjection field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param count set the count.
      */
@@ -105,6 +109,7 @@ public class VIFaultInjection  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkUuid
      */
@@ -115,6 +120,7 @@ public class VIFaultInjection  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param networkUuid set the networkUuid.
      */
@@ -128,6 +134,7 @@ public class VIFaultInjection  {
      * SEVM_CREATE_FAIL_NO_MEM, SEVM_CREATE_FAIL_NO_LEASE, SEVM_CREATE_FAIL_OVF_ERROR, SEVM_CREATE_NO_HOST_VM_NETWORK, SEVM_CREATE_FAIL_NO_PROGRESS,
      * SEVM_CREATE_FAIL_ABORTED, SEVM_CREATE_FAILURE, SEVM_CREATE_FAIL_POWER_ON, SEVM_VNIC_NO_VM, SEVM_VNIC_MAC_ADDR_ERROR, SEVM_VNIC_FAILURE,
      * SEVM_VNIC_NO_PG_PORTS, SEVM_DELETE_FAILURE, SEVM_CREATE_LIMIT_REACHED, SEVM_SET_MGMT_IP_FAILED...
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SEVM_CREATE_FAILURE".
      * @return status
      */
@@ -141,6 +148,7 @@ public class VIFaultInjection  {
      * SEVM_CREATE_FAIL_NO_MEM, SEVM_CREATE_FAIL_NO_LEASE, SEVM_CREATE_FAIL_OVF_ERROR, SEVM_CREATE_NO_HOST_VM_NETWORK, SEVM_CREATE_FAIL_NO_PROGRESS,
      * SEVM_CREATE_FAIL_ABORTED, SEVM_CREATE_FAILURE, SEVM_CREATE_FAIL_POWER_ON, SEVM_VNIC_NO_VM, SEVM_VNIC_MAC_ADDR_ERROR, SEVM_VNIC_FAILURE,
      * SEVM_VNIC_NO_PG_PORTS, SEVM_DELETE_FAILURE, SEVM_CREATE_LIMIT_REACHED, SEVM_SET_MGMT_IP_FAILED...
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SEVM_CREATE_FAILURE".
      * @param status set the status.
      */

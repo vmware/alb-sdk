@@ -34,6 +34,7 @@ public class DnsPolicies  {
      * Uuid of the dns policy.
      * It is a reference to an object of type dnspolicy.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsPolicyRef
      */
@@ -46,6 +47,7 @@ public class DnsPolicies  {
      * Uuid of the dns policy.
      * It is a reference to an object of type dnspolicy.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dnsPolicyRef set the dnsPolicyRef.
      */
@@ -57,6 +59,7 @@ public class DnsPolicies  {
      * This is the getter method this will return the attribute value.
      * Index of the dns policy.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return index
      */
@@ -68,6 +71,7 @@ public class DnsPolicies  {
      * This is the setter method to the attribute.
      * Index of the dns policy.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param index set the index.
      */

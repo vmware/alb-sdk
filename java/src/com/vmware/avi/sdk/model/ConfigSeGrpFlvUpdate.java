@@ -44,6 +44,7 @@ public class ConfigSeGrpFlvUpdate  {
     /**
      * This is the getter method this will return the attribute value.
      * New flavor name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return newFlv
      */
@@ -54,6 +55,7 @@ public class ConfigSeGrpFlvUpdate  {
     /**
      * This is the setter method to the attribute.
      * New flavor name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param newFlv set the newFlv.
      */
@@ -64,6 +66,7 @@ public class ConfigSeGrpFlvUpdate  {
     /**
      * This is the getter method this will return the attribute value.
      * Old flavor name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return oldFlv
      */
@@ -74,6 +77,7 @@ public class ConfigSeGrpFlvUpdate  {
     /**
      * This is the setter method to the attribute.
      * Old flavor name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param oldFlv set the oldFlv.
      */
@@ -84,6 +88,7 @@ public class ConfigSeGrpFlvUpdate  {
     /**
      * This is the getter method this will return the attribute value.
      * Se group name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupName
      */
@@ -94,6 +99,7 @@ public class ConfigSeGrpFlvUpdate  {
     /**
      * This is the setter method to the attribute.
      * Se group name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGroupName set the seGroupName.
      */
@@ -104,6 +110,7 @@ public class ConfigSeGrpFlvUpdate  {
     /**
      * This is the getter method this will return the attribute value.
      * Se group uuid.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupUuid
      */
@@ -114,6 +121,7 @@ public class ConfigSeGrpFlvUpdate  {
     /**
      * This is the setter method to the attribute.
      * Se group uuid.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGroupUuid set the seGroupUuid.
      */
@@ -124,6 +132,7 @@ public class ConfigSeGrpFlvUpdate  {
     /**
      * This is the getter method this will return the attribute value.
      * Tenant name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantName
      */
@@ -134,6 +143,7 @@ public class ConfigSeGrpFlvUpdate  {
     /**
      * This is the setter method to the attribute.
      * Tenant name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantName set the tenantName.
      */
@@ -144,6 +154,7 @@ public class ConfigSeGrpFlvUpdate  {
     /**
      * This is the getter method this will return the attribute value.
      * Tenant uuid.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantUuid
      */
@@ -154,6 +165,7 @@ public class ConfigSeGrpFlvUpdate  {
     /**
      * This is the setter method to the attribute.
      * Tenant uuid.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantUuid set the tenantUuid.
      */

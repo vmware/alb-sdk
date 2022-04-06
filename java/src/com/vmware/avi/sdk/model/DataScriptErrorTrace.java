@@ -34,7 +34,7 @@ public class DataScriptErrorTrace  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property error of obj type datascripterrortrace field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return error
      */
@@ -44,7 +44,7 @@ public class DataScriptErrorTrace  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property error of obj type datascripterrortrace field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param error set the error.
      */
@@ -54,7 +54,7 @@ public class DataScriptErrorTrace  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property event of obj type datascripterrortrace field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return event
      */
@@ -64,7 +64,7 @@ public class DataScriptErrorTrace  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property event of obj type datascripterrortrace field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param event set the event.
      */
@@ -74,7 +74,7 @@ public class DataScriptErrorTrace  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property stack_trace of obj type datascripterrortrace field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return stackTrace
      */
@@ -84,7 +84,7 @@ public class DataScriptErrorTrace  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property stack_trace of obj type datascripterrortrace field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param stackTrace set the stackTrace.
      */

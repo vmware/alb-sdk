@@ -37,6 +37,7 @@ public class VipPlacementNetwork  {
      * Network to use for vip placement.
      * It is a reference to an object of type network.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkRef
      */
@@ -49,6 +50,7 @@ public class VipPlacementNetwork  {
      * Network to use for vip placement.
      * It is a reference to an object of type network.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param networkRef set the networkRef.
      */
@@ -60,6 +62,7 @@ public class VipPlacementNetwork  {
      * This is the getter method this will return the attribute value.
      * Ipv4 subnet to use for vip placement.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnet
      */
@@ -71,6 +74,7 @@ public class VipPlacementNetwork  {
      * This is the setter method to the attribute.
      * Ipv4 subnet to use for vip placement.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subnet set the subnet.
      */
@@ -82,6 +86,7 @@ public class VipPlacementNetwork  {
      * This is the getter method this will return the attribute value.
      * Ipv6 subnet to use for vip placement.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subnet6
      */
@@ -93,6 +98,7 @@ public class VipPlacementNetwork  {
      * This is the setter method to the attribute.
      * Ipv6 subnet to use for vip placement.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subnet6 set the subnet6.
      */

@@ -36,6 +36,7 @@ public class DnsRuleActionGslbSiteSelection  {
      * Gslb fallback sites to use in case the desired site is down.
      * Field introduced in 17.2.5.
      * Maximum of 64 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fallbackSiteNames
      */
@@ -48,6 +49,7 @@ public class DnsRuleActionGslbSiteSelection  {
      * Gslb fallback sites to use in case the desired site is down.
      * Field introduced in 17.2.5.
      * Maximum of 64 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fallbackSiteNames
      */
@@ -60,6 +62,7 @@ public class DnsRuleActionGslbSiteSelection  {
      * Gslb fallback sites to use in case the desired site is down.
      * Field introduced in 17.2.5.
      * Maximum of 64 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fallbackSiteNames
      */
@@ -77,6 +80,7 @@ public class DnsRuleActionGslbSiteSelection  {
      * This setting comes into play when the site is down, as well as no configured fallback site is available (all fallback sites are also down), then
      * any one available site is selected based on the default algorithm for gslb pool member selection.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return isSitePreferred
      */
@@ -90,6 +94,7 @@ public class DnsRuleActionGslbSiteSelection  {
      * This setting comes into play when the site is down, as well as no configured fallback site is available (all fallback sites are also down), then
      * any one available site is selected based on the default algorithm for gslb pool member selection.
      * Field introduced in 17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param isSitePreferred set the isSitePreferred.
      */
@@ -101,6 +106,7 @@ public class DnsRuleActionGslbSiteSelection  {
      * This is the getter method this will return the attribute value.
      * Gslb site name.
      * Field introduced in 17.1.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return siteName
      */
@@ -112,6 +118,7 @@ public class DnsRuleActionGslbSiteSelection  {
      * This is the setter method to the attribute.
      * Gslb site name.
      * Field introduced in 17.1.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param siteName set the siteName.
      */

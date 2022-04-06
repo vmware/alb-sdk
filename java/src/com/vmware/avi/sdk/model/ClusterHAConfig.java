@@ -38,7 +38,7 @@ public class ClusterHAConfig  {
      * Avi derives vsphere ha property from vcenter cluster.if vsphere ha enabled on vcenter cluster, vsphere will handle ha of serviceengine vms in
      * case of underlying esx failure.ex mob  domain-c23.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed in basic edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterId
      */
@@ -52,7 +52,7 @@ public class ClusterHAConfig  {
      * Avi derives vsphere ha property from vcenter cluster.if vsphere ha enabled on vcenter cluster, vsphere will handle ha of serviceengine vms in
      * case of underlying esx failure.ex mob  domain-c23.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed in basic edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clusterId set the clusterId.
      */
@@ -64,7 +64,7 @@ public class ClusterHAConfig  {
      * This is the getter method this will return the attribute value.
      * If this flag set to true, avi handles serviceengine failure irrespective of vsphere ha enabled on vcenter cluster or not.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed in basic edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return overrideVsphereHa
      */
@@ -76,7 +76,7 @@ public class ClusterHAConfig  {
      * This is the setter method to the attribute.
      * If this flag set to true, avi handles serviceengine failure irrespective of vsphere ha enabled on vcenter cluster or not.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed in basic edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param overrideVsphereHa set the overrideVsphereHa.
      */
@@ -88,7 +88,7 @@ public class ClusterHAConfig  {
      * This is the getter method this will return the attribute value.
      * Cluster vm group name.vm group name is unique inside cluster.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed in basic edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vmgName
      */
@@ -100,7 +100,7 @@ public class ClusterHAConfig  {
      * This is the setter method to the attribute.
      * Cluster vm group name.vm group name is unique inside cluster.
      * Field introduced in 20.1.7, 21.1.3.
-     * Allowed in basic edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vmgName set the vmgName.
      */

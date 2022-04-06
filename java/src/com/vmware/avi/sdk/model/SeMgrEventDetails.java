@@ -88,7 +88,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cloud_name of obj type semgreventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudName
      */
@@ -98,7 +98,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cloud_name of obj type semgreventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudName set the cloudName.
      */
@@ -108,7 +108,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudUuid
      */
@@ -118,7 +118,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudUuid set the cloudUuid.
      */
@@ -128,7 +128,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property enable_state of obj type semgreventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return enableState
      */
@@ -138,7 +138,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property enable_state of obj type semgreventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param enableState set the enableState.
      */
@@ -148,7 +148,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property gcp_info of obj type semgreventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gcpInfo
      */
@@ -158,7 +158,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property gcp_info of obj type semgreventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gcpInfo set the gcpInfo.
      */
@@ -168,7 +168,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property host_name of obj type semgreventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostName
      */
@@ -178,7 +178,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property host_name of obj type semgreventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hostName set the hostName.
      */
@@ -188,7 +188,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of host.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostUuid
      */
@@ -198,7 +198,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of host.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hostUuid set the hostUuid.
      */
@@ -208,7 +208,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property memory of obj type semgreventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return memory
      */
@@ -218,7 +218,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property memory of obj type semgreventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param memory set the memory.
      */
@@ -228,7 +228,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property migrate_state of obj type semgreventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return migrateState
      */
@@ -238,7 +238,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property migrate_state of obj type semgreventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param migrateState set the migrateState.
      */
@@ -248,7 +248,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -258,7 +258,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -269,6 +269,7 @@ public class SeMgrEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return newMgmtIp
      */
@@ -279,6 +280,7 @@ public class SeMgrEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param newMgmtIp set the newMgmtIp.
      */
@@ -289,6 +291,7 @@ public class SeMgrEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return newMgmtIp6
      */
@@ -299,6 +302,7 @@ public class SeMgrEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param newMgmtIp6 set the newMgmtIp6.
      */
@@ -309,6 +313,7 @@ public class SeMgrEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return oldMgmtIp
      */
@@ -319,6 +324,7 @@ public class SeMgrEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param oldMgmtIp set the oldMgmtIp.
      */
@@ -329,6 +335,7 @@ public class SeMgrEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return oldMgmtIp6
      */
@@ -339,6 +346,7 @@ public class SeMgrEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param oldMgmtIp6 set the oldMgmtIp6.
      */
@@ -348,7 +356,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property reason of obj type semgreventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -358,7 +366,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property reason of obj type semgreventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -368,7 +376,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_grp_name of obj type semgreventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGrpName
      */
@@ -378,7 +386,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_grp_name of obj type semgreventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGrpName set the seGrpName.
      */
@@ -388,7 +396,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of se_grp.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGrpUuid
      */
@@ -398,7 +406,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of se_grp.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGrpUuid set the seGrpUuid.
      */
@@ -408,7 +416,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcpus of obj type semgreventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcpus
      */
@@ -418,7 +426,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcpus of obj type semgreventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcpus set the vcpus.
      */
@@ -427,7 +435,7 @@ public class SeMgrEventDetails  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vs_name of obj type semgreventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsName
      */
@@ -437,7 +445,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the setter method. this will set the vsName
-     * Placeholder for description of property vs_name of obj type semgreventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsName
      */
@@ -447,7 +455,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the setter method this will set the vsName
-     * Placeholder for description of property vs_name of obj type semgreventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsName
      */
@@ -460,7 +468,7 @@ public class SeMgrEventDetails  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of vs.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsUuid
      */
@@ -470,7 +478,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the setter method. this will set the vsUuid
-     * Unique object identifier of vs.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsUuid
      */
@@ -480,7 +488,7 @@ public class SeMgrEventDetails  {
 
     /**
      * This is the setter method this will set the vsUuid
-     * Unique object identifier of vs.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsUuid
      */
@@ -496,6 +504,7 @@ public class SeMgrEventDetails  {
      * This is the getter method this will return the attribute value.
      * Vsphere ha on cluster enabled.
      * Field introduced in 20.1.7, 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsphereHaEnabled
      */
@@ -507,6 +516,7 @@ public class SeMgrEventDetails  {
      * This is the setter method to the attribute.
      * Vsphere ha on cluster enabled.
      * Field introduced in 20.1.7, 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsphereHaEnabled set the vsphereHaEnabled.
      */
@@ -519,6 +529,7 @@ public class SeMgrEventDetails  {
      * This flag is set to true when cloud connector has detected an esx host failure.
      * This flag is set to false when the se connects back to the controller, or when vsphere ha recovery timeout has occurred.
      * Field introduced in 20.1.7, 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsphereHaInprogress
      */
@@ -531,6 +542,7 @@ public class SeMgrEventDetails  {
      * This flag is set to true when cloud connector has detected an esx host failure.
      * This flag is set to false when the se connects back to the controller, or when vsphere ha recovery timeout has occurred.
      * Field introduced in 20.1.7, 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsphereHaInprogress set the vsphereHaInprogress.
      */

@@ -670,6 +670,7 @@ public class EventDetails  {
      * Adaptive replication event e.g.
      * Dns vs, config version.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return adaptreplEvent
      */
@@ -682,6 +683,7 @@ public class EventDetails  {
      * Adaptive replication event e.g.
      * Dns vs, config version.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param adaptreplEvent set the adaptreplEvent.
      */
@@ -691,7 +693,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property add_networks_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return addNetworksDetails
      */
@@ -701,7 +703,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property add_networks_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param addNetworksDetails set the addNetworksDetails.
      */
@@ -711,7 +713,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property albservices_case_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return albservicesCaseDetails
      */
@@ -721,7 +723,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property albservices_case_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param albservicesCaseDetails set the albservicesCaseDetails.
      */
@@ -731,7 +733,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property albservices_file_upload_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return albservicesFileUploadDetails
      */
@@ -741,7 +743,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property albservices_file_upload_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param albservicesFileUploadDetails set the albservicesFileUploadDetails.
      */
@@ -751,7 +753,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property albservices_status_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return albservicesStatusDetails
      */
@@ -761,7 +763,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property albservices_status_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param albservicesStatusDetails set the albservicesStatusDetails.
      */
@@ -771,7 +773,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property all_seupgrade_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return allSeupgradeEventDetails
      */
@@ -781,7 +783,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property all_seupgrade_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param allSeupgradeEventDetails set the allSeupgradeEventDetails.
      */
@@ -791,7 +793,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property anomaly_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return anomalyDetails
      */
@@ -801,7 +803,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property anomaly_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param anomalyDetails set the anomalyDetails.
      */
@@ -811,7 +813,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property api_version_deprecated of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return apiVersionDeprecated
      */
@@ -821,7 +823,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property api_version_deprecated of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param apiVersionDeprecated set the apiVersionDeprecated.
      */
@@ -832,6 +834,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return apicAgentBdVrfDetails
      */
     public ApicAgentBridgeDomainVrfChange getApicAgentBdVrfDetails() {
@@ -841,6 +844,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param apicAgentBdVrfDetails set the apicAgentBdVrfDetails.
      */
     public void setApicAgentBdVrfDetails(ApicAgentBridgeDomainVrfChange apicAgentBdVrfDetails) {
@@ -850,6 +854,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return apicAgentGenericDetails
      */
     public ApicAgentGenericEventDetails getApicAgentGenericDetails() {
@@ -859,6 +864,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param apicAgentGenericDetails set the apicAgentGenericDetails.
      */
     public void setApicAgentGenericDetails(ApicAgentGenericEventDetails apicAgentGenericDetails) {
@@ -868,6 +874,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return apicAgentVsNetworkError
      */
     public ApicAgentVsNetworkError getApicAgentVsNetworkError() {
@@ -877,6 +884,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param apicAgentVsNetworkError set the apicAgentVsNetworkError.
      */
     public void setApicAgentVsNetworkError(ApicAgentVsNetworkError apicAgentVsNetworkError) {
@@ -885,7 +893,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property app_signature_event_data of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return appSignatureEventData
      */
@@ -895,7 +903,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property app_signature_event_data of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param appSignatureEventData set the appSignatureEventData.
      */
@@ -907,6 +915,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Details for attach ip status.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return attachIpStatusDetails
      */
@@ -918,6 +927,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Details for attach ip status.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param attachIpStatusDetails set the attachIpStatusDetails.
      */
@@ -927,7 +937,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property avg_uptime_change_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return avgUptimeChangeDetails
      */
@@ -937,7 +947,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property avg_uptime_change_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param avgUptimeChangeDetails set the avgUptimeChangeDetails.
      */
@@ -948,6 +958,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.2.10,18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return awsAsgDeletionDetails
      */
@@ -958,6 +969,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.2.10,18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param awsAsgDeletionDetails set the awsAsgDeletionDetails.
      */
@@ -967,7 +979,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property aws_asg_notif_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return awsAsgNotifDetails
      */
@@ -977,7 +989,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property aws_asg_notif_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param awsAsgNotifDetails set the awsAsgNotifDetails.
      */
@@ -987,7 +999,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property aws_infra_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return awsInfraDetails
      */
@@ -997,7 +1009,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property aws_infra_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param awsInfraDetails set the awsInfraDetails.
      */
@@ -1007,7 +1019,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property azure_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return azureInfo
      */
@@ -1017,7 +1029,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property azure_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param azureInfo set the azureInfo.
      */
@@ -1029,6 +1041,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Azure marketplace license term acceptance event.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return azureMpInfo
      */
@@ -1040,6 +1053,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Azure marketplace license term acceptance event.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param azureMpInfo set the azureMpInfo.
      */
@@ -1049,7 +1063,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property bind_vs_se_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return bindVsSeDetails
      */
@@ -1059,7 +1073,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property bind_vs_se_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param bindVsSeDetails set the bindVsSeDetails.
      */
@@ -1069,7 +1083,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property bm_infra_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return bmInfraDetails
      */
@@ -1079,7 +1093,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property bm_infra_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param bmInfraDetails set the bmInfraDetails.
      */
@@ -1089,7 +1103,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property bootup_fail_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return bootupFailDetails
      */
@@ -1099,7 +1113,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property bootup_fail_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param bootupFailDetails set the bootupFailDetails.
      */
@@ -1109,7 +1123,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property burst_checkout_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return burstCheckoutDetails
      */
@@ -1119,7 +1133,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property burst_checkout_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param burstCheckoutDetails set the burstCheckoutDetails.
      */
@@ -1129,7 +1143,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_cluster_vip_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccClusterVipDetails
      */
@@ -1139,7 +1153,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_cluster_vip_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccClusterVipDetails set the ccClusterVipDetails.
      */
@@ -1149,7 +1163,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_dns_update_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccDnsUpdateDetails
      */
@@ -1159,7 +1173,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_dns_update_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccDnsUpdateDetails set the ccDnsUpdateDetails.
      */
@@ -1169,7 +1183,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_health_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccHealthDetails
      */
@@ -1179,7 +1193,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_health_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccHealthDetails set the ccHealthDetails.
      */
@@ -1189,7 +1203,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_infra_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccInfraDetails
      */
@@ -1199,7 +1213,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_infra_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccInfraDetails set the ccInfraDetails.
      */
@@ -1209,7 +1223,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_ip_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccIpDetails
      */
@@ -1219,7 +1233,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_ip_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccIpDetails set the ccIpDetails.
      */
@@ -1229,7 +1243,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_parkintf_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccParkintfDetails
      */
@@ -1239,7 +1253,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_parkintf_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccParkintfDetails set the ccParkintfDetails.
      */
@@ -1250,6 +1264,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccScalesetNotifDetails
      */
@@ -1260,6 +1275,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccScalesetNotifDetails set the ccScalesetNotifDetails.
      */
@@ -1269,7 +1285,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_se_vm_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccSeVmDetails
      */
@@ -1279,7 +1295,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_se_vm_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccSeVmDetails set the ccSeVmDetails.
      */
@@ -1289,7 +1305,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_sync_services_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccSyncServicesDetails
      */
@@ -1299,7 +1315,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_sync_services_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccSyncServicesDetails set the ccSyncServicesDetails.
      */
@@ -1309,7 +1325,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_tenant_del_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccTenantDelDetails
      */
@@ -1319,7 +1335,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_tenant_del_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccTenantDelDetails set the ccTenantDelDetails.
      */
@@ -1329,7 +1345,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_vip_update_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccVipUpdateDetails
      */
@@ -1339,7 +1355,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_vip_update_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccVipUpdateDetails set the ccVipUpdateDetails.
      */
@@ -1349,7 +1365,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_vnic_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccVnicDetails
      */
@@ -1359,7 +1375,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_vnic_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccVnicDetails set the ccVnicDetails.
      */
@@ -1371,6 +1387,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Central license refresh details.
      * Field introduced in 21.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return centralLicenseRefreshDetails
      */
@@ -1382,6 +1399,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Central license refresh details.
      * Field introduced in 21.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param centralLicenseRefreshDetails set the centralLicenseRefreshDetails.
      */
@@ -1393,6 +1411,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Central license subscription details.
      * Field introduced in 21.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return centralLicenseSubscriptionDetails
      */
@@ -1404,6 +1423,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Central license subscription details.
      * Field introduced in 21.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param centralLicenseSubscriptionDetails set the centralLicenseSubscriptionDetails.
      */
@@ -1413,7 +1433,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cloud_asg_notif_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudAsgNotifDetails
      */
@@ -1423,7 +1443,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cloud_asg_notif_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudAsgNotifDetails set the cloudAsgNotifDetails.
      */
@@ -1433,7 +1453,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cloud_autoscaling_config_failure_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudAutoscalingConfigFailureDetails
      */
@@ -1443,7 +1463,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cloud_autoscaling_config_failure_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudAutoscalingConfigFailureDetails set the cloudAutoscalingConfigFailureDetails.
      */
@@ -1455,6 +1475,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Cloud routes event.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudRouteNotifDetails
      */
@@ -1466,6 +1487,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Cloud routes event.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudRouteNotifDetails set the cloudRouteNotifDetails.
      */
@@ -1475,7 +1497,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cluster_config_failed_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterConfigFailedDetails
      */
@@ -1485,7 +1507,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cluster_config_failed_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clusterConfigFailedDetails set the clusterConfigFailedDetails.
      */
@@ -1495,7 +1517,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cluster_leader_failover_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterLeaderFailoverDetails
      */
@@ -1505,7 +1527,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cluster_leader_failover_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clusterLeaderFailoverDetails set the clusterLeaderFailoverDetails.
      */
@@ -1515,7 +1537,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cluster_node_add_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterNodeAddDetails
      */
@@ -1525,7 +1547,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cluster_node_add_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clusterNodeAddDetails set the clusterNodeAddDetails.
      */
@@ -1535,7 +1557,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cluster_node_db_failed_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterNodeDbFailedDetails
      */
@@ -1545,7 +1567,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cluster_node_db_failed_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clusterNodeDbFailedDetails set the clusterNodeDbFailedDetails.
      */
@@ -1555,7 +1577,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cluster_node_remove_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterNodeRemoveDetails
      */
@@ -1565,7 +1587,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cluster_node_remove_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clusterNodeRemoveDetails set the clusterNodeRemoveDetails.
      */
@@ -1575,7 +1597,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cluster_node_shutdown_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterNodeShutdownDetails
      */
@@ -1585,7 +1607,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cluster_node_shutdown_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clusterNodeShutdownDetails set the clusterNodeShutdownDetails.
      */
@@ -1595,7 +1617,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cluster_node_started_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterNodeStartedDetails
      */
@@ -1605,7 +1627,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cluster_node_started_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clusterNodeStartedDetails set the clusterNodeStartedDetails.
      */
@@ -1615,7 +1637,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cluster_service_critical_failure_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterServiceCriticalFailureDetails
      */
@@ -1625,7 +1647,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cluster_service_critical_failure_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clusterServiceCriticalFailureDetails set the clusterServiceCriticalFailureDetails.
      */
@@ -1635,7 +1657,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cluster_service_failed_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterServiceFailedDetails
      */
@@ -1645,7 +1667,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cluster_service_failed_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clusterServiceFailedDetails set the clusterServiceFailedDetails.
      */
@@ -1655,7 +1677,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cluster_service_restored_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clusterServiceRestoredDetails
      */
@@ -1665,7 +1687,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cluster_service_restored_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clusterServiceRestoredDetails set the clusterServiceRestoredDetails.
      */
@@ -1675,7 +1697,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cntlr_host_list_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cntlrHostListDetails
      */
@@ -1685,7 +1707,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cntlr_host_list_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cntlrHostListDetails set the cntlrHostListDetails.
      */
@@ -1695,7 +1717,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property config_action_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return configActionDetails
      */
@@ -1705,7 +1727,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property config_action_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param configActionDetails set the configActionDetails.
      */
@@ -1715,7 +1737,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property config_create_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return configCreateDetails
      */
@@ -1725,7 +1747,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property config_create_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param configCreateDetails set the configCreateDetails.
      */
@@ -1735,7 +1757,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property config_delete_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return configDeleteDetails
      */
@@ -1745,7 +1767,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property config_delete_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param configDeleteDetails set the configDeleteDetails.
      */
@@ -1755,7 +1777,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property config_password_change_request_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return configPasswordChangeRequestDetails
      */
@@ -1765,7 +1787,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property config_password_change_request_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param configPasswordChangeRequestDetails set the configPasswordChangeRequestDetails.
      */
@@ -1775,7 +1797,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property config_se_grp_flv_update_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return configSeGrpFlvUpdateDetails
      */
@@ -1785,7 +1807,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property config_se_grp_flv_update_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param configSeGrpFlvUpdateDetails set the configSeGrpFlvUpdateDetails.
      */
@@ -1795,7 +1817,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property config_update_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return configUpdateDetails
      */
@@ -1805,7 +1827,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property config_update_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param configUpdateDetails set the configUpdateDetails.
      */
@@ -1815,7 +1837,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property config_user_authrz_rule_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return configUserAuthrzRuleDetails
      */
@@ -1825,7 +1847,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property config_user_authrz_rule_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param configUserAuthrzRuleDetails set the configUserAuthrzRuleDetails.
      */
@@ -1835,7 +1857,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property config_user_login_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return configUserLoginDetails
      */
@@ -1845,7 +1867,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property config_user_login_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param configUserLoginDetails set the configUserLoginDetails.
      */
@@ -1855,7 +1877,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property config_user_logout_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return configUserLogoutDetails
      */
@@ -1865,7 +1887,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property config_user_logout_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param configUserLogoutDetails set the configUserLogoutDetails.
      */
@@ -1875,7 +1897,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property config_user_not_authrz_rule_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return configUserNotAuthrzRuleDetails
      */
@@ -1885,7 +1907,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property config_user_not_authrz_rule_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param configUserNotAuthrzRuleDetails set the configUserNotAuthrzRuleDetails.
      */
@@ -1897,6 +1919,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Connection event.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return connectionEvent
      */
@@ -1908,6 +1931,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Connection event.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param connectionEvent set the connectionEvent.
      */
@@ -1917,7 +1941,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property container_cloud_batch_setup of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return containerCloudBatchSetup
      */
@@ -1927,7 +1951,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property container_cloud_batch_setup of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param containerCloudBatchSetup set the containerCloudBatchSetup.
      */
@@ -1937,7 +1961,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property container_cloud_setup of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return containerCloudSetup
      */
@@ -1947,7 +1971,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property container_cloud_setup of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param containerCloudSetup set the containerCloudSetup.
      */
@@ -1957,7 +1981,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property container_cloud_sevice of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return containerCloudSevice
      */
@@ -1967,7 +1991,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property container_cloud_sevice of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param containerCloudSevice set the containerCloudSevice.
      */
@@ -1978,6 +2002,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controllerDiscontinuousTimeChangeEventDetails
      */
@@ -1988,6 +2013,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param controllerDiscontinuousTimeChangeEventDetails set the controllerDiscontinuousTimeChangeEventDetails.
      */
@@ -1997,7 +2023,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property controller_license_reconcile_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controllerLicenseReconcileDetails
      */
@@ -2007,7 +2033,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property controller_license_reconcile_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param controllerLicenseReconcileDetails set the controllerLicenseReconcileDetails.
      */
@@ -2017,7 +2043,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property crs_deployment_failure of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return crsDeploymentFailure
      */
@@ -2027,7 +2053,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property crs_deployment_failure of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param crsDeploymentFailure set the crsDeploymentFailure.
      */
@@ -2037,7 +2063,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property crs_deployment_success of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return crsDeploymentSuccess
      */
@@ -2047,7 +2073,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property crs_deployment_success of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param crsDeploymentSuccess set the crsDeploymentSuccess.
      */
@@ -2057,7 +2083,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property crs_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return crsDetails
      */
@@ -2067,7 +2093,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property crs_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param crsDetails set the crsDetails.
      */
@@ -2077,7 +2103,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property crs_update_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return crsUpdateDetails
      */
@@ -2087,7 +2113,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property crs_update_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param crsUpdateDetails set the crsUpdateDetails.
      */
@@ -2097,7 +2123,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cs_infra_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return csInfraDetails
      */
@@ -2107,7 +2133,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cs_infra_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param csInfraDetails set the csInfraDetails.
      */
@@ -2119,6 +2145,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Database error event.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return databaseEventInfo
      */
@@ -2130,6 +2157,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Database error event.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param databaseEventInfo set the databaseEventInfo.
      */
@@ -2139,7 +2167,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property delete_se_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return deleteSeDetails
      */
@@ -2149,7 +2177,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property delete_se_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param deleteSeDetails set the deleteSeDetails.
      */
@@ -2161,6 +2189,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Details for detach ip status.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return detachIpStatusDetails
      */
@@ -2172,6 +2201,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Details for detach ip status.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param detachIpStatusDetails set the detachIpStatusDetails.
      */
@@ -2181,7 +2211,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property disable_se_migrate_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return disableSeMigrateDetails
      */
@@ -2191,7 +2221,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property disable_se_migrate_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param disableSeMigrateDetails set the disableSeMigrateDetails.
      */
@@ -2201,7 +2231,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property disc_summary of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return discSummary
      */
@@ -2211,7 +2241,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property disc_summary of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param discSummary set the discSummary.
      */
@@ -2221,7 +2251,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property dns_query_error of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsQueryError
      */
@@ -2231,7 +2261,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property dns_query_error of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dnsQueryError set the dnsQueryError.
      */
@@ -2241,7 +2271,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property dns_sync_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsSyncInfo
      */
@@ -2251,7 +2281,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property dns_sync_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dnsSyncInfo set the dnsSyncInfo.
      */
@@ -2261,7 +2291,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property docker_ucp_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dockerUcpDetails
      */
@@ -2271,7 +2301,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property docker_ucp_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dockerUcpDetails set the dockerUcpDetails.
      */
@@ -2281,7 +2311,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property dos_attack_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dosAttackEventDetails
      */
@@ -2291,7 +2321,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property dos_attack_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dosAttackEventDetails set the dosAttackEventDetails.
      */
@@ -2303,6 +2333,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * False positive details.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return falsePositiveDetails
      */
@@ -2314,6 +2345,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * False positive details.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param falsePositiveDetails set the falsePositiveDetails.
      */
@@ -2323,7 +2355,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property gcp_cloud_router_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gcpCloudRouterInfo
      */
@@ -2333,7 +2365,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property gcp_cloud_router_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gcpCloudRouterInfo set the gcpCloudRouterInfo.
      */
@@ -2343,7 +2375,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property gcp_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gcpInfo
      */
@@ -2353,7 +2385,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property gcp_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gcpInfo set the gcpInfo.
      */
@@ -2363,7 +2395,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property generic_audit_compliance_event_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return genericAuditComplianceEventInfo
      */
@@ -2373,7 +2405,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property generic_audit_compliance_event_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param genericAuditComplianceEventInfo set the genericAuditComplianceEventInfo.
      */
@@ -2383,7 +2415,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property glb_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return glbInfo
      */
@@ -2393,7 +2425,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property glb_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param glbInfo set the glbInfo.
      */
@@ -2403,7 +2435,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property gs_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gsInfo
      */
@@ -2413,7 +2445,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property gs_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gsInfo set the gsInfo.
      */
@@ -2423,7 +2455,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property host_unavail_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostUnavailDetails
      */
@@ -2433,7 +2465,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property host_unavail_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hostUnavailDetails set the hostUnavailDetails.
      */
@@ -2443,7 +2475,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property hs_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hsDetails
      */
@@ -2453,7 +2485,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property hs_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hsDetails set the hsDetails.
      */
@@ -2463,7 +2495,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ip_fail_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipFailDetails
      */
@@ -2473,7 +2505,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ip_fail_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipFailDetails set the ipFailDetails.
      */
@@ -2483,7 +2515,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ip_threat_db_event_data of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipThreatDbEventData
      */
@@ -2493,7 +2525,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ip_threat_db_event_data of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipThreatDbEventData set the ipThreatDbEventData.
      */
@@ -2503,7 +2535,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property license_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseDetails
      */
@@ -2513,7 +2545,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property license_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseDetails set the licenseDetails.
      */
@@ -2523,7 +2555,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property license_expiry_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseExpiryDetails
      */
@@ -2533,7 +2565,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property license_expiry_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseExpiryDetails set the licenseExpiryDetails.
      */
@@ -2543,7 +2575,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property license_tier_switch_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseTierSwitchDetails
      */
@@ -2553,7 +2585,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property license_tier_switch_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseTierSwitchDetails set the licenseTierSwitchDetails.
      */
@@ -2563,7 +2595,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property license_transaction_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseTransactionDetails
      */
@@ -2573,7 +2605,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property license_transaction_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseTransactionDetails set the licenseTransactionDetails.
      */
@@ -2583,7 +2615,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property log_agent_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return logAgentEventDetails
      */
@@ -2593,7 +2625,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property log_agent_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param logAgentEventDetails set the logAgentEventDetails.
      */
@@ -2603,7 +2635,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property marathon_service_port_conflict_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return marathonServicePortConflictDetails
      */
@@ -2613,7 +2645,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property marathon_service_port_conflict_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param marathonServicePortConflictDetails set the marathonServicePortConflictDetails.
      */
@@ -2623,7 +2655,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property memory_balancer_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return memoryBalancerInfo
      */
@@ -2633,7 +2665,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property memory_balancer_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param memoryBalancerInfo set the memoryBalancerInfo.
      */
@@ -2643,7 +2675,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property mesos_infra_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mesosInfraDetails
      */
@@ -2653,7 +2685,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property mesos_infra_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mesosInfraDetails set the mesosInfraDetails.
      */
@@ -2663,7 +2695,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property metric_threshold_up_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metricThresholdUpDetails
      */
@@ -2673,7 +2705,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property metric_threshold_up_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param metricThresholdUpDetails set the metricThresholdUpDetails.
      */
@@ -2683,7 +2715,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property metrics_db_disk_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metricsDbDiskDetails
      */
@@ -2693,7 +2725,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property metrics_db_disk_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param metricsDbDiskDetails set the metricsDbDiskDetails.
      */
@@ -2703,7 +2735,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property metrics_db_queue_full_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metricsDbQueueFullDetails
      */
@@ -2713,7 +2745,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property metrics_db_queue_full_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param metricsDbQueueFullDetails set the metricsDbQueueFullDetails.
      */
@@ -2723,7 +2755,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property metrics_db_queue_healthy_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metricsDbQueueHealthyDetails
      */
@@ -2733,7 +2765,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property metrics_db_queue_healthy_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param metricsDbQueueHealthyDetails set the metricsDbQueueHealthyDetails.
      */
@@ -2743,7 +2775,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property metrics_db_sync_failure_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metricsDbSyncFailureDetails
      */
@@ -2753,7 +2785,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property metrics_db_sync_failure_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param metricsDbSyncFailureDetails set the metricsDbSyncFailureDetails.
      */
@@ -2763,7 +2795,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property mgmt_nw_change_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mgmtNwChangeDetails
      */
@@ -2773,7 +2805,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property mgmt_nw_change_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mgmtNwChangeDetails set the mgmtNwChangeDetails.
      */
@@ -2783,7 +2815,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property modify_networks_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return modifyNetworksDetails
      */
@@ -2793,7 +2825,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property modify_networks_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param modifyNetworksDetails set the modifyNetworksDetails.
      */
@@ -2803,7 +2835,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property network_subnet_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkSubnetDetails
      */
@@ -2813,7 +2845,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property network_subnet_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param networkSubnetDetails set the networkSubnetDetails.
      */
@@ -2825,6 +2857,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Nsx-t serviceinsertion virtualendpoint event.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtEndpointDetails
      */
@@ -2836,6 +2869,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Nsx-t serviceinsertion virtualendpoint event.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtEndpointDetails set the nsxtEndpointDetails.
      */
@@ -2847,6 +2881,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Nsxt image event.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtImgDetails
      */
@@ -2858,6 +2893,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Nsxt image event.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtImgDetails set the nsxtImgDetails.
      */
@@ -2869,6 +2905,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Nsxt cloud event.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtInfo
      */
@@ -2880,6 +2917,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Nsxt cloud event.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtInfo set the nsxtInfo.
      */
@@ -2891,6 +2929,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Nsx-t serviceinsertion redirectpolicy event.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtPolicyDetails
      */
@@ -2902,6 +2941,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Nsx-t serviceinsertion redirectpolicy event.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtPolicyDetails set the nsxtPolicyDetails.
      */
@@ -2913,6 +2953,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Nsx-t serviceinsertion redirectrule event.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtRuleDetails
      */
@@ -2924,6 +2965,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Nsx-t serviceinsertion redirectrule event.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtRuleDetails set the nsxtRuleDetails.
      */
@@ -2935,6 +2977,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Nsx-t serviceinsertion service event.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtServiceDetails
      */
@@ -2946,6 +2989,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Nsx-t serviceinsertion service event.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtServiceDetails set the nsxtServiceDetails.
      */
@@ -2955,7 +2999,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property nw_subnet_clash_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nwSubnetClashDetails
      */
@@ -2965,7 +3009,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property nw_subnet_clash_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nwSubnetClashDetails set the nwSubnetClashDetails.
      */
@@ -2975,7 +3019,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property nw_summarized_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nwSummarizedDetails
      */
@@ -2985,7 +3029,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property nw_summarized_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nwSummarizedDetails set the nwSummarizedDetails.
      */
@@ -2995,7 +3039,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property oci_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ociInfo
      */
@@ -3005,7 +3049,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property oci_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ociInfo set the ociInfo.
      */
@@ -3016,6 +3060,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return osApiVerCheckFailure
      */
@@ -3026,6 +3071,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param osApiVerCheckFailure set the osApiVerCheckFailure.
      */
@@ -3035,7 +3081,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property os_infra_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return osInfraDetails
      */
@@ -3045,7 +3091,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property os_infra_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param osInfraDetails set the osInfraDetails.
      */
@@ -3055,7 +3101,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property os_ip_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return osIpDetails
      */
@@ -3065,7 +3111,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property os_ip_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param osIpDetails set the osIpDetails.
      */
@@ -3075,7 +3121,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property os_lbaudit_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return osLbauditDetails
      */
@@ -3085,7 +3131,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property os_lbaudit_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param osLbauditDetails set the osLbauditDetails.
      */
@@ -3095,7 +3141,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property os_lbplugin_op_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return osLbpluginOpDetails
      */
@@ -3105,7 +3151,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property os_lbplugin_op_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param osLbpluginOpDetails set the osLbpluginOpDetails.
      */
@@ -3115,7 +3161,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property os_se_vm_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return osSeVmDetails
      */
@@ -3125,7 +3171,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property os_se_vm_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param osSeVmDetails set the osSeVmDetails.
      */
@@ -3135,7 +3181,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property os_sync_services_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return osSyncServicesDetails
      */
@@ -3145,7 +3191,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property os_sync_services_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param osSyncServicesDetails set the osSyncServicesDetails.
      */
@@ -3155,7 +3201,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property os_vnic_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return osVnicDetails
      */
@@ -3165,7 +3211,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property os_vnic_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param osVnicDetails set the osVnicDetails.
      */
@@ -3175,7 +3221,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property pool_deployment_failure_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolDeploymentFailureInfo
      */
@@ -3185,7 +3231,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property pool_deployment_failure_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolDeploymentFailureInfo set the poolDeploymentFailureInfo.
      */
@@ -3195,7 +3241,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property pool_deployment_success_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolDeploymentSuccessInfo
      */
@@ -3205,7 +3251,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property pool_deployment_success_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolDeploymentSuccessInfo set the poolDeploymentSuccessInfo.
      */
@@ -3215,7 +3261,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property pool_deployment_update_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolDeploymentUpdateInfo
      */
@@ -3225,7 +3271,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property pool_deployment_update_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolDeploymentUpdateInfo set the poolDeploymentUpdateInfo.
      */
@@ -3235,7 +3281,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property pool_server_delete_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolServerDeleteDetails
      */
@@ -3245,7 +3291,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property pool_server_delete_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolServerDeleteDetails set the poolServerDeleteDetails.
      */
@@ -3255,7 +3301,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property psm_program_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return psmProgramDetails
      */
@@ -3265,7 +3311,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property psm_program_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param psmProgramDetails set the psmProgramDetails.
      */
@@ -3276,6 +3322,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rateLimiterEventDetails
      */
@@ -3286,6 +3333,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rateLimiterEventDetails set the rateLimiterEventDetails.
      */
@@ -3295,7 +3343,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property rebalance_migrate_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rebalanceMigrateDetails
      */
@@ -3305,7 +3353,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property rebalance_migrate_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rebalanceMigrateDetails set the rebalanceMigrateDetails.
      */
@@ -3315,7 +3363,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property rebalance_scalein_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rebalanceScaleinDetails
      */
@@ -3325,7 +3373,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property rebalance_scalein_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rebalanceScaleinDetails set the rebalanceScaleinDetails.
      */
@@ -3335,7 +3383,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property rebalance_scaleout_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rebalanceScaleoutDetails
      */
@@ -3345,7 +3393,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property rebalance_scaleout_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rebalanceScaleoutDetails set the rebalanceScaleoutDetails.
      */
@@ -3355,7 +3403,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property reboot_se_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rebootSeDetails
      */
@@ -3365,7 +3413,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property reboot_se_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rebootSeDetails set the rebootSeDetails.
      */
@@ -3375,7 +3423,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property scheduler_action_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return schedulerActionInfo
      */
@@ -3385,7 +3433,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property scheduler_action_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param schedulerActionInfo set the schedulerActionInfo.
      */
@@ -3396,6 +3444,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seBgpPeerDownDetails
      */
@@ -3406,6 +3455,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seBgpPeerDownDetails set the seBgpPeerDownDetails.
      */
@@ -3415,7 +3465,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_bgp_peer_state_change_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seBgpPeerStateChangeDetails
      */
@@ -3425,7 +3475,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_bgp_peer_state_change_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seBgpPeerStateChangeDetails set the seBgpPeerStateChangeDetails.
      */
@@ -3435,7 +3485,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDetails
      */
@@ -3445,7 +3495,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seDetails set the seDetails.
      */
@@ -3456,6 +3506,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDiscontinuousTimeChangeEventDetails
      */
@@ -3466,6 +3517,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seDiscontinuousTimeChangeEventDetails set the seDiscontinuousTimeChangeEventDetails.
      */
@@ -3475,7 +3527,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_dupip_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDupipEventDetails
      */
@@ -3485,7 +3537,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_dupip_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seDupipEventDetails set the seDupipEventDetails.
      */
@@ -3495,7 +3547,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_gateway_heartbeat_failed_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGatewayHeartbeatFailedDetails
      */
@@ -3505,7 +3557,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_gateway_heartbeat_failed_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGatewayHeartbeatFailedDetails set the seGatewayHeartbeatFailedDetails.
      */
@@ -3515,7 +3567,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_gateway_heartbeat_success_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGatewayHeartbeatSuccessDetails
      */
@@ -3525,7 +3577,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_gateway_heartbeat_success_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGatewayHeartbeatSuccessDetails set the seGatewayHeartbeatSuccessDetails.
      */
@@ -3535,7 +3587,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_geo_db_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGeoDbDetails
      */
@@ -3545,7 +3597,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_geo_db_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGeoDbDetails set the seGeoDbDetails.
      */
@@ -3555,7 +3607,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_hb_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seHbEventDetails
      */
@@ -3565,7 +3617,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_hb_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seHbEventDetails set the seHbEventDetails.
      */
@@ -3578,6 +3630,7 @@ public class EventDetails  {
      * Inter-se datapath heartbeat recovered.
      * One event is generated when heartbeat recovers.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seHbRecoveredEventDetails
      */
@@ -3590,6 +3643,7 @@ public class EventDetails  {
      * Inter-se datapath heartbeat recovered.
      * One event is generated when heartbeat recovers.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seHbRecoveredEventDetails set the seHbRecoveredEventDetails.
      */
@@ -3600,6 +3654,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seHighIngressProcLatencyEventDetails
      */
@@ -3610,6 +3665,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seHighIngressProcLatencyEventDetails set the seHighIngressProcLatencyEventDetails.
      */
@@ -3619,7 +3675,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_hm_gs_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seHmGsDetails
      */
@@ -3629,7 +3685,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_hm_gs_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seHmGsDetails set the seHmGsDetails.
      */
@@ -3639,7 +3695,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_hm_gsgroup_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seHmGsgroupDetails
      */
@@ -3649,7 +3705,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_hm_gsgroup_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seHmGsgroupDetails set the seHmGsgroupDetails.
      */
@@ -3659,7 +3715,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_hm_pool_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seHmPoolDetails
      */
@@ -3669,7 +3725,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_hm_pool_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seHmPoolDetails set the seHmPoolDetails.
      */
@@ -3679,7 +3735,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_hm_vs_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seHmVsDetails
      */
@@ -3689,7 +3745,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_hm_vs_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seHmVsDetails set the seHmVsDetails.
      */
@@ -3699,7 +3755,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_ip6_dad_failed_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seIp6DadFailedEventDetails
      */
@@ -3709,7 +3765,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_ip6_dad_failed_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seIp6DadFailedEventDetails set the seIp6DadFailedEventDetails.
      */
@@ -3719,7 +3775,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_ip_added_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seIpAddedEventDetails
      */
@@ -3729,7 +3785,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_ip_added_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seIpAddedEventDetails set the seIpAddedEventDetails.
      */
@@ -3739,7 +3795,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_ip_removed_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seIpRemovedEventDetails
      */
@@ -3749,7 +3805,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_ip_removed_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seIpRemovedEventDetails set the seIpRemovedEventDetails.
      */
@@ -3759,7 +3815,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_ipfailure_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seIpfailureEventDetails
      */
@@ -3769,7 +3825,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_ipfailure_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seIpfailureEventDetails set the seIpfailureEventDetails.
      */
@@ -3779,7 +3835,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_licensed_bandwdith_exceeded_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seLicensedBandwdithExceededEventDetails
      */
@@ -3789,7 +3845,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_licensed_bandwdith_exceeded_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seLicensedBandwdithExceededEventDetails set the seLicensedBandwdithExceededEventDetails.
      */
@@ -3800,6 +3856,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seMemoryLimitEventDetails
      */
@@ -3810,6 +3867,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seMemoryLimitEventDetails set the seMemoryLimitEventDetails.
      */
@@ -3819,7 +3877,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_persistence_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sePersistenceDetails
      */
@@ -3829,7 +3887,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_persistence_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sePersistenceDetails set the sePersistenceDetails.
      */
@@ -3839,7 +3897,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_pool_lb_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sePoolLbDetails
      */
@@ -3849,7 +3907,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_pool_lb_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sePoolLbDetails set the sePoolLbDetails.
      */
@@ -3859,7 +3917,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_reconcile_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seReconcileDetails
      */
@@ -3869,7 +3927,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_reconcile_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seReconcileDetails set the seReconcileDetails.
      */
@@ -3879,7 +3937,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_thresh_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seThreshEventDetails
      */
@@ -3889,7 +3947,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_thresh_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seThreshEventDetails set the seThreshEventDetails.
      */
@@ -3899,7 +3957,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_vnic_down_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seVnicDownEventDetails
      */
@@ -3909,7 +3967,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_vnic_down_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seVnicDownEventDetails set the seVnicDownEventDetails.
      */
@@ -3919,7 +3977,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_vnic_tx_queue_stall_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seVnicTxQueueStallEventDetails
      */
@@ -3929,7 +3987,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_vnic_tx_queue_stall_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seVnicTxQueueStallEventDetails set the seVnicTxQueueStallEventDetails.
      */
@@ -3939,7 +3997,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_vnic_up_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seVnicUpEventDetails
      */
@@ -3949,7 +4007,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_vnic_up_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seVnicUpEventDetails set the seVnicUpEventDetails.
      */
@@ -3961,6 +4019,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Vs flows disrupted when a vs was deleted from se.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seVsDelFlowsDisrupted
      */
@@ -3972,6 +4031,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Vs flows disrupted when a vs was deleted from se.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seVsDelFlowsDisrupted set the seVsDelFlowsDisrupted.
      */
@@ -3981,7 +4041,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_vs_fault_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seVsFaultEventDetails
      */
@@ -3991,7 +4051,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_vs_fault_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seVsFaultEventDetails set the seVsFaultEventDetails.
      */
@@ -4002,6 +4062,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 18.2.11,20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seVsPktBufHighEventDetails
      */
@@ -4012,6 +4073,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 18.2.11,20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seVsPktBufHighEventDetails set the seVsPktBufHighEventDetails.
      */
@@ -4021,7 +4083,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property sec_mgr_data_event of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return secMgrDataEvent
      */
@@ -4031,7 +4093,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property sec_mgr_data_event of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param secMgrDataEvent set the secMgrDataEvent.
      */
@@ -4043,6 +4105,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Security-mgr ua cache event details.
      * Field introduced in 21.1.2.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return secMgrUaEventDetails
      */
@@ -4054,6 +4117,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Security-mgr ua cache event details.
      * Field introduced in 21.1.2.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param secMgrUaEventDetails set the secMgrUaEventDetails.
      */
@@ -4063,7 +4127,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property secure_key_exchange_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return secureKeyExchangeInfo
      */
@@ -4073,7 +4137,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property secure_key_exchange_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param secureKeyExchangeInfo set the secureKeyExchangeInfo.
      */
@@ -4083,7 +4147,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property semigrate_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return semigrateEventDetails
      */
@@ -4093,7 +4157,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property semigrate_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param semigrateEventDetails set the semigrateEventDetails.
      */
@@ -4103,7 +4167,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property server_autoscale_failed_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverAutoscaleFailedInfo
      */
@@ -4113,7 +4177,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property server_autoscale_failed_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serverAutoscaleFailedInfo set the serverAutoscaleFailedInfo.
      */
@@ -4123,7 +4187,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property server_autoscalein_complete_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverAutoscaleinCompleteInfo
      */
@@ -4133,7 +4197,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property server_autoscalein_complete_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serverAutoscaleinCompleteInfo set the serverAutoscaleinCompleteInfo.
      */
@@ -4143,7 +4207,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property server_autoscalein_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverAutoscaleinInfo
      */
@@ -4153,7 +4217,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property server_autoscalein_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serverAutoscaleinInfo set the serverAutoscaleinInfo.
      */
@@ -4163,7 +4227,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property server_autoscaleout_complete_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverAutoscaleoutCompleteInfo
      */
@@ -4173,7 +4237,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property server_autoscaleout_complete_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serverAutoscaleoutCompleteInfo set the serverAutoscaleoutCompleteInfo.
      */
@@ -4183,7 +4247,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property server_autoscaleout_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverAutoscaleoutInfo
      */
@@ -4193,7 +4257,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property server_autoscaleout_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serverAutoscaleoutInfo set the serverAutoscaleoutInfo.
      */
@@ -4203,7 +4267,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property seupgrade_disrupted_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seupgradeDisruptedDetails
      */
@@ -4213,7 +4277,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property seupgrade_disrupted_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seupgradeDisruptedDetails set the seupgradeDisruptedDetails.
      */
@@ -4223,7 +4287,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property seupgrade_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seupgradeEventDetails
      */
@@ -4233,7 +4297,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property seupgrade_event_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seupgradeEventDetails set the seupgradeEventDetails.
      */
@@ -4243,7 +4307,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property seupgrade_migrate_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seupgradeMigrateDetails
      */
@@ -4253,7 +4317,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property seupgrade_migrate_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seupgradeMigrateDetails set the seupgradeMigrateDetails.
      */
@@ -4263,7 +4327,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property seupgrade_scalein_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seupgradeScaleinDetails
      */
@@ -4273,7 +4337,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property seupgrade_scalein_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seupgradeScaleinDetails set the seupgradeScaleinDetails.
      */
@@ -4283,7 +4347,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property seupgrade_scaleout_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seupgradeScaleoutDetails
      */
@@ -4293,7 +4357,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property seupgrade_scaleout_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seupgradeScaleoutDetails set the seupgradeScaleoutDetails.
      */
@@ -4303,7 +4367,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property spawn_se_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return spawnSeDetails
      */
@@ -4313,7 +4377,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property spawn_se_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param spawnSeDetails set the spawnSeDetails.
      */
@@ -4323,7 +4387,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ssl_expire_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sslExpireDetails
      */
@@ -4333,7 +4397,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ssl_expire_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sslExpireDetails set the sslExpireDetails.
      */
@@ -4343,7 +4407,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ssl_export_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sslExportDetails
      */
@@ -4353,7 +4417,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ssl_export_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sslExportDetails set the sslExportDetails.
      */
@@ -4363,7 +4427,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ssl_ignored_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sslIgnoredDetails
      */
@@ -4373,7 +4437,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ssl_ignored_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sslIgnoredDetails set the sslIgnoredDetails.
      */
@@ -4383,7 +4447,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ssl_renew_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sslRenewDetails
      */
@@ -4393,7 +4457,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ssl_renew_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sslRenewDetails set the sslRenewDetails.
      */
@@ -4403,7 +4467,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ssl_renew_failed_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sslRenewFailedDetails
      */
@@ -4413,7 +4477,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ssl_renew_failed_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sslRenewFailedDetails set the sslRenewFailedDetails.
      */
@@ -4423,7 +4487,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ssl_revoked_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sslRevokedDetails
      */
@@ -4433,7 +4497,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ssl_revoked_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sslRevokedDetails set the sslRevokedDetails.
      */
@@ -4443,7 +4507,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property switchover_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return switchoverDetails
      */
@@ -4453,7 +4517,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property switchover_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param switchoverDetails set the switchoverDetails.
      */
@@ -4463,7 +4527,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property switchover_fail_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return switchoverFailDetails
      */
@@ -4473,7 +4537,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property switchover_fail_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param switchoverFailDetails set the switchoverFailDetails.
      */
@@ -4485,6 +4549,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Azure cloud sync services event details.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return syncServicesInfo
      */
@@ -4496,6 +4561,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Azure cloud sync services event details.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param syncServicesInfo set the syncServicesInfo.
      */
@@ -4505,7 +4571,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property tencent_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tencentInfo
      */
@@ -4515,7 +4581,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property tencent_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tencentInfo set the tencentInfo.
      */
@@ -4525,7 +4591,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property unbind_vs_se_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return unbindVsSeDetails
      */
@@ -4535,7 +4601,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property unbind_vs_se_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param unbindVsSeDetails set the unbindVsSeDetails.
      */
@@ -4546,6 +4612,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return upgradeEntry
      */
@@ -4556,6 +4623,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param upgradeEntry set the upgradeEntry.
      */
@@ -4566,6 +4634,7 @@ public class EventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return upgradeStatusInfo
      */
@@ -4576,6 +4645,7 @@ public class EventDetails  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param upgradeStatusInfo set the upgradeStatusInfo.
      */
@@ -4585,7 +4655,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vca_infra_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcaInfraDetails
      */
@@ -4595,7 +4665,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vca_infra_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcaInfraDetails set the vcaInfraDetails.
      */
@@ -4607,6 +4677,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Vcenter cluster event.
      * Field introduced in 20.1.7, 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterClusterDetails
      */
@@ -4618,6 +4689,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Vcenter cluster event.
      * Field introduced in 20.1.7, 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterClusterDetails set the vcenterClusterDetails.
      */
@@ -4627,7 +4699,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_connectivity_status of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterConnectivityStatus
      */
@@ -4637,7 +4709,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_connectivity_status of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterConnectivityStatus set the vcenterConnectivityStatus.
      */
@@ -4647,7 +4719,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterDetails
      */
@@ -4657,7 +4729,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterDetails set the vcenterDetails.
      */
@@ -4667,7 +4739,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_disc_failure of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterDiscFailure
      */
@@ -4677,7 +4749,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_disc_failure of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterDiscFailure set the vcenterDiscFailure.
      */
@@ -4687,7 +4759,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_network_limit of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterNetworkLimit
      */
@@ -4697,7 +4769,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_network_limit of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterNetworkLimit set the vcenterNetworkLimit.
      */
@@ -4707,7 +4779,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_obj_delete_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterObjDeleteDetails
      */
@@ -4717,7 +4789,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_obj_delete_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterObjDeleteDetails set the vcenterObjDeleteDetails.
      */
@@ -4727,7 +4799,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vip_autoscale of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vipAutoscale
      */
@@ -4737,7 +4809,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vip_autoscale of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vipAutoscale set the vipAutoscale.
      */
@@ -4747,7 +4819,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vip_dns_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vipDnsInfo
      */
@@ -4757,7 +4829,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vip_dns_info of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vipDnsInfo set the vipDnsInfo.
      */
@@ -4769,6 +4841,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Details for vip symmetry.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vipSymmetryDetails
      */
@@ -4780,6 +4853,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Details for vip symmetry.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vipSymmetryDetails set the vipSymmetryDetails.
      */
@@ -4789,7 +4863,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vm_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vmDetails
      */
@@ -4799,7 +4873,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vm_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vmDetails set the vmDetails.
      */
@@ -4809,7 +4883,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vs_awaitingse_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsAwaitingseDetails
      */
@@ -4819,7 +4893,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vs_awaitingse_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsAwaitingseDetails set the vsAwaitingseDetails.
      */
@@ -4829,7 +4903,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vs_error_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsErrorDetails
      */
@@ -4839,7 +4913,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vs_error_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsErrorDetails set the vsErrorDetails.
      */
@@ -4849,7 +4923,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vs_fsm_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsFsmDetails
      */
@@ -4859,7 +4933,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vs_fsm_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsFsmDetails set the vsFsmDetails.
      */
@@ -4869,7 +4943,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vs_initialplacement_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsInitialplacementDetails
      */
@@ -4879,7 +4953,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vs_initialplacement_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsInitialplacementDetails set the vsInitialplacementDetails.
      */
@@ -4889,7 +4963,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vs_migrate_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsMigrateDetails
      */
@@ -4899,7 +4973,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vs_migrate_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsMigrateDetails set the vsMigrateDetails.
      */
@@ -4909,7 +4983,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vs_pool_nw_fltr_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsPoolNwFltrDetails
      */
@@ -4919,7 +4993,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vs_pool_nw_fltr_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsPoolNwFltrDetails set the vsPoolNwFltrDetails.
      */
@@ -4929,7 +5003,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vs_scalein_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsScaleinDetails
      */
@@ -4939,7 +5013,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vs_scalein_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsScaleinDetails set the vsScaleinDetails.
      */
@@ -4949,7 +5023,7 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vs_scaleout_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsScaleoutDetails
      */
@@ -4959,7 +5033,7 @@ public class EventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vs_scaleout_details of obj type eventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsScaleoutDetails set the vsScaleoutDetails.
      */
@@ -4971,6 +5045,7 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Details for primary switchover status.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsSwitchoverDetails
      */
@@ -4982,6 +5057,7 @@ public class EventDetails  {
      * This is the setter method to the attribute.
      * Details for primary switchover status.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsSwitchoverDetails set the vsSwitchoverDetails.
      */

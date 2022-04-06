@@ -36,7 +36,7 @@ public class DiskUsage  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cntlr_disk_free of obj type diskusage field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cntlrDiskFree
      */
@@ -46,7 +46,7 @@ public class DiskUsage  {
 
     /**
      * This is the setter method. this will set the cntlrDiskFree
-     * Placeholder for description of property cntlr_disk_free of obj type diskusage field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cntlrDiskFree
      */
@@ -56,7 +56,7 @@ public class DiskUsage  {
 
     /**
      * This is the setter method this will set the cntlrDiskFree
-     * Placeholder for description of property cntlr_disk_free of obj type diskusage field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cntlrDiskFree
      */
@@ -69,7 +69,7 @@ public class DiskUsage  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cntlr_disk_usage of obj type diskusage field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cntlrDiskUsage
      */
@@ -79,7 +79,7 @@ public class DiskUsage  {
 
     /**
      * This is the setter method. this will set the cntlrDiskUsage
-     * Placeholder for description of property cntlr_disk_usage of obj type diskusage field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cntlrDiskUsage
      */
@@ -89,7 +89,7 @@ public class DiskUsage  {
 
     /**
      * This is the setter method this will set the cntlrDiskUsage
-     * Placeholder for description of property cntlr_disk_usage of obj type diskusage field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cntlrDiskUsage
      */
@@ -102,7 +102,7 @@ public class DiskUsage  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_disk_free of obj type diskusage field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDiskFree
      */
@@ -112,7 +112,7 @@ public class DiskUsage  {
 
     /**
      * This is the setter method. this will set the seDiskFree
-     * Placeholder for description of property se_disk_free of obj type diskusage field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDiskFree
      */
@@ -122,7 +122,7 @@ public class DiskUsage  {
 
     /**
      * This is the setter method this will set the seDiskFree
-     * Placeholder for description of property se_disk_free of obj type diskusage field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDiskFree
      */
@@ -135,7 +135,7 @@ public class DiskUsage  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_disk_usage of obj type diskusage field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDiskUsage
      */
@@ -145,7 +145,7 @@ public class DiskUsage  {
 
     /**
      * This is the setter method. this will set the seDiskUsage
-     * Placeholder for description of property se_disk_usage of obj type diskusage field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDiskUsage
      */
@@ -155,7 +155,7 @@ public class DiskUsage  {
 
     /**
      * This is the setter method this will set the seDiskUsage
-     * Placeholder for description of property se_disk_usage of obj type diskusage field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDiskUsage
      */

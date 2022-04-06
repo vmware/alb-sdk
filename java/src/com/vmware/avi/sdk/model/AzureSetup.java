@@ -55,7 +55,7 @@ public class AzureSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property alb_id of obj type azuresetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return albId
      */
@@ -65,7 +65,7 @@ public class AzureSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property alb_id of obj type azuresetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param albId set the albId.
      */
@@ -75,7 +75,7 @@ public class AzureSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_id of obj type azuresetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccId
      */
@@ -85,7 +85,7 @@ public class AzureSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_id of obj type azuresetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccId set the ccId.
      */
@@ -95,7 +95,7 @@ public class AzureSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property nic_id of obj type azuresetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nicId
      */
@@ -105,7 +105,7 @@ public class AzureSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property nic_id of obj type azuresetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nicId set the nicId.
      */
@@ -115,7 +115,7 @@ public class AzureSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property reason of obj type azuresetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -125,7 +125,7 @@ public class AzureSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property reason of obj type azuresetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -135,7 +135,7 @@ public class AzureSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property resource_group of obj type azuresetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resourceGroup
      */
@@ -145,7 +145,7 @@ public class AzureSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property resource_group of obj type azuresetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param resourceGroup set the resourceGroup.
      */
@@ -155,7 +155,7 @@ public class AzureSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property status of obj type azuresetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return status
      */
@@ -165,7 +165,7 @@ public class AzureSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property status of obj type azuresetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param status set the status.
      */
@@ -175,7 +175,7 @@ public class AzureSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property subscription_id of obj type azuresetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subscriptionId
      */
@@ -185,7 +185,7 @@ public class AzureSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property subscription_id of obj type azuresetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subscriptionId set the subscriptionId.
      */
@@ -194,7 +194,7 @@ public class AzureSetup  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vips of obj type azuresetup field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vips
      */
@@ -204,7 +204,7 @@ public class AzureSetup  {
 
     /**
      * This is the setter method. this will set the vips
-     * Placeholder for description of property vips of obj type azuresetup field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vips
      */
@@ -214,7 +214,7 @@ public class AzureSetup  {
 
     /**
      * This is the setter method this will set the vips
-     * Placeholder for description of property vips of obj type azuresetup field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vips
      */
@@ -228,7 +228,7 @@ public class AzureSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vnet_id of obj type azuresetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vnetId
      */
@@ -238,7 +238,7 @@ public class AzureSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vnet_id of obj type azuresetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vnetId set the vnetId.
      */
@@ -247,7 +247,7 @@ public class AzureSetup  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifiers of vss.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsUuids
      */
@@ -257,7 +257,7 @@ public class AzureSetup  {
 
     /**
      * This is the setter method. this will set the vsUuids
-     * Unique object identifiers of vss.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsUuids
      */
@@ -267,7 +267,7 @@ public class AzureSetup  {
 
     /**
      * This is the setter method this will set the vsUuids
-     * Unique object identifiers of vss.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsUuids
      */

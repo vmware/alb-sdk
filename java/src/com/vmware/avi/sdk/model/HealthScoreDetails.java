@@ -67,7 +67,7 @@ public class HealthScoreDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property anomaly_penalty of obj type healthscoredetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return anomalyPenalty
      */
@@ -77,7 +77,7 @@ public class HealthScoreDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property anomaly_penalty of obj type healthscoredetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param anomalyPenalty set the anomalyPenalty.
      */
@@ -88,6 +88,7 @@ public class HealthScoreDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Reason for anomaly penalty.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return anomalyReason
      */
@@ -98,6 +99,7 @@ public class HealthScoreDetails  {
     /**
      * This is the setter method to the attribute.
      * Reason for anomaly penalty.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param anomalyReason set the anomalyReason.
      */
@@ -108,6 +110,7 @@ public class HealthScoreDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Reason for performance score.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return performanceReason
      */
@@ -118,6 +121,7 @@ public class HealthScoreDetails  {
     /**
      * This is the setter method to the attribute.
      * Reason for performance score.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param performanceReason set the performanceReason.
      */
@@ -127,7 +131,7 @@ public class HealthScoreDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property performance_score of obj type healthscoredetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @return performanceScore
      */
@@ -137,7 +141,7 @@ public class HealthScoreDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property performance_score of obj type healthscoredetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 100.
      * @param performanceScore set the performanceScore.
      */
@@ -147,7 +151,7 @@ public class HealthScoreDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property previous_value of obj type healthscoredetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return previousValue
      */
@@ -157,7 +161,7 @@ public class HealthScoreDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property previous_value of obj type healthscoredetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param previousValue set the previousValue.
      */
@@ -168,6 +172,7 @@ public class HealthScoreDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Reason for the health score change.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -178,6 +183,7 @@ public class HealthScoreDetails  {
     /**
      * This is the setter method to the attribute.
      * Reason for the health score change.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -187,7 +193,7 @@ public class HealthScoreDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property resources_penalty of obj type healthscoredetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return resourcesPenalty
      */
@@ -197,7 +203,7 @@ public class HealthScoreDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property resources_penalty of obj type healthscoredetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param resourcesPenalty set the resourcesPenalty.
      */
@@ -208,6 +214,7 @@ public class HealthScoreDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Reason for resources penalty.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resourcesReason
      */
@@ -218,6 +225,7 @@ public class HealthScoreDetails  {
     /**
      * This is the setter method to the attribute.
      * Reason for resources penalty.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param resourcesReason set the resourcesReason.
      */
@@ -227,7 +235,7 @@ public class HealthScoreDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property security_penalty of obj type healthscoredetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return securityPenalty
      */
@@ -237,7 +245,7 @@ public class HealthScoreDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property security_penalty of obj type healthscoredetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param securityPenalty set the securityPenalty.
      */
@@ -248,6 +256,7 @@ public class HealthScoreDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Reason for security threat level.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return securityReason
      */
@@ -258,6 +267,7 @@ public class HealthScoreDetails  {
     /**
      * This is the setter method to the attribute.
      * Reason for security threat level.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param securityReason set the securityReason.
      */
@@ -268,6 +278,7 @@ public class HealthScoreDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * The step interval in seconds.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return step
      */
@@ -278,6 +289,7 @@ public class HealthScoreDetails  {
     /**
      * This is the setter method to the attribute.
      * The step interval in seconds.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param step set the step.
      */
@@ -288,6 +300,7 @@ public class HealthScoreDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Resource prefix containing entity information.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subResourcePrefix
      */
@@ -298,6 +311,7 @@ public class HealthScoreDetails  {
     /**
      * This is the setter method to the attribute.
      * Resource prefix containing entity information.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param subResourcePrefix set the subResourcePrefix.
      */
@@ -307,7 +321,7 @@ public class HealthScoreDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property timestamp of obj type healthscoredetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return timestamp
      */
@@ -317,7 +331,7 @@ public class HealthScoreDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property timestamp of obj type healthscoredetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param timestamp set the timestamp.
      */
@@ -327,7 +341,7 @@ public class HealthScoreDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property value of obj type healthscoredetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return value
      */
@@ -337,7 +351,7 @@ public class HealthScoreDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property value of obj type healthscoredetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param value set the value.
      */

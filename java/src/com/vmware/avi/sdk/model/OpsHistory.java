@@ -61,6 +61,7 @@ public class OpsHistory  {
      * Duration of upgrade operation in seconds.
      * Field introduced in 20.1.4.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return duration
      */
@@ -73,6 +74,7 @@ public class OpsHistory  {
      * Duration of upgrade operation in seconds.
      * Field introduced in 20.1.4.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param duration set the duration.
      */
@@ -84,6 +86,7 @@ public class OpsHistory  {
      * This is the getter method this will return the attribute value.
      * End time of upgrade operation.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return endTime
      */
@@ -95,6 +98,7 @@ public class OpsHistory  {
      * This is the setter method to the attribute.
      * End time of upgrade operation.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param endTime set the endTime.
      */
@@ -107,6 +111,7 @@ public class OpsHistory  {
      * Upgrade operation performed.
      * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ops
      */
@@ -119,6 +124,7 @@ public class OpsHistory  {
      * Upgrade operation performed.
      * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ops set the ops.
      */
@@ -130,6 +136,7 @@ public class OpsHistory  {
      * This is the getter method this will return the attribute value.
      * Patch after the upgrade operation.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return patchVersion
      */
@@ -141,6 +148,7 @@ public class OpsHistory  {
      * This is the setter method to the attribute.
      * Patch after the upgrade operation.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param patchVersion set the patchVersion.
      */
@@ -151,6 +159,7 @@ public class OpsHistory  {
      * This is the getter method this will return the attribute value.
      * Serviceenginegroup/se events for upgrade operation.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seUpgradeEvents
      */
@@ -162,6 +171,7 @@ public class OpsHistory  {
      * This is the setter method. this will set the seUpgradeEvents
      * Serviceenginegroup/se events for upgrade operation.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seUpgradeEvents
      */
@@ -173,6 +183,7 @@ public class OpsHistory  {
      * This is the setter method this will set the seUpgradeEvents
      * Serviceenginegroup/se events for upgrade operation.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seUpgradeEvents
      */
@@ -188,6 +199,7 @@ public class OpsHistory  {
      * This is the getter method this will return the attribute value.
      * Segroup status for the upgrade operation.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return segStatus
      */
@@ -199,6 +211,7 @@ public class OpsHistory  {
      * This is the setter method to the attribute.
      * Segroup status for the upgrade operation.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param segStatus set the segStatus.
      */
@@ -210,6 +223,7 @@ public class OpsHistory  {
      * This is the getter method this will return the attribute value.
      * Start time of upgrade operation.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return startTime
      */
@@ -221,6 +235,7 @@ public class OpsHistory  {
      * This is the setter method to the attribute.
      * Start time of upgrade operation.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param startTime set the startTime.
      */
@@ -232,6 +247,7 @@ public class OpsHistory  {
      * This is the getter method this will return the attribute value.
      * Upgrade operation status.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return state
      */
@@ -243,6 +259,7 @@ public class OpsHistory  {
      * This is the setter method to the attribute.
      * Upgrade operation status.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param state set the state.
      */
@@ -255,6 +272,7 @@ public class OpsHistory  {
      * Record of pre/post snapshot captured for current upgrade operation.
      * It is a reference to an object of type statediffoperation.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return statediffRef
      */
@@ -267,6 +285,7 @@ public class OpsHistory  {
      * Record of pre/post snapshot captured for current upgrade operation.
      * It is a reference to an object of type statediffoperation.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param statediffRef set the statediffRef.
      */
@@ -277,6 +296,7 @@ public class OpsHistory  {
      * This is the getter method this will return the attribute value.
      * Controller events for upgrade operation.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return upgradeEvents
      */
@@ -288,6 +308,7 @@ public class OpsHistory  {
      * This is the setter method. this will set the upgradeEvents
      * Controller events for upgrade operation.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return upgradeEvents
      */
@@ -299,6 +320,7 @@ public class OpsHistory  {
      * This is the setter method this will set the upgradeEvents
      * Controller events for upgrade operation.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return upgradeEvents
      */
@@ -314,6 +336,7 @@ public class OpsHistory  {
      * This is the getter method this will return the attribute value.
      * Image after the upgrade operation.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return version
      */
@@ -325,6 +348,7 @@ public class OpsHistory  {
      * This is the setter method to the attribute.
      * Image after the upgrade operation.
      * Field introduced in 20.1.4.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param version set the version.
      */

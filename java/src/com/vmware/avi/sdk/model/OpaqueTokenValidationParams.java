@@ -33,6 +33,7 @@ public class OpaqueTokenValidationParams  {
      * This is the getter method this will return the attribute value.
      * Resource server specific identifier used to validate against introspection endpoint when access token is opaque.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverId
      */
@@ -44,6 +45,7 @@ public class OpaqueTokenValidationParams  {
      * This is the setter method to the attribute.
      * Resource server specific identifier used to validate against introspection endpoint when access token is opaque.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serverId set the serverId.
      */
@@ -55,6 +57,7 @@ public class OpaqueTokenValidationParams  {
      * This is the getter method this will return the attribute value.
      * Resource server specific password/secret.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverSecret
      */
@@ -66,6 +69,7 @@ public class OpaqueTokenValidationParams  {
      * This is the setter method to the attribute.
      * Resource server specific password/secret.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serverSecret set the serverSecret.
      */

@@ -51,6 +51,7 @@ public class GeoDB extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Description.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -62,6 +63,7 @@ public class GeoDB extends AviRestResource  {
      * This is the setter method to the attribute.
      * Description.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -72,6 +74,7 @@ public class GeoDB extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Geo database files.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return files
      */
@@ -83,6 +86,7 @@ public class GeoDB extends AviRestResource  {
      * This is the setter method. this will set the files
      * Geo database files.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return files
      */
@@ -94,6 +98,7 @@ public class GeoDB extends AviRestResource  {
      * This is the setter method this will set the files
      * Geo database files.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return files
      */
@@ -109,6 +114,7 @@ public class GeoDB extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * This field indicates that this object is replicated across gslb federation.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return isFederated
      */
@@ -120,6 +126,7 @@ public class GeoDB extends AviRestResource  {
      * This is the setter method to the attribute.
      * This field indicates that this object is replicated across gslb federation.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param isFederated set the isFederated.
      */
@@ -131,6 +138,7 @@ public class GeoDB extends AviRestResource  {
      * Custom mappings of geo values.
      * All mappings which start with the prefix 'system-' (any case) are reserved for system default objects and may be overwritten.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mappings
      */
@@ -143,6 +151,7 @@ public class GeoDB extends AviRestResource  {
      * Custom mappings of geo values.
      * All mappings which start with the prefix 'system-' (any case) are reserved for system default objects and may be overwritten.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mappings
      */
@@ -155,6 +164,7 @@ public class GeoDB extends AviRestResource  {
      * Custom mappings of geo values.
      * All mappings which start with the prefix 'system-' (any case) are reserved for system default objects and may be overwritten.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mappings
      */
@@ -170,6 +180,7 @@ public class GeoDB extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Geo database name.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -181,6 +192,7 @@ public class GeoDB extends AviRestResource  {
      * This is the setter method to the attribute.
      * Geo database name.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -193,6 +205,7 @@ public class GeoDB extends AviRestResource  {
      * Tenant that this object belongs to.
      * It is a reference to an object of type tenant.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -205,6 +218,7 @@ public class GeoDB extends AviRestResource  {
      * Tenant that this object belongs to.
      * It is a reference to an object of type tenant.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -233,6 +247,7 @@ public class GeoDB extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid of this object.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -244,6 +259,7 @@ public class GeoDB extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid of this object.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

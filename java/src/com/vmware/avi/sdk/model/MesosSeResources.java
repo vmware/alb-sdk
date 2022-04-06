@@ -38,6 +38,7 @@ public class MesosSeResources  {
     /**
      * This is the getter method this will return the attribute value.
      * Attribute (fleet or mesos) key of hosts.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return attributeKey
      */
@@ -48,6 +49,7 @@ public class MesosSeResources  {
     /**
      * This is the setter method to the attribute.
      * Attribute (fleet or mesos) key of hosts.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param attributeKey set the attributeKey.
      */
@@ -58,6 +60,7 @@ public class MesosSeResources  {
     /**
      * This is the getter method this will return the attribute value.
      * Attribute (fleet or mesos) value of hosts.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return attributeValue
      */
@@ -68,6 +71,7 @@ public class MesosSeResources  {
     /**
      * This is the setter method to the attribute.
      * Attribute (fleet or mesos) value of hosts.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param attributeValue set the attributeValue.
      */
@@ -78,6 +82,7 @@ public class MesosSeResources  {
     /**
      * This is the getter method this will return the attribute value.
      * Obsolete - ignored.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.0f.
      * @return cpu
      */
@@ -88,6 +93,7 @@ public class MesosSeResources  {
     /**
      * This is the setter method to the attribute.
      * Obsolete - ignored.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.0f.
      * @param cpu set the cpu.
      */
@@ -98,6 +104,7 @@ public class MesosSeResources  {
     /**
      * This is the getter method this will return the attribute value.
      * Obsolete - ignored.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
      * @return memory
      */
@@ -108,6 +115,7 @@ public class MesosSeResources  {
     /**
      * This is the setter method to the attribute.
      * Obsolete - ignored.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 4096.
      * @param memory set the memory.
      */

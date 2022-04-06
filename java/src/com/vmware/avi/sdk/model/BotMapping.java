@@ -41,6 +41,7 @@ public class BotMapping extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Rules for bot classification.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mappingRules
      */
@@ -52,6 +53,7 @@ public class BotMapping extends AviRestResource  {
      * This is the setter method. this will set the mappingRules
      * Rules for bot classification.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mappingRules
      */
@@ -63,6 +65,7 @@ public class BotMapping extends AviRestResource  {
      * This is the setter method this will set the mappingRules
      * Rules for bot classification.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mappingRules
      */
@@ -78,6 +81,7 @@ public class BotMapping extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * The name of this mapping.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -89,6 +93,7 @@ public class BotMapping extends AviRestResource  {
      * This is the setter method to the attribute.
      * The name of this mapping.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -101,6 +106,7 @@ public class BotMapping extends AviRestResource  {
      * The unique identifier of the tenant to which this mapping belongs.
      * It is a reference to an object of type tenant.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -113,6 +119,7 @@ public class BotMapping extends AviRestResource  {
      * The unique identifier of the tenant to which this mapping belongs.
      * It is a reference to an object of type tenant.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -141,6 +148,7 @@ public class BotMapping extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * A unique identifier for this mapping.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -152,6 +160,7 @@ public class BotMapping extends AviRestResource  {
      * This is the setter method to the attribute.
      * A unique identifier for this mapping.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

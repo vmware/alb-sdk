@@ -36,6 +36,7 @@ public class SeBgpPeerStateChangeDetails  {
      * This is the getter method this will return the attribute value.
      * Ip address of bgp peer.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return peerIp
      */
@@ -47,6 +48,7 @@ public class SeBgpPeerStateChangeDetails  {
      * This is the setter method to the attribute.
      * Ip address of bgp peer.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param peerIp set the peerIp.
      */
@@ -58,6 +60,7 @@ public class SeBgpPeerStateChangeDetails  {
      * This is the getter method this will return the attribute value.
      * Bgp peer state.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return peerState
      */
@@ -69,6 +72,7 @@ public class SeBgpPeerStateChangeDetails  {
      * This is the setter method to the attribute.
      * Bgp peer state.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param peerState set the peerState.
      */
@@ -80,6 +84,7 @@ public class SeBgpPeerStateChangeDetails  {
      * This is the getter method this will return the attribute value.
      * Name of virtual routing context in which bgp is configured.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vrfName
      */
@@ -91,6 +96,7 @@ public class SeBgpPeerStateChangeDetails  {
      * This is the setter method to the attribute.
      * Name of virtual routing context in which bgp is configured.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vrfName set the vrfName.
      */
