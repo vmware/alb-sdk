@@ -39,6 +39,7 @@ public class SeRuntimeCompressionProperties  {
      * This is the getter method this will return the attribute value.
      * If client rtt is higher than this threshold, enable normal compression on the response.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return maxLowRtt
      */
@@ -50,6 +51,7 @@ public class SeRuntimeCompressionProperties  {
      * This is the setter method to the attribute.
      * If client rtt is higher than this threshold, enable normal compression on the response.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param maxLowRtt set the maxLowRtt.
      */
@@ -61,6 +63,7 @@ public class SeRuntimeCompressionProperties  {
      * This is the getter method this will return the attribute value.
      * If client rtt is higher than this threshold, enable aggressive compression on the response.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 200.
      * @return minHighRtt
      */
@@ -72,6 +75,7 @@ public class SeRuntimeCompressionProperties  {
      * This is the setter method to the attribute.
      * If client rtt is higher than this threshold, enable aggressive compression on the response.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 200.
      * @param minHighRtt set the minHighRtt.
      */
@@ -82,6 +86,7 @@ public class SeRuntimeCompressionProperties  {
     /**
      * This is the getter method this will return the attribute value.
      * Minimum response content length to enable compression.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 128.
      * @return minLength
      */
@@ -92,6 +97,7 @@ public class SeRuntimeCompressionProperties  {
     /**
      * This is the setter method to the attribute.
      * Minimum response content length to enable compression.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 128.
      * @param minLength set the minLength.
      */
@@ -101,6 +107,7 @@ public class SeRuntimeCompressionProperties  {
     /**
      * This is the getter method this will return the attribute value.
      * Values that identify mobile browsers in order to enable aggressive compression.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mobileStr
      */
@@ -111,6 +118,7 @@ public class SeRuntimeCompressionProperties  {
     /**
      * This is the setter method. this will set the mobileStr
      * Values that identify mobile browsers in order to enable aggressive compression.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mobileStr
      */
@@ -121,6 +129,7 @@ public class SeRuntimeCompressionProperties  {
     /**
      * This is the setter method this will set the mobileStr
      * Values that identify mobile browsers in order to enable aggressive compression.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mobileStr
      */

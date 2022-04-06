@@ -56,6 +56,7 @@ public class AuthenticationPolicy  {
      * It is a reference to an object of type authprofile.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return authProfileRef
      */
     public String getAuthProfileRef() {
@@ -68,6 +69,7 @@ public class AuthenticationPolicy  {
      * It is a reference to an object of type authprofile.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param authProfileRef set the authProfileRef.
      */
     public void setAuthProfileRef(String  authProfileRef) {
@@ -77,6 +79,7 @@ public class AuthenticationPolicy  {
      * This is the getter method this will return the attribute value.
      * Add rules to apply auth profile to specific targets.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authnRules
      */
@@ -88,6 +91,7 @@ public class AuthenticationPolicy  {
      * This is the setter method. this will set the authnRules
      * Add rules to apply auth profile to specific targets.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authnRules
      */
@@ -99,6 +103,7 @@ public class AuthenticationPolicy  {
      * This is the setter method this will set the authnRules
      * Add rules to apply auth profile to specific targets.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authnRules
      */
@@ -115,6 +120,7 @@ public class AuthenticationPolicy  {
      * Http cookie name for authenticated session.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return cookieName
      */
     public String getCookieName() {
@@ -126,6 +132,7 @@ public class AuthenticationPolicy  {
      * Http cookie name for authenticated session.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param cookieName set the cookieName.
      */
     public void setCookieName(String  cookieName) {
@@ -139,6 +146,7 @@ public class AuthenticationPolicy  {
      * Field deprecated in 18.2.3.
      * Field introduced in 18.2.1.
      * Unit is min.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return cookieTimeout
      */
     public Integer getCookieTimeout() {
@@ -152,6 +160,7 @@ public class AuthenticationPolicy  {
      * Field deprecated in 18.2.3.
      * Field introduced in 18.2.1.
      * Unit is min.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param cookieTimeout set the cookieTimeout.
      */
     public void setCookieTimeout(Integer  cookieTimeout) {
@@ -163,6 +172,7 @@ public class AuthenticationPolicy  {
      * Auth profile to use for validating users.
      * It is a reference to an object of type authprofile.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return defaultAuthProfileRef
      */
@@ -175,6 +185,7 @@ public class AuthenticationPolicy  {
      * Auth profile to use for validating users.
      * It is a reference to an object of type authprofile.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param defaultAuthProfileRef set the defaultAuthProfileRef.
      */
@@ -188,6 +199,7 @@ public class AuthenticationPolicy  {
      * Entity id on the idp should match this.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return entityId
      */
     public String getEntityId() {
@@ -200,6 +212,7 @@ public class AuthenticationPolicy  {
      * Entity id on the idp should match this.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param entityId set the entityId.
      */
     public void setEntityId(String  entityId) {
@@ -210,6 +223,7 @@ public class AuthenticationPolicy  {
      * Key to generate the cookie.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return key
      */
     public List<HttpCookiePersistenceKey> getKey() {
@@ -221,6 +235,7 @@ public class AuthenticationPolicy  {
      * Key to generate the cookie.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return key
      */
     public void setKey(List<HttpCookiePersistenceKey>  key) {
@@ -232,6 +247,7 @@ public class AuthenticationPolicy  {
      * Key to generate the cookie.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return key
      */
     public AuthenticationPolicy addKeyItem(HttpCookiePersistenceKey keyItem) {
@@ -247,6 +263,7 @@ public class AuthenticationPolicy  {
      * Single signon url to be programmed on the idp.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return singleSignonUrl
      */
     public String getSingleSignonUrl() {
@@ -258,6 +275,7 @@ public class AuthenticationPolicy  {
      * Single signon url to be programmed on the idp.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param singleSignonUrl set the singleSignonUrl.
      */
     public void setSingleSignonUrl(String  singleSignonUrl) {
@@ -269,6 +287,8 @@ public class AuthenticationPolicy  {
      * Saml sp metadata.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @return spMetadata
      */
     public String getSpMetadata() {
@@ -280,6 +300,8 @@ public class AuthenticationPolicy  {
      * Saml sp metadata.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials with any value edition, basic with any value edition, enterprise with cloud services
+     * edition.
      * @param spMetadata set the spMetadata.
      */
     public void setSpMetadata(String  spMetadata) {

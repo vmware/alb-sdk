@@ -33,6 +33,7 @@ public class SearchReplacePair  {
      * This is the getter method this will return the attribute value.
      * String to replace the searched value.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return replacementString
      */
@@ -44,6 +45,7 @@ public class SearchReplacePair  {
      * This is the setter method to the attribute.
      * String to replace the searched value.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param replacementString set the replacementString.
      */
@@ -55,6 +57,7 @@ public class SearchReplacePair  {
      * This is the getter method this will return the attribute value.
      * String to search for in the body.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return searchString
      */
@@ -66,6 +69,7 @@ public class SearchReplacePair  {
      * This is the setter method to the attribute.
      * String to search for in the body.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param searchString set the searchString.
      */

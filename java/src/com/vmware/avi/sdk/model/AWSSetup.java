@@ -43,7 +43,7 @@ public class AWSSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property access_key_id of obj type awssetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return accessKeyId
      */
@@ -53,7 +53,7 @@ public class AWSSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property access_key_id of obj type awssetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param accessKeyId set the accessKeyId.
      */
@@ -63,7 +63,7 @@ public class AWSSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_id of obj type awssetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccId
      */
@@ -73,7 +73,7 @@ public class AWSSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_id of obj type awssetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccId set the ccId.
      */
@@ -83,7 +83,7 @@ public class AWSSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property error_string of obj type awssetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorString
      */
@@ -93,7 +93,7 @@ public class AWSSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property error_string of obj type awssetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorString set the errorString.
      */
@@ -104,6 +104,7 @@ public class AWSSetup  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return privilege
      */
@@ -114,6 +115,7 @@ public class AWSSetup  {
     /**
      * This is the setter method to the attribute.
      * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param privilege set the privilege.
      */
@@ -123,7 +125,7 @@ public class AWSSetup  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property region of obj type awssetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return region
      */
@@ -133,7 +135,7 @@ public class AWSSetup  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property region of obj type awssetup field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param region set the region.
      */
@@ -144,6 +146,7 @@ public class AWSSetup  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 17.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vpcId
      */
@@ -154,6 +157,7 @@ public class AWSSetup  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 17.1.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vpcId set the vpcId.
      */

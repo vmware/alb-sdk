@@ -36,6 +36,7 @@ public class IcapNSXDefenderLog  {
      * This is the getter method this will return the attribute value.
      * Score associated with the uploaded file, if known, value is in between 0 and 100.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return score
      */
@@ -47,6 +48,7 @@ public class IcapNSXDefenderLog  {
      * This is the setter method to the attribute.
      * Score associated with the uploaded file, if known, value is in between 0 and 100.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param score set the score.
      */
@@ -58,6 +60,7 @@ public class IcapNSXDefenderLog  {
      * This is the getter method this will return the attribute value.
      * Url to get details from nsxdefender for the request.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return statusUrl
      */
@@ -69,6 +72,7 @@ public class IcapNSXDefenderLog  {
      * This is the setter method to the attribute.
      * Url to get details from nsxdefender for the request.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param statusUrl set the statusUrl.
      */
@@ -82,6 +86,7 @@ public class IcapNSXDefenderLog  {
      * It is possible to use this uuid in order to access the analysis details from the nsx defender portal/manager web ui.
      * Url to access this information is https //user.lastline.com/portal#/analyst/task/<uuid>/overview.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return taskUuid
      */
@@ -95,6 +100,7 @@ public class IcapNSXDefenderLog  {
      * It is possible to use this uuid in order to access the analysis details from the nsx defender portal/manager web ui.
      * Url to access this information is https //user.lastline.com/portal#/analyst/task/<uuid>/overview.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param taskUuid set the taskUuid.
      */

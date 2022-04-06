@@ -36,7 +36,7 @@ public class ConfigInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property queue of obj type configinfo field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return queue
      */
@@ -46,7 +46,7 @@ public class ConfigInfo  {
 
     /**
      * This is the setter method. this will set the queue
-     * Placeholder for description of property queue of obj type configinfo field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return queue
      */
@@ -56,7 +56,7 @@ public class ConfigInfo  {
 
     /**
      * This is the setter method this will set the queue
-     * Placeholder for description of property queue of obj type configinfo field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return queue
      */
@@ -70,7 +70,7 @@ public class ConfigInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property reader_count of obj type configinfo field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return readerCount
      */
@@ -80,7 +80,7 @@ public class ConfigInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property reader_count of obj type configinfo field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param readerCount set the readerCount.
      */
@@ -91,6 +91,7 @@ public class ConfigInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - REPL_NONE, REPL_ENABLED, REPL_DISABLED.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return state
      */
@@ -101,6 +102,7 @@ public class ConfigInfo  {
     /**
      * This is the setter method to the attribute.
      * Enum options - REPL_NONE, REPL_ENABLED, REPL_DISABLED.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param state set the state.
      */
@@ -110,7 +112,7 @@ public class ConfigInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property writer_count of obj type configinfo field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return writerCount
      */
@@ -120,7 +122,7 @@ public class ConfigInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property writer_count of obj type configinfo field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param writerCount set the writerCount.
      */

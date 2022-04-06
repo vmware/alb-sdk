@@ -36,7 +36,7 @@ public class AllSeUpgradeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property notes of obj type allseupgradeeventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return notes
      */
@@ -46,7 +46,7 @@ public class AllSeUpgradeEventDetails  {
 
     /**
      * This is the setter method. this will set the notes
-     * Placeholder for description of property notes of obj type allseupgradeeventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return notes
      */
@@ -56,7 +56,7 @@ public class AllSeUpgradeEventDetails  {
 
     /**
      * This is the setter method this will set the notes
-     * Placeholder for description of property notes of obj type allseupgradeeventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return notes
      */
@@ -70,7 +70,7 @@ public class AllSeUpgradeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property num_se of obj type allseupgradeeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numSe
      */
@@ -80,7 +80,7 @@ public class AllSeUpgradeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property num_se of obj type allseupgradeeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numSe set the numSe.
      */
@@ -90,7 +90,7 @@ public class AllSeUpgradeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property num_vs of obj type allseupgradeeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numVs
      */
@@ -100,7 +100,7 @@ public class AllSeUpgradeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property num_vs of obj type allseupgradeeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numVs set the numVs.
      */
@@ -110,7 +110,7 @@ public class AllSeUpgradeEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property request of obj type allseupgradeeventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return request
      */
@@ -120,7 +120,7 @@ public class AllSeUpgradeEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property request of obj type allseupgradeeventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param request set the request.
      */

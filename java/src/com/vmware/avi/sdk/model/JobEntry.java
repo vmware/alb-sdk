@@ -46,7 +46,7 @@ public class JobEntry extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property expires_at of obj type jobentry field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return expiresAt
      */
@@ -56,7 +56,7 @@ public class JobEntry extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property expires_at of obj type jobentry field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param expiresAt set the expiresAt.
      */
@@ -67,6 +67,7 @@ public class JobEntry extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -77,6 +78,7 @@ public class JobEntry extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Field introduced in 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -86,7 +88,7 @@ public class JobEntry extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property obj_key of obj type jobentry field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objKey
      */
@@ -96,7 +98,7 @@ public class JobEntry extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property obj_key of obj type jobentry field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param objKey set the objKey.
      */
@@ -106,6 +108,7 @@ public class JobEntry extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subjobs
      */
@@ -116,6 +119,7 @@ public class JobEntry extends AviRestResource  {
     /**
      * This is the setter method. this will set the subjobs
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subjobs
      */
@@ -126,6 +130,7 @@ public class JobEntry extends AviRestResource  {
     /**
      * This is the setter method this will set the subjobs
      * Field introduced in 18.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return subjobs
      */
@@ -140,6 +145,7 @@ public class JobEntry extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -150,6 +156,7 @@ public class JobEntry extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -176,7 +183,7 @@ public class JobEntry extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -186,7 +193,7 @@ public class JobEntry extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

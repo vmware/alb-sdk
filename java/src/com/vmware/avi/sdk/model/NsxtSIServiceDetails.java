@@ -33,6 +33,7 @@ public class NsxtSIServiceDetails  {
      * This is the getter method this will return the attribute value.
      * Error message.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorString
      */
@@ -44,6 +45,7 @@ public class NsxtSIServiceDetails  {
      * This is the setter method to the attribute.
      * Error message.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorString set the errorString.
      */
@@ -55,6 +57,7 @@ public class NsxtSIServiceDetails  {
      * This is the getter method this will return the attribute value.
      * Nsx-t serviceinsertion service name.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return service
      */
@@ -66,6 +69,7 @@ public class NsxtSIServiceDetails  {
      * This is the setter method to the attribute.
      * Nsx-t serviceinsertion service name.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param service set the service.
      */

@@ -31,7 +31,7 @@ public class TimeStamp  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property secs of obj type timestamp field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return secs
      */
@@ -41,7 +41,7 @@ public class TimeStamp  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property secs of obj type timestamp field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param secs set the secs.
      */
@@ -51,7 +51,7 @@ public class TimeStamp  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property usecs of obj type timestamp field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return usecs
      */
@@ -61,7 +61,7 @@ public class TimeStamp  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property usecs of obj type timestamp field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param usecs set the usecs.
      */

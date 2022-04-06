@@ -61,7 +61,7 @@ public class AnomalyEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property deviation of obj type anomalyeventdetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
      * @return deviation
      */
@@ -71,7 +71,7 @@ public class AnomalyEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property deviation of obj type anomalyeventdetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.0f.
      * @param deviation set the deviation.
      */
@@ -81,7 +81,7 @@ public class AnomalyEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property metric_id of obj type anomalyeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metricId
      */
@@ -91,7 +91,7 @@ public class AnomalyEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property metric_id of obj type anomalyeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param metricId set the metricId.
      */
@@ -101,7 +101,7 @@ public class AnomalyEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property metric_timestamp of obj type anomalyeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metricTimestamp
      */
@@ -111,7 +111,7 @@ public class AnomalyEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property metric_timestamp of obj type anomalyeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param metricTimestamp set the metricTimestamp.
      */
@@ -123,6 +123,7 @@ public class AnomalyEventDetails  {
      * This is the getter method this will return the attribute value.
      * Deprecated.
      * Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "EXPONENTIAL_WEIGHTED_MOVING_AVG".
      * @return model
      */
@@ -134,6 +135,7 @@ public class AnomalyEventDetails  {
      * This is the setter method to the attribute.
      * Deprecated.
      * Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "EXPONENTIAL_WEIGHTED_MOVING_AVG".
      * @param model set the model.
      */
@@ -143,6 +145,7 @@ public class AnomalyEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return models
      */
@@ -153,6 +156,7 @@ public class AnomalyEventDetails  {
     /**
      * This is the setter method. this will set the models
      * Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return models
      */
@@ -163,6 +167,7 @@ public class AnomalyEventDetails  {
     /**
      * This is the setter method this will set the models
      * Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return models
      */
@@ -176,7 +181,7 @@ public class AnomalyEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property node_id of obj type anomalyeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nodeId
      */
@@ -186,7 +191,7 @@ public class AnomalyEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property node_id of obj type anomalyeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nodeId set the nodeId.
      */
@@ -200,6 +205,7 @@ public class AnomalyEventDetails  {
      * SE_METRICS_OBJ, VSERVER_RUM, CONTROLLER_METRICS_OBJ, METRICS_COLLECTION, METRICS_RUM_PREAGG_BROWSER_OBJ, METRICS_RUM_PREAGG_COUNTRY_OBJ,
      * METRICS_RUM_PREAGG_DEVTYPE_OBJ, METRICS_RUM_PREAGG_LANG_OBJ, METRICS_RUM_PREAGG_OS_OBJ, METRICS_RUM_PREAGG_URL_OBJ, METRICS_ANOMALY_OBJ,
      * METRICS_HEALTHSCORE_OBJ, METRICS_RESOURCE_TIMING_BROWSER_OBJ, METRICS_RESOURCE_TIMING_OS_OBJ...
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objType
      */
@@ -213,6 +219,7 @@ public class AnomalyEventDetails  {
      * SE_METRICS_OBJ, VSERVER_RUM, CONTROLLER_METRICS_OBJ, METRICS_COLLECTION, METRICS_RUM_PREAGG_BROWSER_OBJ, METRICS_RUM_PREAGG_COUNTRY_OBJ,
      * METRICS_RUM_PREAGG_DEVTYPE_OBJ, METRICS_RUM_PREAGG_LANG_OBJ, METRICS_RUM_PREAGG_OS_OBJ, METRICS_RUM_PREAGG_URL_OBJ, METRICS_ANOMALY_OBJ,
      * METRICS_HEALTHSCORE_OBJ, METRICS_RESOURCE_TIMING_BROWSER_OBJ, METRICS_RESOURCE_TIMING_OS_OBJ...
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param objType set the objType.
      */
@@ -222,7 +229,7 @@ public class AnomalyEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property pool_name of obj type anomalyeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolName
      */
@@ -232,7 +239,7 @@ public class AnomalyEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property pool_name of obj type anomalyeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolName set the poolName.
      */
@@ -242,7 +249,7 @@ public class AnomalyEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of pool.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolUuid
      */
@@ -252,7 +259,7 @@ public class AnomalyEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of pool.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolUuid set the poolUuid.
      */
@@ -263,6 +270,7 @@ public class AnomalyEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return priority
      */
@@ -273,6 +281,7 @@ public class AnomalyEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param priority set the priority.
      */
@@ -282,7 +291,7 @@ public class AnomalyEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property server of obj type anomalyeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return server
      */
@@ -292,7 +301,7 @@ public class AnomalyEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property server of obj type anomalyeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param server set the server.
      */
@@ -302,7 +311,7 @@ public class AnomalyEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property value of obj type anomalyeventdetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return value
      */
@@ -312,7 +321,7 @@ public class AnomalyEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property value of obj type anomalyeventdetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param value set the value.
      */

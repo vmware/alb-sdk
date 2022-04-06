@@ -31,6 +31,7 @@ public class AuthenticationAction  {
      * Authentication action to be taken for a matched rule.
      * Enum options - SKIP_AUTHENTICATION, USE_DEFAULT_AUTHENTICATION.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "USE_DEFAULT_AUTHENTICATION".
      * @return type
      */
@@ -43,6 +44,7 @@ public class AuthenticationAction  {
      * Authentication action to be taken for a matched rule.
      * Enum options - SKIP_AUTHENTICATION, USE_DEFAULT_AUTHENTICATION.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "USE_DEFAULT_AUTHENTICATION".
      * @param type set the type.
      */

@@ -54,6 +54,7 @@ public class AnalyticsPolicy  {
      * This is the getter method this will return the attribute value.
      * Log all headers.
      * Field introduced in 18.1.4, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return allHeaders
      */
@@ -65,6 +66,7 @@ public class AnalyticsPolicy  {
      * This is the setter method to the attribute.
      * Log all headers.
      * Field introduced in 18.1.4, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param allHeaders set the allHeaders.
      */
@@ -76,6 +78,7 @@ public class AnalyticsPolicy  {
      * This is the getter method this will return the attribute value.
      * Gain insights from sampled client to server http requests and responses.
      * Enum options - NO_INSIGHTS, PASSIVE, ACTIVE.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "NO_INSIGHTS".
      * @return clientInsights
      */
@@ -87,6 +90,7 @@ public class AnalyticsPolicy  {
      * This is the setter method to the attribute.
      * Gain insights from sampled client to server http requests and responses.
      * Enum options - NO_INSIGHTS, PASSIVE, ACTIVE.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "NO_INSIGHTS".
      * @param clientInsights set the clientInsights.
      */
@@ -96,7 +100,7 @@ public class AnalyticsPolicy  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property client_insights_sampling of obj type analyticspolicy field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientInsightsSampling
      */
@@ -106,7 +110,7 @@ public class AnalyticsPolicy  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property client_insights_sampling of obj type analyticspolicy field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientInsightsSampling set the clientInsightsSampling.
      */
@@ -115,7 +119,7 @@ public class AnalyticsPolicy  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property client_log_filters of obj type analyticspolicy field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientLogFilters
      */
@@ -125,7 +129,7 @@ public class AnalyticsPolicy  {
 
     /**
      * This is the setter method. this will set the clientLogFilters
-     * Placeholder for description of property client_log_filters of obj type analyticspolicy field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientLogFilters
      */
@@ -135,7 +139,7 @@ public class AnalyticsPolicy  {
 
     /**
      * This is the setter method this will set the clientLogFilters
-     * Placeholder for description of property client_log_filters of obj type analyticspolicy field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientLogFilters
      */
@@ -155,6 +159,7 @@ public class AnalyticsPolicy  {
      * Disable_vs_analytics (for virtualservices metrics), disable_server_analytics (for pool metrics) and client_log_config (for logs).
      * Field deprecated in 18.2.1.
      * Field introduced in 17.2.4.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -169,6 +174,7 @@ public class AnalyticsPolicy  {
      * Disable_vs_analytics (for virtualservices metrics), disable_server_analytics (for pool metrics) and client_log_config (for logs).
      * Field deprecated in 18.2.1.
      * Field introduced in 17.2.4.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param enabled set the enabled.
      */
     public void setEnabled(Boolean  enabled) {
@@ -177,7 +183,7 @@ public class AnalyticsPolicy  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property full_client_logs of obj type analyticspolicy field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fullClientLogs
      */
@@ -187,7 +193,7 @@ public class AnalyticsPolicy  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property full_client_logs of obj type analyticspolicy field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fullClientLogs set the fullClientLogs.
      */
@@ -198,6 +204,7 @@ public class AnalyticsPolicy  {
     /**
      * This is the getter method this will return the attribute value.
      * Settings to turn on realtime metrics and set duration for realtime updates.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metricsRealtimeUpdate
      */
@@ -208,6 +215,7 @@ public class AnalyticsPolicy  {
     /**
      * This is the setter method to the attribute.
      * Settings to turn on realtime metrics and set duration for realtime updates.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param metricsRealtimeUpdate set the metricsRealtimeUpdate.
      */
@@ -222,6 +230,7 @@ public class AnalyticsPolicy  {
      * Set it to zero (0) to deactivate throttling.
      * Field introduced in 17.1.3.
      * Unit is per_second.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return significantLogThrottle
      */
@@ -236,6 +245,7 @@ public class AnalyticsPolicy  {
      * Set it to zero (0) to deactivate throttling.
      * Field introduced in 17.1.3.
      * Unit is per_second.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param significantLogThrottle set the significantLogThrottle.
      */
@@ -251,6 +261,7 @@ public class AnalyticsPolicy  {
      * Set it to zero (0) to deactivate throttling.
      * Field introduced in 17.1.3.
      * Unit is per_second.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @return udfLogThrottle
      */
@@ -266,6 +277,7 @@ public class AnalyticsPolicy  {
      * Set it to zero (0) to deactivate throttling.
      * Field introduced in 17.1.3.
      * Unit is per_second.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
      * @param udfLogThrottle set the udfLogThrottle.
      */

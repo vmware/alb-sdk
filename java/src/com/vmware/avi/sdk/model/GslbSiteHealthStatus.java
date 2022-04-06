@@ -55,6 +55,7 @@ public class GslbSiteHealthStatus  {
     /**
      * This is the getter method this will return the attribute value.
      * Controller retrieved gslb service operational info based of virtual service state.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controllerGsinfo
      */
@@ -65,6 +66,7 @@ public class GslbSiteHealthStatus  {
     /**
      * This is the setter method. this will set the controllerGsinfo
      * Controller retrieved gslb service operational info based of virtual service state.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controllerGsinfo
      */
@@ -75,6 +77,7 @@ public class GslbSiteHealthStatus  {
     /**
      * This is the setter method this will set the controllerGsinfo
      * Controller retrieved gslb service operational info based of virtual service state.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controllerGsinfo
      */
@@ -89,6 +92,7 @@ public class GslbSiteHealthStatus  {
      * This is the getter method this will return the attribute value.
      * Controller retrieved gslb service operational info based of dns datapath resolution.
      * This information is generated only on those sites that have dns-vs participating in gslb.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return datapathGsinfo
      */
@@ -100,6 +104,7 @@ public class GslbSiteHealthStatus  {
      * This is the setter method. this will set the datapathGsinfo
      * Controller retrieved gslb service operational info based of dns datapath resolution.
      * This information is generated only on those sites that have dns-vs participating in gslb.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return datapathGsinfo
      */
@@ -111,6 +116,7 @@ public class GslbSiteHealthStatus  {
      * This is the setter method this will set the datapathGsinfo
      * Controller retrieved gslb service operational info based of dns datapath resolution.
      * This information is generated only on those sites that have dns-vs participating in gslb.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return datapathGsinfo
      */
@@ -125,6 +131,7 @@ public class GslbSiteHealthStatus  {
     /**
      * This is the getter method this will return the attribute value.
      * Dns info at the site.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsInfo
      */
@@ -135,6 +142,7 @@ public class GslbSiteHealthStatus  {
     /**
      * This is the setter method to the attribute.
      * Dns info at the site.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dnsInfo set the dnsInfo.
      */
@@ -145,6 +153,7 @@ public class GslbSiteHealthStatus  {
      * This is the getter method this will return the attribute value.
      * Gslb application persistence profile state at member.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gapTable
      */
@@ -156,6 +165,7 @@ public class GslbSiteHealthStatus  {
      * This is the setter method. this will set the gapTable
      * Gslb application persistence profile state at member.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gapTable
      */
@@ -167,6 +177,7 @@ public class GslbSiteHealthStatus  {
      * This is the setter method this will set the gapTable
      * Gslb application persistence profile state at member.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gapTable
      */
@@ -181,6 +192,7 @@ public class GslbSiteHealthStatus  {
      * This is the getter method this will return the attribute value.
      * Gslb geo db profile state at member.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return geoTable
      */
@@ -192,6 +204,7 @@ public class GslbSiteHealthStatus  {
      * This is the setter method. this will set the geoTable
      * Gslb geo db profile state at member.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return geoTable
      */
@@ -203,6 +216,7 @@ public class GslbSiteHealthStatus  {
      * This is the setter method this will set the geoTable
      * Gslb geo db profile state at member.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return geoTable
      */
@@ -216,6 +230,7 @@ public class GslbSiteHealthStatus  {
     /**
      * This is the getter method this will return the attribute value.
      * Gslb health monitor state at member.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ghmTable
      */
@@ -226,6 +241,7 @@ public class GslbSiteHealthStatus  {
     /**
      * This is the setter method. this will set the ghmTable
      * Gslb health monitor state at member.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ghmTable
      */
@@ -236,6 +252,7 @@ public class GslbSiteHealthStatus  {
     /**
      * This is the setter method this will set the ghmTable
      * Gslb health monitor state at member.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ghmTable
      */
@@ -249,6 +266,7 @@ public class GslbSiteHealthStatus  {
     /**
      * This is the getter method this will return the attribute value.
      * Gslb state at member.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return glbTable
      */
@@ -259,6 +277,7 @@ public class GslbSiteHealthStatus  {
     /**
      * This is the setter method. this will set the glbTable
      * Gslb state at member.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return glbTable
      */
@@ -269,6 +288,7 @@ public class GslbSiteHealthStatus  {
     /**
      * This is the setter method this will set the glbTable
      * Gslb state at member.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return glbTable
      */
@@ -282,6 +302,7 @@ public class GslbSiteHealthStatus  {
     /**
      * This is the getter method this will return the attribute value.
      * Gslb service state at member.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gsTable
      */
@@ -292,6 +313,7 @@ public class GslbSiteHealthStatus  {
     /**
      * This is the setter method. this will set the gsTable
      * Gslb service state at member.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gsTable
      */
@@ -302,6 +324,7 @@ public class GslbSiteHealthStatus  {
     /**
      * This is the setter method this will set the gsTable
      * Gslb service state at member.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gsTable
      */
@@ -316,6 +339,7 @@ public class GslbSiteHealthStatus  {
     /**
      * This is the getter method this will return the attribute value.
      * Current software version of the site.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return swVersion
      */
@@ -326,6 +350,7 @@ public class GslbSiteHealthStatus  {
     /**
      * This is the setter method to the attribute.
      * Current software version of the site.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param swVersion set the swVersion.
      */
@@ -336,6 +361,7 @@ public class GslbSiteHealthStatus  {
     /**
      * This is the getter method this will return the attribute value.
      * Timestamp of health-status generation.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return timestamp
      */
@@ -346,6 +372,7 @@ public class GslbSiteHealthStatus  {
     /**
      * This is the setter method to the attribute.
      * Timestamp of health-status generation.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param timestamp set the timestamp.
      */

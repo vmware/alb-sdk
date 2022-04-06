@@ -38,6 +38,7 @@ public class ControllerDiscontinuousTimeChangeEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Time stamp before the discontinuous jump in time.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fromTime
      */
@@ -48,6 +49,7 @@ public class ControllerDiscontinuousTimeChangeEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Time stamp before the discontinuous jump in time.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fromTime set the fromTime.
      */
@@ -58,6 +60,7 @@ public class ControllerDiscontinuousTimeChangeEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of the controller responsible for this event.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nodeName
      */
@@ -68,6 +71,7 @@ public class ControllerDiscontinuousTimeChangeEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Name of the controller responsible for this event.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nodeName set the nodeName.
      */
@@ -78,6 +82,7 @@ public class ControllerDiscontinuousTimeChangeEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * System peer and candidate ntp servers active at the point of time jump.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ntpServers
      */
@@ -88,6 +93,7 @@ public class ControllerDiscontinuousTimeChangeEventDetails  {
     /**
      * This is the setter method to the attribute.
      * System peer and candidate ntp servers active at the point of time jump.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ntpServers set the ntpServers.
      */
@@ -98,6 +104,7 @@ public class ControllerDiscontinuousTimeChangeEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Time stamp to which the time has discontinuously jumped.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return toTime
      */
@@ -108,6 +115,7 @@ public class ControllerDiscontinuousTimeChangeEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Time stamp to which the time has discontinuously jumped.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param toTime set the toTime.
      */

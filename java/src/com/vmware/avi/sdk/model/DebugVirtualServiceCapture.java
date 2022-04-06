@@ -51,6 +51,7 @@ public class DebugVirtualServiceCapture  {
      * Set both to 0 for avi default size.
      * Dos, ipc and drop pcaps not applicaple.
      * Field introduced in 18.2.8.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return captureFileSize
      */
@@ -65,6 +66,7 @@ public class DebugVirtualServiceCapture  {
      * Set both to 0 for avi default size.
      * Dos, ipc and drop pcaps not applicaple.
      * Field introduced in 18.2.8.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param captureFileSize set the captureFileSize.
      */
@@ -78,6 +80,7 @@ public class DebugVirtualServiceCapture  {
      * Use 0 to capture until manually stopped.
      * Special values are 0 - infinite.
      * Unit is min.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return duration
      */
@@ -91,6 +94,7 @@ public class DebugVirtualServiceCapture  {
      * Use 0 to capture until manually stopped.
      * Special values are 0 - infinite.
      * Unit is min.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param duration set the duration.
      */
@@ -102,6 +106,7 @@ public class DebugVirtualServiceCapture  {
      * This is the getter method this will return the attribute value.
      * Enable ssl session key capture.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableSslSessionKeyCapture
      */
@@ -113,6 +118,7 @@ public class DebugVirtualServiceCapture  {
      * This is the setter method to the attribute.
      * Enable ssl session key capture.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableSslSessionKeyCapture set the enableSslSessionKeyCapture.
      */
@@ -125,6 +131,7 @@ public class DebugVirtualServiceCapture  {
      * Number of files to maintain for se pcap file rotation.file count set to 1 indicates no rotate.
      * Allowed values are 1-10.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return fileCount
      */
@@ -137,6 +144,7 @@ public class DebugVirtualServiceCapture  {
      * Number of files to maintain for se pcap file rotation.file count set to 1 indicates no rotate.
      * Allowed values are 1-10.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param fileCount set the fileCount.
      */
@@ -147,6 +155,7 @@ public class DebugVirtualServiceCapture  {
     /**
      * This is the getter method this will return the attribute value.
      * Total number of packets to capture.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numPkts
      */
@@ -157,6 +166,7 @@ public class DebugVirtualServiceCapture  {
     /**
      * This is the setter method to the attribute.
      * Total number of packets to capture.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numPkts set the numPkts.
      */
@@ -168,6 +178,7 @@ public class DebugVirtualServiceCapture  {
      * This is the getter method this will return the attribute value.
      * Enable pcapng for packet capture.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return pcapNg
      */
@@ -179,6 +190,7 @@ public class DebugVirtualServiceCapture  {
      * This is the setter method to the attribute.
      * Enable pcapng for packet capture.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param pcapNg set the pcapNg.
      */
@@ -193,6 +205,7 @@ public class DebugVirtualServiceCapture  {
      * Allowed values are 64-1514.
      * Special values are 0 - full capture.
      * Unit is bytes.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 128.
      * @return pktSize
      */
@@ -207,6 +220,7 @@ public class DebugVirtualServiceCapture  {
      * Allowed values are 64-1514.
      * Special values are 0 - full capture.
      * Unit is bytes.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 128.
      * @param pktSize set the pktSize.
      */

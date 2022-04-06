@@ -37,6 +37,7 @@ public class Lif  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return cifs
      */
     public List<Cif> getCifs() {
@@ -46,6 +47,7 @@ public class Lif  {
     /**
      * This is the setter method. this will set the cifs
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return cifs
      */
     public void setCifs(List<Cif>  cifs) {
@@ -55,6 +57,7 @@ public class Lif  {
     /**
      * This is the setter method this will set the cifs
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return cifs
      */
     public Lif addCifsItem(Cif cifsItem) {
@@ -68,6 +71,7 @@ public class Lif  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return lif
      */
     public String getLif() {
@@ -77,6 +81,7 @@ public class Lif  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param lif set the lif.
      */
     public void setLif(String  lif) {
@@ -86,6 +91,7 @@ public class Lif  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return lifLabel
      */
     public String getLifLabel() {
@@ -95,6 +101,7 @@ public class Lif  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param lifLabel set the lifLabel.
      */
     public void setLifLabel(String  lifLabel) {
@@ -104,6 +111,7 @@ public class Lif  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return subnet
      */
     public String getSubnet() {
@@ -113,6 +121,7 @@ public class Lif  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param subnet set the subnet.
      */
     public void setSubnet(String  subnet) {

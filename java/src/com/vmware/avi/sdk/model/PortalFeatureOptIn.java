@@ -54,8 +54,8 @@ public class PortalFeatureOptIn  {
      * This is the getter method this will return the attribute value.
      * Enable to receive application specific signature updates.
      * Field introduced in 20.1.4.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
-     * edition.
+     * Allowed in enterprise edition only with addon license edition, essentials(allowed values- false) edition, basic(allowed values- false) edition,
+     * enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableAppsignatureSync
      */
@@ -67,8 +67,8 @@ public class PortalFeatureOptIn  {
      * This is the setter method to the attribute.
      * Enable to receive application specific signature updates.
      * Field introduced in 20.1.4.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
-     * edition.
+     * Allowed in enterprise edition only with addon license edition, essentials(allowed values- false) edition, basic(allowed values- false) edition,
+     * enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableAppsignatureSync set the enableAppsignatureSync.
      */
@@ -81,7 +81,8 @@ public class PortalFeatureOptIn  {
      * This field is deprecated.
      * Field deprecated in 21.1.1.
      * Field introduced in 20.1.1.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- false) edition, basic(allowed values- false) edition, enterprise with
+     * cloud services edition.
      * @return enableAutoCaseCreationOnSeFailure
      */
     public Boolean getEnableAutoCaseCreationOnSeFailure() {
@@ -93,7 +94,8 @@ public class PortalFeatureOptIn  {
      * This field is deprecated.
      * Field deprecated in 21.1.1.
      * Field introduced in 20.1.1.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- false) edition, basic(allowed values- false) edition, enterprise with
+     * cloud services edition.
      * @param enableAutoCaseCreationOnSeFailure set the enableAutoCaseCreationOnSeFailure.
      */
     public void setEnableAutoCaseCreationOnSeFailure(Boolean  enableAutoCaseCreationOnSeFailure) {
@@ -105,7 +107,8 @@ public class PortalFeatureOptIn  {
      * This field is deprecated.
      * Field deprecated in 21.1.1.
      * Field introduced in 20.1.1.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- false) edition, basic(allowed values- false) edition, enterprise with
+     * cloud services edition.
      * @return enableAutoCaseCreationOnSystemFailure
      */
     public Boolean getEnableAutoCaseCreationOnSystemFailure() {
@@ -117,7 +120,8 @@ public class PortalFeatureOptIn  {
      * This field is deprecated.
      * Field deprecated in 21.1.1.
      * Field introduced in 20.1.1.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- false) edition, basic(allowed values- false) edition, enterprise with
+     * cloud services edition.
      * @param enableAutoCaseCreationOnSystemFailure set the enableAutoCaseCreationOnSystemFailure.
      */
     public void setEnableAutoCaseCreationOnSystemFailure(Boolean  enableAutoCaseCreationOnSystemFailure) {
@@ -129,7 +133,8 @@ public class PortalFeatureOptIn  {
      * This field is deprecated.
      * Field deprecated in 21.1.1.
      * Field introduced in 20.1.1.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- false) edition, basic(allowed values- false) edition, enterprise with
+     * cloud services edition.
      * @return enableAutoDownloadWafSignatures
      */
     public Boolean getEnableAutoDownloadWafSignatures() {
@@ -141,7 +146,8 @@ public class PortalFeatureOptIn  {
      * This field is deprecated.
      * Field deprecated in 21.1.1.
      * Field introduced in 20.1.1.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- false) edition, basic(allowed values- false) edition, enterprise with
+     * cloud services edition.
      * @param enableAutoDownloadWafSignatures set the enableAutoDownloadWafSignatures.
      */
     public void setEnableAutoDownloadWafSignatures(Boolean  enableAutoDownloadWafSignatures) {
@@ -152,8 +158,8 @@ public class PortalFeatureOptIn  {
      * This is the getter method this will return the attribute value.
      * Enable to receive ip reputation updates.
      * Field introduced in 20.1.1.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
-     * edition.
+     * Allowed in enterprise edition only with addon license edition, essentials(allowed values- false) edition, basic(allowed values- false) edition,
+     * enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableIpReputation
      */
@@ -165,8 +171,8 @@ public class PortalFeatureOptIn  {
      * This is the setter method to the attribute.
      * Enable to receive ip reputation updates.
      * Field introduced in 20.1.1.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
-     * edition.
+     * Allowed in enterprise edition only with addon license edition, essentials(allowed values- false) edition, basic(allowed values- false) edition,
+     * enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableIpReputation set the enableIpReputation.
      */
@@ -178,9 +184,9 @@ public class PortalFeatureOptIn  {
      * This is the getter method this will return the attribute value.
      * Enable pulse case management.
      * Field introduced in 21.1.1.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
-     * edition.
-     * Special default for basic edition is false, essentials edition is false, enterprise edition is false, enterprise is true.
+     * Allowed in enterprise edition only with addon license edition, essentials(allowed values- false) edition, basic(allowed values- false) edition,
+     * enterprise with cloud services edition.
+     * Special default for enterprise edition is false, essentials edition is false, basic edition is false, enterprise is true.
      * @return enablePulseCaseManagement
      */
     public Boolean getEnablePulseCaseManagement() {
@@ -191,9 +197,9 @@ public class PortalFeatureOptIn  {
      * This is the setter method to the attribute.
      * Enable pulse case management.
      * Field introduced in 21.1.1.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
-     * edition.
-     * Special default for basic edition is false, essentials edition is false, enterprise edition is false, enterprise is true.
+     * Allowed in enterprise edition only with addon license edition, essentials(allowed values- false) edition, basic(allowed values- false) edition,
+     * enterprise with cloud services edition.
+     * Special default for enterprise edition is false, essentials edition is false, basic edition is false, enterprise is true.
      * @param enablePulseCaseManagement set the enablePulseCaseManagement.
      */
     public void setEnablePulseCaseManagement(Boolean  enablePulseCaseManagement) {
@@ -204,9 +210,9 @@ public class PortalFeatureOptIn  {
      * This is the getter method this will return the attribute value.
      * Enable to receive waf crs updates.
      * Field introduced in 21.1.1.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
-     * edition.
-     * Special default for basic edition is false, essentials edition is false, enterprise edition is false, enterprise is true.
+     * Allowed in enterprise edition only with addon license edition, essentials(allowed values- false) edition, basic(allowed values- false) edition,
+     * enterprise with cloud services edition.
+     * Special default for enterprise edition is false, essentials edition is false, basic edition is false, enterprise is true.
      * @return enablePulseWafManagement
      */
     public Boolean getEnablePulseWafManagement() {
@@ -217,9 +223,9 @@ public class PortalFeatureOptIn  {
      * This is the setter method to the attribute.
      * Enable to receive waf crs updates.
      * Field introduced in 21.1.1.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
-     * edition.
-     * Special default for basic edition is false, essentials edition is false, enterprise edition is false, enterprise is true.
+     * Allowed in enterprise edition only with addon license edition, essentials(allowed values- false) edition, basic(allowed values- false) edition,
+     * enterprise with cloud services edition.
+     * Special default for enterprise edition is false, essentials edition is false, basic edition is false, enterprise is true.
      * @param enablePulseWafManagement set the enablePulseWafManagement.
      */
     public void setEnablePulseWafManagement(Boolean  enablePulseWafManagement) {
@@ -230,7 +236,8 @@ public class PortalFeatureOptIn  {
      * This is the getter method this will return the attribute value.
      * Enable to receive bot management updates.
      * Field introduced in 21.1.1.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- false) edition, basic(allowed values- false) edition, enterprise with
+     * cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableUserAgentDbSync
      */
@@ -242,7 +249,8 @@ public class PortalFeatureOptIn  {
      * This is the setter method to the attribute.
      * Enable to receive bot management updates.
      * Field introduced in 21.1.1.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- false) edition, basic(allowed values- false) edition, enterprise with
+     * cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableUserAgentDbSync set the enableUserAgentDbSync.
      */
@@ -255,9 +263,9 @@ public class PortalFeatureOptIn  {
      * This field is deprecated.
      * Field deprecated in 21.1.1.
      * Field introduced in 20.1.1.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
-     * edition.
-     * Special default for basic edition is false, essentials edition is false, enterprise edition is false.
+     * Allowed in enterprise edition only with addon license edition, essentials(allowed values- false) edition, basic(allowed values- false) edition,
+     * enterprise with cloud services edition.
+     * Special default for enterprise edition is false, essentials edition is false, basic edition is false.
      * @return enableWafSignaturesNotifications
      */
     public Boolean getEnableWafSignaturesNotifications() {
@@ -269,9 +277,9 @@ public class PortalFeatureOptIn  {
      * This field is deprecated.
      * Field deprecated in 21.1.1.
      * Field introduced in 20.1.1.
-     * Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise(allowed values- false) edition, enterprise
-     * edition.
-     * Special default for basic edition is false, essentials edition is false, enterprise edition is false.
+     * Allowed in enterprise edition only with addon license edition, essentials(allowed values- false) edition, basic(allowed values- false) edition,
+     * enterprise with cloud services edition.
+     * Special default for enterprise edition is false, essentials edition is false, basic edition is false.
      * @param enableWafSignaturesNotifications set the enableWafSignaturesNotifications.
      */
     public void setEnableWafSignaturesNotifications(Boolean  enableWafSignaturesNotifications) {

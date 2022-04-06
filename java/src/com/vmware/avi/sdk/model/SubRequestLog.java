@@ -75,6 +75,7 @@ public class SubRequestLog  {
      * This is the getter method this will return the attribute value.
      * Response headers received from the server.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return headersReceivedFromServer
      */
@@ -86,6 +87,7 @@ public class SubRequestLog  {
      * This is the setter method to the attribute.
      * Response headers received from the server.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param headersReceivedFromServer set the headersReceivedFromServer.
      */
@@ -97,6 +99,7 @@ public class SubRequestLog  {
      * This is the getter method this will return the attribute value.
      * Request headers sent to the server.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return headersSentToServer
      */
@@ -108,6 +111,7 @@ public class SubRequestLog  {
      * This is the setter method to the attribute.
      * Request headers sent to the server.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param headersSentToServer set the headersSentToServer.
      */
@@ -119,6 +123,7 @@ public class SubRequestLog  {
      * This is the getter method this will return the attribute value.
      * The http response code received from the server.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpResponseCode
      */
@@ -130,6 +135,7 @@ public class SubRequestLog  {
      * This is the setter method to the attribute.
      * The http response code received from the server.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param httpResponseCode set the httpResponseCode.
      */
@@ -142,6 +148,7 @@ public class SubRequestLog  {
      * The http version of the sub-request.
      * Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpVersion
      */
@@ -154,6 +161,7 @@ public class SubRequestLog  {
      * The http version of the sub-request.
      * Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param httpVersion set the httpVersion.
      */
@@ -168,6 +176,7 @@ public class SubRequestLog  {
      * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
      * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return method
      */
@@ -182,6 +191,7 @@ public class SubRequestLog  {
      * HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE,
      * HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param method set the method.
      */
@@ -193,6 +203,7 @@ public class SubRequestLog  {
      * This is the getter method this will return the attribute value.
      * The name of the pool that was used for the sub-request.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolName
      */
@@ -204,6 +215,7 @@ public class SubRequestLog  {
      * This is the setter method to the attribute.
      * The name of the pool that was used for the sub-request.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolName set the poolName.
      */
@@ -215,6 +227,7 @@ public class SubRequestLog  {
      * This is the getter method this will return the attribute value.
      * The uuid of the pool that was used for the sub-request.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolUuid
      */
@@ -226,6 +239,7 @@ public class SubRequestLog  {
      * This is the setter method to the attribute.
      * The uuid of the pool that was used for the sub-request.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolUuid set the poolUuid.
      */
@@ -238,6 +252,7 @@ public class SubRequestLog  {
      * Length of the request sent in bytes.
      * Field introduced in 21.1.3.
      * Unit is bytes.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return requestLength
      */
@@ -250,6 +265,7 @@ public class SubRequestLog  {
      * Length of the request sent in bytes.
      * Field introduced in 21.1.3.
      * Unit is bytes.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param requestLength set the requestLength.
      */
@@ -262,6 +278,7 @@ public class SubRequestLog  {
      * Length of the response received in bytes.
      * Field introduced in 21.1.3.
      * Unit is bytes.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return responseLength
      */
@@ -274,6 +291,7 @@ public class SubRequestLog  {
      * Length of the response received in bytes.
      * Field introduced in 21.1.3.
      * Unit is bytes.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param responseLength set the responseLength.
      */
@@ -285,6 +303,7 @@ public class SubRequestLog  {
      * This is the getter method this will return the attribute value.
      * The ip of the server that was used for the sub-request.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverIp
      */
@@ -296,6 +315,7 @@ public class SubRequestLog  {
      * This is the setter method to the attribute.
      * The ip of the server that was used for the sub-request.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serverIp set the serverIp.
      */
@@ -307,6 +327,7 @@ public class SubRequestLog  {
      * This is the getter method this will return the attribute value.
      * The name of the server that was used for the sub-request.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverName
      */
@@ -318,6 +339,7 @@ public class SubRequestLog  {
      * This is the setter method to the attribute.
      * The name of the server that was used for the sub-request.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serverName set the serverName.
      */
@@ -329,6 +351,7 @@ public class SubRequestLog  {
      * This is the getter method this will return the attribute value.
      * The port of the server that was used for the sub-request.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverPort
      */
@@ -340,6 +363,7 @@ public class SubRequestLog  {
      * This is the setter method to the attribute.
      * The port of the server that was used for the sub-request.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serverPort set the serverPort.
      */
@@ -351,6 +375,7 @@ public class SubRequestLog  {
      * This is the getter method this will return the attribute value.
      * The source port for this request.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sourcePort
      */
@@ -362,6 +387,7 @@ public class SubRequestLog  {
      * This is the setter method to the attribute.
      * The source port for this request.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sourcePort set the sourcePort.
      */
@@ -375,6 +401,7 @@ public class SubRequestLog  {
      * This is the time taken from the 1st byte of the request sent to the last byte of the response received.
      * Field introduced in 21.1.3.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return totalTime
      */
@@ -388,6 +415,7 @@ public class SubRequestLog  {
      * This is the time taken from the 1st byte of the request sent to the last byte of the response received.
      * Field introduced in 21.1.3.
      * Unit is milliseconds.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param totalTime set the totalTime.
      */
@@ -399,6 +427,7 @@ public class SubRequestLog  {
      * This is the getter method this will return the attribute value.
      * The uri path of the sub-request.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uriPath
      */
@@ -410,6 +439,7 @@ public class SubRequestLog  {
      * This is the setter method to the attribute.
      * The uri path of the sub-request.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uriPath set the uriPath.
      */
@@ -421,6 +451,7 @@ public class SubRequestLog  {
      * This is the getter method this will return the attribute value.
      * The uri query of the sub-request.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uriQuery
      */
@@ -432,6 +463,7 @@ public class SubRequestLog  {
      * This is the setter method to the attribute.
      * The uri query of the sub-request.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uriQuery set the uriQuery.
      */

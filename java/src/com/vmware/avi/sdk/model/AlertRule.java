@@ -40,7 +40,7 @@ public class AlertRule  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property conn_app_log_rule of obj type alertrule field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return connAppLogRule
      */
@@ -50,7 +50,7 @@ public class AlertRule  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property conn_app_log_rule of obj type alertrule field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param connAppLogRule set the connAppLogRule.
      */
@@ -60,7 +60,7 @@ public class AlertRule  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property event_match_filter of obj type alertrule field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return eventMatchFilter
      */
@@ -70,7 +70,7 @@ public class AlertRule  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property event_match_filter of obj type alertrule field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param eventMatchFilter set the eventMatchFilter.
      */
@@ -79,7 +79,7 @@ public class AlertRule  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property metrics_rule of obj type alertrule field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metricsRule
      */
@@ -89,7 +89,7 @@ public class AlertRule  {
 
     /**
      * This is the setter method. this will set the metricsRule
-     * Placeholder for description of property metrics_rule of obj type alertrule field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metricsRule
      */
@@ -99,7 +99,7 @@ public class AlertRule  {
 
     /**
      * This is the setter method this will set the metricsRule
-     * Placeholder for description of property metrics_rule of obj type alertrule field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metricsRule
      */
@@ -114,6 +114,7 @@ public class AlertRule  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - OPERATOR_AND, OPERATOR_OR.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "OPERATOR_AND".
      * @return operator
      */
@@ -124,6 +125,7 @@ public class AlertRule  {
     /**
      * This is the setter method to the attribute.
      * Enum options - OPERATOR_AND, OPERATOR_OR.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "OPERATOR_AND".
      * @param operator set the operator.
      */
@@ -132,7 +134,7 @@ public class AlertRule  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property sys_event_rule of obj type alertrule field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sysEventRule
      */
@@ -142,7 +144,7 @@ public class AlertRule  {
 
     /**
      * This is the setter method. this will set the sysEventRule
-     * Placeholder for description of property sys_event_rule of obj type alertrule field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sysEventRule
      */
@@ -152,7 +154,7 @@ public class AlertRule  {
 
     /**
      * This is the setter method this will set the sysEventRule
-     * Placeholder for description of property sys_event_rule of obj type alertrule field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sysEventRule
      */

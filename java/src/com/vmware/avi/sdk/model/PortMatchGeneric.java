@@ -37,6 +37,7 @@ public class PortMatchGeneric  {
      * Criterion to use for src/dest port in a tcp/udp packet.
      * Enum options - IS_IN, IS_NOT_IN.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matchCriteria
      */
@@ -49,6 +50,7 @@ public class PortMatchGeneric  {
      * Criterion to use for src/dest port in a tcp/udp packet.
      * Enum options - IS_IN, IS_NOT_IN.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param matchCriteria set the matchCriteria.
      */
@@ -60,6 +62,7 @@ public class PortMatchGeneric  {
      * Listening tcp port(s).
      * Allowed values are 1-65535.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ports
      */
@@ -72,6 +75,7 @@ public class PortMatchGeneric  {
      * Listening tcp port(s).
      * Allowed values are 1-65535.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ports
      */
@@ -84,6 +88,7 @@ public class PortMatchGeneric  {
      * Listening tcp port(s).
      * Allowed values are 1-65535.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ports
      */
@@ -98,6 +103,7 @@ public class PortMatchGeneric  {
      * This is the getter method this will return the attribute value.
      * A port range defined by a start and end, including both.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ranges
      */
@@ -109,6 +115,7 @@ public class PortMatchGeneric  {
      * This is the setter method. this will set the ranges
      * A port range defined by a start and end, including both.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ranges
      */
@@ -120,6 +127,7 @@ public class PortMatchGeneric  {
      * This is the setter method this will set the ranges
      * A port range defined by a start and end, including both.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ranges
      */

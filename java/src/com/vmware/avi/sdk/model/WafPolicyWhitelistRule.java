@@ -51,6 +51,7 @@ public class WafPolicyWhitelistRule  {
      * Field introduced in 18.2.3.
      * Minimum of 1 items required.
      * Maximum of 1 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return actions
      */
     public List<String> getActions() {
@@ -65,6 +66,7 @@ public class WafPolicyWhitelistRule  {
      * Field introduced in 18.2.3.
      * Minimum of 1 items required.
      * Maximum of 1 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return actions
      */
     public void setActions(List<String>  actions) {
@@ -79,6 +81,7 @@ public class WafPolicyWhitelistRule  {
      * Field introduced in 18.2.3.
      * Minimum of 1 items required.
      * Maximum of 1 items allowed.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return actions
      */
     public WafPolicyWhitelistRule addActionsItem(String actionsItem) {
@@ -94,6 +97,7 @@ public class WafPolicyWhitelistRule  {
      * Description of this rule.
      * Field deprecated in 20.1.3.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return description
      */
     public String getDescription() {
@@ -105,6 +109,7 @@ public class WafPolicyWhitelistRule  {
      * Description of this rule.
      * Field deprecated in 20.1.3.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param description set the description.
      */
     public void setDescription(String  description) {
@@ -116,6 +121,7 @@ public class WafPolicyWhitelistRule  {
      * Enable or disable the rule.
      * Field deprecated in 20.1.3.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return enable
      */
     public Boolean getEnable() {
@@ -127,6 +133,7 @@ public class WafPolicyWhitelistRule  {
      * Enable or disable the rule.
      * Field deprecated in 20.1.3.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param enable set the enable.
      */
     public void setEnable(Boolean  enable) {
@@ -138,6 +145,7 @@ public class WafPolicyWhitelistRule  {
      * Rules are executed in order of this index field.
      * Field deprecated in 20.1.3.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return index
      */
     public Integer getIndex() {
@@ -149,6 +157,7 @@ public class WafPolicyWhitelistRule  {
      * Rules are executed in order of this index field.
      * Field deprecated in 20.1.3.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param index set the index.
      */
     public void setIndex(Integer  index) {
@@ -160,6 +169,7 @@ public class WafPolicyWhitelistRule  {
      * Match criteria describing requests to which this rule should be applied.
      * Field deprecated in 20.1.3.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return match
      */
     public MatchTarget getMatch() {
@@ -171,6 +181,7 @@ public class WafPolicyWhitelistRule  {
      * Match criteria describing requests to which this rule should be applied.
      * Field deprecated in 20.1.3.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param match set the match.
      */
     public void setMatch(MatchTarget match) {
@@ -182,6 +193,7 @@ public class WafPolicyWhitelistRule  {
      * A name describing the rule in a short form.
      * Field deprecated in 20.1.3.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return name
      */
     public String getName() {
@@ -193,6 +205,7 @@ public class WafPolicyWhitelistRule  {
      * A name describing the rule in a short form.
      * Field deprecated in 20.1.3.
      * Field introduced in 18.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param name set the name.
      */
     public void setName(String  name) {
@@ -206,6 +219,7 @@ public class WafPolicyWhitelistRule  {
      * Field deprecated in 20.1.3.
      * Field introduced in 20.1.1.
      * Unit is percent.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return samplingPercent
      */
     public Integer getSamplingPercent() {
@@ -219,6 +233,7 @@ public class WafPolicyWhitelistRule  {
      * Field deprecated in 20.1.3.
      * Field introduced in 20.1.1.
      * Unit is percent.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param samplingPercent set the samplingPercent.
      */
     public void setSamplingPercent(Integer  samplingPercent) {

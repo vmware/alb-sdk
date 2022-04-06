@@ -31,7 +31,7 @@ public class SEFaultInjectExhaustParam  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property leak of obj type sefaultinjectexhaustparam field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return leak
      */
@@ -41,7 +41,7 @@ public class SEFaultInjectExhaustParam  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property leak of obj type sefaultinjectexhaustparam field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param leak set the leak.
      */
@@ -51,7 +51,7 @@ public class SEFaultInjectExhaustParam  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property num of obj type sefaultinjectexhaustparam field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return num
      */
@@ -61,7 +61,7 @@ public class SEFaultInjectExhaustParam  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property num of obj type sefaultinjectexhaustparam field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param num set the num.
      */

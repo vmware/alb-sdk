@@ -63,6 +63,7 @@ public class CaptureIPC  {
      * This is the getter method this will return the attribute value.
      * Flow del probe filter for se ipc.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return flowDelProbe
      */
@@ -74,6 +75,7 @@ public class CaptureIPC  {
      * This is the setter method to the attribute.
      * Flow del probe filter for se ipc.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param flowDelProbe set the flowDelProbe.
      */
@@ -85,6 +87,7 @@ public class CaptureIPC  {
      * This is the getter method this will return the attribute value.
      * Flow mirror add filter for se ipc.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return flowMirrorAdd
      */
@@ -96,6 +99,7 @@ public class CaptureIPC  {
      * This is the setter method to the attribute.
      * Flow mirror add filter for se ipc.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param flowMirrorAdd set the flowMirrorAdd.
      */
@@ -107,6 +111,7 @@ public class CaptureIPC  {
      * This is the getter method this will return the attribute value.
      * Filter for all flow mirror se ipc.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return flowMirrorAll
      */
@@ -118,6 +123,7 @@ public class CaptureIPC  {
      * This is the setter method to the attribute.
      * Filter for all flow mirror se ipc.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param flowMirrorAll set the flowMirrorAll.
      */
@@ -129,6 +135,7 @@ public class CaptureIPC  {
      * This is the getter method this will return the attribute value.
      * Flow mirror del filter for se ipc.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return flowMirrorDel
      */
@@ -140,6 +147,7 @@ public class CaptureIPC  {
      * This is the setter method to the attribute.
      * Flow mirror del filter for se ipc.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param flowMirrorDel set the flowMirrorDel.
      */
@@ -151,6 +159,7 @@ public class CaptureIPC  {
      * This is the getter method this will return the attribute value.
      * Flow probe filter for se ipc.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return flowProbe
      */
@@ -162,6 +171,7 @@ public class CaptureIPC  {
      * This is the setter method to the attribute.
      * Flow probe filter for se ipc.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param flowProbe set the flowProbe.
      */
@@ -173,6 +183,7 @@ public class CaptureIPC  {
      * This is the getter method this will return the attribute value.
      * Filter for all flow probe se ipc.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return flowProbeAll
      */
@@ -184,6 +195,7 @@ public class CaptureIPC  {
      * This is the setter method to the attribute.
      * Filter for all flow probe se ipc.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param flowProbeAll set the flowProbeAll.
      */
@@ -195,6 +207,7 @@ public class CaptureIPC  {
      * This is the getter method this will return the attribute value.
      * Ipc batched filter for se ipc.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipcBatched
      */
@@ -206,6 +219,7 @@ public class CaptureIPC  {
      * This is the setter method to the attribute.
      * Ipc batched filter for se ipc.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipcBatched set the ipcBatched.
      */
@@ -217,6 +231,7 @@ public class CaptureIPC  {
      * This is the getter method this will return the attribute value.
      * Filter for incoming ipc request.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipcRxReq
      */
@@ -228,6 +243,7 @@ public class CaptureIPC  {
      * This is the setter method to the attribute.
      * Filter for incoming ipc request.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipcRxReq set the ipcRxReq.
      */
@@ -239,6 +255,7 @@ public class CaptureIPC  {
      * This is the getter method this will return the attribute value.
      * Filter for incoming ipc response.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipcRxRes
      */
@@ -250,6 +267,7 @@ public class CaptureIPC  {
      * This is the setter method to the attribute.
      * Filter for incoming ipc response.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipcRxRes set the ipcRxRes.
      */
@@ -261,6 +279,7 @@ public class CaptureIPC  {
      * This is the getter method this will return the attribute value.
      * Filter for outgoing ipc request.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipcTxReq
      */
@@ -272,6 +291,7 @@ public class CaptureIPC  {
      * This is the setter method to the attribute.
      * Filter for outgoing ipc request.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipcTxReq set the ipcTxReq.
      */
@@ -283,6 +303,7 @@ public class CaptureIPC  {
      * This is the getter method this will return the attribute value.
      * Filter for outgoing ipc response.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipcTxRes
      */
@@ -294,6 +315,7 @@ public class CaptureIPC  {
      * This is the setter method to the attribute.
      * Filter for outgoing ipc response.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipcTxRes set the ipcTxRes.
      */
@@ -305,6 +327,7 @@ public class CaptureIPC  {
      * This is the getter method this will return the attribute value.
      * Vs heart beat filter for se ipc.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsHb
      */
@@ -316,6 +339,7 @@ public class CaptureIPC  {
      * This is the setter method to the attribute.
      * Vs heart beat filter for se ipc.
      * Field introduced in 18.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsHb set the vsHb.
      */

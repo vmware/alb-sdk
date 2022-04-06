@@ -88,7 +88,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of controller_cluster.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controllerClusterUuid
      */
@@ -98,7 +98,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of controller_cluster.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param controllerClusterUuid set the controllerClusterUuid.
      */
@@ -108,7 +108,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property controller_ip_addr of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return controllerIpAddr
      */
@@ -118,7 +118,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property controller_ip_addr of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param controllerIpAddr set the controllerIpAddr.
      */
@@ -129,6 +129,7 @@ public class VISeVmOvaParams  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - APIC_MODE, NON_APIC_MODE.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mode
      */
@@ -139,6 +140,7 @@ public class VISeVmOvaParams  {
     /**
      * This is the setter method to the attribute.
      * Enum options - APIC_MODE, NON_APIC_MODE.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mode set the mode.
      */
@@ -148,7 +150,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property rm_cookie of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rmCookie
      */
@@ -158,7 +160,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property rm_cookie of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rmCookie set the rmCookie.
      */
@@ -168,7 +170,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_auth_token of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seAuthToken
      */
@@ -178,7 +180,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_auth_token of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seAuthToken set the seAuthToken.
      */
@@ -188,7 +190,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property sevm_name of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sevmName
      */
@@ -198,7 +200,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property sevm_name of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sevmName set the sevmName.
      */
@@ -208,7 +210,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property single_socket_affinity of obj type visevmovaparams field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return singleSocketAffinity
      */
@@ -218,7 +220,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property single_socket_affinity of obj type visevmovaparams field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param singleSocketAffinity set the singleSocketAffinity.
      */
@@ -228,7 +230,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_cpu_reserv of obj type visevmovaparams field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return vcenterCpuReserv
      */
@@ -238,7 +240,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_cpu_reserv of obj type visevmovaparams field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param vcenterCpuReserv set the vcenterCpuReserv.
      */
@@ -248,7 +250,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_ds_include of obj type visevmovaparams field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterDsInclude
      */
@@ -258,7 +260,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_ds_include of obj type visevmovaparams field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterDsInclude set the vcenterDsInclude.
      */
@@ -267,7 +269,7 @@ public class VISeVmOvaParams  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_ds_info of obj type visevmovaparams field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterDsInfo
      */
@@ -277,7 +279,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method. this will set the vcenterDsInfo
-     * Placeholder for description of property vcenter_ds_info of obj type visevmovaparams field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterDsInfo
      */
@@ -287,7 +289,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method this will set the vcenterDsInfo
-     * Placeholder for description of property vcenter_ds_info of obj type visevmovaparams field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterDsInfo
      */
@@ -302,6 +304,7 @@ public class VISeVmOvaParams  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - VCENTER_DATASTORE_ANY, VCENTER_DATASTORE_LOCAL, VCENTER_DATASTORE_SHARED.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterDsMode
      */
@@ -312,6 +315,7 @@ public class VISeVmOvaParams  {
     /**
      * This is the setter method to the attribute.
      * Enum options - VCENTER_DATASTORE_ANY, VCENTER_DATASTORE_LOCAL, VCENTER_DATASTORE_SHARED.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterDsMode set the vcenterDsMode.
      */
@@ -321,7 +325,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_host of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterHost
      */
@@ -331,7 +335,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_host of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterHost set the vcenterHost.
      */
@@ -341,7 +345,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_internal of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "UNIFIED ADMIN".
      * @return vcenterInternal
      */
@@ -351,7 +355,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_internal of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "UNIFIED ADMIN".
      * @param vcenterInternal set the vcenterInternal.
      */
@@ -361,7 +365,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_mem_reserv of obj type visevmovaparams field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return vcenterMemReserv
      */
@@ -371,7 +375,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_mem_reserv of obj type visevmovaparams field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param vcenterMemReserv set the vcenterMemReserv.
      */
@@ -381,7 +385,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_num_mem of obj type visevmovaparams field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2048.
      * @return vcenterNumMem
      */
@@ -391,7 +395,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_num_mem of obj type visevmovaparams field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2048.
      * @param vcenterNumMem set the vcenterNumMem.
      */
@@ -401,7 +405,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_num_se_cores of obj type visevmovaparams field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return vcenterNumSeCores
      */
@@ -411,7 +415,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_num_se_cores of obj type visevmovaparams field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param vcenterNumSeCores set the vcenterNumSeCores.
      */
@@ -421,7 +425,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_opaque_nwid of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterOpaqueNwid
      */
@@ -431,7 +435,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_opaque_nwid of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterOpaqueNwid set the vcenterOpaqueNwid.
      */
@@ -441,7 +445,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_ovf_path of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterOvfPath
      */
@@ -451,7 +455,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_ovf_path of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterOvfPath set the vcenterOvfPath.
      */
@@ -461,7 +465,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_se_disk_size_kb of obj type visevmovaparams field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10485760.
      * @return vcenterSeDiskSizeKb
      */
@@ -471,7 +475,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_se_disk_size_kb of obj type visevmovaparams field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10485760.
      * @param vcenterSeDiskSizeKb set the vcenterSeDiskSizeKb.
      */
@@ -481,7 +485,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_se_mgmt_nw of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterSeMgmtNw
      */
@@ -491,7 +495,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_se_mgmt_nw of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterSeMgmtNw set the vcenterSeMgmtNw.
      */
@@ -501,7 +505,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_vm_folder of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterVmFolder
      */
@@ -511,7 +515,7 @@ public class VISeVmOvaParams  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_vm_folder of obj type visevmovaparams field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterVmFolder set the vcenterVmFolder.
      */

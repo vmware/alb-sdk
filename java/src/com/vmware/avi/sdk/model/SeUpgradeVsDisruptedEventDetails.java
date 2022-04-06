@@ -37,7 +37,7 @@ public class SeUpgradeVsDisruptedEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property ip of obj type seupgradevsdisruptedeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip
      */
@@ -47,7 +47,7 @@ public class SeUpgradeVsDisruptedEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property ip of obj type seupgradevsdisruptedeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip set the ip.
      */
@@ -56,7 +56,7 @@ public class SeUpgradeVsDisruptedEventDetails  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property notes of obj type seupgradevsdisruptedeventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return notes
      */
@@ -66,7 +66,7 @@ public class SeUpgradeVsDisruptedEventDetails  {
 
     /**
      * This is the setter method. this will set the notes
-     * Placeholder for description of property notes of obj type seupgradevsdisruptedeventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return notes
      */
@@ -76,7 +76,7 @@ public class SeUpgradeVsDisruptedEventDetails  {
 
     /**
      * This is the setter method this will set the notes
-     * Placeholder for description of property notes of obj type seupgradevsdisruptedeventdetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return notes
      */
@@ -90,7 +90,7 @@ public class SeUpgradeVsDisruptedEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vip_id of obj type seupgradevsdisruptedeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vipId
      */
@@ -100,7 +100,7 @@ public class SeUpgradeVsDisruptedEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vip_id of obj type seupgradevsdisruptedeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vipId set the vipId.
      */
@@ -110,7 +110,7 @@ public class SeUpgradeVsDisruptedEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of vs.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vsUuid
      */
@@ -120,7 +120,7 @@ public class SeUpgradeVsDisruptedEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of vs.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vsUuid set the vsUuid.
      */

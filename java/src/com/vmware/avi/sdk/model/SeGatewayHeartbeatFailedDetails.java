@@ -35,6 +35,7 @@ public class SeGatewayHeartbeatFailedDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Ip address of gateway monitored.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return gatewayIp
      */
@@ -45,6 +46,7 @@ public class SeGatewayHeartbeatFailedDetails  {
     /**
      * This is the setter method to the attribute.
      * Ip address of gateway monitored.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param gatewayIp set the gatewayIp.
      */
@@ -55,6 +57,7 @@ public class SeGatewayHeartbeatFailedDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of virtual routing context in which this gateway is present.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vrfName
      */
@@ -65,6 +68,7 @@ public class SeGatewayHeartbeatFailedDetails  {
     /**
      * This is the setter method to the attribute.
      * Name of virtual routing context in which this gateway is present.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vrfName set the vrfName.
      */
@@ -75,6 +79,7 @@ public class SeGatewayHeartbeatFailedDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Uuid of the virtual routing context in which this gateway is present.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vrfUuid
      */
@@ -85,6 +90,7 @@ public class SeGatewayHeartbeatFailedDetails  {
     /**
      * This is the setter method to the attribute.
      * Uuid of the virtual routing context in which this gateway is present.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vrfUuid set the vrfUuid.
      */

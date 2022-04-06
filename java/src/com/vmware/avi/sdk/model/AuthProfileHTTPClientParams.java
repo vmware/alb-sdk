@@ -40,6 +40,7 @@ public class AuthProfileHTTPClientParams  {
      * The max allowed length of time a clients authentication is cached.
      * Allowed values are 1-30.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return cacheExpirationTime
      */
@@ -52,6 +53,7 @@ public class AuthProfileHTTPClientParams  {
      * The max allowed length of time a clients authentication is cached.
      * Allowed values are 1-30.
      * Unit is sec.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param cacheExpirationTime set the cacheExpirationTime.
      */
@@ -64,6 +66,7 @@ public class AuthProfileHTTPClientParams  {
      * Group member entries contain full dns instead of just user id attribute values.
      * This should now be configured using the ldapdirectorysettings field instead.
      * Field deprecated in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return groupMemberIsFullDn
      */
     public Boolean getGroupMemberIsFullDn() {
@@ -75,6 +78,7 @@ public class AuthProfileHTTPClientParams  {
      * Group member entries contain full dns instead of just user id attribute values.
      * This should now be configured using the ldapdirectorysettings field instead.
      * Field deprecated in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param groupMemberIsFullDn set the groupMemberIsFullDn.
      */
     public void setGroupMemberIsFullDn(Boolean  groupMemberIsFullDn) {
@@ -86,6 +90,7 @@ public class AuthProfileHTTPClientParams  {
      * Insert an http header.
      * This field is used to define the header name.
      * The value of the header is set to the client's http auth user id.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return requestHeader
      */
@@ -98,6 +103,7 @@ public class AuthProfileHTTPClientParams  {
      * Insert an http header.
      * This field is used to define the header name.
      * The value of the header is set to the client's http auth user id.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param requestHeader set the requestHeader.
      */
@@ -109,6 +115,7 @@ public class AuthProfileHTTPClientParams  {
      * A user should be a member of these groups.
      * Each group is defined by the dn.
      * For example, cn=testgroup,ou=groups,dc=example,dc=avinetworks,dc=com.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return requireUserGroups
      */
@@ -121,6 +128,7 @@ public class AuthProfileHTTPClientParams  {
      * A user should be a member of these groups.
      * Each group is defined by the dn.
      * For example, cn=testgroup,ou=groups,dc=example,dc=avinetworks,dc=com.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return requireUserGroups
      */
@@ -133,6 +141,7 @@ public class AuthProfileHTTPClientParams  {
      * A user should be a member of these groups.
      * Each group is defined by the dn.
      * For example, cn=testgroup,ou=groups,dc=example,dc=avinetworks,dc=com.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return requireUserGroups
      */

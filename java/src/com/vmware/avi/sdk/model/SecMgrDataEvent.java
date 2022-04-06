@@ -33,6 +33,7 @@ public class SecMgrDataEvent  {
      * This is the getter method this will return the attribute value.
      * Type of the generated for an application.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return error
      */
@@ -44,6 +45,7 @@ public class SecMgrDataEvent  {
      * This is the setter method to the attribute.
      * Type of the generated for an application.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param error set the error.
      */
@@ -55,6 +57,7 @@ public class SecMgrDataEvent  {
      * This is the getter method this will return the attribute value.
      * Name of the application.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -66,6 +69,7 @@ public class SecMgrDataEvent  {
      * This is the setter method to the attribute.
      * Name of the application.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */

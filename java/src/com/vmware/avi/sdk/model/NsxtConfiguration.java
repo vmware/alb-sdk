@@ -60,7 +60,7 @@ public class NsxtConfiguration  {
      * This is the getter method this will return the attribute value.
      * Automatically create dfw rules for virtualservice in nsx-t manager.
      * Field introduced in 20.1.1.
-     * Allowed in basic(allowed values- false) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic(allowed values- false) edition, essentials edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return automateDfwRules
      */
@@ -72,7 +72,7 @@ public class NsxtConfiguration  {
      * This is the setter method to the attribute.
      * Automatically create dfw rules for virtualservice in nsx-t manager.
      * Field introduced in 20.1.1.
-     * Allowed in basic(allowed values- false) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic(allowed values- false) edition, essentials edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param automateDfwRules set the automateDfwRules.
      */
@@ -84,7 +84,7 @@ public class NsxtConfiguration  {
      * This is the getter method this will return the attribute value.
      * Data network configuration for avi service engines.
      * Field introduced in 20.1.5.
-     * Allowed in basic edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dataNetworkConfig
      */
@@ -96,7 +96,7 @@ public class NsxtConfiguration  {
      * This is the setter method to the attribute.
      * Data network configuration for avi service engines.
      * Field introduced in 20.1.5.
-     * Allowed in basic edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dataNetworkConfig set the dataNetworkConfig.
      */
@@ -108,6 +108,7 @@ public class NsxtConfiguration  {
      * This is the getter method this will return the attribute value.
      * Domain where nsgroup objects belongs to.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "default".
      * @return domainId
      */
@@ -119,6 +120,7 @@ public class NsxtConfiguration  {
      * This is the setter method to the attribute.
      * Domain where nsgroup objects belongs to.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "default".
      * @param domainId set the domainId.
      */
@@ -130,6 +132,7 @@ public class NsxtConfiguration  {
      * This is the getter method this will return the attribute value.
      * Enforcement point is where the rules of a policy to apply.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "default".
      * @return enforcementpointId
      */
@@ -141,6 +144,7 @@ public class NsxtConfiguration  {
      * This is the setter method to the attribute.
      * Enforcement point is where the rules of a policy to apply.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "default".
      * @param enforcementpointId set the enforcementpointId.
      */
@@ -152,7 +156,7 @@ public class NsxtConfiguration  {
      * This is the getter method this will return the attribute value.
      * Management network configuration for avi service engines.
      * Field introduced in 20.1.5.
-     * Allowed in basic edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return managementNetworkConfig
      */
@@ -164,7 +168,7 @@ public class NsxtConfiguration  {
      * This is the setter method to the attribute.
      * Management network configuration for avi service engines.
      * Field introduced in 20.1.5.
-     * Allowed in basic edition, enterprise edition.
+     * Allowed in enterprise with any value edition, basic with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param managementNetworkConfig set the managementNetworkConfig.
      */
@@ -177,6 +181,7 @@ public class NsxtConfiguration  {
      * Management network segment to use for avi service engines.
      * Field deprecated in 20.1.5.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return managementSegment
      */
     public Tier1LogicalRouterInfo getManagementSegment() {
@@ -188,6 +193,7 @@ public class NsxtConfiguration  {
      * Management network segment to use for avi service engines.
      * Field deprecated in 20.1.5.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param managementSegment set the managementSegment.
      */
     public void setManagementSegment(Tier1LogicalRouterInfo managementSegment) {
@@ -199,6 +205,7 @@ public class NsxtConfiguration  {
      * Credentials to access nsx-t manager.
      * It is a reference to an object of type cloudconnectoruser.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtCredentialsRef
      */
@@ -211,6 +218,7 @@ public class NsxtConfiguration  {
      * Credentials to access nsx-t manager.
      * It is a reference to an object of type cloudconnectoruser.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtCredentialsRef set the nsxtCredentialsRef.
      */
@@ -222,6 +230,7 @@ public class NsxtConfiguration  {
      * This is the getter method this will return the attribute value.
      * Nsx-t manager hostname or ip address.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtUrl
      */
@@ -233,6 +242,7 @@ public class NsxtConfiguration  {
      * This is the setter method to the attribute.
      * Nsx-t manager hostname or ip address.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtUrl set the nsxtUrl.
      */
@@ -244,6 +254,7 @@ public class NsxtConfiguration  {
      * This is the getter method this will return the attribute value.
      * Site where transport zone belongs to.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "default".
      * @return siteId
      */
@@ -255,6 +266,7 @@ public class NsxtConfiguration  {
      * This is the setter method to the attribute.
      * Site where transport zone belongs to.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "default".
      * @param siteId set the siteId.
      */
@@ -267,6 +279,7 @@ public class NsxtConfiguration  {
      * Nsxt tier1 segment configuration for avi service engine data path.
      * Field deprecated in 20.1.5.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return tier1SegmentConfig
      */
     public NsxtTier1SegmentConfig getTier1SegmentConfig() {
@@ -278,6 +291,7 @@ public class NsxtConfiguration  {
      * Nsxt tier1 segment configuration for avi service engine data path.
      * Field deprecated in 20.1.5.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param tier1SegmentConfig set the tier1SegmentConfig.
      */
     public void setTier1SegmentConfig(NsxtTier1SegmentConfig tier1SegmentConfig) {
@@ -291,6 +305,7 @@ public class NsxtConfiguration  {
      * Value should be path like /infra/sites/default/enforcement-points/default/transport-zones/xxx-xxx-xxxx.
      * Field deprecated in 20.1.5.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return transportZone
      */
     public String getTransportZone() {
@@ -304,6 +319,7 @@ public class NsxtConfiguration  {
      * Value should be path like /infra/sites/default/enforcement-points/default/transport-zones/xxx-xxx-xxxx.
      * Field deprecated in 20.1.5.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param transportZone set the transportZone.
      */
     public void setTransportZone(String  transportZone) {

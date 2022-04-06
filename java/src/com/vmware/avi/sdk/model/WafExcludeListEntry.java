@@ -45,6 +45,7 @@ public class WafExcludeListEntry  {
      * This is the getter method this will return the attribute value.
      * Client ip subnet to exclude for waf rules.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientSubnet
      */
@@ -56,6 +57,7 @@ public class WafExcludeListEntry  {
      * This is the setter method to the attribute.
      * Client ip subnet to exclude for waf rules.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientSubnet set the clientSubnet.
      */
@@ -67,6 +69,7 @@ public class WafExcludeListEntry  {
      * This is the getter method this will return the attribute value.
      * Free-text comment about this exclusion.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
      */
@@ -78,6 +81,7 @@ public class WafExcludeListEntry  {
      * This is the setter method to the attribute.
      * Free-text comment about this exclusion.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
      */
@@ -91,6 +95,7 @@ public class WafExcludeListEntry  {
      * 'request_body', 'request_uri', 'request_uri_raw', 'request_cookies xxx', 'request_headers xxx', 'response_headers xxx' or xml xxx.
      * These match_elements in the http transaction (if present) will be excluded when executing waf rules.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matchElement
      */
@@ -104,6 +109,7 @@ public class WafExcludeListEntry  {
      * 'request_body', 'request_uri', 'request_uri_raw', 'request_cookies xxx', 'request_headers xxx', 'response_headers xxx' or xml xxx.
      * These match_elements in the http transaction (if present) will be excluded when executing waf rules.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param matchElement set the matchElement.
      */
@@ -115,6 +121,7 @@ public class WafExcludeListEntry  {
      * This is the getter method this will return the attribute value.
      * Criteria for match_element matching.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matchElementCriteria
      */
@@ -126,6 +133,7 @@ public class WafExcludeListEntry  {
      * This is the setter method to the attribute.
      * Criteria for match_element matching.
      * Field introduced in 18.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param matchElementCriteria set the matchElementCriteria.
      */
@@ -137,6 +145,7 @@ public class WafExcludeListEntry  {
      * This is the getter method this will return the attribute value.
      * Criteria for uri matching.
      * Field introduced in 17.2.8.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uriMatchCriteria
      */
@@ -148,6 +157,7 @@ public class WafExcludeListEntry  {
      * This is the setter method to the attribute.
      * Criteria for uri matching.
      * Field introduced in 17.2.8.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uriMatchCriteria set the uriMatchCriteria.
      */
@@ -159,6 +169,7 @@ public class WafExcludeListEntry  {
      * This is the getter method this will return the attribute value.
      * Uri path to exclude for waf rules.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uriPath
      */
@@ -170,6 +181,7 @@ public class WafExcludeListEntry  {
      * This is the setter method to the attribute.
      * Uri path to exclude for waf rules.
      * Field introduced in 17.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uriPath set the uriPath.
      */

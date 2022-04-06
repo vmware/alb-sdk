@@ -48,6 +48,7 @@ public class DnsRrSet  {
      * This is the getter method this will return the attribute value.
      * Canonical name in cname record.
      * Field introduced in 17.2.12, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cname
      */
@@ -59,6 +60,7 @@ public class DnsRrSet  {
      * This is the setter method to the attribute.
      * Canonical name in cname record.
      * Field introduced in 17.2.12, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cname set the cname.
      */
@@ -70,6 +72,7 @@ public class DnsRrSet  {
      * This is the getter method this will return the attribute value.
      * Fully qualified domain name.
      * Field introduced in 17.2.12, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fqdn
      */
@@ -81,6 +84,7 @@ public class DnsRrSet  {
      * This is the setter method to the attribute.
      * Fully qualified domain name.
      * Field introduced in 17.2.12, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fqdn set the fqdn.
      */
@@ -91,6 +95,7 @@ public class DnsRrSet  {
      * This is the getter method this will return the attribute value.
      * Ipv6 address in aaaa record.
      * Field introduced in 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip6Addresses
      */
@@ -102,6 +107,7 @@ public class DnsRrSet  {
      * This is the setter method. this will set the ip6Addresses
      * Ipv6 address in aaaa record.
      * Field introduced in 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip6Addresses
      */
@@ -113,6 +119,7 @@ public class DnsRrSet  {
      * This is the setter method this will set the ip6Addresses
      * Ipv6 address in aaaa record.
      * Field introduced in 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip6Addresses
      */
@@ -127,6 +134,7 @@ public class DnsRrSet  {
      * This is the getter method this will return the attribute value.
      * Ip address in a record.
      * Field introduced in 17.2.12, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipAddresses
      */
@@ -138,6 +146,7 @@ public class DnsRrSet  {
      * This is the setter method. this will set the ipAddresses
      * Ip address in a record.
      * Field introduced in 17.2.12, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipAddresses
      */
@@ -149,6 +158,7 @@ public class DnsRrSet  {
      * This is the setter method this will set the ipAddresses
      * Ip address in a record.
      * Field introduced in 17.2.12, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipAddresses
      */
@@ -163,6 +173,7 @@ public class DnsRrSet  {
      * This is the getter method this will return the attribute value.
      * Name server information in ns record.
      * Field introduced in 17.2.12, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nses
      */
@@ -174,6 +185,7 @@ public class DnsRrSet  {
      * This is the setter method. this will set the nses
      * Name server information in ns record.
      * Field introduced in 17.2.12, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nses
      */
@@ -185,6 +197,7 @@ public class DnsRrSet  {
      * This is the setter method this will set the nses
      * Name server information in ns record.
      * Field introduced in 17.2.12, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nses
      */
@@ -201,6 +214,7 @@ public class DnsRrSet  {
      * Time to live for this dns record.
      * Allowed values are 0-2147483647.
      * Field introduced in 17.2.12, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ttl
      */
@@ -213,6 +227,7 @@ public class DnsRrSet  {
      * Time to live for this dns record.
      * Allowed values are 0-2147483647.
      * Field introduced in 17.2.12, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ttl set the ttl.
      */
@@ -227,6 +242,7 @@ public class DnsRrSet  {
      * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
      * DNS_RECORD_ANY.
      * Field introduced in 17.2.12, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -241,6 +257,7 @@ public class DnsRrSet  {
      * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
      * DNS_RECORD_ANY.
      * Field introduced in 17.2.12, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */

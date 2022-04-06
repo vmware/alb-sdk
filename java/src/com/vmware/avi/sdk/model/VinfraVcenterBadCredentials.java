@@ -43,7 +43,7 @@ public class VinfraVcenterBadCredentials  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -53,7 +53,7 @@ public class VinfraVcenterBadCredentials  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -63,7 +63,7 @@ public class VinfraVcenterBadCredentials  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property previous_count of obj type vinfravcenterbadcredentials field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return previousCount
      */
@@ -73,7 +73,7 @@ public class VinfraVcenterBadCredentials  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property previous_count of obj type vinfravcenterbadcredentials field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param previousCount set the previousCount.
      */
@@ -83,7 +83,7 @@ public class VinfraVcenterBadCredentials  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property user of obj type vinfravcenterbadcredentials field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return user
      */
@@ -93,7 +93,7 @@ public class VinfraVcenterBadCredentials  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property user of obj type vinfravcenterbadcredentials field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param user set the user.
      */
@@ -103,7 +103,7 @@ public class VinfraVcenterBadCredentials  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter of obj type vinfravcenterbadcredentials field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenter
      */
@@ -113,7 +113,7 @@ public class VinfraVcenterBadCredentials  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter of obj type vinfravcenterbadcredentials field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenter set the vcenter.
      */
@@ -123,7 +123,7 @@ public class VinfraVcenterBadCredentials  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_name of obj type vinfravcenterbadcredentials field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterName
      */
@@ -133,7 +133,7 @@ public class VinfraVcenterBadCredentials  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_name of obj type vinfravcenterbadcredentials field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterName set the vcenterName.
      */
@@ -143,7 +143,7 @@ public class VinfraVcenterBadCredentials  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_object of obj type vinfravcenterbadcredentials field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterObject
      */
@@ -153,7 +153,7 @@ public class VinfraVcenterBadCredentials  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_object of obj type vinfravcenterbadcredentials field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterObject set the vcenterObject.
      */

@@ -41,6 +41,7 @@ public class MgmtIpAccessControl  {
     /**
      * This is the getter method this will return the attribute value.
      * Configure ip addresses to access controller using api.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return apiAccess
      */
@@ -51,6 +52,7 @@ public class MgmtIpAccessControl  {
     /**
      * This is the setter method to the attribute.
      * Configure ip addresses to access controller using api.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param apiAccess set the apiAccess.
      */
@@ -61,6 +63,7 @@ public class MgmtIpAccessControl  {
     /**
      * This is the getter method this will return the attribute value.
      * Configure ip addresses to access controller using cli shell.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return shellServerAccess
      */
@@ -71,6 +74,7 @@ public class MgmtIpAccessControl  {
     /**
      * This is the setter method to the attribute.
      * Configure ip addresses to access controller using cli shell.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param shellServerAccess set the shellServerAccess.
      */
@@ -81,6 +85,7 @@ public class MgmtIpAccessControl  {
     /**
      * This is the getter method this will return the attribute value.
      * Configure ip addresses to access controller using snmp.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return snmpAccess
      */
@@ -91,6 +96,7 @@ public class MgmtIpAccessControl  {
     /**
      * This is the setter method to the attribute.
      * Configure ip addresses to access controller using snmp.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param snmpAccess set the snmpAccess.
      */
@@ -101,6 +107,7 @@ public class MgmtIpAccessControl  {
     /**
      * This is the getter method this will return the attribute value.
      * Configure ip addresses to access controller using ssh.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sshAccess
      */
@@ -111,6 +118,7 @@ public class MgmtIpAccessControl  {
     /**
      * This is the setter method to the attribute.
      * Configure ip addresses to access controller using ssh.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sshAccess set the sshAccess.
      */
@@ -122,6 +130,7 @@ public class MgmtIpAccessControl  {
      * This is the getter method this will return the attribute value.
      * Configure ip addresses to access controller using sysint access.
      * Field introduced in 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sysintAccess
      */
@@ -133,6 +142,7 @@ public class MgmtIpAccessControl  {
      * This is the setter method to the attribute.
      * Configure ip addresses to access controller using sysint access.
      * Field introduced in 18.1.3, 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sysintAccess set the sysintAccess.
      */

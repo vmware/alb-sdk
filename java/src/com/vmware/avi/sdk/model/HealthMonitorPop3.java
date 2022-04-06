@@ -30,6 +30,7 @@ public class HealthMonitorPop3  {
      * This is the getter method this will return the attribute value.
      * Ssl attributes for pop3s monitor.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sslAttributes
      */
@@ -41,6 +42,7 @@ public class HealthMonitorPop3  {
      * This is the setter method to the attribute.
      * Ssl attributes for pop3s monitor.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sslAttributes set the sslAttributes.
      */

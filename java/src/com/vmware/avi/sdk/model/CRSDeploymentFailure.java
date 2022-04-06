@@ -32,6 +32,7 @@ public class CRSDeploymentFailure  {
      * This is the getter method this will return the attribute value.
      * List of all crs updates that failed to install.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return crsInfo
      */
@@ -43,6 +44,7 @@ public class CRSDeploymentFailure  {
      * This is the setter method. this will set the crsInfo
      * List of all crs updates that failed to install.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return crsInfo
      */
@@ -54,6 +56,7 @@ public class CRSDeploymentFailure  {
      * This is the setter method this will set the crsInfo
      * List of all crs updates that failed to install.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return crsInfo
      */
@@ -69,6 +72,7 @@ public class CRSDeploymentFailure  {
      * This is the getter method this will return the attribute value.
      * Error message to be conveyed to controller ui.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return message
      */
@@ -80,6 +84,7 @@ public class CRSDeploymentFailure  {
      * This is the setter method to the attribute.
      * Error message to be conveyed to controller ui.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param message set the message.
      */

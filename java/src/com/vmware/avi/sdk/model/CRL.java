@@ -60,6 +60,7 @@ public class CRL  {
      * This is the getter method this will return the attribute value.
      * Certificate revocation list from a given issuer in pem format.
      * This can either be configured directly or via the server_url.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return body
      */
@@ -71,6 +72,7 @@ public class CRL  {
      * This is the setter method to the attribute.
      * Certificate revocation list from a given issuer in pem format.
      * This can either be configured directly or via the server_url.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param body set the body.
      */
@@ -81,6 +83,7 @@ public class CRL  {
     /**
      * This is the getter method this will return the attribute value.
      * Common name of the issuer in the certificate revocation list.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return commonName
      */
@@ -91,6 +94,7 @@ public class CRL  {
     /**
      * This is the setter method to the attribute.
      * Common name of the issuer in the certificate revocation list.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param commonName set the commonName.
      */
@@ -101,6 +105,7 @@ public class CRL  {
     /**
      * This is the getter method this will return the attribute value.
      * Distinguished name of the issuer in the certificate revocation list.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return distinguishedName
      */
@@ -111,6 +116,7 @@ public class CRL  {
     /**
      * This is the setter method to the attribute.
      * Distinguished name of the issuer in the certificate revocation list.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param distinguishedName set the distinguishedName.
      */
@@ -121,6 +127,7 @@ public class CRL  {
     /**
      * This is the getter method this will return the attribute value.
      * Cached etag to optimize the download of the crl.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return etag
      */
@@ -131,6 +138,7 @@ public class CRL  {
     /**
      * This is the setter method to the attribute.
      * Cached etag to optimize the download of the crl.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param etag set the etag.
      */
@@ -142,6 +150,7 @@ public class CRL  {
      * This is the getter method this will return the attribute value.
      * Fingerprint of the crl.
      * Used to avoid configuring duplicates.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fingerprint
      */
@@ -153,6 +162,7 @@ public class CRL  {
      * This is the setter method to the attribute.
      * Fingerprint of the crl.
      * Used to avoid configuring duplicates.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fingerprint set the fingerprint.
      */
@@ -164,6 +174,7 @@ public class CRL  {
      * This is the getter method this will return the attribute value.
      * Last time crl was refreshed by the system.
      * This is an internal field used by the system.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return lastRefreshed
      */
@@ -175,6 +186,7 @@ public class CRL  {
      * This is the setter method to the attribute.
      * Last time crl was refreshed by the system.
      * This is an internal field used by the system.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param lastRefreshed set the lastRefreshed.
      */
@@ -185,6 +197,7 @@ public class CRL  {
     /**
      * This is the getter method this will return the attribute value.
      * The date when this crl was last issued.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return lastUpdate
      */
@@ -195,6 +208,7 @@ public class CRL  {
     /**
      * This is the setter method to the attribute.
      * The date when this crl was last issued.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param lastUpdate set the lastUpdate.
      */
@@ -206,6 +220,7 @@ public class CRL  {
      * This is the getter method this will return the attribute value.
      * The date when a newer crl will be available.
      * Also conveys the date after which the crl should be considered obsolete.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nextUpdate
      */
@@ -217,6 +232,7 @@ public class CRL  {
      * This is the setter method to the attribute.
      * The date when a newer crl will be available.
      * Also conveys the date after which the crl should be considered obsolete.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nextUpdate set the nextUpdate.
      */
@@ -229,6 +245,7 @@ public class CRL  {
      * Url of a server that issues the certificate revocation list.
      * If this is configured, crl will be periodically downloaded either based on the configured update interval or the next update interval in the crl.
      * Crl itself is stored in the body.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverUrl
      */
@@ -241,6 +258,7 @@ public class CRL  {
      * Url of a server that issues the certificate revocation list.
      * If this is configured, crl will be periodically downloaded either based on the configured update interval or the next update interval in the crl.
      * Crl itself is stored in the body.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serverUrl set the serverUrl.
      */
@@ -251,6 +269,7 @@ public class CRL  {
     /**
      * This is the getter method this will return the attribute value.
      * Certificate revocation list in plain text for readability.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return text
      */
@@ -261,6 +280,7 @@ public class CRL  {
     /**
      * This is the setter method to the attribute.
      * Certificate revocation list in plain text for readability.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param text set the text.
      */
@@ -274,6 +294,7 @@ public class CRL  {
      * If not specified, interval will be 1 day.
      * Allowed values are 30-525600.
      * Unit is min.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return updateInterval
      */
@@ -287,6 +308,7 @@ public class CRL  {
      * If not specified, interval will be 1 day.
      * Allowed values are 30-525600.
      * Unit is min.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param updateInterval set the updateInterval.
      */

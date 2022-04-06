@@ -32,6 +32,7 @@ public class ImageCloudData  {
      * This is the getter method this will return the attribute value.
      * Cloud data specific to a particular cloud.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudDataValues
      */
@@ -43,6 +44,7 @@ public class ImageCloudData  {
      * This is the setter method. this will set the cloudDataValues
      * Cloud data specific to a particular cloud.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudDataValues
      */
@@ -54,6 +56,7 @@ public class ImageCloudData  {
      * This is the setter method this will set the cloudDataValues
      * Cloud data specific to a particular cloud.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudDataValues
      */
@@ -69,6 +72,7 @@ public class ImageCloudData  {
      * This is the getter method this will return the attribute value.
      * Contains the name of the cloud.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudName
      */
@@ -80,6 +84,7 @@ public class ImageCloudData  {
      * This is the setter method to the attribute.
      * Contains the name of the cloud.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudName set the cloudName.
      */

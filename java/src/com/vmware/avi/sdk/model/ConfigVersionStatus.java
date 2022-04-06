@@ -37,6 +37,7 @@ public class ConfigVersionStatus  {
      * Type of replication event.
      * Enum options - DNSVS, OBJECT_CONFIG_VERSION.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return eventType
      */
@@ -49,6 +50,7 @@ public class ConfigVersionStatus  {
      * Type of replication event.
      * Enum options - DNSVS, OBJECT_CONFIG_VERSION.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param eventType set the eventType.
      */
@@ -60,6 +62,7 @@ public class ConfigVersionStatus  {
      * This is the getter method this will return the attribute value.
      * Name of config object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objName
      */
@@ -71,6 +74,7 @@ public class ConfigVersionStatus  {
      * This is the setter method to the attribute.
      * Name of config object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param objName set the objName.
      */
@@ -82,6 +86,7 @@ public class ConfigVersionStatus  {
      * This is the getter method this will return the attribute value.
      * Uuid of config object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objUuid
      */
@@ -93,6 +98,7 @@ public class ConfigVersionStatus  {
      * This is the setter method to the attribute.
      * Uuid of config object.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param objUuid set the objUuid.
      */

@@ -37,6 +37,7 @@ public class NTPAuthenticationKey  {
      * Message digest algorithm used for ntp authentication.
      * Default is ntp_auth_algorithm_md5.
      * Enum options - NTP_AUTH_ALGORITHM_MD5, NTP_AUTH_ALGORITHM_SHA1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "NTP_AUTH_ALGORITHM_MD5".
      * @return algorithm
      */
@@ -49,6 +50,7 @@ public class NTPAuthenticationKey  {
      * Message digest algorithm used for ntp authentication.
      * Default is ntp_auth_algorithm_md5.
      * Enum options - NTP_AUTH_ALGORITHM_MD5, NTP_AUTH_ALGORITHM_SHA1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "NTP_AUTH_ALGORITHM_MD5".
      * @param algorithm set the algorithm.
      */
@@ -59,6 +61,7 @@ public class NTPAuthenticationKey  {
     /**
      * This is the getter method this will return the attribute value.
      * Ntp authentication key.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return key
      */
@@ -69,6 +72,7 @@ public class NTPAuthenticationKey  {
     /**
      * This is the setter method to the attribute.
      * Ntp authentication key.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param key set the key.
      */
@@ -80,6 +84,7 @@ public class NTPAuthenticationKey  {
      * This is the getter method this will return the attribute value.
      * Key number to be assigned to the authentication-key.
      * Allowed values are 1-65534.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return keyNumber
      */
@@ -91,6 +96,7 @@ public class NTPAuthenticationKey  {
      * This is the setter method to the attribute.
      * Key number to be assigned to the authentication-key.
      * Allowed values are 1-65534.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param keyNumber set the keyNumber.
      */

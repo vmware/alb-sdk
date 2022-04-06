@@ -41,6 +41,7 @@ public class HTTPRewriteLocHdrAction  {
     /**
      * This is the getter method this will return the attribute value.
      * Host config.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return host
      */
@@ -51,6 +52,7 @@ public class HTTPRewriteLocHdrAction  {
     /**
      * This is the setter method to the attribute.
      * Host config.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param host set the host.
      */
@@ -61,6 +63,7 @@ public class HTTPRewriteLocHdrAction  {
     /**
      * This is the getter method this will return the attribute value.
      * Keep or drop the query from the server side redirect uri.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return keepQuery
      */
@@ -71,6 +74,7 @@ public class HTTPRewriteLocHdrAction  {
     /**
      * This is the setter method to the attribute.
      * Keep or drop the query from the server side redirect uri.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param keepQuery set the keepQuery.
      */
@@ -81,6 +85,7 @@ public class HTTPRewriteLocHdrAction  {
     /**
      * This is the getter method this will return the attribute value.
      * Path config.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return path
      */
@@ -91,6 +96,7 @@ public class HTTPRewriteLocHdrAction  {
     /**
      * This is the setter method to the attribute.
      * Path config.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param path set the path.
      */
@@ -102,6 +108,7 @@ public class HTTPRewriteLocHdrAction  {
      * This is the getter method this will return the attribute value.
      * Port to use in the redirected uri.
      * Allowed values are 1-65535.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
      */
@@ -113,6 +120,7 @@ public class HTTPRewriteLocHdrAction  {
      * This is the setter method to the attribute.
      * Port to use in the redirected uri.
      * Allowed values are 1-65535.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.
      */
@@ -124,6 +132,7 @@ public class HTTPRewriteLocHdrAction  {
      * This is the getter method this will return the attribute value.
      * Http protocol type.
      * Enum options - HTTP, HTTPS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return protocol
      */
@@ -135,6 +144,7 @@ public class HTTPRewriteLocHdrAction  {
      * This is the setter method to the attribute.
      * Http protocol type.
      * Enum options - HTTP, HTTPS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param protocol set the protocol.
      */

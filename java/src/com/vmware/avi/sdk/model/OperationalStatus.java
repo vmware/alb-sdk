@@ -40,7 +40,7 @@ public class OperationalStatus  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property last_changed_time of obj type operationalstatus field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return lastChangedTime
      */
@@ -50,7 +50,7 @@ public class OperationalStatus  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property last_changed_time of obj type operationalstatus field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param lastChangedTime set the lastChangedTime.
      */
@@ -59,7 +59,7 @@ public class OperationalStatus  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property reason of obj type operationalstatus field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -69,7 +69,7 @@ public class OperationalStatus  {
 
     /**
      * This is the setter method. this will set the reason
-     * Placeholder for description of property reason of obj type operationalstatus field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -79,7 +79,7 @@ public class OperationalStatus  {
 
     /**
      * This is the setter method this will set the reason
-     * Placeholder for description of property reason of obj type operationalstatus field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -93,7 +93,7 @@ public class OperationalStatus  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property reason_code of obj type operationalstatus field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reasonCode
      */
@@ -103,7 +103,7 @@ public class OperationalStatus  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property reason_code of obj type operationalstatus field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reasonCode set the reasonCode.
      */
@@ -113,7 +113,7 @@ public class OperationalStatus  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property reason_code_string of obj type operationalstatus field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reasonCodeString
      */
@@ -123,7 +123,7 @@ public class OperationalStatus  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property reason_code_string of obj type operationalstatus field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reasonCodeString set the reasonCodeString.
      */
@@ -136,6 +136,7 @@ public class OperationalStatus  {
      * Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING,
      * OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING,
      * OPER_FAILED, OPER_UNAVAIL.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "OPER_UNAVAIL".
      * @return state
      */
@@ -148,6 +149,7 @@ public class OperationalStatus  {
      * Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING,
      * OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING,
      * OPER_FAILED, OPER_UNAVAIL.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "OPER_UNAVAIL".
      * @param state set the state.
      */

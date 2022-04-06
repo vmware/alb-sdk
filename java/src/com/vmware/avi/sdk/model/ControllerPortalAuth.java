@@ -36,6 +36,7 @@ public class ControllerPortalAuth  {
      * This is the getter method this will return the attribute value.
      * Access token to authenticate customer portal rest calls.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return accessToken
      */
@@ -47,6 +48,7 @@ public class ControllerPortalAuth  {
      * This is the setter method to the attribute.
      * Access token to authenticate customer portal rest calls.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param accessToken set the accessToken.
      */
@@ -58,6 +60,7 @@ public class ControllerPortalAuth  {
      * This is the getter method this will return the attribute value.
      * Salesforce instance url.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return instanceUrl
      */
@@ -69,6 +72,7 @@ public class ControllerPortalAuth  {
      * This is the setter method to the attribute.
      * Salesforce instance url.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param instanceUrl set the instanceUrl.
      */
@@ -80,6 +84,7 @@ public class ControllerPortalAuth  {
      * This is the getter method this will return the attribute value.
      * Signed jwt to refresh the access token.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return jwtToken
      */
@@ -91,6 +96,7 @@ public class ControllerPortalAuth  {
      * This is the setter method to the attribute.
      * Signed jwt to refresh the access token.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param jwtToken set the jwtToken.
      */

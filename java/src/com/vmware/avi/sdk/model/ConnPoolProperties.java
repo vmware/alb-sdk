@@ -42,7 +42,8 @@ public class ConnPoolProperties  {
      * Special values are 0- infinite idle time.
      * Field introduced in 18.2.1.
      * Unit is milliseconds.
-     * Allowed in basic(allowed values- 60000) edition, essentials(allowed values- 60000) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- 60000) edition, basic(allowed values- 60000) edition, enterprise with
+     * cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
      * @return upstreamConnpoolConnIdleTmo
      */
@@ -57,7 +58,8 @@ public class ConnPoolProperties  {
      * Special values are 0- infinite idle time.
      * Field introduced in 18.2.1.
      * Unit is milliseconds.
-     * Allowed in basic(allowed values- 60000) edition, essentials(allowed values- 60000) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- 60000) edition, basic(allowed values- 60000) edition, enterprise with
+     * cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60000.
      * @param upstreamConnpoolConnIdleTmo set the upstreamConnpoolConnIdleTmo.
      */
@@ -72,7 +74,8 @@ public class ConnPoolProperties  {
      * Special values are 0- infinite life time.
      * Field introduced in 18.2.1.
      * Unit is milliseconds.
-     * Allowed in basic(allowed values- 600000) edition, essentials(allowed values- 600000) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- 600000) edition, basic(allowed values- 600000) edition, enterprise with
+     * cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 600000.
      * @return upstreamConnpoolConnLifeTmo
      */
@@ -87,7 +90,8 @@ public class ConnPoolProperties  {
      * Special values are 0- infinite life time.
      * Field introduced in 18.2.1.
      * Unit is milliseconds.
-     * Allowed in basic(allowed values- 600000) edition, essentials(allowed values- 600000) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- 600000) edition, basic(allowed values- 600000) edition, enterprise with
+     * cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 600000.
      * @param upstreamConnpoolConnLifeTmo set the upstreamConnpoolConnLifeTmo.
      */
@@ -100,7 +104,8 @@ public class ConnPoolProperties  {
      * Maximum number of times a connection can be reused.
      * Special values are 0- unlimited.
      * Field introduced in 18.2.1.
-     * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- 0) edition, basic(allowed values- 0) edition, enterprise with cloud
+     * services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return upstreamConnpoolConnMaxReuse
      */
@@ -113,7 +118,8 @@ public class ConnPoolProperties  {
      * Maximum number of times a connection can be reused.
      * Special values are 0- unlimited.
      * Field introduced in 18.2.1.
-     * Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
+     * Allowed in enterprise with any value edition, essentials(allowed values- 0) edition, basic(allowed values- 0) edition, enterprise with cloud
+     * services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param upstreamConnpoolConnMaxReuse set the upstreamConnpoolConnMaxReuse.
      */
@@ -126,6 +132,7 @@ public class ConnPoolProperties  {
      * Maximum number of connections a server can cache.
      * Special values are 0- unlimited.
      * Field introduced in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return upstreamConnpoolServerMaxCache
      */
@@ -138,6 +145,7 @@ public class ConnPoolProperties  {
      * Maximum number of connections a server can cache.
      * Special values are 0- unlimited.
      * Field introduced in 18.2.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param upstreamConnpoolServerMaxCache set the upstreamConnpoolServerMaxCache.
      */

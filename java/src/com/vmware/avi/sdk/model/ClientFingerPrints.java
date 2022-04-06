@@ -33,6 +33,7 @@ public class ClientFingerPrints  {
      * This is the getter method this will return the attribute value.
      * Values of selected fields from the clienthello.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tlsClientInfo
      */
@@ -44,6 +45,7 @@ public class ClientFingerPrints  {
      * This is the setter method to the attribute.
      * Values of selected fields from the clienthello.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tlsClientInfo set the tlsClientInfo.
      */
@@ -55,6 +57,7 @@ public class ClientFingerPrints  {
      * This is the getter method this will return the attribute value.
      * Message digest (md5) of ja3 from client hello.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tlsFingerprint
      */
@@ -66,6 +69,7 @@ public class ClientFingerPrints  {
      * This is the setter method to the attribute.
      * Message digest (md5) of ja3 from client hello.
      * Field introduced in 22.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tlsFingerprint set the tlsFingerprint.
      */

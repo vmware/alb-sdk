@@ -34,7 +34,7 @@ public class DNSQueryError  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property error of obj type dnsqueryerror field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return error
      */
@@ -44,7 +44,7 @@ public class DNSQueryError  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property error of obj type dnsqueryerror field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param error set the error.
      */
@@ -54,7 +54,7 @@ public class DNSQueryError  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property error_message of obj type dnsqueryerror field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorMessage
      */
@@ -64,7 +64,7 @@ public class DNSQueryError  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property error_message of obj type dnsqueryerror field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorMessage set the errorMessage.
      */
@@ -74,7 +74,7 @@ public class DNSQueryError  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property fqdn of obj type dnsqueryerror field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fqdn
      */
@@ -84,7 +84,7 @@ public class DNSQueryError  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property fqdn of obj type dnsqueryerror field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fqdn set the fqdn.
      */

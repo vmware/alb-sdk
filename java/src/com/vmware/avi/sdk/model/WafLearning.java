@@ -44,6 +44,7 @@ public class WafLearning  {
      * Allowed values are 3-255.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return argSummarizationThreshold
      */
     public Integer getArgSummarizationThreshold() {
@@ -56,6 +57,7 @@ public class WafLearning  {
      * Allowed values are 3-255.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param argSummarizationThreshold set the argSummarizationThreshold.
      */
     public void setArgSummarizationThreshold(Integer  argSummarizationThreshold) {
@@ -69,6 +71,7 @@ public class WafLearning  {
      * Field deprecated in 18.2.3.
      * Field introduced in 18.1.2.
      * Unit is percent.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return confidence
      */
     public Integer getConfidence() {
@@ -82,6 +85,7 @@ public class WafLearning  {
      * Field deprecated in 18.2.3.
      * Field introduced in 18.1.2.
      * Unit is percent.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param confidence set the confidence.
      */
     public void setConfidence(Integer  confidence) {
@@ -93,6 +97,7 @@ public class WafLearning  {
      * Enable learning for waf policy.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return enable
      */
     public Boolean getEnable() {
@@ -104,6 +109,7 @@ public class WafLearning  {
      * Enable learning for waf policy.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param enable set the enable.
      */
     public void setEnable(Boolean  enable) {
@@ -116,6 +122,7 @@ public class WafLearning  {
      * Allowed values are 3-255.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return pathSummarizationThreshold
      */
     public Integer getPathSummarizationThreshold() {
@@ -128,6 +135,7 @@ public class WafLearning  {
      * Allowed values are 3-255.
      * Field deprecated in 18.2.3.
      * Field introduced in 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param pathSummarizationThreshold set the pathSummarizationThreshold.
      */
     public void setPathSummarizationThreshold(Integer  pathSummarizationThreshold) {
@@ -141,6 +149,7 @@ public class WafLearning  {
      * Field deprecated in 18.2.3.
      * Field introduced in 18.1.2.
      * Unit is percent.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return samplingPercent
      */
     public Integer getSamplingPercent() {
@@ -154,6 +163,7 @@ public class WafLearning  {
      * Field deprecated in 18.2.3.
      * Field introduced in 18.1.2.
      * Unit is percent.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param samplingPercent set the samplingPercent.
      */
     public void setSamplingPercent(Integer  samplingPercent) {

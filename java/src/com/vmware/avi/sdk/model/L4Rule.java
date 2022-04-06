@@ -42,6 +42,7 @@ public class L4Rule  {
      * This is the getter method this will return the attribute value.
      * Action to be performed upon successful rule match.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return action
      */
@@ -53,6 +54,7 @@ public class L4Rule  {
      * This is the setter method to the attribute.
      * Action to be performed upon successful rule match.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param action set the action.
      */
@@ -64,6 +66,7 @@ public class L4Rule  {
      * This is the getter method this will return the attribute value.
      * Enable or disable the rule.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enable
      */
@@ -75,6 +78,7 @@ public class L4Rule  {
      * This is the setter method to the attribute.
      * Enable or disable the rule.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enable set the enable.
      */
@@ -86,6 +90,7 @@ public class L4Rule  {
      * This is the getter method this will return the attribute value.
      * Index of the rule.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return index
      */
@@ -97,6 +102,7 @@ public class L4Rule  {
      * This is the setter method to the attribute.
      * Index of the rule.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param index set the index.
      */
@@ -108,6 +114,7 @@ public class L4Rule  {
      * This is the getter method this will return the attribute value.
      * Match criteria of the rule.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return match
      */
@@ -119,6 +126,7 @@ public class L4Rule  {
      * This is the setter method to the attribute.
      * Match criteria of the rule.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param match set the match.
      */
@@ -130,6 +138,7 @@ public class L4Rule  {
      * This is the getter method this will return the attribute value.
      * Name of the rule.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -141,6 +150,7 @@ public class L4Rule  {
      * This is the setter method to the attribute.
      * Name of the rule.
      * Field introduced in 17.2.7.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */

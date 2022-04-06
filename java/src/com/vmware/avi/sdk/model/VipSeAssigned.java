@@ -78,6 +78,7 @@ public class VipSeAssigned  {
      * This is the getter method this will return the attribute value.
      * Vip is active on cloud.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return activeOnCloud
      */
@@ -89,6 +90,7 @@ public class VipSeAssigned  {
      * This is the setter method to the attribute.
      * Vip is active on cloud.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param activeOnCloud set the activeOnCloud.
      */
@@ -100,6 +102,7 @@ public class VipSeAssigned  {
      * This is the getter method this will return the attribute value.
      * Vip is active on this serviceengine.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return activeOnSe
      */
@@ -111,6 +114,7 @@ public class VipSeAssigned  {
      * This is the setter method to the attribute.
      * Vip is active on this serviceengine.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param activeOnSe set the activeOnSe.
      */
@@ -120,7 +124,7 @@ public class VipSeAssigned  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property admin_down_requested of obj type vipseassigned field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return adminDownRequested
      */
@@ -130,7 +134,7 @@ public class VipSeAssigned  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property admin_down_requested of obj type vipseassigned field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param adminDownRequested set the adminDownRequested.
      */
@@ -142,6 +146,7 @@ public class VipSeAssigned  {
      * This is the getter method this will return the attribute value.
      * Attach ip is in progress.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return attachIpInProgress
      */
@@ -153,6 +158,7 @@ public class VipSeAssigned  {
      * This is the setter method to the attribute.
      * Attach ip is in progress.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param attachIpInProgress set the attachIpInProgress.
      */
@@ -162,7 +168,7 @@ public class VipSeAssigned  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property connected of obj type vipseassigned field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return connected
      */
@@ -172,7 +178,7 @@ public class VipSeAssigned  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property connected of obj type vipseassigned field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param connected set the connected.
      */
@@ -184,6 +190,7 @@ public class VipSeAssigned  {
      * This is the getter method this will return the attribute value.
      * Detach ip is in progress.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return detachIpInProgress
      */
@@ -195,6 +202,7 @@ public class VipSeAssigned  {
      * This is the setter method to the attribute.
      * Detach ip is in progress.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param detachIpInProgress set the detachIpInProgress.
      */
@@ -206,6 +214,7 @@ public class VipSeAssigned  {
      * This is the getter method this will return the attribute value.
      * Management ipv4 address of se.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mgmtIp
      */
@@ -217,6 +226,7 @@ public class VipSeAssigned  {
      * This is the setter method to the attribute.
      * Management ipv4 address of se.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mgmtIp set the mgmtIp.
      */
@@ -228,6 +238,7 @@ public class VipSeAssigned  {
      * This is the getter method this will return the attribute value.
      * Management ipv6 address of se.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mgmtIp6
      */
@@ -239,6 +250,7 @@ public class VipSeAssigned  {
      * This is the setter method to the attribute.
      * Management ipv6 address of se.
      * Field introduced in 20.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mgmtIp6 set the mgmtIp6.
      */
@@ -248,7 +260,7 @@ public class VipSeAssigned  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -258,7 +270,7 @@ public class VipSeAssigned  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -268,7 +280,7 @@ public class VipSeAssigned  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property oper_status of obj type vipseassigned field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return operStatus
      */
@@ -278,7 +290,7 @@ public class VipSeAssigned  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property oper_status of obj type vipseassigned field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param operStatus set the operStatus.
      */
@@ -288,7 +300,7 @@ public class VipSeAssigned  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property primary of obj type vipseassigned field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return primary
      */
@@ -298,7 +310,7 @@ public class VipSeAssigned  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property primary of obj type vipseassigned field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param primary set the primary.
      */
@@ -309,6 +321,7 @@ public class VipSeAssigned  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type serviceengine.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ref
      */
@@ -319,6 +332,7 @@ public class VipSeAssigned  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type serviceengine.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ref set the ref.
      */
@@ -328,7 +342,7 @@ public class VipSeAssigned  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property scalein_in_progress of obj type vipseassigned field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return scaleinInProgress
      */
@@ -338,7 +352,7 @@ public class VipSeAssigned  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property scalein_in_progress of obj type vipseassigned field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param scaleinInProgress set the scaleinInProgress.
      */
@@ -350,6 +364,7 @@ public class VipSeAssigned  {
      * This is the getter method this will return the attribute value.
      * Vip is awaiting scaleout response from this serviceengine.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return scaleoutInProgress
      */
@@ -361,6 +376,7 @@ public class VipSeAssigned  {
      * This is the setter method to the attribute.
      * Vip is awaiting scaleout response from this serviceengine.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param scaleoutInProgress set the scaleoutInProgress.
      */
@@ -372,6 +388,7 @@ public class VipSeAssigned  {
      * This is the getter method this will return the attribute value.
      * Vip is awaiting response from this serviceengine.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seReadyInProgress
      */
@@ -383,6 +400,7 @@ public class VipSeAssigned  {
      * This is the setter method to the attribute.
      * Vip is awaiting response from this serviceengine.
      * Field introduced in 21.1.3.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seReadyInProgress set the seReadyInProgress.
      */
@@ -392,7 +410,7 @@ public class VipSeAssigned  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property snat_ip of obj type vipseassigned field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return snatIp
      */
@@ -402,7 +420,7 @@ public class VipSeAssigned  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property snat_ip of obj type vipseassigned field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param snatIp set the snatIp.
      */
@@ -412,7 +430,7 @@ public class VipSeAssigned  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property standby of obj type vipseassigned field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return standby
      */
@@ -422,7 +440,7 @@ public class VipSeAssigned  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property standby of obj type vipseassigned field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param standby set the standby.
      */

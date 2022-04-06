@@ -40,7 +40,7 @@ public class OverallInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property available of obj type overallinfo field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return available
      */
@@ -50,7 +50,7 @@ public class OverallInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property available of obj type overallinfo field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param available set the available.
      */
@@ -60,7 +60,7 @@ public class OverallInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property free_percent of obj type overallinfo field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return freePercent
      */
@@ -70,7 +70,7 @@ public class OverallInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property free_percent of obj type overallinfo field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param freePercent set the freePercent.
      */
@@ -80,7 +80,7 @@ public class OverallInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property path of obj type overallinfo field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return path
      */
@@ -90,7 +90,7 @@ public class OverallInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property path of obj type overallinfo field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param path set the path.
      */
@@ -100,7 +100,7 @@ public class OverallInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property size of obj type overallinfo field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return size
      */
@@ -110,7 +110,7 @@ public class OverallInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property size of obj type overallinfo field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param size set the size.
      */
@@ -120,7 +120,7 @@ public class OverallInfo  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property used of obj type overallinfo field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return used
      */
@@ -130,7 +130,7 @@ public class OverallInfo  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property used of obj type overallinfo field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param used set the used.
      */

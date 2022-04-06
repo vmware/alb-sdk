@@ -35,6 +35,7 @@ public class APICNetworkRel  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return connector
      */
     public String getConnector() {
@@ -44,6 +45,7 @@ public class APICNetworkRel  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param connector set the connector.
      */
     public void setConnector(String  connector) {
@@ -53,6 +55,7 @@ public class APICNetworkRel  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return relKey
      */
     public String getRelKey() {
@@ -62,6 +65,7 @@ public class APICNetworkRel  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param relKey set the relKey.
      */
     public void setRelKey(String  relKey) {
@@ -71,6 +75,7 @@ public class APICNetworkRel  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return targetNetwork
      */
     public String getTargetNetwork() {
@@ -80,6 +85,7 @@ public class APICNetworkRel  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param targetNetwork set the targetNetwork.
      */
     public void setTargetNetwork(String  targetNetwork) {

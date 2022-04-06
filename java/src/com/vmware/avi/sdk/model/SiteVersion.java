@@ -66,6 +66,7 @@ public class SiteVersion extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * This field represents the creation time of the federateddiff.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return datetime
      */
@@ -77,6 +78,7 @@ public class SiteVersion extends AviRestResource  {
      * This is the setter method to the attribute.
      * This field represents the creation time of the federateddiff.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param datetime set the datetime.
      */
@@ -88,6 +90,7 @@ public class SiteVersion extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of the site.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -99,6 +102,7 @@ public class SiteVersion extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of the site.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -110,6 +114,7 @@ public class SiteVersion extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Previous targer version for a site.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return prevTargetVersion
      */
@@ -121,6 +126,7 @@ public class SiteVersion extends AviRestResource  {
      * This is the setter method to the attribute.
      * Previous targer version for a site.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param prevTargetVersion set the prevTargetVersion.
      */
@@ -134,6 +140,7 @@ public class SiteVersion extends AviRestResource  {
      * Enum options - REPLICATION_STATE_FASTFORWARD, REPLICATION_STATE_FORCESYNC, REPLICATION_STATE_STREAMING, REPLICATION_STATE_SUSPENDED,
      * REPLICATION_STATE_INIT, REPLICATION_STATE_WAIT, REPLICATION_STATE_NOT_APPLICABLE.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return replicationState
      */
@@ -147,6 +154,7 @@ public class SiteVersion extends AviRestResource  {
      * Enum options - REPLICATION_STATE_FASTFORWARD, REPLICATION_STATE_FORCESYNC, REPLICATION_STATE_STREAMING, REPLICATION_STATE_SUSPENDED,
      * REPLICATION_STATE_INIT, REPLICATION_STATE_WAIT, REPLICATION_STATE_NOT_APPLICABLE.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param replicationState set the replicationState.
      */
@@ -158,6 +166,7 @@ public class SiteVersion extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Cluster uuid of the site.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return siteId
      */
@@ -169,6 +178,7 @@ public class SiteVersion extends AviRestResource  {
      * This is the setter method to the attribute.
      * Cluster uuid of the site.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param siteId set the siteId.
      */
@@ -180,6 +190,7 @@ public class SiteVersion extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Target timeline of the site.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return targetTimeline
      */
@@ -191,6 +202,7 @@ public class SiteVersion extends AviRestResource  {
      * This is the setter method to the attribute.
      * Target timeline of the site.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param targetTimeline set the targetTimeline.
      */
@@ -202,6 +214,7 @@ public class SiteVersion extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Target version of the site.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return targetVersion
      */
@@ -213,6 +226,7 @@ public class SiteVersion extends AviRestResource  {
      * This is the setter method to the attribute.
      * Target version of the site.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param targetVersion set the targetVersion.
      */
@@ -225,6 +239,7 @@ public class SiteVersion extends AviRestResource  {
      * Tenant that this object belongs to.
      * It is a reference to an object of type tenant.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -237,6 +252,7 @@ public class SiteVersion extends AviRestResource  {
      * Tenant that this object belongs to.
      * It is a reference to an object of type tenant.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -248,6 +264,7 @@ public class SiteVersion extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Timeline of the site.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return timeline
      */
@@ -259,6 +276,7 @@ public class SiteVersion extends AviRestResource  {
      * This is the setter method to the attribute.
      * Timeline of the site.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param timeline set the timeline.
      */
@@ -287,6 +305,7 @@ public class SiteVersion extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid of the siteversion object.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -298,6 +317,7 @@ public class SiteVersion extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid of the siteversion object.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -309,6 +329,7 @@ public class SiteVersion extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Version of the site.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return version
      */
@@ -320,6 +341,7 @@ public class SiteVersion extends AviRestResource  {
      * This is the setter method to the attribute.
      * Version of the site.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param version set the version.
      */
@@ -332,6 +354,7 @@ public class SiteVersion extends AviRestResource  {
      * Type of message for which version is maintained.
      * Enum options - CONFIG_VERSION, HEALTH_STATUS_VERSION.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return versionType
      */
@@ -344,6 +367,7 @@ public class SiteVersion extends AviRestResource  {
      * Type of message for which version is maintained.
      * Enum options - CONFIG_VERSION, HEALTH_STATUS_VERSION.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param versionType set the versionType.
      */

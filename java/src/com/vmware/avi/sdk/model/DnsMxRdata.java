@@ -34,6 +34,7 @@ public class DnsMxRdata  {
      * Fully qualified domain name of a mailserver.
      * The host name maps directly to one or more address records in the dns table, and must not point to any cname records (rfc 2181).
      * Field introduced in 18.2.9, 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return host
      */
@@ -46,6 +47,7 @@ public class DnsMxRdata  {
      * Fully qualified domain name of a mailserver.
      * The host name maps directly to one or more address records in the dns table, and must not point to any cname records (rfc 2181).
      * Field introduced in 18.2.9, 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param host set the host.
      */
@@ -58,6 +60,7 @@ public class DnsMxRdata  {
      * The priority field identifies which mail server should be preferred.
      * Allowed values are 0-65535.
      * Field introduced in 18.2.9, 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return priority
      */
@@ -70,6 +73,7 @@ public class DnsMxRdata  {
      * The priority field identifies which mail server should be preferred.
      * Allowed values are 0-65535.
      * Field introduced in 18.2.9, 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param priority set the priority.
      */

@@ -39,6 +39,7 @@ public class PackageDetails  {
      * This is the getter method this will return the attribute value.
      * This contains build related information.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return build
      */
@@ -50,6 +51,7 @@ public class PackageDetails  {
      * This is the setter method to the attribute.
      * This contains build related information.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param build set the build.
      */
@@ -61,6 +63,7 @@ public class PackageDetails  {
      * This is the getter method this will return the attribute value.
      * Md5 checksum over the entire package.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hash
      */
@@ -72,6 +75,7 @@ public class PackageDetails  {
      * This is the setter method to the attribute.
      * Md5 checksum over the entire package.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hash set the hash.
      */
@@ -83,6 +87,7 @@ public class PackageDetails  {
      * This is the getter method this will return the attribute value.
      * Patch related necessary information.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return patch
      */
@@ -94,6 +99,7 @@ public class PackageDetails  {
      * This is the setter method to the attribute.
      * Patch related necessary information.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param patch set the patch.
      */
@@ -105,6 +111,7 @@ public class PackageDetails  {
      * This is the getter method this will return the attribute value.
      * Path of the package in the repository.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return path
      */
@@ -116,6 +123,7 @@ public class PackageDetails  {
      * This is the setter method to the attribute.
      * Path of the package in the repository.
      * Field introduced in 18.2.6.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param path set the path.
      */

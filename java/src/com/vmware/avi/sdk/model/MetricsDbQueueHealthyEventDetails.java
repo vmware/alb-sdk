@@ -46,7 +46,7 @@ public class MetricsDbQueueHealthyEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property high of obj type metricsdbqueuehealthyeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return high
      */
@@ -56,7 +56,7 @@ public class MetricsDbQueueHealthyEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property high of obj type metricsdbqueuehealthyeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param high set the high.
      */
@@ -66,7 +66,7 @@ public class MetricsDbQueueHealthyEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property instanceport of obj type metricsdbqueuehealthyeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return instanceport
      */
@@ -76,7 +76,7 @@ public class MetricsDbQueueHealthyEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property instanceport of obj type metricsdbqueuehealthyeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param instanceport set the instanceport.
      */
@@ -86,7 +86,7 @@ public class MetricsDbQueueHealthyEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property low of obj type metricsdbqueuehealthyeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return low
      */
@@ -96,7 +96,7 @@ public class MetricsDbQueueHealthyEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property low of obj type metricsdbqueuehealthyeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param low set the low.
      */
@@ -106,7 +106,7 @@ public class MetricsDbQueueHealthyEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property nodeid of obj type metricsdbqueuehealthyeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nodeid
      */
@@ -116,7 +116,7 @@ public class MetricsDbQueueHealthyEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property nodeid of obj type metricsdbqueuehealthyeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nodeid set the nodeid.
      */
@@ -126,7 +126,7 @@ public class MetricsDbQueueHealthyEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property period of obj type metricsdbqueuehealthyeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return period
      */
@@ -136,7 +136,7 @@ public class MetricsDbQueueHealthyEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property period of obj type metricsdbqueuehealthyeventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param period set the period.
      */
@@ -146,7 +146,7 @@ public class MetricsDbQueueHealthyEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property runtime of obj type metricsdbqueuehealthyeventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return runtime
      */
@@ -156,7 +156,7 @@ public class MetricsDbQueueHealthyEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property runtime of obj type metricsdbqueuehealthyeventdetails field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param runtime set the runtime.
      */
@@ -166,7 +166,7 @@ public class MetricsDbQueueHealthyEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property watermark of obj type metricsdbqueuehealthyeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return watermark
      */
@@ -176,7 +176,7 @@ public class MetricsDbQueueHealthyEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property watermark of obj type metricsdbqueuehealthyeventdetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param watermark set the watermark.
      */

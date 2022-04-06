@@ -67,7 +67,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property backend_servers of obj type licenseexpirydetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return backendServers
      */
@@ -77,7 +77,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property backend_servers of obj type licenseexpirydetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param backendServers set the backendServers.
      */
@@ -87,7 +87,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property burst_cores of obj type licenseexpirydetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return burstCores
      */
@@ -97,7 +97,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property burst_cores of obj type licenseexpirydetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param burstCores set the burstCores.
      */
@@ -107,7 +107,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cores of obj type licenseexpirydetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cores
      */
@@ -117,7 +117,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cores of obj type licenseexpirydetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cores set the cores.
      */
@@ -127,7 +127,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cpu_cores of obj type licenseexpirydetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cpuCores
      */
@@ -137,7 +137,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cpu_cores of obj type licenseexpirydetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cpuCores set the cpuCores.
      */
@@ -147,7 +147,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property expiry_at of obj type licenseexpirydetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return expiryAt
      */
@@ -157,7 +157,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property expiry_at of obj type licenseexpirydetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param expiryAt set the expiryAt.
      */
@@ -167,7 +167,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property license_id of obj type licenseexpirydetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseId
      */
@@ -177,7 +177,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property license_id of obj type licenseexpirydetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseId set the licenseId.
      */
@@ -186,7 +186,7 @@ public class LicenseExpiryDetails  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property license_tier of obj type licenseexpirydetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseTier
      */
@@ -196,7 +196,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the setter method. this will set the licenseTier
-     * Placeholder for description of property license_tier of obj type licenseexpirydetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseTier
      */
@@ -206,7 +206,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the setter method this will set the licenseTier
-     * Placeholder for description of property license_tier of obj type licenseexpirydetails field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseTier
      */
@@ -220,7 +220,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property license_type of obj type licenseexpirydetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseType
      */
@@ -230,7 +230,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property license_type of obj type licenseexpirydetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param licenseType set the licenseType.
      */
@@ -240,7 +240,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property max_apps of obj type licenseexpirydetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maxApps
      */
@@ -250,7 +250,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property max_apps of obj type licenseexpirydetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param maxApps set the maxApps.
      */
@@ -260,7 +260,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property max_ses of obj type licenseexpirydetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maxSes
      */
@@ -270,7 +270,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property max_ses of obj type licenseexpirydetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param maxSes set the maxSes.
      */
@@ -280,7 +280,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -290,7 +290,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -300,7 +300,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property service_cores of obj type licenseexpirydetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceCores
      */
@@ -310,7 +310,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property service_cores of obj type licenseexpirydetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceCores set the serviceCores.
      */
@@ -320,7 +320,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property sockets of obj type licenseexpirydetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sockets
      */
@@ -330,7 +330,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property sockets of obj type licenseexpirydetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sockets set the sockets.
      */
@@ -340,7 +340,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property throughput of obj type licenseexpirydetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return throughput
      */
@@ -350,7 +350,7 @@ public class LicenseExpiryDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property throughput of obj type licenseexpirydetails field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param throughput set the throughput.
      */

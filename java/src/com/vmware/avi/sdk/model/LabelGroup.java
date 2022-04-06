@@ -38,6 +38,7 @@ public class LabelGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of allowed or suggested labels for the label group.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
@@ -49,6 +50,7 @@ public class LabelGroup extends AviRestResource  {
      * This is the setter method. this will set the labels
      * List of allowed or suggested labels for the label group.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
@@ -60,6 +62,7 @@ public class LabelGroup extends AviRestResource  {
      * This is the setter method this will set the labels
      * List of allowed or suggested labels for the label group.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return labels
      */
@@ -75,6 +78,7 @@ public class LabelGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of the label group.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -86,6 +90,7 @@ public class LabelGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of the label group.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -114,6 +119,7 @@ public class LabelGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Uuid of the label group.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -125,6 +131,7 @@ public class LabelGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Uuid of the label group.
      * Field introduced in 20.1.5.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */

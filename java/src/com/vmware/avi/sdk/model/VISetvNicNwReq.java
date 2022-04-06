@@ -46,7 +46,7 @@ public class VISetvNicNwReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudUuid
      */
@@ -56,7 +56,7 @@ public class VISetvNicNwReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudUuid set the cloudUuid.
      */
@@ -66,7 +66,7 @@ public class VISetvNicNwReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of dc.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dcUuid
      */
@@ -76,7 +76,7 @@ public class VISetvNicNwReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of dc.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dcUuid set the dcUuid.
      */
@@ -86,7 +86,7 @@ public class VISetvNicNwReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property rm_cookie of obj type visetvnicnwreq field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rmCookie
      */
@@ -96,7 +96,7 @@ public class VISetvNicNwReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property rm_cookie of obj type visetvnicnwreq field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rmCookie set the rmCookie.
      */
@@ -106,7 +106,7 @@ public class VISetvNicNwReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of sevm.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sevmUuid
      */
@@ -116,7 +116,7 @@ public class VISetvNicNwReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of sevm.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sevmUuid set the sevmUuid.
      */
@@ -126,7 +126,7 @@ public class VISetvNicNwReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_admin of obj type visetvnicnwreq field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterAdmin
      */
@@ -136,7 +136,7 @@ public class VISetvNicNwReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_admin of obj type visetvnicnwreq field type str  type ref.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterAdmin set the vcenterAdmin.
      */
@@ -146,7 +146,7 @@ public class VISetvNicNwReq  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_sevm_mor of obj type visetvnicnwreq field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterSevmMor
      */
@@ -156,7 +156,7 @@ public class VISetvNicNwReq  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_sevm_mor of obj type visetvnicnwreq field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterSevmMor set the vcenterSevmMor.
      */
@@ -165,7 +165,7 @@ public class VISetvNicNwReq  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_vnic_info of obj type visetvnicnwreq field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterVnicInfo
      */
@@ -175,7 +175,7 @@ public class VISetvNicNwReq  {
 
     /**
      * This is the setter method. this will set the vcenterVnicInfo
-     * Placeholder for description of property vcenter_vnic_info of obj type visetvnicnwreq field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterVnicInfo
      */
@@ -185,7 +185,7 @@ public class VISetvNicNwReq  {
 
     /**
      * This is the setter method this will set the vcenterVnicInfo
-     * Placeholder for description of property vcenter_vnic_info of obj type visetvnicnwreq field type str  type array.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterVnicInfo
      */

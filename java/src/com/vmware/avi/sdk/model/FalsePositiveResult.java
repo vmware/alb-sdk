@@ -60,6 +60,7 @@ public class FalsePositiveResult  {
      * This is the getter method this will return the attribute value.
      * Whether this uri is always fail.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return alwaysFail
      */
@@ -71,6 +72,7 @@ public class FalsePositiveResult  {
      * This is the setter method to the attribute.
      * Whether this uri is always fail.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param alwaysFail set the alwaysFail.
      */
@@ -82,6 +84,7 @@ public class FalsePositiveResult  {
      * This is the getter method this will return the attribute value.
      * This flag indicates whether this result is identifying an attack.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return attack
      */
@@ -93,6 +96,7 @@ public class FalsePositiveResult  {
      * This is the setter method to the attribute.
      * This flag indicates whether this result is identifying an attack.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param attack set the attack.
      */
@@ -106,6 +110,7 @@ public class FalsePositiveResult  {
      * Allowed values are 0-100.
      * Field introduced in 21.1.1.
      * Unit is percent.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return confidence
      */
@@ -119,6 +124,7 @@ public class FalsePositiveResult  {
      * Allowed values are 0-100.
      * Field introduced in 21.1.1.
      * Unit is percent.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param confidence set the confidence.
      */
@@ -130,6 +136,7 @@ public class FalsePositiveResult  {
      * This is the getter method this will return the attribute value.
      * This flag indicates whether this result is identifying a false positive.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return falsePositive
      */
@@ -141,6 +148,7 @@ public class FalsePositiveResult  {
      * This is the setter method to the attribute.
      * This flag indicates whether this result is identifying a false positive.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param falsePositive set the falsePositive.
      */
@@ -152,6 +160,7 @@ public class FalsePositiveResult  {
      * This is the getter method this will return the attribute value.
      * Header info if uri hit signature rule and match element is request_headers.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return headerInfo
      */
@@ -163,6 +172,7 @@ public class FalsePositiveResult  {
      * This is the setter method to the attribute.
      * Header info if uri hit signature rule and match element is request_headers.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param headerInfo set the headerInfo.
      */
@@ -174,6 +184,7 @@ public class FalsePositiveResult  {
      * This is the getter method this will return the attribute value.
      * Http method for uris did false positive detection.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpMethod
      */
@@ -185,6 +196,7 @@ public class FalsePositiveResult  {
      * This is the setter method to the attribute.
      * Http method for uris did false positive detection.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param httpMethod set the httpMethod.
      */
@@ -196,6 +208,7 @@ public class FalsePositiveResult  {
      * This is the getter method this will return the attribute value.
      * This flag indicates that system is not confident about this result.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return notSure
      */
@@ -207,6 +220,7 @@ public class FalsePositiveResult  {
      * This is the setter method to the attribute.
      * This flag indicates that system is not confident about this result.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param notSure set the notSure.
      */
@@ -218,6 +232,7 @@ public class FalsePositiveResult  {
      * This is the getter method this will return the attribute value.
      * Params info if uri hit signature rule and match element is args.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return paramsInfo
      */
@@ -229,6 +244,7 @@ public class FalsePositiveResult  {
      * This is the setter method to the attribute.
      * Params info if uri hit signature rule and match element is args.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param paramsInfo set the paramsInfo.
      */
@@ -240,6 +256,7 @@ public class FalsePositiveResult  {
      * This is the getter method this will return the attribute value.
      * Signature rule info hitted by uri.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ruleInfo
      */
@@ -251,6 +268,7 @@ public class FalsePositiveResult  {
      * This is the setter method to the attribute.
      * Signature rule info hitted by uri.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ruleInfo set the ruleInfo.
      */
@@ -262,6 +280,7 @@ public class FalsePositiveResult  {
      * This is the getter method this will return the attribute value.
      * Whether this uri is sometimes fail.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sometimesFail
      */
@@ -273,6 +292,7 @@ public class FalsePositiveResult  {
      * This is the setter method to the attribute.
      * Whether this uri is sometimes fail.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sometimesFail set the sometimesFail.
      */
@@ -284,6 +304,7 @@ public class FalsePositiveResult  {
      * This is the getter method this will return the attribute value.
      * Uris did false positive detection.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uri
      */
@@ -295,6 +316,7 @@ public class FalsePositiveResult  {
      * This is the setter method to the attribute.
      * Uris did false positive detection.
      * Field introduced in 21.1.1.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uri set the uri.
      */

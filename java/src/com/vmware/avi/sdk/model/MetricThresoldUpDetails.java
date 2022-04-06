@@ -46,7 +46,7 @@ public class MetricThresoldUpDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property current_value of obj type metricthresoldupdetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return currentValue
      */
@@ -56,7 +56,7 @@ public class MetricThresoldUpDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property current_value of obj type metricthresoldupdetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param currentValue set the currentValue.
      */
@@ -67,6 +67,7 @@ public class MetricThresoldUpDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Id of the object whose metric has hit the threshold.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return entityUuid
      */
@@ -77,6 +78,7 @@ public class MetricThresoldUpDetails  {
     /**
      * This is the setter method to the attribute.
      * Id of the object whose metric has hit the threshold.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param entityUuid set the entityUuid.
      */
@@ -86,7 +88,7 @@ public class MetricThresoldUpDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property metric_id of obj type metricthresoldupdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metricId
      */
@@ -96,7 +98,7 @@ public class MetricThresoldUpDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property metric_id of obj type metricthresoldupdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param metricId set the metricId.
      */
@@ -106,7 +108,7 @@ public class MetricThresoldUpDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property metric_name of obj type metricthresoldupdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metricName
      */
@@ -116,7 +118,7 @@ public class MetricThresoldUpDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property metric_name of obj type metricthresoldupdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param metricName set the metricName.
      */
@@ -127,6 +129,7 @@ public class MetricThresoldUpDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Identity of the pool.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolUuid
      */
@@ -137,6 +140,7 @@ public class MetricThresoldUpDetails  {
     /**
      * This is the setter method to the attribute.
      * Identity of the pool.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param poolUuid set the poolUuid.
      */
@@ -147,6 +151,7 @@ public class MetricThresoldUpDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Server ip port on which event was generated.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return server
      */
@@ -157,6 +162,7 @@ public class MetricThresoldUpDetails  {
     /**
      * This is the setter method to the attribute.
      * Server ip port on which event was generated.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param server set the server.
      */
@@ -166,7 +172,7 @@ public class MetricThresoldUpDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property threshold of obj type metricthresoldupdetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return threshold
      */
@@ -176,7 +182,7 @@ public class MetricThresoldUpDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property threshold of obj type metricthresoldupdetails field type str  type float.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param threshold set the threshold.
      */

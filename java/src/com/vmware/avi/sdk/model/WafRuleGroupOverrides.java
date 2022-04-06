@@ -42,6 +42,7 @@ public class WafRuleGroupOverrides  {
      * This is the getter method this will return the attribute value.
      * Override the enable flag for this group.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return enable
      */
@@ -53,6 +54,7 @@ public class WafRuleGroupOverrides  {
      * This is the setter method to the attribute.
      * Override the enable flag for this group.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param enable set the enable.
      */
@@ -64,6 +66,7 @@ public class WafRuleGroupOverrides  {
      * Replace the exclude list for this group.
      * Field introduced in 20.1.6.
      * Maximum of 64 items allowed.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return excludeList
      */
@@ -76,6 +79,7 @@ public class WafRuleGroupOverrides  {
      * Replace the exclude list for this group.
      * Field introduced in 20.1.6.
      * Maximum of 64 items allowed.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return excludeList
      */
@@ -88,6 +92,7 @@ public class WafRuleGroupOverrides  {
      * Replace the exclude list for this group.
      * Field introduced in 20.1.6.
      * Maximum of 64 items allowed.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return excludeList
      */
@@ -104,6 +109,7 @@ public class WafRuleGroupOverrides  {
      * Override the waf mode for this group.
      * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mode
      */
@@ -116,6 +122,7 @@ public class WafRuleGroupOverrides  {
      * Override the waf mode for this group.
      * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mode set the mode.
      */
@@ -127,6 +134,7 @@ public class WafRuleGroupOverrides  {
      * This is the getter method this will return the attribute value.
      * The name of the group where attributes or rules are overridden.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -138,6 +146,7 @@ public class WafRuleGroupOverrides  {
      * This is the setter method to the attribute.
      * The name of the group where attributes or rules are overridden.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -149,6 +158,7 @@ public class WafRuleGroupOverrides  {
      * Rule specific overrides.
      * Field introduced in 20.1.6.
      * Maximum of 1024 items allowed.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ruleOverrides
      */
@@ -161,6 +171,7 @@ public class WafRuleGroupOverrides  {
      * Rule specific overrides.
      * Field introduced in 20.1.6.
      * Maximum of 1024 items allowed.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ruleOverrides
      */
@@ -173,6 +184,7 @@ public class WafRuleGroupOverrides  {
      * Rule specific overrides.
      * Field introduced in 20.1.6.
      * Maximum of 1024 items allowed.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ruleOverrides
      */

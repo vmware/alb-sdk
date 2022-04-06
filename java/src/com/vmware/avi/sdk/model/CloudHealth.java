@@ -46,7 +46,7 @@ public class CloudHealth  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property cc_id of obj type cloudhealth field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ccId
      */
@@ -56,7 +56,7 @@ public class CloudHealth  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property cc_id of obj type cloudhealth field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ccId set the ccId.
      */
@@ -66,7 +66,7 @@ public class CloudHealth  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property error_string of obj type cloudhealth field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorString
      */
@@ -76,7 +76,7 @@ public class CloudHealth  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property error_string of obj type cloudhealth field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorString set the errorString.
      */
@@ -86,7 +86,7 @@ public class CloudHealth  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property first_fail of obj type cloudhealth field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return firstFail
      */
@@ -96,7 +96,7 @@ public class CloudHealth  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property first_fail of obj type cloudhealth field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param firstFail set the firstFail.
      */
@@ -106,7 +106,7 @@ public class CloudHealth  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property last_fail of obj type cloudhealth field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return lastFail
      */
@@ -116,7 +116,7 @@ public class CloudHealth  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property last_fail of obj type cloudhealth field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param lastFail set the lastFail.
      */
@@ -126,7 +126,7 @@ public class CloudHealth  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property last_ok of obj type cloudhealth field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return lastOk
      */
@@ -136,7 +136,7 @@ public class CloudHealth  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property last_ok of obj type cloudhealth field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param lastOk set the lastOk.
      */
@@ -146,7 +146,7 @@ public class CloudHealth  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property num_fails of obj type cloudhealth field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numFails
      */
@@ -156,7 +156,7 @@ public class CloudHealth  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property num_fails of obj type cloudhealth field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numFails set the numFails.
      */
@@ -168,6 +168,7 @@ public class CloudHealth  {
      * This is the getter method this will return the attribute value.
      * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
      * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vtype
      */
@@ -179,6 +180,7 @@ public class CloudHealth  {
      * This is the setter method to the attribute.
      * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
      * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vtype set the vtype.
      */

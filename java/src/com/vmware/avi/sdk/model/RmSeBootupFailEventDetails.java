@@ -34,7 +34,7 @@ public class RmSeBootupFailEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property host_name of obj type rmsebootupfaileventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostName
      */
@@ -44,7 +44,7 @@ public class RmSeBootupFailEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property host_name of obj type rmsebootupfaileventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hostName set the hostName.
      */
@@ -54,7 +54,7 @@ public class RmSeBootupFailEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property reason of obj type rmsebootupfaileventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
      */
@@ -64,7 +64,7 @@ public class RmSeBootupFailEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property reason of obj type rmsebootupfaileventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
      */
@@ -74,7 +74,7 @@ public class RmSeBootupFailEventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property se_name of obj type rmsebootupfaileventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seName
      */
@@ -84,7 +84,7 @@ public class RmSeBootupFailEventDetails  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property se_name of obj type rmsebootupfaileventdetails field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seName set the seName.
      */

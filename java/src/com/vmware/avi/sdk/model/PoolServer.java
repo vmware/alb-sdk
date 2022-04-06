@@ -36,6 +36,7 @@ public class PoolServer  {
      * This is the getter method this will return the attribute value.
      * Dns resolvable name of the server.
      * May be used in place of the ip address.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return hostname
      */
@@ -47,6 +48,7 @@ public class PoolServer  {
      * This is the setter method to the attribute.
      * Dns resolvable name of the server.
      * May be used in place of the ip address.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param hostname set the hostname.
      */
@@ -57,6 +59,7 @@ public class PoolServer  {
     /**
      * This is the getter method this will return the attribute value.
      * Ip address of the server in the poool.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip
      */
@@ -67,6 +70,7 @@ public class PoolServer  {
     /**
      * This is the setter method to the attribute.
      * Ip address of the server in the poool.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip set the ip.
      */
@@ -79,6 +83,7 @@ public class PoolServer  {
      * Port of the pool server listening for http/https.
      * Default value is the default port in the pool.
      * Allowed values are 1-65535.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
      */
@@ -91,6 +96,7 @@ public class PoolServer  {
      * Port of the pool server listening for http/https.
      * Default value is the default port in the pool.
      * Allowed values are 1-65535.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.
      */

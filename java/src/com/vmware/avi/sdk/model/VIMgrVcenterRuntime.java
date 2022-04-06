@@ -112,7 +112,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property api_version of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return apiVersion
      */
@@ -122,7 +122,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property api_version of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param apiVersion set the apiVersion.
      */
@@ -133,6 +133,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return apicMode
      */
     public Boolean getApicMode() {
@@ -142,6 +143,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Field deprecated in 21.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param apicMode set the apicMode.
      */
     public void setApicMode(Boolean  apicMode) {
@@ -151,6 +153,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return cloudRef
      */
@@ -161,6 +164,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type cloud.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param cloudRef set the cloudRef.
      */
@@ -170,6 +174,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type vimgrdcruntime.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return datacenterRefs
      */
@@ -180,6 +185,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
     /**
      * This is the setter method. this will set the datacenterRefs
      * It is a reference to an object of type vimgrdcruntime.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return datacenterRefs
      */
@@ -190,6 +196,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
     /**
      * This is the setter method this will set the datacenterRefs
      * It is a reference to an object of type vimgrdcruntime.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return datacenterRefs
      */
@@ -203,7 +210,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property disc_end_time of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return discEndTime
      */
@@ -213,7 +220,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property disc_end_time of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param discEndTime set the discEndTime.
      */
@@ -223,7 +230,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property disc_start_time of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return discStartTime
      */
@@ -233,7 +240,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property disc_start_time of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param discStartTime set the discStartTime.
      */
@@ -243,7 +250,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property discovered_datacenter of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return discoveredDatacenter
      */
@@ -253,7 +260,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property discovered_datacenter of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param discoveredDatacenter set the discoveredDatacenter.
      */
@@ -263,7 +270,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property inventory_progress of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return inventoryProgress
      */
@@ -273,7 +280,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property inventory_progress of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param inventoryProgress set the inventoryProgress.
      */
@@ -287,6 +294,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
      * VCENTER_DISCOVERY_ONGOING, VCENTER_DISCOVERY_RESYNCING, VCENTER_DISCOVERY_COMPLETE, VCENTER_DISCOVERY_DELETING_VCENTER, VCENTER_DISCOVERY_FAILURE,
      * VCENTER_DISCOVERY_COMPLETE_NO_MGMT_NW, VCENTER_DISCOVERY_COMPLETE_PER_TENANT_IP_ROUTE, VCENTER_DISCOVERY_MAKING_SE_OVA,
      * VCENTER_DISCOVERY_RESYNC_FAILED, VCENTER_DISCOVERY_OBJECT_LIMIT_REACHED.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return inventoryState
      */
@@ -300,6 +308,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
      * VCENTER_DISCOVERY_ONGOING, VCENTER_DISCOVERY_RESYNCING, VCENTER_DISCOVERY_COMPLETE, VCENTER_DISCOVERY_DELETING_VCENTER, VCENTER_DISCOVERY_FAILURE,
      * VCENTER_DISCOVERY_COMPLETE_NO_MGMT_NW, VCENTER_DISCOVERY_COMPLETE_PER_TENANT_IP_ROUTE, VCENTER_DISCOVERY_MAKING_SE_OVA,
      * VCENTER_DISCOVERY_RESYNC_FAILED, VCENTER_DISCOVERY_OBJECT_LIMIT_REACHED.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param inventoryState set the inventoryState.
      */
@@ -309,7 +318,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property management_network of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return managementNetwork
      */
@@ -319,7 +328,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property management_network of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param managementNetwork set the managementNetwork.
      */
@@ -329,7 +338,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -339,7 +348,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */
@@ -349,7 +358,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property num_clusters of obj type vimgrvcenterruntime field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numClusters
      */
@@ -359,7 +368,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property num_clusters of obj type vimgrvcenterruntime field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numClusters set the numClusters.
      */
@@ -369,7 +378,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property num_dcs of obj type vimgrvcenterruntime field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numDcs
      */
@@ -379,7 +388,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property num_dcs of obj type vimgrvcenterruntime field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numDcs set the numDcs.
      */
@@ -389,7 +398,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property num_hosts of obj type vimgrvcenterruntime field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numHosts
      */
@@ -399,7 +408,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property num_hosts of obj type vimgrvcenterruntime field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numHosts set the numHosts.
      */
@@ -409,7 +418,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property num_nws of obj type vimgrvcenterruntime field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numNws
      */
@@ -419,7 +428,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property num_nws of obj type vimgrvcenterruntime field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numNws set the numNws.
      */
@@ -429,7 +438,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property num_vcenter_req_pending of obj type vimgrvcenterruntime field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numVcenterReqPending
      */
@@ -439,7 +448,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property num_vcenter_req_pending of obj type vimgrvcenterruntime field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numVcenterReqPending set the numVcenterReqPending.
      */
@@ -449,7 +458,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property num_vms of obj type vimgrvcenterruntime field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numVms
      */
@@ -459,7 +468,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property num_vms of obj type vimgrvcenterruntime field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numVms set the numVms.
      */
@@ -469,7 +478,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property password of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return password
      */
@@ -479,7 +488,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property password of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param password set the password.
      */
@@ -490,6 +499,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return privilege
      */
@@ -500,6 +510,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param privilege set the privilege.
      */
@@ -509,7 +520,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property progress of obj type vimgrvcenterruntime field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return progress
      */
@@ -519,7 +530,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property progress of obj type vimgrvcenterruntime field type str  type integer.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param progress set the progress.
      */
@@ -530,6 +541,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * It is a reference to an object of type tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
      */
@@ -540,6 +552,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * It is a reference to an object of type tenant.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
      */
@@ -551,6 +564,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
      * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return type
      */
@@ -562,6 +576,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
      * This is the setter method to the attribute.
      * Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
      * CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param type set the type.
      */
@@ -588,7 +603,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property username of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return username
      */
@@ -598,7 +613,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property username of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param username set the username.
      */
@@ -608,7 +623,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
      */
@@ -618,7 +633,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique object identifier of the object.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
      */
@@ -628,7 +643,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_connected of obj type vimgrvcenterruntime field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return vcenterConnected
      */
@@ -638,7 +653,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_connected of obj type vimgrvcenterruntime field type str  type boolean.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param vcenterConnected set the vcenterConnected.
      */
@@ -648,7 +663,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_fullname of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterFullname
      */
@@ -658,7 +673,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_fullname of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterFullname set the vcenterFullname.
      */
@@ -668,7 +683,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_template_se_location of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterTemplateSeLocation
      */
@@ -678,7 +693,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_template_se_location of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterTemplateSeLocation set the vcenterTemplateSeLocation.
      */
@@ -688,7 +703,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Placeholder for description of property vcenter_url of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterUrl
      */
@@ -698,7 +713,7 @@ public class VIMgrVcenterRuntime extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Placeholder for description of property vcenter_url of obj type vimgrvcenterruntime field type str  type string.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterUrl set the vcenterUrl.
      */

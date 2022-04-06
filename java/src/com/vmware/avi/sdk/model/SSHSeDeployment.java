@@ -40,6 +40,7 @@ public class SSHSeDeployment  {
      * Host os distribution e.g.
      * Coreos, ubuntu, redhat.
      * Field deprecated in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return hostOs
      */
     public String getHostOs() {
@@ -51,6 +52,7 @@ public class SSHSeDeployment  {
      * Host os distribution e.g.
      * Coreos, ubuntu, redhat.
      * Field deprecated in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param hostOs set the hostOs.
      */
     public void setHostOs(String  hostOs) {
@@ -61,6 +63,7 @@ public class SSHSeDeployment  {
      * This is the getter method this will return the attribute value.
      * Password for ssh and/or sudo.
      * Field deprecated in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return password
      */
     public String getPassword() {
@@ -71,6 +74,7 @@ public class SSHSeDeployment  {
      * This is the setter method to the attribute.
      * Password for ssh and/or sudo.
      * Field deprecated in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param password set the password.
      */
     public void setPassword(String  password) {
@@ -81,6 +85,7 @@ public class SSHSeDeployment  {
      * This is the getter method this will return the attribute value.
      * Username for ssh access to hosts.
      * Field deprecated in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return sshUser
      */
     public String getSshUser() {
@@ -91,6 +96,7 @@ public class SSHSeDeployment  {
      * This is the setter method to the attribute.
      * Username for ssh access to hosts.
      * Field deprecated in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param sshUser set the sshUser.
      */
     public void setSshUser(String  sshUser) {
@@ -101,6 +107,7 @@ public class SSHSeDeployment  {
      * This is the getter method this will return the attribute value.
      * Username for sudo.
      * Field deprecated in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @return sudoUser
      */
     public String getSudoUser() {
@@ -111,6 +118,7 @@ public class SSHSeDeployment  {
      * This is the setter method to the attribute.
      * Username for sudo.
      * Field deprecated in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * @param sudoUser set the sudoUser.
      */
     public void setSudoUser(String  sudoUser) {

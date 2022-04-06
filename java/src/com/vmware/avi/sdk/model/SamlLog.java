@@ -48,6 +48,7 @@ public class SamlLog  {
      * This is the getter method this will return the attribute value.
      * Set to true if saml authentication is used.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return isSamlAuthenticationUsed
      */
@@ -59,6 +60,7 @@ public class SamlLog  {
      * This is the setter method to the attribute.
      * Set to true if saml authentication is used.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param isSamlAuthenticationUsed set the isSamlAuthenticationUsed.
      */
@@ -69,6 +71,7 @@ public class SamlLog  {
      * This is the getter method this will return the attribute value.
      * Saml attribute list.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return samlAttributeLists
      */
@@ -80,6 +83,7 @@ public class SamlLog  {
      * This is the setter method. this will set the samlAttributeLists
      * Saml attribute list.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return samlAttributeLists
      */
@@ -91,6 +95,7 @@ public class SamlLog  {
      * This is the setter method this will set the samlAttributeLists
      * Saml attribute list.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return samlAttributeLists
      */
@@ -109,6 +114,7 @@ public class SamlLog  {
      * SAML_AUTH_STATUS_AUTH_REQUEST_GENERATED, SAML_AUTH_STATUS_AUTH_RESPONSE_RECEIVED, SAML_AUTH_STATUS_AUTHENTICATED_REQUEST,
      * SAML_AUTH_STATUS_AUTHORIZATION_FAILED.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return samlAuthStatus
      */
@@ -123,6 +129,7 @@ public class SamlLog  {
      * SAML_AUTH_STATUS_AUTH_REQUEST_GENERATED, SAML_AUTH_STATUS_AUTH_RESPONSE_RECEIVED, SAML_AUTH_STATUS_AUTHENTICATED_REQUEST,
      * SAML_AUTH_STATUS_AUTHORIZATION_FAILED.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param samlAuthStatus set the samlAuthStatus.
      */
@@ -134,6 +141,7 @@ public class SamlLog  {
      * This is the getter method this will return the attribute value.
      * Saml authentication rule match.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return samlAuthnRuleMatch
      */
@@ -145,6 +153,7 @@ public class SamlLog  {
      * This is the setter method to the attribute.
      * Saml authentication rule match.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param samlAuthnRuleMatch set the samlAuthnRuleMatch.
      */
@@ -156,6 +165,7 @@ public class SamlLog  {
      * This is the getter method this will return the attribute value.
      * Saml authorization rule match.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return samlAuthzRuleMatch
      */
@@ -167,6 +177,7 @@ public class SamlLog  {
      * This is the setter method to the attribute.
      * Saml authorization rule match.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param samlAuthzRuleMatch set the samlAuthzRuleMatch.
      */
@@ -178,6 +189,7 @@ public class SamlLog  {
      * This is the getter method this will return the attribute value.
      * Is set when saml session cookie is expired.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return samlSessionCookieExpired
      */
@@ -189,6 +201,7 @@ public class SamlLog  {
      * This is the setter method to the attribute.
      * Is set when saml session cookie is expired.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param samlSessionCookieExpired set the samlSessionCookieExpired.
      */
@@ -200,6 +213,7 @@ public class SamlLog  {
      * This is the getter method this will return the attribute value.
      * Saml userid.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return userid
      */
@@ -211,6 +225,7 @@ public class SamlLog  {
      * This is the setter method to the attribute.
      * Saml userid.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param userid set the userid.
      */

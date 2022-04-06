@@ -37,6 +37,7 @@ public class AlternateAuthConfiguration  {
      * Uuid of the authprofile.
      * It is a reference to an object of type authprofile.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authProfileRef
      */
@@ -49,6 +50,7 @@ public class AlternateAuthConfiguration  {
      * Uuid of the authprofile.
      * It is a reference to an object of type authprofile.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param authProfileRef set the authProfileRef.
      */
@@ -60,6 +62,7 @@ public class AlternateAuthConfiguration  {
      * This is the getter method this will return the attribute value.
      * Index used for maintaining order of alternateauthconfiguration.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return index
      */
@@ -71,6 +74,7 @@ public class AlternateAuthConfiguration  {
      * This is the setter method to the attribute.
      * Index used for maintaining order of alternateauthconfiguration.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param index set the index.
      */
@@ -81,6 +85,7 @@ public class AlternateAuthConfiguration  {
      * This is the getter method this will return the attribute value.
      * Rules list for tenant or role mapping.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mappingRules
      */
@@ -92,6 +97,7 @@ public class AlternateAuthConfiguration  {
      * This is the setter method. this will set the mappingRules
      * Rules list for tenant or role mapping.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mappingRules
      */
@@ -103,6 +109,7 @@ public class AlternateAuthConfiguration  {
      * This is the setter method this will set the mappingRules
      * Rules list for tenant or role mapping.
      * Field introduced in 20.1.6.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mappingRules
      */

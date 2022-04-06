@@ -38,6 +38,7 @@ public class SeVnicDownEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Vnic name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ifName
      */
@@ -48,6 +49,7 @@ public class SeVnicDownEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Vnic name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ifName set the ifName.
      */
@@ -58,6 +60,7 @@ public class SeVnicDownEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Vnic linux name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return linuxName
      */
@@ -68,6 +71,7 @@ public class SeVnicDownEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Vnic linux name.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param linuxName set the linuxName.
      */
@@ -78,6 +82,7 @@ public class SeVnicDownEventDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Mac address.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mac
      */
@@ -88,6 +93,7 @@ public class SeVnicDownEventDetails  {
     /**
      * This is the setter method to the attribute.
      * Mac address.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mac set the mac.
      */
@@ -99,6 +105,7 @@ public class SeVnicDownEventDetails  {
      * This is the getter method this will return the attribute value.
      * Uuid of the se responsible for this event.
      * It is a reference to an object of type serviceengine.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seRef
      */
@@ -110,6 +117,7 @@ public class SeVnicDownEventDetails  {
      * This is the setter method to the attribute.
      * Uuid of the se responsible for this event.
      * It is a reference to an object of type serviceengine.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seRef set the seRef.
      */

@@ -35,6 +35,7 @@ public class ReplicationPolicy  {
      * Follower attempt to replicate configuration till this checkpoint.
      * It is a reference to an object of type federationcheckpoint.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return checkpointRef
      */
@@ -48,6 +49,7 @@ public class ReplicationPolicy  {
      * Follower attempt to replicate configuration till this checkpoint.
      * It is a reference to an object of type federationcheckpoint.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param checkpointRef set the checkpointRef.
      */
@@ -60,6 +62,7 @@ public class ReplicationPolicy  {
      * Replication mode.
      * Enum options - REPLICATION_MODE_CONTINUOUS, REPLICATION_MODE_MANUAL, REPLICATION_MODE_ADAPTIVE.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "REPLICATION_MODE_CONTINUOUS".
      * @return replicationMode
      */
@@ -72,6 +75,7 @@ public class ReplicationPolicy  {
      * Replication mode.
      * Enum options - REPLICATION_MODE_CONTINUOUS, REPLICATION_MODE_MANUAL, REPLICATION_MODE_ADAPTIVE.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "REPLICATION_MODE_CONTINUOUS".
      * @param replicationMode set the replicationMode.
      */

@@ -37,6 +37,7 @@ public class ControllerSize  {
      * Controller flavor (e/s/m/l) for this controller size.
      * Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return flavor
      */
@@ -49,6 +50,7 @@ public class ControllerSize  {
      * Controller flavor (e/s/m/l) for this controller size.
      * Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param flavor set the flavor.
      */
@@ -60,6 +62,7 @@ public class ControllerSize  {
      * This is the getter method this will return the attribute value.
      * Minimum number of cpu cores required.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return minCpus
      */
@@ -71,6 +74,7 @@ public class ControllerSize  {
      * This is the setter method to the attribute.
      * Minimum number of cpu cores required.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param minCpus set the minCpus.
      */
@@ -83,6 +87,7 @@ public class ControllerSize  {
      * Minimum memory required.
      * Field introduced in 20.1.1.
      * Unit is gb.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return minMemory
      */
@@ -95,6 +100,7 @@ public class ControllerSize  {
      * Minimum memory required.
      * Field introduced in 20.1.1.
      * Unit is gb.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param minMemory set the minMemory.
      */

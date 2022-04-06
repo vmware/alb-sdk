@@ -36,6 +36,7 @@ public class NsxtTier1SegmentAutomaticMode  {
      * This is the getter method this will return the attribute value.
      * Uber ip subnet for the logical segments created automatically by avi controller.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxtSegmentSubnet
      */
@@ -47,6 +48,7 @@ public class NsxtTier1SegmentAutomaticMode  {
      * This is the setter method to the attribute.
      * Uber ip subnet for the logical segments created automatically by avi controller.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxtSegmentSubnet set the nsxtSegmentSubnet.
      */
@@ -58,6 +60,7 @@ public class NsxtTier1SegmentAutomaticMode  {
      * This is the getter method this will return the attribute value.
      * The number of se data vnic's that can be connected to the avi logical segment.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 16.
      * @return numSePerSegment
      */
@@ -69,6 +72,7 @@ public class NsxtTier1SegmentAutomaticMode  {
      * This is the setter method to the attribute.
      * The number of se data vnic's that can be connected to the avi logical segment.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 16.
      * @param numSePerSegment set the numSePerSegment.
      */
@@ -80,6 +84,7 @@ public class NsxtTier1SegmentAutomaticMode  {
      * Tier1 logical router ids.
      * Field introduced in 20.1.1.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tier1LrIds
      */
@@ -92,6 +97,7 @@ public class NsxtTier1SegmentAutomaticMode  {
      * Tier1 logical router ids.
      * Field introduced in 20.1.1.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tier1LrIds
      */
@@ -104,6 +110,7 @@ public class NsxtTier1SegmentAutomaticMode  {
      * Tier1 logical router ids.
      * Field introduced in 20.1.1.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tier1LrIds
      */

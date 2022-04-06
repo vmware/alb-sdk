@@ -33,6 +33,7 @@ public class DnsRuleDnsRrSet  {
      * This is the getter method this will return the attribute value.
      * Dns resource record set - (records in the resource record set share the dns domain name, type, and class).
      * Field introduced in 17.2.12, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return resourceRecordSet
      */
@@ -44,6 +45,7 @@ public class DnsRuleDnsRrSet  {
      * This is the setter method to the attribute.
      * Dns resource record set - (records in the resource record set share the dns domain name, type, and class).
      * Field introduced in 17.2.12, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param resourceRecordSet set the resourceRecordSet.
      */
@@ -56,6 +58,7 @@ public class DnsRuleDnsRrSet  {
      * Dns message section for the resource record set.
      * Enum options - DNS_MESSAGE_SECTION_QUESTION, DNS_MESSAGE_SECTION_ANSWER, DNS_MESSAGE_SECTION_AUTHORITY, DNS_MESSAGE_SECTION_ADDITIONAL.
      * Field introduced in 17.2.12, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_MESSAGE_SECTION_ANSWER".
      * @return section
      */
@@ -68,6 +71,7 @@ public class DnsRuleDnsRrSet  {
      * Dns message section for the resource record set.
      * Enum options - DNS_MESSAGE_SECTION_QUESTION, DNS_MESSAGE_SECTION_ANSWER, DNS_MESSAGE_SECTION_AUTHORITY, DNS_MESSAGE_SECTION_ADDITIONAL.
      * Field introduced in 17.2.12, 18.1.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "DNS_MESSAGE_SECTION_ANSWER".
      * @param section set the section.
      */

@@ -58,7 +58,7 @@ public class HealthMonitorHttp  {
      * Type of the authentication method.
      * Enum options - AUTH_BASIC, AUTH_NTLM.
      * Field introduced in 20.1.1.
-     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authType
      */
@@ -71,7 +71,7 @@ public class HealthMonitorHttp  {
      * Type of the authentication method.
      * Enum options - AUTH_BASIC, AUTH_NTLM.
      * Field introduced in 20.1.1.
-     * Allowed in basic edition, essentials edition, enterprise edition.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param authType set the authType.
      */
@@ -83,6 +83,7 @@ public class HealthMonitorHttp  {
      * This is the getter method this will return the attribute value.
      * Use the exact http_request string as specified by user, without any automatic insert of headers like host header.
      * Field introduced in 17.1.6,17.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return exactHttpRequest
      */
@@ -94,6 +95,7 @@ public class HealthMonitorHttp  {
      * This is the setter method to the attribute.
      * Use the exact http_request string as specified by user, without any automatic insert of headers like host header.
      * Field introduced in 17.1.6,17.2.2.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param exactHttpRequest set the exactHttpRequest.
      */
@@ -106,6 +108,7 @@ public class HealthMonitorHttp  {
      * Send an http request to the server.
      * The default get / http/1.0 may be extended with additional headers or information.
      * For instance, get /index.htm http/1.1 host  www.site.com connection  close.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "GET / HTTP/1.0".
      * @return httpRequest
      */
@@ -118,6 +121,7 @@ public class HealthMonitorHttp  {
      * Send an http request to the server.
      * The default get / http/1.0 may be extended with additional headers or information.
      * For instance, get /index.htm http/1.1 host  www.site.com connection  close.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "GET / HTTP/1.0".
      * @param httpRequest set the httpRequest.
      */
@@ -129,6 +133,7 @@ public class HealthMonitorHttp  {
      * This is the getter method this will return the attribute value.
      * Http request body.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpRequestBody
      */
@@ -140,6 +145,7 @@ public class HealthMonitorHttp  {
      * This is the setter method to the attribute.
      * Http request body.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param httpRequestBody set the httpRequestBody.
      */
@@ -150,6 +156,7 @@ public class HealthMonitorHttp  {
     /**
      * This is the getter method this will return the attribute value.
      * Match for a keyword in the first 2kb of the server header and body response.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpResponse
      */
@@ -160,6 +167,7 @@ public class HealthMonitorHttp  {
     /**
      * This is the setter method to the attribute.
      * Match for a keyword in the first 2kb of the server header and body response.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param httpResponse set the httpResponse.
      */
@@ -172,6 +180,7 @@ public class HealthMonitorHttp  {
      * Default is 2xx.
      * Enum options - HTTP_ANY, HTTP_1XX, HTTP_2XX, HTTP_3XX, HTTP_4XX, HTTP_5XX.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpResponseCode
      */
@@ -185,6 +194,7 @@ public class HealthMonitorHttp  {
      * Default is 2xx.
      * Enum options - HTTP_ANY, HTTP_1XX, HTTP_2XX, HTTP_3XX, HTTP_4XX, HTTP_5XX.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpResponseCode
      */
@@ -198,6 +208,7 @@ public class HealthMonitorHttp  {
      * Default is 2xx.
      * Enum options - HTTP_ANY, HTTP_1XX, HTTP_2XX, HTTP_3XX, HTTP_4XX, HTTP_5XX.
      * Minimum of 1 items required.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return httpResponseCode
      */
@@ -214,6 +225,7 @@ public class HealthMonitorHttp  {
      * A successful match results in the server being marked down.
      * Allowed values are 101-599.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maintenanceCode
      */
@@ -227,6 +239,7 @@ public class HealthMonitorHttp  {
      * A successful match results in the server being marked down.
      * Allowed values are 101-599.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maintenanceCode
      */
@@ -240,6 +253,7 @@ public class HealthMonitorHttp  {
      * A successful match results in the server being marked down.
      * Allowed values are 101-599.
      * Maximum of 4 items allowed.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maintenanceCode
      */
@@ -255,6 +269,7 @@ public class HealthMonitorHttp  {
      * This is the getter method this will return the attribute value.
      * Match or look for this keyword in the first 2kb of server header and body response indicating server maintenance.
      * A successful match results in the server being marked down.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maintenanceResponse
      */
@@ -266,6 +281,7 @@ public class HealthMonitorHttp  {
      * This is the setter method to the attribute.
      * Match or look for this keyword in the first 2kb of server header and body response indicating server maintenance.
      * A successful match results in the server being marked down.
+     * Allowed in enterprise with any value edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param maintenanceResponse set the maintenanceResponse.
      */
@@ -278,6 +294,7 @@ public class HealthMonitorHttp  {
      * Expected http/https response page size.
      * Allowed values are 2048-16384.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return responseSize
      */
@@ -290,6 +307,7 @@ public class HealthMonitorHttp  {
      * Expected http/https response page size.
      * Allowed values are 2048-16384.
      * Field introduced in 20.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param responseSize set the responseSize.
      */
@@ -301,6 +319,7 @@ public class HealthMonitorHttp  {
      * This is the getter method this will return the attribute value.
      * Ssl attributes for https health monitor.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sslAttributes
      */
@@ -312,6 +331,7 @@ public class HealthMonitorHttp  {
      * This is the setter method to the attribute.
      * Ssl attributes for https health monitor.
      * Field introduced in 17.1.1.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sslAttributes set the sslAttributes.
      */

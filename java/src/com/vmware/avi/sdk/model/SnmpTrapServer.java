@@ -41,6 +41,7 @@ public class SnmpTrapServer  {
     /**
      * This is the getter method this will return the attribute value.
      * The community string to communicate with the trap server.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return community
      */
@@ -51,6 +52,7 @@ public class SnmpTrapServer  {
     /**
      * This is the setter method to the attribute.
      * The community string to communicate with the trap server.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param community set the community.
      */
@@ -61,6 +63,7 @@ public class SnmpTrapServer  {
     /**
      * This is the getter method this will return the attribute value.
      * Ip address of the snmp trap destination.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipAddr
      */
@@ -71,6 +74,7 @@ public class SnmpTrapServer  {
     /**
      * This is the setter method to the attribute.
      * Ip address of the snmp trap destination.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipAddr set the ipAddr.
      */
@@ -82,6 +86,7 @@ public class SnmpTrapServer  {
      * This is the getter method this will return the attribute value.
      * The udp port of the trap server.
      * Field introduced in 16.5.4,17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 162.
      * @return port
      */
@@ -93,6 +98,7 @@ public class SnmpTrapServer  {
      * This is the setter method to the attribute.
      * The udp port of the trap server.
      * Field introduced in 16.5.4,17.2.5.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 162.
      * @param port set the port.
      */
@@ -104,6 +110,7 @@ public class SnmpTrapServer  {
      * This is the getter method this will return the attribute value.
      * Snmp version 3 configuration.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return user
      */
@@ -115,6 +122,7 @@ public class SnmpTrapServer  {
      * This is the setter method to the attribute.
      * Snmp version 3 configuration.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param user set the user.
      */
@@ -128,6 +136,7 @@ public class SnmpTrapServer  {
      * V2 or v3.
      * Enum options - SNMP_VER2, SNMP_VER3.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_VER2".
      * @return version
      */
@@ -141,6 +150,7 @@ public class SnmpTrapServer  {
      * V2 or v3.
      * Enum options - SNMP_VER2, SNMP_VER3.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_VER2".
      * @param version set the version.
      */

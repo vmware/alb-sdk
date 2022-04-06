@@ -30,6 +30,7 @@ public class SamlIdentityProviderSettings  {
      * This is the getter method this will return the attribute value.
      * Saml idp metadata.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metadata
      */
@@ -41,6 +42,7 @@ public class SamlIdentityProviderSettings  {
      * This is the setter method to the attribute.
      * Saml idp metadata.
      * Field introduced in 17.2.3.
+     * Allowed in enterprise with any value edition, essentials edition, basic edition, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param metadata set the metadata.
      */
