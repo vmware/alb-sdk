@@ -8,6 +8,6 @@ package models
 // swagger:model HealthMonitorPop3
 type HealthMonitorPop3 struct {
 
-	// SSL attributes for POP3S monitor. Field introduced in 21.1.1.
+	// SSL attributes for POP3S monitor. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	SslAttributes *HealthMonitorSSlattributes `json:"ssl_attributes,omitempty"`
 }

@@ -8,6 +8,6 @@ package models
 // swagger:model BotConfigUserAgent
 type BotConfigUserAgent struct {
 
-	// Whether User Agent-based Bot detection is enabled. Field introduced in 21.1.1.
+	// Whether User Agent-based Bot detection is enabled. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Enabled *bool `json:"enabled,omitempty"`
 }

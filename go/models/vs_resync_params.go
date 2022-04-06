@@ -8,9 +8,9 @@ package models
 // swagger:model VsResyncParams
 type VsResyncParams struct {
 
-	//  It is a reference to an object of type ServiceEngine.
+	//  It is a reference to an object of type ServiceEngine. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	SeRef []string `json:"se_ref,omitempty"`
 
-	// Unique object identifier of the object.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 }

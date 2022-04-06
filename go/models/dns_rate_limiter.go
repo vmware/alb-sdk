@@ -8,11 +8,11 @@ package models
 // swagger:model DnsRateLimiter
 type DNSRateLimiter struct {
 
-	// Action to perform upon rate limiting. Field introduced in 20.1.1.
+	// Action to perform upon rate limiting. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Action *DNSRuleRLAction `json:"action"`
 
-	// Rate limiting object. Field introduced in 20.1.1.
+	// Rate limiting object. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	RateLimiterObject *RateLimiter `json:"rate_limiter_object"`
 }

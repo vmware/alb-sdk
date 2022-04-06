@@ -8,12 +8,12 @@ package models
 // swagger:model AlertMgrDebugFilter
 type AlertMgrDebugFilter struct {
 
-	// filter debugs for entity uuid.
+	// filter debugs for entity uuid. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	AlertObjid *string `json:"alert_objid,omitempty"`
 
-	// filter debugs for an alert id.
+	// filter debugs for an alert id. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	AlertUUID *string `json:"alert_uuid,omitempty"`
 
-	// filter debugs for an alert config.
+	// filter debugs for an alert config. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	CfgUUID *string `json:"cfg_uuid,omitempty"`
 }

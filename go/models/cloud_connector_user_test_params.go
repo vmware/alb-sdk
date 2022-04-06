@@ -8,6 +8,6 @@ package models
 // swagger:model CloudConnectorUserTestParams
 type CloudConnectorUserTestParams struct {
 
-	// host of CloudConnectorUserTestParams.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Host *string `json:"host,omitempty"`
 }

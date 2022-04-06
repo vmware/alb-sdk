@@ -8,9 +8,9 @@ package models
 // swagger:model SamlAttribute
 type SamlAttribute struct {
 
-	// SAML Attribute name. Field introduced in 20.1.1.
+	// SAML Attribute name. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	AttrName *string `json:"attr_name,omitempty"`
 
-	// SAML Attribute values. Field introduced in 20.1.1.
+	// SAML Attribute values. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	AttrValues []string `json:"attr_values,omitempty"`
 }

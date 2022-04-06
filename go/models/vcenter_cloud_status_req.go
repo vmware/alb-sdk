@@ -8,6 +8,6 @@ package models
 // swagger:model VcenterCloudStatusReq
 type VcenterCloudStatusReq struct {
 
-	// Unique object identifier of cloud.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	CloudUUID *string `json:"cloud_uuid,omitempty"`
 }

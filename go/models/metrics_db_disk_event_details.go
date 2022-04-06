@@ -8,14 +8,14 @@ package models
 // swagger:model MetricsDbDiskEventDetails
 type MetricsDbDiskEventDetails struct {
 
-	// metrics_deleted_tables of MetricsDbDiskEventDetails.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	MetricsDeletedTables []string `json:"metrics_deleted_tables,omitempty"`
 
-	// Number of metrics_free_sz.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	MetricsFreeSz *int64 `json:"metrics_free_sz"`
 
-	// Number of metrics_quota.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	MetricsQuota *int64 `json:"metrics_quota"`
 }

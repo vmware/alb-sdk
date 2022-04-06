@@ -8,11 +8,11 @@ package models
 // swagger:model AuthAttributeMatch
 type AuthAttributeMatch struct {
 
-	// Attribute name whose values will be looked up in the access lists. Field introduced in 18.2.5.
+	// Attribute name whose values will be looked up in the access lists. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	AttributeName *string `json:"attribute_name"`
 
-	// Attribute Values used to determine access when authentication applies. Field introduced in 18.2.5. Allowed in Basic edition, Essentials edition, Enterprise edition.
+	// Attribute Values used to determine access when authentication applies. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	// Required: true
 	AttributeValueList *StringMatch `json:"attribute_value_list"`
 }

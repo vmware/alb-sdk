@@ -8,23 +8,23 @@ package models
 // swagger:model OpenstackLogin
 type OpenstackLogin struct {
 
-	// admin_tenant of OpenstackLogin.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	AdminTenant *string `json:"admin_tenant,omitempty"`
 
-	// auth_url of OpenstackLogin.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	AuthURL *string `json:"auth_url,omitempty"`
 
-	// keystone_host of OpenstackLogin.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	KeystoneHost *string `json:"keystone_host,omitempty"`
 
-	// password of OpenstackLogin.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Password *string `json:"password"`
 
-	// region of OpenstackLogin.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Region *string `json:"region,omitempty"`
 
-	// username of OpenstackLogin.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Username *string `json:"username"`
 }

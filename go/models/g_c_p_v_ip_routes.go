@@ -8,9 +8,9 @@ package models
 // swagger:model GCPVIPRoutes
 type GCPVIPRoutes struct {
 
-	// Match SE group subnets for VIP placement. Default is to not match SE group subnets. Field introduced in 18.2.9, 20.1.1.
+	// Match SE group subnets for VIP placement. Default is to not match SE group subnets. Field introduced in 18.2.9, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	MatchSeGroupSubnet *bool `json:"match_se_group_subnet,omitempty"`
 
-	// Priority of the routes created in GCP. Field introduced in 20.1.7, 21.1.2.
+	// Priority of the routes created in GCP. Field introduced in 20.1.7, 21.1.2. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	RoutePriority *int32 `json:"route_priority,omitempty"`
 }

@@ -8,7 +8,7 @@ package models
 // swagger:model DnsARdata
 type DNSARdata struct {
 
-	// IP address for FQDN.
+	// IP address for FQDN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	IPAddress *IPAddr `json:"ip_address"`
 }

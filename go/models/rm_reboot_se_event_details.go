@@ -8,9 +8,9 @@ package models
 // swagger:model RmRebootSeEventDetails
 type RmRebootSeEventDetails struct {
 
-	// reason of RmRebootSeEventDetails.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Reason *string `json:"reason,omitempty"`
 
-	// se_name of RmRebootSeEventDetails.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	SeName *string `json:"se_name,omitempty"`
 }

@@ -8,12 +8,12 @@ package models
 // swagger:model IcapOPSWATLog
 type IcapOPSWATLog struct {
 
-	// Blocking reason for the content. It is available only if content was scanned by ICAP server and some violations were found. Field introduced in 21.1.1.
+	// Blocking reason for the content. It is available only if content was scanned by ICAP server and some violations were found. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Reason *string `json:"reason,omitempty"`
 
-	// Short description of the threat found in the content. Available only if content was scanned by ICAP server and some violations were found. Field introduced in 21.1.1.
+	// Short description of the threat found in the content. Available only if content was scanned by ICAP server and some violations were found. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	ThreatID *string `json:"threat_id,omitempty"`
 
-	// Threat found in the content. Available only if content was scanned by ICAP server and some violations were found. Field introduced in 21.1.1.
+	// Threat found in the content. Available only if content was scanned by ICAP server and some violations were found. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Violations []*IcapViolation `json:"violations,omitempty"`
 }

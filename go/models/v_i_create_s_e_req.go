@@ -8,25 +8,25 @@ package models
 // swagger:model VICreateSEReq
 type VICreateSEReq struct {
 
-	// Unique object identifier of cloud.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	CloudUUID *string `json:"cloud_uuid,omitempty"`
 
-	// cookie of VICreateSEReq.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Cookie *string `json:"cookie,omitempty"`
 
-	// Unique object identifier of se_grp.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	SeGrpUUID *string `json:"se_grp_uuid,omitempty"`
 
-	// Placeholder for description of property se_params of obj type VICreateSEReq field type str  type object
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	SeParams *VISeVMOvaParams `json:"se_params"`
 
-	// Unique object identifier of tenant.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	TenantUUID *string `json:"tenant_uuid,omitempty"`
 
-	// Placeholder for description of property vcenter_admin of obj type VICreateSEReq field type str  type object
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	VcenterAdmin *VIAdminCredentials `json:"vcenter_admin,omitempty"`
 
-	// vcenter_vnic_portgroups of VICreateSEReq.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	VcenterVnicPortgroups []string `json:"vcenter_vnic_portgroups,omitempty"`
 }

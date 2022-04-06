@@ -8,10 +8,10 @@ package models
 // swagger:model SEFaultInjectExhaustParam
 type SEFaultInjectExhaustParam struct {
 
-	// Placeholder for description of property leak of obj type SEFaultInjectExhaustParam field type str  type boolean
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Leak *bool `json:"leak,omitempty"`
 
-	// Number of num.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Num *int64 `json:"num"`
 }

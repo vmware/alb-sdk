@@ -8,15 +8,15 @@ package models
 // swagger:model VIDeleteNetworkFilter
 type VIdeleteNetworkFilter struct {
 
-	//  Field introduced in 17.1.3.
+	//  Field introduced in 17.1.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	CloudUUID *string `json:"cloud_uuid,omitempty"`
 
-	//  Field introduced in 17.1.3.
+	//  Field introduced in 17.1.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Datacenter *string `json:"datacenter,omitempty"`
 
-	//  Field introduced in 17.1.3.
+	//  Field introduced in 17.1.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	NetworkUUID *string `json:"network_uuid,omitempty"`
 
-	//  Field introduced in 17.1.3.
+	//  Field introduced in 17.1.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	VcenterURL *string `json:"vcenter_url,omitempty"`
 }

@@ -8,10 +8,10 @@ package models
 // swagger:model AlertFilter
 type AlertFilter struct {
 
-	// filter_action of AlertFilter.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	FilterAction *string `json:"filter_action,omitempty"`
 
-	// filter_string of AlertFilter.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	FilterString *string `json:"filter_string"`
 }

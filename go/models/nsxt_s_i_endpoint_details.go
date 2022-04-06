@@ -8,21 +8,21 @@ package models
 // swagger:model NsxtSIEndpointDetails
 type NsxtSIEndpointDetails struct {
 
-	// VirtualEndpoint Path. Field introduced in 21.1.3.
+	// VirtualEndpoint Path. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Endpoint *string `json:"endpoint,omitempty"`
 
-	// Error message. Field introduced in 21.1.3.
+	// Error message. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	ErrorString *string `json:"error_string,omitempty"`
 
-	// ServiceEngineGroup name. Field introduced in 21.1.3.
+	// ServiceEngineGroup name. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Segroup *string `json:"segroup,omitempty"`
 
-	// Services where endpoint refers. Field introduced in 21.1.3.
+	// Services where endpoint refers. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Services []string `json:"services,omitempty"`
 
-	// Endpoint Target IPs. Field introduced in 21.1.3.
+	// Endpoint Target IPs. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	TargetIps []string `json:"targetIps,omitempty"`
 
-	// Tier1 path. Field introduced in 21.1.3.
+	// Tier1 path. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Tier1 *string `json:"tier1,omitempty"`
 }
