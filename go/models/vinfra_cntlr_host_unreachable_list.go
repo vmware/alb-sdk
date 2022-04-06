@@ -8,10 +8,10 @@ package models
 // swagger:model VinfraCntlrHostUnreachableList
 type VinfraCntlrHostUnreachableList struct {
 
-	// host_name of VinfraCntlrHostUnreachableList.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	HostName []string `json:"host_name,omitempty"`
 
-	// vcenter of VinfraCntlrHostUnreachableList.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Vcenter *string `json:"vcenter"`
 }

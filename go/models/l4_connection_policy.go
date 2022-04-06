@@ -8,6 +8,6 @@ package models
 // swagger:model L4ConnectionPolicy
 type L4ConnectionPolicy struct {
 
-	// Rules to apply when a new transport connection is setup. Field introduced in 17.2.7.
+	// Rules to apply when a new transport connection is setup. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Rules []*L4Rule `json:"rules,omitempty"`
 }

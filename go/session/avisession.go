@@ -1173,8 +1173,15 @@ func (avisess *AviSession) GetCollection(uri string, objList interface{}, option
 }
 
 // GetRaw performs a GET API call and returns raw data
-func (avisess *AviSession) GetRaw(uri string) ([]byte, error) {
-	resp, rerror := avisess.restRequest("GET", uri, nil, "", nil)
+func (avisess *AviSession) GetRaw(uri string, options ...ApiOptionsParams) ([]byte, error) {
+	opts, err := getOptions(options)
+	if err != nil {
+		return nil, err
+	}
+	if len(opts.params) != 0 {
+		uri = updateUri(uri, opts)
+	}
+	resp, rerror := avisess.restRequest("GET", uri, nil, opts.tenant, nil)
 	if rerror != nil || resp == nil {
 		return nil, rerror
 	}
@@ -1183,8 +1190,15 @@ func (avisess *AviSession) GetRaw(uri string) ([]byte, error) {
 }
 
 // PostRaw performs a POST API call and returns raw data
-func (avisess *AviSession) PostRaw(uri string, payload interface{}) ([]byte, error) {
-	resp, rerror := avisess.restRequest("POST", uri, payload, "", nil)
+func (avisess *AviSession) PostRaw(uri string, payload interface{}, options ...ApiOptionsParams) ([]byte, error) {
+	opts, err := getOptions(options)
+	if err != nil {
+		return nil, err
+	}
+	if len(opts.params) != 0 {
+		uri = updateUri(uri, opts)
+	}
+	resp, rerror := avisess.restRequest("POST", uri, payload, opts.tenant, nil)
 	if rerror != nil || resp == nil {
 		return nil, rerror
 	}
@@ -1192,8 +1206,15 @@ func (avisess *AviSession) PostRaw(uri string, payload interface{}) ([]byte, err
 }
 
 // PutRaw performs a POST API call and returns raw data
-func (avisess *AviSession) PutRaw(uri string, payload interface{}) ([]byte, error) {
-	resp, rerror := avisess.restRequest("PUT", uri, payload, "", nil)
+func (avisess *AviSession) PutRaw(uri string, payload interface{}, options ...ApiOptionsParams) ([]byte, error) {
+	opts, err := getOptions(options)
+	if err != nil {
+		return nil, err
+	}
+	if len(opts.params) != 0 {
+		uri = updateUri(uri, opts)
+	}
+	resp, rerror := avisess.restRequest("PUT", uri, payload, opts.tenant, nil)
 	if rerror != nil || resp == nil {
 		return nil, rerror
 	}

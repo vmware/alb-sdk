@@ -8,6 +8,6 @@ package models
 // swagger:model ParamsInURI
 type ParamsInURI struct {
 
-	// Params info in hitted signature rule which has ARGS match element. Field introduced in 21.1.1.
+	// Params info in hitted signature rule which has ARGS match element. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	ParamInfo []*ParamInURI `json:"param_info,omitempty"`
 }

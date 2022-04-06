@@ -8,11 +8,11 @@ package models
 // swagger:model SummarizedSubnetInfo
 type SummarizedSubnetInfo struct {
 
-	// cidr_prefix of SummarizedSubnetInfo.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	CidrPrefix *string `json:"cidr_prefix"`
 
-	// network of SummarizedSubnetInfo.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Network *string `json:"network"`
 }

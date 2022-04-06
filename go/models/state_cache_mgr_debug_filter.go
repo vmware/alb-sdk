@@ -8,9 +8,9 @@ package models
 // swagger:model StateCacheMgrDebugFilter
 type StateCacheMgrDebugFilter struct {
 
-	// Pool UUID. It is a reference to an object of type Pool.
+	// Pool UUID. It is a reference to an object of type Pool. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	PoolRef *string `json:"pool_ref,omitempty"`
 
-	// VirtualService UUID. It is a reference to an object of type VirtualService.
+	// VirtualService UUID. It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	VsRef *string `json:"vs_ref,omitempty"`
 }

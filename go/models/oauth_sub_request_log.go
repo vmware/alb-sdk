@@ -8,12 +8,12 @@ package models
 // swagger:model OauthSubRequestLog
 type OauthSubRequestLog struct {
 
-	// Error code. Field introduced in 21.1.3.
+	// Error code. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	ErrorCode *string `json:"error_code,omitempty"`
 
-	// Error description. Field introduced in 21.1.3.
+	// Error description. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	ErrorDescription *string `json:"error_description,omitempty"`
 
-	// Subrequest info related to the Oauth flow. Field introduced in 21.1.3.
+	// Subrequest info related to the Oauth flow. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	SubRequestLog *SubRequestLog `json:"sub_request_log,omitempty"`
 }

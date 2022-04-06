@@ -8,6 +8,6 @@ package models
 // swagger:model EquivalentLabels
 type EquivalentLabels struct {
 
-	// Equivalent labels.
+	// Equivalent labels. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Labels []string `json:"labels,omitempty"`
 }

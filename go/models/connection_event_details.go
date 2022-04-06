@@ -8,12 +8,12 @@ package models
 // swagger:model ConnectionEventDetails
 type ConnectionEventDetails struct {
 
-	// Destinaton host name to be connected. Field introduced in 21.1.3.
+	// Destinaton host name to be connected. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Host *string `json:"host,omitempty"`
 
-	// Connection status information. Field introduced in 21.1.3.
+	// Connection status information. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Info *string `json:"info,omitempty"`
 
-	// Destinaton port to be connected. Field introduced in 21.1.3.
+	// Destinaton port to be connected. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Port *int32 `json:"port,omitempty"`
 }

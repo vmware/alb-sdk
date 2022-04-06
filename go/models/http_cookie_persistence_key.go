@@ -8,12 +8,12 @@ package models
 // swagger:model HttpCookiePersistenceKey
 type HTTPCookiePersistenceKey struct {
 
-	// aes_key of HttpCookiePersistenceKey.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	AesKey *string `json:"aes_key,omitempty"`
 
-	// hmac_key of HttpCookiePersistenceKey.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	HmacKey *string `json:"hmac_key,omitempty"`
 
-	// name to use for cookie encryption.
+	// name to use for cookie encryption. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 }

@@ -8,9 +8,9 @@ package models
 // swagger:model HTTPHdrData
 type HTTPHdrData struct {
 
-	// HTTP header name.
+	// HTTP header name. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
-	// HTTP header value.
+	// HTTP header value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Value *HTTPHdrValue `json:"value,omitempty"`
 }

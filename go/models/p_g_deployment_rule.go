@@ -8,12 +8,12 @@ package models
 // swagger:model PGDeploymentRule
 type PGDeploymentRule struct {
 
-	// metric_id of PGDeploymentRule.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	MetricID *string `json:"metric_id,omitempty"`
 
-	//  Enum options - CO_EQ, CO_GT, CO_GE, CO_LT, CO_LE, CO_NE.
+	//  Enum options - CO_EQ, CO_GT, CO_GE, CO_LT, CO_LE, CO_NE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Operator *string `json:"operator,omitempty"`
 
-	// metric threshold that is used as the pass fail. If it is not provided then it will simply compare it with current pool vs new pool.
+	// metric threshold that is used as the pass fail. If it is not provided then it will simply compare it with current pool vs new pool. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Threshold *float64 `json:"threshold,omitempty"`
 }

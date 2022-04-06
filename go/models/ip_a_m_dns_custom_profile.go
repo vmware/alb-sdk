@@ -8,18 +8,18 @@ package models
 // swagger:model IpamDnsCustomProfile
 type IPAMDNSCustomProfile struct {
 
-	//  It is a reference to an object of type CustomIpamDnsProfile. Field introduced in 17.1.1.
+	//  It is a reference to an object of type CustomIpamDnsProfile. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	CustomIPAMDNSProfileRef *string `json:"custom_ipam_dns_profile_ref,omitempty"`
 
-	// Custom parameters that will passed to the IPAM/DNS provider including but not limited to provider credentials and API version. Field introduced in 17.1.1.
+	// Custom parameters that will passed to the IPAM/DNS provider including but not limited to provider credentials and API version. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	DynamicParams []*CustomParams `json:"dynamic_params,omitempty"`
 
-	// Networks or Subnets to use for Custom IPAM IP allocation. Field introduced in 21.1.1.
+	// Networks or Subnets to use for Custom IPAM IP allocation. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	UsableAllocSubnets []*CustomIPAMSubnet `json:"usable_alloc_subnets,omitempty"`
 
-	// Usable domains. Field introduced in 17.2.2.
+	// Usable domains. Field introduced in 17.2.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	UsableDomains []string `json:"usable_domains,omitempty"`
 
-	// Usable subnets. Field deprecated in 21.1.1.
+	// Usable subnets. Field deprecated in 21.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	UsableSubnets []*IPAddrPrefix `json:"usable_subnets,omitempty"`
 }

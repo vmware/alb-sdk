@@ -8,11 +8,11 @@ package models
 // swagger:model VinfraVcenterDiscoveryFailure
 type VinfraVcenterDiscoveryFailure struct {
 
-	// state of VinfraVcenterDiscoveryFailure.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	State *string `json:"state"`
 
-	// vcenter of VinfraVcenterDiscoveryFailure.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Vcenter *string `json:"vcenter"`
 }

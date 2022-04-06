@@ -8,9 +8,9 @@ package models
 // swagger:model SSLClientCertificateAction
 type SSLClientCertificateAction struct {
 
-	// Placeholder for description of property close_connection of obj type SSLClientCertificateAction field type str  type boolean
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	CloseConnection *bool `json:"close_connection,omitempty"`
 
-	// Placeholder for description of property headers of obj type SSLClientCertificateAction field type str  type object
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Headers []*SSLClientRequestHeader `json:"headers,omitempty"`
 }

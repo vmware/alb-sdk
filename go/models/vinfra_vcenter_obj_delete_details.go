@@ -8,11 +8,11 @@ package models
 // swagger:model VinfraVcenterObjDeleteDetails
 type VinfraVcenterObjDeleteDetails struct {
 
-	// obj_name of VinfraVcenterObjDeleteDetails.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	ObjName *string `json:"obj_name"`
 
-	// vcenter of VinfraVcenterObjDeleteDetails.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Vcenter *string `json:"vcenter"`
 }

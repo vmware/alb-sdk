@@ -8,9 +8,9 @@ package models
 // swagger:model SeLicensedBandwdithExceededEventDetails
 type SeLicensedBandwdithExceededEventDetails struct {
 
-	// Number of packets dropped since the last event.
+	// Number of packets dropped since the last event. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	NumPktsDropped *int32 `json:"num_pkts_dropped,omitempty"`
 
-	// UUID of the SE responsible for this event. It is a reference to an object of type ServiceEngine.
+	// UUID of the SE responsible for this event. It is a reference to an object of type ServiceEngine. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	SeRef *string `json:"se_ref,omitempty"`
 }

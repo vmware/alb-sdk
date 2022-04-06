@@ -8,11 +8,11 @@ package models
 // swagger:model TimeStamp
 type TimeStamp struct {
 
-	// Number of secs.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Secs *int64 `json:"secs"`
 
-	// Number of usecs.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Usecs *int64 `json:"usecs"`
 }

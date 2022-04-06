@@ -8,24 +8,24 @@ package models
 // swagger:model SwitchoverEventDetails
 type SwitchoverEventDetails struct {
 
-	// from_se_name of SwitchoverEventDetails.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	FromSeName *string `json:"from_se_name,omitempty"`
 
-	// ip of SwitchoverEventDetails.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	IP *string `json:"ip,omitempty"`
 
-	// ip6 of SwitchoverEventDetails.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Ip6 *string `json:"ip6,omitempty"`
 
-	// Reason for switchover. Field introduced in 21.1.3.
+	// Reason for switchover. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Reason *string `json:"reason,omitempty"`
 
-	// to_se_name of SwitchoverEventDetails.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	ToSeName *string `json:"to_se_name,omitempty"`
 
-	// vs_name of SwitchoverEventDetails.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	VsName *string `json:"vs_name,omitempty"`
 
-	// Unique object identifier of vs.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	VsUUID *string `json:"vs_uuid,omitempty"`
 }

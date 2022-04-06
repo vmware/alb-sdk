@@ -8,29 +8,29 @@ package models
 // swagger:model VISetMgmtIpSEReq
 type VISetMgmtIPSEReq struct {
 
-	// Placeholder for description of property admin of obj type VISetMgmtIpSEReq field type str  type object
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Admin *VIAdminCredentials `json:"admin,omitempty"`
 
-	// Placeholder for description of property all_vnic_connected of obj type VISetMgmtIpSEReq field type str  type boolean
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	AllVnicConnected *bool `json:"all_vnic_connected,omitempty"`
 
-	// Unique object identifier of cloud.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	CloudUUID *string `json:"cloud_uuid,omitempty"`
 
-	// Unique object identifier of dc.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	DcUUID *string `json:"dc_uuid,omitempty"`
 
-	// Placeholder for description of property ip_params of obj type VISetMgmtIpSEReq field type str  type object
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	IPParams *VISeVMIPConfParams `json:"ip_params"`
 
-	// Placeholder for description of property power_on of obj type VISetMgmtIpSEReq field type str  type boolean
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	PowerOn *bool `json:"power_on,omitempty"`
 
-	// rm_cookie of VISetMgmtIpSEReq.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	RmCookie *string `json:"rm_cookie,omitempty"`
 
-	// Unique object identifier of sevm.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	SevmUUID *string `json:"sevm_uuid"`
 }

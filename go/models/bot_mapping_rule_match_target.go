@@ -8,30 +8,30 @@ package models
 // swagger:model BotMappingRuleMatchTarget
 type BotMappingRuleMatchTarget struct {
 
-	// How to match the BotClientClass. Field introduced in 21.1.3.
+	// How to match the BotClientClass. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	ClassMatcher *BotClassMatcher `json:"class_matcher,omitempty"`
 
-	// Configure client ip addresses. Field introduced in 21.1.3.
+	// Configure client ip addresses. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	ClientIP *IPAddrMatch `json:"client_ip,omitempty"`
 
-	// The component for which this mapping is used. Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION. Field introduced in 21.1.3.
+	// The component for which this mapping is used. Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	ComponentMatcher *string `json:"component_matcher,omitempty"`
 
-	// Configure HTTP header(s). All configured headers must match. Field introduced in 21.1.3.
+	// Configure HTTP header(s). All configured headers must match. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Hdrs []*HdrMatch `json:"hdrs,omitempty"`
 
-	// Configure the host header. Field introduced in 21.1.3.
+	// Configure the host header. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	HostHdr *HostHdrMatch `json:"host_hdr,omitempty"`
 
-	// The list of bot identifier names and how they're matched. Field introduced in 21.1.3.
+	// The list of bot identifier names and how they're matched. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	IdentifierMatcher *StringMatch `json:"identifier_matcher,omitempty"`
 
-	// Configure HTTP methods. Field introduced in 21.1.3.
+	// Configure HTTP methods. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Method *MethodMatch `json:"method,omitempty"`
 
-	// Configure request paths. Field introduced in 21.1.3.
+	// Configure request paths. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Path *PathMatch `json:"path,omitempty"`
 
-	// How to match the BotClientType. Field introduced in 21.1.3.
+	// How to match the BotClientType. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	TypeMatcher *BotTypeMatcher `json:"type_matcher,omitempty"`
 }

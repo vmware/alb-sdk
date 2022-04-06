@@ -8,12 +8,12 @@ package models
 // swagger:model DataScriptErrorTrace
 type DataScriptErrorTrace struct {
 
-	// error of DataScriptErrorTrace.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Error *string `json:"error,omitempty"`
 
-	// event of DataScriptErrorTrace.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Event *string `json:"event,omitempty"`
 
-	// stack_trace of DataScriptErrorTrace.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	StackTrace *string `json:"stack_trace,omitempty"`
 }

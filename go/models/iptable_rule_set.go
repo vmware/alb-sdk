@@ -8,14 +8,14 @@ package models
 // swagger:model IptableRuleSet
 type IptableRuleSet struct {
 
-	// chain of IptableRuleSet.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Chain *string `json:"chain"`
 
-	// Placeholder for description of property rules of obj type IptableRuleSet field type str  type object
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Rules []*IptableRule `json:"rules,omitempty"`
 
-	// table of IptableRuleSet.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Table *string `json:"table"`
 }

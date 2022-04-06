@@ -8,15 +8,15 @@ package models
 // swagger:model BotEvaluationResult
 type BotEvaluationResult struct {
 
-	// The component of the bot module that made this evaluation. Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION. Field introduced in 21.1.1.
+	// The component of the bot module that made this evaluation. Enum options - BOT_DECIDER_CONSOLIDATION, BOT_DECIDER_USER_AGENT, BOT_DECIDER_IP_REPUTATION, BOT_DECIDER_IP_NETWORK_LOCATION. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Component *string `json:"component,omitempty"`
 
-	// The confidence of this evaluation. Enum options - LOW_CONFIDENCE, MEDIUM_CONFIDENCE, HIGH_CONFIDENCE. Field introduced in 21.1.1.
+	// The confidence of this evaluation. Enum options - LOW_CONFIDENCE, MEDIUM_CONFIDENCE, HIGH_CONFIDENCE. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Confidence *string `json:"confidence,omitempty"`
 
-	// The resulting Bot Identification. Field introduced in 21.1.1.
+	// The resulting Bot Identification. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Identification *BotIdentification `json:"identification,omitempty"`
 
-	// Additional notes for this result. Field introduced in 21.1.1.
+	// Additional notes for this result. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Notes []string `json:"notes,omitempty"`
 }

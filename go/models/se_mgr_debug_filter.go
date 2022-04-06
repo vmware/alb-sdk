@@ -8,6 +8,6 @@ package models
 // swagger:model SeMgrDebugFilter
 type SeMgrDebugFilter struct {
 
-	// Name of the object.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 }

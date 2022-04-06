@@ -8,9 +8,9 @@ package models
 // swagger:model VipAutoscaleGroup
 type VipAutoscaleGroup struct {
 
-	//  Field introduced in 17.2.12, 18.1.2.
+	//  Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Configuration *VipAutoscaleConfiguration `json:"configuration,omitempty"`
 
-	//  Field introduced in 17.2.12, 18.1.2.
+	//  Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Policy *VipAutoscalePolicy `json:"policy,omitempty"`
 }

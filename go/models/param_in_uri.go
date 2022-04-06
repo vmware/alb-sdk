@@ -8,9 +8,9 @@ package models
 // swagger:model ParamInURI
 type ParamInURI struct {
 
-	// Param name in hitted signature rule match_element. Field introduced in 21.1.1.
+	// Param name in hitted signature rule match_element. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	ParamName *string `json:"param_name,omitempty"`
 
-	// Param value in hitted signature rule match_element. Field introduced in 21.1.1.
+	// Param value in hitted signature rule match_element. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Value *string `json:"value,omitempty"`
 }

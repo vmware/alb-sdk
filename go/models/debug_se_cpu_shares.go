@@ -8,11 +8,11 @@ package models
 // swagger:model DebugSeCpuShares
 type DebugSeCPUShares struct {
 
-	// Number of cpu.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	CPU *int32 `json:"cpu"`
 
-	// Number of shares.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Shares *int32 `json:"shares"`
 }

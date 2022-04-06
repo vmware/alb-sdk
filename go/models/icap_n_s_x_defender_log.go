@@ -8,12 +8,12 @@ package models
 // swagger:model IcapNSXDefenderLog
 type IcapNSXDefenderLog struct {
 
-	// Score associated with the uploaded file, if known, value is in between 0 and 100. Field introduced in 21.1.1.
+	// Score associated with the uploaded file, if known, value is in between 0 and 100. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Score *int32 `json:"score,omitempty"`
 
-	// URL to get details from NSXDefender for the request. Field introduced in 21.1.1.
+	// URL to get details from NSXDefender for the request. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	StatusURL *string `json:"status_url,omitempty"`
 
-	// The NSX Defender task UUID associated with the analysis of the file. It is possible to use this UUID in order to access the analysis details from the NSX Defender Portal/Manager Web UI. URL to access this information is https //user.lastline.com/portal#/analyst/task/<uuid>/overview. Field introduced in 21.1.1.
+	// The NSX Defender task UUID associated with the analysis of the file. It is possible to use this UUID in order to access the analysis details from the NSX Defender Portal/Manager Web UI. URL to access this information is https //user.lastline.com/portal#/analyst/task/<uuid>/overview. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	TaskUUID *string `json:"task_uuid,omitempty"`
 }

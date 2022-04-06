@@ -8,12 +8,12 @@ package models
 // swagger:model APICNetworkRel
 type APICNetworkRel struct {
 
-	//  Field deprecated in 21.1.1.
+	//  Field deprecated in 21.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Connector *string `json:"connector,omitempty"`
 
-	//  Field deprecated in 21.1.1.
+	//  Field deprecated in 21.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	RelKey *string `json:"rel_key,omitempty"`
 
-	//  Field deprecated in 21.1.1.
+	//  Field deprecated in 21.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	TargetNetwork *string `json:"target_network,omitempty"`
 }

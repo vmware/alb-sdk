@@ -8,11 +8,11 @@ package models
 // swagger:model KniPortRange
 type KniPortRange struct {
 
-	// Protocol associated with port range. Enum options - KNI_PROTO_TCP, KNI_PROTO_UDP. Field introduced in 21.1.3.
+	// Protocol associated with port range. Enum options - KNI_PROTO_TCP, KNI_PROTO_UDP. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Protocol *string `json:"protocol"`
 
-	// Port range to be allowed to KNI. Field introduced in 21.1.3.
+	// Port range to be allowed to KNI. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Range *PortRange `json:"range"`
 }

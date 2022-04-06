@@ -8,6 +8,6 @@ package models
 // swagger:model BotAllowList
 type BotAllowList struct {
 
-	// Allow rules to control which requests undergo BOT detection. Field introduced in 21.1.1.
+	// Allow rules to control which requests undergo BOT detection. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Rules []*BotAllowRule `json:"rules,omitempty"`
 }

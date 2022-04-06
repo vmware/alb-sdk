@@ -8,12 +8,12 @@ package models
 // swagger:model RuleInfo
 type RuleInfo struct {
 
-	// URI hitted signature rule matches. Field introduced in 21.1.1.
+	// URI hitted signature rule matches. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Matches []*Matches `json:"matches,omitempty"`
 
-	// URI hitted signature rule group id. Field introduced in 21.1.1.
+	// URI hitted signature rule group id. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	RuleGroupID *string `json:"rule_group_id,omitempty"`
 
-	// URI hitted signature rule id. Field introduced in 21.1.1.
+	// URI hitted signature rule id. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	RuleID *string `json:"rule_id,omitempty"`
 }

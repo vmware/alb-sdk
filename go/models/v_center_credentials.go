@@ -8,9 +8,9 @@ package models
 // swagger:model VCenterCredentials
 type VCenterCredentials struct {
 
-	// Password to talk to VCenter server. Field introduced in 20.1.1.
+	// Password to talk to VCenter server. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Password *string `json:"password,omitempty"`
 
-	// Username to talk to VCenter server. Field introduced in 20.1.1.
+	// Username to talk to VCenter server. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Username *string `json:"username,omitempty"`
 }

@@ -8,15 +8,15 @@ package models
 // swagger:model GslbServiceStatus
 type GslbServiceStatus struct {
 
-	// details of GslbServiceStatus.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Details []string `json:"details,omitempty"`
 
-	// Placeholder for description of property gs_runtime of obj type GslbServiceStatus field type str  type object
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	GsRuntime *GslbServiceRuntime `json:"gs_runtime,omitempty"`
 
-	// Name of the object.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
-	// Unique object identifier of the object.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 }

@@ -8,6 +8,6 @@ package models
 // swagger:model FbSeInfo
 type FbSeInfo struct {
 
-	// FB snapshot data. Field introduced in 21.1.3.
+	// FB snapshot data. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	OperStatus *OperationalStatus `json:"oper_status,omitempty"`
 }

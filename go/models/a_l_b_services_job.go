@@ -12,36 +12,36 @@ type ALBServicesJob struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// The command to be triggered by the albservicesjob. Field introduced in 21.1.3.
+	// The command to be triggered by the albservicesjob. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Command *string `json:"command"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.3.
+	// Protobuf versioning for config pbs. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
-	// The time at which the albservicesjob is ended. Field introduced in 21.1.3.
+	// The time at which the albservicesjob is ended. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	EndTime *TimeStamp `json:"end_time,omitempty"`
 
-	// The name of the albservicesjob. Field introduced in 21.1.3.
+	// The name of the albservicesjob. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 
-	// A unique identifier for this job entry on the Pulse portal. Field introduced in 21.1.3.
+	// A unique identifier for this job entry on the Pulse portal. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	PulseJobID *string `json:"pulse_job_id,omitempty"`
 
-	// The time at which the albservicesjob is started. Field introduced in 21.1.3.
+	// The time at which the albservicesjob is started. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	StartTime *TimeStamp `json:"start_time,omitempty"`
 
-	// The status of the albservicesjob. Enum options - UNDETERMINED, PENDING, IN_PROGRESS, COMPLETED, FAILED. Field introduced in 21.1.3.
+	// The status of the albservicesjob. Enum options - UNDETERMINED, PENDING, IN_PROGRESS, COMPLETED, FAILED. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Status *string `json:"status,omitempty"`
 
-	// The unique identifier of the tenant to which this albservicesjob belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.3.
+	// The unique identifier of the tenant to which this albservicesjob belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
 	// url
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// A unique identifier for this albservicesjob entry. Field introduced in 21.1.3.
+	// A unique identifier for this albservicesjob entry. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 }

@@ -8,6 +8,6 @@ package models
 // swagger:model SecurityMgrRuntime
 type SecurityMgrRuntime struct {
 
-	//  Field introduced in 18.2.5.
+	//  Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Thresholds []*SecMgrThreshold `json:"thresholds,omitempty"`
 }

@@ -8,9 +8,9 @@ package models
 // swagger:model EventCache
 type EventCache struct {
 
-	// Placeholder for description of property dns_state of obj type EventCache field type str  type boolean
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	DNSState *bool `json:"dns_state,omitempty"`
 
-	// Cache the exception strings in the system.
+	// Cache the exception strings in the system. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Exceptions []string `json:"exceptions,omitempty"`
 }
