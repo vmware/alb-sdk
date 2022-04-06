@@ -8,13 +8,13 @@ package models
 // swagger:model CustomIpamSubnet
 type CustomIPAMSubnet struct {
 
-	// Network to use for Custom IPAM IP allocation. Field introduced in 21.1.1.
+	// Network to use for Custom IPAM IP allocation. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	// Required: true
 	NetworkID *string `json:"network_id"`
 
-	// IPv4 subnet to use for Custom IPAM IP allocation. Field introduced in 21.1.1.
+	// IPv4 subnet to use for Custom IPAM IP allocation. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Subnet *IPAddrPrefix `json:"subnet,omitempty"`
 
-	// IPv6 subnet to use for Custom IPAM IP allocation. Field introduced in 21.1.1.
+	// IPv6 subnet to use for Custom IPAM IP allocation. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Subnet6 *IPAddrPrefix `json:"subnet6,omitempty"`
 }

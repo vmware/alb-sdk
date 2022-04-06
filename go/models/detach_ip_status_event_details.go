@@ -8,15 +8,15 @@ package models
 // swagger:model DetachIpStatusEventDetails
 type DetachIPStatusEventDetails struct {
 
-	// Reason if Detach IP failed. Field introduced in 21.1.3.
+	// Reason if Detach IP failed. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Reason *string `json:"reason,omitempty"`
 
-	// Name of the Service Engine. Field introduced in 21.1.3.
+	// Name of the Service Engine. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	SeName *string `json:"se_name,omitempty"`
 
-	// VIP ID. Field introduced in 21.1.3.
+	// VIP ID. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	VipID *string `json:"vip_id,omitempty"`
 
-	// Name of the Virtual Service. Field introduced in 21.1.3.
+	// Name of the Virtual Service. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	VsName *string `json:"vs_name,omitempty"`
 }

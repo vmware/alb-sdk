@@ -8,9 +8,9 @@ package models
 // swagger:model OpenStackSyncServices
 type OpenStackSyncServices struct {
 
-	// error_string of OpenStackSyncServices.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	ErrorString *string `json:"error_string,omitempty"`
 
-	// Unique object identifier of se_vm.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	SeVMUUID *string `json:"se_vm_uuid,omitempty"`
 }

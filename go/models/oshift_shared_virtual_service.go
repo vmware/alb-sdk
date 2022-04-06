@@ -8,7 +8,7 @@ package models
 // swagger:model OshiftSharedVirtualService
 type OshiftSharedVirtualService struct {
 
-	// Name of shared virtualservice. VirtualService will be created automatically by Cloud Connector. Field introduced in 17.1.1.
+	// Name of shared virtualservice. VirtualService will be created automatically by Cloud Connector. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	VirtualserviceName *string `json:"virtualservice_name"`
 }

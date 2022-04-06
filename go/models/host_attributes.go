@@ -8,10 +8,10 @@ package models
 // swagger:model HostAttributes
 type HostAttributes struct {
 
-	// attr_key of HostAttributes.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	AttrKey *string `json:"attr_key"`
 
-	// attr_val of HostAttributes.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	AttrVal *string `json:"attr_val,omitempty"`
 }

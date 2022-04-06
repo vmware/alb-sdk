@@ -8,19 +8,19 @@ package models
 // swagger:model VIAdminCredentials
 type VIAdminCredentials struct {
 
-	// Name of the object.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
-	// password of VIAdminCredentials.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Password *string `json:"password,omitempty"`
 
-	//  Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS.
+	//  Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Privilege *string `json:"privilege,omitempty"`
 
-	// vcenter_url of VIAdminCredentials.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	VcenterURL *string `json:"vcenter_url"`
 
-	// vi_mgr_token of VIAdminCredentials.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	ViMgrToken *string `json:"vi_mgr_token,omitempty"`
 }

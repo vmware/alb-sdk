@@ -8,6 +8,6 @@ package models
 // swagger:model CRSUpdateDetails
 type CRSUpdateDetails struct {
 
-	// List of all available CRS updates. Field introduced in 20.1.1.
+	// List of all available CRS updates. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	CrsInfo []*CRSDetails `json:"crs_info,omitempty"`
 }

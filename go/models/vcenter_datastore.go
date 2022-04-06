@@ -8,7 +8,7 @@ package models
 // swagger:model VcenterDatastore
 type VcenterDatastore struct {
 
-	// datastore_name of VcenterDatastore.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	DatastoreName *string `json:"datastore_name"`
 }

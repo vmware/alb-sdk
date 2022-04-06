@@ -8,11 +8,11 @@ package models
 // swagger:model IpAddr
 type IPAddr struct {
 
-	// IP address.
+	// IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Addr *string `json:"addr"`
 
-	//  Enum options - V4, DNS, V6.
+	//  Enum options - V4, DNS, V6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Type *string `json:"type"`
 }

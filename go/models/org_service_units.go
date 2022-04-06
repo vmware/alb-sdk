@@ -8,12 +8,12 @@ package models
 // swagger:model OrgServiceUnits
 type OrgServiceUnits struct {
 
-	// Available service units on pulse portal. Field introduced in 21.1.4.
+	// Available service units on pulse portal. Field introduced in 21.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	AvailableServiceUnits *float64 `json:"available_service_units,omitempty"`
 
-	// Organization id. Field introduced in 21.1.4.
+	// Organization id. Field introduced in 21.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	OrgID *string `json:"org_id,omitempty"`
 
-	// Used service units on pulse portal. Field introduced in 21.1.4.
+	// Used service units on pulse portal. Field introduced in 21.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	UsedServiceUnits *float64 `json:"used_service_units,omitempty"`
 }

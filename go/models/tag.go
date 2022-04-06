@@ -8,10 +8,10 @@ package models
 // swagger:model Tag
 type Tag struct {
 
-	//  Enum options - AVI_DEFINED, USER_DEFINED, VCENTER_DEFINED.
+	//  Enum options - AVI_DEFINED, USER_DEFINED, VCENTER_DEFINED. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Type *string `json:"type,omitempty"`
 
-	// value of Tag.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Value *string `json:"value"`
 }

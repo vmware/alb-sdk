@@ -8,18 +8,18 @@ package models
 // swagger:model VipScaleDetails
 type VipScaleDetails struct {
 
-	// availability_zone of VipScaleDetails.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	AvailabilityZone *string `json:"availability_zone,omitempty"`
 
-	// error of VipScaleDetails.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Error *string `json:"error,omitempty"`
 
-	// Unique object identifier of subnet.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	SubnetUUID *string `json:"subnet_uuid,omitempty"`
 
-	// vip_id of VipScaleDetails.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	VipID *string `json:"vip_id,omitempty"`
 
-	// Unique object identifier of vsvip.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	VsvipUUID *string `json:"vsvip_uuid,omitempty"`
 }

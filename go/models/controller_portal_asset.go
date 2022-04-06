@@ -8,6 +8,6 @@ package models
 // swagger:model ControllerPortalAsset
 type ControllerPortalAsset struct {
 
-	// Asset ID corresponding to this Controller Cluster, returned on a successful registration. Field introduced in 18.2.6.
+	// Asset ID corresponding to this Controller Cluster, returned on a successful registration. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	AssetID *string `json:"asset_id,omitempty"`
 }

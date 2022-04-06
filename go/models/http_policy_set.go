@@ -12,53 +12,53 @@ type HTTPPolicySet struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Checksum of cloud configuration for Pool. Internally set by cloud connector.
+	// Checksum of cloud configuration for Pool. Internally set by cloud connector. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	CloudConfigCksum *string `json:"cloud_config_cksum,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 21.1.1.
+	// Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition.
 	ConfigpbAttributes *ConfigPbAttributes `json:"configpb_attributes,omitempty"`
 
-	// Creator name.
+	// Creator name. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	CreatedBy *string `json:"created_by,omitempty"`
 
-	// User defined description for the object.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
-	// Geo database. It is a reference to an object of type GeoDB. Field introduced in 21.1.1.
+	// Geo database. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	GeoDbRef *string `json:"geo_db_ref,omitempty"`
 
-	// HTTP request policy for the virtual service.
+	// HTTP request policy for the virtual service. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	HTTPRequestPolicy *HTTPRequestPolicy `json:"http_request_policy,omitempty"`
 
-	// HTTP response policy for the virtual service.
+	// HTTP response policy for the virtual service. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	HTTPResponsePolicy *HTTPResponsePolicy `json:"http_response_policy,omitempty"`
 
-	// HTTP security policy for the virtual service.
+	// HTTP security policy for the virtual service. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	HTTPSecurityPolicy *HttpsecurityPolicy `json:"http_security_policy,omitempty"`
 
-	// IP reputation database. It is a reference to an object of type IPReputationDB. Field introduced in 20.1.3.
+	// IP reputation database. It is a reference to an object of type IPReputationDB. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	IPReputationDbRef *string `json:"ip_reputation_db_ref,omitempty"`
 
-	// Placeholder for description of property is_internal_policy of obj type HTTPPolicySet field type str  type boolean
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	IsInternalPolicy *bool `json:"is_internal_policy,omitempty"`
 
-	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed.
+	// Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Labels []*KeyValue `json:"labels,omitempty"`
 
-	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition.
+	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
-	// Name of the HTTP Policy Set.
+	// Name of the HTTP Policy Set. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 
-	//  It is a reference to an object of type Tenant.
+	//  It is a reference to an object of type Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
 	// url
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// UUID of the HTTP Policy Set.
+	// UUID of the HTTP Policy Set. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 }

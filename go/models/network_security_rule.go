@@ -8,35 +8,35 @@ package models
 // swagger:model NetworkSecurityRule
 type NetworkSecurityRule struct {
 
-	//  Enum options - NETWORK_SECURITY_POLICY_ACTION_TYPE_ALLOW, NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY, NETWORK_SECURITY_POLICY_ACTION_TYPE_RATE_LIMIT. Allowed in Basic(Allowed values- NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY) edition, Essentials(Allowed values- NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY) edition, Enterprise edition.
+	//  Enum options - NETWORK_SECURITY_POLICY_ACTION_TYPE_ALLOW, NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY, NETWORK_SECURITY_POLICY_ACTION_TYPE_RATE_LIMIT. Allowed in Enterprise with any value edition, Essentials(Allowed values- NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY) edition, Basic(Allowed values- NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY) edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Action *string `json:"action"`
 
-	// Time in minutes after which rule will be deleted. Allowed values are 1-4294967295. Special values are 0- blocked for ever. Unit is MIN. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.
+	// Time in minutes after which rule will be deleted. Allowed values are 1-4294967295. Special values are 0- blocked for ever. Unit is MIN. Allowed in Enterprise with any value edition, Essentials(Allowed values- 0) edition, Basic(Allowed values- 0) edition, Enterprise with Cloud Services edition.
 	Age *int32 `json:"age,omitempty"`
 
-	// Creator name.
+	// Creator name. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	CreatedBy *string `json:"created_by,omitempty"`
 
-	// Placeholder for description of property enable of obj type NetworkSecurityRule field type str  type boolean
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Enable *bool `json:"enable"`
 
-	// Number of index.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Index *int32 `json:"index"`
 
-	//  Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.
+	//  Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition.
 	Log *bool `json:"log,omitempty"`
 
-	// Placeholder for description of property match of obj type NetworkSecurityRule field type str  type object
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Match *NetworkSecurityMatchTarget `json:"match"`
 
-	// Name of the object.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 
-	// Placeholder for description of property rl_param of obj type NetworkSecurityRule field type str  type object
+	//  Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	RlParam *NetworkSecurityPolicyActionRLParam `json:"rl_param,omitempty"`
 }

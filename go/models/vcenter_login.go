@@ -8,18 +8,18 @@ package models
 // swagger:model VcenterLogin
 type VcenterLogin struct {
 
-	// Unique object identifier of cloud.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	CloudUUID *string `json:"cloud_uuid,omitempty"`
 
-	// password of VcenterLogin.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Password *string `json:"password,omitempty"`
 
-	// Number of start_ts.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	StartTs *int64 `json:"start_ts,omitempty"`
 
-	// username of VcenterLogin.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Username *string `json:"username,omitempty"`
 
-	// vcenter_url of VcenterLogin.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	VcenterURL *string `json:"vcenter_url,omitempty"`
 }

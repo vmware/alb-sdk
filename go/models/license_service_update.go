@@ -8,9 +8,9 @@ package models
 // swagger:model LicenseServiceUpdate
 type LicenseServiceUpdate struct {
 
-	// Name. Field introduced in 21.1.4.
+	// Name. Field introduced in 21.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
-	// Organization id. Field introduced in 21.1.4.
+	// Organization id. Field introduced in 21.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	ServiceUnits *OrgServiceUnits `json:"service_units,omitempty"`
 }

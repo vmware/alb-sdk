@@ -8,13 +8,13 @@ package models
 // swagger:model SeGatewayHeartbeatSuccessDetails
 type SeGatewayHeartbeatSuccessDetails struct {
 
-	// IP address of gateway monitored.
+	// IP address of gateway monitored. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	GatewayIP *string `json:"gateway_ip"`
 
-	// Name of Virtual Routing Context in which this gateway is present.
+	// Name of Virtual Routing Context in which this gateway is present. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	VrfName *string `json:"vrf_name,omitempty"`
 
-	// UUID of the Virtual Routing Context in which this gateway is present.
+	// UUID of the Virtual Routing Context in which this gateway is present. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	VrfUUID *string `json:"vrf_uuid,omitempty"`
 }

@@ -8,9 +8,9 @@ package models
 // swagger:model VcenterHosts
 type VcenterHosts struct {
 
-	//  It is a reference to an object of type VIMgrHostRuntime.
+	//  It is a reference to an object of type VIMgrHostRuntime. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	HostRefs []string `json:"host_refs,omitempty"`
 
-	// Placeholder for description of property include of obj type VcenterHosts field type str  type boolean
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Include *bool `json:"include,omitempty"`
 }

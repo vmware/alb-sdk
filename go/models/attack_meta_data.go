@@ -8,15 +8,15 @@ package models
 // swagger:model AttackMetaData
 type AttackMetaData struct {
 
-	// DNS amplification attack record. Field introduced in 21.1.1.
+	// DNS amplification attack record. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Amplification *AttackDNSAmplification `json:"amplification,omitempty"`
 
-	// ip of AttackMetaData.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	IP *string `json:"ip,omitempty"`
 
-	// Number of max_resp_time.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	MaxRespTime *int32 `json:"max_resp_time,omitempty"`
 
-	// url of AttackMetaData.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	URL *string `json:"url,omitempty"`
 }

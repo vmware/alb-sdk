@@ -8,17 +8,17 @@ package models
 // swagger:model OAuthAppSettings
 type OAuthAppSettings struct {
 
-	// Application specific identifier. Field introduced in 21.1.3.
+	// Application specific identifier. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	// Required: true
 	ClientID *string `json:"client_id"`
 
-	// Application specific identifier secret. Field introduced in 21.1.3.
+	// Application specific identifier secret. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	// Required: true
 	ClientSecret *string `json:"client_secret"`
 
-	// OpenID Connect specific configuration. Field introduced in 21.1.3.
+	// OpenID Connect specific configuration. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	OidcConfig *OIDCConfig `json:"oidc_config,omitempty"`
 
-	// Scope specified to give limited access to the app. Field introduced in 21.1.3.
+	// Scope specified to give limited access to the app. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Scopes []string `json:"scopes,omitempty"`
 }

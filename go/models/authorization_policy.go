@@ -8,6 +8,6 @@ package models
 // swagger:model AuthorizationPolicy
 type AuthorizationPolicy struct {
 
-	// Authorization Policy Rules. Field introduced in 18.2.5.
+	// Authorization Policy Rules. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	AuthzRules []*AuthorizationRule `json:"authz_rules,omitempty"`
 }

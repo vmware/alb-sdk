@@ -8,9 +8,9 @@ package models
 // swagger:model BotManagementLog
 type BotManagementLog struct {
 
-	// The final classification of the bot management module. Field introduced in 21.1.1.
+	// The final classification of the bot management module. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Classification *BotClassification `json:"classification,omitempty"`
 
-	// The evaluation results of the various bot module components. Field introduced in 21.1.1.
+	// The evaluation results of the various bot module components. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Results []*BotEvaluationResult `json:"results,omitempty"`
 }

@@ -12,23 +12,23 @@ type BotConfigConsolidator struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Human-readable description of this consolidator. Field introduced in 21.1.1.
+	// Human-readable description of this consolidator. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
-	// The name of this consolidator. Field introduced in 21.1.1.
+	// The name of this consolidator. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 
-	// Script that consolidates results from all Bot decision components. Field introduced in 21.1.1.
+	// Script that consolidates results from all Bot decision components. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	Script *string `json:"script,omitempty"`
 
-	// The unique identifier of the tenant to which this consolidator belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1.
+	// The unique identifier of the tenant to which this consolidator belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
 	// url
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
 
-	// A unique identifier for this consolidator. Field introduced in 21.1.1.
+	// A unique identifier for this consolidator. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
 }

@@ -8,11 +8,11 @@ package models
 // swagger:model NetworkSecurityPolicyActionRLParam
 type NetworkSecurityPolicyActionRLParam struct {
 
-	// Maximum number of connections or requests or packets to be rate limited instantaneously.
+	// Maximum number of connections or requests or packets to be rate limited instantaneously. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	BurstSize *int32 `json:"burst_size"`
 
-	// Maximum number of connections or requests or packets per second. Allowed values are 1-4294967295.
+	// Maximum number of connections or requests or packets per second. Allowed values are 1-4294967295. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	MaxRate *int32 `json:"max_rate"`
 }

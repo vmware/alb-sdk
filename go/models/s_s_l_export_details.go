@@ -8,6 +8,6 @@ package models
 // swagger:model SSLExportDetails
 type SSLExportDetails struct {
 
-	// Request user.
+	// Request user. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	User *string `json:"user,omitempty"`
 }

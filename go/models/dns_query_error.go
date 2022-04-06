@@ -8,12 +8,12 @@ package models
 // swagger:model DNSQueryError
 type DNSQueryError struct {
 
-	// error of DNSQueryError.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Error *string `json:"error,omitempty"`
 
-	// error_message of DNSQueryError.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	ErrorMessage *string `json:"error_message,omitempty"`
 
-	// fqdn of DNSQueryError.
+	//  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	Fqdn *string `json:"fqdn,omitempty"`
 }

@@ -8,11 +8,11 @@ package models
 // swagger:model OpenStackRoleMapping
 type OpenStackRoleMapping struct {
 
-	// Role name in Avi.
+	// Role name in Avi. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	AviRole *string `json:"avi_role"`
 
-	// Role name in OpenStack.
+	// Role name in OpenStack. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	// Required: true
 	OsRole *string `json:"os_role"`
 }

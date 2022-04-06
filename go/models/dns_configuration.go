@@ -8,9 +8,9 @@ package models
 // swagger:model DNSConfiguration
 type DNSConfiguration struct {
 
-	// Search domain to use in DNS lookup.
+	// Search domain to use in DNS lookup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	SearchDomain *string `json:"search_domain,omitempty"`
 
-	// List of DNS Server IP addresses.
+	// List of DNS Server IP addresses. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
 	ServerList []*IPAddr `json:"server_list,omitempty"`
 }
