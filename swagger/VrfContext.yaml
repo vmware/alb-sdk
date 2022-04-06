@@ -359,17 +359,17 @@ definitions:
         type: object
         properties:
             minrx:
-                description: "Default required minimum receive interval (in ms) used in BFD. Allowed values are 500-4000000. Field introduced in 20.1.1. Unit is MILLISECONDS."
+                description: "Default required minimum receive interval (in ms) used in BFD. Allowed values are 500-4000000. Field introduced in 20.1.1. Unit is MILLISECONDS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1000
                 format: int32
             mintx:
-                description: "Default desired minimum transmit interval (in ms) used in BFD. Allowed values are 500-4000000. Field introduced in 20.1.1. Unit is MILLISECONDS."
+                description: "Default desired minimum transmit interval (in ms) used in BFD. Allowed values are 500-4000000. Field introduced in 20.1.1. Unit is MILLISECONDS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1000
                 format: int32
             multi:
-                description: "Default detection multiplier used in BFD. Allowed values are 3-255. Field introduced in 20.1.1."
+                description: "Default detection multiplier used in BFD. Allowed values are 3-255. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 3
                 format: int32
@@ -377,73 +377,73 @@ definitions:
         type: object
         properties:
             advertise_snat_ip:
-                description: "Advertise SNAT IP to this Peer."
+                description: "Advertise SNAT IP to this Peer. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             advertise_vip:
-                description: "Advertise VIP to this Peer."
+                description: "Advertise VIP to this Peer. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             advertisement_interval:
-                description: "Advertisement interval for this Peer. Allowed values are 1-60."
+                description: "Advertisement interval for this Peer. Allowed values are 1-60. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 5
                 format: int32
             bfd:
-                description: "Enable Bi-Directional Forward Detection. Only async mode supported."
+                description: "Enable Bi-Directional Forward Detection. Only async mode supported. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             connect_timer:
-                description: "Connect timer for this Peer. Allowed values are 1-120."
+                description: "Connect timer for this Peer. Allowed values are 1-120. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10
                 format: int32
             ebgp_multihop:
-                description: "TTL for multihop ebgp Peer. Allowed values are 0-255. Field introduced in 17.1.3."
+                description: "TTL for multihop ebgp Peer. Allowed values are 0-255. Field introduced in 17.1.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             hold_time:
-                description: "Hold time for this Peer. Allowed values are 3-7200."
+                description: "Hold time for this Peer. Allowed values are 3-7200. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             ibgp_local_as_override:
-                description: "Override the profile level local_as with the peer level remote_as. Field introduced in 21.1.1."
+                description: "Override the profile level local_as with the peer level remote_as. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
             keepalive_interval:
-                description: "Keepalive interval for this Peer. Allowed values are 0-3600."
+                description: "Keepalive interval for this Peer. Allowed values are 0-3600. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             label:
-                description: "Label used to enable learning and/or advertisement of routes to this peer. Field introduced in 20.1.1."
+                description: "Label used to enable learning and/or advertisement of routes to this peer. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             local_as:
-                description: "Local AS to use for this ebgp peer. If specified, this will override the local AS configured at the VRF level. Allowed values are 1-4294967295. Field introduced in 17.1.6,17.2.2."
+                description: "Local AS to use for this ebgp peer. If specified, this will override the local AS configured at the VRF level. Allowed values are 1-4294967295. Field introduced in 17.1.6,17.2.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             md5_secret:
-                description: "Peer Autonomous System Md5 Digest Secret Key."
+                description: "Peer Autonomous System Md5 Digest Secret Key. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             network_ref:
-                description: "Network providing reachability for Peer. It is a reference to an object of type Network."
+                description: "Network providing reachability for Peer. It is a reference to an object of type Network. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             peer_ip:
-                description: "IP Address of the BGP Peer."
+                description: "IP Address of the BGP Peer. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             peer_ip6:
-                description: "IPv6 Address of the BGP Peer. Field introduced in 18.1.1."
+                description: "IPv6 Address of the BGP Peer. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             remote_as:
-                description: "Peer Autonomous System ID. Allowed values are 1-4294967295."
+                description: "Peer Autonomous System ID. Allowed values are 1-4294967295. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             shutdown:
-                description: "Shutdown the BGP peer. Field introduced in 17.2.4."
+                description: "Shutdown the BGP peer. Field introduced in 17.2.4. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             subnet:
-                description: "Subnet providing reachability for Peer."
+                description: "Subnet providing reachability for Peer. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
             subnet6:
-                description: "IPv6 subnet providing reachability for Peer. Field introduced in 18.1.1."
+                description: "IPv6 subnet providing reachability for Peer. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
     BgpProfile:
         type: object
@@ -452,57 +452,57 @@ definitions:
             -   local_as
         properties:
             community:
-                description: "Community string either in aa nn format where aa, nn is within [1,65535] or local-AS|no-advertise|no-export|internet. Field introduced in 17.1.2. Maximum of 16 items allowed."
+                description: "Community string either in aa nn format where aa, nn is within [1,65535] or local-AS|no-advertise|no-export|internet. Field introduced in 17.1.2. Maximum of 16 items allowed. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             hold_time:
-                description: "Hold time for Peers. Allowed values are 3-7200."
+                description: "Hold time for Peers. Allowed values are 3-7200. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 180
                 format: int32
             ibgp:
-                description: "BGP peer type."
+                description: "BGP peer type. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             ip_communities:
-                description: "Communities per IP address range. Field introduced in 17.1.3. Maximum of 1024 items allowed."
+                description: "Communities per IP address range. Field introduced in 17.1.3. Maximum of 1024 items allowed. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/IpCommunity'
             keepalive_interval:
-                description: "Keepalive interval for Peers. Allowed values are 0-3600."
+                description: "Keepalive interval for Peers. Allowed values are 0-3600. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
             local_as:
-                description: "Local Autonomous System ID. Allowed values are 1-4294967295."
+                description: "Local Autonomous System ID. Allowed values are 1-4294967295. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             local_preference:
-                description: "LOCAL_PREF to be used for routes advertised. Applicable only over iBGP. Field introduced in 20.1.1."
+                description: "LOCAL_PREF to be used for routes advertised. Applicable only over iBGP. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_as_path_prepend:
-                description: "Number of times the local AS should be prepended additionally. Allowed values are 1-10. Field introduced in 20.1.1."
+                description: "Number of times the local AS should be prepended additionally. Allowed values are 1-10. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             peers:
-                description: "BGP Peers. Maximum of 128 items allowed."
+                description: "BGP Peers. Maximum of 128 items allowed. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/BgpPeer'
             routing_options:
-                description: "Learning and advertising options for BGP peers. Field introduced in 20.1.1. Maximum of 128 items allowed."
+                description: "Learning and advertising options for BGP peers. Field introduced in 20.1.1. Maximum of 128 items allowed. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/BgpRoutingOptions'
             send_community:
-                description: "Send community attribute to all peers. Field introduced in 17.1.2."
+                description: "Send community attribute to all peers. Field introduced in 17.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             shutdown:
-                description: "Shutdown the bgp. Field introduced in 17.2.4."
+                description: "Shutdown the bgp. Field introduced in 17.2.4. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
     BgpRoutingOptions:
         type: object
@@ -510,22 +510,22 @@ definitions:
             -   label
         properties:
             advertise_default_route:
-                description: "Advertise self as default router to the BGP peer. Field introduced in 20.1.1."
+                description: "Advertise self as default router to the BGP peer. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             advertise_learned_routes:
-                description: "Advertise the learned routes to the BGP peer. Field introduced in 20.1.1."
+                description: "Advertise the learned routes to the BGP peer. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             label:
-                description: "Features are applied to peers matching this label. Field introduced in 20.1.1."
+                description: "Features are applied to peers matching this label. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             learn_only_default_route:
-                description: "Learn only default route from the BGP peer. Field introduced in 20.1.1."
+                description: "Learn only default route from the BGP peer. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             learn_routes:
-                description: "Learn routes from the BGP peer. Field introduced in 20.1.1."
+                description: "Learn routes from the BGP peer. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             max_learn_limit:
-                description: "Maximum number of routes that can be learned from a BGP peer. Allowed values are 50-250. Field introduced in 20.1.1."
+                description: "Maximum number of routes that can be learned from a BGP peer. Allowed values are 50-250. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 50
                 format: int32
@@ -533,7 +533,7 @@ definitions:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
+                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
@@ -543,23 +543,23 @@ definitions:
             -   flag
         properties:
             flag:
-                description: " Enum options - DEBUG_VRF_BGP, DEBUG_VRF_QUAGGA, DEBUG_VRF_ALL, DEBUG_VRF_NONE. Field introduced in 17.1.1."
+                description: " Enum options - DEBUG_VRF_BGP, DEBUG_VRF_QUAGGA, DEBUG_VRF_ALL, DEBUG_VRF_NONE. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     DebugVrfContext:
         type: object
         properties:
             command_buffer_interval:
-                description: "Vrf config command buffer process interval. Allowed values are 1-4. Field introduced in 17.2.13,18.1.5,18.2.1. Unit is SECONDS."
+                description: "Vrf config command buffer process interval. Allowed values are 1-4. Field introduced in 17.2.13,18.1.5,18.2.1. Unit is SECONDS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 2
                 format: int32
             command_buffer_size:
-                description: "Vrf config command buffer size. Allowed values are 1-32768. Field introduced in 17.2.13,18.1.5,18.2.1. Unit is BYTES."
+                description: "Vrf config command buffer size. Allowed values are 1-32768. Field introduced in 17.2.13,18.1.5,18.2.1. Unit is BYTES. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 32768
                 format: int32
             flags:
-                description: " Field introduced in 17.1.1."
+                description: " Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/DebugVrf'
@@ -569,44 +569,44 @@ definitions:
             -   gateway_ip
         properties:
             gateway_ip:
-                description: "IP address of next hop gateway to be monitored."
+                description: "IP address of next hop gateway to be monitored. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             gateway_monitor_fail_threshold:
-                description: "The number of consecutive failed gateway health checks before a gateway is marked down. Allowed values are 3-50."
+                description: "The number of consecutive failed gateway health checks before a gateway is marked down. Allowed values are 3-50. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10
                 format: int32
             gateway_monitor_interval:
-                description: "The interval between two ping requests sent by the gateway monitor in milliseconds. If a value is not specified, requests are sent every second. Allowed values are 100-60000. Unit is MILLISECONDS."
+                description: "The interval between two ping requests sent by the gateway monitor in milliseconds. If a value is not specified, requests are sent every second. Allowed values are 100-60000. Unit is MILLISECONDS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1000
                 format: int32
             gateway_monitor_success_threshold:
-                description: "The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up. Allowed values are 3-50."
+                description: "The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up. Allowed values are 3-50. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 15
                 format: int32
             subnet:
-                description: "Subnet providing reachability for Multi-hop Gateway. Field introduced in 18.1.1."
+                description: "Subnet providing reachability for Multi-hop Gateway. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
     InternalGatewayMonitor:
         type: object
         properties:
             disable_gateway_monitor:
-                description: "Disable the gateway monitor for default gateway. They are monitored by default. Field introduced in 17.1.1."
+                description: "Disable the gateway monitor for default gateway. They are monitored by default. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             gateway_monitor_failure_threshold:
-                description: "The number of consecutive failed gateway health checks before a gateway is marked down. Allowed values are 3-50. Field introduced in 17.1.1."
+                description: "The number of consecutive failed gateway health checks before a gateway is marked down. Allowed values are 3-50. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10
                 format: int32
             gateway_monitor_interval:
-                description: "The interval between two ping requests sent by the gateway monitor in milliseconds. If a value is not specified, requests are sent every second. Allowed values are 100-60000. Field introduced in 17.1.1. Unit is MILLISECONDS."
+                description: "The interval between two ping requests sent by the gateway monitor in milliseconds. If a value is not specified, requests are sent every second. Allowed values are 100-60000. Field introduced in 17.1.1. Unit is MILLISECONDS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1000
                 format: int32
             gateway_monitor_success_threshold:
-                description: "The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up. Allowed values are 3-50. Field introduced in 17.1.1."
+                description: "The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up. Allowed values are 3-50. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 15
                 format: int32
@@ -617,10 +617,10 @@ definitions:
             -   type
         properties:
             addr:
-                description: "IP address."
+                description: "IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: " Enum options - V4, DNS, V6."
+                description: " Enum options - V4, DNS, V6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     IpAddrPrefix:
         type: object
@@ -629,10 +629,10 @@ definitions:
             -   mask
         properties:
             ip_addr:
-                description: "Placeholder for description of property ip_addr of obj type IpAddrPrefix field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             mask:
-                description: "Number of mask."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     IpCommunity:
@@ -641,15 +641,15 @@ definitions:
             -   ip_begin
         properties:
             community:
-                description: "Community string either in aa nn format where aa, nn is within [1,65535] or local-AS|no-advertise|no-export|internet. Field introduced in 17.1.3. Minimum of 1 items required. Maximum of 16 items allowed."
+                description: "Community string either in aa nn format where aa, nn is within [1,65535] or local-AS|no-advertise|no-export|internet. Field introduced in 17.1.3. Minimum of 1 items required. Maximum of 16 items allowed. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             ip_begin:
-                description: "Beginning of IP address range. Field introduced in 17.1.3."
+                description: "Beginning of IP address range. Field introduced in 17.1.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             ip_end:
-                description: "End of IP address range. Optional if ip_begin is the only IP address in specified IP range. Field introduced in 17.1.3."
+                description: "End of IP address range. Optional if ip_begin is the only IP address in specified IP range. Field introduced in 17.1.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
     KeyValue:
         type: object
@@ -657,10 +657,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key."
+                description: "Key. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "Value."
+                description: "Value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     RoleFilterMatchLabel:
         type: object
@@ -668,10 +668,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key for filter match. Field introduced in 20.1.3."
+                description: "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             values:
-                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3."
+                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -683,24 +683,24 @@ definitions:
             -   route_id
         properties:
             disable_gateway_monitor:
-                description: "Disable the gateway monitor for default gateway. They are monitored by default. Field introduced in 17.1.1."
+                description: "Disable the gateway monitor for default gateway. They are monitored by default. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             if_name:
-                description: "if_name of StaticRoute."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             labels:
-                description: "Labels associated with this route. Field introduced in 20.1.1. Maximum of 1 items allowed."
+                description: "Labels associated with this route. Field introduced in 20.1.1. Maximum of 1 items allowed. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/KeyValue'
             next_hop:
-                description: "Placeholder for description of property next_hop of obj type StaticRoute field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             prefix:
-                description: "Placeholder for description of property prefix of obj type StaticRoute field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
             route_id:
-                description: "route_id of StaticRoute."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     VrfContext:
         type: object
@@ -712,70 +712,70 @@ definitions:
                 readOnly: True
                 type: string
             attrs:
-                description: "Key/value vrfcontext attributes. Field introduced in 20.1.2. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "Key/value vrfcontext attributes. Field introduced in 20.1.2. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/KeyValue'
             bfd_profile:
-                description: "BFD configuration profile. Field introduced in 20.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "BFD configuration profile. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/BfdProfile'
             bgp_profile:
-                description: "Bgp Local and Peer Info."
+                description: "Bgp Local and Peer Info. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/BgpProfile'
             cloud_ref:
-                description: " It is a reference to an object of type Cloud."
+                description: " It is a reference to an object of type Cloud. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             debugvrfcontext:
-                description: "Configure debug flags for VRF. Field introduced in 17.1.1."
+                description: "Configure debug flags for VRF. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DebugVrfContext'
             description:
-                description: "User defined description for the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             gateway_mon:
-                description: "Configure ping based heartbeat check for gateway in service engines of vrf."
+                description: "Configure ping based heartbeat check for gateway in service engines of vrf. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/GatewayMonitor'
             internal_gateway_monitor:
-                description: "Configure ping based heartbeat check for all default gateways in service engines of vrf. Field introduced in 17.1.1."
+                description: "Configure ping based heartbeat check for all default gateways in service engines of vrf. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/InternalGatewayMonitor'
             labels:
-                description: "Key/value labels which can be used for Object Access Policy permission scoping. Field deprecated in 20.1.5. Field introduced in 18.2.7, 20.1.1."
+                description: "Key/value labels which can be used for Object Access Policy permission scoping. Field deprecated in 20.1.5. Field introduced in 18.2.7, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/KeyValue'
             lldp_enable:
-                description: "Enable LLDP. Field introduced in 18.2.10, 20.1.1. Allowed in Basic(Allowed values- true) edition, Essentials(Allowed values- true) edition, Enterprise edition."
+                description: "Enable LLDP. Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- true) edition, Basic(Allowed values- true) edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             markers:
-                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/RoleFilterMatchLabel'
             name:
-                description: "Name of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             static_routes:
-                description: "Placeholder for description of property static_routes of obj type VrfContext field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/StaticRoute'
             system_default:
-                description: "Placeholder for description of property system_default of obj type VrfContext field type str  type boolean"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             tenant_ref:
-                description: " It is a reference to an object of type Tenant."
+                description: " It is a reference to an object of type Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "Unique object identifier of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     VrfContextApiResponse:
         type: object

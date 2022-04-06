@@ -514,19 +514,19 @@
                     "type": "string"
                 },
                 "end": {
-                    "description": "Number of end.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "free_controller_ips": {
-                    "description": " Field deprecated in 21.1.1.",
+                    "description": " Field deprecated in 21.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "free_ips": {
-                    "description": "Number of free_ips.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "integer"
@@ -534,11 +534,11 @@
                     "format": "int32"
                 },
                 "name": {
-                    "description": "Name of the object.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "start": {
-                    "description": "Number of start.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -548,7 +548,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "Unique object identifier of the object.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

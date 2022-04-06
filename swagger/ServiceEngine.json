@@ -6301,7 +6301,7 @@
             "type": "object",
             "properties": {
                 "ip_address": {
-                    "description": "IP address.",
+                    "description": "IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 }
             }
@@ -6310,7 +6310,7 @@
             "type": "object",
             "properties": {
                 "se_uuid": {
-                    "description": "Unique object identifier of se.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -6323,11 +6323,11 @@
             ],
             "properties": {
                 "addr": {
-                    "description": "IP address.",
+                    "description": "IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "type": {
-                    "description": " Enum options - V4, DNS, V6.",
+                    "description": " Enum options - V4, DNS, V6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -6340,11 +6340,11 @@
             ],
             "properties": {
                 "ip_addr": {
-                    "description": "Placeholder for description of property ip_addr of obj type IpAddrPrefix field type str  type object",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "mask": {
-                    "description": "Number of mask.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -6357,15 +6357,15 @@
             ],
             "properties": {
                 "active": {
-                    "description": "Placeholder for description of property active of obj type MemberInterface field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "if_name": {
-                    "description": "if_name of MemberInterface.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "mac_address": {
-                    "description": " Field introduced in 17.1.5.",
+                    "description": " Field introduced in 17.1.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -6377,11 +6377,11 @@
             ],
             "properties": {
                 "leak": {
-                    "description": "Placeholder for description of property leak of obj type SEFaultInjectExhaustParam field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "num": {
-                    "description": "Number of num.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 }
@@ -6391,29 +6391,29 @@
             "type": "object",
             "properties": {
                 "core": {
-                    "description": "Inject fault in specific core. Field introduced in 18.1.5,18.2.1.",
+                    "description": "Inject fault in specific core. Field introduced in 18.1.5,18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000,
                     "format": "int32"
                 },
                 "obj_names": {
-                    "description": "Inject Fault on Objects. Field introduced in 21.1.3.",
+                    "description": "Inject Fault on Objects. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "random_core": {
-                    "description": "Inject fault in random no of cores. Field introduced in 18.1.5,18.2.1.",
+                    "description": "Inject fault in random no of cores. Field introduced in 18.1.5,18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "se_agent_fault": {
-                    "description": "Set se-agent fault type. Enum options - SE_AGENT_FAULT_DISABLED, SE_AGENT_PRE_PROCESS_FAULT, SE_AGENT_POST_PROCESS_FAULT, SE_AGENT_DP_RESPONSE_FAULT, SE_AGENT_RANDOM_PROCESS_FAULT. Field introduced in 18.1.5,18.2.1.",
+                    "description": "Set se-agent fault type. Enum options - SE_AGENT_FAULT_DISABLED, SE_AGENT_PRE_PROCESS_FAULT, SE_AGENT_POST_PROCESS_FAULT, SE_AGENT_DP_RESPONSE_FAULT, SE_AGENT_RANDOM_PROCESS_FAULT. Field introduced in 18.1.5,18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SE_AGENT_FAULT_DISABLED"
                 },
                 "se_dp_fault": {
-                    "description": "Set se-dp fault type. Enum options - SE_DP_FAULT_DISABLED. Field introduced in 18.1.5,18.2.1.",
+                    "description": "Set se-dp fault type. Enum options - SE_DP_FAULT_DISABLED. Field introduced in 18.1.5,18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SE_DP_FAULT_DISABLED"
                 }
@@ -6428,40 +6428,40 @@
             ],
             "properties": {
                 "cores_per_socket": {
-                    "description": "Number of cores_per_socket.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "disk": {
-                    "description": "Number of disk.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "hyper_threading": {
-                    "description": "Placeholder for description of property hyper_threading of obj type SeResources field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "hypervisor_mode": {
-                    "description": "Indicates that the SE is running on a Virtual Machine. Field introduced in 20.1.1.",
+                    "description": "Indicates that the SE is running on a Virtual Machine. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "memory": {
-                    "description": "Number of memory.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_datapath_processes": {
-                    "description": "Indicates the number of active datapath processes. Field introduced in 20.1.1.",
+                    "description": "Indicates the number of active datapath processes. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_vcpus": {
-                    "description": "Number of num_vcpus.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "sockets": {
-                    "description": "Number of sockets.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -6476,73 +6476,73 @@
                     "type": "string"
                 },
                 "availability_zone": {
-                    "description": "availability_zone of ServiceEngine.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "cloud_ref": {
-                    "description": " It is a reference to an object of type Cloud.",
+                    "description": " It is a reference to an object of type Cloud. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "container_mode": {
-                    "description": "Placeholder for description of property container_mode of obj type ServiceEngine field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "container_type": {
-                    "description": " Enum options - CONTAINER_TYPE_BRIDGE, CONTAINER_TYPE_HOST, CONTAINER_TYPE_HOST_DPDK.",
+                    "description": " Enum options - CONTAINER_TYPE_BRIDGE, CONTAINER_TYPE_HOST, CONTAINER_TYPE_HOST_DPDK. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "CONTAINER_TYPE_HOST"
                 },
                 "controller_created": {
-                    "description": "Placeholder for description of property controller_created of obj type ServiceEngine field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "controller_ip": {
-                    "description": "controller_ip of ServiceEngine.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "data_vnics": {
-                    "description": "Placeholder for description of property data_vnics of obj type ServiceEngine field type str  type object",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/vNIC"
                     }
                 },
                 "enable_state": {
-                    "description": "inorder to disable SE set this field appropriately. Enum options - SE_STATE_ENABLED, SE_STATE_DISABLED_FOR_PLACEMENT, SE_STATE_DISABLED, SE_STATE_DISABLED_FORCE.",
+                    "description": "inorder to disable SE set this field appropriately. Enum options - SE_STATE_ENABLED, SE_STATE_DISABLED_FOR_PLACEMENT, SE_STATE_DISABLED, SE_STATE_DISABLED_FORCE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SE_STATE_ENABLED"
                 },
                 "flavor": {
-                    "description": "flavor of ServiceEngine.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "host_ref": {
-                    "description": " It is a reference to an object of type VIMgrHostRuntime.",
+                    "description": " It is a reference to an object of type VIMgrHostRuntime. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "hypervisor": {
-                    "description": " Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.",
+                    "description": " Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "mgmt_vnic": {
-                    "description": "Placeholder for description of property mgmt_vnic of obj type ServiceEngine field type str  type object",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/vNIC"
                 },
                 "name": {
-                    "description": "Name of the object.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "VM name unknown"
                 },
                 "resources": {
-                    "description": "Placeholder for description of property resources of obj type ServiceEngine field type str  type object",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SeResources"
                 },
                 "se_group_ref": {
-                    "description": " It is a reference to an object of type ServiceEngineGroup.",
+                    "description": " It is a reference to an object of type ServiceEngineGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant.",
+                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -6551,7 +6551,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "Unique object identifier of the object.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -6585,40 +6585,40 @@
             ],
             "properties": {
                 "dhcp_enabled": {
-                    "description": "Placeholder for description of property dhcp_enabled of obj type VlanInterface field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "enabled": {
-                    "description": "Enable the interface. Field introduced in 18.2.5.",
+                    "description": "Enable the interface. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "if_name": {
-                    "description": "if_name of VlanInterface.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ip6_autocfg_enabled": {
-                    "description": "Enable IPv6 auto configuration. Field introduced in 18.1.1.",
+                    "description": "Enable IPv6 auto configuration. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "is_mgmt": {
-                    "description": "Placeholder for description of property is_mgmt of obj type VlanInterface field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "vlan_id": {
-                    "description": "VLAN ID. Allowed values are 0-4096.",
+                    "description": "VLAN ID. Allowed values are 0-4096. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "vnic_networks": {
-                    "description": "Placeholder for description of property vnic_networks of obj type VlanInterface field type str  type object",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/vNICNetwork"
                     }
                 },
                 "vrf_ref": {
-                    "description": " It is a reference to an object of type VrfContext.",
+                    "description": " It is a reference to an object of type VrfContext. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -6630,141 +6630,141 @@
             ],
             "properties": {
                 "adapter": {
-                    "description": "adapter of vNIC.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "aggregator_chgd": {
-                    "description": " Field introduced in 17.2.7.",
+                    "description": " Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "can_se_dp_takeover": {
-                    "description": "Placeholder for description of property can_se_dp_takeover of obj type vNIC field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "connected": {
-                    "description": "Placeholder for description of property connected of obj type vNIC field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "del_pending": {
-                    "description": "Placeholder for description of property del_pending of obj type vNIC field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "delete_vnic": {
-                    "description": "Delete this VNIC. Please confirm dp_deletion_done before removing the VNIC from the cloud. Field introduced in 18.2.5.",
+                    "description": "Delete this VNIC. Please confirm dp_deletion_done before removing the VNIC from the cloud. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "dhcp_enabled": {
-                    "description": "Placeholder for description of property dhcp_enabled of obj type vNIC field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "dp_deletion_done": {
-                    "description": "The VNIC has been cleaned up in the datapath. Field introduced in 18.2.3.",
+                    "description": "The VNIC has been cleaned up in the datapath. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "enabled": {
-                    "description": "Placeholder for description of property enabled of obj type vNIC field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "if_name": {
-                    "description": "if_name of vNIC.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ip6_autocfg_enabled": {
-                    "description": "Enable IPv6 auto configuration. Field introduced in 18.1.1.",
+                    "description": "Enable IPv6 auto configuration. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "is_asm": {
-                    "description": "Placeholder for description of property is_asm of obj type vNIC field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "is_avi_internal_network": {
-                    "description": "Placeholder for description of property is_avi_internal_network of obj type vNIC field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "is_hsm": {
-                    "description": "Placeholder for description of property is_hsm of obj type vNIC field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "is_mgmt": {
-                    "description": "Placeholder for description of property is_mgmt of obj type vNIC field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "is_portchannel": {
-                    "description": "Placeholder for description of property is_portchannel of obj type vNIC field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "link_up": {
-                    "description": "The link is operationally up. Field introduced in 18.2.8, 20.1.1.",
+                    "description": "The link is operationally up. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "linux_name": {
-                    "description": "linux_name of vNIC.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "mac_address": {
-                    "description": "mac_address of vNIC.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "members": {
-                    "description": "Placeholder for description of property members of obj type vNIC field type str  type object",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/MemberInterface"
                     }
                 },
                 "mtu": {
-                    "description": "Number of mtu.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1500,
                     "format": "int32"
                 },
                 "network_name": {
-                    "description": "network_name of vNIC.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "network_ref": {
-                    "description": " It is a reference to an object of type Network.",
+                    "description": " It is a reference to an object of type Network. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "pci_id": {
-                    "description": "pci_id of vNIC.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "port_uuid": {
-                    "description": "Unique object identifier of port.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vlan_id": {
-                    "description": "Number of vlan_id.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "vlan_interfaces": {
-                    "description": "Placeholder for description of property vlan_interfaces of obj type vNIC field type str  type object",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/VlanInterface"
                     }
                 },
                 "vnic_networks": {
-                    "description": "Placeholder for description of property vnic_networks of obj type vNIC field type str  type object",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/vNICNetwork"
                     }
                 },
                 "vrf_id": {
-                    "description": "Number of vrf_id.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "vrf_ref": {
-                    "description": " It is a reference to an object of type VrfContext.",
+                    "description": " It is a reference to an object of type VrfContext. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -6777,15 +6777,15 @@
             ],
             "properties": {
                 "ctlr_alloc": {
-                    "description": "Placeholder for description of property ctlr_alloc of obj type vNICNetwork field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "ip": {
-                    "description": "Placeholder for description of property ip of obj type vNICNetwork field type str  type object",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddrPrefix"
                 },
                 "mode": {
-                    "description": " Enum options - DHCP, STATIC, VIP, DOCKER_HOST.",
+                    "description": " Enum options - DHCP, STATIC, VIP, DOCKER_HOST. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "DHCP"
                 }

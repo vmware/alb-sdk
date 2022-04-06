@@ -351,22 +351,22 @@ definitions:
         type: object
         properties:
             allow_rules:
-                description: "Maximum number of rules to control which requests undergo BOT detection. Field introduced in 22.1.1."
+                description: "Maximum number of rules to control which requests undergo BOT detection. Field introduced in 22.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             hdrs:
-                description: "Maximum number of configurable HTTP header(s). Field introduced in 22.1.1."
+                description: "Maximum number of configurable HTTP header(s). Field introduced in 22.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             mapping_rules:
-                description: "Maximum number of rules in a BotMapping object. Field introduced in 22.1.1."
+                description: "Maximum number of rules in a BotMapping object. Field introduced in 22.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     ConfigPbAttributes:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
+                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
@@ -374,285 +374,285 @@ definitions:
         type: object
         properties:
             num_clouds:
-                description: "Maximum number of clouds of a given type. Field introduced in 20.1.1."
+                description: "Maximum number of clouds of a given type. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             type:
-                description: "Cloud type for the limit. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Field introduced in 20.1.1."
+                description: "Cloud type for the limit. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     ControllerLimits:
         type: object
         properties:
             bot_limits:
-                description: "BOT system limits. Field introduced in 22.1.1."
+                description: "BOT system limits. Field introduced in 22.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/BOTLimits'
             certificates_per_virtualservice:
-                description: "Maximum number of certificates per virtualservice. Field introduced in 20.1.1."
+                description: "Maximum number of certificates per virtualservice. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             controller_cloud_limits:
-                description: "Controller system limits specific to cloud type for all controller sizes. Field introduced in 20.1.1."
+                description: "Controller system limits specific to cloud type for all controller sizes. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ControllerCloudLimits'
             controller_sizing_limits:
-                description: "Controller system limits specific to controller sizing. Field introduced in 20.1.1. Maximum of 4 items allowed."
+                description: "Controller system limits specific to controller sizing. Field introduced in 20.1.1. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ControllerSizingLimits'
             default_routes_per_vrfcontext:
-                description: "Maximum number of default routes per vrfcontext. Field introduced in 20.1.1."
+                description: "Maximum number of default routes per vrfcontext. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             gateway_mon_per_vrf:
-                description: "Maximum number of gateway monitors per vrfcontext. Field introduced in 21.1.1."
+                description: "Maximum number of gateway monitors per vrfcontext. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             ipaddress_limits:
-                description: "IP address limits. Field introduced in 21.1.3."
+                description: "IP address limits. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IPAddrLimits'
             ips_per_ipgroup:
-                description: "Maximum number of IP's per ipaddrgroup. Field introduced in 20.1.1."
+                description: "Maximum number of IP's per ipaddrgroup. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             l7_limits:
-                description: "System limits that apply to Layer 7 configuration objects. Field introduced in 21.1.1."
+                description: "System limits that apply to Layer 7 configuration objects. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/L7limits'
             poolgroups_per_virtualservice:
-                description: "Maximum number of poolgroups per virtualservice. Field introduced in 20.1.1."
+                description: "Maximum number of poolgroups per virtualservice. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             pools_per_poolgroup:
-                description: "Maximum number of pools per poolgroup. Field introduced in 20.1.1."
+                description: "Maximum number of pools per poolgroup. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             pools_per_virtualservice:
-                description: "Maximum number of pools per virtualservice. Field introduced in 20.1.1."
+                description: "Maximum number of pools per virtualservice. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             routes_per_vrfcontext:
-                description: "Maximum number of routes per vrfcontext. Field introduced in 20.1.1."
+                description: "Maximum number of routes per vrfcontext. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             rules_per_httppolicy:
-                description: "Maximum number of rules per httppolicy. Field deprecated in 21.1.1. Field introduced in 20.1.1."
+                description: "Maximum number of rules per httppolicy. Field deprecated in 21.1.1. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             rules_per_nat_policy:
-                description: "Maximum number of nat rules in nat policy. Field introduced in 21.1.3."
+                description: "Maximum number of nat rules in nat policy. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             rules_per_networksecuritypolicy:
-                description: "Maximum number of rules per networksecuritypolicy. Field introduced in 20.1.1."
+                description: "Maximum number of rules per networksecuritypolicy. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             servers_per_pool:
-                description: "Maximum number of servers per pool. Field introduced in 20.1.1."
+                description: "Maximum number of servers per pool. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             sni_children_per_parent:
-                description: "Maximum number of SNI children virtualservices per SNI parent virtualservice. Field introduced in 20.1.1."
+                description: "Maximum number of SNI children virtualservices per SNI parent virtualservice. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             strings_per_stringgroup:
-                description: "Maximum number of strings per stringgroup. Field introduced in 20.1.1."
+                description: "Maximum number of strings per stringgroup. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             vs_bgp_scaleout:
-                description: "Maximum number of serviceengine per virtualservice in bgp scaleout mode. Field introduced in 20.1.1."
+                description: "Maximum number of serviceengine per virtualservice in bgp scaleout mode. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             vs_l2_scaleout:
-                description: "Maximum number of serviceengine per virtualservice in layer 2 scaleout mode. Field introduced in 20.1.1."
+                description: "Maximum number of serviceengine per virtualservice in layer 2 scaleout mode. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             waf_limits:
-                description: "WAF system limits. Field introduced in 21.1.3."
+                description: "WAF system limits. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/WAFLimits'
     ControllerSize:
         type: object
         properties:
             flavor:
-                description: "Controller flavor (E/S/M/L) for this controller size. Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE. Field introduced in 20.1.1."
+                description: "Controller flavor (E/S/M/L) for this controller size. Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             min_cpus:
-                description: "Minimum number of cpu cores required. Field introduced in 20.1.1."
+                description: "Minimum number of cpu cores required. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             min_memory:
-                description: "Minimum memory required. Field introduced in 20.1.1. Unit is GB."
+                description: "Minimum memory required. Field introduced in 20.1.1. Unit is GB. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     ControllerSizingCloudLimits:
         type: object
         properties:
             num_clouds:
-                description: "Maximum number of clouds of a given type. Field introduced in 20.1.1."
+                description: "Maximum number of clouds of a given type. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             type:
-                description: "Cloud type for the limit. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Field introduced in 20.1.1."
+                description: "Cloud type for the limit. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     ControllerSizingLimits:
         type: object
         properties:
             controller_sizing_cloud_limits:
-                description: "Controller system limits specific to cloud type for this controller sizing. Field introduced in 20.1.1."
+                description: "Controller system limits specific to cloud type for this controller sizing. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ControllerSizingCloudLimits'
             flavor:
-                description: "Controller flavor (S/M/L) for this sizing limit. Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE. Field introduced in 20.1.1."
+                description: "Controller flavor (S/M/L) for this sizing limit. Enum options - CONTROLLER_ESSENTIALS, CONTROLLER_SMALL, CONTROLLER_MEDIUM, CONTROLLER_LARGE. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             num_clouds:
-                description: "Maximum number of clouds. Field introduced in 20.1.1."
+                description: "Maximum number of clouds. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_east_west_virtualservices:
-                description: "Maximum number of east-west virtualservices. Field introduced in 20.1.1."
+                description: "Maximum number of east-west virtualservices. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_servers:
-                description: "Maximum number of servers. Field introduced in 20.1.1."
+                description: "Maximum number of servers. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_serviceengines:
-                description: "Maximum number of serviceengines. Field introduced in 20.1.1."
+                description: "Maximum number of serviceengines. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_tenants:
-                description: "Maximum number of tenants. Field introduced in 20.1.1."
+                description: "Maximum number of tenants. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_virtualservices:
-                description: "Maximum number of virtualservices. Field introduced in 20.1.1."
+                description: "Maximum number of virtualservices. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_virtualservices_rt_metrics:
-                description: "Maximum number of virtualservices with realtime metrics enabled. Field introduced in 20.1.1."
+                description: "Maximum number of virtualservices with realtime metrics enabled. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_vrfs:
-                description: "Maximum number of vrfcontexts. Field introduced in 20.1.1."
+                description: "Maximum number of vrfcontexts. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     IPAddrLimits:
         type: object
         properties:
             ip_address_group_per_match_criteria:
-                description: "Number of IP address groups for match criteria. Field introduced in 21.1.3."
+                description: "Number of IP address groups for match criteria. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             ip_address_prefix_per_match_criteria:
-                description: "Number of IP address prefixes for match criteria. Field introduced in 21.1.3."
+                description: "Number of IP address prefixes for match criteria. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             ip_address_range_per_match_criteria:
-                description: "Number of IP address ranges for match criteria. Field introduced in 21.1.3."
+                description: "Number of IP address ranges for match criteria. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             ip_addresses_per_match_criteria:
-                description: "Number of IP addresses for match criteria. Field introduced in 21.1.3."
+                description: "Number of IP addresses for match criteria. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     L7limits:
         type: object
         properties:
             http_policies_per_vs:
-                description: "Number of HTTPPolicies attached to a VS. Field introduced in 21.1.1."
+                description: "Number of HTTPPolicies attached to a VS. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_compression_filters:
-                description: "Number of Compression Filters. Field introduced in 21.1.1."
+                description: "Number of Compression Filters. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_custom_str:
-                description: "Number of Custom strings per match/action. Field introduced in 21.1.1."
+                description: "Number of Custom strings per match/action. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_matches_per_rule:
-                description: "Number of Matches per Rule. Field introduced in 21.1.1."
+                description: "Number of Matches per Rule. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_rules_per_http_policy:
-                description: "Number of rules per HTTPRequest/HTTPResponse/HTTPSecurity Policy. Field introduced in 21.1.1."
+                description: "Number of rules per HTTPRequest/HTTPResponse/HTTPSecurity Policy. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_strgroups_per_match:
-                description: "Number of Stringgroups/IPgroups per match. Field introduced in 21.1.1."
+                description: "Number of Stringgroups/IPgroups per match. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             str_cache_mime:
-                description: "Number of implicit strings for Cacheable MIME types. Field introduced in 21.1.1."
+                description: "Number of implicit strings for Cacheable MIME types. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             str_groups_cache_mime:
-                description: "Number of String groups for Cacheable MIME types. Field introduced in 21.1.1."
+                description: "Number of String groups for Cacheable MIME types. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             str_groups_no_cache_mime:
-                description: "Number of String groups for non Cacheable MIME types. Field introduced in 21.1.1."
+                description: "Number of String groups for non Cacheable MIME types. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             str_groups_no_cache_uri:
-                description: "Number of String groups for non Cacheable URI. Field introduced in 21.1.1."
+                description: "Number of String groups for non Cacheable URI. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             str_no_cache_mime:
-                description: "Number of implicit strings for non Cacheable MIME types. Field introduced in 21.1.1."
+                description: "Number of implicit strings for non Cacheable MIME types. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             str_no_cache_uri:
-                description: "Number of implicit strings for non Cacheable URI. Field introduced in 21.1.1."
+                description: "Number of implicit strings for non Cacheable URI. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     ServiceEngineCloudLimits:
         type: object
         properties:
             type:
-                description: "Cloud type for this cloud limit. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Field introduced in 20.1.1."
+                description: "Cloud type for this cloud limit. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             vrfs_per_serviceengine:
-                description: "Maximum number of vrfcontexts per serviceengine. Field introduced in 20.1.1."
+                description: "Maximum number of vrfcontexts per serviceengine. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     ServiceEngineLimits:
         type: object
         properties:
             all_virtualservices_per_serviceengine:
-                description: "Maximum number of virtualservices per serviceengine, including east-west virtualservices. Field introduced in 20.1.1."
+                description: "Maximum number of virtualservices per serviceengine, including east-west virtualservices. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             ew_virtualservices_per_serviceengine:
-                description: "Maximum number of east-west virtualservices per serviceengine, excluding north-south virtualservices. Field introduced in 20.1.1."
+                description: "Maximum number of east-west virtualservices per serviceengine, excluding north-south virtualservices. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             ns_virtualservices_per_serviceengine:
-                description: "Maximum number of north-south virtualservices per serviceengine, excluding east-west virtualservices. Field introduced in 20.1.1."
+                description: "Maximum number of north-south virtualservices per serviceengine, excluding east-west virtualservices. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_logical_intf_per_se:
-                description: "Maximum number of logical interfaces (vlan, bond) per serviceengine. Field introduced in 20.1.1."
+                description: "Maximum number of logical interfaces (vlan, bond) per serviceengine. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_phy_intf_per_se:
-                description: "Maximum number of physical interfaces per serviceengine. Field introduced in 20.1.1."
+                description: "Maximum number of physical interfaces per serviceengine. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_virtualservices_rt_metrics:
-                description: "Maximum number of virtualservices with realtime metrics enabled. Field introduced in 20.1.1."
+                description: "Maximum number of virtualservices with realtime metrics enabled. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_vlan_intf_per_phy_intf:
-                description: "Maximum number of vlan interfaces per physical interface. Field introduced in 20.1.1."
+                description: "Maximum number of vlan interfaces per physical interface. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_vlan_intf_per_se:
-                description: "Maximum number of vlan interfaces per serviceengine. Field introduced in 20.1.1."
+                description: "Maximum number of vlan interfaces per serviceengine. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             serviceengine_cloud_limits:
-                description: "Serviceengine system limits specific to cloud type. Field introduced in 20.1.1."
+                description: "Serviceengine system limits specific to cloud type. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ServiceEngineCloudLimits'
@@ -664,25 +664,25 @@ definitions:
                 readOnly: True
                 type: string
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             controller_limits:
-                description: "System limits for the entire controller cluster. Field introduced in 20.1.1."
+                description: "System limits for the entire controller cluster. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ControllerLimits'
             controller_sizes:
-                description: "Possible controller sizes. Field introduced in 20.1.1."
+                description: "Possible controller sizes. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ControllerSize'
             serviceengine_limits:
-                description: "System limits that apply to a serviceengine. Field introduced in 20.1.1."
+                description: "System limits that apply to a serviceengine. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ServiceEngineLimits'
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID for the system limits object. Field introduced in 20.1.1."
+                description: "UUID for the system limits object. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     SystemLimitsApiResponse:
         type: object
@@ -703,62 +703,62 @@ definitions:
         type: object
         properties:
             num_allowed_content_types:
-                description: "Number of WAF allowed Content Types. Field introduced in 21.1.3."
+                description: "Number of WAF allowed Content Types. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_allowed_request_content_type_charsets:
-                description: "Number of allowed request content type character sets in WAF. Field introduced in 22.1.1."
+                description: "Number of allowed request content type character sets in WAF. Field introduced in 22.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_allowlist_policy_rules:
-                description: "Number of rules used in WAF allowlist policy. Field introduced in 21.1.3."
+                description: "Number of rules used in WAF allowlist policy. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_applications:
-                description: "Number of applications for which we use rules from sig provider. Field introduced in 21.1.3."
+                description: "Number of applications for which we use rules from sig provider. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_data_files:
-                description: "Number of datafiles used in WAF. Field introduced in 21.1.3."
+                description: "Number of datafiles used in WAF. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_pre_post_crs_groups:
-                description: "Number of pre, post CRS groups. Field introduced in 21.1.3."
+                description: "Number of pre, post CRS groups. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_psm_groups:
-                description: "Number of total PSM groups in WAF. Field introduced in 21.1.3."
+                description: "Number of total PSM groups in WAF. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_psm_match_elements:
-                description: "Number of match elements used in WAF PSM. Field introduced in 21.1.3."
+                description: "Number of match elements used in WAF PSM. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_psm_match_rules_per_loc:
-                description: "Number of match rules per location. Field introduced in 21.1.3."
+                description: "Number of match rules per location. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_psm_total_locations:
-                description: "Number of locations used in WAF PSM. Field introduced in 21.1.3."
+                description: "Number of locations used in WAF PSM. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_restricted_extensions:
-                description: "Number of restricted extensions in WAF. Field introduced in 21.1.3."
+                description: "Number of restricted extensions in WAF. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_restricted_headers:
-                description: "Number of restricted HTTP headers in WAF. Field introduced in 21.1.3."
+                description: "Number of restricted HTTP headers in WAF. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_rule_tags:
-                description: "Number of tags for waf rule . Field introduced in 21.1.3."
+                description: "Number of tags for waf rule . Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_rules_per_rulegroup:
-                description: "Number of rules as per modsec language. Field introduced in 21.1.3."
+                description: "Number of rules as per modsec language. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_static_extensions:
-                description: "Number of restricted static extensions in WAF. Field introduced in 21.1.3."
+                description: "Number of restricted static extensions in WAF. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32

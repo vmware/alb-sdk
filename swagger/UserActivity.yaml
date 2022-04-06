@@ -354,35 +354,35 @@ definitions:
                 readOnly: True
                 type: string
             concurrent_sessions:
-                description: "Number of concurrent user sessions open."
+                description: "Number of concurrent user sessions open. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             failed_login_attempts:
-                description: "Number of failed login attempts before a successful login."
+                description: "Number of failed login attempts before a successful login. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             last_login_ip:
-                description: "IP of the machine the user was last logged in from."
+                description: "IP of the machine the user was last logged in from. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             last_login_timestamp:
-                description: "Timestamp of last login."
+                description: "Timestamp of last login. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             last_password_update:
-                description: "Timestamp of last password update."
+                description: "Timestamp of last password update. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             logged_in:
-                description: "Indicates whether the user is logged in or not."
+                description: "Indicates whether the user is logged in or not. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             login_failure_timestamps:
-                description: "Its a queue that store the timestamps for past login_failures. Field introduced in 22.1.1."
+                description: "Its a queue that store the timestamps for past login_failures. Field introduced in 22.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             name:
-                description: "Name of the user this object refers to."
+                description: "Name of the user this object refers to. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             previous_password:
-                description: "Stores the previous n passwords  where n is ControllerProperties.max_password_history_count. ."
+                description: "Stores the previous n passwords  where n is ControllerProperties.max_password_history_count. . Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -391,7 +391,7 @@ definitions:
                 readOnly: True
                 type: string
             uuid:
-                description: "Unique object identifier of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     UserActivityApiResponse:
         type: object

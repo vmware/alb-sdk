@@ -577,189 +577,189 @@
                     "type": "string"
                 },
                 "apdex_response_threshold": {
-                    "description": "If a client receives an HTTP response in less than the Satisfactory Latency Threshold, the request is considered Satisfied. It is considered Tolerated if it is not Satisfied and less than Tolerated Latency Factor multiplied by the Satisfactory Latency Threshold. Greater than this number and the client's request is considered Frustrated. Allowed values are 1-30000. Unit is MILLISECONDS. Allowed in Basic(Allowed values- 500) edition, Essentials(Allowed values- 500) edition, Enterprise edition.",
+                    "description": "If a client receives an HTTP response in less than the Satisfactory Latency Threshold, the request is considered Satisfied. It is considered Tolerated if it is not Satisfied and less than Tolerated Latency Factor multiplied by the Satisfactory Latency Threshold. Greater than this number and the client's request is considered Frustrated. Allowed values are 1-30000. Unit is MILLISECONDS. Allowed in Enterprise with any value edition, Essentials(Allowed values- 500) edition, Basic(Allowed values- 500) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 500,
                     "format": "int32"
                 },
                 "apdex_response_tolerated_factor": {
-                    "description": "Client tolerated response latency factor. Client must receive a response within this factor times the satisfactory threshold (apdex_response_threshold) to be considered tolerated. Allowed values are 1-1000. Allowed in Basic(Allowed values- 4) edition, Essentials(Allowed values- 4) edition, Enterprise edition.",
+                    "description": "Client tolerated response latency factor. Client must receive a response within this factor times the satisfactory threshold (apdex_response_threshold) to be considered tolerated. Allowed values are 1-1000. Allowed in Enterprise with any value edition, Essentials(Allowed values- 4) edition, Basic(Allowed values- 4) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 4.0,
                     "format": "double"
                 },
                 "apdex_rtt_threshold": {
-                    "description": "Satisfactory client to Avi Round Trip Time(RTT). Allowed values are 1-2000. Unit is MILLISECONDS. Allowed in Basic(Allowed values- 250) edition, Essentials(Allowed values- 250) edition, Enterprise edition.",
+                    "description": "Satisfactory client to Avi Round Trip Time(RTT). Allowed values are 1-2000. Unit is MILLISECONDS. Allowed in Enterprise with any value edition, Essentials(Allowed values- 250) edition, Basic(Allowed values- 250) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 250,
                     "format": "int32"
                 },
                 "apdex_rtt_tolerated_factor": {
-                    "description": "Tolerated client to Avi Round Trip Time(RTT) factor.  It is a multiple of apdex_rtt_tolerated_factor. Allowed values are 1-1000. Allowed in Basic(Allowed values- 4) edition, Essentials(Allowed values- 4) edition, Enterprise edition.",
+                    "description": "Tolerated client to Avi Round Trip Time(RTT) factor.  It is a multiple of apdex_rtt_tolerated_factor. Allowed values are 1-1000. Allowed in Enterprise with any value edition, Essentials(Allowed values- 4) edition, Basic(Allowed values- 4) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 4.0,
                     "format": "double"
                 },
                 "apdex_rum_threshold": {
-                    "description": "If a client is able to load a page in less than the Satisfactory Latency Threshold, the PageLoad is considered Satisfied.  It is considered tolerated if it is greater than Satisfied but less than the Tolerated Latency multiplied by Satisifed Latency. Greater than this number and the client's request is considered Frustrated.  A PageLoad includes the time for DNS lookup, download of all HTTP objects, and page render time. Allowed values are 1-30000. Unit is MILLISECONDS. Allowed in Basic(Allowed values- 5000) edition, Essentials(Allowed values- 5000) edition, Enterprise edition.",
+                    "description": "If a client is able to load a page in less than the Satisfactory Latency Threshold, the PageLoad is considered Satisfied.  It is considered tolerated if it is greater than Satisfied but less than the Tolerated Latency multiplied by Satisifed Latency. Greater than this number and the client's request is considered Frustrated.  A PageLoad includes the time for DNS lookup, download of all HTTP objects, and page render time. Allowed values are 1-30000. Unit is MILLISECONDS. Allowed in Enterprise with any value edition, Essentials(Allowed values- 5000) edition, Basic(Allowed values- 5000) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5000,
                     "format": "int32"
                 },
                 "apdex_rum_tolerated_factor": {
-                    "description": "Virtual service threshold factor for tolerated Page Load Time (PLT) as multiple of apdex_rum_threshold. Allowed values are 1-1000. Allowed in Basic(Allowed values- 4) edition, Essentials(Allowed values- 4) edition, Enterprise edition.",
+                    "description": "Virtual service threshold factor for tolerated Page Load Time (PLT) as multiple of apdex_rum_threshold. Allowed values are 1-1000. Allowed in Enterprise with any value edition, Essentials(Allowed values- 4) edition, Basic(Allowed values- 4) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 4.0,
                     "format": "double"
                 },
                 "apdex_server_response_threshold": {
-                    "description": "A server HTTP response is considered Satisfied if latency is less than the Satisfactory Latency Threshold. The response is considered tolerated when it is greater than Satisfied but less than the Tolerated Latency Factor * S_Latency.  Greater than this number and the server response is considered Frustrated. Allowed values are 1-30000. Unit is MILLISECONDS. Allowed in Basic(Allowed values- 400) edition, Essentials(Allowed values- 400) edition, Enterprise edition.",
+                    "description": "A server HTTP response is considered Satisfied if latency is less than the Satisfactory Latency Threshold. The response is considered tolerated when it is greater than Satisfied but less than the Tolerated Latency Factor * S_Latency.  Greater than this number and the server response is considered Frustrated. Allowed values are 1-30000. Unit is MILLISECONDS. Allowed in Enterprise with any value edition, Essentials(Allowed values- 400) edition, Basic(Allowed values- 400) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 400,
                     "format": "int32"
                 },
                 "apdex_server_response_tolerated_factor": {
-                    "description": "Server tolerated response latency factor. Servermust response within this factor times the satisfactory threshold (apdex_server_response_threshold) to be considered tolerated. Allowed values are 1-1000. Allowed in Basic(Allowed values- 4) edition, Essentials(Allowed values- 4) edition, Enterprise edition.",
+                    "description": "Server tolerated response latency factor. Servermust response within this factor times the satisfactory threshold (apdex_server_response_threshold) to be considered tolerated. Allowed values are 1-1000. Allowed in Enterprise with any value edition, Essentials(Allowed values- 4) edition, Basic(Allowed values- 4) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 4.0,
                     "format": "double"
                 },
                 "apdex_server_rtt_threshold": {
-                    "description": "Satisfactory client to Avi Round Trip Time(RTT). Allowed values are 1-2000. Unit is MILLISECONDS. Allowed in Basic(Allowed values- 125) edition, Essentials(Allowed values- 125) edition, Enterprise edition.",
+                    "description": "Satisfactory client to Avi Round Trip Time(RTT). Allowed values are 1-2000. Unit is MILLISECONDS. Allowed in Enterprise with any value edition, Essentials(Allowed values- 125) edition, Basic(Allowed values- 125) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 125,
                     "format": "int32"
                 },
                 "apdex_server_rtt_tolerated_factor": {
-                    "description": "Tolerated client to Avi Round Trip Time(RTT) factor.  It is a multiple of apdex_rtt_tolerated_factor. Allowed values are 1-1000. Allowed in Basic(Allowed values- 4) edition, Essentials(Allowed values- 4) edition, Enterprise edition.",
+                    "description": "Tolerated client to Avi Round Trip Time(RTT) factor.  It is a multiple of apdex_rtt_tolerated_factor. Allowed values are 1-1000. Allowed in Enterprise with any value edition, Essentials(Allowed values- 4) edition, Basic(Allowed values- 4) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 4.0,
                     "format": "double"
                 },
                 "client_log_config": {
-                    "description": "Configure which logs are sent to the Avi Controller from SEs and how they are processed.",
+                    "description": "Configure which logs are sent to the Avi Controller from SEs and how they are processed. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ClientLogConfiguration"
                 },
                 "client_log_streaming_config": {
-                    "description": "Configure to stream logs to an external server. Field introduced in 17.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "description": "Configure to stream logs to an external server. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ClientLogStreamingConfig"
                 },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "conn_lossy_ooo_threshold": {
-                    "description": "A connection between client and Avi is considered lossy when more than this percentage of out of order packets are received. Allowed values are 1-100. Unit is PERCENT. Allowed in Basic(Allowed values- 50) edition, Essentials(Allowed values- 50) edition, Enterprise edition.",
+                    "description": "A connection between client and Avi is considered lossy when more than this percentage of out of order packets are received. Allowed values are 1-100. Unit is PERCENT. Allowed in Enterprise with any value edition, Essentials(Allowed values- 50) edition, Basic(Allowed values- 50) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 50,
                     "format": "int32"
                 },
                 "conn_lossy_timeo_rexmt_threshold": {
-                    "description": "A connection between client and Avi is considered lossy when more than this percentage of packets are retransmitted due to timeout. Allowed values are 1-100. Unit is PERCENT. Allowed in Basic(Allowed values- 20) edition, Essentials(Allowed values- 20) edition, Enterprise edition.",
+                    "description": "A connection between client and Avi is considered lossy when more than this percentage of packets are retransmitted due to timeout. Allowed values are 1-100. Unit is PERCENT. Allowed in Enterprise with any value edition, Essentials(Allowed values- 20) edition, Basic(Allowed values- 20) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 20,
                     "format": "int32"
                 },
                 "conn_lossy_total_rexmt_threshold": {
-                    "description": "A connection between client and Avi is considered lossy when more than this percentage of packets are retransmitted. Allowed values are 1-100. Unit is PERCENT. Allowed in Basic(Allowed values- 50) edition, Essentials(Allowed values- 50) edition, Enterprise edition.",
+                    "description": "A connection between client and Avi is considered lossy when more than this percentage of packets are retransmitted. Allowed values are 1-100. Unit is PERCENT. Allowed in Enterprise with any value edition, Essentials(Allowed values- 50) edition, Basic(Allowed values- 50) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 50,
                     "format": "int32"
                 },
                 "conn_lossy_zero_win_size_event_threshold": {
-                    "description": "A client connection is considered lossy when percentage of times a packet could not be trasmitted due to TCP zero window is above this threshold. Allowed values are 0-100. Unit is PERCENT. Allowed in Basic(Allowed values- 2) edition, Essentials(Allowed values- 2) edition, Enterprise edition.",
+                    "description": "A client connection is considered lossy when percentage of times a packet could not be trasmitted due to TCP zero window is above this threshold. Allowed values are 0-100. Unit is PERCENT. Allowed in Enterprise with any value edition, Essentials(Allowed values- 2) edition, Basic(Allowed values- 2) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2,
                     "format": "int32"
                 },
                 "conn_server_lossy_ooo_threshold": {
-                    "description": "A connection between Avi and server is considered lossy when more than this percentage of out of order packets are received. Allowed values are 1-100. Unit is PERCENT. Allowed in Basic(Allowed values- 50) edition, Essentials(Allowed values- 50) edition, Enterprise edition.",
+                    "description": "A connection between Avi and server is considered lossy when more than this percentage of out of order packets are received. Allowed values are 1-100. Unit is PERCENT. Allowed in Enterprise with any value edition, Essentials(Allowed values- 50) edition, Basic(Allowed values- 50) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 50,
                     "format": "int32"
                 },
                 "conn_server_lossy_timeo_rexmt_threshold": {
-                    "description": "A connection between Avi and server is considered lossy when more than this percentage of packets are retransmitted due to timeout. Allowed values are 1-100. Unit is PERCENT. Allowed in Basic(Allowed values- 20) edition, Essentials(Allowed values- 20) edition, Enterprise edition.",
+                    "description": "A connection between Avi and server is considered lossy when more than this percentage of packets are retransmitted due to timeout. Allowed values are 1-100. Unit is PERCENT. Allowed in Enterprise with any value edition, Essentials(Allowed values- 20) edition, Basic(Allowed values- 20) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 20,
                     "format": "int32"
                 },
                 "conn_server_lossy_total_rexmt_threshold": {
-                    "description": "A connection between Avi and server is considered lossy when more than this percentage of packets are retransmitted. Allowed values are 1-100. Unit is PERCENT. Allowed in Basic(Allowed values- 50) edition, Essentials(Allowed values- 50) edition, Enterprise edition.",
+                    "description": "A connection between Avi and server is considered lossy when more than this percentage of packets are retransmitted. Allowed values are 1-100. Unit is PERCENT. Allowed in Enterprise with any value edition, Essentials(Allowed values- 50) edition, Basic(Allowed values- 50) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 50,
                     "format": "int32"
                 },
                 "conn_server_lossy_zero_win_size_event_threshold": {
-                    "description": "A server connection is considered lossy when percentage of times a packet could not be trasmitted due to TCP zero window is above this threshold. Allowed values are 0-100. Unit is PERCENT. Allowed in Basic(Allowed values- 2) edition, Essentials(Allowed values- 2) edition, Enterprise edition.",
+                    "description": "A server connection is considered lossy when percentage of times a packet could not be trasmitted due to TCP zero window is above this threshold. Allowed values are 0-100. Unit is PERCENT. Allowed in Enterprise with any value edition, Essentials(Allowed values- 2) edition, Basic(Allowed values- 2) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2,
                     "format": "int32"
                 },
                 "description": {
-                    "description": "User defined description for the object.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "disable_ondemand_metrics": {
-                    "description": "Virtual Service (VS) metrics are processed only when there is live data traffic on the VS. In case, VS is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that VS. Field deprecated in 20.1.3. Field introduced in 18.1.1.",
+                    "description": "Virtual Service (VS) metrics are processed only when there is live data traffic on the VS. In case, VS is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that VS. Field deprecated in 20.1.3. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "disable_se_analytics": {
-                    "description": "Disable node (service engine) level analytics forvs metrics. Field deprecated in 20.1.3.",
+                    "description": "Disable node (service engine) level analytics forvs metrics. Field deprecated in 20.1.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "disable_server_analytics": {
-                    "description": "Disable analytics on backend servers. This may be desired in container environment when there are large number of ephemeral servers. Additionally, no healthscore of servers is computed when server analytics is disabled. Field deprecated in 20.1.3.",
+                    "description": "Disable analytics on backend servers. This may be desired in container environment when there are large number of ephemeral servers. Additionally, no healthscore of servers is computed when server analytics is disabled. Field deprecated in 20.1.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "disable_vs_analytics": {
-                    "description": "Disable VirtualService (frontend) Analytics. This flag disables metrics and healthscore for Virtualservice. Field deprecated in 20.1.3. Field introduced in 18.2.1.",
+                    "description": "Disable VirtualService (frontend) Analytics. This flag disables metrics and healthscore for Virtualservice. Field deprecated in 20.1.3. Field introduced in 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "enable_adaptive_config": {
-                    "description": "Enable adaptive configuration for optimizing resource usage. Field introduced in 20.1.1.",
+                    "description": "Enable adaptive configuration for optimizing resource usage. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "enable_advanced_analytics": {
-                    "description": "Enables Advanced Analytics features like Anomaly detection. If set to false, anomaly computation (and associated rules/events) for VS, Pool and Server metrics will be deactivated. However, setting it to false reduces cpu and memory requirements for Analytics subsystem. Field introduced in 17.2.13, 18.1.5, 18.2.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is True.",
+                    "description": "Enables Advanced Analytics features like Anomaly detection. If set to false, anomaly computation (and associated rules/events) for VS, Pool and Server metrics will be deactivated. However, setting it to false reduces cpu and memory requirements for Analytics subsystem. Field introduced in 17.2.13, 18.1.5, 18.2.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is True.",
                     "type": "boolean",
                     "default": true
                 },
                 "enable_ondemand_metrics": {
-                    "description": "Virtual Service (VS) metrics are processed only when there is live data traffic on the VS. In case, VS is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that VS. Field introduced in 20.1.3.",
+                    "description": "Virtual Service (VS) metrics are processed only when there is live data traffic on the VS. In case, VS is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that VS. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "enable_se_analytics": {
-                    "description": "Enable node (service engine) level analytics forvs metrics. Field introduced in 20.1.3.",
+                    "description": "Enable node (service engine) level analytics forvs metrics. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "enable_server_analytics": {
-                    "description": "Enables analytics on backend servers. This may be desired in container environment when there are large number of ephemeral servers. Additionally, no healthscore of servers is computed when server analytics is enabled. Field introduced in 20.1.3.",
+                    "description": "Enables analytics on backend servers. This may be desired in container environment when there are large number of ephemeral servers. Additionally, no healthscore of servers is computed when server analytics is enabled. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "enable_vs_analytics": {
-                    "description": "Enable VirtualService (frontend) Analytics. This flag enables metrics and healthscore for Virtualservice. Field introduced in 20.1.3.",
+                    "description": "Enable VirtualService (frontend) Analytics. This flag enables metrics and healthscore for Virtualservice. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "exclude_client_close_before_request_as_error": {
-                    "description": "Exclude client closed connection before an HTTP request could be completed from being classified as an error. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Exclude client closed connection before an HTTP request could be completed from being classified as an error. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "exclude_dns_policy_drop_as_significant": {
-                    "description": "Exclude dns policy drops from the list of errors. Field introduced in 17.2.2. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Exclude dns policy drops from the list of errors. Field introduced in 17.2.2. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "exclude_gs_down_as_error": {
-                    "description": "Exclude queries to GSLB services that are operationally down from the list of errors. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Exclude queries to GSLB services that are operationally down from the list of errors. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "exclude_http_error_codes": {
-                    "description": "List of HTTP status codes to be excluded from being classified as an error.  Error connections or responses impacts health score, are included as significant logs, and may be classified as part of a DoS attack.",
+                    "description": "List of HTTP status codes to be excluded from being classified as an error.  Error connections or responses impacts health score, are included as significant logs, and may be classified as part of a DoS attack. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "integer"
@@ -767,45 +767,45 @@
                     "format": "int32"
                 },
                 "exclude_invalid_dns_domain_as_error": {
-                    "description": "Exclude dns queries to domains outside the domains configured in the DNS application profile from the list of errors. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Exclude dns queries to domains outside the domains configured in the DNS application profile from the list of errors. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "exclude_invalid_dns_query_as_error": {
-                    "description": "Exclude invalid dns queries from the list of errors. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Exclude invalid dns queries from the list of errors. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "exclude_issuer_revoked_ocsp_responses_as_error": {
-                    "description": "Exclude the Issuer-Revoked OCSP Responses from the list of errors. Field introduced in 20.1.1. Allowed in Basic(Allowed values- true) edition, Essentials(Allowed values- true) edition, Enterprise edition.",
+                    "description": "Exclude the Issuer-Revoked OCSP Responses from the list of errors. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- true) edition, Basic(Allowed values- true) edition, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "exclude_no_dns_record_as_error": {
-                    "description": "Exclude queries to domains that did not have configured services/records from the list of errors. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Exclude queries to domains that did not have configured services/records from the list of errors. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "exclude_no_valid_gs_member_as_error": {
-                    "description": "Exclude queries to GSLB services that have no available members from the list of errors. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Exclude queries to GSLB services that have no available members from the list of errors. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "exclude_persistence_change_as_error": {
-                    "description": "Exclude persistence server changed while load balancing' from the list of errors. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Exclude persistence server changed while load balancing' from the list of errors. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "exclude_revoked_ocsp_responses_as_error": {
-                    "description": "Exclude the Revoked OCSP certificate status responses from the list of errors. Field introduced in 20.1.1. Allowed in Basic(Allowed values- true) edition, Essentials(Allowed values- true) edition, Enterprise edition.",
+                    "description": "Exclude the Revoked OCSP certificate status responses from the list of errors. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- true) edition, Basic(Allowed values- true) edition, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "exclude_server_dns_error_as_error": {
-                    "description": "Exclude server dns error response from the list of errors. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Exclude server dns error response from the list of errors. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "exclude_server_tcp_reset_as_error": {
-                    "description": "Exclude server TCP reset from errors.  It is common for applications like MS Exchange. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Exclude server TCP reset from errors.  It is common for applications like MS Exchange. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "exclude_sip_error_codes": {
-                    "description": "List of SIP status codes to be excluded from being classified as an error. Field introduced in 17.2.13, 18.1.5, 18.2.1. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "description": "List of SIP status codes to be excluded from being classified as an error. Field introduced in 17.2.13, 18.1.5, 18.2.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "integer"
@@ -813,251 +813,251 @@
                     "format": "int32"
                 },
                 "exclude_stale_ocsp_responses_as_error": {
-                    "description": "Exclude the Stale OCSP certificate status responses from the list of errors. Field introduced in 20.1.1. Allowed in Basic(Allowed values- true) edition, Essentials(Allowed values- true) edition, Enterprise edition.",
+                    "description": "Exclude the Stale OCSP certificate status responses from the list of errors. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- true) edition, Basic(Allowed values- true) edition, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "exclude_syn_retransmit_as_error": {
-                    "description": "Exclude 'server unanswered syns' from the list of errors. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Exclude 'server unanswered syns' from the list of errors. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "exclude_tcp_reset_as_error": {
-                    "description": "Exclude TCP resets by client from the list of potential errors. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Exclude TCP resets by client from the list of potential errors. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "exclude_unavailable_ocsp_responses_as_error": {
-                    "description": "Exclude the unavailable OCSP Responses from the list of errors. Field introduced in 20.1.1. Allowed in Basic(Allowed values- true) edition, Essentials(Allowed values- true) edition, Enterprise edition.",
+                    "description": "Exclude the unavailable OCSP Responses from the list of errors. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- true) edition, Basic(Allowed values- true) edition, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "exclude_unsupported_dns_query_as_error": {
-                    "description": "Exclude unsupported dns queries from the list of errors. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition.",
+                    "description": "Exclude unsupported dns queries from the list of errors. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "healthscore_max_server_limit": {
-                    "description": "Skips health score computation of pool servers when number of servers in a pool is more than this setting. Allowed values are 0-5000. Special values are 0- server health score is deactivated. Field introduced in 17.2.13, 18.1.4. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition. Special default for Basic edition is 0, Essentials edition is 0, Enterprise is 20.",
+                    "description": "Skips health score computation of pool servers when number of servers in a pool is more than this setting. Allowed values are 0-5000. Special values are 0- server health score is deactivated. Field introduced in 17.2.13, 18.1.4. Allowed in Enterprise with any value edition, Essentials(Allowed values- 0) edition, Basic(Allowed values- 0) edition, Enterprise with Cloud Services edition. Special default for Essentials edition is 0, Basic edition is 0, Enterprise is 20.",
                     "type": "integer",
                     "default": 20,
                     "format": "int32"
                 },
                 "hs_event_throttle_window": {
-                    "description": "Time window (in secs) within which only unique health change events should occur. Allowed in Basic(Allowed values- 1209600) edition, Essentials(Allowed values- 1209600) edition, Enterprise edition.",
+                    "description": "Time window (in secs) within which only unique health change events should occur. Allowed in Enterprise with any value edition, Essentials(Allowed values- 1209600) edition, Basic(Allowed values- 1209600) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1209600,
                     "format": "int32"
                 },
                 "hs_max_anomaly_penalty": {
-                    "description": "Maximum penalty that may be deducted from health score for anomalies. Allowed values are 0-100. Allowed in Basic(Allowed values- 10) edition, Essentials(Allowed values- 10) edition, Enterprise edition.",
+                    "description": "Maximum penalty that may be deducted from health score for anomalies. Allowed values are 0-100. Allowed in Enterprise with any value edition, Essentials(Allowed values- 10) edition, Basic(Allowed values- 10) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
                     "format": "int32"
                 },
                 "hs_max_resources_penalty": {
-                    "description": "Maximum penalty that may be deducted from health score for high resource utilization. Allowed values are 0-100. Allowed in Basic(Allowed values- 25) edition, Essentials(Allowed values- 25) edition, Enterprise edition.",
+                    "description": "Maximum penalty that may be deducted from health score for high resource utilization. Allowed values are 0-100. Allowed in Enterprise with any value edition, Essentials(Allowed values- 25) edition, Basic(Allowed values- 25) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 25,
                     "format": "int32"
                 },
                 "hs_max_security_penalty": {
-                    "description": "Maximum penalty that may be deducted from health score based on security assessment. Allowed values are 0-100. Allowed in Basic(Allowed values- 100) edition, Essentials(Allowed values- 100) edition, Enterprise edition.",
+                    "description": "Maximum penalty that may be deducted from health score based on security assessment. Allowed values are 0-100. Allowed in Enterprise with any value edition, Essentials(Allowed values- 100) edition, Basic(Allowed values- 100) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
                     "format": "int32"
                 },
                 "hs_min_dos_rate": {
-                    "description": "DoS connection rate below which the DoS security assessment will not kick in. Allowed in Basic(Allowed values- 1000) edition, Essentials(Allowed values- 1000) edition, Enterprise edition.",
+                    "description": "DoS connection rate below which the DoS security assessment will not kick in. Allowed in Enterprise with any value edition, Essentials(Allowed values- 1000) edition, Basic(Allowed values- 1000) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000,
                     "format": "int32"
                 },
                 "hs_performance_boost": {
-                    "description": "Adds free performance score credits to health score. It can be used for compensating health score for known slow applications. Allowed values are 0-100. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition.",
+                    "description": "Adds free performance score credits to health score. It can be used for compensating health score for known slow applications. Allowed values are 0-100. Allowed in Enterprise with any value edition, Essentials(Allowed values- 0) edition, Basic(Allowed values- 0) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "hs_pscore_traffic_threshold_l4_client": {
-                    "description": "Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed. Allowed in Basic(Allowed values- 10) edition, Essentials(Allowed values- 10) edition, Enterprise edition.",
+                    "description": "Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed. Allowed in Enterprise with any value edition, Essentials(Allowed values- 10) edition, Basic(Allowed values- 10) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 10.0,
                     "format": "double"
                 },
                 "hs_pscore_traffic_threshold_l4_server": {
-                    "description": "Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed. Allowed in Basic(Allowed values- 10) edition, Essentials(Allowed values- 10) edition, Enterprise edition.",
+                    "description": "Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed. Allowed in Enterprise with any value edition, Essentials(Allowed values- 10) edition, Basic(Allowed values- 10) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 10.0,
                     "format": "double"
                 },
                 "hs_security_certscore_expired": {
-                    "description": "Score assigned when the certificate has expired. Allowed values are 0-5. Allowed in Basic(Allowed values- 0.0) edition, Essentials(Allowed values- 0.0) edition, Enterprise edition.",
+                    "description": "Score assigned when the certificate has expired. Allowed values are 0-5. Allowed in Enterprise with any value edition, Essentials(Allowed values- 0.0) edition, Basic(Allowed values- 0.0) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "hs_security_certscore_gt30d": {
-                    "description": "Score assigned when the certificate expires in more than 30 days. Allowed values are 0-5. Allowed in Basic(Allowed values- 5.0) edition, Essentials(Allowed values- 5.0) edition, Enterprise edition.",
+                    "description": "Score assigned when the certificate expires in more than 30 days. Allowed values are 0-5. Allowed in Enterprise with any value edition, Essentials(Allowed values- 5.0) edition, Basic(Allowed values- 5.0) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 5.0,
                     "format": "double"
                 },
                 "hs_security_certscore_le07d": {
-                    "description": "Score assigned when the certificate expires in less than or equal to 7 days. Allowed values are 0-5. Allowed in Basic(Allowed values- 2.0) edition, Essentials(Allowed values- 2.0) edition, Enterprise edition.",
+                    "description": "Score assigned when the certificate expires in less than or equal to 7 days. Allowed values are 0-5. Allowed in Enterprise with any value edition, Essentials(Allowed values- 2.0) edition, Basic(Allowed values- 2.0) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 2.0,
                     "format": "double"
                 },
                 "hs_security_certscore_le30d": {
-                    "description": "Score assigned when the certificate expires in less than or equal to 30 days. Allowed values are 0-5. Allowed in Basic(Allowed values- 4.0) edition, Essentials(Allowed values- 4.0) edition, Enterprise edition.",
+                    "description": "Score assigned when the certificate expires in less than or equal to 30 days. Allowed values are 0-5. Allowed in Enterprise with any value edition, Essentials(Allowed values- 4.0) edition, Basic(Allowed values- 4.0) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 4.0,
                     "format": "double"
                 },
                 "hs_security_chain_invalidity_penalty": {
-                    "description": "Penalty for allowing certificates with invalid chain. Allowed values are 0-5. Allowed in Basic(Allowed values- 1.0) edition, Essentials(Allowed values- 1.0) edition, Enterprise edition.",
+                    "description": "Penalty for allowing certificates with invalid chain. Allowed values are 0-5. Allowed in Enterprise with any value edition, Essentials(Allowed values- 1.0) edition, Basic(Allowed values- 1.0) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 1.0,
                     "format": "double"
                 },
                 "hs_security_cipherscore_eq000b": {
-                    "description": "Score assigned when the minimum cipher strength is 0 bits. Allowed values are 0-5. Allowed in Basic(Allowed values- 0.0) edition, Essentials(Allowed values- 0.0) edition, Enterprise edition.",
+                    "description": "Score assigned when the minimum cipher strength is 0 bits. Allowed values are 0-5. Allowed in Enterprise with any value edition, Essentials(Allowed values- 0.0) edition, Basic(Allowed values- 0.0) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "hs_security_cipherscore_ge128b": {
-                    "description": "Score assigned when the minimum cipher strength is greater than equal to 128 bits. Allowed values are 0-5. Allowed in Basic(Allowed values- 5.0) edition, Essentials(Allowed values- 5.0) edition, Enterprise edition.",
+                    "description": "Score assigned when the minimum cipher strength is greater than equal to 128 bits. Allowed values are 0-5. Allowed in Enterprise with any value edition, Essentials(Allowed values- 5.0) edition, Basic(Allowed values- 5.0) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 5.0,
                     "format": "double"
                 },
                 "hs_security_cipherscore_lt128b": {
-                    "description": "Score assigned when the minimum cipher strength is less than 128 bits. Allowed values are 0-5. Allowed in Basic(Allowed values- 3.5) edition, Essentials(Allowed values- 3.5) edition, Enterprise edition.",
+                    "description": "Score assigned when the minimum cipher strength is less than 128 bits. Allowed values are 0-5. Allowed in Enterprise with any value edition, Essentials(Allowed values- 3.5) edition, Basic(Allowed values- 3.5) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 3.5,
                     "format": "double"
                 },
                 "hs_security_encalgo_score_none": {
-                    "description": "Score assigned when no algorithm is used for encryption. Allowed values are 0-5. Allowed in Basic(Allowed values- 0.0) edition, Essentials(Allowed values- 0.0) edition, Enterprise edition.",
+                    "description": "Score assigned when no algorithm is used for encryption. Allowed values are 0-5. Allowed in Enterprise with any value edition, Essentials(Allowed values- 0.0) edition, Basic(Allowed values- 0.0) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "hs_security_encalgo_score_rc4": {
-                    "description": "Score assigned when RC4 algorithm is used for encryption. Allowed values are 0-5. Allowed in Basic(Allowed values- 2.5) edition, Essentials(Allowed values- 2.5) edition, Enterprise edition.",
+                    "description": "Score assigned when RC4 algorithm is used for encryption. Allowed values are 0-5. Allowed in Enterprise with any value edition, Essentials(Allowed values- 2.5) edition, Basic(Allowed values- 2.5) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 2.5,
                     "format": "double"
                 },
                 "hs_security_hsts_penalty": {
-                    "description": "Penalty for not enabling HSTS. Allowed values are 0-5. Allowed in Basic(Allowed values- 1.0) edition, Essentials(Allowed values- 1.0) edition, Enterprise edition.",
+                    "description": "Penalty for not enabling HSTS. Allowed values are 0-5. Allowed in Enterprise with any value edition, Essentials(Allowed values- 1.0) edition, Basic(Allowed values- 1.0) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 1.0,
                     "format": "double"
                 },
                 "hs_security_nonpfs_penalty": {
-                    "description": "Penalty for allowing non-PFS handshakes. Allowed values are 0-5. Allowed in Basic(Allowed values- 1.0) edition, Essentials(Allowed values- 1.0) edition, Enterprise edition.",
+                    "description": "Penalty for allowing non-PFS handshakes. Allowed values are 0-5. Allowed in Enterprise with any value edition, Essentials(Allowed values- 1.0) edition, Basic(Allowed values- 1.0) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 1.0,
                     "format": "double"
                 },
                 "hs_security_ocsp_revoked_score": {
-                    "description": "Score assigned when OCSP Certificate Status is set to Revoked or Issuer Revoked. Allowed values are 0.0-5.0. Field introduced in 20.1.1. Allowed in Basic(Allowed values- 0.0) edition, Essentials(Allowed values- 0.0) edition, Enterprise edition.",
+                    "description": "Score assigned when OCSP Certificate Status is set to Revoked or Issuer Revoked. Allowed values are 0.0-5.0. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- 0.0) edition, Basic(Allowed values- 0.0) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "hs_security_selfsignedcert_penalty": {
-                    "description": "Deprecated. Allowed values are 0-5. Allowed in Basic(Allowed values- 1.0) edition, Essentials(Allowed values- 1.0) edition, Enterprise edition.",
+                    "description": "Deprecated. Allowed values are 0-5. Allowed in Enterprise with any value edition, Essentials(Allowed values- 1.0) edition, Basic(Allowed values- 1.0) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 1.0,
                     "format": "double"
                 },
                 "hs_security_ssl30_score": {
-                    "description": "Score assigned when supporting SSL3.0 encryption protocol. Allowed values are 0-5. Allowed in Basic(Allowed values- 3.5) edition, Essentials(Allowed values- 3.5) edition, Enterprise edition.",
+                    "description": "Score assigned when supporting SSL3.0 encryption protocol. Allowed values are 0-5. Allowed in Enterprise with any value edition, Essentials(Allowed values- 3.5) edition, Basic(Allowed values- 3.5) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 3.5,
                     "format": "double"
                 },
                 "hs_security_tls10_score": {
-                    "description": "Score assigned when supporting TLS1.0 encryption protocol. Allowed values are 0-5. Allowed in Basic(Allowed values- 5.0) edition, Essentials(Allowed values- 5.0) edition, Enterprise edition.",
+                    "description": "Score assigned when supporting TLS1.0 encryption protocol. Allowed values are 0-5. Allowed in Enterprise with any value edition, Essentials(Allowed values- 5.0) edition, Basic(Allowed values- 5.0) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 5.0,
                     "format": "double"
                 },
                 "hs_security_tls11_score": {
-                    "description": "Score assigned when supporting TLS1.1 encryption protocol. Allowed values are 0-5. Allowed in Basic(Allowed values- 5.0) edition, Essentials(Allowed values- 5.0) edition, Enterprise edition.",
+                    "description": "Score assigned when supporting TLS1.1 encryption protocol. Allowed values are 0-5. Allowed in Enterprise with any value edition, Essentials(Allowed values- 5.0) edition, Basic(Allowed values- 5.0) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 5.0,
                     "format": "double"
                 },
                 "hs_security_tls12_score": {
-                    "description": "Score assigned when supporting TLS1.2 encryption protocol. Allowed values are 0-5. Allowed in Basic(Allowed values- 5.0) edition, Essentials(Allowed values- 5.0) edition, Enterprise edition.",
+                    "description": "Score assigned when supporting TLS1.2 encryption protocol. Allowed values are 0-5. Allowed in Enterprise with any value edition, Essentials(Allowed values- 5.0) edition, Basic(Allowed values- 5.0) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 5.0,
                     "format": "double"
                 },
                 "hs_security_tls13_score": {
-                    "description": "Score assigned when supporting TLS1.3 encryption protocol. Allowed values are 0-5. Field introduced in 18.2.6. Allowed in Basic(Allowed values- 5.0) edition, Essentials(Allowed values- 5.0) edition, Enterprise edition.",
+                    "description": "Score assigned when supporting TLS1.3 encryption protocol. Allowed values are 0-5. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials(Allowed values- 5.0) edition, Basic(Allowed values- 5.0) edition, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "type": "number",
                     "default": 5.0,
                     "format": "double"
                 },
                 "hs_security_weak_signature_algo_penalty": {
-                    "description": "Penalty for allowing weak signature algorithm(s). Allowed values are 0-5. Allowed in Basic(Allowed values- 1.0) edition, Essentials(Allowed values- 1.0) edition, Enterprise edition.",
+                    "description": "Penalty for allowing weak signature algorithm(s). Allowed values are 0-5. Allowed in Enterprise with any value edition, Essentials(Allowed values- 1.0) edition, Basic(Allowed values- 1.0) edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 1.0,
                     "format": "double"
                 },
                 "labels": {
-                    "description": "Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed.",
+                    "description": "Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/KeyValue"
                     }
                 },
                 "latency_audit_props": {
-                    "description": "Influence the audit of ingress latency and connection establishement time. Field introduced in 21.1.1.",
+                    "description": "Influence the audit of ingress latency and connection establishement time. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/LatencyAuditProperties"
                 },
                 "markers": {
-                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/RoleFilterMatchLabel"
                     }
                 },
                 "name": {
-                    "description": "The name of the analytics profile.",
+                    "description": "The name of the analytics profile. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ondemand_metrics_idle_timeout": {
-                    "description": "This flag sets the time duration of no live data traffic after which Virtual Service metrics processing is suspended. It is applicable only when enable_ondemand_metrics is set to false. Field introduced in 18.1.1. Unit is SECONDS.",
+                    "description": "This flag sets the time duration of no live data traffic after which Virtual Service metrics processing is suspended. It is applicable only when enable_ondemand_metrics is set to false. Field introduced in 18.1.1. Unit is SECONDS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1800,
                     "format": "int32"
                 },
                 "ranges": {
-                    "description": "List of HTTP status code ranges to be excluded from being classified as an error.",
+                    "description": "List of HTTP status code ranges to be excluded from being classified as an error. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/HTTPStatusRange"
                     }
                 },
                 "resp_code_block": {
-                    "description": "Block of HTTP response codes to be excluded from being classified as an error. Enum options - AP_HTTP_RSP_4XX, AP_HTTP_RSP_5XX.",
+                    "description": "Block of HTTP response codes to be excluded from being classified as an error. Enum options - AP_HTTP_RSP_4XX, AP_HTTP_RSP_5XX. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "sensitive_log_profile": {
-                    "description": "Rules applied to the HTTP application log for filtering sensitive information. Field introduced in 17.2.10, 18.1.2. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "description": "Rules applied to the HTTP application log for filtering sensitive information. Field introduced in 17.2.10, 18.1.2. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SensitiveLogProfile"
                 },
                 "sip_log_depth": {
-                    "description": "Maximum number of SIP messages added in logs for a SIP transaction. By default, this value is 20. Allowed values are 1-1000. Field introduced in 17.2.13, 18.1.5, 18.2.1. Allowed in Basic(Allowed values- 20) edition, Essentials(Allowed values- 20) edition, Enterprise edition.",
+                    "description": "Maximum number of SIP messages added in logs for a SIP transaction. By default, this value is 20. Allowed values are 1-1000. Field introduced in 17.2.13, 18.1.5, 18.2.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- 20) edition, Basic(Allowed values- 20) edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 20,
                     "format": "int32"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant.",
+                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -1066,7 +1066,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID of the analytics profile.",
+                    "description": "UUID of the analytics profile. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1097,22 +1097,22 @@
             "type": "object",
             "properties": {
                 "enable_significant_log_collection": {
-                    "description": "Enable significant log collection. By default, this flag is enabled, which means that Avi SEs collect significant logs and forward them to Controller for further processing. For example, these logs correspond to error conditions such as when the response code for a request is 500. Users can deactivate this flag to turn off default significant log collection. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is True.",
+                    "description": "Enable significant log collection. By default, this flag is enabled, which means that Avi SEs collect significant logs and forward them to Controller for further processing. For example, these logs correspond to error conditions such as when the response code for a request is 500. Users can deactivate this flag to turn off default significant log collection. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is True.",
                     "type": "boolean",
                     "default": true
                 },
                 "filtered_log_processing": {
-                    "description": "Filtered logs are logs that match any client log filters or rules with logging enabled. Such logs are processed by the Logs Analytics system according to this setting. Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX, LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND. Field introduced in 17.1.1.",
+                    "description": "Filtered logs are logs that match any client log filters or rules with logging enabled. Such logs are processed by the Logs Analytics system according to this setting. Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX, LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND"
                 },
                 "non_significant_log_processing": {
-                    "description": "Logs that are neither significant nor filtered, are processed by the Logs Analytics system according to this setting. Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX, LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND. Field introduced in 17.1.1.",
+                    "description": "Logs that are neither significant nor filtered, are processed by the Logs Analytics system according to this setting. Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX, LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND"
                 },
                 "significant_log_processing": {
-                    "description": "Significant logs are processed by the Logs Analytics system according to this setting. Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX, LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND. Field introduced in 17.1.1.",
+                    "description": "Significant logs are processed by the Logs Analytics system according to this setting. Enum options - LOGS_PROCESSING_NONE, LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND, LOGS_PROCESSING_AUTO_SYNC_AND_INDEX, LOGS_PROCESSING_AUTO_SYNC_BUT_INDEX_ON_DEMAND. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "LOGS_PROCESSING_SYNC_AND_INDEX_ON_DEMAND"
                 }
@@ -1125,37 +1125,37 @@
             ],
             "properties": {
                 "external_server": {
-                    "description": "IP address or hostnames (FQDNs) of destination servers. If an FQDN is provided, this should be resolvable on Avi Service Engines. Multiple servers are supported by furnishing a comma-separated list of IP addresses or host names, for example, 11.11.11.11,23.12.12.4. Optionally, a separate port can be specified for each external server in the list, for example, 11.11.11.11 234,12.12.12.12 343. Field introduced in 17.1.1.",
+                    "description": "IP address or hostnames (FQDNs) of destination servers. If an FQDN is provided, this should be resolvable on Avi Service Engines. Multiple servers are supported by furnishing a comma-separated list of IP addresses or host names, for example, 11.11.11.11,23.12.12.4. Optionally, a separate port can be specified for each external server in the list, for example, 11.11.11.11 234,12.12.12.12 343. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "external_server_port": {
-                    "description": "The service port to use for the external servers. If multiple external servers have been specified, the single port number specified here will apply to all those servers for which an explicit port number has not been specified in the external server list. Field introduced in 17.1.1.",
+                    "description": "The service port to use for the external servers. If multiple external servers have been specified, the single port number specified here will apply to all those servers for which an explicit port number has not been specified in the external server list. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 514,
                     "format": "int32"
                 },
                 "format_config": {
-                    "description": "Configuration to specify the format of streamed logs. By default, each log is encoded in JSON format. Field introduced in 18.2.5.",
+                    "description": "Configuration to specify the format of streamed logs. By default, each log is encoded in JSON format. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ClientLogStreamingFormat"
                 },
                 "log_types_to_send": {
-                    "description": "Type of logs to stream to the external server. Default is LOGS_ALL, i.e., send all logs. Enum options - LOGS_SIGNIFICANT_ONLY, LOGS_UDF_ONLY, LOGS_UDF_SIGNIFICANT, LOGS_ALL. Field introduced in 17.1.1.",
+                    "description": "Type of logs to stream to the external server. Default is LOGS_ALL, i.e., send all logs. Enum options - LOGS_SIGNIFICANT_ONLY, LOGS_UDF_ONLY, LOGS_UDF_SIGNIFICANT, LOGS_ALL. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "LOGS_ALL"
                 },
                 "max_logs_per_second": {
-                    "description": "Maximum number of logs per second streamed to the remote server. By default, 100 logs per second are streamed. Set this to zero(0) to not enforce any limit. Field introduced in 17.1.1.",
+                    "description": "Maximum number of logs per second streamed to the remote server. By default, 100 logs per second are streamed. Set this to zero(0) to not enforce any limit. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
                     "format": "int32"
                 },
                 "protocol": {
-                    "description": "Protocol to use for streaming logs. Enum options - LOG_STREAMING_PROTOCOL_UDP, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_UDP, LOG_STREAMING_PROTOCOL_TCP, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_TCP, LOG_STREAMING_PROTOCOL_RAW_OVER_UDP, LOG_STREAMING_PROTOCOL_TLS, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_TLS. Field introduced in 18.1.1.",
+                    "description": "Protocol to use for streaming logs. Enum options - LOG_STREAMING_PROTOCOL_UDP, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_UDP, LOG_STREAMING_PROTOCOL_TCP, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_TCP, LOG_STREAMING_PROTOCOL_RAW_OVER_UDP, LOG_STREAMING_PROTOCOL_TLS, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_TLS. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "LOG_STREAMING_PROTOCOL_UDP"
                 },
                 "syslog_config": {
-                    "description": "Syslog configuration if a Syslog-based protocol is specified for streaming. Field introduced in 18.1.1.",
+                    "description": "Syslog configuration if a Syslog-based protocol is specified for streaming. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/StreamingSyslogConfig"
                 }
             }
@@ -1167,11 +1167,11 @@
             ],
             "properties": {
                 "format": {
-                    "description": "Format for the streamed logs. Enum options - LOG_STREAMING_FORMAT_JSON_FULL, LOG_STREAMING_FORMAT_JSON_SELECTED. Field introduced in 18.2.5.",
+                    "description": "Format for the streamed logs. Enum options - LOG_STREAMING_FORMAT_JSON_FULL, LOG_STREAMING_FORMAT_JSON_SELECTED. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "included_fields": {
-                    "description": "List of log fields to be streamed, when selective fields (LOG_STREAMING_FORMAT_JSON_SELECTED) option is chosen. Only top-level fields in application or connection logs are supported. Field introduced in 18.2.5.",
+                    "description": "List of log fields to be streamed, when selective fields (LOG_STREAMING_FORMAT_JSON_SELECTED) option is chosen. Only top-level fields in application or connection logs are supported. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1183,7 +1183,7 @@
             "type": "object",
             "properties": {
                 "version": {
-                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.",
+                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "int32"
@@ -1198,12 +1198,12 @@
             ],
             "properties": {
                 "begin": {
-                    "description": "Starting HTTP response status code.",
+                    "description": "Starting HTTP response status code. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "end": {
-                    "description": "Ending HTTP response status code.",
+                    "description": "Ending HTTP response status code. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -1216,11 +1216,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Key.",
+                    "description": "Key. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "value": {
-                    "description": "Value.",
+                    "description": "Value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1229,20 +1229,20 @@
             "type": "object",
             "properties": {
                 "conn_est_audit_mode": {
-                    "description": "Audit TCP connection establishment time. Enum options - LATENCY_AUDIT_OFF, LATENCY_AUDIT_ON, LATENCY_AUDIT_ON_WITH_SIG. Field introduced in 21.1.1.",
+                    "description": "Audit TCP connection establishment time. Enum options - LATENCY_AUDIT_OFF, LATENCY_AUDIT_ON, LATENCY_AUDIT_ON_WITH_SIG. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "conn_est_threshold": {
-                    "description": "Maximum threshold for connection establishment time. Field introduced in 21.1.1. Unit is MILLISECONDS.",
+                    "description": "Maximum threshold for connection establishment time. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "latency_audit_mode": {
-                    "description": "Audit dispatcher to proxy latency. Enum options - LATENCY_AUDIT_OFF, LATENCY_AUDIT_ON, LATENCY_AUDIT_ON_WITH_SIG. Field introduced in 21.1.1.",
+                    "description": "Audit dispatcher to proxy latency. Enum options - LATENCY_AUDIT_OFF, LATENCY_AUDIT_ON, LATENCY_AUDIT_ON_WITH_SIG. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "latency_threshold": {
-                    "description": "Maximum latency threshold between dispatcher and proxy. Field introduced in 21.1.1. Unit is MILLISECONDS.",
+                    "description": "Maximum latency threshold between dispatcher and proxy. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -1255,11 +1255,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Key for filter match. Field introduced in 20.1.3.",
+                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "values": {
-                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3.",
+                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1271,25 +1271,25 @@
             "type": "object",
             "properties": {
                 "action": {
-                    "description": "Action for the matched log field, for instance the matched field can be removed or masked off. Enum options - LOG_FIELD_REMOVE, LOG_FIELD_MASKOFF. Field introduced in 17.2.10, 18.1.2.",
+                    "description": "Action for the matched log field, for instance the matched field can be removed or masked off. Enum options - LOG_FIELD_REMOVE, LOG_FIELD_MASKOFF. Field introduced in 17.2.10, 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "LOG_FIELD_REMOVE"
                 },
                 "enabled": {
-                    "description": "Enable rule to match the sensitive fields. Field introduced in 17.2.10, 18.1.2.",
+                    "description": "Enable rule to match the sensitive fields. Field introduced in 17.2.10, 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "index": {
-                    "description": "Index of the rule. Field introduced in 17.2.10, 18.1.2.",
+                    "description": "Index of the rule. Field introduced in 17.2.10, 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "match": {
-                    "description": "Criterion to use for matching in the Log. Field introduced in 17.2.10, 18.1.2. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "description": "Criterion to use for matching in the Log. Field introduced in 17.2.10, 18.1.2. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/StringMatch"
                 },
                 "name": {
-                    "description": "Name of the rule. Field introduced in 17.2.10, 18.1.2.",
+                    "description": "Name of the rule. Field introduced in 17.2.10, 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1298,21 +1298,21 @@
             "type": "object",
             "properties": {
                 "header_field_rules": {
-                    "description": "Match sensitive header fields in HTTP application log. Field introduced in 17.2.10, 18.1.2.",
+                    "description": "Match sensitive header fields in HTTP application log. Field introduced in 17.2.10, 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/SensitiveFieldRule"
                     }
                 },
                 "uri_query_field_rules": {
-                    "description": "Match sensitive URI query params in HTTP application log. Query params from the URI are extracted and checked for matching sensitive parameter names. A successful match will mask the parameter values in accordance with this rule action. Field introduced in 20.1.7, 21.1.2.",
+                    "description": "Match sensitive URI query params in HTTP application log. Query params from the URI are extracted and checked for matching sensitive parameter names. A successful match will mask the parameter values in accordance with this rule action. Field introduced in 20.1.7, 21.1.2. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/SensitiveFieldRule"
                     }
                 },
                 "waf_field_rules": {
-                    "description": "Match sensitive WAF log fields in HTTP application log. Field introduced in 17.2.13, 18.1.3.",
+                    "description": "Match sensitive WAF log fields in HTTP application log. Field introduced in 17.2.13, 18.1.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/SensitiveFieldRule"
@@ -1324,30 +1324,30 @@
             "type": "object",
             "properties": {
                 "facility": {
-                    "description": "Facility value, as defined in RFC5424, must be between 0 and 23 inclusive. Allowed values are 0-23. Field introduced in 18.1.1.",
+                    "description": "Facility value, as defined in RFC5424, must be between 0 and 23 inclusive. Allowed values are 0-23. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 16,
                     "format": "int32"
                 },
                 "filtered_log_severity": {
-                    "description": "Severity code, as defined in RFC5424, for filtered logs. This must be between 0 and 7 inclusive. Allowed values are 0-7. Field introduced in 18.1.1.",
+                    "description": "Severity code, as defined in RFC5424, for filtered logs. This must be between 0 and 7 inclusive. Allowed values are 0-7. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
                     "format": "int32"
                 },
                 "hostname": {
-                    "description": "String to use as the hostname in the syslog messages. This string can contain only printable ASCII characters (hex 21 to hex 7E; no space allowed). Field introduced in 18.1.1.",
+                    "description": "String to use as the hostname in the syslog messages. This string can contain only printable ASCII characters (hex 21 to hex 7E; no space allowed). Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "AviVantage"
                 },
                 "non_significant_log_severity": {
-                    "description": "Severity code, as defined in RFC5424, for non-significant logs. This must be between 0 and 7 inclusive. Allowed values are 0-7. Field introduced in 18.1.1.",
+                    "description": "Severity code, as defined in RFC5424, for non-significant logs. This must be between 0 and 7 inclusive. Allowed values are 0-7. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 6,
                     "format": "int32"
                 },
                 "significant_log_severity": {
-                    "description": "Severity code, as defined in RFC5424, for significant logs. This must be between 0 and 7 inclusive. Allowed values are 0-7. Field introduced in 18.1.1.",
+                    "description": "Severity code, as defined in RFC5424, for significant logs. This must be between 0 and 7 inclusive. Allowed values are 0-7. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 4,
                     "format": "int32"
@@ -1361,18 +1361,18 @@
             ],
             "properties": {
                 "match_criteria": {
-                    "description": "Criterion to use for string matching the HTTP request. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Allowed in Basic(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Essentials(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Enterprise edition.",
+                    "description": "Criterion to use for string matching the HTTP request. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Allowed in Enterprise with any value edition, Essentials(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Basic(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "match_str": {
-                    "description": "String value(s).",
+                    "description": "String value(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "string_group_refs": {
-                    "description": "UUID of the string group(s). It is a reference to an object of type StringGroup.",
+                    "description": "UUID of the string group(s). It is a reference to an object of type StringGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"

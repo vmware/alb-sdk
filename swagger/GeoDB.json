@@ -577,33 +577,33 @@
                     "type": "string"
                 },
                 "description": {
-                    "description": "Description. Field introduced in 21.1.1.",
+                    "description": "Description. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "files": {
-                    "description": "Geo Database files. Field introduced in 21.1.1.",
+                    "description": "Geo Database files. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/GeoDBFile"
                     }
                 },
                 "is_federated": {
-                    "description": "This field indicates that this object is replicated across GSLB federation. Field introduced in 21.1.1.",
+                    "description": "This field indicates that this object is replicated across GSLB federation. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "mappings": {
-                    "description": "Custom mappings of geo values. All mappings which start with the prefix 'System-' (any case) are reserved for system default objects and may be overwritten. Field introduced in 21.1.1.",
+                    "description": "Custom mappings of geo values. All mappings which start with the prefix 'System-' (any case) are reserved for system default objects and may be overwritten. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/GeoDBMapping"
                     }
                 },
                 "name": {
-                    "description": "Geo Database name. Field introduced in 21.1.1.",
+                    "description": "Geo Database name. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 21.1.1.",
+                    "description": "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -612,7 +612,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID of this object. Field introduced in 21.1.1.",
+                    "description": "UUID of this object. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -649,25 +649,25 @@
             ],
             "properties": {
                 "enabled": {
-                    "description": "If set to false, this file is ignored. Field introduced in 21.1.1.",
+                    "description": "If set to false, this file is ignored. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "file_ref": {
-                    "description": "The file object that contains the geo data. Must be of type 'GeoDB'. It is a reference to an object of type FileObject. Field introduced in 21.1.1.",
+                    "description": "The file object that contains the geo data. Must be of type 'GeoDB'. It is a reference to an object of type FileObject. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "index": {
-                    "description": "Priority of the file - larger number takes precedence. Field introduced in 21.1.1.",
+                    "description": "Priority of the file - larger number takes precedence. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "name": {
-                    "description": "Name of the file. Field introduced in 21.1.1.",
+                    "description": "Name of the file. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vendor": {
-                    "description": "Source of the file data. Enum options - VENDOR_USER_DEFINED, VENDOR_AVI_DEFINED. Field introduced in 21.1.1.",
+                    "description": "Source of the file data. Enum options - VENDOR_USER_DEFINED, VENDOR_AVI_DEFINED. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -680,18 +680,18 @@
             ],
             "properties": {
                 "description": {
-                    "description": "Description of the mapping. Field introduced in 21.1.1.",
+                    "description": "Description of the mapping. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "elements": {
-                    "description": "The set of mapping elements. Field introduced in 21.1.1.",
+                    "description": "The set of mapping elements. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/GeoDBMappingElement"
                     }
                 },
                 "name": {
-                    "description": "The unique name of the user mapping. Field introduced in 21.1.1.",
+                    "description": "The unique name of the user mapping. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -704,11 +704,11 @@
             ],
             "properties": {
                 "attribute": {
-                    "description": "The attribute to map. Enum options - ATTRIBUTE_IP_PREFIX, ATTRIBUTE_COUNTRY_CODE, ATTRIBUTE_COUNTRY_NAME, ATTRIBUTE_CONTINENT_CODE, ATTRIBUTE_CONTINENT_NAME, ATTRIBUTE_REGION_NAME, ATTRIBUTE_CITY_NAME, ATTRIBUTE_ISP_NAME, ATTRIBUTE_ORGANIZATION_NAME, ATTRIBUTE_AS_NUMBER, ATTRIBUTE_AS_NAME, ATTRIBUTE_LONGITUDE, ATTRIBUTE_LATITUDE, ATTRIBUTE_CUSTOM_1, ATTRIBUTE_CUSTOM_2, ATTRIBUTE_CUSTOM_3, ATTRIBUTE_CUSTOM_4, ATTRIBUTE_CUSTOM_5, ATTRIBUTE_CUSTOM_6, ATTRIBUTE_CUSTOM_7, ATTRIBUTE_CUSTOM_8, ATTRIBUTE_CUSTOM_9, ATTRIBUTE_USER_DEFINED_MAPPING. Field introduced in 21.1.1.",
+                    "description": "The attribute to map. Enum options - ATTRIBUTE_IP_PREFIX, ATTRIBUTE_COUNTRY_CODE, ATTRIBUTE_COUNTRY_NAME, ATTRIBUTE_CONTINENT_CODE, ATTRIBUTE_CONTINENT_NAME, ATTRIBUTE_REGION_NAME, ATTRIBUTE_CITY_NAME, ATTRIBUTE_ISP_NAME, ATTRIBUTE_ORGANIZATION_NAME, ATTRIBUTE_AS_NUMBER, ATTRIBUTE_AS_NAME, ATTRIBUTE_LONGITUDE, ATTRIBUTE_LATITUDE, ATTRIBUTE_CUSTOM_1, ATTRIBUTE_CUSTOM_2, ATTRIBUTE_CUSTOM_3, ATTRIBUTE_CUSTOM_4, ATTRIBUTE_CUSTOM_5, ATTRIBUTE_CUSTOM_6, ATTRIBUTE_CUSTOM_7, ATTRIBUTE_CUSTOM_8, ATTRIBUTE_CUSTOM_9, ATTRIBUTE_USER_DEFINED_MAPPING. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "values": {
-                    "description": "The values to map. Field introduced in 21.1.1.",
+                    "description": "The values to map. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
