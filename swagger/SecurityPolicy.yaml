@@ -351,14 +351,14 @@ definitions:
         type: object
         properties:
             deny:
-                description: "Deny the attack packets further processing and drop them. Field introduced in 18.2.1."
+                description: "Deny the attack packets further processing and drop them. Field introduced in 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
     ConfigPbAttributes:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
+                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
@@ -368,34 +368,34 @@ definitions:
             -   attack_vector
         properties:
             attack_vector:
-                description: "The DNS attack vector. Enum options - DNS_REFLECTION, DNS_NXDOMAIN, DNS_AMPLIFICATION_EGRESS. Field introduced in 18.2.1."
+                description: "The DNS attack vector. Enum options - DNS_REFLECTION, DNS_NXDOMAIN, DNS_AMPLIFICATION_EGRESS. Field introduced in 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             enabled:
-                description: "Enable or disable the mitigation of the attack vector. Field introduced in 18.2.1."
+                description: "Enable or disable the mitigation of the attack vector. Field introduced in 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             max_mitigation_age:
-                description: "Time in minutes after which mitigation will be deactivated. Allowed values are 1-4294967295. Special values are 0- blocked for ever. Field introduced in 18.2.1. Unit is MIN."
+                description: "Time in minutes after which mitigation will be deactivated. Allowed values are 1-4294967295. Special values are 0- blocked for ever. Field introduced in 18.2.1. Unit is MIN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
             mitigation_action:
-                description: "Mitigation action to perform for this DNS attack vector. Field introduced in 18.2.1."
+                description: "Mitigation action to perform for this DNS attack vector. Field introduced in 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AttackMitigationAction'
             threshold:
-                description: "Threshold, in terms of DNS packet per second, for the DNS attack vector. Field introduced in 18.2.3."
+                description: "Threshold, in terms of DNS packet per second, for the DNS attack vector. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int64
     DnsAttacks:
         type: object
         properties:
             attacks:
-                description: "Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks. Field introduced in 18.2.1."
+                description: "Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks. Field introduced in 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/DnsAttack'
             oper_mode:
-                description: "Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks. Enum options - DETECTION, MITIGATION. Field introduced in 18.2.1."
+                description: "Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks. Enum options - DETECTION, MITIGATION. Field introduced in 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     KeyValue:
         type: object
@@ -403,10 +403,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key."
+                description: "Key. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "Value."
+                description: "Value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     PortMatchGeneric:
         type: object
@@ -414,16 +414,16 @@ definitions:
             -   match_criteria
         properties:
             match_criteria:
-                description: "Criterion to use for src/dest port in a TCP/UDP packet. Enum options - IS_IN, IS_NOT_IN. Field introduced in 20.1.3."
+                description: "Criterion to use for src/dest port in a TCP/UDP packet. Enum options - IS_IN, IS_NOT_IN. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             ports:
-                description: "Listening TCP port(s). Allowed values are 1-65535. Field introduced in 20.1.3."
+                description: "Listening TCP port(s). Allowed values are 1-65535. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: integer
                 format: int32
             ranges:
-                description: "A port range defined by a start and end, including both. Field introduced in 20.1.3."
+                description: "A port range defined by a start and end, including both. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/PortRange'
@@ -434,11 +434,11 @@ definitions:
             -   start
         properties:
             end:
-                description: "TCP/UDP port range end (inclusive). Allowed values are 1-65535."
+                description: "TCP/UDP port range end (inclusive). Allowed values are 1-65535. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             start:
-                description: "TCP/UDP port range start (inclusive). Allowed values are 1-65535."
+                description: "TCP/UDP port range start (inclusive). Allowed values are 1-65535. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     RoleFilterMatchLabel:
@@ -447,10 +447,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key for filter match. Field introduced in 20.1.3."
+                description: "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             values:
-                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3."
+                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -466,57 +466,57 @@ definitions:
                 readOnly: True
                 type: string
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             description:
-                description: "Security policy is used to specify various configuration information used to perform Distributed Denial of Service (DDoS) attacks detection and mitigation. Field introduced in 18.2.1."
+                description: "Security policy is used to specify various configuration information used to perform Distributed Denial of Service (DDoS) attacks detection and mitigation. Field introduced in 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             dns_amplification_denyports:
-                description: "Source ports and port ranges to deny in DNS Amplification attacks. Field introduced in 21.1.1."
+                description: "Source ports and port ranges to deny in DNS Amplification attacks. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PortMatchGeneric'
             dns_attacks:
-                description: "Attacks utilizing the DNS protocol operations. Field introduced in 18.2.1."
+                description: "Attacks utilizing the DNS protocol operations. Field introduced in 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DnsAttacks'
             dns_policy_index:
-                description: "Index of the dns policy to use for the mitigation rules applied to the dns attacks. Field introduced in 18.2.1."
+                description: "Index of the dns policy to use for the mitigation rules applied to the dns attacks. Field introduced in 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             labels:
-                description: "Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed."
+                description: "Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/KeyValue'
             markers:
-                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/RoleFilterMatchLabel'
             name:
-                description: "The name of the security policy. Field introduced in 18.2.1."
+                description: "The name of the security policy. Field introduced in 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             network_security_policy_index:
-                description: "Index of the network security policy to use for the mitigation rules applied to the attacks. Field introduced in 18.2.1."
+                description: "Index of the network security policy to use for the mitigation rules applied to the attacks. Field introduced in 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             oper_mode:
-                description: "Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks. Enum options - DETECTION, MITIGATION. Field introduced in 18.2.1."
+                description: "Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks. Enum options - DETECTION, MITIGATION. Field introduced in 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "DETECTION"
             tcp_attacks:
-                description: "Attacks utilizing the TCP protocol operations. Field introduced in 18.2.1."
+                description: "Attacks utilizing the TCP protocol operations. Field introduced in 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/TcpAttacks'
             tenant_ref:
-                description: "Tenancy of the security policy. It is a reference to an object of type Tenant. Field introduced in 18.2.1."
+                description: "Tenancy of the security policy. It is a reference to an object of type Tenant. Field introduced in 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             udp_attacks:
-                description: "Attacks utilizing the UDP protocol operations. Field introduced in 18.2.1."
+                description: "Attacks utilizing the UDP protocol operations. Field introduced in 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/UdpAttacks'
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "The UUID of the security policy. Field introduced in 18.2.1."
+                description: "The UUID of the security policy. Field introduced in 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     SecurityPolicyApiResponse:
         type: object

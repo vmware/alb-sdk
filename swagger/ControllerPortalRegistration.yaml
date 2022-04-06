@@ -349,19 +349,19 @@ definitions:
         type: object
         properties:
             asset_id:
-                description: "Asset ID corresponding to this Controller Cluster, returned on a successful registration. Field introduced in 18.2.6."
+                description: "Asset ID corresponding to this Controller Cluster, returned on a successful registration. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     ControllerPortalAuth:
         type: object
         properties:
             access_token:
-                description: "Access Token to authenticate Customer Portal REST calls. Field introduced in 18.2.6."
+                description: "Access Token to authenticate Customer Portal REST calls. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             instance_url:
-                description: "Salesforce instance URL. Field introduced in 18.2.6."
+                description: "Salesforce instance URL. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             jwt_token:
-                description: "Signed JWT to refresh the access token. Field introduced in 18.2.6."
+                description: "Signed JWT to refresh the access token. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     ControllerPortalRegistration:
         type: object
@@ -373,23 +373,23 @@ definitions:
                 readOnly: True
                 type: string
             asset:
-                description: " Field introduced in 18.2.6."
+                description: " Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ControllerPortalAsset'
             name:
-                description: " Field introduced in 18.2.6."
+                description: " Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             portal_auth:
-                description: " Field introduced in 18.2.6."
+                description: " Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ControllerPortalAuth'
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Field introduced in 18.2.6."
+                description: " It is a reference to an object of type Tenant. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Field introduced in 18.2.6."
+                description: " Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     ControllerPortalRegistrationApiResponse:
         type: object

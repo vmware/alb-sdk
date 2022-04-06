@@ -523,74 +523,74 @@
                     "type": "string"
                 },
                 "cloud_ref": {
-                    "description": "Nsxt segment belongs to cloud. It is a reference to an object of type Cloud. Field introduced in 20.1.1.",
+                    "description": "Nsxt segment belongs to cloud. It is a reference to an object of type Cloud. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "dhcp6_ranges": {
-                    "description": "V6 DHCP ranges configured in Nsxt. Field introduced in 20.1.1.",
+                    "description": "V6 DHCP ranges configured in Nsxt. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "dhcp_enabled": {
-                    "description": "IP address management scheme for this Segment associated network. Field introduced in 20.1.1.",
+                    "description": "IP address management scheme for this Segment associated network. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "dhcp_ranges": {
-                    "description": "DHCP ranges configured in Nsxt. Field introduced in 20.1.1.",
+                    "description": "DHCP ranges configured in Nsxt. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "name": {
-                    "description": "Segment object name. Field introduced in 20.1.1.",
+                    "description": "Segment object name. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "nw_name": {
-                    "description": "Network Name. Field introduced in 20.1.1.",
+                    "description": "Network Name. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "nw_ref": {
-                    "description": "Corresponding network object in Avi. It is a reference to an object of type Network. Field introduced in 20.1.1.",
+                    "description": "Corresponding network object in Avi. It is a reference to an object of type Network. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "opaque_network_id": {
-                    "description": "Opaque network Id. Field introduced in 20.1.1.",
+                    "description": "Opaque network Id. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "segment_gw": {
-                    "description": "Segment Gateway. Field introduced in 20.1.1.",
+                    "description": "Segment Gateway. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "segment_gw6": {
-                    "description": "V6 segment Gateway. Field introduced in 20.1.1.",
+                    "description": "V6 segment Gateway. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "segment_id": {
-                    "description": "Segment Id. Field introduced in 20.1.1.",
+                    "description": "Segment Id. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "segname": {
-                    "description": "Segment name. Field introduced in 20.1.1.",
+                    "description": "Segment name. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "subnet": {
-                    "description": "Segment Cidr. Field introduced in 20.1.1.",
+                    "description": "Segment Cidr. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "subnet6": {
-                    "description": "V6 Segment Cidr. Field introduced in 20.1.1.",
+                    "description": "V6 Segment Cidr. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": "Nsxt segment belongs to tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.1.",
+                    "description": "Nsxt segment belongs to tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tier1_id": {
-                    "description": "Tier1 router Id. Field introduced in 20.1.1.",
+                    "description": "Tier1 router Id. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -599,18 +599,18 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "Uuid. Field introduced in 20.1.1.",
+                    "description": "Uuid. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vlan_ids": {
-                    "description": "Segment Vlan ids. Field introduced in 20.1.5.",
+                    "description": "Segment Vlan ids. Field introduced in 20.1.5. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "vrf_context_ref": {
-                    "description": "Corresponding vrf context object in Avi. It is a reference to an object of type VrfContext. Field introduced in 20.1.1.",
+                    "description": "Corresponding vrf context object in Avi. It is a reference to an object of type VrfContext. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

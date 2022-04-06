@@ -514,19 +514,19 @@
                     "type": "string"
                 },
                 "description": {
-                    "description": "Human-readable description of this consolidator. Field introduced in 21.1.1.",
+                    "description": "Human-readable description of this consolidator. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "name": {
-                    "description": "The name of this consolidator. Field introduced in 21.1.1.",
+                    "description": "The name of this consolidator. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "script": {
-                    "description": "Script that consolidates results from all Bot decision components. Field introduced in 21.1.1.",
+                    "description": "Script that consolidates results from all Bot decision components. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": "The unique identifier of the tenant to which this consolidator belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1.",
+                    "description": "The unique identifier of the tenant to which this consolidator belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -535,7 +535,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "A unique identifier for this consolidator. Field introduced in 21.1.1.",
+                    "description": "A unique identifier for this consolidator. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

@@ -351,7 +351,7 @@ definitions:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
+                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
@@ -361,24 +361,24 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key."
+                description: "Key. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "Value."
+                description: "Value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     PGDeploymentRule:
         type: object
         properties:
             metric_id:
-                description: "metric_id of PGDeploymentRule."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "health.health_score_value"
             operator:
-                description: " Enum options - CO_EQ, CO_GT, CO_GE, CO_LT, CO_LE, CO_NE."
+                description: " Enum options - CO_EQ, CO_GT, CO_GE, CO_LT, CO_LE, CO_NE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "CO_GE"
             threshold:
-                description: "metric threshold that is used as the pass fail. If it is not provided then it will simply compare it with current pool vs new pool."
+                description: "metric threshold that is used as the pass fail. If it is not provided then it will simply compare it with current pool vs new pool. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     PoolGroupDeploymentPolicy:
@@ -391,52 +391,52 @@ definitions:
                 readOnly: True
                 type: string
             auto_disable_old_prod_pools:
-                description: "It will automatically disable old production pools once there is a new production candidate."
+                description: "It will automatically disable old production pools once there is a new production candidate. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             description:
-                description: "User defined description for the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             evaluation_duration:
-                description: "Duration of evaluation period for automatic deployment. Allowed values are 60-86400. Unit is SEC."
+                description: "Duration of evaluation period for automatic deployment. Allowed values are 60-86400. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 300
                 format: int32
             labels:
-                description: "Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed."
+                description: "Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/KeyValue'
             markers:
-                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/RoleFilterMatchLabel'
             name:
-                description: "The name of the pool group deployment policy."
+                description: "The name of the pool group deployment policy. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             rules:
-                description: "Placeholder for description of property rules of obj type PoolGroupDeploymentPolicy field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/PGDeploymentRule'
             scheme:
-                description: "deployment scheme. Enum options - BLUE_GREEN, CANARY."
+                description: "deployment scheme. Enum options - BLUE_GREEN, CANARY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "BLUE_GREEN"
             target_test_traffic_ratio:
-                description: "Target traffic ratio before pool is made production. Allowed values are 1-100. Unit is RATIO."
+                description: "Target traffic ratio before pool is made production. Allowed values are 1-100. Unit is RATIO. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
                 format: int32
             tenant_ref:
-                description: " It is a reference to an object of type Tenant."
+                description: " It is a reference to an object of type Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             test_traffic_ratio_rampup:
-                description: "Ratio of the traffic that is sent to the pool under test. test ratio of 100 means blue green. Allowed values are 1-100."
+                description: "Ratio of the traffic that is sent to the pool under test. test ratio of 100 means blue green. Allowed values are 1-100. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
                 format: int32
@@ -445,10 +445,10 @@ definitions:
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the pool group deployment policy."
+                description: "UUID of the pool group deployment policy. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             webhook_ref:
-                description: "Webhook configured with URL that Avi controller will pass back information about pool group, old and new pool information and current deployment rule results. It is a reference to an object of type Webhook. Field introduced in 17.1.1."
+                description: "Webhook configured with URL that Avi controller will pass back information about pool group, old and new pool information and current deployment rule results. It is a reference to an object of type Webhook. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     PoolGroupDeploymentPolicyApiResponse:
         type: object
@@ -471,10 +471,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key for filter match. Field introduced in 20.1.3."
+                description: "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             values:
-                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3."
+                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string

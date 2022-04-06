@@ -514,33 +514,33 @@
                     "type": "string"
                 },
                 "controller_ip": {
-                    "description": "controller_ip of LogControllerMapping.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "metrics_mgr_port": {
-                    "description": " Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.",
+                    "description": " Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "METRICS_MGR_PORT_0"
                 },
                 "node_uuid": {
-                    "description": "Unique object identifier of node.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "prev_controller_ip": {
-                    "description": "prev_controller_ip of LogControllerMapping.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "prev_metrics_mgr_port": {
-                    "description": " Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3.",
+                    "description": " Enum options - METRICS_MGR_PORT_0, METRICS_MGR_PORT_1, METRICS_MGR_PORT_2, METRICS_MGR_PORT_3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "METRICS_MGR_PORT_0"
                 },
                 "static_mapping": {
-                    "description": "Placeholder for description of property static_mapping of obj type LogControllerMapping field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant.",
+                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -549,11 +549,11 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "Unique object identifier of the object.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vs_uuid": {
-                    "description": "Unique object identifier of vs.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

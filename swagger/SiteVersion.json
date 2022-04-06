@@ -514,41 +514,41 @@
                     "type": "string"
                 },
                 "datetime": {
-                    "description": "This field represents the creation time of the federateddiff. Field introduced in 20.1.1.",
+                    "description": "This field represents the creation time of the federateddiff. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "name": {
-                    "description": "Name of the Site. Field introduced in 20.1.1.",
+                    "description": "Name of the Site. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "prev_target_version": {
-                    "description": "Previous targer version for a site. Field introduced in 20.1.1.",
+                    "description": "Previous targer version for a site. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "replication_state": {
-                    "description": "Replication state for a site. Enum options - REPLICATION_STATE_FASTFORWARD, REPLICATION_STATE_FORCESYNC, REPLICATION_STATE_STREAMING, REPLICATION_STATE_SUSPENDED, REPLICATION_STATE_INIT, REPLICATION_STATE_WAIT, REPLICATION_STATE_NOT_APPLICABLE. Field introduced in 20.1.1.",
+                    "description": "Replication state for a site. Enum options - REPLICATION_STATE_FASTFORWARD, REPLICATION_STATE_FORCESYNC, REPLICATION_STATE_STREAMING, REPLICATION_STATE_SUSPENDED, REPLICATION_STATE_INIT, REPLICATION_STATE_WAIT, REPLICATION_STATE_NOT_APPLICABLE. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "site_id": {
-                    "description": "Cluster UUID of the site. Field introduced in 20.1.1.",
+                    "description": "Cluster UUID of the site. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "target_timeline": {
-                    "description": "Target timeline of the site. Field introduced in 20.1.1.",
+                    "description": "Target timeline of the site. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "target_version": {
-                    "description": "Target version of the site. Field introduced in 20.1.1.",
+                    "description": "Target version of the site. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "tenant_ref": {
-                    "description": "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 20.1.1.",
+                    "description": "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "timeline": {
-                    "description": "Timeline of the site. Field introduced in 20.1.1.",
+                    "description": "Timeline of the site. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -557,16 +557,16 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID of the SiteVersion object. Field introduced in 20.1.1.",
+                    "description": "UUID of the SiteVersion object. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "version": {
-                    "description": "Version of the site. Field introduced in 20.1.1.",
+                    "description": "Version of the site. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "version_type": {
-                    "description": "Type of message for which version is maintained. Enum options - CONFIG_VERSION, HEALTH_STATUS_VERSION. Field introduced in 20.1.1.",
+                    "description": "Type of message for which version is maintained. Enum options - CONFIG_VERSION, HEALTH_STATUS_VERSION. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

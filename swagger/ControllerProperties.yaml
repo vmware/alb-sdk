@@ -191,7 +191,7 @@ definitions:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
+                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
@@ -203,334 +203,344 @@ definitions:
                 readOnly: True
                 type: string
             allow_admin_network_updates:
-                description: "Allow non-admin tenants to update admin VrfContext and Network objects. Field introduced in 18.2.7, 20.1.1."
+                description: "Allow non-admin tenants to update admin VrfContext and Network objects. Field introduced in 18.2.7, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             allow_ip_forwarding:
-                description: " Field introduced in 17.1.1."
+                description: " Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             allow_unauthenticated_apis:
-                description: "Allow unauthenticated access for special APIs."
+                description: "Allow unauthenticated access for special APIs. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             allow_unauthenticated_nodes:
-                description: "Placeholder for description of property allow_unauthenticated_nodes of obj type ControllerProperties field type str  type boolean"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             api_idle_timeout:
-                description: " Allowed values are 0-1440. Unit is MIN."
+                description: " Allowed values are 0-1440. Unit is MIN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 15
                 format: int32
             api_perf_logging_threshold:
-                description: "Threshold to log request timing in portal_performance.log and Server-Timing response header. Any stage taking longer than 1% of the threshold will be included in the Server-Timing header. Field introduced in 18.1.4, 18.2.1. Unit is MILLISECONDS."
+                description: "Threshold to log request timing in portal_performance.log and Server-Timing response header. Any stage taking longer than 1% of the threshold will be included in the Server-Timing header. Field introduced in 18.1.4, 18.2.1. Unit is MILLISECONDS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10000
                 format: int32
             appviewx_compat_mode:
-                description: "Export configuration in appviewx compatibility mode. Field introduced in 17.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
+                description: "Export configuration in appviewx compatibility mode. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition."
                 type: boolean
             async_patch_merge_period:
-                description: "Period for which asynchronous patch requests are queued. Allowed values are 30-120. Special values are 0 - Deactivated. Field introduced in 18.2.11, 20.1.3. Unit is SEC."
+                description: "Period for which asynchronous patch requests are queued. Allowed values are 30-120. Special values are 0 - Deactivated. Field introduced in 18.2.11, 20.1.3. Unit is SEC. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             async_patch_request_cleanup_duration:
-                description: "Duration for which asynchronous patch requests should be kept, after being marked as SUCCESS or FAIL. Allowed values are 5-120. Field introduced in 18.2.11, 20.1.3. Unit is MIN."
+                description: "Duration for which asynchronous patch requests should be kept, after being marked as SUCCESS or FAIL. Allowed values are 5-120. Field introduced in 18.2.11, 20.1.3. Unit is MIN. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
             attach_ip_retry_interval:
-                description: " Unit is SEC."
+                description: " Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 360
                 format: int32
             attach_ip_retry_limit:
-                description: "Number of attach_ip_retry_limit."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 4
                 format: int32
             bm_use_ansible:
-                description: "Use Ansible for SE creation in baremetal. Field introduced in 17.2.2."
+                description: "Use Ansible for SE creation in baremetal. Field introduced in 17.2.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             check_vsvip_fqdn_syntax:
-                description: "Enforce VsVip FQDN syntax checks. Field introduced in 20.1.6. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "Enforce VsVip FQDN syntax checks. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             cleanup_expired_authtoken_timeout_period:
-                description: "Period for auth token cleanup job. Field introduced in 18.1.1. Unit is MIN."
+                description: "Period for auth token cleanup job. Field introduced in 18.1.1. Unit is MIN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
             cleanup_sessions_timeout_period:
-                description: "Period for sessions cleanup job. Field introduced in 18.1.1. Unit is MIN."
+                description: "Period for sessions cleanup job. Field introduced in 18.1.1. Unit is MIN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
             cloud_reconcile:
-                description: "Enable/Disable periodic reconcile for all the clouds. Field introduced in 17.2.14,18.1.5,18.2.1."
+                description: "Enable/Disable periodic reconcile for all the clouds. Field introduced in 17.2.14,18.1.5,18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             cluster_ip_gratuitous_arp_period:
-                description: "Period for cluster ip gratuitous arp job. Unit is MIN."
+                description: "Period for cluster ip gratuitous arp job. Unit is MIN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             consistency_check_timeout_period:
-                description: "Period for consistency check job. Field introduced in 18.1.1. Unit is MIN."
+                description: "Period for consistency check job. Field introduced in 18.1.1. Unit is MIN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
             controller_resource_info_collection_period:
-                description: "Periodically collect stats. Field introduced in 20.1.3. Unit is MIN."
+                description: "Periodically collect stats. Field introduced in 20.1.3. Unit is MIN. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 30
                 format: int32
             crashed_se_reboot:
-                description: " Unit is SEC."
+                description: " Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 900
                 format: int32
             dead_se_detection_timer:
-                description: " Unit is SEC."
+                description: " Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 360
                 format: int32
             default_minimum_api_timeout:
-                description: "Minimum api timeout value.If this value is not 60, it will be the default timeout for all APIs that do not have a specific timeout.If an API has a specific timeout but is less than this value, this value will become the new timeout. Allowed values are 60-3600. Field introduced in 18.2.6. Unit is SEC."
+                description: "Minimum api timeout value.If this value is not 60, it will be the default timeout for all APIs that do not have a specific timeout.If an API has a specific timeout but is less than this value, this value will become the new timeout. Allowed values are 60-3600. Field introduced in 18.2.6. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
             del_offline_se_after_reboot_delay:
-                description: "The amount of time the controller will wait before deleting an offline SE after it has been rebooted. For unresponsive SEs, the total time will be  unresponsive_se_reboot + del_offline_se_after_reboot_delay. For crashed SEs, the total time will be crashed_se_reboot + del_offline_se_after_reboot_delay. Field introduced in 20.1.5. Unit is SEC."
+                description: "The amount of time the controller will wait before deleting an offline SE after it has been rebooted. For unresponsive SEs, the total time will be  unresponsive_se_reboot + del_offline_se_after_reboot_delay. For crashed SEs, the total time will be crashed_se_reboot + del_offline_se_after_reboot_delay. Field introduced in 20.1.5. Unit is SEC. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 300
                 format: int32
             detach_ip_retry_interval:
-                description: "Amount of time to wait after last Detach IP failure before attempting next Detach IP retry. Field introduced in 21.1.3. Unit is SEC."
+                description: "Amount of time to wait after last Detach IP failure before attempting next Detach IP retry. Field introduced in 21.1.3. Unit is SEC. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
             detach_ip_retry_limit:
-                description: "Maximum number of Detach IP retries. Field introduced in 21.1.3."
+                description: "Maximum number of Detach IP retries. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 4
                 format: int32
             detach_ip_timeout:
-                description: "Time to wait before marking Detach IP as failed. Field introduced in 21.1.3. Unit is SEC."
+                description: "Time to wait before marking Detach IP as failed. Field introduced in 21.1.3. Unit is SEC. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 300
                 format: int32
             dns_refresh_period:
-                description: "Period for refresh pool and gslb DNS job. Unit is MIN. Allowed in Basic(Allowed values- 60) edition, Essentials(Allowed values- 60) edition, Enterprise edition."
+                description: "Period for refresh pool and gslb DNS job. Unit is MIN. Allowed in Enterprise with any value edition, Essentials(Allowed values- 60) edition, Basic(Allowed values- 60) edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
             dummy:
-                description: "Number of dummy."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             edit_system_limits:
-                description: "Allow editing of system limits. Keep in mind that these system limits have been carefully selected based on rigorous testing in our testig environments. Modifying these limits could destabilize your cluster. Do this at your own risk!. Field introduced in 20.1.1."
+                description: "Allow editing of system limits. Keep in mind that these system limits have been carefully selected based on rigorous testing in our testig environments. Modifying these limits could destabilize your cluster. Do this at your own risk!. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             enable_api_sharding:
-                description: "This setting enables the controller leader to shard API requests to the followers (if any). Field introduced in 18.1.5, 18.2.1."
+                description: "This setting enables the controller leader to shard API requests to the followers (if any). Field introduced in 18.1.5, 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             enable_memory_balancer:
-                description: "Enable/Disable Memory Balancer. Field introduced in 17.2.8."
+                description: "Enable/Disable Memory Balancer. Field introduced in 17.2.8. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             enable_per_process_stop:
-                description: "Enable stopping of individual processes if process cross the given threshold limit, even when the total controller memory usage is belowits threshold limit. Field introduced in 21.1.1."
+                description: "Enable stopping of individual processes if process cross the given threshold limit, even when the total controller memory usage is belowits threshold limit. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
             enable_resmgr_log_cache_print:
-                description: "Enable printing of cached logs inside Resource Manager. Used for debugging purposes only. Field introduced in 20.1.6."
+                description: "Enable printing of cached logs inside Resource Manager. Used for debugging purposes only. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
             fatal_error_lease_time:
-                description: " Unit is SEC."
+                description: " Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 120
                 format: int32
             federated_datastore_cleanup_duration:
-                description: "Federated datastore will not cleanup diffs unless they are at least this duration in the past. Field introduced in 20.1.1. Unit is HOURS."
+                description: "Federated datastore will not cleanup diffs unless they are at least this duration in the past. Field introduced in 20.1.1. Unit is HOURS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 120
                 format: int64
             file_object_cleanup_period:
-                description: "Period for file object cleanup job. Field introduced in 20.1.1. Unit is MIN."
+                description: "Period for file object cleanup job. Field introduced in 20.1.1. Unit is MIN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1440
                 format: int32
             max_dead_se_in_grp:
-                description: "Number of max_dead_se_in_grp."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
             max_pcap_per_tenant:
-                description: "Maximum number of pcap files stored per tenant."
+                description: "Maximum number of pcap files stored per tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 4
                 format: int32
             max_se_spawn_interval_delay:
-                description: "Maximum delay possible to add to se_spawn_retry_interval after successive SE spawn failure. Field introduced in 20.1.1. Unit is SEC."
+                description: "Maximum delay possible to add to se_spawn_retry_interval after successive SE spawn failure. Field introduced in 20.1.1. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1800
                 format: int32
             max_seq_attach_ip_failures:
-                description: "Maximum number of consecutive attach IP failures that halts VS placement. Field introduced in 17.2.2."
+                description: "Maximum number of consecutive attach IP failures that halts VS placement. Field introduced in 17.2.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 3
                 format: int32
             max_seq_vnic_failures:
-                description: "Number of max_seq_vnic_failures."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 3
                 format: int32
             max_threads_cc_vip_bg_worker:
-                description: "Maximum number of threads in threadpool used by cloud connector CCVIPBGWorker. Allowed values are 1-100. Field introduced in 20.1.3."
+                description: "Maximum number of threads in threadpool used by cloud connector CCVIPBGWorker. Allowed values are 1-100. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 20
                 format: int32
             permission_scoped_shared_admin_networks:
-                description: "Network and VrfContext objects from the admin tenant will not be shared to non-admin tenants unless admin permissions are granted. Field introduced in 18.2.7, 20.1.1."
+                description: "Network and VrfContext objects from the admin tenant will not be shared to non-admin tenants unless admin permissions are granted. Field introduced in 18.2.7, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             persistence_key_rotate_period:
-                description: "Period for rotate app persistence keys job. Allowed values are 1-1051200. Special values are 0 - Disabled. Unit is MIN. Allowed in Basic(Allowed values- 0) edition, Essentials(Allowed values- 0) edition, Enterprise edition."
+                description: "Period for rotate app persistence keys job. Allowed values are 1-1051200. Special values are 0 - Disabled. Unit is MIN. Allowed in Enterprise with any value edition, Essentials(Allowed values- 0) edition, Basic(Allowed values- 0) edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             portal_request_burst_limit:
-                description: "Burst limit on number of incoming requests. 0 to disable. Field introduced in 20.1.1."
+                description: "Burst limit on number of incoming requests. 0 to disable. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             portal_request_rate_limit:
-                description: "Maximum average number of requests allowed per second. 0 to disable. Field introduced in 20.1.1. Unit is PER_SECOND."
+                description: "Maximum average number of requests allowed per second. 0 to disable. Field introduced in 20.1.1. Unit is PER_SECOND. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             portal_token:
-                description: "Token used for uploading tech-support to portal. Field introduced in 16.4.6,17.1.2."
+                description: "Token used for uploading tech-support to portal. Field introduced in 16.4.6,17.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             process_locked_useraccounts_timeout_period:
-                description: "Period for process locked user accounts job. Field introduced in 18.1.1. Unit is MIN."
+                description: "Period for process locked user accounts job. Field introduced in 18.1.1. Unit is MIN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
             process_pki_profile_timeout_period:
-                description: "Period for process PKI profile job. Field introduced in 18.1.1. Unit is MIN."
+                description: "Period for process PKI profile job. Field introduced in 18.1.1. Unit is MIN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1440
                 format: int32
             query_host_fail:
-                description: " Unit is SEC."
+                description: " Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 180
                 format: int32
             resmgr_log_caching_period:
-                description: "Period for each cycle of log caching in Resource Manager. At the end of each cycle, the in memory cached log history will be cleared. Field introduced in 20.1.5. Unit is SEC."
+                description: "Period for each cycle of log caching in Resource Manager. At the end of each cycle, the in memory cached log history will be cleared. Field introduced in 20.1.5. Unit is SEC. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 21600
                 format: int32
             restrict_cloud_read_access:
-                description: "Restrict read access to cloud. Field introduced in 22.1.1."
+                description: "Restrict read access to cloud. Field introduced in 22.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
             safenet_hsm_version:
-                description: "Version of the safenet package installed on the controller. Field introduced in 16.5.2,17.2.3."
+                description: "Version of the safenet package installed on the controller. Field introduced in 16.5.2,17.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             se_create_timeout:
-                description: " Unit is SEC."
+                description: " Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 900
                 format: int32
             se_failover_attempt_interval:
-                description: "Interval between attempting failovers to an SE. Unit is SEC."
+                description: "Interval between attempting failovers to an SE. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 300
                 format: int32
             se_from_marketplace:
-                description: "This setting decides whether SE is to be deployed from the cloud marketplace or to be created by the controller. The setting is applicable only when BYOL license is selected. Enum options - MARKETPLACE, IMAGE_SE. Field introduced in 18.1.4, 18.2.1."
+                description: "This setting decides whether SE is to be deployed from the cloud marketplace or to be created by the controller. The setting is applicable only when BYOL license is selected. Enum options - MARKETPLACE, IMAGE_SE. Field introduced in 18.1.4, 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "IMAGE_SE"
             se_offline_del:
-                description: " Unit is SEC."
+                description: " Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 172000
                 format: int32
             se_spawn_retry_interval:
-                description: "Default retry period before attempting another Service Engine spawn in SE Group. Field introduced in 20.1.1. Unit is SEC."
+                description: "Default retry period before attempting another Service Engine spawn in SE Group. Field introduced in 20.1.1. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 300
                 format: int32
             se_vnic_cooldown:
-                description: " Unit is SEC."
+                description: " Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 120
                 format: int32
             se_vnic_gc_wait_time:
-                description: "Duration to wait after last vNIC addition before proceeding with vNIC garbage collection. Used for testing purposes. Field introduced in 20.1.4. Unit is SEC."
+                description: "Duration to wait after last vNIC addition before proceeding with vNIC garbage collection. Used for testing purposes. Field introduced in 20.1.4. Unit is SEC. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 300
                 format: int32
             secure_channel_cleanup_timeout:
-                description: "Period for secure channel cleanup job. Unit is MIN."
+                description: "Period for secure channel cleanup job. Unit is MIN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
             secure_channel_controller_token_timeout:
-                description: " Unit is MIN."
+                description: " Unit is MIN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
             secure_channel_se_token_timeout:
-                description: " Unit is MIN."
+                description: " Unit is MIN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
             seupgrade_copy_pool_size:
-                description: "This parameter defines the number of simultaneous SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. A value of 0 will disable the pacing scheme and all the SE(s) in the SeGroup will attempt to download the image. . Field introduced in 18.2.6."
+                description: "This parameter defines the number of simultaneous SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. A value of 0 will disable the pacing scheme and all the SE(s) in the SeGroup will attempt to download the image. . Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 5
                 format: int32
             seupgrade_fabric_pool_size:
-                description: "Pool size used for all fabric commands during se upgrade."
+                description: "Pool size used for all fabric commands during se upgrade. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 20
                 format: int32
             seupgrade_segroup_min_dead_timeout:
-                description: "Time to wait before marking segroup upgrade as stuck. Unit is SEC."
+                description: "Time to wait before marking segroup upgrade as stuck. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 360
                 format: int32
             shared_ssl_certificates:
-                description: "SSL Certificates in the admin tenant can be used in non-admin tenants. Field introduced in 18.2.5."
+                description: "SSL Certificates in the admin tenant can be used in non-admin tenants. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             ssl_certificate_expiry_warning_days:
-                description: "Number of days for SSL Certificate expiry warning. Unit is DAYS."
+                description: "Number of days for SSL Certificate expiry warning. Unit is DAYS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: integer
                 format: int32
             unresponsive_se_reboot:
-                description: " Unit is SEC."
+                description: " Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 300
                 format: int32
+            update_dns_entry_retry_limit:
+                description: "Number of times to retry a DNS entry update/delete operation. Field introduced in 21.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
+                type: integer
+                default: 3
+                format: int32
+            update_dns_entry_timeout:
+                description: "Timeout period for a DNS entry update/delete operation. Field introduced in 21.1.4. Unit is SEC. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
+                type: integer
+                default: 120
+                format: int32
             upgrade_dns_ttl:
-                description: "Time to account for DNS TTL during upgrade. This is in addition to vs_scalein_timeout_for_upgrade in se_group. Field introduced in 17.1.1. Unit is SEC. Allowed in Basic(Allowed values- 5) edition, Essentials(Allowed values- 5) edition, Enterprise edition."
+                description: "Time to account for DNS TTL during upgrade. This is in addition to vs_scalein_timeout_for_upgrade in se_group. Field introduced in 17.1.1. Unit is SEC. Allowed in Enterprise with any value edition, Essentials(Allowed values- 5) edition, Basic(Allowed values- 5) edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 5
                 format: int32
             upgrade_fat_se_lease_time:
-                description: "Amount of time Controller waits for a large-sized SE (>=128GB memory) to reconnect after it is rebooted during upgrade. Field introduced in 18.2.10, 20.1.1. Unit is SEC."
+                description: "Amount of time Controller waits for a large-sized SE (>=128GB memory) to reconnect after it is rebooted during upgrade. Field introduced in 18.2.10, 20.1.1. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1200
                 format: int32
             upgrade_lease_time:
-                description: "Amount of time Controller waits for a regular-sized SE (<128GB memory) to reconnect after it is rebooted during upgrade. Starting 18.2.10/20.1.1, the default time has increased from 360 seconds to 600 seconds. Unit is SEC."
+                description: "Amount of time Controller waits for a regular-sized SE (<128GB memory) to reconnect after it is rebooted during upgrade. Starting 18.2.10/20.1.1, the default time has increased from 360 seconds to 600 seconds. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 600
                 format: int32
             upgrade_se_per_vs_scale_ops_txn_time:
-                description: "This parameter defines the upper-bound value of the VS scale-in or VS scale-out operation executed in the SeScaleIn and SeScale context.  User can tweak this parameter to a higher value if the Segroup gets suspended due to SeScalein or SeScaleOut timeout failure typically associated with high number of VS(es) scaled out. . Field introduced in 18.2.10, 20.1.1. Unit is SEC."
+                description: "This parameter defines the upper-bound value of the VS scale-in or VS scale-out operation executed in the SeScaleIn and SeScale context.  User can tweak this parameter to a higher value if the Segroup gets suspended due to SeScalein or SeScaleOut timeout failure typically associated with high number of VS(es) scaled out. . Field introduced in 18.2.10, 20.1.1. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 3
                 format: int32
@@ -539,87 +549,87 @@ definitions:
                 readOnly: True
                 type: string
             user_agent_cache_config:
-                description: "Configuration for User-Agent Cache used in Bot Management. Field introduced in 21.1.1."
+                description: "Configuration for User-Agent Cache used in Bot Management. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/UserAgentCacheConfig'
             uuid:
-                description: "Unique object identifier of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             vnic_op_fail_time:
-                description: " Unit is SEC."
+                description: " Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 180
                 format: int32
             vs_apic_scaleout_timeout:
-                description: "Time to wait for the scaled out SE to become ready before marking the scaleout done, applies to APIC configuration only. Field deprecated in 21.1.1. Unit is SEC."
+                description: "Time to wait for the scaled out SE to become ready before marking the scaleout done, applies to APIC configuration only. Field deprecated in 21.1.1. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             vs_awaiting_se_timeout:
-                description: " Unit is SEC."
+                description: " Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
             vs_key_rotate_period:
-                description: "Period for rotate VS keys job. Allowed values are 1-1051200. Special values are 0 - Disabled. Unit is MIN."
+                description: "Period for rotate VS keys job. Allowed values are 1-1051200. Special values are 0 - Disabled. Unit is MIN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 360
                 format: int32
             vs_scaleout_ready_check_interval:
-                description: "Interval for checking scaleout_ready status while controller is waiting for ScaleOutReady RPC from the Service Engine. Field introduced in 18.2.2. Unit is SEC."
+                description: "Interval for checking scaleout_ready status while controller is waiting for ScaleOutReady RPC from the Service Engine. Field introduced in 18.2.2. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
             vs_se_attach_ip_fail:
-                description: "Time to wait before marking attach IP operation on an SE as failed. Field introduced in 17.2.2. Unit is SEC."
+                description: "Time to wait before marking attach IP operation on an SE as failed. Field introduced in 17.2.2. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 600
                 format: int32
             vs_se_bootup_fail:
-                description: " Unit is SEC."
+                description: " Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 480
                 format: int32
             vs_se_create_fail:
-                description: " Unit is SEC."
+                description: " Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1500
                 format: int32
             vs_se_ping_fail:
-                description: " Unit is SEC."
+                description: " Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
             vs_se_vnic_fail:
-                description: " Unit is SEC."
+                description: " Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 300
                 format: int32
             vs_se_vnic_ip_fail:
-                description: " Unit is SEC."
+                description: " Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 120
                 format: int32
             vsphere_ha_detection_timeout:
-                description: "vSphere HA monitor detection timeout. If vsphere_ha_enabled is true and the controller is not able to reach the SE, placement will wait for this duration for vsphere_ha_inprogress to be marked true before taking corrective action. Field introduced in 20.1.7, 21.1.3. Unit is SEC."
+                description: "vSphere HA monitor detection timeout. If vsphere_ha_enabled is true and the controller is not able to reach the SE, placement will wait for this duration for vsphere_ha_inprogress to be marked true before taking corrective action. Field introduced in 20.1.7, 21.1.3. Unit is SEC. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 120
                 format: int32
             vsphere_ha_recovery_timeout:
-                description: "vSphere HA monitor recovery timeout. Once vsphere_ha_inprogress is set to true (meaning host failure detected and vSphere HA will recover the Service Engine), placement will wait for at least this duration for the SE to reconnect to the controller before taking corrective action. Field introduced in 20.1.7, 21.1.3. Unit is SEC."
+                description: "vSphere HA monitor recovery timeout. Once vsphere_ha_inprogress is set to true (meaning host failure detected and vSphere HA will recover the Service Engine), placement will wait for at least this duration for the SE to reconnect to the controller before taking corrective action. Field introduced in 20.1.7, 21.1.3. Unit is SEC. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 480
                 format: int32
             vsphere_ha_timer_interval:
-                description: "vSphere HA monitor timer interval for sending cc_check_se_status to Cloud Connector. Field introduced in 20.1.7, 21.1.3. Unit is SEC."
+                description: "vSphere HA monitor timer interval for sending cc_check_se_status to Cloud Connector. Field introduced in 20.1.7, 21.1.3. Unit is SEC. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 20
                 format: int32
             warmstart_se_reconnect_wait_time:
-                description: " Unit is SEC."
+                description: " Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 480
                 format: int32
             warmstart_vs_resync_wait_time:
-                description: "Timeout for warmstart VS resync. Field introduced in 18.1.4, 18.2.1. Unit is SEC."
+                description: "Timeout for warmstart VS resync. Field introduced in 18.1.4, 18.2.1. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 300
                 format: int32
@@ -642,57 +652,57 @@ definitions:
         type: object
         properties:
             batch_size:
-                description: "How many unknown User-Agents to batch up before querying Controller - unless max_wait_time is reached first. Allowed values are 1-500. Field introduced in 21.1.1."
+                description: "How many unknown User-Agents to batch up before querying Controller - unless max_wait_time is reached first. Allowed values are 1-500. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
                 format: int32
             controller_cache_size:
-                description: "The number of User-Agent entries to cache on the Controller. Allowed values are 500-10000000. Field introduced in 21.1.1."
+                description: "The number of User-Agent entries to cache on the Controller. Allowed values are 500-10000000. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 300000
                 format: int32
             max_upstream_queries:
-                description: "How often at most to query controller for a given User-Agent. Allowed values are 2-100. Field introduced in 21.1.1."
+                description: "How often at most to query controller for a given User-Agent. Allowed values are 2-100. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 5
                 format: int32
             max_wait_time:
-                description: "The time interval in seconds after which to make a request to the Controller, even if the 'batch_size' hasn't been reached yet. Allowed values are 20-100000. Field introduced in 21.1.1. Unit is SEC."
+                description: "The time interval in seconds after which to make a request to the Controller, even if the 'batch_size' hasn't been reached yet. Allowed values are 20-100000. Field introduced in 21.1.1. Unit is SEC. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
             num_entries_upstream_update:
-                description: "How many BotUACacheResult elements to include in an upstream update message. Allowed values are 1-10000. Field introduced in 21.1.1."
+                description: "How many BotUACacheResult elements to include in an upstream update message. Allowed values are 1-10000. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
                 format: int32
             percent_reserved_for_bad_bots:
-                description: "How much space to reserve in percent for known bad bots. Field introduced in 21.1.1."
+                description: "How much space to reserve in percent for known bad bots. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 20
                 format: int32
             percent_reserved_for_browsers:
-                description: "How much space to reserve in percent for browsers. Field introduced in 21.1.1."
+                description: "How much space to reserve in percent for browsers. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 50
                 format: int32
             percent_reserved_for_good_bots:
-                description: "How much space to reserve in percent for known good bots. Field introduced in 21.1.1."
+                description: "How much space to reserve in percent for known good bots. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 20
                 format: int32
             percent_reserved_for_outstanding:
-                description: "How much space to reserve in percent for outstanding upstream requests. Field introduced in 21.1.1."
+                description: "How much space to reserve in percent for outstanding upstream requests. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10
                 format: int32
             se_cache_size:
-                description: "The number of User-Agent entries to cache on each Service Engine. Allowed values are 500-10000000. Field introduced in 21.1.1."
+                description: "The number of User-Agent entries to cache on each Service Engine. Allowed values are 500-10000000. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 20000
                 format: int32
             upstream_update_interval:
-                description: "How often in seconds to send updates about User-Agent cache entries to the next upstream cache. Field introduced in 21.1.1. Unit is SEC."
+                description: "How often in seconds to send updates about User-Agent cache entries to the next upstream cache. Field introduced in 21.1.1. Unit is SEC. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 3600
                 format: int32

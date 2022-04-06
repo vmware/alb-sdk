@@ -350,10 +350,10 @@ definitions:
         type: object
         properties:
             key:
-                description: "key of SecureChannelMetadata."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             val:
-                description: "val of SecureChannelMetadata."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     SecureChannelToken:
         type: object
@@ -365,29 +365,29 @@ definitions:
                 readOnly: True
                 type: string
             expiry_time:
-                description: "Expiry time for auth_token."
+                description: "Expiry time for auth_token. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             in_use:
-                description: "Whether this auth_token is used by some node(SE/controller). Field introduced in 21.1.1."
+                description: "Whether this auth_token is used by some node(SE/controller). Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
             metadata:
-                description: "Metadata associated with auth_token."
+                description: "Metadata associated with auth_token. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/SecureChannelMetadata'
             name:
-                description: "Auth_token used for SE/controller authorization."
+                description: "Auth_token used for SE/controller authorization. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             node_uuid:
-                description: "Deprecated  Uuid of SE or controller who is using this auth_token. Field deprecated in 21.1.1."
+                description: "Deprecated  Uuid of SE or controller who is using this auth_token. Field deprecated in 21.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "Auth_token used for SE/controller authorization."
+                description: "Auth_token used for SE/controller authorization. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     SecureChannelTokenApiResponse:
         type: object

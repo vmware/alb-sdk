@@ -58,79 +58,79 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller with reject requests.
                 -   name: detailed_header
                     in: query
-                    description: Return detailed header with information like contributors etc.?.
+                    description: Return detailed header with information like contributors etc.?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: dimension_aggregation
                     in: query
-                    description: Aggregations for dimensions. Eg. use dimenstion_aggregation=avg for averaged metric values. Enum options - METRICS_DIMENSION_AGG_NONE, METRICS_DIMENSION_AGG_AVG, METRICS_DIMENSION_AGG_SUM, METRICS_DIMENSION_AGG_MAX, METRICS_DIMENSION_AGG_MIN, METRICS_DIMENSION_AGG_PERCENT, METRICS_DIMENSION_AGG_ALL.
+                    description: Aggregations for dimensions. Eg. use dimenstion_aggregation=avg for averaged metric values. Enum options - METRICS_DIMENSION_AGG_NONE, METRICS_DIMENSION_AGG_AVG, METRICS_DIMENSION_AGG_SUM, METRICS_DIMENSION_AGG_MAX, METRICS_DIMENSION_AGG_MIN, METRICS_DIMENSION_AGG_PERCENT, METRICS_DIMENSION_AGG_ALL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: entity_uuid
                     in: query
-                    description: UUID of the entity type.
+                    description: UUID of the entity type. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: hs_type
                     in: query
-                    description: Health Score Type. Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE, HEALTH_SECURITY_THREAT_LEVEL.
+                    description: Health Score Type. Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE, HEALTH_SECURITY_THREAT_LEVEL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: include_refs
                     in: query
-                    description: Resolve uuid to references?.
+                    description: Resolve uuid to references?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: include_statistics
                     in: query
-                    description: Include statistics when no filters specified?.
+                    description: Include statistics when no filters specified?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: limit
                     in: query
-                    description: Max number of metric samples to be returned in the response.
+                    description: Max number of metric samples to be returned in the response. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: metric_entity
                     in: query
-                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: order_series_by
                     in: query
-                    description: Order by field in the statistics. It is required tohave include_statistics set to true. A negative sign means decreasing order. Egs. mean, min, max, etc.
+                    description: Order by field in the statistics. It is required tohave include_statistics set to true. A negative sign means decreasing order. Egs. mean, min, max, etc. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: pad_missing_data
                     in: query
-                    description: Pad missing health scores. That is, if data for certain intervals not present, fill up the time series with null values.
+                    description: Pad missing health scores. That is, if data for certain intervals not present, fill up the time series with null values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: patch_oper_status
                     in: query
-                    description: Patch health score with operational data?.
+                    description: Patch health score with operational data?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: pool_uuid
                     in: query
-                    description: Pool name. This will apply to any backend stats that are specified in the query.
+                    description: Pool name. This will apply to any backend stats that are specified in the query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: result_format
                     in: query
-                    description: Format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF.
+                    description: Format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: server
                     in: query
-                    description: Object id like vip or server ip port.
+                    description: Object id like vip or server ip port. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: start
                     in: query
-                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch.
+                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: step
                     in: query
-                    description: Step interval in seconds.
+                    description: Step interval in seconds. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: stop
                     in: query
-                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now.
+                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: summary
                     in: query
-                    description: Return only summary for health score.
+                    description: Return only summary for health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: tenant_uuid
                     in: query
-                    description: UUID of the Tenant. .
+                    description: UUID of the Tenant. . Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
             security:
                 - basicAuth: []
@@ -180,79 +180,79 @@ paths:
                     type: string
                 -   name: detailed_header
                     in: query
-                    description: Return detailed header with information like contributors etc.?.
+                    description: Return detailed header with information like contributors etc.?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: dimension_aggregation
                     in: query
-                    description: Aggregations for dimensions. Eg. use dimenstion_aggregation=avg for averaged metric values. Enum options - METRICS_DIMENSION_AGG_NONE, METRICS_DIMENSION_AGG_AVG, METRICS_DIMENSION_AGG_SUM, METRICS_DIMENSION_AGG_MAX, METRICS_DIMENSION_AGG_MIN, METRICS_DIMENSION_AGG_PERCENT, METRICS_DIMENSION_AGG_ALL.
+                    description: Aggregations for dimensions. Eg. use dimenstion_aggregation=avg for averaged metric values. Enum options - METRICS_DIMENSION_AGG_NONE, METRICS_DIMENSION_AGG_AVG, METRICS_DIMENSION_AGG_SUM, METRICS_DIMENSION_AGG_MAX, METRICS_DIMENSION_AGG_MIN, METRICS_DIMENSION_AGG_PERCENT, METRICS_DIMENSION_AGG_ALL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: entity_uuid
                     in: query
-                    description: UUID of the entity type.
+                    description: UUID of the entity type. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: hs_type
                     in: query
-                    description: Health Score Type. Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE, HEALTH_SECURITY_THREAT_LEVEL.
+                    description: Health Score Type. Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE, HEALTH_SECURITY_THREAT_LEVEL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: include_refs
                     in: query
-                    description: Resolve uuid to references?.
+                    description: Resolve uuid to references?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: include_statistics
                     in: query
-                    description: Include statistics when no filters specified?.
+                    description: Include statistics when no filters specified?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: limit
                     in: query
-                    description: Max number of metric samples to be returned in the response.
+                    description: Max number of metric samples to be returned in the response. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: metric_entity
                     in: query
-                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: order_series_by
                     in: query
-                    description: Order by field in the statistics. It is required tohave include_statistics set to true. A negative sign means decreasing order. Egs. mean, min, max, etc.
+                    description: Order by field in the statistics. It is required tohave include_statistics set to true. A negative sign means decreasing order. Egs. mean, min, max, etc. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: pad_missing_data
                     in: query
-                    description: Pad missing health scores. That is, if data for certain intervals not present, fill up the time series with null values.
+                    description: Pad missing health scores. That is, if data for certain intervals not present, fill up the time series with null values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: patch_oper_status
                     in: query
-                    description: Patch health score with operational data?.
+                    description: Patch health score with operational data?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: pool_uuid
                     in: query
-                    description: Pool name. This will apply to any backend stats that are specified in the query.
+                    description: Pool name. This will apply to any backend stats that are specified in the query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: result_format
                     in: query
-                    description: Format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF.
+                    description: Format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: server
                     in: query
-                    description: Object id like vip or server ip port.
+                    description: Object id like vip or server ip port. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: start
                     in: query
-                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch.
+                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: step
                     in: query
-                    description: Step interval in seconds.
+                    description: Step interval in seconds. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: stop
                     in: query
-                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now.
+                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: summary
                     in: query
-                    description: Return only summary for health score.
+                    description: Return only summary for health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: tenant_uuid
                     in: query
-                    description: UUID of the Tenant. .
+                    description: UUID of the Tenant. . Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
             security:
                 - basicAuth: []
@@ -302,79 +302,79 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller with reject requests.
                 -   name: detailed_header
                     in: query
-                    description: Return detailed header with information like contributors etc.?.
+                    description: Return detailed header with information like contributors etc.?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: dimension_aggregation
                     in: query
-                    description: Aggregations for dimensions. Eg. use dimenstion_aggregation=avg for averaged metric values. Enum options - METRICS_DIMENSION_AGG_NONE, METRICS_DIMENSION_AGG_AVG, METRICS_DIMENSION_AGG_SUM, METRICS_DIMENSION_AGG_MAX, METRICS_DIMENSION_AGG_MIN, METRICS_DIMENSION_AGG_PERCENT, METRICS_DIMENSION_AGG_ALL.
+                    description: Aggregations for dimensions. Eg. use dimenstion_aggregation=avg for averaged metric values. Enum options - METRICS_DIMENSION_AGG_NONE, METRICS_DIMENSION_AGG_AVG, METRICS_DIMENSION_AGG_SUM, METRICS_DIMENSION_AGG_MAX, METRICS_DIMENSION_AGG_MIN, METRICS_DIMENSION_AGG_PERCENT, METRICS_DIMENSION_AGG_ALL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: entity_uuid
                     in: query
-                    description: UUID of the entity type.
+                    description: UUID of the entity type. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: hs_type
                     in: query
-                    description: Health Score Type. Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE, HEALTH_SECURITY_THREAT_LEVEL.
+                    description: Health Score Type. Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE, HEALTH_SECURITY_THREAT_LEVEL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: include_refs
                     in: query
-                    description: Resolve uuid to references?.
+                    description: Resolve uuid to references?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: include_statistics
                     in: query
-                    description: Include statistics when no filters specified?.
+                    description: Include statistics when no filters specified?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: limit
                     in: query
-                    description: Max number of metric samples to be returned in the response.
+                    description: Max number of metric samples to be returned in the response. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: metric_entity
                     in: query
-                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: order_series_by
                     in: query
-                    description: Order by field in the statistics. It is required tohave include_statistics set to true. A negative sign means decreasing order. Egs. mean, min, max, etc.
+                    description: Order by field in the statistics. It is required tohave include_statistics set to true. A negative sign means decreasing order. Egs. mean, min, max, etc. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: pad_missing_data
                     in: query
-                    description: Pad missing health scores. That is, if data for certain intervals not present, fill up the time series with null values.
+                    description: Pad missing health scores. That is, if data for certain intervals not present, fill up the time series with null values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: patch_oper_status
                     in: query
-                    description: Patch health score with operational data?.
+                    description: Patch health score with operational data?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: pool_uuid
                     in: query
-                    description: Pool name. This will apply to any backend stats that are specified in the query.
+                    description: Pool name. This will apply to any backend stats that are specified in the query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: result_format
                     in: query
-                    description: Format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF.
+                    description: Format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: server
                     in: query
-                    description: Object id like vip or server ip port.
+                    description: Object id like vip or server ip port. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: start
                     in: query
-                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch.
+                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: step
                     in: query
-                    description: Step interval in seconds.
+                    description: Step interval in seconds. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: stop
                     in: query
-                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now.
+                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: summary
                     in: query
-                    description: Return only summary for health score.
+                    description: Return only summary for health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: tenant_uuid
                     in: query
-                    description: UUID of the Tenant. .
+                    description: UUID of the Tenant. . Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
             security:
                 - basicAuth: []
@@ -424,79 +424,79 @@ paths:
                     type: string
                 -   name: detailed_header
                     in: query
-                    description: Return detailed header with information like contributors etc.?.
+                    description: Return detailed header with information like contributors etc.?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: dimension_aggregation
                     in: query
-                    description: Aggregations for dimensions. Eg. use dimenstion_aggregation=avg for averaged metric values. Enum options - METRICS_DIMENSION_AGG_NONE, METRICS_DIMENSION_AGG_AVG, METRICS_DIMENSION_AGG_SUM, METRICS_DIMENSION_AGG_MAX, METRICS_DIMENSION_AGG_MIN, METRICS_DIMENSION_AGG_PERCENT, METRICS_DIMENSION_AGG_ALL.
+                    description: Aggregations for dimensions. Eg. use dimenstion_aggregation=avg for averaged metric values. Enum options - METRICS_DIMENSION_AGG_NONE, METRICS_DIMENSION_AGG_AVG, METRICS_DIMENSION_AGG_SUM, METRICS_DIMENSION_AGG_MAX, METRICS_DIMENSION_AGG_MIN, METRICS_DIMENSION_AGG_PERCENT, METRICS_DIMENSION_AGG_ALL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: entity_uuid
                     in: query
-                    description: UUID of the entity type.
+                    description: UUID of the entity type. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: hs_type
                     in: query
-                    description: Health Score Type. Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE, HEALTH_SECURITY_THREAT_LEVEL.
+                    description: Health Score Type. Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE, HEALTH_SECURITY_THREAT_LEVEL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: include_refs
                     in: query
-                    description: Resolve uuid to references?.
+                    description: Resolve uuid to references?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: include_statistics
                     in: query
-                    description: Include statistics when no filters specified?.
+                    description: Include statistics when no filters specified?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: limit
                     in: query
-                    description: Max number of metric samples to be returned in the response.
+                    description: Max number of metric samples to be returned in the response. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: metric_entity
                     in: query
-                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: order_series_by
                     in: query
-                    description: Order by field in the statistics. It is required tohave include_statistics set to true. A negative sign means decreasing order. Egs. mean, min, max, etc.
+                    description: Order by field in the statistics. It is required tohave include_statistics set to true. A negative sign means decreasing order. Egs. mean, min, max, etc. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: pad_missing_data
                     in: query
-                    description: Pad missing health scores. That is, if data for certain intervals not present, fill up the time series with null values.
+                    description: Pad missing health scores. That is, if data for certain intervals not present, fill up the time series with null values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: patch_oper_status
                     in: query
-                    description: Patch health score with operational data?.
+                    description: Patch health score with operational data?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: pool_uuid
                     in: query
-                    description: Pool name. This will apply to any backend stats that are specified in the query.
+                    description: Pool name. This will apply to any backend stats that are specified in the query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: result_format
                     in: query
-                    description: Format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF.
+                    description: Format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: server
                     in: query
-                    description: Object id like vip or server ip port.
+                    description: Object id like vip or server ip port. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: start
                     in: query
-                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch.
+                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: step
                     in: query
-                    description: Step interval in seconds.
+                    description: Step interval in seconds. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: stop
                     in: query
-                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now.
+                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: summary
                     in: query
-                    description: Return only summary for health score.
+                    description: Return only summary for health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: tenant_uuid
                     in: query
-                    description: UUID of the Tenant. .
+                    description: UUID of the Tenant. . Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
             security:
                 - basicAuth: []
@@ -546,79 +546,79 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller with reject requests.
                 -   name: detailed_header
                     in: query
-                    description: Return detailed header with information like contributors etc.?.
+                    description: Return detailed header with information like contributors etc.?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: dimension_aggregation
                     in: query
-                    description: Aggregations for dimensions. Eg. use dimenstion_aggregation=avg for averaged metric values. Enum options - METRICS_DIMENSION_AGG_NONE, METRICS_DIMENSION_AGG_AVG, METRICS_DIMENSION_AGG_SUM, METRICS_DIMENSION_AGG_MAX, METRICS_DIMENSION_AGG_MIN, METRICS_DIMENSION_AGG_PERCENT, METRICS_DIMENSION_AGG_ALL.
+                    description: Aggregations for dimensions. Eg. use dimenstion_aggregation=avg for averaged metric values. Enum options - METRICS_DIMENSION_AGG_NONE, METRICS_DIMENSION_AGG_AVG, METRICS_DIMENSION_AGG_SUM, METRICS_DIMENSION_AGG_MAX, METRICS_DIMENSION_AGG_MIN, METRICS_DIMENSION_AGG_PERCENT, METRICS_DIMENSION_AGG_ALL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: entity_uuid
                     in: query
-                    description: UUID of the entity type.
+                    description: UUID of the entity type. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: hs_type
                     in: query
-                    description: Health Score Type. Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE, HEALTH_SECURITY_THREAT_LEVEL.
+                    description: Health Score Type. Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE, HEALTH_SECURITY_THREAT_LEVEL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: include_refs
                     in: query
-                    description: Resolve uuid to references?.
+                    description: Resolve uuid to references?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: include_statistics
                     in: query
-                    description: Include statistics when no filters specified?.
+                    description: Include statistics when no filters specified?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: limit
                     in: query
-                    description: Max number of metric samples to be returned in the response.
+                    description: Max number of metric samples to be returned in the response. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: metric_entity
                     in: query
-                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: order_series_by
                     in: query
-                    description: Order by field in the statistics. It is required tohave include_statistics set to true. A negative sign means decreasing order. Egs. mean, min, max, etc.
+                    description: Order by field in the statistics. It is required tohave include_statistics set to true. A negative sign means decreasing order. Egs. mean, min, max, etc. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: pad_missing_data
                     in: query
-                    description: Pad missing health scores. That is, if data for certain intervals not present, fill up the time series with null values.
+                    description: Pad missing health scores. That is, if data for certain intervals not present, fill up the time series with null values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: patch_oper_status
                     in: query
-                    description: Patch health score with operational data?.
+                    description: Patch health score with operational data?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: pool_uuid
                     in: query
-                    description: Pool name. This will apply to any backend stats that are specified in the query.
+                    description: Pool name. This will apply to any backend stats that are specified in the query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: result_format
                     in: query
-                    description: Format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF.
+                    description: Format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: server
                     in: query
-                    description: Object id like vip or server ip port.
+                    description: Object id like vip or server ip port. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: start
                     in: query
-                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch.
+                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: step
                     in: query
-                    description: Step interval in seconds.
+                    description: Step interval in seconds. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: stop
                     in: query
-                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now.
+                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: summary
                     in: query
-                    description: Return only summary for health score.
+                    description: Return only summary for health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: tenant_uuid
                     in: query
-                    description: UUID of the Tenant. .
+                    description: UUID of the Tenant. . Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
             security:
                 - basicAuth: []
@@ -668,79 +668,79 @@ paths:
                     type: string
                 -   name: detailed_header
                     in: query
-                    description: Return detailed header with information like contributors etc.?.
+                    description: Return detailed header with information like contributors etc.?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: dimension_aggregation
                     in: query
-                    description: Aggregations for dimensions. Eg. use dimenstion_aggregation=avg for averaged metric values. Enum options - METRICS_DIMENSION_AGG_NONE, METRICS_DIMENSION_AGG_AVG, METRICS_DIMENSION_AGG_SUM, METRICS_DIMENSION_AGG_MAX, METRICS_DIMENSION_AGG_MIN, METRICS_DIMENSION_AGG_PERCENT, METRICS_DIMENSION_AGG_ALL.
+                    description: Aggregations for dimensions. Eg. use dimenstion_aggregation=avg for averaged metric values. Enum options - METRICS_DIMENSION_AGG_NONE, METRICS_DIMENSION_AGG_AVG, METRICS_DIMENSION_AGG_SUM, METRICS_DIMENSION_AGG_MAX, METRICS_DIMENSION_AGG_MIN, METRICS_DIMENSION_AGG_PERCENT, METRICS_DIMENSION_AGG_ALL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: entity_uuid
                     in: query
-                    description: UUID of the entity type.
+                    description: UUID of the entity type. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: hs_type
                     in: query
-                    description: Health Score Type. Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE, HEALTH_SECURITY_THREAT_LEVEL.
+                    description: Health Score Type. Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE, HEALTH_SECURITY_THREAT_LEVEL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: include_refs
                     in: query
-                    description: Resolve uuid to references?.
+                    description: Resolve uuid to references?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: include_statistics
                     in: query
-                    description: Include statistics when no filters specified?.
+                    description: Include statistics when no filters specified?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: limit
                     in: query
-                    description: Max number of metric samples to be returned in the response.
+                    description: Max number of metric samples to be returned in the response. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: metric_entity
                     in: query
-                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: order_series_by
                     in: query
-                    description: Order by field in the statistics. It is required tohave include_statistics set to true. A negative sign means decreasing order. Egs. mean, min, max, etc.
+                    description: Order by field in the statistics. It is required tohave include_statistics set to true. A negative sign means decreasing order. Egs. mean, min, max, etc. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: pad_missing_data
                     in: query
-                    description: Pad missing health scores. That is, if data for certain intervals not present, fill up the time series with null values.
+                    description: Pad missing health scores. That is, if data for certain intervals not present, fill up the time series with null values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: patch_oper_status
                     in: query
-                    description: Patch health score with operational data?.
+                    description: Patch health score with operational data?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: pool_uuid
                     in: query
-                    description: Pool name. This will apply to any backend stats that are specified in the query.
+                    description: Pool name. This will apply to any backend stats that are specified in the query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: result_format
                     in: query
-                    description: Format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF.
+                    description: Format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: server
                     in: query
-                    description: Object id like vip or server ip port.
+                    description: Object id like vip or server ip port. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: start
                     in: query
-                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch.
+                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: step
                     in: query
-                    description: Step interval in seconds.
+                    description: Step interval in seconds. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: stop
                     in: query
-                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now.
+                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: summary
                     in: query
-                    description: Return only summary for health score.
+                    description: Return only summary for health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: tenant_uuid
                     in: query
-                    description: UUID of the Tenant. .
+                    description: UUID of the Tenant. . Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
             security:
                 - basicAuth: []
@@ -758,16 +758,16 @@ definitions:
             -   reason
         properties:
             reason:
-                description: "Reason for the Health Score."
+                description: "Reason for the Health Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the health score."
+                description: "Attribute that is dominating the health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ref:
-                description: " It is a reference to an object of type Application."
+                description: " It is a reference to an object of type Application. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             virtualservice_anomaly_scores:
-                description: "Placeholder for description of property virtualservice_anomaly_scores of obj type ApplicationAnomalyScoreData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/VirtualServiceAnomalyScore'
@@ -777,16 +777,16 @@ definitions:
             -   reason
         properties:
             reason:
-                description: "Reason for the Health Score."
+                description: "Reason for the Health Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the health score."
+                description: "Attribute that is dominating the health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ref:
-                description: " It is a reference to an object of type Application."
+                description: " It is a reference to an object of type Application. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             virtualservice_performance_scores:
-                description: "Placeholder for description of property virtualservice_performance_scores of obj type ApplicationPerformanceScoreData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/VirtualServicePerformanceScore'
@@ -796,16 +796,16 @@ definitions:
             -   reason
         properties:
             reason:
-                description: "Reason for the Health Score."
+                description: "Reason for the Health Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the health score."
+                description: "Attribute that is dominating the health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ref:
-                description: " It is a reference to an object of type Application."
+                description: " It is a reference to an object of type Application. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             virtualservice_resources_scores:
-                description: "Placeholder for description of property virtualservice_resources_scores of obj type ApplicationResourcesScoreData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/VirtualServiceResourcesScore'
@@ -816,22 +816,22 @@ definitions:
             -   reason
         properties:
             anomalous_controller_stats_metrics:
-                description: "anomalous_controller_stats_metrics of ControllerAnomalyScoreData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             per_anomalous_controller_stats_metrics:
-                description: "Placeholder for description of property per_anomalous_controller_stats_metrics of obj type ControllerAnomalyScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             reason:
-                description: "Reason for the Health Score."
+                description: "Reason for the Health Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the health score."
+                description: "Attribute that is dominating the health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             uuid:
-                description: "Unique object identifier of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     ControllerResourcesScoreData:
         type: object
@@ -839,21 +839,21 @@ definitions:
             -   reason
         properties:
             avg_cpu_usage:
-                description: "Placeholder for description of property avg_cpu_usage of obj type ControllerResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_mem_usage:
-                description: "Placeholder for description of property avg_mem_usage of obj type ControllerResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             reason:
-                description: "Reason for the Health Score."
+                description: "Reason for the Health Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the health score."
+                description: "Attribute that is dominating the health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             uuid:
-                description: "Unique object identifier of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     DosAttackLevelData:
         type: object
@@ -861,53 +861,53 @@ definitions:
             -   reason
         properties:
             avg_dos_total_req:
-                description: "Placeholder for description of property avg_dos_total_req of obj type DosAttackLevelData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_total_connections:
-                description: "Placeholder for description of property avg_total_connections of obj type DosAttackLevelData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             pct_application_dos_attacks:
-                description: "Placeholder for description of property pct_application_dos_attacks of obj type DosAttackLevelData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             pct_connections_dos_attacks:
-                description: "Placeholder for description of property pct_connections_dos_attacks of obj type DosAttackLevelData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             pct_dos_bandwidth:
-                description: "Placeholder for description of property pct_dos_bandwidth of obj type DosAttackLevelData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             pct_dos_rx_bytes:
-                description: "Placeholder for description of property pct_dos_rx_bytes of obj type DosAttackLevelData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             pct_pkts_dos_attacks:
-                description: "Placeholder for description of property pct_pkts_dos_attacks of obj type DosAttackLevelData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             pct_policy_drops:
-                description: "Placeholder for description of property pct_policy_drops of obj type DosAttackLevelData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             reason:
-                description: "Reason for the DoS Attack Level."
+                description: "Reason for the DoS Attack Level. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the DoS Attack Level."
+                description: "Attribute that is dominating the DoS Attack Level. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ref:
-                description: " It is a reference to an object of type VirtualService."
+                description: " It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             serviceengine_dos_attack_level_scores:
-                description: "Placeholder for description of property serviceengine_dos_attack_level_scores of obj type DosAttackLevelData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ServiceEngineDosAttackLevel'
             value:
-                description: "Placeholder for description of property value of obj type DosAttackLevelData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     HealthScoreAnomalyData:
@@ -917,32 +917,32 @@ definitions:
             -   value
         properties:
             application_anomaly:
-                description: "Placeholder for description of property application_anomaly of obj type HealthScoreAnomalyData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApplicationAnomalyScoreData'
             controller_anomaly:
-                description: "Placeholder for description of property controller_anomaly of obj type HealthScoreAnomalyData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ControllerAnomalyScoreData'
             pool_anomaly:
-                description: "Placeholder for description of property pool_anomaly of obj type HealthScoreAnomalyData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PoolAnomalyScoreData'
             reason:
-                description: "Reason for Anomaly Score."
+                description: "Reason for Anomaly Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "reason_attr of HealthScoreAnomalyData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             server_anomaly:
-                description: "Placeholder for description of property server_anomaly of obj type HealthScoreAnomalyData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ServerAnomalyScoreData'
             serviceengine_anomaly:
-                description: "Placeholder for description of property serviceengine_anomaly of obj type HealthScoreAnomalyData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ServiceEngineAnomalyScoreData'
             value:
-                description: "Placeholder for description of property value of obj type HealthScoreAnomalyData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             virtualservice_anomaly:
-                description: "Placeholder for description of property virtualservice_anomaly of obj type HealthScoreAnomalyData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/VirtualServiceAnomalyScoreData'
     HealthScoreData:
         type: object
@@ -951,61 +951,61 @@ definitions:
             -   value
         properties:
             anomaly_penalty:
-                description: "Number of anomaly_penalty."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             anomaly_score:
-                description: "Placeholder for description of property anomaly_score of obj type HealthScoreData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScoreAnomalyData'
             dos_attack_level:
-                description: "Placeholder for description of property dos_attack_level of obj type HealthScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             is_null:
-                description: "This is set if the data is none or zero is none."
+                description: "This is set if the data is none or zero is none. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             num_samples:
-                description: "This keeps the num samples reported during aggregation queries."
+                description: "This keeps the num samples reported during aggregation queries. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             performance_score:
-                description: "Placeholder for description of property performance_score of obj type HealthScoreData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScorePerformanceData'
             performance_value:
-                description: "Number of performance_value."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
                 format: int32
             reason:
-                description: "Reason for the Health Score."
+                description: "Reason for the Health Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the health score."
+                description: "Attribute that is dominating the health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             resources_penalty:
-                description: "Number of resources_penalty."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             resources_score:
-                description: "Placeholder for description of property resources_score of obj type HealthScoreData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScoreResourcesData'
             security_penalty:
-                description: "Number of security_penalty."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             security_threat_level:
-                description: "Placeholder for description of property security_threat_level of obj type HealthScoreData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScoreSecurityData'
             ssl_score:
-                description: "Placeholder for description of property ssl_score of obj type HealthScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 default: 5.0
                 format: double
             timestamp:
-                description: "timestamp of HealthScoreData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "Placeholder for description of property value of obj type HealthScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     HealthScoreDataSeries:
@@ -1014,12 +1014,12 @@ definitions:
             -   header
         properties:
             data:
-                description: "Placeholder for description of property data of obj type HealthScoreDataSeries field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/HealthScoreData'
             header:
-                description: "Placeholder for description of property header of obj type HealthScoreDataSeries field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScoreHeader'
     HealthScoreEntity:
         type: object
@@ -1028,71 +1028,71 @@ definitions:
             -   metrics_entity
         properties:
             entity_uuid:
-                description: "Unique object identifier of entity."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             metrics_entity:
-                description: " Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY."
+                description: " Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             pool_ref:
-                description: " It is a reference to an object of type Pool."
+                description: " It is a reference to an object of type Pool. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             server:
-                description: "server of HealthScoreEntity."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     HealthScoreHeader:
         type: object
         properties:
             anomaly_penalty_statistics:
-                description: "Placeholder for description of property anomaly_penalty_statistics of obj type HealthScoreHeader field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MetricStatistics'
             contributors:
-                description: "Placeholder for description of property contributors of obj type HealthScoreHeader field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/HealthScoreTypeContributorData'
             entity_uuid:
-                description: "uuid of the entity type."
+                description: "uuid of the entity type. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             hs_type:
-                description: " Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE, HEALTH_SECURITY_THREAT_LEVEL."
+                description: " Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE, HEALTH_SECURITY_THREAT_LEVEL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             metrics_min_scale:
-                description: "Number of metrics_min_scale."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
                 format: int32
             missing_intervals:
-                description: "Missing data intervals. data in these intervals are not used for stats calculation."
+                description: "Missing data intervals. data in these intervals are not used for stats calculation. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/MetricsMissingDataInterval'
             name:
-                description: "Health Score metric name."
+                description: "Health Score metric name. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "health_score"
             performance_score_statistics:
-                description: "Placeholder for description of property performance_score_statistics of obj type HealthScoreHeader field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MetricStatistics'
             pool_ref:
-                description: " It is a reference to an object of type Pool."
+                description: " It is a reference to an object of type Pool. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             resources_penalty_statistics:
-                description: "Placeholder for description of property resources_penalty_statistics of obj type HealthScoreHeader field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MetricStatistics'
             security_penalty_statistics:
-                description: "Placeholder for description of property security_penalty_statistics of obj type HealthScoreHeader field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MetricStatistics'
             server:
-                description: "server of HealthScoreHeader."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             serviceengine_ref:
-                description: " It is a reference to an object of type ServiceEngine."
+                description: " It is a reference to an object of type ServiceEngine. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             statistics:
-                description: "Placeholder for description of property statistics of obj type HealthScoreHeader field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MetricStatistics'
             units:
-                description: "units of the column data. Enum options - METRIC_COUNT, BITS_PER_SECOND, MILLISECONDS, SECONDS, PER_SECOND, BYTES, PERCENT, KILO_BYTES, KILO_BYTES_PER_SECOND, BYTES_PER_SECOND, KILO_BITS_PER_SECOND, GIGA_BYTES, MEGA_BYTES, NORMALIZED, STRING, SEC, MIN, DAYS, KB, MB, GB, MBPS, GHZ, RATIO, WORD, MICROSECONDS, HEALTH, HOURS."
+                description: "units of the column data. Enum options - METRIC_COUNT, BITS_PER_SECOND, MILLISECONDS, SECONDS, PER_SECOND, BYTES, PERCENT, KILO_BYTES, KILO_BYTES_PER_SECOND, BYTES_PER_SECOND, KILO_BITS_PER_SECOND, GIGA_BYTES, MEGA_BYTES, NORMALIZED, STRING, SEC, MIN, DAYS, KB, MB, GB, MBPS, GHZ, RATIO, WORD, MICROSECONDS, HEALTH, HOURS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "METRIC_COUNT"
     HealthScorePerformanceData:
@@ -1102,29 +1102,29 @@ definitions:
             -   value
         properties:
             application_performance:
-                description: "Placeholder for description of property application_performance of obj type HealthScorePerformanceData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApplicationPerformanceScoreData'
             pool_performance:
-                description: "Placeholder for description of property pool_performance of obj type HealthScorePerformanceData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PoolPerformanceScoreData'
             reason:
-                description: "Reason for Performance Score."
+                description: "Reason for Performance Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "reason_attr of HealthScorePerformanceData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             server_performance:
-                description: "Placeholder for description of property server_performance of obj type HealthScorePerformanceData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ServerPerformanceScoreData'
             serviceengine_performance:
-                description: "Placeholder for description of property serviceengine_performance of obj type HealthScorePerformanceData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ServiceEnginePerformanceScoreData'
             value:
-                description: "Placeholder for description of property value of obj type HealthScorePerformanceData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             virtualservice_performance:
-                description: "Placeholder for description of property virtualservice_performance of obj type HealthScorePerformanceData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/VirtualServicePerformanceScoreData'
     HealthScoreQuery:
         type: object
@@ -1133,74 +1133,74 @@ definitions:
             -   metric_entity
         properties:
             detailed_header:
-                description: "Return detailed header with information like contributors etc.?."
+                description: "Return detailed header with information like contributors etc.?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             dimension_aggregation:
-                description: "Aggregations for dimensions. Eg. use dimenstion_aggregation=avg for averaged metric values. Enum options - METRICS_DIMENSION_AGG_NONE, METRICS_DIMENSION_AGG_AVG, METRICS_DIMENSION_AGG_SUM, METRICS_DIMENSION_AGG_MAX, METRICS_DIMENSION_AGG_MIN, METRICS_DIMENSION_AGG_PERCENT, METRICS_DIMENSION_AGG_ALL."
+                description: "Aggregations for dimensions. Eg. use dimenstion_aggregation=avg for averaged metric values. Enum options - METRICS_DIMENSION_AGG_NONE, METRICS_DIMENSION_AGG_AVG, METRICS_DIMENSION_AGG_SUM, METRICS_DIMENSION_AGG_MAX, METRICS_DIMENSION_AGG_MIN, METRICS_DIMENSION_AGG_PERCENT, METRICS_DIMENSION_AGG_ALL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "METRICS_DIMENSION_AGG_NONE"
             entity_uuid:
-                description: "UUID of the entity type."
+                description: "UUID of the entity type. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             hs_type:
-                description: "Health Score Type. Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE, HEALTH_SECURITY_THREAT_LEVEL."
+                description: "Health Score Type. Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE, HEALTH_SECURITY_THREAT_LEVEL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "HEALTH_SCORE"
             include_refs:
-                description: "Resolve uuid to references?."
+                description: "Resolve uuid to references?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             include_statistics:
-                description: "Include statistics when no filters specified?."
+                description: "Include statistics when no filters specified?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             limit:
-                description: "Max number of metric samples to be returned in the response."
+                description: "Max number of metric samples to be returned in the response. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
             metric_entity:
-                description: "Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY."
+                description: "Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "VSERVER_METRICS_ENTITY"
             order_series_by:
-                description: "Order by field in the statistics. It is required tohave include_statistics set to true. A negative sign means decreasing order. Egs. mean, min, max, etc."
+                description: "Order by field in the statistics. It is required tohave include_statistics set to true. A negative sign means decreasing order. Egs. mean, min, max, etc. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             pad_missing_data:
-                description: "Pad missing health scores. That is, if data for certain intervals not present, fill up the time series with null values."
+                description: "Pad missing health scores. That is, if data for certain intervals not present, fill up the time series with null values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             patch_oper_status:
-                description: "Patch health score with operational data?."
+                description: "Patch health score with operational data?. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             pool_uuid:
-                description: "Pool name. This will apply to any backend stats that are specified in the query."
+                description: "Pool name. This will apply to any backend stats that are specified in the query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             result_format:
-                description: "Format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF."
+                description: "Format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "METRICS_FORMAT_JSON"
             server:
-                description: "Object id like vip or server ip port."
+                description: "Object id like vip or server ip port. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             start:
-                description: "Start time for the metrics in ISO 8601 format. Default is UNIX Epoch."
+                description: "Start time for the metrics in ISO 8601 format. Default is UNIX Epoch. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "1970-01-01T00:00:00"
             step:
-                description: "Step interval in seconds."
+                description: "Step interval in seconds. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 300
                 format: int32
             stop:
-                description: "End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now."
+                description: "End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             summary:
-                description: "Return only summary for health score."
+                description: "Return only summary for health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             tenant_uuid:
-                description: "UUID of the Tenant. ."
+                description: "UUID of the Tenant. . Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     HealthScoreQueryResponse:
         type: object
@@ -1212,31 +1212,31 @@ definitions:
             -   stop
         properties:
             entity_uuid:
-                description: "uuid of the entity type."
+                description: "uuid of the entity type. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             metric_entity:
-                description: " Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY."
+                description: " Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             pool_ref:
-                description: "Pool name. This will apply to any back end statistics that are specified in the query. It is a reference to an object of type Pool."
+                description: "Pool name. This will apply to any back end statistics that are specified in the query. It is a reference to an object of type Pool. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             series:
-                description: "Placeholder for description of property series of obj type HealthScoreQueryResponse field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/HealthScoreDataSeries'
             server:
-                description: "server name or ip."
+                description: "server name or ip. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             start:
-                description: "start of HealthScoreQueryResponse."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             step:
-                description: "Number of step."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             stop:
-                description: "stop of HealthScoreQueryResponse."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
@@ -1264,54 +1264,54 @@ definitions:
             -   value
         properties:
             application_resources:
-                description: "Placeholder for description of property application_resources of obj type HealthScoreResourcesData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApplicationResourcesScoreData'
             controller_resources:
-                description: "Placeholder for description of property controller_resources of obj type HealthScoreResourcesData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ControllerResourcesScoreData'
             pool_resources:
-                description: "Placeholder for description of property pool_resources of obj type HealthScoreResourcesData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PoolResourcesScoreData'
             reason:
-                description: "Reason for Resources Score."
+                description: "Reason for Resources Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "reason_attr of HealthScoreResourcesData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             server_resources:
-                description: "Placeholder for description of property server_resources of obj type HealthScoreResourcesData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ServerResourcesScoreData'
             serviceengine_resources:
-                description: "Placeholder for description of property serviceengine_resources of obj type HealthScoreResourcesData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ServiceEngineResourcesScoreData'
             value:
-                description: "Placeholder for description of property value of obj type HealthScoreResourcesData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             virtualservice_resources:
-                description: "Placeholder for description of property virtualservice_resources of obj type HealthScoreResourcesData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/VirtualServiceResourcesScoreData'
     HealthScoreSecurityData:
         type: object
         properties:
             dos_attack_level_data:
-                description: "Threat associated with VirtualService DoS infrastructure."
+                description: "Threat associated with VirtualService DoS infrastructure. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DosAttackLevelData'
             reason:
-                description: "Reason for Security Threat Level."
+                description: "Reason for Security Threat Level. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "No Security Penalty"
             reason_attr:
-                description: "reason_attr of HealthScoreSecurityData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             serviceengine_dos_attack_level_data:
-                description: "Threat associated with ServiceEngine DoS infrastructure."
+                description: "Threat associated with ServiceEngine DoS infrastructure. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ServiceEngineDosAttackLevelData'
             ssl_score_data:
-                description: "Threat associated with VirtualService SSL infrastructure."
+                description: "Threat associated with VirtualService SSL infrastructure. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SslScoreData'
             value:
-                description: "Placeholder for description of property value of obj type HealthScoreSecurityData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     HealthScoreTypeContributorData:
@@ -1320,15 +1320,15 @@ definitions:
             -   hs_type
         properties:
             entities:
-                description: "Placeholder for description of property entities of obj type HealthScoreTypeContributorData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/HealthScoreEntity'
             hs_type:
-                description: " Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE, HEALTH_SECURITY_THREAT_LEVEL."
+                description: " Enum options - HEALTH_SCORE, HEALTH_PERFORMANCE_SCORE, HEALTH_ANOMALY_SCORE, HEALTH_RESOURCES_SCORE, HEALTH_SECURITY_THREAT_LEVEL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             metric_ids:
-                description: "metric_ids of HealthScoreTypeContributorData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     MetricsMissingDataInterval:
         type: object
@@ -1337,46 +1337,46 @@ definitions:
             -   start
         properties:
             end:
-                description: "end of MetricsMissingDataInterval."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             start:
-                description: "start of MetricsMissingDataInterval."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     MetricStatistics:
         type: object
         properties:
             last_sample:
-                description: "value of the last sample."
+                description: "value of the last sample. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             max:
-                description: "maximum value in time series requested."
+                description: "maximum value in time series requested. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             max_ts:
-                description: "timestamp of the minimum value."
+                description: "timestamp of the minimum value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             mean:
-                description: "arithmetic mean."
+                description: "arithmetic mean. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             min:
-                description: "minimum value in time series requested."
+                description: "minimum value in time series requested. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             min_ts:
-                description: "timestamp of the minimum value."
+                description: "timestamp of the minimum value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             num_samples:
-                description: "Number of actual data samples. It excludes fake data."
+                description: "Number of actual data samples. It excludes fake data. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             sum:
-                description: "summation of all values."
+                description: "summation of all values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             trend:
-                description: "slope of the data points across the time series requested. trend = (last_value - avg)/avg."
+                description: "slope of the data points across the time series requested. trend = (last_value - avg)/avg. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     PoolAnomalyScore:
@@ -1387,16 +1387,16 @@ definitions:
             -   value
         properties:
             hs_entity:
-                description: "Placeholder for description of property hs_entity of obj type PoolAnomalyScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScoreEntity'
             reason:
-                description: "reason of PoolAnomalyScore."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             score_data:
-                description: "Placeholder for description of property score_data of obj type PoolAnomalyScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PoolAnomalyScoreData'
             value:
-                description: "Placeholder for description of property value of obj type PoolAnomalyScore field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     PoolAnomalyScoreData:
@@ -1407,41 +1407,41 @@ definitions:
             -   reason
         properties:
             anomalous_l4_metrics:
-                description: "anomalous_l4_metrics of PoolAnomalyScoreData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             anomalous_l7_metrics:
-                description: "anomalous_l7_metrics of PoolAnomalyScoreData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             avg_server_anomaly_score:
-                description: "Placeholder for description of property avg_server_anomaly_score of obj type PoolAnomalyScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             per_anomalous_l4_metrics:
-                description: "Placeholder for description of property per_anomalous_l4_metrics of obj type PoolAnomalyScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             per_anomalous_l7_metrics:
-                description: "Placeholder for description of property per_anomalous_l7_metrics of obj type PoolAnomalyScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             pool_ref:
-                description: " It is a reference to an object of type Pool."
+                description: " It is a reference to an object of type Pool. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason:
-                description: "Reason for the Health Score."
+                description: "Reason for the Health Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the health score."
+                description: "Attribute that is dominating the health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ref:
-                description: " It is a reference to an object of type VirtualService."
+                description: " It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             server_anomaly_scores:
-                description: "Placeholder for description of property server_anomaly_scores of obj type PoolAnomalyScoreData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ServerAnomalyScore'
@@ -1453,16 +1453,16 @@ definitions:
             -   value
         properties:
             hs_entity:
-                description: "Placeholder for description of property hs_entity of obj type PoolPerformanceScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScoreEntity'
             reason:
-                description: "reason of PoolPerformanceScore."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             score_data:
-                description: "Placeholder for description of property score_data of obj type PoolPerformanceScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PoolPerformanceScoreData'
             value:
-                description: "Placeholder for description of property value of obj type PoolPerformanceScore field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     PoolPerformanceScoreData:
@@ -1472,31 +1472,31 @@ definitions:
             -   reason
         properties:
             apdexc:
-                description: "Placeholder for description of property apdexc of obj type PoolPerformanceScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             apdexr:
-                description: "Placeholder for description of property apdexr of obj type PoolPerformanceScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 default: 100.0
                 format: double
             oper_state:
-                description: " Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING, OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING, OPER_FAILED, OPER_UNAVAIL."
+                description: " Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING, OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING, OPER_FAILED, OPER_UNAVAIL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             pool_ref:
-                description: " It is a reference to an object of type Pool."
+                description: " It is a reference to an object of type Pool. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason:
-                description: "Reason for the Health Score."
+                description: "Reason for the Health Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the health score."
+                description: "Attribute that is dominating the health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ref:
-                description: " It is a reference to an object of type VirtualService."
+                description: " It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             sum_finished_conns:
-                description: "Placeholder for description of property sum_finished_conns of obj type PoolPerformanceScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     PoolResourcesScore:
@@ -1507,16 +1507,16 @@ definitions:
             -   value
         properties:
             hs_entity:
-                description: "Placeholder for description of property hs_entity of obj type PoolResourcesScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScoreEntity'
             reason:
-                description: "reason of PoolResourcesScore."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             score_data:
-                description: "Placeholder for description of property score_data of obj type PoolResourcesScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PoolResourcesScoreData'
             value:
-                description: "Placeholder for description of property value of obj type PoolResourcesScore field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     PoolResourcesScoreData:
@@ -1526,27 +1526,27 @@ definitions:
             -   reason
         properties:
             avg_server_resources_score:
-                description: "Placeholder for description of property avg_server_resources_score of obj type PoolResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_uptime:
-                description: "Placeholder for description of property avg_uptime of obj type PoolResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             pool_ref:
-                description: " It is a reference to an object of type Pool."
+                description: " It is a reference to an object of type Pool. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason:
-                description: "Reason for the Health Score."
+                description: "Reason for the Health Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the health score."
+                description: "Attribute that is dominating the health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ref:
-                description: " It is a reference to an object of type VirtualService."
+                description: " It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             server_resources_scores:
-                description: "Placeholder for description of property server_resources_scores of obj type PoolResourcesScoreData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ServerResourcesScore'
@@ -1558,16 +1558,16 @@ definitions:
             -   value
         properties:
             hs_entity:
-                description: "Placeholder for description of property hs_entity of obj type ServerAnomalyScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScoreEntity'
             reason:
-                description: "reason of ServerAnomalyScore."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             score_data:
-                description: "Placeholder for description of property score_data of obj type ServerAnomalyScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ServerAnomalyScoreData'
             value:
-                description: "Placeholder for description of property value of obj type ServerAnomalyScore field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     ServerAnomalyScoreData:
@@ -1579,46 +1579,46 @@ definitions:
             -   server
         properties:
             anomalous_l4_metrics:
-                description: "anomalous_l4_metrics of ServerAnomalyScoreData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             anomalous_l7_metrics:
-                description: "anomalous_l7_metrics of ServerAnomalyScoreData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             anomalous_vm_metrics:
-                description: "anomalous_vm_metrics of ServerAnomalyScoreData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             per_anomalous_l4_metrics:
-                description: "Placeholder for description of property per_anomalous_l4_metrics of obj type ServerAnomalyScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             per_anomalous_l7_metrics:
-                description: "Placeholder for description of property per_anomalous_l7_metrics of obj type ServerAnomalyScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             per_anomalous_vm_metrics:
-                description: "Placeholder for description of property per_anomalous_vm_metrics of obj type ServerAnomalyScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             pool_uuid:
-                description: "Unique object identifier of pool."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason:
-                description: "Reason for the Health Score."
+                description: "Reason for the Health Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the health score."
+                description: "Attribute that is dominating the health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ref:
-                description: " It is a reference to an object of type VirtualService."
+                description: " It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             server:
-                description: "server of ServerAnomalyScoreData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     ServerPerformanceScoreData:
         type: object
@@ -1628,33 +1628,33 @@ definitions:
             -   server
         properties:
             apdexc:
-                description: "Placeholder for description of property apdexc of obj type ServerPerformanceScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             apdexr:
-                description: "Placeholder for description of property apdexr of obj type ServerPerformanceScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             oper_state:
-                description: " Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING, OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING, OPER_FAILED, OPER_UNAVAIL."
+                description: " Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING, OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING, OPER_FAILED, OPER_UNAVAIL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             pool_uuid:
-                description: "Unique object identifier of pool."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason:
-                description: "Reason for the Health Score."
+                description: "Reason for the Health Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the health score."
+                description: "Attribute that is dominating the health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ref:
-                description: " It is a reference to an object of type VirtualService."
+                description: " It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             server:
-                description: "server of ServerPerformanceScoreData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             sum_finished_conns:
-                description: "Placeholder for description of property sum_finished_conns of obj type ServerPerformanceScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     ServerResourcesScore:
@@ -1665,16 +1665,16 @@ definitions:
             -   value
         properties:
             hs_entity:
-                description: "Placeholder for description of property hs_entity of obj type ServerResourcesScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScoreEntity'
             reason:
-                description: "reason of ServerResourcesScore."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             score_data:
-                description: "Placeholder for description of property score_data of obj type ServerResourcesScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ServerResourcesScoreData'
             value:
-                description: "Placeholder for description of property value of obj type ServerResourcesScore field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     ServerResourcesScoreData:
@@ -1685,55 +1685,55 @@ definitions:
             -   server
         properties:
             avg_cpu_usage:
-                description: "Placeholder for description of property avg_cpu_usage of obj type ServerResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_cpu_wait:
-                description: "Placeholder for description of property avg_cpu_wait of obj type ServerResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_disk1_usage:
-                description: "Placeholder for description of property avg_disk1_usage of obj type ServerResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_disk2_usage:
-                description: "Placeholder for description of property avg_disk2_usage of obj type ServerResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_disk3_usage:
-                description: "Placeholder for description of property avg_disk3_usage of obj type ServerResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_disk4_usage:
-                description: "Placeholder for description of property avg_disk4_usage of obj type ServerResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_mem_usage:
-                description: "Placeholder for description of property avg_mem_usage of obj type ServerResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_uptime:
-                description: "Placeholder for description of property avg_uptime of obj type ServerResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             pct_open_conns:
-                description: "Placeholder for description of property pct_open_conns of obj type ServerResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             pool_uuid:
-                description: "Unique object identifier of pool."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason:
-                description: "Reason for the Health Score."
+                description: "Reason for the Health Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the health score."
+                description: "Attribute that is dominating the health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ref:
-                description: " It is a reference to an object of type VirtualService."
+                description: " It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             server:
-                description: "server of ServerResourcesScoreData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     ServiceEngineAnomalyScore:
         type: object
@@ -1743,16 +1743,16 @@ definitions:
             -   value
         properties:
             hs_entity:
-                description: "Placeholder for description of property hs_entity of obj type ServiceEngineAnomalyScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScoreEntity'
             reason:
-                description: "reason of ServiceEngineAnomalyScore."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             score_data:
-                description: "Placeholder for description of property score_data of obj type ServiceEngineAnomalyScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ServiceEngineAnomalyScoreData'
             value:
-                description: "Placeholder for description of property value of obj type ServiceEngineAnomalyScore field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     ServiceEngineAnomalyScoreData:
@@ -1762,46 +1762,46 @@ definitions:
             -   reason
         properties:
             anomalous_se_stats_metrics:
-                description: "anomalous_se_stats_metrics of ServiceEngineAnomalyScoreData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             anomalous_vm_stats_metrics:
-                description: "anomalous_vm_stats_metrics of ServiceEngineAnomalyScoreData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             per_anomalous_se_stats_metrics:
-                description: "Placeholder for description of property per_anomalous_se_stats_metrics of obj type ServiceEngineAnomalyScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             per_anomalous_vm_stats_metrics:
-                description: "Placeholder for description of property per_anomalous_vm_stats_metrics of obj type ServiceEngineAnomalyScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             reason:
-                description: "Reason for the Health Score."
+                description: "Reason for the Health Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the health score."
+                description: "Attribute that is dominating the health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ref:
-                description: " It is a reference to an object of type ServiceEngine."
+                description: " It is a reference to an object of type ServiceEngine. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     ServiceEngineDosAttackLevel:
         type: object
         properties:
             hs_entity:
-                description: "Placeholder for description of property hs_entity of obj type ServiceEngineDosAttackLevel field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScoreEntity'
             reason:
-                description: "reason of ServiceEngineDosAttackLevel."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             score_data:
-                description: "Placeholder for description of property score_data of obj type ServiceEngineDosAttackLevel field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ServiceEngineDosAttackLevelData'
             value:
-                description: "Placeholder for description of property value of obj type ServiceEngineDosAttackLevel field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     ServiceEngineDosAttackLevelData:
@@ -1810,40 +1810,40 @@ definitions:
             -   reason
         properties:
             avg_connections:
-                description: "Placeholder for description of property avg_connections of obj type ServiceEngineDosAttackLevelData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_rx_bandwidth:
-                description: "Placeholder for description of property avg_rx_bandwidth of obj type ServiceEngineDosAttackLevelData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_rx_pkts:
-                description: "Placeholder for description of property avg_rx_pkts of obj type ServiceEngineDosAttackLevelData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             pct_connections_dropped:
-                description: "Placeholder for description of property pct_connections_dropped of obj type ServiceEngineDosAttackLevelData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             pct_rx_bytes_dropped:
-                description: "Placeholder for description of property pct_rx_bytes_dropped of obj type ServiceEngineDosAttackLevelData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             pct_rx_pkts_dropped:
-                description: "Placeholder for description of property pct_rx_pkts_dropped of obj type ServiceEngineDosAttackLevelData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             reason:
-                description: "Reason for the SE DoS Attack Level."
+                description: "Reason for the SE DoS Attack Level. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the DoS Attack Level."
+                description: "Attribute that is dominating the DoS Attack Level. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ref:
-                description: " It is a reference to an object of type ServiceEngine."
+                description: " It is a reference to an object of type ServiceEngine. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "Placeholder for description of property value of obj type ServiceEngineDosAttackLevelData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     ServiceEnginePerformanceScoreData:
@@ -1852,16 +1852,16 @@ definitions:
             -   reason
         properties:
             oper_state:
-                description: " Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING, OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING, OPER_FAILED, OPER_UNAVAIL."
+                description: " Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING, OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING, OPER_FAILED, OPER_UNAVAIL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason:
-                description: "Reason for the Health Performance Score."
+                description: "Reason for the Health Performance Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the performance score."
+                description: "Attribute that is dominating the performance score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ref:
-                description: " It is a reference to an object of type ServiceEngine."
+                description: " It is a reference to an object of type ServiceEngine. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     ServiceEngineResourcesScore:
         type: object
@@ -1871,16 +1871,16 @@ definitions:
             -   value
         properties:
             hs_entity:
-                description: "Placeholder for description of property hs_entity of obj type ServiceEngineResourcesScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScoreEntity'
             reason:
-                description: "reason of ServiceEngineResourcesScore."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             score_data:
-                description: "Placeholder for description of property score_data of obj type ServiceEngineResourcesScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ServiceEngineResourcesScoreData'
             value:
-                description: "Placeholder for description of property value of obj type ServiceEngineResourcesScore field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     ServiceEngineResourcesScoreData:
@@ -1889,60 +1889,60 @@ definitions:
             -   reason
         properties:
             avg_connection_mem_usage:
-                description: "Placeholder for description of property avg_connection_mem_usage of obj type ServiceEngineResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_cpu_usage:
-                description: "Placeholder for description of property avg_cpu_usage of obj type ServiceEngineResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_cpu_wait:
-                description: "Placeholder for description of property avg_cpu_wait of obj type ServiceEngineResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_disk1_usage:
-                description: "Placeholder for description of property avg_disk1_usage of obj type ServiceEngineResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_dynamic_mem_usage:
-                description: "Placeholder for description of property avg_dynamic_mem_usage of obj type ServiceEngineResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_mem_usage:
-                description: "Placeholder for description of property avg_mem_usage of obj type ServiceEngineResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_packet_buffer_usage:
-                description: "Placeholder for description of property avg_packet_buffer_usage of obj type ServiceEngineResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_persistent_table_usage:
-                description: "Placeholder for description of property avg_persistent_table_usage of obj type ServiceEngineResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_shared_memory_usage:
-                description: "Use shared memory usage in computation of SE resource penalty."
+                description: "Use shared memory usage in computation of SE resource penalty. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_ssl_session_cache_usage:
-                description: "Placeholder for description of property avg_ssl_session_cache_usage of obj type ServiceEngineResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             oper_state:
-                description: " Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING, OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING, OPER_FAILED, OPER_UNAVAIL."
+                description: " Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING, OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING, OPER_FAILED, OPER_UNAVAIL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             pct_syn_cache_usage:
-                description: "Placeholder for description of property pct_syn_cache_usage of obj type ServiceEngineResourcesScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             reason:
-                description: "Reason for the Health Score."
+                description: "Reason for the Health Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the health score."
+                description: "Attribute that is dominating the health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ref:
-                description: " It is a reference to an object of type ServiceEngine."
+                description: " It is a reference to an object of type ServiceEngine. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     SslScoreData:
         type: object
@@ -1950,101 +1950,101 @@ definitions:
             -   reason
         properties:
             cert_chain_verified:
-                description: "Chains for all certificates are verified."
+                description: "Chains for all certificates are verified. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             cert_chain_verified_score:
-                description: "Score  Chains for all certificates are verified."
+                description: "Score  Chains for all certificates are verified. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             cert_revoked_status:
-                description: "Certificate revoked status by OCSP Responder."
+                description: "Certificate revoked status by OCSP Responder. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             cert_revoked_status_score:
-                description: "Score  Certficate Revoked for VS."
+                description: "Score  Certficate Revoked for VS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             deactivate_client_renegotiation:
-                description: "Deactivate client renegotiation. Field introduced in 20.1.3."
+                description: "Deactivate client renegotiation. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             deactivate_client_renegotiation_score:
-                description: "Score  Deactivate client renegotiation. Field introduced in 20.1.3."
+                description: "Score  Deactivate client renegotiation. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: number
                 default: 5.0
                 format: double
             disable_client_renegotiation:
-                description: "Disable client renegotiation. Field deprecated in 20.1.3."
+                description: "Disable client renegotiation. Field deprecated in 20.1.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             disable_client_renegotiation_score:
-                description: "Score  Disable client renegotiation. Field deprecated in 20.1.3."
+                description: "Score  Disable client renegotiation. Field deprecated in 20.1.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 default: 5.0
                 format: double
             earliest_cert_expiry:
-                description: "Earliest certificate expiration time."
+                description: "Earliest certificate expiration time. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             earliest_cert_expiry_score:
-                description: "Score  Earliest certificate expiration time."
+                description: "Score  Earliest certificate expiration time. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             hsts_enabled:
-                description: "HSTS enabled for VS."
+                description: "HSTS enabled for VS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             hsts_enabled_score:
-                description: "Score  HSTS enabled for VS."
+                description: "Score  HSTS enabled for VS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             min_cipher_strength:
-                description: "Strength of the weakest symmetric encryption algorithm."
+                description: "Strength of the weakest symmetric encryption algorithm. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             min_cipher_strength_score:
-                description: "Score  Strength of the weakest symmetric encryption algorithm."
+                description: "Score  Strength of the weakest symmetric encryption algorithm. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             min_ssl_protocol_strength:
-                description: "Weakest SSL protocol supported."
+                description: "Weakest SSL protocol supported. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             min_ssl_protocol_strength_score:
-                description: "Score  Weakest SSL protocol supported."
+                description: "Score  Weakest SSL protocol supported. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             pfs_support:
-                description: "Is a PFS cipher suite supported."
+                description: "Is a PFS cipher suite supported. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             pfs_support_score:
-                description: "Score  Is a PFS cipher suite supported."
+                description: "Score  Is a PFS cipher suite supported. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             reason:
-                description: "Reason for the SSL Config Level."
+                description: "Reason for the SSL Config Level. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the SSL Config Level."
+                description: "Attribute that is dominating the SSL Config Level. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ref:
-                description: " It is a reference to an object of type VirtualService."
+                description: " It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ssl_enabled:
-                description: "Set whether the SSL service is enabled for the VS."
+                description: "Set whether the SSL service is enabled for the VS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             value:
-                description: "Placeholder for description of property value of obj type SslScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 default: 5.0
                 format: double
             weak_signature_algorithm:
-                description: "Weak algorithm used for signing the certificate, amongst all certificates for the VS."
+                description: "Weak algorithm used for signing the certificate, amongst all certificates for the VS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             weak_signature_algorithm_score:
-                description: "Score  Weak algorithm used for signing the certificate."
+                description: "Score  Weak algorithm used for signing the certificate. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             weakest_enc_algo:
-                description: "Weakest algorithm for symmetric encryption."
+                description: "Weakest algorithm for symmetric encryption. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             weakest_enc_algo_score:
-                description: "Score  Weakest algorithm for symmetric encryption."
+                description: "Score  Weakest algorithm for symmetric encryption. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     VirtualServiceAnomalyScore:
@@ -2055,16 +2055,16 @@ definitions:
             -   value
         properties:
             hs_entity:
-                description: "Placeholder for description of property hs_entity of obj type VirtualServiceAnomalyScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScoreEntity'
             reason:
-                description: "reason of VirtualServiceAnomalyScore."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             score_data:
-                description: "Placeholder for description of property score_data of obj type VirtualServiceAnomalyScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/VirtualServiceAnomalyScoreData'
             value:
-                description: "Placeholder for description of property value of obj type VirtualServiceAnomalyScore field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     VirtualServiceAnomalyScoreData:
@@ -2073,39 +2073,39 @@ definitions:
             -   reason
         properties:
             anomalous_l4_metrics:
-                description: "anomalous_l4_metrics of VirtualServiceAnomalyScoreData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             anomalous_l7_metrics:
-                description: "anomalous_l7_metrics of VirtualServiceAnomalyScoreData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             per_anomalous_l4_metrics:
-                description: "Placeholder for description of property per_anomalous_l4_metrics of obj type VirtualServiceAnomalyScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             per_anomalous_l7_metrics:
-                description: "Placeholder for description of property per_anomalous_l7_metrics of obj type VirtualServiceAnomalyScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             pool_anomaly_scores:
-                description: "Placeholder for description of property pool_anomaly_scores of obj type VirtualServiceAnomalyScoreData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/PoolAnomalyScore'
             reason:
-                description: "Reason for the Health Score."
+                description: "Reason for the Health Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the health score."
+                description: "Attribute that is dominating the health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ref:
-                description: " It is a reference to an object of type VirtualService."
+                description: " It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             serviceengine_anomaly_scores:
-                description: "Placeholder for description of property serviceengine_anomaly_scores of obj type VirtualServiceAnomalyScoreData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ServiceEngineAnomalyScore'
@@ -2117,16 +2117,16 @@ definitions:
             -   value
         properties:
             hs_entity:
-                description: "Placeholder for description of property hs_entity of obj type VirtualServicePerformanceScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScoreEntity'
             reason:
-                description: "reason of VirtualServicePerformanceScore."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             score_data:
-                description: "Placeholder for description of property score_data of obj type VirtualServicePerformanceScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/VirtualServicePerformanceScoreData'
             value:
-                description: "Placeholder for description of property value of obj type VirtualServicePerformanceScore field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     VirtualServicePerformanceScoreData:
@@ -2136,45 +2136,45 @@ definitions:
             -   reason
         properties:
             apdexc:
-                description: "Placeholder for description of property apdexc of obj type VirtualServicePerformanceScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             apdexr:
-                description: "Placeholder for description of property apdexr of obj type VirtualServicePerformanceScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 default: 100.0
                 format: double
             avg_pool_performance_score:
-                description: "Average of all pool performance scores."
+                description: "Average of all pool performance scores. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             oper_state:
-                description: " Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING, OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING, OPER_FAILED, OPER_UNAVAIL."
+                description: " Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING, OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING, OPER_FAILED, OPER_UNAVAIL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             pool_performance_scores:
-                description: "Placeholder for description of property pool_performance_scores of obj type VirtualServicePerformanceScoreData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/PoolPerformanceScore'
             reason:
-                description: "Reason for the Health Score."
+                description: "Reason for the Health Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the health score."
+                description: "Attribute that is dominating the health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ref:
-                description: " It is a reference to an object of type VirtualService."
+                description: " It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             rum_apdexr:
-                description: "Rum Apdexr when client insights is active."
+                description: "Rum Apdexr when client insights is active. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_finished_conns:
-                description: "Placeholder for description of property sum_finished_conns of obj type VirtualServicePerformanceScoreData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             vs_uptime:
-                description: "Percentage time of last 5mins that the VirtualService has been up."
+                description: "Percentage time of last 5mins that the VirtualService has been up. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     VirtualServiceResourcesScore:
@@ -2185,16 +2185,16 @@ definitions:
             -   value
         properties:
             hs_entity:
-                description: "Placeholder for description of property hs_entity of obj type VirtualServiceResourcesScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScoreEntity'
             reason:
-                description: "reason of VirtualServiceResourcesScore."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             score_data:
-                description: "Placeholder for description of property score_data of obj type VirtualServiceResourcesScore field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/VirtualServiceResourcesScoreData'
             value:
-                description: "Placeholder for description of property value of obj type VirtualServiceResourcesScore field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     VirtualServiceResourcesScoreData:
@@ -2203,37 +2203,37 @@ definitions:
             -   reason
         properties:
             avg_bandwidth_usage:
-                description: "Resources of the virtual service with respect to max_throughput."
+                description: "Resources of the virtual service with respect to max_throughput. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             ha_index:
-                description: "Fraction of service engines available."
+                description: "Fraction of service engines available. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             max_open_conns_usage:
-                description: "Resources of the virtual service with respect to max_open_conns."
+                description: "Resources of the virtual service with respect to max_open_conns. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             multivip_index:
-                description: "Fraction of VIPs available, given a VirtualService."
+                description: "Fraction of VIPs available, given a VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             pool_resources_scores:
-                description: "Placeholder for description of property pool_resources_scores of obj type VirtualServiceResourcesScoreData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/PoolResourcesScore'
             reason:
-                description: "Reason for the Health Score."
+                description: "Reason for the Health Score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reason_attr:
-                description: "Attribute that is dominating the health score."
+                description: "Attribute that is dominating the health score. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ref:
-                description: " It is a reference to an object of type VirtualService."
+                description: " It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             serviceengine_resources_scores:
-                description: "Placeholder for description of property serviceengine_resources_scores of obj type VirtualServiceResourcesScoreData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ServiceEngineResourcesScore'

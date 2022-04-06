@@ -352,38 +352,38 @@ definitions:
         type: object
         properties:
             alert_objid:
-                description: "filter debugs for entity uuid."
+                description: "filter debugs for entity uuid. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             alert_uuid:
-                description: "filter debugs for an alert id."
+                description: "filter debugs for an alert id. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             cfg_uuid:
-                description: "filter debugs for an alert config."
+                description: "filter debugs for an alert config. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     AutoScaleMgrDebugFilter:
         type: object
         properties:
             enable_aws_autoscale_integration:
-                description: "Enable aws autoscale integration. This is an alpha feature. Field introduced in 17.1.1."
+                description: "Enable aws autoscale integration. This is an alpha feature. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             intelligent_autoscale_period:
-                description: "period of running intelligent autoscale check."
+                description: "period of running intelligent autoscale check. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             pool_ref:
-                description: "uuid of the Pool. It is a reference to an object of type Pool."
+                description: "uuid of the Pool. It is a reference to an object of type Pool. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     CloudConnectorDebugFilter:
         type: object
         properties:
             app_id:
-                description: "filter debugs for an app."
+                description: "filter debugs for an app. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             disable_se_reboot:
-                description: "Disable SE reboot via cloud connector on HB miss."
+                description: "Disable SE reboot via cloud connector on HB miss. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             se_id:
-                description: "filter debugs for a SE."
+                description: "filter debugs for a SE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     DebugController:
         type: object
@@ -398,29 +398,29 @@ definitions:
                 readOnly: True
                 type: string
             filters:
-                description: "Placeholder for description of property filters of obj type DebugController field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DebugFilterUnion'
             log_level:
-                description: " Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR."
+                description: " Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             name:
-                description: "Name of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             sub_module:
-                description: " Enum options - TASK_QUEUE_DEBUG, RPC_INFRA_DEBUG, JOB_MGR_DEBUG, TRANSACTION_DEBUG, SE_AGENT_DEBUG, SE_AGENT_METRICS_DEBUG, VIRTUALSERVICE_DEBUG, RES_MGR_DEBUG, SE_MGR_DEBUG, VI_MGR_DEBUG, METRICS_MANAGER_DEBUG, METRICS_MGR_DEBUG, EVENT_API_DEBUG, HS_MGR_DEBUG, ALERT_MGR_DEBUG, AUTOSCALE_MGR_DEBUG, APIC_AGENT_DEBUG, REDIS_INFRA_DEBUG, CLOUD_CONNECTOR_DEBUG, MESOS_METRICS_DEBUG, STATECACHE_MGR_DEBUG, NSX_AGENT_DEBUG, SE_AGENT_CPU_UTIL_DEBUG, SE_AGENT_MEM_UTIL_DEBUG, SE_RPC_PROXY_DEBUG, SE_AGENT_GSLB_DEBUG, METRICSAPI_SRV_DEBUG, SECURITYMGR_DEBUG, RES_MGR_READ_DEBUG, LICENSE_VMWSRVR_DEBUG, SE_AGENT_RESOLVERDB_DEBUG, LOGMANAGER_DEBUG, OSYNC_DEBUG."
+                description: " Enum options - TASK_QUEUE_DEBUG, RPC_INFRA_DEBUG, JOB_MGR_DEBUG, TRANSACTION_DEBUG, SE_AGENT_DEBUG, SE_AGENT_METRICS_DEBUG, VIRTUALSERVICE_DEBUG, RES_MGR_DEBUG, SE_MGR_DEBUG, VI_MGR_DEBUG, METRICS_MANAGER_DEBUG, METRICS_MGR_DEBUG, EVENT_API_DEBUG, HS_MGR_DEBUG, ALERT_MGR_DEBUG, AUTOSCALE_MGR_DEBUG, APIC_AGENT_DEBUG, REDIS_INFRA_DEBUG, CLOUD_CONNECTOR_DEBUG, MESOS_METRICS_DEBUG, STATECACHE_MGR_DEBUG, NSX_AGENT_DEBUG, SE_AGENT_CPU_UTIL_DEBUG, SE_AGENT_MEM_UTIL_DEBUG, SE_RPC_PROXY_DEBUG, SE_AGENT_GSLB_DEBUG, METRICSAPI_SRV_DEBUG, SECURITYMGR_DEBUG, RES_MGR_READ_DEBUG, LICENSE_VMWSRVR_DEBUG, SE_AGENT_RESOLVERDB_DEBUG, LOGMANAGER_DEBUG, OSYNC_DEBUG. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: " It is a reference to an object of type Tenant."
+                description: " It is a reference to an object of type Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             trace_level:
-                description: " Enum options - TRACE_LEVEL_DISABLED, TRACE_LEVEL_ERROR, TRACE_LEVEL_DEBUG, TRACE_LEVEL_DEBUG_DETAIL."
+                description: " Enum options - TRACE_LEVEL_DISABLED, TRACE_LEVEL_ERROR, TRACE_LEVEL_DEBUG, TRACE_LEVEL_DEBUG_DETAIL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "Unique object identifier of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     DebugControllerApiResponse:
         type: object
@@ -443,89 +443,89 @@ definitions:
             -   type
         properties:
             alert_debug_filter:
-                description: "Placeholder for description of property alert_debug_filter of obj type DebugFilterUnion field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AlertMgrDebugFilter'
             autoscale_mgr_debug_filter:
-                description: "Placeholder for description of property autoscale_mgr_debug_filter of obj type DebugFilterUnion field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AutoScaleMgrDebugFilter'
             cloud_connector_debug_filter:
-                description: "Placeholder for description of property cloud_connector_debug_filter of obj type DebugFilterUnion field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/CloudConnectorDebugFilter'
             hs_debug_filter:
-                description: "Placeholder for description of property hs_debug_filter of obj type DebugFilterUnion field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HSMgrDebugFilter'
             logmanager_debug_filter:
-                description: "Add filter to Log Manager Debug. Field introduced in 21.1.1."
+                description: "Add filter to Log Manager Debug. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LogManagerDebugFilter'
             mesos_metrics_debug_filter:
-                description: "Placeholder for description of property mesos_metrics_debug_filter of obj type DebugFilterUnion field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MesosMetricsDebugFilter'
             metrics_debug_filter:
-                description: "Placeholder for description of property metrics_debug_filter of obj type DebugFilterUnion field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MetricsMgrDebugFilter'
             metricsapi_srv_debug_filter:
-                description: "Add Metricsapi Server filter. Field introduced in 18.2.3."
+                description: "Add Metricsapi Server filter. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MetricsApiSrvDebugFilter'
             se_mgr_debug_filter:
-                description: "Placeholder for description of property se_mgr_debug_filter of obj type DebugFilterUnion field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SeMgrDebugFilter'
             se_rpc_proxy_filter:
-                description: "Add SE RPC Proxy Filter. Field introduced in 18.1.5, 18.2.1."
+                description: "Add SE RPC Proxy Filter. Field introduced in 18.1.5, 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SeRpcProxyDebugFilter'
             securitymgr_debug_filter:
-                description: "Add Metricsapi Server filter. Field introduced in 18.2.6."
+                description: "Add Metricsapi Server filter. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SecurityMgrDebugFilter'
             state_cache_mgr_debug_filter:
-                description: "Placeholder for description of property state_cache_mgr_debug_filter of obj type DebugFilterUnion field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/StateCacheMgrDebugFilter'
             type:
-                description: " Enum options - TASK_QUEUE_DEBUG, RPC_INFRA_DEBUG, JOB_MGR_DEBUG, TRANSACTION_DEBUG, SE_AGENT_DEBUG, SE_AGENT_METRICS_DEBUG, VIRTUALSERVICE_DEBUG, RES_MGR_DEBUG, SE_MGR_DEBUG, VI_MGR_DEBUG, METRICS_MANAGER_DEBUG, METRICS_MGR_DEBUG, EVENT_API_DEBUG, HS_MGR_DEBUG, ALERT_MGR_DEBUG, AUTOSCALE_MGR_DEBUG, APIC_AGENT_DEBUG, REDIS_INFRA_DEBUG, CLOUD_CONNECTOR_DEBUG, MESOS_METRICS_DEBUG, STATECACHE_MGR_DEBUG, NSX_AGENT_DEBUG, SE_AGENT_CPU_UTIL_DEBUG, SE_AGENT_MEM_UTIL_DEBUG, SE_RPC_PROXY_DEBUG, SE_AGENT_GSLB_DEBUG, METRICSAPI_SRV_DEBUG, SECURITYMGR_DEBUG, RES_MGR_READ_DEBUG, LICENSE_VMWSRVR_DEBUG, SE_AGENT_RESOLVERDB_DEBUG, LOGMANAGER_DEBUG, OSYNC_DEBUG."
+                description: " Enum options - TASK_QUEUE_DEBUG, RPC_INFRA_DEBUG, JOB_MGR_DEBUG, TRANSACTION_DEBUG, SE_AGENT_DEBUG, SE_AGENT_METRICS_DEBUG, VIRTUALSERVICE_DEBUG, RES_MGR_DEBUG, SE_MGR_DEBUG, VI_MGR_DEBUG, METRICS_MANAGER_DEBUG, METRICS_MGR_DEBUG, EVENT_API_DEBUG, HS_MGR_DEBUG, ALERT_MGR_DEBUG, AUTOSCALE_MGR_DEBUG, APIC_AGENT_DEBUG, REDIS_INFRA_DEBUG, CLOUD_CONNECTOR_DEBUG, MESOS_METRICS_DEBUG, STATECACHE_MGR_DEBUG, NSX_AGENT_DEBUG, SE_AGENT_CPU_UTIL_DEBUG, SE_AGENT_MEM_UTIL_DEBUG, SE_RPC_PROXY_DEBUG, SE_AGENT_GSLB_DEBUG, METRICSAPI_SRV_DEBUG, SECURITYMGR_DEBUG, RES_MGR_READ_DEBUG, LICENSE_VMWSRVR_DEBUG, SE_AGENT_RESOLVERDB_DEBUG, LOGMANAGER_DEBUG, OSYNC_DEBUG. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             vs_debug_filter:
-                description: "Placeholder for description of property vs_debug_filter of obj type DebugFilterUnion field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/VsDebugFilter'
     HSMgrDebugFilter:
         type: object
         properties:
             entity:
-                description: "entity of HSMgrDebugFilter."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             metric_entity:
-                description: " Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY."
+                description: " Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             period:
-                description: "Number of period."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             pool:
-                description: "pool of HSMgrDebugFilter."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             server:
-                description: "server of HSMgrDebugFilter."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             skip_hs_db_writes:
-                description: "Placeholder for description of property skip_hs_db_writes of obj type HSMgrDebugFilter field type str  type boolean"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
     LogManagerDebugFilter:
         type: object
         properties:
             entity_ref:
-                description: "UUID of the entity. It is a reference to an object of type Virtualservice. Field introduced in 21.1.1."
+                description: "UUID of the entity. It is a reference to an object of type Virtualservice. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
     MesosMetricsDebugFilter:
         type: object
         properties:
             mesos_master:
-                description: "mesos_master of MesosMetricsDebugFilter."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             mesos_slave:
-                description: "mesos_slave of MesosMetricsDebugFilter."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             metric_entity:
-                description: " Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY."
+                description: " Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             metrics_collection_frq:
-                description: "Number of metrics_collection_frq."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
@@ -533,84 +533,84 @@ definitions:
         type: object
         properties:
             entity_ref:
-                description: "uuid of the entity. It is a reference to an object of type Virtualservice. Field introduced in 18.2.3."
+                description: "uuid of the entity. It is a reference to an object of type Virtualservice. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     MetricsMgrDebugFilter:
         type: object
         properties:
             debug_skip_eval_period:
-                description: "Set to ignore skip_eval_period field in metrics_anomaly_option. Field introduced in 20.1.4."
+                description: "Set to ignore skip_eval_period field in metrics_anomaly_option. Field introduced in 20.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             disable_hw_training:
-                description: "disable_hw_training of MetricsMgrDebugFilter."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             entity:
-                description: "entity of MetricsMgrDebugFilter."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             license_grace_period:
-                description: "setting to reduce the grace period for license expiry in hours."
+                description: "setting to reduce the grace period for license expiry in hours. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             log_first_n:
-                description: "log_first_n of MetricsMgrDebugFilter."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             logging_freq:
-                description: "logging_freq of MetricsMgrDebugFilter."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             metric_instance_id:
-                description: "metric_instance_id of MetricsMgrDebugFilter."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             obj:
-                description: "obj of MetricsMgrDebugFilter."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             skip_cluster_map_check:
-                description: "skip_cluster_map_check of MetricsMgrDebugFilter."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             skip_metrics_db_writes:
-                description: "skip_metrics_db_writes of MetricsMgrDebugFilter."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     SecurityMgrDebugFilter:
         type: object
         properties:
             enable_adaptive_config:
-                description: "Dynamically adapt configuration parameters for Application Learning feature. Field introduced in 20.1.1."
+                description: "Dynamically adapt configuration parameters for Application Learning feature. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             entity_ref:
-                description: "uuid of the entity. It is a reference to an object of type Virtualservice. Field introduced in 18.2.6."
+                description: "uuid of the entity. It is a reference to an object of type Virtualservice. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     SeMgrDebugFilter:
         type: object
         properties:
             name:
-                description: "Name of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     SeRpcProxyDebugFilter:
         type: object
         properties:
             method_name:
-                description: "Method name of RPC. Field introduced in 18.1.5, 18.2.1."
+                description: "Method name of RPC. Field introduced in 18.1.5, 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             queue:
-                description: "Queue name of RPC. Field introduced in 18.1.5, 18.2.1."
+                description: "Queue name of RPC. Field introduced in 18.1.5, 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             se_uuid:
-                description: "UUID of Service Engine. Field introduced in 18.1.5, 18.2.1."
+                description: "UUID of Service Engine. Field introduced in 18.1.5, 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     StateCacheMgrDebugFilter:
         type: object
         properties:
             pool_ref:
-                description: "Pool UUID. It is a reference to an object of type Pool."
+                description: "Pool UUID. It is a reference to an object of type Pool. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             vs_ref:
-                description: "VirtualService UUID. It is a reference to an object of type VirtualService."
+                description: "VirtualService UUID. It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     VsDebugFilter:
         type: object
         properties:
             name:
-                description: "Name of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             se_uuid:
-                description: "Unique object identifier of se."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
