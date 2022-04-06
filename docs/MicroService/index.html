@@ -830,32 +830,32 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="IpAddr">IpAddr</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">addr </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> IP address. </div>
-<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - V4, DNS, V6. </div>
+      <div class="param">addr </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - V4, DNS, V6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="MicroService">MicroService</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
-<div class="param">application_name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> application_name of MicroService. </div>
-<div class="param">cloud_config_cksum (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Checksum of cloud configuration for Microservice. Internally set by cloud connector. Field introduced in 17.2.8. </div>
-<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
-<div class="param">containers (optional)</div><div class="param-desc"><span class="param-type"><a href="#MicroServiceContainer">array[MicroServiceContainer]</a></span> The list of containers for this microservice. </div>
-<div class="param">created_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Creator name. </div>
-<div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> User defined description for the object. </div>
-<div class="param">ip_list (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Flag to indicate if container IP list is provided by cloud connectorThis is applicable for overlay cases. </div>
-<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the object. </div>
-<div class="param">orchestrator_name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> orchestrator_name of MicroService. </div>
-<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. </div>
+<div class="param">application_name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">cloud_config_cksum (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Checksum of cloud configuration for Microservice. Internally set by cloud connector. Field introduced in 17.2.8. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">containers (optional)</div><div class="param-desc"><span class="param-type"><a href="#MicroServiceContainer">array[MicroServiceContainer]</a></span> The list of containers for this microservice. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">created_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Creator name. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ip_list (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Flag to indicate if container IP list is provided by cloud connectorThis is applicable for overlay cases. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">orchestrator_name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
-<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Unique object identifier of the object. </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -869,11 +869,11 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="MicroServiceContainer">MicroServiceContainer</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">container_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> ID of the container. </div>
-<div class="param">host (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> ID or name of the host where the container is. </div>
-<div class="param">ip </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> IP Address of the container. </div>
-<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Port nunber of the instance. format: int32</div>
-<div class="param">task_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Marathon Task ID of the instance. </div>
+      <div class="param">container_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> ID of the container. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">host (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> ID or name of the host where the container is. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ip </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> IP Address of the container. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Port nunber of the instance. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">task_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Marathon Task ID of the instance. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   </body>

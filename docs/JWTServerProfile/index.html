@@ -757,38 +757,38 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="ControllerInternalAuth">ControllerInternalAuth</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">symmetric_jwks_keys (optional)</div><div class="param-desc"><span class="param-type"><a href="#JWSKey">array[JWSKey]</a></span> Symmetric keys used for signing/validating the JWT, only allowed with profile_type CONTROLLER_INTERNAL_AUTH. Field introduced in 20.1.6. Minimum of 1 items required. Maximum of 1 items allowed. </div>
+      <div class="param">symmetric_jwks_keys (optional)</div><div class="param-desc"><span class="param-type"><a href="#JWSKey">array[JWSKey]</a></span> Symmetric keys used for signing/validating the JWT, only allowed with profile_type CONTROLLER_INTERNAL_AUTH. Field introduced in 20.1.6. Minimum of 1 items required. Maximum of 1 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="JWSKey">JWSKey</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">alg (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Algorithm that need to be used while signing/validation, allowed values  HS256, HS384, HS512. Field introduced in 20.1.6. </div>
-<div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Secret JWK for signing/validation, length of the key varies depending upon the type of algorithm used for key generation {HS256  32 bytes, HS384  48bytes, HS512  64 bytes}. Field introduced in 20.1.6. </div>
-<div class="param">kid </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Unique key id across all keys. Field introduced in 20.1.6. </div>
-<div class="param">kty (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Secret key type/format, allowed value  octet(oct). Field introduced in 20.1.6. </div>
+      <div class="param">alg (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Algorithm that need to be used while signing/validation, allowed values  HS256, HS384, HS512. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Secret JWK for signing/validation, length of the key varies depending upon the type of algorithm used for key generation {HS256  32 bytes, HS384  48bytes, HS512  64 bytes}. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">kid </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Unique key id across all keys. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">kty (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Secret key type/format, allowed value  octet(oct). Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="JWTServerProfile">JWTServerProfile</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
-<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
-<div class="param">controller_internal_auth (optional)</div><div class="param-desc"><span class="param-type"><a href="#ControllerInternalAuth">ControllerInternalAuth</a></span> JWT Auth configuration for profile_type CONTROLLER_INTERNAL_AUTH. Field introduced in 20.1.6. </div>
-<div class="param">is_federated (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> This field describes the object&#39;s replication scope. If the field is set to false, then the object is visible within the controller-cluster.  If the field is set to true, then the object is replicated across the federation.  . Field introduced in 20.1.6. </div>
-<div class="param">issuer (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Uniquely identifiable name of the Token Issuer, only allowed with profile_type CLIENT_AUTH. Field introduced in 20.1.3. </div>
-<div class="param">jwks_keys (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> JWKS key set used for validating the JWT, only allowed with profile_type CLIENT_AUTH. Field introduced in 20.1.3. </div>
-<div class="param">jwt_profile_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of JWT Server profile which defines the usage type. Enum options - CLIENT_AUTH, CONTROLLER_INTERNAL_AUTH. Field introduced in 20.1.6. </div>
-<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the JWT Profile. Field introduced in 20.1.3. </div>
-<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the Tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.3. </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">controller_internal_auth (optional)</div><div class="param-desc"><span class="param-type"><a href="#ControllerInternalAuth">ControllerInternalAuth</a></span> JWT Auth configuration for profile_type CONTROLLER_INTERNAL_AUTH. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">is_federated (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> This field describes the object&#39;s replication scope. If the field is set to false, then the object is visible within the controller-cluster.  If the field is set to true, then the object is replicated across the federation.  . Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">issuer (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Uniquely identifiable name of the Token Issuer, only allowed with profile_type CLIENT_AUTH. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">jwks_keys (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> JWKS key set used for validating the JWT, only allowed with profile_type CLIENT_AUTH. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">jwt_profile_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of JWT Server profile which defines the usage type. Enum options - CLIENT_AUTH, CONTROLLER_INTERNAL_AUTH. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the JWT Profile. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the Tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
-<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the JWTProfile. Field introduced in 20.1.3. </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the JWTProfile. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

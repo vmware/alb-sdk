@@ -731,43 +731,43 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="DbAppLearningInfo">DbAppLearningInfo</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">app_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Application UUID. Combination of Virtualservice UUID and WAF Policy UUID. Field introduced in 20.1.1. </div>
-<div class="param">uri_info (optional)</div><div class="param-desc"><span class="param-type"><a href="#URIInfo">array[URIInfo]</a></span> Information about various URIs under a application. Field introduced in 20.1.1. </div>
-<div class="param">vs_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Virtualserivce UUID. Field introduced in 20.1.1. </div>
+      <div class="param">app_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Application UUID. Combination of Virtualservice UUID and WAF Policy UUID. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">uri_info (optional)</div><div class="param-desc"><span class="param-type"><a href="#URIInfo">array[URIInfo]</a></span> Information about various URIs under a application. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">vs_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Virtualserivce UUID. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="ParamInfo">ParamInfo</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">param_hits (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Number of hits for a param. Field introduced in 20.1.1. format: int64</div>
-<div class="param">param_key (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Param name. Field introduced in 20.1.1. </div>
-<div class="param">param_size_classes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ParamSizeClass">array[ParamSizeClass]</a></span> Various param size and its respective hit count. Field introduced in 20.1.1. </div>
-<div class="param">param_type_classes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ParamTypeClass">array[ParamTypeClass]</a></span> Various param type and its respective hit count. Field introduced in 20.1.1. </div>
+      <div class="param">param_hits (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Number of hits for a param. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int64</div>
+<div class="param">param_key (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Param name. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">param_size_classes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ParamSizeClass">array[ParamSizeClass]</a></span> Various param size and its respective hit count. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">param_type_classes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ParamTypeClass">array[ParamTypeClass]</a></span> Various param type and its respective hit count. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="ParamSizeClass">ParamSizeClass</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">hits (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  Field introduced in 20.1.1. format: int64</div>
-<div class="param">len (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - EMPTY, SMALL, MEDIUM, LARGE, UNLIMITED. Field introduced in 20.1.1. </div>
+      <div class="param">hits (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int64</div>
+<div class="param">len (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - EMPTY, SMALL, MEDIUM, LARGE, UNLIMITED. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="ParamTypeClass">ParamTypeClass</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">hits (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  Field introduced in 20.1.1. format: int64</div>
-<div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - PARAM_FLAG, PARAM_DIGITS, PARAM_HEXDIGITS, PARAM_WORD, PARAM_SAFE_TEXT, PARAM_SAFE_TEXT_MULTILINE, PARAM_TEXT, PARAM_TEXT_MULTILINE, PARAM_ALL. Field introduced in 20.1.1. </div>
+      <div class="param">hits (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int64</div>
+<div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - PARAM_FLAG, PARAM_DIGITS, PARAM_HEXDIGITS, PARAM_WORD, PARAM_SAFE_TEXT, PARAM_SAFE_TEXT_MULTILINE, PARAM_TEXT, PARAM_TEXT_MULTILINE, PARAM_ALL. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="SecurityManagerData">SecurityManagerData</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
-<div class="param">app_learning_info (optional)</div><div class="param-desc"><span class="param-type"><a href="#DbAppLearningInfo">array[DbAppLearningInfo]</a></span> Information about various applications. Field introduced in 20.1.1. </div>
-<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Virtualservice Name. Field introduced in 20.1.1. </div>
-<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Field introduced in 20.1.1. </div>
+<div class="param">app_learning_info (optional)</div><div class="param-desc"><span class="param-type"><a href="#DbAppLearningInfo">array[DbAppLearningInfo]</a></span> Information about various applications. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Virtualservice Name. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
-<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Virtualservice UUID. Field introduced in 20.1.1. </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Virtualservice UUID. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -781,9 +781,9 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="URIInfo">URIInfo</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">param_info (optional)</div><div class="param-desc"><span class="param-type"><a href="#ParamInfo">array[ParamInfo]</a></span> Information about various params under a URI. Field introduced in 20.1.1. </div>
-<div class="param">uri_hits (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Total number of URI hits. Field introduced in 20.1.1. format: int64</div>
-<div class="param">uri_key (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> URI name. Field introduced in 20.1.1. </div>
+      <div class="param">param_info (optional)</div><div class="param-desc"><span class="param-type"><a href="#ParamInfo">array[ParamInfo]</a></span> Information about various params under a URI. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+<div class="param">uri_hits (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Total number of URI hits. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int64</div>
+<div class="param">uri_key (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> URI name. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   </body>
