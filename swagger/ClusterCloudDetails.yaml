@@ -354,10 +354,10 @@ definitions:
             -   subscription_id
         properties:
             cloud_credential_ref:
-                description: " It is a reference to an object of type CloudConnectorUser. Field introduced in 17.2.5."
+                description: " It is a reference to an object of type CloudConnectorUser. Field introduced in 17.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             subscription_id:
-                description: " Field introduced in 17.2.5."
+                description: " Field introduced in 17.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     ClusterCloudDetails:
         type: object
@@ -369,23 +369,23 @@ definitions:
                 readOnly: True
                 type: string
             azure_info:
-                description: "Azure info to configure cluster_vip on the controller. Field introduced in 17.2.5."
+                description: "Azure info to configure cluster_vip on the controller. Field introduced in 17.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AzureClusterInfo'
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             name:
-                description: " Field introduced in 17.2.5."
+                description: " Field introduced in 17.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Field introduced in 17.2.5."
+                description: " It is a reference to an object of type Tenant. Field introduced in 17.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Field introduced in 17.2.5."
+                description: " Field introduced in 17.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     ClusterCloudDetailsApiResponse:
         type: object
@@ -406,7 +406,7 @@ definitions:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
+                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32

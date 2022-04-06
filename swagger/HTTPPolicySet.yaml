@@ -353,10 +353,10 @@ definitions:
             -   type
         properties:
             type:
-                description: "One of the system-defined Bot classification types. Enum options - HUMAN, GOOD_BOT, BAD_BOT, DANGEROUS_BOT, USER_DEFINED_BOT, UNKNOWN_CLIENT. Field introduced in 21.1.1."
+                description: "One of the system-defined Bot classification types. Enum options - HUMAN, GOOD_BOT, BAD_BOT, DANGEROUS_BOT, USER_DEFINED_BOT, UNKNOWN_CLIENT. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             user_defined_type:
-                description: "If 'type' has BotClassificationTypes value 'USER_DEFINED', this is the user-defined value. Field introduced in 21.1.1."
+                description: "If 'type' has BotClassificationTypes value 'USER_DEFINED', this is the user-defined value. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
     BotDetectionMatch:
         type: object
@@ -364,18 +364,18 @@ definitions:
             -   match_operation
         properties:
             classifications:
-                description: "Bot classification types. Field introduced in 21.1.1."
+                description: "Bot classification types. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/BotClassification'
             match_operation:
-                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1."
+                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
     ConfigPbAttributes:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
+                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
@@ -386,17 +386,17 @@ definitions:
             -   name
         properties:
             match_case:
-                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE."
+                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "INSENSITIVE"
             match_criteria:
-                description: "Criterion to use for matching the cookie in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL."
+                description: "Criterion to use for matching the cookie in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             name:
-                description: "Name of the cookie."
+                description: "Name of the cookie. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "String value in the cookie."
+                description: "String value in the cookie. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     GeoMatch:
         type: object
@@ -406,13 +406,13 @@ definitions:
             -   values
         properties:
             attribute:
-                description: "The Geo data type to match on. Enum options - ATTRIBUTE_IP_PREFIX, ATTRIBUTE_COUNTRY_CODE, ATTRIBUTE_COUNTRY_NAME, ATTRIBUTE_CONTINENT_CODE, ATTRIBUTE_CONTINENT_NAME, ATTRIBUTE_REGION_NAME, ATTRIBUTE_CITY_NAME, ATTRIBUTE_ISP_NAME, ATTRIBUTE_ORGANIZATION_NAME, ATTRIBUTE_AS_NUMBER, ATTRIBUTE_AS_NAME, ATTRIBUTE_LONGITUDE, ATTRIBUTE_LATITUDE, ATTRIBUTE_CUSTOM_1, ATTRIBUTE_CUSTOM_2, ATTRIBUTE_CUSTOM_3, ATTRIBUTE_CUSTOM_4, ATTRIBUTE_CUSTOM_5, ATTRIBUTE_CUSTOM_6, ATTRIBUTE_CUSTOM_7, ATTRIBUTE_CUSTOM_8, ATTRIBUTE_CUSTOM_9, ATTRIBUTE_USER_DEFINED_MAPPING. Field introduced in 21.1.1."
+                description: "The Geo data type to match on. Enum options - ATTRIBUTE_IP_PREFIX, ATTRIBUTE_COUNTRY_CODE, ATTRIBUTE_COUNTRY_NAME, ATTRIBUTE_CONTINENT_CODE, ATTRIBUTE_CONTINENT_NAME, ATTRIBUTE_REGION_NAME, ATTRIBUTE_CITY_NAME, ATTRIBUTE_ISP_NAME, ATTRIBUTE_ORGANIZATION_NAME, ATTRIBUTE_AS_NUMBER, ATTRIBUTE_AS_NAME, ATTRIBUTE_LONGITUDE, ATTRIBUTE_LATITUDE, ATTRIBUTE_CUSTOM_1, ATTRIBUTE_CUSTOM_2, ATTRIBUTE_CUSTOM_3, ATTRIBUTE_CUSTOM_4, ATTRIBUTE_CUSTOM_5, ATTRIBUTE_CUSTOM_6, ATTRIBUTE_CUSTOM_7, ATTRIBUTE_CUSTOM_8, ATTRIBUTE_CUSTOM_9, ATTRIBUTE_USER_DEFINED_MAPPING. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             match_operation:
-                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1."
+                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             values:
-                description: "The values to match. Field introduced in 21.1.1."
+                description: "The values to match. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -423,17 +423,17 @@ definitions:
             -   match_criteria
         properties:
             hdr:
-                description: "Name of the HTTP header whose value is to be matched."
+                description: "Name of the HTTP header whose value is to be matched. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             match_case:
-                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE."
+                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "INSENSITIVE"
             match_criteria:
-                description: "Criterion to use for matching headers in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL."
+                description: "Criterion to use for matching headers in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "String values to match in the HTTP header."
+                description: "String values to match in the HTTP header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -443,14 +443,14 @@ definitions:
             -   match_criteria
         properties:
             match_case:
-                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE."
+                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "INSENSITIVE"
             match_criteria:
-                description: "Criterion to use for the host header value match. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL."
+                description: "Criterion to use for the host header value match. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "String value(s) in the host header."
+                description: "String value(s) in the host header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -458,10 +458,10 @@ definitions:
         type: object
         properties:
             name:
-                description: "Cookie name."
+                description: "Cookie name. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "Cookie value."
+                description: "Cookie value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     HTTPHdrAction:
         type: object
@@ -469,31 +469,31 @@ definitions:
             -   action
         properties:
             action:
-                description: "ADD  A new header with the new value is added irrespective of the existence of an HTTP header of the given name. REPLACE  A new header with the new value is added if no header of the given name exists, else existing headers with the given name are removed and a new header with the new value is added. REMOVE  All the headers of the given name are removed. Enum options - HTTP_ADD_HDR, HTTP_REMOVE_HDR, HTTP_REPLACE_HDR. Allowed in Basic(Allowed values- HTTP_REMOVE_HDR,HTTP_REPLACE_HDR) edition, Essentials(Allowed values- HTTP_REMOVE_HDR,HTTP_REPLACE_HDR) edition, Enterprise edition."
+                description: "ADD  A new header with the new value is added irrespective of the existence of an HTTP header of the given name. REPLACE  A new header with the new value is added if no header of the given name exists, else existing headers with the given name are removed and a new header with the new value is added. REMOVE  All the headers of the given name are removed. Enum options - HTTP_ADD_HDR, HTTP_REMOVE_HDR, HTTP_REPLACE_HDR. Allowed in Enterprise with any value edition, Essentials(Allowed values- HTTP_REMOVE_HDR,HTTP_REPLACE_HDR) edition, Basic(Allowed values- HTTP_REMOVE_HDR,HTTP_REPLACE_HDR) edition, Enterprise with Cloud Services edition."
                 type: string
             cookie:
-                description: "Cookie information."
+                description: "Cookie information. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPCookieData'
             hdr:
-                description: "HTTP header information."
+                description: "HTTP header information. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPHdrData'
     HTTPHdrData:
         type: object
         properties:
             name:
-                description: "HTTP header name."
+                description: "HTTP header name. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "HTTP header value."
+                description: "HTTP header value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPHdrValue'
     HTTPHdrValue:
         type: object
         properties:
             val:
-                description: "HTTP header value or variable representing an HTTP header."
+                description: "HTTP header value or variable representing an HTTP header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             var:
-                description: "Variable. Enum options - HTTP_POLICY_VAR_CLIENT_IP, HTTP_POLICY_VAR_VS_PORT, HTTP_POLICY_VAR_VS_IP, HTTP_POLICY_VAR_HTTP_HDR, HTTP_POLICY_VAR_SSL_CLIENT_FINGERPRINT, HTTP_POLICY_VAR_SSL_CLIENT_SERIAL, HTTP_POLICY_VAR_SSL_CLIENT_ISSUER, HTTP_POLICY_VAR_SSL_CLIENT_SUBJECT, HTTP_POLICY_VAR_SSL_CLIENT_RAW, HTTP_POLICY_VAR_SSL_PROTOCOL, HTTP_POLICY_VAR_SSL_SERVER_NAME, HTTP_POLICY_VAR_USER_NAME, HTTP_POLICY_VAR_SSL_CIPHER, HTTP_POLICY_VAR_REQUEST_ID, HTTP_POLICY_VAR_SSL_CLIENT_VERSION, HTTP_POLICY_VAR_SSL_CLIENT_SIGALG, HTTP_POLICY_VAR_SSL_CLIENT_NOTVALIDBEFORE, HTTP_POLICY_VAR_SSL_CLIENT_NOTVALIDAFTER, HTTP_POLICY_VAR_SSL_CLIENT_ESCAPED, HTTP_POLICY_VAR_SOURCE_IP."
+                description: "Variable. Enum options - HTTP_POLICY_VAR_CLIENT_IP, HTTP_POLICY_VAR_VS_PORT, HTTP_POLICY_VAR_VS_IP, HTTP_POLICY_VAR_HTTP_HDR, HTTP_POLICY_VAR_SSL_CLIENT_FINGERPRINT, HTTP_POLICY_VAR_SSL_CLIENT_SERIAL, HTTP_POLICY_VAR_SSL_CLIENT_ISSUER, HTTP_POLICY_VAR_SSL_CLIENT_SUBJECT, HTTP_POLICY_VAR_SSL_CLIENT_RAW, HTTP_POLICY_VAR_SSL_PROTOCOL, HTTP_POLICY_VAR_SSL_SERVER_NAME, HTTP_POLICY_VAR_USER_NAME, HTTP_POLICY_VAR_SSL_CIPHER, HTTP_POLICY_VAR_REQUEST_ID, HTTP_POLICY_VAR_SSL_CLIENT_VERSION, HTTP_POLICY_VAR_SSL_CLIENT_SIGALG, HTTP_POLICY_VAR_SSL_CLIENT_NOTVALIDBEFORE, HTTP_POLICY_VAR_SSL_CLIENT_NOTVALIDAFTER, HTTP_POLICY_VAR_SSL_CLIENT_ESCAPED, HTTP_POLICY_VAR_SOURCE_IP. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     HTTPLocalFile:
         type: object
@@ -502,13 +502,13 @@ definitions:
             -   file_content
         properties:
             content_type:
-                description: "Mime-type of the content in the file."
+                description: "Mime-type of the content in the file. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             file_content:
-                description: "File content to used in the local HTTP response body."
+                description: "File content to used in the local HTTP response body. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             file_length:
-                description: "File content length. Field introduced in 21.1.1."
+                description: "File content length. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     HTTPPolicySet:
@@ -521,57 +521,57 @@ definitions:
                 readOnly: True
                 type: string
             cloud_config_cksum:
-                description: "Checksum of cloud configuration for Pool. Internally set by cloud connector."
+                description: "Checksum of cloud configuration for Pool. Internally set by cloud connector. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             created_by:
-                description: "Creator name."
+                description: "Creator name. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             description:
-                description: "User defined description for the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             geo_db_ref:
-                description: "Geo database. It is a reference to an object of type GeoDB. Field introduced in 21.1.1."
+                description: "Geo database. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             http_request_policy:
-                description: "HTTP request policy for the virtual service."
+                description: "HTTP request policy for the virtual service. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPRequestPolicy'
             http_response_policy:
-                description: "HTTP response policy for the virtual service."
+                description: "HTTP response policy for the virtual service. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPResponsePolicy'
             http_security_policy:
-                description: "HTTP security policy for the virtual service."
+                description: "HTTP security policy for the virtual service. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPSecurityPolicy'
             ip_reputation_db_ref:
-                description: "IP reputation database. It is a reference to an object of type IPReputationDB. Field introduced in 20.1.3."
+                description: "IP reputation database. It is a reference to an object of type IPReputationDB. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             is_internal_policy:
-                description: "Placeholder for description of property is_internal_policy of obj type HTTPPolicySet field type str  type boolean"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             labels:
-                description: "Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed."
+                description: "Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/KeyValue'
             markers:
-                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/RoleFilterMatchLabel'
             name:
-                description: "Name of the HTTP Policy Set."
+                description: "Name of the HTTP Policy Set. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: " It is a reference to an object of type Tenant."
+                description: " It is a reference to an object of type Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the HTTP Policy Set."
+                description: "UUID of the HTTP Policy Set. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     HTTPPolicySetApiResponse:
         type: object
@@ -594,34 +594,34 @@ definitions:
             -   protocol
         properties:
             add_string:
-                description: "Add a query string to the redirect URI. If keep_query is set, concatenates the add_string to the query of the incoming request. Field introduced in 21.1.1."
+                description: "Add a query string to the redirect URI. If keep_query is set, concatenates the add_string to the query of the incoming request. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             host:
-                description: "Host config."
+                description: "Host config. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/URIParam'
             keep_query:
-                description: "Keep or drop the query of the incoming request URI in the redirected URI."
+                description: "Keep or drop the query of the incoming request URI in the redirected URI. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             path:
-                description: "Path config."
+                description: "Path config. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/URIParam'
             port:
-                description: "Port to which redirect the request. Allowed values are 1-65535."
+                description: "Port to which redirect the request. Allowed values are 1-65535. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             protocol:
-                description: "Protocol type. Enum options - HTTP, HTTPS."
+                description: "Protocol type. Enum options - HTTP, HTTPS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             status_code:
-                description: "HTTP redirect status code. Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307."
+                description: "HTTP redirect status code. Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "HTTP_REDIRECT_STATUS_CODE_302"
     HTTPRequestPolicy:
         type: object
         properties:
             rules:
-                description: "Add rules to the HTTP request policy."
+                description: "Add rules to the HTTP request policy. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/HTTPRequestRule'
@@ -633,44 +633,44 @@ definitions:
             -   name
         properties:
             all_headers:
-                description: "Log all HTTP headers upon rule match."
+                description: "Log all HTTP headers upon rule match. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
             enable:
-                description: "Enable or disable the rule."
+                description: "Enable or disable the rule. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             hdr_action:
-                description: "HTTP header rewrite action."
+                description: "HTTP header rewrite action. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/HTTPHdrAction'
             index:
-                description: "Index of the rule."
+                description: "Index of the rule. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             log:
-                description: "Log HTTP request upon rule match."
+                description: "Log HTTP request upon rule match. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
             match:
-                description: "Add match criteria to the rule."
+                description: "Add match criteria to the rule. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MatchTarget'
             name:
-                description: "Name of the rule."
+                description: "Name of the rule. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             redirect_action:
-                description: "HTTP redirect action."
+                description: "HTTP redirect action. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPRedirectAction'
             rewrite_url_action:
-                description: "HTTP request URL rewrite action."
+                description: "HTTP request URL rewrite action. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPRewriteURLAction'
             switching_action:
-                description: "Content switching action."
+                description: "Content switching action. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPSwitchingAction'
     HTTPResponsePolicy:
         type: object
         properties:
             rules:
-                description: "Add rules to the HTTP response policy."
+                description: "Add rules to the HTTP response policy. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/HTTPResponseRule'
@@ -682,32 +682,32 @@ definitions:
             -   name
         properties:
             all_headers:
-                description: "Log all HTTP headers upon rule match."
+                description: "Log all HTTP headers upon rule match. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
             enable:
-                description: "Enable or disable the rule."
+                description: "Enable or disable the rule. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             hdr_action:
-                description: "HTTP header rewrite action."
+                description: "HTTP header rewrite action. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/HTTPHdrAction'
             index:
-                description: "Index of the rule."
+                description: "Index of the rule. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             loc_hdr_action:
-                description: "Location header rewrite action."
+                description: "Location header rewrite action. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPRewriteLocHdrAction'
             log:
-                description: "Log HTTP request upon rule match."
+                description: "Log HTTP request upon rule match. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
             match:
-                description: "Add match criteria to the rule."
+                description: "Add match criteria to the rule. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ResponseMatchTarget'
             name:
-                description: "Name of the rule."
+                description: "Name of the rule. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     HTTPRewriteLocHdrAction:
         type: object
@@ -715,33 +715,33 @@ definitions:
             -   protocol
         properties:
             host:
-                description: "Host config."
+                description: "Host config. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/URIParam'
             keep_query:
-                description: "Keep or drop the query from the server side redirect URI."
+                description: "Keep or drop the query from the server side redirect URI. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             path:
-                description: "Path config."
+                description: "Path config. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/URIParam'
             port:
-                description: "Port to use in the redirected URI. Allowed values are 1-65535."
+                description: "Port to use in the redirected URI. Allowed values are 1-65535. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             protocol:
-                description: "HTTP protocol type. Enum options - HTTP, HTTPS."
+                description: "HTTP protocol type. Enum options - HTTP, HTTPS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     HTTPRewriteURLAction:
         type: object
         properties:
             host_hdr:
-                description: "Host config."
+                description: "Host config. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/URIParam'
             path:
-                description: "Path config."
+                description: "Path config. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/URIParam'
             query:
-                description: "Query config."
+                description: "Query config. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/URIParamQuery'
     HTTPSecurityAction:
         type: object
@@ -749,23 +749,23 @@ definitions:
             -   action
         properties:
             action:
-                description: "Type of the security action to perform. Enum options - HTTP_SECURITY_ACTION_CLOSE_CONN, HTTP_SECURITY_ACTION_SEND_RESPONSE, HTTP_SECURITY_ACTION_ALLOW, HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS, HTTP_SECURITY_ACTION_RATE_LIMIT, HTTP_SECURITY_ACTION_REQUEST_CHECK_ICAP. Allowed in Basic(Allowed values- HTTP_SECURITY_ACTION_CLOSE_CONN,HTTP_SECURITY_ACTION_SEND_RESPONSE,HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS) edition, Essentials(Allowed values- HTTP_SECURITY_ACTION_CLOSE_CONN,HTTP_SECURITY_ACTION_SEND_RESPONSE,HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS) edition, Enterprise edition."
+                description: "Type of the security action to perform. Enum options - HTTP_SECURITY_ACTION_CLOSE_CONN, HTTP_SECURITY_ACTION_SEND_RESPONSE, HTTP_SECURITY_ACTION_ALLOW, HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS, HTTP_SECURITY_ACTION_RATE_LIMIT, HTTP_SECURITY_ACTION_REQUEST_CHECK_ICAP. Allowed in Enterprise with any value edition, Essentials(Allowed values- HTTP_SECURITY_ACTION_CLOSE_CONN,HTTP_SECURITY_ACTION_SEND_RESPONSE,HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS) edition, Basic(Allowed values- HTTP_SECURITY_ACTION_CLOSE_CONN,HTTP_SECURITY_ACTION_SEND_RESPONSE,HTTP_SECURITY_ACTION_REDIRECT_TO_HTTPS) edition, Enterprise with Cloud Services edition."
                 type: string
             file:
-                description: "File to be used for generating HTTP local response."
+                description: "File to be used for generating HTTP local response. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPLocalFile'
             https_port:
-                description: "Secure SSL/TLS port to redirect the HTTP request to. Allowed values are 1-65535."
+                description: "Secure SSL/TLS port to redirect the HTTP request to. Allowed values are 1-65535. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             rate_limit:
-                description: "Rate Limit profile to be used to rate-limit the flow.  (deprecated). Field deprecated in 18.2.9."
+                description: "Rate Limit profile to be used to rate-limit the flow.  (deprecated). Field deprecated in 18.2.9. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/RateProfile'
             rate_profile:
-                description: "Rate limiting configuration for this action. Field introduced in 18.2.9. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "Rate limiting configuration for this action. Field introduced in 18.2.9. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPSecurityActionRateProfile'
             status_code:
-                description: "HTTP status code to use for local response. Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501."
+                description: "HTTP status code to use for local response. Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     HTTPSecurityActionRateProfile:
         type: object
@@ -774,22 +774,22 @@ definitions:
             -   rate_limiter
         properties:
             action:
-                description: "The action to take when the rate limit has been reached. Field introduced in 18.2.9."
+                description: "The action to take when the rate limit has been reached. Field introduced in 18.2.9. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/RateLimiterAction'
             per_client_ip:
-                description: "Rate limiting should be done on a per client ip basis. Field introduced in 18.2.9."
+                description: "Rate limiting should be done on a per client ip basis. Field introduced in 18.2.9. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             per_uri_path:
-                description: "Rate limiting should be done on a per request uri path basis. Field introduced in 18.2.9."
+                description: "Rate limiting should be done on a per request uri path basis. Field introduced in 18.2.9. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             rate_limiter:
-                description: "The rate limiter used when this action is triggered. Field introduced in 18.2.9."
+                description: "The rate limiter used when this action is triggered. Field introduced in 18.2.9. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/RateLimiter'
     HTTPSecurityPolicy:
         type: object
         properties:
             rules:
-                description: "Add rules to the HTTP security policy."
+                description: "Add rules to the HTTP security policy. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/HTTPSecurityRule'
@@ -801,24 +801,24 @@ definitions:
             -   name
         properties:
             action:
-                description: "Action to be performed upon successful matching."
+                description: "Action to be performed upon successful matching. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPSecurityAction'
             enable:
-                description: "Enable or disable the rule."
+                description: "Enable or disable the rule. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             index:
-                description: "Index of the rule."
+                description: "Index of the rule. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             log:
-                description: "Log HTTP request upon rule match."
+                description: "Log HTTP request upon rule match. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
             match:
-                description: "Add match criteria to the rule."
+                description: "Add match criteria to the rule. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MatchTarget'
             name:
-                description: "Name of the rule."
+                description: "Name of the rule. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     HTTPStatusMatch:
         type: object
@@ -826,15 +826,15 @@ definitions:
             -   match_criteria
         properties:
             match_criteria:
-                description: "Criterion to use for matching the HTTP response status code(s). Enum options - IS_IN, IS_NOT_IN."
+                description: "Criterion to use for matching the HTTP response status code(s). Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ranges:
-                description: "HTTP response status code range(s)."
+                description: "HTTP response status code range(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/HTTPStatusRange'
             status_codes:
-                description: "HTTP response status code(s)."
+                description: "HTTP response status code(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: integer
@@ -846,11 +846,11 @@ definitions:
             -   end
         properties:
             begin:
-                description: "Starting HTTP response status code."
+                description: "Starting HTTP response status code. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             end:
-                description: "Ending HTTP response status code."
+                description: "Ending HTTP response status code. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     HTTPSwitchingAction:
@@ -859,22 +859,22 @@ definitions:
             -   action
         properties:
             action:
-                description: "Content switching action type. Enum options - HTTP_SWITCHING_SELECT_POOL, HTTP_SWITCHING_SELECT_LOCAL, HTTP_SWITCHING_SELECT_POOLGROUP. Allowed in Essentials(Allowed values- HTTP_SWITCHING_SELECT_POOL,HTTP_SWITCHING_SELECT_LOCAL) edition, Enterprise edition."
+                description: "Content switching action type. Enum options - HTTP_SWITCHING_SELECT_POOL, HTTP_SWITCHING_SELECT_LOCAL, HTTP_SWITCHING_SELECT_POOLGROUP. Allowed in Enterprise with any value edition, Essentials(Allowed values- HTTP_SWITCHING_SELECT_POOL,HTTP_SWITCHING_SELECT_LOCAL) edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             file:
-                description: "File from which to serve local response to the request."
+                description: "File from which to serve local response to the request. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPLocalFile'
             pool_group_ref:
-                description: "UUID of the pool group to serve the request. It is a reference to an object of type PoolGroup."
+                description: "UUID of the pool group to serve the request. It is a reference to an object of type PoolGroup. Allowed in Enterprise with any value edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             pool_ref:
-                description: "UUID of the pool of servers to serve the request. It is a reference to an object of type Pool."
+                description: "UUID of the pool of servers to serve the request. It is a reference to an object of type Pool. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             server:
-                description: "Specific pool server to select."
+                description: "Specific pool server to select. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PoolServer'
             status_code:
-                description: "HTTP status code to use when serving local response. Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501."
+                description: "HTTP status code to use when serving local response. Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     HTTPVersionMatch:
         type: object
@@ -882,10 +882,10 @@ definitions:
             -   match_criteria
         properties:
             match_criteria:
-                description: "Criterion to use for HTTP version matching the version used in the HTTP request. Enum options - IS_IN, IS_NOT_IN."
+                description: "Criterion to use for HTTP version matching the version used in the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             versions:
-                description: "HTTP protocol version. Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO. Minimum of 1 items required. Maximum of 8 items allowed. Allowed in Basic(Allowed values- ONE_ZERO,ONE_ONE) edition, Essentials(Allowed values- ONE_ZERO,ONE_ONE) edition, Enterprise edition."
+                description: "HTTP protocol version. Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO. Minimum of 1 items required. Maximum of 8 items allowed. Allowed in Enterprise with any value edition, Essentials(Allowed values- ONE_ZERO,ONE_ONE) edition, Basic(Allowed values- ONE_ZERO,ONE_ONE) edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -896,10 +896,10 @@ definitions:
             -   type
         properties:
             addr:
-                description: "IP address."
+                description: "IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: " Enum options - V4, DNS, V6."
+                description: " Enum options - V4, DNS, V6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     IpAddrMatch:
         type: object
@@ -907,25 +907,25 @@ definitions:
             -   match_criteria
         properties:
             addrs:
-                description: "IP address(es)."
+                description: "IP address(es). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/IpAddr'
             group_refs:
-                description: "UUID of IP address group(s). It is a reference to an object of type IpAddrGroup."
+                description: "UUID of IP address group(s). It is a reference to an object of type IpAddrGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             match_criteria:
-                description: "Criterion to use for IP address matching the HTTP request. Enum options - IS_IN, IS_NOT_IN."
+                description: "Criterion to use for IP address matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             prefixes:
-                description: "IP address prefix(es)."
+                description: "IP address prefix(es). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/IpAddrPrefix'
             ranges:
-                description: "IP address range(s)."
+                description: "IP address range(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/IpAddrRange'
@@ -936,10 +936,10 @@ definitions:
             -   mask
         properties:
             ip_addr:
-                description: "Placeholder for description of property ip_addr of obj type IpAddrPrefix field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             mask:
-                description: "Number of mask."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     IpAddrRange:
@@ -949,10 +949,10 @@ definitions:
             -   end
         properties:
             begin:
-                description: "Starting IP address of the range."
+                description: "Starting IP address of the range. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             end:
-                description: "Ending IP address of the range."
+                description: "Ending IP address of the range. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
     IPReputationTypeMatch:
         type: object
@@ -960,10 +960,10 @@ definitions:
             -   match_operation
         properties:
             match_operation:
-                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 20.1.1."
+                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reputation_types:
-                description: "IP reputation type. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 20.1.1. Minimum of 1 items required."
+                description: "IP reputation type. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 20.1.1. Minimum of 1 items required. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -973,10 +973,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key."
+                description: "Key. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "Value."
+                description: "Value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     LocationHdrMatch:
         type: object
@@ -984,14 +984,14 @@ definitions:
             -   match_criteria
         properties:
             match_case:
-                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE."
+                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "INSENSITIVE"
             match_criteria:
-                description: "Criterion to use for matching location header value in the HTTP response. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL."
+                description: "Criterion to use for matching location header value in the HTTP response. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "String value(s) in the location header."
+                description: "String value(s) in the location header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -999,50 +999,50 @@ definitions:
         type: object
         properties:
             bot_detection_result:
-                description: "Configure the bot classification result. Field introduced in 21.1.1."
+                description: "Configure the bot classification result. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/BotDetectionMatch'
             client_ip:
-                description: "Configure client ip addresses."
+                description: "Configure client ip addresses. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrMatch'
             cookie:
-                description: "Configure HTTP cookie(s)."
+                description: "Configure HTTP cookie(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/CookieMatch'
             geo_matches:
-                description: "Configure the geo information. Field introduced in 21.1.1. Maximum of 1 items allowed."
+                description: "Configure the geo information. Field introduced in 21.1.1. Maximum of 1 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/GeoMatch'
             hdrs:
-                description: "Configure HTTP header(s). All configured headers must match."
+                description: "Configure HTTP header(s). All configured headers must match. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/HdrMatch'
             host_hdr:
-                description: "Configure the host header."
+                description: "Configure the host header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HostHdrMatch'
             ip_reputation_type:
-                description: "Configure IP reputation. Field introduced in 20.1.3."
+                description: "Configure IP reputation. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IPReputationTypeMatch'
             method:
-                description: "Configure HTTP methods."
+                description: "Configure HTTP methods. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MethodMatch'
             path:
-                description: "Configure request paths."
+                description: "Configure request paths. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PathMatch'
             protocol:
-                description: "Configure the type of HTTP protocol."
+                description: "Configure the type of HTTP protocol. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ProtocolMatch'
             query:
-                description: "Configure request query."
+                description: "Configure request query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/QueryMatch'
             source_ip:
-                description: "Configure source ip addresses. Field introduced in 21.1.3."
+                description: "Configure source ip addresses. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrMatch'
             version:
-                description: "Configure versions of the HTTP protocol."
+                description: "Configure versions of the HTTP protocol. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPVersionMatch'
             vs_port:
-                description: "Configure virtual service ports."
+                description: "Configure virtual service ports. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PortMatch'
     MethodMatch:
         type: object
@@ -1050,10 +1050,10 @@ definitions:
             -   match_criteria
         properties:
             match_criteria:
-                description: "Criterion to use for HTTP method matching the method in the HTTP request. Enum options - IS_IN, IS_NOT_IN."
+                description: "Criterion to use for HTTP method matching the method in the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             methods:
-                description: "Configure HTTP method(s). Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Minimum of 1 items required. Maximum of 16 items allowed. Allowed in Basic(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS) edition, Essentials(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS) edition, Enterprise edition."
+                description: "Configure HTTP method(s). Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Minimum of 1 items required. Maximum of 16 items allowed. Allowed in Enterprise with any value edition, Essentials(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS) edition, Basic(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS) edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -1063,20 +1063,20 @@ definitions:
             -   match_criteria
         properties:
             match_case:
-                description: "Case sensitivity to use for the matching. Enum options - SENSITIVE, INSENSITIVE."
+                description: "Case sensitivity to use for the matching. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "INSENSITIVE"
             match_criteria:
-                description: "Criterion to use for matching the path in the HTTP request URI. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Allowed in Basic(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Essentials(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Enterprise edition."
+                description: "Criterion to use for matching the path in the HTTP request URI. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Allowed in Enterprise with any value edition, Essentials(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Basic(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "CONTAINS"
             match_str:
-                description: "String values."
+                description: "String values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             string_group_refs:
-                description: "UUID of the string group(s). It is a reference to an object of type StringGroup."
+                description: "UUID of the string group(s). It is a reference to an object of type StringGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -1086,13 +1086,13 @@ definitions:
             -   ip
         properties:
             hostname:
-                description: "DNS resolvable name of the server.  May be used in place of the IP address."
+                description: "DNS resolvable name of the server.  May be used in place of the IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ip:
-                description: "IP address of the server in the poool."
+                description: "IP address of the server in the poool. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             port:
-                description: "Port of the pool server listening for HTTP/HTTPS. Default value is the default port in the pool. Allowed values are 1-65535."
+                description: "Port of the pool server listening for HTTP/HTTPS. Default value is the default port in the pool. Allowed values are 1-65535. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     PortMatch:
@@ -1101,10 +1101,10 @@ definitions:
             -   match_criteria
         properties:
             match_criteria:
-                description: "Criterion to use for port matching the HTTP request. Enum options - IS_IN, IS_NOT_IN."
+                description: "Criterion to use for port matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ports:
-                description: "Listening TCP port(s). Allowed values are 1-65535. Minimum of 1 items required."
+                description: "Listening TCP port(s). Allowed values are 1-65535. Minimum of 1 items required. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: integer
@@ -1116,10 +1116,10 @@ definitions:
             -   protocols
         properties:
             match_criteria:
-                description: "Criterion to use for protocol matching the HTTP request. Enum options - IS_IN, IS_NOT_IN."
+                description: "Criterion to use for protocol matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             protocols:
-                description: "HTTP or HTTPS protocol. Enum options - HTTP, HTTPS."
+                description: "HTTP or HTTPS protocol. Enum options - HTTP, HTTPS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     QueryMatch:
         type: object
@@ -1127,19 +1127,19 @@ definitions:
             -   match_criteria
         properties:
             match_case:
-                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE."
+                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "INSENSITIVE"
             match_criteria:
-                description: "Criterion to use for matching the query in HTTP request URI. Enum options - QUERY_MATCH_CONTAINS."
+                description: "Criterion to use for matching the query in HTTP request URI. Enum options - QUERY_MATCH_CONTAINS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             match_str:
-                description: "String value(s)."
+                description: "String value(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             string_group_refs:
-                description: "UUID of the string group(s). It is a reference to an object of type StringGroup."
+                description: "UUID of the string group(s). It is a reference to an object of type StringGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -1150,19 +1150,19 @@ definitions:
             -   period
         properties:
             burst_sz:
-                description: "Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9. Allowed in Basic(Allowed values- 0) edition, Enterprise edition."
+                description: "Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9. Allowed in Enterprise with any value edition, Basic(Allowed values- 0) edition, Essentials edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             count:
-                description: "Maximum number of connections, requests or packets permitted each period. Allowed values are 1-1000000000. Field introduced in 18.2.9."
+                description: "Maximum number of connections, requests or packets permitted each period. Allowed values are 1-1000000000. Field introduced in 18.2.9. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1000000000
                 format: int32
             name:
-                description: "Identifier for Rate Limit. Constructed according to context. Field introduced in 18.2.9."
+                description: "Identifier for Rate Limit. Constructed according to context. Field introduced in 18.2.9. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             period:
-                description: "Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC. Allowed in Basic(Allowed values- 1) edition, Enterprise edition."
+                description: "Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC. Allowed in Enterprise with any value edition, Basic(Allowed values- 1) edition, Essentials edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
@@ -1170,17 +1170,17 @@ definitions:
         type: object
         properties:
             file:
-                description: "File to be used for HTTP Local response rate limit action."
+                description: "File to be used for HTTP Local response rate limit action. Allowed in Enterprise with any value edition, Essentials edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPLocalFile'
             redirect:
-                description: "Parameters for HTTP Redirect rate limit action."
+                description: "Parameters for HTTP Redirect rate limit action. Allowed in Enterprise with any value edition, Essentials edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPRedirectAction'
             status_code:
-                description: "HTTP status code for Local Response rate limit action. Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501. Allowed in Basic(Allowed values- HTTP_LOCAL_RESPONSE_STATUS_CODE_429) edition, Enterprise edition."
+                description: "HTTP status code for Local Response rate limit action. Enum options - HTTP_LOCAL_RESPONSE_STATUS_CODE_200, HTTP_LOCAL_RESPONSE_STATUS_CODE_204, HTTP_LOCAL_RESPONSE_STATUS_CODE_403, HTTP_LOCAL_RESPONSE_STATUS_CODE_404, HTTP_LOCAL_RESPONSE_STATUS_CODE_429, HTTP_LOCAL_RESPONSE_STATUS_CODE_501. Allowed in Enterprise with any value edition, Basic(Allowed values- HTTP_LOCAL_RESPONSE_STATUS_CODE_429) edition, Essentials edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "HTTP_LOCAL_RESPONSE_STATUS_CODE_429"
             type:
-                description: "Type of action to be enforced upon hitting the rate limit. Enum options - RL_ACTION_NONE, RL_ACTION_DROP_CONN, RL_ACTION_RESET_CONN, RL_ACTION_CLOSE_CONN, RL_ACTION_LOCAL_RSP, RL_ACTION_REDIRECT. Allowed in Basic(Allowed values- RL_ACTION_NONE,RL_ACTION_DROP_CONN) edition, Enterprise edition."
+                description: "Type of action to be enforced upon hitting the rate limit. Enum options - RL_ACTION_NONE, RL_ACTION_DROP_CONN, RL_ACTION_RESET_CONN, RL_ACTION_CLOSE_CONN, RL_ACTION_LOCAL_RSP, RL_ACTION_REDIRECT. Allowed in Enterprise with any value edition, Basic(Allowed values- RL_ACTION_NONE,RL_ACTION_DROP_CONN) edition, Essentials edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "RL_ACTION_NONE"
     RateProfile:
@@ -1189,83 +1189,83 @@ definitions:
             -   action
         properties:
             action:
-                description: "Action to perform upon rate limiting."
+                description: "Action to perform upon rate limiting. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/RateLimiterAction'
             burst_sz:
-                description: "Maximum number of connections or requests or packets to be let through instantaneously. Allowed values are 10-2500. Special values are 0- automatic. Field deprecated in 18.2.9."
+                description: "Maximum number of connections or requests or packets to be let through instantaneously. Allowed values are 10-2500. Special values are 0- automatic. Field deprecated in 18.2.9. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             count:
-                description: "Maximum number of connections or requests or packets. Allowed values are 1-1000000000. Special values are 0- unlimited. Field deprecated in 18.2.9."
+                description: "Maximum number of connections or requests or packets. Allowed values are 1-1000000000. Special values are 0- unlimited. Field deprecated in 18.2.9. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             explicit_tracking:
-                description: "Explicitly tracks an attacker across rate periods. Allowed in Basic(Allowed values- false) edition, Enterprise edition."
+                description: "Explicitly tracks an attacker across rate periods. Allowed in Enterprise with any value edition, Basic(Allowed values- false) edition, Essentials edition, Enterprise with Cloud Services edition."
                 type: boolean
             fine_grain:
-                description: "Enable fine granularity. Allowed in Basic(Allowed values- false) edition, Enterprise edition."
+                description: "Enable fine granularity. Allowed in Enterprise with any value edition, Basic(Allowed values- false) edition, Essentials edition, Enterprise with Cloud Services edition."
                 type: boolean
             http_cookie:
-                description: "HTTP cookie name. Field introduced in 17.1.1. Allowed in Basic edition, Enterprise edition."
+                description: "HTTP cookie name. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Enterprise with Cloud Services edition."
                 type: string
             http_header:
-                description: "HTTP header name. Field introduced in 17.1.1. Allowed in Basic edition, Enterprise edition."
+                description: "HTTP header name. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Enterprise with Cloud Services edition."
                 type: string
             period:
-                description: "Time value in seconds to enforce rate count. Allowed values are 1-300. Field deprecated in 18.2.9. Unit is SEC."
+                description: "Time value in seconds to enforce rate count. Allowed values are 1-300. Field deprecated in 18.2.9. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             rate_limiter:
-                description: "The rate limiter configuration for this rate profile. Field introduced in 18.2.9."
+                description: "The rate limiter configuration for this rate profile. Field introduced in 18.2.9. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/RateLimiter'
     ResponseMatchTarget:
         type: object
         properties:
             client_ip:
-                description: "Configure client ip addresses."
+                description: "Configure client ip addresses. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrMatch'
             cookie:
-                description: "Configure HTTP cookie(s)."
+                description: "Configure HTTP cookie(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/CookieMatch'
             hdrs:
-                description: "Configure HTTP headers."
+                description: "Configure HTTP headers. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/HdrMatch'
             host_hdr:
-                description: "Configure the host header."
+                description: "Configure the host header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HostHdrMatch'
             loc_hdr:
-                description: "Configure the location header."
+                description: "Configure the location header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LocationHdrMatch'
             method:
-                description: "Configure HTTP methods."
+                description: "Configure HTTP methods. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MethodMatch'
             path:
-                description: "Configure request paths."
+                description: "Configure request paths. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PathMatch'
             protocol:
-                description: "Configure the type of HTTP protocol."
+                description: "Configure the type of HTTP protocol. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ProtocolMatch'
             query:
-                description: "Configure request query."
+                description: "Configure request query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/QueryMatch'
             rsp_hdrs:
-                description: "Configure the HTTP headers in response."
+                description: "Configure the HTTP headers in response. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/HdrMatch'
             source_ip:
-                description: "Configure source ip addresses. Field introduced in 21.1.3."
+                description: "Configure source ip addresses. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrMatch'
             status:
-                description: "Configure the HTTP status code(s)."
+                description: "Configure the HTTP status code(s). Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPStatusMatch'
             version:
-                description: "Configure versions of the HTTP protocol."
+                description: "Configure versions of the HTTP protocol. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPVersionMatch'
             vs_port:
-                description: "Configure virtual service ports."
+                description: "Configure virtual service ports. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PortMatch'
     RoleFilterMatchLabel:
         type: object
@@ -1273,10 +1273,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key for filter match. Field introduced in 20.1.3."
+                description: "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             values:
-                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3."
+                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -1286,21 +1286,21 @@ definitions:
             -   type
         properties:
             tokens:
-                description: "Token config either for the URI components or a constant string. Minimum of 1 items required."
+                description: "Token config either for the URI components or a constant string. Minimum of 1 items required. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/URIParamToken'
             type:
-                description: "URI param type. Enum options - URI_PARAM_TYPE_TOKENIZED."
+                description: "URI param type. Enum options - URI_PARAM_TYPE_TOKENIZED. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     URIParamQuery:
         type: object
         properties:
             add_string:
-                description: "Concatenate a string to the query of the incoming request URI and then use it in the request URI going to the backend server."
+                description: "Concatenate a string to the query of the incoming request URI and then use it in the request URI going to the backend server. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             keep_query:
-                description: "Use or drop the query of the incoming request URI in the request URI to the backend server."
+                description: "Use or drop the query of the incoming request URI in the request URI to the backend server. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
     URIParamToken:
@@ -1309,16 +1309,16 @@ definitions:
             -   type
         properties:
             end_index:
-                description: "Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - end of string."
+                description: "Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - end of string. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             start_index:
-                description: "Index of the starting token in the incoming URI."
+                description: "Index of the starting token in the incoming URI. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             str_value:
-                description: "Constant string to use as a token."
+                description: "Constant string to use as a token. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: "Token type for constructing the URI. Enum options - URI_TOKEN_TYPE_HOST, URI_TOKEN_TYPE_PATH, URI_TOKEN_TYPE_STRING, URI_TOKEN_TYPE_STRING_GROUP, URI_TOKEN_TYPE_REGEX."
+                description: "Token type for constructing the URI. Enum options - URI_TOKEN_TYPE_HOST, URI_TOKEN_TYPE_PATH, URI_TOKEN_TYPE_STRING, URI_TOKEN_TYPE_STRING_GROUP, URI_TOKEN_TYPE_REGEX. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string

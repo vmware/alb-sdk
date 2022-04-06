@@ -351,7 +351,7 @@ definitions:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
+                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
@@ -361,10 +361,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key."
+                description: "Key. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "Value."
+                description: "Value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     RoleFilterMatchLabel:
         type: object
@@ -372,10 +372,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key for filter match. Field introduced in 20.1.3."
+                description: "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             values:
-                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3."
+                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -383,34 +383,34 @@ definitions:
         type: object
         properties:
             autoscaling_duration:
-                description: "Scheduled autoscale duration (in hours). Allowed values are 1-24. Field introduced in 21.1.1. Unit is HOURS."
+                description: "Scheduled autoscale duration (in hours). Allowed values are 1-24. Field introduced in 21.1.1. Unit is HOURS. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
             cron_expression:
-                description: "The cron expression describing desired time for the scheduled autoscale. Field introduced in 21.1.1."
+                description: "The cron expression describing desired time for the scheduled autoscale. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             desired_capacity:
-                description: "Desired number of servers during scheduled intervals, it may cause scale-in or scale-out based on the value. Field introduced in 21.1.1."
+                description: "Desired number of servers during scheduled intervals, it may cause scale-in or scale-out based on the value. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             enable:
-                description: "Enables the scheduled autoscale. Field introduced in 21.1.1."
+                description: "Enables the scheduled autoscale. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             end_date:
-                description: "Scheduled autoscale end date in ISO8601 format, said day will be included in scheduled and have to be in future and greater than start date. Field introduced in 21.1.1."
+                description: "Scheduled autoscale end date in ISO8601 format, said day will be included in scheduled and have to be in future and greater than start date. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             recurrence:
-                description: "Deprecated.Frequency of the Scheduled autoscale. Enum options - ONCE, EVERY_DAY, EVERY_WEEK, EVERY_MONTH. Field deprecated in 21.1.3. Field introduced in 21.1.1."
+                description: "Deprecated.Frequency of the Scheduled autoscale. Enum options - ONCE, EVERY_DAY, EVERY_WEEK, EVERY_MONTH. Field deprecated in 21.1.3. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             schedule_max_step:
-                description: "Maximum number of simultaneous scale-in/out servers for scheduled autoscale. If this value is 0, regular autoscale policy dictates this. . Field introduced in 21.1.1."
+                description: "Maximum number of simultaneous scale-in/out servers for scheduled autoscale. If this value is 0, regular autoscale policy dictates this. . Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
             start_date:
-                description: "Scheduled autoscale start date in ISO8601 format, said day will be included in scheduled and have to be in future. Field introduced in 21.1.1."
+                description: "Scheduled autoscale start date in ISO8601 format, said day will be included in scheduled and have to be in future. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
     ServerAutoScalePolicy:
         type: object
@@ -422,96 +422,96 @@ definitions:
                 readOnly: True
                 type: string
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             delay_for_server_garbage_collection:
-                description: "Delay in minutes after which a down server will be removed from Pool. Value 0 disables this functionality. Field introduced in 20.1.3."
+                description: "Delay in minutes after which a down server will be removed from Pool. Value 0 disables this functionality. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             description:
-                description: "User defined description for the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             intelligent_autoscale:
-                description: "Use Avi intelligent autoscale algorithm where autoscale is performed by comparing load on the pool against estimated capacity of all the servers."
+                description: "Use Avi intelligent autoscale algorithm where autoscale is performed by comparing load on the pool against estimated capacity of all the servers. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             intelligent_scalein_margin:
-                description: "Maximum extra capacity as percentage of load used by the intelligent scheme. Scale-in is triggered when available capacity is more than this margin. Allowed values are 1-99."
+                description: "Maximum extra capacity as percentage of load used by the intelligent scheme. Scale-in is triggered when available capacity is more than this margin. Allowed values are 1-99. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 40
                 format: int32
             intelligent_scaleout_margin:
-                description: "Minimum extra capacity as percentage of load used by the intelligent scheme. Scale-out is triggered when available capacity is less than this margin. Allowed values are 1-99."
+                description: "Minimum extra capacity as percentage of load used by the intelligent scheme. Scale-out is triggered when available capacity is less than this margin. Allowed values are 1-99. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 20
                 format: int32
             labels:
-                description: "Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.3. Maximum of 4 items allowed."
+                description: "Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.3. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/KeyValue'
             markers:
-                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/RoleFilterMatchLabel'
             max_scalein_adjustment_step:
-                description: "Maximum number of servers to scale-in simultaneously. The actual number of servers to scale-in is chosen such that target number of servers is always more than or equal to the min_size."
+                description: "Maximum number of servers to scale-in simultaneously. The actual number of servers to scale-in is chosen such that target number of servers is always more than or equal to the min_size. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
             max_scaleout_adjustment_step:
-                description: "Maximum number of servers to scale-out simultaneously. The actual number of servers to scale-out is chosen such that target number of servers is always less than or equal to the max_size."
+                description: "Maximum number of servers to scale-out simultaneously. The actual number of servers to scale-out is chosen such that target number of servers is always less than or equal to the max_size. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
             max_size:
-                description: "Maximum number of servers after scale-out. Allowed values are 0-400."
+                description: "Maximum number of servers after scale-out. Allowed values are 0-400. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             min_size:
-                description: "No scale-in happens once number of operationally up servers reach min_servers. Allowed values are 0-400."
+                description: "No scale-in happens once number of operationally up servers reach min_servers. Allowed values are 0-400. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             name:
-                description: "Name of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             scalein_alertconfig_refs:
-                description: "Trigger scale-in when alerts due to any of these Alert configurations are raised. It is a reference to an object of type AlertConfig."
+                description: "Trigger scale-in when alerts due to any of these Alert configurations are raised. It is a reference to an object of type AlertConfig. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             scalein_cooldown:
-                description: "Cooldown period during which no new scale-in is triggered to allow previous scale-in to successfully complete. Unit is SEC."
+                description: "Cooldown period during which no new scale-in is triggered to allow previous scale-in to successfully complete. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 300
                 format: int32
             scaleout_alertconfig_refs:
-                description: "Trigger scale-out when alerts due to any of these Alert configurations are raised. It is a reference to an object of type AlertConfig."
+                description: "Trigger scale-out when alerts due to any of these Alert configurations are raised. It is a reference to an object of type AlertConfig. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             scaleout_cooldown:
-                description: "Cooldown period during which no new scale-out is triggered to allow previous scale-out to successfully complete. Unit is SEC."
+                description: "Cooldown period during which no new scale-out is triggered to allow previous scale-out to successfully complete. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 300
                 format: int32
             scheduled_scalings:
-                description: "Scheduled-based scale-in/out policy. During scheduled intervals, metrics based autoscale is not enabled and number of servers will be solely derived from ScheduleScale policy. Field introduced in 21.1.1. Maximum of 1 items allowed."
+                description: "Scheduled-based scale-in/out policy. During scheduled intervals, metrics based autoscale is not enabled and number of servers will be solely derived from ScheduleScale policy. Field introduced in 21.1.1. Maximum of 1 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ScheduledScaling'
             tenant_ref:
-                description: " It is a reference to an object of type Tenant."
+                description: " It is a reference to an object of type Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             use_predicted_load:
-                description: "Use predicted load rather than current load."
+                description: "Use predicted load rather than current load. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             uuid:
-                description: "Unique object identifier of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     ServerAutoScalePolicyApiResponse:
         type: object

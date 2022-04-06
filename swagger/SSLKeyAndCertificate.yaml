@@ -423,16 +423,16 @@ definitions:
         type: object
         properties:
             ca_ref:
-                description: " It is a reference to an object of type SSLKeyAndCertificate."
+                description: " It is a reference to an object of type SSLKeyAndCertificate. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             name:
-                description: "Name of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     ConfigPbAttributes:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
+                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
@@ -442,16 +442,16 @@ definitions:
             -   name
         properties:
             is_dynamic:
-                description: "Placeholder for description of property is_dynamic of obj type CustomParams field type str  type boolean"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             is_sensitive:
-                description: "Placeholder for description of property is_sensitive of obj type CustomParams field type str  type boolean"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             name:
-                description: "Name of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "value of CustomParams."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     KeyValue:
         type: object
@@ -459,40 +459,40 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key."
+                description: "Key. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "Value."
+                description: "Value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     OCSPConfig:
         type: object
         properties:
             failed_ocsp_jobs_retry_interval:
-                description: "Describes the Time Interval after which the next OCSP job needs to be scheduled in case of the OCSP job failures. Allowed values are 60-86400. Field introduced in 20.1.1. Unit is SEC."
+                description: "Describes the Time Interval after which the next OCSP job needs to be scheduled in case of the OCSP job failures. Allowed values are 60-86400. Field introduced in 20.1.1. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 3600
                 format: int32
             max_tries:
-                description: "Maximum number of times the failed OCSP jobs can be scheduled. Field introduced in 20.1.1."
+                description: "Maximum number of times the failed OCSP jobs can be scheduled. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10
                 format: int32
             ocsp_req_interval:
-                description: "Interval between the OCSP queries. Allowed values are 60-31536000. Field introduced in 20.1.1. Unit is SEC."
+                description: "Interval between the OCSP queries. Allowed values are 60-31536000. Field introduced in 20.1.1. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 86400
                 format: int32
             ocsp_resp_timeout:
-                description: "Time in seconds that the system waits for a reply from the OCSP responder before dropping the connection. Field introduced in 20.1.1. Unit is SEC."
+                description: "Time in seconds that the system waits for a reply from the OCSP responder before dropping the connection. Field introduced in 20.1.1. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             responder_url_lists:
-                description: "List of Responder URLs configured by user to do failover/override the AIA extension contained in the OCSP responder's SSL/TLS certificate. Field introduced in 20.1.1."
+                description: "List of Responder URLs configured by user to do failover/override the AIA extension contained in the OCSP responder's SSL/TLS certificate. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             url_action:
-                description: "Describes the type of action to take with the Responder URLs. Enum options - OCSP_RESPONDER_URL_FAILOVER, OCSP_RESPONDER_URL_OVERRIDE. Field introduced in 20.1.1."
+                description: "Describes the type of action to take with the Responder URLs. Enum options - OCSP_RESPONDER_URL_FAILOVER, OCSP_RESPONDER_URL_OVERRIDE. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "OCSP_RESPONDER_URL_FAILOVER"
     OCSPResponseInfo:
@@ -503,31 +503,31 @@ definitions:
             -   ocsp_response
         properties:
             cert_status:
-                description: "Revocation status of the certificate. Enum options - OCSP_CERTSTATUS_GOOD, OCSP_CERTSTATUS_REVOKED, OCSP_CERTSTATUS_UNKNOWN. Field introduced in 20.1.1."
+                description: "Revocation status of the certificate. Enum options - OCSP_CERTSTATUS_GOOD, OCSP_CERTSTATUS_REVOKED, OCSP_CERTSTATUS_UNKNOWN. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
             next_update:
-                description: "The time at or before which newer information will be available about the status of the certificate. Field introduced in 20.1.1."
+                description: "The time at or before which newer information will be available about the status of the certificate. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
             ocsp_resp_from_responder_url:
-                description: "The OCSP Responder URL from which the response is received. Field introduced in 20.1.1."
+                description: "The OCSP Responder URL from which the response is received. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
             ocsp_response:
-                description: "Signed OCSP response received from the CA's OCSP Responder. Field introduced in 20.1.1."
+                description: "Signed OCSP response received from the CA's OCSP Responder. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
             revocation_reason:
-                description: "The reason for the revocation of the certificate. Enum options - OCSP_REVOCATION_REASON_UNSPECIFIED, OCSP_REVOCATION_REASON_KEY_COMPROMISE, OCSP_REVOCATION_REASON_CA_COMPROMISE, OCSP_REVOCATION_REASON_AFFILIATION_CHANGED, OCSP_REVOCATION_REASON_SUPERSEDED, OCSP_REVOCATION_REASON_CESSATION_OF_OPERATION, OCSP_REVOCATION_REASON_CERTIFICATE_HOLD, OCSP_REVOCATION_REASON_REMOVE_FROM_CRL, OCSP_REVOCATION_REASON_PRIVILEGE_WITHDRAWN, OCSP_REVOCATION_REASON_AA_COMPROMISE. Field introduced in 20.1.1."
+                description: "The reason for the revocation of the certificate. Enum options - OCSP_REVOCATION_REASON_UNSPECIFIED, OCSP_REVOCATION_REASON_KEY_COMPROMISE, OCSP_REVOCATION_REASON_CA_COMPROMISE, OCSP_REVOCATION_REASON_AFFILIATION_CHANGED, OCSP_REVOCATION_REASON_SUPERSEDED, OCSP_REVOCATION_REASON_CESSATION_OF_OPERATION, OCSP_REVOCATION_REASON_CERTIFICATE_HOLD, OCSP_REVOCATION_REASON_REMOVE_FROM_CRL, OCSP_REVOCATION_REASON_PRIVILEGE_WITHDRAWN, OCSP_REVOCATION_REASON_AA_COMPROMISE. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
             revocation_time:
-                description: "ISO 8601 compatible timestamp at which the certificate was revoked or placed on hold. Field introduced in 20.1.1."
+                description: "ISO 8601 compatible timestamp at which the certificate was revoked or placed on hold. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
             this_update:
-                description: "The most recent time at which the status being indicated is known by the OCSP Responder to have been correct. Field introduced in 20.1.1."
+                description: "The most recent time at which the status being indicated is known by the OCSP Responder to have been correct. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
     RoleFilterMatchLabel:
@@ -536,10 +536,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key for filter match. Field introduced in 20.1.3."
+                description: "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             values:
-                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3."
+                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -547,93 +547,93 @@ definitions:
         type: object
         properties:
             certificate:
-                description: "certificate of SSLCertificate."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             certificate_signing_request:
-                description: "certificate_signing_request of SSLCertificate."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             chain_verified:
-                description: "Placeholder for description of property chain_verified of obj type SSLCertificate field type str  type boolean"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             days_until_expire:
-                description: "Number of days_until_expire."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 365
                 format: int32
             expiry_status:
-                description: " Enum options - SSL_CERTIFICATE_GOOD, SSL_CERTIFICATE_EXPIRY_WARNING, SSL_CERTIFICATE_EXPIRED."
+                description: " Enum options - SSL_CERTIFICATE_GOOD, SSL_CERTIFICATE_EXPIRY_WARNING, SSL_CERTIFICATE_EXPIRED. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "SSL_CERTIFICATE_GOOD"
             fingerprint:
-                description: "fingerprint of SSLCertificate."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             issuer:
-                description: "Placeholder for description of property issuer of obj type SSLCertificate field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SSLCertificateDescription'
             key_params:
-                description: "Placeholder for description of property key_params of obj type SSLCertificate field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SSLKeyParams'
             not_after:
-                description: "not_after of SSLCertificate."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             not_before:
-                description: "not_before of SSLCertificate."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             public_key:
-                description: "public_key of SSLCertificate."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             self_signed:
-                description: "Placeholder for description of property self_signed of obj type SSLCertificate field type str  type boolean"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             serial_number:
-                description: "serial_number of SSLCertificate."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             signature:
-                description: "signature of SSLCertificate."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             signature_algorithm:
-                description: "signature_algorithm of SSLCertificate."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             subject:
-                description: "Placeholder for description of property subject of obj type SSLCertificate field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SSLCertificateDescription'
             subject_alt_names:
-                description: "subjectAltName that provides additional subject identities."
+                description: "subjectAltName that provides additional subject identities. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             text:
-                description: "text of SSLCertificate."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             version:
-                description: "version of SSLCertificate."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     SSLCertificateDescription:
         type: object
         properties:
             common_name:
-                description: "common_name of SSLCertificateDescription."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             country:
-                description: "country of SSLCertificateDescription."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             distinguished_name:
-                description: "distinguished_name of SSLCertificateDescription."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             email_address:
-                description: "email_address of SSLCertificateDescription."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             locality:
-                description: "locality of SSLCertificateDescription."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             organization:
-                description: "organization of SSLCertificateDescription."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             organization_unit:
-                description: "organization_unit of SSLCertificateDescription."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             state:
-                description: "state of SSLCertificateDescription."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     SSLKeyAndCertificate:
         type: object
@@ -646,105 +646,105 @@ definitions:
                 readOnly: True
                 type: string
             ca_certs:
-                description: "CA certificates in certificate chain."
+                description: "CA certificates in certificate chain. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/CertificateAuthority'
             certificate:
-                description: "Placeholder for description of property certificate of obj type SSLKeyAndCertificate field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SSLCertificate'
             certificate_base64:
-                description: "States if the certificate is base64 encoded."
+                description: "States if the certificate is base64 encoded. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             certificate_management_profile_ref:
-                description: " It is a reference to an object of type CertificateManagementProfile."
+                description: " It is a reference to an object of type CertificateManagementProfile. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             created_by:
-                description: "Creator name."
+                description: "Creator name. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             dynamic_params:
-                description: "Dynamic parameters needed for certificate management profile."
+                description: "Dynamic parameters needed for certificate management profile. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/CustomParams'
             enable_ocsp_stapling:
-                description: "Enables OCSP Stapling. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
+                description: "Enables OCSP Stapling. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition."
                 type: boolean
             enckey_base64:
-                description: "Encrypted private key corresponding to the private key (e.g. those generated by an HSM such as Thales nShield)."
+                description: "Encrypted private key corresponding to the private key (e.g. those generated by an HSM such as Thales nShield). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             enckey_name:
-                description: "Name of the encrypted private key (e.g. those generated by an HSM such as Thales nShield)."
+                description: "Name of the encrypted private key (e.g. those generated by an HSM such as Thales nShield). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             format:
-                description: "Format of the Key/Certificate file. Enum options - SSL_PEM, SSL_PKCS12."
+                description: "Format of the Key/Certificate file. Enum options - SSL_PEM, SSL_PKCS12. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "SSL_PEM"
             hardwaresecuritymodulegroup_ref:
-                description: " It is a reference to an object of type HardwareSecurityModuleGroup."
+                description: " It is a reference to an object of type HardwareSecurityModuleGroup. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             key:
-                description: "Private key."
+                description: "Private key. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             key_base64:
-                description: "States if the private key is base64 encoded."
+                description: "States if the private key is base64 encoded. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             key_params:
-                description: "Placeholder for description of property key_params of obj type SSLKeyAndCertificate field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SSLKeyParams'
             key_passphrase:
-                description: "Passphrase used to encrypt the private key."
+                description: "Passphrase used to encrypt the private key. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             labels:
-                description: "Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed."
+                description: "Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/KeyValue'
             markers:
-                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/RoleFilterMatchLabel'
             name:
-                description: "Name of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ocsp_config:
-                description: "Configuration related to OCSP. Field introduced in 20.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "Configuration related to OCSP. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/OCSPConfig'
             ocsp_error_status:
-                description: "Error reported during OCSP status query. Enum options - OCSP_ERR_CERTSTATUS_GOOD, OCSP_ERR_CERTSTATUS_REVOKED, OCSP_ERR_CERTSTATUS_UNKNOWN, OCSP_ERR_CERTSTATUS_SERVERFAIL_ERR, OCSP_ERR_CERTSTATUS_JOBDB, OCSP_ERR_CERTSTATUS_DISABLED, OCSP_ERR_CERTSTATUS_GETCERT, OCSP_ERR_CERTSTATUS_NONVSCERT, OCSP_ERR_CERTSTATUS_SELFSIGNED, OCSP_ERR_CERTSTATUS_CERTFINISH, OCSP_ERR_CERTSTATUS_CACERT, OCSP_ERR_CERTSTATUS_REQUEST, OCSP_ERR_CERTSTATUS_ISSUER_REVOKED, OCSP_ERR_CERTSTATUS_PARSE_CERT, OCSP_ERR_CERTSTATUS_HTTP_REQ, OCSP_ERR_CERTSTATUS_URL_LIST, OCSP_ERR_CERTSTATUS_HTTP_SEND, OCSP_ERR_CERTSTATUS_HTTP_RECV, OCSP_ERR_CERTSTATUS_HTTP_RESP. Field introduced in 20.1.1. Allowed in Basic(Allowed values- OCSP_ERR_CERTSTATUS_DISABLED) edition, Essentials(Allowed values- OCSP_ERR_CERTSTATUS_DISABLED) edition, Enterprise edition."
+                description: "Error reported during OCSP status query. Enum options - OCSP_ERR_CERTSTATUS_GOOD, OCSP_ERR_CERTSTATUS_REVOKED, OCSP_ERR_CERTSTATUS_UNKNOWN, OCSP_ERR_CERTSTATUS_SERVERFAIL_ERR, OCSP_ERR_CERTSTATUS_JOBDB, OCSP_ERR_CERTSTATUS_DISABLED, OCSP_ERR_CERTSTATUS_GETCERT, OCSP_ERR_CERTSTATUS_NONVSCERT, OCSP_ERR_CERTSTATUS_SELFSIGNED, OCSP_ERR_CERTSTATUS_CERTFINISH, OCSP_ERR_CERTSTATUS_CACERT, OCSP_ERR_CERTSTATUS_REQUEST, OCSP_ERR_CERTSTATUS_ISSUER_REVOKED, OCSP_ERR_CERTSTATUS_PARSE_CERT, OCSP_ERR_CERTSTATUS_HTTP_REQ, OCSP_ERR_CERTSTATUS_URL_LIST, OCSP_ERR_CERTSTATUS_HTTP_SEND, OCSP_ERR_CERTSTATUS_HTTP_RECV, OCSP_ERR_CERTSTATUS_HTTP_RESP. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- OCSP_ERR_CERTSTATUS_DISABLED) edition, Basic(Allowed values- OCSP_ERR_CERTSTATUS_DISABLED) edition, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
                 default: "OCSP_ERR_CERTSTATUS_DISABLED"
             ocsp_responder_url_list_from_certs:
-                description: "This is an Internal field to store the OCSP Responder URLs contained in the certificate. Field introduced in 20.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "This is an Internal field to store the OCSP Responder URLs contained in the certificate. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: array
                 items:
                     type: string
             ocsp_response_info:
-                description: "Information related to OCSP response. Field introduced in 20.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "Information related to OCSP response. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 readOnly: True
                 $ref: '#/definitions/OCSPResponseInfo'
             status:
-                description: " Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING."
+                description: " Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "SSL_CERTIFICATE_FINISHED"
             tenant_ref:
-                description: " It is a reference to an object of type Tenant."
+                description: " It is a reference to an object of type Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: " Enum options - SSL_CERTIFICATE_TYPE_VIRTUALSERVICE, SSL_CERTIFICATE_TYPE_SYSTEM, SSL_CERTIFICATE_TYPE_CA."
+                description: " Enum options - SSL_CERTIFICATE_TYPE_VIRTUALSERVICE, SSL_CERTIFICATE_TYPE_SYSTEM, SSL_CERTIFICATE_TYPE_CA. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "Unique object identifier of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     SSLKeyAndCertificateApiResponse:
         type: object
@@ -765,7 +765,7 @@ definitions:
         type: object
         properties:
             curve:
-                description: " Enum options - SSL_KEY_EC_CURVE_SECP256R1, SSL_KEY_EC_CURVE_SECP384R1, SSL_KEY_EC_CURVE_SECP521R1."
+                description: " Enum options - SSL_KEY_EC_CURVE_SECP256R1, SSL_KEY_EC_CURVE_SECP384R1, SSL_KEY_EC_CURVE_SECP521R1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "SSL_KEY_EC_CURVE_SECP256R1"
     SSLKeyParams:
@@ -774,24 +774,24 @@ definitions:
             -   algorithm
         properties:
             algorithm:
-                description: " Enum options - SSL_KEY_ALGORITHM_RSA, SSL_KEY_ALGORITHM_EC."
+                description: " Enum options - SSL_KEY_ALGORITHM_RSA, SSL_KEY_ALGORITHM_EC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "SSL_KEY_ALGORITHM_RSA"
             ec_params:
-                description: "Placeholder for description of property ec_params of obj type SSLKeyParams field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SSLKeyECParams'
             rsa_params:
-                description: "Placeholder for description of property rsa_params of obj type SSLKeyParams field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SSLKeyRSAParams'
     SSLKeyRSAParams:
         type: object
         properties:
             exponent:
-                description: "Number of exponent."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 65537
                 format: int32
             key_size:
-                description: " Enum options - SSL_KEY_1024_BITS, SSL_KEY_2048_BITS, SSL_KEY_3072_BITS, SSL_KEY_4096_BITS."
+                description: " Enum options - SSL_KEY_1024_BITS, SSL_KEY_2048_BITS, SSL_KEY_3072_BITS, SSL_KEY_4096_BITS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "SSL_KEY_2048_BITS"

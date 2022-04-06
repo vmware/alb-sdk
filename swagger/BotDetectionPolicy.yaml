@@ -351,7 +351,7 @@ definitions:
         type: object
         properties:
             rules:
-                description: "Allow rules to control which requests undergo BOT detection. Field introduced in 21.1.1."
+                description: "Allow rules to control which requests undergo BOT detection. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/BotAllowRule'
@@ -363,17 +363,17 @@ definitions:
             -   index
         properties:
             action:
-                description: "The action to take. Enum options - BOT_ACTION_BYPASS, BOT_ACTION_CONTINUE. Field introduced in 21.1.1."
+                description: "The action to take. Enum options - BOT_ACTION_BYPASS, BOT_ACTION_CONTINUE. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             condition:
-                description: "The condition to match. Field introduced in 21.1.1."
+                description: "The condition to match. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MatchTarget'
             index:
-                description: "Rules are processed in order of this index field. Field introduced in 21.1.1."
+                description: "Rules are processed in order of this index field. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             name:
-                description: "A name describing the rule in a short form. Field introduced in 21.1.1."
+                description: "A name describing the rule in a short form. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
     BotClassification:
         type: object
@@ -381,45 +381,45 @@ definitions:
             -   type
         properties:
             type:
-                description: "One of the system-defined Bot classification types. Enum options - HUMAN, GOOD_BOT, BAD_BOT, DANGEROUS_BOT, USER_DEFINED_BOT, UNKNOWN_CLIENT. Field introduced in 21.1.1."
+                description: "One of the system-defined Bot classification types. Enum options - HUMAN, GOOD_BOT, BAD_BOT, DANGEROUS_BOT, USER_DEFINED_BOT, UNKNOWN_CLIENT. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             user_defined_type:
-                description: "If 'type' has BotClassificationTypes value 'USER_DEFINED', this is the user-defined value. Field introduced in 21.1.1."
+                description: "If 'type' has BotClassificationTypes value 'USER_DEFINED', this is the user-defined value. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
     BotConfigIPLocation:
         type: object
         properties:
             enabled:
-                description: "If this is enabled, IP location information is used to determine if a client is a known search engine bot, comes from the cloud, etc. Field introduced in 21.1.1."
+                description: "If this is enabled, IP location information is used to determine if a client is a known search engine bot, comes from the cloud, etc. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             ip_location_db_ref:
-                description: "The UUID of the Geo-IP database to use. It is a reference to an object of type GeoDB. Field introduced in 21.1.1."
+                description: "The UUID of the Geo-IP database to use. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             system_cloud_providers_ref:
-                description: "The system-defined cloud providers. It is a reference to an object of type StringGroup. Field introduced in 21.1.1."
+                description: "The system-defined cloud providers. It is a reference to an object of type StringGroup. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             system_search_engines_ref:
-                description: "The system-defined search engines. It is a reference to an object of type StringGroup. Field introduced in 21.1.1."
+                description: "The system-defined search engines. It is a reference to an object of type StringGroup. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
     BotConfigIPReputation:
         type: object
         properties:
             enabled:
-                description: "Whether IP reputation-based Bot detection is enabled. Field introduced in 21.1.1."
+                description: "Whether IP reputation-based Bot detection is enabled. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             ip_reputation_db_ref:
-                description: "The UUID of the IP reputation DB to use. It is a reference to an object of type IPReputationDB. Field introduced in 21.1.1."
+                description: "The UUID of the IP reputation DB to use. It is a reference to an object of type IPReputationDB. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             system_ip_reputation_mapping_ref:
-                description: "The system-provided mapping from IP reputation types to Bot types. It is a reference to an object of type BotIPReputationTypeMapping. Field introduced in 21.1.1."
+                description: "The system-provided mapping from IP reputation types to Bot types. It is a reference to an object of type BotIPReputationTypeMapping. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
     BotConfigUserAgent:
         type: object
         properties:
             enabled:
-                description: "Whether User Agent-based Bot detection is enabled. Field introduced in 21.1.1."
+                description: "Whether User Agent-based Bot detection is enabled. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
     BotDetectionMatch:
@@ -428,12 +428,12 @@ definitions:
             -   match_operation
         properties:
             classifications:
-                description: "Bot classification types. Field introduced in 21.1.1."
+                description: "Bot classification types. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/BotClassification'
             match_operation:
-                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1."
+                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
     BotDetectionPolicy:
         type: object
@@ -448,44 +448,44 @@ definitions:
                 readOnly: True
                 type: string
             allow_list:
-                description: "Allow the user to skip BotManagement for selected requests. Field introduced in 21.1.1."
+                description: "Allow the user to skip BotManagement for selected requests. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/BotAllowList'
             description:
-                description: "Human-readable description of this Bot Detection Policy. Field introduced in 21.1.1."
+                description: "Human-readable description of this Bot Detection Policy. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             ip_location_detector:
-                description: "The IP location configuration used in this policy. Field introduced in 21.1.1."
+                description: "The IP location configuration used in this policy. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/BotConfigIPLocation'
             ip_reputation_detector:
-                description: "The IP reputation configuration used in this policy. Field introduced in 21.1.1."
+                description: "The IP reputation configuration used in this policy. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/BotConfigIPReputation'
             name:
-                description: "The name of this Bot Detection Policy. Field introduced in 21.1.1."
+                description: "The name of this Bot Detection Policy. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             system_bot_mapping_ref:
-                description: "System-defined rules for classification. It is a reference to an object of type BotMapping. Field introduced in 21.1.1."
+                description: "System-defined rules for classification. It is a reference to an object of type BotMapping. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             system_consolidator_ref:
-                description: "The installation provides an updated ruleset for consolidating the results of different decider phases. It is a reference to an object of type BotConfigConsolidator. Field introduced in 21.1.1."
+                description: "The installation provides an updated ruleset for consolidating the results of different decider phases. It is a reference to an object of type BotConfigConsolidator. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: "The unique identifier of the tenant to which this policy belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1."
+                description: "The unique identifier of the tenant to which this policy belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             user_agent_detector:
-                description: "The User-Agent configuration used in this policy. Field introduced in 21.1.1."
+                description: "The User-Agent configuration used in this policy. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/BotConfigUserAgent'
             user_bot_mapping_ref:
-                description: "User-defined rules for classification. These are applied before the system classification rules. If a rule matches, processing terminates and the system-defined rules will not run. It is a reference to an object of type BotMapping. Field introduced in 21.1.1."
+                description: "User-defined rules for classification. These are applied before the system classification rules. If a rule matches, processing terminates and the system-defined rules will not run. It is a reference to an object of type BotMapping. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             user_consolidator_ref:
-                description: "The user-provided ruleset for consolidating the results of different decider phases. This runs before the system consolidator. If it successfully sets a consolidation, the system consolidator will not change it. It is a reference to an object of type BotConfigConsolidator. Field introduced in 21.1.1."
+                description: "The user-provided ruleset for consolidating the results of different decider phases. This runs before the system consolidator. If it successfully sets a consolidation, the system consolidator will not change it. It is a reference to an object of type BotConfigConsolidator. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             uuid:
-                description: "A unique identifier to this Bot Detection Policy. Field introduced in 21.1.1."
+                description: "A unique identifier to this Bot Detection Policy. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
     BotDetectionPolicyApiResponse:
         type: object
@@ -509,17 +509,17 @@ definitions:
             -   name
         properties:
             match_case:
-                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE."
+                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "INSENSITIVE"
             match_criteria:
-                description: "Criterion to use for matching the cookie in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL."
+                description: "Criterion to use for matching the cookie in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             name:
-                description: "Name of the cookie."
+                description: "Name of the cookie. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "String value in the cookie."
+                description: "String value in the cookie. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     GeoMatch:
         type: object
@@ -529,13 +529,13 @@ definitions:
             -   values
         properties:
             attribute:
-                description: "The Geo data type to match on. Enum options - ATTRIBUTE_IP_PREFIX, ATTRIBUTE_COUNTRY_CODE, ATTRIBUTE_COUNTRY_NAME, ATTRIBUTE_CONTINENT_CODE, ATTRIBUTE_CONTINENT_NAME, ATTRIBUTE_REGION_NAME, ATTRIBUTE_CITY_NAME, ATTRIBUTE_ISP_NAME, ATTRIBUTE_ORGANIZATION_NAME, ATTRIBUTE_AS_NUMBER, ATTRIBUTE_AS_NAME, ATTRIBUTE_LONGITUDE, ATTRIBUTE_LATITUDE, ATTRIBUTE_CUSTOM_1, ATTRIBUTE_CUSTOM_2, ATTRIBUTE_CUSTOM_3, ATTRIBUTE_CUSTOM_4, ATTRIBUTE_CUSTOM_5, ATTRIBUTE_CUSTOM_6, ATTRIBUTE_CUSTOM_7, ATTRIBUTE_CUSTOM_8, ATTRIBUTE_CUSTOM_9, ATTRIBUTE_USER_DEFINED_MAPPING. Field introduced in 21.1.1."
+                description: "The Geo data type to match on. Enum options - ATTRIBUTE_IP_PREFIX, ATTRIBUTE_COUNTRY_CODE, ATTRIBUTE_COUNTRY_NAME, ATTRIBUTE_CONTINENT_CODE, ATTRIBUTE_CONTINENT_NAME, ATTRIBUTE_REGION_NAME, ATTRIBUTE_CITY_NAME, ATTRIBUTE_ISP_NAME, ATTRIBUTE_ORGANIZATION_NAME, ATTRIBUTE_AS_NUMBER, ATTRIBUTE_AS_NAME, ATTRIBUTE_LONGITUDE, ATTRIBUTE_LATITUDE, ATTRIBUTE_CUSTOM_1, ATTRIBUTE_CUSTOM_2, ATTRIBUTE_CUSTOM_3, ATTRIBUTE_CUSTOM_4, ATTRIBUTE_CUSTOM_5, ATTRIBUTE_CUSTOM_6, ATTRIBUTE_CUSTOM_7, ATTRIBUTE_CUSTOM_8, ATTRIBUTE_CUSTOM_9, ATTRIBUTE_USER_DEFINED_MAPPING. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             match_operation:
-                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1."
+                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             values:
-                description: "The values to match. Field introduced in 21.1.1."
+                description: "The values to match. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -546,17 +546,17 @@ definitions:
             -   match_criteria
         properties:
             hdr:
-                description: "Name of the HTTP header whose value is to be matched."
+                description: "Name of the HTTP header whose value is to be matched. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             match_case:
-                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE."
+                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "INSENSITIVE"
             match_criteria:
-                description: "Criterion to use for matching headers in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL."
+                description: "Criterion to use for matching headers in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "String values to match in the HTTP header."
+                description: "String values to match in the HTTP header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -566,14 +566,14 @@ definitions:
             -   match_criteria
         properties:
             match_case:
-                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE."
+                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "INSENSITIVE"
             match_criteria:
-                description: "Criterion to use for the host header value match. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL."
+                description: "Criterion to use for the host header value match. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "String value(s) in the host header."
+                description: "String value(s) in the host header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -583,10 +583,10 @@ definitions:
             -   match_criteria
         properties:
             match_criteria:
-                description: "Criterion to use for HTTP version matching the version used in the HTTP request. Enum options - IS_IN, IS_NOT_IN."
+                description: "Criterion to use for HTTP version matching the version used in the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             versions:
-                description: "HTTP protocol version. Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO. Minimum of 1 items required. Maximum of 8 items allowed. Allowed in Basic(Allowed values- ONE_ZERO,ONE_ONE) edition, Essentials(Allowed values- ONE_ZERO,ONE_ONE) edition, Enterprise edition."
+                description: "HTTP protocol version. Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO. Minimum of 1 items required. Maximum of 8 items allowed. Allowed in Enterprise with any value edition, Essentials(Allowed values- ONE_ZERO,ONE_ONE) edition, Basic(Allowed values- ONE_ZERO,ONE_ONE) edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -597,10 +597,10 @@ definitions:
             -   type
         properties:
             addr:
-                description: "IP address."
+                description: "IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: " Enum options - V4, DNS, V6."
+                description: " Enum options - V4, DNS, V6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     IpAddrMatch:
         type: object
@@ -608,25 +608,25 @@ definitions:
             -   match_criteria
         properties:
             addrs:
-                description: "IP address(es)."
+                description: "IP address(es). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/IpAddr'
             group_refs:
-                description: "UUID of IP address group(s). It is a reference to an object of type IpAddrGroup."
+                description: "UUID of IP address group(s). It is a reference to an object of type IpAddrGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             match_criteria:
-                description: "Criterion to use for IP address matching the HTTP request. Enum options - IS_IN, IS_NOT_IN."
+                description: "Criterion to use for IP address matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             prefixes:
-                description: "IP address prefix(es)."
+                description: "IP address prefix(es). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/IpAddrPrefix'
             ranges:
-                description: "IP address range(s)."
+                description: "IP address range(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/IpAddrRange'
@@ -637,10 +637,10 @@ definitions:
             -   mask
         properties:
             ip_addr:
-                description: "Placeholder for description of property ip_addr of obj type IpAddrPrefix field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             mask:
-                description: "Number of mask."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     IpAddrRange:
@@ -650,10 +650,10 @@ definitions:
             -   end
         properties:
             begin:
-                description: "Starting IP address of the range."
+                description: "Starting IP address of the range. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             end:
-                description: "Ending IP address of the range."
+                description: "Ending IP address of the range. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
     IPReputationTypeMatch:
         type: object
@@ -661,10 +661,10 @@ definitions:
             -   match_operation
         properties:
             match_operation:
-                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 20.1.1."
+                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reputation_types:
-                description: "IP reputation type. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 20.1.1. Minimum of 1 items required."
+                description: "IP reputation type. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 20.1.1. Minimum of 1 items required. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -672,50 +672,50 @@ definitions:
         type: object
         properties:
             bot_detection_result:
-                description: "Configure the bot classification result. Field introduced in 21.1.1."
+                description: "Configure the bot classification result. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/BotDetectionMatch'
             client_ip:
-                description: "Configure client ip addresses."
+                description: "Configure client ip addresses. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrMatch'
             cookie:
-                description: "Configure HTTP cookie(s)."
+                description: "Configure HTTP cookie(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/CookieMatch'
             geo_matches:
-                description: "Configure the geo information. Field introduced in 21.1.1. Maximum of 1 items allowed."
+                description: "Configure the geo information. Field introduced in 21.1.1. Maximum of 1 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/GeoMatch'
             hdrs:
-                description: "Configure HTTP header(s). All configured headers must match."
+                description: "Configure HTTP header(s). All configured headers must match. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/HdrMatch'
             host_hdr:
-                description: "Configure the host header."
+                description: "Configure the host header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HostHdrMatch'
             ip_reputation_type:
-                description: "Configure IP reputation. Field introduced in 20.1.3."
+                description: "Configure IP reputation. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IPReputationTypeMatch'
             method:
-                description: "Configure HTTP methods."
+                description: "Configure HTTP methods. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MethodMatch'
             path:
-                description: "Configure request paths."
+                description: "Configure request paths. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PathMatch'
             protocol:
-                description: "Configure the type of HTTP protocol."
+                description: "Configure the type of HTTP protocol. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ProtocolMatch'
             query:
-                description: "Configure request query."
+                description: "Configure request query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/QueryMatch'
             source_ip:
-                description: "Configure source ip addresses. Field introduced in 21.1.3."
+                description: "Configure source ip addresses. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrMatch'
             version:
-                description: "Configure versions of the HTTP protocol."
+                description: "Configure versions of the HTTP protocol. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPVersionMatch'
             vs_port:
-                description: "Configure virtual service ports."
+                description: "Configure virtual service ports. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PortMatch'
     MethodMatch:
         type: object
@@ -723,10 +723,10 @@ definitions:
             -   match_criteria
         properties:
             match_criteria:
-                description: "Criterion to use for HTTP method matching the method in the HTTP request. Enum options - IS_IN, IS_NOT_IN."
+                description: "Criterion to use for HTTP method matching the method in the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             methods:
-                description: "Configure HTTP method(s). Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Minimum of 1 items required. Maximum of 16 items allowed. Allowed in Basic(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS) edition, Essentials(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS) edition, Enterprise edition."
+                description: "Configure HTTP method(s). Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Minimum of 1 items required. Maximum of 16 items allowed. Allowed in Enterprise with any value edition, Essentials(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS) edition, Basic(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS) edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -736,20 +736,20 @@ definitions:
             -   match_criteria
         properties:
             match_case:
-                description: "Case sensitivity to use for the matching. Enum options - SENSITIVE, INSENSITIVE."
+                description: "Case sensitivity to use for the matching. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "INSENSITIVE"
             match_criteria:
-                description: "Criterion to use for matching the path in the HTTP request URI. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Allowed in Basic(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Essentials(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Enterprise edition."
+                description: "Criterion to use for matching the path in the HTTP request URI. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Allowed in Enterprise with any value edition, Essentials(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Basic(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "CONTAINS"
             match_str:
-                description: "String values."
+                description: "String values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             string_group_refs:
-                description: "UUID of the string group(s). It is a reference to an object of type StringGroup."
+                description: "UUID of the string group(s). It is a reference to an object of type StringGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -759,10 +759,10 @@ definitions:
             -   match_criteria
         properties:
             match_criteria:
-                description: "Criterion to use for port matching the HTTP request. Enum options - IS_IN, IS_NOT_IN."
+                description: "Criterion to use for port matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ports:
-                description: "Listening TCP port(s). Allowed values are 1-65535. Minimum of 1 items required."
+                description: "Listening TCP port(s). Allowed values are 1-65535. Minimum of 1 items required. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: integer
@@ -774,10 +774,10 @@ definitions:
             -   protocols
         properties:
             match_criteria:
-                description: "Criterion to use for protocol matching the HTTP request. Enum options - IS_IN, IS_NOT_IN."
+                description: "Criterion to use for protocol matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             protocols:
-                description: "HTTP or HTTPS protocol. Enum options - HTTP, HTTPS."
+                description: "HTTP or HTTPS protocol. Enum options - HTTP, HTTPS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     QueryMatch:
         type: object
@@ -785,19 +785,19 @@ definitions:
             -   match_criteria
         properties:
             match_case:
-                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE."
+                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "INSENSITIVE"
             match_criteria:
-                description: "Criterion to use for matching the query in HTTP request URI. Enum options - QUERY_MATCH_CONTAINS."
+                description: "Criterion to use for matching the query in HTTP request URI. Enum options - QUERY_MATCH_CONTAINS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             match_str:
-                description: "String value(s)."
+                description: "String value(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             string_group_refs:
-                description: "UUID of the string group(s). It is a reference to an object of type StringGroup."
+                description: "UUID of the string group(s). It is a reference to an object of type StringGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string

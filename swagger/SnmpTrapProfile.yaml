@@ -401,16 +401,16 @@ definitions:
             -   text
         properties:
             text:
-                description: "The contents of the Syslog message/SNMP Trap contents."
+                description: "The contents of the Syslog message/SNMP Trap contents. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             uuid:
-                description: "Unique object identifier of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     ConfigPbAttributes:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
+                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
@@ -421,10 +421,10 @@ definitions:
             -   type
         properties:
             addr:
-                description: "IP address."
+                description: "IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: " Enum options - V4, DNS, V6."
+                description: " Enum options - V4, DNS, V6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     SnmpTrapProfile:
         type: object
@@ -436,16 +436,16 @@ definitions:
                 readOnly: True
                 type: string
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             name:
-                description: "A user-friendly name of the SNMP trap configuration."
+                description: "A user-friendly name of the SNMP trap configuration. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: " It is a reference to an object of type Tenant."
+                description: " It is a reference to an object of type Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             trap_servers:
-                description: "The IP address or hostname of the SNMP trap destination server."
+                description: "The IP address or hostname of the SNMP trap destination server. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/SnmpTrapServer'
@@ -454,7 +454,7 @@ definitions:
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the SNMP trap profile object."
+                description: "UUID of the SNMP trap profile object. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     SnmpTrapProfileApiResponse:
         type: object
@@ -477,42 +477,42 @@ definitions:
             -   ip_addr
         properties:
             community:
-                description: "The community string to communicate with the trap server."
+                description: "The community string to communicate with the trap server. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ip_addr:
-                description: "IP Address of the SNMP trap destination."
+                description: "IP Address of the SNMP trap destination. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             port:
-                description: "The UDP port of the trap server. Field introduced in 16.5.4,17.2.5."
+                description: "The UDP port of the trap server. Field introduced in 16.5.4,17.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 162
                 format: int32
             user:
-                description: "SNMP version 3 configuration. Field introduced in 17.2.3."
+                description: "SNMP version 3 configuration. Field introduced in 17.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SnmpV3UserParams'
             version:
-                description: "SNMP version support. V2 or V3. Enum options - SNMP_VER2, SNMP_VER3. Field introduced in 17.2.3."
+                description: "SNMP version support. V2 or V3. Enum options - SNMP_VER2, SNMP_VER3. Field introduced in 17.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "SNMP_VER2"
     SnmpV3UserParams:
         type: object
         properties:
             auth_passphrase:
-                description: "SNMP V3 authentication passphrase. Field introduced in 17.2.3."
+                description: "SNMP V3 authentication passphrase. Field introduced in 17.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "avinetworks"
             auth_type:
-                description: "SNMP V3 user authentication type. Enum options - SNMP_V3_AUTH_MD5, SNMP_V3_AUTH_SHA, SNMP_V3_AUTH_SHA_224, SNMP_V3_AUTH_SHA_256, SNMP_V3_AUTH_SHA_384, SNMP_V3_AUTH_SHA_512. Field introduced in 17.2.3."
+                description: "SNMP V3 user authentication type. Enum options - SNMP_V3_AUTH_MD5, SNMP_V3_AUTH_SHA, SNMP_V3_AUTH_SHA_224, SNMP_V3_AUTH_SHA_256, SNMP_V3_AUTH_SHA_384, SNMP_V3_AUTH_SHA_512. Field introduced in 17.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "SNMP_V3_AUTH_MD5"
             priv_passphrase:
-                description: "SNMP V3 privacy passphrase. Field introduced in 17.2.3."
+                description: "SNMP V3 privacy passphrase. Field introduced in 17.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "avinetworks"
             priv_type:
-                description: "SNMP V3 privacy setting. Enum options - SNMP_V3_PRIV_DES, SNMP_V3_PRIV_AES. Field introduced in 17.2.3."
+                description: "SNMP V3 privacy setting. Enum options - SNMP_V3_PRIV_DES, SNMP_V3_PRIV_AES. Field introduced in 17.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "SNMP_V3_PRIV_DES"
             username:
-                description: "SNMP username to be used by SNMP clients for performing SNMP walk. Field introduced in 17.2.3."
+                description: "SNMP username to be used by SNMP clients for performing SNMP walk. Field introduced in 17.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string

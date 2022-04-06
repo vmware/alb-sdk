@@ -506,18 +506,18 @@
             "type": "object",
             "properties": {
                 "app_id": {
-                    "description": "Application UUID. Combination of Virtualservice UUID and WAF Policy UUID. Field introduced in 20.1.1.",
+                    "description": "Application UUID. Combination of Virtualservice UUID and WAF Policy UUID. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "uri_info": {
-                    "description": "Information about various URIs under a application. Field introduced in 20.1.1.",
+                    "description": "Information about various URIs under a application. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/URIInfo"
                     }
                 },
                 "vs_uuid": {
-                    "description": "Virtualserivce UUID. Field introduced in 20.1.1.",
+                    "description": "Virtualserivce UUID. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -526,23 +526,23 @@
             "type": "object",
             "properties": {
                 "param_hits": {
-                    "description": "Number of hits for a param. Field introduced in 20.1.1.",
+                    "description": "Number of hits for a param. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "param_key": {
-                    "description": "Param name. Field introduced in 20.1.1.",
+                    "description": "Param name. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "param_size_classes": {
-                    "description": "Various param size and its respective hit count. Field introduced in 20.1.1.",
+                    "description": "Various param size and its respective hit count. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ParamSizeClass"
                     }
                 },
                 "param_type_classes": {
-                    "description": "Various param type and its respective hit count. Field introduced in 20.1.1.",
+                    "description": "Various param type and its respective hit count. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ParamTypeClass"
@@ -554,12 +554,12 @@
             "type": "object",
             "properties": {
                 "hits": {
-                    "description": " Field introduced in 20.1.1.",
+                    "description": " Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "len": {
-                    "description": " Enum options - EMPTY, SMALL, MEDIUM, LARGE, UNLIMITED. Field introduced in 20.1.1.",
+                    "description": " Enum options - EMPTY, SMALL, MEDIUM, LARGE, UNLIMITED. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -568,12 +568,12 @@
             "type": "object",
             "properties": {
                 "hits": {
-                    "description": " Field introduced in 20.1.1.",
+                    "description": " Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "type": {
-                    "description": " Enum options - PARAM_FLAG, PARAM_DIGITS, PARAM_HEXDIGITS, PARAM_WORD, PARAM_SAFE_TEXT, PARAM_SAFE_TEXT_MULTILINE, PARAM_TEXT, PARAM_TEXT_MULTILINE, PARAM_ALL. Field introduced in 20.1.1.",
+                    "description": " Enum options - PARAM_FLAG, PARAM_DIGITS, PARAM_HEXDIGITS, PARAM_WORD, PARAM_SAFE_TEXT, PARAM_SAFE_TEXT_MULTILINE, PARAM_TEXT, PARAM_TEXT_MULTILINE, PARAM_ALL. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -590,18 +590,18 @@
                     "type": "string"
                 },
                 "app_learning_info": {
-                    "description": "Information about various applications. Field introduced in 20.1.1.",
+                    "description": "Information about various applications. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/DbAppLearningInfo"
                     }
                 },
                 "name": {
-                    "description": "Virtualservice Name. Field introduced in 20.1.1.",
+                    "description": "Virtualservice Name. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Field introduced in 20.1.1.",
+                    "description": " It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -610,7 +610,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "Virtualservice UUID. Field introduced in 20.1.1.",
+                    "description": "Virtualservice UUID. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -641,19 +641,19 @@
             "type": "object",
             "properties": {
                 "param_info": {
-                    "description": "Information about various params under a URI. Field introduced in 20.1.1.",
+                    "description": "Information about various params under a URI. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ParamInfo"
                     }
                 },
                 "uri_hits": {
-                    "description": "Total number of URI hits. Field introduced in 20.1.1.",
+                    "description": "Total number of URI hits. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "uri_key": {
-                    "description": "URI name. Field introduced in 20.1.1.",
+                    "description": "URI name. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

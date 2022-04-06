@@ -351,13 +351,13 @@ definitions:
         type: object
         properties:
             class:
-                description: "The Bot Client Class of this identification. Enum options - UNDETERMINED_CLIENT, HUMAN_CLIENT, BOT_CLIENT. Field introduced in 21.1.1."
+                description: "The Bot Client Class of this identification. Enum options - UNDETERMINED_CLIENT, HUMAN_CLIENT, BOT_CLIENT. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             identifier:
-                description: "A free-form string to identify the client. Field introduced in 21.1.1."
+                description: "A free-form string to identify the client. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: "The Bot Client Type of this identification. Enum options - UNDETERMINED_CLIENT_TYPE, WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION. Field introduced in 21.1.1."
+                description: "The Bot Client Type of this identification. Enum options - UNDETERMINED_CLIENT_TYPE, WEB_BROWSER, IN_APP_BROWSER, SEARCH_ENGINE, IMPERSONATOR, SPAM_SOURCE, WEB_ATTACKS, BOTNET, SCANNER, DENIAL_OF_SERVICE, CLOUD_SOURCE, SECURITY_SCANNER, SITE_MONITOR, GENERIC_APPLICATION. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
     BotIPReputationTypeMapping:
         type: object
@@ -369,22 +369,22 @@ definitions:
                 readOnly: True
                 type: string
             ip_reputation_mappings:
-                description: "Map every IPReputationType to a bot type (can be unknown). Field introduced in 21.1.1."
+                description: "Map every IPReputationType to a bot type (can be unknown). Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/IPReputationTypeMapping'
             name:
-                description: "The name of this mapping. Field introduced in 21.1.1."
+                description: "The name of this mapping. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: "The unique identifier of the tenant to which this mapping belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1."
+                description: "The unique identifier of the tenant to which this mapping belongs. It is a reference to an object of type Tenant. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "A unique identifier of this mapping. Field introduced in 21.1.1."
+                description: "A unique identifier of this mapping. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
     BotIPReputationTypeMappingApiResponse:
         type: object
@@ -408,8 +408,8 @@ definitions:
             -   ip_reputation_type
         properties:
             bot_identification:
-                description: "The Bot Identification to which the IP reputation type is mapped. Field introduced in 21.1.1."
+                description: "The Bot Identification to which the IP reputation type is mapped. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/BotIdentification'
             ip_reputation_type:
-                description: "The type of IP reputation that is mapped to a Bot Identification. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 21.1.1."
+                description: "The type of IP reputation that is mapped to a Bot Identification. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string

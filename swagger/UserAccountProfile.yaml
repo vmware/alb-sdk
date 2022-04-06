@@ -351,7 +351,7 @@ definitions:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
+                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
@@ -365,45 +365,45 @@ definitions:
                 readOnly: True
                 type: string
             account_lock_timeout:
-                description: "Lock timeout period (in minutes). Default is 30 minutes. Unit is MIN."
+                description: "Lock timeout period (in minutes). Default is 30 minutes. Unit is MIN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 30
                 format: int32
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             credentials_timeout_threshold:
-                description: "The time period after which credentials expire. Default is 180 days. Unit is DAYS."
+                description: "The time period after which credentials expire. Default is 180 days. Unit is DAYS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 180
                 format: int32
             login_failure_count_expiry_window:
-                description: "The configurable time window beyond which we need to pop all the login failure timestamps from the login_failure_timestamps. Special values are 0 - Do not reset login_failure_counts on the basis of time.. Field introduced in 22.1.1. Unit is MIN."
+                description: "The configurable time window beyond which we need to pop all the login failure timestamps from the login_failure_timestamps. Special values are 0 - Do not reset login_failure_counts on the basis of time.. Field introduced in 22.1.1. Unit is MIN. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             max_concurrent_sessions:
-                description: "Maximum number of concurrent sessions allowed. There are unlimited sessions by default."
+                description: "Maximum number of concurrent sessions allowed. There are unlimited sessions by default. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             max_login_failure_count:
-                description: "Number of login attempts before lockout. Default is 3 attempts. Allowed values are 3-20. Special values are 0- Unlimited login attempts allowed.."
+                description: "Number of login attempts before lockout. Default is 3 attempts. Allowed values are 3-20. Special values are 0- Unlimited login attempts allowed.. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 3
                 format: int32
             max_password_history_count:
-                description: "Maximum number of passwords to be maintained in the password history. Default is 4 passwords."
+                description: "Maximum number of passwords to be maintained in the password history. Default is 4 passwords. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 4
                 format: int32
             name:
-                description: "Name of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "Unique object identifier of the object."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     UserAccountProfileApiResponse:
         type: object

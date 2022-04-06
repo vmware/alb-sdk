@@ -365,7 +365,7 @@ definitions:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
+                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
@@ -375,15 +375,15 @@ definitions:
             -   network_ref
         properties:
             network_ref:
-                description: "Discovered network for this IP. It is a reference to an object of type Network."
+                description: "Discovered network for this IP. It is a reference to an object of type Network. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             subnet:
-                description: "Discovered subnet for this IP."
+                description: "Discovered subnet for this IP. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/IpAddrPrefix'
             subnet6:
-                description: "Discovered IPv6 subnet for this IP. Field introduced in 18.1.1."
+                description: "Discovered IPv6 subnet for this IP. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/IpAddrPrefix'
@@ -393,35 +393,35 @@ definitions:
             -   cname
         properties:
             cname:
-                description: "Canonical name."
+                description: "Canonical name. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     DnsInfo:
         type: object
         properties:
             algorithm:
-                description: "Specifies the algorithm to pick the IP address(es) to be returned, when multiple entries are configured. This does not apply if num_records_in_response is 0. Default is consistent hash. Enum options - DNS_RECORD_RESPONSE_ROUND_ROBIN, DNS_RECORD_RESPONSE_CONSISTENT_HASH. Field introduced in 17.1.1."
+                description: "Specifies the algorithm to pick the IP address(es) to be returned, when multiple entries are configured. This does not apply if num_records_in_response is 0. Default is consistent hash. Enum options - DNS_RECORD_RESPONSE_ROUND_ROBIN, DNS_RECORD_RESPONSE_CONSISTENT_HASH. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "DNS_RECORD_RESPONSE_CONSISTENT_HASH"
             cname:
-                description: "Canonical name in CNAME record. Field introduced in 17.2.1."
+                description: "Canonical name in CNAME record. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DnsCnameRdata'
             fqdn:
-                description: "Fully qualified domain name."
+                description: "Fully qualified domain name. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             metadata:
-                description: "Any metadata associated with this record. Field introduced in 17.2.2."
+                description: "Any metadata associated with this record. Field introduced in 17.2.2. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
             num_records_in_response:
-                description: "Specifies the number of records returned for this FQDN. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 17.1.1."
+                description: "Specifies the number of records returned for this FQDN. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             ttl:
-                description: "Time to live for fqdn record. Default value is chosen from DNS profile for this cloud if no value provided."
+                description: "Time to live for fqdn record. Default value is chosen from DNS profile for this cloud if no value provided. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             type:
-                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY."
+                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "DNS_RECORD_A"
     IpAddr:
@@ -431,10 +431,10 @@ definitions:
             -   type
         properties:
             addr:
-                description: "IP address."
+                description: "IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: " Enum options - V4, DNS, V6."
+                description: " Enum options - V4, DNS, V6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     IpAddrPrefix:
         type: object
@@ -443,29 +443,29 @@ definitions:
             -   mask
         properties:
             ip_addr:
-                description: "Placeholder for description of property ip_addr of obj type IpAddrPrefix field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             mask:
-                description: "Number of mask."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     IPNetworkSubnet:
         type: object
         properties:
             network_ref:
-                description: "Network for VirtualService IP allocation with Vantage as the IPAM provider. Network should be created before this is configured. It is a reference to an object of type Network."
+                description: "Network for VirtualService IP allocation with Vantage as the IPAM provider. Network should be created before this is configured. It is a reference to an object of type Network. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             subnet:
-                description: "Subnet for VirtualService IP allocation with Vantage or Infoblox as the IPAM provider. Only one of subnet or subnet_uuid configuration is allowed."
+                description: "Subnet for VirtualService IP allocation with Vantage or Infoblox as the IPAM provider. Only one of subnet or subnet_uuid configuration is allowed. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
             subnet6:
-                description: "Subnet for VirtualService IPv6 allocation with Vantage or Infoblox as the IPAM provider. Only one of subnet or subnet_uuid configuration is allowed. Field introduced in 18.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "Subnet for VirtualService IPv6 allocation with Vantage or Infoblox as the IPAM provider. Only one of subnet or subnet_uuid configuration is allowed. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
             subnet6_uuid:
-                description: "Subnet UUID or Name or Prefix for VirtualService IPv6 allocation with AWS or OpenStack as the IPAM provider. Only one of subnet or subnet_uuid configuration is allowed. Field introduced in 18.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "Subnet UUID or Name or Prefix for VirtualService IPv6 allocation with AWS or OpenStack as the IPAM provider. Only one of subnet or subnet_uuid configuration is allowed. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             subnet_uuid:
-                description: "Subnet UUID or Name or Prefix for VirtualService IP allocation with AWS or OpenStack as the IPAM provider. Only one of subnet or subnet_uuid configuration is allowed."
+                description: "Subnet UUID or Name or Prefix for VirtualService IP allocation with AWS or OpenStack as the IPAM provider. Only one of subnet or subnet_uuid configuration is allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
     KeyValue:
         type: object
@@ -473,10 +473,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key."
+                description: "Key. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "Value."
+                description: "Value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     KeyValueTuple:
         type: object
@@ -484,10 +484,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key. Field introduced in 20.1.3."
+                description: "Key. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "Value. Field introduced in 20.1.3."
+                description: "Value. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
     RoleFilterMatchLabel:
         type: object
@@ -495,10 +495,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key for filter match. Field introduced in 20.1.3."
+                description: "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             values:
-                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3."
+                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -508,12 +508,12 @@ definitions:
             -   type
         properties:
             labels:
-                description: "Labels as key value pairs to select on. Field introduced in 20.1.3. Minimum of 1 items required."
+                description: "Labels as key value pairs to select on. Field introduced in 20.1.3. Minimum of 1 items required. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/KeyValueTuple'
             type:
-                description: "Selector type. Enum options - SELECTOR_IPAM. Field introduced in 20.1.3."
+                description: "Selector type. Enum options - SELECTOR_IPAM. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
     Vip:
         type: object
@@ -521,96 +521,96 @@ definitions:
             -   vip_id
         properties:
             auto_allocate_floating_ip:
-                description: "Auto-allocate floating/elastic IP from the Cloud infrastructure. Field introduced in 17.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
+                description: "Auto-allocate floating/elastic IP from the Cloud infrastructure. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition."
                 type: boolean
             auto_allocate_ip:
-                description: "Auto-allocate VIP from the provided subnet. Field introduced in 17.1.1."
+                description: "Auto-allocate VIP from the provided subnet. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             auto_allocate_ip_type:
-                description: "Specifies whether to auto-allocate only a V4 address, only a V6 address, or one of each type. Enum options - V4_ONLY, V6_ONLY, V4_V6. Field introduced in 18.1.1. Allowed in Basic(Allowed values- V4_ONLY) edition, Essentials(Allowed values- V4_ONLY) edition, Enterprise edition."
+                description: "Specifies whether to auto-allocate only a V4 address, only a V6 address, or one of each type. Enum options - V4_ONLY, V6_ONLY, V4_V6. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- V4_ONLY) edition, Basic(Allowed values- V4_ONLY) edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "V4_ONLY"
             availability_zone:
-                description: "Availability-zone to place the Virtual Service. Field introduced in 17.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "Availability-zone to place the Virtual Service. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             avi_allocated_fip:
-                description: "(internal-use) FIP allocated by Avi in the Cloud infrastructure. Field introduced in 17.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
+                description: "(internal-use) FIP allocated by Avi in the Cloud infrastructure. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition."
                 type: boolean
             avi_allocated_vip:
-                description: "(internal-use) VIP allocated by Avi in the Cloud infrastructure. Field introduced in 17.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
+                description: "(internal-use) VIP allocated by Avi in the Cloud infrastructure. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition."
                 type: boolean
             discovered_networks:
-                description: "Discovered networks providing reachability for client facing Vip IP. Field introduced in 17.1.1."
+                description: "Discovered networks providing reachability for client facing Vip IP. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/DiscoveredNetwork'
             enabled:
-                description: "Enable or disable the Vip. Field introduced in 17.1.1."
+                description: "Enable or disable the Vip. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             floating_ip:
-                description: "Floating IPv4 to associate with this Vip. Field introduced in 17.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "Floating IPv4 to associate with this Vip. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             floating_ip6:
-                description: "Floating IPv6 address to associate with this Vip. Field introduced in 18.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "Floating IPv6 address to associate with this Vip. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             floating_subnet6_uuid:
-                description: "If auto_allocate_floating_ip is True and more than one floating-ip subnets exist, then the subnet for the floating IPv6 address allocation. Field introduced in 18.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "If auto_allocate_floating_ip is True and more than one floating-ip subnets exist, then the subnet for the floating IPv6 address allocation. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             floating_subnet_uuid:
-                description: "If auto_allocate_floating_ip is True and more than one floating-ip subnets exist, then the subnet for the floating IP address allocation. Field introduced in 17.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "If auto_allocate_floating_ip is True and more than one floating-ip subnets exist, then the subnet for the floating IP address allocation. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             ip6_address:
-                description: "IPv6 Address of the Vip. Field introduced in 18.1.1."
+                description: "IPv6 Address of the Vip. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             ip_address:
-                description: "IPv4 Address of the VIP. Field introduced in 17.1.1."
+                description: "IPv4 Address of the VIP. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             ipam_network_subnet:
-                description: "Subnet and/or Network for allocating VirtualService IP by IPAM Provider module. Field introduced in 17.1.1."
+                description: "Subnet and/or Network for allocating VirtualService IP by IPAM Provider module. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IPNetworkSubnet'
             network_ref:
-                description: "Manually override the network on which the Vip is placed. It is a reference to an object of type Network. Field introduced in 17.1.1."
+                description: "Manually override the network on which the Vip is placed. It is a reference to an object of type Network. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             placement_networks:
-                description: "Placement networks/subnets to use for vip placement. Field introduced in 18.2.5. Maximum of 10 items allowed."
+                description: "Placement networks/subnets to use for vip placement. Field introduced in 18.2.5. Maximum of 10 items allowed. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/VipPlacementNetwork'
             port_uuid:
-                description: "(internal-use) Network port assigned to the Vip IP address. Field introduced in 17.1.1."
+                description: "(internal-use) Network port assigned to the Vip IP address. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             prefix_length:
-                description: "Mask applied for the Vip, non-default mask supported only for wildcard Vip. Allowed values are 0-32. Field introduced in 20.1.1. Allowed in Basic(Allowed values- 32) edition, Essentials(Allowed values- 32) edition, Enterprise edition."
+                description: "Mask applied for the Vip, non-default mask supported only for wildcard Vip. Allowed values are 0-32. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- 32) edition, Basic(Allowed values- 32) edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 32
                 format: int32
             subnet:
-                description: "Subnet providing reachability for client facing Vip IP. Field introduced in 17.1.1."
+                description: "Subnet providing reachability for client facing Vip IP. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
             subnet6:
-                description: "Subnet providing reachability for client facing Vip IPv6. Field introduced in 18.1.1. Allowed in Essentials edition, Enterprise edition."
+                description: "Subnet providing reachability for client facing Vip IPv6. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
             subnet6_uuid:
-                description: "If auto_allocate_ip is True, then the subnet for the Vip IPv6 address allocation. This field is applicable only if the VirtualService belongs to an Openstack or AWS cloud, in which case it is mandatory, if auto_allocate is selected. Field introduced in 18.1.1. Allowed in Essentials edition, Enterprise edition."
+                description: "If auto_allocate_ip is True, then the subnet for the Vip IPv6 address allocation. This field is applicable only if the VirtualService belongs to an Openstack or AWS cloud, in which case it is mandatory, if auto_allocate is selected. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             subnet_uuid:
-                description: "If auto_allocate_ip is True, then the subnet for the Vip IP address allocation. This field is applicable only if the VirtualService belongs to an Openstack or AWS cloud, in which case it is mandatory, if auto_allocate is selected. Field introduced in 17.1.1."
+                description: "If auto_allocate_ip is True, then the subnet for the Vip IP address allocation. This field is applicable only if the VirtualService belongs to an Openstack or AWS cloud, in which case it is mandatory, if auto_allocate is selected. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             vip_id:
-                description: "Unique ID associated with the vip. Field introduced in 17.1.1."
+                description: "Unique ID associated with the vip. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     VipPlacementNetwork:
         type: object
         properties:
             network_ref:
-                description: "Network to use for vip placement. It is a reference to an object of type Network. Field introduced in 18.2.5."
+                description: "Network to use for vip placement. It is a reference to an object of type Network. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             subnet:
-                description: "IPv4 Subnet to use for vip placement. Field introduced in 18.2.5."
+                description: "IPv4 Subnet to use for vip placement. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
             subnet6:
-                description: "IPv6 subnet to use for vip placement. Field introduced in 18.2.5."
+                description: "IPv6 subnet to use for vip placement. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
     VsVip:
         type: object
@@ -622,66 +622,66 @@ definitions:
                 readOnly: True
                 type: string
             bgp_peer_labels:
-                description: "Select BGP peers, using peer label, for VsVip advertisement. Field introduced in 20.1.5. Maximum of 128 items allowed."
+                description: "Select BGP peers, using peer label, for VsVip advertisement. Field introduced in 20.1.5. Maximum of 128 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             cloud_ref:
-                description: " It is a reference to an object of type Cloud. Field introduced in 17.1.1."
+                description: " It is a reference to an object of type Cloud. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             dns_info:
-                description: "Service discovery specific data including fully qualified domain name, type and Time-To-Live of the DNS record. Field introduced in 17.1.1. Maximum of 1000 items allowed. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "Service discovery specific data including fully qualified domain name, type and Time-To-Live of the DNS record. Field introduced in 17.1.1. Maximum of 1000 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/DnsInfo'
             east_west_placement:
-                description: "Force placement on all Service Engines in the Service Engine Group (Container clouds only). Field introduced in 17.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
+                description: "Force placement on all Service Engines in the Service Engine Group (Container clouds only). Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition."
                 type: boolean
             ipam_selector:
-                description: "Determines the set of IPAM networks to use for this VsVip. Selector type must be SELECTOR_IPAM and only one label is supported. Field introduced in 20.1.3."
+                description: "Determines the set of IPAM networks to use for this VsVip. Selector type must be SELECTOR_IPAM and only one label is supported. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/Selector'
             labels:
-                description: "Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed."
+                description: "Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/KeyValue'
             markers:
-                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/RoleFilterMatchLabel'
             name:
-                description: "Name for the VsVip object. Field introduced in 17.1.1."
+                description: "Name for the VsVip object. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Field introduced in 17.1.1."
+                description: " It is a reference to an object of type Tenant. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             tier1_lr:
-                description: "This sets the placement scope of virtualservice to given tier1 logical router in Nsx-t. Field introduced in 20.1.1."
+                description: "This sets the placement scope of virtualservice to given tier1 logical router in Nsx-t. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             use_standard_alb:
-                description: "This overrides the cloud level default and needs to match the SE Group value in which it will be used if the SE Group use_standard_alb value is set. This is only used when FIP is used for VS on Azure Cloud. Field introduced in 18.2.3. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "This overrides the cloud level default and needs to match the SE Group value in which it will be used if the SE Group use_standard_alb value is set. This is only used when FIP is used for VS on Azure Cloud. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
             uuid:
-                description: "UUID of the VsVip object. Field introduced in 17.1.1."
+                description: "UUID of the VsVip object. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             vip:
-                description: "List of Virtual Service IPs and other shareable entities. Field introduced in 17.1.1."
+                description: "List of Virtual Service IPs and other shareable entities. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/Vip'
             vrf_context_ref:
-                description: "Virtual Routing Context that the Virtual Service is bound to. This is used to provide the isolation of the set of networks the application is attached to. It is a reference to an object of type VrfContext. Field introduced in 17.1.1."
+                description: "Virtual Routing Context that the Virtual Service is bound to. This is used to provide the isolation of the set of networks the application is attached to. It is a reference to an object of type VrfContext. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             vsvip_cloud_config_cksum:
-                description: "Checksum of cloud configuration for VsVip. Internally set by cloud connector. Field introduced in 17.2.9, 18.1.2."
+                description: "Checksum of cloud configuration for VsVip. Internally set by cloud connector. Field introduced in 17.2.9, 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     VsVipApiResponse:
         type: object

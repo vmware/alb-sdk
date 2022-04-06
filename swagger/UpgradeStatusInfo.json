@@ -506,25 +506,25 @@
             "type": "object",
             "properties": {
                 "nodes_events": {
-                    "description": "List of all events node wise.(Not in use). Field introduced in 18.2.6.",
+                    "description": "List of all events node wise.(Not in use). Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/UpgradeEvent"
                     }
                 },
                 "sub_events": {
-                    "description": "List of all events node wise. Field introduced in 18.2.10, 20.1.1.",
+                    "description": "List of all events node wise. Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/UpgradeEvent"
                     }
                 },
                 "task": {
-                    "description": "Enum representing the task.(Not in use). Enum options - PREPARE_FOR_SHUTDOWN, COPY_AND_VERIFY_IMAGE, INSTALL_IMAGE, POST_INSTALL_HOOKS, PREPARE_CONTROLLER_FOR_SHUTDOWN, STOP_CONTROLLER, EXTRACT_PATCH_IMAGE, EXECUTE_PRE_INSTALL_COMMANDS, INSTALL_PATCH_IMAGE, PREPARE_FOR_REBOOT_CONTROLLER_NODES, REBOOT_CONTROLLER_NODES, WAIT_FOR_ALL_CONTROLLER_NODES_ONLINE, PRE_UPGRADE_HOOKS, MIGRATE_CONFIG, START_PRIMARY_CONTROLLER, START_ALL_CONTROLLERS, POST_UPGRADE_HOOKS, EXECUTE_POST_INSTALL_COMMANDS, SET_CONTROLLER_UPGRADE_COMPLETED, STATE_NOT_USED_IN_V2, COMMIT_UPGRADE, UNKNOWN_TASK, PATCH_CONTROLLER_HEALTH_CHECK. Field introduced in 18.2.6.",
+                    "description": "Enum representing the task.(Not in use). Enum options - PREPARE_FOR_SHUTDOWN, COPY_AND_VERIFY_IMAGE, INSTALL_IMAGE, POST_INSTALL_HOOKS, PREPARE_CONTROLLER_FOR_SHUTDOWN, STOP_CONTROLLER, EXTRACT_PATCH_IMAGE, EXECUTE_PRE_INSTALL_COMMANDS, INSTALL_PATCH_IMAGE, PREPARE_FOR_REBOOT_CONTROLLER_NODES, REBOOT_CONTROLLER_NODES, WAIT_FOR_ALL_CONTROLLER_NODES_ONLINE, PRE_UPGRADE_HOOKS, MIGRATE_CONFIG, START_PRIMARY_CONTROLLER, START_ALL_CONTROLLERS, POST_UPGRADE_HOOKS, EXECUTE_POST_INSTALL_COMMANDS, SET_CONTROLLER_UPGRADE_COMPLETED, STATE_NOT_USED_IN_V2, COMMIT_UPGRADE, UNKNOWN_TASK, PATCH_CONTROLLER_HEALTH_CHECK. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "task_name": {
-                    "description": "Name representing the task. Field introduced in 18.2.10, 20.1.1.",
+                    "description": "Name representing the task. Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -537,11 +537,11 @@
             ],
             "properties": {
                 "addr": {
-                    "description": "IP address.",
+                    "description": "IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "type": {
-                    "description": " Enum options - V4, DNS, V6.",
+                    "description": " Enum options - V4, DNS, V6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -550,54 +550,54 @@
             "type": "object",
             "properties": {
                 "duration": {
-                    "description": "Duration of Upgrade operation in seconds. Field introduced in 20.1.4. Unit is SEC.",
+                    "description": "Duration of Upgrade operation in seconds. Field introduced in 20.1.4. Unit is SEC. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "end_time": {
-                    "description": "End time of Upgrade operation. Field introduced in 20.1.4.",
+                    "description": "End time of Upgrade operation. Field introduced in 20.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ops": {
-                    "description": "Upgrade operation performed. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME. Field introduced in 20.1.4.",
+                    "description": "Upgrade operation performed. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME. Field introduced in 20.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "patch_version": {
-                    "description": "Patch after the upgrade operation. . Field introduced in 20.1.4.",
+                    "description": "Patch after the upgrade operation. . Field introduced in 20.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "se_upgrade_events": {
-                    "description": "ServiceEngineGroup/SE events for upgrade operation. Field introduced in 20.1.4.",
+                    "description": "ServiceEngineGroup/SE events for upgrade operation. Field introduced in 20.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/SeUpgradeEvents"
                     }
                 },
                 "seg_status": {
-                    "description": "SeGroup status for the upgrade operation. Field introduced in 20.1.4.",
+                    "description": "SeGroup status for the upgrade operation. Field introduced in 20.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SeGroupStatus"
                 },
                 "start_time": {
-                    "description": "Start time of Upgrade operation. Field introduced in 20.1.4.",
+                    "description": "Start time of Upgrade operation. Field introduced in 20.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "state": {
-                    "description": "Upgrade operation status. Field introduced in 20.1.4.",
+                    "description": "Upgrade operation status. Field introduced in 20.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/UpgradeOpsState"
                 },
                 "statediff_ref": {
-                    "description": "Record of Pre/Post snapshot captured for current upgrade operation. It is a reference to an object of type StatediffOperation. Field introduced in 21.1.3.",
+                    "description": "Record of Pre/Post snapshot captured for current upgrade operation. It is a reference to an object of type StatediffOperation. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "upgrade_events": {
-                    "description": "Controller events for Upgrade operation. Field introduced in 20.1.4.",
+                    "description": "Controller events for Upgrade operation. Field introduced in 20.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/EventMap"
                     }
                 },
                 "version": {
-                    "description": "Image after the upgrade operation. Field introduced in 20.1.4.",
+                    "description": "Image after the upgrade operation. Field introduced in 20.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -606,15 +606,15 @@
             "type": "object",
             "properties": {
                 "patch_image_path": {
-                    "description": "Image path of current patch image. . Field introduced in 18.2.10, 20.1.1.",
+                    "description": "Image path of current patch image. . Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "patch_image_ref": {
-                    "description": "Image uuid for identifying the patch. It is a reference to an object of type Image. Field introduced in 18.2.8, 20.1.1.",
+                    "description": "Image uuid for identifying the patch. It is a reference to an object of type Image. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "patch_version": {
-                    "description": "Patch version. Field introduced in 18.2.8, 20.1.1.",
+                    "description": "Patch version. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -623,12 +623,12 @@
             "type": "object",
             "properties": {
                 "action_on_error": {
-                    "description": "The error recovery action configured for a SE Group. Enum options - ROLLBACK_UPGRADE_OPS_ON_ERROR, SUSPEND_UPGRADE_OPS_ON_ERROR, CONTINUE_UPGRADE_OPS_ON_ERROR. Field introduced in 18.2.6.",
+                    "description": "The error recovery action configured for a SE Group. Enum options - ROLLBACK_UPGRADE_OPS_ON_ERROR, SUSPEND_UPGRADE_OPS_ON_ERROR, CONTINUE_UPGRADE_OPS_ON_ERROR. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SUSPEND_UPGRADE_OPS_ON_ERROR"
                 },
                 "disruptive": {
-                    "description": "Disable non-disruptive mechanism. Field introduced in 18.2.6.",
+                    "description": "Disable non-disruptive mechanism. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 }
             }
@@ -637,16 +637,16 @@
             "type": "object",
             "properties": {
                 "action_on_error": {
-                    "description": "The error recovery action configured for a SE Group. Enum options - ROLLBACK_UPGRADE_OPS_ON_ERROR, SUSPEND_UPGRADE_OPS_ON_ERROR, CONTINUE_UPGRADE_OPS_ON_ERROR. Field introduced in 18.2.6.",
+                    "description": "The error recovery action configured for a SE Group. Enum options - ROLLBACK_UPGRADE_OPS_ON_ERROR, SUSPEND_UPGRADE_OPS_ON_ERROR, CONTINUE_UPGRADE_OPS_ON_ERROR. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SUSPEND_UPGRADE_OPS_ON_ERROR"
                 },
                 "disruptive": {
-                    "description": "Allow disruptive mechanism. Field introduced in 18.2.8, 20.1.1.",
+                    "description": "Allow disruptive mechanism. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "skip_suspended": {
-                    "description": "Skip upgrade on suspended SE(s). Field introduced in 18.2.6.",
+                    "description": "Skip upgrade on suspended SE(s). Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 }
             }
@@ -655,249 +655,249 @@
             "type": "object",
             "properties": {
                 "controller_version": {
-                    "description": "Controller version. Field introduced in 18.2.6.",
+                    "description": "Controller version. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "disrupted_vs_ref": {
-                    "description": " It is a reference to an object of type VirtualService.",
+                    "description": " It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "duration": {
-                    "description": "duration of SeGroupStatus.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "end_time": {
-                    "description": "end_time of SeGroupStatus.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "enqueue_time": {
-                    "description": "enqueue_time of SeGroupStatus.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ha_mode": {
-                    "description": " Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY.",
+                    "description": " Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "in_progress": {
-                    "description": "ServiceEngineGroup upgrade in progress. Field introduced in 18.2.6.",
+                    "description": "ServiceEngineGroup upgrade in progress. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "notes": {
-                    "description": "notes of SeGroupStatus.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "num_se": {
-                    "description": "Number of num_se.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_se_with_no_vs": {
-                    "description": "Number of num_se_with_no_vs.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_se_with_vs_not_scaledout": {
-                    "description": "Number of num_se_with_vs_not_scaledout.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_se_with_vs_scaledout": {
-                    "description": "Number of num_se_with_vs_scaledout.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_vs": {
-                    "description": "Number of num_vs.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_vs_disrupted": {
-                    "description": "Number of num_vs_disrupted.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "progress": {
-                    "description": "Number of progress.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "reason": {
-                    "description": "reason of SeGroupStatus.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "request_time": {
-                    "description": "request_time of SeGroupStatus.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "se_already_upgraded_at_start": {
-                    "description": "ServiceEngines are already upgraded before the upgrade. It is a reference to an object of type ServiceEngine. Field introduced in 18.2.6.",
+                    "description": "ServiceEngines are already upgraded before the upgrade. It is a reference to an object of type ServiceEngine. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "se_disconnected_at_start": {
-                    "description": "ServiceEngines in disconnected state before starting the upgrade. It is a reference to an object of type ServiceEngine. Field introduced in 18.2.6.",
+                    "description": "ServiceEngines in disconnected state before starting the upgrade. It is a reference to an object of type ServiceEngine. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "se_group_name": {
-                    "description": "se_group_name of SeGroupStatus.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "se_group_uuid": {
-                    "description": "Unique object identifier of se_group.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "se_ip_missing_at_start": {
-                    "description": "ServiceEngines local ip not present before the upgrade. It is a reference to an object of type ServiceEngine. Field introduced in 18.2.6.",
+                    "description": "ServiceEngines local ip not present before the upgrade. It is a reference to an object of type ServiceEngine. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "se_poweredoff_at_start": {
-                    "description": "ServiceEngines in poweredoff state before the upgrade. It is a reference to an object of type ServiceEngine. Field introduced in 18.2.6.",
+                    "description": "ServiceEngines in poweredoff state before the upgrade. It is a reference to an object of type ServiceEngine. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "se_reboot_in_progress_ref": {
-                    "description": " It is a reference to an object of type ServiceEngine.",
+                    "description": " It is a reference to an object of type ServiceEngine. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "se_upgrade_completed": {
-                    "description": "ServiceEngines upgrade completed. It is a reference to an object of type ServiceEngine. Field introduced in 18.2.6.",
+                    "description": "ServiceEngines upgrade completed. It is a reference to an object of type ServiceEngine. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "se_upgrade_errors": {
-                    "description": "ServiceEngineGroup upgrade errors. Field introduced in 18.2.6.",
+                    "description": "ServiceEngineGroup upgrade errors. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/SeUpgradeEvents"
                     }
                 },
                 "se_upgrade_failed": {
-                    "description": "ServiceEngines upgrade failed. It is a reference to an object of type ServiceEngine. Field introduced in 18.2.6.",
+                    "description": "ServiceEngines upgrade failed. It is a reference to an object of type ServiceEngine. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "se_upgrade_in_progress": {
-                    "description": "ServiceEngines upgrade in progress. It is a reference to an object of type ServiceEngine. Field introduced in 18.2.6.",
+                    "description": "ServiceEngines upgrade in progress. It is a reference to an object of type ServiceEngine. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "se_upgrade_not_started": {
-                    "description": "ServiceEngines upgrade not started. It is a reference to an object of type ServiceEngine. Field introduced in 18.2.6.",
+                    "description": "ServiceEngines upgrade not started. It is a reference to an object of type ServiceEngine. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "se_upgrade_skip_suspended": {
-                    "description": "Service Engines that were in suspended state and were skipped upon Service Engine Group ugprade resumption. It is a reference to an object of type ServiceEngine.",
+                    "description": "Service Engines that were in suspended state and were skipped upon Service Engine Group ugprade resumption. It is a reference to an object of type ServiceEngine. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "se_upgrade_suspended": {
-                    "description": "Service Engines which triggered Service Engine Group to be in suspended state. It is a reference to an object of type ServiceEngine.",
+                    "description": "Service Engines which triggered Service Engine Group to be in suspended state. It is a reference to an object of type ServiceEngine. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "se_with_no_vs": {
-                    "description": " It is a reference to an object of type ServiceEngine.",
+                    "description": " It is a reference to an object of type ServiceEngine. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "se_with_vs_not_scaledout": {
-                    "description": " It is a reference to an object of type ServiceEngine.",
+                    "description": " It is a reference to an object of type ServiceEngine. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "se_with_vs_scaledout": {
-                    "description": " It is a reference to an object of type ServiceEngine.",
+                    "description": " It is a reference to an object of type ServiceEngine. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "start_time": {
-                    "description": "start_time of SeGroupStatus.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "state": {
-                    "description": " Enum options - SE_UPGRADE_PREVIEW, SE_UPGRADE_IN_PROGRESS, SE_UPGRADE_COMPLETE, SE_UPGRADE_ERROR, SE_UPGRADE_PRE_CHECKS, SE_IMAGE_INSTALL, SE_UPGRADE_IMAGE_NOT_FOUND, SE_ALREADY_UPGRADED, SE_REBOOT, SE_CONNECT_AFTER_REBOOT, SE_PRE_UPGRADE_TASKS, SE_POST_UPGRADE_TASKS, SE_WAIT_FOR_SWITCHOVER, SE_CHECK_SCALEDOUT_VS_EXISTS, SE_UPGRADE_SEMGR_REQUEST, SE_UPGRADE_SEMGR_SE_UNREACHABLE, SE_PRE_UPGRADE_SCALE_IN_OPS, SE_POST_UPGRADE_SCALE_OUT_OPS, SE_UPGRADE_SUSPENDED, SE_UPGRADE_START, SE_UPGRADE_PAUSED, SE_UPGRADE_FAILED, SE_UPGRADE_VERSION_CHECKS, SE_UPGRADE_CONNECTIVITY_CHECKS, SE_UPGRADE_VERIFY_VERSION, SE_UPGRADE_SKIP_RESUME_OPS, SE_UPGRADE_SEMGR_DONE, SEGROUP_UPGRADE_NOT_STARTED, SEGROUP_UPGRADE_ENQUEUED, SEGROUP_UPGRADE_ENQUEUE_FAILED, SEGROUP_UPGRADE_IN_PROGRESS, SEGROUP_UPGRADE_COMPLETE, SEGROUP_UPGRADE_ERROR, SEGROUP_UPGRADE_SUSPENDED, VS_DISRUPTED, VS_SCALEIN, VS_SCALEIN_ERROR, VS_SCALEIN_ERROR_RPC_FAILED, VS_SCALEOUT, VS_SCALEOUT_ERROR, VS_SCALEOUT_ERROR_RPC_FAILED, VS_SCALEOUT_ERROR_SE_NOT_READY, VS_MIGRATE, VS_MIGRATE_ERROR, VS_MIGRATE_BACK, VS_MIGRATE_BACK_ERROR, VS_MIGRATE_BACK_NOT_NEEDED, VS_MIGRATE_ERROR_NO_CANDIDATE_SE, VS_MIGRATE_ERROR_RPC_FAILED, VS_MIGRATE_BACK_ERROR_SE_NOT_READY, VS_MIGRATE_BACK_ERROR_RPC_FAILED, SEGROUP_PAUSE_PLACEMENT, SEGROUP_RESUME_PLACEMENT, SEGROUP_CLOUD_DISCOVERY, SEGROUP_IMAGE_GENERATION, SEGROUP_IMAGE_COPY_INSTALL_TO_SES, SEGROUP_SERIAL_SE_UPGRADE, SEGROUP_PARALLEL_SE_UPGRADE, SEGROUP_V2_TO_V1_ROLLBACK, SEGROUP_FAILED_SE_ERROR_RECOVERY, SEGROUP_SE_CONNECTIVITY_CHECKS, SEGROUP_UPGRADE_START, SEGROUP_WAIT_FOR_WARM_START_DONE, SEGROUP_PRE_SNAPSHOT, SEGROUP_POST_SNAPSHOT, SEGROUP_WAIT_FOR_SNAPSHOT_COLLECTION.",
+                    "description": " Enum options - SE_UPGRADE_PREVIEW, SE_UPGRADE_IN_PROGRESS, SE_UPGRADE_COMPLETE, SE_UPGRADE_ERROR, SE_UPGRADE_PRE_CHECKS, SE_IMAGE_INSTALL, SE_UPGRADE_IMAGE_NOT_FOUND, SE_ALREADY_UPGRADED, SE_REBOOT, SE_CONNECT_AFTER_REBOOT, SE_PRE_UPGRADE_TASKS, SE_POST_UPGRADE_TASKS, SE_WAIT_FOR_SWITCHOVER, SE_CHECK_SCALEDOUT_VS_EXISTS, SE_UPGRADE_SEMGR_REQUEST, SE_UPGRADE_SEMGR_SE_UNREACHABLE, SE_PRE_UPGRADE_SCALE_IN_OPS, SE_POST_UPGRADE_SCALE_OUT_OPS, SE_UPGRADE_SUSPENDED, SE_UPGRADE_START, SE_UPGRADE_PAUSED, SE_UPGRADE_FAILED, SE_UPGRADE_VERSION_CHECKS, SE_UPGRADE_CONNECTIVITY_CHECKS, SE_UPGRADE_VERIFY_VERSION, SE_UPGRADE_SKIP_RESUME_OPS, SE_UPGRADE_SEMGR_DONE, SEGROUP_UPGRADE_NOT_STARTED, SEGROUP_UPGRADE_ENQUEUED, SEGROUP_UPGRADE_ENQUEUE_FAILED, SEGROUP_UPGRADE_IN_PROGRESS, SEGROUP_UPGRADE_COMPLETE, SEGROUP_UPGRADE_ERROR, SEGROUP_UPGRADE_SUSPENDED, VS_DISRUPTED, VS_SCALEIN, VS_SCALEIN_ERROR, VS_SCALEIN_ERROR_RPC_FAILED, VS_SCALEOUT, VS_SCALEOUT_ERROR, VS_SCALEOUT_ERROR_RPC_FAILED, VS_SCALEOUT_ERROR_SE_NOT_READY, VS_MIGRATE, VS_MIGRATE_ERROR, VS_MIGRATE_BACK, VS_MIGRATE_BACK_ERROR, VS_MIGRATE_BACK_NOT_NEEDED, VS_MIGRATE_ERROR_NO_CANDIDATE_SE, VS_MIGRATE_ERROR_RPC_FAILED, VS_MIGRATE_BACK_ERROR_SE_NOT_READY, VS_MIGRATE_BACK_ERROR_RPC_FAILED, SEGROUP_PAUSE_PLACEMENT, SEGROUP_RESUME_PLACEMENT, SEGROUP_CLOUD_DISCOVERY, SEGROUP_IMAGE_GENERATION, SEGROUP_IMAGE_COPY_INSTALL_TO_SES, SEGROUP_SERIAL_SE_UPGRADE, SEGROUP_PARALLEL_SE_UPGRADE, SEGROUP_V2_TO_V1_ROLLBACK, SEGROUP_FAILED_SE_ERROR_RECOVERY, SEGROUP_SE_CONNECTIVITY_CHECKS, SEGROUP_UPGRADE_START, SEGROUP_WAIT_FOR_WARM_START_DONE, SEGROUP_PRE_SNAPSHOT, SEGROUP_POST_SNAPSHOT, SEGROUP_WAIT_FOR_SNAPSHOT_COLLECTION. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant.",
+                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "thread": {
-                    "description": "thread of SeGroupStatus.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "traffic_status": {
-                    "description": " Enum options - TRAFFIC_DISRUPTED, TRAFFIC_NOT_DISRUPTED.",
+                    "description": " Enum options - TRAFFIC_DISRUPTED, TRAFFIC_NOT_DISRUPTED. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vs_errors": {
-                    "description": "VirtualService errors during the SeGroup upgrade. Field introduced in 18.2.6.",
+                    "description": "VirtualService errors during the SeGroup upgrade. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/VsError"
                     }
                 },
                 "vs_migrate_in_progress_ref": {
-                    "description": " It is a reference to an object of type VirtualService.",
+                    "description": " It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "vs_scalein_in_progress_ref": {
-                    "description": " It is a reference to an object of type VirtualService.",
+                    "description": " It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "vs_scaleout_in_progress_ref": {
-                    "description": " It is a reference to an object of type VirtualService.",
+                    "description": " It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "worker": {
-                    "description": "worker of SeGroupStatus.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -906,64 +906,64 @@
             "type": "object",
             "properties": {
                 "from_se_ref": {
-                    "description": " It is a reference to an object of type ServiceEngine.",
+                    "description": " It is a reference to an object of type ServiceEngine. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "num_se": {
-                    "description": "Number of num_se.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_se_group": {
-                    "description": "Number of num_se_group.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_vs": {
-                    "description": "Number of num_vs.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "reason": {
-                    "description": "reason of SeUpgradeEvents.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "se_group_ha_mode": {
-                    "description": " Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY.",
+                    "description": " Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "se_group_ref": {
-                    "description": " It is a reference to an object of type ServiceEngineGroup.",
+                    "description": " It is a reference to an object of type ServiceEngineGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "se_ref": {
-                    "description": " It is a reference to an object of type ServiceEngine.",
+                    "description": " It is a reference to an object of type ServiceEngine. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "sub_tasks": {
-                    "description": "List of sub_tasks executed. Field introduced in 20.1.4.",
+                    "description": "List of sub_tasks executed. Field introduced in 20.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "task": {
-                    "description": " Enum options - SE_UPGRADE_PREVIEW, SE_UPGRADE_IN_PROGRESS, SE_UPGRADE_COMPLETE, SE_UPGRADE_ERROR, SE_UPGRADE_PRE_CHECKS, SE_IMAGE_INSTALL, SE_UPGRADE_IMAGE_NOT_FOUND, SE_ALREADY_UPGRADED, SE_REBOOT, SE_CONNECT_AFTER_REBOOT, SE_PRE_UPGRADE_TASKS, SE_POST_UPGRADE_TASKS, SE_WAIT_FOR_SWITCHOVER, SE_CHECK_SCALEDOUT_VS_EXISTS, SE_UPGRADE_SEMGR_REQUEST, SE_UPGRADE_SEMGR_SE_UNREACHABLE, SE_PRE_UPGRADE_SCALE_IN_OPS, SE_POST_UPGRADE_SCALE_OUT_OPS, SE_UPGRADE_SUSPENDED, SE_UPGRADE_START, SE_UPGRADE_PAUSED, SE_UPGRADE_FAILED, SE_UPGRADE_VERSION_CHECKS, SE_UPGRADE_CONNECTIVITY_CHECKS, SE_UPGRADE_VERIFY_VERSION, SE_UPGRADE_SKIP_RESUME_OPS, SE_UPGRADE_SEMGR_DONE, SEGROUP_UPGRADE_NOT_STARTED, SEGROUP_UPGRADE_ENQUEUED, SEGROUP_UPGRADE_ENQUEUE_FAILED, SEGROUP_UPGRADE_IN_PROGRESS, SEGROUP_UPGRADE_COMPLETE, SEGROUP_UPGRADE_ERROR, SEGROUP_UPGRADE_SUSPENDED, VS_DISRUPTED, VS_SCALEIN, VS_SCALEIN_ERROR, VS_SCALEIN_ERROR_RPC_FAILED, VS_SCALEOUT, VS_SCALEOUT_ERROR, VS_SCALEOUT_ERROR_RPC_FAILED, VS_SCALEOUT_ERROR_SE_NOT_READY, VS_MIGRATE, VS_MIGRATE_ERROR, VS_MIGRATE_BACK, VS_MIGRATE_BACK_ERROR, VS_MIGRATE_BACK_NOT_NEEDED, VS_MIGRATE_ERROR_NO_CANDIDATE_SE, VS_MIGRATE_ERROR_RPC_FAILED, VS_MIGRATE_BACK_ERROR_SE_NOT_READY, VS_MIGRATE_BACK_ERROR_RPC_FAILED, SEGROUP_PAUSE_PLACEMENT, SEGROUP_RESUME_PLACEMENT, SEGROUP_CLOUD_DISCOVERY, SEGROUP_IMAGE_GENERATION, SEGROUP_IMAGE_COPY_INSTALL_TO_SES, SEGROUP_SERIAL_SE_UPGRADE, SEGROUP_PARALLEL_SE_UPGRADE, SEGROUP_V2_TO_V1_ROLLBACK, SEGROUP_FAILED_SE_ERROR_RECOVERY, SEGROUP_SE_CONNECTIVITY_CHECKS, SEGROUP_UPGRADE_START, SEGROUP_WAIT_FOR_WARM_START_DONE, SEGROUP_PRE_SNAPSHOT, SEGROUP_POST_SNAPSHOT, SEGROUP_WAIT_FOR_SNAPSHOT_COLLECTION.",
+                    "description": " Enum options - SE_UPGRADE_PREVIEW, SE_UPGRADE_IN_PROGRESS, SE_UPGRADE_COMPLETE, SE_UPGRADE_ERROR, SE_UPGRADE_PRE_CHECKS, SE_IMAGE_INSTALL, SE_UPGRADE_IMAGE_NOT_FOUND, SE_ALREADY_UPGRADED, SE_REBOOT, SE_CONNECT_AFTER_REBOOT, SE_PRE_UPGRADE_TASKS, SE_POST_UPGRADE_TASKS, SE_WAIT_FOR_SWITCHOVER, SE_CHECK_SCALEDOUT_VS_EXISTS, SE_UPGRADE_SEMGR_REQUEST, SE_UPGRADE_SEMGR_SE_UNREACHABLE, SE_PRE_UPGRADE_SCALE_IN_OPS, SE_POST_UPGRADE_SCALE_OUT_OPS, SE_UPGRADE_SUSPENDED, SE_UPGRADE_START, SE_UPGRADE_PAUSED, SE_UPGRADE_FAILED, SE_UPGRADE_VERSION_CHECKS, SE_UPGRADE_CONNECTIVITY_CHECKS, SE_UPGRADE_VERIFY_VERSION, SE_UPGRADE_SKIP_RESUME_OPS, SE_UPGRADE_SEMGR_DONE, SEGROUP_UPGRADE_NOT_STARTED, SEGROUP_UPGRADE_ENQUEUED, SEGROUP_UPGRADE_ENQUEUE_FAILED, SEGROUP_UPGRADE_IN_PROGRESS, SEGROUP_UPGRADE_COMPLETE, SEGROUP_UPGRADE_ERROR, SEGROUP_UPGRADE_SUSPENDED, VS_DISRUPTED, VS_SCALEIN, VS_SCALEIN_ERROR, VS_SCALEIN_ERROR_RPC_FAILED, VS_SCALEOUT, VS_SCALEOUT_ERROR, VS_SCALEOUT_ERROR_RPC_FAILED, VS_SCALEOUT_ERROR_SE_NOT_READY, VS_MIGRATE, VS_MIGRATE_ERROR, VS_MIGRATE_BACK, VS_MIGRATE_BACK_ERROR, VS_MIGRATE_BACK_NOT_NEEDED, VS_MIGRATE_ERROR_NO_CANDIDATE_SE, VS_MIGRATE_ERROR_RPC_FAILED, VS_MIGRATE_BACK_ERROR_SE_NOT_READY, VS_MIGRATE_BACK_ERROR_RPC_FAILED, SEGROUP_PAUSE_PLACEMENT, SEGROUP_RESUME_PLACEMENT, SEGROUP_CLOUD_DISCOVERY, SEGROUP_IMAGE_GENERATION, SEGROUP_IMAGE_COPY_INSTALL_TO_SES, SEGROUP_SERIAL_SE_UPGRADE, SEGROUP_PARALLEL_SE_UPGRADE, SEGROUP_V2_TO_V1_ROLLBACK, SEGROUP_FAILED_SE_ERROR_RECOVERY, SEGROUP_SE_CONNECTIVITY_CHECKS, SEGROUP_UPGRADE_START, SEGROUP_WAIT_FOR_WARM_START_DONE, SEGROUP_PRE_SNAPSHOT, SEGROUP_POST_SNAPSHOT, SEGROUP_WAIT_FOR_SNAPSHOT_COLLECTION. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "to_se_ref": {
-                    "description": " It is a reference to an object of type ServiceEngine.",
+                    "description": " It is a reference to an object of type ServiceEngine. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "traffic_status": {
-                    "description": " Enum options - TRAFFIC_DISRUPTED, TRAFFIC_NOT_DISRUPTED.",
+                    "description": " Enum options - TRAFFIC_DISRUPTED, TRAFFIC_NOT_DISRUPTED. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vs_ref": {
-                    "description": " It is a reference to an object of type VirtualService.",
+                    "description": " It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -976,12 +976,12 @@
             ],
             "properties": {
                 "secs": {
-                    "description": "Number of secs.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "usecs": {
-                    "description": "Number of usecs.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 }
@@ -991,32 +991,32 @@
             "type": "object",
             "properties": {
                 "duration": {
-                    "description": "Time taken to complete upgrade event in seconds. Field introduced in 18.2.6. Unit is SEC.",
+                    "description": "Time taken to complete upgrade event in seconds. Field introduced in 18.2.6. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "end_time": {
-                    "description": "Task end time. Field introduced in 18.2.6.",
+                    "description": "Task end time. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ip": {
-                    "description": "Ip of the node. Field introduced in 18.2.6.",
+                    "description": "Ip of the node. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "message": {
-                    "description": "Upgrade event message if any. Field introduced in 18.2.6.",
+                    "description": "Upgrade event message if any. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "start_time": {
-                    "description": "Task start time. Field introduced in 18.2.6.",
+                    "description": "Task start time. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "status": {
-                    "description": "Upgrade event status. Field introduced in 18.2.6.",
+                    "description": "Upgrade event status. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "sub_tasks": {
-                    "description": "Sub tasks executed on each node. Field introduced in 18.2.8, 20.1.1.",
+                    "description": "Sub tasks executed on each node. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1028,19 +1028,19 @@
             "type": "object",
             "properties": {
                 "image_ref": {
-                    "description": "Image uuid for identifying base image. It is a reference to an object of type Image. Field introduced in 18.2.6.",
+                    "description": "Image uuid for identifying base image. It is a reference to an object of type Image. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "patch_ref": {
-                    "description": "Image uuid for identifying patch. It is a reference to an object of type Image. Field introduced in 18.2.6.",
+                    "description": "Image uuid for identifying patch. It is a reference to an object of type Image. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "se_group_options": {
-                    "description": "This field identifies SE group options that need to be applied during the upgrade operations. Field introduced in 18.2.6.",
+                    "description": "This field identifies SE group options that need to be applied during the upgrade operations. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SeGroupOptions"
                 },
                 "se_group_resume_options": {
-                    "description": "Apply options while resuming SE group upgrade operations. Field introduced in 18.2.6.",
+                    "description": "Apply options while resuming SE group upgrade operations. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SeGroupResumeOptions"
                 }
             }
@@ -1049,19 +1049,19 @@
             "type": "object",
             "properties": {
                 "last_changed_time": {
-                    "description": "The last time the state changed. Field introduced in 18.2.6.",
+                    "description": "The last time the state changed. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TimeStamp"
                 },
                 "reason": {
-                    "description": "Descriptive reason for the state-change. Field introduced in 18.2.6.",
+                    "description": "Descriptive reason for the state-change. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "rebooted": {
-                    "description": "State for keeping track of reboot status during upgrade operation. Field introduced in 20.1.2. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "description": "State for keeping track of reboot status during upgrade operation. Field introduced in 20.1.2. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "state": {
-                    "description": "The upgrade operations current fsm-state. Enum options - UPGRADE_FSM_INIT, UPGRADE_FSM_STARTED, UPGRADE_FSM_WAITING, UPGRADE_FSM_IN_PROGRESS, UPGRADE_FSM_ENQUEUED, UPGRADE_FSM_ERROR, UPGRADE_FSM_SUSPENDED, UPGRADE_FSM_ENQUEUE_FAILED, UPGRADE_FSM_PAUSED, UPGRADE_FSM_COMPLETED, UPGRADE_FSM_ABORT_IN_PROGRESS, UPGRADE_FSM_ABORTED, UPGRADE_FSM_SE_UPGRADE_IN_PROGRESS, UPGRADE_FSM_CONTROLLER_COMPLETED, UPGRADE_FSM_DUMMY_3, UPGRADE_FSM_DUMMY_4, UPGRADE_FSM_DUMMY_5. Field introduced in 18.2.6.",
+                    "description": "The upgrade operations current fsm-state. Enum options - UPGRADE_FSM_INIT, UPGRADE_FSM_STARTED, UPGRADE_FSM_WAITING, UPGRADE_FSM_IN_PROGRESS, UPGRADE_FSM_ENQUEUED, UPGRADE_FSM_ERROR, UPGRADE_FSM_SUSPENDED, UPGRADE_FSM_ENQUEUE_FAILED, UPGRADE_FSM_PAUSED, UPGRADE_FSM_COMPLETED, UPGRADE_FSM_ABORT_IN_PROGRESS, UPGRADE_FSM_ABORTED, UPGRADE_FSM_SE_UPGRADE_IN_PROGRESS, UPGRADE_FSM_CONTROLLER_COMPLETED, UPGRADE_FSM_DUMMY_3, UPGRADE_FSM_DUMMY_4, UPGRADE_FSM_DUMMY_5. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1075,194 +1075,194 @@
                     "type": "string"
                 },
                 "after_reboot_rollback_fnc": {
-                    "description": "Backward compatible abort function name. Field introduced in 18.2.10, 20.1.1.",
+                    "description": "Backward compatible abort function name. Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "after_reboot_task_name": {
-                    "description": "Backward compatible task dict name. Field introduced in 18.2.10, 20.1.1.",
+                    "description": "Backward compatible task dict name. Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "clean": {
-                    "description": "Flag for clean installation. Field introduced in 18.2.10, 20.1.1.",
+                    "description": "Flag for clean installation. Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "duration": {
-                    "description": "Duration of Upgrade operation in seconds. Field introduced in 18.2.6.",
+                    "description": "Duration of Upgrade operation in seconds. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "enable_patch_rollback": {
-                    "description": "Check if the patch rollback is possible on this node. Field introduced in 18.2.6.",
+                    "description": "Check if the patch rollback is possible on this node. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "enable_rollback": {
-                    "description": "Check if the rollback is possible on this node. Field introduced in 18.2.6.",
+                    "description": "Check if the rollback is possible on this node. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "end_time": {
-                    "description": "End time of Upgrade operation. Field introduced in 18.2.6.",
+                    "description": "End time of Upgrade operation. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "enqueue_time": {
-                    "description": "Enqueue time of Upgrade operation. Field introduced in 18.2.6.",
+                    "description": "Enqueue time of Upgrade operation. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "fips_mode": {
-                    "description": "Fips mode for the entire system. Field introduced in 20.1.5.",
+                    "description": "Fips mode for the entire system. Field introduced in 20.1.5. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "history": {
-                    "description": "Record of past operations on this node. Field introduced in 20.1.4.",
+                    "description": "Record of past operations on this node. Field introduced in 20.1.4. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/OpsHistory"
                     }
                 },
                 "image_path": {
-                    "description": "Image path of current base image. Field introduced in 18.2.10, 20.1.1.",
+                    "description": "Image path of current base image. Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "image_ref": {
-                    "description": "Image uuid for identifying the current base image. It is a reference to an object of type Image. Field introduced in 18.2.6.",
+                    "description": "Image uuid for identifying the current base image. It is a reference to an object of type Image. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "name": {
-                    "description": "Name of the system such as cluster name, se group name and se name. Field introduced in 18.2.6.",
+                    "description": "Name of the system such as cluster name, se group name and se name. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "node_type": {
-                    "description": "Type of the system such as controller_cluster, se_group or se. Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE. Field introduced in 18.2.6.",
+                    "description": "Type of the system such as controller_cluster, se_group or se. Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "obj_cloud_ref": {
-                    "description": "Cloud that this object belongs to. It is a reference to an object of type Cloud. Field introduced in 18.2.6.",
+                    "description": "Cloud that this object belongs to. It is a reference to an object of type Cloud. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "params": {
-                    "description": "Parameters associated with the Upgrade operation. Field introduced in 18.2.6.",
+                    "description": "Parameters associated with the Upgrade operation. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/UpgradeOpsParam"
                 },
                 "patch_image_path": {
-                    "description": "Image path of current patch image. Field introduced in 18.2.10, 20.1.1.",
+                    "description": "Image path of current patch image. Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "patch_image_ref": {
-                    "description": "Image uuid for identifying the current patch.Example  Base-image is 18.2.6 and a patch 6p1 is applied, then this field will indicate the 6p1 value. . It is a reference to an object of type Image. Field introduced in 18.2.6.",
+                    "description": "Image uuid for identifying the current patch.Example  Base-image is 18.2.6 and a patch 6p1 is applied, then this field will indicate the 6p1 value. . It is a reference to an object of type Image. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "patch_list": {
-                    "description": "List of patches applied to this node. Example  Base-image is 18.2.6 and a patch 6p1 is applied, then a patch 6p5 applied. This field will indicate the [{'6p1', '6p1_image_uuid'}, {'6p5', '6p5_image_uuid'}] value. Field introduced in 18.2.8, 20.1.1.",
+                    "description": "List of patches applied to this node. Example  Base-image is 18.2.6 and a patch 6p1 is applied, then a patch 6p5 applied. This field will indicate the [{'6p1', '6p1_image_uuid'}, {'6p5', '6p5_image_uuid'}] value. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/PatchData"
                     }
                 },
                 "patch_reboot": {
-                    "description": "Flag for patch op with reboot. Field introduced in 18.2.10, 20.1.1.",
+                    "description": "Flag for patch op with reboot. Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "patch_version": {
-                    "description": "Current patch version applied to this node. Example  Base-image is 18.2.6 and a patch 6p1 is applied, then this field will indicate the 6p1 value. . Field introduced in 18.2.6.",
+                    "description": "Current patch version applied to this node. Example  Base-image is 18.2.6 and a patch 6p1 is applied, then this field will indicate the 6p1 value. . Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "prev_image_path": {
-                    "description": "Image path of previous base image. Field introduced in 18.2.10, 20.1.1.",
+                    "description": "Image path of previous base image. Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "prev_patch_image_path": {
-                    "description": "Image path of previous patch image. Field introduced in 18.2.10, 20.1.1.",
+                    "description": "Image path of previous patch image. Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "previous_image_ref": {
-                    "description": "Image uuid for identifying previous base image.Example  Base-image was 18.2.5 and an upgrade was done to 18.2.6, then this field will indicate the 18.2.5 value. . It is a reference to an object of type Image. Field introduced in 18.2.6.",
+                    "description": "Image uuid for identifying previous base image.Example  Base-image was 18.2.5 and an upgrade was done to 18.2.6, then this field will indicate the 18.2.5 value. . It is a reference to an object of type Image. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "previous_patch_image_ref": {
-                    "description": "Image uuid for identifying previous patch.Example  Base-image was 18.2.6 with a patch 6p1. Upgrade was initiated to 18.2.8 with patch 8p1. The previous_image field will contain 18.2.6 and this field will indicate the 6p1 value. . It is a reference to an object of type Image. Field introduced in 18.2.6.",
+                    "description": "Image uuid for identifying previous patch.Example  Base-image was 18.2.6 with a patch 6p1. Upgrade was initiated to 18.2.8 with patch 8p1. The previous_image field will contain 18.2.6 and this field will indicate the 6p1 value. . It is a reference to an object of type Image. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "previous_patch_list": {
-                    "description": "List of patches applied to this node on previous major version. Field introduced in 18.2.8, 20.1.1.",
+                    "description": "List of patches applied to this node on previous major version. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/PatchData"
                     }
                 },
                 "previous_patch_version": {
-                    "description": "Previous patch version applied to this node.Example  Base-image was 18.2.6 with a patch 6p1. Upgrade was initiated to 18.2.8 with patch 8p1. The previous_image field will contain 18.2.6 and this field will indicate the 6p1 value. . Field introduced in 18.2.6.",
+                    "description": "Previous patch version applied to this node.Example  Base-image was 18.2.6 with a patch 6p1. Upgrade was initiated to 18.2.8 with patch 8p1. The previous_image field will contain 18.2.6 and this field will indicate the 6p1 value. . Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "previous_version": {
-                    "description": "Previous version prior to upgrade.Example  Base-image was 18.2.5 and an upgrade was done to 18.2.6, then this field will indicate the 18.2.5 value. . Field introduced in 18.2.6.",
+                    "description": "Previous version prior to upgrade.Example  Base-image was 18.2.5 and an upgrade was done to 18.2.6, then this field will indicate the 18.2.5 value. . Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "progress": {
-                    "description": "Upgrade operations progress which holds value between 0-100. Allowed values are 0-100. Field introduced in 18.2.8, 20.1.1. Unit is PERCENT.",
+                    "description": "Upgrade operations progress which holds value between 0-100. Allowed values are 0-100. Field introduced in 18.2.8, 20.1.1. Unit is PERCENT. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "se_patch_image_path": {
-                    "description": "Image path of se patch image.(required in case of reimage and upgrade + patch). Field introduced in 18.2.10, 20.1.1.",
+                    "description": "Image path of se patch image.(required in case of reimage and upgrade + patch). Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "se_patch_image_ref": {
-                    "description": "Image uuid for identifying the current se patch required in case of system upgrade(re-image) with se patch. . It is a reference to an object of type Image. Field introduced in 18.2.10, 20.1.1.",
+                    "description": "Image uuid for identifying the current se patch required in case of system upgrade(re-image) with se patch. . It is a reference to an object of type Image. Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "se_upgrade_events": {
-                    "description": "ServiceEngineGroup upgrade errors. Field introduced in 18.2.6.",
+                    "description": "ServiceEngineGroup upgrade errors. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/SeUpgradeEvents"
                     }
                 },
                 "seg_params": {
-                    "description": "se_patch may be different from the controller_patch. It has to be saved in the journal for subsequent consumption. The SeGroup params will be saved in the controller entry as seg_params. . Field introduced in 18.2.10, 20.1.1.",
+                    "description": "se_patch may be different from the controller_patch. It has to be saved in the journal for subsequent consumption. The SeGroup params will be saved in the controller entry as seg_params. . Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/UpgradeOpsParam"
                 },
                 "seg_status": {
-                    "description": "Detailed SeGroup status. Field introduced in 18.2.6.",
+                    "description": "Detailed SeGroup status. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SeGroupStatus"
                 },
                 "start_time": {
-                    "description": "Start time of Upgrade operation. Field introduced in 18.2.6.",
+                    "description": "Start time of Upgrade operation. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "state": {
-                    "description": "Current status of the Upgrade operation. Field introduced in 18.2.6.",
+                    "description": "Current status of the Upgrade operation. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/UpgradeOpsState"
                 },
                 "statediff_ref": {
-                    "description": "Record of Pre/Post snapshot captured for current upgrade operation. It is a reference to an object of type StatediffOperation. Field introduced in 21.1.3.",
+                    "description": "Record of Pre/Post snapshot captured for current upgrade operation. It is a reference to an object of type StatediffOperation. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "system": {
-                    "description": "Flag is set only in the cluster if the upgrade is initiated as a system-upgrade. . Field introduced in 18.2.6.",
+                    "description": "Flag is set only in the cluster if the upgrade is initiated as a system-upgrade. . Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "tasks_completed": {
-                    "description": "Completed set of tasks in the Upgrade operation. Field introduced in 18.2.6.",
+                    "description": "Completed set of tasks in the Upgrade operation. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "tenant_ref": {
-                    "description": "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 18.2.6.",
+                    "description": "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "total_tasks": {
-                    "description": "Total number of tasks in the Upgrade operation. Field introduced in 18.2.6.",
+                    "description": "Total number of tasks in the Upgrade operation. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "upgrade_events": {
-                    "description": "Events performed for Upgrade operation. Field introduced in 18.2.6.",
+                    "description": "Events performed for Upgrade operation. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/EventMap"
                     }
                 },
                 "upgrade_ops": {
-                    "description": "Upgrade operations requested. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME. Field introduced in 18.2.6.",
+                    "description": "Upgrade operations requested. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -1271,11 +1271,11 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID Identifier for the system such as cluster, se group and se. Field introduced in 18.2.6.",
+                    "description": "UUID Identifier for the system such as cluster, se group and se. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "version": {
-                    "description": "Current base image applied to this node. Field introduced in 18.2.6.",
+                    "description": "Current base image applied to this node. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1306,42 +1306,42 @@
             "type": "object",
             "properties": {
                 "event_timestamp": {
-                    "description": "The time at which the error occurred. Field introduced in 18.2.10, 20.1.1.",
+                    "description": "The time at which the error occurred. Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TimeStamp"
                 },
                 "reason": {
-                    "description": "reason of VsError.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "se_group_ha_mode": {
-                    "description": " Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY.",
+                    "description": " Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "se_group_ref": {
-                    "description": " It is a reference to an object of type ServiceEngineGroup.",
+                    "description": " It is a reference to an object of type ServiceEngineGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "se_ref": {
-                    "description": "The SE on which the VS errored during scale-in/scale-out operations. It is a reference to an object of type ServiceEngine. Field introduced in 18.2.10, 20.1.1.",
+                    "description": "The SE on which the VS errored during scale-in/scale-out operations. It is a reference to an object of type ServiceEngine. Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant.",
+                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "traffic_status": {
-                    "description": " Enum options - TRAFFIC_DISRUPTED, TRAFFIC_NOT_DISRUPTED.",
+                    "description": " Enum options - TRAFFIC_DISRUPTED, TRAFFIC_NOT_DISRUPTED. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vip_id": {
-                    "description": "vip_id of VsError.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vs_ref": {
-                    "description": " It is a reference to an object of type VirtualService.",
+                    "description": " It is a reference to an object of type VirtualService. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

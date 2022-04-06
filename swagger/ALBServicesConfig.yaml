@@ -351,13 +351,13 @@ definitions:
         type: object
         properties:
             id:
-                description: "ID of an Account in the customer portal. Field introduced in 20.1.1."
+                description: "ID of an Account in the customer portal. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             name:
-                description: "Account to which the customer portal user belongs. Field introduced in 20.1.1."
+                description: "Account to which the customer portal user belongs. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             users:
-                description: "Information about users within the account in the customer portal. Field introduced in 20.1.1."
+                description: "Information about users within the account in the customer portal. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ALBServicesAccountUser'
@@ -369,13 +369,13 @@ definitions:
             -   phone
         properties:
             email:
-                description: " Field introduced in 20.1.1."
+                description: " Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             name:
-                description: " Field introduced in 20.1.1."
+                description: " Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             phone:
-                description: " Field introduced in 20.1.1."
+                description: " Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     ALBServicesConfig:
         type: object
@@ -395,60 +395,60 @@ definitions:
                 readOnly: True
                 type: string
             app_signature_config:
-                description: "Default values to be used for Application Signature sync. Field introduced in 20.1.4. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "Default values to be used for Application Signature sync. Field introduced in 20.1.4. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AppSignatureConfig'
             asset_contact:
-                description: "Information about the default contact for this controller cluster. Field introduced in 20.1.1."
+                description: "Information about the default contact for this controller cluster. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ALBServicesUser'
             case_config:
-                description: "Default values to be used for pulse case management. Field introduced in 21.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "Default values to be used for pulse case management. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/CaseConfig'
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             feature_opt_in_status:
-                description: "Information about the portal features opted in for controller. Field introduced in 20.1.1. Allowed in Enterprise edition, Enterprise edition."
+                description: "Information about the portal features opted in for controller. Field introduced in 20.1.1."
                 $ref: '#/definitions/PortalFeatureOptIn'
             ip_reputation_config:
-                description: "Default values to be used for IP Reputation sync. Field introduced in 20.1.1."
+                description: "Default values to be used for IP Reputation sync. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpReputationConfig'
             mode:
-                description: "Mode helps log collection and upload. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE. Field introduced in 20.1.2. Allowed in Basic(Allowed values- SALESFORCE,MYVMWARE,SYSTEST) edition, Essentials(Allowed values- SALESFORCE,MYVMWARE,SYSTEST) edition, Enterprise edition."
+                description: "Mode helps log collection and upload. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE. Field introduced in 20.1.2. Allowed in Enterprise with any value edition, Essentials(Allowed values- SALESFORCE,MYVMWARE,SYSTEST) edition, Basic(Allowed values- SALESFORCE,MYVMWARE,SYSTEST) edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "MYVMWARE"
             polling_interval:
-                description: "Time interval in minutes. Allowed values are 5-60. Field introduced in 18.2.6."
+                description: "Time interval in minutes. Allowed values are 5-60. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10
                 format: int32
             portal_url:
-                description: "The FQDN or IP address of the customer portal. Field introduced in 18.2.6."
+                description: "The FQDN or IP address of the customer portal. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             saas_licensing_config:
-                description: "Saas licensing configuration. Field introduced in 21.1.3. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "Saas licensing configuration. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SaasLicensingInfo'
             split_proxy_configuration:
-                description: "Split proxy configuration to connect external pulse services. Field introduced in 20.1.1."
+                description: "Split proxy configuration to connect external pulse services. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ProxyConfiguration'
             url:
                 description: "url"
                 readOnly: True
                 type: string
             use_split_proxy:
-                description: "By default, pulse uses proxy added in system configuration. If pulse needs to use a seperate proxy, set this flag to true and configure split proxy configuration. Field introduced in 20.1.1."
+                description: "By default, pulse uses proxy added in system configuration. If pulse needs to use a seperate proxy, set this flag to true and configure split proxy configuration. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             use_tls:
-                description: "Secure the controller to PULSE communication over TLS. Field introduced in 20.1.3. Allowed in Basic edition, Enterprise edition."
+                description: "Secure the controller to PULSE communication over TLS. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             user_agent_db_config:
-                description: "Default values to be used for user agent DB Service. Field introduced in 21.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "Default values to be used for user agent DB Service. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/UserAgentDBConfig'
             uuid:
-                description: " Field introduced in 18.2.6."
+                description: " Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             waf_config:
-                description: "Default values to be used for pulse waf management. Field introduced in 21.1.1. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "Default values to be used for pulse waf management. Field introduced in 21.1.1. Allowed in Essentials with any value edition, Basic with any value edition, Enterprise edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/WafCrsConfig'
     ALBServicesConfigApiResponse:
         type: object
@@ -471,30 +471,30 @@ definitions:
             -   email
         properties:
             account_id:
-                description: "ID of primary account of the portal user. Field introduced in 20.1.1."
+                description: "ID of primary account of the portal user. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             account_name:
-                description: "Name of primary account of the portal user. Field introduced in 20.1.1."
+                description: "Name of primary account of the portal user. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             email:
-                description: "Email ID of the portal user. Field introduced in 20.1.1."
+                description: "Email ID of the portal user. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             managed_accounts:
-                description: "Information about all the accounts managed by user in the customer portal. Field introduced in 20.1.1."
+                description: "Information about all the accounts managed by user in the customer portal. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ALBServicesAccount'
             name:
-                description: "Name of the portal user. Field introduced in 20.1.1."
+                description: "Name of the portal user. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             phone:
-                description: "Phone number of the user. Field introduced in 20.1.1."
+                description: "Phone number of the user. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     AppSignatureConfig:
         type: object
         properties:
             app_signature_sync_interval:
-                description: "Application Signature db sync interval in minutes. Allowed values are 60-10080. Field introduced in 20.1.4. Unit is MIN. Allowed in Basic edition, Essentials edition, Enterprise edition. Special default for Basic edition is 1440, Essentials edition is 1440, Enterprise is 1440."
+                description: "Application Signature db sync interval in minutes. Allowed values are 60-10080. Field introduced in 20.1.4. Unit is MIN. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition. Special default for Essentials edition is 1440, Basic edition is 1440, Enterprise is 1440."
                 type: integer
                 default: 1440
                 format: int32
@@ -502,20 +502,20 @@ definitions:
         type: object
         properties:
             enable_auto_case_creation_on_controller_failure:
-                description: "Enable pro-active support case creation when a controller failure occurs. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
+                description: "Enable pro-active support case creation when a controller failure occurs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition."
                 type: boolean
             enable_auto_case_creation_on_se_failure:
-                description: "Enable pro-active support case creation when a service engine failure occurs. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
+                description: "Enable pro-active support case creation when a service engine failure occurs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition."
                 type: boolean
             enable_cleanup_of_attached_files:
-                description: "Enable cleanup of successfully attached files to support case. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is True."
+                description: "Enable cleanup of successfully attached files to support case. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is True."
                 type: boolean
                 default: True
     ConfigPbAttributes:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
+                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
@@ -523,12 +523,12 @@ definitions:
         type: object
         properties:
             ip_reputation_file_object_expiry_duration:
-                description: "IP reputation db file object expiry duration in days. Allowed values are 1-7. Field introduced in 20.1.1. Unit is DAYS."
+                description: "IP reputation db file object expiry duration in days. Allowed values are 1-7. Field introduced in 20.1.1. Unit is DAYS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 3
                 format: int32
             ip_reputation_sync_interval:
-                description: "IP reputation db sync interval in minutes. Allowed values are 2-1440. Field introduced in 20.1.1. Unit is MIN. Allowed in Basic(Allowed values- 60) edition, Essentials(Allowed values- 60) edition, Enterprise edition."
+                description: "IP reputation db sync interval in minutes. Allowed values are 2-1440. Field introduced in 20.1.1. Unit is MIN. Allowed in Enterprise with any value edition, Essentials(Allowed values- 60) edition, Basic(Allowed values- 60) edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: int32
@@ -536,34 +536,34 @@ definitions:
         type: object
         properties:
             enable_appsignature_sync:
-                description: "Enable to receive Application specific signature updates. Field introduced in 20.1.4. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise(Allowed values- false) edition, Enterprise edition."
+                description: "Enable to receive Application specific signature updates. Field introduced in 20.1.4. Allowed in Enterprise edition only with addon license edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition."
                 type: boolean
             enable_ip_reputation:
-                description: "Enable to receive IP reputation updates. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise(Allowed values- false) edition, Enterprise edition."
+                description: "Enable to receive IP reputation updates. Field introduced in 20.1.1. Allowed in Enterprise edition only with addon license edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition."
                 type: boolean
             enable_pulse_case_management:
-                description: "Enable Pulse Case Management. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise edition is false, Enterprise is True."
+                description: "Enable Pulse Case Management. Field introduced in 21.1.1. Allowed in Enterprise edition only with addon license edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition. Special default for Enterprise edition is false, Essentials edition is false, Basic edition is false, Enterprise is True."
                 type: boolean
                 default: True
             enable_pulse_waf_management:
-                description: "Enable to receive WAF CRS updates. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise edition is false, Enterprise is True."
+                description: "Enable to receive WAF CRS updates. Field introduced in 21.1.1. Allowed in Enterprise edition only with addon license edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition. Special default for Enterprise edition is false, Essentials edition is false, Basic edition is false, Enterprise is True."
                 type: boolean
                 default: True
             enable_user_agent_db_sync:
-                description: "Enable to receive Bot Management updates. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
+                description: "Enable to receive Bot Management updates. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition."
                 type: boolean
     ProactiveSupportDefaults:
         type: object
         properties:
             attach_core_dump:
-                description: "Opt-in to attach core dump with support case. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition."
+                description: "Opt-in to attach core dump with support case. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition."
                 type: boolean
             attach_tech_support:
-                description: "Opt-in to attach tech support with support case. Field introduced in 20.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is True."
+                description: "Opt-in to attach tech support with support case. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is True."
                 type: boolean
                 default: True
             case_severity:
-                description: "Case severity to be used for proactive support case creation. Field introduced in 20.1.1."
+                description: "Case severity to be used for proactive support case creation. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "Severity 5"
     ProxyConfiguration:
@@ -573,34 +573,34 @@ definitions:
             -   port
         properties:
             host:
-                description: "Proxy hostname or IP address."
+                description: "Proxy hostname or IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             password:
-                description: "Password for proxy."
+                description: "Password for proxy. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             port:
-                description: "Proxy port."
+                description: "Proxy port. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             username:
-                description: "Username for proxy."
+                description: "Username for proxy. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     SaasLicensingInfo:
         type: object
         properties:
             max_service_units:
-                description: "Maximum service units limit for controller. Allowed values are 0-1000. Special values are 0 - infinite. Field introduced in 21.1.3."
+                description: "Maximum service units limit for controller. Allowed values are 0-1000. Special values are 0 - infinite. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             reserve_service_units:
-                description: "Minimum service units that always remain reserved on controller. Allowed values are 0-1000. Field introduced in 21.1.3."
+                description: "Minimum service units that always remain reserved on controller. Allowed values are 0-1000. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     UserAgentDBConfig:
         type: object
         properties:
             allowed_batch_size:
-                description: "Batch query limit. Allowed values are 1-500. Field introduced in 21.1.1. Allowed in Basic(Allowed values- 500) edition, Essentials(Allowed values- 500) edition, Enterprise edition."
+                description: "Batch query limit. Allowed values are 1-500. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- 500) edition, Basic(Allowed values- 500) edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 500
                 format: int32
@@ -608,9 +608,9 @@ definitions:
         type: object
         properties:
             enable_auto_download_waf_signatures:
-                description: "Enable to automatically download new WAF signatures/CRS version to the Controller. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise(Allowed values- false) edition, Enterprise edition."
+                description: "Enable to automatically download new WAF signatures/CRS version to the Controller. Field introduced in 21.1.1. Allowed in Enterprise edition only with addon license edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition."
                 type: boolean
             enable_waf_signatures_notifications:
-                description: "Enable event notifications when new WAF signatures/CRS versions are available. Field introduced in 21.1.1. Allowed in Basic(Allowed values- false) edition, Essentials(Allowed values- false) edition, Enterprise edition. Special default for Basic edition is false, Essentials edition is false, Enterprise is True."
+                description: "Enable event notifications when new WAF signatures/CRS versions are available. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is True."
                 type: boolean
                 default: True

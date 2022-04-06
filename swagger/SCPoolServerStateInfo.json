@@ -510,11 +510,11 @@
             ],
             "properties": {
                 "addr": {
-                    "description": "IP address.",
+                    "description": "IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "type": {
-                    "description": " Enum options - V4, DNS, V6.",
+                    "description": " Enum options - V4, DNS, V6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -523,27 +523,27 @@
             "type": "object",
             "properties": {
                 "last_changed_time": {
-                    "description": "Placeholder for description of property last_changed_time of obj type OperationalStatus field type str  type object",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TimeStamp"
                 },
                 "reason": {
-                    "description": "reason of OperationalStatus.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "reason_code": {
-                    "description": "Number of reason_code.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "reason_code_string": {
-                    "description": "reason_code_string of OperationalStatus.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "state": {
-                    "description": " Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING, OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING, OPER_FAILED, OPER_UNAVAIL.",
+                    "description": " Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING, OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING, OPER_FAILED, OPER_UNAVAIL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "OPER_UNAVAIL"
                 }
@@ -558,26 +558,26 @@
                     "type": "string"
                 },
                 "is_server": {
-                    "description": " Field introduced in 17.1.1.",
+                    "description": " Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "oper_status": {
-                    "description": " Field introduced in 17.1.1.",
+                    "description": " Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/OperationalStatus"
                 },
                 "pool_id": {
-                    "description": " Field introduced in 17.1.1.",
+                    "description": " Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "server_states": {
-                    "description": " Field introduced in 17.1.1.",
+                    "description": " Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/SCServerStateInfo"
                     }
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Field introduced in 17.1.1.",
+                    "description": " It is a reference to an object of type Tenant. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -586,7 +586,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": " Field introduced in 17.1.1.",
+                    "description": " Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -617,15 +617,15 @@
             "type": "object",
             "properties": {
                 "oper_status": {
-                    "description": " Field introduced in 17.1.1.",
+                    "description": " Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/OperationalStatus"
                 },
                 "server_ip": {
-                    "description": " Field introduced in 17.1.1.",
+                    "description": " Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "server_port": {
-                    "description": " Allowed values are 1-65535. Field introduced in 17.1.1.",
+                    "description": " Allowed values are 1-65535. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -639,12 +639,12 @@
             ],
             "properties": {
                 "secs": {
-                    "description": "Number of secs.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "usecs": {
-                    "description": "Number of usecs.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 }

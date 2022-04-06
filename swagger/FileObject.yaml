@@ -359,54 +359,54 @@ definitions:
                 readOnly: True
                 type: string
             checksum:
-                description: "SHA1 checksum of the file. Field introduced in 20.1.1."
+                description: "SHA1 checksum of the file. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             compressed:
-                description: "This field indicates whether the file is gzip-compressed. Field introduced in 20.1.1."
+                description: "This field indicates whether the file is gzip-compressed. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             created:
-                description: "Timestamp of creation for the file. Field introduced in 20.1.1."
+                description: "Timestamp of creation for the file. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             description:
-                description: "Description of the file. Field introduced in 20.1.1."
+                description: "Description of the file. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             expires_at:
-                description: "Timestamp when the file will be no longer needed and can be removed by the system. If this is set, a garbage collector process will try to remove the file after this time. Field introduced in 20.1.1."
+                description: "Timestamp when the file will be no longer needed and can be removed by the system. If this is set, a garbage collector process will try to remove the file after this time. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             is_federated:
-                description: "This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines. If the field is set to true, then the object is replicated across the federation. Field introduced in 20.1.1."
+                description: "This field describes the object's replication scope. If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines. If the field is set to true, then the object is replicated across the federation. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             name:
-                description: "Name of the file object. Field introduced in 20.1.1."
+                description: "Name of the file object. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             path:
-                description: "Path to the file. Field introduced in 20.1.1."
+                description: "Path to the file. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             read_only:
-                description: "Enforce Read-Only on the file. Field introduced in 20.1.1."
+                description: "Enforce Read-Only on the file. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             restrict_download:
-                description: "Flag to allow/restrict download of the file. Field introduced in 20.1.1."
+                description: "Flag to allow/restrict download of the file. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             size:
-                description: "Size of the file. Field introduced in 20.1.1."
+                description: "Size of the file. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int64
             tenant_ref:
-                description: "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 20.1.1."
+                description: "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: "Type of the file. Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE. Field introduced in 20.1.1. Allowed in Basic(Allowed values- OTHER_FILE_TYPES) edition, Essentials(Allowed values- OTHER_FILE_TYPES) edition, Enterprise edition."
+                description: "Type of the file. Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials(Allowed values- OTHER_FILE_TYPES) edition, Basic(Allowed values- OTHER_FILE_TYPES) edition, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the file. Field introduced in 20.1.1."
+                description: "UUID of the file. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             version:
-                description: "Version of the file. Field introduced in 20.1.1."
+                description: "Version of the file. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     FileObjectApiResponse:
         type: object

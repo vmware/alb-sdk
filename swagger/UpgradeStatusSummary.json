@@ -510,12 +510,12 @@
             ],
             "properties": {
                 "secs": {
-                    "description": "Number of secs.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "usecs": {
-                    "description": "Number of usecs.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int64"
                 }
@@ -525,19 +525,19 @@
             "type": "object",
             "properties": {
                 "last_changed_time": {
-                    "description": "The last time the state changed. Field introduced in 18.2.6.",
+                    "description": "The last time the state changed. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TimeStamp"
                 },
                 "reason": {
-                    "description": "Descriptive reason for the state-change. Field introduced in 18.2.6.",
+                    "description": "Descriptive reason for the state-change. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "rebooted": {
-                    "description": "State for keeping track of reboot status during upgrade operation. Field introduced in 20.1.2. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "description": "State for keeping track of reboot status during upgrade operation. Field introduced in 20.1.2. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "state": {
-                    "description": "The upgrade operations current fsm-state. Enum options - UPGRADE_FSM_INIT, UPGRADE_FSM_STARTED, UPGRADE_FSM_WAITING, UPGRADE_FSM_IN_PROGRESS, UPGRADE_FSM_ENQUEUED, UPGRADE_FSM_ERROR, UPGRADE_FSM_SUSPENDED, UPGRADE_FSM_ENQUEUE_FAILED, UPGRADE_FSM_PAUSED, UPGRADE_FSM_COMPLETED, UPGRADE_FSM_ABORT_IN_PROGRESS, UPGRADE_FSM_ABORTED, UPGRADE_FSM_SE_UPGRADE_IN_PROGRESS, UPGRADE_FSM_CONTROLLER_COMPLETED, UPGRADE_FSM_DUMMY_3, UPGRADE_FSM_DUMMY_4, UPGRADE_FSM_DUMMY_5. Field introduced in 18.2.6.",
+                    "description": "The upgrade operations current fsm-state. Enum options - UPGRADE_FSM_INIT, UPGRADE_FSM_STARTED, UPGRADE_FSM_WAITING, UPGRADE_FSM_IN_PROGRESS, UPGRADE_FSM_ENQUEUED, UPGRADE_FSM_ERROR, UPGRADE_FSM_SUSPENDED, UPGRADE_FSM_ENQUEUE_FAILED, UPGRADE_FSM_PAUSED, UPGRADE_FSM_COMPLETED, UPGRADE_FSM_ABORT_IN_PROGRESS, UPGRADE_FSM_ABORTED, UPGRADE_FSM_SE_UPGRADE_IN_PROGRESS, UPGRADE_FSM_CONTROLLER_COMPLETED, UPGRADE_FSM_DUMMY_3, UPGRADE_FSM_DUMMY_4, UPGRADE_FSM_DUMMY_5. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -551,61 +551,61 @@
                     "type": "string"
                 },
                 "enable_patch_rollback": {
-                    "description": "Check if the patch rollback is possible on this node. Field introduced in 18.2.6.",
+                    "description": "Check if the patch rollback is possible on this node. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "enable_rollback": {
-                    "description": "Check if the rollback is possible on this node. Field introduced in 18.2.6.",
+                    "description": "Check if the rollback is possible on this node. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "end_time": {
-                    "description": "End time of upgrade operations. Field introduced in 18.2.6.",
+                    "description": "End time of upgrade operations. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "image_ref": {
-                    "description": "Image uuid for identifying the current base image. It is a reference to an object of type Image. Field introduced in 18.2.6.",
+                    "description": "Image uuid for identifying the current base image. It is a reference to an object of type Image. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "name": {
-                    "description": "Name of the system such as cluster name, se group name and se name. Field introduced in 18.2.6.",
+                    "description": "Name of the system such as cluster name, se group name and se name. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "node_type": {
-                    "description": "Type of the system such as controller_cluster, se_group or se. Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE. Field introduced in 18.2.6.",
+                    "description": "Type of the system such as controller_cluster, se_group or se. Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "obj_cloud_ref": {
-                    "description": "Cloud that this object belongs to. It is a reference to an object of type Cloud. Field introduced in 18.2.6.",
+                    "description": "Cloud that this object belongs to. It is a reference to an object of type Cloud. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "patch_image_ref": {
-                    "description": "Image uuid for identifying the current patch. It is a reference to an object of type Image. Field introduced in 18.2.6.",
+                    "description": "Image uuid for identifying the current patch. It is a reference to an object of type Image. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "start_time": {
-                    "description": "Start time of upgrade operations. Field introduced in 18.2.6.",
+                    "description": "Start time of upgrade operations. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "state": {
-                    "description": "Current status of the upgrade operations. Field introduced in 18.2.6.",
+                    "description": "Current status of the upgrade operations. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/UpgradeOpsState"
                 },
                 "tasks_completed": {
-                    "description": "Upgrade tasks completed. Field introduced in 18.2.6.",
+                    "description": "Upgrade tasks completed. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "tenant_ref": {
-                    "description": "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 18.2.6.",
+                    "description": "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "total_tasks": {
-                    "description": "Total upgrade tasks. Field introduced in 18.2.6.",
+                    "description": "Total upgrade tasks. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "upgrade_ops": {
-                    "description": "Upgrade operations requested. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME. Field introduced in 18.2.6.",
+                    "description": "Upgrade operations requested. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -614,11 +614,11 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID Identifier for the system such as cluster, se group and se. Field introduced in 18.2.6.",
+                    "description": "UUID Identifier for the system such as cluster, se group and se. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "version": {
-                    "description": "Current base image applied to this node. Field introduced in 18.2.6.",
+                    "description": "Current base image applied to this node. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

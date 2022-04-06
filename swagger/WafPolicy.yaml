@@ -351,22 +351,22 @@ definitions:
         type: object
         properties:
             confid_high_value:
-                description: "Confidence threshold for label CONFIDENCE_HIGH. Field introduced in 18.2.3."
+                description: "Confidence threshold for label CONFIDENCE_HIGH. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 9500
                 format: int32
             confid_low_value:
-                description: "Confidence threshold for label CONFIDENCE_LOW. Field introduced in 18.2.3."
+                description: "Confidence threshold for label CONFIDENCE_LOW. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 7500
                 format: int32
             confid_probable_value:
-                description: "Confidence threshold for label CONFIDENCE_PROBABLE. Field introduced in 18.2.3."
+                description: "Confidence threshold for label CONFIDENCE_PROBABLE. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 9000
                 format: int32
             confid_very_high_value:
-                description: "Confidence threshold for label CONFIDENCE_VERY_HIGH. Field introduced in 18.2.3."
+                description: "Confidence threshold for label CONFIDENCE_VERY_HIGH. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 9999
                 format: int32
@@ -374,31 +374,31 @@ definitions:
         type: object
         properties:
             enable_per_uri_learning:
-                description: "Learn the params per URI path. Field introduced in 18.2.3."
+                description: "Learn the params per URI path. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             max_params:
-                description: "Maximum number of params programmed for an application. Allowed values are 10-1000. Field introduced in 18.2.3."
+                description: "Maximum number of params programmed for an application. Allowed values are 10-1000. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
                 format: int32
             max_uris:
-                description: "Maximum number of URI paths programmed for an application. Allowed values are 10-10000. Field introduced in 18.2.3."
+                description: "Maximum number of URI paths programmed for an application. Allowed values are 10-10000. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 500
                 format: int32
             min_hits_to_learn:
-                description: "Minimum number of occurances required for a Param to qualify for learning. Field introduced in 18.2.5."
+                description: "Minimum number of occurances required for a Param to qualify for learning. Field introduced in 18.2.5. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10000
                 format: int64
             sampling_percent:
-                description: "Percent of the requests subjected to Application learning. Allowed values are 1-100. Field introduced in 18.2.3. Unit is PERCENT."
+                description: "Percent of the requests subjected to Application learning. Allowed values are 1-100. Field introduced in 18.2.3. Unit is PERCENT. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
             update_interval:
-                description: "Frequency with which SE publishes Application learning data to controller. Allowed values are 1-60. Field introduced in 18.2.3. Unit is MIN."
+                description: "Frequency with which SE publishes Application learning data to controller. Allowed values are 1-60. Field introduced in 18.2.3. Unit is MIN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 30
                 format: int32
@@ -408,10 +408,10 @@ definitions:
             -   type
         properties:
             type:
-                description: "One of the system-defined Bot classification types. Enum options - HUMAN, GOOD_BOT, BAD_BOT, DANGEROUS_BOT, USER_DEFINED_BOT, UNKNOWN_CLIENT. Field introduced in 21.1.1."
+                description: "One of the system-defined Bot classification types. Enum options - HUMAN, GOOD_BOT, BAD_BOT, DANGEROUS_BOT, USER_DEFINED_BOT, UNKNOWN_CLIENT. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             user_defined_type:
-                description: "If 'type' has BotClassificationTypes value 'USER_DEFINED', this is the user-defined value. Field introduced in 21.1.1."
+                description: "If 'type' has BotClassificationTypes value 'USER_DEFINED', this is the user-defined value. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
     BotDetectionMatch:
         type: object
@@ -419,18 +419,18 @@ definitions:
             -   match_operation
         properties:
             classifications:
-                description: "Bot classification types. Field introduced in 21.1.1."
+                description: "Bot classification types. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/BotClassification'
             match_operation:
-                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1."
+                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
     ConfigPbAttributes:
         type: object
         properties:
             version:
-                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1."
+                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
@@ -441,17 +441,17 @@ definitions:
             -   name
         properties:
             match_case:
-                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE."
+                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "INSENSITIVE"
             match_criteria:
-                description: "Criterion to use for matching the cookie in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL."
+                description: "Criterion to use for matching the cookie in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             name:
-                description: "Name of the cookie."
+                description: "Name of the cookie. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "String value in the cookie."
+                description: "String value in the cookie. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     GeoMatch:
         type: object
@@ -461,13 +461,13 @@ definitions:
             -   values
         properties:
             attribute:
-                description: "The Geo data type to match on. Enum options - ATTRIBUTE_IP_PREFIX, ATTRIBUTE_COUNTRY_CODE, ATTRIBUTE_COUNTRY_NAME, ATTRIBUTE_CONTINENT_CODE, ATTRIBUTE_CONTINENT_NAME, ATTRIBUTE_REGION_NAME, ATTRIBUTE_CITY_NAME, ATTRIBUTE_ISP_NAME, ATTRIBUTE_ORGANIZATION_NAME, ATTRIBUTE_AS_NUMBER, ATTRIBUTE_AS_NAME, ATTRIBUTE_LONGITUDE, ATTRIBUTE_LATITUDE, ATTRIBUTE_CUSTOM_1, ATTRIBUTE_CUSTOM_2, ATTRIBUTE_CUSTOM_3, ATTRIBUTE_CUSTOM_4, ATTRIBUTE_CUSTOM_5, ATTRIBUTE_CUSTOM_6, ATTRIBUTE_CUSTOM_7, ATTRIBUTE_CUSTOM_8, ATTRIBUTE_CUSTOM_9, ATTRIBUTE_USER_DEFINED_MAPPING. Field introduced in 21.1.1."
+                description: "The Geo data type to match on. Enum options - ATTRIBUTE_IP_PREFIX, ATTRIBUTE_COUNTRY_CODE, ATTRIBUTE_COUNTRY_NAME, ATTRIBUTE_CONTINENT_CODE, ATTRIBUTE_CONTINENT_NAME, ATTRIBUTE_REGION_NAME, ATTRIBUTE_CITY_NAME, ATTRIBUTE_ISP_NAME, ATTRIBUTE_ORGANIZATION_NAME, ATTRIBUTE_AS_NUMBER, ATTRIBUTE_AS_NAME, ATTRIBUTE_LONGITUDE, ATTRIBUTE_LATITUDE, ATTRIBUTE_CUSTOM_1, ATTRIBUTE_CUSTOM_2, ATTRIBUTE_CUSTOM_3, ATTRIBUTE_CUSTOM_4, ATTRIBUTE_CUSTOM_5, ATTRIBUTE_CUSTOM_6, ATTRIBUTE_CUSTOM_7, ATTRIBUTE_CUSTOM_8, ATTRIBUTE_CUSTOM_9, ATTRIBUTE_USER_DEFINED_MAPPING. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             match_operation:
-                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1."
+                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             values:
-                description: "The values to match. Field introduced in 21.1.1."
+                description: "The values to match. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -478,17 +478,17 @@ definitions:
             -   match_criteria
         properties:
             hdr:
-                description: "Name of the HTTP header whose value is to be matched."
+                description: "Name of the HTTP header whose value is to be matched. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             match_case:
-                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE."
+                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "INSENSITIVE"
             match_criteria:
-                description: "Criterion to use for matching headers in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL."
+                description: "Criterion to use for matching headers in the HTTP request. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "String values to match in the HTTP header."
+                description: "String values to match in the HTTP header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -498,14 +498,14 @@ definitions:
             -   match_criteria
         properties:
             match_case:
-                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE."
+                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "INSENSITIVE"
             match_criteria:
-                description: "Criterion to use for the host header value match. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL."
+                description: "Criterion to use for the host header value match. Enum options - HDR_EXISTS, HDR_DOES_NOT_EXIST, HDR_BEGINS_WITH, HDR_DOES_NOT_BEGIN_WITH, HDR_CONTAINS, HDR_DOES_NOT_CONTAIN, HDR_ENDS_WITH, HDR_DOES_NOT_END_WITH, HDR_EQUALS, HDR_DOES_NOT_EQUAL. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "String value(s) in the host header."
+                description: "String value(s) in the host header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -515,10 +515,10 @@ definitions:
             -   match_criteria
         properties:
             match_criteria:
-                description: "Criterion to use for HTTP version matching the version used in the HTTP request. Enum options - IS_IN, IS_NOT_IN."
+                description: "Criterion to use for HTTP version matching the version used in the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             versions:
-                description: "HTTP protocol version. Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO. Minimum of 1 items required. Maximum of 8 items allowed. Allowed in Basic(Allowed values- ONE_ZERO,ONE_ONE) edition, Essentials(Allowed values- ONE_ZERO,ONE_ONE) edition, Enterprise edition."
+                description: "HTTP protocol version. Enum options - ZERO_NINE, ONE_ZERO, ONE_ONE, TWO_ZERO. Minimum of 1 items required. Maximum of 8 items allowed. Allowed in Enterprise with any value edition, Essentials(Allowed values- ONE_ZERO,ONE_ONE) edition, Basic(Allowed values- ONE_ZERO,ONE_ONE) edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -529,10 +529,10 @@ definitions:
             -   type
         properties:
             addr:
-                description: "IP address."
+                description: "IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: " Enum options - V4, DNS, V6."
+                description: " Enum options - V4, DNS, V6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     IpAddrMatch:
         type: object
@@ -540,25 +540,25 @@ definitions:
             -   match_criteria
         properties:
             addrs:
-                description: "IP address(es)."
+                description: "IP address(es). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/IpAddr'
             group_refs:
-                description: "UUID of IP address group(s). It is a reference to an object of type IpAddrGroup."
+                description: "UUID of IP address group(s). It is a reference to an object of type IpAddrGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             match_criteria:
-                description: "Criterion to use for IP address matching the HTTP request. Enum options - IS_IN, IS_NOT_IN."
+                description: "Criterion to use for IP address matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             prefixes:
-                description: "IP address prefix(es)."
+                description: "IP address prefix(es). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/IpAddrPrefix'
             ranges:
-                description: "IP address range(s)."
+                description: "IP address range(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/IpAddrRange'
@@ -569,10 +569,10 @@ definitions:
             -   mask
         properties:
             ip_addr:
-                description: "Placeholder for description of property ip_addr of obj type IpAddrPrefix field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             mask:
-                description: "Number of mask."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     IpAddrRange:
@@ -582,10 +582,10 @@ definitions:
             -   end
         properties:
             begin:
-                description: "Starting IP address of the range."
+                description: "Starting IP address of the range. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             end:
-                description: "Ending IP address of the range."
+                description: "Ending IP address of the range. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
     IPReputationTypeMatch:
         type: object
@@ -593,10 +593,10 @@ definitions:
             -   match_operation
         properties:
             match_operation:
-                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 20.1.1."
+                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             reputation_types:
-                description: "IP reputation type. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 20.1.1. Minimum of 1 items required."
+                description: "IP reputation type. Enum options - IP_REPUTATION_TYPE_SPAM_SOURCE, IP_REPUTATION_TYPE_WINDOWS_EXPLOITS, IP_REPUTATION_TYPE_WEB_ATTACKS, IP_REPUTATION_TYPE_BOTNETS, IP_REPUTATION_TYPE_SCANNERS, IP_REPUTATION_TYPE_DOS, IP_REPUTATION_TYPE_REPUTATION, IP_REPUTATION_TYPE_PHISHING, IP_REPUTATION_TYPE_PROXY, IP_REPUTATION_TYPE_NETWORK, IP_REPUTATION_TYPE_CLOUD, IP_REPUTATION_TYPE_MOBILE_THREATS, IP_REPUTATION_TYPE_TOR, IP_REPUTATION_TYPE_ALL. Field introduced in 20.1.1. Minimum of 1 items required. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -606,59 +606,59 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key."
+                description: "Key. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "Value."
+                description: "Value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     MatchTarget:
         type: object
         properties:
             bot_detection_result:
-                description: "Configure the bot classification result. Field introduced in 21.1.1."
+                description: "Configure the bot classification result. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/BotDetectionMatch'
             client_ip:
-                description: "Configure client ip addresses."
+                description: "Configure client ip addresses. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrMatch'
             cookie:
-                description: "Configure HTTP cookie(s)."
+                description: "Configure HTTP cookie(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/CookieMatch'
             geo_matches:
-                description: "Configure the geo information. Field introduced in 21.1.1. Maximum of 1 items allowed."
+                description: "Configure the geo information. Field introduced in 21.1.1. Maximum of 1 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/GeoMatch'
             hdrs:
-                description: "Configure HTTP header(s). All configured headers must match."
+                description: "Configure HTTP header(s). All configured headers must match. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/HdrMatch'
             host_hdr:
-                description: "Configure the host header."
+                description: "Configure the host header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HostHdrMatch'
             ip_reputation_type:
-                description: "Configure IP reputation. Field introduced in 20.1.3."
+                description: "Configure IP reputation. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IPReputationTypeMatch'
             method:
-                description: "Configure HTTP methods."
+                description: "Configure HTTP methods. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MethodMatch'
             path:
-                description: "Configure request paths."
+                description: "Configure request paths. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PathMatch'
             protocol:
-                description: "Configure the type of HTTP protocol."
+                description: "Configure the type of HTTP protocol. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ProtocolMatch'
             query:
-                description: "Configure request query."
+                description: "Configure request query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/QueryMatch'
             source_ip:
-                description: "Configure source ip addresses. Field introduced in 21.1.3."
+                description: "Configure source ip addresses. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrMatch'
             version:
-                description: "Configure versions of the HTTP protocol."
+                description: "Configure versions of the HTTP protocol. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPVersionMatch'
             vs_port:
-                description: "Configure virtual service ports."
+                description: "Configure virtual service ports. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PortMatch'
     MethodMatch:
         type: object
@@ -666,10 +666,10 @@ definitions:
             -   match_criteria
         properties:
             match_criteria:
-                description: "Criterion to use for HTTP method matching the method in the HTTP request. Enum options - IS_IN, IS_NOT_IN."
+                description: "Criterion to use for HTTP method matching the method in the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             methods:
-                description: "Configure HTTP method(s). Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Minimum of 1 items required. Maximum of 16 items allowed. Allowed in Basic(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS) edition, Essentials(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS) edition, Enterprise edition."
+                description: "Configure HTTP method(s). Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Minimum of 1 items required. Maximum of 16 items allowed. Allowed in Enterprise with any value edition, Essentials(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS) edition, Basic(Allowed values- HTTP_METHOD_GET,HTTP_METHOD_PUT,HTTP_METHOD_POST,HTTP_METHOD_HEAD,HTTP_METHOD_OPTIONS) edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -679,20 +679,20 @@ definitions:
             -   match_criteria
         properties:
             match_case:
-                description: "Case sensitivity to use for the matching. Enum options - SENSITIVE, INSENSITIVE."
+                description: "Case sensitivity to use for the matching. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "INSENSITIVE"
             match_criteria:
-                description: "Criterion to use for matching the path in the HTTP request URI. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Allowed in Basic(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Essentials(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Enterprise edition."
+                description: "Criterion to use for matching the path in the HTTP request URI. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Allowed in Enterprise with any value edition, Essentials(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Basic(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL) edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "CONTAINS"
             match_str:
-                description: "String values."
+                description: "String values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             string_group_refs:
-                description: "UUID of the string group(s). It is a reference to an object of type StringGroup."
+                description: "UUID of the string group(s). It is a reference to an object of type StringGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -702,10 +702,10 @@ definitions:
             -   match_criteria
         properties:
             match_criteria:
-                description: "Criterion to use for port matching the HTTP request. Enum options - IS_IN, IS_NOT_IN."
+                description: "Criterion to use for port matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             ports:
-                description: "Listening TCP port(s). Allowed values are 1-65535. Minimum of 1 items required."
+                description: "Listening TCP port(s). Allowed values are 1-65535. Minimum of 1 items required. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: integer
@@ -717,10 +717,10 @@ definitions:
             -   protocols
         properties:
             match_criteria:
-                description: "Criterion to use for protocol matching the HTTP request. Enum options - IS_IN, IS_NOT_IN."
+                description: "Criterion to use for protocol matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             protocols:
-                description: "HTTP or HTTPS protocol. Enum options - HTTP, HTTPS."
+                description: "HTTP or HTTPS protocol. Enum options - HTTP, HTTPS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     QueryMatch:
         type: object
@@ -728,19 +728,19 @@ definitions:
             -   match_criteria
         properties:
             match_case:
-                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE."
+                description: "Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "INSENSITIVE"
             match_criteria:
-                description: "Criterion to use for matching the query in HTTP request URI. Enum options - QUERY_MATCH_CONTAINS."
+                description: "Criterion to use for matching the query in HTTP request URI. Enum options - QUERY_MATCH_CONTAINS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             match_str:
-                description: "String value(s)."
+                description: "String value(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             string_group_refs:
-                description: "UUID of the string group(s). It is a reference to an object of type StringGroup."
+                description: "UUID of the string group(s). It is a reference to an object of type StringGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -750,10 +750,10 @@ definitions:
             -   key
         properties:
             key:
-                description: "Key for filter match. Field introduced in 20.1.3."
+                description: "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             values:
-                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3."
+                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -763,29 +763,29 @@ definitions:
             -   provider_ref
         properties:
             provider_ref:
-                description: "The external provide for the rules. It is a reference to an object of type WafApplicationSignatureProvider. Field introduced in 20.1.1."
+                description: "The external provide for the rules. It is a reference to an object of type WafApplicationSignatureProvider. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             resolved_rules:
-                description: "A resolved version of the active application specific rules together with the overrides. Field introduced in 20.1.6."
+                description: "A resolved version of the active application specific rules together with the overrides. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/WafRule'
             rule_overrides:
-                description: "Override attributes of application signature rules. Field introduced in 20.1.6."
+                description: "Override attributes of application signature rules. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/WafRuleOverrides'
             rules:
-                description: "This entry is deprecated. If you want to deactivate a certain rule, please use the rule_overrides field instead. Field deprecated in 20.1.6. Field introduced in 20.1.1."
+                description: "This entry is deprecated. If you want to deactivate a certain rule, please use the rule_overrides field instead. Field deprecated in 20.1.6. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/WafRule'
             ruleset_version:
-                description: "The version in use of the provided ruleset. Field introduced in 20.1.1."
+                description: "The version in use of the provided ruleset. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
             selected_applications:
-                description: "List of applications for which we use the rules from the WafApplicationSignatureProvider. Field introduced in 20.1.1."
+                description: "List of applications for which we use the rules from the WafApplicationSignatureProvider. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -793,22 +793,22 @@ definitions:
         type: object
         properties:
             client_subnet:
-                description: "Client IP Subnet to exclude for WAF rules. Field introduced in 17.2.1."
+                description: "Client IP Subnet to exclude for WAF rules. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
             description:
-                description: "Free-text comment about this exclusion. Field introduced in 18.2.6."
+                description: "Free-text comment about this exclusion. Field introduced in 18.2.6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             match_element:
-                description: "The match_element can be 'ARGS xxx', 'ARGS_GET xxx', 'ARGS_POST xxx', 'ARGS_NAMES xxx', 'FILES xxx', 'QUERY_STRING', 'REQUEST_BASENAME', 'REQUEST_BODY', 'REQUEST_URI', 'REQUEST_URI_RAW', 'REQUEST_COOKIES xxx', 'REQUEST_HEADERS xxx', 'RESPONSE_HEADERS xxx' or XML xxx. These match_elements in the HTTP Transaction (if present) will be excluded when executing WAF Rules. Field introduced in 17.2.1."
+                description: "The match_element can be 'ARGS xxx', 'ARGS_GET xxx', 'ARGS_POST xxx', 'ARGS_NAMES xxx', 'FILES xxx', 'QUERY_STRING', 'REQUEST_BASENAME', 'REQUEST_BODY', 'REQUEST_URI', 'REQUEST_URI_RAW', 'REQUEST_COOKIES xxx', 'REQUEST_HEADERS xxx', 'RESPONSE_HEADERS xxx' or XML xxx. These match_elements in the HTTP Transaction (if present) will be excluded when executing WAF Rules. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             match_element_criteria:
-                description: "Criteria for match_element matching. Field introduced in 18.2.2."
+                description: "Criteria for match_element matching. Field introduced in 18.2.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/WafExclusionType'
             uri_match_criteria:
-                description: "Criteria for URI matching. Field introduced in 17.2.8."
+                description: "Criteria for URI matching. Field introduced in 17.2.8. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/WafExclusionType'
             uri_path:
-                description: "URI Path to exclude for WAF rules. Field introduced in 17.2.1."
+                description: "URI Path to exclude for WAF rules. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     WafExclusionType:
         type: object
@@ -817,33 +817,33 @@ definitions:
             -   match_op
         properties:
             match_case:
-                description: "Case sensitivity to use for the matching. Enum options - SENSITIVE, INSENSITIVE. Field introduced in 17.2.8."
+                description: "Case sensitivity to use for the matching. Enum options - SENSITIVE, INSENSITIVE. Field introduced in 17.2.8. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "SENSITIVE"
             match_op:
-                description: "String Operation to use for matching the Exclusion. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Field introduced in 17.2.8."
+                description: "String Operation to use for matching the Exclusion. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Field introduced in 17.2.8. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "EQUALS"
     WafLearning:
         type: object
         properties:
             arg_summarization_threshold:
-                description: "Suffix Summarization threshold used to compress args. Allowed values are 3-255. Field deprecated in 18.2.3. Field introduced in 18.1.2."
+                description: "Suffix Summarization threshold used to compress args. Allowed values are 3-255. Field deprecated in 18.2.3. Field introduced in 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             confidence:
-                description: "Confidence level used to derive rules from the WAF learning. Allowed values are 60-100. Field deprecated in 18.2.3. Field introduced in 18.1.2. Unit is PERCENT."
+                description: "Confidence level used to derive rules from the WAF learning. Allowed values are 60-100. Field deprecated in 18.2.3. Field introduced in 18.1.2. Unit is PERCENT. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             enable:
-                description: "Enable Learning for WAF policy. Field deprecated in 18.2.3. Field introduced in 18.1.2."
+                description: "Enable Learning for WAF policy. Field deprecated in 18.2.3. Field introduced in 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             path_summarization_threshold:
-                description: "Suffix Summarization threshold used to compress paths. Allowed values are 3-255. Field deprecated in 18.2.3. Field introduced in 18.1.2."
+                description: "Suffix Summarization threshold used to compress paths. Allowed values are 3-255. Field deprecated in 18.2.3. Field introduced in 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             sampling_percent:
-                description: "Sampling percent of the requests subjected to WAF learning. Allowed values are 1-100. Field deprecated in 18.2.3. Field introduced in 18.1.2. Unit is PERCENT."
+                description: "Sampling percent of the requests subjected to WAF learning. Allowed values are 1-100. Field deprecated in 18.2.3. Field introduced in 18.1.2. Unit is PERCENT. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     WafPolicy:
@@ -858,125 +858,125 @@ definitions:
                 readOnly: True
                 type: string
             allow_mode_delegation:
-                description: "Allow Rules to overwrite the policy mode. This must be set if the policy mode is set to enforcement. Field introduced in 18.1.5, 18.2.1."
+                description: "Allow Rules to overwrite the policy mode. This must be set if the policy mode is set to enforcement. Field introduced in 18.1.5, 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             allowlist:
-                description: "A set of rules which describe conditions under which the request will bypass the WAF. This will be processed in the request header phase before any other WAF related code. Field introduced in 20.1.3."
+                description: "A set of rules which describe conditions under which the request will bypass the WAF. This will be processed in the request header phase before any other WAF related code. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/WafPolicyAllowlist'
             application_signatures:
-                description: "Application Specific Signatures. Field introduced in 20.1.1."
+                description: "Application Specific Signatures. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/WafApplicationSignatures'
             bypass_static_extensions:
-                description: "Enable the functionality to bypass WAF for static file extensions. Field introduced in 22.1.1."
+                description: "Enable the functionality to bypass WAF for static file extensions. Field introduced in 22.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             confidence_override:
-                description: "Configure thresholds for confidence labels. Field introduced in 20.1.1."
+                description: "Configure thresholds for confidence labels. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AppLearningConfidenceOverride'
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             created_by:
-                description: "Creator name. Field introduced in 17.2.4."
+                description: "Creator name. Field introduced in 17.2.4. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             crs_groups:
-                description: "This entry is deprecated. If you want to change the property of a CRS group or rule (enabled, mode, exclusions), please use the crs_overrides field instead. Field deprecated in 20.1.6. Field introduced in 17.2.1."
+                description: "This entry is deprecated. If you want to change the property of a CRS group or rule (enabled, mode, exclusions), please use the crs_overrides field instead. Field deprecated in 20.1.6. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/WafRuleGroup'
             crs_overrides:
-                description: "Override attributes for CRS rules. Field introduced in 20.1.6."
+                description: "Override attributes for CRS rules. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/WafRuleGroupOverrides'
             description:
-                description: " Field introduced in 17.2.1."
+                description: " Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             enable_app_learning:
-                description: "Enable Application Learning for this WAF policy. Field introduced in 18.2.3."
+                description: "Enable Application Learning for this WAF policy. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             enable_auto_rule_updates:
-                description: "Enable Application Learning based rule updates on the WAF Profile. Rules will be programmed in dedicated WAF learning group. Field introduced in 20.1.1."
+                description: "Enable Application Learning based rule updates on the WAF Profile. Rules will be programmed in dedicated WAF learning group. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             enable_regex_learning:
-                description: "Enable dynamic regex generation for positive security model rules. This is an experimental feature and shouldn't be used in production. Field introduced in 20.1.1."
+                description: "Enable dynamic regex generation for positive security model rules. This is an experimental feature and shouldn't be used in production. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             failure_mode:
-                description: "WAF Policy failure mode. This can be 'Open' or 'Closed'. Enum options - WAF_FAILURE_MODE_OPEN, WAF_FAILURE_MODE_CLOSED. Field introduced in 18.1.2."
+                description: "WAF Policy failure mode. This can be 'Open' or 'Closed'. Enum options - WAF_FAILURE_MODE_OPEN, WAF_FAILURE_MODE_CLOSED. Field introduced in 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "WAF_FAILURE_MODE_OPEN"
             geo_db_ref:
-                description: "Geo Location Mapping Database used by this WafPolicy. It is a reference to an object of type GeoDB. Field introduced in 21.1.1."
+                description: "Geo Location Mapping Database used by this WafPolicy. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             labels:
-                description: "Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed."
+                description: "Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/KeyValue'
             learning:
-                description: "Configure parameters for WAF learning. Field deprecated in 18.2.3. Field introduced in 18.1.2."
+                description: "Configure parameters for WAF learning. Field deprecated in 18.2.3. Field introduced in 18.1.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/WafLearning'
             learning_params:
-                description: "Parameters for tuning Application learning. Field introduced in 20.1.1."
+                description: "Parameters for tuning Application learning. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AppLearningParams'
             markers:
-                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition."
+                description: "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/RoleFilterMatchLabel'
             min_confidence:
-                description: "Minimum confidence label required for auto rule updates. Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE. Field introduced in 20.1.1."
+                description: "Minimum confidence label required for auto rule updates. Enum options - CONFIDENCE_VERY_HIGH, CONFIDENCE_HIGH, CONFIDENCE_PROBABLE, CONFIDENCE_LOW, CONFIDENCE_NONE. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "CONFIDENCE_VERY_HIGH"
             mode:
-                description: "WAF Policy mode. This can be detection or enforcement. It can be overwritten by rules if allow_mode_delegation is set. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 17.2.1."
+                description: "WAF Policy mode. This can be detection or enforcement. It can be overwritten by rules if allow_mode_delegation is set. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "WAF_MODE_DETECTION_ONLY"
             name:
-                description: " Field introduced in 17.2.1."
+                description: " Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             paranoia_level:
-                description: "WAF Ruleset paranoia  mode. This is used to select Rules based on the paranoia-level tag. Enum options - WAF_PARANOIA_LEVEL_LOW, WAF_PARANOIA_LEVEL_MEDIUM, WAF_PARANOIA_LEVEL_HIGH, WAF_PARANOIA_LEVEL_EXTREME. Field introduced in 17.2.1."
+                description: "WAF Ruleset paranoia  mode. This is used to select Rules based on the paranoia-level tag. Enum options - WAF_PARANOIA_LEVEL_LOW, WAF_PARANOIA_LEVEL_MEDIUM, WAF_PARANOIA_LEVEL_HIGH, WAF_PARANOIA_LEVEL_EXTREME. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "WAF_PARANOIA_LEVEL_LOW"
             positive_security_model:
-                description: "The Positive Security Model. This is used to describe how the request or parts of the request should look like. It is executed in the Request Body Phase of Avi WAF. Field introduced in 18.2.3."
+                description: "The Positive Security Model. This is used to describe how the request or parts of the request should look like. It is executed in the Request Body Phase of Avi WAF. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/WafPositiveSecurityModel'
             post_crs_groups:
-                description: "WAF Rules are categorized in to groups based on their characterization. These groups are created by the user and will be enforced after the CRS groups. Field introduced in 17.2.1."
+                description: "WAF Rules are categorized in to groups based on their characterization. These groups are created by the user and will be enforced after the CRS groups. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/WafRuleGroup'
             pre_crs_groups:
-                description: "WAF Rules are categorized in to groups based on their characterization. These groups are created by the user and will be  enforced before the CRS groups. Field introduced in 17.2.1."
+                description: "WAF Rules are categorized in to groups based on their characterization. These groups are created by the user and will be  enforced before the CRS groups. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/WafRuleGroup'
             resolved_crs_groups:
-                description: "A resolved version of waf_crs_ref with waf_crs_overrides applied. Field deprecated in 21.1.3. Field introduced in 20.1.6."
+                description: "A resolved version of waf_crs_ref with waf_crs_overrides applied. Field deprecated in 21.1.3. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/WafRuleGroup'
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Field introduced in 17.2.1."
+                description: " It is a reference to an object of type Tenant. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Field introduced in 17.2.1."
+                description: " Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             waf_crs_ref:
-                description: "WAF core ruleset used for the CRS part of this Policy. It is a reference to an object of type WafCRS. Field introduced in 18.1.1."
+                description: "WAF core ruleset used for the CRS part of this Policy. It is a reference to an object of type WafCRS. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             waf_profile_ref:
-                description: "WAF Profile for WAF policy. It is a reference to an object of type WafProfile. Field introduced in 17.2.1."
+                description: "WAF Profile for WAF policy. It is a reference to an object of type WafProfile. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             whitelist:
-                description: "A set of rules which describe conditions under which the request will bypass the WAF. This will be executed in the request header phase before any other WAF related code. Field deprecated in 20.1.3. Field introduced in 18.2.3."
+                description: "A set of rules which describe conditions under which the request will bypass the WAF. This will be executed in the request header phase before any other WAF related code. Field deprecated in 20.1.3. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/WafPolicyWhitelist'
     WafPolicyApiResponse:
         type: object
@@ -997,7 +997,7 @@ definitions:
         type: object
         properties:
             rules:
-                description: "Rules to bypass WAF. Field introduced in 20.1.3."
+                description: "Rules to bypass WAF. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/WafPolicyAllowlistRule'
@@ -1009,29 +1009,29 @@ definitions:
             -   name
         properties:
             actions:
-                description: "Actions to be performed upon successful matching. Enum options - WAF_POLICY_ALLOWLIST_ACTION_BYPASS, WAF_POLICY_ALLOWLIST_ACTION_DETECTION_MODE, WAF_POLICY_ALLOWLIST_ACTION_CONTINUE. Field introduced in 20.1.3. Minimum of 1 items required. Maximum of 1 items allowed."
+                description: "Actions to be performed upon successful matching. Enum options - WAF_POLICY_ALLOWLIST_ACTION_BYPASS, WAF_POLICY_ALLOWLIST_ACTION_DETECTION_MODE, WAF_POLICY_ALLOWLIST_ACTION_CONTINUE. Field introduced in 20.1.3. Minimum of 1 items required. Maximum of 1 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             description:
-                description: "Description of this rule. Field introduced in 20.1.3."
+                description: "Description of this rule. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             enable:
-                description: "Enable or deactivate the rule. Field introduced in 20.1.3."
+                description: "Enable or deactivate the rule. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             index:
-                description: "Rules are processed in order of this index field. Field introduced in 20.1.3."
+                description: "Rules are processed in order of this index field. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             match:
-                description: "Match criteria describing requests to which this rule should be applied. Field introduced in 20.1.3."
+                description: "Match criteria describing requests to which this rule should be applied. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MatchTarget'
             name:
-                description: "A name describing the rule in a short form. Field introduced in 20.1.3."
+                description: "A name describing the rule in a short form. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             sampling_percent:
-                description: "Percentage of traffic that is sampled. Allowed values are 0-100. Field introduced in 20.1.3. Unit is PERCENT."
+                description: "Percentage of traffic that is sampled. Allowed values are 0-100. Field introduced in 20.1.3. Unit is PERCENT. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
                 format: int32
@@ -1039,7 +1039,7 @@ definitions:
         type: object
         properties:
             rules:
-                description: "Rules to bypass WAF. Field deprecated in 20.1.3. Field introduced in 18.2.3. Maximum of 1024 items allowed."
+                description: "Rules to bypass WAF. Field deprecated in 20.1.3. Field introduced in 18.2.3. Maximum of 1024 items allowed. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/WafPolicyWhitelistRule'
@@ -1051,35 +1051,35 @@ definitions:
             -   name
         properties:
             actions:
-                description: "Actions to be performed upon successful matching. Enum options - WAF_POLICY_WHITELIST_ACTION_ALLOW, WAF_POLICY_WHITELIST_ACTION_DETECTION_MODE, WAF_POLICY_WHITELIST_ACTION_CONTINUE. Field deprecated in 20.1.3. Field introduced in 18.2.3. Minimum of 1 items required. Maximum of 1 items allowed."
+                description: "Actions to be performed upon successful matching. Enum options - WAF_POLICY_WHITELIST_ACTION_ALLOW, WAF_POLICY_WHITELIST_ACTION_DETECTION_MODE, WAF_POLICY_WHITELIST_ACTION_CONTINUE. Field deprecated in 20.1.3. Field introduced in 18.2.3. Minimum of 1 items required. Maximum of 1 items allowed. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             description:
-                description: "Description of this rule. Field deprecated in 20.1.3. Field introduced in 18.2.3."
+                description: "Description of this rule. Field deprecated in 20.1.3. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             enable:
-                description: "Enable or disable the rule. Field deprecated in 20.1.3. Field introduced in 18.2.3."
+                description: "Enable or disable the rule. Field deprecated in 20.1.3. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             index:
-                description: "Rules are executed in order of this index field. Field deprecated in 20.1.3. Field introduced in 18.2.3."
+                description: "Rules are executed in order of this index field. Field deprecated in 20.1.3. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             match:
-                description: "Match criteria describing requests to which this rule should be applied. Field deprecated in 20.1.3. Field introduced in 18.2.3."
+                description: "Match criteria describing requests to which this rule should be applied. Field deprecated in 20.1.3. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MatchTarget'
             name:
-                description: "A name describing the rule in a short form. Field deprecated in 20.1.3. Field introduced in 18.2.3."
+                description: "A name describing the rule in a short form. Field deprecated in 20.1.3. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             sampling_percent:
-                description: "Percentage of traffic that is sampled. Allowed values are 0-100. Field deprecated in 20.1.3. Field introduced in 20.1.1. Unit is PERCENT."
+                description: "Percentage of traffic that is sampled. Allowed values are 0-100. Field deprecated in 20.1.3. Field introduced in 20.1.1. Unit is PERCENT. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     WafPositiveSecurityModel:
         type: object
         properties:
             group_refs:
-                description: "These groups should be used to separate different levels of concern. The order of the groups matters, one group may mark parts of the request as valid, so that subsequent groups will not check these parts. It is a reference to an object of type WafPolicyPSMGroup. Field introduced in 18.2.3."
+                description: "These groups should be used to separate different levels of concern. The order of the groups matters, one group may mark parts of the request as valid, so that subsequent groups will not check these parts. It is a reference to an object of type WafPolicyPSMGroup. Field introduced in 18.2.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -1091,42 +1091,42 @@ definitions:
             -   rule
         properties:
             enable:
-                description: "Enable or disable WAF Rule Group. Field introduced in 17.2.1."
+                description: "Enable or disable WAF Rule Group. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             exclude_list:
-                description: "Exclude list for the WAF rule. The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria. If there are multiple excludelist entries, it will be 'logical or' of them. Field introduced in 17.2.3. Maximum of 64 items allowed."
+                description: "Exclude list for the WAF rule. The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria. If there are multiple excludelist entries, it will be 'logical or' of them. Field introduced in 17.2.3. Maximum of 64 items allowed. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/WafExcludeListEntry'
             force_detection:
-                description: "When set to 'true', this rule will not cause 'deny' or 'redirect' actions to run, even if WAF Policy is set to enforcement mode. The behavior would be as if this rule operated in detection mode regardless of WAF Policy setting. Field deprecated in 18.1.5. Field introduced in 18.1.4."
+                description: "When set to 'true', this rule will not cause 'deny' or 'redirect' actions to run, even if WAF Policy is set to enforcement mode. The behavior would be as if this rule operated in detection mode regardless of WAF Policy setting. Field deprecated in 18.1.5. Field introduced in 18.1.4. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             index:
-                description: " Field introduced in 17.2.1."
+                description: " Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             is_sensitive:
-                description: "The rule field is sensitive and will not be displayed. Field introduced in 20.1.1."
+                description: "The rule field is sensitive and will not be displayed. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             mode:
-                description: "WAF Rule mode. This can be detection or enforcement. If this is not set, the Policy mode is used. This only takes effect if the policy allows delegation. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 18.1.5, 18.2.1."
+                description: "WAF Rule mode. This can be detection or enforcement. If this is not set, the Policy mode is used. This only takes effect if the policy allows delegation. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 18.1.5, 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             name:
-                description: "User-friendly optional name for a rule. Field introduced in 17.2.1."
+                description: "User-friendly optional name for a rule. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             phase:
-                description: "The execution phase where this rule will be executed. Enum options - WAF_PHASE_CONNECTION, WAF_PHASE_REQUEST_HEADER, WAF_PHASE_REQUEST_BODY, WAF_PHASE_RESPONSE_HEADER, WAF_PHASE_RESPONSE_BODY, WAF_PHASE_LOGGING. Field introduced in 20.1.1."
+                description: "The execution phase where this rule will be executed. Enum options - WAF_PHASE_CONNECTION, WAF_PHASE_REQUEST_HEADER, WAF_PHASE_REQUEST_BODY, WAF_PHASE_RESPONSE_HEADER, WAF_PHASE_RESPONSE_BODY, WAF_PHASE_LOGGING. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
             rule:
-                description: "Rule as per Modsec language. Field introduced in 17.2.1."
+                description: "Rule as per Modsec language. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             rule_id:
-                description: "Identifier (id) for a rule per Modsec language. All SecRule and SecAction directives require an id. It is extracted from the id action in a Modsec rule. Rules within a single WAF Policy are required to have unique rule_ids. Field introduced in 17.2.2."
+                description: "Identifier (id) for a rule per Modsec language. All SecRule and SecAction directives require an id. It is extracted from the id action in a Modsec rule. Rules within a single WAF Policy are required to have unique rule_ids. Field introduced in 17.2.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             tags:
-                description: "Tags for WAF rule as per Modsec language. They are extracted from the tag action in a ModSec rule. Field introduced in 18.1.3."
+                description: "Tags for WAF rule as per Modsec language. They are extracted from the tag action in a ModSec rule. Field introduced in 18.1.3. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -1138,26 +1138,26 @@ definitions:
             -   name
         properties:
             enable:
-                description: "Enable or disable WAF Rule Group. Field introduced in 17.2.1."
+                description: "Enable or disable WAF Rule Group. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             exclude_list:
-                description: "Exclude list for the WAF rule group. The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria. If there are multiple excludelist entries, it will be 'logical or' of them. Field introduced in 17.2.1. Maximum of 64 items allowed."
+                description: "Exclude list for the WAF rule group. The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria. If there are multiple excludelist entries, it will be 'logical or' of them. Field introduced in 17.2.1. Maximum of 64 items allowed. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/WafExcludeListEntry'
             force_detection:
-                description: "When set to 'true', any rule in this group will not cause 'deny' or 'redirect' actions to run, even if WAF Policy is set to enforcement mode. The behavior would be as if this rule operated in detection mode regardless of WAF Policy setting. Field deprecated in 18.1.5. Field introduced in 18.1.4."
+                description: "When set to 'true', any rule in this group will not cause 'deny' or 'redirect' actions to run, even if WAF Policy is set to enforcement mode. The behavior would be as if this rule operated in detection mode regardless of WAF Policy setting. Field deprecated in 18.1.5. Field introduced in 18.1.4. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             index:
-                description: " Field introduced in 17.2.1."
+                description: " Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             name:
-                description: " Field introduced in 17.2.1."
+                description: " Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             rules:
-                description: "Rules as per Modsec language. Field introduced in 17.2.1."
+                description: "Rules as per Modsec language. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/WafRule'
@@ -1167,21 +1167,21 @@ definitions:
             -   name
         properties:
             enable:
-                description: "Override the enable flag for this group. Field introduced in 20.1.6."
+                description: "Override the enable flag for this group. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
             exclude_list:
-                description: "Replace the exclude list for this group. Field introduced in 20.1.6. Maximum of 64 items allowed."
+                description: "Replace the exclude list for this group. Field introduced in 20.1.6. Maximum of 64 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/WafExcludeListEntry'
             mode:
-                description: "Override the waf mode for this group.. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 20.1.6."
+                description: "Override the waf mode for this group.. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             name:
-                description: "The name of the group where attributes or rules are overridden. Field introduced in 20.1.6."
+                description: "The name of the group where attributes or rules are overridden. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             rule_overrides:
-                description: "Rule specific overrides. Field introduced in 20.1.6. Maximum of 1024 items allowed."
+                description: "Rule specific overrides. Field introduced in 20.1.6. Maximum of 1024 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/WafRuleOverrides'
@@ -1191,16 +1191,16 @@ definitions:
             -   rule_id
         properties:
             enable:
-                description: "Override the enable flag for this rule. Field introduced in 20.1.6."
+                description: "Override the enable flag for this rule. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
             exclude_list:
-                description: "Replace the exclude list for this rule. Field introduced in 20.1.6. Maximum of 64 items allowed."
+                description: "Replace the exclude list for this rule. Field introduced in 20.1.6. Maximum of 64 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/WafExcludeListEntry'
             mode:
-                description: "Override the waf mode for this rule. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 20.1.6."
+                description: "Override the waf mode for this rule. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             rule_id:
-                description: "The rule_id of the rule where attributes are overridden. Field introduced in 20.1.6."
+                description: "The rule_id of the rule where attributes are overridden. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
