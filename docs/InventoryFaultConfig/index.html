@@ -740,32 +740,32 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="ControllerFaults">ControllerFaults</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">backup_scheduler_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable backup scheduler faults. Field introduced in 20.1.6. </div>
-<div class="param">cluster_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable cluster faults. Field introduced in 20.1.6. </div>
-<div class="param">deprecated_api_version_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable deprecated api version faults. Field introduced in 20.1.6. </div>
-<div class="param">license_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable license faults. Field introduced in 20.1.6. </div>
-<div class="param">migration_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable DB migration faults. Field introduced in 20.1.6. </div>
-<div class="param">sslprofile_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable SSL Profile faults. Field introduced in 20.1.6. </div>
+      <div class="param">backup_scheduler_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable backup scheduler faults. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">cluster_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable cluster faults. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">deprecated_api_version_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable deprecated api version faults. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">license_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable license faults. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">migration_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable DB migration faults. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">sslprofile_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable SSL Profile faults. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="InventoryFaultConfig">InventoryFaultConfig</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
-<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. </div>
-<div class="param">controller_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#ControllerFaults">ControllerFaults</a></span> Configure controller faults. Field introduced in 20.1.6. </div>
-<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name. Field introduced in 20.1.6. </div>
-<div class="param">serviceengine_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#ServiceengineFaults">ServiceengineFaults</a></span> Configure serviceengine faults. Field introduced in 20.1.6. </div>
-<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.6. </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">controller_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#ControllerFaults">ControllerFaults</a></span> Configure controller faults. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">serviceengine_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#ServiceengineFaults">ServiceengineFaults</a></span> Configure serviceengine faults. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
-<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID Auto generated. Field introduced in 20.1.6. </div>
-<div class="param">virtualservice_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#VirtualserviceFaults">VirtualserviceFaults</a></span> Configure VirtualService faults. Field introduced in 20.1.6. </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID Auto generated. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">virtualservice_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#VirtualserviceFaults">VirtualserviceFaults</a></span> Configure VirtualService faults. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -779,18 +779,18 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ServiceengineFaults">ServiceengineFaults</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">debug_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable debug faults. Field introduced in 20.1.6. </div>
+      <div class="param">debug_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable debug faults. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="VirtualserviceFaults">VirtualserviceFaults</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">debug_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable debug faults. Field introduced in 20.1.6. </div>
-<div class="param">pool_server_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable pool server faults. Field introduced in 20.1.6. </div>
-<div class="param">scaleout_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable VS scaleout and scalein faults. Field introduced in 20.1.6. </div>
-<div class="param">shared_vip_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable shared vip faults. Field introduced in 20.1.6. </div>
-<div class="param">ssl_cert_expiry_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable SSL certificate expiry faults. Field introduced in 20.1.6. </div>
-<div class="param">ssl_cert_status_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable SSL certificate status faults. Field introduced in 20.1.6. </div>
+      <div class="param">debug_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable debug faults. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">pool_server_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable pool server faults. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">scaleout_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable VS scaleout and scalein faults. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">shared_vip_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable shared vip faults. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ssl_cert_expiry_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable SSL certificate expiry faults. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">ssl_cert_status_faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable SSL certificate status faults. Field introduced in 20.1.6. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   </body>
