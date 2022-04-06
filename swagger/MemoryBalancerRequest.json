@@ -506,7 +506,7 @@
             "type": "object",
             "properties": {
                 "version": {
-                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.",
+                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "int32"
@@ -517,7 +517,7 @@
             "type": "object",
             "properties": {
                 "current_controller_mem_usage": {
-                    "description": "Total controller memory usage in GBs. Field introduced in 21.1.1.",
+                    "description": "Total controller memory usage in GBs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 }
@@ -535,35 +535,35 @@
                     "type": "string"
                 },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "controller_info": {
-                    "description": "Current details regarding controller. Field introduced in 21.1.1.",
+                    "description": "Current details regarding controller. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ControllerInfo"
                 },
                 "name": {
-                    "description": "Name of controller process. Field introduced in 21.1.1.",
+                    "description": "Name of controller process. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "node_uuid": {
-                    "description": "UUID of Node. Field introduced in 21.1.1.",
+                    "description": "UUID of Node. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "process_info": {
-                    "description": "Current process information of the controller process. Field introduced in 21.1.1.",
+                    "description": "Current process information of the controller process. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ProcessInfo"
                 },
                 "process_instance": {
-                    "description": "Instance of the controller process. Field introduced in 21.1.1.",
+                    "description": "Instance of the controller process. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": "UUID of Tenant Object. It is a reference to an object of type Tenant. Field introduced in 21.1.1.",
+                    "description": "UUID of Tenant Object. It is a reference to an object of type Tenant. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "timestamp": {
-                    "description": "Time at which Memory Balancer Request was created/updated. Field introduced in 21.1.1.",
+                    "description": "Time at which Memory Balancer Request was created/updated. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -572,7 +572,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID of Memory Balancer Request object. Field introduced in 21.1.1.",
+                    "description": "UUID of Memory Balancer Request object. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -603,35 +603,35 @@
             "type": "object",
             "properties": {
                 "current_process_id": {
-                    "description": "Current Process ID. Field introduced in 21.1.1.",
+                    "description": "Current Process ID. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "current_process_mem_usage": {
-                    "description": "Total memory usage of process in KBs. Field introduced in 21.1.1.",
+                    "description": "Total memory usage of process in KBs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "intimation_count": {
-                    "description": "Number of times the process has been in current ProcessMode. Field introduced in 21.1.1.",
+                    "description": "Number of times the process has been in current ProcessMode. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "memory_limit": {
-                    "description": "Memory limit for process in KBs. Field introduced in 21.1.1.",
+                    "description": "Memory limit for process in KBs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "memory_trend_usage": {
-                    "description": "Current usage trend of process memory. Enum options - UPWARD, DOWNWARD, NEUTRAL. Field introduced in 21.1.1.",
+                    "description": "Current usage trend of process memory. Enum options - UPWARD, DOWNWARD, NEUTRAL. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "process_mode": {
-                    "description": "Current mode of process. Enum options - REGULAR, DEBUG, DEGRADED, STOP. Field introduced in 21.1.1.",
+                    "description": "Current mode of process. Enum options - REGULAR, DEBUG, DEGRADED, STOP. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "threshold_percent": {
-                    "description": "Percentage of memory used out of given limits. Field introduced in 21.1.1.",
+                    "description": "Percentage of memory used out of given limits. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 }

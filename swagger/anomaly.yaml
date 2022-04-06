@@ -58,103 +58,103 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller with reject requests.
                 -   name: aggregate_obj_id
                     in: query
-                    description: Aggregate metrics for all the records for obj_id. When this is set obj_id is treated as a filter rather than a dimension. Field introduced in 17.2.1.
+                    description: Aggregate metrics for all the records for obj_id. When this is set obj_id is treated as a filter rather than a dimension. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: aggregation
                     in: query
-                    description:  Enum options - METRICS_ANOMALY_AGG_NONE, METRICS_ANOMALY_AGG_COUNT.
+                    description:  Enum options - METRICS_ANOMALY_AGG_NONE, METRICS_ANOMALY_AGG_COUNT. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: aggregation_window
                     in: query
-                    description: factor of aggregation window to the step. Eg. if requirement to is aggregate count ever 30 mins using 5 minute samples then value is 6.
+                    description: factor of aggregation window to the step. Eg. if requirement to is aggregate count ever 30 mins using 5 minute samples then value is 6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: detailed_header
                     in: query
-                    description: ability to reduce the information returned in header.
+                    description: ability to reduce the information returned in header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: dimension_filter_op
                     in: query
-                    description: Filters the obj_id based on the filter specified. Enum options - METRICS_FILTER_EQUALS, METRICS_FILTER_LIKE, METRICS_FILTER_CONTAINS, METRICS_FILTER_NOT_EQUALS.
+                    description: Filters the obj_id based on the filter specified. Enum options - METRICS_FILTER_EQUALS, METRICS_FILTER_LIKE, METRICS_FILTER_CONTAINS, METRICS_FILTER_NOT_EQUALS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: entity_uuid
                     in: query
-                    description: uuid of the entity type.
+                    description: uuid of the entity type. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: include_refs
                     in: query
-                    description: Resolve uuid to references.
+                    description: Resolve uuid to references. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: include_related
                     in: query
-                    description: include anomalies from related objects.
+                    description: include anomalies from related objects. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: limit
                     in: query
-                    description: Max number of metric samples.
+                    description: Max number of metric samples. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: metric_entity
                     in: query
-                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: metric_id
                     in: query
-                    description: This is of the form l4_server. comma seperated values.
+                    description: This is of the form l4_server. comma seperated values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: model
                     in: query
-                    description:  Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS.
+                    description:  Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: obj_id
                     in: query
-                    description: object id like vip or server ip.
+                    description: object id like vip or server ip. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: order_by
                     in: query
-                    description: Positive means sort from start and Negative sign means sort from end. Only metric_timestamp is supported for now.
+                    description: Positive means sort from start and Negative sign means sort from end. Only metric_timestamp is supported for now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: page
                     in: query
-                    description: page id for the anomaly query.
+                    description: page id for the anomaly query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: page_size
                     in: query
-                    description: size of each page of anomalies.
+                    description: size of each page of anomalies. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: pool_uuid
                     in: query
-                    description: Pool name. This will apply to any backend stats that are specified in the query.
+                    description: Pool name. This will apply to any backend stats that are specified in the query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: priority
                     in: query
-                    description: High priority Anomaly. Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW.
+                    description: High priority Anomaly. Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: result_format
                     in: query
-                    description: format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF.
+                    description: format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: server
                     in: query
-                    description: server ip port.
+                    description: server ip port. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: serviceengine_uuid
                     in: query
-                    description: ID of the Node. Eg. if query is SE specific then it would have SE UUID.
+                    description: ID of the Node. Eg. if query is SE specific then it would have SE UUID. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: start
                     in: query
-                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch.
+                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: step
                     in: query
-                    description: step interval in seconds.
+                    description: step interval in seconds. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: stop
                     in: query
-                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now.
+                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: tenant_uuid
                     in: query
-                    description: UUID of the Tenant.
+                    description: UUID of the Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
             security:
                 - basicAuth: []
@@ -204,103 +204,103 @@ paths:
                     type: string
                 -   name: aggregate_obj_id
                     in: query
-                    description: Aggregate metrics for all the records for obj_id. When this is set obj_id is treated as a filter rather than a dimension. Field introduced in 17.2.1.
+                    description: Aggregate metrics for all the records for obj_id. When this is set obj_id is treated as a filter rather than a dimension. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: aggregation
                     in: query
-                    description:  Enum options - METRICS_ANOMALY_AGG_NONE, METRICS_ANOMALY_AGG_COUNT.
+                    description:  Enum options - METRICS_ANOMALY_AGG_NONE, METRICS_ANOMALY_AGG_COUNT. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: aggregation_window
                     in: query
-                    description: factor of aggregation window to the step. Eg. if requirement to is aggregate count ever 30 mins using 5 minute samples then value is 6.
+                    description: factor of aggregation window to the step. Eg. if requirement to is aggregate count ever 30 mins using 5 minute samples then value is 6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: detailed_header
                     in: query
-                    description: ability to reduce the information returned in header.
+                    description: ability to reduce the information returned in header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: dimension_filter_op
                     in: query
-                    description: Filters the obj_id based on the filter specified. Enum options - METRICS_FILTER_EQUALS, METRICS_FILTER_LIKE, METRICS_FILTER_CONTAINS, METRICS_FILTER_NOT_EQUALS.
+                    description: Filters the obj_id based on the filter specified. Enum options - METRICS_FILTER_EQUALS, METRICS_FILTER_LIKE, METRICS_FILTER_CONTAINS, METRICS_FILTER_NOT_EQUALS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: entity_uuid
                     in: query
-                    description: uuid of the entity type.
+                    description: uuid of the entity type. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: include_refs
                     in: query
-                    description: Resolve uuid to references.
+                    description: Resolve uuid to references. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: include_related
                     in: query
-                    description: include anomalies from related objects.
+                    description: include anomalies from related objects. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: limit
                     in: query
-                    description: Max number of metric samples.
+                    description: Max number of metric samples. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: metric_entity
                     in: query
-                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: metric_id
                     in: query
-                    description: This is of the form l4_server. comma seperated values.
+                    description: This is of the form l4_server. comma seperated values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: model
                     in: query
-                    description:  Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS.
+                    description:  Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: obj_id
                     in: query
-                    description: object id like vip or server ip.
+                    description: object id like vip or server ip. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: order_by
                     in: query
-                    description: Positive means sort from start and Negative sign means sort from end. Only metric_timestamp is supported for now.
+                    description: Positive means sort from start and Negative sign means sort from end. Only metric_timestamp is supported for now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: page
                     in: query
-                    description: page id for the anomaly query.
+                    description: page id for the anomaly query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: page_size
                     in: query
-                    description: size of each page of anomalies.
+                    description: size of each page of anomalies. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: pool_uuid
                     in: query
-                    description: Pool name. This will apply to any backend stats that are specified in the query.
+                    description: Pool name. This will apply to any backend stats that are specified in the query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: priority
                     in: query
-                    description: High priority Anomaly. Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW.
+                    description: High priority Anomaly. Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: result_format
                     in: query
-                    description: format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF.
+                    description: format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: server
                     in: query
-                    description: server ip port.
+                    description: server ip port. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: serviceengine_uuid
                     in: query
-                    description: ID of the Node. Eg. if query is SE specific then it would have SE UUID.
+                    description: ID of the Node. Eg. if query is SE specific then it would have SE UUID. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: start
                     in: query
-                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch.
+                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: step
                     in: query
-                    description: step interval in seconds.
+                    description: step interval in seconds. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: stop
                     in: query
-                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now.
+                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: tenant_uuid
                     in: query
-                    description: UUID of the Tenant.
+                    description: UUID of the Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
             security:
                 - basicAuth: []
@@ -350,103 +350,103 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller with reject requests.
                 -   name: aggregate_obj_id
                     in: query
-                    description: Aggregate metrics for all the records for obj_id. When this is set obj_id is treated as a filter rather than a dimension. Field introduced in 17.2.1.
+                    description: Aggregate metrics for all the records for obj_id. When this is set obj_id is treated as a filter rather than a dimension. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: aggregation
                     in: query
-                    description:  Enum options - METRICS_ANOMALY_AGG_NONE, METRICS_ANOMALY_AGG_COUNT.
+                    description:  Enum options - METRICS_ANOMALY_AGG_NONE, METRICS_ANOMALY_AGG_COUNT. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: aggregation_window
                     in: query
-                    description: factor of aggregation window to the step. Eg. if requirement to is aggregate count ever 30 mins using 5 minute samples then value is 6.
+                    description: factor of aggregation window to the step. Eg. if requirement to is aggregate count ever 30 mins using 5 minute samples then value is 6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: detailed_header
                     in: query
-                    description: ability to reduce the information returned in header.
+                    description: ability to reduce the information returned in header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: dimension_filter_op
                     in: query
-                    description: Filters the obj_id based on the filter specified. Enum options - METRICS_FILTER_EQUALS, METRICS_FILTER_LIKE, METRICS_FILTER_CONTAINS, METRICS_FILTER_NOT_EQUALS.
+                    description: Filters the obj_id based on the filter specified. Enum options - METRICS_FILTER_EQUALS, METRICS_FILTER_LIKE, METRICS_FILTER_CONTAINS, METRICS_FILTER_NOT_EQUALS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: entity_uuid
                     in: query
-                    description: uuid of the entity type.
+                    description: uuid of the entity type. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: include_refs
                     in: query
-                    description: Resolve uuid to references.
+                    description: Resolve uuid to references. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: include_related
                     in: query
-                    description: include anomalies from related objects.
+                    description: include anomalies from related objects. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: limit
                     in: query
-                    description: Max number of metric samples.
+                    description: Max number of metric samples. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: metric_entity
                     in: query
-                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: metric_id
                     in: query
-                    description: This is of the form l4_server. comma seperated values.
+                    description: This is of the form l4_server. comma seperated values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: model
                     in: query
-                    description:  Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS.
+                    description:  Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: obj_id
                     in: query
-                    description: object id like vip or server ip.
+                    description: object id like vip or server ip. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: order_by
                     in: query
-                    description: Positive means sort from start and Negative sign means sort from end. Only metric_timestamp is supported for now.
+                    description: Positive means sort from start and Negative sign means sort from end. Only metric_timestamp is supported for now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: page
                     in: query
-                    description: page id for the anomaly query.
+                    description: page id for the anomaly query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: page_size
                     in: query
-                    description: size of each page of anomalies.
+                    description: size of each page of anomalies. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: pool_uuid
                     in: query
-                    description: Pool name. This will apply to any backend stats that are specified in the query.
+                    description: Pool name. This will apply to any backend stats that are specified in the query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: priority
                     in: query
-                    description: High priority Anomaly. Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW.
+                    description: High priority Anomaly. Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: result_format
                     in: query
-                    description: format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF.
+                    description: format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: server
                     in: query
-                    description: server ip port.
+                    description: server ip port. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: serviceengine_uuid
                     in: query
-                    description: ID of the Node. Eg. if query is SE specific then it would have SE UUID.
+                    description: ID of the Node. Eg. if query is SE specific then it would have SE UUID. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: start
                     in: query
-                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch.
+                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: step
                     in: query
-                    description: step interval in seconds.
+                    description: step interval in seconds. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: stop
                     in: query
-                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now.
+                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: tenant_uuid
                     in: query
-                    description: UUID of the Tenant.
+                    description: UUID of the Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
             security:
                 - basicAuth: []
@@ -496,103 +496,103 @@ paths:
                     type: string
                 -   name: aggregate_obj_id
                     in: query
-                    description: Aggregate metrics for all the records for obj_id. When this is set obj_id is treated as a filter rather than a dimension. Field introduced in 17.2.1.
+                    description: Aggregate metrics for all the records for obj_id. When this is set obj_id is treated as a filter rather than a dimension. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: aggregation
                     in: query
-                    description:  Enum options - METRICS_ANOMALY_AGG_NONE, METRICS_ANOMALY_AGG_COUNT.
+                    description:  Enum options - METRICS_ANOMALY_AGG_NONE, METRICS_ANOMALY_AGG_COUNT. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: aggregation_window
                     in: query
-                    description: factor of aggregation window to the step. Eg. if requirement to is aggregate count ever 30 mins using 5 minute samples then value is 6.
+                    description: factor of aggregation window to the step. Eg. if requirement to is aggregate count ever 30 mins using 5 minute samples then value is 6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: detailed_header
                     in: query
-                    description: ability to reduce the information returned in header.
+                    description: ability to reduce the information returned in header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: dimension_filter_op
                     in: query
-                    description: Filters the obj_id based on the filter specified. Enum options - METRICS_FILTER_EQUALS, METRICS_FILTER_LIKE, METRICS_FILTER_CONTAINS, METRICS_FILTER_NOT_EQUALS.
+                    description: Filters the obj_id based on the filter specified. Enum options - METRICS_FILTER_EQUALS, METRICS_FILTER_LIKE, METRICS_FILTER_CONTAINS, METRICS_FILTER_NOT_EQUALS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: entity_uuid
                     in: query
-                    description: uuid of the entity type.
+                    description: uuid of the entity type. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: include_refs
                     in: query
-                    description: Resolve uuid to references.
+                    description: Resolve uuid to references. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: include_related
                     in: query
-                    description: include anomalies from related objects.
+                    description: include anomalies from related objects. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: limit
                     in: query
-                    description: Max number of metric samples.
+                    description: Max number of metric samples. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: metric_entity
                     in: query
-                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: metric_id
                     in: query
-                    description: This is of the form l4_server. comma seperated values.
+                    description: This is of the form l4_server. comma seperated values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: model
                     in: query
-                    description:  Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS.
+                    description:  Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: obj_id
                     in: query
-                    description: object id like vip or server ip.
+                    description: object id like vip or server ip. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: order_by
                     in: query
-                    description: Positive means sort from start and Negative sign means sort from end. Only metric_timestamp is supported for now.
+                    description: Positive means sort from start and Negative sign means sort from end. Only metric_timestamp is supported for now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: page
                     in: query
-                    description: page id for the anomaly query.
+                    description: page id for the anomaly query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: page_size
                     in: query
-                    description: size of each page of anomalies.
+                    description: size of each page of anomalies. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: pool_uuid
                     in: query
-                    description: Pool name. This will apply to any backend stats that are specified in the query.
+                    description: Pool name. This will apply to any backend stats that are specified in the query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: priority
                     in: query
-                    description: High priority Anomaly. Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW.
+                    description: High priority Anomaly. Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: result_format
                     in: query
-                    description: format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF.
+                    description: format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: server
                     in: query
-                    description: server ip port.
+                    description: server ip port. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: serviceengine_uuid
                     in: query
-                    description: ID of the Node. Eg. if query is SE specific then it would have SE UUID.
+                    description: ID of the Node. Eg. if query is SE specific then it would have SE UUID. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: start
                     in: query
-                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch.
+                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: step
                     in: query
-                    description: step interval in seconds.
+                    description: step interval in seconds. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: stop
                     in: query
-                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now.
+                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: tenant_uuid
                     in: query
-                    description: UUID of the Tenant.
+                    description: UUID of the Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
             security:
                 - basicAuth: []
@@ -642,103 +642,103 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller with reject requests.
                 -   name: aggregate_obj_id
                     in: query
-                    description: Aggregate metrics for all the records for obj_id. When this is set obj_id is treated as a filter rather than a dimension. Field introduced in 17.2.1.
+                    description: Aggregate metrics for all the records for obj_id. When this is set obj_id is treated as a filter rather than a dimension. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: aggregation
                     in: query
-                    description:  Enum options - METRICS_ANOMALY_AGG_NONE, METRICS_ANOMALY_AGG_COUNT.
+                    description:  Enum options - METRICS_ANOMALY_AGG_NONE, METRICS_ANOMALY_AGG_COUNT. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: aggregation_window
                     in: query
-                    description: factor of aggregation window to the step. Eg. if requirement to is aggregate count ever 30 mins using 5 minute samples then value is 6.
+                    description: factor of aggregation window to the step. Eg. if requirement to is aggregate count ever 30 mins using 5 minute samples then value is 6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: detailed_header
                     in: query
-                    description: ability to reduce the information returned in header.
+                    description: ability to reduce the information returned in header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: dimension_filter_op
                     in: query
-                    description: Filters the obj_id based on the filter specified. Enum options - METRICS_FILTER_EQUALS, METRICS_FILTER_LIKE, METRICS_FILTER_CONTAINS, METRICS_FILTER_NOT_EQUALS.
+                    description: Filters the obj_id based on the filter specified. Enum options - METRICS_FILTER_EQUALS, METRICS_FILTER_LIKE, METRICS_FILTER_CONTAINS, METRICS_FILTER_NOT_EQUALS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: entity_uuid
                     in: query
-                    description: uuid of the entity type.
+                    description: uuid of the entity type. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: include_refs
                     in: query
-                    description: Resolve uuid to references.
+                    description: Resolve uuid to references. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: include_related
                     in: query
-                    description: include anomalies from related objects.
+                    description: include anomalies from related objects. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: limit
                     in: query
-                    description: Max number of metric samples.
+                    description: Max number of metric samples. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: metric_entity
                     in: query
-                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: metric_id
                     in: query
-                    description: This is of the form l4_server. comma seperated values.
+                    description: This is of the form l4_server. comma seperated values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: model
                     in: query
-                    description:  Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS.
+                    description:  Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: obj_id
                     in: query
-                    description: object id like vip or server ip.
+                    description: object id like vip or server ip. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: order_by
                     in: query
-                    description: Positive means sort from start and Negative sign means sort from end. Only metric_timestamp is supported for now.
+                    description: Positive means sort from start and Negative sign means sort from end. Only metric_timestamp is supported for now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: page
                     in: query
-                    description: page id for the anomaly query.
+                    description: page id for the anomaly query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: page_size
                     in: query
-                    description: size of each page of anomalies.
+                    description: size of each page of anomalies. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: pool_uuid
                     in: query
-                    description: Pool name. This will apply to any backend stats that are specified in the query.
+                    description: Pool name. This will apply to any backend stats that are specified in the query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: priority
                     in: query
-                    description: High priority Anomaly. Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW.
+                    description: High priority Anomaly. Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: result_format
                     in: query
-                    description: format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF.
+                    description: format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: server
                     in: query
-                    description: server ip port.
+                    description: server ip port. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: serviceengine_uuid
                     in: query
-                    description: ID of the Node. Eg. if query is SE specific then it would have SE UUID.
+                    description: ID of the Node. Eg. if query is SE specific then it would have SE UUID. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: start
                     in: query
-                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch.
+                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: step
                     in: query
-                    description: step interval in seconds.
+                    description: step interval in seconds. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: stop
                     in: query
-                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now.
+                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: tenant_uuid
                     in: query
-                    description: UUID of the Tenant.
+                    description: UUID of the Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
             security:
                 - basicAuth: []
@@ -788,103 +788,103 @@ paths:
                     type: string
                 -   name: aggregate_obj_id
                     in: query
-                    description: Aggregate metrics for all the records for obj_id. When this is set obj_id is treated as a filter rather than a dimension. Field introduced in 17.2.1.
+                    description: Aggregate metrics for all the records for obj_id. When this is set obj_id is treated as a filter rather than a dimension. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: aggregation
                     in: query
-                    description:  Enum options - METRICS_ANOMALY_AGG_NONE, METRICS_ANOMALY_AGG_COUNT.
+                    description:  Enum options - METRICS_ANOMALY_AGG_NONE, METRICS_ANOMALY_AGG_COUNT. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: aggregation_window
                     in: query
-                    description: factor of aggregation window to the step. Eg. if requirement to is aggregate count ever 30 mins using 5 minute samples then value is 6.
+                    description: factor of aggregation window to the step. Eg. if requirement to is aggregate count ever 30 mins using 5 minute samples then value is 6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: detailed_header
                     in: query
-                    description: ability to reduce the information returned in header.
+                    description: ability to reduce the information returned in header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: dimension_filter_op
                     in: query
-                    description: Filters the obj_id based on the filter specified. Enum options - METRICS_FILTER_EQUALS, METRICS_FILTER_LIKE, METRICS_FILTER_CONTAINS, METRICS_FILTER_NOT_EQUALS.
+                    description: Filters the obj_id based on the filter specified. Enum options - METRICS_FILTER_EQUALS, METRICS_FILTER_LIKE, METRICS_FILTER_CONTAINS, METRICS_FILTER_NOT_EQUALS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: entity_uuid
                     in: query
-                    description: uuid of the entity type.
+                    description: uuid of the entity type. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: include_refs
                     in: query
-                    description: Resolve uuid to references.
+                    description: Resolve uuid to references. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: include_related
                     in: query
-                    description: include anomalies from related objects.
+                    description: include anomalies from related objects. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: boolean
                 -   name: limit
                     in: query
-                    description: Max number of metric samples.
+                    description: Max number of metric samples. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: metric_entity
                     in: query
-                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY.
+                    description: Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: metric_id
                     in: query
-                    description: This is of the form l4_server. comma seperated values.
+                    description: This is of the form l4_server. comma seperated values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: model
                     in: query
-                    description:  Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS.
+                    description:  Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: obj_id
                     in: query
-                    description: object id like vip or server ip.
+                    description: object id like vip or server ip. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: order_by
                     in: query
-                    description: Positive means sort from start and Negative sign means sort from end. Only metric_timestamp is supported for now.
+                    description: Positive means sort from start and Negative sign means sort from end. Only metric_timestamp is supported for now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: page
                     in: query
-                    description: page id for the anomaly query.
+                    description: page id for the anomaly query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: page_size
                     in: query
-                    description: size of each page of anomalies.
+                    description: size of each page of anomalies. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: pool_uuid
                     in: query
-                    description: Pool name. This will apply to any backend stats that are specified in the query.
+                    description: Pool name. This will apply to any backend stats that are specified in the query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: priority
                     in: query
-                    description: High priority Anomaly. Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW.
+                    description: High priority Anomaly. Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: result_format
                     in: query
-                    description: format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF.
+                    description: format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: server
                     in: query
-                    description: server ip port.
+                    description: server ip port. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: serviceengine_uuid
                     in: query
-                    description: ID of the Node. Eg. if query is SE specific then it would have SE UUID.
+                    description: ID of the Node. Eg. if query is SE specific then it would have SE UUID. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: start
                     in: query
-                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch.
+                    description: Start time for the metrics in ISO 8601 format. Default is UNIX Epoch. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: step
                     in: query
-                    description: step interval in seconds.
+                    description: step interval in seconds. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: integer
                 -   name: stop
                     in: query
-                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now.
+                    description: End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
                 -   name: tenant_uuid
                     in: query
-                    description: UUID of the Tenant.
+                    description: UUID of the Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.
                     type: string
             security:
                 - basicAuth: []
@@ -900,23 +900,23 @@ definitions:
         type: object
         properties:
             ema_context:
-                description: "Placeholder for description of property ema_context of obj type AnomalyContext field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ExponentialMovingAverageCtx'
             ewma_context:
-                description: "Placeholder for description of property ewma_context of obj type AnomalyContext field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ExponentialMovingAverageCtx'
             hw_at_as_context:
-                description: "Placeholder for description of property hw_at_as_context of obj type AnomalyContext field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HoltWintersCtx'
             hw_at_ms_context:
-                description: "Placeholder for description of property hw_at_ms_context of obj type AnomalyContext field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HoltWintersCtx'
             prediction_interval_high:
-                description: "Placeholder for description of property prediction_interval_high of obj type AnomalyContext field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             prediction_interval_low:
-                description: "Placeholder for description of property prediction_interval_low of obj type AnomalyContext field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     AnomalyData:
@@ -926,32 +926,32 @@ definitions:
             -   value
         properties:
             anomaly_context:
-                description: "Placeholder for description of property anomaly_context of obj type AnomalyData field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AnomalyContext'
             anomaly_model:
-                description: "Deprecated. Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS."
+                description: "Deprecated. Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             entity_uuid:
-                description: "Unique object identifier of entity."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             obj_id:
-                description: "obj_id of AnomalyData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             obj_id_type:
-                description: "Object ID type. Enum options - METRICS_OBJ_ID_TYPE_VIRTUALSERVICE, METRICS_OBJ_ID_TYPE_SERVER, METRICS_OBJ_ID_TYPE_POOL, METRICS_OBJ_ID_TYPE_SERVICEENGINE, METRICS_OBJ_ID_TYPE_VIRTUALMACHINE, METRICS_OBJ_ID_TYPE_CONTROLLER, METRICS_OBJ_ID_TYPE_TENANT, METRICS_OBJ_ID_TYPE_CLUSTER, METRICS_OBJ_ID_TYPE_SE_INTERFACE."
+                description: "Object ID type. Enum options - METRICS_OBJ_ID_TYPE_VIRTUALSERVICE, METRICS_OBJ_ID_TYPE_SERVER, METRICS_OBJ_ID_TYPE_POOL, METRICS_OBJ_ID_TYPE_SERVICEENGINE, METRICS_OBJ_ID_TYPE_VIRTUALMACHINE, METRICS_OBJ_ID_TYPE_CONTROLLER, METRICS_OBJ_ID_TYPE_TENANT, METRICS_OBJ_ID_TYPE_CLUSTER, METRICS_OBJ_ID_TYPE_SE_INTERFACE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "METRICS_OBJ_ID_TYPE_SERVER"
             pool_uuid:
-                description: "Unique object identifier of pool."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             priority:
-                description: " Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW."
+                description: " Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             timestamp:
-                description: "timestamp of AnomalyData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             value:
-                description: "Placeholder for description of property value of obj type AnomalyData field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     AnomalyDataSeries:
@@ -960,12 +960,12 @@ definitions:
             -   header
         properties:
             data:
-                description: "Placeholder for description of property data of obj type AnomalyDataSeries field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/AnomalyData'
             header:
-                description: "Placeholder for description of property header of obj type AnomalyDataSeries field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MetricsDataHeader'
     AnomalyzerQuery:
         type: object
@@ -974,97 +974,97 @@ definitions:
             -   metric_entity
         properties:
             aggregate_obj_id:
-                description: "Aggregate metrics for all the records for obj_id. When this is set obj_id is treated as a filter rather than a dimension. Field introduced in 17.2.1."
+                description: "Aggregate metrics for all the records for obj_id. When this is set obj_id is treated as a filter rather than a dimension. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             aggregation:
-                description: " Enum options - METRICS_ANOMALY_AGG_NONE, METRICS_ANOMALY_AGG_COUNT."
+                description: " Enum options - METRICS_ANOMALY_AGG_NONE, METRICS_ANOMALY_AGG_COUNT. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "METRICS_ANOMALY_AGG_NONE"
             aggregation_window:
-                description: "factor of aggregation window to the step. Eg. if requirement to is aggregate count ever 30 mins using 5 minute samples then value is 6."
+                description: "factor of aggregation window to the step. Eg. if requirement to is aggregate count ever 30 mins using 5 minute samples then value is 6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
                 format: int32
             detailed_header:
-                description: "ability to reduce the information returned in header."
+                description: "ability to reduce the information returned in header. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             dimension_filter_op:
-                description: "Filters the obj_id based on the filter specified. Enum options - METRICS_FILTER_EQUALS, METRICS_FILTER_LIKE, METRICS_FILTER_CONTAINS, METRICS_FILTER_NOT_EQUALS."
+                description: "Filters the obj_id based on the filter specified. Enum options - METRICS_FILTER_EQUALS, METRICS_FILTER_LIKE, METRICS_FILTER_CONTAINS, METRICS_FILTER_NOT_EQUALS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "METRICS_FILTER_EQUALS"
             entity_uuid:
-                description: "uuid of the entity type."
+                description: "uuid of the entity type. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             include_refs:
-                description: "Resolve uuid to references."
+                description: "Resolve uuid to references. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             include_related:
-                description: "include anomalies from related objects."
+                description: "include anomalies from related objects. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             limit:
-                description: "Max number of metric samples."
+                description: "Max number of metric samples. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 50
                 format: int32
             metric_entity:
-                description: "Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY."
+                description: "Metrics Types supported. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "VSERVER_METRICS_ENTITY"
             metric_id:
-                description: "This is of the form l4_server. comma seperated values."
+                description: "This is of the form l4_server. comma seperated values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             model:
-                description: " Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS."
+                description: " Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             obj_id:
-                description: "object id like vip or server ip."
+                description: "object id like vip or server ip. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             order_by:
-                description: "Positive means sort from start and Negative sign means sort from end. Only metric_timestamp is supported for now."
+                description: "Positive means sort from start and Negative sign means sort from end. Only metric_timestamp is supported for now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "metric_timestamp"
             page:
-                description: "page id for the anomaly query."
+                description: "page id for the anomaly query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             page_size:
-                description: "size of each page of anomalies."
+                description: "size of each page of anomalies. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             pool_uuid:
-                description: "Pool name. This will apply to any backend stats that are specified in the query."
+                description: "Pool name. This will apply to any backend stats that are specified in the query. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             priority:
-                description: "High priority Anomaly. Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW."
+                description: "High priority Anomaly. Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "ANZ_PRIORITY_HIGH"
             result_format:
-                description: "format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF."
+                description: "format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "METRICS_FORMAT_JSON"
             server:
-                description: "server ip port."
+                description: "server ip port. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             serviceengine_uuid:
-                description: "ID of the Node. Eg. if query is SE specific then it would have SE UUID."
+                description: "ID of the Node. Eg. if query is SE specific then it would have SE UUID. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             start:
-                description: "Start time for the metrics in ISO 8601 format. Default is UNIX Epoch."
+                description: "Start time for the metrics in ISO 8601 format. Default is UNIX Epoch. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "1970-01-01T00:00:00"
             step:
-                description: "step interval in seconds."
+                description: "step interval in seconds. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 default: 5
                 format: int32
             stop:
-                description: "End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now."
+                description: "End time for the metrics in ISO 8601 format. Default is now. Negative numbers mean relative time from now. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             tenant_uuid:
-                description: "UUID of the Tenant."
+                description: "UUID of the Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     AnomalyzerQueryResponse:
         type: object
@@ -1074,22 +1074,22 @@ definitions:
             -   stop
         properties:
             metric_id:
-                description: "metric_id of AnomalyzerQueryResponse."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             series:
-                description: "Placeholder for description of property series of obj type AnomalyzerQueryResponse field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/AnomalyDataSeries'
             start:
-                description: "start of AnomalyzerQueryResponse."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             step:
-                description: "Number of step."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             stop:
-                description: "stop of AnomalyzerQueryResponse."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
@@ -1120,66 +1120,66 @@ definitions:
             -   std_dev
         properties:
             average:
-                description: "Average value for the metric."
+                description: "Average value for the metric. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             deviation:
-                description: "Deviation of last sample to the average."
+                description: "Deviation of last sample to the average. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             max_std_dev:
-                description: "Maximum standard deviation recorded."
+                description: "Maximum standard deviation recorded. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             normal_high:
-                description: "Deprecated."
+                description: "Deprecated. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             normal_low:
-                description: "Deprecated."
+                description: "Deprecated. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             prediction:
-                description: "Predicted value for the metric at the time instant."
+                description: "Predicted value for the metric at the time instant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             prediction_interval_high:
-                description: "Lower boundary of the range of normal values for this metric."
+                description: "Lower boundary of the range of normal values for this metric. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             prediction_interval_low:
-                description: "Lower boundary of the range of normal values for this metric."
+                description: "Lower boundary of the range of normal values for this metric. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             std_dev:
-                description: "Standard deviation."
+                description: "Standard deviation. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     HoltWintersCtx:
         type: object
         properties:
             deviation:
-                description: "Placeholder for description of property deviation of obj type HoltWintersCtx field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             level:
-                description: "Placeholder for description of property level of obj type HoltWintersCtx field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             prediction:
-                description: "Placeholder for description of property prediction of obj type HoltWintersCtx field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             prediction_interval_high:
-                description: "Placeholder for description of property prediction_interval_high of obj type HoltWintersCtx field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             prediction_interval_low:
-                description: "Placeholder for description of property prediction_interval_low of obj type HoltWintersCtx field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             trend:
-                description: "Placeholder for description of property trend of obj type HoltWintersCtx field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     MetricsDataHeader:
@@ -1188,61 +1188,61 @@ definitions:
             -   name
         properties:
             derivation_data:
-                description: "Metrics derivation info."
+                description: "Metrics derivation info. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MetricsDerivationData'
             dimension_data:
-                description: "Placeholder for description of property dimension_data of obj type MetricsDataHeader field type str  type object"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/MetricsDimensionData'
             entity_uuid:
-                description: "entity uuid."
+                description: "entity uuid. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             metric_description:
-                description: "metric_description of MetricsDataHeader."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             metrics_min_scale:
-                description: "Placeholder for description of property metrics_min_scale of obj type MetricsDataHeader field type str  type number"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             metrics_sum_agg_invalid:
-                description: "Placeholder for description of property metrics_sum_agg_invalid of obj type MetricsDataHeader field type str  type boolean"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             missing_intervals:
-                description: "Missing data intervals. data in these intervals are not used for stats calculation."
+                description: "Missing data intervals. data in these intervals are not used for stats calculation. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/MetricsMissingDataInterval'
             name:
-                description: "name of the column."
+                description: "name of the column. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             obj_id:
-                description: "object ID of the series when object ID was specified in the metric."
+                description: "object ID of the series when object ID was specified in the metric. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             obj_id_type:
-                description: "obj_id_type. Enum options - METRICS_OBJ_ID_TYPE_VIRTUALSERVICE, METRICS_OBJ_ID_TYPE_SERVER, METRICS_OBJ_ID_TYPE_POOL, METRICS_OBJ_ID_TYPE_SERVICEENGINE, METRICS_OBJ_ID_TYPE_VIRTUALMACHINE, METRICS_OBJ_ID_TYPE_CONTROLLER, METRICS_OBJ_ID_TYPE_TENANT, METRICS_OBJ_ID_TYPE_CLUSTER, METRICS_OBJ_ID_TYPE_SE_INTERFACE."
+                description: "obj_id_type. Enum options - METRICS_OBJ_ID_TYPE_VIRTUALSERVICE, METRICS_OBJ_ID_TYPE_SERVER, METRICS_OBJ_ID_TYPE_POOL, METRICS_OBJ_ID_TYPE_SERVICEENGINE, METRICS_OBJ_ID_TYPE_VIRTUALMACHINE, METRICS_OBJ_ID_TYPE_CONTROLLER, METRICS_OBJ_ID_TYPE_TENANT, METRICS_OBJ_ID_TYPE_CLUSTER, METRICS_OBJ_ID_TYPE_SE_INTERFACE. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             pool_uuid:
-                description: "pool_id for the metric."
+                description: "pool_id for the metric. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             priority:
-                description: "Placeholder for description of property priority of obj type MetricsDataHeader field type str  type boolean"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             server:
-                description: "server ip port."
+                description: "server ip port. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             serviceengine_uuid:
-                description: "Service Engine ref or UUID. Field introduced in 17.2.8."
+                description: "Service Engine ref or UUID. Field introduced in 17.2.8. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             statistics:
-                description: "statistics of the metric."
+                description: "statistics of the metric. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MetricStatistics'
             tenant_uuid:
-                description: "Tenant ref or UUID."
+                description: "Tenant ref or UUID. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             units:
-                description: "units of the column data. Enum options - METRIC_COUNT, BITS_PER_SECOND, MILLISECONDS, SECONDS, PER_SECOND, BYTES, PERCENT, KILO_BYTES, KILO_BYTES_PER_SECOND, BYTES_PER_SECOND, KILO_BITS_PER_SECOND, GIGA_BYTES, MEGA_BYTES, NORMALIZED, STRING, SEC, MIN, DAYS, KB, MB, GB, MBPS, GHZ, RATIO, WORD, MICROSECONDS, HEALTH, HOURS."
+                description: "units of the column data. Enum options - METRIC_COUNT, BITS_PER_SECOND, MILLISECONDS, SECONDS, PER_SECOND, BYTES, PERCENT, KILO_BYTES, KILO_BYTES_PER_SECOND, BYTES_PER_SECOND, KILO_BITS_PER_SECOND, GIGA_BYTES, MEGA_BYTES, NORMALIZED, STRING, SEC, MIN, DAYS, KB, MB, GB, MBPS, GHZ, RATIO, WORD, MICROSECONDS, HEALTH, HOURS. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "METRIC_COUNT"
     MetricsDerivationData:
@@ -1252,28 +1252,28 @@ definitions:
             -   metric_ids
         properties:
             derivation_fn:
-                description: " Enum options - METRICS_ALIAS, SUM_FIRST_N_DIVIDE_BY_LAST, SUM_BW_GAUGE, AVG_GET_POST_OTHER_LATENCY, APPDEX_ON_3_BUCKETS, APPDEX_ON_4_BUCKETS, SUM_GAUGE, SUM_N_METRICS, APPDEX_ON_5_BUCKETS, APPDEX_ON_6_BUCKETS, APPDEX_ON_CONNECTIONS, APPDEX_ON_2_BUCKETS, AVG_CLIENT_LATENCY, AVG_APPLICATION_LATENCY, MIN_N_METRICS, SUM_FIRST_N_DIVIDE_BY_LAST_PERCENTAGE, L4_CONNECTION_ERROR_PERCENTAGE, AVG_L4_CLIENT_LATENCY, CHECK_FOR_TRANSITIONS, SUBSTRACT_ALL_FROM_FIRST, AVG_N_OVER_TIME_PERIOD, AVG_NAVIGATION_TIMING, AVG_RUM_VISITS, PCT_SSL_ERROR_CONNECTIONS, AVG_RESPONSE_TIME, SUM_RATES_FIRST_N_DIVIDE_BY_LAST, SUM_RATES_FIRST_N_DIVIDE_BY_LAST_PERCENTAGE, PCT_CACHE_METRICS, SUM_FIRST_N_DIVIDE_BY_SECLAST_EXCL_ERROR_RATE, SUM_FIRST_N_SUBSTRACT_LAST, AVG_POOL_METRICS, AVG_POOL_BW, AVG_BY_SUBSTRACT_ALL_FROM_FIRST_OVER_TIME, AVG_RSA_PFS, EVAL_FN, SSL_PROTOCOL_INDICATOR, SUM_FIRST_N_DIVIDE_BY_SECLAST_RATE_EXCL_ERROR_RATE, SUBSTRACT_ALL_FROM_FIRST_WITH_FLOOR_ZERO, AVAILABLE_CAPACITY, CONNECTION_SATURATION, AVG_RSA_NON_PFS, SSL_HANDSHAKES_NONPFS, DYN_MEM_USAGE, FIRST_DIVIDE_BY_DIFFERENCE_OF_SECOND_AND_THIRD, DIVIDE_BY_100."
+                description: " Enum options - METRICS_ALIAS, SUM_FIRST_N_DIVIDE_BY_LAST, SUM_BW_GAUGE, AVG_GET_POST_OTHER_LATENCY, APPDEX_ON_3_BUCKETS, APPDEX_ON_4_BUCKETS, SUM_GAUGE, SUM_N_METRICS, APPDEX_ON_5_BUCKETS, APPDEX_ON_6_BUCKETS, APPDEX_ON_CONNECTIONS, APPDEX_ON_2_BUCKETS, AVG_CLIENT_LATENCY, AVG_APPLICATION_LATENCY, MIN_N_METRICS, SUM_FIRST_N_DIVIDE_BY_LAST_PERCENTAGE, L4_CONNECTION_ERROR_PERCENTAGE, AVG_L4_CLIENT_LATENCY, CHECK_FOR_TRANSITIONS, SUBSTRACT_ALL_FROM_FIRST, AVG_N_OVER_TIME_PERIOD, AVG_NAVIGATION_TIMING, AVG_RUM_VISITS, PCT_SSL_ERROR_CONNECTIONS, AVG_RESPONSE_TIME, SUM_RATES_FIRST_N_DIVIDE_BY_LAST, SUM_RATES_FIRST_N_DIVIDE_BY_LAST_PERCENTAGE, PCT_CACHE_METRICS, SUM_FIRST_N_DIVIDE_BY_SECLAST_EXCL_ERROR_RATE, SUM_FIRST_N_SUBSTRACT_LAST, AVG_POOL_METRICS, AVG_POOL_BW, AVG_BY_SUBSTRACT_ALL_FROM_FIRST_OVER_TIME, AVG_RSA_PFS, EVAL_FN, SSL_PROTOCOL_INDICATOR, SUM_FIRST_N_DIVIDE_BY_SECLAST_RATE_EXCL_ERROR_RATE, SUBSTRACT_ALL_FROM_FIRST_WITH_FLOOR_ZERO, AVAILABLE_CAPACITY, CONNECTION_SATURATION, AVG_RSA_NON_PFS, SSL_HANDSHAKES_NONPFS, DYN_MEM_USAGE, FIRST_DIVIDE_BY_DIFFERENCE_OF_SECOND_AND_THIRD, DIVIDE_BY_100. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             exclude_derived_metric:
-                description: "Placeholder for description of property exclude_derived_metric of obj type MetricsDerivationData field type str  type boolean"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             include_derivation_metrics:
-                description: "Placeholder for description of property include_derivation_metrics of obj type MetricsDerivationData field type str  type boolean"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             join_tables:
-                description: " Enum options - METRICS_TABLE_NONE, METRICS_TABLE_ANOMALY, METRICS_TABLE_CONTROLLER_STATS, METRICS_TABLE_HEALTH_SCORE, METRICS_TABLE_SE_STATS, METRICS_TABLE_VSERVER_L4_SERVER, METRICS_TABLE_VSERVER_L4_CLIENT, METRICS_TABLE_VSERVER_L7_CLIENT, METRICS_TABLE_VSERVER_L7_SERVER, METRICS_TABLE_RUM_PREAGG_BROWSER, METRICS_TABLE_RUM_PREAGG_COUNTRY, METRICS_TABLE_RUM_PREAGG_DEVTYPE, METRICS_TABLE_RUM_PREAGG_LANG, METRICS_TABLE_RUM_PREAGG_OS, METRICS_TABLE_RUM_PREAGG_URL, METRICS_TABLE_RUM_ANALYTICS, METRICS_TABLE_VM_STATS, METRICS_TABLE_RESOURCE_TIMING_DIM, METRICS_TABLE_RESOURCE_TIMING_BLOB, METRICS_TABLE_RUM_PREAGG_IPGROUP, METRICS_TABLE_DOS_ANALYTICS, METRICS_TABLE_APP_INSIGHTS, METRICS_TABLE_VSERVER_DNS, METRICS_TABLE_SERVER_DNS, METRICS_TABLE_SERVICE_INSIGHTS, METRICS_TABLE_SOURCE_INSIGHTS, METRICS_TABLE_TENANT_STATS, METRICS_TABLE_SE_IF_STATS, METRICS_TABLE_USER_METRICS, METRICS_TABLE_WAF_GROUP, METRICS_TABLE_WAF_TAG, METRICS_TABLE_WAF_RULE, METRICS_TABLE_PROCESS_STATS, METRICS_TABLE_VSERVER_HTTP2_CLIENT, METRICS_TABLE_PG_STAT_DATABASE, METRICS_TABLE_PG_STAT_ALL_TABLES, METRICS_TABLE_PG_STAT_ALL_INDEXES, METRICS_TABLE_PG_STAT_IO_ALL_TABLES, METRICS_TABLE_PG_STAT_CLASS, METRICS_TABLE_PG_STAT_BG_WRITER, METRICS_TABLE_WAF_WHITELIST, METRICS_TABLE_WAF_PSMGROUP, METRICS_TABLE_WAF_PSMLOCATION, METRICS_TABLE_WAF_PSMRULE, METRICS_TABLE_GSLB_STATS, METRICS_TABLE_VS_SCALEOUT, METRICS_TABLE_API_PERF_STATS, METRICS_TABLE_NSXT_STATS, METRICS_TABLE_ICAP, METRICS_TABLE_BOT."
+                description: " Enum options - METRICS_TABLE_NONE, METRICS_TABLE_ANOMALY, METRICS_TABLE_CONTROLLER_STATS, METRICS_TABLE_HEALTH_SCORE, METRICS_TABLE_SE_STATS, METRICS_TABLE_VSERVER_L4_SERVER, METRICS_TABLE_VSERVER_L4_CLIENT, METRICS_TABLE_VSERVER_L7_CLIENT, METRICS_TABLE_VSERVER_L7_SERVER, METRICS_TABLE_RUM_PREAGG_BROWSER, METRICS_TABLE_RUM_PREAGG_COUNTRY, METRICS_TABLE_RUM_PREAGG_DEVTYPE, METRICS_TABLE_RUM_PREAGG_LANG, METRICS_TABLE_RUM_PREAGG_OS, METRICS_TABLE_RUM_PREAGG_URL, METRICS_TABLE_RUM_ANALYTICS, METRICS_TABLE_VM_STATS, METRICS_TABLE_RESOURCE_TIMING_DIM, METRICS_TABLE_RESOURCE_TIMING_BLOB, METRICS_TABLE_RUM_PREAGG_IPGROUP, METRICS_TABLE_DOS_ANALYTICS, METRICS_TABLE_APP_INSIGHTS, METRICS_TABLE_VSERVER_DNS, METRICS_TABLE_SERVER_DNS, METRICS_TABLE_SERVICE_INSIGHTS, METRICS_TABLE_SOURCE_INSIGHTS, METRICS_TABLE_TENANT_STATS, METRICS_TABLE_SE_IF_STATS, METRICS_TABLE_USER_METRICS, METRICS_TABLE_WAF_GROUP, METRICS_TABLE_WAF_TAG, METRICS_TABLE_WAF_RULE, METRICS_TABLE_PROCESS_STATS, METRICS_TABLE_VSERVER_HTTP2_CLIENT, METRICS_TABLE_PG_STAT_DATABASE, METRICS_TABLE_PG_STAT_ALL_TABLES, METRICS_TABLE_PG_STAT_ALL_INDEXES, METRICS_TABLE_PG_STAT_IO_ALL_TABLES, METRICS_TABLE_PG_STAT_CLASS, METRICS_TABLE_PG_STAT_BG_WRITER, METRICS_TABLE_WAF_WHITELIST, METRICS_TABLE_WAF_PSMGROUP, METRICS_TABLE_WAF_PSMLOCATION, METRICS_TABLE_WAF_PSMRULE, METRICS_TABLE_GSLB_STATS, METRICS_TABLE_VS_SCALEOUT, METRICS_TABLE_API_PERF_STATS, METRICS_TABLE_NSXT_STATS, METRICS_TABLE_ICAP, METRICS_TABLE_BOT. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             metric_ids:
-                description: "metric_ids of MetricsDerivationData."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             result_has_additional_fields:
-                description: "Placeholder for description of property result_has_additional_fields of obj type MetricsDerivationData field type str  type boolean"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             second_order_derivation:
-                description: " Field introduced in 17.2.8."
+                description: " Field introduced in 17.2.8. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
             skip_backend_derivation:
-                description: "Placeholder for description of property skip_backend_derivation of obj type MetricsDerivationData field type str  type boolean"
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: boolean
     MetricsDimensionData:
         type: object
@@ -1282,10 +1282,10 @@ definitions:
             -   dimension_id
         properties:
             dimension:
-                description: "Dimension Type. Enum options - METRICS_DIMENSION_METRIC_TIMESTAMP, METRICS_DIMENSION_COUNTRY, METRICS_DIMENSION_OS, METRICS_DIMENSION_URL, METRICS_DIMENSION_DEVTYPE, METRICS_DIMENSION_LANG, METRICS_DIMENSION_BROWSER, METRICS_DIMENSION_IPGROUP, METRICS_DIMENSION_ATTACK, METRICS_DIMENSION_ASN."
+                description: "Dimension Type. Enum options - METRICS_DIMENSION_METRIC_TIMESTAMP, METRICS_DIMENSION_COUNTRY, METRICS_DIMENSION_OS, METRICS_DIMENSION_URL, METRICS_DIMENSION_DEVTYPE, METRICS_DIMENSION_LANG, METRICS_DIMENSION_BROWSER, METRICS_DIMENSION_IPGROUP, METRICS_DIMENSION_ATTACK, METRICS_DIMENSION_ASN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             dimension_id:
-                description: "Dimension ID."
+                description: "Dimension ID. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     MetricsMissingDataInterval:
         type: object
@@ -1294,45 +1294,45 @@ definitions:
             -   start
         properties:
             end:
-                description: "end of MetricsMissingDataInterval."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             start:
-                description: "start of MetricsMissingDataInterval."
+                description: " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     MetricStatistics:
         type: object
         properties:
             last_sample:
-                description: "value of the last sample."
+                description: "value of the last sample. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             max:
-                description: "maximum value in time series requested."
+                description: "maximum value in time series requested. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             max_ts:
-                description: "timestamp of the minimum value."
+                description: "timestamp of the minimum value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             mean:
-                description: "arithmetic mean."
+                description: "arithmetic mean. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             min:
-                description: "minimum value in time series requested."
+                description: "minimum value in time series requested. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             min_ts:
-                description: "timestamp of the minimum value."
+                description: "timestamp of the minimum value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             num_samples:
-                description: "Number of actual data samples. It excludes fake data."
+                description: "Number of actual data samples. It excludes fake data. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             sum:
-                description: "summation of all values."
+                description: "summation of all values. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             trend:
-                description: "slope of the data points across the time series requested. trend = (last_value - avg)/avg."
+                description: "slope of the data points across the time series requested. trend = (last_value - avg)/avg. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double

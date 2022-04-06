@@ -354,21 +354,21 @@ definitions:
             -   tier
         properties:
             last_updated:
-                description: "Last updated time. Field introduced in 20.1.1."
+                description: "Last updated time. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int64
             service_cores:
-                description: "Quantity of service cores. Field introduced in 20.1.1."
+                description: "Quantity of service cores. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             tenant_uuid:
-                description: "Specifies the license tier. Field introduced in 20.1.1."
+                description: "Specifies the license tier. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             tier:
-                description: "Specifies the license tier. Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES. Field introduced in 20.1.1."
+                description: "Specifies the license tier. Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             uuid:
-                description: "Identifier(license_id, se_uuid, cookie). Field introduced in 20.1.1."
+                description: "Identifier(license_id, se_uuid, cookie). Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     LicenseLedgerDetails:
         type: object
@@ -378,17 +378,17 @@ definitions:
                 readOnly: True
                 type: string
             escrow_infos:
-                description: "Maintain information about reservation against cookie. Field introduced in 20.1.1."
+                description: "Maintain information about reservation against cookie. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/LicenseInfo'
             se_infos:
-                description: "Maintain information about consumed licenses against se_uuid. Field introduced in 20.1.1."
+                description: "Maintain information about consumed licenses against se_uuid. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/LicenseInfo'
             tier_usages:
-                description: "License usage per tier. Field introduced in 20.1.1."
+                description: "License usage per tier. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/LicenseTierUsage'
@@ -397,7 +397,7 @@ definitions:
                 readOnly: True
                 type: string
             uuid:
-                description: "Uuid for reference. Field introduced in 20.1.1."
+                description: "Uuid for reference. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     LicenseLedgerDetailsApiResponse:
         type: object
@@ -418,27 +418,27 @@ definitions:
         type: object
         properties:
             tier:
-                description: "Specifies the license tier. Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES. Field introduced in 20.1.1."
+                description: "Specifies the license tier. Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             usage:
-                description: "Usage stats of license tier. Field introduced in 20.1.1."
+                description: "Usage stats of license tier. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LicenseUsage'
     LicenseUsage:
         type: object
         properties:
             available:
-                description: "Total license cores available for consumption. Field introduced in 20.1.1."
+                description: "Total license cores available for consumption. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             consumed:
-                description: "Total license cores consumed. Field introduced in 20.1.1."
+                description: "Total license cores consumed. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             escrow:
-                description: "Total license cores reserved or escrowed. Field introduced in 20.1.1."
+                description: "Total license cores reserved or escrowed. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             remaining:
-                description: "Total license cores remaining for consumption. Field introduced in 20.1.1."
+                description: "Total license cores remaining for consumption. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: number
                 format: double

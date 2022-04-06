@@ -352,7 +352,7 @@ definitions:
             -   ip6_address
         properties:
             ip6_address:
-                description: "IPv6 address for FQDN. Field introduced in 18.1.1."
+                description: "IPv6 address for FQDN. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
     DnsARdata:
         type: object
@@ -360,7 +360,7 @@ definitions:
             -   ip_address
         properties:
             ip_address:
-                description: "IP address for FQDN."
+                description: "IP address for FQDN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
     DnsCnameRdata:
         type: object
@@ -368,7 +368,7 @@ definitions:
             -   cname
         properties:
             cname:
-                description: "Canonical name."
+                description: "Canonical name. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     DnsMxRdata:
         type: object
@@ -377,10 +377,10 @@ definitions:
             -   priority
         properties:
             host:
-                description: "Fully qualified domain name of a mailserver . The host name maps directly to one or more address records in the DNS table, and must not point to any CNAME records (RFC 2181). Field introduced in 18.2.9, 20.1.1."
+                description: "Fully qualified domain name of a mailserver . The host name maps directly to one or more address records in the DNS table, and must not point to any CNAME records (RFC 2181). Field introduced in 18.2.9, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             priority:
-                description: "The priority field identifies which mail server should be preferred. Allowed values are 0-65535. Field introduced in 18.2.9, 20.1.1."
+                description: "The priority field identifies which mail server should be preferred. Allowed values are 0-65535. Field introduced in 18.2.9, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     DnsNsRdata:
@@ -389,13 +389,13 @@ definitions:
             -   nsname
         properties:
             ip6_address:
-                description: "IPv6 address for Name Server. Field introduced in 18.1.1."
+                description: "IPv6 address for Name Server. Field introduced in 18.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             ip_address:
-                description: "IP address for Name Server. Field introduced in 17.1.1."
+                description: "IP address for Name Server. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             nsname:
-                description: "Name Server name. Field introduced in 17.1.1."
+                description: "Name Server name. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     DnsSrvRdata:
         type: object
@@ -403,19 +403,19 @@ definitions:
             -   port
         properties:
             port:
-                description: "Service port. Allowed values are 0-65535."
+                description: "Service port. Allowed values are 0-65535. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             priority:
-                description: "Priority of the target hosting the service, low value implies higher priority for this service record. Allowed values are 0-65535."
+                description: "Priority of the target hosting the service, low value implies higher priority for this service record. Allowed values are 0-65535. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             target:
-                description: "Canonical hostname, of the machine hosting the service, with no trailing period. 'default.host' is valid but not 'default.host.'."
+                description: "Canonical hostname, of the machine hosting the service, with no trailing period. 'default.host' is valid but not 'default.host.'. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "default.host"
             weight:
-                description: "Relative weight for service records with same priority, high value implies higher preference for this service record. Allowed values are 0-65535."
+                description: "Relative weight for service records with same priority, high value implies higher preference for this service record. Allowed values are 0-65535. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
     DnsTxtRdata:
@@ -424,7 +424,7 @@ definitions:
             -   text_str
         properties:
             text_str:
-                description: "Text data associated with the FQDN. Field introduced in 18.2.9, 20.1.1."
+                description: "Text data associated with the FQDN. Field introduced in 18.2.9, 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
     DynamicDnsRecord:
         type: object
@@ -434,83 +434,83 @@ definitions:
                 readOnly: True
                 type: string
             algorithm:
-                description: "Specifies the algorithm to pick the IP address(es) to be returned,when multiple entries are configured. This does not apply if num_records_in_response is 0. Default is round-robin. Enum options - DNS_RECORD_RESPONSE_ROUND_ROBIN, DNS_RECORD_RESPONSE_CONSISTENT_HASH. Field introduced in 20.1.3."
+                description: "Specifies the algorithm to pick the IP address(es) to be returned,when multiple entries are configured. This does not apply if num_records_in_response is 0. Default is round-robin. Enum options - DNS_RECORD_RESPONSE_ROUND_ROBIN, DNS_RECORD_RESPONSE_CONSISTENT_HASH. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
                 default: "DNS_RECORD_RESPONSE_ROUND_ROBIN"
             cname:
-                description: "Canonical name in CNAME record. Field introduced in 20.1.3."
+                description: "Canonical name in CNAME record. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DnsCnameRdata'
             delegated:
-                description: "Configured FQDNs are delegated domains (i.e. they represent a zone cut). Field introduced in 20.1.3."
+                description: "Configured FQDNs are delegated domains (i.e. they represent a zone cut). Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
             description:
-                description: "Details of DNS record. Field introduced in 20.1.3."
+                description: "Details of DNS record. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             dns_vs_uuid:
-                description: "UUID of the DNS VS. Field introduced in 20.1.3."
+                description: "UUID of the DNS VS. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             fqdn:
-                description: "Fully Qualified Domain Name. Field introduced in 20.1.3."
+                description: "Fully Qualified Domain Name. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             ip6_address:
-                description: "IPv6 address in AAAA record. Field introduced in 20.1.3. Maximum of 4 items allowed."
+                description: "IPv6 address in AAAA record. Field introduced in 20.1.3. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/DnsAAAARdata'
             ip_address:
-                description: "IP address in A record. Field introduced in 20.1.3. Maximum of 4 items allowed."
+                description: "IP address in A record. Field introduced in 20.1.3. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/DnsARdata'
             metadata:
-                description: "Internal metadata for the DNS record. Field introduced in 20.1.3."
+                description: "Internal metadata for the DNS record. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             mx_records:
-                description: "MX record. Field introduced in 20.1.3. Maximum of 4 items allowed."
+                description: "MX record. Field introduced in 20.1.3. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/DnsMxRdata'
             name:
-                description: "DynamicDnsRecord name, needed for a top level uuid protobuf, for display in shell. Field introduced in 20.1.3."
+                description: "DynamicDnsRecord name, needed for a top level uuid protobuf, for display in shell. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             ns:
-                description: "Name Server information in NS record. Field introduced in 20.1.3. Maximum of 13 items allowed."
+                description: "Name Server information in NS record. Field introduced in 20.1.3. Maximum of 13 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/DnsNsRdata'
             num_records_in_response:
-                description: "Specifies the number of records returned by the DNS service.Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 20.1.3."
+                description: "Specifies the number of records returned by the DNS service.Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             service_locators:
-                description: "Service locator info in SRV record. Field introduced in 20.1.3. Maximum of 4 items allowed."
+                description: "Service locator info in SRV record. Field introduced in 20.1.3. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/DnsSrvRdata'
             tenant_ref:
-                description: "tenant_uuid from Dns VS's tenant_uuid. It is a reference to an object of type Tenant. Field introduced in 20.1.3."
+                description: "tenant_uuid from Dns VS's tenant_uuid. It is a reference to an object of type Tenant. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             ttl:
-                description: "Time To Live for this DNS record. Field introduced in 20.1.3."
+                description: "Time To Live for this DNS record. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             txt_records:
-                description: "Text record. Field introduced in 20.1.3. Maximum of 4 items allowed."
+                description: "Text record. Field introduced in 20.1.3. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/DnsTxtRdata'
             type:
-                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Field introduced in 20.1.3."
+                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the dns record. Field introduced in 20.1.3."
+                description: "UUID of the dns record. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: string
             wildcard_match:
-                description: "Enable wild-card match of fqdn  if an exact match is not found in the DNS table, the longest match is chosen by wild-carding the fqdn in the DNS request. Default is false. Field introduced in 20.1.3."
+                description: "Enable wild-card match of fqdn  if an exact match is not found in the DNS table, the longest match is chosen by wild-carding the fqdn in the DNS request. Default is false. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition."
                 type: boolean
     DynamicDnsRecordApiResponse:
         type: object
@@ -534,8 +534,8 @@ definitions:
             -   type
         properties:
             addr:
-                description: "IP address."
+                description: "IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: " Enum options - V4, DNS, V6."
+                description: " Enum options - V4, DNS, V6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition."
                 type: string

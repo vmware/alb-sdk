@@ -518,35 +518,35 @@
             "type": "object",
             "properties": {
                 "availability_set": {
-                    "description": "Name of the availability set of which the VM is a part of. Field introduced in 17.2.1.",
+                    "description": "Name of the availability set of which the VM is a part of. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "fault_domain": {
-                    "description": "Fault domain within the availability set the VM is a part of. Field introduced in 17.2.1.",
+                    "description": "Fault domain within the availability set the VM is a part of. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "name": {
-                    "description": "Name of the Azure VM. Field introduced in 17.2.1.",
+                    "description": "Name of the Azure VM. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "resource_group": {
-                    "description": "Resource group name for the VM. Field introduced in 17.2.1.",
+                    "description": "Resource group name for the VM. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "subnet_id": {
-                    "description": "Subnet ID of the primary nic of the VM. Field introduced in 17.2.1.",
+                    "description": "Subnet ID of the primary nic of the VM. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "update_domain": {
-                    "description": "Update domain within the availability set the VM is a part of. Field introduced in 17.2.1.",
+                    "description": "Update domain within the availability set the VM is a part of. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vm_uuid": {
-                    "description": "Azure VM uuid for the SE VM. Field introduced in 17.2.1.",
+                    "description": "Azure VM uuid for the SE VM. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vnic_id": {
-                    "description": "VNIC id of the primary nic of the VM. Field introduced in 17.2.1.",
+                    "description": "VNIC id of the primary nic of the VM. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -558,15 +558,15 @@
             ],
             "properties": {
                 "name": {
-                    "description": "FloatingIp subnet name if available, else uuid. Field introduced in 17.2.1.",
+                    "description": "FloatingIp subnet name if available, else uuid. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "prefix": {
-                    "description": "FloatingIp subnet prefix. Field introduced in 17.2.1.",
+                    "description": "FloatingIp subnet prefix. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddrPrefix"
                 },
                 "uuid": {
-                    "description": "FloatingIp subnet uuid. Field introduced in 17.2.1.",
+                    "description": "FloatingIp subnet uuid. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -579,11 +579,11 @@
             ],
             "properties": {
                 "addr": {
-                    "description": "IP address.",
+                    "description": "IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "type": {
-                    "description": " Enum options - V4, DNS, V6.",
+                    "description": " Enum options - V4, DNS, V6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -596,11 +596,11 @@
             ],
             "properties": {
                 "ip_addr": {
-                    "description": "Placeholder for description of property ip_addr of obj type IpAddrPrefix field type str  type object",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "mask": {
-                    "description": "Number of mask.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -614,51 +614,51 @@
             ],
             "properties": {
                 "avi_internal_network": {
-                    "description": "Placeholder for description of property avi_internal_network of obj type VIMgrGuestNicRuntime field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "connected": {
-                    "description": "Placeholder for description of property connected of obj type VIMgrGuestNicRuntime field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "del_pending": {
-                    "description": "Placeholder for description of property del_pending of obj type VIMgrGuestNicRuntime field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "guest_ip": {
-                    "description": "Placeholder for description of property guest_ip of obj type VIMgrGuestNicRuntime field type str  type object",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/VIMgrIPSubnetRuntime"
                     }
                 },
                 "label": {
-                    "description": "label of VIMgrGuestNicRuntime.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "Unknown"
                 },
                 "mac_addr": {
-                    "description": "mac_addr of VIMgrGuestNicRuntime.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "mgmt_vnic": {
-                    "description": "Placeholder for description of property mgmt_vnic of obj type VIMgrGuestNicRuntime field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "network_name": {
-                    "description": "network_name of VIMgrGuestNicRuntime.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "network_uuid": {
-                    "description": "Unique object identifier of network.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "os_port_uuid": {
-                    "description": "Unique object identifier of os_port.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "type": {
-                    "description": " Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.",
+                    "description": " Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -670,51 +670,51 @@
             ],
             "properties": {
                 "fip_available": {
-                    "description": "If true, capable of floating/elastic IP association.",
+                    "description": "If true, capable of floating/elastic IP association. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "fip_subnet_uuids": {
-                    "description": "If fip_available is True, this is list of supported FIP subnets, possibly empty if Cloud does not support such a network list.",
+                    "description": "If fip_available is True, this is list of supported FIP subnets, possibly empty if Cloud does not support such a network list. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "floatingip_subnets": {
-                    "description": "If fip_available is True, the list of associated FloatingIP subnets, possibly empty if unsupported or implictly defined by the Cloud. Field introduced in 17.2.1.",
+                    "description": "If fip_available is True, the list of associated FloatingIP subnets, possibly empty if unsupported or implictly defined by the Cloud. Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/FloatingIpSubnet"
                     }
                 },
                 "ip_subnet": {
-                    "description": "ip_subnet of VIMgrIPSubnetRuntime.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "name": {
-                    "description": "Name of the object.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "prefix": {
-                    "description": "Placeholder for description of property prefix of obj type VIMgrIPSubnetRuntime field type str  type object",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddrPrefix"
                 },
                 "primary": {
-                    "description": "True if prefix is primary IP on interface, else false.",
+                    "description": "True if prefix is primary IP on interface, else false. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "ref_count": {
-                    "description": "Number of ref_count.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "se_ref_count": {
-                    "description": "Number of se_ref_count.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "uuid": {
-                    "description": "Unique object identifier of the object.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -733,143 +733,143 @@
                     "type": "string"
                 },
                 "availability_zone": {
-                    "description": "availability_zone of VIMgrSEVMRuntime.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "azure_info": {
-                    "description": " Field introduced in 17.2.1.",
+                    "description": " Field introduced in 17.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/AzureInfo"
                 },
                 "cloud_name": {
-                    "description": "cloud_name of VIMgrSEVMRuntime.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "cloud_ref": {
-                    "description": " It is a reference to an object of type Cloud.",
+                    "description": " It is a reference to an object of type Cloud. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "cluster_id": {
-                    "description": "ServiceEngine deployed on cluster.Ex MOB  domain-c23. Field introduced in 20.1.7, 21.1.3.",
+                    "description": "ServiceEngine deployed on cluster.Ex MOB  domain-c23. Field introduced in 20.1.7, 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "cluster_vmgroup": {
-                    "description": "ServiceEngine added to cluster vmgroup. Field introduced in 20.1.7, 21.1.3.",
+                    "description": "ServiceEngine added to cluster vmgroup. Field introduced in 20.1.7, 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "connection_state": {
-                    "description": "connection_state of VIMgrSEVMRuntime.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "controller_cluster_uuid": {
-                    "description": "Unique object identifier of controller_cluster.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "controller_ip_addr": {
-                    "description": "controller_ip_addr of VIMgrSEVMRuntime.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "cookie": {
-                    "description": "Service Engine Cookie set by the resource manager. Field introduced in 18.2.2.",
+                    "description": "Service Engine Cookie set by the resource manager. Field introduced in 18.2.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "creation_in_progress": {
-                    "description": "Placeholder for description of property creation_in_progress of obj type VIMgrSEVMRuntime field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "deletion_in_progress": {
-                    "description": "Placeholder for description of property deletion_in_progress of obj type VIMgrSEVMRuntime field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "discovery_response": {
-                    "description": "discovery_response of VIMgrSEVMRuntime.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "discovery_status": {
-                    "description": "Number of discovery_status.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "disk_gb": {
-                    "description": "Disk space in GB for each service engine VM. Field introduced in 18.2.2.",
+                    "description": "Disk space in GB for each service engine VM. Field introduced in 18.2.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "flavor": {
-                    "description": "flavor of VIMgrSEVMRuntime.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "gcp_se_project_id": {
-                    "description": "GCP Project ID in which SE is created. This field is applicable for GCP cloud type only. Field introduced in 20.1.7, 21.1.2, 21.1.3.",
+                    "description": "GCP Project ID in which SE is created. This field is applicable for GCP cloud type only. Field introduced in 20.1.7, 21.1.2, 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "guest_nic": {
-                    "description": "Placeholder for description of property guest_nic of obj type VIMgrSEVMRuntime field type str  type object",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/VIMgrGuestNicRuntime"
                     }
                 },
                 "host": {
-                    "description": "host of VIMgrSEVMRuntime.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "host_ref": {
-                    "description": " It is a reference to an object of type VIMgrHostRuntime.",
+                    "description": " It is a reference to an object of type VIMgrHostRuntime. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "hostid": {
-                    "description": "hostid of VIMgrSEVMRuntime.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "hypervisor": {
-                    "description": " Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.",
+                    "description": " Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "init_vnics": {
-                    "description": "Number of init_vnics.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "last_discovery": {
-                    "description": "Number of last_discovery.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "managed_object_id": {
-                    "description": "managed_object_id of VIMgrSEVMRuntime.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "memory_mb": {
-                    "description": "Memory in MB for each service engine VM. Field introduced in 18.2.2.",
+                    "description": "Memory in MB for each service engine VM. Field introduced in 18.2.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "name": {
-                    "description": "Name of the object.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "powerstate": {
-                    "description": "powerstate of VIMgrSEVMRuntime.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "security_group_uuid": {
-                    "description": "Unique object identifier of security_group.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "segroup_ref": {
-                    "description": " It is a reference to an object of type ServiceEngineGroup.",
+                    "description": " It is a reference to an object of type ServiceEngineGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "server_group_uuid": {
-                    "description": "Unique object identifier of server_group.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant.",
+                    "description": " It is a reference to an object of type Tenant. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "type": {
-                    "description": " Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.",
+                    "description": " Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP, CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -878,68 +878,68 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "Unique object identifier of the object.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vcenter_datacenter_uuid": {
-                    "description": "Unique object identifier of vcenter_datacenter.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vcenter_host_connection_state": {
-                    "description": "ServiceEngine host connection state in vCenter. Field introduced in 20.1.7, 21.1.3.",
+                    "description": "ServiceEngine host connection state in vCenter. Field introduced in 20.1.7, 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vcenter_host_ha_state": {
-                    "description": "VCenter Host HA state.Ex  election, fdmUnreachable, hostDown, initializationError, networkIsolated, uninitializationError, uninitialized. Field introduced in 20.1.7, 21.1.3.",
+                    "description": "VCenter Host HA state.Ex  election, fdmUnreachable, hostDown, initializationError, networkIsolated, uninitializationError, uninitialized. Field introduced in 20.1.7, 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vcenter_instance_uuid": {
-                    "description": "ServiceEngine instance uuid from vCenter. Field introduced in 20.1.1.",
+                    "description": "ServiceEngine instance uuid from vCenter. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vcenter_ref": {
-                    "description": "ServiceEngine belongs to VCenter. It is a reference to an object of type VCenterServer. Field introduced in 20.1.1.",
+                    "description": "ServiceEngine belongs to VCenter. It is a reference to an object of type VCenterServer. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vcenter_rm_cookie": {
-                    "description": "vcenter_rm_cookie of VIMgrSEVMRuntime.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vcenter_se_type": {
-                    "description": " Enum options - VIMGR_SE_NETWORK_ADMIN, VIMGR_SE_UNIFIED_ADMIN.",
+                    "description": " Enum options - VIMGR_SE_NETWORK_ADMIN, VIMGR_SE_UNIFIED_ADMIN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vcenter_template_vm": {
-                    "description": "Placeholder for description of property vcenter_template_vm of obj type VIMgrSEVMRuntime field type str  type boolean",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "vcenter_url": {
-                    "description": "Service Engine deployed in vcenter. Field introduced in 20.1.1.",
+                    "description": "Service Engine deployed in vcenter. Field introduced in 20.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vcenter_vAppName": {
-                    "description": "vcenter_vAppName of VIMgrSEVMRuntime.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vcenter_vAppVendor": {
-                    "description": "vcenter_vAppVendor of VIMgrSEVMRuntime.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vcenter_vm_type": {
-                    "description": " Enum options - VMTYPE_SE_VM, VMTYPE_POOL_SRVR.",
+                    "description": " Enum options - VMTYPE_SE_VM, VMTYPE_POOL_SRVR. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vcpus": {
-                    "description": "Count of vcpus for each service engine VM. Field introduced in 18.2.2.",
+                    "description": "Count of vcpus for each service engine VM. Field introduced in 18.2.2. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "vsphere_ha_enabled": {
-                    "description": "VSphere HA on cluster enabled or not. Field introduced in 20.1.7, 21.1.3.",
+                    "description": "VSphere HA on cluster enabled or not. Field introduced in 20.1.7, 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "vsphere_ha_inprogress": {
-                    "description": "If this flag is set to True, vCenter vSphere HA handles ServiceEngine failure. This flag is set dynamiclly based on underlying ESX HA state(connected, hostDown..etc). Field introduced in 20.1.7, 21.1.3.",
+                    "description": "If this flag is set to True, vCenter vSphere HA handles ServiceEngine failure. This flag is set dynamiclly based on underlying ESX HA state(connected, hostDown..etc). Field introduced in 20.1.7, 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 }
             }

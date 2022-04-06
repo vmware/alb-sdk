@@ -506,7 +506,7 @@
             "type": "object",
             "properties": {
                 "version": {
-                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1.",
+                    "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "int32"
@@ -521,11 +521,11 @@
             ],
             "properties": {
                 "addr": {
-                    "description": "IP address.",
+                    "description": "IP address. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "type": {
-                    "description": " Enum options - V4, DNS, V6.",
+                    "description": " Enum options - V4, DNS, V6. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -537,32 +537,32 @@
             ],
             "properties": {
                 "addrs": {
-                    "description": "IP address(es).",
+                    "description": "IP address(es). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/IpAddr"
                     }
                 },
                 "group_refs": {
-                    "description": "UUID of IP address group(s). It is a reference to an object of type IpAddrGroup.",
+                    "description": "UUID of IP address group(s). It is a reference to an object of type IpAddrGroup. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "match_criteria": {
-                    "description": "Criterion to use for IP address matching the HTTP request. Enum options - IS_IN, IS_NOT_IN.",
+                    "description": "Criterion to use for IP address matching the HTTP request. Enum options - IS_IN, IS_NOT_IN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "prefixes": {
-                    "description": "IP address prefix(es).",
+                    "description": "IP address prefix(es). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/IpAddrPrefix"
                     }
                 },
                 "ranges": {
-                    "description": "IP address range(s).",
+                    "description": "IP address range(s). Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/IpAddrRange"
@@ -578,11 +578,11 @@
             ],
             "properties": {
                 "ip_addr": {
-                    "description": "Placeholder for description of property ip_addr of obj type IpAddrPrefix field type str  type object",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "mask": {
-                    "description": "Number of mask.",
+                    "description": " Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -596,11 +596,11 @@
             ],
             "properties": {
                 "begin": {
-                    "description": "Starting IP address of the range.",
+                    "description": "Starting IP address of the range. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "end": {
-                    "description": "Ending IP address of the range.",
+                    "description": "Ending IP address of the range. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 }
             }
@@ -612,11 +612,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Key.",
+                    "description": "Key. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "value": {
-                    "description": "Value.",
+                    "description": "Value. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -625,7 +625,7 @@
             "type": "object",
             "properties": {
                 "rules": {
-                    "description": "Rules to apply when a new transport connection is setup. Field introduced in 17.2.7.",
+                    "description": "Rules to apply when a new transport connection is setup. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/L4Rule"
@@ -645,45 +645,45 @@
                     "type": "string"
                 },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
                 "created_by": {
-                    "description": "Creator name. Field introduced in 17.2.7.",
+                    "description": "Creator name. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "description": {
-                    "description": " Field introduced in 17.2.7.",
+                    "description": " Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "is_internal_policy": {
-                    "description": " Field introduced in 17.2.7.",
+                    "description": " Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "l4_connection_policy": {
-                    "description": "Policy to apply when a new transport connection is setup. Field introduced in 17.2.7.",
+                    "description": "Policy to apply when a new transport connection is setup. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/L4ConnectionPolicy"
                 },
                 "labels": {
-                    "description": "Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed.",
+                    "description": "Key value pairs for granular object access control. Also allows for classification and tagging of similar objects. Field deprecated in 20.1.5. Field introduced in 20.1.2. Maximum of 4 items allowed. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/KeyValue"
                     }
                 },
                 "markers": {
-                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise with any value edition, Essentials with any value edition, Basic with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/RoleFilterMatchLabel"
                     }
                 },
                 "name": {
-                    "description": "Name of the L4 Policy Set. Field introduced in 17.2.7.",
+                    "description": "Name of the L4 Policy Set. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Field introduced in 17.2.7.",
+                    "description": " It is a reference to an object of type Tenant. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -692,7 +692,7 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "ID of the L4 Policy Set. Field introduced in 17.2.7.",
+                    "description": "ID of the L4 Policy Set. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -727,25 +727,25 @@
             ],
             "properties": {
                 "action": {
-                    "description": "Action to be performed upon successful rule match. Field introduced in 17.2.7.",
+                    "description": "Action to be performed upon successful rule match. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/L4RuleAction"
                 },
                 "enable": {
-                    "description": "Enable or disable the rule. Field introduced in 17.2.7.",
+                    "description": "Enable or disable the rule. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "index": {
-                    "description": "Index of the rule. Field introduced in 17.2.7.",
+                    "description": "Index of the rule. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "match": {
-                    "description": "Match criteria of the rule. Field introduced in 17.2.7.",
+                    "description": "Match criteria of the rule. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/L4RuleMatchTarget"
                 },
                 "name": {
-                    "description": "Name of the rule. Field introduced in 17.2.7.",
+                    "description": "Name of the rule. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -754,7 +754,7 @@
             "type": "object",
             "properties": {
                 "select_pool": {
-                    "description": "Indicates pool or pool-group selection on rule match. Field introduced in 17.2.7.",
+                    "description": "Indicates pool or pool-group selection on rule match. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/L4RuleActionSelectPool"
                 }
             }
@@ -766,15 +766,15 @@
             ],
             "properties": {
                 "action_type": {
-                    "description": "Indicates action to take on rule match. Enum options - L4_RULE_ACTION_SELECT_POOL, L4_RULE_ACTION_SELECT_POOLGROUP. Field introduced in 17.2.7. Allowed in Basic(Allowed values- L4_RULE_ACTION_SELECT_POOL) edition, Essentials(Allowed values- L4_RULE_ACTION_SELECT_POOL) edition, Enterprise edition.",
+                    "description": "Indicates action to take on rule match. Enum options - L4_RULE_ACTION_SELECT_POOL, L4_RULE_ACTION_SELECT_POOLGROUP. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials(Allowed values- L4_RULE_ACTION_SELECT_POOL) edition, Basic(Allowed values- L4_RULE_ACTION_SELECT_POOL) edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "pool_group_ref": {
-                    "description": "ID of the pool group to serve the request. It is a reference to an object of type PoolGroup. Field introduced in 17.2.7. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "description": "ID of the pool group to serve the request. It is a reference to an object of type PoolGroup. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "pool_ref": {
-                    "description": "ID of the pool of servers to serve the request. It is a reference to an object of type Pool. Field introduced in 17.2.7.",
+                    "description": "ID of the pool of servers to serve the request. It is a reference to an object of type Pool. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -783,15 +783,15 @@
             "type": "object",
             "properties": {
                 "client_ip": {
-                    "description": "IP addresses to match against client IP. Field introduced in 17.2.7. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "description": "IP addresses to match against client IP. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddrMatch"
                 },
                 "port": {
-                    "description": "Port number to match against Virtual Service listner port. Field introduced in 17.2.7.",
+                    "description": "Port number to match against Virtual Service listner port. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/L4RulePortMatch"
                 },
                 "protocol": {
-                    "description": "TCP/UDP/ICMP protocol to match against transport protocol. Field introduced in 17.2.7. Allowed in Basic edition, Essentials edition, Enterprise edition.",
+                    "description": "TCP/UDP/ICMP protocol to match against transport protocol. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/L4RuleProtocolMatch"
                 }
             }
@@ -803,18 +803,18 @@
             ],
             "properties": {
                 "match_criteria": {
-                    "description": "Criterion to use for Virtual Service port matching. Enum options - IS_IN, IS_NOT_IN. Field introduced in 17.2.7.",
+                    "description": "Criterion to use for Virtual Service port matching. Enum options - IS_IN, IS_NOT_IN. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "port_ranges": {
-                    "description": "Range of TCP/UDP port numbers of the Virtual Service. Field introduced in 17.2.7.",
+                    "description": "Range of TCP/UDP port numbers of the Virtual Service. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/PortRange"
                     }
                 },
                 "ports": {
-                    "description": "Virtual Service's listening port(s). Allowed values are 1-65535. Field introduced in 17.2.7.",
+                    "description": "Virtual Service's listening port(s). Allowed values are 1-65535. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "integer"
@@ -831,11 +831,11 @@
             ],
             "properties": {
                 "match_criteria": {
-                    "description": "Criterion to use for transport protocol matching. Enum options - IS_IN, IS_NOT_IN. Field introduced in 17.2.7.",
+                    "description": "Criterion to use for transport protocol matching. Enum options - IS_IN, IS_NOT_IN. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "protocol": {
-                    "description": "Transport protocol to match. Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP. Field introduced in 17.2.7.",
+                    "description": "Transport protocol to match. Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP. Field introduced in 17.2.7. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -848,12 +848,12 @@
             ],
             "properties": {
                 "end": {
-                    "description": "TCP/UDP port range end (inclusive). Allowed values are 1-65535.",
+                    "description": "TCP/UDP port range end (inclusive). Allowed values are 1-65535. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "start": {
-                    "description": "TCP/UDP port range start (inclusive). Allowed values are 1-65535.",
+                    "description": "TCP/UDP port range start (inclusive). Allowed values are 1-65535. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -866,11 +866,11 @@
             ],
             "properties": {
                 "key": {
-                    "description": "Key for filter match. Field introduced in 20.1.3.",
+                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "values": {
-                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3.",
+                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
