@@ -184,7 +184,7 @@ font-style: italic;
   </head>
   <body>
   <h1>Avi VirtualService Object API</h1>
-    <div class="app-desc">CLI ``` - configure virtualservice <key> - show virtualservice <key> - scaleout virtualservice <key> - scalein virtualservice <key> - migrate virtualservice <key> - switchover virtualservice <key> - clear virtualservice <key> - resync virtualservice <key> - rotatekeys virtualservice <key> - apicplacement virtualservice <key> - retryplacement virtualservice <key> ```  Examples - **virtualservice_example_1**: To create a basic virtualservice object that has both http and https enabled   ```json     {'name': 'production_vs', 'services': [{'port': 80}, {'port': 443, 'enable_ssl': True}], 'vsvip_ref': '/api/vsvip/vsvip-5b310671-7784-472b-8096-8679d3e1c769'}   ```  - **virtualservice_example_ipamdns_infoblox**: Create a basic virtualservice object that requires IP to be auto-allocated and DNS record to be registered. @Assumptions: - This example assumes the virtualservice being created is part of a Cloud with Infoblox as IPAM & DNS provider - On Infoblox server - \"10.10.10.0/24\" is configured for VIPs - \"prod.corp\" is configured as zone   ```json     {'name': 'production_vs', 'fqdn': 'production_vs.prod.corp', 'vsvip_ref': '/api/vsvip/vsvip-5b310671-7784-472b-8096-8679d3e1c769'}   ```  - **virtualservice_example_ipamdns_internal**: Create a basic virtualservice object that requires IP to be auto-allocated and DNS record to be registered. @Assumptions: - This example assumes the virtualservice being created is part of a Cloud with Internal IPAM & DNS provider - On Avi - Network object containing free IPs from \"10.10.10.0/24\" is already created - \"prod.corp\" is configured as a domain name in DNS provider config in Avi   ```json     {'name': 'production_vs', 'fqdn': 'production_vs.prod.corp', 'vsvip_ref': '/api/vsvip/vsvip-5b310671-7784-472b-8096-8679d3e1c769'}   ``` </div>
+    <div class="app-desc">CLI ``` - configure virtualservice <key> - show virtualservice <key> - scaleout virtualservice <key> - scalein virtualservice <key> - migrate virtualservice <key> - switchover virtualservice <key> - clear virtualservice <key> - resync virtualservice <key> - rotatekeys virtualservice <key> - apicplacement virtualservice <key> - retryplacement virtualservice <key> - logrecommendation virtualservice <key> - applylogrecommendation virtualservice <key> ```  Examples - **virtualservice_example_1**: To create a basic virtualservice object that has both http and https enabled   ```json     {'name': 'production_vs', 'services': [{'port': 80}, {'port': 443, 'enable_ssl': True}], 'vsvip_ref': '/api/vsvip/vsvip-5b310671-7784-472b-8096-8679d3e1c769'}   ```  - **virtualservice_example_ipamdns_infoblox**: Create a basic virtualservice object that requires IP to be auto-allocated and DNS record to be registered. @Assumptions: - This example assumes the virtualservice being created is part of a Cloud with Infoblox as IPAM & DNS provider - On Infoblox server - \"10.10.10.0/24\" is configured for VIPs - \"prod.corp\" is configured as zone   ```json     {'name': 'production_vs', 'fqdn': 'production_vs.prod.corp', 'vsvip_ref': '/api/vsvip/vsvip-5b310671-7784-472b-8096-8679d3e1c769'}   ```  - **virtualservice_example_ipamdns_internal**: Create a basic virtualservice object that requires IP to be auto-allocated and DNS record to be registered. @Assumptions: - This example assumes the virtualservice being created is part of a Cloud with Internal IPAM & DNS provider - On Avi - Network object containing free IPs from \"10.10.10.0/24\" is already created - \"prod.corp\" is configured as a domain name in DNS provider config in Avi   ```json     {'name': 'production_vs', 'fqdn': 'production_vs.prod.corp', 'vsvip_ref': '/api/vsvip/vsvip-5b310671-7784-472b-8096-8679d3e1c769'}   ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
     <div class="app-desc">Version: 22.1.1</div>
@@ -206,6 +206,7 @@ font-style: italic;
   <li><a href="#virtualserviceGet"><code><span class="http-method">get</span> /virtualservice</code></a></li>
   <li><a href="#virtualservicePost"><code><span class="http-method">post</span> /virtualservice</code></a></li>
   <li><a href="#virtualserviceUuidApicplacementPost"><code><span class="http-method">post</span> /virtualservice/{uuid}/apicplacement</code></a></li>
+  <li><a href="#virtualserviceUuidApplylogrecommendationPost"><code><span class="http-method">post</span> /virtualservice/{uuid}/applylogrecommendation</code></a></li>
   <li><a href="#virtualserviceUuidAuthstatsGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/authstats/</code></a></li>
   <li><a href="#virtualserviceUuidBotstatsGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/botstats/</code></a></li>
   <li><a href="#virtualserviceUuidCandidatesehostlistGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/candidatesehostlist/</code></a></li>
@@ -237,6 +238,7 @@ font-style: italic;
   <li><a href="#virtualserviceUuidKeyvalsummaryGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/keyvalsummary/</code></a></li>
   <li><a href="#virtualserviceUuidKeyvalsummaryobjsyncGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/keyvalsummaryobjsync/</code></a></li>
   <li><a href="#virtualserviceUuidL4policysetstatsGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/l4policysetstats/</code></a></li>
+  <li><a href="#virtualserviceUuidLogrecommendationPost"><code><span class="http-method">post</span> /virtualservice/{uuid}/logrecommendation</code></a></li>
   <li><a href="#virtualserviceUuidMigratePost"><code><span class="http-method">post</span> /virtualservice/{uuid}/migrate</code></a></li>
   <li><a href="#virtualserviceUuidNetworksecuritypolicyDetailGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/networksecuritypolicy/detail/</code></a></li>
   <li><a href="#virtualserviceUuidNetworksecuritypolicystatsGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/networksecuritypolicystats/</code></a></li>
@@ -1462,6 +1464,64 @@ font-style: italic;
       <div class="param">body (required)</div>
 
       <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; ApicVSPlacementReq </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="virtualserviceUuidApplylogrecommendationPost"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /virtualservice/{uuid}/applylogrecommendation</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">virtualserviceUuidApplylogrecommendationPost</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; ApplyLogRecommendations </div>
     </div>  <!-- field-items -->
 
 
@@ -3592,6 +3652,64 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="virtualserviceUuidLogrecommendationPost"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /virtualservice/{uuid}/logrecommendation</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">virtualserviceUuidLogrecommendationPost</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; GetLogRecommendations </div>
+    </div>  <!-- field-items -->
 
 
 
@@ -6148,8 +6266,10 @@ font-style: italic;
   <h2>Table of Contents</h2>
   <ol>
     <li><a href="#APICNetworkRel"><code>APICNetworkRel</code></a></li>
+    <li><a href="#Action"><code>Action</code></a></li>
     <li><a href="#AnalyticsPolicy"><code>AnalyticsPolicy</code></a></li>
     <li><a href="#ApicVSPlacementReq"><code>ApicVSPlacementReq</code></a></li>
+    <li><a href="#ApplyLogRecommendations"><code>ApplyLogRecommendations</code></a></li>
     <li><a href="#AuthAttributeMatch"><code>AuthAttributeMatch</code></a></li>
     <li><a href="#AuthenticationAction"><code>AuthenticationAction</code></a></li>
     <li><a href="#AuthenticationMatch"><code>AuthenticationMatch</code></a></li>
@@ -6177,6 +6297,7 @@ font-style: italic;
     <li><a href="#DnsSrvRdata"><code>DnsSrvRdata</code></a></li>
     <li><a href="#DnsTxtRdata"><code>DnsTxtRdata</code></a></li>
     <li><a href="#FullClientLogs"><code>FullClientLogs</code></a></li>
+    <li><a href="#GetLogRecommendations"><code>GetLogRecommendations</code></a></li>
     <li><a href="#HTTPClientAuthenticationParams"><code>HTTPClientAuthenticationParams</code></a></li>
     <li><a href="#HTTPLocalFile"><code>HTTPLocalFile</code></a></li>
     <li><a href="#HTTPPolicies"><code>HTTPPolicies</code></a></li>
@@ -6211,6 +6332,7 @@ font-style: italic;
     <li><a href="#RateLimiter"><code>RateLimiter</code></a></li>
     <li><a href="#RateLimiterAction"><code>RateLimiterAction</code></a></li>
     <li><a href="#RateProfile"><code>RateProfile</code></a></li>
+    <li><a href="#RecommendationRequest"><code>RecommendationRequest</code></a></li>
     <li><a href="#ReplaceStringVar"><code>ReplaceStringVar</code></a></li>
     <li><a href="#RetryPlacementParams"><code>RetryPlacementParams</code></a></li>
     <li><a href="#RoleFilterMatchLabel"><code>RoleFilterMatchLabel</code></a></li>
@@ -6250,6 +6372,13 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3 class="field-label"><a name="Action">Action</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">data </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A description of the change to this object. This field is opaque to the caller, it should not be interpreted or modified. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">url_ref </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The referenced object on which this action will be applied. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="AnalyticsPolicy">AnalyticsPolicy</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">all_headers (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Log all headers. Field introduced in 18.1.4, 18.2.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
@@ -6273,6 +6402,12 @@ font-style: italic;
 <div class="param">tenant_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field deprecated in 21.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
 <div class="param">vdev (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field deprecated in 21.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
 <div class="param">vgrp (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field deprecated in 21.1.1. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="ApplyLogRecommendations">ApplyLogRecommendations</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">actions (optional)</div><div class="param-desc"><span class="param-type"><a href="#Action">array[Action]</a></span> Describe the actions we want to perform. Field introduced in 21.1.3. Minimum of 1 items required. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6510,6 +6645,12 @@ font-style: italic;
 <div class="param">duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> How long should the system capture all logs, measured in minutes. Set to 0 for infinite. Special values are 0 - infinite. Unit is MIN. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">enabled </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Capture all client logs including connections and requests.  When deactivated, only errors will be logged. Allowed in Enterprise with any value edition, Essentials(Allowed values- false) edition, Basic(Allowed values- false) edition, Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is False. </div>
 <div class="param">throttle (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> This setting limits the number of non-significant logs generated per second for this VS on each SE. Default is 10 logs per second. Set it to zero (0) to deactivate throttling. Field introduced in 17.1.3. Unit is PER_SECOND. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="GetLogRecommendations">GetLogRecommendations</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">requests (optional)</div><div class="param-desc"><span class="param-type"><a href="#RecommendationRequest">array[RecommendationRequest]</a></span> Describe the recommendation we want to get. Field introduced in 21.1.3. Minimum of 1 items required. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6799,6 +6940,16 @@ font-style: italic;
 <div class="param">http_header (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP header name. Field introduced in 17.1.1. Allowed in Enterprise with any value edition, Essentials edition, Enterprise with Cloud Services edition. </div>
 <div class="param">period (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time value in seconds to enforce rate count. Allowed values are 1-300. Field deprecated in 18.2.9. Unit is SEC. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">rate_limiter (optional)</div><div class="param-desc"><span class="param-type"><a href="#RateLimiter">RateLimiter</a></span> The rate limiter configuration for this rate profile. Field introduced in 18.2.9. Allowed in Enterprise with any value edition, Essentials edition, Basic edition, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="RecommendationRequest">RecommendationRequest</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">match_element (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The match element for this a false positive should be mitigated. If this is not gives, all match elements will be considered. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">report_timestamp (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The report_timestamp field of the log entry. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">request_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The request_id field of the log entry. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">rule_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The rule id for which a false positive should be mitigated. If this is not given, all rules will be considered. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The type of the request, e.g. RECOMMENDATION_REQUEST_FALSE_POSITIVE. Enum options - RECOMMENDATION_REQUEST_FALSE_POSITIVE. Field introduced in 21.1.3. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
