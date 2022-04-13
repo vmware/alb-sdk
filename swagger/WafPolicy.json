@@ -8,7 +8,7 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure wafpolicy <key>\n- show wafpolicy <key>\n```\n"
+        "description": "CLI\n```\n- configure wafpolicy <key>\n- show wafpolicy <key>\n- updatecrsrules virtualservice <key>\n```\n"
     },
     "securityDefinitions": {
         "basicAuth": {
@@ -496,6 +496,78 @@
                     },
                     "404": {
                         "description": "not found"
+                    }
+                }
+            }
+        },
+        "/wafpolicy/{uuid}/updatecrsrules": {
+            "put": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "WafPolicyCRSUpdate",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/WafPolicyCRSUpdate"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
                     }
                 }
             }
@@ -1446,6 +1518,22 @@
                     "type": "integer",
                     "default": 100,
                     "format": "int32"
+                }
+            }
+        },
+        "WafPolicyCRSUpdate": {
+            "type": "object",
+            "required": [
+                "waf_crs_ref"
+            ],
+            "properties": {
+                "commit": {
+                    "description": "Set this to true if you want to update the policy. The default value of false will only analyse what would be changed if this flag would be set to true. Field introduced in 22.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "waf_crs_ref": {
+                    "description": "CRS object to which this policy should be updated to. To disable CRS for this policy, the special CRS object CRS-VERSION-NOT-APPLICABLE can be used. It is a reference to an object of type WafCRS. Field introduced in 22.1.1. Allowed in Enterprise with any value edition, Enterprise with Cloud Services edition.",
+                    "type": "string"
                 }
             }
         },
