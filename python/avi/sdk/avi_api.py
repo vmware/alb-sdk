@@ -880,8 +880,8 @@ class ApiSession(Session):
             session creation
         returns session's response object
         """
-        uuid = self._get_uuid_by_name(
-            path, name, tenant, tenant_uuid, api_version=api_version)
+        uuid = self._get_uuid_by_name(path, name, tenant, tenant_uuid,
+                                      params=params, api_version=api_version)
         path = '%s/%s' % (path, uuid)
         return self.put(path, data, tenant, tenant_uuid, timeout=timeout,
                         params=params, api_version=api_version, **kwargs)
