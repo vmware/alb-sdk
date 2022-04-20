@@ -930,7 +930,7 @@ class ApiSession(Session):
         returns session's response object
         """
         uuid = self._get_uuid_by_name(path, name, tenant, tenant_uuid,
-                                      api_version=api_version)
+                                      params=params, api_version=api_version)
         if not uuid:
             raise ObjectNotFound("%s/?name=%s" % (path, name))
         path = '%s/%s' % (path, uuid)
@@ -1063,10 +1063,11 @@ class ApiSession(Session):
             return self.prefix + '/api/' + path
 
     def _get_uuid_by_name(self, path, name, tenant='admin',
-                          tenant_uuid='', api_version=None):
+                          params=None, tenant_uuid='', api_version=None):
         """gets object by name and service path and returns uuid"""
         resp = self.get_object_by_name(
-            path, name, tenant, tenant_uuid, api_version=api_version)
+            path, name, tenant, tenant_uuid, params=params,
+            api_version=api_version)
         if not resp:
             raise ObjectNotFound("%s/%s" % (path, name))
         return self.get_obj_uuid(resp)
