@@ -1990,7 +1990,7 @@ class F5Util(MigrationUtil):
         """
         pool_obj = [pool for pool in avi_config['Pool'] if pool['name'] ==
                     pool_ref]
-        if pool_obj and not pool_obj[0].get('vrf_ref'):
+        if pool_obj:
             pool_obj[0]['vrf_ref'] = vrf_ref
             LOG.debug("Added vrf ref to the pool %s", pool_ref)
 
