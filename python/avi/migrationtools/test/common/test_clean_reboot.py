@@ -32,10 +32,14 @@ def clean_reboot(controller_ip, username, password, version, licensefile_path):
                         data=json.dumps ({'mode': 'REBOOT_CLEAN'}),
                         auth=(username, password))
     if res.status_code < 300:
-        wait_until_node_ready (session)
+        ApiSession.clear_cached_sessions()
+        time.sleep(500)
+        api = ApiSession.get_session(controller_ip, username,
+                                     password=os.environ['default_password'])
+        wait_until_node_ready(api)
         if version > "16.5.4" :
-            session.clear_cached_sessions()
-            set_default_password(controller_ip, username)
+            ApiSession.clear_cached_sessions()
+            set_default_password(controller_ip, username, password)
     else:
         raise Exception("Failed with error %s" % res.content)
     with open(licensefile_path, 'r') as license:
@@ -79,7 +83,7 @@ def upload_license(session, licensefile):
     print("Successfully uploaded license AviInternal")
 
 
-def wait_until_node_ready(session, interval=10, timeout=9000):
+def wait_until_node_ready(api, interval=10, timeout=9000):
     """""
     Polls the controller at every 10 seconds status till we get success state
     and verify cluster state.
@@ -88,7 +92,7 @@ def wait_until_node_ready(session, interval=10, timeout=9000):
     iters = int(timeout / interval)
     for count in range(0, iters):
         try:
-            data = session.get('cluster/runtime&treat_invalid_session_as_unauthenticated=true')
+            data = api.get('cluster/runtime?treat_invalid_session_as_unauthenticated=true')
         except Exception as e:
             print("cluster api runtime exception %s" % e)
             pass
