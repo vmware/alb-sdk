@@ -58,9 +58,9 @@ def get_auth_params():
     Return authentication parameters.
     """
     auth_params = {}
-    auth_params["server"] = "10.79.108.150"
-    auth_params["username"] = "admin"
-    auth_params["password"] = "avi123"
+    auth_params["server"] = "0.0.0.0"
+    auth_params["username"] = "xxxx"
+    auth_params["password"] = "xxx"
     auth_params["wapi_version"] = "v2.0"
     auth_params["dns_view"] = "default"
     return auth_params
