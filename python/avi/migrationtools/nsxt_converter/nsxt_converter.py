@@ -6,7 +6,7 @@ import argparse
 
 def conver_lb_config(args):
     output_file_path = args.output_file_path if args.output_file_path else 'output'
-    nsxt_config_converter.convert(args.nsxt_ip, args.nsxt_user, args.nsxt_passord, args.nsxt_port, output_file_path)
+    nsxt_config_converter.convert(args.nsxt_ip, args.nsxt_user, args.nsxt_passord, args.nsxt_port, output_file_path,args.cloud_name,args.prefix)
 
 
 
@@ -33,7 +33,11 @@ if __name__ == "__main__":
     parser.add_argument('-o', '--output_file_path',
                         help='Folder path for output files to be created in',
                         )
-
+    parser.add_argument('--vrf',
+                        help='Update the available vrf ref with the custom vrf'
+                             'reference')
+    parser.add_argument('--cloud_name', required=True,help='cloud name for auto upload')
+    parser.add_argument('--prefix' ,help='Prefix for objects')
     args = parser.parse_args()
     conver_lb_config(args)
 
