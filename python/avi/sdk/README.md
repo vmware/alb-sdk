@@ -55,15 +55,26 @@ Usage Examples
 
    api = ApiSession.get_session("10.10.10.42", "admin", "something", tenant="admin")
 
-- **Create VirtualService Using Pool sample_pool:**
+- **Create Pool with one server:**
 
-   pool_obj = api.get_object_by_name('pool', 'sample_pool')
-   pool_ref = api.get_obj_ref(pool_obj)
+   pool_obj = {'name': 'sample_pool', 'servers': [{'ip': {'addr': '192.0.0.1', 'type': 'V4'}}]}
+   pool_resp = session.post('pool', data=pool_obj)
+   print(pool_resp.json())
+
+- **Create VsVip on 20.x Controllers:**
+
+   vsvip_obj = {'name': 'sample_vsvip', 'vip': [{'vip_id': '1' 'ip_address': {'addr': '11.11.11.42', 'type': 'V4'}}]}
+   vsvip_resp = session.post('vsvip', data=vsvip_obj)
+   print(vsvip_resp.json())
+
+- **Create VirtualService Using VsVip and Pool on 20.x Controllers:**
+
+   pool_ref = '/api/pool?name={}'.format(pool_obj.get('name'))
+   vsvip_ref = '/api/vsvip?name={}'.format(vsvip_obj.get('name'))
    services_obj = [{'port': 80, 'enable_ssl': False}]
-   vs_obj = {'name': 'sample_vs', 'ip_address': {'addr': '11.11.11.42', 'type': 'V4'},
-            'services': services_obj, 'pool_ref': pool_ref}
-   resp = api.post('virtualservice', data=vs_obj)
-   print resp.json()
+   vs_obj = {'name': 'sample_vs', 'services': services_obj, 'vsvip_ref': vsvip_ref, 'pool_ref': pool_ref}
+   resp = session.post('virtualservice', data=vs_obj)
+   print(resp.json())
 
 - **Create VirtualService Using Pool sample_pool on 17.x Controllers:**
 
@@ -102,13 +113,23 @@ from avi.sdk.saml_avi_api import OktaSAMLApiSession
 # create Avi API Session
 api = OktaSAMLApiSession("10.10.10.42", "okta_username", "okta_password")
 
-# create virtualservice using pool sample_pool
-pool_obj = api.get_object_by_name('pool', 'sample_pool')
-pool_ref = api.get_obj_ref(pool_obj)
+# create pool with one server
+pool_obj = {'name': 'sample_pool', 'servers': [{'ip': {'addr': '192.0.0.1', 'type': 'V4'}}]}
+pool_resp = session.post('pool', data=pool_obj)
+print(pool_resp.json())
+
+# create vsvip
+vsvip_obj = {'name': 'sample_vsvip', 'vip': [{'vip_id': '1',
+                                             'ip_address': {'addr': '11.11.11.42', 'type': 'V4'}}]}
+vsvip_resp = session.post('vsvip', data=vsvip_obj)
+print(vsvip_resp.json())
+
+# create virtualservice using sample_vsvip and sample_pool
+pool_ref = '/api/pool?name={}'.format(pool_obj.get('name'))
+vsvip_ref = '/api/vsvip?name={}'.format(vsvip_obj.get('name'))
 services_obj = [{'port': 80, 'enable_ssl': False}]
-vs_obj = {'name': 'sample_vs', 'ip_address': {'addr': '11.11.11.42', 'type': 'V4'},
-         'services': services_obj, 'pool_ref': pool_ref}
-resp = api.post('virtualservice', data=vs_obj)
+vs_obj = {'name': 'sample_vs', 'services': services_obj, 'vsvip_ref': vsvip_ref, 'pool_ref': pool_ref}
+resp = session.post('virtualservice', data=vs_obj)
 
 # print list of all virtualservices
 resp = api.get('virtualservice')
@@ -126,13 +147,23 @@ from avi.sdk.saml_avi_api import OneloginSAMLApiSession
 # create Avi API Session
 api = OneloginSAMLApiSession("10.10.10.42", "onelogin_username", "onelogin_password")
 
-# create virtualservice using pool sample_pool
-pool_obj = api.get_object_by_name('pool', 'sample_pool')
-pool_ref = api.get_obj_ref(pool_obj)
+# create pool with one server
+pool_obj = {'name': 'sample_pool', 'servers': [{'ip': {'addr': '192.0.0.1', 'type': 'V4'}}]}
+pool_resp = session.post('pool', data=pool_obj)
+print(pool_resp.json())
+
+# create vsvip
+vsvip_obj = {'name': 'sample_vsvip', 'vip': [{'vip_id': '1',
+                                             'ip_address': {'addr': '11.11.11.42', 'type': 'V4'}}]}
+vsvip_resp = session.post('vsvip', data=vsvip_obj)
+print(vsvip_resp.json())
+
+# create virtualservice using sample_vsvip and sample_pool
+pool_ref = '/api/pool?name={}'.format(pool_obj.get('name'))
+vsvip_ref = '/api/vsvip?name={}'.format(vsvip_obj.get('name'))
 services_obj = [{'port': 80, 'enable_ssl': False}]
-vs_obj = {'name': 'sample_vs', 'ip_address': {'addr': '11.11.11.42', 'type': 'V4'},
-         'services': services_obj, 'pool_ref': pool_ref}
-resp = api.post('virtualservice', data=vs_obj)
+vs_obj = {'name': 'sample_vs', 'services': services_obj, 'vsvip_ref': vsvip_ref, 'pool_ref': pool_ref}
+resp = session.post('virtualservice', data=vs_obj)
 
 # print list of all virtualservices
 resp = api.get('virtualservice')
