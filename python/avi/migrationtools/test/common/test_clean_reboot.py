@@ -5,7 +5,6 @@ import json
 import os
 import time
 from avi.sdk.avi_api import ApiSession
-import requests
 
 def verify_controller_is_up(controller_ip, username, password):
     """""
@@ -34,7 +33,10 @@ def clean_reboot(controller_ip, username, password, version, licensefile_path):
                         auth=(username, password))
     if res.status_code < 300:
         ApiSession.clear_cached_sessions()
-        wait_until_node_ready(controller_ip)
+        time.sleep(500)
+        api = ApiSession.get_session(controller_ip, username,
+                                     password=os.environ['default_password'])
+        wait_until_node_ready(api)
         if version > "16.5.4" :
             ApiSession.clear_cached_sessions()
             set_default_password(controller_ip, username, password)
@@ -83,15 +85,19 @@ def upload_license(session, licensefile):
     print("Successfully uploaded license AviInternal")
 
 
-def wait_until_node_ready(controller_ip, interval=120, timeout=3000):
+def wait_until_node_ready(api, interval=10, timeout=9000):
     """""
-    Polls the controller at every minute status till we get success state
+    Polls the controller at every 10 seconds status till we get success state
     and verify cluster state.
     """
     cluster_up_states = ["CLUSTER_UP_HA_ACTIVE", "CLUSTER_UP_NO_HA"]
     iters = int(timeout / interval)
     for count in range(0, iters):
-        data = requests.get('https://{ip}/api/cluster/runtime'.format(ip=controller_ip), verify=False)
+        try:
+            data = api.get('cluster/runtime?treat_invalid_session_as_unauthenticated=true')
+        except Exception as e:
+            print("cluster api runtime exception %s" % e)
+            pass
         if type(data) != dict and data.status_code == 200:
             response_content = data.content.decode() if type(data.content) == bytes else data.content
             data = json.loads (response_content)
