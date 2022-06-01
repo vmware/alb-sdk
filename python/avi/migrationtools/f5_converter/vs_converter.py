@@ -639,10 +639,14 @@ class VSConfigConv(object):
                              converted_rules]
             if skipped_rules:
                 skipped.append('rules: %s' % skipped_rules)
-        conv_status['na_list'] = [val for val in skipped if
-                                  val in self.vs_na_attr]
+        na_list = [val for val in skipped if val in self.vs_na_attr]
         skipped = [attr for attr in skipped if attr not in self.vs_na_attr]
         skipped = [attr for attr in skipped if attr not in user_ignore]
+        conv_status['indirect'] = [val for val in skipped if
+                                   val in self.vs_indirect_attr]
+        skipped = [attr for attr in skipped if attr not in self.vs_indirect_attr]
+        conv_status['na_list'] = [val for val in skipped if val in na_list]
+        skipped = [attr for attr in skipped if attr not in na_list]
         conv_status['skipped'] = skipped
         status = final.STATUS_SUCCESSFUL
         if skipped:
@@ -725,6 +729,8 @@ class VSConfigConvV11(VSConfigConv):
             f5_virtualservice_attributes['VS_unsupported_types']
         self.vs_na_attr = \
             f5_virtualservice_attributes['VS_na_attr']
+        self.vs_indirect_attr = \
+            f5_virtualservice_attributes['VS-indirect-attr']
         self.connection_limit = 'connection-limit'
         # Added prefix for objects
         self.prefix = prefix
@@ -784,6 +790,8 @@ class VSConfigConvV10(VSConfigConv):
             f5_virtualservice_attributes['VS_na_attr']
         self.unsupported_types = \
             f5_virtualservice_attributes['VS_unsupported_types']
+        self.vs_indirect_attr = \
+            f5_virtualservice_attributes['VS-indirect-attr']
         self.connection_limit = 'limit'
         # Added prefix for objects
         self.prefix = prefix

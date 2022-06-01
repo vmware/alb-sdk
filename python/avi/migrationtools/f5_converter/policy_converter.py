@@ -19,7 +19,7 @@ used_pools = {}
 
 class PolicyConfigConv(object):
     @classmethod
-    def get_instance(cls, version, prefix):
+    def get_instance(cls, version, f5_profile_attributes, prefix):
         """
 
         :param version: version of f5 instance
@@ -28,9 +28,9 @@ class PolicyConfigConv(object):
         :return:
         """
         if version == '10':
-            return PolicyConfigConvV10(prefix)
+            return PolicyConfigConvV10(prefix, f5_profile_attributes)
         if version in ['11', '12']:
-            return PolicyConfigConvV11(prefix)
+            return PolicyConfigConvV11(prefix, f5_profile_attributes)
 
     def convert(self, f5_config, avi_config, tenant_ref):
         """
@@ -63,10 +63,15 @@ class PolicyConfigConv(object):
                     avi_config['HTTPPolicySet'].append(httppolicy)
                     if isinstance(skip, dict):
                         if skip:
+                            na_list = [val for val in skip if val in self.na_list]
                             conv_status = {'skipped': [skip],
-                                           'status': final.STATUS_PARTIAL}
+                                           'status': final.STATUS_PARTIAL,
+                                           'na_list': na_list
+                                           }
                         else:
                             conv_status = {'status': final.STATUS_SUCCESSFUL}
+                    indirect = self.indirect
+                    conv_status['indirect'] = indirect
                     conv_utils.add_conv_status('policy', None, each_policy,
                                                conv_status,
                                                [{'policy_set': httppolicy}])
@@ -1157,10 +1162,13 @@ class PolicyConfigConv(object):
 
 
 class PolicyConfigConvV11(PolicyConfigConv):
-    def __init__(self, prefix):
+    def __init__(self, prefix, f5_profile_attributes):
         self.prefix = prefix
-
+        self.na_list = f5_profile_attributes['Policy_na_attr']
+        self.indirect = f5_profile_attributes['Policy_indirect_attr']
 
 class PolicyConfigConvV10(PolicyConfigConv):
-    def __init__(self, prefix):
+    def __init__(self, prefix , f5_profile_attributes):
         self.prefix = prefix
+        self.na_list = f5_profile_attributes['Policy_na_attr']
+        self.indirect = f5_profile_attributes['Policy_indirect_attr']

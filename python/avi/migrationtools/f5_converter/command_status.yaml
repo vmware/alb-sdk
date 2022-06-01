@@ -239,9 +239,43 @@ VERSION_11:
     - 'inherit-certkeychain'
     - 'chain'
     - 'renegotiation'
+    - 'app-service'
+    - 'authenticate'
+    - 'cert-extension-includes'
+    - 'description'
+    - 'c3d-ca-cert'
+    - 'c3d-ca-key'
+    - 'c3d-ca-passphrase'
+    - 'c3d-cert-extension-custom-oids'
+    - 'c3d-cert-extension-includes'
+    - 'c3d-cert-lifespan'
+    - 'c3d-drop-unknown-ocsp-status'
+    - 'c3d-ocsp'
+    - 'destination-ip-blacklist'
+    - 'destination-ip-whitelist'
+    - 'forward-proxy-bypass-default-action'
+    - 'handshake-timeout'
+    - 'hostname-blacklist'
+    - 'hostname-whitelist'
+    - 'inherit-ca-certkeychain'
+    - 'max-active-handshakes'
+    - 'max-aggregate-renegotiation-per-minute'
+    - 'maximum-record-size'
+    - 'expire-cert-response-control'
+    - 'ocsp'
+    - 'proxy-ca-passphrase'
+    - 'source-ip-blacklist'
+    - 'source-ip-whitelist'
+    - 'ssl-c3d'
+    - 'ssl-forward-proxy-verified-handshake'
+    - 'untrusted-cert-response-control'
+    - 'allow-dynamic-record-sizing'
+    - 'bypass-on-client-cert-fail'
+    - 'bypass-on-handshake-alert'
 
     Profile_indirect_ssl:
     - 'session-mirroring'
+    - 'notify-cert-status-to-virtual-server'
 
     Profile_supported_ssl:
     - 'cert-key-chain'
@@ -260,6 +294,7 @@ VERSION_11:
     - 'lws-width'
     - 'lws-separator'
     - 'allow-http-10'
+    - 'enforcement'
 
     Profile_supported_http:
     - "description"
@@ -276,6 +311,18 @@ VERSION_11:
     - "header-insert"
     - "partition"
 
+    Profile_supported_http_enforcement:
+    - "max-header-size"
+
+    Profile_http_enf_ignore_for_defaults:
+        'unknown-method': 'allow'
+        'max-header-count': '64'
+        'pipeline': 'allow'
+
+    Profile_na_http_enforcement:
+    - 'max-requests'
+    - 'truncated-redirects'
+
     Profile_indirect_http:
     - "request-chunking"
     - "response-chunking"
@@ -284,6 +331,10 @@ VERSION_11:
     - 'via-response'
     - 'via-request'
     - 'server-agent-name'
+    - 'enforcement'
+
+    Profile_indirect_http_enforcement:
+    - 'pipeline'
 
     Profile_na_dns:
     - 'enable-gtm'
@@ -358,6 +409,13 @@ VERSION_11:
 
     profile_na_l4:
     - "hardware-syn-cookie"
+    - "tcp-close-timeout"
+    - "tcp-strip-sack"
+    - "loose-close"
+    - "loose-initialization"
+    - 'pva-flow-aging'
+    - 'pva-flow-evict'
+    - 'pva-offload-state'
 
     Profile_indirect_l4:
     - 'reset-on-timeout'
@@ -383,6 +441,7 @@ VERSION_11:
     - 'server-sack'
     - 'receive-window-size'
     - 'reassemble-fragments'
+    - 'syn-cookie-enable'
 
     Profile_supported_fh:
     - "description"
@@ -446,9 +505,27 @@ VERSION_11:
     - 'delayed-acks'
     - 'selective-nack'
     - 'early-retransmit'
+    - 'ack-on-push'
+    - 'close-wait-timeout'
 
     Profile_na_tcp:
     - 'hardware-syn-cookie'
+    - 'abc'
+    - 'app-service'
+    - 'delay-window-control'
+    - 'md5-signature'
+    - "cmetrics-cache"
+    - "ecn"
+    - "fin-wait-timeout"
+    - "init-cwnd"
+    - "md5-signature-passphrase"
+    - "pkt-loss-ignore-burst"
+    - "pkt-loss-ignore-rate"
+    - "proxy-mss"
+    - "rate-pace"
+    - "syn-rto-base"
+    - "zero-window-timeout"
+    - 'fin-wait-2-timeout'
 
     Profile_supported_udp:
     - "description"
@@ -481,11 +558,19 @@ VERSION_11:
     - 'source'
     - 'rate-limit'
     - 'connection-limit'
-    - 'rules'
     - "partition"
 
     VS_na_attr:
     - 'vs-index'
+    - "translate-address"
+    - "app-service"
+    - 'creation-time'
+    - 'last-modified-time'
+    - 'service-down-immediate-action'
+    - 'cmp-enabled'
+    - 'vlans'
+    - 'vlans-enabled'
+    - 'cmp-enabled'
 
     VS_ignore_for_value:
         'ip-protocol': 'tcp'
@@ -500,6 +585,21 @@ VERSION_11:
     - "dhcp-relay"
     - "internal"
     - "reject"
+
+    VS-indirect-attr:
+    - 'ip-protocol'
+
+    Policy_na_attr:
+    - 'policy_action'
+    - 'redirect-rewrite'
+    - 'Skipping rule'
+    - 'explicit-proxy'
+    - 'fallback-status-codes'
+
+    Policy_indirect_attr:
+    - 'encrypt-cookie-secret'
+
+
 
 # Attributes for f5 version 10
 VERSION_10:
@@ -565,6 +665,7 @@ VERSION_10:
     - "recv disable"
     - "reverse"
     - "send"
+
 
     Monitor_https_attr:
     - "recv"
@@ -664,19 +765,53 @@ VERSION_10:
     - "peer cert mode"
 
     Profile_na_ssl:
-    - 'secure renegotiation'
-    - 'cache size'
-    - 'cache timeout'
-    - 'renegotiate size'
-    - 'renegotiate max record delay'
-    - 'strict resume'
-    - 'renegotiate period'
+    - 'secure-renegotiation'
+    - 'cache-size'
+    - 'cache-timeout'
+    - 'renegotiate-size'
+    - 'renegotiate-max-record-delay'
+    - 'strict-resume'
+    - 'renegotiate-period'
     - 'inherit-certkeychain'
     - 'chain'
     - 'renegotiation'
+    - 'app-service'
+    - 'authenticate'
+    - 'cert-extension-includes'
+    - 'description'
+    - 'c3d-ca-cert'
+    - 'c3d-ca-key'
+    - 'c3d-ca-passphrase'
+    - 'c3d-cert-extension-custom-oids'
+    - 'c3d-cert-extension-includes'
+    - 'c3d-cert-lifespan'
+    - 'c3d-drop-unknown-ocsp-status'
+    - 'c3d-ocsp'
+    - 'destination-ip-blacklist'
+    - 'destination-ip-whitelist'
+    - 'forward-proxy-bypass-default-action'
+    - 'handshake-timeout'
+    - 'hostname-blacklist'
+    - 'hostname-whitelist'
+    - 'inherit-ca-certkeychain'
+    - 'max-active-handshakes'
+    - 'max-aggregate-renegotiation-per-minute'
+    - 'maximum-record-size'
+    - 'expire-cert-response-control'
+    - 'ocsp'
+    - 'proxy-ca-passphrase'
+    - 'source-ip-blacklist'
+    - 'source-ip-whitelist'
+    - 'ssl-c3d'
+    - 'ssl-forward-proxy-verified-handshake'
+    - 'untrusted-cert-response-control'
+    - 'allow-dynamic-record-sizing'
+    - 'bypass-on-client-cert-fail'
+    - 'bypass-on-handshake-alert'
 
     Profile_indirect_ssl:
     - 'session mirroring'
+    - 'notify-cert-status-to-virtual-server'
 
     Profile_ignore_for_defaults:
         'app service': 'none'
@@ -744,11 +879,12 @@ VERSION_10:
     Profile_na_http:
     - 'lws width'
     - 'allow-http-10'
+    - 'enforcement'
 
     Profile_supported_http:
     - "insert xforwarded for"
     - "xff alternative names"
-    - "max header size"
+    - "enforcement"
     - "ramcache min object size"
     - "ramcache max age"
     - "ramcache max object size"
@@ -762,6 +898,18 @@ VERSION_10:
     - "encrypt cookies"
     - "fallback"
     - "defaults from"
+
+    Profile_supported_http_enforcement:
+    - "max-header-size"
+
+    Profile_http_enf_ignore_for_defaults:
+        'unknown-method': 'allow'
+        'max-header-count': '64'
+        'pipeline': 'allow'
+
+    Profile_na_http_enforcement:
+    - 'max-requests'
+    - 'truncated-redirects'
 
     Profile_indirect_http:
     - "lws separator"
@@ -778,6 +926,7 @@ VERSION_10:
     - 'compress min size'
     - 'compress gzip memory level'
     - 'compress vary header'
+    - 'enforcement'
 
     Profile_supported_dns:
     - "description"
@@ -812,9 +961,17 @@ VERSION_10:
     - 'server sack'
     - 'receive window size'
     - 'reassemble fragments'
+    - 'syn-cookie-enable'
 
     profile_na_l4:
-    - "hardware syn cookie"
+    - "hardware-syn-cookie"
+    - "tcp-close-timeout"
+    - "tcp-strip-sack"
+    - "loose-close"
+    - "loose-initialization"
+    - 'pva-flow-aging'
+    - 'pva-flow-evict'
+    - 'pva-offload-state'
 
     Profile_supported_fh:
     - "description"
@@ -872,6 +1029,28 @@ VERSION_10:
     - 'mptcp timeout'
     - 'send buffer size'
     - 'early retransmit'
+    - 'ack-on-push'
+    - 'close-wait-timeout'
+
+    Profile_na_tcp:
+    - 'hardware-syn-cookie'
+    - 'abc'
+    - 'app-service'
+    - 'delay-window-control'
+    - 'md5-signature'
+    - "cmetrics-cache"
+    - "ecn"
+    - "fin-wait-timeout"
+    - "init-cwnd"
+    - "md5-signature-passphrase"
+    - "pkt-loss-ignore-burst"
+    - "pkt-loss-ignore-rate"
+    - "proxy-mss"
+    - "rate-pace"
+    - "syn-rto-base"
+    - "zero-window-timeout"
+    - 'fin-wait-2-timeout'
+
 
     Profile_indirect_udp:
     - 'link qos to client'
@@ -889,6 +1068,9 @@ VERSION_10:
     - 'defaults from'
     - 'source mask'
 
+    Profile_indirect_http_enforcement:
+    - 'pipeline'
+
     VS_supported_attr:
     - 'profiles'
     - 'destination'
@@ -902,7 +1084,15 @@ VERSION_10:
     - 'limit'
 
     VS_na_attr:
-    - 'vs index'
+    - 'vs-index'
+    - "translate-address"
+    - "app-service"
+    - 'creation-time'
+    - 'last-modified-time'
+    - 'service-down-immediate-action'
+    - 'cmp-enabled'
+    - 'vlans'
+    - 'vlans-enabled'
 
     VS_ignore_for_value:
         'ip protocol': 'tcp'
@@ -914,3 +1104,16 @@ VERSION_10:
     - "ip forward"
     - "stateless"
     - "reject"
+
+    VS-indirect-attr:
+    - 'ip-protocol'
+
+    Policy_indirect_attr:
+    - 'encrypt-cookie-secret'
+
+    Policy_na_attr:
+    - 'policy_action'
+    - 'redirect-rewrite'
+    - 'Skipping rule'
+    - 'explicit-proxy'
+    - 'fallback-status-codes'

@@ -507,6 +507,7 @@ class MonitorConfigConvV11(MonitorConfigConv):
         :return:
         """
         f5_monitor = monitor_config[key]
+        logging.debug("f5_monitor "+key)
         monitor_type, monitor_name = key.split(" ")
         parent_name = f5_monitor.get("defaults-from", None)
         parent_name = None if parent_name == 'none' else \

@@ -186,6 +186,8 @@ class PersistenceConfigConv(object):
                 elif i == 3:
                     timeout += (val*final.MIN_IN_HR*final.HR_IN_DAY)
                 i += 1
+        else:
+            timeout = 1 if int(timeout) == 0 else timeout
         return timeout
 
 
@@ -232,7 +234,7 @@ class PersistenceConfigConvV11(PersistenceConfigConv):
         # Set cookie name to default value from avi if not given
         if not cookie_name or cookie_name == 'none':
             cookie_name = 'AVI_COOKIE'
-        timeout = profile.get("expiration", '0')
+        timeout = profile.get("expiration", '1')
         timeout = parent_obj.convert_timeout(timeout)
         persist_profile = {
             "name": name,

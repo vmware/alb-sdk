@@ -5,15 +5,20 @@
 This testsuite contains the initial test cases for testing the
 f5 converter tool along with its options / parameters
 """
+import unittest
 import json
 import logging
 import os
 import subprocess
 import sys
+
+import pandas as pd
 import pytest
 import yaml
+from avi.migrationtools.f5_converter.test.conftest import option
+from avi.migrationtools.avi_migration_utils import MigrationUtil
 from avi.migrationtools.avi_migration_utils import get_count, set_update_count
-from avi.migrationtools.f5_converter.f5_converter import F5Converter, get_terminal_args,\
+from avi.migrationtools.f5_converter.f5_converter import F5Converter, get_terminal_args, \
     ARG_DEFAULT_VALUE
 from avi.migrationtools.test.common.excel_reader \
     import percentage_success, output_sanitization, output_vs_level_status
@@ -22,10 +27,17 @@ from avi.migrationtools.test.common.test_clean_reboot \
 from avi.migrationtools.test.common.test_tenant_cloud \
     import create_segroup, create_vrf_context
 import ansible_runner
-config_file = pytest.config.getoption("--config")
-input_file = pytest.config.getoption("--file")
-input_file_version = pytest.config.getoption("--fileVersion")
-output_file = pytest.config.getoption("--out")
+from avi.migrationtools.avi_migration_utils import MigrationUtil
+common_avi_util = MigrationUtil()
+
+config_file = option.config
+input_file = option.file
+input_file_version = option.fileVersion
+output_file = option.out
+# config_file = pytest.config.getoption("--config")
+# input_file = pytest.config.getoption("--file")
+# input_file_version = pytest.config.getoption("--fileVersion")
+# output_file = pytest.config.getoption("--out")
 if not output_file:
     output_file = os.path.abspath(os.path.join(
         os.path.dirname(__file__), 'output'))
@@ -47,9 +59,9 @@ if input_file_version == '10' and input_file:
 elif input_file_version == '11' and input_file:
     v11 = '11'
     input_file_v11 = input_file
-elif any([input_file_version, input_file]):
-    print("Both arguments 'input_file_version' and 'input_file' are mandatory")
-    sys.exit(0)
+# elif any([input_file_version, input_file]):
+# print("Both arguments 'input_file_version' and 'input_file' are mandatory")
+# sys.exit(0)
 
 
 with open(config_file) as f:
@@ -136,7 +148,6 @@ def f5_conv(
         f5_passphrase_file=None, vs_level_status=False, test_vip=None,
         vrf=None, segroup=None, custom_config=None, skip_pki=False,
         distinct_app_profile=False, reuse_http_policy=False, args_config_file=None):
-
     args = Namespace(bigip_config_file=bigip_config_file,
                      skip_default_file=skip_default_file,
                      f5_config_version=f5_config_version,
@@ -712,12 +723,12 @@ class TestF5Converter:
             shell=True))
         try:
             output = ansible_runner.run(
-                    playbook = setup.get('f5_ansible_object'),
-                    extravars = {'controller': setup.get('controller_ip_17_1_1'),
-                        'username': setup.get('controller_user_17_1_1'),
-                        'password':setup.get('controller_password_17_1_1')},
-                         verbosity = 3,
-                         quiet = True)
+                playbook=setup.get('f5_ansible_object'),
+                extravars={'controller': setup.get('controller_ip_17_1_1'),
+                           'username': setup.get('controller_user_17_1_1'),
+                           'password': setup.get('controller_password_17_1_1')},
+                verbosity=3,
+                quiet=True)
             playbook_stats = output.stats
             playbook_output = output.stdout.read()
             mylogger.info('ansible playbook output: \n{}'.format(playbook_output))
@@ -1533,7 +1544,7 @@ class TestF5Converter:
                         == "81-hol-advanced-http-vs-dmz"][0]
             second_vs = [vs for vs in vs_object if vs['name']
                          == "82-hol-advanced-http-vs-dmz"][0]
-            vs1_http_policy = first_vs['http_policies'][0]\
+            vs1_http_policy = first_vs['http_policies'][0] \
                 ['http_policy_set_ref'].split("=")[-1]
             vs2_http_policy = second_vs['http_policies'][0] \
                 ['http_policy_set_ref'].split("=")[-1]
@@ -1648,6 +1659,124 @@ class TestF5Converter:
             assert vs_object.get('enabled')
         assert os.path.exists("%s/%s" % (output_file, "avi_config_create_object.yml"))
         assert os.path.exists("%s/%s" % (output_file, "avi_config_delete_object.yml"))
+
+    def test_profile_http_na_enforcement(self, cleanup):
+        f5_conv(bigip_config_file=setup.get('config_file_name_v11'),
+                f5_config_version=setup.get('file_version_v11'),
+                controller_version=setup.get('controller_version_v17'),
+                tenant=file_attribute['tenant'],
+                cloud_name=file_attribute['cloud_name'],
+                no_profile_merge=file_attribute['no_profile_merge'],
+                output_file_path=setup.get('output_file_path')
+                )
+        self.excel_path = os.path.abspath(
+            os.path.join(
+                output_file, 'hol_advanced_bigip-ConversionStatus.xlsx'
+            )
+        )
+        data = pd.read_excel(self.excel_path)
+        for k, row in data.iterrows():
+            if row['F5 SubType'] in ["http"]:
+                na_attr = row['Not Applicable']
+                na_attr = common_avi_util.format_string_to_json(na_attr)
+                for item in na_attr:
+                    if isinstance(item, dict):
+                        for k in item.keys():
+                            if k == 'enforcement':
+                                enf = item[k]
+                                for item in enf:
+                                    assert item in ['max-requests', 'truncated-redirects',]
+                                break
+
+    def test_profile_indirect_http_enforcement(self, cleanup):
+        f5_conv(bigip_config_file=setup.get('config_file_name_v11'),
+                f5_config_version=setup.get('file_version_v11'),
+                controller_version=setup.get('controller_version_v17'),
+                tenant=file_attribute['tenant'],
+                cloud_name=file_attribute['cloud_name'],
+                no_profile_merge=file_attribute['no_profile_merge'],
+                output_file_path=setup.get('output_file_path')
+                )
+        self.excel_path = os.path.abspath(
+            os.path.join(
+                output_file, 'hol_advanced_bigip-ConversionStatus.xlsx'
+            )
+        )
+        data = pd.read_excel(self.excel_path)
+        for k, row in data.iterrows():
+            if row['F5 SubType'] in ["http"]:
+                indirect_attr = row['Indirect mapping']
+                indirect_attr = common_avi_util.format_string_to_json(indirect_attr)
+                for item in indirect_attr:
+                    if isinstance(item, dict):
+                        for k in item.keys():
+                            if k == 'enforcement':
+                                enf = item[k]
+                                for item in enf:
+                                    assert item in ['pipeline']
+                                break
+
+
+    def test_profile_http_skipped_enforcement(self, cleanup):
+        f5_conv(bigip_config_file=setup.get('config_file_name_v11'),
+                f5_config_version=setup.get('file_version_v11'),
+                controller_version=setup.get('controller_version_v17'),
+                tenant=file_attribute['tenant'],
+                cloud_name=file_attribute['cloud_name'],
+                no_profile_merge=file_attribute['no_profile_merge'],
+                output_file_path=setup.get('output_file_path')
+                )
+        self.excel_path = os.path.abspath(
+            os.path.join(
+                output_file, 'hol_advanced_bigip-ConversionStatus.xlsx'
+            )
+        )
+        data = pd.read_excel(self.excel_path)
+        for k, row in data.iterrows():
+            if row['F5 SubType'] in ["http"]:
+                if row['Status'] not in ['SUCCESSFUL', 'SKIPPED']:
+                    skipped_attr = row['Skipped settings']
+                    skipped_attr = common_avi_util.format_string_to_json(skipped_attr)
+                    for item in skipped_attr:
+                        if isinstance(item, dict):
+                            for k in item.keys():
+                                if k == 'enforcement':
+                                    enf = item[k]
+                                    for item in enf:
+                                        assert item not in ['max-requests', 'truncated-redirects', 'pipeline']
+                                    break
+
+    def test_skipped_objects(self,cleanup):
+        """
+        test case for skipped objct
+        """
+        f5_conv(bigip_config_file=setup.get('config_file_name_v11'),
+                f5_config_version=setup.get('file_version_v11'),
+                controller_version=setup.get('controller_version_v17'),
+                tenant=file_attribute['tenant'],
+                cloud_name=file_attribute['cloud_name'],
+                no_profile_merge=file_attribute['no_profile_merge'],
+                output_file_path=setup.get('output_file_path')
+                )
+        self.excel_path = os.path.abspath(
+            os.path.join(
+                output_file, 'hol_advanced_bigip-ConversionStatus.xlsx'
+            )
+        )
+        data = pd.read_excel(self.excel_path)
+        for k, row in data.iterrows():
+            if row['F5 SubType'] in ["universal", "dest-addr"]:
+                assert row['Status'] == 'SKIPPED'
+
+    def test_tenant_ref(self):
+        input =["/common/test-monitor", "common/test-monitor","common test-monitor"]
+        for ipt in input:
+            tenant, name = common_avi_util.get_tenant_ref(ipt)
+            assert tenant == tenant.strip()
+            assert tenant != "common"
+            assert not name.__contains__("name=")
+            assert not name.__contains__("/")
+            assert not name.__contains__("=")
 
 
 def teardown():
