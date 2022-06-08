@@ -47,43 +47,40 @@ $ pip install avisdk
 Usage Examples
 --------------
 
-- **Import Avi API Session:**
+## Example for the AVI Controller
 
-   from avi.sdk.avi_api import ApiSession
+```python
+from avi.sdk.avi_api import ApiSession
 
-- **Create Avi API Session:**
+# create Avi API Session
+session = ApiSession.get_session("10.10.10.42", "controller_username", "controller_password", tenant="admin")
 
-   api = ApiSession.get_session("10.10.10.42", "admin", "something", tenant="admin")
+# create pool with one server
+pool_obj = {'name': 'sample_pool', 'servers': [{'ip': {'addr': '192.0.0.1', 'type': 'V4'}}]}
+pool_resp = session.post('pool', data=pool_obj)
+print(pool_resp.json())
 
-- **Create VirtualService Using Pool sample_pool:**
+# create vsvip
+vsvip_obj = {'name': 'sample_vsvip', 'vip': [{'vip_id': '1', 'ip_address': {'addr': '11.11.11.42', 'type': 'V4'}}]}
+vsvip_resp = session.post('vsvip', data=vsvip_obj)
+print(vsvip_resp.json())
 
-   pool_obj = api.get_object_by_name('pool', 'sample_pool')
-   pool_ref = api.get_obj_ref(pool_obj)
-   services_obj = [{'port': 80, 'enable_ssl': False}]
-   vs_obj = {'name': 'sample_vs', 'ip_address': {'addr': '11.11.11.42', 'type': 'V4'},
-            'services': services_obj, 'pool_ref': pool_ref}
-   resp = api.post('virtualservice', data=vs_obj)
-   print resp.json()
+# create virtualservice using sample_vsvip and sample_pool
+pool_ref = '/api/pool?name={}'.format(pool_obj.get('name'))
+vsvip_ref = '/api/vsvip?name={}'.format(vsvip_obj.get('name'))
+services_obj = [{'port': 80, 'enable_ssl': False}]
+vs_obj = {'name': 'sample_vs', 'services': services_obj, 'vsvip_ref': vsvip_ref, 'pool_ref': pool_ref}
+resp = session.post('virtualservice', data=vs_obj)
+print(resp.json())
 
-- **Create VirtualService Using Pool sample_pool on 17.x Controllers:**
+# print list of all virtualservices
+resp = session.get('virtualservice')
+for vs in resp.json()['results']:
+    print(vs['name'])
 
-   pool_obj = api.post('pool', data={'name': 'sample_pool'}, api_version='17.2.4')
-   pool_ref = api.get_obj_ref(pool_obj)
-   services_obj = [{'port': 80, 'enable_ssl': False}]
-   vs_obj = {'name': 'sample_vs', 'vip': [{'ip_address': {'addr': '11.11.11.42', 'type': 'V4'}}],
-            'services': services_obj, 'pool_ref': pool_ref}
-   resp = api.post('virtualservice', data=vs_obj, api_version='17.2.4')
-   print resp.json()
-
-- **Print List of All VirtualServices:**
-
-   resp = api.get('virtualservice')
-   for vs in resp.json()['results']:
-      print vs['name']
-
-- **Delete VirtualService:**
-
-   resp = api.delete('virtualservice', 'sample_vs')
+# delete virtualservice
+resp = session.delete_by_name('virtualservice', 'sample_vs')
+```
 
 # SAML Authentication Usage
 ### Prerequisite:
