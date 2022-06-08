@@ -32,8 +32,8 @@ class ProfileConfigConv(object):
         alb_config['NetworkProfile'] = list()
         skipped_ap = []
         skipped_np = []
-        na_ap=[]
-        na_np=[]
+        na_ap = []
+        na_np = []
         attr_ap = []
         attr_np = []
         progressbar_count = 0
@@ -48,8 +48,13 @@ class ProfileConfigConv(object):
                 name = lb_pr.get('display_name')
                 if prefix:
                     name = prefix + '-' + name
+                tenant_name, t_name = conv_utils.get_tenant_ref(tenant)
+                if not tenant:
+                    tenant = tenant_name
+
                 alb_pr = dict(
                     name=name,
+                    tenant_ref=conv_utils.get_object_ref(tenant, 'tenant')
                 )
 
                 if lb_pr['resource_type'] == 'LBHttpProfile':
@@ -70,6 +75,14 @@ class ProfileConfigConv(object):
                 ignore_for_defaults = {}
 
                 if lb_pr['resource_type'] == 'LBHttpProfile':
+                    if self.object_merge_check:
+                        if name in self.merge_object_mapping['app_profile'].keys():
+                            name = name + "-" + lb_pr["id"]
+                    else:
+                        profile_temp = list(filter(lambda pr: pr["name"] == name, alb_config['ApplicationProfile']))
+                        if profile_temp:
+                            name = name + "-" + lb_pr["id"]
+                    alb_pr["name"] = name
                     skipped = [val for val in lb_pr.keys()
                                if val not in self.ap_http_supported_attributes]
                     if lb_pr.get("description"):
@@ -78,7 +91,8 @@ class ProfileConfigConv(object):
                     if self.object_merge_check:
                         common_avi_util.update_skip_duplicates(alb_pr,
                                                                alb_config['ApplicationProfile'], 'app_profile',
-                                                               converted_objs, name, None, self.merge_object_mapping,
+                                                               converted_objs, name, None,
+                                                               self.merge_object_mapping,
                                                                lb_pr['resource_type'], prefix,
                                                                self.sys_dict['ApplicationProfile'])
                         self.app_pr_count += 1
@@ -86,6 +100,7 @@ class ProfileConfigConv(object):
                         alb_config['ApplicationProfile'].append(alb_pr)
                     skipped_ap.append(skipped)
                     val = dict(
+                        id=lb_pr["id"],
                         name=alb_pr['name'],
                         resource_type=lb_pr['resource_type'],
                         alb_pr=alb_pr)
@@ -93,13 +108,22 @@ class ProfileConfigConv(object):
                     na_ap.append(na_list)
 
                 else:
+                    if self.object_merge_check:
+                        if name in self.merge_object_mapping['network_profile'].keys():
+                            name = name + "-" + lb_pr["id"]
+                    else:
+                        profile_temp = list(filter(lambda pr: pr["name"] == name, alb_config['NetworkProfile']))
+                        if profile_temp:
+                            name = name + "-" + lb_pr["id"]
+                    alb_pr["name"] = name
                     skipped = [val for val in lb_pr.keys()
                                if val not in self.np_supported_attributes]
 
                     if self.object_merge_check:
                         common_avi_util.update_skip_duplicates(alb_pr,
                                                                alb_config['NetworkProfile'], 'network_profile',
-                                                               converted_objs, name, None, self.merge_object_mapping,
+                                                               converted_objs, name, None,
+                                                               self.merge_object_mapping,
                                                                lb_pr['resource_type'], prefix,
                                                                self.sys_dict['NetworkProfile'])
                         self.np_pr_count += 1
@@ -107,6 +131,7 @@ class ProfileConfigConv(object):
                         alb_config['NetworkProfile'].append(alb_pr)
                     skipped_np.append(skipped)
                     val = dict(
+                        id=lb_pr["id"],
                         name=alb_pr['name'],
                         resource_type=lb_pr['resource_type'],
                         alb_pr=alb_pr)
@@ -126,7 +151,6 @@ class ProfileConfigConv(object):
                 conv_utils.add_status_row('applicationprofile', None, lb_pr['display_name'],
                                           conv_const.STATUS_ERROR)
 
-
         if len(skipped_ap):
             for index, skipped in enumerate(skipped_ap):
                 conv_status = conv_utils.get_conv_status(
@@ -135,6 +159,7 @@ class ProfileConfigConv(object):
                 na_list = [val for val in na_ap[index] if val not in self.common_na_attr]
                 conv_status["na_list"] = na_list
                 name = attr_ap[index]['name']
+                profile_id = attr_ap[index]['id']
                 alb_mig_app_pr = attr_ap[index]['alb_pr']
                 if self.object_merge_check:
                     alb_mig_app_pr = [app_pr for app_pr in alb_config['ApplicationProfile'] if
@@ -158,10 +183,12 @@ class ProfileConfigConv(object):
                 na_list = [val for val in na_np[index] if val not in self.common_na_attr]
                 conv_status["na_list"] = na_list
                 name = attr_np[index]['name']
+                profile_id = attr_np[index]['id']
                 alb_mig_np_pr = attr_np[index]['alb_pr']
                 if self.object_merge_check:
                     alb_mig_np_pr = [np_pr for np_pr in alb_config['NetworkProfile'] if
-                                     np_pr.get('name') == self.merge_object_mapping['network_profile'].get(name)]
+                                         np_pr.get('name') == self.merge_object_mapping['network_profile'].get(
+                                             name)]
                     conv_utils.add_conv_status('applicationprofile', attr_np[index]['resource_type'],
                                                attr_np[index]['name'], conv_status,
                                                [{'network_profile': alb_mig_np_pr[0]}])
@@ -174,8 +201,6 @@ class ProfileConfigConv(object):
                                                                                      conv_status['skipped']))
 
     def convert_http(self, alb_pr, lb_pr):
-        tenant, name = conv_utils.get_tenant_ref("admin")
-        alb_pr['tenant_ref'] = conv_utils.get_object_ref(tenant, 'tenant')
         alb_pr['type'] = 'APPLICATION_PROFILE_TYPE_HTTP'
         alb_pr['http_profile'] = dict(
             xff_enabled=lb_pr.get('xForwardedFor', False),
@@ -198,16 +223,17 @@ class ProfileConfigConv(object):
             type='PROTOCOL_TYPE_UDP_FAST_PATH',
             udp_fast_path_profile=self.fast_profile_path(lb_pr)
         )
+        alb_pr["connection_mirror"] = lb_pr.get("flow_mirroring_enabled")
 
     def convert_tcp(self, alb_pr, lb_pr):
         alb_pr['profile'] = dict(
             type='PROTOCOL_TYPE_TCP_FAST_PATH',
             tcp_fast_path_profile=self.fast_profile_path(lb_pr)
         )
+        alb_pr["connection_mirror"] = lb_pr.get("ha_flow_mirroring_enabled")
 
     def fast_profile_path(self, lb_pr):
         path = dict(
-            session_idle_timeout=lb_pr.get('idle_timeout'),
-            connection_mirror=lb_pr.get("ha_flow_mirroring_enabled")
+            session_idle_timeout=lb_pr.get('idle_timeout')
         )
         return path

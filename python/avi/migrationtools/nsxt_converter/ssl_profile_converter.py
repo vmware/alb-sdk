@@ -20,6 +20,8 @@ class SslProfileConfigConv(object):
         self.supported_client_ssl_attributes = nsxt_profile_attributes['SSLProfile_Client_Supported_Attributes']
         self.supported_server_ssl_attributes = nsxt_profile_attributes['SSLProfile_Server_Supported_Attributes']
         self.common_na_attr = nsxt_profile_attributes['Common_Na_List']
+        self.indirect_client_ssl_attr = nsxt_profile_attributes["SSLProfile_Client_Indirect_Attributes"]
+        self.indirect_server_ssl_attr = nsxt_profile_attributes["SSLProfile_Server_Indirect_Attributes"]
         self.object_merge_check = object_merge_check
         self.merge_object_mapping = merge_object_mapping
         self.sys_dict = sys_dict
@@ -45,13 +47,23 @@ class SslProfileConfigConv(object):
                     na_attr = [val for val in lb_ssl.keys()
                                if val in self.common_na_attr]
                     na_list.append(na_attr)
-
+                    tenant_name, name = conv_utils.get_tenant_ref(tenant)
+                    if not tenant:
+                        tenant = tenant_name
                     progressbar_count += 1
                     name = lb_ssl.get('display_name')
                     if prefix:
                         name = prefix + '-' + name
+                    if self.object_merge_check:
+                        if name in self.merge_object_mapping['ssl_profile'].keys():
+                            name = name + "-" + lb_ssl["id"]
+                    else:
+                        c_ssl_temp = list(filter(lambda c_ssl: c_ssl["name"] == name, alb_config['SSLProfile']))
+                        if c_ssl_temp:
+                            name = name + "-" + lb_ssl["id"]
                     alb_ssl = dict(
                         name=name,
+                        tenant_ref=conv_utils.get_object_ref(tenant, 'tenant'),
                     )
                     if lb_ssl.get("session_cache_enabled"):
                         alb_ssl['enable_ssl_session_reuse'] = lb_ssl['session_cache_enabled']
@@ -59,10 +71,13 @@ class SslProfileConfigConv(object):
                         alb_ssl['ssl_session_timeout'] = lb_ssl['session_cache_timeout']
 
                     if lb_ssl.get("ciphers"):
-                        alb_ssl['accepted_ciphers'] = ":".join(lb_ssl['ciphers'])
+                        converted_ciphers = self.convert_ciphers_to_valid_format(":".join(lb_ssl['ciphers']))
+                        alb_ssl['accepted_ciphers'] = converted_ciphers
 
                     if lb_ssl.get("protocols"):
                         self.convert_protocols(lb_ssl['protocols'], alb_ssl)
+                    if lb_ssl.get("prefer_server_ciphers"):
+                        alb_ssl["prefer_client_cipher_ordering"] = not lb_ssl["prefer_server_ciphers"]
 
                     skipped_list.append(skipped)
                     ##
@@ -70,7 +85,8 @@ class SslProfileConfigConv(object):
                         common_avi_util.update_skip_duplicates(alb_ssl,
                                                                alb_config['SSLProfile'],
                                                                'ssl_profile',
-                                                               converted_objs, name, None, self.merge_object_mapping,
+                                                               converted_objs, name, None,
+                                                               self.merge_object_mapping,
                                                                lb_ssl['resource_type'], prefix,
                                                                self.sys_dict['SSLProfile'])
                         self.ssl_profile_count += 1
@@ -78,6 +94,7 @@ class SslProfileConfigConv(object):
                         alb_config['SSLProfile'].append(alb_ssl)
 
                     val = dict(
+                        id=lb_ssl["id"],
                         name=name,
                         resource_type=lb_ssl['resource_type'],
                         alb_ssl=alb_ssl
@@ -97,7 +114,7 @@ class SslProfileConfigConv(object):
                     conv_utils.add_status_row('sslprofile', None, lb_ssl['display_name'],
                                               conv_const.STATUS_ERROR)
 
-            indirect = []
+            indirect = self.indirect_client_ssl_attr
             u_ignore = []
             ignore_for_defaults = {}
             for index, skipped in enumerate(skipped_list):
@@ -107,6 +124,7 @@ class SslProfileConfigConv(object):
                 ssl_na = [val for val in na_list[index] if val not in self.common_na_attr]
                 conv_status["na_list"] = ssl_na
                 name = converted_alb_ssl[index]['name']
+                ssl_id = converted_alb_ssl[index]['id']
                 alb_mig_ssl = converted_alb_ssl[index]['alb_ssl']
                 resource_type = converted_alb_ssl[index]['resource_type']
                 if self.object_merge_check:
@@ -144,11 +162,20 @@ class SslProfileConfigConv(object):
                     name = lb_ssl.get('display_name')
                     if prefix:
                         name = prefix + '-' + name
+                    if self.object_merge_check:
+                        if name in self.merge_object_mapping['ssl_profile'].keys():
+                            name = name + "-" + lb_ssl["id"]
+                    else:
+                        s_ssl_temp = list(filter(lambda ssl: ssl["name"] == name, alb_config['SSLProfile']))
+                        if s_ssl_temp:
+                            name = name + "-" + lb_ssl["id"]
                     alb_ssl = dict(
                         name=name,
                     )
                     if lb_ssl.get("ciphers"):
-                        alb_ssl['accepted_ciphers'] = ":".join(lb_ssl['ciphers'])
+                        converted_ciphers = self.convert_ciphers_to_valid_format(":".join(lb_ssl['ciphers']))
+                        alb_ssl['accepted_ciphers'] = converted_ciphers
+
                     if lb_ssl.get("protocols"):
                         self.convert_protocols(lb_ssl['protocols'], alb_ssl)
 
@@ -158,7 +185,8 @@ class SslProfileConfigConv(object):
                         common_avi_util.update_skip_duplicates(alb_ssl,
                                                                alb_config['SSLProfile'],
                                                                'ssl_profile',
-                                                               converted_objs, name, None, self.merge_object_mapping,
+                                                               converted_objs, name, None,
+                                                               self.merge_object_mapping,
                                                                lb_ssl['resource_type'], prefix,
                                                                self.sys_dict['SSLProfile'])
                         self.ssl_profile_count += 1
@@ -166,6 +194,7 @@ class SslProfileConfigConv(object):
                         alb_config['SSLProfile'].append(alb_ssl)
 
                     val = dict(
+                        id=lb_ssl["id"],
                         name=name,
                         resource_type=lb_ssl['resource_type'],
                         alb_ssl=alb_ssl
@@ -185,7 +214,7 @@ class SslProfileConfigConv(object):
                     conv_utils.add_status_row('sslprofile', None, lb_ssl['display_name'],
                                               conv_const.STATUS_ERROR)
 
-            indirect = []
+            indirect = self.indirect_server_ssl_attr
             u_ignore = []
             ignore_for_defaults = {}
             for index, skipped in enumerate(skipped_list):
@@ -195,6 +224,7 @@ class SslProfileConfigConv(object):
                 ssl_na = [val for val in na_list[index] if val not in self.common_na_attr]
                 conv_status["na_list"] = ssl_na
                 name = converted_alb_ssl[index]['name']
+                ssl_id = converted_alb_ssl[index]['id']
                 alb_mig_ssl = converted_alb_ssl[index]['alb_ssl']
                 resource_type = converted_alb_ssl[index]['resource_type']
                 if self.object_merge_check:
@@ -226,3 +256,10 @@ class SslProfileConfigConv(object):
                 type=accepted_version[acc_ver]
             )
             alb_ssl['accepted_versions'].append(acc_version)
+
+    def convert_ciphers_to_valid_format(self, cipher_str):
+        cipher_str = cipher_str.replace('TLS_', '')
+        cipher_str = cipher_str.replace('_', '-')
+        cipher_str = cipher_str.replace('WITH-AES-128', 'AES128')
+        cipher_str = cipher_str.replace('WITH-AES-256', 'AES256')
+        return cipher_str

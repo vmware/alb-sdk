@@ -271,9 +271,9 @@ class NsxtConvUtil(MigrationUtil):
         # Get the list of csv rows which has profile as NsxT type
         profile_csv_list = self.get_csv_object_list(
             csv_writer_dict_list, ['applicationprofile'])
-        ssl_profile_csv_list=self.get_csv_object_list(
+        ssl_profile_csv_list = self.get_csv_object_list(
             csv_writer_dict_list, ['sslprofile'])
-        ssl_key_certificate_csv_list=self.get_csv_object_list(
+        ssl_key_certificate_csv_list = self.get_csv_object_list(
             csv_writer_dict_list, ['ssl_key_and_certificate'])
         ptotal_count = ptotal_count + len(vs_csv_objects)
         for vs_csv_object in vs_csv_objects:
@@ -984,7 +984,6 @@ class NsxtConvUtil(MigrationUtil):
                 network_profile_names.append(network_profile_ref)
         return network_profile_names
 
-
     def get_app_persistence_profile_skipped(self, csv_writer_dict_list,
                                             pool_object, vs_ref):
         """
@@ -1018,5 +1017,14 @@ class NsxtConvUtil(MigrationUtil):
         skipped_list = self.get_csv_skipped_list(
             profile_csv_list, ssl_profile_name, vs_ref, field_key='ssl_profile')
         return ssl_profile_name, skipped_list
+
+    def get_conv_status_by_obj_name(self, obj_name):
+        conv_status_list = list(filter(lambda obj: obj.get("NsxT ID") == obj_name, csv_writer_dict_list))
+        conv_status = dict()
+        conv_status["status"] = conv_status_list[0]["Status"]
+        conv_status['skipped'] = conv_status_list[0]["Skipped settings"]
+        conv_status['indirect'] = conv_status_list[0]["Indirect mapping"]
+        conv_status['na_list'] = conv_status_list[0]['Not Applicable']
+        return conv_status
 
 
