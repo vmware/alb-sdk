@@ -10,8 +10,6 @@ from requests.packages.urllib3.util.retry import Retry
 
 LOG = logging.getLogger(__name__)
 
-requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-
 
 class DetailedHttpError(requests.exceptions.HTTPError):
     def __init__(self, response):

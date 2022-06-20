@@ -1,0 +1,362 @@
+NSXT:
+    SUPPORTED_ALB_OBJECTS :
+    - "AlertScriptConfig"
+    - "AnalyticsProfile"
+    - "ApplicationPersistenceProfile"
+    - "ApplicationProfile"
+    - "Authprofiles"
+    - "AutoScaleLaunchConfig"
+    - "DnsPolicy"
+    - "ErrorPageBody"
+    - "ErrorPageProfile"
+    - "HardwareSecurityModuleGroup"
+    - "HealthMonitor"
+    - "HTTPPolicySet"
+    - "IpAddrGroup"
+    - "L4PolicySet"
+    - "NetworkProfile"
+    - "NetworkSecurityPolicy"
+    - "ObjectAccessPolicy"
+    - "PingAccessAgent"
+    - "PKIProfile"
+    - "Pool"
+    - "PoolGroup"
+    - "PoolGroupDeploymentPolicy"
+    - "PriorityLabels"
+    - "ProtocolParser"
+    - "SecurityPolicy"
+    - "ServerAutoScalePolicy"
+    - "CertificateManagementProfile"
+    - "SSLKeyAndCertificate"
+    - "SSLProfile"
+    - "SSOPolicy"
+    - "StringGroup"
+    - "TrafficCloneProfile"
+    - "VirtualService"
+    - "VSDataScriptSet"
+    - "VsVip"
+    - "WafCRS"
+    - "WafPolicy"
+    - "WafPolicyPSMGroup"
+    - "WafProfile"
+    - "Webhook"
+
+    albObjectType :
+        "alertscriptconfig": "alb-alert-script-configs"
+        "analyticsprofile": "alb-analytics-profiles"
+        "applicationpersistenceprofile": "alb-application-persistence-profiles"
+        "applicationprofile": "alb-application-profiles"
+        "authprofile": "alb-auth-profiles"
+        "autoscalelaunchconfig": "alb-auto-scale-launch-configs"
+        "certificatemanagementprofile": "alb-certificate-management-profiles"
+        "dnspolicy": "alb-dns-policies"
+        "errorpagebody": "alb-error-page-bodies"
+        "errorpageprofile": "alb-error-page-profiles"
+        "httppolicyset": "alb-http-policy-sets"
+        "hardwaresecuritymodulegroup": "alb-hardware-security-module-groups"
+        "healthmonitor": "alb-health-monitors"
+        "ipaddrgroup": "alb-ip-addr-groups"
+        "l4policyset": "alb-l4-policy-sets"
+        "networkprofile": "alb-network-profiles"
+        "networksecuritypolicy": "alb-network-security-policies"
+        "pkiprofile": "alb-pki-profiles"
+        "pingaccessagent": "alb-ping-access-agents"
+        "pool": "alb-pools"
+        "poolgroup": "alb-pool-groups"
+        "poolgroupdeploymentpolicy": "alb-pool-group-deployment-policies"
+        "prioritylabels": "alb-priority-labels"
+        "protocolparser": "alb-protocol-parsers"
+        "sslkeyandcertificate": "alb-ssl-key-and-certificates"
+        "sslprofile": "alb-ssl-profiles"
+        "ssopolicy": "alb-sso-policies"
+        "securitypolicy": "alb-security-policies"
+        "serverautoscalepolicy": "alb-server-auto-scale-policies"
+        "stringgroup": "alb-string-groups"
+        "trafficcloneprofile": "alb-traffic-clone-profiles"
+        "vsdatascriptset": "alb-vs-data-script-sets"
+        "virtualservice": "alb-virtual-services"
+        "vsvip": "alb-vs-vips"
+        "wafcrs": "alb-waf-crs"
+        "wafpolicy": "alb-waf-policies"
+        "wafpolicypsmgroup": "alb-waf-policy-psm-groups"
+        "wafprofile": "alb-waf-profiles"
+        "objectaccesspolicy": "alb-object-access-policies"
+        "webhook": "alb-webhooks"
+
+    NOT_APPLICABLE :
+        - 'url'
+        - 'uuid'
+        - 'tenant_ref'
+
+    REPLACE_KEYS :
+        - 'name'
+        - 'cloud_ref'
+        - 'vrf_ref'
+        - 'vrf_context_ref'
+        - 'tier1_lr'
+
+
+    Monitor_Supported_Types:
+     - "LBHttpMonitorProfile"
+     - "LBHttpsMonitorProfile"
+     - "LBIcmpMonitorProfile"
+     - "LBTcpMonitorProfile"
+     - "LBUdpMonitorProfile"
+
+    Monitor_Supported_Attributes:
+     - "monitor_port"
+     - "interval"
+     - "timeout"
+     - "rise_count"
+     - "fall_count"
+     - "display_name"
+     - "resource_type"
+     - "id"
+
+    Monitor_http_attr:
+    - "request_url"
+    - "request_method"
+    - "request_version"
+    - "request_body"
+    - "response_status_codes"
+    - "response_body"
+    - "request_headers"
+
+    Monitor_https_attr:
+    - "request_url"
+    - "request_method"
+    - "request_version"
+    - "request_body"
+    - "response_status_codes"
+    - "response_body"
+    - "server_ssl_profile_binding"
+    - "request_headers"
+
+    Monitor_tcp_attr:
+    - "send"
+    - "receive"
+
+    Monitor_udp_attr:
+    - "send"
+    - "receive"
+
+    Monitor_ping_attr:
+
+    Monitor_icmp_ignore:
+    - "data_length"
+
+    Monitor_passive_indirect:
+    - "max_fails"
+    - "timeout"
+
+    Monitor_server_ssl_indirect_attributes:
+    - "server_auth"
+    - "certificate_chain_depth"
+
+    Monitor_server_ssl_supported_attributes:
+    - "ssl_profile_path"
+    - "server_auth_ca_paths"
+    - "client_certificate_path"
+    - "server_auth_crl_paths"
+
+    Pool_supported_attr:
+    - "display_name"
+    - "members"
+    - "algorithm"
+    - "member_group"
+    - "active_monitor_paths"
+    - "snat_translation"
+    - "tcp_multiplexing_enabled"
+    - "tcp_multiplexing_number"
+    - "min_active_members"
+    - "resource_type"
+    - "id"
+
+    Pool_supported_attr_convert_servers_config:
+    - "display_name"
+    - "ip_address"
+    - "port"
+    - "admin_state"
+    - "weight"
+    - "max_concurrent_connections"
+    - 'backup_member'
+
+    Pool_supported_attr_convert_member_group:
+    - "group_path"
+    - "port"
+
+    Pool_na_list:
+    - "max_ip_list_size"
+    - "ip_revision_filter"
+
+    Application_Http_Profile_supported_attr:
+    - "x_forwarded_for"
+    - "http_redirect_to_https"
+    - "idle_timeout"
+    - "request_header_size"
+    - "request_body_size"
+    - "description"
+    - "display_name"
+    - "resource_type"
+    - "server_keep_alive"
+    - "id"
+    - "ntlm"
+    - "response_header_size"
+    - "http_redirect_to"
+    - "response_timeout"
+
+    http_na_list:
+    - "response_buffering"
+
+    tcp_na_list:
+    - "close_timeout"
+
+    Network_Profile_supported_attr:
+    - "display_name"
+    - "resource_type"
+    - "id"
+    - "idle_timeout"
+    - 'ha_flow_mirroring_enabled'
+    - 'flow_mirroring_enabled'
+
+    VS_supported_attr:
+    - 'application_profile_path'
+    - 'destination'
+    - 'pool_path'
+    - 'persist'
+    - 'source-address-translation'
+    - 'description'
+    - 'translate-port'
+    - 'source'
+    - 'rate-limit'
+    - 'connection-limit'
+    - 'rules'
+    - "partition"
+    - 'enabled'
+    - 'ports'
+    - 'max_concurrent_connections'
+    - 'ip_address'
+    - 'lb_persistence_profile_path'
+    - 'lb_service_path'
+    - 'display_name'
+    - 'id'
+    - 'resource_type'
+    - 'client_ssl_profile_binding'
+    - 'server_ssl_profile_binding'
+    - 'default_pool_member_ports'
+    - 'sorry_pool_path'
+
+    VS_client_ssl_supported_attr:
+    - 'ssl_profile_path'
+    - 'default_certificate_path'
+    - 'client_auth'
+    - 'client_auth_ca_paths'
+    - 'client_auth_crl_paths'
+
+    VS_server_ssl_supported_attr:
+    - 'ssl_profile_path'
+    - 'client_certificate_path'
+    - 'server_auth_crl_paths'
+    - 'client_certificate_path'
+    - 'server_auth_ca_paths'
+
+    VS_na_list:
+    - "log_significant_event_only"
+
+    VS_indirect_aatr:
+    - "access_log_enabled"
+
+    VS_client_ssl_indirect_attr:
+    - "certificate_chain_depth"
+
+    VS_server_ssl_indirect_attr:
+    - "certificate_chain_depth"
+
+    SSLProfile_Client_Supported_Attributes:
+    - "ciphers"
+    - "protocols"
+    - "session_cache_enabled"
+    - "session_cache_timeout"
+    - "display_name"
+    - "id"
+    - "resource_type"
+    - 'prefer_server_ciphers'
+
+    SSLProfile_Client_Indirect_Attributes:
+     - "is_secure"
+     - "is_fips"
+
+    SSLProfile_Server_Supported_Attributes:
+    - "ciphers"
+    - "protocols"
+    - "session_cache_enabled"
+    - "session_cache_timeout"
+    - "display_name"
+    - "id"
+    - "resource_type"
+
+    SSLProfile_Server_Indirect_Attributes:
+        - "is_secure"
+        - "is_fips"
+
+    PersistenceProfile_Supported_Attributes:
+    - "display_name"
+    - "id"
+    - "resource_type"
+
+    CookiePersistenceProfile_Supported_Attributes:
+    - "cookie_name"
+    - "cookie_max_idle"
+    - "cookie_fallback"
+    - "cookie_time"
+
+    SourcePersistenceProfile_Supported_Attributes:
+    - "timeout"
+
+    SourcePersistenceProfile_NA_Attributes:
+    - "ha_persistence_mirroring_enabled"
+
+    Persistence_indirect_cookie:
+    - "cookie_garble"
+
+    Persistence_na_attr:
+    - "persistence_shared"
+
+    HttpPolicySetRules_Supported_Attributes:
+    - "match_conditions"
+    - "actions"
+    - "phase"
+    - "match_strategy"
+
+    HttpPolicySetRules_Skiped_List_MatchingCondition:
+    - "LBHttpRequestBodyCondition"
+    - "LBTcpHeaderCondition"
+    - "LBVariableCondition"
+    - "LBSslSniCondition"
+    - "LBClientCertificateIssuerDnConditionDto"
+    - "LBClientCertificateSubjectDnConditionDto"
+
+    HttpPolicySetRules_Skiped_List_Actions:
+    - "LBSslModeSelectionAction"
+    - "LBVariableAssignmentAction"
+    - "LBJwtAuthAction"
+    - "LBJwtCertificateKey"
+    - "LBJwtSymmetricKey"
+    - "LBJwtPublicKey"
+
+
+    Common_Na_List:
+    - "path"
+    - "relative_path" 
+    - "parent_path" 
+    - "unique_id" 
+    - "realization_id" 
+    - "marked_for_delete" 
+    - "overridden" 
+    - "_create_time" 
+    - "_create_user" 
+    - "_last_modified_time" 
+    - "_last_modified_user" 
+    - "_system_owned" 
+    - "_protection" 
+    - "_revision"

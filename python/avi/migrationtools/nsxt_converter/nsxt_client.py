@@ -2,7 +2,6 @@
 
 import requests
 
-from com.vmware import nsx_client
 from com.vmware import nsx_policy_client
 from vmware.vapi.bindings.stub import ApiClient
 from vmware.vapi.bindings.stub import StubFactory
@@ -22,10 +21,9 @@ def get_basic_auth_stub_config(user, password, nsx_host, tcp_port=443):
     session = requests.session()
 
     # Since the NSX manager default certificate is self-signed,
-    # we disable verification. This is dangerous and real code
+    # we deactivate verification. This is dangerous and real code
     # should verify that it is talking to a valid server.
     session.verify = False
-    requests.packages.urllib3.disable_warnings()
 
     nsx_url = 'https://%s:%s' % (nsx_host, tcp_port)
     connector = connect.get_requests_connector(
@@ -41,7 +39,7 @@ def get_basic_auth_stub_config(user, password, nsx_host, tcp_port=443):
 def get_basic_auth_api_client(user, password, nsx_host, tcp_port=443):
     stub_config = get_basic_auth_stub_config(
         user, password, nsx_host, tcp_port)
-    stub_factory = nsx_client.StubFactory(stub_config)
+    stub_factory = nsx_policy_client.StubFactory(stub_config)
     return ApiClient(stub_factory)
 
 
@@ -54,10 +52,9 @@ def get_session_auth_stub_config(user, password, nsx_host, tcp_port=443):
     session = requests.session()
 
     # Since the NSX manager default certificate is self-signed,
-    # we disable verification. This is dangerous and real code
+    # we deactivate verification. This is dangerous and real code
     # should verify that it is talking to a valid server.
     session.verify = False
-    requests.packages.urllib3.disable_warnings()
     nsx_url = 'https://%s:%s' % (nsx_host, tcp_port)
     resp = session.post(nsx_url + "/api/session/create",
                         data={"j_username": user, "j_password": password})
@@ -78,7 +75,7 @@ def get_session_auth_stub_config(user, password, nsx_host, tcp_port=443):
 def get_session_auth_api_client(user, password, nsx_host, tcp_port=443):
     stub_config = get_session_auth_stub_config(
         user, password, nsx_host, tcp_port)
-    stub_factory = nsx_client.StubFactory(stub_config)
+    stub_factory = nsx_policy_client.StubFactory(stub_config)
     return ApiClient(stub_factory)
 
 
@@ -96,11 +93,11 @@ def create_api_client(stub_factory_class, user, password, nsx_host,
 
 def create_nsx_api_client(user, password, nsx_host, tcp_port=443,
                           auth_type=BASIC_AUTH):
-    return create_api_client(nsx_client, user, password, nsx_host,
-                             tcp_port, auth_type)
-
-
-def create_nsx_policy_api_client(user, password, nsx_host, tcp_port=443,
-                                 auth_type=BASIC_AUTH):
     return create_api_client(nsx_policy_client, user, password, nsx_host,
                              tcp_port, auth_type)
+
+
+def create_nsx_policy_api_client(
+        user, password, nsx_host, tcp_port=443, auth_type=BASIC_AUTH):
+    return create_api_client(
+        nsx_policy_client, user, password, nsx_host, tcp_port, auth_type)

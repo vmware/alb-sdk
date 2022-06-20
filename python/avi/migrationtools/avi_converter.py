@@ -24,6 +24,7 @@ class AviConverter(object):
     user = None
     password = None
     tenant = None
+    prefix = None
 
     def print_pip_and_controller_version(self):
         pass
@@ -45,7 +46,7 @@ class AviConverter(object):
             avi_config = cp.patch()
         # Check if vs_filter args present then execute vs_filter.py with args
         if self.vs_filter:
-            avi_config = filter_for_vs(avi_config, self.vs_filter)
+            avi_config = filter_for_vs(avi_config, self.vs_filter, self.prefix)
         return avi_config
 
     def upload_config_to_controller(self, avi_config):

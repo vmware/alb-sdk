@@ -2,8 +2,6 @@ import requests
 from avi.migrationtools.nsxt_converter import base_client
 
 
-requests.packages.urllib3.disable_warnings()
-
 class NSXVClient(base_client.NSXClient):
 
     def get_list_results(self, endpoint, params=None):
