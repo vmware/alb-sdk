@@ -149,6 +149,16 @@ NSXT:
     - "max_fails"
     - "timeout"
 
+    Monitor_server_ssl_indirect_attributes:
+    - "server_auth"
+    - "certificate_chain_depth"
+
+    Monitor_server_ssl_supported_attributes:
+    - "ssl_profile_path"
+    - "server_auth_ca_paths"
+    - "client_certificate_path"
+    - "server_auth_crl_paths"
+
     Pool_supported_attr:
     - "display_name"
     - "members"
@@ -169,6 +179,7 @@ NSXT:
     - "admin_state"
     - "weight"
     - "max_concurrent_connections"
+    - 'backup_member'
 
     Pool_supported_attr_convert_member_group:
     - "group_path"
@@ -205,6 +216,8 @@ NSXT:
     - "resource_type"
     - "id"
     - "idle_timeout"
+    - 'ha_flow_mirroring_enabled'
+    - 'flow_mirroring_enabled'
 
     VS_supported_attr:
     - 'application_profile_path'
@@ -231,6 +244,7 @@ NSXT:
     - 'client_ssl_profile_binding'
     - 'server_ssl_profile_binding'
     - 'default_pool_member_ports'
+    - 'sorry_pool_path'
 
     VS_client_ssl_supported_attr:
     - 'ssl_profile_path'
@@ -249,6 +263,9 @@ NSXT:
     VS_na_list:
     - "log_significant_event_only"
 
+    VS_indirect_aatr:
+    - "access_log_enabled"
+
     VS_client_ssl_indirect_attr:
     - "certificate_chain_depth"
 
@@ -263,6 +280,11 @@ NSXT:
     - "display_name"
     - "id"
     - "resource_type"
+    - 'prefer_server_ciphers'
+
+    SSLProfile_Client_Indirect_Attributes:
+     - "is_secure"
+     - "is_fips"
 
     SSLProfile_Server_Supported_Attributes:
     - "ciphers"
@@ -272,6 +294,10 @@ NSXT:
     - "display_name"
     - "id"
     - "resource_type"
+
+    SSLProfile_Server_Indirect_Attributes:
+        - "is_secure"
+        - "is_fips"
 
     PersistenceProfile_Supported_Attributes:
     - "display_name"
@@ -292,6 +318,9 @@ NSXT:
 
     Persistence_indirect_cookie:
     - "cookie_garble"
+
+    Persistence_na_attr:
+    - "persistence_shared"
 
     HttpPolicySetRules_Supported_Attributes:
     - "match_conditions"

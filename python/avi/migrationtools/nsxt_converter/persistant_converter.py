@@ -23,6 +23,7 @@ class PersistantProfileConfigConv(object):
         self.common_na_attr = nsxt_profile_attributes['Common_Na_List']
         self.na_attr_source = nsxt_profile_attributes["SourcePersistenceProfile_NA_Attributes"]
         self.indirect_attr_cookie = nsxt_profile_attributes["Persistence_indirect_cookie"]
+        self.persistence_na_attr = nsxt_profile_attributes["Persistence_na_attr"]
         self.object_merge_check = object_merge_check
         self.merge_object_mapping = merge_object_mapping
         self.sys_dict = sys_dict
@@ -48,12 +49,20 @@ class PersistantProfileConfigConv(object):
                     conv_utils.add_status_row('persistence', lb_pp['resource_type'], lb_pp['display_name'],
                                               conv_const.STATUS_SKIPPED)
                     continue
-
+                tenant_name, name = conv_utils.get_tenant_ref(tenant)
+                if not tenant:
+                    tenant = tenant_name
                 pp_type, name = self.get_name_type(lb_pp)
 
                 if prefix:
                     name = prefix + '-' + name
-
+                if self.object_merge_check:
+                    if name in self.merge_object_mapping['app_per_profile'].keys():
+                        name = name+"-"+lb_pp["id"]
+                else:
+                    pp_temp = list(filter(lambda pp: pp["name"] == name, alb_config['ApplicationPersistenceProfile']))
+                    if pp_temp:
+                        name = name + "-" + lb_pp["id"]
                 alb_pp = dict(
                     name=name
                 )
@@ -63,14 +72,15 @@ class PersistantProfileConfigConv(object):
                 cookie_skipped_list, source_skipped_list = [], []
                 if pp_type == "LBCookiePersistenceProfile":
                     na_attrs = [val for val in lb_pp.keys()
-                                if val in self.common_na_attr]
+                                if val in self.common_na_attr or val in self.persistence_na_attr]
                     na_list.append(na_attrs)
-                    skipped, cookie_skipped_list = self.convert_cookie(lb_pp, alb_pp, skipped, "admin")
+                    skipped, cookie_skipped_list = self.convert_cookie(lb_pp, alb_pp, skipped, tenant)
                 elif pp_type == "LBSourceIpPersistenceProfile":
                     na_attrs = [val for val in lb_pp.keys()
-                                if val in self.common_na_attr or val in self.na_attr_source]
+                                if val in self.common_na_attr or val in self.na_attr_source
+                                or val in self.persistence_na_attr]
                     na_list.append(na_attrs)
-                    skipped = self.convert_source(lb_pp, alb_pp, skipped, "admin")
+                    skipped = self.convert_source(lb_pp, alb_pp, skipped, tenant)
                     indirect = self.indirect_attr_cookie
 
                 if cookie_skipped_list:
@@ -92,6 +102,7 @@ class PersistantProfileConfigConv(object):
                     alb_config['ApplicationPersistenceProfile'].append(alb_pp)
 
                 val = dict(
+                    id = lb_pp["id"],
                     name=name,
                     resource_type=lb_pp['resource_type'],
                     alb_pp=alb_pp
@@ -125,6 +136,7 @@ class PersistantProfileConfigConv(object):
             app_per_na_list = [val for val in na_list[index] if val not in self.common_na_attr]
             conv_status["na_list"] = app_per_na_list
             name = converted_alb_pp[index]['name']
+            pp_id = converted_alb_pp[index]['id']
             alb_mig_pp = converted_alb_pp[index]['alb_pp']
             resource_type = converted_alb_pp[index]['resource_type']
             if self.object_merge_check:
@@ -173,6 +185,8 @@ class PersistantProfileConfigConv(object):
         if final_skiped_attr:
             skipped_list.append({lb_pp['display_name']: final_skiped_attr})
         skipped = [key for key in skipped if key not in self.supported_attr_cookie]
+        if lb_pp.get("cookie_mode", None) == "INSERT":
+            skipped.remove("cookie_mode")
         return skipped, skipped_list
 
     def convert_source(self, lb_pp, alb_pp, skipped, tenant):

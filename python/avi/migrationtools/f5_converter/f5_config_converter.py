@@ -120,7 +120,7 @@ def convert(f5_config, output_dir, vs_state, input_dir, version,
         persist_conv.convert(f5_config, avi_config_dict, user_ignore, tenant,
                              merge_object_mapping, sys_dict)
 
-        policy_conv = PolicyConfigConv.get_instance(version, prefix)
+        policy_conv = PolicyConfigConv.get_instance(version, f5_attributes, prefix)
         policy_conv.convert(f5_config, avi_config_dict, tenant)
 
         vs_conv = VSConfigConv.get_instance(

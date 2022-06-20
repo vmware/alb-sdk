@@ -35,6 +35,8 @@ class MonitorConfigConv(object):
         self.common_na_attr = nsxt_monitor_attributes['Common_Na_List']
         self.icmp_ignore_attr = nsxt_monitor_attributes["Monitor_icmp_ignore"]
         self.passive_indirect_attr = nsxt_monitor_attributes["Monitor_passive_indirect"]
+        self.server_ssl_indirect_attr = nsxt_monitor_attributes["Monitor_server_ssl_indirect_attributes"]
+        self.server_ssl_supported_attr = nsxt_monitor_attributes["Monitor_server_ssl_supported_attributes"]
         self.object_merge_check = object_merge_check
         self.merge_object_mapping = merge_object_mapping
         self.sys_dict = sys_dict
@@ -108,8 +110,11 @@ class MonitorConfigConv(object):
             conv_const.HM_CUSTOM_KEY, dict()
         ) if custom_mapping else dict()
         skipped_list = []
+        server_ssl_indirect_list = []
         converted_alb_monitor = []
-        tenant = "admin"
+        tenant_name, name = conv_utils.get_tenant_ref(tenant)
+        if not tenant:
+            tenant = tenant_name
         total_size = len(nsx_lb_config['LbMonitorProfiles'])
         print("Converting Monitors...")
         LOG.info('[MONITOR] Converting Monitors...')
@@ -160,7 +165,13 @@ class MonitorConfigConv(object):
                            if val in self.common_na_attr]
                 if prefix:
                     name = prefix + '-' + name
-
+                if self.object_merge_check:
+                    if name in self.merge_object_mapping.keys():
+                        name = name+"-"+lb_hm["id"]
+                else:
+                    monitor_temp = list(filter(lambda hm: hm["name"] == name, alb_config['HealthMonitor']))
+                    if monitor_temp:
+                        name = name + "-" + lb_hm["id"]
                 alb_hm = dict(
                     name=name,
                     failed_checks=lb_hm['fall_count'],
@@ -171,12 +182,14 @@ class MonitorConfigConv(object):
                 if lb_hm.get('monitor_port', None):
                     alb_hm['monitor_port'] = lb_hm.get('monitor_port', None)
 
-                alb_hm['tenant_ref'] = "/api/tenant/?name=admin"
+                alb_hm['tenant_ref'] = conv_utils.get_object_ref(tenant,'tenant')
+                server_ssl_indirect = []
                 if monitor_type == "LBHttpMonitorProfile":
                     skipped = self.convert_http(lb_hm, alb_hm, skipped)
                 elif monitor_type == "LBHttpsMonitorProfile":
-                    skipped = self.convert_https(lb_hm, alb_hm, skipped, alb_config, prefix, tenant, converted_objs,
-                                                 converted_alb_ssl_certs, converted_pki_profile)
+                    skipped, server_ssl_indirect = self.convert_https(lb_hm, alb_hm, skipped, alb_config, prefix,
+                                                                      tenant, converted_objs,
+                                                                      converted_alb_ssl_certs, converted_pki_profile)
                 elif monitor_type == "LBIcmpMonitorProfile":
                     u_ignore = self.icmp_ignore_attr
                     skipped = self.convert_icmp(lb_hm, alb_hm, skipped)
@@ -187,6 +200,7 @@ class MonitorConfigConv(object):
 
                 ignore_for_defaults = {}
                 skipped_list.append(skipped)
+                server_ssl_indirect_list.append(server_ssl_indirect)
                 if self.object_merge_check:
                     common_avi_util.update_skip_duplicates(alb_hm,
                                                            alb_config['HealthMonitor'], 'health_monitor',
@@ -197,6 +211,7 @@ class MonitorConfigConv(object):
                 else:
                     alb_config['HealthMonitor'].append(alb_hm)
                 val = dict(
+                    id=lb_hm["id"],
                     name=name,
                     resource_type=lb_hm['resource_type'],
                     alb_hm=alb_hm
@@ -222,7 +237,10 @@ class MonitorConfigConv(object):
                 u_ignore, na_list)
             na_list_hm = [val for val in na_list if val not in self.common_na_attr]
             conv_status["na_list"] = na_list_hm
+            if server_ssl_indirect_list[index]:
+                conv_status["indirect"].append({"server_ssl": server_ssl_indirect_list[index]})
             name = converted_alb_monitor[index]['name']
+            hm_id = converted_alb_monitor[index]['id']
             alb_mig_hm = converted_alb_monitor[index]['alb_hm']
             resource_type = converted_alb_monitor[index]['resource_type']
             if self.object_merge_check:
@@ -255,8 +273,6 @@ class MonitorConfigConv(object):
             conv_utils.add_conv_status('pki_profile', None, pki_profile['name'], conv_status,
                                        [{"pki_profile": pki_profile}])
 
-
-
     def get_name_type(self, lb_hm):
         """
 
@@ -282,6 +298,7 @@ class MonitorConfigConv(object):
             converted_alb_ssl_certs = []
         if converted_pki_profile is None:
             converted_pki_profile = []
+        indirect = []
         alb_hm['type'] = 'HEALTH_MONITOR_HTTPS'
         https_request = self.update_http_request_for_avi(lb_hm)
         alb_hm['https_monitor'] = dict(
@@ -290,7 +307,6 @@ class MonitorConfigConv(object):
             http_response=lb_hm.get('response_body'),
             http_response_code=self.get_alb_response_codes(lb_hm['response_status_codes']),
         )
-
         if lb_hm.get('server_ssl_profile_binding', None):
             server_ssl_profile_binding = lb_hm.get('server_ssl_profile_binding', None)
             ssl_profile_path = server_ssl_profile_binding["ssl_profile_path"]
@@ -299,25 +315,26 @@ class MonitorConfigConv(object):
                 ssl_profile_name = prefix + '-' + ssl_profile_name
             ssl_attributes = {
                 "ssl_profile_ref": conv_utils.get_object_ref(
-                    ssl_profile_name, 'sslprofile', tenant="admin")
+                    ssl_profile_name, 'sslprofile', tenant=tenant)
             }
 
             if server_ssl_profile_binding.get("client_certificate_path", None):
-                ca_cert_obj = self.update_ca_cert_obj(lb_hm['display_name'], alb_config, [], "admin", prefix,
+                ca_cert_obj = self.update_ca_cert_obj(lb_hm['display_name'], alb_config, [], tenant, prefix,
                                                       cert_type='SSL_CERTIFICATE_TYPE_VIRTUALSERVICE')
                 ssl_attributes[
-                    "ssl_key_and_certificate_ref"] = "/api/sslkeyandcertificate/?tenant=admin&name=" + ca_cert_obj.get(
-                    "name")
+                    "ssl_key_and_certificate_ref"] = "/api/sslkeyandcertificate/?tenant=%s&name=%s" % (tenant, ca_cert_obj.get(
+                    "name"))
                 converted_alb_ssl_certs.append(ca_cert_obj)
 
             alb_hm["https_monitor"]['ssl_attributes'] = ssl_attributes
             pki_profile = self.create_pki_profile(lb_hm, alb_hm["name"], tenant, alb_hm, converted_pki_profile)
             if pki_profile:
+                pki_id = lb_hm["id"] + "-" + "pki"
                 pki_profile_name = pki_profile["name"]
                 if self.object_merge_check:
                     conv_utils.update_skip_duplicates(pki_profile,
                                                       alb_config['PKIProfile'], 'pki_profile',
-                                                      converted_objs, pki_profile["name"], None,
+                                                      converted_objs, pki_profile_name, None,
                                                       self.merge_object_mapping, None, prefix,
                                                       self.sys_dict['PKIProfile'])
                     self.pki_count += 1
@@ -325,11 +342,17 @@ class MonitorConfigConv(object):
                 else:
                     converted_objs.append({'pki_profile': pki_profile})
                     alb_config['PKIProfile'].append(pki_profile)
-                alb_hm["pki_profile_ref"] = '/api/pkiprofile/?tenant=admin&name=' + pki_profile_name
+                alb_hm["pki_profile_ref"] = '/api/pkiprofile/?tenant=%s&name=%s' % (tenant, pki_profile_name)
+            server_ssl_skipped = [key for key in server_ssl_profile_binding.keys()
+                                  if key not in self.server_ssl_supported_attr]
+            server_ssl_indirect_list = self.server_ssl_indirect_attr
+            indirect = [val for val in server_ssl_skipped if val in server_ssl_indirect_list]
+            server_ssl_skipped = [val for val in server_ssl_skipped if val not in server_ssl_indirect_list]
+            if server_ssl_skipped:
+                skipped.append({"server_ssl": server_ssl_skipped})
 
         skipped = [key for key in skipped if key not in self.https_attr]
-
-        return skipped
+        return skipped, indirect
 
     def convert_icmp(self, lb_hm, alb_hm, skipped):
         alb_hm['type'] = 'HEALTH_MONITOR_PING'
@@ -460,9 +483,8 @@ class MonitorConfigConv(object):
                 return pki_server_profile
         return False
 
-
     def get_ca_cert(self, ca_url):
-            ca_id = """-----BEGIN CERTIFICATE-----
+        ca_id = """-----BEGIN CERTIFICATE-----
 MIIDXzCCAkegAwIBAgIQILuJ/vBaBpdK5/W07NmI5DANBgkqhkiG9w0BAQsFADBC
 MRMwEQYKCZImiZPyLGQBGRYDbGFiMRUwEwYKCZImiZPyLGQBGRYFcmVwcm8xFDAS
 BgNVBAMTC3JlcHJvLUFELUNBMB4XDTIwMDQyOTEzMTgwMVoXDTI1MDQyOTEzMjgw
@@ -484,7 +506,7 @@ n6DBZ2ZDOhyFCejCDCSIbku76WGNeT8+0xXjCPaTNBL0AawR77uqa2KZpaCU7e84
 jhiq
 -----END CERTIFICATE----- """
 
-            return ca_id
+        return ca_id
 
     def get_crl_cert(self, crl_url):
         crl_id = """-----BEGIN CERTIFICATE-----
@@ -510,5 +532,3 @@ jhiq
 -----END CERTIFICATE----- """
 
         return crl_id
-
-

@@ -207,10 +207,12 @@ def filter_for_vs(avi_config):
     global vs_ref_dict_g
     new_config = []
     vs_ref_dict = dict()
-    for vs in avi_config['VirtualService']:
+    for vs in avi_config.get('VirtualService'):
         vs_flag = True
         if 'tenant_ref' in vs:
             link, tenant = get_name_and_entity(vs['tenant_ref'])
+        else :
+            tenant = 'admin'
         name = '%s-%s-%s' % (vs['name'], 'VirtualService', tenant)
         new_config.append(name)
         find_and_add_objects(vs, avi_config, new_config, vs_ref_dict,
@@ -238,7 +240,8 @@ def wipe_out_not_in_use(avi_config):
     :param avi_config:
     :return:
     """
-    use_obj = filter_for_vs(avi_config)
+    if 'VirtualService' in avi_config:
+        use_obj = filter_for_vs(avi_config)
     for key in DEFAULT_META_ORDER:
         if key not in avi_config:
             continue

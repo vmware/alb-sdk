@@ -1,13 +1,19 @@
 import logging
+import random
 import time
+from random import randint
 
 from avi.migrationtools.avi_migration_utils import update_count
 from avi.migrationtools.nsxt_converter.conversion_util import NsxtConvUtil
 import avi.migrationtools.nsxt_converter.converter_constants as conv_const
+from avi.migrationtools.nsxt_converter.nsxt_util import get_object_segments, get_lb_service_name
 
 LOG = logging.getLogger(__name__)
 
 conv_utils = NsxtConvUtil()
+skipped_pools_list = []
+vs_pool_segment_list = dict()
+vs_sorry_pool_segment_list = dict()
 
 
 class PoolConfigConv(object):
@@ -26,7 +32,7 @@ class PoolConfigConv(object):
         self.merge_object_mapping = merge_object_mapping
         self.sys_dict = sys_dict
 
-    def convert(self, alb_config, nsx_lb_config, cloud_name, prefix, tenant):
+    def convert(self, alb_config, nsx_lb_config, prefix, tenant):
         '''
         LBPool to Avi Config pool converter
         '''
@@ -39,21 +45,99 @@ class PoolConfigConv(object):
             try:
                 LOG.info('[POOL] Migration started for Pool {}'.format(lb_pl['display_name']))
                 progressbar_count += 1
+                tenant_name, name = conv_utils.get_tenant_ref(tenant)
+                if not tenant:
+                    tenant = tenant_name
 
-                tenant, name = conv_utils.get_tenant_ref("admin")
                 lb_type, name = self.get_name_type(lb_pl)
+                alb_pl = {
+                    'lb_algorithm': lb_type,
+                }
+                vs_list = [vs["id"] for vs in nsx_lb_config["LbVirtualServers"] if
+                           (vs.get("pool_path") and vs.get("pool_path").split("/")[-1] == lb_pl.get("id"))]
+                vs_list_for_sorry_pool = [vs["id"] for vs in nsx_lb_config["LbVirtualServers"] if
+                            (vs.get("sorry_pool_path") and vs.get("sorry_pool_path").split("/")[-1] == lb_pl.get("id"))]
+                if prefix:
+                    name = prefix+"-"+name
+                pool_temp = list(filter(lambda pl: pl["name"] == name, alb_config['Pool']))
+                if pool_temp:
+                    name = name + "-" + lb_pl["id"]
+                pool_skip = True
+                pool_count = 0
+                if lb_pl.get("members") and vs_list:
+                    for member in lb_pl.get("members"):
+                        lb_list = {}
+                        for vs_id in vs_list:
+                            if vs_id in vs_pool_segment_list.keys():
+                                continue
+                            lb = get_lb_service_name(vs_id)
+                            if not lb:
+                                continue
+                            pool_segment = get_object_segments(vs_id,
+                                                             member["ip_address"])
+                            if pool_segment:
+                                if lb in lb_list.keys():
+                                    pool_list = lb_list[lb]
+ #                                   pool_list["name"] = pool_list["name"]+"-"+vs_id
+                                    vs_pool_segment_list[vs_id] = lb_list[lb]
+                                    continue
+
+                                pool_skip = False
+                                if pool_count == 0:
+                                    vs_pool_segment_list[vs_id] = {
+                                        "pool_name": name,
+                                        "pool_segment": pool_segment
+                                    }
+                                    lb_list[lb] = vs_pool_segment_list[vs_id]
+
+                                else:
+                                    new_pool_name = '%s-%s' % (name, pool_segment[0]["subnets"]["network_range"])
+                                    new_pool_name = new_pool_name.replace('/', '-')
+                                    vs_pool_segment_list[vs_id] = {
+                                        "pool_name": new_pool_name,
+                                        "pool_segment": pool_segment
+                                    }
+                                    lb_list[lb] = vs_pool_segment_list[vs_id]
+                                pool_count += 1
+                        for vs_id in vs_list_for_sorry_pool:
+                            if vs_id in vs_sorry_pool_segment_list.keys():
+                                continue
+                            lb = get_lb_service_name(vs_id)
+                            pool_segment = get_object_segments(vs_id,
+                                                             member["ip_address"])
+                            if pool_segment:
+                                if lb in lb_list.keys():
+                                    vs_sorry_pool_segment_list[vs_id] = lb_list[lb]
+                                    continue
+
+                                pool_skip = False
+                                if pool_count == 0:
+                                    vs_sorry_pool_segment_list[vs_id] = {
+                                        "pool_name": name,
+                                        "pool_segment": pool_segment
+                                    }
+                                    lb_list[lb] = vs_sorry_pool_segment_list[vs_id]
+
+                                else:
+                                    vs_sorry_pool_segment_list[vs_id] = {
+                                        "pool_name": '%s-%s' % (name, pool_segment[0]["subnets"]["network_range"]),
+                                        "pool_segment": pool_segment
+                                    }
+                                    lb_list[lb] = vs_sorry_pool_segment_list[vs_id]
+                                pool_count += 1
+
+                    if pool_skip:
+                        skipped_pools_list.append(name)
+                        conv_utils.add_status_row('pool', None, lb_pl['display_name'],
+                                                        conv_const.STATUS_SKIPPED)
+                        continue
+
                 na_list = [val for val in lb_pl.keys()
                            if val in self.common_na_attr or val in self.pool_na_attr]
                 servers, member_skipped_config, skipped_servers, limits = \
                     self.convert_servers_config(lb_pl.get("members", []))
-                if prefix:
-                    name = prefix + "-" + name
-                alb_pl = {
-                    'name': name,
-                    'servers': servers,
-                    'lb_algorithm': lb_type,
-                    'cloud_ref': conv_utils.get_object_ref(cloud_name, "cloud")
-                }
+                alb_pl["name"] = name
+                alb_pl["servers"] = servers
 
                 if any(server.get("port") == None for server in servers):
                     alb_pl.update({"use_service_port": "true"})
@@ -101,17 +185,20 @@ class PoolConfigConv(object):
                     monitor_refs = []
                     for lb_hm_path in active_monitor_paths:
                         ref = lb_hm_path.split("/lb-monitor-profiles/")[1]
+                        hm_config = list(
+                            filter(lambda pr: pr["id"] == ref, nsx_lb_config["LbMonitorProfiles"]))
+                        hm_name = hm_config[0]["display_name"]
                         if prefix:
-                            ref = prefix + "-" + ref
-                        if ref in [monitor_obj.get('name') for monitor_obj in alb_config['HealthMonitor']]:
-                            ref = ref
+                            hm_name = prefix + "-" + hm_name
+                        if hm_name in [monitor_obj.get('name') for monitor_obj in alb_config['HealthMonitor']]:
+                            hm_name = hm_name
                         elif self.object_merge_check:
-                            if ref in self.merge_object_mapping['health_monitor'].keys():
-                                ref = self.merge_object_mapping['health_monitor'].get(ref)
+                            if hm_name in self.merge_object_mapping['health_monitor'].keys():
+                                hm_name = self.merge_object_mapping['health_monitor'].get(hm_name)
                         else:
                             continue
                         monitor_refs.append(
-                            "/api/healthmonitor/?tenant=admin&name=" + ref)
+                            "/api/healthmonitor/?tenant=%s&name=%s" % (tenant, hm_name))
 
                     alb_pl["health_monitor_refs"] = list(set(monitor_refs))
                 skipped = [val for val in lb_pl.keys()
@@ -169,6 +256,7 @@ class PoolConfigConv(object):
         skipped_list = []
         server_skipped = []
         connection_limit = []
+        pg_obj =[]
         for member in servers_config:
             server_obj = {
                 'ip': {
@@ -177,7 +265,8 @@ class PoolConfigConv(object):
                 },
                 'description': member.get("display_name"),
             }
-
+            if member["backup_member"]:
+                server_obj['backup_member'] = member["backup_member"]
             if member.get("port", ""):
                 server_obj['port'] = int(member.get("port"))
             else:
@@ -194,6 +283,7 @@ class PoolConfigConv(object):
                 if c_lim > 0:
                     connection_limit.append(c_lim)
             server_list.append(server_obj)
+
             skipped = [key for key in member.keys()
                        if key not in self.server_attributes]
             if skipped:
@@ -202,3 +292,4 @@ class PoolConfigConv(object):
         if connection_limit:
             limits['connection_limit'] = min(connection_limit)
         return server_list, skipped_list, server_skipped, limits
+

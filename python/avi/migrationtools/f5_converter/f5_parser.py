@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache License 2.0
 
 from pyparsing import *
+import re
 import logging
 import sys
 from avi.migrationtools.f5_converter.conversion_util import F5Util
@@ -143,6 +144,7 @@ def parse_config(source_str, total_size, version=11):
     last_end = 0
     source_str = source_str.replace("\t", "    ")
     source_str = source_str.replace("user-defined ", "user-defined_")
+    source_str = re.sub(" (min) (\d) (of)","", source_str)
     for tokens, start, end in grammar.scanString(source_str):
         result = result+tokens.asList()
         if last_end != 0:
