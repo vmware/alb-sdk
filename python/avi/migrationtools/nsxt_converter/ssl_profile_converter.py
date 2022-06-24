@@ -29,6 +29,9 @@ class SslProfileConfigConv(object):
 
     def convert(self, alb_config, nsx_lb_config, prefix, tenant):
         alb_config["SSLProfile"] = []
+        tenant_name, name = conv_utils.get_tenant_ref(tenant)
+        if not tenant:
+            tenant = tenant_name
         if nsx_lb_config.get('LbClientSslProfiles'):
             converted_objs = []
             skipped_list = []
@@ -47,9 +50,6 @@ class SslProfileConfigConv(object):
                     na_attr = [val for val in lb_ssl.keys()
                                if val in self.common_na_attr]
                     na_list.append(na_attr)
-                    tenant_name, name = conv_utils.get_tenant_ref(tenant)
-                    if not tenant:
-                        tenant = tenant_name
                     progressbar_count += 1
                     name = lb_ssl.get('display_name')
                     if prefix:
@@ -171,6 +171,7 @@ class SslProfileConfigConv(object):
                             name = name + "-" + lb_ssl["id"]
                     alb_ssl = dict(
                         name=name,
+                        tenant_ref=conv_utils.get_object_ref(tenant, 'tenant'),
                     )
                     if lb_ssl.get("ciphers"):
                         converted_ciphers = self.convert_ciphers_to_valid_format(":".join(lb_ssl['ciphers']))

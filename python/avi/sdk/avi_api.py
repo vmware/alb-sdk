@@ -209,7 +209,7 @@ class ApiSession(Session):
                  port=None, timeout=60, api_version=None,
                  retry_conxn_errors=True, data_log=False,
                  avi_credentials=None, session_id=None, csrftoken=None,
-                 lazy_authentication=False, no_auth=False, max_api_retries=None, user_hdrs={}):
+                 lazy_authentication=False, max_api_retries=None, user_hdrs={}):
         """
          ApiSession takes ownership of avi_credentials and may update the
          information inside it.
@@ -259,7 +259,6 @@ class ApiSession(Session):
         self.data_log = data_log
         self.num_session_retries = 0
         self.num_api_retries = 0
-        self.no_auth = no_auth
         self.retry_wait_time = 0
         self.max_session_retries = (
             self.MAX_API_RETRIES if max_api_retries is None
@@ -301,8 +300,6 @@ class ApiSession(Session):
         elif lazy_authentication:
             sessionDict.get(self.key, {}).update(
                 {'api': self, "last_used": datetime.utcnow()})
-        elif no_auth:
-            pass
         else:
             self.authenticate_session()
         self.num_session_retries = 0
@@ -402,7 +399,7 @@ class ApiSession(Session):
             tenant=None, tenant_uuid=None, verify=False, port=None, timeout=60,
             retry_conxn_errors=True, api_version=None, data_log=False,
             avi_credentials=None, session_id=None, csrftoken=None,
-            lazy_authentication=False, no_auth=False, max_api_retries=None, idp_class=None, user_hdrs=None):
+            lazy_authentication=False, max_api_retries=None, idp_class=None, user_hdrs=None):
         """
         returns the session object for same user and tenant
         calls init if session dose not exist and adds it to session cache
@@ -446,7 +443,7 @@ class ApiSession(Session):
         if cached_session:
             user_session = cached_session['api']
             if not (user_session.avi_credentials.csrftoken or
-                    lazy_authentication or no_auth):
+                    lazy_authentication):
                 user_session.authenticate_session()
         else:
             user_session = idp_class(
@@ -457,16 +454,13 @@ class ApiSession(Session):
                 api_version=api_version, data_log=data_log,
                 avi_credentials=avi_credentials,
                 lazy_authentication=lazy_authentication,
-                max_api_retries=max_api_retries, no_auth=no_auth, user_hdrs=user_hdrs)
+                max_api_retries=max_api_retries, user_hdrs=user_hdrs)
         return user_session
 
     def reset_session(self):
         """
         resets and re-authenticates the current session.
         """
-        if self.no_auth:
-            raise APIError("This API requires authentication. "
-                           "controller %s" % self.controller_ip)
         sessionDict[self.key]['connected'] = False
         logger.info('resetting session for %s', self.key)
         self.user_hdrs = {}
@@ -552,7 +546,7 @@ class ApiSession(Session):
         return
 
     def _get_api_headers(self, tenant, tenant_uuid, timeout, headers,
-                         api_version, **kwargs):
+                         api_version):
         """
         returns the headers that are passed to the requests.Session api calls.
         """
@@ -586,8 +580,6 @@ class ApiSession(Session):
         if self.key in sessionDict and 'csrftoken' in \
                 sessionDict.get(self.key):
             api_hdrs['X-CSRFToken'] = sessionDict.get(self.key)['csrftoken']
-        elif self.no_auth or ('no_auth' in kwargs and kwargs.get('no_auth')):
-            pass
         else:
             self.authenticate_session()
             api_hdrs['X-CSRFToken'] = sessionDict.get(self.key)['csrftoken']
@@ -612,13 +604,12 @@ class ApiSession(Session):
         :param headers: dictionary of headers that override the session
             headers.
         """
-            
         fullpath = self._get_api_path(path)
         fn = getattr(super(ApiSession, self), api_name)
         connection_error = False
         err = None
         api_hdrs = self._get_api_headers(tenant, tenant_uuid, timeout, headers,
-                                         api_version,**kwargs)
+                                         api_version)
         if 'X-CSRFToken' in api_hdrs:
             cookies = {
                 'csrftoken': api_hdrs['X-CSRFToken'],
@@ -639,8 +630,6 @@ class ApiSession(Session):
                 cookies['avi-sessionid'] = sessionid
             except KeyError:
                 pass
-        if 'no_auth' in kwargs:
-            del kwargs['no_auth']
         try:
             if (data is not None) and (type(data) == dict):
                 resp = fn(fullpath, data=json.dumps(data), headers=api_hdrs,
@@ -737,7 +726,6 @@ class ApiSession(Session):
             class get method
         returns session's response object
         """
-       
         return self._api('get', path, tenant, tenant_uuid, timeout=timeout,
                          params=params, api_version=api_version, **kwargs)
 

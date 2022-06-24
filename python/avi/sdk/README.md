@@ -189,11 +189,3 @@ api = ApiSession.get_session("10.10.10.42", "onelogin_username", "onelogin_passw
    virtualservice_examples_api.py -h
    virtualservice_examples_api.py -c 10.10.25.42 -i 10.90.64.141 -o create-basic-vs -s 10.90.64.12
 
-# Add support for calling unauthenticated APIs
-User can call unauthenticated apis from unauthenticated session by passing no_auth = True to the session
-eg: session = api.ApiSession(controller_ip="10.102.65.4",no_auth=True)
-User can also call unauthenticated apis by passing no_auth = True in the get call itself
-eg: session = api.ApiSession(controller_ip="10.102.65.4",lazy_authentication=True)
-    session.get("cluster/runtime",no_auth=True)
-
-

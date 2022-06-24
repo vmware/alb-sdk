@@ -6,11 +6,12 @@ from avi.migrationtools.nsxt_converter.conversion_util import NsxtConvUtil
 from avi.migrationtools.avi_migration_utils import update_count
 import avi.migrationtools.nsxt_converter.converter_constants as conv_const
 import avi.migrationtools.nsxt_converter.converter_constants as final
-
+from avi.migrationtools.nsxt_converter.pools_converter import vs_pool_segment_list
 LOG = logging.getLogger(__name__)
 
 conv_utils = NsxtConvUtil()
 common_avi_util = MigrationUtil()
+
 
 class PolicyConfigConverter(object):
     def __init__(self, nsxt_profile_attributes, object_merge_check, merge_object_mapping, sys_dict):
@@ -29,21 +30,33 @@ class PolicyConfigConverter(object):
         self.merge_object_mapping = merge_object_mapping
         self.sys_dict = sys_dict
 
-
-    def convert(self, lb_vs_config, alb_config, cloud_name, prefix, tenant="admin"):
+    def convert(self, lb_vs_config, alb_vs_config, alb_config,nsx_lb_config,
+                is_pool_group_used,http_pool_group_list,http_pool_list, cloud_type, cloud_name, prefix, controller_version,
+                cloud_tenant, tier1_lr, tenant="admin"):
         '''
 
         '''
+
         self.lb_vs_config = lb_vs_config
         self.alb_config = alb_config
+        self.alb_vs_config = alb_vs_config
+        self.nsx_lb_config = nsx_lb_config
+        self.tenant = tenant
+        self.is_pool_group_used = is_pool_group_used
+        self.controller_version = controller_version
+        self.cloud_type = cloud_type
+        self.cloud_tenant = cloud_tenant
+        self.tier1_lr = tier1_lr
+        self.http_pool_group_list = http_pool_group_list
+        self.http_pool_list = http_pool_list
 
         policy_set_name = lb_vs_config.get("display_name") + "-" + cloud_name + "-HTTP-Policy-Set"
         if prefix:
             policy_set_name = prefix + '-' + policy_set_name
 
         policy_obj = {
-	        'name': policy_set_name,
-	        'tenant_ref': conv_utils.get_object_ref(tenant, 'tenant'),
+            'name': policy_set_name,
+            'tenant_ref': conv_utils.get_object_ref(tenant, 'tenant'),
         }
         http_request_policy = {
             'rules': []
@@ -62,17 +75,22 @@ class PolicyConfigConverter(object):
         skipped_rule = []
         status_rule_list = []
         rules = lb_vs_config.get("rules")
-        print("\n")
+
         for index, policy in enumerate(rules):
             actions = policy.get("actions")
             na_action_list = list(filter(lambda x: x["type"] in self.rules_actions_na, actions))
 
-            #If na_action_list is empty then we can mapped this rule otherwise skipped this rule
+            # If na_action_list is empty then we can mapped this rule otherwise skipped this rule
             if len(na_action_list) > 0:
                 skipped_rule.append(policy)
-                status_rule_list.append('[VS-RULES: {}] SKIPPING RULE Actions Not supported {}'.format(policy_set_name, [action['type'] for action in na_action_list]))
-                LOG.info('[VS-RULES: {}] SKIPPING RULE Actions Not supported {}'.format(policy_set_name, [action['type'] for action in na_action_list]))
-                #print('[VS-RULES: {}] SKIPPING RULE Actions Not supported {}'.format(policy_set_name, [action['type'] for action in na_action_list]))
+                status_rule_list.append('[VS-RULES: {}] SKIPPING RULE Actions Not supported {}'.format(policy_set_name,
+                                                                                                       [action['type']
+                                                                                                        for action in
+                                                                                                        na_action_list]))
+                LOG.info('[VS-RULES: {}] SKIPPING RULE Actions Not supported {}'.format(policy_set_name,
+                                                                                        [action['type'] for action in
+                                                                                         na_action_list]))
+                # print('[VS-RULES: {}] SKIPPING RULE Actions Not supported {}'.format(policy_set_name, [action['type'] for action in na_action_list]))
                 continue
             if not len(na_action_list):
                 match_conditions = policy.get("match_conditions")
@@ -89,7 +107,7 @@ class PolicyConfigConverter(object):
                             [match['type'] for match in na_match_list]))
                         status_rule_list.append('[VS-RULES: {}] SKIPPING RULE One of Match Conditions is Not supported '
                                                 '{}'.format(policy_set_name,
-                            [match['type'] for match in na_match_list]))
+                                                            [match['type'] for match in na_match_list]))
 
                         skipped_rule.append(policy)
                         continue
@@ -101,7 +119,7 @@ class PolicyConfigConverter(object):
                         for match_condition in match_conditions:
                             if match_condition['type'] == "LBHttpSslCondition":
                                 # TODO Silent Skip add loggers
-                                #GR: If action allow -> add it to the SSL profile; otherwise skip
+                                # GR: If action allow -> add it to the SSL profile; otherwise skip
                                 continue
                             match = self.convert_match_conditions_to_match(match, match_condition)
                         rule_dict['match'] = match
@@ -115,7 +133,8 @@ class PolicyConfigConverter(object):
                         elif phase == "HTTP_FORWARDING":
                             if len(actions) == 1 and actions[0]['type'] == "LBConnectionDropAction":
                                 sec_rules.append(rule_dict)
-                            elif rule_dict.__contains__('redirect_action') and rule_dict.__contains__('switching_action'):
+                            elif rule_dict.__contains__('redirect_action') and rule_dict.__contains__(
+                                    'switching_action'):
                                 redirect_action = copy.deepcopy(rule_dict)
                                 redirect_action.pop('switching_action')
                                 http_rules.append(redirect_action)
@@ -123,15 +142,19 @@ class PolicyConfigConverter(object):
                                 switching_action = copy.deepcopy(rule_dict)
                                 switching_action.pop('redirect_action')
                                 http_rules.append(switching_action)
+                            elif rule_dict.__contains__('redirect_action') or rule_dict.__contains__(
+                                    'switching_action'):
+                                http_rules.append(rule_dict)
                 if match_strategy == "ANY":
                     for match_condition in match_conditions:
                         if match_condition["type"] in self.rule_match_na:
                             LOG.info('[VS-RULES: {}] SKIPPING RULE Match Condition is Not supported {}'.format(
                                 policy_set_name,
                                 [match_condition['type']]))
-                            status_rule_list.append('[VS-RULES: {}] SKIPPING RULE Match Condition is Not supported {}'.format(
-                                policy_set_name,
-                                [match_condition['type']]))
+                            status_rule_list.append(
+                                '[VS-RULES: {}] SKIPPING RULE Match Condition is Not supported {}'.format(
+                                    policy_set_name,
+                                    [match_condition['type']]))
                             continue
                         rule_dict = dict(name="Rule {}",
                                          index=0,
@@ -155,7 +178,7 @@ class PolicyConfigConverter(object):
                             if len(actions) == 1 and actions[0]['type'] == "LBConnectionDropAction":
                                 sec_rules.append(rule_dict)
                             elif rule_dict.__contains__('redirect_action') and rule_dict.__contains__(
-                                        'switching_action'):
+                                    'switching_action'):
                                 redirect_action = copy.deepcopy(rule_dict)
                                 redirect_action.pop('switching_action')
                                 http_rules.append(redirect_action)
@@ -163,6 +186,9 @@ class PolicyConfigConverter(object):
                                 switching_action = copy.deepcopy(rule_dict)
                                 switching_action.pop('redirect_action')
                                 http_rules.append(switching_action)
+                            elif rule_dict.__contains__('redirect_action') or rule_dict.__contains__(
+                                    'switching_action'):
+                                http_rules.append(rule_dict)
 
         for index, rule in enumerate(http_rules):
             counter = index + 1
@@ -187,7 +213,6 @@ class PolicyConfigConverter(object):
             [], indirect, ignore_for_defaults, [],
             u_ignore, [])
 
-
         for skipped in status_rule_list:
             print(skipped)
         if http_rules or sec_rules or rsp_rules:
@@ -203,7 +228,10 @@ class PolicyConfigConverter(object):
 
             conv_status["skipped"] = skipped_rule
             conv_status["na_list"] = []
-            conv_status["status"] = "PARTIAL"
+            if not skipped_rule:
+                conv_status["status"] = "SUCCESSFUL"
+            else:
+                conv_status["status"] = "PARTIAL"
             conv_utils.add_conv_status('policy', None, policy_set_name, conv_status,
                                        [{"policy_set": policy_obj}])
 
@@ -212,7 +240,6 @@ class PolicyConfigConverter(object):
             conv_utils.add_status_row('policy', [], policy_set_name,
                                       conv_const.STATUS_SKIPPED)
             return None, status_rule_list
-
 
     def convert_match_conditions_to_match(self, match, match_condition):
         if match_condition.get("type") == "LBHttpResponseHeaderCondition":
@@ -243,9 +270,9 @@ class PolicyConfigConverter(object):
                 elif match_condition.get("match_type") == "STARTS_WITH":
                     match_criteria = "BEGINS_WITH"
                 elif match_condition.get("match_type") == "ENDS_WITH":
-                    match_criteria = "HDR_ENDS_WITH"
+                    match_criteria = "ENDS_WITH"
                 elif match_condition.get("match_type") == "CONTAINS" or match_condition.get("match_type") == "REGEX":
-                    match_criteria = "HDR_CONTAINS"
+                    match_criteria = "CONTAINS"
                 request_uri['match_criteria'] = match_criteria
             match["path"] = request_uri
         if match_condition.get("type") == "LBHttpRequestHeaderCondition":
@@ -310,28 +337,9 @@ class PolicyConfigConverter(object):
         for action in actions:
             if action["type"] == "LBVariablePersistenceLearnAction" or action[
                 'type'] == 'LBVariablePersistenceOnAction':
-                # Gr: Create a new Pool with the persistent profile and same members and context switch
-                if self.lb_vs_config.get('pool_path'):
-                    pool_ref = self.lb_vs_config.get('pool_path')
-                    pool_name = pool_ref.split('/')[-1]
-                    if prefix:
-                        pool_name = prefix + '-' + pool_name
-                    for pool in self.alb_config['Pool']:
-                        if pool.get('name') == pool_name:
-                            new_pool = copy.deepcopy(pool)
-                            new_pool['name'] = '%s-%s' % (pool_name, final.PLACE_HOLDER_STR)
-                            if prefix:
-                                persistence_name = prefix + '-' + action.get('persistence_profile_path').split('/')[
-                                    -1]
-                            else:
-                                persistence_name = action.get('persistence_profile_path').split('/')[-1]
-                            new_pool[
-                                'persistence_profile_ref'] = '/api/applicationpersistenceprofile/?tenant=admin&name=' + persistence_name
-                            self.alb_config['Pool'].append(new_pool)
-                            rule_dict['switching_action'] = {'action': 'HTTP_SWITCHING_SELECT_POOL',
-                                                             "pool_ref": conv_utils.get_object_ref(
-                                                                 new_pool['name'], 'pool', tenant="admin",
-                                                                 cloud_name=cloud_name)}
+                # skip rule
+                continue
+
             if action["type"] == "LBHttpRequestUriRewriteAction":
                 rule_dict['rewrite_url_action'] = {}
                 path = {"type": "URI_PARAM_TYPE_TOKENIZED",
@@ -357,18 +365,32 @@ class PolicyConfigConverter(object):
                 rule_dict['hdr_action'].append(hdr_action)
             if action["type"] == "LBSelectPoolAction":
                 pool_ref = action.get('pool_id')
-                pool_name = pool_ref.split('/')[-1]
-                if prefix:
-                    pool_name = prefix + '-' + pool_name
-                rule_dict['switching_action'] = {'action': 'HTTP_SWITCHING_SELECT_POOL',
-                                                 "pool_ref": conv_utils.get_object_ref(
-                                                     pool_name, 'pool', tenant="admin", cloud_name=cloud_name)}
+                is_pool_group = False
+                if pool_ref:
+                    pool_ref, is_pool_group = self.pool_and_poolgroup_sharing(pool_ref, cloud_name, prefix)
+                if is_pool_group:
+                    rule_dict['switching_action'] = {'action': 'HTTP_SWITCHING_SELECT_POOLGROUP',
+                                                     "pool_group_ref": conv_utils.get_object_ref(
+                                                         pool_ref, 'poolgroup', tenant=self.tenant,
+                                                         cloud_name=cloud_name)}
+                elif pool_ref:
+                    rule_dict['switching_action'] = {'action': 'HTTP_SWITCHING_SELECT_POOL',
+                                                     "pool_ref": conv_utils.get_object_ref(
+                                                         pool_ref, 'pool', tenant=self.tenant,
+                                                         cloud_name=cloud_name)}
+                else:
+                    LOG.debug("No pool/poolgroup '%s' found",
+                              pool_ref)
+                    continue
             if action["type"] == "LBConnectionDropAction":
                 rule_dict['action'] = {'action': 'HTTP_SECURITY_ACTION_CLOSE_CONN'}
             if action["type"] == "LBHttpRedirectAction" and action.get("redirect_url").__contains__("http"):
                 redirect_url = action.get("redirect_url")
                 host_protocol = redirect_url.split("://")
-
+                if not len(host_protocol) > 1:
+                    LOG.debug("No proper redirect url '%s' found",
+                              redirect_url)
+                    continue
                 protocol = host_protocol[0].upper()
                 host_path = host_protocol[1].split("/")
 
@@ -421,3 +443,89 @@ class PolicyConfigConverter(object):
             rule_dict.pop('hdr_action')
         return rule_dict
 
+    def pool_and_poolgroup_sharing(self,pool_ref,cloud_name,prefix):
+        pl_id = pool_ref.split('/')[-1]
+        pl_config = list(filter(lambda pr: pr["id"] == pl_id, self.nsx_lb_config["LbPools"]))
+        pool_name = pl_config[0]["display_name"]
+        ##
+        pool_present = False
+        if self.lb_vs_config["id"] in vs_pool_segment_list.keys():
+            pool_segment = vs_pool_segment_list[self.lb_vs_config["id"]].get("pool_segment")
+            is_pg_created = False
+            if pool_ref:
+                p_tenant, pool_ref = conv_utils.get_tenant_ref(pool_ref)
+                if self.tenant:
+                    p_tenant = self.tenant
+                pool_ref = pool_name
+                persist_ref = self.lb_vs_config.get("lb_persistence_profile_path", None)
+                if persist_ref:
+                    persist_ref = self.lb_vs_config['lb_persistence_profile_path'].split('/')[-1]
+
+                avi_persistence = self.alb_config['ApplicationPersistenceProfile']
+                persist_type = None
+                if persist_ref:
+                    # Called tenant ref to get object name
+                    persist_ref = conv_utils.get_tenant_ref(persist_ref)[1]
+                    if prefix:
+                        persist_ref = '{}-{}'.format(prefix, persist_ref)
+                    persist_profile_objs = (
+                            [ob for ob in avi_persistence if ob['name'] ==
+                             self.merge_object_mapping['app_per_profile'].get(
+                                 persist_ref)] or
+                            [obj for obj in avi_persistence if
+                             (obj["name"] == persist_ref or persist_ref in obj.get(
+                                 "dup_of", []))])
+                    persist_type = (persist_profile_objs[0]['persistence_type'] if
+                                    persist_profile_objs else None)
+                # cookie persistence or app profile type is different and poolgroup
+                # cloned
+                vs_name = self.alb_vs_config['name']
+                pool_ref, is_pool_group = conv_utils.clone_pool_if_shared(
+                    pool_ref, self.alb_config, vs_name, self.tenant, p_tenant, persist_type,
+                    self.controller_version, self.alb_vs_config['application_profile_ref'], self.is_pool_group_used,
+                    self.http_pool_group_list,self.http_pool_list,
+                    cloud_name=cloud_name, prefix=prefix)
+                if is_pool_group:
+                    is_pg_created = is_pool_group
+                    self.is_pool_group_used[pool_ref]=vs_name
+                    self.http_pool_group_list[pool_ref] ={
+                        'vs_name': vs_name,
+                        'cloud_name' :cloud_name,
+                        'tenant': self.tenant
+                    }
+                else:
+                    pool_present = True
+                    self.http_pool_list[pool_ref] = {
+                        'vs_name': vs_name,
+                        'cloud_name': cloud_name,
+                        'tenant': self.tenant
+                    }
+                if self.cloud_type == 'Vlan':
+                    if is_pool_group:
+                        conv_utils.add_placement_network_to_pool_group(pool_ref, pool_segment,
+                                                                 self.alb_config, cloud_name, self.tenant)
+
+                    else:
+                        conv_utils.add_placement_network_to_pool(self.alb_config['Pool'],
+                                                           pool_ref, pool_segment, cloud_name, self.tenant)
+
+                if persist_ref:
+                    if is_pool_group:
+                        conv_utils.add_poolgroup_with_persistence(self.alb_config, self.nsx_lb_config, self.lb_vs_config,
+                                                            pool_ref, prefix, cloud_name, self.tenant,
+                                                            self.object_merge_check, self.merge_object_mapping)
+                    else:
+                        conv_utils.add_pool_with_persistence(self.alb_config, self.nsx_lb_config, self.lb_vs_config,
+                                                       pool_ref, prefix, cloud_name, self.tenant,
+                                                       self.object_merge_check, self.merge_object_mapping)
+                if is_pool_group:
+                    conv_utils.add_teir_to_poolgroup(pool_ref, self.alb_config, self.tier1_lr)
+                    conv_utils.update_poolgroup_with_cloud(pool_ref, self.alb_config, cloud_name, self.tenant, self.cloud_tenant)
+
+                elif pool_present:
+                    conv_utils.add_tier_to_pool(pool_ref, self.alb_config, self.tier1_lr)
+                    conv_utils.update_pool_with_cloud(pool_ref, self.alb_config, cloud_name, self.tenant, self.cloud_tenant)
+
+                return pool_ref , is_pool_group
+
+        return None, False

@@ -26,11 +26,11 @@ class TrafficCutover(AviConverter):
         self.controller_version = args.alb_controller_version
         self.user = args.alb_controller_user
         self.password = args.alb_controller_password
-        self.cutover_vs = None
-        if args.cutover:
-            self.cutover_vs = \
-                (set(args.cutover) if type(args.cutover) == list
-                 else set(args.cutover.split(',')))
+        self.vs_filter = None
+        if args.vs_filter:
+            self.vs_filter = \
+                (set(args.vs_filter) if type(args.vs_filter) == list
+                 else set(args.vs_filter.split(',')))
         self.output_file_path = args.output_file_path if args.output_file_path \
             else 'output'
 
@@ -61,12 +61,13 @@ class TrafficCutover(AviConverter):
             os.mkdir(self.output_file_path)
         self.init_logger_path()
 
-        cutover_msg = "Performing cutover for applications"
-        LOG.debug(cutover_msg)
-        print(cutover_msg)
-        nsx_util = NSXUtil(self.nsxt_user, self.nsxt_passord, self.nsxt_ip, self.nsxt_port \
-                           , self.controller_ip, self.user, self.password, self.controller_version)
-        nsx_util.cutover_vs(self.cutover_vs)
+        nsx_util = NSXUtil(self.nsxt_user, self.nsxt_passord, self.nsxt_ip, self.nsxt_port,
+                           self.controller_ip, self.user, self.password, self.controller_version)
+        vs_not_found = nsx_util.cutover_vs(self.vs_filter)
+        if vs_not_found:
+            print_msg = "\033[93m" + "Warning: Following virtual service/s could not be found" + "\033[0m"
+            print(print_msg)
+            print(vs_not_found)
 
         print("Total Warning: ", get_count('warning'))
         print("Total Errors: ", get_count('error'))
@@ -92,9 +93,8 @@ if __name__ == "__main__":
     parser.add_argument('--alb_controller_password',
                         help='controller password. Input '
                              'prompt will appear if no value provided', required=True)
-    # Added command line args to take skip type for ansible playbook
-    parser.add_argument('--cutover',
-                        help='comma separated names of virtualservices for cutover.\n',
+    parser.add_argument('--vs_filter',
+                        help='comma separated names of virtual services for performing cutover.\n',
                         required=True)
     parser.add_argument('-n', '--nsxt_ip',
                         help='Ip of NSXT', required=True)

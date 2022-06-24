@@ -104,6 +104,13 @@ def get_lb_skip_reason(vs_id):
         return vs_details.get(vs_id).get("lb_skip_reason")
     return None
 
+
+def get_vs_details(vs_id):
+    if vs_details.get(vs_id):
+        return vs_details.get(vs_id)
+    return None
+
+
 def get_object_segments(vs_id, obj_ip):
     vs = vs_details.get(vs_id, None)
     if not vs:
@@ -125,19 +132,19 @@ def get_object_segments(vs_id, obj_ip):
     return None
 
 
-def get_certificate_data(certificate_ref, nsxt_ip, nsxt_pw):
+def get_certificate_data(certificate_ref, nsxt_ip, ssh_root_password):
     import paramiko
     import json
 
     ssh = paramiko.SSHClient()
     ssh.load_system_host_keys()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    ssh.connect(nsxt_ip, username='root', password=nsxt_pw, allow_agent=False, look_for_keys=False)
+    ssh.connect(nsxt_ip, username='root', password=ssh_root_password, allow_agent=False, look_for_keys=False)
 
     data = None
     cmd = "curl --header 'Content-Type: application/json' --header 'x-nsx-username: admin' " \
           "http://'admin':'{}'@127.0.0.1:7440/nsxapi/api/v1/trust-management/certificates".\
-        format(nsxt_pw)
+        format(ssh_root_password)
     stdin, stdout, stderr = ssh.exec_command(cmd)
 
     output_dict = ''
@@ -174,6 +181,7 @@ class NSXUtil():
     nsx_api_client = None
     nsxt_ip = None
     nsxt_pw = None
+    nsxt_un = None
 
     def __init__(self, nsx_un, nsx_pw, nsx_ip, nsx_port, c_ip=None, c_un=None, c_pw=None, c_vr=None):
         self.nsx_api_client = nsx_client_util.create_nsx_policy_api_client(
@@ -188,6 +196,7 @@ class NSXUtil():
 
             self.nsxt_ip = nsx_ip
             self.nsxt_pw = nsx_pw
+            self.nsxt_un = nsx_un
 
             self.cloud = self.session.get("cloud/").json()["results"]
             self.avi_vs_object = []
@@ -246,58 +255,122 @@ class NSXUtil():
                     self.nsx_api_client.infra.LbMonitorProfiles.delete(monitor["id"])
 
     def cutover_vs(self, vs_list):
-        virtual_service = self.get_all_virtual_service()
+        vs_not_found = list()
+        nsxt_all_virtual_services = self.get_all_virtual_service()
+
+        # Create nsxt VS list from input vs list
+        nsxt_vs_list = dict()
+        for input_vs in vs_list:
+            vs_found = False
+            for nsxt_vs in nsxt_all_virtual_services:
+                if nsxt_vs["display_name"] == input_vs:
+                    nsxt_vs_list[nsxt_vs["display_name"]] = nsxt_vs
+                    vs_found = True
+                    break
+            if not vs_found:
+                vs_not_found.append(input_vs)
 
         # Get list of all ALB VS's
-        self.alb_vs_list = dict()
-        self.alb_all_vs_list = self.session.get("virtualservice/").json()["results"]
-        for vs in self.alb_all_vs_list:
-            self.alb_vs_list[vs["name"]] = vs
+        alb_vs_list = dict()
+        alb_all_vs_list = self.session.get("virtualservice/").json()["results"]
+        for vs in alb_all_vs_list:
+            alb_vs_list[vs["name"]] = vs
 
-        for nsxt_vs in virtual_service:
-            vs_body = self.nsx_api_client.infra.LbVirtualServers.get(nsxt_vs["id"])
-            if (vs_list and nsxt_vs['display_name'] in vs_list) or (not vs_list) and not nsxt_vs["system_owned"]:
+        for nsxt_vs_name in nsxt_vs_list:
+            vs_body = self.nsx_api_client.infra.LbVirtualServers.get(nsxt_vs_list[nsxt_vs_name]["id"])
+            if not vs_body.system_owned:
+                cutover_msg = "Performing cutover for VS {} ...".format(nsxt_vs_name)
+                LOG.debug(cutover_msg)
+                print(cutover_msg)
                 vs_body.lb_service_path = None
                 vs_body.enabled = False
-                self.nsx_api_client.infra.LbVirtualServers.update(nsxt_vs["id"], vs_body)
+                self.nsx_api_client.infra.LbVirtualServers.update(nsxt_vs_list[nsxt_vs_name]["id"], vs_body)
+                print("Disconnected traffic for VS {} on NSX-T".format(nsxt_vs_name))
 
-                for alb_vs in self.alb_vs_list:
-                    if alb_vs == nsxt_vs["display_name"]:
-                        vs_obj = self.alb_vs_list[alb_vs]
+                for alb_vs in alb_vs_list:
+                    if alb_vs == nsxt_vs_name:
+                        vs_obj = alb_vs_list[alb_vs]
                         vs_obj["traffic_enabled"] = True
+                        if "analytics_policy" in vs_obj:
+                            vs_obj["analytics_policy"]["full_client_logs"]["enabled"] = True
+                        else:
+                            analytics_policy = {
+                                "full_client_logs": {
+                                    "duration": 30,
+                                    "enabled": True,
+                                    "throttle": 10
+                                }
+                            }
+                            vs_obj.update({"analytics_policy": analytics_policy})
                         self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj)
+                        print("Enabled traffic for VS {} on ALB".format(nsxt_vs_name))
+                        print("Completed cutover for VS {}\n".format(nsxt_vs_name))
                         break
+
+        return vs_not_found
 
     def rollback_vs(self, vs_list, input_data):
-        virtual_service = self.get_all_virtual_service()
+        vs_not_found = list()
+        nsxt_all_virtual_services = self.get_all_virtual_service()
+
+        # Create nsxt VS list from input vs list
+        nsxt_vs_list = dict()
+        for input_vs in vs_list:
+            vs_found = False
+            for nsxt_vs in nsxt_all_virtual_services:
+                if nsxt_vs["display_name"] == input_vs:
+                    nsxt_vs_list[nsxt_vs["display_name"]] = nsxt_vs
+                    vs_found = True
+                    break
+            if not vs_found:
+                vs_not_found.append(input_vs)
 
         # Get list of all ALB VS's
-        self.alb_vs_list = dict()
-        self.alb_all_vs_list = self.session.get("virtualservice/").json()["results"]
-        for vs in self.alb_all_vs_list:
-            self.alb_vs_list[vs["name"]] = vs
+        alb_vs_list = dict()
+        alb_all_vs_list = self.session.get("virtualservice/").json()["results"]
+        for vs in alb_all_vs_list:
+            alb_vs_list[vs["name"]] = vs
 
+        # Retrieve old LB service path data from input json
         vs_lb_mapping_list = dict()
-        nsxt_vs_list = input_data['LbVirtualServers']
-        for vs in nsxt_vs_list:
-            vs_lb_mapping_list['{}_{}'.format(vs["id"], vs["display_name"])] \
-                = vs['lb_service_path']
+        old_nsxt_vs_list = input_data['LbVirtualServers']
+        vs_with_no_lb = list()
+        for vs in old_nsxt_vs_list:
+            if vs.get('lb_service_path'):
+                vs_lb_mapping_list['{}_{}'.format(vs["id"], vs["display_name"])] \
+                    = vs['lb_service_path']
+            else:
+                vs_with_no_lb.append(vs["display_name"])
 
-        for nsxt_vs in virtual_service:
-            vs_body = self.nsx_api_client.infra.LbVirtualServers.get(nsxt_vs["id"])
-            if (vs_list and nsxt_vs["display_name"] in vs_list) or (not vs_list) and not nsxt_vs["system_owned"]:
-                lb_service_path = vs_lb_mapping_list.get("{}_{}".format(nsxt_vs["id"],
-                                                                        nsxt_vs["display_name"]))
+        # Perform roll back for vs filter list
+        for nsxt_vs_name in nsxt_vs_list:
+            vs_body = self.nsx_api_client.infra.LbVirtualServers.get(nsxt_vs_list[nsxt_vs_name]["id"])
+            if not vs_body.system_owned:
+                cutover_msg = "Performing rollback for VS {} ...".format(nsxt_vs_name)
+                LOG.debug(cutover_msg)
+                print(cutover_msg)
+
+                for alb_vs in alb_vs_list:
+                    if alb_vs == nsxt_vs_name:
+                        vs_obj = alb_vs_list[alb_vs]
+                        vs_obj["traffic_enabled"] = False
+                        vs_obj["enabled"] = False
+                        if "analytics_policy" in vs_obj:
+                            vs_obj["analytics_policy"]["full_client_logs"]["enabled"] = False
+                        self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj)
+                        print("Disconnected traffic for VS {} on ALB".format(nsxt_vs_name))
+                        break
+
+                lb_service_path = vs_lb_mapping_list.get("{}_{}".format(nsxt_vs_list[nsxt_vs_name]["id"],
+                                                                        nsxt_vs_name))
                 vs_body.lb_service_path = lb_service_path
                 vs_body.enabled = True
-                self.nsx_api_client.infra.LbVirtualServers.update(nsxt_vs["id"], vs_body)
+                self.nsx_api_client.infra.LbVirtualServers.update(nsxt_vs_list[nsxt_vs_name]["id"],
+                                                                  vs_body)
+                print("Enabled traffic for VS {} on NSX-T".format(nsxt_vs_name))
+                print("Completed rollback for VS {}\n".format(nsxt_vs_name))
 
-                for alb_vs in self.alb_vs_list:
-                    if alb_vs == nsxt_vs["display_name"]:
-                        vs_obj = self.alb_vs_list[alb_vs]
-                        vs_obj["traffic_enabled"] = False
-                        self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj)
-                        break
+        return vs_not_found, vs_with_no_lb
 
     def get_cloud_type(self, avi_cloud_list, tz_id, seg_id):
         is_seg_present = False
@@ -341,6 +414,7 @@ class NSXUtil():
             tz_id = None
             cloud_name = None
             lb_details = []
+            lb_tier1_lr = None
             if len(interface_list):
                 interface = interface_list[0].id
                 segment_id = get_name_and_entity(interface_list[0].segment_path)[-1]
@@ -354,11 +428,7 @@ class NSXUtil():
                     network = "Overlay"
 
                 if network == "Overlay" and len(interface_list) > 0:
-                    self.lb_services[lb["id"]] = {
-                        "lb_name": lb["id"],
-                        "lb_skip_reason": "Overlay Network having Service Interfaces is not supported"
-                    }
-                    continue
+                    lb_tier1_lr = segment.connectivity_path
 
                 for intrf in interface_list:
                     segment_id = get_name_and_entity(intrf.segment_path)[-1]
@@ -410,6 +480,7 @@ class NSXUtil():
                 "lb_name": lb["id"],
                 "Network": network,
                 "Cloud": cloud_name,
+                "lb_tier1_lr": lb_tier1_lr
                 }
             if lb_details:
                 self.lb_services[lb["id"]]["Segments"] = lb_details
@@ -453,6 +524,7 @@ class NSXUtil():
                     vs_object["Cloud_type"] = lb_details.get("Cloud_type")
                     vs_object['lb_name'] = lb
                     vs_object['lb_skip_reason'] = lb_details.get("lb_skip_reason")
+                    vs_object['lb_tier1_lr'] = lb_details.get("lb_tier1_lr")
                     # lb_details["vs_name"] = vs["display_name"]
                     vs_details[vs["id"]] = vs_object
             if vs["enabled"]:
@@ -680,47 +752,47 @@ class NSXUtil():
             worksheet.write(row, 6, cloud)
 
         # adding some more summary
-        worksheet_summary.write(9, 5, "Total vs", bold)
+        worksheet_summary.write(9, 5, "Total Virtual Service", bold)
         worksheet_summary.write(9, 6, str(total_vs))
 
-        worksheet_summary.write(10, 5, "Total vs UP", bold)
+        worksheet_summary.write(10, 5, "Total Virtual Service UP", bold)
         worksheet_summary.write(10, 6, str(total_enabled_vs))
 
-        worksheet_summary.write(11, 5, "Total pools", bold)
+        worksheet_summary.write(11, 5, "Total Pools", bold)
         worksheet_summary.write(11, 6, str(total_pools))
 
-        worksheet_summary.write(12, 5, "Total pools UP", bold)
+        worksheet_summary.write(12, 5, "Total Pools UP", bold)
         worksheet_summary.write(12, 6, str(total_enabled_pools))
 
-        worksheet_summary.write(13, 5, "Total complex vs", bold)
+        worksheet_summary.write(13, 5, "Total Complex Virtual Service", bold)
         worksheet_summary.write(13, 6, str(total_complex_vs))
 
-        worksheet_summary.write(14, 5, "Total l4 vs", bold)
+        worksheet_summary.write(14, 5, "Total L4 Virtual Service", bold)
         worksheet_summary.write(14, 6, str(total_l4_vs))
 
-        worksheet_summary.write(15, 5, "Total l7 vs", bold)
+        worksheet_summary.write(15, 5, "Total L7 Virtual Service", bold)
         worksheet_summary.write(15, 6, str(total_l7_vs))
 
-        worksheet_summary.write(16, 5, "Total vs in VLAN", bold)
+        worksheet_summary.write(16, 5, "Total Virtual Service in VLAN", bold)
         worksheet_summary.write(16, 6, str(total_vs_in_vlan))
 
-        worksheet_summary.write(17, 5, "Total vs in OVERLAY", bold)
+        worksheet_summary.write(17, 5, "Total Virtual Service in OVERLAY", bold)
         worksheet_summary.write(17, 6, str(total_vs_in_overlay))
 
-        print("====================")
+        print("=====================================")
         print(" Summary")
-        print("====================")
-        print("Total vs: ", total_vs)
-        print("Total vs UP: ", total_enabled_vs)
-        print("Total pools: ", total_pools)
-        print("Total pools UP: ", total_enabled_pools)
-        print("Total complex vs: ", total_complex_vs)
-        print("Total l4 vs: ", total_l4_vs)
-        print("Total l7 vs: ", total_l7_vs)
-        print("Total vs in VLAN", total_vs_in_vlan)
-        print("Total vs in OVERLAY", total_vs_in_overlay)
+        print("=====================================")
+        print("Total Virtual Service: ", total_vs)
+        print("Total Virtual Service UP: ", total_enabled_vs)
+        print("Total Pools: ", total_pools)
+        print("Total Pools UP: ", total_enabled_pools)
+        print("Total Complex Virtual Service: ", total_complex_vs)
+        print("Total L4 Virtual Service: ", total_l4_vs)
+        print("Total L7 Virtual Service: ", total_l7_vs)
+        print("Total Virtual Service in VLAN", total_vs_in_vlan)
+        print("Total Virtual Service in OVERLAY", total_vs_in_overlay)
 
-        print("--------------------")
+        print("-------------------------------------")
 
         workbook.close()
 
@@ -744,3 +816,56 @@ class NSXUtil():
                     print(alb_hm_obj)
                 except Exception as e:
                     print(e)
+
+    def create_and_update_nsgroup(self, pool_name, alb_config, pool_members):
+        domain_obj = self.nsx_api_client.infra.Domains.list().to_dict().get("results", [])
+        domain_id = None
+
+        if domain_obj:
+            domain_id = domain_obj[0]["id"]
+        ns_name = "{}-{}".format(pool_name, "alb-nsgroup")
+        try:
+            import requests
+            import json
+            headers = {'content-type': 'application/json'}
+            requests.packages.urllib3.disable_warnings()
+
+            response = requests.get(
+                "https://{}/policy/api/v1/infra/domains/{}/groups/{}".format(self.nsxt_ip, domain_id, ns_name),
+                auth=(self.nsxt_un, self.nsxt_pw), headers=headers, verify=False)
+            response = json.loads(response.text)
+
+            if response.get('httpStatus') == "NOT_FOUND":
+                ip_address_list = list()
+                for member in pool_members:
+                    ip_address_list.append(member["ip_address"])
+
+                data = {
+                    "expression": [{
+                        "ip_addresses": ip_address_list,
+                        "resource_type": "IPAddressExpression"
+                    }],
+                    "resource_type": "Group",
+                    "id": ns_name,
+                    "display_name": ns_name
+                }
+
+                response = requests.put("https://{}/policy/api/v1/infra/domains/{}/groups/{}".
+                                        format(self.nsxt_ip, domain_id, ns_name),
+                                        data=json.dumps(data), auth=(self.nsxt_un, self.nsxt_pw),
+                                        headers=headers, verify=False)
+                response = json.loads(response.text)
+
+            for pool in alb_config["Pool"]:
+                if pool["name"] == pool_name:
+                    pool["nsx_securitygroup"] = [response["path"]]
+                    # Make sure to update the pool server port to be retained
+                    if pool_members:
+                        pool["default_server_port"] = pool_members[0]["port"]
+                    if "servers" in pool:
+                        del pool["servers"]
+                    break
+
+            LOG.debug("ns group created for pool {}".format(pool_name))
+        except Exception:
+            LOG.debug("Error in creating ns group for pool {}".format(pool_name))

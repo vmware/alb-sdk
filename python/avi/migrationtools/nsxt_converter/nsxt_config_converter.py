@@ -40,9 +40,9 @@ merge_object_mapping = {
 
 
 def convert(nsx_lb_config, input_path, output_path, tenant, prefix,
-            migrate_to, object_merge_check, controller_version, migration_input_config=None,
+            migrate_to, object_merge_check, controller_version, ssh_root_password, nsxt_util, migration_input_config=None,
             vs_state=False, vs_level_status=False, vrf=None,
-            segroup=None, not_in_use=True, custom_mapping=None, traffic_enabled=False,cloud_tenant="admin",
+            segroup=None, not_in_use=True, custom_mapping=None, traffic_enabled=False, cloud_tenant="admin",
             nsxt_ip=None, nsxt_passord=None):
 
     # load the yaml file attribute in nsxt_attributes.
@@ -81,7 +81,8 @@ def convert(nsx_lb_config, input_path, output_path, tenant, prefix,
         vs_converter = VsConfigConv(nsxt_attributes,object_merge_check, merge_object_mapping,sys_dict,
                                     nsxt_ip, nsxt_passord)
         vs_converter.convert(avi_config_dict, nsx_lb_config, prefix,
-                             tenant, vs_state, controller_version, traffic_enabled,cloud_tenant, migration_input_config,
+                             tenant, vs_state, controller_version, traffic_enabled,
+                             cloud_tenant, ssh_root_password, nsxt_util, migration_input_config,
                              vrf, segroup)
 
         # Validating the aviconfig after generation
@@ -103,17 +104,17 @@ def convert(nsx_lb_config, input_path, output_path, tenant, prefix,
         if key != 'META':
             if key == 'VirtualService':
                 if vs_level_status:
-                    LOG.info('Total Objects of %s : %s (%s full conversions)'
-                             % (key, len(avi_config_dict[key]),
+                    LOG.info('Total Objects of %s : %s (%s  migrated , %s full conversions)'
+                             % (key,len(nsx_lb_config['LbVirtualServers']), len(avi_config_dict[key]),
                                 conversion_util.fully_migrated))
-                    print('Total Objects of %s : %s (%s full conversions)' \
-                          % (key, len(avi_config_dict[key]),
+                    print('Total Objects of %s : %s (%s  migrated , %s full conversions)' \
+                          % (key, len(nsx_lb_config['LbVirtualServers']), len(avi_config_dict[key]),
                              conversion_util.fully_migrated))
                 else:
-                    LOG.info('Total Objects of %s : %s'
-                             % (key, len(avi_config_dict[key])))
-                    print('Total Objects of %s : %s' \
-                          % (key, len(avi_config_dict[key])))
+                    LOG.info('Total Objects of %s : %s (%s  migrated)'
+                             % (key, len(nsx_lb_config['LbVirtualServers']), len(avi_config_dict[key])))
+                    print('Total Objects of %s : %s (%s  migrated)' \
+                          % (key,len(nsx_lb_config['LbVirtualServers']),  len(avi_config_dict[key])))
 
                 continue
             # Added code to print merged count.

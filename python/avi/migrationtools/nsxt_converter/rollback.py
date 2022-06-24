@@ -26,11 +26,11 @@ class NsxtAlbRollback(AviConverter):
         self.controller_version = args.alb_controller_version
         self.user = args.alb_controller_user
         self.password = args.alb_controller_password
-        self.rollback_vs = None
-        if args.rollback:
-            self.rollback_vs = \
-                (set(args.rollback) if type(args.rollback) == list
-                 else set(args.rollback.split(',')))
+        self.vs_filter = None
+        if args.vs_filter:
+            self.vs_filter = \
+                (set(args.vs_filter) if type(args.vs_filter) == list
+                 else set(args.vs_filter.split(',')))
         self.output_file_path = args.output_file_path if args.output_file_path \
             else 'output'
 
@@ -71,12 +71,20 @@ class NsxtAlbRollback(AviConverter):
             os.mkdir(self.output_file_path)
         self.init_logger_path()
 
-        cutover_msg = "Performing rollback for applications"
-        LOG.debug(cutover_msg)
-        print(cutover_msg)
-        nsx_util = NSXUtil(self.nsxt_user, self.nsxt_passord, self.nsxt_ip, self.nsxt_port \
-                           , self.controller_ip, self.user, self.password, self.controller_version)
-        nsx_util.rollback_vs(self.rollback_vs, self.input_data)
+        nsx_util = NSXUtil(self.nsxt_user, self.nsxt_passord, self.nsxt_ip, self.nsxt_port,
+                           self.controller_ip, self.user, self.password, self.controller_version)
+        vs_not_found, vs_with_no_lb = nsx_util.rollback_vs(self.vs_filter, self.input_data)
+        if vs_not_found:
+            print_msg = "\033[93m" + "Warning: Following virtual service/s could not be found" + "\033[0m"
+            print(print_msg)
+            print(vs_not_found)
+            LOG.warning("{} {}".format(print_msg, vs_not_found))
+        if vs_with_no_lb:
+            warn_msg = "\033[93m" + "Warning: Load balancer configuration details not found for performing " \
+                       "rollback operation for following virtual services:" + "\033[0m"
+            print(warn_msg)
+            print(vs_with_no_lb)
+            LOG.warning("{} {}".format(warn_msg, vs_with_no_lb))
 
         print("Total Warning: ", get_count('warning'))
         print("Total Errors: ", get_count('error'))
@@ -113,9 +121,8 @@ if __name__ == "__main__":
     parser.add_argument('-o', '--output_file_path',
                         help='Folder path for output files to be created in',
                         )
-    # Added command line args to take skip type for ansible playbook
-    parser.add_argument('--rollback',
-                        help='comma separated names of virtualservices for cutover.\n',
+    parser.add_argument('--vs_filter',
+                        help='comma separated names of virtual services for performing rollback.\n',
                         required=True)
 
     start = datetime.now()

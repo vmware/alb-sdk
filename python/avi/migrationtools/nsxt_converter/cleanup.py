@@ -21,7 +21,7 @@ class NsxtAlbCleanup(AviConverter):
         self.nsxt_user = args.nsxt_user
         self.nsxt_passord = args.nsxt_password
         self.nsxt_port = args.nsxt_port
-        self.cleanup_vs_names = args.cleanup
+        self.cleanup_vs_names = args.vs_filter
         self.output_file_path = args.output_file_path if args.output_file_path \
             else 'output'
 
@@ -54,18 +54,17 @@ class NsxtAlbCleanup(AviConverter):
             os.mkdir(self.output_file_path)
         self.init_logger_path()
 
-        cleanup_msg = "Performing cleanup for applications"
-        LOG.debug(cleanup_msg)
-        print(cleanup_msg)
-
         if self.cleanup_vs_names:
             nsx_c = NSXCleanup(self.nsxt_user, self.nsxt_passord, self.nsxt_ip, self.nsxt_port)
             nsx_c.nsx_cleanup(self.cleanup_vs_names)
 
-        if nsx_c.vs_not_found:
-            print_msg = "\033[93m"+"Warning: Following virtual service/s could not be found"+'\033[0m'
+            if nsx_c.vs_not_found:
+                print_msg = "\033[93m"+"Warning: Following virtual service/s could not be found"+'\033[0m'
+                print(print_msg)
+                print(nsx_c.vs_not_found)
+        else:
+            print_msg = "\033[93m" + "Warning: No virtual service/s specified for cleanup" + '\033[0m'
             print(print_msg)
-            print(nsx_c.vs_not_found)
 
         print("Total Warning: ", get_count('warning'))
         print("Total Errors: ", get_count('error'))
@@ -83,8 +82,8 @@ if __name__ == "__main__":
         formatter_class=argparse.RawTextHelpFormatter, description=HELP_STR)
 
     # Added command line args to take skip type for ansible playbook
-    parser.add_argument('--cleanup',
-                        help='comma separated vs names that we want to clear from nsx-t side',
+    parser.add_argument('--vs_filter',
+                        help='comma separated vs names that we want to cleanup from nsx-t side',
                         required=True)
     parser.add_argument('-n', '--nsxt_ip',
                         help='Ip of NSXT', required=True)
