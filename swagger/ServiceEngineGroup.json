@@ -2238,7 +2238,7 @@
                     "format": "int32"
                 },
                 "num_dispatcher_queues": {
-                    "description": "Number of queues to each dispatcher. Allowed values are 2-8. Special values are 0 - auto-compute, 1 - single-queue. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Number of queues to each dispatcher. Allowed values are 1-2. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "int32"
