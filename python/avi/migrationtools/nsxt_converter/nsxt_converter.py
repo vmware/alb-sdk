@@ -19,7 +19,7 @@ import argparse
 
 from avi.migrationtools.nsxt_converter.nsxt_util import NSXUtil
 from avi.migrationtools.nsxt_converter.vs_converter import vs_list_with_snat_deactivated, vs_data_path_not_work, \
-    vs_with_no_cloud_configured, vs_with_no_lb_configured, vs_with_lb_skipped
+    vs_with_no_cloud_configured, vs_with_no_lb_configured, vs_with_lb_skipped, vs_with_no_snat_no_floating_ip
 
 ARG_CHOICES = {
     'option': ['cli-upload', 'auto-upload'],
@@ -65,7 +65,7 @@ class NsxtConverter(AviConverter):
         self.ssh_root_password = args.ssh_root_password
 
     def conver_lb_config(self, args):
-
+        
         if not os.path.exists(self.output_file_path):
             os.mkdir(self.output_file_path)
         self.init_logger_path()
@@ -114,7 +114,8 @@ class NsxtConverter(AviConverter):
                 migration_input_config = default_params_file.read()
                 migration_input_config = json.loads(migration_input_config)
             except:
-                print("\033[93m" + "Warning: Default parameter config file not found" + "\033[0m")
+                print("\033[93m" + "Warning: Default parameter config file specified with --default_params_file "
+                                   "parameter not found" + "\033[0m")
                 sys.exit()
 
         if not nsx_lb_config:
@@ -132,12 +133,14 @@ class NsxtConverter(AviConverter):
             self.traffic_enabled, self.cloud_tenant,
             self.nsxt_ip, self.nsxt_passord)
 
-        avi_config = self.process_for_utils(alb_config)
+        avi_config = self.process_for_utils(alb_config, skip_ref_objects=["cloud_ref", "tenant_ref"])
         # Check if flag true then skip not in use object
         # if self.not_in_use:
         # avi_config = wipe_out_not_in_use(avi_config)
         # output_path = (output_dir + os.path.sep + self.nsxt_ip + os.path.sep +
         # "output")
+        if alb_config["NetworkService"]:
+            avi_config["NetworkService"] = alb_config["NetworkService"]
         self.write_output(avi_config, output_path, 'avi_config.json')
         if self.ansible:
             self.convert(avi_config, output_path)
@@ -198,7 +201,7 @@ class NsxtConverter(AviConverter):
                 print(print_msg)
                 print(vs_list_with_snat_deactivated)
         if vs_data_path_not_work:
-            print_msg = "\033[93m"+"For following virtual service/s Data path won't work"+'\033[0m'
+            print_msg = "\033[93m"+"Warning: For following virtual service/s Data path won't work"+'\033[0m'
             if self.vs_filter:
                 if list(set(vs_data_path_not_work).intersection(set(filtered_vs_list))):
                     print(print_msg)
@@ -206,6 +209,18 @@ class NsxtConverter(AviConverter):
             else:
                 print(print_msg)
                 print(vs_data_path_not_work)
+        if vs_with_no_snat_no_floating_ip:
+            print_msg = "\033[93m"+"Warning: Following virtual service/s are skipped as " \
+                                   "Network service on ALB is not configured for datapath to work. " \
+                                   "\nEither configure Network service on ALB or provide floating IP in " \
+                                   "default_params.json file and provide --default_params_file parameter" + '\033[0m'
+            if self.vs_filter:
+                if list(set(vs_with_no_snat_no_floating_ip).intersection(set(filtered_vs_list))):
+                    print(print_msg)
+                    print(list(set(vs_with_no_snat_no_floating_ip).intersection(set(filtered_vs_list))))
+            else:
+                print(print_msg)
+                print(vs_with_no_snat_no_floating_ip)
         print("Total Warning: ", get_count('warning'))
         print("Total Errors: ", get_count('error'))
         LOG.info("Total Warning: {}".format(get_count('warning')))
@@ -299,7 +314,14 @@ if __name__ == "__main__":
     Example to default param files
         nsxt_converter.py --default_params_file test/default_params.json
     UseCase: To set default parameters for migration. Sample file test/default_params.json
-
+    1. "bgp_peer_configured_for_vlan": true/false
+    2. "network_service": {
+            "<tier1_name>-floating-ip": "<floating-ip>"
+        }
+    e.g 1. "bgp_peer_configured_for_vlan": true/false
+        2. "network_service": {
+            "PBOneArm-floating-ip": "<floating-ip>"
+        }
     """
 
     parser = argparse.ArgumentParser(

@@ -10,7 +10,7 @@ LOG = logging.getLogger(__name__)
 
 conv_utils = NsxtConvUtil()
 common_avi_util = MigrationUtil()
-
+persistence_profile_list = {}
 
 class PersistantProfileConfigConv(object):
     def __init__(self, nsxt_profile_attributes, object_merge_check, merge_object_mapping, sys_dict):
@@ -58,14 +58,15 @@ class PersistantProfileConfigConv(object):
                     name = prefix + '-' + name
                 if self.object_merge_check:
                     if name in self.merge_object_mapping['app_per_profile'].keys():
-                        name = name+"-"+lb_pp["id"]
+                        name = '%s-%s' % (name, lb_pp["id"])
                 else:
                     pp_temp = list(filter(lambda pp: pp["name"] == name, alb_config['ApplicationPersistenceProfile']))
                     if pp_temp:
-                        name = name + "-" + lb_pp["id"]
+                        name = '%s-%s' % (name, lb_pp["id"])
                 alb_pp = dict(
-                    name=name
+                    name=name,
                 )
+                persistence_profile_list[lb_pp['id']] = name
                 skipped = [val for val in lb_pp.keys()
                            if val not in self.supported_attr]
 

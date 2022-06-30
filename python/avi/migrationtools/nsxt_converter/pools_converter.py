@@ -7,6 +7,7 @@ from random import randint
 from avi.migrationtools.avi_migration_utils import update_count
 from avi.migrationtools.nsxt_converter.conversion_util import NsxtConvUtil
 import avi.migrationtools.nsxt_converter.converter_constants as conv_const
+from avi.migrationtools.nsxt_converter.monitor_converter import monitor_list
 from avi.migrationtools.nsxt_converter.nsxt_util import get_object_segments, get_lb_service_name
 
 LOG = logging.getLogger(__name__)
@@ -15,7 +16,7 @@ conv_utils = NsxtConvUtil()
 skipped_pools_list = []
 vs_pool_segment_list = dict()
 vs_sorry_pool_segment_list = dict()
-
+pool_name_dict={}
 
 class PoolConfigConv(object):
     def __init__(self, nsxt_pool_attributes, object_merge_check, merge_object_mapping, sys_dict):
@@ -54,17 +55,23 @@ class PoolConfigConv(object):
 
                 lb_type, name = self.get_name_type(lb_pl)
                 alb_pl = {
-                    'lb_algorithm': lb_type,
+                    'lb_algorithm': lb_type['lb_algorithm'],
                 }
+                if lb_type.get('lb_algorithm_hash'):
+                    alb_pl['lb_algorithm_hash'] = lb_type['lb_algorithm_hash']
                 vs_list = [vs["id"] for vs in nsx_lb_config["LbVirtualServers"] if
                            (vs.get("pool_path") and vs.get("pool_path").split("/")[-1] == lb_pl.get("id"))]
                 vs_list_for_sorry_pool = [vs["id"] for vs in nsx_lb_config["LbVirtualServers"] if
                             (vs.get("sorry_pool_path") and vs.get("sorry_pool_path").split("/")[-1] == lb_pl.get("id"))]
+                pool_name_without_prefix = name
                 if prefix:
-                    name = prefix+"-"+name
+                    name = '%s-%s' % (prefix, name)
                 pool_temp = list(filter(lambda pl: pl["name"] == name, alb_config['Pool']))
+                if not pool_temp:
+                    pool_temp = list(filter(lambda pl: pl["name"] == name, alb_config['PoolGroup']))
                 if pool_temp:
-                    name = name + "-" + lb_pl["id"]
+                    name = '%s-%s' % (name, lb_pl["id"])
+
                 pool_skip = True
                 pool_count = 0
                 if lb_pl.get("members") :
@@ -155,7 +162,7 @@ class PoolConfigConv(object):
                     self.convert_servers_config(lb_pl.get("members", []))
                 alb_pl["name"] = name
                 alb_pl["servers"] = servers
-
+                pool_name_dict[lb_pl['id']] = pool_name_without_prefix
                 if any(server.get("port") == None for server in servers):
                     alb_pl.update({"use_service_port": "true"})
                 alb_pl['tenant_ref'] = conv_utils.get_object_ref(
@@ -202,11 +209,9 @@ class PoolConfigConv(object):
                     monitor_refs = []
                     for lb_hm_path in active_monitor_paths:
                         ref = lb_hm_path.split("/lb-monitor-profiles/")[1]
-                        hm_config = list(
-                            filter(lambda pr: pr["id"] == ref, nsx_lb_config["LbMonitorProfiles"]))
-                        hm_name = hm_config[0]["display_name"]
-                        if prefix:
-                            hm_name = prefix + "-" + hm_name
+                        hm_name = None
+                        if ref in monitor_list.keys():
+                            hm_name = monitor_list[ref]
                         if hm_name in [monitor_obj.get('name') for monitor_obj in alb_config['HealthMonitor']]:
                             hm_name = hm_name
                         elif self.object_merge_check:
@@ -276,15 +281,16 @@ class PoolConfigConv(object):
         alb_config['Pool'] = pool_list
 
     def get_name_type(self, lb_pl):
-        type = ""
+        lb_type = {}
         if lb_pl['algorithm'] in ['ROUND_ROBIN', 'WEIGHTED_ROUND_ROBIN']:
-            type = 'LB_ALGORITHM_ROUND_ROBIN'
+            lb_type['lb_algorithm'] = 'LB_ALGORITHM_ROUND_ROBIN'
         elif lb_pl['algorithm'] in ['LEAST_CONNECTION',
                                     'WEIGHTED_LEAST_CONNECTION']:
-            type = 'LB_ALGORITHM_LEAST_CONNECTION'
+            lb_type['lb_algorithm'] = 'LB_ALGORITHM_LEAST_CONNECTIONS'
         elif lb_pl['algorithm'] == 'IP_HASH':
-            type = 'LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS'
-        return type, lb_pl['display_name']
+            lb_type['lb_algorithm'] = 'LB_ALGORITHM_CONSISTENT_HASH'
+            lb_type['lb_algorithm_hash'] = 'LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS'
+        return lb_type, lb_pl['display_name']
 
     def convert_servers_config(self, servers_config):
         server_list = []

@@ -99,7 +99,7 @@ class PolicyConfigConverter(object):
                 actions = policy.get("actions")
                 # if check all type of matches if any one not supported then check match_strategy is ALL
                 # then skip other migrate whaterver supported
-                if match_strategy == "ALL":
+                if match_strategy == "ALL" and match_conditions:
                     na_match_list = list(filter(lambda x: x["type"] in self.rule_match_na, match_conditions))
                     if len(na_match_list) > 0:
                         LOG.info('[VS-RULES: {}] SKIPPING RULE One of Match Conditions is Not supported {}'.format(
@@ -145,7 +145,7 @@ class PolicyConfigConverter(object):
                             elif rule_dict.__contains__('redirect_action') or rule_dict.__contains__(
                                     'switching_action'):
                                 http_rules.append(rule_dict)
-                if match_strategy == "ANY":
+                if match_strategy == "ANY" and match_conditions:
                     for match_condition in match_conditions:
                         if match_condition["type"] in self.rule_match_na:
                             LOG.info('[VS-RULES: {}] SKIPPING RULE Match Condition is Not supported {}'.format(
@@ -213,8 +213,6 @@ class PolicyConfigConverter(object):
             [], indirect, ignore_for_defaults, [],
             u_ignore, [])
 
-        for skipped in status_rule_list:
-            print(skipped)
         if http_rules or sec_rules or rsp_rules:
             if http_rules:
                 http_request_policy['rules'] = http_rules

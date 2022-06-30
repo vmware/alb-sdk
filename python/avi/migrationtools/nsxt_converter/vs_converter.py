@@ -7,13 +7,16 @@ from avi.migrationtools.nsxt_converter.nsxt_util import is_vlan_configured_with_
 from avi.migrationtools.nsxt_converter.conversion_util import NsxtConvUtil
 from avi.migrationtools.avi_migration_utils import update_count
 from avi.migrationtools.nsxt_converter.nsxt_util import get_vs_cloud_name, get_object_segments, get_certificate_data
+from avi.migrationtools.nsxt_converter.persistant_converter import persistence_profile_list
 from avi.migrationtools.nsxt_converter.policy_converter import PolicyConfigConverter
 import avi.migrationtools.nsxt_converter.converter_constants as conv_const
 import avi.migrationtools.nsxt_converter.converter_constants as final
 import random
 
 from avi.migrationtools.nsxt_converter.pools_converter import skipped_pools_list, vs_pool_segment_list, \
-    vs_sorry_pool_segment_list
+    vs_sorry_pool_segment_list, pool_name_dict
+from avi.migrationtools.nsxt_converter.profile_converter import application_profile_list, network_profile_list
+from avi.migrationtools.nsxt_converter.ssl_profile_converter import ssl_profile_list
 
 LOG = logging.getLogger(__name__)
 
@@ -29,6 +32,7 @@ vs_with_lb_skipped = []
 is_pool_group_used = {}
 http_pool_group_list = {}
 http_pool_list = {}
+vs_with_no_snat_no_floating_ip = list()
 
 
 class VsConfigConv(object):
@@ -72,6 +76,7 @@ class VsConfigConv(object):
         alb_config['VsVip'] = list()
         alb_config["HTTPPolicySet"] = list()
         alb_config["ServiceEngineGroup"] = list()
+        alb_config["NetworkService"] = list()
         converted_objs = []
         progressbar_count = 0
         total_size = len(nsx_lb_config['LbVirtualServers'])
@@ -81,6 +86,9 @@ class VsConfigConv(object):
                                                  self.merge_object_mapping, self.sys_dict)
         app_profile_pci_created = False
         is_pci_se_group_created = False
+        # Dict for checking network service is created or not as it is
+        # combination of segroup and vrf
+        is_network_service_created = dict()
 
         for lb_vs in nsx_lb_config['LbVirtualServers']:
             try:
@@ -115,6 +123,30 @@ class VsConfigConv(object):
                         vs_with_no_lb_configured.append(lb_vs["display_name"])
                         continue
 
+                tier1_lr = ''
+                for ref in nsx_lb_config['LBServices']:
+                    vs_details = get_vs_details(lb_vs['id'])
+                    if vs_details.get("lb_tier1_lr"):
+                        tier1_lr = vs_details.get('lb_tier1_lr')
+                    elif lb_vs['lb_service_path'] == ref['path']:
+                        tier1_lr = ref.get('connectivity_path', None)
+                if lb_vs.get('pool_path'):
+                    tier_name = tier1_lr.split("/")[-1]
+                    pool_ref = lb_vs.get('pool_path')
+                    pl_id = pool_ref.split('/')[-1]
+                    pl_config = list(filter(lambda pr: pr["id"] == pl_id, nsx_lb_config["LbPools"]))
+                    if (pl_config[0]["snat_translation"].get("type") == "LBSnatDisabled" and
+                        migration_input_config and migration_input_config.get('network_service')):
+                        if not migration_input_config.get('network_service').get("{}-{}".format(tier_name, "floating-ip")):
+                            vs_with_no_snat_no_floating_ip.append(lb_vs["display_name"])
+                            conv_utils.add_status_row('virtualservice', None, lb_vs["display_name"],
+                                                      conv_const.STATUS_SKIPPED, "Configure Network Service with "
+                                                                                 "floating IP to migrate")
+                            LOG.warning("Network service with floating ip address "
+                                        "is not configured for %s" % lb_vs["display_name"])
+                            vs_with_no_snat_no_floating_ip.append(lb_vs["display_name"])
+                            continue
+
                 tenant_name, name = conv_utils.get_tenant_ref(tenant)
                 if not tenant:
                     tenant = tenant_name
@@ -124,10 +156,10 @@ class VsConfigConv(object):
                     ssh_root_password = self.nsxt_password
                 name = lb_vs.get('display_name')
                 if prefix:
-                    name = prefix + '-' + name
+                    name = '%s-%s' % (prefix, name)
                 vs_temp = list(filter(lambda vs: vs["name"] == name, alb_config['VirtualService']))
                 if vs_temp:
-                    name = name + "-" + lb_vs["id"]
+                    name = '%s-%s' % (name, lb_vs["id"])
                 enabled = lb_vs.get('enabled')
                 if enabled and vs_state:
                     enabled = (vs_state == 'enable')
@@ -138,17 +170,10 @@ class VsConfigConv(object):
                     cloud_ref=conv_utils.get_object_ref(cloud_name, 'cloud', cloud_tenant=cloud_tenant),
                     tenant_ref=conv_utils.get_object_ref(tenant, 'tenant')
                 )
-                tier1_lr = ''
-                for ref in nsx_lb_config['LBServices']:
-                    vs_details = get_vs_details(lb_vs['id'])
-                    if vs_details.get("lb_tier1_lr"):
-                        tier1_lr = vs_details.get('lb_tier1_lr')
-                    elif lb_vs['lb_service_path'] == ref['path']:
-                        tier1_lr = ref.get('connectivity_path', None)
 
                 if lb_vs.get('ip_address'):
                     vip = dict(
-                        name=name + '-vsvip',
+                        name='%s-vsvip' % name,
                         tier1_lr=tier1_lr,
                         cloud_ref=conv_utils.get_object_ref(cloud_name, 'cloud', cloud_tenant=cloud_tenant),
                         tenant_ref=conv_utils.get_object_ref(tenant, 'tenant'),
@@ -278,16 +303,18 @@ class VsConfigConv(object):
                     profile_path = lb_vs.get('application_profile_path')
                     profile_id = profile_path.split('/')[-1]
                     profile_config = list(filter(lambda pr: pr["id"] == profile_id, nsx_lb_config["LbAppProfiles"]))
+                    profile_type = "APPLICATION_PROFILE_TYPE_HTTP"
                     profile_name = profile_config[0]["display_name"]
-                    if prefix:
-                        profile_name = prefix + "-" + profile_name
-                    profile_type = "network"
+                    if profile_id in application_profile_list.keys():
+                        profile_name = application_profile_list[profile_id]
+                        profile_type = "APPLICATION_PROFILE_TYPE_HTTP"
+                    elif profile_id in network_profile_list.keys():
+                        profile_name = network_profile_list[profile_id]
+                        profile_type = "network"
+
                     merge_profile_name = profile_name
                     if self.object_merge_check:
                         merge_profile_name = self.merge_object_mapping["app_profile"].get(profile_name)
-                    for profile in alb_config["ApplicationProfile"]:
-                        if profile["name"] == profile_name or profile["name"] == merge_profile_name:
-                            profile_type = profile["type"]
 
                     app_profile_ref = self.get_vs_app_profile_ref(alb_config['ApplicationProfile'],
                                                                   profile_name, self.object_merge_check,
@@ -316,12 +343,10 @@ class VsConfigConv(object):
                     ssl_key_cert_refs = []
                     if client_ssl.get('ssl_profile_path'):
                         ssl_ref_id = client_ssl['ssl_profile_path'].split('/')[-1]
-                        client_ssl_config = list(
-                            filter(lambda c_ssl: c_ssl["id"] == ssl_ref_id, nsx_lb_config["LbClientSslProfiles"]))
-                        if client_ssl_config:
-                            ssl_name = client_ssl_config[0]["display_name"]
-                            if prefix:
-                                ssl_name = prefix + '-' + ssl_name
+                        ssl_name = None
+                        if ssl_ref_id in ssl_profile_list.keys():
+                            ssl_name = ssl_profile_list[ssl_ref_id]
+                        if ssl_name:
                             if self.object_merge_check:
                                 ssl_name = self.merge_object_mapping['ssl_profile'].get(ssl_name)
                             alb_vs['ssl_profile_ref'] = conv_utils.get_object_ref(ssl_name, 'sslprofile', tenant=tenant)
@@ -375,9 +400,10 @@ class VsConfigConv(object):
                     pool_ref = lb_vs.get("sorry_pool_path")
                     sry_pl_id = lb_vs.get("sorry_pool_path").split("/")[-1]
                     sry_pl_config = list(filter(lambda pr: pr["id"] == sry_pl_id, nsx_lb_config["LbPools"]))
-                    sry_pl = sry_pl_config[0]["display_name"]
-                    sorry_pool_name = sry_pl
+
                     if lb_vs["id"] in vs_sorry_pool_segment_list.keys():
+                        sry_pl = pool_name_dict.get(sry_pl_id)
+                        sorry_pool_name = sry_pl
                         pool_segment = vs_sorry_pool_segment_list[lb_vs["id"]].get("pool_segment")
                         pl_name = sry_pl
                         is_sry_pool_group = False
@@ -389,11 +415,10 @@ class VsConfigConv(object):
                             persist_ref = self.get_persist_ref(lb_vs)
                             avi_persistence = alb_config['ApplicationPersistenceProfile']
                             persist_type = None
+                            persist_ref = persistence_profile_list.get(persist_ref,None)
                             if persist_ref:
                                 # Called tenant ref to get object name
                                 persist_ref = conv_utils.get_tenant_ref(persist_ref)[1]
-                                if prefix:
-                                    persist_ref = '{}-{}'.format(prefix, persist_ref)
                                 persist_profile_objs = (
                                         [ob for ob in avi_persistence if ob['name'] ==
                                          self.merge_object_mapping['app_per_profile'].get(
@@ -430,20 +455,22 @@ class VsConfigConv(object):
                     pool_ref = lb_vs.get('pool_path')
                     pl_id = pool_ref.split('/')[-1]
                     pl_config = list(filter(lambda pr: pr["id"] == pl_id, nsx_lb_config["LbPools"]))
-                    pl_name = pl_config[0]["display_name"]
-                    pool_name = pl_name
+
                     if lb_vs["id"] in vs_pool_segment_list.keys():
+                        pl_name = pool_name_dict.get(pl_id)
+                        pool_name = pl_name
                         pool_segment = vs_pool_segment_list[lb_vs["id"]].get("pool_segment")
                         vs_app_name = profile_name
                         if pl_config[0].get("snat_translation"):
                             if pl_config[0]["snat_translation"].get("type") == "LBSnatDisabled":
-                                vs_app_name = self.update_app_with_snat(profile_name, profile_type,
-                                                                        alb_config["ApplicationProfile"],
-                                                                        self.object_merge_check,
-                                                                        self.merge_object_mapping)
-                                if vs_app_name != profile_name:
-                                    alb_vs['application_profile_ref'] = conv_utils.get_object_ref \
-                                        (vs_app_name, 'applicationprofile', tenant=tenant)
+                                if not alb_vs['application_profile_ref'].__contains__('System-L4-Application'):
+                                    vs_app_name = self.update_app_with_snat(profile_name, profile_type,
+                                                                            alb_config["ApplicationProfile"],
+                                                                            self.object_merge_check,
+                                                                            self.merge_object_mapping)
+                                    if vs_app_name != profile_name:
+                                        alb_vs['application_profile_ref'] = conv_utils.get_object_ref \
+                                            (vs_app_name, 'applicationprofile', tenant=tenant)
                                 elif alb_vs['application_profile_ref'].__contains__('System-L4-Application'):
                                     alb_vs['application_profile_ref'] = conv_utils. \
                                         get_object_ref('System-L4-Application-pci', 'applicationprofile',
@@ -452,7 +479,8 @@ class VsConfigConv(object):
                                         new_pci_app_profile = {
                                             "name": "System-L4-Application-pci",
                                             "type": "APPLICATION_PROFILE_TYPE_L4",
-                                            "preserve_client_ip": True
+                                            "preserve_client_ip": True,
+                                            "tenant_ref": conv_utils.get_object_ref(tenant, 'tenant')
                                         }
                                         alb_config["ApplicationProfile"].append(new_pci_app_profile)
                                         app_profile_pci_created = True
@@ -465,6 +493,7 @@ class VsConfigConv(object):
                                         "ha_mode": "HA_MODE_LEGACY_ACTIVE_STANDBY",
                                         "cloud_ref": conv_utils.get_object_ref(cloud_name, 'cloud',
                                                                                cloud_tenant=cloud_tenant),
+                                        "tenant_ref": conv_utils.get_object_ref(tenant, 'tenant')
                                     }
                                     alb_config["ServiceEngineGroup"].append(new_pci_se_group)
                                     is_pci_se_group_created = True
@@ -477,6 +506,29 @@ class VsConfigConv(object):
 
                                 nsxt_util.create_and_update_nsgroup(pool_name, alb_config,
                                                                     pl_config[0].get("members"))
+
+                                # Create NetworkService for the created SEGroup
+                                if not is_network_service_created.get("{}-{}".format(pci_se_group_name, tier1_lr)):
+                                    ns_name = "{}-{}".format(pci_se_group_name, "ns")
+                                    tier_name = tier1_lr.split("/")[-1]
+                                    floating_ip = "0.0.0.0"
+                                    if migration_input_config and migration_input_config.get('network_service'):
+                                        floating_ip = migration_input_config.get('network_service'). \
+                                            get("{}-{}".format(tier_name, "floating-ip"))
+                                    ns_cloud_ref = conv_utils.get_object_ref(cloud_name, 'cloud',
+                                                                             cloud_tenant=cloud_tenant)
+                                    ns_vrf_ref = conv_utils.get_object_ref(tier_name, 'vrfcontext',
+                                                                           cloud_name=cloud_name,
+                                                                           cloud_tenant=cloud_tenant,
+                                                                           tenant=tenant)
+                                    tenant_ref = conv_utils.get_object_ref(tenant, 'tenant')
+                                    new_network_service = nsxt_util.create_network_service_obj(ns_name,
+                                                                                               alb_vs["se_group_ref"],
+                                                                                               ns_cloud_ref, ns_vrf_ref,
+                                                                                               floating_ip, tenant_ref)
+                                    alb_config["NetworkService"].append(new_network_service)
+                                    is_network_service_created["{}-{}".format(pci_se_group_name, tier1_lr)] = True
+
                                 vs_list_with_snat_deactivated.append(alb_vs["name"])
 
                             if pl_config[0]["snat_translation"].get("type") == "LBSnatIpPool":
@@ -498,11 +550,10 @@ class VsConfigConv(object):
                             persist_ref = self.get_persist_ref(lb_vs)
                             avi_persistence = alb_config['ApplicationPersistenceProfile']
                             persist_type = None
+                            persist_ref = persistence_profile_list.get(persist_ref,None)
                             if persist_ref:
                                 # Called tenant ref to get object name
                                 persist_ref = conv_utils.get_tenant_ref(persist_ref)[1]
-                                if prefix:
-                                    persist_ref = '{}-{}'.format(prefix, persist_ref)
                                 persist_profile_objs = (
                                         [ob for ob in avi_persistence if ob['name'] ==
                                          self.merge_object_mapping['app_per_profile'].get(
@@ -603,9 +654,9 @@ class VsConfigConv(object):
 
                     policy, skipped_rules = policy_converter.convert \
                         (lb_vs, alb_vs, alb_config, nsx_lb_config,
-                         is_pool_group_used, http_pool_group_list, http_pool_list,
-                         cloud_type, cloud_name, prefix, controller_version,
-                         cloud_tenant, tier1_lr, tenant)
+                        is_pool_group_used, http_pool_group_list, http_pool_list,
+                        cloud_type, cloud_name, prefix, controller_version,
+                        cloud_tenant, tier1_lr, tenant)
                     converted_http_policy_sets.append(skipped_rules)
                     if policy:
                         updated_http_policy_ref = conv_utils.get_object_ref(
@@ -681,55 +732,6 @@ class VsConfigConv(object):
         if self.object_merge_check:
             self.update_ssl_key_refernce(alb_config)
             self.update_pki_refernce(alb_config)
-
-    def update_pool_with_ssl(self, alb_config, nsx_lb_config, lb_vs, pool_name, object_merge_check,
-                             merge_object_mapping,
-                             prefix, tenant,
-                             converted_alb_ssl_certs, ssh_root_password):
-        for pool in alb_config['Pool']:
-            if pool.get('name') == pool_name:
-                server_ssl = lb_vs['server_ssl_profile_binding']
-                if server_ssl.get('ssl_profile_path'):
-                    ssl_ref_id = server_ssl['ssl_profile_path'].split('/')[-1]
-                    ssl_config = list(
-                        filter(lambda ssl: ssl["id"] == ssl_ref_id, nsx_lb_config["LbServerSslProfiles"]))
-                    ssl_name = ssl_config[0]["display_name"]
-                    if prefix:
-                        ssl_name = prefix + '-' + ssl_name
-                    if object_merge_check:
-                        ssl_merge_name = merge_object_mapping['ssl_profile'].get(ssl_name)
-                        if ssl_merge_name:
-                            ssl_name = ssl_merge_name
-                    pool['ssl_profile_ref'] = conv_utils.get_object_ref(ssl_name, "sslprofile", tenant=tenant)
-                else:
-                    pool['ssl_profile_ref'] = conv_utils.get_object_ref("System-Standard",
-                                                                        "sslprofile", tenant=tenant)
-                if server_ssl.get('client_certificate_path', None):
-                    ca_cert_obj = self.update_ca_cert_obj(pool_name, alb_config, [], tenant, prefix,
-                                                          ssl_type='server_ssl', ssl_data=server_ssl,
-                                                          nsxt_ip=self.nsxt_ip, ssh_root_password=ssh_root_password)
-
-                    pool[
-                        "ssl_key_and_certificate_ref"] = conv_utils.get_object_ref \
-                        (ca_cert_obj.get("name"), "sslkeyandcertificate", tenant=tenant)
-
-                    converted_alb_ssl_certs.append(ca_cert_obj)
-
-    def update_pool_with_persistence(self, alb_pool_config, nsx_lb_config, lb_vs, pool_name,
-                                     prefix, tenant):
-        persis_id = lb_vs.get('lb_persistence_profile_path').split('/')[-1]
-        persis_config = list(
-            filter(lambda pp: pp["id"] == persis_id, nsx_lb_config["LbPersistenceProfiles"]))
-        if persis_config:
-            persis_name = persis_config[0]["display_name"]
-            if prefix:
-                persis_name = prefix + "-" + persis_name
-            if self.object_merge_check:
-                persis_name = self.merge_object_mapping['app_per_profile'].get(persis_name)
-            for pool in alb_pool_config:
-                if pool.get('name') == pool_name:
-                    pool['application_persistence_profile_ref'] = conv_utils.get_object_ref \
-                        (persis_name, 'applicationpersistenceprofile', tenant=tenant)
 
     def get_vs_app_profile_ref(self, alb_profile_config, profile_name, object_merge_check,
                                merge_object_mapping, profile_type, tenant):
@@ -813,10 +815,12 @@ class VsConfigConv(object):
 
     def update_app_with_snat(self, profile_name, profile_type, alb_app_config, object_merge_check,
                              merge_object_mapping):
+        app_profile_name = profile_name
         app_prof_obj = [obj for obj in alb_app_config if obj['name'] == profile_name]
         if object_merge_check:
             app_profile_merge_name = merge_object_mapping['app_profile'].get(profile_name)
             app_prof_obj = [obj for obj in alb_app_config if obj['name'] == app_profile_merge_name]
+            profile_name = app_profile_merge_name
         cme = True
         if profile_type == 'APPLICATION_PROFILE_TYPE_HTTP':
             cme = app_prof_obj[0]['http_profile'].get(
@@ -843,7 +847,7 @@ class VsConfigConv(object):
                 app_obj_ref = conv_utils.get_object_ref(
                     app_name, 'applicationprofile',
                     tenant=conv_utils.get_name(app_prof_cmd['tenant_ref']))
-                conv_status = conv_utils.get_conv_status_by_obj_name(profile_name)
+                conv_status = conv_utils.get_conv_status_by_obj_name(app_profile_name)
                 conv_utils.add_conv_status('applicationprofile', "LBHttpProfile",
                                            app_prof_cmd['name'], conv_status,
                                            [{'application_http_profile': app_prof_cmd}])
@@ -1132,12 +1136,8 @@ class VsConfigConv(object):
 
     def add_pool_with_persistence(self, alb_config, nsx_lb_config, lb_vs, pool_name, prefix, cloud_name, tenant):
         persis_id = lb_vs.get('lb_persistence_profile_path').split('/')[-1]
-        persis_config = list(
-            filter(lambda pp: pp["id"] == persis_id, nsx_lb_config["LbPersistenceProfiles"]))
-        if persis_config:
-            persis_name = persis_config[0]["display_name"]
-            if prefix:
-                persis_name = prefix + "-" + persis_name
+        persis_name = persistence_profile_list.get(persis_id)
+        if persis_name:
             if self.object_merge_check:
                 persis_name = self.merge_object_mapping['app_per_profile'].get(persis_name)
             for pool in alb_config['Pool']:
@@ -1254,16 +1254,15 @@ class VsConfigConv(object):
                 server_ssl = lb_vs['server_ssl_profile_binding']
                 if server_ssl.get('ssl_profile_path'):
                     ssl_ref_id = server_ssl['ssl_profile_path'].split('/')[-1]
-                    ssl_config = list(
-                        filter(lambda ssl: ssl["id"] == ssl_ref_id, nsx_lb_config["LbServerSslProfiles"]))
-                    ssl_name = ssl_config[0]["display_name"]
-                    if prefix:
-                        ssl_name = prefix + '-' + ssl_name
-                    if self.object_merge_check:
-                        ssl_merge_name = self.merge_object_mapping['ssl_profile'].get(ssl_name)
-                        if ssl_merge_name:
-                            ssl_name = ssl_merge_name
-                    pool['ssl_profile_ref'] = conv_utils.get_object_ref(ssl_name, "sslprofile", tenant=tenant)
+                    ssl_name = None
+                    if ssl_ref_id in ssl_profile_list.keys():
+                        ssl_name = ssl_profile_list[ssl_ref_id]
+                    if ssl_name:
+                        if self.object_merge_check:
+                            ssl_merge_name = self.merge_object_mapping['ssl_profile'].get(ssl_name)
+                            if ssl_merge_name:
+                                ssl_name = ssl_merge_name
+                        pool['ssl_profile_ref'] = conv_utils.get_object_ref(ssl_name, "sslprofile", tenant=tenant)
                 if server_ssl.get('client_certificate_path', None):
                     ca_cert_obj = self.update_ca_cert_obj(pool_name, alb_config, [], tenant, prefix,
                                                           ssl_type='server_ssl', ssl_data=server_ssl,

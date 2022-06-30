@@ -254,7 +254,7 @@ class NSXUtil():
                 if not monitor["_system_owned"]:
                     self.nsx_api_client.infra.LbMonitorProfiles.delete(monitor["id"])
 
-    def cutover_vs(self, vs_list):
+    def cutover_vs(self, vs_list, prefix):
         vs_not_found = list()
         nsxt_all_virtual_services = self.get_all_virtual_service()
 
@@ -288,9 +288,11 @@ class NSXUtil():
                 print("Disconnected traffic for VS {} on NSX-T".format(nsxt_vs_name))
 
                 for alb_vs in alb_vs_list:
-                    if alb_vs == nsxt_vs_name:
+                    vs_name_with_prefix = "{}-{}".format(prefix, nsxt_vs_name) if prefix else nsxt_vs_name
+                    if alb_vs == vs_name_with_prefix:
                         vs_obj = alb_vs_list[alb_vs]
                         vs_obj["traffic_enabled"] = True
+                        vs_obj["enabled"] = True
                         if "analytics_policy" in vs_obj:
                             vs_obj["analytics_policy"]["full_client_logs"]["enabled"] = True
                         else:
@@ -309,7 +311,7 @@ class NSXUtil():
 
         return vs_not_found
 
-    def rollback_vs(self, vs_list, input_data):
+    def rollback_vs(self, vs_list, input_data, prefix):
         vs_not_found = list()
         nsxt_all_virtual_services = self.get_all_virtual_service()
 
@@ -351,7 +353,8 @@ class NSXUtil():
                 print(cutover_msg)
 
                 for alb_vs in alb_vs_list:
-                    if alb_vs == nsxt_vs_name:
+                    vs_name_with_prefix = "{}-{}".format(prefix, nsxt_vs_name) if prefix else nsxt_vs_name
+                    if alb_vs == vs_name_with_prefix:
                         vs_obj = alb_vs_list[alb_vs]
                         vs_obj["traffic_enabled"] = False
                         vs_obj["enabled"] = False
@@ -372,8 +375,10 @@ class NSXUtil():
 
         return vs_not_found, vs_with_no_lb
 
-    def get_cloud_type(self, avi_cloud_list, tz_id, seg_id):
+    def get_cloud_type(self, avi_cloud_list, tz_id, seg_id, tier1):
         is_seg_present = False
+        vlan_cloud_list = list()
+        overlay_cloud_list = list()
         for cl in avi_cloud_list:
             if cl.get("vtype") == "CLOUD_NSXT":
                 if cl.get("nsxt_configuration"):
@@ -399,12 +404,47 @@ class NSXUtil():
                         tz = tz.split("/")[-1]
                     if tz == tz_id and is_seg_present:
                         return cl.get("name")
+                    elif tz == tz_id and not is_seg_present:
+                        if cl["nsxt_configuration"]["data_network_config"].get("tz_type") == "VLAN":
+                            vlan_cloud_list.append(cl)
+                            continue
+                        elif cl["nsxt_configuration"]["data_network_config"].get("tz_type") == "OVERLAY":
+                            overlay_cloud_list.append(cl)
+                            continue
+
+        if vlan_cloud_list:
+            cloud_info = self.session.get_object_by_name("cloud", vlan_cloud_list[0]['name'])
+            cloud_vlan_segments = cloud_info.get("nsxt_configuration").get("data_network_config").get("vlan_segments")
+            cloud_vlan_segments.append("/infra/segments/{}".format(seg_id))
+            cloud_info.get("nsxt_configuration").get("data_network_config").update({
+                "vlan_segments": cloud_vlan_segments
+            })
+            self.session.put("cloud/{}".format(cloud_info.get("uuid")), cloud_info)
+            return cloud_info.get("name")
+        elif overlay_cloud_list:
+            for cloud in overlay_cloud_list:
+                cloud_info = self.session.get_object_by_name("cloud", cloud['name'])
+                cloud_tier1_lrs = cloud_info.get("nsxt_configuration").get("data_network_config").\
+                    get("tier1_segment_config").get("manual").get("tier1_lrs")
+                cloud_tier1_lrs.append({
+                    "segment_id": "/infra/segments/{}".format(seg_id),
+                    "tier1_lr_id": tier1 if '/infra/tier-1s' in tier1 else "/infra/tier-1s/{}".format(tier1)
+                })
+                cloud_info.get("nsxt_configuration").get("data_network_config").get("tier1_segment_config").get("manual").update({
+                    "tier1_lrs": cloud_tier1_lrs
+                })
+                response = self.session.put("cloud/{}".format(cloud_info.get("uuid")), cloud_info)
+                if response.status_code == 200:
+                    return cloud_info.get("name")
+                else:
+                    continue
 
         return "Cloud Not Found"
 
     def get_lb_services_details(self):
         lb_services = self.nsx_api_client.infra.LbServices.list().to_dict().get('results', [])
         for lb in lb_services:
+            self.cloud = self.session.get("cloud/").json()["results"]
             if not lb.get("connectivity_path"):
                 continue
             tier = get_name_and_entity(lb["connectivity_path"])[-1]
@@ -419,9 +459,6 @@ class NSXUtil():
                 interface = interface_list[0].id
                 segment_id = get_name_and_entity(interface_list[0].segment_path)[-1]
                 segment = self.nsx_api_client.infra.Segments.get(segment_id)
-                tz_path = segment.transport_zone_path
-                tz_id = get_name_and_entity(tz_path)[-1]
-                cloud_name = self.get_cloud_type(self.cloud, tz_id, segment_id)
                 if hasattr(segment, "vlan_ids") and segment.vlan_ids:
                     network = "Vlan"
                 else:
@@ -429,6 +466,10 @@ class NSXUtil():
 
                 if network == "Overlay" and len(interface_list) > 0:
                     lb_tier1_lr = segment.connectivity_path
+
+                tz_path = segment.transport_zone_path
+                tz_id = get_name_and_entity(tz_path)[-1]
+                cloud_name = self.get_cloud_type(self.cloud, tz_id, segment_id, lb_tier1_lr if lb_tier1_lr else tier)
 
                 for intrf in interface_list:
                     segment_id = get_name_and_entity(intrf.segment_path)[-1]
@@ -450,29 +491,35 @@ class NSXUtil():
                         if gateway_name == tier:
                             tz_path = seg.get("transport_zone_path")
                             tz_id = get_name_and_entity(tz_path)[-1]
-                            cloud_name = self.get_cloud_type(self.cloud, tz_id, seg.get("id"))
-                            if seg.get("vlan_ids"):
-                                network = "Vlan"
-                            else:
-                                network = "Overlay"
-                            if seg.get("subnets"):
-                                subnets = []
-                                for subnet in seg["subnets"]:
-                                    subnets.append({
-                                        "network_range": subnet["network"]
-                                    })
-                                segments = {
-                                    "name": seg.get("id"),
-                                    "subnet": subnets}
-                                lb_details.append(segments)
-                            if cloud_name == "Cloud Not Found":
-                                continue
-                            break
+                            dhcp_present = False
+                            for subnet in seg["subnets"]:
+                                if "dhcp_config" in subnet.keys() and not dhcp_present:
+                                    dhcp_present = True
+                            if dhcp_present:
+                                cloud_name = self.get_cloud_type(self.cloud, tz_id, seg.get("id"), tier)
+                                if seg.get("vlan_ids"):
+                                    network = "Vlan"
+                                else:
+                                    network = "Overlay"
+                                if seg.get("subnets"):
+                                    subnets = []
+                                    for subnet in seg["subnets"]:
+                                        subnets.append({
+                                            "network_range": subnet["network"]
+                                        })
+                                    segments = {
+                                        "name": seg.get("id"),
+                                        "subnet": subnets}
+                                    lb_details.append(segments)
+                                if cloud_name == "Cloud Not Found":
+                                    continue
+                                break
 
                 if not (network and cloud_name):
                     self.lb_services[lb["id"]] = {
                         "lb_name": lb["id"],
-                        "lb_skip_reason": "No segments or service interfaces configured"
+                        "lb_skip_reason": "Skipping because NSX Load Balancer has no segments "
+                                          "or service interfaces configured"
                     }
                     continue
 
@@ -533,13 +580,13 @@ class NSXUtil():
                 vs_object["enabled"] = False
             if vs.get('pool_path'):
                 pool = vs.get("pool_path")
-                pool_partition, pool_name = get_name_and_entity(pool)
-                if pool_name:
+                pool_partition, pool_id = get_name_and_entity(pool)
+                if pool_id:
                     vs_object['pool'] = {
-                        'name': pool_name
+                        'name': pool_id
                     }
-                    self.enabled_pool_list.append(pool_name)
-                    pool_obj = self.nsx_api_client.infra.LbPools.get(pool_name)
+                    self.enabled_pool_list.append(pool_id)
+                    pool_obj = self.nsx_api_client.infra.LbPools.get(pool_id)
                     vs_object["pool"]["pool_id"] = pool_obj.id
                     if pool_obj.active_monitor_paths:
                         health_monitors = [
@@ -565,10 +612,10 @@ class NSXUtil():
                     if vs_object["enabled"]:
                         vs_object['pool']["vs_enabled"] = vs_object["enabled"]
             if vs.get("application_profile_path"):
-                profile_name = get_name_and_entity(vs["application_profile_path"])[1]
-                vs_object["profiles"] = profile_name
+                profile_id = get_name_and_entity(vs["application_profile_path"])[1]
+                vs_object["profiles"] = profile_id
                 prof_obj_list = self.nsx_api_client.infra.LbAppProfiles.list().to_dict().get("results", [])
-                prof_obj = [prof for prof in prof_obj_list if prof["display_name"] == profile_name]
+                prof_obj = [prof for prof in prof_obj_list if prof["id"] == profile_id]
                 prof_type = prof_obj[0].get("resource_type")
                 if prof_type == "LBHttpProfile":
                     vs_type = "L7"
@@ -869,3 +916,21 @@ class NSXUtil():
             LOG.debug("ns group created for pool {}".format(pool_name))
         except Exception:
             LOG.debug("Error in creating ns group for pool {}".format(pool_name))
+
+    def create_network_service_obj(self, name, se_group_ref, cloud_ref, vrf_ref, floating_ip, tenant_ref):
+        new_network_service = dict()
+        new_network_service["name"] = name
+        new_network_service["se_group_ref"] = se_group_ref
+        new_network_service["cloud_ref"] = cloud_ref
+        new_network_service["vrf_ref"] = vrf_ref
+        new_network_service["service_type"] = "ROUTING_SERVICE"
+        new_network_service["tenant_ref"] = tenant_ref
+        new_network_service["routing_service"] = {
+            "floating_intf_ip": [
+                    {
+                        "addr": floating_ip,
+                        "type": "V4"
+                    }
+                ]
+        }
+        return new_network_service

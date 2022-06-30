@@ -62,7 +62,7 @@ def convert(nsx_lb_config, input_path, output_path, tenant, prefix,
         for key in merge_object_type:
             sys_dict[key] = []
             avi_config_dict[key] = []
-
+        
         monitor_converter = MonitorConfigConv(nsxt_attributes, object_merge_check, merge_object_mapping, sys_dict)
         monitor_converter.convert(avi_config_dict, nsx_lb_config, prefix,tenant,custom_mapping)
 
@@ -84,7 +84,7 @@ def convert(nsx_lb_config, input_path, output_path, tenant, prefix,
                              tenant, vs_state, controller_version, traffic_enabled,
                              cloud_tenant, ssh_root_password, nsxt_util, migration_input_config,
                              vrf, segroup)
-
+        conv_utils.remove_dup_of(avi_config_dict)
         # Validating the aviconfig after generation
         conv_utils.validation(avi_config_dict)
     except Exception as e:

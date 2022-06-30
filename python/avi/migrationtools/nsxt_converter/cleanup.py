@@ -90,7 +90,7 @@ if __name__ == "__main__":
     parser.add_argument('-u', '--nsxt_user',
                         help='NSX-T User name')
     parser.add_argument('-p', '--nsxt_password',
-                        help='NSX-T Password', required=True)
+                        help='NSX-T Password')
     parser.add_argument('-port', '--nsxt_port', default=443,
                         help='NSX-T Port')
     parser.add_argument('-o', '--output_file_path',
@@ -99,6 +99,13 @@ if __name__ == "__main__":
 
     start = datetime.now()
     args = parser.parse_args()
+    if not args.nsxt_password:
+        if os.environ.get('nsxt_password'):
+            args.nsxt_password = os.environ.get('nsxt_password')
+        else:
+            print("\033[91m"+'ERROR: please provide nsxt password either through '
+                            'environment variable or as a script parameter'+"\033[0m")
+            exit()
     nsxtalb_cleanup = NsxtAlbCleanup(args)
     nsxtalb_cleanup.initiate_cleanup()
     end = datetime.now()

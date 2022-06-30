@@ -12,6 +12,7 @@ LOG = logging.getLogger(__name__)
 
 conv_utils = NsxtConvUtil()
 common_avi_util = MigrationUtil()
+monitor_list = {}
 
 
 class MonitorConfigConv(object):
@@ -164,10 +165,10 @@ class MonitorConfigConv(object):
                 na_list = [val for val in lb_hm.keys()
                            if val in self.common_na_attr]
                 if prefix:
-                    name = prefix + '-' + name
+                    name = '%s-%s' % (prefix, name)
                 if self.object_merge_check:
                     if name in self.merge_object_mapping.keys():
-                        name = name+"-"+lb_hm["id"]
+                        name = '%s-%s' % (name, lb_hm["id"])
                 else:
                     monitor_temp = list(filter(lambda hm: hm["name"] == name, alb_config['HealthMonitor']))
                     if monitor_temp:
@@ -179,10 +180,11 @@ class MonitorConfigConv(object):
                     send_interval=lb_hm['interval'],
                     successful_checks=lb_hm.get('rise_count', None)
                 )
+                monitor_list[lb_hm['id']] = name
                 if lb_hm.get('monitor_port', None):
                     alb_hm['monitor_port'] = lb_hm.get('monitor_port', None)
 
-                alb_hm['tenant_ref'] = conv_utils.get_object_ref(tenant,'tenant')
+                alb_hm['tenant_ref'] = conv_utils.get_object_ref(tenant, 'tenant')
                 server_ssl_indirect = []
                 if monitor_type == "LBHttpMonitorProfile":
                     skipped = self.convert_http(lb_hm, alb_hm, skipped)
@@ -322,7 +324,8 @@ class MonitorConfigConv(object):
                 ca_cert_obj = self.update_ca_cert_obj(lb_hm['display_name'], alb_config, [], tenant, prefix,
                                                       cert_type='SSL_CERTIFICATE_TYPE_VIRTUALSERVICE')
                 ssl_attributes[
-                    "ssl_key_and_certificate_ref"] = "/api/sslkeyandcertificate/?tenant=%s&name=%s" % (tenant, ca_cert_obj.get(
+                    "ssl_key_and_certificate_ref"] = "/api/sslkeyandcertificate/?tenant=%s&name=%s" % (
+                tenant, ca_cert_obj.get(
                     "name"))
                 converted_alb_ssl_certs.append(ca_cert_obj)
 

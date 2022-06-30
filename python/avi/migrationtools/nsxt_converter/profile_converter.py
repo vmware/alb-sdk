@@ -9,6 +9,8 @@ LOG = logging.getLogger(__name__)
 
 conv_utils = NsxtConvUtil()
 common_avi_util = MigrationUtil()
+application_profile_list = {}
+network_profile_list = {}
 
 
 class ProfileConfigConv(object):
@@ -47,14 +49,14 @@ class ProfileConfigConv(object):
                 progressbar_count += 1
                 name = lb_pr.get('display_name')
                 if prefix:
-                    name = prefix + '-' + name
+                    name = '%s-%s' % (prefix, name)
                 tenant_name, t_name = conv_utils.get_tenant_ref(tenant)
                 if not tenant:
                     tenant = tenant_name
 
                 alb_pr = dict(
                     name=name,
-                    tenant_ref=conv_utils.get_object_ref(tenant, 'tenant')
+                    tenant_ref=conv_utils.get_object_ref(tenant, 'tenant'),
                 )
 
                 if lb_pr['resource_type'] == 'LBHttpProfile':
@@ -77,11 +79,11 @@ class ProfileConfigConv(object):
                 if lb_pr['resource_type'] == 'LBHttpProfile':
                     if self.object_merge_check:
                         if name in self.merge_object_mapping['app_profile'].keys():
-                            name = name + "-" + lb_pr["id"]
+                            name = '%s-%s' % (name, lb_pr["id"])
                     else:
                         profile_temp = list(filter(lambda pr: pr["name"] == name, alb_config['ApplicationProfile']))
                         if profile_temp:
-                            name = name + "-" + lb_pr["id"]
+                            name = '%s-%s' % (name, lb_pr["id"])
                     alb_pr["name"] = name
                     skipped = [val for val in lb_pr.keys()
                                if val not in self.ap_http_supported_attributes]
@@ -110,11 +112,11 @@ class ProfileConfigConv(object):
                 else:
                     if self.object_merge_check:
                         if name in self.merge_object_mapping['network_profile'].keys():
-                            name = name + "-" + lb_pr["id"]
+                            name = '%s-%s' % (name, lb_pr["id"])
                     else:
                         profile_temp = list(filter(lambda pr: pr["name"] == name, alb_config['NetworkProfile']))
                         if profile_temp:
-                            name = name + "-" + lb_pr["id"]
+                            name = '%s-%s' % (name, lb_pr["id"])
                     alb_pr["name"] = name
                     skipped = [val for val in lb_pr.keys()
                                if val not in self.np_supported_attributes]
@@ -167,10 +169,13 @@ class ProfileConfigConv(object):
                     conv_utils.add_conv_status('applicationprofile', attr_ap[index]['resource_type'],
                                                attr_ap[index]['name'], conv_status,
                                                [{'application_http_profile': alb_mig_app_pr[0]}])
+                    application_profile_list[profile_id] = attr_ap[index]['name']
                 else:
                     conv_utils.add_conv_status('applicationprofile', attr_ap[index]['resource_type'],
                                                attr_ap[index]['name'], conv_status,
                                                [{'application_http_profile': alb_mig_app_pr}])
+                    application_profile_list[profile_id] = attr_ap[index]['name']
+
                 if len(conv_status['skipped']) > 0:
                     LOG.debug('[APPLICATION-PROFILE] Skipped Attribute {}:{}'.format(attr_ap[index]['name'],
                                                                                      conv_status['skipped']))
@@ -187,15 +192,17 @@ class ProfileConfigConv(object):
                 alb_mig_np_pr = attr_np[index]['alb_pr']
                 if self.object_merge_check:
                     alb_mig_np_pr = [np_pr for np_pr in alb_config['NetworkProfile'] if
-                                         np_pr.get('name') == self.merge_object_mapping['network_profile'].get(
-                                             name)]
+                                     np_pr.get('name') == self.merge_object_mapping['network_profile'].get(
+                                         name)]
                     conv_utils.add_conv_status('applicationprofile', attr_np[index]['resource_type'],
                                                attr_np[index]['name'], conv_status,
                                                [{'network_profile': alb_mig_np_pr[0]}])
+                    network_profile_list[profile_id] = attr_np[index]['name']
                 else:
                     conv_utils.add_conv_status('applicationprofile', attr_np[index]['resource_type'],
                                                attr_np[index]['name'], conv_status,
                                                [{'network_profile': alb_mig_np_pr}])
+                    network_profile_list[profile_id] = attr_np[index]['name']
                 if len(conv_status['skipped']) > 0:
                     LOG.debug('[APPLICATION-PROFILE] Skipped Attribute {}:{}'.format(attr_np[index]['name'],
                                                                                      conv_status['skipped']))

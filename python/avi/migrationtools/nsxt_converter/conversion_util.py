@@ -101,7 +101,7 @@ class NsxtConvUtil(MigrationUtil):
         for status in conv_const.STATUS_LIST:
             status_list = [row for row in csv_writer_dict_list if
                            row['Status'] == status]
-            print('%s: %s' % ('Total ' + status, len(status_list)))
+            print('Total %s: %s' % (status, len(status_list)))
         print("Writing Excel Sheet For Converted Configuration...")
         ptotal_count = ptotal_count + len(csv_writer_dict_list)
         if vs_level_status:
@@ -1155,8 +1155,8 @@ class NsxtConvUtil(MigrationUtil):
                     shared_apptype = shared_appobj['type'] if shared_appobj \
                         else None
                 app_prof_name = self.get_name(app_prof_ref)
-                app_prof_objs = [appob for appob in (avi_config[
-                    'ApplicationProfile']) if appob['name'] ==
+                app_prof_objs = [app_ob for app_ob in (avi_config[
+                    'ApplicationProfile']) if app_ob['name'] ==
                                  app_prof_name]
                 app_prof_obj = app_prof_objs[0] if app_prof_objs else {}
                 app_prof_type = app_prof_obj['type'] if app_prof_obj else None
@@ -1371,3 +1371,12 @@ class NsxtConvUtil(MigrationUtil):
                     )
                     pool_obj["placement_networks"].append(subnets)
                 break
+
+    def remove_dup_of(self,avi_config):
+        self.remove_dup_key(avi_config["SSLKeyAndCertificate"])
+        self.remove_dup_key(avi_config["ApplicationProfile"])
+        self.remove_dup_key(avi_config["NetworkProfile"])
+        self.remove_dup_key(avi_config["SSLProfile"])
+        self.remove_dup_key(avi_config["PKIProfile"])
+        self.remove_dup_key(avi_config["ApplicationPersistenceProfile"])
+        self.remove_dup_key(avi_config["HealthMonitor"])
