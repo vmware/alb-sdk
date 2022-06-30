@@ -129,7 +129,7 @@
 		</plugins>
 	</build>
 	<properties>
-		<jackson.version>2.12.6</jackson.version>
+		<jackson.version>2.12.6.1</jackson.version>
 	</properties>
 	<dependencies>
 		<dependency>
