@@ -1,4 +1,3 @@
-import pytest
 
 
 def pytest_addoption(parser):
@@ -7,6 +6,7 @@ def pytest_addoption(parser):
     )
     parser.addoption('--conv_excel',action="store")
     parser.addoption("--config",action="store")
+    parser.addoption("--out", action="store")
     parser.addoption( '--avi_config_file',
                     help='absolute path for avi config file')
 

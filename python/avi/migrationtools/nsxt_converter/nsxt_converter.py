@@ -38,7 +38,7 @@ class NsxtConverter(AviConverter):
         '''
         self.nsxt_ip = args.nsxt_ip
         self.nsxt_user = args.nsxt_user
-        self.nsxt_passord = args.nsxt_password
+        self.nsxt_password = args.nsxt_password
         self.nsxt_port = args.nsxt_port
         self.prefix = args.prefix
         self.controller_ip = args.alb_controller_ip
@@ -98,7 +98,7 @@ class NsxtConverter(AviConverter):
         if is_download_from_host:
             LOG.debug("Copying files from host")
             print("Copying Files from Host...")
-            nsx_util = NSXUtil(self.nsxt_user, self.nsxt_passord, self.nsxt_ip, self.nsxt_port \
+            nsx_util = NSXUtil(self.nsxt_user, self.nsxt_password, self.nsxt_ip, self.nsxt_port \
                                , self.controller_ip, self.user, self.password, self.controller_version)
             nsx_util.get_inventory()
             nsx_util.get_pool_details()
@@ -131,7 +131,7 @@ class NsxtConverter(AviConverter):
             self.vs_state,
             self.vs_level_status, None, self.segroup, self.not_in_use, None,
             self.traffic_enabled, self.cloud_tenant,
-            self.nsxt_ip, self.nsxt_passord)
+            self.nsxt_ip, self.nsxt_password)
 
         avi_config = self.process_for_utils(alb_config, skip_ref_objects=["cloud_ref", "tenant_ref"])
         # Check if flag true then skip not in use object
@@ -241,7 +241,7 @@ class NsxtConverter(AviConverter):
             controller_version=self.controller_version,
             filter_types=self.ansible_filter_types)
         avi_traffic.write_ansible_playbook(
-            self.nsxt_ip, self.nsxt_user, self.nsxt_passord, 'nsxt')
+            self.nsxt_ip, self.nsxt_user, self.nsxt_password, 'nsxt')
 
 
 if __name__ == "__main__":
