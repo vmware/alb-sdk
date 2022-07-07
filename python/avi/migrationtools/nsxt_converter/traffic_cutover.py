@@ -94,7 +94,7 @@ if __name__ == "__main__":
                         help='controller username')
     parser.add_argument('--alb_controller_password',
                         help='controller password. Input '
-                             'prompt will appear if no value provided', required=True)
+                             'prompt will appear if no value provided')
     parser.add_argument('--vs_filter',
                         help='comma separated names of virtual services for performing cutover.\n',
                         required=True)
@@ -103,7 +103,7 @@ if __name__ == "__main__":
     parser.add_argument('-u', '--nsxt_user',
                         help='NSX-T User name')
     parser.add_argument('-p', '--nsxt_password',
-                        help='NSX-T Password', required=True)
+                        help='NSX-T Password')
     parser.add_argument('-port', '--nsxt_port', default=443,
                         help='NSX-T Port')
     parser.add_argument('-o', '--output_file_path',
@@ -112,6 +112,19 @@ if __name__ == "__main__":
 
     start = datetime.now()
     args = parser.parse_args()
+    if not args.nsxt_password:
+        if os.environ.get('nsxt_password'):
+            args.nsxt_password = os.environ.get('nsxt_password')
+        else:
+            print("\033[91m"+'ERROR: please provide nsxt password either through '
+                            'environment variable or as a script parameter'+"\033[0m")
+            exit()
+    if not args.alb_controller_password:
+        if os.environ.get('alb_controller_password'):
+            args.alb_controller_password= os.environ.get('alb_controller_password')
+        else:
+            print('\033[91m'+'ERROR: please provide alb_controller_password either through environment variable or as a script parameter'+"\033[0m")
+            exit()
     traffic_cutover = TrafficCutover(args)
     traffic_cutover.initiate_cutover_vs()
     end = datetime.now()
