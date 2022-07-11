@@ -60,6 +60,9 @@ type DebugServiceEngine struct {
 	//  It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
+	// Trace the functions calling memory allocation and free APIs. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	TraceMemory *DebugTraceMemory `json:"trace_memory,omitempty"`
+
 	// url
 	// Read Only: true
 	URL *string `json:"url,omitempty"`
