@@ -364,18 +364,18 @@ definitions:
             -   mandatory_strings
         properties:
             mandatory_message:
-                description: "f_mandatory message for nested f_mandatory test cases-level2. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "f_mandatory message for nested f_mandatory test cases-level2. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/L2FMandatoryTestCase'
             mandatory_messages:
-                description: "Repeated f_mandatory_message for nested f_mandatory test cases-level2. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Repeated f_mandatory_message for nested f_mandatory test cases-level2. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/L2FMandatoryTestCase'
             mandatory_string:
-                description: "f_mandatory string field for nested f_mandatory test cases-level1. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "f_mandatory string field for nested f_mandatory test cases-level1. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             mandatory_strings:
-                description: "Repeated f_mandatory string field for nested f_mandatory test cases-level1. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Repeated f_mandatory string field for nested f_mandatory test cases-level1. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -383,18 +383,18 @@ definitions:
         type: object
         properties:
             string_length_message:
-                description: "String length message for nested string length test cases. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "String length message for nested string length test cases. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/L2StringLengthTestCase'
             string_length_messages:
-                description: "Repeated string length message for nested string length test cases. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Repeated string length message for nested string length test cases. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/L2StringLengthTestCase'
             test_string:
-                description: "String field for nested string length test cases. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "String field for nested string length test cases. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             test_strings:
-                description: "Repeated field for nested string length test cases. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Repeated field for nested string length test cases. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -407,18 +407,18 @@ definitions:
             -   mandatory_strings
         properties:
             mandatory_message:
-                description: "f_mandatory message for nested f_mandatory test cases-level3. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "f_mandatory message for nested f_mandatory test cases-level3. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SingleOptionalFieldMessage'
             mandatory_messages:
-                description: "Repeated f_mandatory_message for nested f_mandatory test cases-level3. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Repeated f_mandatory_message for nested f_mandatory test cases-level3. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/SingleOptionalFieldMessage'
             mandatory_string:
-                description: "f_mandatory string field for nested f_mandatory test cases-level2. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "f_mandatory string field for nested f_mandatory test cases-level2. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             mandatory_strings:
-                description: "Repeated f_mandatory string field for nested f_mandatory test cases-level2. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Repeated f_mandatory string field for nested f_mandatory test cases-level2. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -426,18 +426,18 @@ definitions:
         type: object
         properties:
             string_length_message:
-                description: "String length message for nested string length test cases. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "String length message for nested string length test cases. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SingleOptionalStringField'
             string_length_messages:
-                description: "Repeated string length message for nested string length test cases. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Repeated string length message for nested string length test cases. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/SingleOptionalStringField'
             test_string:
-                description: "String field for nested string length test cases. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "String field for nested string length test cases. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             test_strings:
-                description: "Repeated  string field for nested string length test cases. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Repeated  string field for nested string length test cases. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -445,13 +445,13 @@ definitions:
         type: object
         properties:
             optional_string:
-                description: "Optional string field for nested f_mandatory test cases-level3. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Optional string field for nested f_mandatory test cases-level3. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
     SingleOptionalStringField:
         type: object
         properties:
             test_string:
-                description: "Optional string field. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Optional string field. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
     WebappUT:
         type: object
@@ -463,39 +463,39 @@ definitions:
                 readOnly: True
                 type: string
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Protobuf versioning for config pbs. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             mandatory_test:
-                description: "Optional message for nested f_mandatory test cases defined at level0. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Optional message for nested f_mandatory test cases defined at level0. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/L1FMandatoryTestCase'
             mandatory_tests:
-                description: "Repeated message for nested f_mandatory test cases-level1. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Repeated message for nested f_mandatory test cases-level1. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/L1FMandatoryTestCase'
             name:
-                description: "Name of the WebappUT object-level0. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Name of the WebappUT object-level0. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             string_length_test:
-                description: "Optional message for nested  max string length test cases. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Optional message for nested  max string length test cases. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/L1StringLengthTestCase'
             string_length_tests:
-                description: "Repeated message for nested  max string length test cases. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Repeated message for nested  max string length test cases. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/L1StringLengthTestCase'
             tenant_ref:
-                description: "Tenant of the WebappUT object-level0. It is a reference to an object of type Tenant. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Tenant of the WebappUT object-level0. It is a reference to an object of type Tenant. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             test_string:
-                description: "The maximum string length. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "The maximum string length. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the WebappUT object-level0. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "UUID of the WebappUT object-level0. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
     WebappUTApiResponse:
         type: object
