@@ -69,6 +69,9 @@ public class DebugServiceEngine extends AviRestResource  {
     @JsonProperty("tenant_ref")
     private String tenantRef = null;
 
+    @JsonProperty("trace_memory")
+    private DebugTraceMemory traceMemory = null;
+
     @JsonProperty("url")
     private String url = "url";
 
@@ -503,6 +506,30 @@ public class DebugServiceEngine extends AviRestResource  {
     public void setTenantRef(String  tenantRef) {
         this.tenantRef = tenantRef;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Trace the functions calling memory allocation and free apis.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return traceMemory
+     */
+    public DebugTraceMemory getTraceMemory() {
+        return traceMemory;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Trace the functions calling memory allocation and free apis.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param traceMemory set the traceMemory.
+     */
+    public void setTraceMemory(DebugTraceMemory traceMemory) {
+        this.traceMemory = traceMemory;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Avi controller URL of the object.
@@ -567,6 +594,7 @@ public class DebugServiceEngine extends AviRestResource  {
   Objects.equals(this.benchmarkAction, objDebugServiceEngine.benchmarkAction)&&
   Objects.equals(this.benchmarkOption, objDebugServiceEngine.benchmarkOption)&&
   Objects.equals(this.benchmarkRssHash, objDebugServiceEngine.benchmarkRssHash)&&
+  Objects.equals(this.traceMemory, objDebugServiceEngine.traceMemory)&&
   Objects.equals(this.tenantRef, objDebugServiceEngine.tenantRef);
     }
 
@@ -590,6 +618,7 @@ public class DebugServiceEngine extends AviRestResource  {
                         sb.append("    seagentDebug: ").append(toIndentedString(seagentDebug)).append("\n");
                         sb.append("    selogagentDebug: ").append(toIndentedString(selogagentDebug)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+                        sb.append("    traceMemory: ").append(toIndentedString(traceMemory)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
       return sb.toString();

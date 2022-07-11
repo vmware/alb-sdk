@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The SingleOptionalFieldMessage is a POJO class extends AviRestResource that used for creating
- * SingleOptionalFieldMessage.
+ * The DebugTraceMallocTypes is a POJO class extends AviRestResource that used for creating
+ * DebugTraceMallocTypes.
  *
  * @version 1.0
  * @since 
@@ -20,34 +20,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class SingleOptionalFieldMessage  {
-    @JsonProperty("optional_string")
-    private String optionalString = null;
+public class DebugTraceMallocTypes  {
+    @JsonProperty("malloc_type_index")
+    private Integer mallocTypeIndex = null;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Optional string field for nested f_mandatory test cases-level3.
-     * Field introduced in 21.1.5, 22.1.1.
+     * Memory type to be traced for se_malloc and se_free.
+     * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return optionalString
+     * @return mallocTypeIndex
      */
-    public String getOptionalString() {
-        return optionalString;
+    public Integer getMallocTypeIndex() {
+        return mallocTypeIndex;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Optional string field for nested f_mandatory test cases-level3.
-     * Field introduced in 21.1.5, 22.1.1.
+     * Memory type to be traced for se_malloc and se_free.
+     * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param optionalString set the optionalString.
+     * @param mallocTypeIndex set the mallocTypeIndex.
      */
-    public void setOptionalString(String  optionalString) {
-        this.optionalString = optionalString;
+    public void setMallocTypeIndex(Integer  mallocTypeIndex) {
+        this.mallocTypeIndex = mallocTypeIndex;
     }
 
 
@@ -59,15 +59,15 @@ public class SingleOptionalFieldMessage  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      SingleOptionalFieldMessage objSingleOptionalFieldMessage = (SingleOptionalFieldMessage) o;
-      return   Objects.equals(this.optionalString, objSingleOptionalFieldMessage.optionalString);
+      DebugTraceMallocTypes objDebugTraceMallocTypes = (DebugTraceMallocTypes) o;
+      return   Objects.equals(this.mallocTypeIndex, objDebugTraceMallocTypes.mallocTypeIndex);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class SingleOptionalFieldMessage {\n");
-                  sb.append("    optionalString: ").append(toIndentedString(optionalString)).append("\n");
+      sb.append("class DebugTraceMallocTypes {\n");
+                  sb.append("    mallocTypeIndex: ").append(toIndentedString(mallocTypeIndex)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
