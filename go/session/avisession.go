@@ -145,7 +145,7 @@ func (avisess *AviSession) restMultipartFileObjectUploadRequest(verb string, fil
 			return err
 		}
 		retryReq = true
-	} else if resp.StatusCode == 419 || (resp.StatusCode >= 500 && resp.StatusCode < 599) {
+	} else if resp.StatusCode >= 500 && resp.StatusCode < 599 {
 		resp.Body.Close()
 		retryReq = true
 		glog.Infof("Retrying %d due to Status Code %d", retryNum, resp.StatusCode)
@@ -691,7 +691,7 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 				return nil, err
 			}
 			retryReq = true
-		} else if resp.StatusCode == 419 || (resp.StatusCode >= 500 && resp.StatusCode < 599) {
+		} else if resp.StatusCode >= 500 && resp.StatusCode < 599 {
 			resp.Body.Close()
 			retryReq = true
 			glog.Infof("Retrying url: %s; retry: %d due to Status Code %d", url, retry, resp.StatusCode)
@@ -855,7 +855,7 @@ func (avisess *AviSession) restMultipartUploadRequest(verb string, uri string, f
 			return err
 		}
 		retryReq = true
-	} else if resp.StatusCode == 419 || (resp.StatusCode >= 500 && resp.StatusCode < 599) {
+	} else if resp.StatusCode >= 500 && resp.StatusCode < 599 {
 		resp.Body.Close()
 		retryReq = true
 		glog.Infof("Retrying %d due to Status Code %d", retry, resp.StatusCode)
@@ -934,7 +934,7 @@ func (avisess *AviSession) restMultipartDownloadRequest(verb string, uri string,
 			return err
 		}
 		retryReq = true
-	} else if resp.StatusCode == 419 || (resp.StatusCode >= 500 && resp.StatusCode < 599) {
+	} else if resp.StatusCode >= 500 && resp.StatusCode < 599 {
 		resp.Body.Close()
 		retryReq = true
 		glog.Infof("Retrying %d due to Status Code %d", retry, resp.StatusCode)
