@@ -1087,7 +1087,7 @@
                 }
             }
         },
-        "/virtualservice/{uuid}/logrecommendation": {
+        "/virtualservice/{uuid}/log-recommendation": {
             "post": {
                 "consumes": [
                     "application/json"
@@ -1159,7 +1159,7 @@
                 }
             }
         },
-        "/virtualservice/{uuid}/applylogrecommendation": {
+        "/virtualservice/{uuid}/apply-log-recommendation": {
             "post": {
                 "consumes": [
                     "application/json"
