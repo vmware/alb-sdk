@@ -755,7 +755,7 @@ paths:
                         type: string
                 401:
                     description: log in failed
-    /virtualservice/{uuid}/logrecommendation:
+    /virtualservice/{uuid}/log-recommendation:
         post:
             consumes:
                 -   application/json
@@ -802,7 +802,7 @@ paths:
                         type: string
                 401:
                     description: log in failed
-    /virtualservice/{uuid}/applylogrecommendation:
+    /virtualservice/{uuid}/apply-log-recommendation:
         post:
             consumes:
                 -   application/json

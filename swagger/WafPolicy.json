@@ -500,7 +500,7 @@
                 }
             }
         },
-        "/wafpolicy/{uuid}/updatecrsrules": {
+        "/wafpolicy/{uuid}/update-crs-rules": {
             "put": {
                 "consumes": [
                     "application/json"

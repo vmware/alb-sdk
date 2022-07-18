@@ -346,7 +346,7 @@ paths:
                 404:
                     description: not found
 
-    /alertsyslogconfig/{uuid}/alerttestsyslog:
+    /alertsyslogconfig/{uuid}/testsyslog:
         post:
             consumes:
                 -   application/json
