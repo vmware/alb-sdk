@@ -1,5 +1,4 @@
 
-
 def pytest_addoption(parser):
     parser.addoption('--nsx_lb_config',
         action="store"
