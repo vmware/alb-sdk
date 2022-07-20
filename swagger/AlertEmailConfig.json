@@ -500,7 +500,7 @@
                 }
             }
         },
-        "/alertemailconfig/{uuid}/alerttestemail": {
+        "/alertemailconfig/{uuid}/testemail": {
             "post": {
                 "consumes": [
                     "application/json"

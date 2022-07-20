@@ -500,7 +500,7 @@
                 }
             }
         },
-        "/alertsyslogconfig/{uuid}/alerttestsyslog": {
+        "/alertsyslogconfig/{uuid}/testsyslog": {
             "post": {
                 "consumes": [
                     "application/json"

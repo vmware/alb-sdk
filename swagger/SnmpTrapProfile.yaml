@@ -346,7 +346,7 @@ paths:
                 404:
                     description: not found
 
-    /snmptrapprofile/{uuid}/alerttestsnmptrap:
+    /snmptrapprofile/{uuid}/testsnmptrap:
         post:
             consumes:
                 -   application/json
