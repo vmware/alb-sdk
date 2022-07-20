@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 import requests
 
 from com.vmware import nsx_policy_client

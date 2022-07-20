@@ -1,0 +1,12 @@
+HTTP_NO_SNAT_VS = '1.1-vs-inline-noSNAT'
+HTTPS_NO_SNAT_VS = '1.2-vs-inline-noSNAT'
+UDP_NO_SNAT = '1.4-vs-inline-noSNAT'
+
+# No SEG but Have Service Interface
+HTTP_SERVICE_INTF_NO_SEG = '6.5-vs-oneArm-VLAN-SNAT'
+HTTPS_SERVICE_INTF_NO_SEG = '6.6-vs-oneArm-VLAN-SNAT'
+
+HTTP_SNAT = '9.1-vs-inline-VLAN-noSNAT'
+HTTPS_NO_SNAT_POOL = 'https_no_SNAT'
+
+TCP_PROFILE_TYPES = ['PROTOCOL_TYPE_TCP_PROXY', 'PROTOCOL_TYPE_TCP_FAST_PATH']
