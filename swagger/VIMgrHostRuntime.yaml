@@ -353,7 +353,7 @@ paths:
                 404:
                     description: not found
 
-    /vimgrhostruntime/{uuid}/makeaccessible:
+    /vimgrhostruntime/{uuid}/accessible:
         post:
             consumes:
                 -   application/json
