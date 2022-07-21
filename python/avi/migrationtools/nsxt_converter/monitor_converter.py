@@ -1,3 +1,6 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 import time, logging
 
 import com.vmware.nsx_policy.model_client as model_client
