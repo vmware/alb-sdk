@@ -500,7 +500,7 @@
                 }
             }
         },
-        "/snmptrapprofile/{uuid}/alerttestsnmptrap": {
+        "/snmptrapprofile/{uuid}/testsnmptrap": {
             "post": {
                 "consumes": [
                     "application/json"

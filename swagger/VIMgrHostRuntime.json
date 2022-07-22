@@ -512,7 +512,7 @@
                 }
             }
         },
-        "/vimgrhostruntime/{uuid}/makeaccessible": {
+        "/vimgrhostruntime/{uuid}/accessible": {
             "post": {
                 "consumes": [
                     "application/json"
