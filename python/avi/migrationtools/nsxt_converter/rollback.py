@@ -1,4 +1,15 @@
-# !/usr/bin/env python3
+#!/usr/bin/env python3
+
+############################################################################
+# ========================================================================
+# Copyright 2021 VMware, Inc.  All rights reserved. VMware Confidential
+# ========================================================================
+###
+
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
+
 import logging
 import os
 import json
@@ -26,11 +37,12 @@ class NsxtAlbRollback(AviConverter):
         self.controller_version = args.alb_controller_version
         self.user = args.alb_controller_user
         self.password = args.alb_controller_password
-        self.rollback_vs = None
-        if args.rollback:
-            self.rollback_vs = \
-                (set(args.rollback) if type(args.rollback) == list
-                 else set(args.rollback.split(',')))
+        self.alb_controller_tenant = None
+        self.vs_filter = None
+        if args.vs_filter:
+            self.vs_filter = \
+                (set(args.vs_filter) if type(args.vs_filter) == list
+                 else set(args.vs_filter.split(',')))
         self.output_file_path = args.output_file_path if args.output_file_path \
             else 'output'
 
@@ -55,6 +67,10 @@ class NsxtAlbRollback(AviConverter):
             self.password = data.get('alb_controller_password')
         if not self.output_file_path:
             self.output_file_path = data.get('output_file_path')
+        if not self.alb_controller_tenant:
+            self.alb_controller_tenant = data.get('alb_controller_tenant')
+        if not self.prefix:
+            self.prefix = data.get('prefix')
 
         input_path = None
         self.input_data = None
@@ -71,12 +87,21 @@ class NsxtAlbRollback(AviConverter):
             os.mkdir(self.output_file_path)
         self.init_logger_path()
 
-        cutover_msg = "Performing rollback for applications"
-        LOG.debug(cutover_msg)
-        print(cutover_msg)
-        nsx_util = NSXUtil(self.nsxt_user, self.nsxt_passord, self.nsxt_ip, self.nsxt_port \
-                           , self.controller_ip, self.user, self.password, self.controller_version)
-        nsx_util.rollback_vs(self.rollback_vs, self.input_data)
+        nsx_util = NSXUtil(self.nsxt_user, self.nsxt_passord, self.nsxt_ip, self.nsxt_port,
+                           self.controller_ip, self.user, self.password, self.controller_version)
+        vs_not_found, vs_with_no_lb = nsx_util.rollback_vs(self.vs_filter, self.input_data,
+                                                           self.prefix, self.alb_controller_tenant)
+        if vs_not_found:
+            print_msg = "\033[93m" + "Warning: Following virtual service/s could not be found" + "\033[0m"
+            print(print_msg)
+            print(vs_not_found)
+            LOG.warning("{} {}".format(print_msg, vs_not_found))
+        if vs_with_no_lb:
+            warn_msg = "\033[93m" + "Warning: Load balancer configuration details not found for performing " \
+                       "rollback operation for following virtual services:" + "\033[0m"
+            print(warn_msg)
+            print(vs_with_no_lb)
+            LOG.warning("{} {}".format(warn_msg, vs_with_no_lb))
 
         print("Total Warning: ", get_count('warning'))
         print("Total Errors: ", get_count('error'))
@@ -101,25 +126,37 @@ if __name__ == "__main__":
                         help='controller username')
     parser.add_argument('--alb_controller_password',
                         help='controller password. Input '
-                             'prompt will appear if no value provided', required=True)
+                             'prompt will appear if no value provided')
     parser.add_argument('-n', '--nsxt_ip',
                         help='Ip of NSXT', required=True)
     parser.add_argument('-u', '--nsxt_user',
                         help='NSX-T User name')
     parser.add_argument('-p', '--nsxt_password',
-                        help='NSX-T Password', required=True)
+                        help='NSX-T Password')
     parser.add_argument('-port', '--nsxt_port', default=443,
                         help='NSX-T Port')
     parser.add_argument('-o', '--output_file_path',
                         help='Folder path for output files to be created in',
                         )
-    # Added command line args to take skip type for ansible playbook
-    parser.add_argument('--rollback',
-                        help='comma separated names of virtualservices for cutover.\n',
+    parser.add_argument('--vs_filter',
+                        help='comma separated names of virtual services for performing rollback.\n',
                         required=True)
 
     start = datetime.now()
     args = parser.parse_args()
+    if not args.nsxt_password:
+        if os.environ.get('nsxt_password'):
+            args.nsxt_password = os.environ.get('nsxt_password')
+        else:
+            print("\033[91m"+'ERROR: please provide nsxt password either through '
+                            'environment variable or as a script parameter'+"\033[0m")
+            exit()
+    if not args.alb_controller_password:
+        if os.environ.get('alb_controller_password'):
+            args.alb_controller_password= os.environ.get('alb_controller_password')
+        else:
+            print('\033[91m'+'ERROR: please provide alb_controller_password either through environment variable or as a script parameter'+"\033[0m")
+            exit()
     nsxtalb_rollback = NsxtAlbRollback(args)
     nsxtalb_rollback.initiate_rollback()
     end = datetime.now()
