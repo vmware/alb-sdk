@@ -36,7 +36,7 @@ jobs:
           JAVA_VERSION=$(echo ${GITHUB_REF##*/} | cut -d - -f 2)
           if [[ "$JAVA_VERSION" == *"post"* ]]; then
             echo "Java version post"
-            JAVA_VERSION="${JAVA_VERSION/post/\.}"
+            JAVA_VERSION="${JAVA_VERSION/.post/\.}"
           elif  [[ "$JAVA_VERSION" == *"b"* ]]; then
             echo "Java version beta:"
             JAVA_VERSION="${JAVA_VERSION/b/-beta-}"
