@@ -21,7 +21,7 @@ controller_details = {}
 LOG = logging.getLogger(__name__)
 
 
-def is_segment_configured_with_subnet(vs_id, cloud_name):
+def is_segment_configured_with_subnet(vs_id, cloud_name, cloud_tenant):
     vs_config = vs_details[vs_id]
     network_type = vs_config["Network"]
     if network_type == "Vlan":
@@ -32,7 +32,7 @@ def is_segment_configured_with_subnet(vs_id, cloud_name):
                 session = ApiSession.get_session(controller_details.get("ip"), controller_details.get("username"),
                                                  controller_details.get("password"), tenant="admin",
                                                  api_version=controller_details.get("version"))
-                cloud = session.get("cloud/").json()["results"]
+                cloud = session.get("cloud/", tenant=cloud_tenant).json()["results"]
                 cloud_id = [cl.get("uuid") for cl in cloud if cl.get("name") == cloud_name]
                 segment_list = session.get("network/?&cloud_ref.uuid=" + cloud_id[0]).json()["results"]
                 segment = [seg for seg in segment_list if seg.get("name") == seg_id]
@@ -47,11 +47,11 @@ def is_segment_configured_with_subnet(vs_id, cloud_name):
     return False, None, network_type, "overlay"
 
 
-def is_vlan_configured_with_bgp(cloud_name, tenant, vlan_segment):
+def is_vlan_configured_with_bgp(cloud_name, tenant, vlan_segment, cloud_tenant):
     session = ApiSession.get_session(controller_details.get("ip"), controller_details.get("username"),
                                      controller_details.get("password"), tenant="admin",
                                      api_version=controller_details.get("version"))
-    cloud = session.get("cloud/").json()["results"]
+    cloud = session.get("cloud/", tenant=cloud_tenant).json()["results"]
     cloud_id = [cl.get("uuid") for cl in cloud if cl.get("name") == cloud_name]
     """
     Check if VLAN network is configured as a BGP peer
@@ -185,8 +185,10 @@ class NSXUtil():
     nsxt_ip = None
     nsxt_pw = None
     nsxt_un = None
+    cloud_tenant = None
 
-    def __init__(self, nsx_un, nsx_pw, nsx_ip, nsx_port, c_ip=None, c_un=None, c_pw=None, c_vr=None):
+    def __init__(self, nsx_un, nsx_pw, nsx_ip, nsx_port, c_ip=None, c_un=None, c_pw=None, c_vr=None,
+                 cloud_tenant='admin'):
         self.nsx_api_client = nsx_client_util.create_nsx_policy_api_client(
             nsx_un, nsx_pw, nsx_ip, nsx_port, auth_type=nsx_client_util.BASIC_AUTH)
         if c_ip and c_un and c_pw and c_vr:
@@ -200,8 +202,9 @@ class NSXUtil():
             self.nsxt_ip = nsx_ip
             self.nsxt_pw = nsx_pw
             self.nsxt_un = nsx_un
+            self.cloud_tenant = cloud_tenant
 
-            self.cloud = self.session.get("cloud/").json()["results"]
+            self.cloud = self.session.get("cloud/", tenant=self.cloud_tenant).json()["results"]
             self.avi_vs_object = []
             self.avi_object_temp = {}
             self.avi_pool_object = []
@@ -257,7 +260,7 @@ class NSXUtil():
                 if not monitor["_system_owned"]:
                     self.nsx_api_client.infra.LbMonitorProfiles.delete(monitor["id"])
 
-    def cutover_vs(self, vs_list, prefix):
+    def cutover_vs(self, vs_list, prefix, vs_tenant):
         vs_not_found = list()
         nsxt_all_virtual_services = self.get_all_virtual_service()
 
@@ -275,7 +278,7 @@ class NSXUtil():
 
         # Get list of all ALB VS's
         alb_vs_list = dict()
-        alb_all_vs_list = self.session.get("virtualservice/").json()["results"]
+        alb_all_vs_list = self.session.get("virtualservice/", tenant=vs_tenant).json()["results"]
         for vs in alb_all_vs_list:
             alb_vs_list[vs["name"]] = vs
 
@@ -307,14 +310,14 @@ class NSXUtil():
                                 }
                             }
                             vs_obj.update({"analytics_policy": analytics_policy})
-                        self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj)
+                        self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj, tenant=vs_tenant)
                         print("Enabled traffic for VS {} on ALB".format(nsxt_vs_name))
                         print("Completed cutover for VS {}\n".format(nsxt_vs_name))
                         break
 
         return vs_not_found
 
-    def rollback_vs(self, vs_list, input_data, prefix):
+    def rollback_vs(self, vs_list, input_data, prefix, vs_tenant):
         vs_not_found = list()
         nsxt_all_virtual_services = self.get_all_virtual_service()
 
@@ -332,7 +335,7 @@ class NSXUtil():
 
         # Get list of all ALB VS's
         alb_vs_list = dict()
-        alb_all_vs_list = self.session.get("virtualservice/").json()["results"]
+        alb_all_vs_list = self.session.get("virtualservice/", tenant=vs_tenant).json()["results"]
         for vs in alb_all_vs_list:
             alb_vs_list[vs["name"]] = vs
 
@@ -345,7 +348,8 @@ class NSXUtil():
                 vs_lb_mapping_list['{}_{}'.format(vs["id"], vs["display_name"])] \
                     = vs['lb_service_path']
             else:
-                vs_with_no_lb.append(vs["display_name"])
+                if vs.get("display_name") in input_vs:
+                    vs_with_no_lb.append(vs["display_name"])
 
         # Perform roll back for vs filter list
         for nsxt_vs_name in nsxt_vs_list:
@@ -363,7 +367,7 @@ class NSXUtil():
                         vs_obj["enabled"] = False
                         if "analytics_policy" in vs_obj:
                             vs_obj["analytics_policy"]["full_client_logs"]["enabled"] = False
-                        self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj)
+                        self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj, tenant=vs_tenant)
                         print("Disconnected traffic for VS {} on ALB".format(nsxt_vs_name))
                         break
 
@@ -416,17 +420,17 @@ class NSXUtil():
                             continue
 
         if vlan_cloud_list:
-            cloud_info = self.session.get_object_by_name("cloud", vlan_cloud_list[0]['name'])
+            cloud_info = self.session.get_object_by_name("cloud", vlan_cloud_list[0]['name'], tenant=self.cloud_tenant)
             cloud_vlan_segments = cloud_info.get("nsxt_configuration").get("data_network_config").get("vlan_segments")
             cloud_vlan_segments.append("/infra/segments/{}".format(seg_id))
             cloud_info.get("nsxt_configuration").get("data_network_config").update({
                 "vlan_segments": cloud_vlan_segments
             })
-            self.session.put("cloud/{}".format(cloud_info.get("uuid")), cloud_info)
+            self.session.put("cloud/{}".format(cloud_info.get("uuid")), cloud_info, tenant=self.cloud_tenant)
             return cloud_info.get("name")
         elif overlay_cloud_list:
             for cloud in overlay_cloud_list:
-                cloud_info = self.session.get_object_by_name("cloud", cloud['name'])
+                cloud_info = self.session.get_object_by_name("cloud", cloud['name'], tenant=self.cloud_tenant)
                 cloud_tier1_lrs = cloud_info.get("nsxt_configuration").get("data_network_config").\
                     get("tier1_segment_config").get("manual").get("tier1_lrs")
                 cloud_tier1_lrs.append({
@@ -436,7 +440,8 @@ class NSXUtil():
                 cloud_info.get("nsxt_configuration").get("data_network_config").get("tier1_segment_config").get("manual").update({
                     "tier1_lrs": cloud_tier1_lrs
                 })
-                response = self.session.put("cloud/{}".format(cloud_info.get("uuid")), cloud_info)
+                response = self.session.put("cloud/{}".format(cloud_info.get("uuid")), cloud_info,
+                                            tenant=self.cloud_tenant)
                 if response.status_code == 200:
                     return cloud_info.get("name")
                 else:
@@ -447,7 +452,7 @@ class NSXUtil():
     def get_lb_services_details(self):
         lb_services = self.nsx_api_client.infra.LbServices.list().to_dict().get('results', [])
         for lb in lb_services:
-            self.cloud = self.session.get("cloud/").json()["results"]
+            self.cloud = self.session.get("cloud/", tenant=self.cloud_tenant).json()["results"]
             if not lb.get("connectivity_path"):
                 continue
             tier = get_name_and_entity(lb["connectivity_path"])[-1]

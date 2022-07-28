@@ -37,6 +37,7 @@ class TrafficCutover(AviConverter):
         self.controller_version = args.alb_controller_version
         self.user = args.alb_controller_user
         self.password = args.alb_controller_password
+        self.alb_controller_tenant = None
         self.vs_filter = None
         if args.vs_filter:
             self.vs_filter = \
@@ -65,6 +66,8 @@ class TrafficCutover(AviConverter):
             self.user = data.get('alb_controller_user')
         if not self.password:
             self.password = data.get('alb_controller_password')
+        if not self.alb_controller_tenant:
+            self.alb_controller_tenant = data.get('alb_controller_tenant')
         if not self.prefix:
             self.prefix = data.get('prefix')
 
@@ -76,7 +79,7 @@ class TrafficCutover(AviConverter):
 
         nsx_util = NSXUtil(self.nsxt_user, self.nsxt_passord, self.nsxt_ip, self.nsxt_port,
                            self.controller_ip, self.user, self.password, self.controller_version)
-        vs_not_found = nsx_util.cutover_vs(self.vs_filter, self.prefix)
+        vs_not_found = nsx_util.cutover_vs(self.vs_filter, self.prefix, self.alb_controller_tenant)
         if vs_not_found:
             print_msg = "\033[93m" + "Warning: Following virtual service/s could not be found" + "\033[0m"
             print(print_msg)

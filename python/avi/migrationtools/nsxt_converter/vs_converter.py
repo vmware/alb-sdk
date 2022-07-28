@@ -26,7 +26,6 @@ LOG = logging.getLogger(__name__)
 conv_utils = NsxtConvUtil()
 common_avi_util = MigrationUtil()
 vs_list_with_snat_deactivated = []
-vs_data_path_not_work = []
 pool_attached_with_poolgroup = []
 pool_attached_with_vs_poolref = []
 vs_with_no_cloud_configured = []
@@ -36,6 +35,8 @@ is_pool_group_used = {}
 http_pool_group_list = {}
 http_pool_list = {}
 vs_with_no_snat_no_floating_ip = list()
+vips_not_configured = list()
+vs_with_custom_se_group = list()
 
 
 class VsConfigConv(object):
@@ -194,11 +195,13 @@ class VsConfigConv(object):
                     if cloud_type == "Vlan":
                         vip_segment = get_object_segments(lb_vs["id"], lb_vs['ip_address'])
                         if vip_segment:
-                            self.add_placement_network_to_vip(vip['vip'], vip_segment, tenant, cloud_name)
+                            self.add_placement_network_to_vip(vip['vip'], vip_segment, cloud_tenant, cloud_name)
                         else:
                             conv_utils.add_status_row('virtualservice', None, lb_vs["display_name"],
-                                                      conv_const.STATUS_SKIPPED)
-                            LOG.warning("vip segment is not found for %s" % lb_vs["display_name"])
+                                                      conv_const.STATUS_SKIPPED, "VS skipped as VIP segment not "
+                                                                                 "configured in cloud networks")
+                            vips_not_configured.append(lb_vs["display_name"])
+                            LOG.warning("VS skipped as VIP segment is not found for %s" % lb_vs["display_name"])
                             continue
                     alb_config['VsVip'].append(vip)
                     vsvip_ref = conv_utils.get_object_ref(
@@ -215,7 +218,7 @@ class VsConfigConv(object):
                            if val in self.common_na_attr or val in self.VS_na_attr]
                 if segroup:
                     segroup_ref = conv_utils.get_object_ref(
-                        segroup, 'serviceenginegroup', tenant,
+                        segroup, 'serviceenginegroup', cloud_tenant,
                         cloud_name=cloud_name)
                     alb_vs['se_group_ref'] = segroup_ref
                 client_pki = False
@@ -445,11 +448,11 @@ class VsConfigConv(object):
                             if cloud_type == 'Vlan':
                                 if is_sry_pool_group:
                                     self.add_placement_network_to_pool_group(pool_ref, pool_segment,
-                                                                             alb_config, cloud_name, tenant)
+                                                                             alb_config, cloud_name, cloud_tenant)
 
                                 else:
                                     self.add_placement_network_to_pool(alb_config['Pool'],
-                                                                       pool_ref, pool_segment, cloud_name, tenant)
+                                                                       pool_ref, pool_segment, cloud_name, cloud_tenant)
 
                 is_pg_created = False
                 main_pool_ref = None
@@ -496,16 +499,18 @@ class VsConfigConv(object):
                                         "ha_mode": "HA_MODE_LEGACY_ACTIVE_STANDBY",
                                         "cloud_ref": conv_utils.get_object_ref(cloud_name, 'cloud',
                                                                                cloud_tenant=cloud_tenant),
-                                        "tenant_ref": conv_utils.get_object_ref(tenant, 'tenant')
+                                        "tenant_ref": conv_utils.get_object_ref(cloud_tenant, 'tenant')
                                     }
                                     alb_config["ServiceEngineGroup"].append(new_pci_se_group)
                                     is_pci_se_group_created = True
+
+                                vs_with_custom_se_group.append(lb_vs['display_name'])
 
                                 alb_vs["se_group_ref"] = conv_utils.get_object_ref(pci_se_group_name,
                                                                                    'serviceenginegroup',
                                                                                    cloud_name=cloud_name,
                                                                                    cloud_tenant=cloud_tenant,
-                                                                                   tenant=tenant)
+                                                                                   tenant=cloud_tenant)
 
                                 nsxt_util.create_and_update_nsgroup(pool_name, alb_config,
                                                                     pl_config[0].get("members"))
@@ -524,7 +529,7 @@ class VsConfigConv(object):
                                                                            cloud_name=cloud_name,
                                                                            cloud_tenant=cloud_tenant,
                                                                            tenant=tenant)
-                                    tenant_ref = conv_utils.get_object_ref(tenant, 'tenant')
+                                    tenant_ref = conv_utils.get_object_ref(cloud_tenant, 'tenant')
                                     new_network_service = nsxt_util.create_network_service_obj(ns_name,
                                                                                                alb_vs["se_group_ref"],
                                                                                                ns_cloud_ref, ns_vrf_ref,
@@ -543,6 +548,18 @@ class VsConfigConv(object):
                                         type="V4"
                                     )
                                     alb_vs["snat_ip"].append(snat_ip)
+                                    alb_vs["se_group_ref"] = conv_utils.get_object_ref("Default-Group",
+                                                                                       'serviceenginegroup',
+                                                                                       cloud_name=cloud_name,
+                                                                                       cloud_tenant=cloud_tenant,
+                                                                                       tenant=cloud_tenant)
+
+                            if pl_config[0]["snat_translation"].get("type") == "LBSnatAutoMap":
+                                alb_vs["se_group_ref"] = conv_utils.get_object_ref("Default-Group",
+                                                                                   'serviceenginegroup',
+                                                                                   cloud_name=cloud_name,
+                                                                                   cloud_tenant=cloud_tenant,
+                                                                                   tenant=cloud_tenant)
 
                         is_pool_group = False
                         if pool_ref:
@@ -582,10 +599,10 @@ class VsConfigConv(object):
                             if cloud_type == 'Vlan':
                                 if is_pool_group:
                                     self.add_placement_network_to_pool_group(pool_ref, pool_segment,
-                                                                             alb_config, cloud_name, tenant)
+                                                                             alb_config, cloud_name, cloud_tenant)
                                 else:
                                     self.add_placement_network_to_pool(alb_config['Pool'],
-                                                                       pool_ref, pool_segment, cloud_name, tenant)
+                                                                       pool_ref, pool_segment, cloud_name, cloud_tenant)
 
                             if persist_ref:
                                 if is_pool_group:
@@ -676,12 +693,13 @@ class VsConfigConv(object):
                 # If vlan VS then check if VLAN network is configured as a BGP peer,
                 # if yes, then advertise bgp otherwise don't advertise
                 is_vlan_configured, vlan_segment, network_type, return_mesg = is_segment_configured_with_subnet \
-                    (lb_vs["id"], cloud_name)
+                    (lb_vs["id"], cloud_name, cloud_tenant)
                 if network_type == "Vlan":
                     if is_vlan_configured:
                         LOG.info("%s is configured with subnet" % lb_vs["display_name"])
-                        is_bgp_configured = is_vlan_configured_with_bgp \
-                            (cloud_name=cloud_name, tenant=tenant, vlan_segment=vlan_segment)
+                        is_bgp_configured = is_vlan_configured_with_bgp(cloud_name=cloud_name, tenant=tenant,
+                                                                        vlan_segment=vlan_segment,
+                                                                        cloud_tenant=cloud_tenant)
                         if is_bgp_configured:
                             if migration_input_config and migration_input_config.get('bgp_peer_configured_for_vlan'):
                                 alb_vs['enable_rhi'] = True
@@ -690,7 +708,6 @@ class VsConfigConv(object):
                             LOG.warning("%s vlan is not configured with bgp" % lb_vs["display_name"])
                     else:
                         LOG.warning("%s data path won't work as %s" % (lb_vs["display_name"], return_mesg))
-                        vs_data_path_not_work.append(name)
 
                 indirect = self.vs_indirect_attr
                 u_ignore = []
@@ -722,7 +739,7 @@ class VsConfigConv(object):
                 LOG.error("[VirtualServer] Failed to convert Monitor: %s" % lb_vs['display_name'],
                           exc_info=True)
                 conv_utils.add_status_row('virtualservice', None, lb_vs['display_name'],
-                                          conv_const.STATUS_ERROR)
+                                          conv_const.STATUS_ERROR, "Conversion failure")
         for cert in converted_alb_ssl_certs:
             indirect = []
             u_ignore = []
@@ -897,42 +914,6 @@ class VsConfigConv(object):
                         )
                     break
 
-    def update_pool_with_subnets(self, pool_name, pool_segment, alb_pl, old_pool_name, cloud_name, cloud_type, tenant):
-
-        pool_present = False
-        for pool in alb_pl:
-            if pool["name"] == pool_name:
-                pool_obj = pool
-                pool_present = True
-            elif pool["name"] == old_pool_name:
-                pool_obj = copy.deepcopy(pool)
-                pool_obj["name"] = pool_name
-            else:
-                continue
-            if cloud_type == "Vlan":
-                pool_obj["placement_networks"] = list()
-                for sub in pool_segment:
-                    ip_addreses = dict(
-                        addr=sub["subnets"]["network_range"].split("/")[0],
-                        type="V4"
-                    )
-                    subnets = dict(
-                        subnet={
-                            "ip_addr": ip_addreses,
-                            "mask": sub["subnets"]["network_range"].split("/")[-1]
-                        },
-                        network_ref=conv_utils.get_object_ref(
-                            sub["seg_name"], 'network', tenant="admin", cloud_name=cloud_name)
-                    )
-                    pool_obj["placement_networks"].append(subnets)
-            if not pool_present:
-                alb_pl.append(pool_obj)
-                conv_status = conv_utils.get_conv_status_by_obj_name(old_pool_name)
-                conv_utils.add_conv_status(
-                    'pool', None, pool_obj["name"], conv_status,
-                    {'pools': [pool_obj]})
-            break
-
     def create_pool_group(self, cloud_name, pg_obj, alb_config, lb_pool, vs_name, backup_pool=None, sorry_pool=None,
                           sry_pool_present=False, tenant="admin"):
 
@@ -1073,7 +1054,7 @@ class VsConfigConv(object):
                     "mask": sub["subnets"]["network_range"].split("/")[-1]
                 },
                 network_ref=conv_utils.get_object_ref(
-                    sub["seg_name"], 'network', tenant="admin", cloud_name=cloud_name)
+                    sub["seg_name"], 'network', tenant=tenant, cloud_name=cloud_name)
             )
             vip_config[0]['placement_networks'].append(subnets)
 
@@ -1118,7 +1099,7 @@ class VsConfigConv(object):
                             "mask": sub["subnets"]["network_range"].split("/")[-1]
                         },
                         network_ref=conv_utils.get_object_ref(
-                            sub["seg_name"], 'network', tenant="admin", cloud_name=cloud_name)
+                            sub["seg_name"], 'network', tenant=tenant, cloud_name=cloud_name)
                     )
                     pool_obj["placement_networks"].append(subnets)
                 break

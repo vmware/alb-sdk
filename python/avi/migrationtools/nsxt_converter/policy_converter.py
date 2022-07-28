@@ -504,11 +504,11 @@ class PolicyConfigConverter(object):
                 if self.cloud_type == 'Vlan':
                     if is_pool_group:
                         conv_utils.add_placement_network_to_pool_group(pool_ref, pool_segment,
-                                                                 self.alb_config, cloud_name, self.tenant)
+                                                                 self.alb_config, cloud_name, self.cloud_tenant)
 
                     else:
                         conv_utils.add_placement_network_to_pool(self.alb_config['Pool'],
-                                                           pool_ref, pool_segment, cloud_name, self.tenant)
+                                                           pool_ref, pool_segment, cloud_name, self.cloud_tenant)
 
                 if persist_ref:
                     if is_pool_group:
