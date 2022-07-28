@@ -1663,7 +1663,7 @@ public class VserverL4MetricsObj  {
     /**
      * This is the getter method this will return the attribute value.
      * Maximum connection establishment time on the client side.
-     * Field introduced in 22.1.1.
+     * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return maxConnectionEstbTimeFe
@@ -1675,7 +1675,7 @@ public class VserverL4MetricsObj  {
     /**
      * This is the setter method to the attribute.
      * Maximum connection establishment time on the client side.
-     * Field introduced in 22.1.1.
+     * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param maxConnectionEstbTimeFe set the maxConnectionEstbTimeFe.
@@ -2037,7 +2037,7 @@ public class VserverL4MetricsObj  {
     /**
      * This is the getter method this will return the attribute value.
      * Total number of times client side connection establishment time was breached.
-     * Field introduced in 22.1.1.
+     * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sumConnEstTimeExceededFlowsFe
@@ -2049,7 +2049,7 @@ public class VserverL4MetricsObj  {
     /**
      * This is the setter method to the attribute.
      * Total number of times client side connection establishment time was breached.
-     * Field introduced in 22.1.1.
+     * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sumConnEstTimeExceededFlowsFe set the sumConnEstTimeExceededFlowsFe.
@@ -2239,7 +2239,7 @@ public class VserverL4MetricsObj  {
     /**
      * This is the getter method this will return the attribute value.
      * Total number of times 'latency_threshold' was breached during ingress.
-     * Field introduced in 22.1.1.
+     * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sumIngressLatencyExceededFlows
@@ -2251,7 +2251,7 @@ public class VserverL4MetricsObj  {
     /**
      * This is the setter method to the attribute.
      * Total number of times 'latency_threshold' was breached during ingress.
-     * Field introduced in 22.1.1.
+     * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param sumIngressLatencyExceededFlows set the sumIngressLatencyExceededFlows.
