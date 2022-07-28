@@ -1,3 +1,6 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 import logging
 import os
 
@@ -10,6 +13,7 @@ LOG = logging.getLogger(__name__)
 
 conv_utils = NsxtConvUtil()
 common_avi_util = MigrationUtil()
+ssl_profile_list = {}
 
 
 class SslProfileConfigConv(object):
@@ -29,6 +33,9 @@ class SslProfileConfigConv(object):
 
     def convert(self, alb_config, nsx_lb_config, prefix, tenant):
         alb_config["SSLProfile"] = []
+        tenant_name, name = conv_utils.get_tenant_ref(tenant)
+        if not tenant:
+            tenant = tenant_name
         if nsx_lb_config.get('LbClientSslProfiles'):
             converted_objs = []
             skipped_list = []
@@ -47,24 +54,22 @@ class SslProfileConfigConv(object):
                     na_attr = [val for val in lb_ssl.keys()
                                if val in self.common_na_attr]
                     na_list.append(na_attr)
-                    tenant_name, name = conv_utils.get_tenant_ref(tenant)
-                    if not tenant:
-                        tenant = tenant_name
                     progressbar_count += 1
                     name = lb_ssl.get('display_name')
                     if prefix:
-                        name = prefix + '-' + name
+                        name = name = '%s-%s' % (prefix, name)
                     if self.object_merge_check:
                         if name in self.merge_object_mapping['ssl_profile'].keys():
-                            name = name + "-" + lb_ssl["id"]
+                            name = '%s-%s' % (name, lb_ssl["id"])
                     else:
                         c_ssl_temp = list(filter(lambda c_ssl: c_ssl["name"] == name, alb_config['SSLProfile']))
                         if c_ssl_temp:
-                            name = name + "-" + lb_ssl["id"]
+                            name = '%s-%s' % (name, lb_ssl["id"])
                     alb_ssl = dict(
                         name=name,
                         tenant_ref=conv_utils.get_object_ref(tenant, 'tenant'),
                     )
+                    ssl_profile_list[lb_ssl['id']] = name
                     if lb_ssl.get("session_cache_enabled"):
                         alb_ssl['enable_ssl_session_reuse'] = lb_ssl['session_cache_enabled']
                     if lb_ssl.get("session_cache_timeout"):
@@ -161,17 +166,19 @@ class SslProfileConfigConv(object):
                     progressbar_count += 1
                     name = lb_ssl.get('display_name')
                     if prefix:
-                        name = prefix + '-' + name
+                        name = '%s-%s' % (prefix, name)
                     if self.object_merge_check:
                         if name in self.merge_object_mapping['ssl_profile'].keys():
-                            name = name + "-" + lb_ssl["id"]
+                            name = '%s-%s' % (name, lb_ssl["id"])
                     else:
                         s_ssl_temp = list(filter(lambda ssl: ssl["name"] == name, alb_config['SSLProfile']))
                         if s_ssl_temp:
-                            name = name + "-" + lb_ssl["id"]
+                            name = '%s-%s' % (name, lb_ssl["id"])
                     alb_ssl = dict(
                         name=name,
+                        tenant_ref=conv_utils.get_object_ref(tenant, 'tenant'),
                     )
+                    ssl_profile_list[lb_ssl['id']] = name
                     if lb_ssl.get("ciphers"):
                         converted_ciphers = self.convert_ciphers_to_valid_format(":".join(lb_ssl['ciphers']))
                         alb_ssl['accepted_ciphers'] = converted_ciphers

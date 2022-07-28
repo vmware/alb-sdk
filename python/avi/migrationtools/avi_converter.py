@@ -25,6 +25,7 @@ class AviConverter(object):
     password = None
     tenant = None
     prefix = None
+    skip_ref_object_list = ['cloud_ref', 'tenant_ref', 'se_group_ref']
 
     def print_pip_and_controller_version(self):
         pass
@@ -32,10 +33,11 @@ class AviConverter(object):
     def convert(self):
         pass
 
-    def process_for_utils(self, avi_config):
+    def process_for_utils(self, avi_config, skip_ref_objects=skip_ref_object_list):
         """
         Check if patch args present then execute the config_patch.py with args
         :param avi_config: converted avi object dict
+        :param skip_ref_objects: comma separated names of objects ref to be skipped
         :return: avi_config
         """
 
@@ -46,7 +48,7 @@ class AviConverter(object):
             avi_config = cp.patch()
         # Check if vs_filter args present then execute vs_filter.py with args
         if self.vs_filter:
-            avi_config = filter_for_vs(avi_config, self.vs_filter, self.prefix)
+            avi_config = filter_for_vs(avi_config, self.vs_filter, self.prefix, skip_ref_objects=skip_ref_objects)
         return avi_config
 
     def upload_config_to_controller(self, avi_config):
