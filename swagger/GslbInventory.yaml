@@ -1719,7 +1719,7 @@ definitions:
                 type: number
                 format: double
             max_connection_estb_time_fe:
-                description: "Maximum connection establishment time on the client side. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Maximum connection establishment time on the client side. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             max_num_active_se:
@@ -1786,7 +1786,7 @@ definitions:
                 type: number
                 format: double
             sum_conn_est_time_exceeded_flows_fe:
-                description: "Total number of times client side connection establishment time was breached. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Total number of times client side connection establishment time was breached. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_connection_dropped_user_limit:
@@ -1822,7 +1822,7 @@ definitions:
                 type: number
                 format: double
             sum_ingress_latency_exceeded_flows:
-                description: "Total number of times 'latency_threshold' was breached during ingress. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Total number of times 'latency_threshold' was breached during ingress. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_lossy_connections:
