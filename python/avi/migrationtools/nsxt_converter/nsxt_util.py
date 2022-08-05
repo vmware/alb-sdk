@@ -158,7 +158,7 @@ def get_certificate_data(certificate_ref, nsxt_ip, ssh_root_password):
 
     LOG.info("output_dict for certificate_ref {}".format(certificate_ref))
     for cert_data in output_dict['results']:
-        if 'tags' in cert_data.keys():
+        if 'tags' in cert_data.keys() and len(cert_data['tags']) > 0:
             cert_id = cert_data['tags'][0]['tag'].split('/')[-1]
         else:
             cert_id = cert_data['id']
