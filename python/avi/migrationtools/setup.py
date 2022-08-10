@@ -25,7 +25,8 @@ setup(
              'avi/migrationtools/config_patch.py',
              'avi/migrationtools/ansible/avi_config_to_ansible.py',
              'avi/migrationtools/f5_discovery.py',
-             'avi/migrationtools/nsxt_converter/nsxt_converter.py'],
+             'avi/migrationtools/nsxt_converter/nsxt_converter.py',
+             'avi/migrationtools/nsxt_converter/install_nsx_dependencies.py'],
     classifiers=[
         'Operating System :: OS Independent',
         'Programming Language :: Python',
@@ -42,6 +43,7 @@ setup(
     package_data={'avi': ['*.cfg', '*.conf', '*.crt', '*.crl', '*.json',
                           '*.jinja', '*.key', '*.pem', '*.xml',
                           '*.yaml', '*.yml'],
+                  'avi.migrationtools.lib': ['*.whl'],
                   'avi.migrationtools.gss_convertor.parser_files': [
         "gslb_template.jinja"]
     }
