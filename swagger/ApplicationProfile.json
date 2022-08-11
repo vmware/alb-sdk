@@ -1128,7 +1128,7 @@
                     "default": true
                 },
                 "detect_ntlm_app": {
-                    "description": "Detect NTLM apps based on the HTTP Response from the server. Once detected, connection multiplexing will be disabled for that connection. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Detect NTLM apps based on the HTTP Response from the server. Once detected, connection multiplexing will be disabled for that connection. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
