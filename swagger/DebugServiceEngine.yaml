@@ -619,6 +619,9 @@ definitions:
             enable_kdump:
                 description: "Enables the use of kdump on SE. Requires SE Reboot. Applicable only in case of VM Based deployments. Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
+            enable_rpc_timing_profiler:
+                description: "Enable profiling time for certain RPC calls. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
             fault:
                 description: "Params for SE fault injection. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DebugSeFault'
