@@ -39,10 +39,14 @@ setup(
                       'nose-testconfig', 'ConfigParser', 'xlsxwriter', 'jinja2',
                       'pandas', 'openpyxl', 'appdirs',  'pexpect',
                       'unittest2', 'networkx', 'xmltodict',
-                      'vsphere-automation-sdk @ git+https://github.com/vmware/vsphere-automation-sdk-python.git'],
+                      'vapi-runtime @ file://localhost/%s/avi/migrationtools/lib/vapi_runtime-2.29.0-py2.py3-none-any.whl' % (os.getcwd()),
+                      'vapi_common_client @ file://localhost/%s/avi/migrationtools/lib/vapi_common_client-2.29.0-py2.py3-none-any.whl' % (os.getcwd()),
+                      'nsx_python_sdk @ file://localhost/%s/avi/migrationtools/lib/nsx_python_sdk-4.0.0.1.0-py2.py3-none-any.whl' % (os.getcwd()),
+                      'nsx_policy_python_sdk @ file://localhost/%s/avi/migrationtools/lib/nsx_policy_python_sdk-4.0.0.1.0-py2.py3-none-any.whl' % (os.getcwd())],
     package_data={'avi': ['*.cfg', '*.conf', '*.crt', '*.crl', '*.json',
                           '*.jinja', '*.key', '*.pem', '*.xml',
                           '*.yaml', '*.yml'],
+                  'avi.migrationtools.lib': ['*.whl'],
                   'avi.migrationtools.gss_convertor.parser_files': [
         "gslb_template.jinja"]
     }

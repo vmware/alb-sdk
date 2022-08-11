@@ -37,7 +37,7 @@ class PoolConfigConv(object):
         self.merge_object_mapping = merge_object_mapping
         self.sys_dict = sys_dict
 
-    def convert(self, alb_config, nsx_lb_config, prefix, tenant):
+    def convert(self, alb_config, nsx_lb_config, nsxt_util, prefix, tenant):
         '''
         LBPool to Avi Config pool converter
         '''
@@ -77,9 +77,26 @@ class PoolConfigConv(object):
 
                 pool_skip = True
                 pool_count = 0
-                if lb_pl.get("members") :
+                pool_members_list=list()
+                if lb_pl.get('member_group'):
+                    ns_grp_name, ip_addr_grp = nsxt_util.get_nsx_group_details(lb_pl['member_group']['group_path'])
+                    if ip_addr_grp:
+                        for ip in ip_addr_grp:
+                            pool_members_list.append(dict(
+                                ip_address=ip))
+                    else:
+                        skipped_pools_list.append(name)
+                        skip_msg = 'Member group does not contain ip addresses'
+                        conv_utils.add_status_row('pool', None, lb_pl['display_name'],
+                                                  conv_const.STATUS_SKIPPED, skip_msg)
+                        LOG.warning("POOL {} not migrated. Reason: {}".format(name,
+                                                                              skip_msg))
+                        continue
+
+                elif lb_pl.get('members'): pool_members_list = lb_pl['members']
+                if pool_members_list :
                     if vs_list:
-                        for member in lb_pl.get("members"):
+                        for member in pool_members_list:
                             lb_list = {}
                             for vs_id in vs_list:
                                 if vs_id in vs_pool_segment_list.keys():
@@ -161,8 +178,19 @@ class PoolConfigConv(object):
 
                 na_list = [val for val in lb_pl.keys()
                            if val in self.common_na_attr or val in self.pool_na_attr]
-                servers, member_skipped_config, skipped_servers, limits = \
-                    self.convert_servers_config(lb_pl.get("members", []))
+                if lb_pl['snat_translation'].get('type') != "LBSnatDisabled":
+                    if lb_pl.get('member_group'):
+                        servers, member_skipped_config, skipped_servers, limits = \
+                            self.convert_member_group_to_pool_servers(ip_addr_grp, lb_pl['member_group'])
+                        if lb_pl['member_group'].get('customized_members'):
+                            customized_members = lb_pl['member_group'].get('customized_members')
+                            self.update_pool_member_group_with_customized_member(servers, customized_members)
+                    else:
+                        servers, member_skipped_config, skipped_servers, limits = \
+                            self.convert_servers_config(lb_pl.get("members", []))
+                else:
+                    servers, member_skipped_config, skipped_servers, limits = \
+                        self.convert_servers_config(lb_pl.get("members", []))
                 alb_pl["name"] = name
                 alb_pl["servers"] = servers
                 pool_name_dict[lb_pl['id']] = pool_name_without_prefix
@@ -435,4 +463,48 @@ class PoolConfigConv(object):
         return converted_objs
 
     #
+    def convert_member_group_to_pool_servers(self,ip_group_list,member_group_config):
+        server_list = []
+        skipped_list = []
+        server_skipped = []
+        connection_limit = []
+        pg_obj = []
+        member_count = 1
+        for ip in ip_group_list:
+            type="V6"
+            if "." in ip:
+                type="V4"
+            server_obj = {
+                'ip': {
+                    'addr': ip,
+                    'type': type
+                },
+                'description': "member-%s" % member_count,
+            }
+            if member_group_config.get("port", ""):
+                server_obj['port'] = int(member_group_config.get("port"))
+            else:
+                server_skipped.append(server_obj.get("description"))
+
+            server_obj["enabled"] = False
+            server_list.append(server_obj)
+
+            skipped = [key for key in member_group_config.keys()
+                       if key not in self.member_group_attr]
+            if skipped:
+                skipped_list.append({server_obj['description']: skipped})
+        limit = dict()
+        return server_list, skipped_list, server_skipped, limit
+
+    def update_pool_member_group_with_customized_member(self,pool_servers,customized_members):
+        for c_member in customized_members:
+            server_member = [server for server in pool_servers if server['ip']['addr'] == c_member['ip_address']]
+            if server_member:
+                server_member = server_member[0]
+                if c_member.get('display_name'):
+                    server_member['description'] = c_member.get('display_name')
+                if c_member.get('admin_state') == "ENABLED":
+                    server_member['enabled'] = True
+                if c_member.get('weight'):
+                    server_member['ratio'] = c_member.get('weight')
 
