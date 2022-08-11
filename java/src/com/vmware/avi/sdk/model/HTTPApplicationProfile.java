@@ -444,7 +444,7 @@ public class HTTPApplicationProfile  {
      * Detect ntlm apps based on the http response from the server.
      * Once detected, connection multiplexing will be disabled for that connection.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, basic edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return detectNtlmApp
      */
@@ -457,7 +457,7 @@ public class HTTPApplicationProfile  {
      * Detect ntlm apps based on the http response from the server.
      * Once detected, connection multiplexing will be disabled for that connection.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, basic edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param detectNtlmApp set the detectNtlmApp.
      */
