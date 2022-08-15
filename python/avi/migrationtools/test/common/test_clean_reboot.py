@@ -84,14 +84,14 @@ def upload_license(session, licensefile):
     print("Successfully uploaded license AviInternal")
 
 
-def wait_until_node_ready(controller_ip, interval=120, timeout=3000):
+def wait_until_node_ready(controller_ip, interval=120, timeout=3600):
     """""
     Polls the controller at every minute status till we get success state
     and verify cluster state.
     """
     cluster_up_states = ["CLUSTER_UP_HA_ACTIVE", "CLUSTER_UP_NO_HA"]
     iters = int(timeout / interval)
-    retries = 8
+    retries = 12
     retry = 0
     for count in range(0, iters):
         try:
