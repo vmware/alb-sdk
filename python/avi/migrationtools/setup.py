@@ -43,7 +43,6 @@ setup(
     package_data={'avi': ['*.cfg', '*.conf', '*.crt', '*.crl', '*.json',
                           '*.jinja', '*.key', '*.pem', '*.xml',
                           '*.yaml', '*.yml'],
-                  'avi.migrationtools.lib': ['*.whl'],
                   'avi.migrationtools.gss_convertor.parser_files': [
         "gslb_template.jinja"]
     }
