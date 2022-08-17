@@ -120,6 +120,9 @@ public class Pool extends AviRestResource  {
     @JsonProperty("ipaddrgroup_ref")
     private String ipaddrgroupRef = null;
 
+    @JsonProperty("lb_algo_rr_per_se")
+    private Boolean lbAlgoRrPerSe = false;
+
     @JsonProperty("lb_algorithm")
     private String lbAlgorithm = "LB_ALGORITHM_LEAST_CONNECTIONS";
 
@@ -1135,6 +1138,30 @@ public class Pool extends AviRestResource  {
      */
     public void setIpaddrgroupRef(String  ipaddrgroupRef) {
         this.ipaddrgroupRef = ipaddrgroupRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Do round robin load load balancing at se level instead of the default per core load balancing.
+     * Field introduced in 21.1.5, 22.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return lbAlgoRrPerSe
+     */
+    public Boolean getLbAlgoRrPerSe() {
+        return lbAlgoRrPerSe;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Do round robin load load balancing at se level instead of the default per core load balancing.
+     * Field introduced in 21.1.5, 22.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param lbAlgoRrPerSe set the lbAlgoRrPerSe.
+     */
+    public void setLbAlgoRrPerSe(Boolean  lbAlgoRrPerSe) {
+        this.lbAlgoRrPerSe = lbAlgoRrPerSe;
     }
 
     /**
@@ -2221,7 +2248,8 @@ public class Pool extends AviRestResource  {
   Objects.equals(this.serverDisableType, objPool.serverDisableType)&&
   Objects.equals(this.useServiceSslMode, objPool.useServiceSslMode)&&
   Objects.equals(this.horizonProfile, objPool.horizonProfile)&&
-  Objects.equals(this.poolType, objPool.poolType);
+  Objects.equals(this.poolType, objPool.poolType)&&
+  Objects.equals(this.lbAlgoRrPerSe, objPool.lbAlgoRrPerSe);
     }
 
     @Override
@@ -2261,6 +2289,7 @@ public class Pool extends AviRestResource  {
                         sb.append("    ignoreServerPort: ").append(toIndentedString(ignoreServerPort)).append("\n");
                         sb.append("    inlineHealthMonitor: ").append(toIndentedString(inlineHealthMonitor)).append("\n");
                         sb.append("    ipaddrgroupRef: ").append(toIndentedString(ipaddrgroupRef)).append("\n");
+                        sb.append("    lbAlgoRrPerSe: ").append(toIndentedString(lbAlgoRrPerSe)).append("\n");
                         sb.append("    lbAlgorithm: ").append(toIndentedString(lbAlgorithm)).append("\n");
                         sb.append("    lbAlgorithmConsistentHashHdr: ").append(toIndentedString(lbAlgorithmConsistentHashHdr)).append("\n");
                         sb.append("    lbAlgorithmCoreNonaffinity: ").append(toIndentedString(lbAlgorithmCoreNonaffinity)).append("\n");
