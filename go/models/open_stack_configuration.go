@@ -39,6 +39,12 @@ type OpenStackConfiguration struct {
 	// Custom image properties to be set on a Service Engine image. Only hw_vif_multiqueue_enabled property is supported. Other properties will be ignored. Field introduced in 18.2.7, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	CustomSeImageProperties []*Property `json:"custom_se_image_properties,omitempty"`
 
+	// When enabled, frequently used objects like networks, subnets, routers etc. are cached to improve performance and reduce load on OpenStack Controllers. Suitable for OpenStack environments where Neutron resources are not frequently created, updated, or deleted.The cache is refreshed when cloud GC API is issued. Field introduced in 21.1.5, 22.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	EnableOsObjectCaching *bool `json:"enable_os_object_caching,omitempty"`
+
+	// When set to True, OpenStack resources created by Avi are tagged with Avi Cloud UUID. Field introduced in 21.1.5, 22.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	EnableTagging *bool `json:"enable_tagging,omitempty"`
+
 	// If True, allow selection of networks marked as 'external' for management,  vip or data networks. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	ExternalNetworks *bool `json:"external_networks,omitempty"`
 
@@ -116,4 +122,7 @@ type OpenStackConfiguration struct {
 	// The username Avi Vantage will use when authenticating to Keystone. For Keystone v3, provide the user information in user@domain format, unless that user belongs to the Default domain. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Username *string `json:"username"`
+
+	// When set to True, VIP ports are created in OpenStack tenant configured as admin_tenant in cloud. Otherwise, default behavior is to create VIP ports in user tenant. Field introduced in 21.1.5, 22.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	VipPortInAdminTenant *bool `json:"vip_port_in_admin_tenant,omitempty"`
 }
