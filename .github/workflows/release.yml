@@ -53,8 +53,8 @@ jobs:
           echo "Publish AVI VERSION ${{ steps.get_sdk_version.outputs.AVI_VERSION }}"
           cd java
           mvn versions:set -DnewVersion=${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}
-          mvn clean install -Dgpg.skip=true
-          # mvn clean --batch-mode deploy -DskipTests -Dgpg.passphrase=${{ secrets.AVISDK_PGP_PASSPHRASE }} -Denv.MAVEN_USERNAME=${{ secrets.OSSRH_USERNAME }} -Denv.MAVEN_PASSWORD=${{ secrets.OSSRH_TOKEN }}
+          # mvn clean install -Dgpg.skip=true
+          mvn clean --batch-mode deploy -DskipTests -Dgpg.passphrase=${{ secrets.AVISDK_PGP_PASSPHRASE }} -Denv.MAVEN_USERNAME=${{ secrets.OSSRH_USERNAME }} -Denv.MAVEN_PASSWORD=${{ secrets.OSSRH_TOKEN }}
           cd ..
           ls java/target/
           cp java/target/avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}.jar .
