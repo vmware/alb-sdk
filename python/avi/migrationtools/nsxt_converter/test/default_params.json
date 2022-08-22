@@ -1,3 +1,7 @@
 {
-  "bgp_peer_configured_for_vlan": true
+  "bgp_peer_configured_for_vlan": true,
+  "network_service": {
+    "no-OneArm-PB": "1.2.3.4",
+    "T1_PB-DATA-Migration-Test-floating-ip": "192.168.223.160"
+  }
 }

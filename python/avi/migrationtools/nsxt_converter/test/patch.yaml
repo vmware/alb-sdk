@@ -1,7 +1,7 @@
 VirtualService: #Object to match
   - match_name: ".*" #Wildcard to match all names
     patch:
-      enabled: True #Enable Virtual Service
+      enabled: true #Enable Virtual Service
 
 ApplicationProfile: #Object to match
   - match_name_in_list: #Application profiles to match
