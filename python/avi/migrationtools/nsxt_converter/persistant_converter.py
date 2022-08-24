@@ -1,6 +1,10 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 import logging
 import os
 
+import avi
 from avi.migrationtools.avi_migration_utils import update_count
 from avi.migrationtools.nsxt_converter.conversion_util import NsxtConvUtil
 import avi.migrationtools.nsxt_converter.converter_constants as conv_const
@@ -11,6 +15,8 @@ LOG = logging.getLogger(__name__)
 conv_utils = NsxtConvUtil()
 common_avi_util = MigrationUtil()
 persistence_profile_list = {}
+persistence_ds_list = {}
+
 
 class PersistantProfileConfigConv(object):
     def __init__(self, nsxt_profile_attributes, object_merge_check, merge_object_mapping, sys_dict):
@@ -28,9 +34,11 @@ class PersistantProfileConfigConv(object):
         self.merge_object_mapping = merge_object_mapping
         self.sys_dict = sys_dict
         self.app_per_count = 0
+        self.vs_ds_count = 0
 
     def convert(self, alb_config, nsx_lb_config, prefix, tenant):
         alb_config["ApplicationPersistenceProfile"] = list()
+        alb_config['VSDataScriptSet'] = []
         converted_objs = []
         skipped_list = []
         converted_alb_pp = []
@@ -66,16 +74,19 @@ class PersistantProfileConfigConv(object):
                 alb_pp = dict(
                     name=name,
                 )
-                persistence_profile_list[lb_pp['id']] = name
                 skipped = [val for val in lb_pp.keys()
                            if val not in self.supported_attr]
-
+                if lb_pp.get('purge'):
+                    if not lb_pp['purge'] == "FULL":
+                        skipped.remove('purge')
                 cookie_skipped_list, source_skipped_list = [], []
                 if pp_type == "LBCookiePersistenceProfile":
                     na_attrs = [val for val in lb_pp.keys()
                                 if val in self.common_na_attr or val in self.persistence_na_attr]
                     na_list.append(na_attrs)
                     skipped, cookie_skipped_list = self.convert_cookie(lb_pp, alb_pp, skipped, tenant)
+                    vs_datascript = self.create_datascript(lb_pp, alb_config, alb_pp,tenant)
+                    persistence_ds_list[lb_pp['id']] = name
                 elif pp_type == "LBSourceIpPersistenceProfile":
                     na_attrs = [val for val in lb_pp.keys()
                                 if val in self.common_na_attr or val in self.na_attr_source
@@ -90,27 +101,46 @@ class PersistantProfileConfigConv(object):
                     skipped.append(source_skipped_list)
 
                 skipped_list.append(skipped)
-                ##
-                if self.object_merge_check:
-                    common_avi_util.update_skip_duplicates(alb_pp,
-                                                           alb_config['ApplicationPersistenceProfile'],
-                                                           'app_per_profile',
-                                                           converted_objs, name, None, self.merge_object_mapping,
-                                                           pp_type, prefix,
-                                                           self.sys_dict['ApplicationPersistenceProfile'])
-                    self.app_per_count += 1
+
+                if not pp_type == "LBCookiePersistenceProfile":
+                    persistence_profile_list[lb_pp['id']] = name
+                    if self.object_merge_check:
+                        common_avi_util.update_skip_duplicates(alb_pp,
+                                                               alb_config['ApplicationPersistenceProfile'],
+                                                               'app_per_profile',
+                                                               converted_objs, name, None, self.merge_object_mapping,
+                                                               pp_type, prefix,
+                                                               self.sys_dict['ApplicationPersistenceProfile'])
+                        self.app_per_count += 1
+                    else:
+                        alb_config['ApplicationPersistenceProfile'].append(alb_pp)
+                    val = dict(
+                        id=lb_pp["id"],
+                        name=name,
+                        resource_type=lb_pp['resource_type'],
+                        alb_pp=alb_pp
+
+                    )
+                    converted_alb_pp.append(val)
                 else:
-                    alb_config['ApplicationPersistenceProfile'].append(alb_pp)
+                    if self.object_merge_check:
+                        common_avi_util.update_skip_duplicates(vs_datascript,
+                                                               alb_config['VSDataScriptSet'],
+                                                               'vs_ds',
+                                                               converted_objs, name, None, self.merge_object_mapping,
+                                                               pp_type, prefix,
+                                                               self.sys_dict['VSDataScriptSet'])
+                        self.vs_ds_count += 1
+                    else:
+                        alb_config['VSDataScriptSet'].append(vs_datascript)
+                    val = dict(
+                        id=lb_pp["id"],
+                        name=name,
+                        resource_type=lb_pp['resource_type'],
+                        alb_pp_ds=vs_datascript
 
-                val = dict(
-                    id = lb_pp["id"],
-                    name=name,
-                    resource_type=lb_pp['resource_type'],
-                    alb_pp=alb_pp
-
-                )
-                converted_alb_pp.append(val)
-                ###
+                    )
+                    converted_alb_pp.append(val)
 
                 msg = "ApplicationPersistenceProfile conversion started..."
                 conv_utils.print_progress_bar(progressbar_count, total_size, msg,
@@ -138,16 +168,31 @@ class PersistantProfileConfigConv(object):
             conv_status["na_list"] = app_per_na_list
             name = converted_alb_pp[index]['name']
             pp_id = converted_alb_pp[index]['id']
-            alb_mig_pp = converted_alb_pp[index]['alb_pp']
+            is_ds = False
+            if 'alb_pp' in converted_alb_pp[index].keys():
+                alb_mig_pp = converted_alb_pp[index]['alb_pp']
+            else:
+                alb_mig_pp = converted_alb_pp[index]['alb_pp_ds']
+                is_ds = True
             resource_type = converted_alb_pp[index]['resource_type']
             if self.object_merge_check:
-                alb_mig_pp = [pp for pp in alb_config['ApplicationPersistenceProfile'] if
-                              pp.get('name') == self.merge_object_mapping['app_per_profile'].get(name)]
-                conv_utils.add_conv_status('persistence', resource_type, name, conv_status,
-                                           [{'app_per_profile': alb_mig_pp[0]}])
+                if is_ds:
+                    alb_mig_pp = [pp for pp in alb_config['VSDataScriptSet'] if
+                                  pp.get('name') == self.merge_object_mapping['vs_ds'].get(name)]
+                    conv_utils.add_conv_status('vsdatascript', resource_type, name, conv_status,
+                                               [{'vs_ds': alb_mig_pp[0]}])
+                else:
+                    alb_mig_pp = [pp for pp in alb_config['ApplicationPersistenceProfile'] if
+                                  pp.get('name') == self.merge_object_mapping['app_per_profile'].get(name)]
+                    conv_utils.add_conv_status('persistence', resource_type, name, conv_status,
+                                               [{'app_per_profile': alb_mig_pp[0]}])
             else:
-                conv_utils.add_conv_status('persistence', resource_type, name, conv_status,
-                                           [{'app_per_profile': alb_mig_pp}])
+                if is_ds:
+                    conv_utils.add_conv_status('vsdatascript', resource_type, name, conv_status,
+                                               [{'vs_ds': alb_mig_pp}])
+                else:
+                    conv_utils.add_conv_status('persistence', resource_type, name, conv_status,
+                                               [{'app_per_profile': alb_mig_pp}])
             if len(conv_status['skipped']) > 0:
                 LOG.debug('[ApplicationPersistenceProfile] Skipped Attribute {}:{}'.format(name,
                                                                                            conv_status['skipped']))
@@ -164,7 +209,8 @@ class PersistantProfileConfigConv(object):
         final_skiped_attr = []
         if lb_pp.get("cookie_name"):
             http_cookie_persistence_profile["cookie_name"] = lb_pp.get("cookie_name")
-
+        if lb_pp.get('cookie_httponly'):
+            http_cookie_persistence_profile['http_only'] = lb_pp.get('cookie_httponly')
         if lb_pp.get("cookie_time", None):
             http_cookie_persistence_profile["timeout"] = lb_pp.get("cookie_time")['cookie_max_idle']
             for index, i in enumerate(skipped):
@@ -186,8 +232,6 @@ class PersistantProfileConfigConv(object):
         if final_skiped_attr:
             skipped_list.append({lb_pp['display_name']: final_skiped_attr})
         skipped = [key for key in skipped if key not in self.supported_attr_cookie]
-        if lb_pp.get("cookie_mode", None) == "INSERT":
-            skipped.remove("cookie_mode")
         return skipped, skipped_list
 
     def convert_source(self, lb_pp, alb_pp, skipped, tenant):
@@ -202,3 +246,41 @@ class PersistantProfileConfigConv(object):
 
         skipped = [key for key in skipped if key not in self.supported_attr_source]
         return skipped
+
+    def create_datascript(self, lb_pp, avi_config, alb_pp,tenant):
+
+        vs_ds = dict(
+            name=alb_pp.get('name'),
+            datascript=list(),
+            tenant_ref=conv_utils.get_object_ref(tenant, 'tenant')
+
+        )
+        datascript = dict(
+            evt='VS_DATASCRIPT_EVT_HTTP_RESP',
+        )
+        if lb_pp.get("cookie_mode") == 'INSERT':
+            cookie_max_idle = 0
+            cookie_max_life = 0
+            if lb_pp.get('cookie_time'):
+                cookie_max_idle = lb_pp['cookie_time'].get('cookie_max_idle', 0)
+                cookie_max_life = lb_pp['cookie_time'].get('cookie_max_life', 0)
+            script = "cookie_table={name=\"%s\",path=\"%s\",domain=\"%s\", \"%s\", \"%s\", \"%s\"}" \
+                     " avi.http.add_cookie(cookie_table)" \
+                     % (lb_pp.get('cookie_name'), lb_pp.get('cookie_path', '/'), lb_pp.get('cookie_domain'),
+                        cookie_max_idle, cookie_max_life, lb_pp.get('cookie_httponly', False))
+
+        elif lb_pp.get("cookie_mode") == 'REWRITE':
+            script = "ip,port = avi.pool.get_server_info() cookie_name = \"%s\" " \
+                     "if avi.http.cookie_exists(cookie_name) then " \
+                     "updated_cookie_value = ip .. \":\" ..port "\
+                     "avi.http.update_cookie(cookie_name,updated_cookie_value )\nend " % lb_pp.get('cookie_name')
+        else:
+            script = "ip,port = avi.pool.get_server_info() cookie_name = \"%s\" " \
+                     "if avi.http.cookie_exists(cookie_name) then " \
+                     "updated_cookie_value = ip .. \":\" .. port .. avi.http.get_cookie(cookie_name)" \
+                     "avi.http.update_cookie(cookie_name,updated_cookie_value )\nend" % lb_pp.get('cookie_name')
+
+        datascript['script'] = script
+        vs_ds['datascript'].append(datascript)
+
+        return vs_ds

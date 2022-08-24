@@ -77,6 +77,8 @@ def percentage_success(path_to_excel):
     s = pandas.read_excel(path, engine='openpyxl', sheet_name='Status Sheet')
     if "F5 type" in s:
         type_str = "F5 type"
+    elif 'NsxT type' in s:
+        type_str = "NsxT type"
     else:
         type_str = "Netscaler Command"
     report_dict = dict()

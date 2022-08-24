@@ -24,7 +24,8 @@ setup(
              'avi/migrationtools/ace_converter/ace_converter.py',
              'avi/migrationtools/config_patch.py',
              'avi/migrationtools/ansible/avi_config_to_ansible.py',
-             'avi/migrationtools/f5_discovery.py'],
+             'avi/migrationtools/f5_discovery.py',
+             'avi/migrationtools/nsxt_converter/nsxt_converter.py'],
     classifiers=[
         'Operating System :: OS Independent',
         'Programming Language :: Python',
@@ -37,10 +38,15 @@ setup(
                       'pycrypto', 'ecdsa', 'pyOpenssl', 'nose-html-reporting',
                       'nose-testconfig', 'ConfigParser', 'xlsxwriter', 'jinja2',
                       'pandas', 'openpyxl', 'appdirs',  'pexpect',
-                      'unittest2', 'networkx', 'xmltodict'],
+                      'unittest2', 'networkx', 'xmltodict',
+                      'vapi-runtime @ file://localhost/%s/avi/migrationtools/lib/vapi_runtime-2.29.0-py2.py3-none-any.whl' % (os.getcwd()),
+                      'vapi_common_client @ file://localhost/%s/avi/migrationtools/lib/vapi_common_client-2.29.0-py2.py3-none-any.whl' % (os.getcwd()),
+                      'nsx_python_sdk @ file://localhost/%s/avi/migrationtools/lib/nsx_python_sdk-4.0.0.1.0-py2.py3-none-any.whl' % (os.getcwd()),
+                      'nsx_policy_python_sdk @ file://localhost/%s/avi/migrationtools/lib/nsx_policy_python_sdk-4.0.0.1.0-py2.py3-none-any.whl' % (os.getcwd())],
     package_data={'avi': ['*.cfg', '*.conf', '*.crt', '*.crl', '*.json',
                           '*.jinja', '*.key', '*.pem', '*.xml',
                           '*.yaml', '*.yml'],
+                  'avi.migrationtools.lib': ['*.whl'],
                   'avi.migrationtools.gss_convertor.parser_files': [
         "gslb_template.jinja"]
     }

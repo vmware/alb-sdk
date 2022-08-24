@@ -183,7 +183,8 @@ NSXT:
 
     Pool_supported_attr_convert_member_group:
     - "group_path"
-    - "port"
+    - "customized_members"
+    - "ip_revision_filter"
 
     Pool_na_list:
     - "max_ip_list_size"
@@ -245,6 +246,8 @@ NSXT:
     - 'server_ssl_profile_binding'
     - 'default_pool_member_ports'
     - 'sorry_pool_path'
+    - 'access_list_control'
+    - 'max_new_connection_rate'
 
     VS_client_ssl_supported_attr:
     - 'ssl_profile_path'
@@ -309,6 +312,12 @@ NSXT:
     - "cookie_max_idle"
     - "cookie_fallback"
     - "cookie_time"
+    - "cookie_domain"
+    - "cookie_path"
+    - "cookie_secure"
+    - "cookie_httponly"
+    - "cookie_time"
+    - "cookie_mode"
 
     SourcePersistenceProfile_Supported_Attributes:
     - "timeout"
@@ -332,9 +341,6 @@ NSXT:
     - "LBHttpRequestBodyCondition"
     - "LBTcpHeaderCondition"
     - "LBVariableCondition"
-    - "LBSslSniCondition"
-    - "LBClientCertificateIssuerDnConditionDto"
-    - "LBClientCertificateSubjectDnConditionDto"
 
     HttpPolicySetRules_Skiped_List_Actions:
     - "LBSslModeSelectionAction"

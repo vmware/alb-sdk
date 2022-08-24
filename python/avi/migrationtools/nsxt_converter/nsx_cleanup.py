@@ -1,3 +1,6 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 import logging
 
 from avi.migrationtools.nsxt_converter import nsxt_client as nsx_client_util

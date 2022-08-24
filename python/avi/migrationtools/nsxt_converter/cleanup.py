@@ -1,4 +1,15 @@
-# !/usr/bin/env python3
+#!/usr/bin/env python3
+
+############################################################################
+# ========================================================================
+# Copyright 2021 VMware, Inc.  All rights reserved. VMware Confidential
+# ========================================================================
+###
+
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
+
 import logging
 import os
 import json

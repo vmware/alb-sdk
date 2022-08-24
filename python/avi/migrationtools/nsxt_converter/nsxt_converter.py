@@ -1,4 +1,15 @@
-# !/usr/bin/env python3
+#!/usr/bin/env python3
+
+############################################################################
+# ========================================================================
+# Copyright 2021 VMware, Inc.  All rights reserved. VMware Confidential
+# ========================================================================
+###
+
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
+
 import json
 import logging
 import os
@@ -18,8 +29,9 @@ from avi.migrationtools.nsxt_converter import nsxt_config_converter, vs_converte
 import argparse
 
 from avi.migrationtools.nsxt_converter.nsxt_util import NSXUtil
-from avi.migrationtools.nsxt_converter.vs_converter import vs_list_with_snat_deactivated, vs_data_path_not_work, \
-    vs_with_no_cloud_configured, vs_with_no_lb_configured, vs_with_lb_skipped, vs_with_no_snat_no_floating_ip
+from avi.migrationtools.nsxt_converter.vs_converter import vs_list_with_snat_deactivated, \
+    vs_with_no_cloud_configured, vs_with_no_lb_configured, vs_with_lb_skipped, vs_with_no_snat_no_floating_ip,\
+vips_not_configured, vs_with_custom_se_group
 
 ARG_CHOICES = {
     'option': ['cli-upload', 'auto-upload'],
@@ -38,7 +50,7 @@ class NsxtConverter(AviConverter):
         '''
         self.nsxt_ip = args.nsxt_ip
         self.nsxt_user = args.nsxt_user
-        self.nsxt_passord = args.nsxt_password
+        self.nsxt_password = args.nsxt_password
         self.nsxt_port = args.nsxt_port
         self.prefix = args.prefix
         self.controller_ip = args.alb_controller_ip
@@ -98,8 +110,9 @@ class NsxtConverter(AviConverter):
         if is_download_from_host:
             LOG.debug("Copying files from host")
             print("Copying Files from Host...")
-            nsx_util = NSXUtil(self.nsxt_user, self.nsxt_passord, self.nsxt_ip, self.nsxt_port \
-                               , self.controller_ip, self.user, self.password, self.controller_version)
+            nsx_util = NSXUtil(self.nsxt_user, self.nsxt_password, self.nsxt_ip, self.nsxt_port \
+                               , self.controller_ip, self.user, self.password, self.controller_version,
+                               self.cloud_tenant)
             nsx_util.get_inventory()
             nsx_util.get_pool_details()
             nsx_util.write_output(
@@ -131,7 +144,7 @@ class NsxtConverter(AviConverter):
             self.vs_state,
             self.vs_level_status, None, self.segroup, self.not_in_use, None,
             self.traffic_enabled, self.cloud_tenant,
-            self.nsxt_ip, self.nsxt_passord)
+            self.nsxt_ip, self.nsxt_password)
 
         avi_config = self.process_for_utils(alb_config, skip_ref_objects=["cloud_ref", "tenant_ref"])
         # Check if flag true then skip not in use object
@@ -139,8 +152,17 @@ class NsxtConverter(AviConverter):
         # avi_config = wipe_out_not_in_use(avi_config)
         # output_path = (output_dir + os.path.sep + self.nsxt_ip + os.path.sep +
         # "output")
-        if alb_config["NetworkService"]:
+
+        # Network, ServiceEngineGroup objects are created as whole migration
+        # is executed and then vs are filtered. Need to verify whether filtered
+        # vs are using these objects, if yes, add it back to final config
+        if avi_config.get("VirtualService"):
+            vs_names_after_filter = [vs["name"] for vs in avi_config["VirtualService"]]
+
+        if alb_config.get("NetworkService") and (set(vs_with_custom_se_group) & set(vs_names_after_filter)):
             avi_config["NetworkService"] = alb_config["NetworkService"]
+        if alb_config.get("ServiceEngineGroup") and (set(vs_with_custom_se_group) & set(vs_names_after_filter)):
+            avi_config["ServiceEngineGroup"] = alb_config["ServiceEngineGroup"]
         self.write_output(avi_config, output_path, 'avi_config.json')
         if self.ansible:
             self.convert(avi_config, output_path)
@@ -200,15 +222,6 @@ class NsxtConverter(AviConverter):
             else:
                 print(print_msg)
                 print(vs_list_with_snat_deactivated)
-        if vs_data_path_not_work:
-            print_msg = "\033[93m"+"Warning: For following virtual service/s Data path won't work"+'\033[0m'
-            if self.vs_filter:
-                if list(set(vs_data_path_not_work).intersection(set(filtered_vs_list))):
-                    print(print_msg)
-                    print(list(set(vs_data_path_not_work).intersection(set(filtered_vs_list))))
-            else:
-                print(print_msg)
-                print(vs_data_path_not_work)
         if vs_with_no_snat_no_floating_ip:
             print_msg = "\033[93m"+"Warning: Following virtual service/s are skipped as " \
                                    "Network service on ALB is not configured for datapath to work. " \
@@ -221,6 +234,16 @@ class NsxtConverter(AviConverter):
             else:
                 print(print_msg)
                 print(vs_with_no_snat_no_floating_ip)
+        if vips_not_configured:
+            print_msg = "\033[93m" + "Warning: Following virtual service/s are skipped as " \
+                                     "VIP segment not configured in cloud networks on ALB" + "\033[0m"
+            if self.vs_filter:
+                if list(set(vips_not_configured).intersection(set(filtered_vs_list))):
+                    print(print_msg)
+                    print(list(set(vips_not_configured).intersection(set(filtered_vs_list))))
+            else:
+                print(print_msg)
+                print(vips_not_configured)
         print("Total Warning: ", get_count('warning'))
         print("Total Errors: ", get_count('error'))
         LOG.info("Total Warning: {}".format(get_count('warning')))
@@ -228,9 +251,13 @@ class NsxtConverter(AviConverter):
 
 
     def upload_config_to_controller(self, alb_config):
-        avi_rest_lib.upload_config_to_controller(
-            alb_config, self.controller_ip, self.user, self.password,
-            self.tenant, self.controller_version)
+        try:
+            avi_rest_lib.upload_config_to_controller(
+                alb_config, self.controller_ip, self.user, self.password,
+                self.tenant, self.controller_version)
+        except Exception as e:
+            print("Exception occurred while uploading config to controller. Reason: {}".format(str(e)))
+            sys.exit(1)
 
     def convert(self, alb_config, output_path):
         # output_path = (self.output_file_path + os.path.sep + self.nsxt_ip +
@@ -241,7 +268,7 @@ class NsxtConverter(AviConverter):
             controller_version=self.controller_version,
             filter_types=self.ansible_filter_types)
         avi_traffic.write_ansible_playbook(
-            self.nsxt_ip, self.nsxt_user, self.nsxt_passord, 'nsxt')
+            self.nsxt_ip, self.nsxt_user, self.nsxt_password, 'nsxt')
 
 
 if __name__ == "__main__":
