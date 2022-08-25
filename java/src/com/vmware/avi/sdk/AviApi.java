@@ -329,7 +329,10 @@ public class AviApi {
 			ResponseEntity<String> response = (ResponseEntity<String>) restTemplate.exchange(putUrl, HttpMethod.PUT,
 					requestEntity, String.class);
 
-			JSONObject jsonObject = new JSONObject(response.getBody());
+			JSONObject jsonObject = null;
+			if (response.getBody() != null) {
+				jsonObject = new JSONObject(response.getBody());
+			}
 			LOGGER.info("__DONE__Executing PUT is completed..");
 			return jsonObject;
 
