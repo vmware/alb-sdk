@@ -102,7 +102,7 @@ jobs:
         with:
           upload_url: ${{ steps.update_release.outputs.upload_url }}
           asset_path: avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
-          asset_name: pip-package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}
+          asset_name: pip-package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
           asset_content_type: application/gzip
       
       - name: Upload Avi Migration Tools pip package
@@ -112,7 +112,7 @@ jobs:
         with:
           upload_url: ${{ steps.update_release.outputs.upload_url }}
           asset_path: avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
-          asset_name: pip-package-avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}
+          asset_name: pip-package-avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
           asset_content_type: application/gzip
         
       #- name: Upload Avi API SDK debian package
@@ -132,7 +132,7 @@ jobs:
         with:
           upload_url: ${{ steps.update_release.outputs.upload_url }}
           asset_path: avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.rpm
-          asset_name: rpm--package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}
+          asset_name: rpm--package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.rpm
           asset_content_type: application/x-rpm
       
       - name: Upload Avi API SDK Java package
