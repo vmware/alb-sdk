@@ -90,8 +90,14 @@ public class Cloud extends AviRestResource  {
     @JsonProperty("maintenance_mode")
     private Boolean maintenanceMode = false;
 
+    @JsonProperty("markers")
+    private List<RoleFilterMatchLabel> markers = null;
+
     @JsonProperty("mesos_configuration")
     private MesosConfiguration mesosConfiguration;
+
+    @JsonProperty("metrics_polling_interval")
+    private Integer metricsPollingInterval = 300;
 
     @JsonProperty("mtu")
     private Integer mtu = 1500;
@@ -732,6 +738,48 @@ public class Cloud extends AviRestResource  {
     public void setMaintenanceMode(Boolean  maintenanceMode) {
         this.maintenanceMode = maintenanceMode;
     }
+    /**
+     * This is the getter method this will return the attribute value.
+     * List of labels to be used for granular rbac.
+     * Field introduced in 21.1.6.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public List<RoleFilterMatchLabel> getMarkers() {
+        return markers;
+    }
+
+    /**
+     * This is the setter method. this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 21.1.6.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public void setMarkers(List<RoleFilterMatchLabel>  markers) {
+        this.markers = markers;
+    }
+
+    /**
+     * This is the setter method this will set the markers
+     * List of labels to be used for granular rbac.
+     * Field introduced in 21.1.6.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markers
+     */
+    public Cloud addMarkersItem(RoleFilterMatchLabel markersItem) {
+      if (this.markers == null) {
+        this.markers = new ArrayList<RoleFilterMatchLabel>();
+      }
+      this.markers.add(markersItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -751,6 +799,32 @@ public class Cloud extends AviRestResource  {
      */
     public void setMesosConfiguration(MesosConfiguration mesosConfiguration) {
         this.mesosConfiguration = mesosConfiguration;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Cloud metrics collector polling interval in seconds.
+     * Field introduced in 21.1.6.
+     * Unit is seconds.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 300.
+     * @return metricsPollingInterval
+     */
+    public Integer getMetricsPollingInterval() {
+        return metricsPollingInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Cloud metrics collector polling interval in seconds.
+     * Field introduced in 21.1.6.
+     * Unit is seconds.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 300.
+     * @param metricsPollingInterval set the metricsPollingInterval.
+     */
+    public void setMetricsPollingInterval(Integer  metricsPollingInterval) {
+        this.metricsPollingInterval = metricsPollingInterval;
     }
 
     /**
@@ -1225,7 +1299,9 @@ public class Cloud extends AviRestResource  {
   Objects.equals(this.autoscalePollingInterval, objCloud.autoscalePollingInterval)&&
   Objects.equals(this.seGroupTemplateRef, objCloud.seGroupTemplateRef)&&
   Objects.equals(this.vmcDeployment, objCloud.vmcDeployment)&&
-  Objects.equals(this.dnsResolvers, objCloud.dnsResolvers);
+  Objects.equals(this.dnsResolvers, objCloud.dnsResolvers)&&
+  Objects.equals(this.markers, objCloud.markers)&&
+  Objects.equals(this.metricsPollingInterval, objCloud.metricsPollingInterval);
     }
 
     @Override
@@ -1255,7 +1331,9 @@ public class Cloud extends AviRestResource  {
                         sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
                         sb.append("    linuxserverConfiguration: ").append(toIndentedString(linuxserverConfiguration)).append("\n");
                         sb.append("    maintenanceMode: ").append(toIndentedString(maintenanceMode)).append("\n");
+                        sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    mesosConfiguration: ").append(toIndentedString(mesosConfiguration)).append("\n");
+                        sb.append("    metricsPollingInterval: ").append(toIndentedString(metricsPollingInterval)).append("\n");
                         sb.append("    mtu: ").append(toIndentedString(mtu)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    nsxConfiguration: ").append(toIndentedString(nsxConfiguration)).append("\n");
