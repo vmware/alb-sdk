@@ -587,6 +587,12 @@ class VSConfigConv(object):
                                            conv_status, msg)
         if ntwk_prof:
             vs_obj['network_profile_ref'] = ntwk_prof[0]
+            ntwk_prof_name = ntwk_prof[0].split('name=')[-1]
+            ntwk_prof_config = [np for np in avi_config['NetworkProfile'] if np['name'] == ntwk_prof_name]
+            ntwk_verified_accept = ntwk_prof_config[0].get('verified-accept')
+            if ntwk_verified_accept and ntwk_verified_accept != 'disabled':
+                vs_obj['"remove_listening_port_on_vs_down'] = True
+
         if enable_ssl:
             vs_obj['ssl_profile_ref'] = ssl_vs[0]["profile"]
             if ssl_vs[0]["cert"]:
