@@ -834,6 +834,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("vcenter_hosts")
     private VcenterHosts vcenterHosts = null;
 
+    @JsonProperty("vcenter_parking_vnic_pg")
+    private String vcenterParkingVnicPg = null;
+
     @JsonProperty("vcenters")
     private List<PlacementScopeConfig> vcenters = null;
 
@@ -8148,6 +8151,30 @@ public class ServiceEngineGroup extends AviRestResource  {
     public void setVcenterHosts(VcenterHosts vcenterHosts) {
         this.vcenterHosts = vcenterHosts;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Parking port group to be used by 9 vnics at the time of se creation.
+     * Field introduced in 21.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return vcenterParkingVnicPg
+     */
+    public String getVcenterParkingVnicPg() {
+        return vcenterParkingVnicPg;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Parking port group to be used by 9 vnics at the time of se creation.
+     * Field introduced in 21.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param vcenterParkingVnicPg set the vcenterParkingVnicPg.
+     */
+    public void setVcenterParkingVnicPg(String  vcenterParkingVnicPg) {
+        this.vcenterParkingVnicPg = vcenterParkingVnicPg;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Vcenter information for scoping at host/cluster level.
@@ -9041,7 +9068,8 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.hybridRssMode, objServiceEngineGroup.hybridRssMode)&&
   Objects.equals(this.numDispatcherQueues, objServiceEngineGroup.numDispatcherQueues)&&
   Objects.equals(this.kniAllowedServerPorts, objServiceEngineGroup.kniAllowedServerPorts)&&
-  Objects.equals(this.deactivateKniFilteringAtDispatcher, objServiceEngineGroup.deactivateKniFilteringAtDispatcher);
+  Objects.equals(this.deactivateKniFilteringAtDispatcher, objServiceEngineGroup.deactivateKniFilteringAtDispatcher)&&
+  Objects.equals(this.vcenterParkingVnicPg, objServiceEngineGroup.vcenterParkingVnicPg);
     }
 
     @Override
@@ -9318,6 +9346,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    vcenterDatastoresInclude: ").append(toIndentedString(vcenterDatastoresInclude)).append("\n");
                         sb.append("    vcenterFolder: ").append(toIndentedString(vcenterFolder)).append("\n");
                         sb.append("    vcenterHosts: ").append(toIndentedString(vcenterHosts)).append("\n");
+                        sb.append("    vcenterParkingVnicPg: ").append(toIndentedString(vcenterParkingVnicPg)).append("\n");
                         sb.append("    vcenters: ").append(toIndentedString(vcenters)).append("\n");
                         sb.append("    vcpusPerSe: ").append(toIndentedString(vcpusPerSe)).append("\n");
                         sb.append("    vipAsg: ").append(toIndentedString(vipAsg)).append("\n");

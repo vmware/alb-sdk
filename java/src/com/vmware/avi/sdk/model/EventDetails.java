@@ -615,6 +615,9 @@ public class EventDetails  {
     @JsonProperty("vcenter_disc_failure")
     private VinfraVcenterDiscoveryFailure vcenterDiscFailure = null;
 
+    @JsonProperty("vcenter_img_details")
+    private VcenterImageDetails vcenterImgDetails = null;
+
     @JsonProperty("vcenter_network_limit")
     private VinfraVcenterNetworkLimit vcenterNetworkLimit = null;
 
@@ -4724,6 +4727,30 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Vcenter image event details.
+     * Field introduced in 21.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return vcenterImgDetails
+     */
+    public VcenterImageDetails getVcenterImgDetails() {
+        return vcenterImgDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Vcenter image event details.
+     * Field introduced in 21.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param vcenterImgDetails set the vcenterImgDetails.
+     */
+    public void setVcenterImgDetails(VcenterImageDetails vcenterImgDetails) {
+        this.vcenterImgDetails = vcenterImgDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterNetworkLimit
@@ -5233,6 +5260,7 @@ public class EventDetails  {
   Objects.equals(this.nsxtEndpointDetails, objEventDetails.nsxtEndpointDetails)&&
   Objects.equals(this.nsxtPolicyDetails, objEventDetails.nsxtPolicyDetails)&&
   Objects.equals(this.nsxtRuleDetails, objEventDetails.nsxtRuleDetails)&&
+  Objects.equals(this.vcenterImgDetails, objEventDetails.vcenterImgDetails)&&
   Objects.equals(this.psmProgramDetails, objEventDetails.psmProgramDetails)&&
   Objects.equals(this.secMgrDataEvent, objEventDetails.secMgrDataEvent)&&
   Objects.equals(this.falsePositiveDetails, objEventDetails.falsePositiveDetails)&&
@@ -5457,6 +5485,7 @@ public class EventDetails  {
                         sb.append("    vcenterConnectivityStatus: ").append(toIndentedString(vcenterConnectivityStatus)).append("\n");
                         sb.append("    vcenterDetails: ").append(toIndentedString(vcenterDetails)).append("\n");
                         sb.append("    vcenterDiscFailure: ").append(toIndentedString(vcenterDiscFailure)).append("\n");
+                        sb.append("    vcenterImgDetails: ").append(toIndentedString(vcenterImgDetails)).append("\n");
                         sb.append("    vcenterNetworkLimit: ").append(toIndentedString(vcenterNetworkLimit)).append("\n");
                         sb.append("    vcenterObjDeleteDetails: ").append(toIndentedString(vcenterObjDeleteDetails)).append("\n");
                         sb.append("    vipAutoscale: ").append(toIndentedString(vipAutoscale)).append("\n");
