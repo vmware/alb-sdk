@@ -20,6 +20,6 @@ type AdminAuthConfiguration struct {
 	// Rules list for tenant or role mapping. Field deprecated in 22.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	MappingRules []*AuthMappingRule `json:"mapping_rules,omitempty"`
 
-	// Remote Auth configurations. Field introduced in 22.1.1. Minimum of 1 items required. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Remote Auth configurations. Field introduced in 22.1.1. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	RemoteAuthConfigurations []*RemoteAuthConfiguration `json:"remote_auth_configurations,omitempty"`
 }
