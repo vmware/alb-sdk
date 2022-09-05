@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '21.1.5'
+    version: '21.1.6'
     title: Avi ServiceEngineGroup Object API
     contact:
         name: Avi Networks Inc.
@@ -2161,6 +2161,9 @@ definitions:
             vcenter_hosts:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/VcenterHosts'
+            vcenter_parking_vnic_pg:
+                description: "Parking port group to be used by 9 vnics at the time of SE creation. Field introduced in 21.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
             vcenters:
                 description: "VCenter information for scoping at Host/Cluster level. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array

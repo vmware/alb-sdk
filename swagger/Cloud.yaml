@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '21.1.5'
+    version: '21.1.6'
     title: Avi Cloud Object API
     contact:
         name: Avi Networks Inc.
@@ -474,46 +474,6 @@ paths:
                 401:
                     description: log in failed
     /cloud/{uuid}/gc/:
-        patch:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        type: string
-                401:
-                    description: log in failed
         put:
             consumes:
                 -   application/json
@@ -548,6 +508,46 @@ paths:
                         type: object
                         additionalProperties:
                             type: string
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                200:
+                    description: OK
+                    schema:
+                        type: string
+                401:
+                    description: log in failed
+        patch:
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -1092,9 +1092,19 @@ definitions:
             maintenance_mode:
                 description: "Cloud is in maintenance mode. Field introduced in 20.1.7,21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: boolean
+            markers:
+                description: "List of labels to be used for granular RBAC. Field introduced in 21.1.6. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/RoleFilterMatchLabel'
             mesos_configuration:
                 description: " Field deprecated in 18.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MesosConfiguration'
+            metrics_polling_interval:
+                description: "Cloud metrics collector polling interval in seconds. Field introduced in 21.1.6. Unit is SECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                default: 300
+                format: int32
             mtu:
                 description: "MTU setting for the cloud. Unit is BYTES. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
@@ -1210,6 +1220,15 @@ definitions:
                 type: integer
                 default: 1
                 format: int32
+    ContentLibConfig:
+        type: object
+        properties:
+            id:
+                description: "Content Library Id. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            name:
+                description: "Content Library name. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
     CustomTag:
         type: object
         required:
@@ -2726,6 +2745,19 @@ definitions:
             use_controller_image:
                 description: "If true, use controller generated SE docker image via fileservice, else use docker repository image as defined by docker_registry_se. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
+    RoleFilterMatchLabel:
+        type: object
+        required:
+            -   key
+        properties:
+            key:
+                description: "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            values:
+                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
     RouteInfo:
         type: object
         required:
@@ -2778,6 +2810,9 @@ definitions:
         required:
             -   privilege
         properties:
+            content_lib:
+                description: "vCenter content library where Service Engine images are stored. Field introduced in 21.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/ContentLibConfig'
             datacenter:
                 description: "Datacenter for virtual infrastructure discovery. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -2797,6 +2832,9 @@ definitions:
                 description: "Set the access mode to vCenter as either Read, which allows Avi to discover networks and servers, or Write, which also allows Avi to create Service Engines and configure their network properties. Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "WRITE_ACCESS"
+            use_content_lib:
+                description: "If false, Service Engine image will not be pushed to content library. Field introduced in 21.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
             username:
                 description: "The username Avi Vantage will use when authenticating with vCenter. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
