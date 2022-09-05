@@ -187,7 +187,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - configure serviceenginegroup <key> - show serviceenginegroup <key> - redistribute serviceenginegroup <key> - clear serviceenginegroup <key> ```  Examples - **serviceenginegroup_example_1**: To create a SE group that is suitable for a production application with a HA policy of shared active/active with a minimum scale out of 2 SE   ```json     {'name': 'production-group', 'min_scaleout_per_vs': 2, 'ha_mode': 'HA_MODE_SHARED_PAIR'}   ```  - **serviceenginegroup_example_2**: To create a SE group that is of best effort category suitable for test deployments   ```json     {'name': 'test-group', 'max_se': 8, 'ha_mode': 'HA_MODE_SHARED', 'buffer_se': 0}   ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 21.1.5</div>
+    <div class="app-desc">Version: 21.1.6</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -731,6 +731,7 @@ font-style: italic;
     "_last_modified" : "aeiou",
     "significant_log_throttle" : 123,
     "se_rum_sampling_nav_interval" : 123,
+    "vcenter_parking_vnic_pg" : "aeiou",
     "hypervisor" : "aeiou",
     "use_legacy_netlink" : true,
     "use_hyperthreaded_cores" : true,
@@ -1220,6 +1221,7 @@ font-style: italic;
   "_last_modified" : "aeiou",
   "significant_log_throttle" : 123,
   "se_rum_sampling_nav_interval" : 123,
+  "vcenter_parking_vnic_pg" : "aeiou",
   "hypervisor" : "aeiou",
   "use_legacy_netlink" : true,
   "use_hyperthreaded_cores" : true,
@@ -1780,6 +1782,7 @@ font-style: italic;
   "_last_modified" : "aeiou",
   "significant_log_throttle" : 123,
   "se_rum_sampling_nav_interval" : 123,
+  "vcenter_parking_vnic_pg" : "aeiou",
   "hypervisor" : "aeiou",
   "use_legacy_netlink" : true,
   "use_hyperthreaded_cores" : true,
@@ -2280,6 +2283,7 @@ font-style: italic;
   "_last_modified" : "aeiou",
   "significant_log_throttle" : 123,
   "se_rum_sampling_nav_interval" : 123,
+  "vcenter_parking_vnic_pg" : "aeiou",
   "hypervisor" : "aeiou",
   "use_legacy_netlink" : true,
   "use_hyperthreaded_cores" : true,
@@ -2936,6 +2940,7 @@ font-style: italic;
   "_last_modified" : "aeiou",
   "significant_log_throttle" : 123,
   "se_rum_sampling_nav_interval" : 123,
+  "vcenter_parking_vnic_pg" : "aeiou",
   "hypervisor" : "aeiou",
   "use_legacy_netlink" : true,
   "use_hyperthreaded_cores" : true,
@@ -3614,6 +3619,7 @@ font-style: italic;
 <div class="param">vcenter_datastores_include (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">vcenter_folder (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Folder to place all the Service Engine virtual machines in vCenter. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">vcenter_hosts (optional)</div><div class="param-desc"><span class="param-type"><a href="#VcenterHosts">VcenterHosts</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">vcenter_parking_vnic_pg (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parking port group to be used by 9 vnics at the time of SE creation. Field introduced in 21.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">vcenters (optional)</div><div class="param-desc"><span class="param-type"><a href="#PlacementScopeConfig">array[PlacementScopeConfig]</a></span> VCenter information for scoping at Host/Cluster level. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">vcpus_per_se (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of vcpus for each of the Service Engine virtual machines. Changes to this setting do not affect existing SEs. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">vip_asg (optional)</div><div class="param-desc"><span class="param-type"><a href="#VipAutoscaleGroup">VipAutoscaleGroup</a></span> When vip_asg is set, Vip configuration will be managed by Avi.User will be able to configure vip_asg or Vips individually at the time of create. Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
