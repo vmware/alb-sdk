@@ -84,8 +84,14 @@ type Cloud struct {
 	// Cloud is in maintenance mode. Field introduced in 20.1.7,21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	MaintenanceMode *bool `json:"maintenance_mode,omitempty"`
 
+	// List of labels to be used for granular RBAC. Field introduced in 21.1.6. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
+	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
+
 	//  Field deprecated in 18.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	MesosConfiguration *MesosConfiguration `json:"mesos_configuration,omitempty"`
+
+	// Cloud metrics collector polling interval in seconds. Field introduced in 21.1.6. Unit is SECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	MetricsPollingInterval *int32 `json:"metrics_polling_interval,omitempty"`
 
 	// MTU setting for the cloud. Unit is BYTES. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Mtu *int32 `json:"mtu,omitempty"`
