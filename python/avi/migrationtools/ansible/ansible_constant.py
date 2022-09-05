@@ -12,7 +12,7 @@ common_task_args = {'controller': "{{ controller }}",
 ansible_dict = dict({
     'connection': 'local',
     'hosts': 'localhost',
-    'roles': ['avinetworks.avisdk', 'avinetworks.avimigrationtools'],
+    'collections': ['vmware.alb'],
     'vars': deepcopy(common_task_args),
     'tasks': []})
 

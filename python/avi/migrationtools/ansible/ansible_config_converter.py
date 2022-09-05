@@ -80,14 +80,11 @@ class AviAnsibleConverterBase(object):
     common_task_args = {
         'controller': "{{ controller }}",
         'username': "{{ username }}",
-        'password': "{{ password }}"
+        'password': "{{ password }}",
+        'state': "{{ state | default(omit)}}"
     }
 
-    ansible_dict = dict({
-        'connection': 'local',
-        'hosts': 'localhost',
-        'vars': common_task_args,
-        'tasks': []})
+    ansible_dict = ansible_dict
 
     skip_fields = SKIP_FIELDS
     default_meta_order = supported_obj['avi_resource_types']
@@ -558,7 +555,7 @@ class AviAnsibleConverterMigration(AviAnsibleConverterBase):
         with open(ansible_create_object_path, "w") as outf:
             outf.write(ANSIBLE_STR)
             outf.write('---\n')
-            yaml.safe_dump([ad], outf, default_flow_style=False, indent=2)
+            yaml.safe_dump([ad], outf, default_flow_style=False, indent=2, sort_keys=False)
 
         # Added support to generate ansible delete object playbook
         if len(ad['tasks']):
@@ -573,12 +570,12 @@ class AviAnsibleConverterMigration(AviAnsibleConverterBase):
                 if v.get('system_default'):
                     tasks.remove(task)
                     continue
-                v['state'] = 'absent'
         ad['tasks'] = tasks
+        ad['vars']['state'] = 'absent'
         with open(ansible_delete_object_path, "w") as outf:
             outf.write('# Auto-generated from Avi Configuration\n')
             outf.write('---\n')
-            yaml.safe_dump([ad], outf, default_flow_style=False, indent=2)
+            yaml.safe_dump([ad], outf, default_flow_style=False, indent=2, sort_keys=False)
 
 
 HELP_STR = HELP_STR

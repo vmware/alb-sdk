@@ -311,6 +311,7 @@ VERSION_11:
     - "header-erase"
     - "header-insert"
     - "partition"
+    - "redirect-rewrite"
 
     Profile_supported_http_enforcement:
     - "max-header-size"
@@ -479,6 +480,7 @@ VERSION_11:
     - "receive-window-size"
     - "ip-tos-to-client"
     - "partition"
+    - 'verified-accept'
 
     Profile_indirect_tcp:
     - 'reset-on-timeout'
@@ -899,9 +901,11 @@ VERSION_10:
     - "encrypt cookies"
     - "fallback"
     - "defaults from"
+    - "redirect-rewrite"
 
     Profile_supported_http_enforcement:
     - "max-header-size"
+
 
     Profile_http_enf_ignore_for_defaults:
         'unknown-method': 'allow'
@@ -1002,6 +1006,7 @@ VERSION_10:
     - "recv window"
     - "max retrans"
     - "defaults from"
+    - 'verified-accept'
 
     Profile_indirect_tcp:
     - "reset on timeout"

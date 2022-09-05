@@ -2385,3 +2385,8 @@ class F5Util(MigrationUtil):
                 parent_profile.update(profile)
                 profile = parent_profile
         return profile
+
+    def remove_verified_accept_from_network_profile(self, avi_config_dict):
+        for ntwk_profile in avi_config_dict['NetworkProfile']:
+            if ntwk_profile.get('verified-accept'):
+                del(ntwk_profile['verified_accept'])

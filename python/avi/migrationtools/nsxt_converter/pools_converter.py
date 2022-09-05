@@ -19,7 +19,8 @@ conv_utils = NsxtConvUtil()
 skipped_pools_list = []
 vs_pool_segment_list = dict()
 vs_sorry_pool_segment_list = dict()
-pool_name_dict={}
+pool_name_dict = {}
+vs_select_pool_action_list = dict()
 
 class PoolConfigConv(object):
     def __init__(self, nsxt_pool_attributes, object_merge_check, merge_object_mapping, sys_dict):
@@ -44,7 +45,8 @@ class PoolConfigConv(object):
         alb_config['Pool'] = list()
         alb_config['PoolGroup'] = list()
         progressbar_count = 0
-        pool_list =[]
+        pool_list = []
+        rule_select_pool_action_list = []
         total_size = len(nsx_lb_config['LbPools'])
         print("\nConverting Pools ...")
         LOG.info('[POOL] Converting Pools...')
@@ -62,10 +64,21 @@ class PoolConfigConv(object):
                 }
                 if lb_type.get('lb_algorithm_hash'):
                     alb_pl['lb_algorithm_hash'] = lb_type['lb_algorithm_hash']
+
                 vs_list = [vs["id"] for vs in nsx_lb_config["LbVirtualServers"] if
                            (vs.get("pool_path") and vs.get("pool_path").split("/")[-1] == lb_pl.get("id"))]
-                vs_list_for_sorry_pool = [vs["id"] for vs in nsx_lb_config["LbVirtualServers"] if
-                            (vs.get("sorry_pool_path") and vs.get("sorry_pool_path").split("/")[-1] == lb_pl.get("id"))]
+
+                vs_list_for_sorry_pool = [vs["id"] for vs in nsx_lb_config["LbVirtualServers"] 
+                                          if vs.get("sorry_pool_path")
+                                          and vs.get("sorry_pool_path").split("/")[-1] == lb_pl.get("id")]
+
+                vs_list_for_rules_select_action_pool = [vs['id'] for vs in nsx_lb_config['LbVirtualServers']
+                                                        if vs.get('rules')
+                                                        for vs_rules in vs['rules']
+                                                        for action in vs_rules.get('actions')
+                                                        if action.get('pool_id')
+                                                        and action.get('pool_id').split("/")[-1] == lb_pl.get("id")]
+
                 pool_name_without_prefix = name
                 if prefix:
                     name = '%s-%s' % (prefix, name)
@@ -74,10 +87,10 @@ class PoolConfigConv(object):
                     pool_temp = list(filter(lambda pl: pl["name"] == name, alb_config['PoolGroup']))
                 if pool_temp:
                     name = '%s-%s' % (name, lb_pl["id"])
-
+                is_sry_pool_present = False
                 pool_skip = True
                 pool_count = 0
-                pool_members_list=list()
+                pool_members_list = list()
                 if lb_pl.get('member_group'):
                     ns_grp_name, ip_addr_grp = nsxt_util.get_nsx_group_details(lb_pl['member_group']['group_path'])
                     if ip_addr_grp:
@@ -93,79 +106,33 @@ class PoolConfigConv(object):
                                                                               skip_msg))
                         continue
 
-                elif lb_pl.get('members'): pool_members_list = lb_pl['members']
-                if pool_members_list :
+                elif lb_pl.get('members'):
+                    pool_members_list = lb_pl['members']
+                if pool_members_list:
+                    lb_list = {}
                     if vs_list:
-                        for member in pool_members_list:
-                            lb_list = {}
-                            for vs_id in vs_list:
-                                if vs_id in vs_pool_segment_list.keys():
-                                    pool_skip = False
-                                    continue
-                                lb = get_lb_service_name(vs_id)
-                                if not lb:
-                                    continue
-                                pool_segment = get_object_segments(vs_id,
-                                                                 member["ip_address"])
-                                if pool_segment:
-                                    pool_skip = False
-                                    if lb in lb_list.keys():
-       #                                 pool_list = lb_list[lb]
-     #                                   pool_list["name"] = pool_list["name"]+"-"+vs_id
-                                        vs_pool_segment_list[vs_id] = lb_list[lb]
-                                        continue
+                        pool_seg_list,is_member_ip_in_range,pool_skip = self.check_pool_member_ip_ranges\
+                            (vs_list, pool_count, lb_list, pool_members_list, pool_skip, name, vs_pool_segment_list)
 
-                                    if pool_count == 0:
-                                        vs_pool_segment_list[vs_id] = {
-                                            "pool_name": name,
-                                            "pool_segment": pool_segment
-                                        }
-                                        lb_list[lb] = vs_pool_segment_list[vs_id]
+                    if vs_list_for_sorry_pool:
+                        pool_seg_list,is_member_ip_in_range ,pool_skip= self.check_pool_member_ip_ranges \
+                            (vs_list_for_sorry_pool, pool_count, lb_list, pool_members_list, pool_skip, name,
+                             vs_sorry_pool_segment_list)
+                        if is_member_ip_in_range:
+                            is_sry_pool_present = True
 
-                                    else:
-                                        new_pool_name = '%s-%s' % (name, pool_segment[0]["subnets"]["network_range"])
-                                        new_pool_name = new_pool_name.replace('/', '-')
-                                        vs_pool_segment_list[vs_id] = {
-                                            "pool_name": new_pool_name,
-                                            "pool_segment": pool_segment
-                                        }
-                                        lb_list[lb] = vs_pool_segment_list[vs_id]
-                                    pool_count += 1
-                    for vs_id in vs_list_for_sorry_pool:
-                        if vs_id in vs_sorry_pool_segment_list.keys():
-                            pool_skip = False
-                            continue
-                        lb = get_lb_service_name(vs_id)
-                        pool_segment = get_object_segments(vs_id,
-                                                         member["ip_address"])
-                        if pool_segment:
-                            pool_skip = False
-                            if lb in lb_list.keys():
-                                vs_sorry_pool_segment_list[vs_id] = lb_list[lb]
-                                continue
-
-                            if pool_count == 0:
-                                vs_sorry_pool_segment_list[vs_id] = {
-                                    "pool_name": name,
-                                    "pool_segment": pool_segment
-                                }
-                                lb_list[lb] = vs_sorry_pool_segment_list[vs_id]
-
-                            else:
-                                vs_sorry_pool_segment_list[vs_id] = {
-                                    "pool_name": '%s-%s' % (name, pool_segment[0]["subnets"]["network_range"]),
-                                    "pool_segment": pool_segment
-                                }
-                                lb_list[lb] = vs_sorry_pool_segment_list[vs_id]
-                            pool_count += 1
+                    if vs_list_for_rules_select_action_pool:
+                        pool_seg_list,is_member_ip_in_range, pool_skip = self.check_pool_member_ip_ranges \
+                            (vs_list_for_rules_select_action_pool, pool_count, lb_list, pool_members_list, pool_skip, name,
+                             vs_select_pool_action_list)
 
                     if pool_skip:
                         skipped_pools_list.append(name)
-                        skip_msg='Member ip not falling in segment rnge'
+                        skip_msg = 'Member ip not falling in segment rnge'
                         conv_utils.add_status_row('pool', None, lb_pl['display_name'],
-                                                        conv_const.STATUS_SKIPPED, skip_msg)
+                                                  conv_const.STATUS_SKIPPED, skip_msg)
                         LOG.warning("POOL {} not migrated. Reason: {}".format(name,
-                                                                            skip_msg))
+                                                                              skip_msg))
                         continue
                 else:
                     skipped_pools_list.append(name)
@@ -257,8 +224,8 @@ class PoolConfigConv(object):
                 skipped = [val for val in lb_pl.keys()
                            if val not in self.supported_attr]
                 ##
-                if vs_list_for_sorry_pool:
-                    is_pg, pg_dict = self.check_for_pool_group(servers,sorry_pool=True)
+                if is_sry_pool_present:
+                    is_pg, pg_dict = self.check_for_pool_group(servers, sorry_pool=True)
                 else:
                     is_pg, pg_dict = self.check_for_pool_group(servers)
                 converted_objs = dict()
@@ -288,16 +255,16 @@ class PoolConfigConv(object):
                     nsx_lb_config['LbPools'], u_ignore, na_list)
                 na_list = [val for val in na_list if val not in self.common_na_attr]
                 conv_status["na_list"] = na_list
-                conv_utils.add_conv_status('pool',None,alb_pl['name'],conv_status,converted_objs)
-#                conv_utils.add_conv_status(
-#                    'pool', None, alb_pl['name'], conv_status,
- #                   {'pools': [alb_pl]})
+                conv_utils.add_conv_status('pool', None, alb_pl['name'], conv_status, converted_objs)
+                #                conv_utils.add_conv_status(
+                #                    'pool', None, alb_pl['name'], conv_status,
+                #                   {'pools': [alb_pl]})
                 msg = "Pools conversion started..."
                 conv_utils.print_progress_bar(
                     progressbar_count, total_size, msg, prefix='Progress',
                     suffix='')
 
-#                alb_config['Pool'].append(alb_pl)
+                #                alb_config['Pool'].append(alb_pl)
                 # time.sleep(0.1)
 
                 if len(conv_status['skipped']) > 0:
@@ -328,7 +295,7 @@ class PoolConfigConv(object):
         skipped_list = []
         server_skipped = []
         connection_limit = []
-        pg_obj =[]
+        pg_obj = []
         for member in servers_config:
             server_obj = {
                 'ip': {
@@ -377,8 +344,8 @@ class PoolConfigConv(object):
 
         pool_bmd = []
         pool_bme = []
-        pg_dict={}
-        is_pool_group= False
+        pg_dict = {}
+        is_pool_group = False
         for member in servers:
             if member.get("backup_member"):
                 pool_bme.append(member)
@@ -393,12 +360,12 @@ class PoolConfigConv(object):
                 bmd_priority = "1"
                 bme_priority = "0"
             priority_list = pg_dict.get(bmd_priority, [])
-            priority_list=pool_bmd
+            priority_list = pool_bmd
             pg_dict[bmd_priority] = priority_list
             pg_dict[bmd_priority] = pg_dict[bmd_priority][0]
             priority_list = pg_dict.get(bme_priority, [])
-            priority_list=pool_bme
-            pg_dict[bme_priority]=priority_list
+            priority_list = pool_bme
+            pg_dict[bme_priority] = priority_list
             pg_dict[bme_priority] = pg_dict[bme_priority][0]
 
         elif pool_bme:
@@ -409,7 +376,7 @@ class PoolConfigConv(object):
                 priority = "0"
             priority_list = pg_dict.get(priority, [])
             priority_list = pool_bme
-            pg_dict[priority]=priority_list
+            pg_dict[priority] = priority_list
             pg_dict[priority] = pg_dict[priority][0]
 
         else:
@@ -417,9 +384,9 @@ class PoolConfigConv(object):
                 is_pool_group = True
                 priority = "1"
                 priority_list = pg_dict.get(priority, [])
-                priority_list=pool_bmd
-                pg_dict[priority]=priority_list
-                pg_dict[priority]=pg_dict[priority][0]
+                priority_list = pool_bmd
+                pg_dict[priority] = priority_list
+                pg_dict[priority] = pg_dict[priority][0]
 
         return is_pool_group, pg_dict
 
@@ -445,7 +412,7 @@ class PoolConfigConv(object):
             pools.append(priority_pool)
             if priority_pool_ref:
                 member = {
-                    'pool_ref': conv_utils.get_object_ref(priority_pool_ref,'pool',tenant=tenant),
+                    'pool_ref': conv_utils.get_object_ref(priority_pool_ref, 'pool', tenant=tenant),
                     'priority_label': priority
                 }
                 pg_members.append(member)
@@ -463,7 +430,7 @@ class PoolConfigConv(object):
         return converted_objs
 
     #
-    def convert_member_group_to_pool_servers(self,ip_group_list,member_group_config):
+    def convert_member_group_to_pool_servers(self, ip_group_list, member_group_config):
         server_list = []
         skipped_list = []
         server_skipped = []
@@ -471,9 +438,9 @@ class PoolConfigConv(object):
         pg_obj = []
         member_count = 1
         for ip in ip_group_list:
-            type="V6"
+            type = "V6"
             if "." in ip:
-                type="V4"
+                type = "V4"
             server_obj = {
                 'ip': {
                     'addr': ip,
@@ -496,7 +463,7 @@ class PoolConfigConv(object):
         limit = dict()
         return server_list, skipped_list, server_skipped, limit
 
-    def update_pool_member_group_with_customized_member(self,pool_servers,customized_members):
+    def update_pool_member_group_with_customized_member(self, pool_servers, customized_members):
         for c_member in customized_members:
             server_member = [server for server in pool_servers if server['ip']['addr'] == c_member['ip_address']]
             if server_member:
@@ -508,3 +475,41 @@ class PoolConfigConv(object):
                 if c_member.get('weight'):
                     server_member['ratio'] = c_member.get('weight')
 
+    def check_pool_member_ip_ranges(self, vs_list, pool_count, lb_list, pool_members_list, pool_skip, pool_name,
+                                    pool_segment_list):
+        is_member_ip_in_range=False
+        for member in pool_members_list:
+            for vs_id in vs_list:
+                if vs_id in pool_segment_list.keys():
+                    pool_skip = False
+                    is_member_ip_in_range=True
+                    continue
+                lb = get_lb_service_name(vs_id)
+                if not lb:
+                    continue
+                pool_segment = get_object_segments(vs_id,
+                                                   member.get("ip_address"))
+                if pool_segment:
+                    pool_skip = False
+                    is_member_ip_in_range = True
+                    if lb in lb_list.keys():
+                        pool_segment_list[vs_id] = lb_list.get(lb)
+                        continue
+
+                    if pool_count == 0:
+                        pool_segment_list[vs_id] = {
+                            "pool_name": pool_name,
+                            "pool_segment": pool_segment
+                        }
+                        lb_list[lb] = pool_segment_list.get(vs_id)    
+                    else:
+                        new_pool_name = '%s-%s' % (pool_name, pool_segment[0].get("subnets").get("network_range"))
+                        new_pool_name = new_pool_name.replace('/', '-')
+                        vs_pool_segment_list[vs_id] = {
+                            "pool_name": new_pool_name,
+                            "pool_segment": pool_segment
+                        }
+                        lb_list[lb] = pool_segment_list.get(vs_id)
+                    pool_count += 1
+
+        return pool_segment_list, is_member_ip_in_range,pool_skip
