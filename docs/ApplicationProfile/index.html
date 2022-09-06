@@ -301,6 +301,9 @@ font-style: italic;
     "type" : "aeiou",
     "created_by" : "aeiou",
     "uuid" : "aeiou",
+    "l4_ssl_profile" : {
+      "ssl_stream_idle_timeout" : 123
+    },
     "url" : "aeiou",
     "_last_modified" : "aeiou",
     "http_profile" : {
@@ -602,6 +605,9 @@ font-style: italic;
   "type" : "aeiou",
   "created_by" : "aeiou",
   "uuid" : "aeiou",
+  "l4_ssl_profile" : {
+    "ssl_stream_idle_timeout" : 123
+  },
   "url" : "aeiou",
   "_last_modified" : "aeiou",
   "http_profile" : {
@@ -974,6 +980,9 @@ font-style: italic;
   "type" : "aeiou",
   "created_by" : "aeiou",
   "uuid" : "aeiou",
+  "l4_ssl_profile" : {
+    "ssl_stream_idle_timeout" : 123
+  },
   "url" : "aeiou",
   "_last_modified" : "aeiou",
   "http_profile" : {
@@ -1286,6 +1295,9 @@ font-style: italic;
   "type" : "aeiou",
   "created_by" : "aeiou",
   "uuid" : "aeiou",
+  "l4_ssl_profile" : {
+    "ssl_stream_idle_timeout" : 123
+  },
   "url" : "aeiou",
   "_last_modified" : "aeiou",
   "http_profile" : {
@@ -1598,6 +1610,9 @@ font-style: italic;
   "type" : "aeiou",
   "created_by" : "aeiou",
   "uuid" : "aeiou",
+  "l4_ssl_profile" : {
+    "ssl_stream_idle_timeout" : 123
+  },
   "url" : "aeiou",
   "_last_modified" : "aeiou",
   "http_profile" : {
@@ -1901,6 +1916,7 @@ font-style: italic;
     <li><a href="#IpAddr"><code>IpAddr</code></a></li>
     <li><a href="#IpAddrPrefix"><code>IpAddrPrefix</code></a></li>
     <li><a href="#IpAddrRange"><code>IpAddrRange</code></a></li>
+    <li><a href="#L4SSLApplicationProfile"><code>L4SSLApplicationProfile</code></a></li>
     <li><a href="#PathMatch"><code>PathMatch</code></a></li>
     <li><a href="#RateLimiter"><code>RateLimiter</code></a></li>
     <li><a href="#RateLimiterAction"><code>RateLimiterAction</code></a></li>
@@ -1928,6 +1944,7 @@ font-style: italic;
 <div class="param">dns_service_profile (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsServiceApplicationProfile">DnsServiceApplicationProfile</a></span> Specifies various DNS service related controls for virtual service. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">dos_rl_profile (optional)</div><div class="param-desc"><span class="param-type"><a href="#DosRateLimitProfile">DosRateLimitProfile</a></span> Specifies various security related controls for virtual service. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">http_profile (optional)</div><div class="param-desc"><span class="param-type"><a href="#HTTPApplicationProfile">HTTPApplicationProfile</a></span> Specifies the HTTP application proxy profile parameters. Allowed in Enterprise edition with any value, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">l4_ssl_profile (optional)</div><div class="param-desc"><span class="param-type"><a href="#L4SSLApplicationProfile">L4SSLApplicationProfile</a></span> Specifies various L4 SSL service related controls for virtual service. Field introduced in 22.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of the application profile. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">preserve_client_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Specifies if client IP needs to be preserved for backend connection. Not compatible with Connection Multiplexing. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -2179,6 +2196,12 @@ font-style: italic;
     <div class="field-items">
       <div class="param">begin </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Starting IP address of the range. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">end </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Ending IP address of the range. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="L4SSLApplicationProfile">L4SSLApplicationProfile</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">ssl_stream_idle_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> L4 stream idle connection timeout in seconds. Allowed values are 60-86400. Field introduced in 22.1.2. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
