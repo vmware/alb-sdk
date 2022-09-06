@@ -36,6 +36,9 @@ type ApplicationProfile struct {
 	// Specifies the HTTP application proxy profile parameters. Allowed in Enterprise edition with any value, Basic, Enterprise with Cloud Services edition.
 	HTTPProfile *HTTPApplicationProfile `json:"http_profile,omitempty"`
 
+	// Specifies various L4 SSL service related controls for virtual service. Field introduced in 22.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	L4SslProfile *L4SSlapplicationProfile `json:"l4_ssl_profile,omitempty"`
+
 	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
