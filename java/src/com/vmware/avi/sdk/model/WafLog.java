@@ -602,7 +602,7 @@ public class WafLog  {
      * This is the getter method this will return the attribute value.
      * Denotes whether waf is running in detection mode or enforcement mode, whether any rules matched the transaction, and whether transaction is
      * dropped by the waf module.
-     * Enum options - NO_WAF, FLAGGED, PASSED, REJECTED, WHITELISTED, BYPASSED.
+     * Enum options - NO_WAF, FLAGGED, PASSED, REJECTED, ALLOWLISTED, BYPASSED.
      * Field introduced in 17.2.2.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -616,7 +616,7 @@ public class WafLog  {
      * This is the setter method to the attribute.
      * Denotes whether waf is running in detection mode or enforcement mode, whether any rules matched the transaction, and whether transaction is
      * dropped by the waf module.
-     * Enum options - NO_WAF, FLAGGED, PASSED, REJECTED, WHITELISTED, BYPASSED.
+     * Enum options - NO_WAF, FLAGGED, PASSED, REJECTED, ALLOWLISTED, BYPASSED.
      * Field introduced in 17.2.2.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
