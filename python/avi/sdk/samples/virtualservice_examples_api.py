@@ -49,20 +49,20 @@ class VirtualServiceExample(object):
         pool_name = vs_name + '-pool'
         pool_obj = self.create_pool(pool_name, servers_obj)
         pool_ref = self.api.get_obj_ref(pool_obj)
+        vsvip_name = vs_name + '-vsvip'
+        vsvip_obj = self.create_vsvip(vsvip_name, vip)
+        vsvip_ref = self.api.get_obj_ref(vsvip_obj)
 
         # create virtual service dict
         services_obj = [{'port': 80, 'enable_ssl': False}]
         vs_obj = {
             'name': vs_name,
             'type': 'VS_TYPE_NORMAL',
-            'ip_address': {
-                'addr': vip,
-                'type': 'V4'
-            },
             'enabled': True,
             'services': services_obj,
             'application_profile_name': 'System-HTTP',
-            'pool_ref': pool_ref
+            'pool_ref': pool_ref,
+            'vsvip_ref': vsvip_ref
         }
 
         # post VS data in json format to avi api
@@ -86,20 +86,22 @@ class VirtualServiceExample(object):
         pool_obj = self.create_pool(pool_name, servers_obj)
         pool_ref = self.api.get_obj_ref(pool_obj)
 
+        # create vsvip for virtual service
+        vsvip_name = vs_name + '-vsvip'
+        vsvip_obj = self.create_vsvip(vsvip_name, vip)
+        vsvip_ref = self.api.get_obj_ref(vsvip_obj)
+
         # create virtual service dict for ssl VS
         vs_obj = {
             'name': vs_name,
             'type': 'VS_TYPE_NORMAL',
-            'ip_address': {
-                'addr': vip,
-                'type': 'V4'
-            },
             'enabled': True,
             'services': services_obj,
             'ssl_key_and_certificate_refs': ssl_key_and_cert_ref,
             'ssl_profile_name': 'System-Standard',
             'application_profile_name': 'System-Secure-HTTP',
-            'pool_ref': pool_ref
+            'pool_ref': pool_ref,
+            'vsvip_ref': vsvip_ref
         }
         resp = self.api.post('virtualservice', data=json.dumps(vs_obj))
         if resp.status_code >= 200 and resp.status_code < 300:
@@ -123,20 +125,22 @@ class VirtualServiceExample(object):
             ['System-TCP', 'System-HTTP', 'System-Ping'])
         pool_ref = self.api.get_obj_ref(pool_obj)
 
+        # create vsvip for virtual service
+        vsvip_name = vs_name + '-vsvip'
+        vsvip_obj = self.create_vsvip(vsvip_name, vip)
+        vsvip_ref = self.api.get_obj_ref(vsvip_obj)
+
         # create virtual service dict for ssl VS
         vs_obj = {
             'name': vs_name,
             'type': 'VS_TYPE_NORMAL',
-            'ip_address': {
-                'addr': vip,
-                'type': 'V4'
-            },
             'enabled': True,
             'services': services_obj,
             'ssl_key_and_certificate_refs': ssl_key_and_cert_ref,
             'ssl_profile_name': 'System-Standard',
             'application_profile_name': 'System-Secure-HTTP',
-            'pool_ref': pool_ref
+            'pool_ref': pool_ref,
+            'vsvip_ref': vsvip_ref
         }
         resp = self.api.post('virtualservice', data=json.dumps(vs_obj))
         if resp.status_code >= 200 and resp.status_code < 300:
@@ -162,20 +166,22 @@ class VirtualServiceExample(object):
             ['System-TCP', 'System-HTTP', 'System-Ping'])
         pool_ref = self.api.get_obj_ref(pool_obj)
 
+        # create vsvip for virtual service
+        vsvip_name = vs_name + '-vsvip'
+        vsvip_obj = self.create_vsvip(vsvip_name, vip)
+        vsvip_ref = self.api.get_obj_ref(vsvip_obj)
+
         # create virtual service dict for ssl VS
         vs_obj = {
             'name': vs_name,
             'type': 'VS_TYPE_NORMAL',
-            'ip_address': {
-                'addr': vip,
-                'type': 'V4'
-            },
             'enabled': True,
             'services': services_obj,
             'ssl_key_and_certificate_refs': ssl_key_and_cert_ref,
             'ssl_profile_name': 'System-Standard',
             'application_profile_name': 'System-Secure-HTTP',
-            'pool_ref': pool_ref
+            'pool_ref': pool_ref,
+            'vsvip_ref': vsvip_ref
         }
         resp = self.api.post('virtualservice', data=json.dumps(vs_obj))
         if resp.status_code >= 200 and resp.status_code < 300:
@@ -251,6 +257,23 @@ class VirtualServiceExample(object):
                 'port': port
             })
         return servers_obj
+
+    def create_vsvip(self, vsvip_name, vip):
+        '''
+        '''
+        vsvip_obj = {'name': vsvip_name,
+                     'vip': [{'vip_id': '1',
+                              'ip_address':
+                                  {'addr': vip,
+                                   'type': 'V4'}
+                              }]
+                     }
+        resp = self.api.post('vsvip', data=json.dumps(vsvip_obj))
+        if resp.status_code in range(200, 299):
+            return resp
+        else:
+            print('Error in creating vsvip :%s' % resp.text)
+            exit(0)
 
     def create_pool(self, name, servers_obj, monitor_names=None,
                     lb_algorithm='LB_ALGORITHM_LEAST_CONNECTIONS'):
@@ -495,6 +518,8 @@ if __name__ == '__main__':
     elif args.option == 'show-se-inventory':
         rsp = vse.get_inventory('serviceengine-inventory')
         print(rsp)
+    elif args.option == 'delete-vsvip':
+        vse.delete(args.resource_name, 'vsvip')
     elif args.option == 'delete-vs':
         vse.delete(args.resource_name, 'virtualservice')
     elif args.option == 'delete-pool':
