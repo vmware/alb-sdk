@@ -17,6 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.UUID;
 import java.util.logging.Logger;
 
 import org.apache.http.HttpResponse;
@@ -26,7 +27,9 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.HttpMultipartMode;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
@@ -485,17 +488,21 @@ public class AviApi {
 			httpClient = AviRestUtils.buildHttpClient(this.aviCredentials);
 			LOGGER.info("Inside upload file :: Path is :" + uri);
 			String postUrl = AviRestUtils.getControllerURL(this.aviCredentials) + "/api/" + uri;
+			String boundary = "---------------"+UUID.randomUUID().toString();
+
 			HttpPost request = new HttpPost(postUrl);
 			AviRestUtils.buildHeaders(request, null, this.aviCredentials);
-			request.removeHeaders("Content-Type");
-			MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-			builder.addTextBody("uri", fileUploadUri, ContentType.TEXT_PLAIN);
+			request.setHeader("Content-Type", ContentType.MULTIPART_FORM_DATA.getMimeType()+";boundary="+ boundary);
 
 			// This attaches the file to the POST:
 			File f = new File(filePath);
-			builder.addBinaryBody("file", new FileInputStream(f), ContentType.APPLICATION_OCTET_STREAM, f.getName());
-			HttpEntity multipart = (HttpEntity) builder.build();
-			request.setEntity((org.apache.http.HttpEntity) multipart);
+			FileBody fileBody = new FileBody(f, ContentType.MULTIPART_FORM_DATA);
+			MultipartEntityBuilder entityBuilder = MultipartEntityBuilder.create().setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
+			entityBuilder.addPart("file", fileBody);
+			entityBuilder.setBoundary(boundary);
+			org.apache.http.HttpEntity entity = entityBuilder.build();
+
+			request.setEntity(entity);
 			CloseableHttpResponse response = httpClient.execute(request);
 			int responseCode = response.getStatusLine().getStatusCode();
 			if (responseCode > 299) {

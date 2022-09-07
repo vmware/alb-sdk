@@ -166,7 +166,8 @@ public class AdminAuthConfiguration  {
      * Remote auth configurations.
      * Field introduced in 22.1.1.
      * Minimum of 1 items required.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return remoteAuthConfigurations
      */
@@ -179,7 +180,8 @@ public class AdminAuthConfiguration  {
      * Remote auth configurations.
      * Field introduced in 22.1.1.
      * Minimum of 1 items required.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return remoteAuthConfigurations
      */
@@ -192,7 +194,8 @@ public class AdminAuthConfiguration  {
      * Remote auth configurations.
      * Field introduced in 22.1.1.
      * Minimum of 1 items required.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return remoteAuthConfigurations
      */
