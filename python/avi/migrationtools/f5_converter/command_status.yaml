@@ -76,6 +76,7 @@ VERSION_11:
     - "cert"
     - "cipherlist"
     - "key"
+    - "ssl-profile"
 
     Monitor_dns_attr:
     - "recv"

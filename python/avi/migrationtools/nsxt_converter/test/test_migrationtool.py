@@ -10,6 +10,7 @@ import logging
 import os
 import pytest
 import yaml
+
 import subprocess
 from avi.migrationtools.avi_migration_utils import get_count, set_update_count
 from avi.migrationtools.nsxt_converter.nsxt_converter import NsxtConverter
@@ -25,6 +26,7 @@ output_file = pytest.config.getoption('--out')
 
 with open(config_file) as f:
     file_attribute = yaml.load(f, Loader=yaml.Loader)
+
 
 setup = dict(nsxt_ip=file_attribute['nsxt_ip'],
              nsxt_user=file_attribute['nsxt_user'],
@@ -386,6 +388,7 @@ class TestNSXTConverter:
                   object_merge_check=False,
                   tenant=setup.get('alb_controller_tenant'),
                   prefix=setup.get('prefix'))
+
 
     def test_cookie_persistence(self):
         Nsxt_conv(nsxt_ip=setup.get('nsxt_ip'),

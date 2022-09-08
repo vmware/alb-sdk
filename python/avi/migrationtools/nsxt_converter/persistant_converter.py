@@ -79,14 +79,15 @@ class PersistantProfileConfigConv(object):
                 if lb_pp.get('purge'):
                     if not lb_pp['purge'] == "FULL":
                         skipped.remove('purge')
+                is_ds_created = False
                 cookie_skipped_list, source_skipped_list = [], []
                 if pp_type == "LBCookiePersistenceProfile":
                     na_attrs = [val for val in lb_pp.keys()
                                 if val in self.common_na_attr or val in self.persistence_na_attr]
                     na_list.append(na_attrs)
                     skipped, cookie_skipped_list = self.convert_cookie(lb_pp, alb_pp, skipped, tenant)
-                    vs_datascript = self.create_datascript(lb_pp, alb_config, alb_pp)
-                    persistence_ds_list[lb_pp['id']] = name
+                    vs_datascript, is_ds_created = self.create_datascript(lb_pp, alb_config, alb_pp,tenant)
+
                 elif pp_type == "LBSourceIpPersistenceProfile":
                     na_attrs = [val for val in lb_pp.keys()
                                 if val in self.common_na_attr or val in self.na_attr_source
@@ -102,7 +103,7 @@ class PersistantProfileConfigConv(object):
 
                 skipped_list.append(skipped)
 
-                if not pp_type == "LBCookiePersistenceProfile":
+                if not is_ds_created:
                     persistence_profile_list[lb_pp['id']] = name
                     if self.object_merge_check:
                         common_avi_util.update_skip_duplicates(alb_pp,
@@ -123,6 +124,7 @@ class PersistantProfileConfigConv(object):
                     )
                     converted_alb_pp.append(val)
                 else:
+                    persistence_ds_list[lb_pp['id']] = name
                     if self.object_merge_check:
                         common_avi_util.update_skip_duplicates(vs_datascript,
                                                                alb_config['VSDataScriptSet'],
@@ -212,7 +214,7 @@ class PersistantProfileConfigConv(object):
         if lb_pp.get('cookie_httponly'):
             http_cookie_persistence_profile['http_only'] = lb_pp.get('cookie_httponly')
         if lb_pp.get("cookie_time", None):
-            http_cookie_persistence_profile["timeout"] = lb_pp.get("cookie_time")['cookie_max_idle']
+            http_cookie_persistence_profile["timeout"] = lb_pp.get("cookie_time").get('cookie_max_idle')
             for index, i in enumerate(skipped):
                 if i == "cookie_time":
                     del skipped[index]
@@ -232,8 +234,6 @@ class PersistantProfileConfigConv(object):
         if final_skiped_attr:
             skipped_list.append({lb_pp['display_name']: final_skiped_attr})
         skipped = [key for key in skipped if key not in self.supported_attr_cookie]
-        if lb_pp.get("cookie_mode", None) == "INSERT":
-            skipped.remove("cookie_mode")
         return skipped, skipped_list
 
     def convert_source(self, lb_pp, alb_pp, skipped, tenant):
@@ -249,25 +249,46 @@ class PersistantProfileConfigConv(object):
         skipped = [key for key in skipped if key not in self.supported_attr_source]
         return skipped
 
-    def create_datascript(self, lb_pp, avi_config, alb_pp):
+    def create_datascript(self, lb_pp, avi_config, alb_pp,tenant):
 
         vs_ds = dict(
             name=alb_pp.get('name'),
-            datascript=list()
+            datascript=list(),
+            tenant_ref=conv_utils.get_object_ref(tenant, 'tenant')
+
         )
-
-        cookie_max_idle = 0
-        cookie_max_life = 0
-        if lb_pp.get('cookie_time'):
-            cookie_max_idle = lb_pp['cookie_time'].get('cookie_max_idle', 0)
-            cookie_max_life = lb_pp['cookie_time'].get('cookie_max_life', 0)
-
+        is_ds_created = False
         datascript = dict(
             evt='VS_DATASCRIPT_EVT_HTTP_RESP',
         )
-        script = "cookie_table={name=\"%s\",path=\"%s\",domain=\"%s\", \"%s\", \"%s\", \"%s\"} avi.http.add_cookie(cookie_table)" \
-                 % (lb_pp.get('cookie_name'), lb_pp.get('cookie_path', '/'), lb_pp.get('cookie_domain'),
-                    cookie_max_idle, cookie_max_life, lb_pp.get('cookie_httponly', False))
-        datascript['script'] = script
-        vs_ds['datascript'].append(datascript)
-        return vs_ds
+        if lb_pp.get("cookie_mode") == 'INSERT':
+            if lb_pp.get('cookie_path', None) or lb_pp.get('cookie_domain', None):
+                cookie_max_idle = 0
+                cookie_max_life = 0
+                if lb_pp.get('cookie_time'):
+                    cookie_max_idle = lb_pp['cookie_time'].get('cookie_max_idle', 0)
+                    cookie_max_life = lb_pp['cookie_time'].get('cookie_max_life', 0)
+                script = "cookie_table={name=\"%s\",path=\"%s\",domain=\"%s\", \"%s\", \"%s\", \"%s\"}" \
+                         " avi.http.add_cookie(cookie_table)" \
+                         % (lb_pp.get('cookie_name'), lb_pp.get('cookie_path', '/'), lb_pp.get('cookie_domain'),
+                            cookie_max_idle, cookie_max_life, lb_pp.get('cookie_httponly', False))
+                is_ds_created = True
+
+        elif lb_pp.get("cookie_mode") == 'REWRITE':
+            script = "ip,port = avi.pool.get_server_info() cookie_name = \"%s\" " \
+                     "if avi.http.cookie_exists(cookie_name) then " \
+                     "updated_cookie_value = ip .. \":\" ..port "\
+                     "avi.http.update_cookie(cookie_name,updated_cookie_value )\nend " % lb_pp.get('cookie_name')
+            is_ds_created = True
+
+        else:
+            script = "ip,port = avi.pool.get_server_info() cookie_name = \"%s\" " \
+                     "if avi.http.cookie_exists(cookie_name) then " \
+                     "updated_cookie_value = ip .. \":\" .. port .. avi.http.get_cookie(cookie_name)" \
+                     "avi.http.update_cookie(cookie_name,updated_cookie_value )\nend" % lb_pp.get('cookie_name')
+            is_ds_created = True
+        if is_ds_created:
+            datascript['script'] = script
+            vs_ds['datascript'].append(datascript)
+
+        return vs_ds, is_ds_created

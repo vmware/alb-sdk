@@ -590,8 +590,17 @@ class MonitorConfigConvV11(MonitorConfigConv):
         if parse_version(controller_version) >= parse_version('17.1'):
             # Added code to handle ssl attribute.
             # Removed ssl cert key ref from monitor's ssl attribute
-            if f5_monitor.get('cipherlist', None):
-                self.create_sslprofile(monitor_dict, f5_monitor, avi_config,
+            # cipherlist and ssl-profile were present in config then it should use ssl-profile as priority
+            if f5_monitor.get('cipherlist', None) or f5_monitor.get('ssl-profile', None):
+                if f5_monitor.get('ssl-profile', None):
+                    _, ssl_ref = conv_utils.get_tenant_ref(f5_monitor['ssl-profile'])
+                    monitor_dict["https_monitor"]['ssl_attributes'][
+                        'ssl_profile_ref'] = conv_utils.get_object_ref(
+                                                ssl_ref,
+                                                conv_const.OBJECT_TYPE_SSL_PROFILE,
+                                                tenant_ref)
+                else:
+                    self.create_sslprofile(monitor_dict, f5_monitor, avi_config,
                                tenant_ref, cloud_name, merge_object_mapping,
                                        sys_dict)
             else:

@@ -71,7 +71,7 @@ def convert(nsx_lb_config, input_path, output_path, tenant, prefix,
         monitor_converter.convert(avi_config_dict, nsx_lb_config, prefix,tenant,custom_mapping)
 
         pool_converter = PoolConfigConv(nsxt_attributes, object_merge_check, merge_object_mapping, sys_dict)
-        pool_converter.convert(avi_config_dict, nsx_lb_config, prefix, tenant)
+        pool_converter.convert(avi_config_dict, nsx_lb_config,nsxt_util, prefix, tenant)
 
         profile_converter = ProfileConfigConv(nsxt_attributes, object_merge_check, merge_object_mapping, sys_dict)
         profile_converter.convert(avi_config_dict, nsx_lb_config, prefix,tenant)
@@ -97,6 +97,7 @@ def convert(nsx_lb_config, input_path, output_path, tenant, prefix,
         LOG.error("Conversion error", exc_info=True)
 
     output_config = output_path + os.path.sep + "avi_config.json"
+
    # with open(output_config, "w", encoding='utf-8') as text_file:
        # json.dump(avi_config_dict, text_file, indent=4)
 

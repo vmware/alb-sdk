@@ -1049,6 +1049,7 @@ class NsxtConvUtil(MigrationUtil):
         :return:
         """
         is_pool_group = False
+        is_pool = False
         pool_group_obj = None
         # Added prefix for objects
         if prefix:
@@ -1171,7 +1172,9 @@ class NsxtConvUtil(MigrationUtil):
                                           True, tenant)
                 else:
                     LOG.debug("Shared pool %s for VS %s", ref, vs_name)
-
+        if not is_pool_group:
+            if not pool_obj:
+                return None, is_pool_group
         return ref, is_pool_group
 
     def is_pool_clone_criteria(self, controller_version, app_prof_type,
@@ -1368,7 +1371,7 @@ class NsxtConvUtil(MigrationUtil):
                             "mask": sub["subnets"]["network_range"].split("/")[-1]
                         },
                         network_ref=self.get_object_ref(
-                            sub["seg_name"], 'network', tenant="admin", cloud_name=cloud_name)
+                            sub["seg_name"], 'network', tenant=tenant, cloud_name=cloud_name)
                     )
                     pool_obj["placement_networks"].append(subnets)
                 break
