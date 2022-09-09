@@ -13,3 +13,4 @@ exported/migrated Avi config json file
 
 - **F5 discovery tool:** Useful for generating report to scope the migration efforts
 
+- **[NSX-T to Avi Migration tool](https://github.com/vmware/alb-sdk/blob/22.1.1/python/avi/migrationtools/nsxt_converter):** Migrates NSX-T native LB to Avi
