@@ -8,6 +8,13 @@ package models
 // swagger:model SAMLSPConfig
 type SAMLSPConfig struct {
 
+	// Index to be used in the AssertionConsumerServiceIndex attribute of the Authentication request, if the authn_req_acs_type is set to Use AssertionConsumerServiceIndex. Allowed values are 0-64. Field introduced in 21.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	AcsIndex *int32 `json:"acs_index,omitempty"`
+
+	// Option to set the ACS attributes in the AuthnRequest . Enum options - SAML_AUTHN_REQ_ACS_TYPE_URL, SAML_AUTHN_REQ_ACS_TYPE_INDEX, SAML_AUTHN_REQ_ACS_TYPE_NONE. Field introduced in 21.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Required: true
+	AuthnReqAcsType *string `json:"authn_req_acs_type"`
+
 	// HTTP cookie name for authenticated session. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	CookieName *string `json:"cookie_name,omitempty"`
 
@@ -24,7 +31,7 @@ type SAMLSPConfig struct {
 	// SP will use this SSL certificate to sign requests going to the IdP and decrypt the assertions coming from IdP. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SigningSslKeyAndCertificateRef *string `json:"signing_ssl_key_and_certificate_ref,omitempty"`
 
-	// SAML Single Signon URL to be programmed on the IDP. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// SAML Single Signon endpoint to receive the Authentication response. This also specifies the destination endpoint to be configured for this application on the IDP. If the authn_req_acs_type is set to 'Use AssertionConsumerServiceURL', this endpoint will be sent in the AssertionConsumerServiceURL attribute of the Authentication request. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	SingleSignonURL *string `json:"single_signon_url"`
 

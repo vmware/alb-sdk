@@ -605,6 +605,9 @@ type EventDetails struct {
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterDiscFailure *VinfraVcenterDiscoveryFailure `json:"vcenter_disc_failure,omitempty"`
 
+	// Vcenter Image event details. Field introduced in 21.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	VcenterImgDetails *VcenterImageDetails `json:"vcenter_img_details,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterNetworkLimit *VinfraVcenterNetworkLimit `json:"vcenter_network_limit,omitempty"`
 

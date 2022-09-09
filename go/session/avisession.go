@@ -18,6 +18,7 @@ import (
 	"os"
 	"reflect"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/golang/glog"
@@ -274,6 +275,9 @@ type AviSession struct {
 
 	// this flag disables the checkcontrollerstatus method, instead client do their own retries
 	disableControllerStatusCheck bool
+
+	// Lock to synchronise the cookies collection from API response
+	cookiesCollectLock sync.Mutex
 }
 
 const DEFAULT_AVI_VERSION = "18.2.6"
@@ -381,9 +385,6 @@ func (avisess *AviSession) initiateSession() error {
 	} else {
 		cred["password"] = avisess.password
 	}
-
-	avisess.csrfToken = ""
-	avisess.sessionid = ""
 
 	rerror := avisess.Post("login", cred, res)
 	if rerror != nil {
@@ -612,7 +613,7 @@ func (avisess *AviSession) newAviRequest(verb string, url string, payload io.Rea
 	if tenant == "" {
 		tenant = avisess.tenant
 	}
-	if avisess.csrfToken != "" {
+	if !strings.HasSuffix(url, "login") && avisess.csrfToken != "" {
 		req.Header["X-CSRFToken"] = []string{avisess.csrfToken}
 		req.AddCookie(&http.Cookie{Name: "csrftoken", Value: avisess.csrfToken})
 	}
@@ -623,7 +624,7 @@ func (avisess *AviSession) newAviRequest(verb string, url string, payload io.Rea
 		req.Header.Set("X-Avi-Tenant", tenant)
 	}
 
-	if avisess.sessionid != "" {
+	if !strings.HasSuffix(url, "login") && avisess.sessionid != "" {
 		req.AddCookie(&http.Cookie{Name: "sessionid", Value: avisess.sessionid})
 		req.AddCookie(&http.Cookie{Name: "avi-sessionid", Value: avisess.sessionid})
 	}
@@ -636,18 +637,22 @@ func (avisess *AviSession) newAviRequest(verb string, url string, payload io.Rea
 
 func (avisess *AviSession) collectCookiesFromResp(resp *http.Response) {
 	// collect cookies from the resp
+	avisess.cookiesCollectLock.Lock()
+	defer avisess.cookiesCollectLock.Unlock()
+
+	var csrfToken string
+	var sessionID string
 	for _, cookie := range resp.Cookies() {
-		glog.Infof("cookie: %v", cookie)
 		if cookie.Name == "csrftoken" {
-			avisess.csrfToken = cookie.Value
-			glog.Infof("Set the csrf token to %v", avisess.csrfToken)
+			csrfToken = cookie.Value
 		}
-		if cookie.Name == "sessionid" {
-			avisess.sessionid = cookie.Value
+		if cookie.Name == "sessionid" || cookie.Name == "avi-sessionid" {
+			sessionID = cookie.Value
 		}
-		if cookie.Name == "avi-sessionid" {
-			avisess.sessionid = cookie.Value
-		}
+	}
+	if csrfToken != "" && sessionID != "" {
+		avisess.csrfToken = csrfToken
+		avisess.sessionid = sessionID
 	}
 }
 
@@ -708,9 +713,11 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 	if !retryReq {
 		glog.Infof("Req for %s uri %v tenant %s RespCode %v", verb, url, tenant, resp.StatusCode)
 		errorResult.HttpStatusCode = resp.StatusCode
-		avisess.collectCookiesFromResp(resp)
 
-		if resp.StatusCode == 401 && len(avisess.sessionid) != 0 && uri != "login" {
+		if uri == "login" {
+			avisess.collectCookiesFromResp(resp)
+		}
+		if resp.StatusCode == 401 && uri != "login" {
 			resp.Body.Close()
 			glog.Infof("Retrying url %s; retry %d due to Status Code %d", url, retry, resp.StatusCode)
 			err := avisess.initiateSession()
@@ -1173,8 +1180,15 @@ func (avisess *AviSession) GetCollection(uri string, objList interface{}, option
 }
 
 // GetRaw performs a GET API call and returns raw data
-func (avisess *AviSession) GetRaw(uri string) ([]byte, error) {
-	resp, rerror := avisess.restRequest("GET", uri, nil, "", nil)
+func (avisess *AviSession) GetRaw(uri string, options ...ApiOptionsParams) ([]byte, error) {
+	opts, err := getOptions(options)
+	if err != nil {
+		return nil, err
+	}
+	if len(opts.params) != 0 {
+		uri = updateUri(uri, opts)
+	}
+	resp, rerror := avisess.restRequest("GET", uri, nil, opts.tenant, nil)
 	if rerror != nil || resp == nil {
 		return nil, rerror
 	}
@@ -1183,8 +1197,15 @@ func (avisess *AviSession) GetRaw(uri string) ([]byte, error) {
 }
 
 // PostRaw performs a POST API call and returns raw data
-func (avisess *AviSession) PostRaw(uri string, payload interface{}) ([]byte, error) {
-	resp, rerror := avisess.restRequest("POST", uri, payload, "", nil)
+func (avisess *AviSession) PostRaw(uri string, payload interface{}, options ...ApiOptionsParams) ([]byte, error) {
+	opts, err := getOptions(options)
+	if err != nil {
+		return nil, err
+	}
+	if len(opts.params) != 0 {
+		uri = updateUri(uri, opts)
+	}
+	resp, rerror := avisess.restRequest("POST", uri, payload, opts.tenant, nil)
 	if rerror != nil || resp == nil {
 		return nil, rerror
 	}
@@ -1192,8 +1213,15 @@ func (avisess *AviSession) PostRaw(uri string, payload interface{}) ([]byte, err
 }
 
 // PutRaw performs a POST API call and returns raw data
-func (avisess *AviSession) PutRaw(uri string, payload interface{}) ([]byte, error) {
-	resp, rerror := avisess.restRequest("PUT", uri, payload, "", nil)
+func (avisess *AviSession) PutRaw(uri string, payload interface{}, options ...ApiOptionsParams) ([]byte, error) {
+	opts, err := getOptions(options)
+	if err != nil {
+		return nil, err
+	}
+	if len(opts.params) != 0 {
+		uri = updateUri(uri, opts)
+	}
+	resp, rerror := avisess.restRequest("PUT", uri, payload, opts.tenant, nil)
 	if rerror != nil || resp == nil {
 		return nil, rerror
 	}

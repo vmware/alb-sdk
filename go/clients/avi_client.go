@@ -125,13 +125,10 @@ type AviClient struct {
 	VCenterServer                   *VCenterServerClient
 	VIDCInfo                        *VIDCInfoClient
 	VIMgrClusterRuntime             *VIMgrClusterRuntimeClient
-	VIMgrControllerRuntime          *VIMgrControllerRuntimeClient
-	VIMgrDCRuntime                  *VIMgrDCRuntimeClient
 	VIMgrHostRuntime                *VIMgrHostRuntimeClient
 	VIMgrNWRuntime                  *VIMgrNWRuntimeClient
 	VIMgrSEVMRuntime                *VIMgrSEVMRuntimeClient
 	VIMgrVMRuntime                  *VIMgrVMRuntimeClient
-	VIMgrVcenterRuntime             *VIMgrVcenterRuntimeClient
 	VIPGNameInfo                    *VIPGNameInfoClient
 	VSDataScriptSet                 *VSDataScriptSetClient
 	VirtualService                  *VirtualServiceClient
@@ -270,13 +267,10 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.VCenterServer = NewVCenterServerClient(aviSession)
 	aviClient.VIDCInfo = NewVIDCInfoClient(aviSession)
 	aviClient.VIMgrClusterRuntime = NewVIMgrClusterRuntimeClient(aviSession)
-	aviClient.VIMgrControllerRuntime = NewVIMgrControllerRuntimeClient(aviSession)
-	aviClient.VIMgrDCRuntime = NewVIMgrDCRuntimeClient(aviSession)
 	aviClient.VIMgrHostRuntime = NewVIMgrHostRuntimeClient(aviSession)
 	aviClient.VIMgrNWRuntime = NewVIMgrNWRuntimeClient(aviSession)
 	aviClient.VIMgrSEVMRuntime = NewVIMgrSEVMRuntimeClient(aviSession)
 	aviClient.VIMgrVMRuntime = NewVIMgrVMRuntimeClient(aviSession)
-	aviClient.VIMgrVcenterRuntime = NewVIMgrVcenterRuntimeClient(aviSession)
 	aviClient.VIPGNameInfo = NewVIPGNameInfoClient(aviSession)
 	aviClient.VSDataScriptSet = NewVSDataScriptSetClient(aviSession)
 	aviClient.VirtualService = NewVirtualServiceClient(aviSession)

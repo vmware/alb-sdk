@@ -12,6 +12,7 @@ import (
 	"os/exec"
 	"reflect"
 	"strconv"
+	"sync"
 	"testing"
 	"time"
 
@@ -728,5 +729,189 @@ func TestSetClient(t *testing.T) {
 	if err := avisess.Get("api/pool", &res); err != nil {
 		glog.Infof("Error: %v", err)
 		t.Fail()
+	}
+}
+
+func testRawAPI(t *testing.T, avisess *AviSession) {
+	rpool := models.Pool{}
+	pname := "gosdk-test-raw-pool"
+	var defaultPort int32 = 4000
+	rpool.DefaultServerPort = &defaultPort
+	rpool.Name = &pname
+	uri := "/api/pool"
+	var response models.Pool
+	var res []byte
+	var err error
+
+	// Create Pool using PostRaw
+	if res, err = avisess.PostRaw(uri, &rpool); err != nil {
+		t.Errorf("Pool PostRow failed %s", err)
+	}
+	if err = json.Unmarshal(res, &response); err != nil {
+		t.Errorf("Pool PostRow Unmarshal failed %s", err)
+	}
+
+	// Check DefaultServerPort from response
+	if *response.DefaultServerPort != 4000 {
+		t.Errorf("Failed to set the DefaultServerPort using PostRow")
+	}
+
+	// Update pool using PutRaw
+	defaultPort = 5000
+	updateUri := "/api/pool/" + *response.UUID
+	if res, err = avisess.PutRaw(updateUri, &rpool); err != nil {
+		t.Errorf("Pool PutRow failed %s", err)
+	}
+	if err = json.Unmarshal(res, &response); err != nil {
+		t.Errorf("Pool PutRow Unmarshal failed %s", err)
+	}
+
+	// Get pool using GetRaw
+	if res, err = avisess.GetRaw(uri); err != nil {
+		t.Errorf("Pool GetRow failed %s", err)
+	}
+	if err = json.Unmarshal(res, &response); err != nil {
+		t.Errorf("Pool GetRow Unmarshal failed %s", err)
+	}
+
+	// Check DefaultServerPort from updated response
+	if *response.DefaultServerPort != 5000 {
+		t.Errorf("Failed to set the DefaultServerPort using PutRow")
+	}
+
+	// Delete pool
+	if err = avisess.Delete(updateUri); err != nil {
+		t.Errorf("Pool deletion failed: %s", err)
+	}
+}
+
+func testNonDefaultTenantRawAPI(t *testing.T, avisess *AviSession) {
+	// Create Tenant
+	tenant := "Test-Raw-Tenant"
+	tobj := models.Tenant{}
+	tname := tenant
+	tobj.Name = &tname
+	var tres models.Tenant
+	var err error
+	err = avisess.Post("api/tenant", &tobj, &tres)
+	if err != nil {
+		t.Errorf("Tenant Creation failed: %s", err)
+	}
+
+	// Create Pool in Test-Raw-Tenant using PostRaw
+	rpool := models.Pool{}
+	pname := "gosdk-test-raw-pool"
+	var defaultPort int32 = 4000
+	rpool.DefaultServerPort = &defaultPort
+	rpool.Name = &pname
+	uri := "/api/pool"
+	var response models.Pool
+	var res []byte
+	if res, err = avisess.PostRaw(uri, &rpool, SetOptTenant(tenant)); err != nil {
+		t.Errorf("Pool PostRow failed %s", err)
+	}
+	if err = json.Unmarshal(res, &response); err != nil {
+		t.Errorf("Pool PostRow Unmarshal failed %s", err)
+	}
+
+	// Check DefaultServerPort from response
+	if *response.DefaultServerPort != 4000 {
+		t.Errorf("Failed to set the DefaultServerPort using PostRow")
+	}
+
+	// Update pool using PutRaw
+	defaultPort = 5000
+	updateUri := "/api/pool/" + *response.UUID
+	if res, err = avisess.PutRaw(updateUri, &rpool, SetOptTenant(tenant)); err != nil {
+		t.Errorf("Pool PutRow failed %s", err)
+	}
+	if err = json.Unmarshal(res, &response); err != nil {
+		t.Errorf("Pool PutRow Unmarshal failed %s", err)
+	}
+
+	// Get pool using GetRaw
+	if res, err = avisess.GetRaw(uri, SetOptTenant(tenant)); err != nil {
+		t.Errorf("Pool GetRow failed %s", err)
+	}
+	if err = json.Unmarshal(res, &response); err != nil {
+		t.Errorf("Pool GetRow Unmarshal failed %s", err)
+	}
+
+	// Check DefaultServerPort from updated response
+	if *response.DefaultServerPort != 5000 {
+		t.Errorf("Failed to set the DefaultServerPort using PutRow")
+	}
+
+	// Delete pool
+	if err = avisess.DeleteObject(updateUri, SetOptTenant(tenant)); err != nil {
+		t.Errorf("Pool deletion failed: %s", err)
+	}
+
+	// Delete Tenant
+	uri = "api/tenant/" + *tres.UUID
+	if err = avisess.Delete(uri); err != nil {
+		t.Errorf("Tenant Deletion failed: %s", err)
+	}
+}
+
+func TestRawAPI(t *testing.T) {
+	for _, session := range getSessions(t) {
+		testRawAPI(t, session)
+		testNonDefaultTenantRawAPI(t, session)
+	}
+}
+
+func testCreateDeleteAviTenant(t *testing.T, avisess *AviSession, tenantName string, invalidateSession bool) {
+	glog.Infof("DEBUG: Passing CSRF token as: %+v", avisess.csrfToken)
+
+	if invalidateSession {
+		avisess.csrfToken = "jhkfjqfgq"
+		glog.Infof("DEBUG: Passing Invalid CSRF token as: %+v", avisess.csrfToken)
+	}
+
+	// Post
+	tenant := models.Tenant{}
+	tenant.Name = &tenantName
+	var tres models.Tenant
+
+	// tenant := make(map[string]string)
+	// tenant["name"] = tenantName
+	// var tres interface{}
+
+	glog.Infof("Creating tenant with name: %s", tenantName)
+	err := avisess.Post("api/tenant", &tenant, &tres)
+	glog.Infof("res: %v, err: %v", tres, err)
+	if err != nil {
+		t.Errorf("Tenant creation failed for tenant: %s Error %s", tenantName, err)
+	} else {
+		//tenantUuid := tres.(map[string]interface{})["uuid"].(string)
+		glog.Infof("Deleting tenant with name: %s", tenantName)
+		// err = avisess.Delete("api/tenant/" + tenantUuid)
+		err = avisess.Delete("api/tenant/" + *tres.UUID)
+		if err != nil {
+			t.Errorf("Tenant deletion failed: %s", err)
+		}
+	}
+}
+
+func TestAviSessionGoRoutine(t *testing.T) {
+	var wg sync.WaitGroup
+	//session := getSessions(t)
+	for _, session := range getSessions(t) {
+		invalidateSession := false
+		for i := 0; i < 100; i++ {
+			tenantName := fmt.Sprintf("testtenant-%d", i)
+			wg.Add(1)
+			go func(tenantName string, wg *sync.WaitGroup) {
+				defer wg.Done()
+				glog.Infof("Tenant Name: %s", tenantName)
+				if i == 20 {
+					invalidateSession = true
+				}
+				testCreateDeleteAviTenant(t, session, tenantName, invalidateSession)
+				time.Sleep(time.Second * 1)
+			}(tenantName, &wg)
+		}
+		wg.Wait()
 	}
 }
