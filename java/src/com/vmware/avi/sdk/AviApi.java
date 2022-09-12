@@ -56,6 +56,11 @@ public class AviApi {
 	static final Logger LOGGER = Logger.getLogger(AviApi.class.getName());
 
 	/**
+	 * Sets the properties file name
+	 */
+    private static final String PROPERTIES_FILE = "config.properties";
+
+	/**
 	 * Constructor for AviApi Class.
 	 * 
 	 * @param aviCredentials an AviCredentials Object containing controller's
@@ -277,7 +282,8 @@ public class AviApi {
 	 */
 	private boolean hasMatchingSubstring(String path) throws AviApiException {
 		try {
-			InputStream inputStream = new FileInputStream("resources/config.properties");
+			ClassLoader loader = Thread.currentThread().getContextClassLoader();
+			InputStream inputStream = loader.getResourceAsStream(PROPERTIES_FILE);
 			Properties properties = new Properties();
 			properties.load(inputStream);
 			String putObjectsNotAllowed = properties.getProperty("api.put.not.allowed");
