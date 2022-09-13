@@ -184,7 +184,7 @@ font-style: italic;
   </head>
   <body>
   <h1>Avi VIMgrHostRuntime Object API</h1>
-    <div class="app-desc">CLI ``` - show vinfra host <key> - vinfra makehostaccessible  <key> ``` </div>
+    <div class="app-desc">CLI ``` - show vinfra host <key> - vinfra makehostaccessible  <key> - show vinfra quarantinedhost ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
     <div class="app-desc">Version: 21.1.6</div>
@@ -203,6 +203,7 @@ font-style: italic;
   <div class="method-summary"></div>
   <ol>
   <li><a href="#vimgrhostruntimeGet"><code><span class="http-method">get</span> /vimgrhostruntime</code></a></li>
+  <li><a href="#vimgrhostruntimeGetquarantinedhostsPost"><code><span class="http-method">post</span> /vimgrhostruntime/getquarantinedhosts</code></a></li>
   <li><a href="#vimgrhostruntimePost"><code><span class="http-method">post</span> /vimgrhostruntime</code></a></li>
   <li><a href="#vimgrhostruntimeUuidAccessiblePost"><code><span class="http-method">post</span> /vimgrhostruntime/{uuid}/accessible</code></a></li>
   <li><a href="#vimgrhostruntimeUuidDelete"><code><span class="http-method">delete</span> /vimgrhostruntime/{uuid}</code></a></li>
@@ -314,6 +315,58 @@ font-style: italic;
     <h4 class="field-label">200</h4>
     OK
         <a href="#VIMgrHostRuntimeApiResponse">VIMgrHostRuntimeApiResponse</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="vimgrhostruntimeGetquarantinedhostsPost"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /vimgrhostruntime/getquarantinedhosts</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">vimgrhostruntimeGetquarantinedhostsPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; VcenterQuarantinedHostParams </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
@@ -835,6 +888,7 @@ font-style: italic;
     <li><a href="#CdpLldpInfo"><code>CdpLldpInfo</code></a></li>
     <li><a href="#VIMgrHostRuntime"><code>VIMgrHostRuntime</code></a></li>
     <li><a href="#VIMgrHostRuntimeApiResponse"><code>VIMgrHostRuntimeApiResponse</code></a></li>
+    <li><a href="#VcenterQuarantinedHostParams"><code>VcenterQuarantinedHostParams</code></a></li>
   </ol>
 
   <div class="model">
@@ -887,6 +941,12 @@ font-style: italic;
       <div class="param">count </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
 <div class="param">results </div><div class="param-desc"><span class="param-type"><a href="#VIMgrHostRuntime">array[VIMgrHostRuntime]</a></span>  </div>
 <div class="param">next (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="VcenterQuarantinedHostParams">VcenterQuarantinedHostParams</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">cloud_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Vcenter cloud id. Field introduced in 21.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   </body>
