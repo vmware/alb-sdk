@@ -30,51 +30,6 @@ used_pool = {}
 
 class F5Util(MigrationUtil):
 
-    def get_conv_status(self, skipped, indirect_list, ignore_dict, f5_object,
-                        user_ignore=None, na_list=None):
-        """
-        Update skipped list for conversion status
-        :param skipped: All skipped attributes after conversion
-        :param indirect_list: List of attrs to be mapped as indirect mapping
-        :param ignore_dict: Dict of default values for column skipped for defaults
-        :param f5_object: Currant F5 object
-        :param user_ignore: List of attributes user wants not to be shown in skipped
-        :param na_list: List of attributes marked as not applicable
-        :return: Conversion status dict
-        """
-        conv_status = dict()
-        user_ignore = [] if not user_ignore else user_ignore
-        na_list = [] if not na_list else na_list
-
-        conv_status['user_ignore'] = [val for val in skipped if
-                                      val in user_ignore]
-        skipped = [attr for attr in skipped if attr not in user_ignore]
-
-        conv_status['indirect'] = [val for val in skipped if
-                                   val in indirect_list]
-        skipped = [attr for attr in skipped if attr not in indirect_list]
-
-        conv_status['na_list'] = [val for val in skipped if val in na_list]
-        skipped = [attr for attr in skipped if attr not in na_list]
-
-        default_skip = []
-        for key in ignore_dict.keys():
-            f5_val = f5_object.get(key)
-            default_val = ignore_dict.get(key)
-            if key in skipped and f5_val == default_val:
-                default_skip.append(key)
-        if default_skip:
-            skipped = [attr for attr in skipped if attr not in default_skip]
-
-        conv_status['skipped'] = skipped
-        conv_status['default_skip'] = default_skip
-        if skipped:
-            status = conv_const.STATUS_PARTIAL
-        else:
-            status = conv_const.STATUS_SUCCESSFUL
-        conv_status['status'] = status
-        return conv_status
-
     def get_avi_pool_down_action(self, action):
         """
         Maps Pool down action from F5 config to Avi Config
@@ -721,12 +676,13 @@ class F5Util(MigrationUtil):
                       self.get_object_ref(
                           h['name'], 'healthmonitor', tenant=tenant) == hm_ref]
                 if hm and hm[0]['type'] == 'HEALTH_MONITOR_HTTPS':
-                    pool[0]['health_monitor_refs'].remove(hm_ref)
-                    LOG.warning(
-                        'Skipping %s this reference from %s pool '
-                        'because of health monitor type is HTTPS and VS '
-                        'has no ssl profile.'
-                        % (hm_ref, pool_ref))
+                    if hm[0].get("ssl_attributes", None) and not hm[0]['ssl_attributes'].get("ssl_profile_ref", ""):
+                        pool[0]['health_monitor_refs'].remove(hm_ref)
+                        LOG.warning(
+                            'Skipping %s this reference from %s pool '
+                            'because of health monitor type is HTTPS and VS '
+                            'has no ssl profile.'
+                            % (hm_ref, pool_ref))
 
     def remove_http_mon_from_pool(self, avi_config, pool_ref, tenant, sysdict):
         pool = [p for p in avi_config['Pool'] if p['name'] == pool_ref]
@@ -1032,27 +988,6 @@ class F5Util(MigrationUtil):
                 vrf_obj['system_default'] = True
             vrf_list.append(vrf_obj)
 
-    def get_tenant_ref(self, name):
-        tenant = 'admin'
-        if name and name.startswith('/'):
-            parts = name.split('/', 2)
-            tenant = parts[1]
-            if not parts[2]:
-                LOG.warning('Invalid tenant ref : %s' % name)
-            name = parts[2]
-        elif name and '/' in name:
-            parts = name.split('/')
-            # Changed the index to get the tenant and name in case of
-            # prefixed name
-            tenant = parts[-2]
-            name = parts[-1]
-        if tenant.lower() == 'common':
-            tenant = 'admin'
-        if '/' in name:
-            name = name.split('/')[1]
-        if ' ' in tenant:
-            tenant = tenant.split(' ')[-1]
-        return tenant, name
 
     def get_app_profile_type(self, profile_name, avi_config):
         profiles = avi_config.get('ApplicationProfile', [])
@@ -2450,3 +2385,8 @@ class F5Util(MigrationUtil):
                 parent_profile.update(profile)
                 profile = parent_profile
         return profile
+
+    def remove_verified_accept_from_network_profile(self, avi_config_dict):
+        for ntwk_profile in avi_config_dict['NetworkProfile']:
+            if ntwk_profile.get('verified-accept'):
+                del(ntwk_profile['verified_accept'])

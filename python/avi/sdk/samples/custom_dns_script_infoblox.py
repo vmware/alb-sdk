@@ -9,15 +9,18 @@ This script allows the user to communicate with Infoblox DNS provider.
 
 Required Functions
 ------------------
-1. CreateOrUpdateDnsRecords: Function to create or update DNS records with the provider.
-2. DeleteDnsRecords: Function to delete DNS records from the provider.
+1. TestLogin: Function to verify provider credentials, used in the UI during DNS profile configuration.
+2. GetAvailableDomains: Function to return available (discoverable) domains from the provider.
+3. CreateOrUpdateDnsRecords: Function to create or update DNS records with the provider.
+4. DeleteDnsRecords: Function to delete DNS records from the provider.
 
 Required Exception Classes
 --------------------------
 1. CustomDnsAuthenticationErrorException: Raised when authentication fails.
 2. CustomDnsRecordNotFoundException: Raised when given record not found, incase of update record request.
 3. CustomDnsRecordAlreadyExistsException: Raised when the record already exists.
-4. CustomDnsGeneralException: Raised for other types of exceptions.
+4. CustomDnsNotImplementedException: Raised when the functionality is not implemented.
+5. CustomDnsGeneralException: Raised for other types of exceptions.
 
 Helper Functions (Optional)
 ---------------------------
@@ -30,7 +33,6 @@ Helper Functions (Optional)
 7. _delete_dns_record: Internal function used to delete a given DNS record from the provider.
 """
 
-from types import new_class
 import requests
 import json
 import logging
@@ -53,6 +55,13 @@ class CustomDnsRecordNotFoundException(Exception):
 class CustomDnsRecordAlreadyExistsException(Exception):
     """
     Raised when the record already exists.
+    """
+    pass
+
+
+class CustomDnsNotImplementedException(Exception):
+    """
+    Raised when the functionality is not implemented.
     """
     pass
 
@@ -295,6 +304,77 @@ def _delete_dns_record(auth_params, record_name):
         logger.error("Error deleting the record[%s] reason[%s]" % (record_name, str(e)))
         raise CustomDnsGeneralException("Error deleting the record[%s] reason[%s]" % (record_name, str(e)))
 
+
+def TestLogin(auth_params):
+    """
+    Function to validate user credentials. This function is called from DNS profile 
+    configuration UI page.
+    Args
+    ----
+        auth_params: (dict of str: str)
+            Parameters required for authentication. These are script parameters provided while 
+            creating a Custom DNS profile.
+            Eg: auth_params can have following keys
+            server: Server ip address of the custom DNS provider
+            username: self explanatory
+            password: self explanatory 
+            logger_name: logger name   
+    Returns
+    -------
+        Return True on success    
+    Raises
+    ------
+        CustomDnsNotImplementedException: if this function is not implemented.
+        CustomDnsAuthenticationErrorException: if authentication fails.
+    """
+    
+    _verify_required_fields_in_auth_params(auth_params)
+    logger = logging.getLogger(auth_params.get('logger_name', ''))
+    tmp_auth_params = copy.deepcopy(auth_params)
+    tmp_auth_params['password'] = '<sensitive>'
+    logger.info("Inside F[TestLogin] auth_params[%s]", tmp_auth_params)
+    server = auth_params.get('server', None)
+    username = auth_params.get('username', None)
+    password = auth_params.get('password', None)
+    wapi_version = auth_params.get('wapi_version', None)
+  
+    if not server or not username or not password or not wapi_version:
+        raise CustomDnsGeneralException("F[TestLogin] all credentials are not provided")
+    try:
+        schema_url = 'https://' + server + \
+            '/wapi/' + wapi_version + '/?_schema'
+        auth = (username, password)
+        r = requests.get(
+            url=schema_url, auth=auth, verify=False, timeout=30)
+        logger.info("F[TestLogin] req[%s] status_code[%s]" % (schema_url, r.status_code))
+        if r.status_code == 200:
+            return True
+        _check_and_raise_auth_error(r)
+    except CustomDnsAuthenticationErrorException as e:
+        raise
+    except Exception as e:
+        raise CustomDnsGeneralException("F[TestLogin] login failed reason[%s]" % str(e))
+
+
+def GetAvailableDomains(auth_params):
+    """
+    Function to retrieve domains from the provider.
+    Called from the DNS profile configuration to populate usable domains on the UI.
+    Args
+    ----
+        auth_params: (dict of str: str)
+            Parameters required for authentication.
+    Returns
+    -------
+        domain_list: (list of str)
+    Raises
+    ------
+        CustomDnsNotImplementedException: if this function is not implemented.
+        CustomDnsGeneralException: if the api request fails.
+    """
+
+    raise CustomDnsNotImplementedException("F[GetAvailableDomains] not implemented in the script!")
+         
 
 def DeleteDnsRecords(records_info, auth_params):
     """
