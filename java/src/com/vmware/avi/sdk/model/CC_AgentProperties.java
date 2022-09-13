@@ -36,6 +36,18 @@ public class CC_AgentProperties  {
     @JsonProperty("poll_slow_target")
     private Integer pollSlowTarget = 240;
 
+    @JsonProperty("vcenter_host_ping_interval")
+    private Integer vcenterHostPingInterval = 300;
+
+    @JsonProperty("vcenter_inventory_max_object_updates")
+    private Integer vcenterInventoryMaxObjectUpdates = 100;
+
+    @JsonProperty("vcenter_max_datastore_go_routines")
+    private Integer vcenterMaxDatastoreGoRoutines = 20;
+
+    @JsonProperty("vcenter_reconcile_interval")
+    private Integer vcenterReconcileInterval = 3600;
+
     @JsonProperty("vnic_retries")
     private Integer vnicRetries = 60;
 
@@ -166,6 +178,114 @@ public class CC_AgentProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Vcenter host reachability check interval.
+     * Allowed values are 60-3600.
+     * Field introduced in 21.1.6.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 300.
+     * @return vcenterHostPingInterval
+     */
+    public Integer getVcenterHostPingInterval() {
+        return vcenterHostPingInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Vcenter host reachability check interval.
+     * Allowed values are 60-3600.
+     * Field introduced in 21.1.6.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 300.
+     * @param vcenterHostPingInterval set the vcenterHostPingInterval.
+     */
+    public void setVcenterHostPingInterval(Integer  vcenterHostPingInterval) {
+        this.vcenterHostPingInterval = vcenterHostPingInterval;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Batch size of vcenter inventory updates.
+     * Allowed values are 1-500.
+     * Field introduced in 21.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+     * @return vcenterInventoryMaxObjectUpdates
+     */
+    public Integer getVcenterInventoryMaxObjectUpdates() {
+        return vcenterInventoryMaxObjectUpdates;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Batch size of vcenter inventory updates.
+     * Allowed values are 1-500.
+     * Field introduced in 21.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+     * @param vcenterInventoryMaxObjectUpdates set the vcenterInventoryMaxObjectUpdates.
+     */
+    public void setVcenterInventoryMaxObjectUpdates(Integer  vcenterInventoryMaxObjectUpdates) {
+        this.vcenterInventoryMaxObjectUpdates = vcenterInventoryMaxObjectUpdates;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Max datastore processing go routines for vcenter datastore updates.
+     * Allowed values are 1-40.
+     * Field introduced in 21.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 20.
+     * @return vcenterMaxDatastoreGoRoutines
+     */
+    public Integer getVcenterMaxDatastoreGoRoutines() {
+        return vcenterMaxDatastoreGoRoutines;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Max datastore processing go routines for vcenter datastore updates.
+     * Allowed values are 1-40.
+     * Field introduced in 21.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 20.
+     * @param vcenterMaxDatastoreGoRoutines set the vcenterMaxDatastoreGoRoutines.
+     */
+    public void setVcenterMaxDatastoreGoRoutines(Integer  vcenterMaxDatastoreGoRoutines) {
+        this.vcenterMaxDatastoreGoRoutines = vcenterMaxDatastoreGoRoutines;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Reconcile interval for vcenter inventory.
+     * Allowed values are 60-3600.
+     * Field introduced in 21.1.6.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
+     * @return vcenterReconcileInterval
+     */
+    public Integer getVcenterReconcileInterval() {
+        return vcenterReconcileInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Reconcile interval for vcenter inventory.
+     * Allowed values are 60-3600.
+     * Field introduced in 21.1.6.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 3600.
+     * @param vcenterReconcileInterval set the vcenterReconcileInterval.
+     */
+    public void setVcenterReconcileInterval(Integer  vcenterReconcileInterval) {
+        this.vcenterReconcileInterval = vcenterReconcileInterval;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Maximum polls to check for vnics to be attached to vm.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
@@ -226,7 +346,11 @@ public class CC_AgentProperties  {
   Objects.equals(this.asyncRetries, objCC_AgentProperties.asyncRetries)&&
   Objects.equals(this.asyncRetriesDelay, objCC_AgentProperties.asyncRetriesDelay)&&
   Objects.equals(this.vnicRetries, objCC_AgentProperties.vnicRetries)&&
-  Objects.equals(this.vnicRetriesDelay, objCC_AgentProperties.vnicRetriesDelay);
+  Objects.equals(this.vnicRetriesDelay, objCC_AgentProperties.vnicRetriesDelay)&&
+  Objects.equals(this.vcenterReconcileInterval, objCC_AgentProperties.vcenterReconcileInterval)&&
+  Objects.equals(this.vcenterInventoryMaxObjectUpdates, objCC_AgentProperties.vcenterInventoryMaxObjectUpdates)&&
+  Objects.equals(this.vcenterMaxDatastoreGoRoutines, objCC_AgentProperties.vcenterMaxDatastoreGoRoutines)&&
+  Objects.equals(this.vcenterHostPingInterval, objCC_AgentProperties.vcenterHostPingInterval);
     }
 
     @Override
@@ -238,6 +362,10 @@ public class CC_AgentProperties  {
                         sb.append("    pollDurationTarget: ").append(toIndentedString(pollDurationTarget)).append("\n");
                         sb.append("    pollFastTarget: ").append(toIndentedString(pollFastTarget)).append("\n");
                         sb.append("    pollSlowTarget: ").append(toIndentedString(pollSlowTarget)).append("\n");
+                        sb.append("    vcenterHostPingInterval: ").append(toIndentedString(vcenterHostPingInterval)).append("\n");
+                        sb.append("    vcenterInventoryMaxObjectUpdates: ").append(toIndentedString(vcenterInventoryMaxObjectUpdates)).append("\n");
+                        sb.append("    vcenterMaxDatastoreGoRoutines: ").append(toIndentedString(vcenterMaxDatastoreGoRoutines)).append("\n");
+                        sb.append("    vcenterReconcileInterval: ").append(toIndentedString(vcenterReconcileInterval)).append("\n");
                         sb.append("    vnicRetries: ").append(toIndentedString(vnicRetries)).append("\n");
                         sb.append("    vnicRetriesDelay: ").append(toIndentedString(vnicRetriesDelay)).append("\n");
                   sb.append("}");
