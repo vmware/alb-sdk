@@ -1,0 +1,9 @@
+healthmonitor_custom_config:
+  - monitor_name: prefix-default-http-lb-monitor
+    avi_config:
+      receive_timeout: 4
+      failed_checks: 2
+      send_interval: 10
+      successful_checks: 2
+      type: LBHttpMonitorProfile
+

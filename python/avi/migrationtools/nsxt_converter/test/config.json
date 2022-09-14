@@ -1,0 +1,1587 @@
+{
+    "LBServices": [
+        {
+            "_revision": 1,
+            "_create_time": 1643797106577,
+            "_create_user": "admin",
+            "_last_modified_time": 1643972011268,
+            "_last_modified_user": "admin",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": false,
+            "description": "Load balancers",
+            "display_name": "lb",
+            "id": "lb",
+            "resource_type": "LBService",
+            "tags": [
+                {
+                    "scope": "NLB-Lb-ID",
+                    "tag": "lb"
+                }
+            ],
+            "parent_path": "/infra",
+            "path": "/infra/lb-services/lb",
+            "realization_id": "d9a2630e-eefd-4d66-b4a3-7285370a8cb1",
+            "relative_path": "lb",
+            "unique_id": "d9a2630e-eefd-4d66-b4a3-7285370a8cb1",
+            "marked_for_delete": false,
+            "overridden": false,
+            "connectivity_path": "/infra/tier-1s/London_Tier1Gateway1",
+            "enabled": true,
+            "error_log_level": "INFO",
+            "relax_scale_validation": false,
+            "size": "SMALL"
+        }
+    ],
+    "LbMonitorProfiles": [
+        {
+            "request_url": "/",
+            "request_method": "GET",
+            "request_version": "HTTP_VERSION_1_1",
+            "response_status_codes": [
+                200,
+                300,
+                301,
+                302,
+                304,
+                307
+            ],
+            "resource_type": "LBHttpMonitorProfile",
+            "id": "default-http-lb-monitor",
+            "display_name": "default-http-lb-monitor",
+            "path": "/infra/lb-monitor-profiles/default-http-lb-monitor",
+            "relative_path": "default-http-lb-monitor",
+            "parent_path": "/infra",
+            "unique_id": "c5d5fc24-656f-44c9-93e1-5bcdd02b9a5d",
+            "realization_id": "c5d5fc24-656f-44c9-93e1-5bcdd02b9a5d",
+            "marked_for_delete": false,
+            "overridden": false,
+            "monitor_port": 80,
+            "interval": 5,
+            "timeout": 5,
+            "rise_count": 3,
+            "fall_count": 3,
+            "_create_time": 1643751877517,
+            "_create_user": "system",
+            "_last_modified_time": 1643751877517,
+            "_last_modified_user": "system",
+            "_system_owned": true,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+        },
+        {
+            "request_url": "/",
+            "request_method": "GET",
+            "request_version": "HTTP_VERSION_1_1",
+            "response_status_codes": [
+                200,
+                300,
+                301,
+                302,
+                304,
+                307
+            ],
+            "resource_type": "LBHttpsMonitorProfile",
+            "id": "default-https-lb-monitor",
+            "display_name": "default-https-lb-monitor",
+            "path": "/infra/lb-monitor-profiles/default-https-lb-monitor",
+            "relative_path": "default-https-lb-monitor",
+            "parent_path": "/infra",
+            "unique_id": "ae2eabe3-8bdd-4801-ba7e-471a19411f79",
+            "realization_id": "ae2eabe3-8bdd-4801-ba7e-471a19411f79",
+            "marked_for_delete": false,
+            "overridden": false,
+            "monitor_port": 443,
+            "interval": 5,
+            "timeout": 5,
+            "rise_count": 3,
+            "fall_count": 3,
+            "_create_time": 1643751877599,
+            "_create_user": "system",
+            "_last_modified_time": 1643751877599,
+            "_last_modified_user": "system",
+            "_system_owned": true,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+        },
+        {
+            "data_length": 56,
+            "resource_type": "LBIcmpMonitorProfile",
+            "id": "default-icmp-lb-monitor",
+            "display_name": "default-icmp-lb-monitor",
+            "path": "/infra/lb-monitor-profiles/default-icmp-lb-monitor",
+            "relative_path": "default-icmp-lb-monitor",
+            "parent_path": "/infra",
+            "unique_id": "11f257c0-c2e6-4a12-a0bf-7b2cce6556be",
+            "realization_id": "11f257c0-c2e6-4a12-a0bf-7b2cce6556be",
+            "marked_for_delete": false,
+            "overridden": false,
+            "interval": 5,
+            "timeout": 5,
+            "rise_count": 3,
+            "fall_count": 3,
+            "_create_time": 1643751877661,
+            "_create_user": "system",
+            "_last_modified_time": 1643751877661,
+            "_last_modified_user": "system",
+            "_system_owned": true,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+        },
+        {
+            "max_fails": 5,
+            "timeout": 5,
+            "resource_type": "LBPassiveMonitorProfile",
+            "id": "default-passive-lb-monitor",
+            "display_name": "default-passive-lb-monitor",
+            "path": "/infra/lb-monitor-profiles/default-passive-lb-monitor",
+            "relative_path": "default-passive-lb-monitor",
+            "parent_path": "/infra",
+            "unique_id": "0b9d4539-5cdd-4a9e-9067-d17e79544163",
+            "realization_id": "0b9d4539-5cdd-4a9e-9067-d17e79544163",
+            "marked_for_delete": false,
+            "overridden": false,
+            "_create_time": 1643751877715,
+            "_create_user": "system",
+            "_last_modified_time": 1643751877715,
+            "_last_modified_user": "system",
+            "_system_owned": true,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+        },
+        {
+            "resource_type": "LBTcpMonitorProfile",
+            "id": "default-tcp-lb-monitor",
+            "display_name": "default-tcp-lb-monitor",
+            "path": "/infra/lb-monitor-profiles/default-tcp-lb-monitor",
+            "relative_path": "default-tcp-lb-monitor",
+            "parent_path": "/infra",
+            "unique_id": "6c80bf44-1ec8-4d53-8d9d-dafaccf14d7f",
+            "realization_id": "6c80bf44-1ec8-4d53-8d9d-dafaccf14d7f",
+            "marked_for_delete": false,
+            "overridden": false,
+            "interval": 5,
+            "timeout": 5,
+            "rise_count": 3,
+            "fall_count": 3,
+            "_create_time": 1643751877343,
+            "_create_user": "system",
+            "_last_modified_time": 1643751877343,
+            "_last_modified_user": "system",
+            "_system_owned": true,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+        },
+        {
+            "send": "10",
+            "receive": "10",
+            "resource_type": "LBUdpMonitorProfile",
+            "id": "udp-lb-monitor",
+            "display_name": "udp-lb-monitor",
+            "path": "/infra/lb-monitor-profiles/udp-lb-monitor",
+            "relative_path": "udp-lb-monitor",
+            "parent_path": "/infra",
+            "unique_id": "941ad999-f7dd-48c0-84d2-31582e06871c",
+            "realization_id": "941ad999-f7dd-48c0-84d2-31582e06871c",
+            "marked_for_delete": false,
+            "overridden": false,
+            "monitor_port": 80,
+            "interval": 5,
+            "timeout": 5,
+            "rise_count": 3,
+            "fall_count": 3,
+            "_create_time": 1644228103820,
+            "_create_user": "admin",
+            "_last_modified_time": 1644228167871,
+            "_last_modified_user": "admin",
+            "_system_owned": false,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 1
+        }
+    ],
+    "LbPools": [
+        {
+            "_revision": 4,
+            "_create_time": 0,
+            "_create_user": "unknown",
+            "_last_modified_time": 1644475153831,
+            "_last_modified_user": "admin",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": false,
+            "description": "Server Pools",
+            "display_name": "l4-pool",
+            "id": "l4-pool",
+            "resource_type": "LBPool",
+            "tags": [
+                {
+                    "scope": "NLB-Lb-ID",
+                    "tag": "lb"
+                }
+            ],
+            "parent_path": "/infra",
+            "path": "/infra/lb-pools/l4-pool",
+            "realization_id": "971e5a98-6032-4cb5-bf61-b6692bfc92aa",
+            "relative_path": "l4-pool",
+            "unique_id": "971e5a98-6032-4cb5-bf61-b6692bfc92aa",
+            "marked_for_delete": false,
+            "overridden": false,
+            "active_monitor_paths": [
+                "/infra/lb-monitor-profiles/default-http-lb-monitor"
+            ],
+            "algorithm": "ROUND_ROBIN",
+            "members": [
+                {
+                    "admin_state": "ENABLED",
+                    "backup_member": false,
+                    "display_name": "server",
+                    "ip_address": "192.168.0.1",
+                    "port": "80",
+                    "weight": 1
+                }
+            ],
+            "min_active_members": 1,
+            "passive_monitor_path": "/infra/lb-monitor-profiles/default-passive-lb-monitor",
+            "snat_translation": {
+                "type": "LBSnatDisabled"
+            },
+            "tcp_multiplexing_enabled": true,
+            "tcp_multiplexing_number": 6
+        },
+        {
+            "_revision": 3,
+            "_create_time": 0,
+            "_create_user": "unknown",
+            "_last_modified_time": 1644567710183,
+            "_last_modified_user": "admin",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": false,
+            "description": "Server pools",
+            "display_name": "l7-pool",
+            "id": "l7-pool",
+            "resource_type": "LBPool",
+            "tags": [
+                {
+                    "scope": "NLB-Lb-ID",
+                    "tag": "lb"
+                }
+            ],
+            "parent_path": "/infra",
+            "path": "/infra/lb-pools/l7-pool",
+            "realization_id": "6d833ee5-493a-4f90-a768-3f7e2914dd0c",
+            "relative_path": "l7-pool",
+            "unique_id": "6d833ee5-493a-4f90-a768-3f7e2914dd0c",
+            "marked_for_delete": false,
+            "overridden": false,
+            "active_monitor_paths": [
+                "/infra/lb-monitor-profiles/default-http-lb-monitor"
+            ],
+            "algorithm": "ROUND_ROBIN",
+            "members": [
+                {
+                    "admin_state": "ENABLED",
+                    "backup_member": false,
+                    "display_name": "server",
+                    "ip_address": "192.168.0.2",
+                    "port": "80",
+                    "weight": 1
+                }
+            ],
+            "min_active_members": 1,
+            "passive_monitor_path": "/infra/lb-monitor-profiles/default-passive-lb-monitor",
+            "snat_translation": {
+                "ip_addresses": [
+                    {
+                        "ip_address": "10.10.0.13"
+                    }
+                ],
+                "type": "LBSnatIpPool"
+            },
+            "tcp_multiplexing_enabled": true,
+            "tcp_multiplexing_number": 6
+        },
+        {
+            "_revision": 3,
+            "_create_time": 0,
+            "_create_user": "unknown",
+            "_last_modified_time": 1644839765572,
+            "_last_modified_user": "admin",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": false,
+            "display_name": "pool1",
+            "id": "pool1",
+            "resource_type": "LBPool",
+            "parent_path": "/infra",
+            "path": "/infra/lb-pools/pool1",
+            "realization_id": "2bec0b52-7e37-4d19-ae8e-a9d19b86fd8d",
+            "relative_path": "pool1",
+            "unique_id": "2bec0b52-7e37-4d19-ae8e-a9d19b86fd8d",
+            "marked_for_delete": false,
+            "overridden": false,
+            "active_monitor_paths": [
+                "/infra/lb-monitor-profiles/default-icmp-lb-monitor"
+            ],
+            "algorithm": "ROUND_ROBIN",
+            "member_group": {
+                "group_path": "/infra/domains/default/groups/Testing-Groups",
+                "ip_revision_filter": "IPV4"
+            },
+            "min_active_members": 1,
+            "snat_translation": {
+                "type": "LBSnatDisabled"
+            },
+            "tcp_multiplexing_enabled": true,
+            "tcp_multiplexing_number": 6
+        },
+        {
+            "_revision": 0,
+            "_create_time": 1644228721462,
+            "_create_user": "admin",
+            "_last_modified_time": 1644228721462,
+            "_last_modified_user": "admin",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": false,
+            "display_name": "sorry-pool-l4",
+            "id": "sorry-pool-l4",
+            "resource_type": "LBPool",
+            "parent_path": "/infra",
+            "path": "/infra/lb-pools/sorry-pool-l4",
+            "realization_id": "85b99cb1-9f5a-42e1-a928-fac73d41651d",
+            "relative_path": "sorry-pool-l4",
+            "unique_id": "85b99cb1-9f5a-42e1-a928-fac73d41651d",
+            "marked_for_delete": false,
+            "overridden": false,
+            "algorithm": "ROUND_ROBIN",
+            "members": [
+                {
+                    "admin_state": "ENABLED",
+                    "backup_member": true,
+                    "display_name": "l4-pool-member",
+                    "ip_address": "10.10.0.8",
+                    "port": "80",
+                    "weight": 1
+                }
+            ],
+            "min_active_members": 1,
+            "snat_translation": {
+                "type": "LBSnatAutoMap"
+            },
+            "tcp_multiplexing_enabled": false,
+            "tcp_multiplexing_number": 6
+        },
+        {
+            "_revision": 1,
+            "_create_time": 0,
+            "_create_user": "unknown",
+            "_last_modified_time": 1644229951170,
+            "_last_modified_user": "admin",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": false,
+            "display_name": "sorry-pool-l7",
+            "id": "sorry-pool-l7",
+            "resource_type": "LBPool",
+            "parent_path": "/infra",
+            "path": "/infra/lb-pools/sorry-pool-l7",
+            "realization_id": "4e7a7600-0932-44fe-b00c-4c2b5cf2e808",
+            "relative_path": "sorry-pool-l7",
+            "unique_id": "4e7a7600-0932-44fe-b00c-4c2b5cf2e808",
+            "marked_for_delete": false,
+            "overridden": false,
+            "active_monitor_paths": [
+                "/infra/lb-monitor-profiles/default-https-lb-monitor"
+            ],
+            "algorithm": "ROUND_ROBIN",
+            "member_group": {
+                "group_path": "/infra/domains/default/groups/NSX-POOL-GROUP",
+                "ip_revision_filter": "IPV4"
+            },
+            "min_active_members": 1,
+            "snat_translation": {
+                "type": "LBSnatAutoMap"
+            },
+            "tcp_multiplexing_enabled": false,
+            "tcp_multiplexing_number": 6
+        },
+        {
+            "_revision": 0,
+            "_create_time": 1644228785019,
+            "_create_user": "admin",
+            "_last_modified_time": 1644228785019,
+            "_last_modified_user": "admin",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": false,
+            "display_name": "sorry-pool-udp",
+            "id": "sorry-pool-udp",
+            "resource_type": "LBPool",
+            "parent_path": "/infra",
+            "path": "/infra/lb-pools/sorry-pool-udp",
+            "realization_id": "6b3670c0-6015-4c58-935d-46dbc3af1cb9",
+            "relative_path": "sorry-pool-udp",
+            "unique_id": "6b3670c0-6015-4c58-935d-46dbc3af1cb9",
+            "marked_for_delete": false,
+            "overridden": false,
+            "active_monitor_paths": [
+                "/infra/lb-monitor-profiles/udp-lb-monitor"
+            ],
+            "algorithm": "ROUND_ROBIN",
+            "member_group": {
+                "group_path": "/infra/domains/default/groups/Testing-Groups",
+                "ip_revision_filter": "IPV4"
+            },
+            "min_active_members": 1,
+            "snat_translation": {
+                "type": "LBSnatAutoMap"
+            },
+            "tcp_multiplexing_enabled": false,
+            "tcp_multiplexing_number": 6
+        },
+        {
+            "_revision": 1,
+            "_create_time": 0,
+            "_create_user": "unknown",
+            "_last_modified_time": 1644229968196,
+            "_last_modified_user": "admin",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": false,
+            "display_name": "sorrypool-l7-1",
+            "id": "sorrypool-l7-1",
+            "resource_type": "LBPool",
+            "parent_path": "/infra",
+            "path": "/infra/lb-pools/sorrypool-l7-1",
+            "realization_id": "cde6a5dd-7ebf-4255-9536-8539da5d5ca4",
+            "relative_path": "sorrypool-l7-1",
+            "unique_id": "cde6a5dd-7ebf-4255-9536-8539da5d5ca4",
+            "marked_for_delete": false,
+            "overridden": false,
+            "active_monitor_paths": [
+                "/infra/lb-monitor-profiles/default-http-lb-monitor"
+            ],
+            "algorithm": "ROUND_ROBIN",
+            "member_group": {
+                "group_path": "/infra/domains/default/groups/NSX-POOL-GROUP",
+                "ip_revision_filter": "IPV4"
+            },
+            "min_active_members": 1,
+            "snat_translation": {
+                "type": "LBSnatAutoMap"
+            },
+            "tcp_multiplexing_enabled": false,
+            "tcp_multiplexing_number": 6
+        },
+        {
+            "_revision": 1,
+            "_create_time": 0,
+            "_create_user": "unknown",
+            "_last_modified_time": 1644228178994,
+            "_last_modified_user": "admin",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": false,
+            "display_name": "udp-pool",
+            "id": "udp-pool",
+            "resource_type": "LBPool",
+            "parent_path": "/infra",
+            "path": "/infra/lb-pools/udp-pool",
+            "realization_id": "3d8b3327-1344-4806-98a3-5c819ce50422",
+            "relative_path": "udp-pool",
+            "unique_id": "3d8b3327-1344-4806-98a3-5c819ce50422",
+            "marked_for_delete": false,
+            "overridden": false,
+            "active_monitor_paths": [
+                "/infra/lb-monitor-profiles/udp-lb-monitor"
+            ],
+            "algorithm": "ROUND_ROBIN",
+            "member_group": {
+                "group_path": "/infra/domains/default/groups/Testing-Groups",
+                "ip_revision_filter": "IPV4"
+            },
+            "min_active_members": 1,
+            "snat_translation": {
+                "type": "LBSnatAutoMap"
+            },
+            "tcp_multiplexing_enabled": false,
+            "tcp_multiplexing_number": 6
+        }
+    ],
+    "LbAppProfiles": [
+        {
+            "x_forwarded_for": "INSERT",
+            "http_redirect_to_https": false,
+            "ntlm": false,
+            "idle_timeout": 15,
+            "request_header_size": 1024,
+            "response_timeout": 60,
+            "response_header_size": 4096,
+            "response_buffering": false,
+            "server_keep_alive": false,
+            "resource_type": "LBHttpProfile",
+            "id": "Http-app1",
+            "display_name": "Http-app1",
+            "path": "/infra/lb-app-profiles/Http-app1",
+            "relative_path": "Http-app1",
+            "parent_path": "/infra",
+            "unique_id": "ffbe0c58-8158-4b1f-861c-5020b5a12dcb",
+            "realization_id": "ffbe0c58-8158-4b1f-861c-5020b5a12dcb",
+            "marked_for_delete": false,
+            "overridden": false,
+            "_create_time": 1644474224082,
+            "_create_user": "admin",
+            "_last_modified_time": 1644815073141,
+            "_last_modified_user": "admin",
+            "_system_owned": false,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 1
+        },
+        {
+            "http_redirect_to_https": false,
+            "ntlm": false,
+            "idle_timeout": 15,
+            "request_header_size": 1024,
+            "response_timeout": 60,
+            "response_header_size": 4096,
+            "response_buffering": false,
+            "server_keep_alive": false,
+            "resource_type": "LBHttpProfile",
+            "id": "default-http-lb-app-profile",
+            "display_name": "default-http-lb-app-profile",
+            "path": "/infra/lb-app-profiles/default-http-lb-app-profile",
+            "relative_path": "default-http-lb-app-profile",
+            "parent_path": "/infra",
+            "unique_id": "9b5c76e0-c653-41c3-bb92-2b31b7140d9e",
+            "realization_id": "9b5c76e0-c653-41c3-bb92-2b31b7140d9e",
+            "marked_for_delete": false,
+            "overridden": false,
+            "_create_time": 1643751878205,
+            "_create_user": "system",
+            "_last_modified_time": 1643751878205,
+            "_last_modified_user": "system",
+            "_system_owned": true,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+        },
+        {
+            "idle_timeout": 1800,
+            "close_timeout": 8,
+            "ha_flow_mirroring_enabled": false,
+            "resource_type": "LBFastTcpProfile",
+            "id": "default-tcp-lb-app-profile",
+            "display_name": "default-tcp-lb-app-profile",
+            "path": "/infra/lb-app-profiles/default-tcp-lb-app-profile",
+            "relative_path": "default-tcp-lb-app-profile",
+            "parent_path": "/infra",
+            "unique_id": "91633ac2-a2f4-4c88-8d1a-63f9240cd055",
+            "realization_id": "91633ac2-a2f4-4c88-8d1a-63f9240cd055",
+            "marked_for_delete": false,
+            "overridden": false,
+            "_create_time": 1643751878275,
+            "_create_user": "system",
+            "_last_modified_time": 1643751878275,
+            "_last_modified_user": "system",
+            "_system_owned": true,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+        },
+        {
+            "idle_timeout": 300,
+            "flow_mirroring_enabled": false,
+            "resource_type": "LBFastUdpProfile",
+            "id": "default-udp-lb-app-profile",
+            "display_name": "default-udp-lb-app-profile",
+            "path": "/infra/lb-app-profiles/default-udp-lb-app-profile",
+            "relative_path": "default-udp-lb-app-profile",
+            "parent_path": "/infra",
+            "unique_id": "fbc5c4f8-1834-4062-806b-b917883bc640",
+            "realization_id": "fbc5c4f8-1834-4062-806b-b917883bc640",
+            "marked_for_delete": false,
+            "overridden": false,
+            "_create_time": 1643751878320,
+            "_create_user": "system",
+            "_last_modified_time": 1643751878320,
+            "_last_modified_user": "system",
+            "_system_owned": true,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+        }
+    ],
+    "LbClientSslProfiles": [
+        {
+            "_revision": 0,
+            "_create_time": 1643751878612,
+            "_create_user": "system",
+            "_last_modified_time": 1643751878612,
+            "_last_modified_user": "system",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": true,
+            "display_name": "default-balanced-client-ssl-profile",
+            "id": "default-balanced-client-ssl-profile",
+            "resource_type": "LBClientSslProfile",
+            "parent_path": "/infra",
+            "path": "/infra/lb-client-ssl-profiles/default-balanced-client-ssl-profile",
+            "realization_id": "fbd9b058-8d86-4be2-85ca-5df582adc065",
+            "relative_path": "default-balanced-client-ssl-profile",
+            "unique_id": "fbd9b058-8d86-4be2-85ca-5df582adc065",
+            "marked_for_delete": false,
+            "overridden": false,
+            "cipher_group_label": "BALANCED",
+            "ciphers": [
+                "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+                "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+                "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+                "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+                "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+                "TLS_RSA_WITH_AES_128_GCM_SHA256",
+                "TLS_RSA_WITH_AES_128_CBC_SHA256",
+                "TLS_RSA_WITH_AES_128_CBC_SHA"
+            ],
+            "is_fips": true,
+            "is_secure": true,
+            "prefer_server_ciphers": true,
+            "protocols": [
+                "TLS_V1_1",
+                "TLS_V1_2"
+            ],
+            "session_cache_enabled": true,
+            "session_cache_timeout": 300
+        },
+        {
+            "_revision": 0,
+            "_create_time": 1643751878578,
+            "_create_user": "system",
+            "_last_modified_time": 1643751878578,
+            "_last_modified_user": "system",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": true,
+            "display_name": "default-high-compatibility-client-ssl-profile",
+            "id": "default-high-compatibility-client-ssl-profile",
+            "resource_type": "LBClientSslProfile",
+            "parent_path": "/infra",
+            "path": "/infra/lb-client-ssl-profiles/default-high-compatibility-client-ssl-profile",
+            "realization_id": "3e8a841e-38bf-4ca6-a071-60db52f76099",
+            "relative_path": "default-high-compatibility-client-ssl-profile",
+            "unique_id": "3e8a841e-38bf-4ca6-a071-60db52f76099",
+            "marked_for_delete": false,
+            "overridden": false,
+            "cipher_group_label": "HIGH_COMPATIBILITY",
+            "ciphers": [
+                "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+                "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+                "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+                "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+                "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+                "TLS_RSA_WITH_AES_128_GCM_SHA256",
+                "TLS_RSA_WITH_AES_128_CBC_SHA256",
+                "TLS_RSA_WITH_AES_128_CBC_SHA",
+                "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
+            ],
+            "is_fips": true,
+            "is_secure": false,
+            "prefer_server_ciphers": true,
+            "protocols": [
+                "TLS_V1_1",
+                "TLS_V1_2"
+            ],
+            "session_cache_enabled": true,
+            "session_cache_timeout": 300
+        },
+        {
+            "_revision": 0,
+            "_create_time": 1643751878632,
+            "_create_user": "system",
+            "_last_modified_time": 1643751878632,
+            "_last_modified_user": "system",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": true,
+            "display_name": "default-high-security-client-ssl-profile",
+            "id": "default-high-security-client-ssl-profile",
+            "resource_type": "LBClientSslProfile",
+            "parent_path": "/infra",
+            "path": "/infra/lb-client-ssl-profiles/default-high-security-client-ssl-profile",
+            "realization_id": "c72ca854-667b-4c2e-9be0-4d07478f9300",
+            "relative_path": "default-high-security-client-ssl-profile",
+            "unique_id": "c72ca854-667b-4c2e-9be0-4d07478f9300",
+            "marked_for_delete": false,
+            "overridden": false,
+            "cipher_group_label": "HIGH_SECURITY",
+            "ciphers": [
+                "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+                "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+                "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+                "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+                "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
+            ],
+            "is_fips": true,
+            "is_secure": true,
+            "prefer_server_ciphers": true,
+            "protocols": [
+                "TLS_V1_2"
+            ],
+            "session_cache_enabled": true,
+            "session_cache_timeout": 300
+        }
+    ],
+    "LbServerSslProfiles": [
+        {
+            "_revision": 0,
+            "_create_time": 1643751878860,
+            "_create_user": "system",
+            "_last_modified_time": 1643751878860,
+            "_last_modified_user": "system",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": true,
+            "display_name": "default-balanced-server-ssl-profile",
+            "id": "default-balanced-server-ssl-profile",
+            "resource_type": "LBServerSslProfile",
+            "parent_path": "/infra",
+            "path": "/infra/lb-server-ssl-profiles/default-balanced-server-ssl-profile",
+            "realization_id": "ac822bda-8bcc-4942-b7af-7d217cde5dd5",
+            "relative_path": "default-balanced-server-ssl-profile",
+            "unique_id": "ac822bda-8bcc-4942-b7af-7d217cde5dd5",
+            "marked_for_delete": false,
+            "overridden": false,
+            "cipher_group_label": "BALANCED",
+            "ciphers": [
+                "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+                "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+                "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+                "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+                "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+                "TLS_RSA_WITH_AES_128_GCM_SHA256",
+                "TLS_RSA_WITH_AES_128_CBC_SHA256",
+                "TLS_RSA_WITH_AES_128_CBC_SHA"
+            ],
+            "is_fips": true,
+            "is_secure": true,
+            "protocols": [
+                "TLS_V1_1",
+                "TLS_V1_2"
+            ],
+            "session_cache_enabled": true
+        },
+        {
+            "_revision": 0,
+            "_create_time": 1643751878803,
+            "_create_user": "system",
+            "_last_modified_time": 1643751878803,
+            "_last_modified_user": "system",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": true,
+            "display_name": "default-high-compatibility-server-ssl-profile",
+            "id": "default-high-compatibility-server-ssl-profile",
+            "resource_type": "LBServerSslProfile",
+            "parent_path": "/infra",
+            "path": "/infra/lb-server-ssl-profiles/default-high-compatibility-server-ssl-profile",
+            "realization_id": "abcae212-bb06-45d1-af42-c736b0fc0a8e",
+            "relative_path": "default-high-compatibility-server-ssl-profile",
+            "unique_id": "abcae212-bb06-45d1-af42-c736b0fc0a8e",
+            "marked_for_delete": false,
+            "overridden": false,
+            "cipher_group_label": "HIGH_COMPATIBILITY",
+            "ciphers": [
+                "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+                "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+                "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+                "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+                "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+                "TLS_RSA_WITH_AES_128_GCM_SHA256",
+                "TLS_RSA_WITH_AES_128_CBC_SHA256",
+                "TLS_RSA_WITH_AES_128_CBC_SHA",
+                "TLS_RSA_WITH_3DES_EDE_CBC_SHA"
+            ],
+            "is_fips": true,
+            "is_secure": false,
+            "protocols": [
+                "TLS_V1_1",
+                "TLS_V1_2"
+            ],
+            "session_cache_enabled": true
+        },
+        {
+            "_revision": 0,
+            "_create_time": 1643751878871,
+            "_create_user": "system",
+            "_last_modified_time": 1643751878871,
+            "_last_modified_user": "system",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": true,
+            "display_name": "default-high-security-server-ssl-profile",
+            "id": "default-high-security-server-ssl-profile",
+            "resource_type": "LBServerSslProfile",
+            "parent_path": "/infra",
+            "path": "/infra/lb-server-ssl-profiles/default-high-security-server-ssl-profile",
+            "realization_id": "6a943643-9a17-4105-9280-b2dbcdf48512",
+            "relative_path": "default-high-security-server-ssl-profile",
+            "unique_id": "6a943643-9a17-4105-9280-b2dbcdf48512",
+            "marked_for_delete": false,
+            "overridden": false,
+            "cipher_group_label": "HIGH_SECURITY",
+            "ciphers": [
+                "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+                "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+                "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+                "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+                "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
+            ],
+            "is_fips": true,
+            "is_secure": true,
+            "protocols": [
+                "TLS_V1_2"
+            ],
+            "session_cache_enabled": true
+        }
+    ],
+    "LbPersistenceProfiles": [
+        {
+            "cookie_name": "NSXLB",
+            "cookie_mode": "INSERT",
+            "cookie_fallback": true,
+            "cookie_garble": true,
+            "cookie_httponly": false,
+            "cookie_secure": false,
+            "resource_type": "LBCookiePersistenceProfile",
+            "id": "default-cookie-lb-persistence-profile",
+            "display_name": "default-cookie-lb-persistence-profile",
+            "path": "/infra/lb-persistence-profiles/default-cookie-lb-persistence-profile",
+            "relative_path": "default-cookie-lb-persistence-profile",
+            "parent_path": "/infra",
+            "unique_id": "8d25f0d4-f460-4f6c-b548-2bc1ea819464",
+            "realization_id": "8d25f0d4-f460-4f6c-b548-2bc1ea819464",
+            "marked_for_delete": false,
+            "overridden": false,
+            "persistence_shared": false,
+            "_create_time": 1643751878139,
+            "_create_user": "system",
+            "_last_modified_time": 1643751878139,
+            "_last_modified_user": "system",
+            "_system_owned": true,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+        },
+        {
+            "timeout": 300,
+            "ha_persistence_mirroring_enabled": false,
+            "resource_type": "LBGenericPersistenceProfile",
+            "id": "default-generic-lb-persistence-profile",
+            "display_name": "default-generic-lb-persistence-profile",
+            "path": "/infra/lb-persistence-profiles/default-generic-lb-persistence-profile",
+            "relative_path": "default-generic-lb-persistence-profile",
+            "parent_path": "/infra",
+            "unique_id": "463b8a94-6d67-4565-8314-952058216b12",
+            "realization_id": "463b8a94-6d67-4565-8314-952058216b12",
+            "marked_for_delete": false,
+            "overridden": false,
+            "persistence_shared": false,
+            "_create_time": 1643751878090,
+            "_create_user": "system",
+            "_last_modified_time": 1643751878090,
+            "_last_modified_user": "system",
+            "_system_owned": true,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+        },
+        {
+            "purge": "FULL",
+            "timeout": 300,
+            "ha_persistence_mirroring_enabled": false,
+            "resource_type": "LBSourceIpPersistenceProfile",
+            "id": "default-source-ip-lb-persistence-profile",
+            "display_name": "default-source-ip-lb-persistence-profile",
+            "path": "/infra/lb-persistence-profiles/default-source-ip-lb-persistence-profile",
+            "relative_path": "default-source-ip-lb-persistence-profile",
+            "parent_path": "/infra",
+            "unique_id": "0ef8de23-c86e-4dee-929a-7967c726290e",
+            "realization_id": "0ef8de23-c86e-4dee-929a-7967c726290e",
+            "marked_for_delete": false,
+            "overridden": false,
+            "persistence_shared": false,
+            "_create_time": 1643751877923,
+            "_create_user": "system",
+            "_last_modified_time": 1643751877923,
+            "_last_modified_user": "system",
+            "_system_owned": true,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+        }
+    ],
+    "LbVirtualServers": [
+        {
+            "_revision": 1,
+            "_create_time": 0,
+            "_create_user": "unknown",
+            "_last_modified_time": 1644228847670,
+            "_last_modified_user": "admin",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": false,
+            "display_name": "Vs-http-1",
+            "id": "Vs-http-1",
+            "resource_type": "LBVirtualServer",
+            "parent_path": "/infra",
+            "path": "/infra/lb-virtual-servers/Vs-http-1",
+            "realization_id": "4806a36a-692d-4428-81a1-d65462cf894a",
+            "relative_path": "Vs-http-1",
+            "unique_id": "4806a36a-692d-4428-81a1-d65462cf894a",
+            "marked_for_delete": false,
+            "overridden": false,
+            "access_log_enabled": false,
+            "application_profile_path": "/infra/lb-app-profiles/default-http-lb-app-profile",
+            "enabled": true,
+            "ip_address": "10.10.0.8",
+            "lb_persistence_profile_path": "/infra/lb-persistence-profiles/default-cookie-lb-persistence-profile",
+            "lb_service_path": "/infra/lb-services/lb",
+            "log_significant_event_only": false,
+            "pool_path": "/infra/lb-pools/pool1",
+            "ports": [
+                "443"
+            ],
+            "sorry_pool_path": "/infra/lb-pools/sorrypool-l7-1"
+        },
+        {
+            "_revision": 3,
+            "_create_time": 0,
+            "_create_user": "unknown",
+            "_last_modified_time": 1644228787408,
+            "_last_modified_user": "admin",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": false,
+            "display_name": "l4-udp",
+            "id": "l4-udp",
+            "resource_type": "LBVirtualServer",
+            "parent_path": "/infra",
+            "path": "/infra/lb-virtual-servers/l4-udp",
+            "realization_id": "1dd0a31f-605b-479c-b7c9-a3e1eceed682",
+            "relative_path": "l4-udp",
+            "unique_id": "1dd0a31f-605b-479c-b7c9-a3e1eceed682",
+            "marked_for_delete": false,
+            "overridden": false,
+            "access_log_enabled": false,
+            "application_profile_path": "/infra/lb-app-profiles/default-udp-lb-app-profile",
+            "enabled": true,
+            "ip_address": "10.10.0.3",
+            "lb_service_path": "/infra/lb-services/lb",
+            "log_significant_event_only": false,
+            "pool_path": "/infra/lb-pools/udp-pool",
+            "ports": [
+                "80"
+            ],
+            "sorry_pool_path": "/infra/lb-pools/sorry-pool-udp"
+        },
+        {
+            "_revision": 2,
+            "_create_time": 0,
+            "_create_user": "unknown",
+            "_last_modified_time": 1644228729104,
+            "_last_modified_user": "admin",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": false,
+            "description": "Virtual Service",
+            "display_name": "l4-vs",
+            "id": "l4-vs",
+            "resource_type": "LBVirtualServer",
+            "tags": [
+                {
+                    "scope": "NLB-Lb-ID",
+                    "tag": "lb"
+                }
+            ],
+            "parent_path": "/infra",
+            "path": "/infra/lb-virtual-servers/l4-vs",
+            "realization_id": "1774a525-0c34-41dc-9ef3-9faab126f5a7",
+            "relative_path": "l4-vs",
+            "unique_id": "1774a525-0c34-41dc-9ef3-9faab126f5a7",
+            "marked_for_delete": false,
+            "overridden": false,
+            "access_list_control": {
+                "action": "ALLOW",
+                "enabled": true,
+                "group_path": "/infra/domains/default/groups/03335585-9574-4d44-a001-818ca9a9c282"
+            },
+            "access_log_enabled": true,
+            "application_profile_path": "/infra/lb-app-profiles/default-tcp-lb-app-profile",
+            "default_pool_member_ports": [
+                "80"
+            ],
+            "enabled": true,
+            "ip_address": "10.10.0.1",
+            "lb_persistence_profile_path": "/infra/lb-persistence-profiles/default-source-ip-lb-persistence-profile",
+            "lb_service_path": "/infra/lb-services/lb",
+            "log_significant_event_only": true,
+            "max_concurrent_connections": 1000,
+            "max_new_connection_rate": 200,
+            "pool_path": "/infra/lb-pools/l4-pool",
+            "ports": [
+                "80"
+            ],
+            "sorry_pool_path": "/infra/lb-pools/sorry-pool-l4"
+        },
+        {
+            "_revision": 17,
+            "_create_time": 0,
+            "_create_user": "unknown",
+            "_last_modified_time": 1644829386585,
+            "_last_modified_user": "admin",
+            "_protection": "NOT_PROTECTED",
+            "_system_owned": false,
+            "display_name": "l7-vs",
+            "id": "l7-vs",
+            "resource_type": "LBVirtualServer",
+            "parent_path": "/infra",
+            "path": "/infra/lb-virtual-servers/l7-vs",
+            "realization_id": "c619359e-e318-4fce-a923-4e0d7396deaf",
+            "relative_path": "l7-vs",
+            "unique_id": "c619359e-e318-4fce-a923-4e0d7396deaf",
+            "marked_for_delete": false,
+            "overridden": false,
+            "access_log_enabled": false,
+            "application_profile_path": "/infra/lb-app-profiles/default-http-lb-app-profile",
+            "client_ssl_profile_binding": {
+                "certificate_chain_depth": 3,
+                "client_auth": "IGNORE",
+                "client_auth_ca_paths": [
+                    "/infra/certificates/51ea59bb-c485-461f-8970-43a7b2722db8"
+                ],
+                "default_certificate_path": "/infra/certificates/a1246209-dc8e-48c3-a1cc-42ab657d452d"
+            },
+            "default_pool_member_ports": [
+                "8080"
+            ],
+            "enabled": true,
+            "ip_address": "10.10.0.2",
+            "lb_service_path": "/infra/lb-services/lb",
+            "log_significant_event_only": false,
+            "max_concurrent_connections": 100,
+            "max_new_connection_rate": 100,
+            "pool_path": "/infra/lb-pools/l7-pool",
+            "ports": [
+                "80"
+            ],
+            "rules": [
+                {
+                    "actions": [
+                        {
+                            "variable_name": "avi",
+                            "variable_value": "avi",
+                            "type": "LBVariableAssignmentAction"
+                        }
+                    ],
+                    "match_conditions": [
+                        {
+                            "source_port": "8080",
+                            "type": "LBTcpHeaderCondition",
+                            "inverse": false
+                        }
+                    ],
+                    "match_strategy": "ALL",
+                    "phase": "HTTP_ACCESS"
+                },
+                {
+                    "actions": [
+                        {
+                            "type": "LBConnectionDropAction"
+                        }
+                    ],
+                    "match_conditions": [
+                        {
+                            "source_port": "8080",
+                            "type": "LBTcpHeaderCondition",
+                            "inverse": false
+                        }
+                    ],
+                    "match_strategy": "ALL",
+                    "phase": "HTTP_ACCESS"
+                },
+                {
+                    "actions": [
+                        {
+                            "pool_id": "/infra/lb-pools/l4-pool",
+                            "type": "LBSelectPoolAction"
+                        },
+                        {
+                            "ssl_mode": "SSL_PASSTHROUGH",
+                            "type": "LBSslModeSelectionAction"
+                        }
+                    ],
+                    "match_conditions": [
+                        {
+                            "sni": "google",
+                            "match_type": "STARTS_WITH",
+                            "case_sensitive": false,
+                            "type": "LBSslSniCondition",
+                            "inverse": false
+                        },
+                        {
+                            "sni": "google",
+                            "match_type": "EQUALS",
+                            "case_sensitive": false,
+                            "type": "LBSslSniCondition",
+                            "inverse": false
+                        }
+                    ],
+                    "match_strategy": "ALL",
+                    "phase": "TRANSPORT"
+                },
+                {
+                    "actions": [
+                        {
+                            "ssl_mode": "SSL_PASSTHROUGH",
+                            "type": "LBSslModeSelectionAction"
+                        }
+                    ],
+                    "match_conditions": [
+                        {
+                            "sni": "google",
+                            "match_type": "STARTS_WITH",
+                            "case_sensitive": false,
+                            "type": "LBSslSniCondition",
+                            "inverse": false
+                        }
+                    ],
+                    "match_strategy": "ALL",
+                    "phase": "TRANSPORT"
+                },
+                {
+                    "actions": [
+                        {
+                            "uri": "avi",
+                            "type": "LBHttpRequestUriRewriteAction"
+                        }
+                    ],
+                    "match_conditions": [
+                        {
+                            "body_value": "xyz",
+                            "match_type": "CONTAINS",
+                            "case_sensitive": false,
+                            "type": "LBHttpRequestBodyCondition",
+                            "inverse": false
+                        }
+                    ],
+                    "match_strategy": "ALL",
+                    "phase": "HTTP_REQUEST_REWRITE"
+                },
+                {
+                    "actions": [
+                        {
+                            "uri": "avi",
+                            "uri_arguments": "avi",
+                            "type": "LBHttpRequestUriRewriteAction"
+                        },
+                        {
+                            "header_name": "avi",
+                            "header_value": "AVI",
+                            "type": "LBHttpRequestHeaderRewriteAction"
+                        },
+                        {
+                            "header_name": "AVI",
+                            "type": "LBHttpRequestHeaderDeleteAction"
+                        },
+                        {
+                            "variable_name": "AVI",
+                            "variable_value": "AVI",
+                            "type": "LBVariableAssignmentAction"
+                        }
+                    ],
+                    "match_conditions": [
+                        {
+                            "cookie_name": "avi",
+                            "cookie_value": "avi",
+                            "match_type": "STARTS_WITH",
+                            "case_sensitive": false,
+                            "type": "LBHttpRequestCookieCondition",
+                            "inverse": false
+                        },
+                        {
+                            "cookie_name": "avi",
+                            "cookie_value": "avi",
+                            "match_type": "ENDS_WITH",
+                            "case_sensitive": false,
+                            "type": "LBHttpRequestCookieCondition",
+                            "inverse": false
+                        },
+                        {
+                            "cookie_name": "avi",
+                            "cookie_value": "avi",
+                            "match_type": "EQUALS",
+                            "case_sensitive": false,
+                            "type": "LBHttpRequestCookieCondition",
+                            "inverse": false
+                        },
+                        {
+                            "cookie_name": "avi",
+                            "cookie_value": "avi",
+                            "match_type": "CONTAINS",
+                            "case_sensitive": false,
+                            "type": "LBHttpRequestCookieCondition",
+                            "inverse": false
+                        },
+                        {
+                            "cookie_name": "avi",
+                            "cookie_value": "avi",
+                            "match_type": "REGEX",
+                            "case_sensitive": false,
+                            "type": "LBHttpRequestCookieCondition",
+                            "inverse": false
+                        }
+                    ],
+                    "match_strategy": "ALL",
+                    "phase": "HTTP_REQUEST_REWRITE"
+                },
+                {
+                    "actions": [
+                        {
+                            "uri": "google.com",
+                            "type": "LBHttpRequestUriRewriteAction"
+                        }
+                    ],
+                    "match_conditions": [
+                        {
+                            "body_value": "test",
+                            "match_type": "CONTAINS",
+                            "case_sensitive": false,
+                            "type": "LBHttpRequestBodyCondition",
+                            "inverse": false
+                        }
+                    ],
+                    "match_strategy": "ALL",
+                    "phase": "HTTP_REQUEST_REWRITE"
+                },
+                {
+                    "actions": [
+                        {
+                            "uri": "google.com",
+                            "type": "LBHttpRequestUriRewriteAction"
+                        }
+                    ],
+                    "match_conditions": [
+                        {
+                            "cookie_name": "avi.com",
+                            "cookie_value": "avi.com",
+                            "match_type": "EQUALS",
+                            "case_sensitive": false,
+                            "type": "LBHttpRequestCookieCondition",
+                            "inverse": false
+                        },
+                        {
+                            "version": "HTTP_VERSION_1_1",
+                            "type": "LBHttpRequestVersionCondition",
+                            "inverse": false
+                        },
+                        {
+                            "header_value": "avi",
+                            "header_name": "avi",
+                            "match_type": "REGEX",
+                            "case_sensitive": false,
+                            "type": "LBHttpRequestHeaderCondition",
+                            "inverse": false
+                        }
+                    ],
+                    "match_strategy": "ALL",
+                    "phase": "HTTP_REQUEST_REWRITE"
+                },
+                {
+                    "actions": [
+                        {
+                            "uri": "google.com",
+                            "type": "LBHttpRequestUriRewriteAction"
+                        }
+                    ],
+                    "match_conditions": [
+                        {
+                            "version": "HTTP_VERSION_1_1",
+                            "type": "LBHttpRequestVersionCondition",
+                            "inverse": false
+                        },
+                        {
+                            "version": "HTTP_VERSION_1_0",
+                            "type": "LBHttpRequestVersionCondition",
+                            "inverse": false
+                        }
+                    ],
+                    "match_strategy": "ALL",
+                    "phase": "HTTP_REQUEST_REWRITE"
+                },
+                {
+                    "actions": [
+                        {
+                            "uri": "google.com",
+                            "type": "LBHttpRequestUriRewriteAction"
+                        }
+                    ],
+                    "match_conditions": [
+                        {
+                            "header_value": "avi",
+                            "header_name": "avi.com",
+                            "match_type": "EQUALS",
+                            "case_sensitive": false,
+                            "type": "LBHttpRequestHeaderCondition",
+                            "inverse": false
+                        }
+                    ],
+                    "match_strategy": "ALL",
+                    "phase": "HTTP_REQUEST_REWRITE"
+                },
+                {
+                    "actions": [
+                        {
+                            "uri": "google.com",
+                            "type": "LBHttpRequestUriRewriteAction"
+                        }
+                    ],
+                    "match_conditions": [
+                        {
+                            "uri_arguments": "google",
+                            "match_type": "EQUALS",
+                            "case_sensitive": false,
+                            "type": "LBHttpRequestUriArgumentsCondition",
+                            "inverse": false
+                        }
+                    ],
+                    "match_strategy": "ALL",
+                    "phase": "HTTP_REQUEST_REWRITE"
+                },
+                {
+                    "actions": [
+                        {
+                            "uri": "google.com",
+                            "uri_arguments": "hhh",
+                            "type": "LBHttpRequestUriRewriteAction"
+                        }
+                    ],
+                    "match_conditions": [
+                        {
+                            "method": "GET",
+                            "type": "LBHttpRequestMethodCondition",
+                            "inverse": false
+                        }
+                    ],
+                    "match_strategy": "ALL",
+                    "phase": "HTTP_REQUEST_REWRITE"
+                },
+                {
+                    "actions": [
+                        {
+                            "uri": "google.com",
+                            "type": "LBHttpRequestUriRewriteAction"
+                        }
+                    ],
+                    "match_conditions": [
+                        {
+                            "uri": "google.com",
+                            "match_type": "STARTS_WITH",
+                            "case_sensitive": false,
+                            "type": "LBHttpRequestUriCondition",
+                            "inverse": false
+                        }
+                    ],
+                    "match_strategy": "ALL",
+                    "phase": "HTTP_REQUEST_REWRITE"
+                },
+                {
+                    "actions": [
+                        {
+                            "reply_status": "200",
+                            "reply_message": "ok",
+                            "type": "LBHttpRejectAction"
+                        },
+                        {
+                            "redirect_status": "302",
+                            "redirect_url": "https://avi.com/users",
+                            "type": "LBHttpRedirectAction"
+                        },
+                        {
+                            "pool_id": "/infra/lb-pools/l4-pool",
+                            "type": "LBSelectPoolAction"
+                        }
+                    ],
+                    "match_conditions": [
+                        {
+                            "uri": "avi",
+                            "match_type": "EQUALS",
+                            "case_sensitive": false,
+                            "type": "LBHttpRequestUriCondition",
+                            "inverse": false
+                        }
+                    ],
+                    "match_strategy": "ALL",
+                    "phase": "HTTP_FORWARDING"
+                },
+                {
+                    "actions": [
+                        {
+                            "type": "LBConnectionDropAction"
+                        }
+                    ],
+                    "match_conditions": [
+                        {
+                            "uri": "google.com",
+                            "match_type": "STARTS_WITH",
+                            "case_sensitive": false,
+                            "type": "LBHttpRequestUriCondition",
+                            "inverse": false
+                        }
+                    ],
+                    "match_strategy": "ALL",
+                    "phase": "HTTP_FORWARDING"
+                },
+                {
+                    "actions": [
+                        {
+                            "header_name": "avi_hdr",
+                            "header_value": "avi_val",
+                            "type": "LBHttpResponseHeaderRewriteAction"
+                        },
+                        {
+                            "header_name": "avi",
+                            "type": "LBHttpResponseHeaderDeleteAction"
+                        },
+                        {
+                            "persistence_profile_path": "/infra/lb-persistence-profiles/default-generic-lb-persistence-profile",
+                            "variable_name": "abc",
+                            "variable_hash_enabled": false,
+                            "type": "LBVariablePersistenceLearnAction"
+                        }
+                    ],
+                    "match_conditions": [
+                        {
+                            "header_name": "avi",
+                            "header_value": "avi",
+                            "match_type": "STARTS_WITH",
+                            "case_sensitive": false,
+                            "type": "LBHttpResponseHeaderCondition",
+                            "inverse": false
+                        },
+                        {
+                            "method": "GET",
+                            "type": "LBHttpRequestMethodCondition",
+                            "inverse": false
+                        },
+                        {
+                            "uri": "uri",
+                            "match_type": "EQUALS",
+                            "case_sensitive": false,
+                            "type": "LBHttpRequestUriCondition",
+                            "inverse": false
+                        },
+                        {
+                            "uri_arguments": "zvi",
+                            "match_type": "EQUALS",
+                            "case_sensitive": false,
+                            "type": "LBHttpRequestUriArgumentsCondition",
+                            "inverse": false
+                        },
+                        {
+                            "version": "HTTP_VERSION_1_1",
+                            "type": "LBHttpRequestVersionCondition",
+                            "inverse": false
+                        },
+                        {
+                            "header_value": "avi",
+                            "header_name": "avi",
+                            "match_type": "EQUALS",
+                            "case_sensitive": false,
+                            "type": "LBHttpRequestHeaderCondition",
+                            "inverse": false
+                        },
+                        {
+                            "cookie_name": "avi",
+                            "cookie_value": "avi",
+                            "match_type": "EQUALS",
+                            "case_sensitive": false,
+                            "type": "LBHttpRequestCookieCondition",
+                            "inverse": false
+                        },
+                        {
+                            "client_certificate_issuer_dn": {
+                                "issuer_dn": "avi",
+                                "match_type": "STARTS_WITH",
+                                "case_sensitive": false
+                            },
+                            "session_reused": "IGNORE",
+                            "type": "LBHttpSslCondition",
+                            "inverse": false
+                        },
+                        {
+                            "source_port": "8080",
+                            "type": "LBTcpHeaderCondition",
+                            "inverse": false
+                        },
+                        {
+                            "source_address": "10.10.10.2",
+                            "type": "LBIpHeaderCondition",
+                            "inverse": false
+                        },
+                        {
+                            "variable_name": "avi",
+                            "variable_value": "avi",
+                            "match_type": "STARTS_WITH",
+                            "case_sensitive": false,
+                            "type": "LBVariableCondition",
+                            "inverse": false
+                        },
+                        {
+                            "group_path": "/infra/domains/default/groups/03335585-9574-4d44-a001-818ca9a9c282",
+                            "type": "LBIpHeaderCondition",
+                            "inverse": false
+                        }
+                    ],
+                    "match_strategy": "ALL",
+                    "phase": "HTTP_RESPONSE_REWRITE"
+                },
+                {
+                    "actions": [
+                        {
+                            "header_name": "avi-version",
+                            "header_value": "21.1.3",
+                            "type": "LBHttpResponseHeaderRewriteAction"
+                        },
+                        {
+                            "header_name": "avi",
+                            "type": "LBHttpResponseHeaderDeleteAction"
+                        },
+                        {
+                            "persistence_profile_path": "/infra/lb-persistence-profiles/default-generic-lb-persistence-profile",
+                            "variable_name": "avi",
+                            "variable_hash_enabled": false,
+                            "type": "LBVariablePersistenceLearnAction"
+                        }
+                    ],
+                    "match_conditions": [
+                        {
+                            "header_name": "avi-version",
+                            "header_value": "21.1.3",
+                            "match_type": "STARTS_WITH",
+                            "case_sensitive": false,
+                            "type": "LBHttpResponseHeaderCondition",
+                            "inverse": false
+                        },
+                        {
+                            "header_name": "avi",
+                            "header_value": "21.1.3",
+                            "match_type": "ENDS_WITH",
+                            "case_sensitive": false,
+                            "type": "LBHttpResponseHeaderCondition",
+                            "inverse": false
+                        },
+                        {
+                            "header_name": "avi",
+                            "header_value": "21.1.3",
+                            "match_type": "STARTS_WITH",
+                            "case_sensitive": false,
+                            "type": "LBHttpResponseHeaderCondition",
+                            "inverse": false
+                        }
+                    ],
+                    "match_strategy": "ALL",
+                    "phase": "HTTP_RESPONSE_REWRITE"
+                }
+            ],
+            "server_ssl_profile_binding": {
+                "certificate_chain_depth": 3,
+                "client_certificate_path": "/infra/certificates/a1246209-dc8e-48c3-a1cc-42ab657d452d",
+                "server_auth": "IGNORE",
+                "server_auth_ca_paths": [
+                    "/infra/certificates/51ea59bb-c485-461f-8970-43a7b2722db8"
+                ]
+            },
+            "sorry_pool_path": "/infra/lb-pools/l4-pool"
+        }
+    ]
+}

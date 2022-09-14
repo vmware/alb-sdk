@@ -28,7 +28,6 @@ from avi.sdk.avi_api import ApiSession, APIError
 
 
 requests.packages.urllib3.disable_warnings()
-AVI_API_VERSION = "18.2.5"
 __version__ = "1.0"
 
 logging.basicConfig(level=logging.ERROR)
@@ -64,6 +63,8 @@ def process_args():
     parser.add_argument("-g", "--group", action="store",
                         help="WAF policy PSM group name. " +
                         "Default is scanner type e.g. zap or qualysweb.")
+    parser.add_argument("--version", action="store",
+                        default = "18.2.6", help="AVI API Version")
     args = parser.parse_args()
     return args
 
@@ -379,7 +380,7 @@ def main():
                                         args.username,
                                         args.password,
                                         tenant=args.tenant,
-                                        api_version=AVI_API_VERSION) as api:
+                                        api_version=args.version) as api:
                 save_psmgroup(api, psmgroup)
         except APIError as err:
             LOGGER.error("API error: %s/%s", err.rsp.status_code, err.rsp.reason)

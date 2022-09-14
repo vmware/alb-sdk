@@ -10,3 +10,7 @@ def pytest_addoption(parser):
     parser.addoption ("--fileVersion", action="store", help="Input file version")
     parser.addoption("--file", action="store", help="Input file")
     parser.addoption ("--out", action="store", help="Output folder path")
+
+def pytest_configure(config):
+    global option
+    option=config.option
