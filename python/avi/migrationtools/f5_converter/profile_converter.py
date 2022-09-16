@@ -421,6 +421,7 @@ class ProfileConfigConvV11(ProfileConfigConv):
         self.na_tcp = f5_profile_attributes['Profile_na_tcp']
         self.supported_udp = f5_profile_attributes['Profile_supported_udp']
         self.indirect_udp = f5_profile_attributes['Profile_indirect_udp']
+        self.na_udp = f5_profile_attributes['Profile_na_udp']
         self.supported_oc = f5_profile_attributes['Profile_supported_oc']
         self.supported_enf = \
             f5_profile_attributes['Profile_supported_http_enforcement']
@@ -669,6 +670,9 @@ class ProfileConfigConvV11(ProfileConfigConv):
             http_profile['secure_cookie_enabled'] = encpt_cookie
             http_profile['xff_enabled'] = insert_xff
             http_profile['connection_multiplexing_enabled'] = con_mltplxng
+            if profile.get('via-host-name'):
+                app_profile['via-host-name'] = profile.get('via-host-name')
+                app_profile['via-request'] = profile.get('via-request')
             if not profile.get('redirect-rewrite'):
                 http_profile['hsts_enabled'] = True
             enforcement = profile.get('enforcement', None)
@@ -1125,6 +1129,7 @@ class ProfileConfigConvV11(ProfileConfigConv):
         elif profile_type == 'udp':
             supported_attr = self.supported_udp
             indirect = self.indirect_udp
+            na_list = self.na_udp
             u_ignore = user_ignore.get('udp', [])
             skipped = [attr for attr in profile.keys()
                        if attr not in supported_attr]
@@ -1198,6 +1203,7 @@ class ProfileConfigConvV10(ProfileConfigConv):
         self.supported_udp = f5_profile_attributes['Profile_supported_udp']
         self.na_tcp = f5_profile_attributes['Profile_na_tcp']
         self.indirect_udp = []
+        self.na_udp = f5_profile_attributes['Profile_na_udp']
         self.supported_oc = f5_profile_attributes['Profile_supported_oc']
         self.supported_enf = []
         self.ignore_for_defaults_enf = []
@@ -1631,6 +1637,7 @@ class ProfileConfigConvV10(ProfileConfigConv):
         elif profile_type == 'udp':
             u_ignore = user_ignore.get('udp', [])
             supported_attr = self.supported_udp
+            na_list = self.na_udp
             skipped = [attr for attr in profile.keys()
                        if attr not in supported_attr]
             per_pkt = profile.get("datagram lb", 'disable')
