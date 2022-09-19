@@ -36,6 +36,13 @@ type NsxtSegmentRuntime struct {
 	// Opaque network Id. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	OpaqueNetworkID *string `json:"opaque_network_id,omitempty"`
 
+	// Origin ID applicable to security only cloud. Field introduced in 22.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Required: true
+	OriginID *string `json:"origin_id"`
+
+	// Nsxt segment belongs to Security only cloud. Field introduced in 22.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	SecurityOnlyNsxt *bool `json:"security_only_nsxt,omitempty"`
+
 	// Segment Gateway. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SegmentGw *string `json:"segment_gw,omitempty"`
 
