@@ -356,6 +356,8 @@ paths:
 definitions:
     NsxtSegmentRuntime:
         type: object
+        required:
+            -   origin_id
         properties:
             _last_modified:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
@@ -390,6 +392,12 @@ definitions:
             opaque_network_id:
                 description: "Opaque network Id. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            origin_id:
+                description: "Origin ID applicable to security only cloud. Field introduced in 22.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            security_only_nsxt:
+                description: "Nsxt segment belongs to Security only cloud. Field introduced in 22.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
             segment_gw:
                 description: "Segment Gateway. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
