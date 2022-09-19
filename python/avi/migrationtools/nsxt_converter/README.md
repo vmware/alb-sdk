@@ -1,14 +1,12 @@
-#NSX-T to AVI Migration Tool
+# NSX-T to AVI Migration Tool
 
----------------------------
-
-[NSX-T to AVI Migration Tool](https://github.com/vmware/alb-sdk/releases/tag/22.1.1.post4>)
+[NSX-T to AVI Migration Tool](https://github.com/vmware/alb-sdk/releases/tag/22.1.1.post4)
 is an Open-Source tool developed by the AVI Development team to help NSX-T users seamlessly migrate their Virtual Services to NSX Advanced Load Balancer (AVI), enabling them to get all the benefits that NSX Advanced Load Balancer can deliver, such as elastic load balancing, application security, autoscaling, container networking, and web application firewall.
 
 The [How-to Guide](https://raw.githubusercontent.com/vmware/alb-sdk/22.1.1/python/avi/migrationtools/nsxt_converter/NSX-T_to_Avi_Migration_Tool_-_How_To_Guide.pdf)
 located in this repository will help you understand the basics about how Avi works, how it interacts with NSX-T, and how you can use this tool to migrate your Virtual Services to Avi.
 
-###Usage Examples
+### Usage Examples
 
 - NSX-T to AVI Migration Tool help
 
@@ -122,7 +120,7 @@ located in this repository will help you understand the basics about how Avi wor
         }
     ```
 
-- Optional arguments
+- Arguments
   
   ```
   -h, --help            show this help message and exit
