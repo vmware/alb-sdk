@@ -561,7 +561,7 @@ class ApiSession(Session):
         if api_version:
             api_hdrs['X-Avi-Version'] = api_version
         elif self.avi_credentials.api_version:
-            api_hdrs['X-Avi-Version'] = self.avi_credentials.api_version
+            api_hdrs['X-Avi-Version'] = str(self.avi_credentials.api_version)
         if tenant:
             tenant_uuid = None
         elif tenant_uuid:
