@@ -10,7 +10,7 @@ from avi.migrationtools.nsxt_converter.nsxt_util import is_vlan_configured_with_
 from avi.migrationtools.nsxt_converter.conversion_util import NsxtConvUtil
 from avi.migrationtools.avi_migration_utils import update_count
 from avi.migrationtools.nsxt_converter.nsxt_util import get_vs_cloud_name, get_object_segments, get_certificate_data
-from avi.migrationtools.nsxt_converter.persistant_converter import persistence_profile_list, persistence_ds_list
+from avi.migrationtools.nsxt_converter.persistant_converter import persistence_profile_list
 from avi.migrationtools.nsxt_converter.policy_converter import PolicyConfigConverter
 import avi.migrationtools.nsxt_converter.converter_constants as conv_const
 import avi.migrationtools.nsxt_converter.converter_constants as final
@@ -81,10 +81,7 @@ class VsConfigConv(object):
         alb_config["HTTPPolicySet"] = list()
         alb_config["ServiceEngineGroup"] = list()
         alb_config["NetworkService"] = list()
-        alb_config['NetworkSecurityPolicy'] = list()
-        alb_config['IpAddrGroup'] = list()
         converted_objs = []
-        index = 1
         progressbar_count = 0
         total_size = len(nsx_lb_config['LbVirtualServers'])
         print("\nConverting Virtual Services ...")
@@ -129,7 +126,7 @@ class VsConfigConv(object):
                         LOG.warning("Load balancer not configured for %s" % lb_vs["display_name"])
                         vs_with_no_lb_configured.append(lb_vs["display_name"])
                         continue
-                vs_datascripts = []
+
                 tier1_lr = ''
                 for ref in nsx_lb_config['LBServices']:
                     vs_details = get_vs_details(lb_vs['id'])
@@ -347,16 +344,6 @@ class VsConfigConv(object):
                     alb_vs['performance_limits'] = dict(
                         max_concurrent_connections=lb_vs.get('max_concurrent_connections')
                     )
-                if lb_vs.get('max_new_connection_rate'):
-                    alb_vs['connections_rate_limit'] = dict(
-                        rate_limiter=dict(
-                            count=lb_vs['max_new_connection_rate'],
-                            period='1'
-                        ),
-                        action=dict(
-                            type='RL_ACTION_DROP_CONN'
-                        )
-                    )
                 if lb_vs.get('client_ssl_profile_binding'):
                     client_ssl = lb_vs.get('client_ssl_profile_binding')
                     ssl_key_cert_refs = []
@@ -411,31 +398,6 @@ class VsConfigConv(object):
                     skipped_client_ssl = [attr for attr in skipped_client_ssl if attr not in indirect_client_ssl]
                     if skipped_client_ssl:
                         skipped.append({"client_ssl ": skipped_client_ssl})
-                if lb_vs.get('access_list_control'):
-                    ns_group_name, ns_ip_addre_list = \
-                        nsxt_util.get_nsx_group_details(lb_vs['access_list_control']['group_path'])
-                    if not ns_ip_addre_list:
-                        LOG.debug('Skipping ns group %s as it does not contain ip addresss' % ns_group_name)
-                    else:
-                        ns_policy_name = nsxt_util.create_ns_group_policy \
-                            (alb_vs, lb_vs['access_list_control'], ns_ip_addre_list,
-                             ns_group_name, alb_config, prefix, tenant)
-                        alb_vs["network_security_policy_ref"] = \
-                            conv_utils.get_object_ref\
-                                (ns_policy_name, "networksecuritypolicy", tenant=tenant, cloud_name=cloud_name)
-                persist_ds = None
-                if lb_vs.get('lb_persistence_profile_path'):
-                    persist_ref = self.get_persist_ref(lb_vs)
-                    persist_ds = persistence_ds_list.get(persist_ref, None)
-                if persist_ds:
-                    vs_datascripts.append(
-                        {
-                            "index": index,
-                            "vs_datascript_set_ref": conv_utils.get_object_ref(
-                                persist_ds, 'vsdatascriptset', tenant=tenant)
-                        }
-                    )
-                    index += 1
 
                 lb_pl_config = nsx_lb_config['LbPools']
                 sry_pool_present = False
@@ -696,9 +658,6 @@ class VsConfigConv(object):
                     else:
                         self.add_ssl_to_pool(alb_config, nsx_lb_config, lb_vs, main_pool_ref,
                                              prefix, tenant, converted_alb_ssl_certs, ssh_root_password)
-                if lb_vs.get('server_ssl_profile_binding'):
-                    # if lb_vs["server_ssl_profile_binding"]
-                    server_ssl = lb_vs.get('server_ssl_profile_binding')
 
                     skipped_server_ssl = [val for val in server_ssl.keys()
                                           if val not in self.server_ssl_attr]
@@ -714,37 +673,23 @@ class VsConfigConv(object):
                 if lb_vs.get('rules'):
 
                     policy, skipped_rules = policy_converter.convert \
-                        (lb_vs, alb_vs, alb_config, nsx_lb_config, nsxt_util,
-                         is_pool_group_used, http_pool_group_list, http_pool_list,
-                         cloud_type, cloud_name, prefix, controller_version,
-                         cloud_tenant, tier1_lr, tenant)
+                        (lb_vs, alb_vs, alb_config, nsx_lb_config,
+                        is_pool_group_used, http_pool_group_list, http_pool_list,
+                        cloud_type, cloud_name, prefix, controller_version,
+                        cloud_tenant, tier1_lr, tenant)
                     converted_http_policy_sets.append(skipped_rules)
                     if policy:
-                        if policy.get('datascripts'):
-                            for ds in policy['datascripts']:
-                                vs_datascripts.append(
-                                    {
-                                        "index": index,
-                                        "vs_datascript_set_ref": conv_utils.get_object_ref(
-                                            ds.get('name'), 'vsdatascriptset', tenant=tenant)
-                                    }
-                                )
-                                index += 1
-                        del (policy['datascripts'])
-                        if policy.get('http_request_policy') or policy.get('http_security_policy') \
-                                or policy.get('http_response_policy'):
-                            updated_http_policy_ref = conv_utils.get_object_ref(
-                                policy['name'], conv_const.OBJECT_TYPE_HTTP_POLICY_SET,
-                                tenant)
-                            http_policies = {
-                                'index': 11,
-                                'http_policy_set_ref': updated_http_policy_ref
-                            }
-                            alb_vs['http_policies'] = []
-                            alb_vs['http_policies'].append(http_policies)
-                            alb_config['HTTPPolicySet'].append(policy)
-                if vs_datascripts:
-                    alb_vs['vs_datascripts'] = vs_datascripts
+                        updated_http_policy_ref = conv_utils.get_object_ref(
+                            policy['name'], conv_const.OBJECT_TYPE_HTTP_POLICY_SET,
+                            tenant)
+                        http_policies = {
+                            'index': 11,
+                            'http_policy_set_ref': updated_http_policy_ref
+                        }
+                        alb_vs['http_policies'] = []
+                        alb_vs['http_policies'].append(http_policies)
+                        alb_config['HTTPPolicySet'].append(policy)
+
                 # If vlan VS then check if VLAN network is configured as a BGP peer,
                 # if yes, then advertise bgp otherwise don't advertise
                 is_vlan_configured, vlan_segment, network_type, return_mesg = is_segment_configured_with_subnet \

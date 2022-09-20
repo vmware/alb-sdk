@@ -9,8 +9,7 @@ import random
 import copy
 import xlsxwriter
 import logging
-from avi.migrationtools.nsxt_converter.conversion_util import NsxtConvUtil
-from avi.migrationtools.avi_migration_utils import MigrationUtil
+
 from avi.migrationtools.nsxt_converter import nsxt_client as nsx_client_util
 import pprint
 from avi.sdk.avi_api import ApiSession
@@ -18,9 +17,8 @@ from avi.sdk.avi_api import ApiSession
 pp = pprint.PrettyPrinter(indent=4)
 vs_details = {}
 controller_details = {}
-conv_utils = NsxtConvUtil()
+
 LOG = logging.getLogger(__name__)
-common_avi_util = MigrationUtil()
 
 
 def is_segment_configured_with_subnet(vs_id, cloud_name, cloud_tenant):
@@ -141,51 +139,45 @@ def get_certificate_data(certificate_ref, nsxt_ip, ssh_root_password):
     import paramiko
     import json
 
-    try:
-        ssh = paramiko.SSHClient()
-        ssh.load_system_host_keys()
-        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        ssh.connect(nsxt_ip, username='root', password=ssh_root_password, allow_agent=False, look_for_keys=False)
+    ssh = paramiko.SSHClient()
+    ssh.load_system_host_keys()
+    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    ssh.connect(nsxt_ip, username='root', password=ssh_root_password, allow_agent=False, look_for_keys=False)
 
-        cmd = "curl --header 'Content-Type: application/json' --header 'x-nsx-username: admin' " \
-              "http://'admin':'{}'@127.0.0.1:7440/nsxapi/api/v1/trust-management/certificates".\
-            format(ssh_root_password)
-        stdin, stdout, stderr = ssh.exec_command(cmd)
+    data = None
+    cmd = "curl --header 'Content-Type: application/json' --header 'x-nsx-username: admin' " \
+          "http://'admin':'{}'@127.0.0.1:7440/nsxapi/api/v1/trust-management/certificates".\
+        format(ssh_root_password)
+    stdin, stdout, stderr = ssh.exec_command(cmd)
 
-        output_dict = ''
-        for line in stdout.read().splitlines():
-            output_dict += line.decode()
+    output_dict = ''
+    for line in stdout.read().splitlines():
+        output_dict += line.decode()
 
-        if output_dict:
-            output_dict = json.loads(output_dict)
+    output_dict = json.loads(output_dict)
 
-            LOG.info("output_dict for certificate_ref {}".format(certificate_ref))
-            for cert_data in output_dict['results']:
-                if 'tags' in cert_data.keys() and len(cert_data['tags']) > 0:
-                    cert_id = cert_data['tags'][0]['tag'].split('/')[-1]
-                else:
-                    cert_id = cert_data['id']
-
-                if cert_id == certificate_ref:
-                    cert_command = cmd + "/" + cert_data['id'] + '/' + "?action=get_private"
-                    cert_stdin, cert_stdout, cert_stderr = ssh.exec_command(cert_command)
-                    cert_dict = ''
-                    for line in cert_stdout.read().splitlines():
-                        cert_dict += line.decode()
-
-                    cert_dict = json.loads(cert_dict)
-                    LOG.debug("cert_dict for certificate_ref {}".format(certificate_ref))
-                    if 'private_key' in cert_dict:
-                        return cert_dict['private_key'], cert_dict['pem_encoded']
+    LOG.info("output_dict for certificate_ref {}".format(certificate_ref))
+    for cert_data in output_dict['results']:
+        if 'tags' in cert_data.keys() and len(cert_data['tags']) > 0:
+            cert_id = cert_data['tags'][0]['tag'].split('/')[-1]
         else:
-            LOG.warning("No certificate data found for certificate ref {}".format(certificate_ref))
+            cert_id = cert_data['id']
 
-        ssh.close()
-        stdin.close()
-    except Exception as e:
-        LOG.error("Error in getting certificate data for ref {}. Message: {}".format(certificate_ref, str(e)))
+        if cert_id == certificate_ref:
+            cert_command = cmd + "/" + cert_data['id'] + '/' + "?action=get_private"
+            cert_stdin, cert_stdout, cert_stderr = ssh.exec_command(cert_command)
+            cert_dict = ''
+            for line in cert_stdout.read().splitlines():
+                cert_dict += line.decode()
 
-    return None, None
+            cert_dict = json.loads(cert_dict)
+            LOG.debug("cert_dict for certificate_ref {}".format(certificate_ref))
+            if 'private_key' in cert_dict:
+                return cert_dict['private_key'], cert_dict['pem_encoded']
+
+    ssh.close()
+    stdin.close()
+    return data
 
 
 class NSXUtil():
@@ -950,71 +942,3 @@ class NSXUtil():
                 ]
         }
         return new_network_service
-
-    def get_nsx_group_details(self,group_path):
-        domain_id = group_path.split('domains/')[1].split("/groups")[0]
-        ns_group_id = group_path.split('groups/')[1]
-        ns_groups_list = self.nsx_api_client.infra.domains.Groups.list(domain_id).to_dict().get("results", [])
-        ns_group = [ns_g for ns_g in ns_groups_list if ns_g['id'] == ns_group_id]
-        ns_group_name = ns_group[0]['display_name']
-        ns_ip_addr = None
-        if ns_group[0].get('expression'):
-            ns_ip_addr = ns_group[0].get('expression')[0].get('ip_addresses')
-        return ns_group_name, ns_ip_addr
-
-    def create_ns_group_policy(self, alb_vs,access_control_list, ns_ip_addr, ns_group_name, alb_config,prefix,tenant):
-        ns_policy = dict(
-            name="{}-ns".format(alb_vs['name']),
-            tenant_ref = conv_utils.get_object_ref(tenant,"tenant"),
-            rules=[]
-        )
-        rule_count = 1
-        if access_control_list.get("action") == "ALLOW":
-           action= "NETWORK_SECURITY_POLICY_ACTION_TYPE_ALLOW"
-        else:
-            action = "NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY"
-        rule_dict = dict(
-            name="Rule {}".format(rule_count),
-            action=action,
-            index="1",
-            match=dict(
-                client_ip={}
-            )
-        )
-        rule_dict['enable'] = access_control_list.get("enabled")
-        ip_group_name = self.create_ip_group(ns_ip_addr, ns_group_name,alb_config, prefix,tenant)
-        rule_dict['match']["client_ip"]["group_refs"] = list()
-        rule_dict['match']["client_ip"]["group_refs"].append(conv_utils.get_object_ref
-                                                             (ip_group_name, "ipaddrgroup", tenant))
-        rule_dict['match']['client_ip']["match_criteria"] = "IS_IN"
-        ns_policy['rules'].append(rule_dict)
-        alb_config['NetworkSecurityPolicy'].append(ns_policy)
-
-        return ns_policy['name']
-
-    def create_ip_group(self, ip_addresses_list, group_name, alb_config, prefix,tenant):
-        if prefix:
-            group_name = "{}-{}-ipgroup".format(prefix, group_name)
-        is_ip_group_present = [ip_grp for ip_grp in alb_config['IpAddrGroup'] if ip_grp['name'] == group_name and
-                               ip_grp['tenant_ref'] == conv_utils.get_object_ref(tenant, 'tenant')]
-        if is_ip_group_present:
-            return group_name
-        ip_group = dict(
-            name=group_name
-        )
-        addr_list = []
-        for ip_adr in ip_addresses_list:
-            type="V6"
-            if "." in ip_adr:
-                type="V4"
-            addr_dict = dict(
-                addr=ip_adr,
-                type=type
-            )
-            addr_list.append(
-                addr_dict
-            )
-        ip_group['addrs'] = addr_list
-        ip_group['tenant_ref'] = conv_utils.get_object_ref(tenant, 'tenant')
-        alb_config['IpAddrGroup'].append(ip_group)
-        return ip_group['name']

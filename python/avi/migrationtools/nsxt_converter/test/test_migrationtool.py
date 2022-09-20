@@ -10,7 +10,7 @@ import logging
 import os
 import pytest
 import yaml
-
+import vcr
 import subprocess
 from avi.migrationtools.avi_migration_utils import get_count, set_update_count
 from avi.migrationtools.nsxt_converter.nsxt_converter import NsxtConverter
@@ -27,6 +27,11 @@ output_file = pytest.config.getoption('--out')
 with open(config_file) as f:
     file_attribute = yaml.load(f, Loader=yaml.Loader)
 
+my_vcr = vcr.VCR(
+    cassette_library_dir='fixtures/cassettes/',
+    serializer='yaml',
+    match_on= ['method','url']
+)
 
 setup = dict(nsxt_ip=file_attribute['nsxt_ip'],
              nsxt_user=file_attribute['nsxt_user'],
@@ -388,75 +393,3 @@ class TestNSXTConverter:
                   object_merge_check=False,
                   tenant=setup.get('alb_controller_tenant'),
                   prefix=setup.get('prefix'))
-
-
-    def test_cookie_persistence(self):
-        Nsxt_conv(nsxt_ip=setup.get('nsxt_ip'),
-                  nsxt_user=setup.get('nsxt_user'),
-                  nsxt_password=setup.get('nsxt_password'),
-                  controller_ip=setup.get('alb_controller_ip'),
-                  user=setup.get('alb_controller_user'),
-                  alb_controller_version=setup.get('alb_controller_version'),
-                  password=setup.get('alb_controller_password'),
-                  output_file_path=setup.get('output_file_path'),
-                  option=setup.get('option'),
-                  object_merge_check=False,
-                  tenant=setup.get('alb_controller_tenant'),
-                  prefix=setup.get('prefix'))
-
-        output_json = os.path.abspath(os.path.join(
-            output_file, '{}/output/avi_config.json'.format(setup.get('nsxt_ip'))))
-        with open(output_json) as json_file:
-            data = json.load(json_file)
-            app_persistence_config = data['ApplicationPersistenceProfile']
-            is_cookie_present_in_persis_config = [data['name'] for data in app_persistence_config
-                                      if data['persistence_type'] == "PERSISTENCE_TYPE_HTTP_COOKIE"]
-            assert not is_cookie_present_in_persis_config
-
-    def test_rule_config(self):
-        Nsxt_conv(nsxt_ip=setup.get('nsxt_ip'),
-                  nsxt_user=setup.get('nsxt_user'),
-                  nsxt_password=setup.get('nsxt_password'),
-                  controller_ip=setup.get('alb_controller_ip'),
-                  user=setup.get('alb_controller_user'),
-                  alb_controller_version=setup.get('alb_controller_version'),
-                  password=setup.get('alb_controller_password'),
-                  output_file_path=setup.get('output_file_path'),
-                  option=setup.get('option'),
-                  object_merge_check=False,
-                  tenant=setup.get('alb_controller_tenant'),
-                  prefix=setup.get('prefix'))
-
-        output_json = os.path.abspath(os.path.join(
-            output_file, '{}/output/avi_config.json'.format(setup.get('nsxt_ip'))))
-        with open(output_json) as json_file:
-            data = json.load(json_file)
-            vs_datascript = data['VSDataScriptSet']
-            vs_object = data['VirtualService']
-            http_policy_set = data['HTTPPolicySet']
-            network_security_policy = data['NetworkSecurityPolicy']
-
-            for vs in vs_object:
-                if vs.get("vs_datascripts"):
-                    for vs_ds in vs['vs_datascripts'] :
-                        vs_ds_name = vs_ds['vs_datascript_set_ref'].split('name=')[1].split('&')[0]
-                        script_set = [data['name'] for data in vs_datascript if
-                                      data['name'] == vs_ds_name][0]
-                        print(script_set, " ", vs_ds_name)
-                        assert script_set == vs_ds_name
-
-                if vs.get('http_policies'):
-                    for vs_policy in vs['http_policies']:
-                        vs_policy_name = vs_policy['http_policy_set_ref'].split('name=')[1]
-                        http_policy = [data['name'] for data in http_policy_set
-                                      if data['name'] == vs_policy_name][0]
-                        print(vs_policy_name, " ", http_policy)
-                        assert vs_policy_name == http_policy
-                if vs.get('network_security_policy_ref'):
-                    policy_ref = vs['network_security_policy_ref']
-                    policy_name = policy_ref.split('name=')[1].split('&')[0]
-                    network_security_name = [data['name'] for data in network_security_policy
-                                            if data['name'] == policy_name][0]
-                    assert network_security_name == policy_name
-
-

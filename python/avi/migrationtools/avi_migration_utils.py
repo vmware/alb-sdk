@@ -545,7 +545,7 @@ class MigrationUtil(object):
             object_name = prefix + '-' + object_name
 
         cloud_supported_types = ['pool', 'poolgroup', 'vsvip', 'vrfcontext',
-                                 'serviceenginegroup', 'network', 'vsdatascriptset','networksecuritypolicy']
+                                 'serviceenginegroup', 'network']
         if not cloud_name:
             cloud_name = "Default-Cloud"
 

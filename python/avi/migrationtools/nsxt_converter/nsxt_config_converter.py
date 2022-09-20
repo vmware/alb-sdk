@@ -38,8 +38,7 @@ merge_object_mapping = {
     'pki_profile': {'no': 0},
     'health_monitor': {'no': 0},
     'ssl_cert_key': {'no': 0},
-    'ip_group': {'no': 0},
-    'vs_ds': {'no': 0}
+    'ip_group': {'no': 0}
 }
 
 
@@ -62,7 +61,7 @@ def convert(nsx_lb_config, input_path, output_path, tenant, prefix,
         merge_object_type = ['ApplicationProfile', 'NetworkProfile',
                              'SSLProfile', 'PKIProfile', 'SSLKeyAndCertificate',
                              'ApplicationPersistenceProfile', 'HealthMonitor',
-                             'IpAddrGroup', 'VSDataScriptSet']
+                             'IpAddrGroup']
         for key in merge_object_type:
             sys_dict[key] = []
             avi_config_dict[key] = []
