@@ -184,7 +184,7 @@ class PoolConfigConv(object):
                         limits['connection_limit']
 
                 skipped_list_mg = []
-                if lb_pl.get('member_group'):
+                if lb_pl.get('member_group') and lb_pl['snat_translation'].get('type') == "LBSnatDisabled":
                     skipped_mg = [val for val in
                                   lb_pl.get('member_group').keys()
                                   if val not in self.member_group_attr]
