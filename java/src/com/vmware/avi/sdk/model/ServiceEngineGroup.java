@@ -130,7 +130,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean deactivateKniFilteringAtDispatcher = null;
 
     @JsonProperty("dedicated_dispatcher_core")
-    private Boolean dedicatedDispatcherCore = false;
+    private Boolean dedicatedDispatcherCore = null;
 
     @JsonProperty("description")
     private String description = null;
@@ -1857,7 +1857,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Dedicate the core that handles packet receive/transmit from the network to just the dispatching function.
      * Don't use it for tcp/ip and ssl functions.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dedicatedDispatcherCore
      */
     public Boolean getDedicatedDispatcherCore() {
@@ -1869,7 +1869,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Dedicate the core that handles packet receive/transmit from the network to just the dispatching function.
      * Don't use it for tcp/ip and ssl functions.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dedicatedDispatcherCore set the dedicatedDispatcherCore.
      */
     public void setDedicatedDispatcherCore(Boolean  dedicatedDispatcherCore) {
