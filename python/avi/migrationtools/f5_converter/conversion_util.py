@@ -676,12 +676,13 @@ class F5Util(MigrationUtil):
                       self.get_object_ref(
                           h['name'], 'healthmonitor', tenant=tenant) == hm_ref]
                 if hm and hm[0]['type'] == 'HEALTH_MONITOR_HTTPS':
-                    pool[0]['health_monitor_refs'].remove(hm_ref)
-                    LOG.warning(
-                        'Skipping %s this reference from %s pool '
-                        'because of health monitor type is HTTPS and VS '
-                        'has no ssl profile.'
-                        % (hm_ref, pool_ref))
+                    if hm[0].get("ssl_attributes", None) and not hm[0]['ssl_attributes'].get("ssl_profile_ref", ""):
+                        pool[0]['health_monitor_refs'].remove(hm_ref)
+                        LOG.warning(
+                            'Skipping %s this reference from %s pool '
+                            'because of health monitor type is HTTPS and VS '
+                            'has no ssl profile.'
+                            % (hm_ref, pool_ref))
 
     def remove_http_mon_from_pool(self, avi_config, pool_ref, tenant, sysdict):
         pool = [p for p in avi_config['Pool'] if p['name'] == pool_ref]
@@ -2384,3 +2385,8 @@ class F5Util(MigrationUtil):
                 parent_profile.update(profile)
                 profile = parent_profile
         return profile
+
+    def remove_verified_accept_from_network_profile(self, avi_config_dict):
+        for ntwk_profile in avi_config_dict['NetworkProfile']:
+            if ntwk_profile.get('verified-accept'):
+                del(ntwk_profile['verified_accept'])

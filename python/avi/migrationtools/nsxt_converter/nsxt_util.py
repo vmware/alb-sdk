@@ -9,7 +9,8 @@ import random
 import copy
 import xlsxwriter
 import logging
-
+from avi.migrationtools.nsxt_converter.conversion_util import NsxtConvUtil
+from avi.migrationtools.avi_migration_utils import MigrationUtil
 from avi.migrationtools.nsxt_converter import nsxt_client as nsx_client_util
 import pprint
 from avi.sdk.avi_api import ApiSession
@@ -17,11 +18,12 @@ from avi.sdk.avi_api import ApiSession
 pp = pprint.PrettyPrinter(indent=4)
 vs_details = {}
 controller_details = {}
-
+conv_utils = NsxtConvUtil()
 LOG = logging.getLogger(__name__)
+common_avi_util = MigrationUtil()
 
 
-def is_segment_configured_with_subnet(vs_id, cloud_name):
+def is_segment_configured_with_subnet(vs_id, cloud_name, cloud_tenant):
     vs_config = vs_details[vs_id]
     network_type = vs_config["Network"]
     if network_type == "Vlan":
@@ -32,7 +34,7 @@ def is_segment_configured_with_subnet(vs_id, cloud_name):
                 session = ApiSession.get_session(controller_details.get("ip"), controller_details.get("username"),
                                                  controller_details.get("password"), tenant="admin",
                                                  api_version=controller_details.get("version"))
-                cloud = session.get("cloud/").json()["results"]
+                cloud = session.get("cloud/", tenant=cloud_tenant).json()["results"]
                 cloud_id = [cl.get("uuid") for cl in cloud if cl.get("name") == cloud_name]
                 segment_list = session.get("network/?&cloud_ref.uuid=" + cloud_id[0]).json()["results"]
                 segment = [seg for seg in segment_list if seg.get("name") == seg_id]
@@ -47,11 +49,11 @@ def is_segment_configured_with_subnet(vs_id, cloud_name):
     return False, None, network_type, "overlay"
 
 
-def is_vlan_configured_with_bgp(cloud_name, tenant, vlan_segment):
+def is_vlan_configured_with_bgp(cloud_name, tenant, vlan_segment, cloud_tenant):
     session = ApiSession.get_session(controller_details.get("ip"), controller_details.get("username"),
                                      controller_details.get("password"), tenant="admin",
                                      api_version=controller_details.get("version"))
-    cloud = session.get("cloud/").json()["results"]
+    cloud = session.get("cloud/", tenant=cloud_tenant).json()["results"]
     cloud_id = [cl.get("uuid") for cl in cloud if cl.get("name") == cloud_name]
     """
     Check if VLAN network is configured as a BGP peer
@@ -139,45 +141,51 @@ def get_certificate_data(certificate_ref, nsxt_ip, ssh_root_password):
     import paramiko
     import json
 
-    ssh = paramiko.SSHClient()
-    ssh.load_system_host_keys()
-    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    ssh.connect(nsxt_ip, username='root', password=ssh_root_password, allow_agent=False, look_for_keys=False)
+    try:
+        ssh = paramiko.SSHClient()
+        ssh.load_system_host_keys()
+        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        ssh.connect(nsxt_ip, username='root', password=ssh_root_password, allow_agent=False, look_for_keys=False)
 
-    data = None
-    cmd = "curl --header 'Content-Type: application/json' --header 'x-nsx-username: admin' " \
-          "http://'admin':'{}'@127.0.0.1:7440/nsxapi/api/v1/trust-management/certificates".\
-        format(ssh_root_password)
-    stdin, stdout, stderr = ssh.exec_command(cmd)
+        cmd = "curl --header 'Content-Type: application/json' --header 'x-nsx-username: admin' " \
+              "http://'admin':'{}'@127.0.0.1:7440/nsxapi/api/v1/trust-management/certificates".\
+            format(ssh_root_password)
+        stdin, stdout, stderr = ssh.exec_command(cmd)
 
-    output_dict = ''
-    for line in stdout.read().splitlines():
-        output_dict += line.decode()
+        output_dict = ''
+        for line in stdout.read().splitlines():
+            output_dict += line.decode()
 
-    output_dict = json.loads(output_dict)
+        if output_dict:
+            output_dict = json.loads(output_dict)
 
-    LOG.info("output_dict for certificate_ref {}".format(certificate_ref))
-    for cert_data in output_dict['results']:
-        if 'tags' in cert_data.keys():
-            cert_id = cert_data['tags'][0]['tag'].split('/')[-1]
+            LOG.info("output_dict for certificate_ref {}".format(certificate_ref))
+            for cert_data in output_dict['results']:
+                if 'tags' in cert_data.keys() and len(cert_data['tags']) > 0:
+                    cert_id = cert_data['tags'][0]['tag'].split('/')[-1]
+                else:
+                    cert_id = cert_data['id']
+
+                if cert_id == certificate_ref:
+                    cert_command = cmd + "/" + cert_data['id'] + '/' + "?action=get_private"
+                    cert_stdin, cert_stdout, cert_stderr = ssh.exec_command(cert_command)
+                    cert_dict = ''
+                    for line in cert_stdout.read().splitlines():
+                        cert_dict += line.decode()
+
+                    cert_dict = json.loads(cert_dict)
+                    LOG.debug("cert_dict for certificate_ref {}".format(certificate_ref))
+                    if 'private_key' in cert_dict:
+                        return cert_dict['private_key'], cert_dict['pem_encoded']
         else:
-            cert_id = cert_data['id']
+            LOG.warning("No certificate data found for certificate ref {}".format(certificate_ref))
 
-        if cert_id == certificate_ref:
-            cert_command = cmd + "/" + cert_data['id'] + '/' + "?action=get_private"
-            cert_stdin, cert_stdout, cert_stderr = ssh.exec_command(cert_command)
-            cert_dict = ''
-            for line in cert_stdout.read().splitlines():
-                cert_dict += line.decode()
+        ssh.close()
+        stdin.close()
+    except Exception as e:
+        LOG.error("Error in getting certificate data for ref {}. Message: {}".format(certificate_ref, str(e)))
 
-            cert_dict = json.loads(cert_dict)
-            LOG.debug("cert_dict for certificate_ref {}".format(certificate_ref))
-            if 'private_key' in cert_dict:
-                return cert_dict['private_key'], cert_dict['pem_encoded']
-
-    ssh.close()
-    stdin.close()
-    return data
+    return None, None
 
 
 class NSXUtil():
@@ -185,8 +193,10 @@ class NSXUtil():
     nsxt_ip = None
     nsxt_pw = None
     nsxt_un = None
+    cloud_tenant = None
 
-    def __init__(self, nsx_un, nsx_pw, nsx_ip, nsx_port, c_ip=None, c_un=None, c_pw=None, c_vr=None):
+    def __init__(self, nsx_un, nsx_pw, nsx_ip, nsx_port, c_ip=None, c_un=None, c_pw=None, c_vr=None,
+                 cloud_tenant='admin'):
         self.nsx_api_client = nsx_client_util.create_nsx_policy_api_client(
             nsx_un, nsx_pw, nsx_ip, nsx_port, auth_type=nsx_client_util.BASIC_AUTH)
         if c_ip and c_un and c_pw and c_vr:
@@ -200,8 +210,9 @@ class NSXUtil():
             self.nsxt_ip = nsx_ip
             self.nsxt_pw = nsx_pw
             self.nsxt_un = nsx_un
+            self.cloud_tenant = cloud_tenant
 
-            self.cloud = self.session.get("cloud/").json()["results"]
+            self.cloud = self.session.get("cloud/", tenant=self.cloud_tenant).json()["results"]
             self.avi_vs_object = []
             self.avi_object_temp = {}
             self.avi_pool_object = []
@@ -257,7 +268,7 @@ class NSXUtil():
                 if not monitor["_system_owned"]:
                     self.nsx_api_client.infra.LbMonitorProfiles.delete(monitor["id"])
 
-    def cutover_vs(self, vs_list, prefix):
+    def cutover_vs(self, vs_list, prefix, vs_tenant):
         vs_not_found = list()
         nsxt_all_virtual_services = self.get_all_virtual_service()
 
@@ -275,7 +286,7 @@ class NSXUtil():
 
         # Get list of all ALB VS's
         alb_vs_list = dict()
-        alb_all_vs_list = self.session.get("virtualservice/").json()["results"]
+        alb_all_vs_list = self.session.get("virtualservice/", tenant=vs_tenant).json()["results"]
         for vs in alb_all_vs_list:
             alb_vs_list[vs["name"]] = vs
 
@@ -307,14 +318,14 @@ class NSXUtil():
                                 }
                             }
                             vs_obj.update({"analytics_policy": analytics_policy})
-                        self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj)
+                        self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj, tenant=vs_tenant)
                         print("Enabled traffic for VS {} on ALB".format(nsxt_vs_name))
                         print("Completed cutover for VS {}\n".format(nsxt_vs_name))
                         break
 
         return vs_not_found
 
-    def rollback_vs(self, vs_list, input_data, prefix):
+    def rollback_vs(self, vs_list, input_data, prefix, vs_tenant):
         vs_not_found = list()
         nsxt_all_virtual_services = self.get_all_virtual_service()
 
@@ -332,7 +343,7 @@ class NSXUtil():
 
         # Get list of all ALB VS's
         alb_vs_list = dict()
-        alb_all_vs_list = self.session.get("virtualservice/").json()["results"]
+        alb_all_vs_list = self.session.get("virtualservice/", tenant=vs_tenant).json()["results"]
         for vs in alb_all_vs_list:
             alb_vs_list[vs["name"]] = vs
 
@@ -345,7 +356,8 @@ class NSXUtil():
                 vs_lb_mapping_list['{}_{}'.format(vs["id"], vs["display_name"])] \
                     = vs['lb_service_path']
             else:
-                vs_with_no_lb.append(vs["display_name"])
+                if vs.get("display_name") in input_vs:
+                    vs_with_no_lb.append(vs["display_name"])
 
         # Perform roll back for vs filter list
         for nsxt_vs_name in nsxt_vs_list:
@@ -363,7 +375,7 @@ class NSXUtil():
                         vs_obj["enabled"] = False
                         if "analytics_policy" in vs_obj:
                             vs_obj["analytics_policy"]["full_client_logs"]["enabled"] = False
-                        self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj)
+                        self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj, tenant=vs_tenant)
                         print("Disconnected traffic for VS {} on ALB".format(nsxt_vs_name))
                         break
 
@@ -416,17 +428,17 @@ class NSXUtil():
                             continue
 
         if vlan_cloud_list:
-            cloud_info = self.session.get_object_by_name("cloud", vlan_cloud_list[0]['name'])
+            cloud_info = self.session.get_object_by_name("cloud", vlan_cloud_list[0]['name'], tenant=self.cloud_tenant)
             cloud_vlan_segments = cloud_info.get("nsxt_configuration").get("data_network_config").get("vlan_segments")
             cloud_vlan_segments.append("/infra/segments/{}".format(seg_id))
             cloud_info.get("nsxt_configuration").get("data_network_config").update({
                 "vlan_segments": cloud_vlan_segments
             })
-            self.session.put("cloud/{}".format(cloud_info.get("uuid")), cloud_info)
+            self.session.put("cloud/{}".format(cloud_info.get("uuid")), cloud_info, tenant=self.cloud_tenant)
             return cloud_info.get("name")
         elif overlay_cloud_list:
             for cloud in overlay_cloud_list:
-                cloud_info = self.session.get_object_by_name("cloud", cloud['name'])
+                cloud_info = self.session.get_object_by_name("cloud", cloud['name'], tenant=self.cloud_tenant)
                 cloud_tier1_lrs = cloud_info.get("nsxt_configuration").get("data_network_config").\
                     get("tier1_segment_config").get("manual").get("tier1_lrs")
                 cloud_tier1_lrs.append({
@@ -436,7 +448,8 @@ class NSXUtil():
                 cloud_info.get("nsxt_configuration").get("data_network_config").get("tier1_segment_config").get("manual").update({
                     "tier1_lrs": cloud_tier1_lrs
                 })
-                response = self.session.put("cloud/{}".format(cloud_info.get("uuid")), cloud_info)
+                response = self.session.put("cloud/{}".format(cloud_info.get("uuid")), cloud_info,
+                                            tenant=self.cloud_tenant)
                 if response.status_code == 200:
                     return cloud_info.get("name")
                 else:
@@ -447,7 +460,7 @@ class NSXUtil():
     def get_lb_services_details(self):
         lb_services = self.nsx_api_client.infra.LbServices.list().to_dict().get('results', [])
         for lb in lb_services:
-            self.cloud = self.session.get("cloud/").json()["results"]
+            self.cloud = self.session.get("cloud/", tenant=self.cloud_tenant).json()["results"]
             if not lb.get("connectivity_path"):
                 continue
             tier = get_name_and_entity(lb["connectivity_path"])[-1]
@@ -938,19 +951,26 @@ class NSXUtil():
         }
         return new_network_service
 
-    def add_ns_policy_to_vs(self, alb_vs, access_control_list,alb_config):
-        domain_id = access_control_list.get('group_path').split('domains/')[1].split("/groups")[0]
-        ns_group_name = access_control_list.get('group_path').split('groups/')[1]
+    def get_nsx_group_details(self,group_path):
+        domain_id = group_path.split('domains/')[1].split("/groups")[0]
+        ns_group_id = group_path.split('groups/')[1]
         ns_groups_list = self.nsx_api_client.infra.domains.Groups.list(domain_id).to_dict().get("results", [])
-        ns_group = [ns_g for ns_g in ns_groups_list if ns_g['display_name'] == ns_group_name ]
-        ns_ip_addr = ns_group[0].get('expression')[0].get('ip_addresses')
+        ns_group = [ns_g for ns_g in ns_groups_list if ns_g['id'] == ns_group_id]
+        ns_group_name = ns_group[0]['display_name']
+        ns_ip_addr = None
+        if ns_group[0].get('expression'):
+            ns_ip_addr = ns_group[0].get('expression')[0].get('ip_addresses')
+        return ns_group_name, ns_ip_addr
+
+    def create_ns_group_policy(self, alb_vs,access_control_list, ns_ip_addr, ns_group_name, alb_config,prefix,tenant):
         ns_policy = dict(
             name="{}-ns".format(alb_vs['name']),
+            tenant_ref = conv_utils.get_object_ref(tenant,"tenant"),
             rules=[]
         )
         rule_count = 1
         if access_control_list.get("action") == "ALLOW":
-            action= "NETWORK_SECURITY_POLICY_ACTION_TYPE_ALLOW"
+           action= "NETWORK_SECURITY_POLICY_ACTION_TYPE_ALLOW"
         else:
             action = "NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY"
         rule_dict = dict(
@@ -962,18 +982,39 @@ class NSXUtil():
             )
         )
         rule_dict['enable'] = access_control_list.get("enabled")
+        ip_group_name = self.create_ip_group(ns_ip_addr, ns_group_name,alb_config, prefix,tenant)
+        rule_dict['match']["client_ip"]["group_refs"] = list()
+        rule_dict['match']["client_ip"]["group_refs"].append(conv_utils.get_object_ref
+                                                             (ip_group_name, "ipaddrgroup", tenant))
+        rule_dict['match']['client_ip']["match_criteria"] = "IS_IN"
+        ns_policy['rules'].append(rule_dict)
+        alb_config['NetworkSecurityPolicy'].append(ns_policy)
 
+        return ns_policy['name']
+
+    def create_ip_group(self, ip_addresses_list, group_name, alb_config, prefix,tenant):
+        if prefix:
+            group_name = "{}-{}-ipgroup".format(prefix, group_name)
+        is_ip_group_present = [ip_grp for ip_grp in alb_config['IpAddrGroup'] if ip_grp['name'] == group_name and
+                               ip_grp['tenant_ref'] == conv_utils.get_object_ref(tenant, 'tenant')]
+        if is_ip_group_present:
+            return group_name
+        ip_group = dict(
+            name=group_name
+        )
         addr_list = []
-        for ip_adr in ns_ip_addr:
+        for ip_adr in ip_addresses_list:
+            type="V6"
+            if "." in ip_adr:
+                type="V4"
             addr_dict = dict(
                 addr=ip_adr,
-                type="V4"
+                type=type
             )
             addr_list.append(
                 addr_dict
             )
-        rule_dict['match']["client_ip"]['addrs'] = addr_list
-        rule_dict['match']['client_ip']["match_criteria"] = "IS_IN"
-        ns_policy['rules'].append(rule_dict)
-        alb_config['NetworkSecurityPolicy'].append(ns_policy)
-        return ns_policy['name']
+        ip_group['addrs'] = addr_list
+        ip_group['tenant_ref'] = conv_utils.get_object_ref(tenant, 'tenant')
+        alb_config['IpAddrGroup'].append(ip_group)
+        return ip_group['name']

@@ -29,8 +29,9 @@ from avi.migrationtools.nsxt_converter import nsxt_config_converter, vs_converte
 import argparse
 
 from avi.migrationtools.nsxt_converter.nsxt_util import NSXUtil
-from avi.migrationtools.nsxt_converter.vs_converter import vs_list_with_snat_deactivated, vs_data_path_not_work, \
-    vs_with_no_cloud_configured, vs_with_no_lb_configured, vs_with_lb_skipped, vs_with_no_snat_no_floating_ip
+from avi.migrationtools.nsxt_converter.vs_converter import vs_list_with_snat_deactivated, \
+    vs_with_no_cloud_configured, vs_with_no_lb_configured, vs_with_lb_skipped, vs_with_no_snat_no_floating_ip,\
+vips_not_configured, vs_with_custom_se_group
 
 ARG_CHOICES = {
     'option': ['cli-upload', 'auto-upload'],
@@ -76,172 +77,181 @@ class NsxtConverter(AviConverter):
         self.ssh_root_password = args.ssh_root_password
 
     def conver_lb_config(self, args):
-        
-        if not os.path.exists(self.output_file_path):
-            os.mkdir(self.output_file_path)
-        self.init_logger_path()
-        output_dir = os.path.normpath(self.output_file_path)
 
-        is_download_from_host = False
-        args_copy = copy.deepcopy(args)
-        vars(args_copy).pop('nsxt_password')
-        vars(args_copy).pop('alb_controller_password')
-        output_path = None
-        if self.nsxt_ip:
-            output_path = output_dir + os.path.sep + self.nsxt_ip + os.path.sep + "output"
-            if not os.path.exists(output_path):
-                os.makedirs(output_path)
-            input_path = output_dir + os.path.sep + self.nsxt_ip + os.path.sep + "input"
-            if not os.path.exists(input_path):
-                os.makedirs(input_path)
-            is_download_from_host = True
-        else:
-            output_path = output_dir + os.path.sep + "config-output" + os.path.sep + "output"
-            if not os.path.exists(output_path):
-                os.makedirs(output_path)
-            input_path = output_dir + os.path.sep + "config-output" + os.path.sep + "input"
-            if not os.path.exists(input_path):
-                os.makedirs(input_path)
-        with open(output_path + os.path.sep + "state.json", 'w') as f:
-            f.write("%s" % json.dumps(vars(args_copy)))
-        nsx_lb_config = None
-        nsx_util = None
-        if is_download_from_host:
-            LOG.debug("Copying files from host")
-            print("Copying Files from Host...")
-            nsx_util = NSXUtil(self.nsxt_user, self.nsxt_password, self.nsxt_ip, self.nsxt_port \
-                               , self.controller_ip, self.user, self.password, self.controller_version,
-                               self.cloud_tenant)
-            nsx_util.get_inventory()
-            nsx_util.get_pool_details()
-            nsx_util.write_output(
-                output_path, args.nsxt_ip)
-            nsx_lb_config = nsx_util.get_nsx_config()
-            LOG.debug("Copied input files")
+        try:
+            if not os.path.exists(self.output_file_path):
+                os.mkdir(self.output_file_path)
+            self.init_logger_path()
+            output_dir = os.path.normpath(self.output_file_path)
 
-        migration_input_config = None
-        if self.default_params_file:
-            try:
-                default_params_file = open(self.default_params_file, "r")
-                migration_input_config = default_params_file.read()
-                migration_input_config = json.loads(migration_input_config)
-            except:
-                print("\033[93m" + "Warning: Default parameter config file specified with --default_params_file "
-                                   "parameter not found" + "\033[0m")
-                sys.exit()
+            is_download_from_host = False
+            args_copy = copy.deepcopy(args)
+            vars(args_copy).pop('nsxt_password')
+            vars(args_copy).pop('alb_controller_password')
+            output_path = None
+            if self.nsxt_ip:
+                output_path = output_dir + os.path.sep + self.nsxt_ip + os.path.sep + "output"
+                if not os.path.exists(output_path):
+                    os.makedirs(output_path)
+                input_path = output_dir + os.path.sep + self.nsxt_ip + os.path.sep + "input"
+                if not os.path.exists(input_path):
+                    os.makedirs(input_path)
+                is_download_from_host = True
+            else:
+                output_path = output_dir + os.path.sep + "config-output" + os.path.sep + "output"
+                if not os.path.exists(output_path):
+                    os.makedirs(output_path)
+                input_path = output_dir + os.path.sep + "config-output" + os.path.sep + "input"
+                if not os.path.exists(input_path):
+                    os.makedirs(input_path)
+            with open(output_path + os.path.sep + "state.json", 'w') as f:
+                f.write("%s" % json.dumps(vars(args_copy)))
+            nsx_lb_config = None
+            nsx_util = None
+            if is_download_from_host:
+                LOG.debug("Copying files from host")
+                print("Copying Files from Host...")
+                nsx_util = NSXUtil(self.nsxt_user, self.nsxt_password, self.nsxt_ip, self.nsxt_port \
+                                   , self.controller_ip, self.user, self.password, self.controller_version,
+                                   self.cloud_tenant)
+                nsx_util.get_inventory()
+                nsx_util.get_pool_details()
+                nsx_util.write_output(
+                    output_path, args.nsxt_ip)
+                nsx_lb_config = nsx_util.get_nsx_config()
+                LOG.debug("Copied input files")
 
-        if not nsx_lb_config:
-            print('Not found NSX configuration file')
-            return
+            migration_input_config = None
+            if self.default_params_file:
+                try:
+                    default_params_file = open(self.default_params_file, "r")
+                    migration_input_config = default_params_file.read()
+                    migration_input_config = json.loads(migration_input_config)
+                except:
+                    print("\033[93m" + "Warning: Default parameter config file specified with --default_params_file "
+                                       "parameter not found" + "\033[0m")
+                    sys.exit()
 
-        if not self.cloud_tenant:
-            self.cloud_tenant = "admin"
-        alb_config = nsxt_config_converter.convert(
-            nsx_lb_config, input_path, output_path, self.tenant,
-            self.prefix, None, self.object_merge_check, self.controller_version, self.ssh_root_password,
-            nsx_util, migration_input_config,
-            self.vs_state,
-            self.vs_level_status, None, self.segroup, self.not_in_use, None,
-            self.traffic_enabled, self.cloud_tenant,
-            self.nsxt_ip, self.nsxt_password)
+            if not nsx_lb_config:
+                print('Not found NSX configuration file')
+                return
 
-        avi_config = self.process_for_utils(alb_config, skip_ref_objects=["cloud_ref", "tenant_ref"])
-        # Check if flag true then skip not in use object
-        # if self.not_in_use:
-        # avi_config = wipe_out_not_in_use(avi_config)
-        # output_path = (output_dir + os.path.sep + self.nsxt_ip + os.path.sep +
-        # "output")
+            if not self.cloud_tenant:
+                self.cloud_tenant = "admin"
+            alb_config = nsxt_config_converter.convert(
+                nsx_lb_config, input_path, output_path, self.tenant,
+                self.prefix, None, self.object_merge_check, self.controller_version, self.ssh_root_password,
+                nsx_util, migration_input_config,
+                self.vs_state,
+                self.vs_level_status, None, self.segroup, self.not_in_use, None,
+                self.traffic_enabled, self.cloud_tenant,
+                self.nsxt_ip, self.nsxt_password)
 
-        # Network, ServiceEngineGroup objects are filtered from final config as they do not have any direct reference
-        # with vs or any other object referenced by vs. Hence adding it back in final config.
-        if alb_config["NetworkService"]:
-            avi_config["NetworkService"] = alb_config["NetworkService"]
-        if alb_config["ServiceEngineGroup"] and "ServiceEngineGroup" not in avi_config.keys():
-            avi_config["ServiceEngineGroup"] = alb_config["ServiceEngineGroup"]
-        self.write_output(avi_config, output_path, 'avi_config.json')
-        if self.ansible:
-            self.convert(avi_config, output_path)
-        if self.option == 'auto-upload':
-            self.upload_config_to_controller(avi_config)
-        if self.vs_filter:
-            filtered_vs_list=[]
-            virtual_services=[]
-            if self.vs_filter and type(self.vs_filter) == str:
-                virtual_services = self.vs_filter.split(',')
-            elif self.vs_filter and type(self.vs_filter) == list:
-                virtual_services = self.vs_filter
-            for vs_name in virtual_services:
-                if self.prefix:
-                    if not vs_name.startswith(self.prefix):
-                        vs_name = self.prefix + "-" + vs_name
-                        filtered_vs_list.append(vs_name)
+            avi_config = self.process_for_utils(alb_config, skip_ref_objects=["cloud_ref", "tenant_ref"])
+            # Check if flag true then skip not in use object
+            # if self.not_in_use:
+            # avi_config = wipe_out_not_in_use(avi_config)
+            # output_path = (output_dir + os.path.sep + self.nsxt_ip + os.path.sep +
+            # "output")
+
+            # Network, ServiceEngineGroup objects are created as whole migration
+            # is executed and then vs are filtered. Need to verify whether filtered
+            # vs are using these objects, if yes, add it back to final config
+            vs_names_after_filter = []
+            if avi_config.get("VirtualService"):
+                vs_names_after_filter = [vs["name"] for vs in avi_config["VirtualService"]]
+
+            if alb_config.get("NetworkService") and (set(vs_with_custom_se_group) & set(vs_names_after_filter)):
+                avi_config["NetworkService"] = alb_config["NetworkService"]
+            if alb_config.get("ServiceEngineGroup") and (set(vs_with_custom_se_group) & set(vs_names_after_filter)):
+                avi_config["ServiceEngineGroup"] = alb_config["ServiceEngineGroup"]
+            self.write_output(avi_config, output_path, 'avi_config.json')
+            if self.ansible:
+                self.convert(avi_config, output_path)
+            if self.option == 'auto-upload':
+                self.upload_config_to_controller(avi_config)
+            if self.vs_filter:
+                filtered_vs_list=[]
+                virtual_services=[]
+                if self.vs_filter and type(self.vs_filter) == str:
+                    virtual_services = self.vs_filter.split(',')
+                elif self.vs_filter and type(self.vs_filter) == list:
+                    virtual_services = self.vs_filter
+                for vs_name in virtual_services:
+                    if self.prefix:
+                        if not vs_name.startswith(self.prefix):
+                            vs_name = self.prefix + "-" + vs_name
+                            filtered_vs_list.append(vs_name)
+                    else:
+                        filtered_vs_list = virtual_services
+            if vs_with_lb_skipped:
+                print_msg = "\033[93m"+"Warning: For following virtual service/s load balancer are skipped due to " \
+                                       "unsupported LB configuration"+'\033[0m'
+                if self.vs_filter:
+                    if list(set(vs_with_lb_skipped).intersection(set(filtered_vs_list))):
+                        print(print_msg)
+                        print(list(set(vs_with_lb_skipped).intersection(set(filtered_vs_list))))
                 else:
-                    filtered_vs_list = virtual_services
-        if vs_with_lb_skipped:
-            print_msg = "\033[93m"+"Warning: For following virtual service/s load balancer are skipped due to " \
-                                   "unsupported LB configuration"+'\033[0m'
-            if self.vs_filter:
-                if list(set(vs_with_lb_skipped).intersection(set(filtered_vs_list))):
                     print(print_msg)
-                    print(list(set(vs_with_lb_skipped).intersection(set(filtered_vs_list))))
-            else:
-                print(print_msg)
-                print(vs_with_lb_skipped)
-        if vs_with_no_lb_configured:
-            print_msg = "\033[93m"+"Warning: Following virtual service/s are skipped as " \
-                                   "load balancer not configured" + '\033[0m'
-            if self.vs_filter:
-                if list(set(vs_with_no_lb_configured).intersection(set(filtered_vs_list))):
+                    print(vs_with_lb_skipped)
+            if vs_with_no_lb_configured:
+                print_msg = "\033[93m"+"Warning: Following virtual service/s are skipped as " \
+                                       "load balancer not configured" + '\033[0m'
+                if self.vs_filter:
+                    if list(set(vs_with_no_lb_configured).intersection(set(filtered_vs_list))):
+                        print(print_msg)
+                        print(list(set(vs_with_no_lb_configured).intersection(set(filtered_vs_list))))
+                else:
                     print(print_msg)
-                    print(list(set(vs_with_no_lb_configured).intersection(set(filtered_vs_list))))
-            else:
-                print(print_msg)
-                print(vs_with_no_lb_configured)
-        if vs_with_no_cloud_configured:
-            print_msg = "\033[93m"+"Warning: Following virtual service/s cloud is not configured"+'\033[0m'
-            if self.vs_filter:
-                if list(set(vs_with_no_cloud_configured).intersection(set(filtered_vs_list))):
+                    print(vs_with_no_lb_configured)
+            if vs_with_no_cloud_configured:
+                print_msg = "\033[93m"+"Warning: Following virtual service/s cloud is not configured"+'\033[0m'
+                if self.vs_filter:
+                    if list(set(vs_with_no_cloud_configured).intersection(set(filtered_vs_list))):
+                        print(print_msg)
+                        print(list(set(vs_with_no_cloud_configured).intersection(set(filtered_vs_list))))
+                else:
                     print(print_msg)
-                    print(list(set(vs_with_no_cloud_configured).intersection(set(filtered_vs_list))))
-            else:
-                print(print_msg)
-                print(vs_with_no_cloud_configured)
-        if vs_list_with_snat_deactivated:
-            print_msg = '\033[93m' + "Warning: For following virtual service/s please follow steps giving in KB: " \
-                                     "https://avinetworks.com/docs/21.1/migrating-nsx-transparent-lb-to-nsx-alb/" + \
-                        '\033[0m'
-            if self.vs_filter:
-                if list(set(vs_list_with_snat_deactivated).intersection(set(filtered_vs_list))):
+                    print(vs_with_no_cloud_configured)
+            if vs_list_with_snat_deactivated:
+                print_msg = '\033[93m' + "Warning: For following virtual service/s please follow steps giving in KB: " \
+                                         "https://avinetworks.com/docs/21.1/migrating-nsx-transparent-lb-to-nsx-alb/" + \
+                            '\033[0m'
+                if self.vs_filter:
+                    if list(set(vs_list_with_snat_deactivated).intersection(set(filtered_vs_list))):
+                        print(print_msg)
+                        print(list(set(vs_list_with_snat_deactivated).intersection(set(filtered_vs_list))))
+                else:
                     print(print_msg)
-                    print(list(set(vs_list_with_snat_deactivated).intersection(set(filtered_vs_list))))
-            else:
-                print(print_msg)
-                print(vs_list_with_snat_deactivated)
-        if vs_data_path_not_work:
-            print_msg = "\033[93m"+"Warning: For following virtual service/s Data path won't work"+'\033[0m'
-            if self.vs_filter:
-                if list(set(vs_data_path_not_work).intersection(set(filtered_vs_list))):
+                    print(vs_list_with_snat_deactivated)
+            if vs_with_no_snat_no_floating_ip:
+                print_msg = "\033[93m"+"Warning: Following virtual service/s are skipped as " \
+                                       "Network service on ALB is not configured for datapath to work. " \
+                                       "\nEither configure Network service on ALB or provide floating IP in " \
+                                       "default_params.json file and provide --default_params_file parameter" + '\033[0m'
+                if self.vs_filter:
+                    if list(set(vs_with_no_snat_no_floating_ip).intersection(set(filtered_vs_list))):
+                        print(print_msg)
+                        print(list(set(vs_with_no_snat_no_floating_ip).intersection(set(filtered_vs_list))))
+                else:
                     print(print_msg)
-                    print(list(set(vs_data_path_not_work).intersection(set(filtered_vs_list))))
-            else:
-                print(print_msg)
-                print(vs_data_path_not_work)
-        if vs_with_no_snat_no_floating_ip:
-            print_msg = "\033[93m"+"Warning: Following virtual service/s are skipped as " \
-                                   "Network service on ALB is not configured for datapath to work. " \
-                                   "\nEither configure Network service on ALB or provide floating IP in " \
-                                   "default_params.json file and provide --default_params_file parameter" + '\033[0m'
-            if self.vs_filter:
-                if list(set(vs_with_no_snat_no_floating_ip).intersection(set(filtered_vs_list))):
+                    print(vs_with_no_snat_no_floating_ip)
+            if vips_not_configured:
+                print_msg = "\033[93m" + "Warning: Following virtual service/s are skipped as " \
+                                         "VIP segment not configured in cloud networks on ALB" + "\033[0m"
+                if self.vs_filter:
+                    if list(set(vips_not_configured).intersection(set(filtered_vs_list))):
+                        print(print_msg)
+                        print(list(set(vips_not_configured).intersection(set(filtered_vs_list))))
+                else:
                     print(print_msg)
-                    print(list(set(vs_with_no_snat_no_floating_ip).intersection(set(filtered_vs_list))))
-            else:
-                print(print_msg)
-                print(vs_with_no_snat_no_floating_ip)
-        print("Total Warning: ", get_count('warning'))
-        print("Total Errors: ", get_count('error'))
-        LOG.info("Total Warning: {}".format(get_count('warning')))
-        LOG.info("Total Errors: {}".format(get_count('error')))
+                    print(vips_not_configured)
+            print("Total Warning: ", get_count('warning'))
+            print("Total Errors: ", get_count('error'))
+            LOG.info("Total Warning: {}".format(get_count('warning')))
+            LOG.info("Total Errors: {}".format(get_count('error')))
+        except Exception as e:
+            print("\033[91m" + "Error in migrating LB config. Message: ", str(e) +"\033[0m")
 
 
     def upload_config_to_controller(self, alb_config):

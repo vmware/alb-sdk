@@ -213,17 +213,15 @@ class ConfigPatch(object):
             if isinstance(v, collections.Mapping):
                 d[k] = self.deep_update(d.get(k, {}), v)
             elif isinstance(v, list):
-                for i in v:
-                    cnt = 0
-                    if isinstance(i, collections.Mapping) and k in d and len(d[k]) >= cnt + 1:
-                        d[k][cnt] = self.deep_update(d[k][cnt], i)
-                    elif k in d and len(d[k]) >= cnt + 1:
-                        d[k][cnt] = i
+                for index, i in enumerate(v):
+                    if isinstance(i, collections.Mapping) and k in d and len(d[k]) >= index + 1:
+                        d[k][index] = self.deep_update(d[k][index], i)
+                    elif k in d and len(d[k]) >= index + 1:
+                        d[k][index] = i
                     elif k in d and d[k]:
                         d[k].append(i)
                     else:
                         d[k] = [i]
-                    cnt += 1
             else:
                 d[k] = v
         return d

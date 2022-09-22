@@ -183,7 +183,8 @@ NSXT:
 
     Pool_supported_attr_convert_member_group:
     - "group_path"
-    - "port"
+    - "customized_members"
+    - "ip_revision_filter"
 
     Pool_na_list:
     - "max_ip_list_size"
@@ -316,6 +317,7 @@ NSXT:
     - "cookie_secure"
     - "cookie_httponly"
     - "cookie_time"
+    - "cookie_mode"
 
     SourcePersistenceProfile_Supported_Attributes:
     - "timeout"

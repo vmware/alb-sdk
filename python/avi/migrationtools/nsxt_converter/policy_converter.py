@@ -10,7 +10,7 @@ from avi.migrationtools.avi_migration_utils import update_count
 import avi.migrationtools.nsxt_converter.converter_constants as conv_const
 import avi.migrationtools.nsxt_converter.converter_constants as final
 from avi.migrationtools.nsxt_converter.persistant_converter import persistence_ds_list, persistence_profile_list
-from avi.migrationtools.nsxt_converter.pools_converter import vs_pool_segment_list
+from avi.migrationtools.nsxt_converter.pools_converter import vs_pool_segment_list, vs_select_pool_action_list
 
 LOG = logging.getLogger(__name__)
 
@@ -35,14 +35,14 @@ class PolicyConfigConverter(object):
         self.merge_object_mapping = merge_object_mapping
         self.sys_dict = sys_dict
 
-    def convert(self, lb_vs_config, alb_vs_config, alb_config, nsx_lb_config,
+    def convert(self, lb_vs_config, alb_vs_config, alb_config, nsx_lb_config, nsxt_util,
                 is_pool_group_used, http_pool_group_list, http_pool_list, cloud_type, cloud_name, prefix,
                 controller_version,
                 cloud_tenant, tier1_lr, tenant="admin"):
         '''
 
         '''
-
+        self.nsxt_util=nsxt_util
         self.lb_vs_config = lb_vs_config
         self.alb_config = alb_config
         self.alb_vs_config = alb_vs_config
@@ -55,6 +55,11 @@ class PolicyConfigConverter(object):
         self.tier1_lr = tier1_lr
         self.http_pool_group_list = http_pool_group_list
         self.http_pool_list = http_pool_list
+        self.datascript = dict(
+            evt='VS_DATASCRIPT_EVT_HTTP_RESP',
+
+        )
+        self.ds_script = ''
 
         policy_set_name = lb_vs_config.get("display_name") + "-" + cloud_name + "-HTTP-Policy-Set"
         if prefix:
@@ -73,6 +78,30 @@ class PolicyConfigConverter(object):
         http_response_policy = {
             'rules': []
         }
+        self.policy_datascript_obj={
+            'tenant_ref': conv_utils.get_object_ref(tenant,'tenant'),
+            'datascript': list(),
+            'pool_group_refs': list(),
+            'pool_refs': list()
+        }
+        self.http_policy_ds_obj = {
+            'datascript': list(),
+            'pool_group_refs': list(),
+            'pool_refs': list()
+        }
+        self.sec_policy_ds_obj = {
+            'datascript': list(),
+            'pool_group_refs': list(),
+            'pool_refs': list()
+        }
+        self.rsp_policy_ds_obj = {
+            'datascript': list(),
+            'pool_group_refs': list(),
+            'pool_refs': list()
+        }
+        self.http_ds_scripts = ''
+        self.sec_ds_script = ''
+        self.resp_ds_scripts = ''
 
         http_rules = []
         rsp_rules = []
@@ -130,20 +159,23 @@ class PolicyConfigConverter(object):
                         if is_match_ds:
                             match, total_action_count = \
                                 self.convert_match_conditions_to_match_ds(match, match_conditions, rule_dict,
-                                                                          actions, prefix, cloud_name)
+                                                                          actions, prefix, cloud_name,match_strategy,
+                                                                          phase)
                             rule_dict['match'] = match
 
                         else:
-                            match = self.convert_match_conditions_to_match(match, match_conditions, rule_dict, actions,
+                            match, total_match_count = self.convert_match_conditions_to_match(match, match_conditions, rule_dict, actions,
                                                                            prefix, cloud_name)
                             rule_dict['match'] = match
-                            rule_dict, total_action_count = self.convert_actions_to_avi_actions(rule_dict, actions,
+                            total_action_count = 0
+                            if total_match_count:
+                                rule_dict, total_action_count = self.convert_actions_to_avi_actions(rule_dict, actions,
                                                                                                 prefix,
                                                                                                 cloud_name)
-                        if total_action_count:
-                            if rule_dict['match'].get('Data_script'):
-                                policy_datascript.append(match['Data_script'])
-                            elif phase == "HTTP_REQUEST_REWRITE" or phase == "TRANSPORT":
+                        if total_action_count and not is_match_ds:
+                            #if rule_dict['match'].get('Data_script'):
+                            #    policy_datascript.append(match['Data_script'])
+                            if phase == "HTTP_REQUEST_REWRITE" or phase == "TRANSPORT":
                                 http_rules.append(rule_dict)
                             elif phase == "HTTP_RESPONSE_REWRITE":
                                 rsp_rules.append(rule_dict)
@@ -190,20 +222,23 @@ class PolicyConfigConverter(object):
                         if is_match_ds:
                             match, total_action_count = \
                                 self.convert_match_conditions_to_match_ds(match, supp_match_conditions, rule_dict,
-                                                                          actions, prefix, cloud_name)
+                                                                          actions, prefix, cloud_name,match_strategy,
+                                                                          phase)
                             rule_dict['match'] = match
                         else:
-                            match = self.convert_match_conditions_to_match(match, supp_match_conditions, rule_dict,
+                            match, total_match_count = self.convert_match_conditions_to_match(match, supp_match_conditions, rule_dict,
                                                                            actions,
                                                                            prefix, cloud_name)
                             rule_dict['match'] = match
-                            rule_dict, total_action_count = self.convert_actions_to_avi_actions(rule_dict, actions,
+                            total_action_count = 0
+                            if total_match_count:
+                                rule_dict, total_action_count = self.convert_actions_to_avi_actions(rule_dict, actions,
                                                                                                 prefix,
                                                                                                 cloud_name)
-                        if total_action_count:
-                            if rule_dict['match'].get('Data_script'):
-                                policy_datascript.append(match['Data_script'])
-                            elif phase == "HTTP_REQUEST_REWRITE" or phase == "TRANSPORT":
+                        if total_action_count and not is_match_ds:
+                            #if rule_dict['match'].get('Data_script'):
+                            #    policy_datascript.append(match['Data_script'])
+                            if phase == "HTTP_REQUEST_REWRITE" or phase == "TRANSPORT":
                                 http_rules.append(rule_dict)
                             elif phase == "HTTP_RESPONSE_REWRITE":
                                 rsp_rules.append(rule_dict)
@@ -248,7 +283,7 @@ class PolicyConfigConverter(object):
             [], indirect, ignore_for_defaults, [],
             u_ignore, [])
 
-        if http_rules or sec_rules or rsp_rules or policy_datascript:
+        if http_rules or sec_rules or rsp_rules or self.policy_datascript_obj:
             conv_status["skipped"] = skipped_rule
             conv_status["na_list"] = []
             if not skipped_rule:
@@ -268,16 +303,78 @@ class PolicyConfigConverter(object):
             conv_utils.add_conv_status('policy', None, policy_set_name, conv_status,
                                        [{"policy_set": policy_obj}])
 
-            if policy_datascript:
-                policy_obj['datascripts'] = list()
-                for policy_ds in policy_datascript:
-                    policy_ds['name'] = "%s-ds-%s" % (policy_set_name, ds_counter)
+          #  if policy_datascript:
+          #      policy_obj['datascripts'] = list()
+          #      for policy_ds in policy_datascript:
+          #          policy_ds['name'] = "%s-ds-%s" % (policy_set_name, ds_counter)
+          #          policy_ds['tenant_ref'] = conv_utils.get_object_ref(tenant, 'tenant')
+          #          policy_obj['datascripts'].append(policy_ds)
+          #          conv_utils.add_conv_status('datascript', None, policy_ds['name'], conv_status,
+          #                                     [{"datascript": policy_ds}])
+          #          alb_config['VSDataScriptSet'].append(policy_ds)
+          #          ds_counter += 1
 
-                    policy_obj['datascripts'].append(policy_ds)
-                    conv_utils.add_conv_status('datascript', None, policy_ds['name'], conv_status,
-                                               [{"datascript": policy_ds}])
-                    alb_config['VSDataScriptSet'].append(policy_ds)
-                    ds_counter += 1
+            count_ds=1
+
+            policy_obj['datascripts'] = list()
+            if len(self.http_ds_scripts) > 1:
+                datascript = dict(
+                    evt='VS_DATASCRIPT_EVT_HTTP_RESP',
+
+                )
+                self.http_policy_ds_obj['name'] = "%s-ds-%s" % (policy_set_name, count_ds)
+                self.http_ds_scripts = "%s end" % self.http_ds_scripts
+                datascript['script'] = self.http_ds_scripts
+                self.http_policy_ds_obj['datascript'].append(datascript)
+
+                if not self.http_policy_ds_obj['pool_refs']:
+                    self.http_policy_ds_obj.pop('pool_refs')
+                if not self.http_policy_ds_obj['pool_group_refs']:
+                    self.http_policy_ds_obj.pop('pool_group_refs')
+                policy_obj['datascripts'].append(self.http_policy_ds_obj)
+                conv_utils.add_conv_status('datascript', None, self.http_policy_ds_obj['name'], conv_status,
+                                                     [{"datascript": self.http_policy_ds_obj}])
+                alb_config['VSDataScriptSet'].append(self.http_policy_ds_obj)
+                count_ds+=1
+
+            if len(self.resp_ds_scripts) > 1:
+                datascript = dict(
+                    evt='VS_DATASCRIPT_EVT_HTTP_REQ',
+
+                )
+                self.rsp_policy_ds_obj['name'] = "%s-ds-%s" % (policy_set_name, count_ds)
+                self.resp_ds_scripts = "%s end" % self.resp_ds_scripts
+                datascript['script'] = self.resp_ds_scripts
+                self.rsp_policy_ds_obj['datascript'].append(datascript)
+
+                if not self.rsp_policy_ds_obj['pool_refs']:
+                    self.rsp_policy_ds_obj.pop('pool_refs')
+                if not self.rsp_policy_ds_obj['pool_group_refs']:
+                    self.rsp_policy_ds_obj.pop('pool_group_refs')
+                policy_obj['datascripts'].append(self.rsp_policy_ds_obj)
+                conv_utils.add_conv_status('datascript', None, self.http_policy_ds_obj['name'], conv_status,
+                                                     [{"datascript": self.rsp_policy_ds_obj}])
+                alb_config['VSDataScriptSet'].append(self.rsp_policy_ds_obj)
+                count_ds += 1
+
+            if len(self.sec_ds_script) > 1:
+                datascript = dict(
+                    evt='VS_DATASCRIPT_EVT_HTTP_REQ',
+
+                )
+                self.sec_policy_ds_obj['name'] = "%s-ds-%s" % (policy_set_name, count_ds)
+                self.sec_ds_script= "%s end" % self.sec_ds_script
+                datascript['script'] = self.sec_ds_script
+                self.sec_policy_ds_obj['datascript'].append(datascript)
+                if not self.sec_policy_ds_obj['pool_refs']:
+                    self.sec_policy_ds_obj.pop('pool_refs')
+                if not self.sec_policy_ds_obj['pool_group_refs']:
+                    self.sec_policy_ds_obj.pop('pool_group_refs')
+                policy_obj['datascripts'].append(self.sec_policy_ds_obj)
+                conv_utils.add_conv_status('datascript', None, self.sec_policy_ds_obj['name'], conv_status,
+                                                     [{"datascript": self.sec_policy_ds_obj}])
+                alb_config['VSDataScriptSet'].append(self.sec_policy_ds_obj)
+                count_ds += 1
 
             return policy_obj, status_rule_list
         else:
@@ -286,7 +383,7 @@ class PolicyConfigConverter(object):
             return None, status_rule_list
 
     def convert_match_conditions_to_match(self, match, match_conditions, rule_dict, actions, prefix, cloud_name):
-
+        total_match_count=0
         match['hdrs'] = list()
         match['rsp_hdrs'] = list()
         for match_condition in match_conditions:
@@ -309,6 +406,7 @@ class PolicyConfigConverter(object):
                 if match_condition.get("header_name"):
                     hdrs["hdr"] = match_condition.get("header_name")
                 match['rsp_hdrs'].append(hdrs)
+                total_match_count += 1
             if match_condition.get("type") == "LBHttpRequestUriCondition":
                 request_uri = dict(match_str=[match_condition.get("uri")],
                                    match_case="SENSITIVE" if match_condition.get("case_sensitive") else "INSENSITIVE")
@@ -325,6 +423,7 @@ class PolicyConfigConverter(object):
                         match_criteria = "CONTAINS"
                     request_uri['match_criteria'] = match_criteria
                 match["path"] = request_uri
+                total_match_count += 1
             if match_condition.get("type") == "LBHttpRequestHeaderCondition":
                 hdrs = dict(value=[match_condition.get("header_value")],
                             match_case="SENSITIVE" if match_condition.get("case_sensitive") else "INSENSITIVE")
@@ -343,19 +442,23 @@ class PolicyConfigConverter(object):
                 if match_condition.get("header_name"):
                     hdrs["hdr"] = match_condition.get("header_name")
                 match['hdrs'].append(hdrs)
+                total_match_count += 1
             if match_condition.get("type") == "LBHttpRequestMethodCondition":
                 method = dict(methods=["HTTP_METHOD_" + match_condition.get("method")], match_criteria="IS_IN")
                 match["method"] = method
+                total_match_count += 1
             if match_condition.get("type") == "LBHttpRequestUriArgumentsCondition":
                 query = dict(match_str=[match_condition.get("uri_arguments")],
                              match_case="SENSITIVE" if match_condition.get("case_sensitive") else "INSENSITIVE",
                              match_criteria="QUERY_MATCH_CONTAINS")
                 match["query"] = query
+                total_match_count += 1
             if match_condition.get("type") == "LBHttpRequestVersionCondition":
                 version = dict(
                     versions=["ONE_ONE" if match_condition.get("version") == "HTTP_VERSION_1_1" else "ONE_ZERO"],
                     match_criteria="IS_IN")
                 match["version"] = version
+                total_match_count += 1
             if match_condition.get("type") == "LBHttpRequestCookieCondition":
                 cookie = dict(name=match_condition.get("cookie_name"),
                               value=match_condition.get("cookie_value"),
@@ -373,6 +476,7 @@ class PolicyConfigConverter(object):
                         match_criteria = "HDR_CONTAINS"
                     cookie["match_criteria"] = match_criteria
                 match["cookie"] = cookie
+                total_match_count += 1
             if match_condition.get("type") == "LBIpHeaderCondition":
                 if match_condition.get("source_address"):
                     client_ip = {
@@ -380,15 +484,28 @@ class PolicyConfigConverter(object):
                         "addrs": [{"addr": match_condition.get("source_address"), "type": "V4"}]
                     }
                     match['client_ip'] = client_ip
+                    total_match_count += 1
                 elif match_condition.get("group_path"):
-                    # TODO Need to discuss
-                    type = match_condition.get("type")
+                    group_path = match_condition['group_path']
+                    group_name,ip_addr_list = self.nsxt_util.get_nsx_group_details(group_path)
+                    if not ip_addr_list:
+                        LOG.debug('Skipping ns group %s as it does not contain ip addresss' % group_name)
+                    else:
+                        ip_group_name = self.nsxt_util.create_ip_group\
+                            (ip_addr_list, group_name, self.alb_config, prefix,self.tenant)
+                        client_ip={
+                            "match_criteria": "IS_IN",
+                            "group_refs":list()
+                        }
+                        client_ip['group_refs'].append(conv_utils.get_object_ref(ip_group_name, "ipaddrgroup", self.tenant))
+                        match['client_ip'] = client_ip
+                        total_match_count += 1
 
         if not match['hdrs']:
             match.pop('hdrs')
         if not match['rsp_hdrs']:
             match.pop('rsp_hdrs')
-        return match
+        return match, total_match_count
 
     def convert_actions_to_avi_actions(self, rule_dict, actions, prefix, cloud_name):
         rule_dict['hdr_action'] = []
@@ -521,7 +638,7 @@ class PolicyConfigConverter(object):
             persist_ds = persistence_ds_list.get(persist_ref, None)
 
         pool_present = False
-        if self.lb_vs_config["id"] in vs_pool_segment_list.keys():
+        if self.lb_vs_config["id"] in vs_select_pool_action_list.keys():
             pool_segment = vs_pool_segment_list[self.lb_vs_config["id"]].get("pool_segment")
             is_pg_created = False
             if pool_ref:
@@ -565,7 +682,7 @@ class PolicyConfigConverter(object):
                         'cloud_name': cloud_name,
                         'tenant': self.tenant
                     }
-                else:
+                elif pool_ref:
                     pool_present = True
                     self.http_pool_list[pool_ref] = {
                         'vs_name': vs_name,
@@ -577,7 +694,7 @@ class PolicyConfigConverter(object):
                         conv_utils.add_placement_network_to_pool_group(pool_ref, pool_segment,
                                                                        self.alb_config, cloud_name, self.tenant)
 
-                    else:
+                    elif pool_ref:
                         conv_utils.add_placement_network_to_pool(self.alb_config['Pool'],
                                                                  pool_ref, pool_segment, cloud_name, self.tenant)
 
@@ -588,7 +705,7 @@ class PolicyConfigConverter(object):
                                                                   pool_ref, prefix, cloud_name, self.tenant,
                                                                   self.object_merge_check,
                                                                   self.merge_object_mapping)
-                    else:
+                    elif pool_ref:
                         conv_utils.add_pool_with_persistence(self.alb_config, self.nsx_lb_config, self.lb_vs_config,
                                                              pool_ref, prefix, cloud_name, self.tenant,
                                                              self.object_merge_check, self.merge_object_mapping)
@@ -669,24 +786,44 @@ class PolicyConfigConverter(object):
         return match_criteria
 
     def convert_match_conditions_to_match_ds(self, match, match_conditions, rule_dict, actions,
-                                             prefix, cloud_name):
+                                             prefix, cloud_name, match_strategy,phase):
+        script_list=[]
+        total_matches = 0
+        initializing_data={}
+        is_sec_ds = False
+        is_http_ds = False
+        is_rsp_ds = False
 
-        ds = dict(
-            datascript=list(),
-            pool_group_refs=list(),
-            pool_refs=list()
-        )
-        datascript = dict(
-            evt='VS_DATASCRIPT_EVT_HTTP_RESP',
 
-        )
-        script_list = []
-        initializing_data = {}
+
         rule_dict, total_action_count = self.convert_actions_to_avi_actions(rule_dict, actions, prefix,
                                                                             cloud_name)
         if not total_action_count:
             return None, total_action_count
-        list_of_action = self.get_ds_action_list(rule_dict , ds)
+        if phase == "HTTP_REQUEST_REWRITE" or phase == "TRANSPORT":
+            temp_policy_ds_obj=self.http_policy_ds_obj
+            temp_ds_script=self.http_ds_scripts
+            is_http_ds=True
+        if phase == "HTTP_RESPONSE_REWRITE":
+            temp_policy_ds_obj=self.rsp_policy_ds_obj
+            temp_ds_script=self.resp_ds_scripts
+            is_rsp_ds = True
+        if phase == "HTTP_ACCESS":
+            temp_policy_ds_obj=self.sec_policy_ds_obj
+            temp_ds_script=self.sec_ds_script
+            is_sec_ds = True
+        elif phase == "HTTP_FORWARDING":
+            if len(actions) == 1 and actions[0]['type'] == "LBConnectionDropAction":
+                temp_policy_ds_obj = self.sec_policy_ds_obj
+                temp_ds_script = self.sec_ds_script
+                is_sec_ds = True
+            else:
+                temp_policy_ds_obj = self.http_policy_ds_obj
+                temp_ds_script = self.http_ds_scripts
+                is_http_ds = True
+
+        list_of_action = self.get_ds_action_list(rule_dict, temp_policy_ds_obj)
+       # list_of_action = self.get_ds_action_list(rule_dict, self.policy_datascript_obj)
         for match_condition in match_conditions:
             if match_condition.get('type') == 'LBSslSniCondition':
 
@@ -781,6 +918,17 @@ class PolicyConfigConverter(object):
                     else:
                         script = " (avi.ssl.protocol() == \"%s\")  " % used_protocol
                     script_list.append(script)
+
+                if not match_condition.get('session_reused') and not match_condition.get('client_supported_ssl_ciphers')\
+                    and not match_condition.get('client_certificate_subject_dn') and not\
+                    match_condition.get('client_certificate_issuer_dn'):
+                    if match_condition.get('session_reused'):
+                        if match_condition['session_reused'] in ['NEW','IGNORE']:
+                            script = " (avi.ssl.protocol()) "
+                        if match_condition['session_reused'] in ['REUSED']:
+                            if actions[0] == "LBConnectionDropAction":
+                                if self.alb_vs_config.get('ssl_profile_ref'):
+                                    self.unable_session_reuse_in_ssl_profile()
 
             if match_condition.get("type") == "LBHttpResponseHeaderCondition":
                 header_name = match_condition.get("header_name")
@@ -902,28 +1050,55 @@ class PolicyConfigConverter(object):
                     script_list.append(script)
                 elif match_condition.get("group_path"):
                     # TODO Need to discuss
-                    type = match_condition.get("type")
+                    group_path = match_condition['group_path']
+                    group_name, ip_addr_list = self.nsxt_util.get_nsx_group_details(group_path)
+                    if ip_addr_list:
+                        ip_group_name = self.nsxt_util.create_ip_group \
+                            (ip_addr_list, group_name, self.alb_config, prefix, self.tenant)
+                        if negate:
+                            script = " avi.vs.client_ip() ~= \"%s\" " % match_condition['source_address']
+                        else:
+                            script = " avi.vs.client_ip() == \"%s\" " % match_condition['source_address']
+                        script_list.append(script)
 
-        if initializing_data:
-            script = ""
-            for key in initializing_data.keys():
-                script = " %s %s=%s " % (script, key, initializing_data[key])
-            script = " %s if %s " % (script, script_list[0])
+        if match_strategy == 'ALL':
+            script_connector = 'or'
         else:
-            script = "if %s " % (script_list[0])
+            script_connector = 'and'
+        script = ""
+        if not script_list:
+            return match, total_action_count
+
+        if len(temp_ds_script)>1 :
+            script = "elseif %s " % (script_list[0])
+        else:
+            script = "if %s" % (script_list[0])
         if len(script_list) > 1:
             for index in range(1, len(script_list)):
-                script = "%s and %s" % (script, script_list[index])
+                script = "%s %s %s" % (script, script_connector, script_list[index])
         script = "%s then " % script
-
+        if initializing_data:
+            for key in initializing_data.keys():
+                script = " %s %s=%s " % (script, key, initializing_data[key])
         for action in list_of_action:
             script = "%s %s" % (script, action)
-        script = "%s end" % script
-        datascript['script'] = script
-        ds['datascript'].append(datascript)
-        if not ds['pool_refs']:
-            ds.pop('pool_refs')
-        if not ds['pool_group_refs']:
-            ds.pop('pool_group_refs')
-        match['Data_script'] = ds
+        script = "%s " % script
+        if len(temp_ds_script) > 0:
+            temp_ds_script = "%s\n%s" % (temp_ds_script, script)
+        else:
+            temp_ds_script = script
+
+        if is_sec_ds:
+            self.sec_ds_script = temp_ds_script
+        elif is_rsp_ds:
+            self.resp_ds_scripts = temp_ds_script
+        elif is_http_ds:
+            self.http_ds_scripts = temp_ds_script
+
         return match, total_action_count
+
+    def unable_session_reuse_in_ssl_profile(self):
+        client_ssl_ref = self.alb_vs_config.get('ssl_profile_ref')
+        client_ssl_name = client_ssl_ref.split('name=')[1]
+        ssl_config = [config for config in self.alb_config["SSLProfile"] if config['name'] == client_ssl_name ]
+        ssl_config[0]['enable_ssl_session_reuse'] = False
