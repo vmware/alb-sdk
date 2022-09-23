@@ -421,6 +421,7 @@ class ProfileConfigConvV11(ProfileConfigConv):
         self.na_tcp = f5_profile_attributes['Profile_na_tcp']
         self.supported_udp = f5_profile_attributes['Profile_supported_udp']
         self.indirect_udp = f5_profile_attributes['Profile_indirect_udp']
+        self.na_udp = f5_profile_attributes['Profile_na_udp']
         self.supported_oc = f5_profile_attributes['Profile_supported_oc']
         self.supported_enf = \
             f5_profile_attributes['Profile_supported_http_enforcement']
@@ -669,12 +670,19 @@ class ProfileConfigConvV11(ProfileConfigConv):
             http_profile['secure_cookie_enabled'] = encpt_cookie
             http_profile['xff_enabled'] = insert_xff
             http_profile['connection_multiplexing_enabled'] = con_mltplxng
+            if profile.get('via-host-name'):
+                app_profile['via-host-name'] = profile.get('via-host-name')
+                app_profile['via-request'] = profile.get('via-request')
+            if not profile.get('redirect-rewrite'):
+                http_profile['hsts_enabled'] = True
             enforcement = profile.get('enforcement', None)
             if enforcement:
                 header_size = enforcement.get('max-header-size',
                                               final.DEFAULT_MAX_HEADER)
                 http_profile['client_max_header_size'] = \
                     int(header_size) / final.BYTES_IN_KB
+                if enforcement.get('max-header-count'):
+                    http_profile['max_header_count'] = enforcement.get('max-header-count')
                 enf_skipped, enf_skip_defaults , enf_na , enf_indirect = self.get_enf_skipped(enforcement)
                 if enf_skipped:
                     skipped.append({"enforcement": enf_skipped})
@@ -909,6 +917,7 @@ class ProfileConfigConvV11(ProfileConfigConv):
                 LOG.warn("idle-timeout for profile: %s  is grater" % name +
                          " than maximum, changed to Avis maximum value")
             description = profile.get('description', None)
+            verified_accept = profile.get("verified-accept")
             ntwk_profile = {
                 "profile": {
                     "tcp_fast_path_profile": {
@@ -919,7 +928,8 @@ class ProfileConfigConvV11(ProfileConfigConv):
                 },
                 "name": name,
                 'tenant_ref': conv_utils.get_object_ref(tenant, 'tenant'),
-                "description": description
+                "description": description,
+                'verified-accept': verified_accept
             }
             app_profile = dict()
             app_profile['name'] = name
@@ -997,6 +1007,7 @@ class ProfileConfigConvV11(ProfileConfigConv):
                     final.MAX_RECV_WIN):
                 receive_window = final.DEFAULT_RECV_WIN
             timeout = profile.get("idle-timeout", 0)
+            verified_accept = profile.get("verified-accept")
             ntwk_profile = {
                 "profile": {
                     "tcp_proxy_profile": {
@@ -1006,7 +1017,8 @@ class ProfileConfigConvV11(ProfileConfigConv):
                     },
                     "type": "PROTOCOL_TYPE_TCP_PROXY"
                 },
-                "name": name
+                "name": name,
+                'verified-accept': verified_accept
             }
             app_profile['tenant_ref'] = conv_utils.get_object_ref(
                 tenant, 'tenant')
@@ -1071,6 +1083,7 @@ class ProfileConfigConvV11(ProfileConfigConv):
             cc_algo = profile.get("congestion-control", "")
             cc_algo = conv_utils.get_cc_algo_val(cc_algo)
             ip_dscp = profile.get("ip-tos-to-client", None)
+            verified_accept = profile.get("verified-accept")
             ntwk_profile = {
                 "profile": {
                     "tcp_proxy_profile": {
@@ -1086,7 +1099,8 @@ class ProfileConfigConvV11(ProfileConfigConv):
                     },
                     "type": "PROTOCOL_TYPE_TCP_PROXY"
                 },
-                "name": name
+                "name": name,
+                'verified-accept': verified_accept
             }
             if ip_dscp:
                 is_ip_dscp = True
@@ -1115,6 +1129,7 @@ class ProfileConfigConvV11(ProfileConfigConv):
         elif profile_type == 'udp':
             supported_attr = self.supported_udp
             indirect = self.indirect_udp
+            na_list = self.na_udp
             u_ignore = user_ignore.get('udp', [])
             skipped = [attr for attr in profile.keys()
                        if attr not in supported_attr]
@@ -1188,6 +1203,7 @@ class ProfileConfigConvV10(ProfileConfigConv):
         self.supported_udp = f5_profile_attributes['Profile_supported_udp']
         self.na_tcp = f5_profile_attributes['Profile_na_tcp']
         self.indirect_udp = []
+        self.na_udp = f5_profile_attributes['Profile_na_udp']
         self.supported_oc = f5_profile_attributes['Profile_supported_oc']
         self.supported_enf = []
         self.ignore_for_defaults_enf = []
@@ -1425,6 +1441,7 @@ class ProfileConfigConvV10(ProfileConfigConv):
                 timeout = final.MAX_SESSION_TIMEOUT
                 LOG.warn("idle-timeout for profile: %s  is grater" % name +
                          " than maximum, changed to Avis maximum value")
+            verified_accept = profile.get("verified-accept")
             ntwk_profile = {
                 "profile": {
                     "tcp_fast_path_profile": {
@@ -1434,7 +1451,8 @@ class ProfileConfigConvV10(ProfileConfigConv):
                     "type": "PROTOCOL_TYPE_TCP_FAST_PATH"
                 },
                 "name": name,
-                "description": description
+                "description": description,
+                "verified-accept": verified_accept
             }
             app_profile = {
                 "type": "APPLICATION_PROFILE_TYPE_L4",
@@ -1500,6 +1518,7 @@ class ProfileConfigConvV10(ProfileConfigConv):
                 converted_objs.append({'app_profile': app_profile})
                 avi_config['ApplicationProfile'].append(app_profile)
             timeout = profile.get("idle-timeout", 0)
+            verified_accept = profile.get("verified-accept")
             ntwk_profile = {
                 "profile": {
                     "tcp_proxy_profile": {
@@ -1508,7 +1527,8 @@ class ProfileConfigConvV10(ProfileConfigConv):
                     },
                     "type": "PROTOCOL_TYPE_TCP_PROXY"
                 },
-                "name": name
+                "name": name,
+                "verified-accept": verified_accept
             }
             ntwk_profile['tenant_ref'] = conv_utils.get_object_ref(
                 tenant, 'tenant')
@@ -1571,6 +1591,7 @@ class ProfileConfigConvV10(ProfileConfigConv):
             cc_algo = profile.get("congestion-control", "")
             cc_algo = conv_utils.get_cc_algo_val(cc_algo)
             ip_dscp = profile.get("ip tos", None)
+            verified_accept=profile.get('verified-accept')
             ntwk_profile = {
                 "profile": {
                     "tcp_proxy_profile": {
@@ -1586,7 +1607,8 @@ class ProfileConfigConvV10(ProfileConfigConv):
                     },
                     "type": "PROTOCOL_TYPE_TCP_PROXY"
                 },
-                "name": name
+                "name": name,
+                'verified-accept': verified_accept
             }
             if ip_dscp:
                 is_ip_dscp = True
@@ -1615,6 +1637,7 @@ class ProfileConfigConvV10(ProfileConfigConv):
         elif profile_type == 'udp':
             u_ignore = user_ignore.get('udp', [])
             supported_attr = self.supported_udp
+            na_list = self.na_udp
             skipped = [attr for attr in profile.keys()
                        if attr not in supported_attr]
             per_pkt = profile.get("datagram lb", 'disable')
@@ -1686,6 +1709,8 @@ class ProfileConfigConvV10(ProfileConfigConv):
             header_size) / final.BYTES_IN_KB
         http_profile['connection_multiplexing_enabled'] = con_mltplxng
         http_profile['secure_cookie_enabled'] = encpt_cookie
+        if not profile.get('redirect-rewrite'):
+            http_profile['hsts_enabled'] = True
         app_profile["http_profile"] = http_profile
         fallback_host = profile.get("fallback", 'none')
         fallback_host = None if fallback_host == 'none' else fallback_host

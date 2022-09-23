@@ -730,7 +730,7 @@ class VsConfigConv(object):
                                     }
                                 )
                                 index += 1
-                            del (policy['datascripts'])
+                        del (policy['datascripts'])
                         if policy.get('http_request_policy') or policy.get('http_security_policy') \
                                 or policy.get('http_response_policy'):
                             updated_http_policy_ref = conv_utils.get_object_ref(

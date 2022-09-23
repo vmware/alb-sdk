@@ -86,19 +86,21 @@ class SAMLExample(object):
         pool_obj = self.create_pool(pool_name, servers_obj)
         pool_ref = self.api.get_obj_ref(pool_obj)
 
+        # create vsvip for virtual service
+        vsvip_name = vs_name + '-vsvip'
+        vsvip_obj = self.create_vsvip(vsvip_name, vip)
+        vsvip_ref = self.api.get_obj_ref(vsvip_obj)
+
         # create virtual service dict
         services_obj = [{'port': 80, 'enable_ssl': False}]
         vs_obj = {
             'name': vs_name,
             'type': 'VS_TYPE_NORMAL',
-            'ip_address': {
-                'addr': vip,
-                'type': 'V4'
-            },
             'enabled': True,
             'services': services_obj,
             'application_profile_name': 'System-HTTP',
-            'pool_ref': pool_ref
+            'pool_ref': pool_ref,
+            'vsvip_ref': vsvip_ref
         }
 
         # post VS data in json format to avi api
@@ -107,6 +109,24 @@ class SAMLExample(object):
             logger.debug('Virtual service created successfully %s' % vs_name)
         else:
             logger.debug('Error creating virtual service : %s' % resp.text)
+        return
+
+    def create_vsvip(self, vsvip_name, vip):
+        '''
+        '''
+        vsvip_obj = {'name': vsvip_name,
+                     'vip': [{'vip_id': '1',
+                              'ip_address':
+                                  {'addr': vip,
+                                   'type': 'V4'}
+                              }]
+                     }
+        resp = self.api.post('vsvip', data=json.dumps(vsvip_obj))
+        if resp.status_code in range(200, 299):
+            return resp
+        else:
+            print('Error in creating vsvip :%s' % resp.text)
+            exit(0)
         return
 
     def create_pool(self, name, servers_obj, monitor_names=None,
