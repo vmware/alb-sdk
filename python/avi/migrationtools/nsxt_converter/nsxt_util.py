@@ -141,45 +141,51 @@ def get_certificate_data(certificate_ref, nsxt_ip, ssh_root_password):
     import paramiko
     import json
 
-    ssh = paramiko.SSHClient()
-    ssh.load_system_host_keys()
-    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    ssh.connect(nsxt_ip, username='root', password=ssh_root_password, allow_agent=False, look_for_keys=False)
+    try:
+        ssh = paramiko.SSHClient()
+        ssh.load_system_host_keys()
+        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        ssh.connect(nsxt_ip, username='root', password=ssh_root_password, allow_agent=False, look_for_keys=False)
 
-    data = None
-    cmd = "curl --header 'Content-Type: application/json' --header 'x-nsx-username: admin' " \
-          "http://'admin':'{}'@127.0.0.1:7440/nsxapi/api/v1/trust-management/certificates".\
-        format(ssh_root_password)
-    stdin, stdout, stderr = ssh.exec_command(cmd)
+        cmd = "curl --header 'Content-Type: application/json' --header 'x-nsx-username: admin' " \
+              "http://'admin':'{}'@127.0.0.1:7440/nsxapi/api/v1/trust-management/certificates".\
+            format(ssh_root_password)
+        stdin, stdout, stderr = ssh.exec_command(cmd)
 
-    output_dict = ''
-    for line in stdout.read().splitlines():
-        output_dict += line.decode()
+        output_dict = ''
+        for line in stdout.read().splitlines():
+            output_dict += line.decode()
 
-    output_dict = json.loads(output_dict)
+        if output_dict:
+            output_dict = json.loads(output_dict)
 
-    LOG.info("output_dict for certificate_ref {}".format(certificate_ref))
-    for cert_data in output_dict['results']:
-        if 'tags' in cert_data.keys() and len(cert_data['tags']) > 0:
-            cert_id = cert_data['tags'][0]['tag'].split('/')[-1]
+            LOG.info("output_dict for certificate_ref {}".format(certificate_ref))
+            for cert_data in output_dict['results']:
+                if 'tags' in cert_data.keys() and len(cert_data['tags']) > 0:
+                    cert_id = cert_data['tags'][0]['tag'].split('/')[-1]
+                else:
+                    cert_id = cert_data['id']
+
+                if cert_id == certificate_ref:
+                    cert_command = cmd + "/" + cert_data['id'] + '/' + "?action=get_private"
+                    cert_stdin, cert_stdout, cert_stderr = ssh.exec_command(cert_command)
+                    cert_dict = ''
+                    for line in cert_stdout.read().splitlines():
+                        cert_dict += line.decode()
+
+                    cert_dict = json.loads(cert_dict)
+                    LOG.debug("cert_dict for certificate_ref {}".format(certificate_ref))
+                    if 'private_key' in cert_dict:
+                        return cert_dict['private_key'], cert_dict['pem_encoded']
         else:
-            cert_id = cert_data['id']
+            LOG.warning("No certificate data found for certificate ref {}".format(certificate_ref))
 
-        if cert_id == certificate_ref:
-            cert_command = cmd + "/" + cert_data['id'] + '/' + "?action=get_private"
-            cert_stdin, cert_stdout, cert_stderr = ssh.exec_command(cert_command)
-            cert_dict = ''
-            for line in cert_stdout.read().splitlines():
-                cert_dict += line.decode()
+        ssh.close()
+        stdin.close()
+    except Exception as e:
+        LOG.error("Error in getting certificate data for ref {}. Message: {}".format(certificate_ref, str(e)))
 
-            cert_dict = json.loads(cert_dict)
-            LOG.debug("cert_dict for certificate_ref {}".format(certificate_ref))
-            if 'private_key' in cert_dict:
-                return cert_dict['private_key'], cert_dict['pem_encoded']
-
-    ssh.close()
-    stdin.close()
-    return data
+    return None, None
 
 
 class NSXUtil():
@@ -1011,5 +1017,4 @@ class NSXUtil():
         ip_group['addrs'] = addr_list
         ip_group['tenant_ref'] = conv_utils.get_object_ref(tenant, 'tenant')
         alb_config['IpAddrGroup'].append(ip_group)
-        print(alb_config['IpAddrGroup'])
         return ip_group['name']

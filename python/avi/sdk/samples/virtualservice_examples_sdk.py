@@ -11,6 +11,8 @@ from avi.protobuf.options_pb2 import MetricsEntityType
 from avi.protobuf.pool_pb2 import LbAlgorithm
 from avi.protobuf.pool_pb2 import Pool
 from avi.protobuf.vs_pb2 import VirtualService
+from avi.protobuf.vs_pb2 import VsVip
+from avi.protobuf.vs_pb2 import Vip
 from avi.sdk.avi_sdk import AviSdk
 
 
@@ -20,6 +22,16 @@ class VirtualserviceSDKExample(object):
         pool_pb = Pool()
         pool_pb.name = vs_name + 'pool_pb'
         pool_pb.lb_algorithm = LbAlgorithm.Value('LB_ALGORITHM_LEAST_CONNECTIONS')
+
+        # create vsvip protobuf object
+        vsvip_pb = VsVip()
+        vsvip_pb.name = vs_name + 'vsvip_pb'
+        vip_pb = Vip()
+        vip_pb.vip_id = 1
+        ip = IpAddr()
+        ip.addr = vip
+        ip.type = IpAddrType.Value('V4')
+        vip_pb.ip_address.CopyFrom(ip)
 
         server_protos = []
         for server in servers:
@@ -39,16 +51,17 @@ class VirtualserviceSDKExample(object):
         pool_resource = sdk.resource(AviObjectType.POOL)
         pool_obj = pool_resource.post(pool_pb)
 
+        # post the vsvip protobuf with vsvip resource
+        vsvip_resource = sdk.resource(AviObjectType.VSVIP)
+        vsvip_obj = vsvip_resource.post(vsvip_pb)
+
         # create vs protobuf
         vs_pb = VirtualService()
         vs_pb.name = vs_name
         service = vs_pb.services.add()
         service.port = 80
-        ip = IpAddr()
-        ip.addr = vip
-        ip.type = IpAddrType.Value('V4')
-        vs_pb.ip_address.CopyFrom(ip)
         vs_pb.pool_uuid = pool_obj.protobuf().uuid
+        vsvip_pb.vsvip_uuid = vsvip_obj.protobug().uuid
 
         # post vs protobuf using vs resource
         vs_obj = vs_resource.post(vs_pb)
