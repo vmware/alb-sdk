@@ -500,7 +500,7 @@
                 }
             }
         },
-        "/albservicesfileupload": {
+        "/debugvirtualservice": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -592,7 +592,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUploadApiResponse"
+                            "$ref": "#/definitions/DebugVirtualServiceApiResponse"
                         }
                     },
                     "401": {
@@ -639,10 +639,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "ALBServicesFileUpload object creation",
+                        "description": "DebugVirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     }
                 ],
@@ -655,7 +655,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -664,7 +664,7 @@
                 }
             }
         },
-        "/albservicesfileupload/{uuid}": {
+        "/debugvirtualservice/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -751,7 +751,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -805,10 +805,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "ALBServicesFileUpload object creation",
+                        "description": "DebugVirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     {
@@ -828,7 +828,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -882,10 +882,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "ALBServicesFileUpload object creation",
+                        "description": "DebugVirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     {
@@ -905,7 +905,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -1946,7 +1946,7 @@
                 }
             }
         },
-        "/debugvirtualservice": {
+        "/albservicesfileupload": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -2038,7 +2038,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualServiceApiResponse"
+                            "$ref": "#/definitions/ALBServicesFileUploadApiResponse"
                         }
                     },
                     "401": {
@@ -2085,10 +2085,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "DebugVirtualService object creation",
+                        "description": "ALBServicesFileUpload object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     }
                 ],
@@ -2101,7 +2101,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     "401": {
@@ -2110,7 +2110,7 @@
                 }
             }
         },
-        "/debugvirtualservice/{uuid}": {
+        "/albservicesfileupload/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -2197,7 +2197,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     "401": {
@@ -2251,10 +2251,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "DebugVirtualService object creation",
+                        "description": "ALBServicesFileUpload object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     {
@@ -2274,7 +2274,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     "401": {
@@ -2328,10 +2328,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "DebugVirtualService object creation",
+                        "description": "ALBServicesFileUpload object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     {
@@ -2351,7 +2351,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     "401": {
