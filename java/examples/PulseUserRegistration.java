@@ -126,7 +126,7 @@ public class PulseUserRegistration {
             if (resp.get("registration_status").equals("ALBSERVICES_REGISTERED")) {
                 JSONObject albServiceConfigObj = new JSONObject();
                 albServiceConfigObj.put("status", "Obsolete");
-                albServiceConfigObj.put("albservices/register", data);
+                albServiceConfigObj.put("albservices/register", albServiceConfigObj);
             }
             LOGGER.info("Deregistered successfully");
 

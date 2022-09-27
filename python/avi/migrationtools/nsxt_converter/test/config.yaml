@@ -1,0 +1,11 @@
+---
+nsxt_ip: '10.12.44.22'
+nsxt_user: 'admin'
+nsxt_password: 'nsxt_password'
+ssh_root_password: 'root_password''
+alb_controller_ip: '10.12.55.14'
+alb_controller_user: 'admin'
+alb_controller_password: 'password'
+alb_controller_version: '21.1.4'
+alb_controller_tenant: 'test'
+output_file_path: 'output'

@@ -27,6 +27,9 @@ public class OverallInfo  {
     @JsonProperty("free_percent")
     private String freePercent = null;
 
+    @JsonProperty("mount_path")
+    private String mountPath = null;
+
     @JsonProperty("path")
     private String path = null;
 
@@ -76,6 +79,30 @@ public class OverallInfo  {
      */
     public void setFreePercent(String  freePercent) {
         this.freePercent = freePercent;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Mount path for the disk filesystem.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mountPath
+     */
+    public String getMountPath() {
+        return mountPath;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Mount path for the disk filesystem.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param mountPath set the mountPath.
+     */
+    public void setMountPath(String  mountPath) {
+        this.mountPath = mountPath;
     }
 
     /**
@@ -152,7 +179,8 @@ public class OverallInfo  {
   Objects.equals(this.size, objOverallInfo.size)&&
   Objects.equals(this.used, objOverallInfo.used)&&
   Objects.equals(this.available, objOverallInfo.available)&&
-  Objects.equals(this.freePercent, objOverallInfo.freePercent);
+  Objects.equals(this.freePercent, objOverallInfo.freePercent)&&
+  Objects.equals(this.mountPath, objOverallInfo.mountPath);
     }
 
     @Override
@@ -161,6 +189,7 @@ public class OverallInfo  {
       sb.append("class OverallInfo {\n");
                   sb.append("    available: ").append(toIndentedString(available)).append("\n");
                         sb.append("    freePercent: ").append(toIndentedString(freePercent)).append("\n");
+                        sb.append("    mountPath: ").append(toIndentedString(mountPath)).append("\n");
                         sb.append("    path: ").append(toIndentedString(path)).append("\n");
                         sb.append("    size: ").append(toIndentedString(size)).append("\n");
                         sb.append("    used: ").append(toIndentedString(used)).append("\n");

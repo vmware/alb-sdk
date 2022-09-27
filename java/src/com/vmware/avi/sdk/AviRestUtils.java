@@ -11,6 +11,9 @@ import org.apache.http.Header;
 import org.apache.http.HttpEntityEnclosingRequest;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.CredentialsProvider;
 import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpPost;
@@ -21,6 +24,7 @@ import org.apache.http.conn.HttpHostConnectException;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultServiceUnavailableRetryStrategy;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -173,6 +177,9 @@ public class AviRestUtils {
 					setConnectionRequestTimeout((creds.getTimeout())*1000).
 					setConnectTimeout((creds.getConnectionTimeout())*1000).
 					build();
+
+			CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+			credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(creds.getUsername(), creds.getPassword()));
 
 			clientBuilder = HttpClients.custom().
 					setSSLSocketFactory(sslConnectionSocketFactory).

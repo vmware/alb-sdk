@@ -187,7 +187,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - configure virtualservice <key> - show virtualservice <key> - scaleout virtualservice <key> - scalein virtualservice <key> - migrate virtualservice <key> - switchover virtualservice <key> - clear virtualservice <key> - resync virtualservice <key> - rotatekeys virtualservice <key> - apicplacement virtualservice <key> - retryplacement virtualservice <key> - logrecommendation virtualservice <key> - applylogrecommendation virtualservice <key> ```  Examples - **virtualservice_example_1**: To create a basic virtualservice object that has both http and https enabled   ```json     {'name': 'production_vs', 'services': [{'port': 80}, {'port': 443, 'enable_ssl': True}], 'vsvip_ref': '/api/vsvip/vsvip-5b310671-7784-472b-8096-8679d3e1c769'}   ```  - **virtualservice_example_ipamdns_infoblox**: Create a basic virtualservice object that requires IP to be auto-allocated and DNS record to be registered. @Assumptions: - This example assumes the virtualservice being created is part of a Cloud with Infoblox as IPAM & DNS provider - On Infoblox server - \"10.10.10.0/24\" is configured for VIPs - \"prod.corp\" is configured as zone   ```json     {'name': 'production_vs', 'fqdn': 'production_vs.prod.corp', 'vsvip_ref': '/api/vsvip/vsvip-5b310671-7784-472b-8096-8679d3e1c769'}   ```  - **virtualservice_example_ipamdns_internal**: Create a basic virtualservice object that requires IP to be auto-allocated and DNS record to be registered. @Assumptions: - This example assumes the virtualservice being created is part of a Cloud with Internal IPAM & DNS provider - On Avi - Network object containing free IPs from \"10.10.10.0/24\" is already created - \"prod.corp\" is configured as a domain name in DNS provider config in Avi   ```json     {'name': 'production_vs', 'fqdn': 'production_vs.prod.corp', 'vsvip_ref': '/api/vsvip/vsvip-5b310671-7784-472b-8096-8679d3e1c769'}   ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 22.1.1</div>
+    <div class="app-desc">Version: 22.1.3</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -205,7 +205,7 @@ font-style: italic;
   <li><a href="#virtualserviceClearPost"><code><span class="http-method">post</span> /virtualservice/clear</code></a></li>
   <li><a href="#virtualserviceGet"><code><span class="http-method">get</span> /virtualservice</code></a></li>
   <li><a href="#virtualservicePost"><code><span class="http-method">post</span> /virtualservice</code></a></li>
-  <li><a href="#virtualserviceUuidApplylogrecommendationPost"><code><span class="http-method">post</span> /virtualservice/{uuid}/applylogrecommendation</code></a></li>
+  <li><a href="#virtualserviceUuidApplyLogRecommendationPost"><code><span class="http-method">post</span> /virtualservice/{uuid}/apply-log-recommendation</code></a></li>
   <li><a href="#virtualserviceUuidAuthstatsGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/authstats/</code></a></li>
   <li><a href="#virtualserviceUuidBotstatsGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/botstats/</code></a></li>
   <li><a href="#virtualserviceUuidCandidatesehostlistGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/candidatesehostlist/</code></a></li>
@@ -237,7 +237,7 @@ font-style: italic;
   <li><a href="#virtualserviceUuidKeyvalsummaryGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/keyvalsummary/</code></a></li>
   <li><a href="#virtualserviceUuidKeyvalsummaryobjsyncGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/keyvalsummaryobjsync/</code></a></li>
   <li><a href="#virtualserviceUuidL4policysetstatsGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/l4policysetstats/</code></a></li>
-  <li><a href="#virtualserviceUuidLogrecommendationPost"><code><span class="http-method">post</span> /virtualservice/{uuid}/logrecommendation</code></a></li>
+  <li><a href="#virtualserviceUuidLogRecommendationPost"><code><span class="http-method">post</span> /virtualservice/{uuid}/log-recommendation</code></a></li>
   <li><a href="#virtualserviceUuidMigratePost"><code><span class="http-method">post</span> /virtualservice/{uuid}/migrate</code></a></li>
   <li><a href="#virtualserviceUuidNetworksecuritypolicyDetailGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/networksecuritypolicy/detail/</code></a></li>
   <li><a href="#virtualserviceUuidNetworksecuritypolicystatsGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/networksecuritypolicystats/</code></a></li>
@@ -1220,11 +1220,11 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="virtualserviceUuidApplylogrecommendationPost"/>
+  <div class="method"><a name="virtualserviceUuidApplyLogRecommendationPost"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /virtualservice/{uuid}/applylogrecommendation</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">virtualserviceUuidApplylogrecommendationPost</span>)</div>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /virtualservice/{uuid}/apply-log-recommendation</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">virtualserviceUuidApplyLogRecommendationPost</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -3298,11 +3298,11 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="virtualserviceUuidLogrecommendationPost"/>
+  <div class="method"><a name="virtualserviceUuidLogRecommendationPost"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /virtualservice/{uuid}/logrecommendation</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">virtualserviceUuidLogrecommendationPost</span>)</div>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /virtualservice/{uuid}/log-recommendation</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">virtualserviceUuidLogRecommendationPost</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -6570,7 +6570,7 @@ font-style: italic;
 <div class="param">vh_domain_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> The exact name requested from the client&#39;s SNI-enabled TLS hello domain name field. If this is a match, the parent VS will forward the connection to this child VS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">vh_matches (optional)</div><div class="param-desc"><span class="param-type"><a href="#VHMatch">array[VHMatch]</a></span> Host and path match criteria to select this child VS. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">vh_parent_vs_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Specifies the Virtual Service acting as Virtual Hosting (SNI) parent. It is a reference to an object of type VirtualService. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">vh_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Specify if the Virtual Hosting VS is of type SNI or Enhanced. Enum options - VS_TYPE_VH_SNI, VS_TYPE_VH_ENHANCED. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Basic edition(Allowed values- VS_TYPE_VH_ENHANCED), Enterprise with Cloud Services edition. Special default for Basic edition is VS_TYPE_VH_ENHANCED, Enterprise is VS_TYPE_VH_SNI. </div>
+<div class="param">vh_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Specify if the Virtual Hosting VS is of type SNI or Enhanced. Enum options - VS_TYPE_VH_SNI, VS_TYPE_VH_ENHANCED. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Basic edition(Allowed values- VS_TYPE_VH_SNI,VS_TYPE_VH_ENHANCED), Enterprise with Cloud Services edition. </div>
 <div class="param">vip (optional)</div><div class="param-desc"><span class="param-type"><a href="#Vip">array[Vip]</a></span> List of Virtual Service IPs. While creating a &#39;Shared VS&#39;,please use vsvip_ref to point to the shared entities. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">vrf_context_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Virtual Routing Context that the Virtual Service is bound to. This is used to provide the isolation of the set of networks the application is attached to. It is a reference to an object of type VrfContext. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">vs_datascripts (optional)</div><div class="param-desc"><span class="param-type"><a href="#VSDataScripts">array[VSDataScripts]</a></span> Datascripts applied on the data traffic of the Virtual Service. Allowed in Enterprise edition with any value, Basic, Enterprise with Cloud Services edition. </div>

@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "22.1.1",
+        "version": "22.1.3",
         "title": "Avi AlertEmailConfig Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -500,7 +500,7 @@
                 }
             }
         },
-        "/alertemailconfig/{uuid}/alerttestemail": {
+        "/alertemailconfig/{uuid}/testemail": {
             "post": {
                 "consumes": [
                     "application/json"

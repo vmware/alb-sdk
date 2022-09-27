@@ -36,6 +36,9 @@ public class EmailConfiguration  {
     @JsonProperty("from_email")
     private String fromEmail = "admin@avicontroller.net";
 
+    @JsonProperty("from_name")
+    private String fromName = null;
+
     @JsonProperty("mail_server_name")
     private String mailServerName = "localhost";
 
@@ -169,6 +172,30 @@ public class EmailConfiguration  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Friendly name in from field.
+     * Field introduced in 21.1.4.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return fromName
+     */
+    public String getFromName() {
+        return fromName;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Friendly name in from field.
+     * Field introduced in 21.1.4.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param fromName set the fromName.
+     */
+    public void setFromName(String  fromName) {
+        this.fromName = fromName;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Mail server host.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "localhost".
@@ -252,7 +279,8 @@ public class EmailConfiguration  {
   Objects.equals(this.authUsername, objEmailConfiguration.authUsername)&&
   Objects.equals(this.authPassword, objEmailConfiguration.authPassword)&&
   Objects.equals(this.disableTls, objEmailConfiguration.disableTls)&&
-  Objects.equals(this.emailTimezone, objEmailConfiguration.emailTimezone);
+  Objects.equals(this.emailTimezone, objEmailConfiguration.emailTimezone)&&
+  Objects.equals(this.fromName, objEmailConfiguration.fromName);
     }
 
     @Override
@@ -264,6 +292,7 @@ public class EmailConfiguration  {
                         sb.append("    disableTls: ").append(toIndentedString(disableTls)).append("\n");
                         sb.append("    emailTimezone: ").append(toIndentedString(emailTimezone)).append("\n");
                         sb.append("    fromEmail: ").append(toIndentedString(fromEmail)).append("\n");
+                        sb.append("    fromName: ").append(toIndentedString(fromName)).append("\n");
                         sb.append("    mailServerName: ").append(toIndentedString(mailServerName)).append("\n");
                         sb.append("    mailServerPort: ").append(toIndentedString(mailServerPort)).append("\n");
                         sb.append("    smtpType: ").append(toIndentedString(smtpType)).append("\n");

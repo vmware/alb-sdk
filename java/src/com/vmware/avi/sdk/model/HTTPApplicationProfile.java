@@ -183,6 +183,9 @@ public class HTTPApplicationProfile  {
     @JsonProperty("xff_enabled")
     private Boolean xffEnabled = true;
 
+    @JsonProperty("xff_update")
+    private String xffUpdate = "REPLACE_XFF_HEADERS";
+
 
 
     /**
@@ -454,7 +457,7 @@ public class HTTPApplicationProfile  {
      * Detect ntlm apps based on the http response from the server.
      * Once detected, connection multiplexing will be disabled for that connection.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, basic edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return detectNtlmApp
      */
@@ -467,7 +470,7 @@ public class HTTPApplicationProfile  {
      * Detect ntlm apps based on the http response from the server.
      * Once detected, connection multiplexing will be disabled for that connection.
      * Field introduced in 20.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, basic edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param detectNtlmApp set the detectNtlmApp.
      */
@@ -1605,6 +1608,32 @@ public class HTTPApplicationProfile  {
         this.xffEnabled = xffEnabled;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Configure how incoming x-forwarded-for headers from the client are handled.
+     * Enum options - REPLACE_XFF_HEADERS, APPEND_TO_THE_XFF_HEADER, ADD_NEW_XFF_HEADER.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "REPLACE_XFF_HEADERS".
+     * @return xffUpdate
+     */
+    public String getXffUpdate() {
+        return xffUpdate;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Configure how incoming x-forwarded-for headers from the client are handled.
+     * Enum options - REPLACE_XFF_HEADERS, APPEND_TO_THE_XFF_HEADER, ADD_NEW_XFF_HEADER.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "REPLACE_XFF_HEADERS".
+     * @param xffUpdate set the xffUpdate.
+     */
+    public void setXffUpdate(String  xffUpdate) {
+        this.xffUpdate = xffUpdate;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1618,6 +1647,7 @@ public class HTTPApplicationProfile  {
       return   Objects.equals(this.connectionMultiplexingEnabled, objHTTPApplicationProfile.connectionMultiplexingEnabled)&&
   Objects.equals(this.xffEnabled, objHTTPApplicationProfile.xffEnabled)&&
   Objects.equals(this.xffAlternateName, objHTTPApplicationProfile.xffAlternateName)&&
+  Objects.equals(this.xffUpdate, objHTTPApplicationProfile.xffUpdate)&&
   Objects.equals(this.hstsEnabled, objHTTPApplicationProfile.hstsEnabled)&&
   Objects.equals(this.hstsMaxAge, objHTTPApplicationProfile.hstsMaxAge)&&
   Objects.equals(this.hstsSubdomainsEnabled, objHTTPApplicationProfile.hstsSubdomainsEnabled)&&
@@ -1729,6 +1759,7 @@ public class HTTPApplicationProfile  {
                         sb.append("    xForwardedProtoEnabled: ").append(toIndentedString(xForwardedProtoEnabled)).append("\n");
                         sb.append("    xffAlternateName: ").append(toIndentedString(xffAlternateName)).append("\n");
                         sb.append("    xffEnabled: ").append(toIndentedString(xffEnabled)).append("\n");
+                        sb.append("    xffUpdate: ").append(toIndentedString(xffUpdate)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

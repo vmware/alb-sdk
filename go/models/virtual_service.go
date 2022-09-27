@@ -265,7 +265,7 @@ type VirtualService struct {
 	// Specifies the Virtual Service acting as Virtual Hosting (SNI) parent. It is a reference to an object of type VirtualService. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	VhParentVsRef *string `json:"vh_parent_vs_ref,omitempty"`
 
-	// Specify if the Virtual Hosting VS is of type SNI or Enhanced. Enum options - VS_TYPE_VH_SNI, VS_TYPE_VH_ENHANCED. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Basic edition(Allowed values- VS_TYPE_VH_ENHANCED), Enterprise with Cloud Services edition. Special default for Basic edition is VS_TYPE_VH_ENHANCED, Enterprise is VS_TYPE_VH_SNI.
+	// Specify if the Virtual Hosting VS is of type SNI or Enhanced. Enum options - VS_TYPE_VH_SNI, VS_TYPE_VH_ENHANCED. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Basic edition(Allowed values- VS_TYPE_VH_SNI,VS_TYPE_VH_ENHANCED), Enterprise with Cloud Services edition.
 	VhType *string `json:"vh_type,omitempty"`
 
 	// List of Virtual Service IPs. While creating a 'Shared VS',please use vsvip_ref to point to the shared entities. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.

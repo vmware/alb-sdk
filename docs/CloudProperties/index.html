@@ -187,7 +187,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - configure cloudproperties - show cloudproperties ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 22.1.1</div>
+    <div class="app-desc">Version: 22.1.3</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -285,11 +285,15 @@ font-style: italic;
     "info" : [ {
       "cca_props" : {
         "poll_duration_target" : 123,
+        "vcenter_reconcile_interval" : 123,
         "vnic_retries_delay" : 123,
         "poll_fast_target" : 123,
+        "vcenter_inventory_max_object_updates" : 123,
         "poll_slow_target" : 123,
+        "vcenter_host_ping_interval" : 123,
         "async_retries_delay" : 123,
         "async_retries" : 123,
+        "vcenter_max_datastore_go_routines" : 123,
         "vnic_retries" : 123
       },
       "htypes" : [ "aeiou" ],
@@ -505,11 +509,15 @@ font-style: italic;
   "info" : [ {
     "cca_props" : {
       "poll_duration_target" : 123,
+      "vcenter_reconcile_interval" : 123,
       "vnic_retries_delay" : 123,
       "poll_fast_target" : 123,
+      "vcenter_inventory_max_object_updates" : 123,
       "poll_slow_target" : 123,
+      "vcenter_host_ping_interval" : 123,
       "async_retries_delay" : 123,
       "async_retries" : 123,
+      "vcenter_max_datastore_go_routines" : 123,
       "vnic_retries" : 123
     },
     "htypes" : [ "aeiou" ],
@@ -796,11 +804,15 @@ font-style: italic;
   "info" : [ {
     "cca_props" : {
       "poll_duration_target" : 123,
+      "vcenter_reconcile_interval" : 123,
       "vnic_retries_delay" : 123,
       "poll_fast_target" : 123,
+      "vcenter_inventory_max_object_updates" : 123,
       "poll_slow_target" : 123,
+      "vcenter_host_ping_interval" : 123,
       "async_retries_delay" : 123,
       "async_retries" : 123,
+      "vcenter_max_datastore_go_routines" : 123,
       "vnic_retries" : 123
     },
     "htypes" : [ "aeiou" ],
@@ -1027,11 +1039,15 @@ font-style: italic;
   "info" : [ {
     "cca_props" : {
       "poll_duration_target" : 123,
+      "vcenter_reconcile_interval" : 123,
       "vnic_retries_delay" : 123,
       "poll_fast_target" : 123,
+      "vcenter_inventory_max_object_updates" : 123,
       "poll_slow_target" : 123,
+      "vcenter_host_ping_interval" : 123,
       "async_retries_delay" : 123,
       "async_retries" : 123,
+      "vcenter_max_datastore_go_routines" : 123,
       "vnic_retries" : 123
     },
     "htypes" : [ "aeiou" ],
@@ -1258,11 +1274,15 @@ font-style: italic;
   "info" : [ {
     "cca_props" : {
       "poll_duration_target" : 123,
+      "vcenter_reconcile_interval" : 123,
       "vnic_retries_delay" : 123,
       "poll_fast_target" : 123,
+      "vcenter_inventory_max_object_updates" : 123,
       "poll_slow_target" : 123,
+      "vcenter_host_ping_interval" : 123,
       "async_retries_delay" : 123,
       "async_retries" : 123,
+      "vcenter_max_datastore_go_routines" : 123,
       "vnic_retries" : 123
     },
     "htypes" : [ "aeiou" ],
@@ -2420,6 +2440,10 @@ font-style: italic;
 <div class="param">poll_duration_target (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Discovery poll target duration; a scale factor of 1+ is computed with the actual discovery (actual/target) and used to tweak slow and fast poll intervals. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">poll_fast_target (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Fast poll interval. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">poll_slow_target (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Slow poll interval. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">vcenter_host_ping_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Vcenter host reachability check interval. Allowed values are 60-3600. Field introduced in 22.1.3. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">vcenter_inventory_max_object_updates (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Batch size of vcenter inventory updates. Allowed values are 1-500. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">vcenter_max_datastore_go_routines (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Max datastore processing go routines for vcenter datastore updates. Allowed values are 1-40. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">vcenter_reconcile_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Reconcile interval for vcenter inventory. Allowed values are 60-3600. Field introduced in 22.1.3. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">vnic_retries (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum polls to check for vnics to be attached to VM. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">vnic_retries_delay (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Delay between each vnic status poll check. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->

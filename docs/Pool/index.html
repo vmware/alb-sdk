@@ -187,7 +187,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - configure pool <key> - show pool <key> - scaleout pool <key> - scalein pool <key> - clear pool <key> ```  Examples - **pool_example**: To create a basic pool object that uses the least connections algorithm and has a couple of application servers in the backend   ```json     {'name': 'production_pool', 'default_server_port': 80, 'servers': [{'ip': {'addr': '10.10.90.120', 'type': 'V4'}}, {'ip': {'addr': '10.10.90.121', 'type': 'V4'}}], 'lb_algorithm': 'LB_ALGORITHM_LEAST_CONNECTIONS'}   ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 22.1.1</div>
+    <div class="app-desc">Version: 22.1.3</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -369,6 +369,7 @@ font-style: italic;
     "application_persistence_profile_ref" : "aeiou",
     "lb_algorithm_core_nonaffinity" : 123,
     "autoscale_launch_config_ref" : "aeiou",
+    "lb_algo_rr_per_se" : true,
     "routing_pool" : true,
     "placement_networks" : [ {
       "subnet" : {
@@ -621,6 +622,7 @@ font-style: italic;
   "application_persistence_profile_ref" : "aeiou",
   "lb_algorithm_core_nonaffinity" : 123,
   "autoscale_launch_config_ref" : "aeiou",
+  "lb_algo_rr_per_se" : true,
   "routing_pool" : true,
   "placement_networks" : [ {
     "subnet" : {
@@ -1106,6 +1108,7 @@ font-style: italic;
   "application_persistence_profile_ref" : "aeiou",
   "lb_algorithm_core_nonaffinity" : 123,
   "autoscale_launch_config_ref" : "aeiou",
+  "lb_algo_rr_per_se" : true,
   "routing_pool" : true,
   "placement_networks" : [ {
     "subnet" : {
@@ -1629,6 +1632,7 @@ font-style: italic;
   "application_persistence_profile_ref" : "aeiou",
   "lb_algorithm_core_nonaffinity" : 123,
   "autoscale_launch_config_ref" : "aeiou",
+  "lb_algo_rr_per_se" : true,
   "routing_pool" : true,
   "placement_networks" : [ {
     "subnet" : {
@@ -1944,6 +1948,7 @@ font-style: italic;
   "application_persistence_profile_ref" : "aeiou",
   "lb_algorithm_core_nonaffinity" : 123,
   "autoscale_launch_config_ref" : "aeiou",
+  "lb_algo_rr_per_se" : true,
   "routing_pool" : true,
   "placement_networks" : [ {
     "subnet" : {
@@ -3216,6 +3221,7 @@ font-style: italic;
 <div class="param">ignore_server_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Ignore the server port in building the load balancing state.Applicable only for consistent hash load balancing algorithm or Disable Port translation (use_service_port) use cases. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">inline_health_monitor (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> The Passive monitor will monitor client to server connections and requests and adjust traffic load to servers based on successful responses.  This may alter the expected behavior of the LB method, such as Round Robin. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ipaddrgroup_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Use list of servers from Ip Address Group. It is a reference to an object of type IpAddrGroup. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">lb_algo_rr_per_se (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Do Round Robin load load balancing at SE level instead of the default per core load balancing. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">lb_algorithm (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The load balancing algorithm will pick a server within the pool&#39;s list of available servers. Values LB_ALGORITHM_NEAREST_SERVER and LB_ALGORITHM_TOPOLOGY are only allowed for GSLB pool. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- LB_ALGORITHM_LEAST_CONNECTIONS,LB_ALGORITHM_ROUND_ROBIN,LB_ALGORITHM_CONSISTENT_HASH), Basic edition(Allowed values- LB_ALGORITHM_LEAST_CONNECTIONS,LB_ALGORITHM_ROUND_ROBIN,LB_ALGORITHM_CONSISTENT_HASH), Enterprise with Cloud Services edition. </div>
 <div class="param">lb_algorithm_consistent_hash_hdr (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP header name to be used for the hash key. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">lb_algorithm_core_nonaffinity (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Degree of non-affinity for core affinity based server selection. Allowed values are 1-65535. Field introduced in 17.1.3. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 2), Basic edition(Allowed values- 2), Enterprise with Cloud Services edition. format: int32</div>
@@ -3322,7 +3328,7 @@ font-style: italic;
 <div class="param">mac_address (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> MAC address of server. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">nw_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> (internal-use) This field is used internally by Avi, not editable by the user. It is a reference to an object of type VIMgrNWRuntime. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Optionally specify the servers port number.  This will override the pool&#39;s default server port attribute. Allowed values are 1-65535. Special values are 0- use backend port in pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">preference_order (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Preference order of this member in the group. The DNS Service chooses the member with the lowest preference that is operationally up. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">preference_order (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Preference order of this member in the group. The DNS Service chooses the member with the lowest preference that is operationally up. Allowed values are 1-128. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">prst_hdr_val (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Header value for custom header persistence. . Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">ratio (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Ratio of selecting eligible servers in the pool. Allowed values are 1-20. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">resolve_server_by_dns (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Auto resolve server&#39;s IP using DNS name. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. </div>

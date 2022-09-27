@@ -6,6 +6,7 @@ import os
 import time
 from avi.sdk.avi_api import ApiSession
 import requests
+from requests import ConnectionError
 
 def verify_controller_is_up(controller_ip, username, password):
     """""
@@ -83,21 +84,29 @@ def upload_license(session, licensefile):
     print("Successfully uploaded license AviInternal")
 
 
-def wait_until_node_ready(controller_ip, interval=120, timeout=3000):
+def wait_until_node_ready(controller_ip, interval=120, timeout=3600):
     """""
     Polls the controller at every minute status till we get success state
     and verify cluster state.
     """
     cluster_up_states = ["CLUSTER_UP_HA_ACTIVE", "CLUSTER_UP_NO_HA"]
     iters = int(timeout / interval)
+    retries = 12
+    retry = 0
     for count in range(0, iters):
-        data = requests.get('https://{ip}/api/cluster/runtime'.format(ip=controller_ip), verify=False)
-        if type(data) != dict and data.status_code == 200:
-            response_content = data.content.decode() if type(data.content) == bytes else data.content
-            data = json.loads (response_content)
-            if data['cluster_state']['state'] in cluster_up_states:
-                print("node is active")
-                break
-        time.sleep (interval)
+        try:
+            data = requests.get('https://{ip}/api/cluster/runtime'.format(ip=controller_ip), verify=False)
+            if type(data) != dict and data.status_code == 200:
+                response_content = data.content.decode() if type(data.content) == bytes else data.content
+                data = json.loads (response_content)
+                if data['cluster_state']['state'] in cluster_up_states:
+                    print("node is active")
+                    break
+            time.sleep(interval)
+        except ConnectionError as err:
+            retry += 1
+            if retry >= retries:
+                raise Exception('Connection break : %s' % err)
+            continue
     else:
         raise Exception("Node is not in up state after timeout %s" % timeout)

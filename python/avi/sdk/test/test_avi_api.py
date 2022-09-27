@@ -897,20 +897,6 @@ class Test(unittest.TestCase):
                                   api_version=login_info.get("api_version"))
         assert resp.status_code in (200, 204)
 
-    @pytest.mark.travis
-    @my_vcr.use_cassette()
-    def test_unauthenticated_session(self):
-        ApiSession.clear_cached_sessions()
-        session = ApiSession(
-            controller_ip=login_info["controller_ip"], lazy_authentication=True)
-        resp = session.get('cluster/runtime', no_auth=True)
-        assert resp.status_code in (200, 204)
-        ApiSession.clear_cached_sessions()
-
-        session = ApiSession(
-            controller_ip=login_info["controller_ip"], no_auth=True)
-        resp = session.get('cluster/runtime')
-        assert resp.status_code in (200, 204)
 
 if __name__ == "__main__":
     unittest.main()

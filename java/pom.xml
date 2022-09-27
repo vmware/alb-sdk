@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.vmware.avi.sdk</groupId>
 	<artifactId>avisdk</artifactId>
-	<version>21.1.3</version>
+	<version>22.1.3</version>
 	<name>avisdk</name>
 	<description>Avi SDK is a java API which creates a session with controller and perform CRUD operations.</description>
 	<url>https://github.com/vmware/alb-sdk/tree/master/java</url>
@@ -46,6 +46,12 @@
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<testSourceDirectory>test</testSourceDirectory>
+		<resources>
+	        <resource>
+	            <directory>resources</directory>
+	            <filtering>true</filtering>
+	        </resource>
+	    </resources>
 		<plugins>
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
@@ -129,7 +135,7 @@
 		</plugins>
 	</build>
 	<properties>
-		<jackson.version>2.12.6</jackson.version>
+		<jackson.version>2.12.7</jackson.version>
 	</properties>
 	<dependencies>
 		<dependency>

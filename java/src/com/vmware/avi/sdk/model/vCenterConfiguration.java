@@ -43,7 +43,7 @@ public class vCenterConfiguration  {
     private String privilege = "WRITE_ACCESS";
 
     @JsonProperty("use_content_lib")
-    private Boolean useContentLib = false;
+    private Boolean useContentLib = true;
 
     @JsonProperty("username")
     private String username = null;
@@ -224,8 +224,8 @@ public class vCenterConfiguration  {
      * This is the getter method this will return the attribute value.
      * If false, service engine image will not be pushed to content library.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Allowed in enterprise edition with any value, essentials edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return useContentLib
      */
     public Boolean getUseContentLib() {
@@ -236,8 +236,8 @@ public class vCenterConfiguration  {
      * This is the setter method to the attribute.
      * If false, service engine image will not be pushed to content library.
      * Field introduced in 22.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Allowed in enterprise edition with any value, essentials edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param useContentLib set the useContentLib.
      */
     public void setUseContentLib(Boolean  useContentLib) {

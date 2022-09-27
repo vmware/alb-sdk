@@ -83,6 +83,9 @@ type WafPolicy struct {
 	// WAF Rules are categorized in to groups based on their characterization. These groups are created by the user and will be  enforced before the CRS groups. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	PreCrsGroups []*WafRuleGroup `json:"pre_crs_groups,omitempty"`
 
+	// The data files and types referred in this WAF policy. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
+	RequiredDataFiles []*WafPolicyRequiredDataFile `json:"required_data_files,omitempty"`
+
 	//  It is a reference to an object of type Tenant. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 

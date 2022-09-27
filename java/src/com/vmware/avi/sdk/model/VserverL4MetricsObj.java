@@ -204,6 +204,9 @@ public class VserverL4MetricsObj  {
     @JsonProperty("avg_tx_pkts")
     private Float avgTxPkts = null;
 
+    @JsonProperty("max_connection_estb_time_fe")
+    private Float maxConnectionEstbTimeFe = null;
+
     @JsonProperty("max_num_active_se")
     private Float maxNumActiveSe = null;
 
@@ -252,6 +255,9 @@ public class VserverL4MetricsObj  {
     @JsonProperty("sum_conn_duration")
     private Float sumConnDuration = null;
 
+    @JsonProperty("sum_conn_est_time_exceeded_flows_fe")
+    private Float sumConnEstTimeExceededFlowsFe = null;
+
     @JsonProperty("sum_connection_dropped_user_limit")
     private Float sumConnectionDroppedUserLimit = null;
 
@@ -275,6 +281,9 @@ public class VserverL4MetricsObj  {
 
     @JsonProperty("sum_finished_conns")
     private Float sumFinishedConns = null;
+
+    @JsonProperty("sum_ingress_latency_exceeded_flows")
+    private Float sumIngressLatencyExceededFlows = null;
 
     @JsonProperty("sum_lossy_connections")
     private Float sumLossyConnections = null;
@@ -1653,6 +1662,30 @@ public class VserverL4MetricsObj  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Maximum connection establishment time on the client side.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return maxConnectionEstbTimeFe
+     */
+    public Float getMaxConnectionEstbTimeFe() {
+        return maxConnectionEstbTimeFe;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum connection establishment time on the client side.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param maxConnectionEstbTimeFe set the maxConnectionEstbTimeFe.
+     */
+    public void setMaxConnectionEstbTimeFe(Float  maxConnectionEstbTimeFe) {
+        this.maxConnectionEstbTimeFe = maxConnectionEstbTimeFe;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Max number of ses.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -2003,6 +2036,30 @@ public class VserverL4MetricsObj  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Total number of times client side connection establishment time was breached.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumConnEstTimeExceededFlowsFe
+     */
+    public Float getSumConnEstTimeExceededFlowsFe() {
+        return sumConnEstTimeExceededFlowsFe;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total number of times client side connection establishment time was breached.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumConnEstTimeExceededFlowsFe set the sumConnEstTimeExceededFlowsFe.
+     */
+    public void setSumConnEstTimeExceededFlowsFe(Float  sumConnEstTimeExceededFlowsFe) {
+        this.sumConnEstTimeExceededFlowsFe = sumConnEstTimeExceededFlowsFe;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Total number of connection dropped due to vserver connection limit.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -2177,6 +2234,30 @@ public class VserverL4MetricsObj  {
      */
     public void setSumFinishedConns(Float  sumFinishedConns) {
         this.sumFinishedConns = sumFinishedConns;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total number of times 'latency_threshold' was breached during ingress.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumIngressLatencyExceededFlows
+     */
+    public Float getSumIngressLatencyExceededFlows() {
+        return sumIngressLatencyExceededFlows;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total number of times 'latency_threshold' was breached during ingress.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumIngressLatencyExceededFlows set the sumIngressLatencyExceededFlows.
+     */
+    public void setSumIngressLatencyExceededFlows(Float  sumIngressLatencyExceededFlows) {
+        this.sumIngressLatencyExceededFlows = sumIngressLatencyExceededFlows;
     }
 
     /**
@@ -2480,7 +2561,10 @@ public class VserverL4MetricsObj  {
   Objects.equals(this.avgTotalConnections, objVserverL4MetricsObj.avgTotalConnections)&&
   Objects.equals(this.maxNumActiveSe, objVserverL4MetricsObj.maxNumActiveSe)&&
   Objects.equals(this.avgDosAttacks, objVserverL4MetricsObj.avgDosAttacks)&&
-  Objects.equals(this.avgHalfOpenConns, objVserverL4MetricsObj.avgHalfOpenConns);
+  Objects.equals(this.avgHalfOpenConns, objVserverL4MetricsObj.avgHalfOpenConns)&&
+  Objects.equals(this.maxConnectionEstbTimeFe, objVserverL4MetricsObj.maxConnectionEstbTimeFe)&&
+  Objects.equals(this.sumIngressLatencyExceededFlows, objVserverL4MetricsObj.sumIngressLatencyExceededFlows)&&
+  Objects.equals(this.sumConnEstTimeExceededFlowsFe, objVserverL4MetricsObj.sumConnEstTimeExceededFlowsFe);
     }
 
     @Override
@@ -2548,6 +2632,7 @@ public class VserverL4MetricsObj  {
                         sb.append("    avgTotalRtt: ").append(toIndentedString(avgTotalRtt)).append("\n");
                         sb.append("    avgTxBytes: ").append(toIndentedString(avgTxBytes)).append("\n");
                         sb.append("    avgTxPkts: ").append(toIndentedString(avgTxPkts)).append("\n");
+                        sb.append("    maxConnectionEstbTimeFe: ").append(toIndentedString(maxConnectionEstbTimeFe)).append("\n");
                         sb.append("    maxNumActiveSe: ").append(toIndentedString(maxNumActiveSe)).append("\n");
                         sb.append("    maxOpenConns: ").append(toIndentedString(maxOpenConns)).append("\n");
                         sb.append("    maxRxBytesAbsolute: ").append(toIndentedString(maxRxBytesAbsolute)).append("\n");
@@ -2564,6 +2649,7 @@ public class VserverL4MetricsObj  {
                         sb.append("    pctPktsDosAttacks: ").append(toIndentedString(pctPktsDosAttacks)).append("\n");
                         sb.append("    pctPolicyDrops: ").append(toIndentedString(pctPolicyDrops)).append("\n");
                         sb.append("    sumConnDuration: ").append(toIndentedString(sumConnDuration)).append("\n");
+                        sb.append("    sumConnEstTimeExceededFlowsFe: ").append(toIndentedString(sumConnEstTimeExceededFlowsFe)).append("\n");
                         sb.append("    sumConnectionDroppedUserLimit: ").append(toIndentedString(sumConnectionDroppedUserLimit)).append("\n");
                         sb.append("    sumConnectionErrors: ").append(toIndentedString(sumConnectionErrors)).append("\n");
                         sb.append("    sumConnectionsDropped: ").append(toIndentedString(sumConnectionsDropped)).append("\n");
@@ -2572,6 +2658,7 @@ public class VserverL4MetricsObj  {
                         sb.append("    sumEndToEndRttBucket1: ").append(toIndentedString(sumEndToEndRttBucket1)).append("\n");
                         sb.append("    sumEndToEndRttBucket2: ").append(toIndentedString(sumEndToEndRttBucket2)).append("\n");
                         sb.append("    sumFinishedConns: ").append(toIndentedString(sumFinishedConns)).append("\n");
+                        sb.append("    sumIngressLatencyExceededFlows: ").append(toIndentedString(sumIngressLatencyExceededFlows)).append("\n");
                         sb.append("    sumLossyConnections: ").append(toIndentedString(sumLossyConnections)).append("\n");
                         sb.append("    sumLossyReq: ").append(toIndentedString(sumLossyReq)).append("\n");
                         sb.append("    sumOutOfOrders: ").append(toIndentedString(sumOutOfOrders)).append("\n");

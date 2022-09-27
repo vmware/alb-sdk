@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "22.1.1",
+        "version": "22.1.3",
         "title": "Avi Cloud Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -2931,6 +2931,14 @@
                         "$ref": "#/definitions/Property"
                     }
                 },
+                "enable_os_object_caching": {
+                    "description": "When enabled, frequently used objects like networks, subnets, routers etc. are cached to improve performance and reduce load on OpenStack Controllers. Suitable for OpenStack environments where Neutron resources are not frequently created, updated, or deleted.The cache is refreshed when cloud GC API is issued. Field introduced in 21.1.5, 22.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "enable_tagging": {
+                    "description": "When set to True, OpenStack resources created by Avi are tagged with Avi Cloud UUID. Field introduced in 21.1.5, 22.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
                 "external_networks": {
                     "description": "If True, allow selection of networks marked as 'external' for management,  vip or data networks. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
@@ -3052,6 +3060,10 @@
                 "username": {
                     "description": "The username Avi Vantage will use when authenticating to Keystone. For Keystone v3, provide the user information in user@domain format, unless that user belongs to the Default domain. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
+                },
+                "vip_port_in_admin_tenant": {
+                    "description": "When set to True, VIP ports are created in OpenStack tenant configured as admin_tenant in cloud. Otherwise, default behavior is to create VIP ports in user tenant. Field introduced in 21.1.5, 22.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
                 }
             }
         },
@@ -3726,8 +3738,9 @@
                     "default": "WRITE_ACCESS"
                 },
                 "use_content_lib": {
-                    "description": "If false, Service Engine image will not be pushed to content library. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
+                    "description": "If false, Service Engine image will not be pushed to content library. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "boolean",
+                    "default": true
                 },
                 "username": {
                     "description": "The username Avi Vantage will use when authenticating with vCenter. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",

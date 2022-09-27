@@ -30,7 +30,7 @@ type VCenterConfiguration struct {
 	// Required: true
 	Privilege *string `json:"privilege"`
 
-	// If false, Service Engine image will not be pushed to content library. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// If false, Service Engine image will not be pushed to content library. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Enterprise with Cloud Services edition.
 	UseContentLib *bool `json:"use_content_lib,omitempty"`
 
 	// The username Avi Vantage will use when authenticating with vCenter. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -1,6 +1,7 @@
 # Copyright 2021 VMware, Inc.
 # SPDX-License-Identifier: Apache License 2.0
 
+import copy
 import logging
 import os
 from functools import reduce
@@ -15,7 +16,6 @@ from xlsxwriter import Workbook
 from openpyxl import load_workbook
 
 from avi.migrationtools.avi_migration_utils import MigrationUtil
-from avi.migrationtools.f5_converter.conversion_util import F5Util
 
 LOG = logging.getLogger(__name__)
 csv_writer_dict_list = []
@@ -102,7 +102,7 @@ class NsxtConvUtil(MigrationUtil):
         for status in conv_const.STATUS_LIST:
             status_list = [row for row in csv_writer_dict_list if
                            row['Status'] == status]
-            print('%s: %s' % (status, len(status_list)))
+            print('Total %s: %s' % (status, len(status_list)))
         print("Writing Excel Sheet For Converted Configuration...")
         ptotal_count = ptotal_count + len(csv_writer_dict_list)
         if vs_level_status:
@@ -271,9 +271,9 @@ class NsxtConvUtil(MigrationUtil):
         # Get the list of csv rows which has profile as NsxT type
         profile_csv_list = self.get_csv_object_list(
             csv_writer_dict_list, ['applicationprofile'])
-        ssl_profile_csv_list=self.get_csv_object_list(
+        ssl_profile_csv_list = self.get_csv_object_list(
             csv_writer_dict_list, ['sslprofile'])
-        ssl_key_certificate_csv_list=self.get_csv_object_list(
+        ssl_key_certificate_csv_list = self.get_csv_object_list(
             csv_writer_dict_list, ['ssl_key_and_certificate'])
         ptotal_count = ptotal_count + len(vs_csv_objects)
         for vs_csv_object in vs_csv_objects:
@@ -512,11 +512,11 @@ class NsxtConvUtil(MigrationUtil):
                                                'SSL_CLIENT_CERTIFICATE_NONE')
                     pki_profile = self.get_object_ref(
                         pki_profiles[0]["name"], 'pkiprofile',
-                        tenant=self.get_name(pki_profiles[0]['tenant_ref']))
+                        tenant=(pki_profiles[0]['tenant_ref'])).split('name=')[-1]
                 if context == "clientside":
                     ssl_prof_ref = self.get_object_ref(
                         ssl_profiles[0]["name"], 'sslprofile',
-                        tenant=self.get_name(ssl_profiles[0]['tenant_ref']))
+                        tenant=(ssl_profiles[0]['tenant_ref'])).split('name=')
                     vs_ssl_profile_names.append({"profile": ssl_prof_ref,
                                                  "cert": key_cert,
                                                  "pki": pki_profile,
@@ -524,7 +524,7 @@ class NsxtConvUtil(MigrationUtil):
                 elif context == "serverside":
                     ssl_prof_ref = self.get_object_ref(
                         ssl_profiles[0]["name"], 'sslprofile',
-                        tenant=self.get_name(ssl_profiles[0]['tenant_ref']))
+                        tenant=(ssl_profiles[0]['tenant_ref'])).split('name=')
                     pool_ssl_profile_names.append(
                         {"profile": ssl_prof_ref, "cert": key_cert,
                          "pki": pki_profile, 'mode': mode})
@@ -838,7 +838,7 @@ class NsxtConvUtil(MigrationUtil):
                 app_prof_name = app_profiles[0]['name']
                 app_profile_refs.append(self.get_object_ref(
                     app_prof_name, 'applicationprofile',
-                    tenant=self.get_name(app_profiles[0]['tenant_ref'])))
+                    tenant=(app_profiles[0]['tenant_ref']))).split('name=')
 
                 if app_profiles[0].get('HTTPPolicySet', None):
                     app_prof_conf['policy_name'] = app_profiles[0]['HTTPPolicySet']
@@ -883,7 +883,7 @@ class NsxtConvUtil(MigrationUtil):
                                       obj for obj in app_profile_list if
                                       (obj['name'] == value
                                        or value in obj.get("dup_of", []))]
-            tenant = self.get_name(default_app_profile[0]['tenant_ref']) if \
+            tenant = (default_app_profile[0]['tenant_ref']).split('name=') if \
                 default_app_profile else '/api/tenant/?name=admin'
             app_profile_refs.append(
                 self.get_object_ref(default_app_profile[0]['name'],
@@ -926,7 +926,7 @@ class NsxtConvUtil(MigrationUtil):
             if network_profiles:
                 network_profile_ref = self.get_object_ref(
                     network_profiles[0]['name'], 'networkprofile',
-                    tenant=self.get_name(network_profiles[0]['tenant_ref']))
+                    tenant=(network_profiles[0]['tenant_ref'])).split('name=')
                 network_profile_names.append(network_profile_ref)
         return network_profile_names
 
@@ -980,10 +980,9 @@ class NsxtConvUtil(MigrationUtil):
             if network_profiles:
                 network_profile_ref = self.get_object_ref(
                     network_profiles[0]['name'], 'networkprofile',
-                    tenant=self.get_name(network_profiles[0]['tenant_ref']))
+                    tenant=(network_profiles[0]['tenant_ref'])).split('name=')
                 network_profile_names.append(network_profile_ref)
         return network_profile_names
-
 
     def get_app_persistence_profile_skipped(self, csv_writer_dict_list,
                                             pool_object, vs_ref):
@@ -1019,4 +1018,369 @@ class NsxtConvUtil(MigrationUtil):
             profile_csv_list, ssl_profile_name, vs_ref, field_key='ssl_profile')
         return ssl_profile_name, skipped_list
 
+    def get_conv_status_by_obj_name(self, obj_name):
+        conv_status_list = list(filter(lambda obj: obj.get("NsxT ID") == obj_name, csv_writer_dict_list))
+        conv_status = dict()
+        conv_status["status"] = conv_status_list[0]["Status"]
+        conv_status['skipped'] = conv_status_list[0]["Skipped settings"]
+        conv_status['indirect'] = conv_status_list[0]["Indirect mapping"]
+        conv_status['na_list'] = conv_status_list[0]['Not Applicable']
+        return conv_status
 
+    def clone_pool_if_shared(self, ref, avi_config, vs_name, tenant, p_tenant,
+                             persist_type, controller_version, app_prof_ref, is_pool_group_used,
+                             http_pool_group_list, http_pool_list,
+                             cloud_name='Default-Cloud', prefix=None):
+        """
+        clones pool or pool group if its shard between multiple VS or partitions
+        in Nsxt
+        :param ref: reference of pool or pool group
+        :param avi_config: Avi configuration cloned pool or pool groups to be
+        added
+        :param vs_name: Name of the vs to be added
+        :param tenant: tenant name of vs
+        :param p_tenant: tenant name of pool
+        :param persist_type: persistence profile type
+        :param controller_version:
+        :param app_prof_ref: Application profile referance
+        :param sysdict:
+        :param cloud_name:
+        :param prefix:
+        :return:
+        """
+        is_pool_group = False
+        is_pool = False
+        pool_group_obj = None
+        # Added prefix for objects
+        if prefix:
+            ref = prefix + '-' + ref
+        # Search the pool or pool group with name in avi config for the same
+        # tenant as VS
+        pool_obj = [pool for pool in avi_config['Pool'] if pool['name'] == ref
+                    and pool['tenant_ref'] == self.get_object_ref(tenant,
+                                                                  'tenant')]
+        pool_per_ref = pool_obj[0].get(
+            'application_persistence_profile_ref') if pool_obj else None
+        pool_per_name = self.get_name(pool_per_ref) if pool_per_ref else None
+        pool_per_types = [obj['persistence_type'] for obj in (avi_config[
+            'ApplicationPersistenceProfile']) if obj['name'] ==
+                          pool_per_name] if pool_per_name else []
+        pool_per_type = pool_per_types[0] if pool_per_types else None
+        if not pool_obj:
+            pool_group_obj = [pool for pool in avi_config['PoolGroup']
+                              if pool['name'] == ref and
+                              pool['tenant_ref'] == self.get_object_ref(
+                    tenant, 'tenant')]
+        if pool_group_obj:
+            is_pool_group = True
+        if p_tenant:
+            shared_vs = [obj for obj in avi_config['VirtualService']
+                         if obj.get("pool_ref", "") == self.get_object_ref(
+                    ref, 'pool', tenant=p_tenant, cloud_name=cloud_name)]
+            if not shared_vs:
+                if ref in http_pool_list:
+                    if self.get_object_ref(
+                            ref, 'pool', tenant=p_tenant, cloud_name=cloud_name) == self.get_object_ref(
+                            ref, 'pool', tenant=http_pool_list[ref]['tenant'],
+                            cloud_name=http_pool_list[ref]['cloud_name']):
+                            shared_vs = [http_pool_list[ref]['vs_name']]
+            if not shared_vs:
+                shared_vs = [obj for obj in avi_config['VirtualService']
+                             if obj.get("pool_group_ref", "") ==
+                             self.get_object_ref(
+                                 ref, 'poolgroup', tenant=p_tenant,
+                                 cloud_name=cloud_name)]
+            if not shared_vs:
+                if ref in http_pool_group_list:
+                    if self.get_object_ref(
+                            ref, 'poolgroup', tenant=p_tenant, cloud_name=cloud_name) == self.get_object_ref(
+                            ref, 'poolgroup', tenant=http_pool_group_list[ref]['tenant'],
+                            cloud_name=http_pool_group_list[ref]['cloud_name']):
+                            shared_vs = [http_pool_group_list[ref]['vs_name']]
+
+        else:
+            shared_vs = [obj for obj in avi_config['VirtualService']
+                         if obj.get("pool_ref", "") == self.get_object_ref(
+                    ref, 'pool', tenant=tenant, cloud_name=cloud_name)]
+            if not shared_vs:
+                if ref in http_pool_list:
+                    if self.get_object_ref(
+                            ref, 'pool', tenant=p_tenant, cloud_name=cloud_name) == self.get_object_ref(
+                            ref, 'pool', tenant=http_pool_list[ref]['tenant'],
+                            cloud_name=http_pool_list[ref]['cloud_name']):
+                            shared_vs = [http_pool_list[ref]['vs_name']]
+            if not shared_vs:
+                shared_vs = [obj for obj in avi_config['VirtualService']
+                             if obj.get("pool_group_ref", "") ==
+                             self.get_object_ref(
+                                 ref, 'poolgroup', tenant=tenant,
+                                 cloud_name=cloud_name)]
+            if not shared_vs:
+                if ref in http_pool_group_list:
+                    if self.get_object_ref(
+                            ref, 'poolgroup', tenant=p_tenant, cloud_name=cloud_name) == self.get_object_ref(
+                            ref, 'poolgroup', tenant=http_pool_group_list[ref]['tenant'],
+                            cloud_name=http_pool_group_list[ref]['cloud_name']):
+                            shared_vs = [http_pool_group_list[ref]['vs_name']]
+        if not tenant == p_tenant:
+            if is_pool_group:
+                ref = self.clone_pool_group(ref, vs_name, avi_config, True,
+                                            tenant, cloud_name=cloud_name)
+            else:
+                ref = self.clone_pool(ref, vs_name, avi_config['Pool'],
+                                      True, tenant)
+        if pool_obj and not shared_vs:
+            if pool_obj[0].get('cloud_ref'):
+                if self.get_name(pool_obj[0]['cloud_ref']) != cloud_name:
+                    ref = self.clone_pool(ref, vs_name, avi_config['Pool'],
+                                          True, tenant)
+
+        if is_pool_group and not shared_vs:
+            if pool_group_obj[0].get('members'):
+                if pool_group_obj[0]['members'][0]['pool_ref'].split('cloud=')[-1] != cloud_name:
+                    shared_vs = [vs_name]
+                    is_pool_group = True
+
+        if shared_vs:
+            if is_pool_group:
+                ref = self.clone_pool_group(ref, vs_name, avi_config, True,
+                                            tenant, cloud_name=cloud_name)
+            else:
+                shared_appref = shared_vs[0].get('application_profile_ref')
+                shared_apptype = None
+                if shared_appref:
+                    shared_appname = self.get_name(shared_appref)
+                    shared_appobjs = [ob for ob in (avi_config[
+                        'ApplicationProfile']) if ob['name'] ==
+                                      shared_appname]
+                    shared_appobj = shared_appobjs[0] if shared_appobjs else {}
+                    shared_apptype = shared_appobj['type'] if shared_appobj \
+                        else None
+                app_prof_name = self.get_name(app_prof_ref)
+                app_prof_objs = [app_ob for app_ob in (avi_config[
+                    'ApplicationProfile']) if app_ob['name'] ==
+                                 app_prof_name]
+                app_prof_obj = app_prof_objs[0] if app_prof_objs else {}
+                app_prof_type = app_prof_obj['type'] if app_prof_obj else None
+
+                if self.is_pool_clone_criteria(
+                        controller_version, app_prof_type, shared_apptype,
+                        persist_type, pool_per_type, shared_appobj,
+                        app_prof_obj):
+                    LOG.debug('Cloned the pool %s for VS %s', ref, vs_name)
+                    ref = self.clone_pool(ref, vs_name, avi_config['Pool'],
+                                          True, tenant)
+                else:
+                    LOG.debug("Shared pool %s for VS %s", ref, vs_name)
+        if not is_pool_group:
+            if not pool_obj:
+                return None, is_pool_group
+        return ref, is_pool_group
+
+    def is_pool_clone_criteria(self, controller_version, app_prof_type,
+                               shared_apptype, persist_type, pool_per_type,
+                               shared_appobj, app_prof_obj):
+        if parse_version(controller_version) < parse_version(
+                '17.1.6') or app_prof_type != 'APPLICATION_PROFILE_TYPE_HTTP' \
+                or shared_apptype != app_prof_type or (
+                persist_type != None and persist_type !=
+                'PERSISTENCE_TYPE_HTTP_COOKIE') or (
+                pool_per_type != None and pool_per_type !=
+                'PERSISTENCE_TYPE_HTTP_COOKIE') or (
+                shared_appobj.get('http_profile', {}).get(
+                    'connection_multiplexing_enabled') != app_prof_obj.get(
+            'http_profile', {}).get('connection_multiplexing_enabled') or (
+                        shared_appobj.get('http_profile', {}).get(
+                            'cache_config') != app_prof_obj.get(
+                    'http_profile', {}).get('cache_config'))):
+            return True
+        else:
+            return False
+
+    def clone_pool_group(self, pool_group_name, clone_for, avi_config, is_vs,
+                         tenant='admin', cloud_name='Default-Cloud'):
+        """
+        If pool is shared with other VS pool is cloned for other VS as Avi dose
+        not support shared pools with new pool name as <pool_name>-<vs_name>
+        :param pool_group_name: Name of the pool group to be cloned
+        :param clone_for: Name of the object/entity for pool group to be cloned
+        :param avi_config: new pool to be added to avi config
+        :param is_vs: True if clone is called for VS
+        :param tenant: if nsxt pool is shared across partition then coned for
+        tenant
+        :param cloud_name:
+        :return: new pool group name
+        """
+        pg_ref = None
+        new_pool_group = None
+        for pool_group in avi_config['PoolGroup']:
+            if pool_group["name"] == pool_group_name:
+                new_pool_group = copy.deepcopy(pool_group)
+                break
+        if new_pool_group:
+            if pool_group_name in used_pool_groups:
+                used_pool_groups[pool_group_name] += 1
+            else:
+                used_pool_groups[pool_group_name] = 1
+            LOG.debug('Cloning pool group for %s', clone_for)
+            new_pool_group["name"] = '{}-{}'.format(
+                pool_group_name, used_pool_groups[pool_group_name])
+            pg_ref = new_pool_group["name"]
+            new_pool_group["tenant_ref"] = self.get_object_ref(tenant, 'tenant')
+            avi_config['PoolGroup'].append(new_pool_group)
+            for index, member in enumerate(new_pool_group['members']):
+                pool_name = self.get_name(member['pool_ref'])
+                if not pool_name.startswith(pool_group_name):
+                    del new_pool_group['members'][index]
+                    continue
+                pool_name = self.clone_pool(pool_name, clone_for,
+                                            avi_config['Pool'], is_vs, tenant)
+                member['pool_ref'] = self.get_object_ref(
+                    pool_name, 'pool', tenant=tenant, cloud_name=cloud_name)
+        return pg_ref
+
+    def clone_pool(self, pool_name, clone_for, avi_pool_list, is_vs,
+                   tenant=None):
+        """
+        If pool is shared with other VS pool is cloned for other VS as Avi dose
+        not support shared pools with new pool name as <pool_name>-<vs_name>
+        :param pool_name: Name of the pool to be cloned
+        :param clone_for: Name of the VS for pool to be cloned
+        :param avi_pool_list: new pool to be added to this list
+        :param is_vs: True if this cloning is for VS
+        :param tenant: if pool is shared across partition then coned for tenant
+        :return: new pool object
+        """
+        LOG.debug("Cloning pool %s for %s " % (pool_name, clone_for))
+        new_pool = None
+        for pool in avi_pool_list:
+            if pool["name"] == pool_name:
+                new_pool = copy.deepcopy(pool)
+                break
+        if new_pool:
+            if pool_name in used_pool:
+                used_pool[pool_name] += 1
+            else:
+                used_pool[pool_name] = 1
+            LOG.debug('Cloning Pool for %s', clone_for)
+            new_pool["name"] = '{}-{}'.format(pool_name, used_pool[pool_name])
+            if tenant:
+                new_pool["tenant_ref"] = self.get_object_ref(tenant, 'tenant')
+            if is_vs:
+                # removing config added from VS config to pool
+                new_pool["application_persistence_profile_ref"] = None
+                new_pool["ssl_profile_ref"] = None
+                new_pool["ssl_key_and_certificate_ref"] = None
+                new_pool["pki_profile_ref"] = None
+                if new_pool.get('placement_networks'):
+                    del new_pool['placement_networks']
+            avi_pool_list.append(new_pool)
+            pool_ref = new_pool["name"]
+            LOG.debug("Cloned pool successfully %s for %s " % (
+                new_pool["name"], clone_for))
+            return pool_ref
+
+    def update_poolgroup_with_cloud(self, pg_ref, alb_config, cloud_name, tenant, cloud_tenant):
+        pool_group = [obj for obj in alb_config['PoolGroup']
+                      if obj['name'] == pg_ref]
+        if pool_group:
+            pool_group = pool_group[0]
+            pool_group['cloud_ref'] = '/api/cloud/?name=%s' % (cloud_name)
+            for member in pool_group['members']:
+                pool_name = self.get_name(member['pool_ref'])
+                member['pool_ref'] = self.get_object_ref(pool_name, 'pool', tenant=tenant, cloud_name=cloud_name)
+                self.update_pool_with_cloud(pool_name, alb_config, cloud_name, tenant, cloud_tenant)
+
+    def update_pool_with_cloud(self, pool_name, alb_config, cloud_name, tenant, cloud_tenant):
+        for pool in alb_config['Pool']:
+            if pool_name == pool["name"]:
+                pool['cloud_ref'] = self.get_object_ref(cloud_name, 'cloud', cloud_tenant=cloud_tenant)
+                break
+
+    def add_teir_to_poolgroup(self, pg_ref, alb_config, tier1_lr):
+        pool_group = [obj for obj in alb_config['PoolGroup']
+                      if obj['name'] == pg_ref]
+        if pool_group:
+            pool_group = pool_group[0]
+            pool_group['tier1_lr'] = tier1_lr
+            for member in pool_group['members']:
+                pool_name = self.get_name(member['pool_ref'])
+                self.add_tier_to_pool(pool_name, alb_config, tier1_lr)
+
+    def add_tier_to_pool(self, pool_name, alb_config, tier1_lr):
+        for pool in alb_config['Pool']:
+            if pool_name == pool["name"]:
+                pool['tier1_lr'] = tier1_lr
+                break
+
+    def add_poolgroup_with_persistence(self, alb_config, nsx_lb_config, lb_vs, pool_group_ref, prefix, cloud_name,
+                                       tenant, object_merge_check, merge_object_mapping):
+        pool_group = [obj for obj in alb_config['PoolGroup']
+                      if obj['name'] == pool_group_ref]
+        if pool_group:
+            pool_group = pool_group[0]
+            for member in pool_group['members']:
+                pool_name = self.get_name(member['pool_ref'])
+                self.add_pool_with_persistence(alb_config, nsx_lb_config, lb_vs, pool_name, prefix, cloud_name,
+                                               tenant, object_merge_check, merge_object_mapping)
+
+    def add_pool_with_persistence(self, alb_config, nsx_lb_config, lb_vs, pool_name, prefix, cloud_name, tenant,
+                                  object_merge_check, merge_object_mapping):
+        persis_id = lb_vs.get('lb_persistence_profile_path').split('/')[-1]
+        persis_config = list(
+            filter(lambda pp: pp["id"] == persis_id, nsx_lb_config["LbPersistenceProfiles"]))
+        if persis_config:
+            persis_name = persis_config[0]["display_name"]
+            if prefix:
+                persis_name = prefix + "-" + persis_name
+            if object_merge_check:
+                persis_name = merge_object_mapping['app_per_profile'].get(persis_name)
+            for pool in alb_config['Pool']:
+                if pool.get('name') == pool_name:
+                    pool['application_persistence_profile_ref'] = self.get_object_ref \
+                        (persis_name, 'applicationpersistenceprofile', tenant=tenant)
+                    break
+
+    def add_placement_network_to_pool_group(self, pool_group_ref, pool_segment, alb_config, cloud_name, tenant):
+        pool_group = [obj for obj in alb_config['PoolGroup']
+                      if obj['name'] == pool_group_ref]
+        if pool_group:
+            pool_group = pool_group[0]
+            for member in pool_group['members']:
+                pool_name = self.get_name(member['pool_ref'])
+                self.add_placement_network_to_pool(
+                    alb_config['Pool'], pool_name, pool_segment, cloud_name, tenant)
+
+    def add_placement_network_to_pool(self, avi_pool_list, pool_ref, pool_segment, cloud_name,
+                                      tenant='admin'):
+        """
+        :param avi_pool_list: List of pools to search pool object
+        :param pool_ref: name of the pool
+        """
+        for pool_obj in avi_pool_list:
+            if pool_ref == pool_obj["name"]:
+                pool_obj["placement_networks"] = list()
+                for sub in pool_segment:
+                    ip_addreses = dict(
+                        addr=sub["subnets"]["network_range"].split("/")[0],
+                        type="V4"
+                    )
+                    subnets = dict(
+                        subnet={
+                            "ip_addr": ip_addreses,
+                            "mask": sub["subnets"]["network_range"].split("/")[-1]
+                        },
+                        network_ref=self.get_object_ref(
+                            sub["seg_name"], 'network', tenant=tenant, cloud_name=cloud_name)
+                    )
+                    pool_obj["placement_networks"].append(subnets)
+                break
+
+    def remove_dup_of(self,avi_config):
+        self.remove_dup_key(avi_config["SSLKeyAndCertificate"])
+        self.remove_dup_key(avi_config["ApplicationProfile"])
+        self.remove_dup_key(avi_config["NetworkProfile"])
+        self.remove_dup_key(avi_config["SSLProfile"])
+        self.remove_dup_key(avi_config["PKIProfile"])
+        self.remove_dup_key(avi_config["ApplicationPersistenceProfile"])
+        self.remove_dup_key(avi_config["HealthMonitor"])

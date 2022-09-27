@@ -38,7 +38,7 @@ type HTTPApplicationProfile struct {
 	// Allows HTTP requests, not just TCP connections, to be load balanced across servers.  Proxied TCP connections to servers may be reused by multiple clients to improve performance. Not compatible with Preserve Client IP. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConnectionMultiplexingEnabled *bool `json:"connection_multiplexing_enabled,omitempty"`
 
-	// Detect NTLM apps based on the HTTP Response from the server. Once detected, connection multiplexing will be disabled for that connection. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Detect NTLM apps based on the HTTP Response from the server. Once detected, connection multiplexing will be disabled for that connection. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	DetectNtlmApp *bool `json:"detect_ntlm_app,omitempty"`
 
 	// Disable keep-alive client side connections for older browsers based off MS Internet Explorer 6.0 (MSIE6). For some applications, this might break NTLM authentication for older clients based off MSIE6. For such applications, set this option to false to allow keep-alive connections. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- true), Basic edition(Allowed values- true), Enterprise with Cloud Services edition.
@@ -169,4 +169,7 @@ type HTTPApplicationProfile struct {
 
 	// The client's original IP address is inserted into an HTTP request header sent to the server.  Servers may use this address for logging or other purposes, rather than Avi's source NAT address used in the Avi to server IP connection. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	XffEnabled *bool `json:"xff_enabled,omitempty"`
+
+	// Configure how incoming X-Forwarded-For headers from the client are handled. Enum options - REPLACE_XFF_HEADERS, APPEND_TO_THE_XFF_HEADER, ADD_NEW_XFF_HEADER. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	XffUpdate *string `json:"xff_update,omitempty"`
 }

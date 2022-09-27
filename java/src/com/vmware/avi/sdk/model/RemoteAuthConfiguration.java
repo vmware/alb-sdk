@@ -34,7 +34,7 @@ public class RemoteAuthConfiguration  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Uuid of the authmappingprofile(set of auth mapping rules) to assign to be assigned to a user on successful match.
+     * Uuid of the authmappingprofile(set of auth mapping rules) to be assigned to a user on successful match.
      * It is a reference to an object of type authmappingprofile.
      * Field introduced in 22.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -47,7 +47,7 @@ public class RemoteAuthConfiguration  {
 
     /**
      * This is the setter method to the attribute.
-     * Uuid of the authmappingprofile(set of auth mapping rules) to assign to be assigned to a user on successful match.
+     * Uuid of the authmappingprofile(set of auth mapping rules) to be assigned to a user on successful match.
      * It is a reference to an object of type authmappingprofile.
      * Field introduced in 22.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.

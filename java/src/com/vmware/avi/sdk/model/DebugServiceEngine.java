@@ -51,6 +51,9 @@ public class DebugServiceEngine extends AviRestResource  {
     @JsonProperty("enable_kdump")
     private Boolean enableKdump = false;
 
+    @JsonProperty("enable_rpc_timing_profiler")
+    private Boolean enableRpcTimingProfiler = false;
+
     @JsonProperty("fault")
     private DebugSeFault fault = null;
 
@@ -68,6 +71,9 @@ public class DebugServiceEngine extends AviRestResource  {
 
     @JsonProperty("tenant_ref")
     private String tenantRef = null;
+
+    @JsonProperty("trace_memory")
+    private DebugTraceMemory traceMemory = null;
 
     @JsonProperty("url")
     private String url = "url";
@@ -350,6 +356,30 @@ public class DebugServiceEngine extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Enable profiling time for certain rpc calls.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return enableRpcTimingProfiler
+     */
+    public Boolean getEnableRpcTimingProfiler() {
+        return enableRpcTimingProfiler;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable profiling time for certain rpc calls.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param enableRpcTimingProfiler set the enableRpcTimingProfiler.
+     */
+    public void setEnableRpcTimingProfiler(Boolean  enableRpcTimingProfiler) {
+        this.enableRpcTimingProfiler = enableRpcTimingProfiler;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Params for se fault injection.
      * Field introduced in 18.1.2.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -503,6 +533,30 @@ public class DebugServiceEngine extends AviRestResource  {
     public void setTenantRef(String  tenantRef) {
         this.tenantRef = tenantRef;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Trace the functions calling memory allocation and free apis.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return traceMemory
+     */
+    public DebugTraceMemory getTraceMemory() {
+        return traceMemory;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Trace the functions calling memory allocation and free apis.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param traceMemory set the traceMemory.
+     */
+    public void setTraceMemory(DebugTraceMemory traceMemory) {
+        this.traceMemory = traceMemory;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Avi controller URL of the object.
@@ -567,6 +621,8 @@ public class DebugServiceEngine extends AviRestResource  {
   Objects.equals(this.benchmarkAction, objDebugServiceEngine.benchmarkAction)&&
   Objects.equals(this.benchmarkOption, objDebugServiceEngine.benchmarkOption)&&
   Objects.equals(this.benchmarkRssHash, objDebugServiceEngine.benchmarkRssHash)&&
+  Objects.equals(this.traceMemory, objDebugServiceEngine.traceMemory)&&
+  Objects.equals(this.enableRpcTimingProfiler, objDebugServiceEngine.enableRpcTimingProfiler)&&
   Objects.equals(this.tenantRef, objDebugServiceEngine.tenantRef);
     }
 
@@ -584,12 +640,14 @@ public class DebugServiceEngine extends AviRestResource  {
                         sb.append("    cpuShares: ").append(toIndentedString(cpuShares)).append("\n");
                         sb.append("    debugIp: ").append(toIndentedString(debugIp)).append("\n");
                         sb.append("    enableKdump: ").append(toIndentedString(enableKdump)).append("\n");
+                        sb.append("    enableRpcTimingProfiler: ").append(toIndentedString(enableRpcTimingProfiler)).append("\n");
                         sb.append("    fault: ").append(toIndentedString(fault)).append("\n");
                         sb.append("    flags: ").append(toIndentedString(flags)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    seagentDebug: ").append(toIndentedString(seagentDebug)).append("\n");
                         sb.append("    selogagentDebug: ").append(toIndentedString(selogagentDebug)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+                        sb.append("    traceMemory: ").append(toIndentedString(traceMemory)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
       return sb.toString();

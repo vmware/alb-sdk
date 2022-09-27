@@ -187,7 +187,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - configure snmptrapprofile <key> - show snmptrapprofile <key> - test alerttestsnmptrap <key> ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 22.1.1</div>
+    <div class="app-desc">Version: 22.1.3</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -204,11 +204,11 @@ font-style: italic;
   <ol>
   <li><a href="#snmptrapprofileGet"><code><span class="http-method">get</span> /snmptrapprofile</code></a></li>
   <li><a href="#snmptrapprofilePost"><code><span class="http-method">post</span> /snmptrapprofile</code></a></li>
-  <li><a href="#snmptrapprofileUuidAlerttestsnmptrapPost"><code><span class="http-method">post</span> /snmptrapprofile/{uuid}/alerttestsnmptrap</code></a></li>
   <li><a href="#snmptrapprofileUuidDelete"><code><span class="http-method">delete</span> /snmptrapprofile/{uuid}</code></a></li>
   <li><a href="#snmptrapprofileUuidGet"><code><span class="http-method">get</span> /snmptrapprofile/{uuid}</code></a></li>
   <li><a href="#snmptrapprofileUuidPatch"><code><span class="http-method">patch</span> /snmptrapprofile/{uuid}</code></a></li>
   <li><a href="#snmptrapprofileUuidPut"><code><span class="http-method">put</span> /snmptrapprofile/{uuid}</code></a></li>
+  <li><a href="#snmptrapprofileUuidTestsnmptrapPost"><code><span class="http-method">post</span> /snmptrapprofile/{uuid}/testsnmptrap</code></a></li>
   </ol>
 
   <div class="method"><a name="snmptrapprofileGet"/>
@@ -376,64 +376,6 @@ font-style: italic;
     <h4 class="field-label">200</h4>
     OK
         <a href="#SnmpTrapProfile">SnmpTrapProfile</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="snmptrapprofileUuidAlerttestsnmptrapPost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /snmptrapprofile/{uuid}/alerttestsnmptrap</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">snmptrapprofileUuidAlerttestsnmptrapPost</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertTestSyslogSnmpParams </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
@@ -761,6 +703,64 @@ font-style: italic;
     <h4 class="field-label">200</h4>
     OK
         <a href="#SnmpTrapProfile">SnmpTrapProfile</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="snmptrapprofileUuidTestsnmptrapPost"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /snmptrapprofile/{uuid}/testsnmptrap</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">snmptrapprofileUuidTestsnmptrapPost</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertTestSyslogSnmpParams </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>

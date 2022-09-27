@@ -42,9 +42,9 @@ public class AviAuthorizationInterceptor implements ClientHttpRequestInterceptor
 	public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException{
 		LOGGER.info("__INIT__ Inside Interceptor..");
 		int numApiExecCount = 0;
-		if (!aviCredentials.getLazyAuthentication() &&
-				(null == this.aviCredentials.getSessionID() ||
-						this.aviCredentials.getSessionID().isEmpty())) {
+		if (!aviCredentials.getLazyAuthentication()
+				&& (null == this.aviCredentials.getSessionID() || this.aviCredentials.getSessionID().isEmpty())
+				&& !aviCredentials.getIsUnAuthenticatedApi()) {
 			AviRestUtils.authenticateSession(this.aviCredentials);
 		}
 		ClientHttpResponse response = null;
@@ -60,10 +60,12 @@ public class AviAuthorizationInterceptor implements ClientHttpRequestInterceptor
 			if (!addIfAbsent("X-Avi-Tenant", headers)) {
 				headers.add("X-Avi-Tenant", this.aviCredentials.getTenant());
 			}
-			headers.add("X-CSRFToken", this.aviCredentials.getCsrftoken());
+			if (!aviCredentials.getIsUnAuthenticatedApi()){
+				headers.add("X-CSRFToken", this.aviCredentials.getCsrftoken());
+				headers.add(HttpHeaders.COOKIE, "csrftoken=" + this.aviCredentials.getCsrftoken() + "; " + "avi-sessionid="
+						+ this.aviCredentials.getSessionID());
+			}
 			headers.add("Referer", AviRestUtils.getControllerURL(this.aviCredentials));
-			headers.add(HttpHeaders.COOKIE, "csrftoken=" + this.aviCredentials.getCsrftoken() + "; " + "avi-sessionid="
-					+ this.aviCredentials.getSessionID());
 
 			response = execution.execute(request, body);
 

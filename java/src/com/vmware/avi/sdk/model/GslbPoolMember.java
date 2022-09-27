@@ -270,7 +270,7 @@ public class GslbPoolMember  {
      * This is the getter method this will return the attribute value.
      * Preference order of this member in the group.
      * The dns service chooses the member with the lowest preference that is operationally up.
-     * Allowed values are 1-100.
+     * Allowed values are 1-128.
      * Field introduced in 22.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
@@ -284,7 +284,7 @@ public class GslbPoolMember  {
      * This is the setter method to the attribute.
      * Preference order of this member in the group.
      * The dns service chooses the member with the lowest preference that is operationally up.
-     * Allowed values are 1-100.
+     * Allowed values are 1-128.
      * Field introduced in 22.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.

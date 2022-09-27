@@ -48,8 +48,9 @@ public class ClientLogStreamingConfig  {
      * This is the getter method this will return the attribute value.
      * Ip address or hostnames (fqdns) of destination servers.
      * If an fqdn is provided, this should be resolvable on avi service engines.
-     * Multiple servers are supported by furnishing a comma-separated list of ip addresses or host names, for example, 11.11.11.11,23.12.12.4.
-     * Optionally, a separate port can be specified for each external server in the list, for example, 11.11.11.11 234,12.12.12.12 343.
+     * Multiple servers are supported by furnishing a comma-separated list of ip addresses or host names, for example, 11.11.11.11,23.12.12.4,2001 123
+     * 1.
+     * Optionally, a separate port can be specified for each external server in the list, for example,11.11.11.11 234,12.12.12.12 343,[2001 123  1] 234.
      * Field introduced in 17.1.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -63,8 +64,9 @@ public class ClientLogStreamingConfig  {
      * This is the setter method to the attribute.
      * Ip address or hostnames (fqdns) of destination servers.
      * If an fqdn is provided, this should be resolvable on avi service engines.
-     * Multiple servers are supported by furnishing a comma-separated list of ip addresses or host names, for example, 11.11.11.11,23.12.12.4.
-     * Optionally, a separate port can be specified for each external server in the list, for example, 11.11.11.11 234,12.12.12.12 343.
+     * Multiple servers are supported by furnishing a comma-separated list of ip addresses or host names, for example, 11.11.11.11,23.12.12.4,2001 123
+     * 1.
+     * Optionally, a separate port can be specified for each external server in the list, for example,11.11.11.11 234,12.12.12.12 343,[2001 123  1] 234.
      * Field introduced in 17.1.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.

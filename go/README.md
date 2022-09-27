@@ -28,71 +28,51 @@ Go Lang ([Click here](https://golang.org/doc/install) for more information)
 They can be installed simply as:
 ### Avi Go SDK Install
 ```sh
-$ mkdir -p src/github.com/vmware/
-$ cd src/github.com/vmware/
+$ mkdir -p src/github.com/avinetworks/
+$ cd src/github.com/avinetworks/
 $ git clone https://github.com/vmware/alb-sdk.git
 #GOPATH will be path till src dir.
-$ export GOPATH=<path to src directory>
+$ export GOPATH=~/src
 ```
 
 ### Usage Examples
-Please follow following steps to create session, pool and virtualservice. 
-1. Create create_vs.go file and write following code in the file.
-2. Import AVI session, models and clients
-```
+To create session, pool and a basic virtualservice named my-test-vs you need to execute create_vs.go file.
+Before executing this script you need to specify AVI controller IP, username, 
+password and tenant in create_vs.go file.
+
+- Import AVI session, models and clients:
+
+```go
 package main
 
 import (
-        "fmt"
-        "github.com/vmware/alb-sdk/go/clients"
-        "github.com/vmware/alb-sdk/go/models"
-        "github.com/vmware/alb-sdk/go/session"
-)
-```
-3. Add main function.
-```
-func main() {
-    // Add code from steps 4 to 11 here.
-}
-```
-4. Create AVI API session. Specify AVI controller IP, username, password, tenant and API version
-for your NSX ALB controller
-```
+	"github.com/vmware/alb-sdk/go/clients"
+	"github.com/vmware/alb-sdk/go/models"
+	"github.com/vmware/alb-sdk/go/session"
+	)
+``` 
+- Create AVI API session:
+
+```go
 aviClient, err := clients.NewAviClient("10.10.25.25", "admin",
 		session.SetPassword("something"),
 		session.SetTenant("admin"),
-		session.SetInsecure,
-		session.SetControllerStatusCheckLimits(5, 10),
-		session.SetVersion("22.1.1"))
+		session.SetInsecure)
 ```
-- We can use following options while creating session.
-    - **SetPassword(password string)** : Use this for NewAviSession option argument for setting password
-    - **SetTenant(tenant string)** : Use this for NewAviSession option argument for setting tenant
-    - **SetInsecure** : Use this for NewAviSession option argument for allowing insecure connection to AviController
-    - **SetControllerStatusCheckLimits(numRetries, retryInterval int)** : 
-        SetControllerStatusCheckLimits allows client to limit the number of tries the SDK should 
-        attempt to reach the controller at the time gap of specified time intervals.
-    - **SetTransport(transport \*http.Transport)** : Use this for NewAviSession option argument for
-        configuring http transport to enable connection
-    - **SetClient(client HttpClient)** : SetClient allows callers to inject their own HTTP client.
-    - **SetVersion(version string)** : Use this for NewAviSession option argument for setting version
-    - **SetAuthToken(authToken string)** : Use this for NewAviSession option argument for setting authToken
-    - **SetRefreshAuthTokenCallback(f func() string)** : Use this for NewAviSession option argument 
-        for setting authToken
-    - **SetRefreshAuthTokenCallbackV2(f func() (string, error))** : Use this for NewAviSession 
-        option argument for setting authToken with option to return error found
-    - **DisableControllerStatusCheckOnFailure(controllerStatusCheck bool)** : Use this for 
-        NewAviSession option argument to disable controller status check.
-    - **SetTimeout(timeout time.Duration)** : Use this for NewAviSession option argument to set 
-        API timeout
-    - **SetLazyAuthentication(lazyAuthentication bool)** : Use this for NewAviSession option 
-        argument to enable the lazy authentication.
-    - **SetMaxApiRetries(max_api_retries int)** : Use this for NewAviSession option argument to 
-        sel maximum allowed API retries
-    - **SetApiRetryInterval(api_retry_interval int)** : Use this for NewAviSession option argument 
-        to set API retry interval.
 
-5. Create pool 'my-test-pool' with one server. Here we can use the models defined in go/models.
+For custom retry count and interval (in seconds) between retries to poll for 
+controller status, below example can be used to initialise the client.
+
+```go
+aviClient, err := clients.NewAviClient("10.10.25.25", "admin",
+		session.SetPassword("something"),
+		session.SetTenant("admin"),
+		session.SetControllerStatusCheckLimits(5, 10), // retryCount, timeInterval (in seconds).
+		session.SetInsecure)
+```
+
+- Create pool 'my-test-pool' with one server:
+
 ```go
 pobj := models.Pool{}
 pname := "my-test-pool"
@@ -112,7 +92,7 @@ if err != nil {
 }
 ```
 
-6. Create vsvip 'test-vip' :
+- Create vsvip 'test-vip' :
 
 ```go
 vsVip := models.VsVip{}
@@ -132,7 +112,7 @@ if err != nil {
 }
 ```
 
-7. Create virtualservice 'my-test-vs' using pool 'my-test-pool':
+- Create virtualservice 'my-test-vs' using pool 'my-test-pool':
 
 ```go
 vsobj := models.VirtualService{}
@@ -151,7 +131,7 @@ if err != nil {
 fmt.Printf("VS obj: %+v", *nvsobj)
 ```
 
-8. Fetching object by name:
+- Fetching object by name:
 
 ```go
 var obj interface{}
@@ -164,26 +144,30 @@ err = aviClient.AviSession.GetObject(
 fmt.Printf("VS with CLOUD_UUID obj: %v", obj)
 ```
 
-9. Delete virtualservice
+- Delete virtualservice
 
 ```go
 aviClient.VirtualService.Delete(nvsobj.UUID)
 ```
-10. Delete VsVip
-```
-aviClient.VsVip.Delete(*vsVipObj.UUID)
-```
-11. Delete pool
+- Delete pool
 
 ```go
 aviClient.Pool.Delete(npobj.UUID)
 ```
-12. Now we can run create_vs.go to create/delete VS, pool.
+
+- Creating a session with Lazy Authentication:
+
+```go
+avisess, err := NewAviSession(AVI_CONTROLLER, "admin",
+		SetPassword(AVI_PASSWORD), SetLazyAuthentication(true))
+```
+
+- create_vs.go Usage - Create a basic virtualservice named my-test-vs: 
+
 ```sh
 $ go run create_vs.go
 ```
-##
-**Lets try another example**
+
 - Metric and Inventory API example:
 ```go
 package main
@@ -229,19 +213,29 @@ func main() {
 	fmt.Printf("response %v\n", rsp)
 }
 ```
-- To run:
+- To compile:
 
 ```sh
-$ go run metrics_inventory.go
+$ go build -o /usr/bin/create_vs create_vs.go
 ```
-##
-**To include Go SDK in third party code:**
+- To include Go SDK in third party code:
 
-Following is an example entry of go.mod file in third party code
-```
-require (
-	github.com/vmware/alb-sdk v22.1.1
-)
+Following is an example entry of vendor.json file in Terraform provider
+```go
+"package": [{
+                "path": "github.com/vmware/alb-sdk/go/clients",
+                "revision": "23def4e6c14b4da8ac2ed8007337bc5eb5007998",
+                "revisionTime": "2016-01-25T20:49:56Z",
+                "version": "18.1.3",
+                "versionExact": "18.1.3"
+            },
+            {
+                "path": "github.com/vmware/alb-sdk/go/session",
+                "revision": "23def4e6c14b4da8ac2ed8007337bc5eb5007998",
+                "revisionTime": "2016-01-25T20:49:56Z",
+                "version": "18.1.3",
+                "versionExact": "18.1.3"
+            }]
 ```
 
 Following is an example to import Go SDK packages in third party Go code

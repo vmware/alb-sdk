@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "22.1.1",
+        "version": "22.1.3",
         "title": "Avi AuthProfile Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -808,7 +808,7 @@
                     "type": "string"
                 },
                 "jwks_timeout": {
-                    "description": "Lifetime of the cached JWKS keys. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Lifetime of the cached JWKS keys. Allowed values are 0-1440. Field introduced in 21.1.3. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },

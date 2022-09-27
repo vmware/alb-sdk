@@ -117,6 +117,9 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("enable_per_process_stop")
     private Boolean enablePerProcessStop = false;
 
+    @JsonProperty("false_positive_learning_config")
+    private FalsePositiveLearningConfig falsePositiveLearningConfig = null;
+
     @JsonProperty("fatal_error_lease_time")
     private Integer fatalErrorLeaseTime = 120;
 
@@ -193,7 +196,7 @@ public class ControllerProperties extends AviRestResource  {
     private Integer seSpawnRetryInterval = 300;
 
     @JsonProperty("se_upgrade_flow_cleanup_timeout")
-    private Integer seUpgradeFlowCleanupTimeout = 30;
+    private Integer seUpgradeFlowCleanupTimeout = 90;
 
     @JsonProperty("se_vnic_cooldown")
     private Integer seVnicCooldown = 120;
@@ -1102,6 +1105,30 @@ public class ControllerProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * False positive learning configuration.
+     * Field introduced in 22.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return falsePositiveLearningConfig
+     */
+    public FalsePositiveLearningConfig getFalsePositiveLearningConfig() {
+        return falsePositiveLearningConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * False positive learning configuration.
+     * Field introduced in 22.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param falsePositiveLearningConfig set the falsePositiveLearningConfig.
+     */
+    public void setFalsePositiveLearningConfig(FalsePositiveLearningConfig falsePositiveLearningConfig) {
+        this.falsePositiveLearningConfig = falsePositiveLearningConfig;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Unit is sec.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 120.
@@ -1722,7 +1749,7 @@ public class ControllerProperties extends AviRestResource  {
      * Field introduced in 22.1.1.
      * Unit is sec.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 90.
      * @return seUpgradeFlowCleanupTimeout
      */
     public Integer getSeUpgradeFlowCleanupTimeout() {
@@ -1735,7 +1762,7 @@ public class ControllerProperties extends AviRestResource  {
      * Field introduced in 22.1.1.
      * Unit is sec.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 90.
      * @param seUpgradeFlowCleanupTimeout set the seUpgradeFlowCleanupTimeout.
      */
     public void setSeUpgradeFlowCleanupTimeout(Integer  seUpgradeFlowCleanupTimeout) {
@@ -2711,7 +2738,8 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.restrictCloudReadAccess, objControllerProperties.restrictCloudReadAccess)&&
   Objects.equals(this.updateDnsEntryTimeout, objControllerProperties.updateDnsEntryTimeout)&&
   Objects.equals(this.updateDnsEntryRetryLimit, objControllerProperties.updateDnsEntryRetryLimit)&&
-  Objects.equals(this.seUpgradeFlowCleanupTimeout, objControllerProperties.seUpgradeFlowCleanupTimeout);
+  Objects.equals(this.seUpgradeFlowCleanupTimeout, objControllerProperties.seUpgradeFlowCleanupTimeout)&&
+  Objects.equals(this.falsePositiveLearningConfig, objControllerProperties.falsePositiveLearningConfig);
     }
 
     @Override
@@ -2750,6 +2778,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    enableApiSharding: ").append(toIndentedString(enableApiSharding)).append("\n");
                         sb.append("    enableMemoryBalancer: ").append(toIndentedString(enableMemoryBalancer)).append("\n");
                         sb.append("    enablePerProcessStop: ").append(toIndentedString(enablePerProcessStop)).append("\n");
+                        sb.append("    falsePositiveLearningConfig: ").append(toIndentedString(falsePositiveLearningConfig)).append("\n");
                         sb.append("    fatalErrorLeaseTime: ").append(toIndentedString(fatalErrorLeaseTime)).append("\n");
                         sb.append("    federatedDatastoreCleanupDuration: ").append(toIndentedString(federatedDatastoreCleanupDuration)).append("\n");
                         sb.append("    fileObjectCleanupPeriod: ").append(toIndentedString(fileObjectCleanupPeriod)).append("\n");

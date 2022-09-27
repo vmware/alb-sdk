@@ -5,6 +5,7 @@
 package com.vmware.avi.sdk;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -125,6 +126,22 @@ public class AviSDKTest {
 			e.printStackTrace(System.err);
 		}
 	}
+
+	@Test
+	public void testUnAuthenticatedApi() throws Exception {
+		try {
+			AviCredentials postRequestCreds = AviSDKTest.getCredsPassword();
+			postRequestCreds.setIsUnAuthenticatedApi(true);
+			AviApi api = new AviApi(postRequestCreds);
+
+			JSONObject resp = api.get("cluster/runtime", null);
+			assertNotNull(resp);
+
+		} catch (AviApiException e) {
+			e.printStackTrace(System.err);
+		}
+	}
+
 	@Test
 	public void testPostFileUpload() throws Exception {
 		try {

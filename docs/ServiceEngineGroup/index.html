@@ -187,7 +187,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - configure serviceenginegroup <key> - show serviceenginegroup <key> - redistribute serviceenginegroup <key> - clear serviceenginegroup <key> ```  Examples - **serviceenginegroup_example_1**: To create a SE group that is suitable for a production application with a HA policy of shared active/active with a minimum scale out of 2 SE   ```json     {'name': 'production-group', 'min_scaleout_per_vs': 2, 'ha_mode': 'HA_MODE_SHARED_PAIR'}   ```  - **serviceenginegroup_example_2**: To create a SE group that is of best effort category suitable for test deployments   ```json     {'name': 'test-group', 'max_se': 8, 'ha_mode': 'HA_MODE_SHARED', 'buffer_se': 0}   ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 22.1.1</div>
+    <div class="app-desc">Version: 22.1.3</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -461,6 +461,7 @@ font-style: italic;
     "free_list_size" : 123,
     "se_hyperthreaded_mode" : "aeiou",
     "min_cpu_usage" : 123,
+    "ntp_sync_status_interval" : 123,
     "cpu_socket_affinity" : true,
     "se_group_analytics_policy" : {
       "metrics_event_thresholds" : [ {
@@ -558,6 +559,7 @@ font-style: italic;
     "buffer_se" : 123,
     "deactivate_kni_filtering_at_dispatcher" : true,
     "max_public_ips_per_lb" : 123,
+    "ntp_sync_fail_event" : true,
     "mem_reserve" : true,
     "l7_conns_per_core" : 123,
     "openstack_mgmt_network_name" : "aeiou",
@@ -940,6 +942,7 @@ font-style: italic;
   "free_list_size" : 123,
   "se_hyperthreaded_mode" : "aeiou",
   "min_cpu_usage" : 123,
+  "ntp_sync_status_interval" : 123,
   "cpu_socket_affinity" : true,
   "se_group_analytics_policy" : {
     "metrics_event_thresholds" : [ {
@@ -1037,6 +1040,7 @@ font-style: italic;
   "buffer_se" : 123,
   "deactivate_kni_filtering_at_dispatcher" : true,
   "max_public_ips_per_lb" : 123,
+  "ntp_sync_fail_event" : true,
   "mem_reserve" : true,
   "l7_conns_per_core" : 123,
   "openstack_mgmt_network_name" : "aeiou",
@@ -1490,6 +1494,7 @@ font-style: italic;
   "free_list_size" : 123,
   "se_hyperthreaded_mode" : "aeiou",
   "min_cpu_usage" : 123,
+  "ntp_sync_status_interval" : 123,
   "cpu_socket_affinity" : true,
   "se_group_analytics_policy" : {
     "metrics_event_thresholds" : [ {
@@ -1587,6 +1592,7 @@ font-style: italic;
   "buffer_se" : 123,
   "deactivate_kni_filtering_at_dispatcher" : true,
   "max_public_ips_per_lb" : 123,
+  "ntp_sync_fail_event" : true,
   "mem_reserve" : true,
   "l7_conns_per_core" : 123,
   "openstack_mgmt_network_name" : "aeiou",
@@ -1980,6 +1986,7 @@ font-style: italic;
   "free_list_size" : 123,
   "se_hyperthreaded_mode" : "aeiou",
   "min_cpu_usage" : 123,
+  "ntp_sync_status_interval" : 123,
   "cpu_socket_affinity" : true,
   "se_group_analytics_policy" : {
     "metrics_event_thresholds" : [ {
@@ -2077,6 +2084,7 @@ font-style: italic;
   "buffer_se" : 123,
   "deactivate_kni_filtering_at_dispatcher" : true,
   "max_public_ips_per_lb" : 123,
+  "ntp_sync_fail_event" : true,
   "mem_reserve" : true,
   "l7_conns_per_core" : 123,
   "openstack_mgmt_network_name" : "aeiou",
@@ -2626,6 +2634,7 @@ font-style: italic;
   "free_list_size" : 123,
   "se_hyperthreaded_mode" : "aeiou",
   "min_cpu_usage" : 123,
+  "ntp_sync_status_interval" : 123,
   "cpu_socket_affinity" : true,
   "se_group_analytics_policy" : {
     "metrics_event_thresholds" : [ {
@@ -2723,6 +2732,7 @@ font-style: italic;
   "buffer_se" : 123,
   "deactivate_kni_filtering_at_dispatcher" : true,
   "max_public_ips_per_lb" : 123,
+  "ntp_sync_fail_event" : true,
   "mem_reserve" : true,
   "l7_conns_per_core" : 123,
   "openstack_mgmt_network_name" : "aeiou",
@@ -3448,8 +3458,10 @@ font-style: italic;
 <div class="param">ngx_free_connection_stack (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Free the connection stack. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">non_significant_log_throttle (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> This setting limits the number of non-significant logs generated per second per core on this SE. Default is 100 logs per second. Set it to zero (0) to deactivate throttling. Field introduced in 17.1.3. Unit is PER_SECOND. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">ns_helper_deq_interval_msec (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Dequeue interval for receive queue from NS HELPER. Allowed values are 1-1000. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">ntp_sync_fail_event (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Toggle SE NTP synchronization failure events generation. Disabled by default. Field introduced in 22.1.2. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">ntp_sync_status_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Configures the interval at which SE synchronization status with NTP server(s) is verified. A value of zero disables SE NTP synchronization status validation. Allowed values are 120-900. Special values are 0- disable. Field introduced in 22.1.2. Unit is SEC. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">num_dispatcher_cores (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of dispatcher cores (0,1,2,4,8 or 16). If set to 0, then number of dispatcher cores is deduced automatically.Requires SE Reboot. Allowed values are 0,1,2,4,8,16. Field introduced in 17.2.12, 18.1.3, 18.2.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">num_dispatcher_queues (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of queues to each dispatcher. Allowed values are 2-8. Special values are 0 - auto-compute, 1 - single-queue. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">num_dispatcher_queues (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of queues to each dispatcher. Allowed values are 1-2. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">num_flow_cores_sum_changes_to_ignore (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of changes in num flow cores sum to ignore. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">objsync_config (optional)</div><div class="param-desc"><span class="param-type"><a href="#ObjSyncConfig">ObjSyncConfig</a></span> Configuration knobs for InterSE Object Distribution. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">objsync_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> TCP port on SE management interface for InterSE Object Distribution. Supported only for externally managed security groups. Not supported on full access deployments. Requires SE reboot. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>

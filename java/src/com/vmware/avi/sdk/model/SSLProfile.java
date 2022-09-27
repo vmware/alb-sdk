@@ -85,7 +85,7 @@ public class SSLProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Ciphers suites represented as defined by https //www.openssl.org/docs/apps/ciphers.html.
+     * Ciphers suites represented as defined by https //www.openssl.org/docs/man1.1.1/man1/ciphers.html.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "AES:3DES:RC4".
      * @return acceptedCiphers
@@ -96,7 +96,7 @@ public class SSLProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Ciphers suites represented as defined by https //www.openssl.org/docs/apps/ciphers.html.
+     * Ciphers suites represented as defined by https //www.openssl.org/docs/man1.1.1/man1/ciphers.html.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "AES:3DES:RC4".
      * @param acceptedCiphers set the acceptedCiphers.
@@ -209,7 +209,7 @@ public class SSLProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Tls 1.3 ciphers suites represented as defined by u(https //www.openssl.org/docs/manmaster/man1/ciphers.html).
+     * Tls 1.3 ciphers suites represented as defined by u(https //www.openssl.org/docs/man1.1.1/man1/ciphers.html).
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Special default for essentials edition is tls_aes_256_gcm_sha384-tls_aes_128_gcm_sha256, basic edition is
@@ -222,7 +222,7 @@ public class SSLProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Tls 1.3 ciphers suites represented as defined by u(https //www.openssl.org/docs/manmaster/man1/ciphers.html).
+     * Tls 1.3 ciphers suites represented as defined by u(https //www.openssl.org/docs/man1.1.1/man1/ciphers.html).
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Special default for essentials edition is tls_aes_256_gcm_sha384-tls_aes_128_gcm_sha256, basic edition is

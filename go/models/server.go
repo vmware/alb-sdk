@@ -48,7 +48,7 @@ type Server struct {
 	// Optionally specify the servers port number.  This will override the pool's default server port attribute. Allowed values are 1-65535. Special values are 0- use backend port in pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Port *int32 `json:"port,omitempty"`
 
-	// Preference order of this member in the group. The DNS Service chooses the member with the lowest preference that is operationally up. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
+	// Preference order of this member in the group. The DNS Service chooses the member with the lowest preference that is operationally up. Allowed values are 1-128. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	PreferenceOrder *int32 `json:"preference_order,omitempty"`
 
 	// Header value for custom header persistence. . Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
