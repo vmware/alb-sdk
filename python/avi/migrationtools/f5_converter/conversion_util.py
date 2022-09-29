@@ -913,6 +913,7 @@ class F5Util(MigrationUtil):
                 if tenant['name'] == 'admin':
                     avi_config['Tenant'].remove(tenant)
 
+
     def create_hdr_erase_rule(self, name, hdr_name, rule_index):
         return self.create_header_rule(
             name, hdr_name, "HTTP_REMOVE_HDR", None, rule_index)
@@ -2389,4 +2390,10 @@ class F5Util(MigrationUtil):
     def remove_verified_accept_from_network_profile(self, avi_config_dict):
         for ntwk_profile in avi_config_dict['NetworkProfile']:
             if ntwk_profile.get('verified-accept'):
-                del(ntwk_profile['verified_accept'])
+                del(ntwk_profile['verified-accept'])
+
+    def remove_via_host_from_app_profiles(self,avi_config_dict):
+        for app_profile in avi_config_dict['ApplicationProfile']:
+            if app_profile.get('via-host-name'):
+                del(app_profile['via-host-name'])
+                del(app_profile['via-request'])

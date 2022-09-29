@@ -184,7 +184,7 @@ class PoolConfigConv(object):
                         limits['connection_limit']
 
                 skipped_list_mg = []
-                if lb_pl.get('member_group'):
+                if lb_pl.get('member_group') and lb_pl['snat_translation'].get('type') == "LBSnatDisabled":
                     skipped_mg = [val for val in
                                   lb_pl.get('member_group').keys()
                                   if val not in self.member_group_attr]
@@ -453,7 +453,7 @@ class PoolConfigConv(object):
             else:
                 server_skipped.append(server_obj.get("description"))
 
-            server_obj["enabled"] = False
+            server_obj["enabled"] = True
             server_list.append(server_obj)
 
             skipped = [key for key in member_group_config.keys()
@@ -472,6 +472,8 @@ class PoolConfigConv(object):
                     server_member['description'] = c_member.get('display_name')
                 if c_member.get('admin_state') == "ENABLED":
                     server_member['enabled'] = True
+                if c_member.get('admin_state') == "DISABLED":
+                    server_member['enabled'] = False
                 if c_member.get('weight'):
                     server_member['ratio'] = c_member.get('weight')
 
