@@ -214,7 +214,9 @@ class PersistantProfileConfigConv(object):
         if lb_pp.get('cookie_httponly'):
             http_cookie_persistence_profile['http_only'] = lb_pp.get('cookie_httponly')
         if lb_pp.get("cookie_time", None):
-            http_cookie_persistence_profile["timeout"] = lb_pp.get("cookie_time").get('cookie_max_idle')
+            cookie_max_idle = lb_pp.get("cookie_time").get('cookie_max_idle')
+            if cookie_max_idle:
+                http_cookie_persistence_profile["timeout"] = cookie_max_idle
             for index, i in enumerate(skipped):
                 if i == "cookie_time":
                     del skipped[index]

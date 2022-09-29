@@ -136,6 +136,8 @@ def convert(f5_config, output_dir, vs_state, input_dir, version,
                         tenant, merge_object_mapping, sys_dict)
         #removing verified_accept key from network profile
         conv_utils.remove_verified_accept_from_network_profile(avi_config_dict)
+        # removing via-host info from http profiles
+        conv_utils.remove_via_host_from_app_profiles(avi_config_dict)
         # Updating application profile from L4 to http if service has ssl enable
         conv_utils.update_app_profile(avi_config_dict, sys_dict)
         # Updated network profile to TCP PROXY if application profile is HTTP
