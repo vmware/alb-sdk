@@ -216,9 +216,10 @@ class ProfileConfigConv(object):
             xff_enabled=lb_pr.get('xForwardedFor', False),
             http_to_https=lb_pr.get('httpRedirectToHttps', False),
             keepalive_timeout=lb_pr.get('idle_timeout'),
-            client_max_header_size=lb_pr.get('request_header_size'),
+            # nsx-t config value in bytes, so converting from bytes to KB for ALB
+            client_max_header_size=lb_pr.get('request_header_size') / 1024,
             keepalive_header=lb_pr.get('server_keep_alive'),
-            max_response_headers_size=lb_pr.get("response_header_size"),
+            max_response_headers_size=lb_pr.get("response_header_size") / 1024,
             detect_ntlm_app=lb_pr.get("ntlm")
         )
         if lb_pr.get('request_body_size', None):
