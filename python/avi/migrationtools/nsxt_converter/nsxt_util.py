@@ -109,6 +109,10 @@ def get_lb_skip_reason(vs_id):
         return vs_details.get(vs_id).get("lb_skip_reason")
     return None
 
+def get_warning_mesg(vs_id):
+    if vs_details.get(vs_id):
+        return vs_details.get(vs_id).get("warning_mesg")
+    return None
 
 def get_vs_details(vs_id):
     if vs_details.get(vs_id):
@@ -471,6 +475,7 @@ class NSXUtil():
             cloud_name = None
             lb_details = []
             lb_tier1_lr = None
+            warning_mesg=None
             if len(interface_list):
                 interface = interface_list[0].id
                 segment_id = get_name_and_entity(interface_list[0].segment_path)[-1]
@@ -501,6 +506,15 @@ class NSXUtil():
 
             else:
                 segment_list = self.nsx_api_client.infra.Segments.list().to_dict().get('results', [])
+
+                if len(segment_list)==0:
+                    self.lb_services[lb["id"]] = {
+                        "lb_name": lb["id"],
+                        "lb_skip_reason": "Skipping because NSX Load Balancer has no segments "
+                                          "or service interfaces configured"
+                    }
+                    continue
+   
                 for seg in segment_list:
                     if seg.get("connectivity_path"):
                         gateway_name = get_name_and_entity(seg["connectivity_path"])[-1]
@@ -511,33 +525,33 @@ class NSXUtil():
                             for subnet in seg["subnets"]:
                                 if "dhcp_config" in subnet.keys() and not dhcp_present:
                                     dhcp_present = True
-                            if dhcp_present:
-                                cloud_name = self.get_cloud_type(self.cloud, tz_id, seg.get("id"), tier)
-                                if seg.get("vlan_ids"):
-                                    network = "Vlan"
-                                else:
-                                    network = "Overlay"
-                                if seg.get("subnets"):
-                                    subnets = []
-                                    for subnet in seg["subnets"]:
-                                        subnets.append({
-                                            "network_range": subnet["network"]
-                                        })
-                                    segments = {
-                                        "name": seg.get("id"),
-                                        "subnet": subnets}
-                                    lb_details.append(segments)
-                                if cloud_name == "Cloud Not Found":
+                            cloud_name = self.get_cloud_type(self.cloud, tz_id, seg.get("id"), tier)
+                            if cloud_name == "Cloud Not Found":
                                     continue
-                                break
+                            is_dhcp_configured_on_avi,is_static_ip_pool_configured,is_ip_subnet_configured,static_ip_for_se_flag = \
+                            self.get_dhcp_config_details_on_avi_side(cloud_name,seg.get("id"))
 
-                if not (network and cloud_name):
-                    self.lb_services[lb["id"]] = {
-                        "lb_name": lb["id"],
-                        "lb_skip_reason": "Skipping because NSX Load Balancer has no segments "
-                                          "or service interfaces configured"
-                    }
-                    continue
+                            if not is_dhcp_configured_on_avi and (not is_static_ip_pool_configured or not is_ip_subnet_configured or not static_ip_for_se_flag):
+                                warning_mesg = "Warning : configuration of  %s network is incomplete , please check it once " % seg.get("display_name")
+
+                            if seg.get("vlan_ids"):
+                                network = "Vlan"
+                            else:
+                                network = "Overlay"
+                            if seg.get("subnets"):
+                                subnets = []
+                                for subnet in seg["subnets"]:
+                                    subnets.append({
+                                        "network_range": subnet["network"]
+                                    })
+                                segments = {
+                                    "name": seg.get("id"),
+                                    "subnet": subnets}
+                                lb_details.append(segments)
+                            
+                            if cloud_name == "Cloud Not Found":
+                                continue
+                            break
 
             self.lb_services[lb["id"]] = {
                 "lb_name": lb["id"],
@@ -547,7 +561,30 @@ class NSXUtil():
                 }
             if lb_details:
                 self.lb_services[lb["id"]]["Segments"] = lb_details
+            if warning_mesg:
+                self.lb_services[lb["id"]]["warning_mesg"] = warning_mesg
 
+    def get_dhcp_config_details_on_avi_side(self,cloud_name,seg_id):
+        is_dhcp_configured_on_avi = False
+        is_static_ip_pool_configured = False
+        is_ip_subnet_configured = False
+        static_ip_for_se_flag = False
+        cloud_id = [cl.get("uuid") for cl in self.cloud if cl.get("name") == cloud_name]
+        segment_list = self.session.get("network/?&cloud_ref.uuid=" + cloud_id[0]).json()["results"]
+        segment = [seg for seg in segment_list if seg.get("attrs")[0].get("value").split('segments/')[-1] == seg_id]
+        if segment :
+            is_dhcp_configured_on_avi = segment[0].get("dhcp_enabled") 
+            if segment[0].get("configured_subnets"):
+                configured_subnets = segment[0].get("configured_subnets")
+                if configured_subnets[0].get("prefix"):
+                    is_ip_subnet_configured = True
+                    if configured_subnets[0].get("static_ip_ranges"):
+                        is_static_ip_pool_configured = True
+                        if configured_subnets[0].get("static_ip_ranges")[0].get("type") in ["STATIC_IPS_FOR_VIP_AND_SE","STATIC_IPS_FOR_SE"]:
+                             static_ip_for_se_flag = True
+
+        return is_dhcp_configured_on_avi,is_static_ip_pool_configured,is_ip_subnet_configured,static_ip_for_se_flag
+           
     def get_all_virtual_service(self):
         """
         :return:list of virtual server objects
@@ -588,6 +625,7 @@ class NSXUtil():
                     vs_object['lb_name'] = lb
                     vs_object['lb_skip_reason'] = lb_details.get("lb_skip_reason")
                     vs_object['lb_tier1_lr'] = lb_details.get("lb_tier1_lr")
+                    vs_object["warning_mesg"]= lb_details.get("warning_mesg")
                     # lb_details["vs_name"] = vs["display_name"]
                     vs_details[vs["id"]] = vs_object
             if vs["enabled"]:
@@ -958,8 +996,9 @@ class NSXUtil():
         ns_group = [ns_g for ns_g in ns_groups_list if ns_g['id'] == ns_group_id]
         ns_group_name = ns_group[0]['display_name']
         ns_ip_addr = None
-        if ns_group[0].get('expression'):
-            ns_ip_addr = ns_group[0].get('expression')[0].get('ip_addresses')
+        ip_addr=self.nsx_api_client.infra.domains.groups.members.IpAddresses.list(domain_id, ns_group_id).to_dict().get("results", [])
+        if ip_addr:
+            ns_ip_addr=ip_addr
         return ns_group_name, ns_ip_addr
 
     def create_ns_group_policy(self, alb_vs,access_control_list, ns_ip_addr, ns_group_name, alb_config,prefix,tenant):
