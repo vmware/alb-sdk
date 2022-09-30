@@ -230,10 +230,10 @@ class NsxtConvUtil(MigrationUtil):
         main_book = \
             load_workbook(report_path)
         main_writer = pandas.ExcelWriter(report_path, engine='openpyxl')
-        main_writer.book = main_book
+        main_writer._book = main_book
         # Add pivot table in Pivot sheet
         pivot_df.to_excel(main_writer, 'Pivot Sheet')
-        main_writer.save()
+        main_writer._save()
 
     def vs_complexity_level(self):
         """
