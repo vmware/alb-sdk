@@ -53,6 +53,7 @@ class PoolConfigConv(object):
         for lb_pl in nsx_lb_config['LbPools']:
             try:
                 LOG.info('[POOL] Migration started for Pool {}'.format(lb_pl['display_name']))
+                msg = "Pools conversion started..."
                 progressbar_count += 1
                 tenant_name, name = conv_utils.get_tenant_ref(tenant)
                 if not tenant:
@@ -104,6 +105,7 @@ class PoolConfigConv(object):
                                                   conv_const.STATUS_SKIPPED, skip_msg)
                         LOG.warning("POOL {} not migrated. Reason: {}".format(name,
                                                                               skip_msg))
+                        conv_utils.print_progress_bar(progressbar_count, total_size, msg, prefix='Progress', suffix='')
                         continue
 
                 elif lb_pl.get('members'):
@@ -133,6 +135,7 @@ class PoolConfigConv(object):
                                                   conv_const.STATUS_SKIPPED, skip_msg)
                         LOG.warning("POOL {} not migrated. Reason: {}".format(name,
                                                                               skip_msg))
+                        conv_utils.print_progress_bar(progressbar_count, total_size, msg, prefix='Progress', suffix='')
                         continue
                 else:
                     skipped_pools_list.append(name)
@@ -141,6 +144,7 @@ class PoolConfigConv(object):
                                               conv_const.STATUS_SKIPPED, skip_msg)
                     LOG.warning("POOL {} not migrated. Reason: {}".format(name,
                                                                           skip_msg))
+                    conv_utils.print_progress_bar(progressbar_count, total_size, msg, prefix='Progress', suffix='')
                     continue
 
                 na_list = [val for val in lb_pl.keys()
@@ -259,7 +263,7 @@ class PoolConfigConv(object):
                 #                conv_utils.add_conv_status(
                 #                    'pool', None, alb_pl['name'], conv_status,
                 #                   {'pools': [alb_pl]})
-                msg = "Pools conversion started..."
+
                 conv_utils.print_progress_bar(
                     progressbar_count, total_size, msg, prefix='Progress',
                     suffix='')
