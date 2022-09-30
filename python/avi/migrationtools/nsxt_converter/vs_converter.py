@@ -5,7 +5,7 @@ import copy
 import logging
 
 from avi.migrationtools.avi_migration_utils import MigrationUtil
-from avi.migrationtools.nsxt_converter.nsxt_util import is_vlan_configured_with_bgp, \
+from avi.migrationtools.nsxt_converter.nsxt_util import get_warning_mesg, is_vlan_configured_with_bgp, \
     is_segment_configured_with_subnet, get_vs_cloud_type, get_lb_skip_reason, get_vs_details
 from avi.migrationtools.nsxt_converter.conversion_util import NsxtConvUtil
 from avi.migrationtools.avi_migration_utils import update_count
@@ -37,6 +37,9 @@ http_pool_list = {}
 vs_with_no_snat_no_floating_ip = list()
 vips_not_configured = list()
 vs_with_custom_se_group = list()
+network_configuration_incomplete = list()
+vip_ips_info = dict()
+se_group_created_for_cloud = dict()
 
 
 class VsConfigConv(object):
@@ -92,7 +95,6 @@ class VsConfigConv(object):
         policy_converter = PolicyConfigConverter(self.nsxt_profile_attributes, self.object_merge_check,
                                                  self.merge_object_mapping, self.sys_dict)
         app_profile_pci_created = False
-        is_pci_se_group_created = False
         # Dict for checking network service is created or not as it is
         # combination of segroup and vrf
         is_network_service_created = dict()
@@ -129,6 +131,10 @@ class VsConfigConv(object):
                         LOG.warning("Load balancer not configured for %s" % lb_vs["display_name"])
                         vs_with_no_lb_configured.append(lb_vs["display_name"])
                         continue
+                if get_warning_mesg(lb_vs['id']):
+                    LOG.warning("VS {} : {}".format(lb_vs["display_name"],get_warning_mesg(lb_vs["id"])))
+                    network_configuration_incomplete.append(lb_vs["display_name"])
+
                 vs_datascripts = []
                 tier1_lr = ''
                 for ref in nsx_lb_config['LBServices']:
@@ -151,7 +157,6 @@ class VsConfigConv(object):
                                                                                  "floating IP to migrate")
                             LOG.warning("Network service with floating ip address "
                                         "is not configured for %s" % lb_vs["display_name"])
-                            vs_with_no_snat_no_floating_ip.append(lb_vs["display_name"])
                             continue
 
                 tenant_name, name = conv_utils.get_tenant_ref(tenant)
@@ -179,21 +184,27 @@ class VsConfigConv(object):
                 )
 
                 if lb_vs.get('ip_address'):
-                    vip = dict(
-                        name='%s-vsvip' % name,
-                        tier1_lr=tier1_lr,
-                        cloud_ref=conv_utils.get_object_ref(cloud_name, 'cloud', cloud_tenant=cloud_tenant),
-                        tenant_ref=conv_utils.get_object_ref(tenant, 'tenant'),
-                        vip=[
-                            dict(
-                                vip_id="1",
-                                ip_address=dict(
-                                    addr=lb_vs.get('ip_address'),
-                                    type='V4'
+                    tier_name = tier1_lr.split("/")[-1]
+                    vip_info = vip_ips_info.get("{}_{}_{}".format(cloud_name, tier_name, lb_vs.get('ip_address')))
+                    if vip_info:
+                        vip = vip_info
+                    else:
+                        vip = dict(
+                            name='%s-vsvip' % name,
+                            tier1_lr=tier1_lr,
+                            cloud_ref=conv_utils.get_object_ref(cloud_name, 'cloud', cloud_tenant=cloud_tenant),
+                            tenant_ref=conv_utils.get_object_ref(tenant, 'tenant'),
+                            vip=[
+                                dict(
+                                    vip_id="1",
+                                    ip_address=dict(
+                                        addr=lb_vs.get('ip_address'),
+                                        type='V4'
+                                    )
                                 )
-                            )
-                        ]
-                    )
+                            ]
+                        )
+                        vip_ips_info["{}_{}_{}".format(cloud_name, tier_name, lb_vs.get('ip_address'))] = vip
 
                     if cloud_type == "Vlan":
                         vip_segment = get_object_segments(lb_vs["id"], lb_vs['ip_address'])
@@ -206,9 +217,12 @@ class VsConfigConv(object):
                             vips_not_configured.append(lb_vs["display_name"])
                             LOG.warning("VS skipped as VIP segment is not found for %s" % lb_vs["display_name"])
                             continue
-                    alb_config['VsVip'].append(vip)
-                    vsvip_ref = conv_utils.get_object_ref(
-                        name + '-vsvip', 'vsvip', tenant=tenant, cloud_name=cloud_name)
+                    if not vip_info:
+                        alb_config['VsVip'].append(vip)
+                        vsvip_ref = conv_utils.get_object_ref(
+                            name + '-vsvip', 'vsvip', tenant=tenant, cloud_name=cloud_name)
+                    else:
+                        vsvip_ref = conv_utils.get_object_ref(vip["name"], 'vsvip', tenant=tenant, cloud_name=cloud_name)
                     alb_vs['vsvip_ref'] = vsvip_ref
                 alb_vs['services'] = [
                     dict(
@@ -531,7 +545,8 @@ class VsConfigConv(object):
 
                                 pci_se_group_name = prefix if prefix else self.nsxt_ip
                                 pci_se_group_name = "{}-{}".format(pci_se_group_name, "PreserveClientIP")
-                                if not is_pci_se_group_created:
+
+                                if not se_group_created_for_cloud.get(cloud_name):
                                     new_pci_se_group = {
                                         "name": pci_se_group_name,
                                         "ha_mode": "HA_MODE_LEGACY_ACTIVE_STANDBY",
@@ -540,7 +555,7 @@ class VsConfigConv(object):
                                         "tenant_ref": conv_utils.get_object_ref(cloud_tenant, 'tenant')
                                     }
                                     alb_config["ServiceEngineGroup"].append(new_pci_se_group)
-                                    is_pci_se_group_created = True
+                                    se_group_created_for_cloud[cloud_name] = new_pci_se_group
 
                                 vs_with_custom_se_group.append(lb_vs['display_name'])
 
@@ -550,8 +565,10 @@ class VsConfigConv(object):
                                                                                    cloud_tenant=cloud_tenant,
                                                                                    tenant=cloud_tenant)
 
-                                nsxt_util.create_and_update_nsgroup(pool_name, alb_config,
-                                                                    pl_config[0].get("members"))
+                                # If member_group is attached then no need to create ns group,
+                                if pl_config[0].get("members"):
+                                    nsxt_util.create_and_update_nsgroup(pool_name, alb_config,
+                                                                        pl_config[0].get("members"))
 
                                 # Create NetworkService for the created SEGroup
                                 if not is_network_service_created.get("{}-{}".format(pci_se_group_name, tier1_lr)):
@@ -563,10 +580,16 @@ class VsConfigConv(object):
                                             get("{}-{}".format(tier_name, "floating-ip"))
                                     ns_cloud_ref = conv_utils.get_object_ref(cloud_name, 'cloud',
                                                                              cloud_tenant=cloud_tenant)
-                                    ns_vrf_ref = conv_utils.get_object_ref(tier_name, 'vrfcontext',
-                                                                           cloud_name=cloud_name,
-                                                                           cloud_tenant=cloud_tenant,
-                                                                           tenant=tenant)
+                                    if cloud_type == "Vlan":
+                                        ns_vrf_ref = conv_utils.get_object_ref("global", 'vrfcontext',
+                                                                               cloud_name=cloud_name,
+                                                                               cloud_tenant=cloud_tenant,
+                                                                               tenant=tenant)
+                                    else:
+                                        ns_vrf_ref = conv_utils.get_object_ref(tier_name, 'vrfcontext',
+                                                                               cloud_name=cloud_name,
+                                                                               cloud_tenant=cloud_tenant,
+                                                                               tenant=tenant)
                                     tenant_ref = conv_utils.get_object_ref(cloud_tenant, 'tenant')
                                     new_network_service = nsxt_util.create_network_service_obj(ns_name,
                                                                                                alb_vs["se_group_ref"],

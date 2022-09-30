@@ -31,7 +31,7 @@ import argparse
 from avi.migrationtools.nsxt_converter.nsxt_util import NSXUtil
 from avi.migrationtools.nsxt_converter.vs_converter import vs_list_with_snat_deactivated, \
     vs_with_no_cloud_configured, vs_with_no_lb_configured, vs_with_lb_skipped, vs_with_no_snat_no_floating_ip,\
-vips_not_configured, vs_with_custom_se_group
+vips_not_configured, vs_with_custom_se_group, network_configuration_incomplete
 
 ARG_CHOICES = {
     'option': ['cli-upload', 'auto-upload'],
@@ -246,6 +246,16 @@ class NsxtConverter(AviConverter):
                 else:
                     print(print_msg)
                     print(vips_not_configured)
+            if network_configuration_incomplete:
+                print_msg = "\033[93m" + "Warning: Following virtual service/s are migrated but the network configuration is not complete, " \
+                                         "so data path might not work" + "\033[0m"
+                if self.vs_filter:
+                    if list(set(network_configuration_incomplete).intersection(set(filtered_vs_list))):
+                        print(print_msg)
+                        print(list(set(network_configuration_incomplete).intersection(set(filtered_vs_list))))
+                else:
+                    print(print_msg)
+                    print(network_configuration_incomplete)
             print("Total Warning: ", get_count('warning'))
             print("Total Errors: ", get_count('error'))
             LOG.info("Total Warning: {}".format(get_count('warning')))
