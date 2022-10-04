@@ -571,32 +571,38 @@ class VsConfigConv(object):
                                                                         pl_config[0].get("members"))
 
                                 # Create NetworkService for the created SEGroup
-                                if not is_network_service_created.get("{}-{}".format(pci_se_group_name, tier1_lr)):
-                                    ns_name = "{}-{}".format(pci_se_group_name, "ns")
-                                    tier_name = tier1_lr.split("/")[-1]
-                                    floating_ip = "0.0.0.0"
-                                    if migration_input_config and migration_input_config.get('network_service'):
-                                        floating_ip = migration_input_config.get('network_service'). \
-                                            get("{}-{}".format(tier_name, "floating-ip"))
+                                tier_name = tier1_lr.split("/")[-1]
+                                floating_ip = "0.0.0.0"
+                                if migration_input_config and migration_input_config.get('network_service'):
+                                    floating_ip = migration_input_config.get('network_service'). \
+                                        get("{}-{}".format(tier_name, "floating-ip"))
+                                if cloud_type == "Vlan":
+                                    ns_vrf_name = "global"
+                                else:
+                                    ns_vrf_name = tier_name
+
+                                ns_name = "{}-{}-{}".format(pci_se_group_name, ns_vrf_name, "ns")
+
+                                is_network_service_created_obj = is_network_service_created.get("{}-{}-{}".format(
+                                    pci_se_group_name, cloud_name, ns_vrf_name))
+                                if is_network_service_created_obj:
+                                    for network_obj in alb_config["NetworkService"]:
+                                        if network_obj["name"] == is_network_service_created_obj["name"]:
+                                            nsxt_util.update_network_service_obj(network_obj, floating_ip)
+                                else:
                                     ns_cloud_ref = conv_utils.get_object_ref(cloud_name, 'cloud',
                                                                              cloud_tenant=cloud_tenant)
-                                    if cloud_type == "Vlan":
-                                        ns_vrf_ref = conv_utils.get_object_ref("global", 'vrfcontext',
-                                                                               cloud_name=cloud_name,
-                                                                               cloud_tenant=cloud_tenant,
-                                                                               tenant=tenant)
-                                    else:
-                                        ns_vrf_ref = conv_utils.get_object_ref(tier_name, 'vrfcontext',
-                                                                               cloud_name=cloud_name,
-                                                                               cloud_tenant=cloud_tenant,
-                                                                               tenant=tenant)
+                                    ns_vrf_ref = conv_utils.get_object_ref(ns_vrf_name, 'vrfcontext',
+                                                                           cloud_name=cloud_name,
+                                                                           cloud_tenant=cloud_tenant,
+                                                                           tenant=tenant)
                                     tenant_ref = conv_utils.get_object_ref(cloud_tenant, 'tenant')
                                     new_network_service = nsxt_util.create_network_service_obj(ns_name,
                                                                                                alb_vs["se_group_ref"],
                                                                                                ns_cloud_ref, ns_vrf_ref,
                                                                                                floating_ip, tenant_ref)
                                     alb_config["NetworkService"].append(new_network_service)
-                                    is_network_service_created["{}-{}".format(pci_se_group_name, tier1_lr)] = True
+                                    is_network_service_created["{}-{}-{}".format(pci_se_group_name, cloud_name, ns_vrf_name)] = new_network_service
 
                                 vs_list_with_snat_deactivated.append(alb_vs["name"])
 
@@ -1235,7 +1241,7 @@ class VsConfigConv(object):
     def add_port_to_pool(self, pool_name, alb_config, lb_vs):
         for pool in alb_config['Pool']:
             if pool_name == pool["name"]:
-                pool['default_port'] = int(lb_vs.get['default_pool_member_ports'][0])
+                pool['default_port'] = int(lb_vs.get('default_pool_member_ports')[0])
                 break
 
     def add_teir_to_poolgroup(self, pg_ref, alb_config, tier1_lr):
@@ -1344,7 +1350,8 @@ class VsConfigConv(object):
                 ssl_key_name = pool['ssl_key_and_certificate_ref'].split('name=')[-1]
                 ssl_key_ref = pool['ssl_key_and_certificate_ref'].split(ssl_key_name)[0]
                 ssl_key_name = self.merge_object_mapping['ssl_cert_key'].get(ssl_key_name)
-                pool['ssl_key_and_certificate_ref'] = ssl_key_ref + ssl_key_name
+                if ssl_key_name:
+                    pool['ssl_key_and_certificate_ref'] = ssl_key_ref + ssl_key_name
 
         for vs in alb_config['VirtualService']:
             if vs.get('ssl_key_and_certificate_refs'):
@@ -1353,7 +1360,8 @@ class VsConfigConv(object):
                     ssl_key_name = vs_ssl.split('name=')[-1]
                     ssl_key_ref = vs_ssl.split(ssl_key_name)[0]
                     ssl_key_name = self.merge_object_mapping['ssl_cert_key'].get(ssl_key_name)
-                    vs_ssl_list[index] = ssl_key_ref + ssl_key_name
+                    if ssl_key_name:
+                        vs_ssl_list[index] = ssl_key_ref + ssl_key_name
 
     def update_pki_refernce(self, alb_config):
         for pool in alb_config['Pool']:
@@ -1361,18 +1369,21 @@ class VsConfigConv(object):
                 pki_name = pool['pki_profile_ref'].split('name=')[-1]
                 pki_profile_ref = pool['pki_profile_ref'].split(pki_name)[0]
                 pki_name = self.merge_object_mapping['pki_profile'].get(pki_name)
-                pool['pki_profile_ref'] = pki_profile_ref + pki_name
+                if pki_name:
+                    pool['pki_profile_ref'] = pki_profile_ref + pki_name
 
         for app in alb_config['ApplicationProfile']:
             if app.get('pki_profile_ref'):
                 pki_name = app['pki_profile_ref'].split('name=')[-1]
                 pki_profile_ref = app['pki_profile_ref'].split(pki_name)[0]
                 pki_name = self.merge_object_mapping['pki_profile'].get(pki_name)
-                app['pki_profile_ref'] = pki_profile_ref + pki_name
+                if pki_name:
+                    app['pki_profile_ref'] = pki_profile_ref + pki_name
 
         for app in alb_config['NetworkProfile']:
             if app.get('pki_profile_ref'):
                 pki_name = app['pki_profile_ref'].split('name=')[-1]
                 pki_profile_ref = app['pki_profile_ref'].split(pki_name)[0]
                 pki_name = self.merge_object_mapping['pki_profile'].get(pki_name)
-                app['pki_profile_ref'] = pki_profile_ref + pki_name
+                if pki_name:
+                    app['pki_profile_ref'] = pki_profile_ref + pki_name
