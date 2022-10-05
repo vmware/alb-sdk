@@ -12,6 +12,9 @@ type OAuthProfile struct {
 	// Required: true
 	AuthorizationEndpoint *string `json:"authorization_endpoint"`
 
+	// Logout URI of IDP server. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	EndSessionEndpoint *string `json:"end_session_endpoint,omitempty"`
+
 	// URL of token introspection server. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	IntrospectionEndpoint *string `json:"introspection_endpoint,omitempty"`
 
