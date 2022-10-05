@@ -258,6 +258,7 @@ font-style: italic;
   <li><a href="#virtualserviceUuidScaleoutPost"><code><span class="http-method">post</span> /virtualservice/{uuid}/scaleout</code></a></li>
   <li><a href="#virtualserviceUuidScaleoutstatusDetailGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/scaleoutstatus/detail/</code></a></li>
   <li><a href="#virtualserviceUuidScaleoutstatusGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/scaleoutstatus/</code></a></li>
+  <li><a href="#virtualserviceUuidSctpstatGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/sctpstat/</code></a></li>
   <li><a href="#virtualserviceUuidSescaleoutstatusGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/sescaleoutstatus/</code></a></li>
   <li><a href="#virtualserviceUuidSslsessioncacheGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/sslsessioncache/</code></a></li>
   <li><a href="#virtualserviceUuidSsopolicystatsGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/ssopolicystats/</code></a></li>
@@ -687,6 +688,8 @@ font-style: italic;
       } ],
       "cookie_timeout" : 123,
       "redirect_uri" : "aeiou",
+      "logout_uri" : "aeiou",
+      "post_logout_redirect_uri" : "aeiou",
       "key" : [ {
         "hmac_key" : "aeiou",
         "aes_key" : "aeiou",
@@ -1128,6 +1131,8 @@ font-style: italic;
     } ],
     "cookie_timeout" : 123,
     "redirect_uri" : "aeiou",
+    "logout_uri" : "aeiou",
+    "post_logout_redirect_uri" : "aeiou",
     "key" : [ {
       "hmac_key" : "aeiou",
       "aes_key" : "aeiou",
@@ -2374,6 +2379,8 @@ font-style: italic;
     } ],
     "cookie_timeout" : 123,
     "redirect_uri" : "aeiou",
+    "logout_uri" : "aeiou",
+    "post_logout_redirect_uri" : "aeiou",
     "key" : [ {
       "hmac_key" : "aeiou",
       "aes_key" : "aeiou",
@@ -3930,6 +3937,8 @@ font-style: italic;
     } ],
     "cookie_timeout" : 123,
     "redirect_uri" : "aeiou",
+    "logout_uri" : "aeiou",
+    "post_logout_redirect_uri" : "aeiou",
     "key" : [ {
       "hmac_key" : "aeiou",
       "aes_key" : "aeiou",
@@ -4590,6 +4599,8 @@ font-style: italic;
     } ],
     "cookie_timeout" : 123,
     "redirect_uri" : "aeiou",
+    "logout_uri" : "aeiou",
+    "post_logout_redirect_uri" : "aeiou",
     "key" : [ {
       "hmac_key" : "aeiou",
       "aes_key" : "aeiou",
@@ -5185,6 +5196,58 @@ font-style: italic;
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /virtualservice/{uuid}/scaleoutstatus/</code></pre></div>
     <div class="method-summary"> (<span class="nickname">virtualserviceUuidScaleoutstatusGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="virtualserviceUuidSctpstatGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /virtualservice/{uuid}/sctpstat/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">virtualserviceUuidSctpstatGet</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -6208,7 +6271,9 @@ font-style: italic;
       <div class="param">cookie_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP cookie name for authorized session. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">cookie_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> HTTP cookie timeout for authorized session. Allowed values are 1-1440. Field introduced in 21.1.3. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">key (optional)</div><div class="param-desc"><span class="param-type"><a href="#HttpCookiePersistenceKey">array[HttpCookiePersistenceKey]</a></span> Key to generate the cookie. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">logout_uri (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> URI which triggers OAuth logout. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">oauth_settings (optional)</div><div class="param-desc"><span class="param-type"><a href="#OAuthSettings">array[OAuthSettings]</a></span> Application and IDP settings for OAuth/OIDC. Field introduced in 21.1.3. Maximum of 1 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">post_logout_redirect_uri (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> URI to which IDP will redirect to after the logout. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">redirect_uri (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Redirect URI specified in the request to Authorization Server. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
@@ -6398,7 +6463,7 @@ font-style: italic;
 <div class="param">service_pool_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">service_port </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Pool based destination port. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">service_port_range_end (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The end of the Service port number range. Allowed values are 1-65535. Special values are 0- single port. Field introduced in 17.2.4. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">service_protocol (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Destination protocol to match for the pool selection. If not specified, it will match any protocol. Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">service_protocol (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Destination protocol to match for the pool selection. If not specified, it will match any protocol. Enum options - PROTOCOL_TYPE_TCP_PROXY, PROTOCOL_TYPE_TCP_FAST_PATH, PROTOCOL_TYPE_UDP_FAST_PATH, PROTOCOL_TYPE_UDP_PROXY, PROTOCOL_TYPE_SCTP_PROXY, PROTOCOL_TYPE_SCTP_FAST_PATH. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
