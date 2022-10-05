@@ -90,7 +90,7 @@ type Cloud struct {
 	//  Field deprecated in 18.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	MesosConfiguration *MesosConfiguration `json:"mesos_configuration,omitempty"`
 
-	// Cloud metrics collector polling interval in seconds. Field introduced in 21.1.6. Unit is SECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Cloud metrics collector polling interval in seconds. Field introduced in 21.1.6. Unit is SECONDS. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	MetricsPollingInterval *int32 `json:"metrics_polling_interval,omitempty"`
 
 	// MTU setting for the cloud. Unit is BYTES. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
