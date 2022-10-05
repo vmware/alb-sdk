@@ -69,12 +69,14 @@ public class AviCredentials
      *            For check SSL is want.
      * @param retryConxnErrors
      *            Retry connection timeout.
+     * @param numApiRetries
+     *            API retry count.
      * @param connectionTimeout
      *            Connection timeout for socket
      */
     public AviCredentials(String controller, String username, String password, String tenant, String version,
             String tenantUuid, Integer port, Integer timeout, String sessionID, String csrftoken,
-            String token, Boolean verify, Boolean retryConxnErrors, Integer connectionTimeout)
+            String token, Boolean verify, Boolean retryConxnErrors, Integer numApiRetries, Integer connectionTimeout)
     {
         this.controller = controller;
         this.username = username;
@@ -89,6 +91,7 @@ public class AviCredentials
         this.token = token;
         this.verify = verify;
         this.retryConxnErrors = retryConxnErrors;
+        this.numApiRetries = numApiRetries;
         this.connectionTimeout = connectionTimeout;
     }
 
@@ -122,6 +125,8 @@ public class AviCredentials
      *            For check SSL is want.
      * @param retryConxnErrors
      *            Retry connection timeout.
+     * @param numApiRetries
+     *            API retry count.
      * @param connectionTimeout
      *            Connection timeout for socket
      * @param isUnauthenticatedApi
@@ -129,10 +134,10 @@ public class AviCredentials
      */
     public AviCredentials(String controller, String username, String password, String tenant, String version,
             String tenantUuid, Integer port, Integer timeout, String sessionID, String csrftoken,
-            String token, Boolean verify, Boolean retryConxnErrors, Integer connectionTimeout, Boolean isUnAuthenticatedApi)
+            String token, Boolean verify, Boolean retryConxnErrors, Integer numApiRetries, Integer connectionTimeout, Boolean isUnAuthenticatedApi)
     {
         this(controller, username, password, tenant, version, tenantUuid, port, timeout, sessionID, csrftoken, token,
-				verify, retryConxnErrors, connectionTimeout);
+				verify, retryConxnErrors, numApiRetries, connectionTimeout);
 		this.isUnAuthenticatedApi = isUnAuthenticatedApi;
     }
 
@@ -149,7 +154,7 @@ public class AviCredentials
     private String token;
     private Boolean verify = false;// for SSL and HTTPS
     private Boolean retryConxnErrors;
-    private Integer numApiRetries = 3;
+    private Integer numApiRetries = 3; // 3 retries default
     private Integer retryWaitTime = 5;
     private Boolean lazyAuthentication = false;
     private Integer connectionTimeout = 60; // 1 min default
