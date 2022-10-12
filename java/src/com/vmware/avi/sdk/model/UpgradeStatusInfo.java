@@ -108,6 +108,9 @@ public class UpgradeStatusInfo extends AviRestResource  {
     @JsonProperty("progress")
     private Integer progress = 0;
 
+    @JsonProperty("reason")
+    private String reason = null;
+
     @JsonProperty("se_patch_image_path")
     private String sePatchImagePath = null;
 
@@ -149,6 +152,9 @@ public class UpgradeStatusInfo extends AviRestResource  {
 
     @JsonProperty("upgrade_ops")
     private String upgradeOps = null;
+
+    @JsonProperty("upgrade_readiness")
+    private UpgradeReadinessCheckObj upgradeReadiness = null;
 
     @JsonProperty("url")
     private String url = "url";
@@ -942,6 +948,30 @@ public class UpgradeStatusInfo extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Descriptive reason for the upgrade state.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return reason
+     */
+    public String getReason() {
+        return reason;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Descriptive reason for the upgrade state.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param reason set the reason.
+     */
+    public void setReason(String  reason) {
+        this.reason = reason;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Image path of se patch image.(required in case of reimage and upgrade + patch).
      * Field introduced in 18.2.10, 20.1.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -1295,7 +1325,8 @@ public class UpgradeStatusInfo extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Upgrade operations requested.
-     * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME.
+     * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
+     * EVAL_SEGROUP_RESUME.
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -1308,7 +1339,8 @@ public class UpgradeStatusInfo extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Upgrade operations requested.
-     * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME.
+     * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
+     * EVAL_SEGROUP_RESUME.
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -1316,6 +1348,30 @@ public class UpgradeStatusInfo extends AviRestResource  {
      */
     public void setUpgradeOps(String  upgradeOps) {
         this.upgradeOps = upgradeOps;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Upgrade readiness check execution detail.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return upgradeReadiness
+     */
+    public UpgradeReadinessCheckObj getUpgradeReadiness() {
+        return upgradeReadiness;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Upgrade readiness check execution detail.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param upgradeReadiness set the upgradeReadiness.
+     */
+    public void setUpgradeReadiness(UpgradeReadinessCheckObj upgradeReadiness) {
+        this.upgradeReadiness = upgradeReadiness;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -1432,12 +1488,14 @@ public class UpgradeStatusInfo extends AviRestResource  {
   Objects.equals(this.patchReboot, objUpgradeStatusInfo.patchReboot)&&
   Objects.equals(this.afterRebootTaskName, objUpgradeStatusInfo.afterRebootTaskName)&&
   Objects.equals(this.afterRebootRollbackFnc, objUpgradeStatusInfo.afterRebootRollbackFnc)&&
+  Objects.equals(this.upgradeReadiness, objUpgradeStatusInfo.upgradeReadiness)&&
   Objects.equals(this.tenantRef, objUpgradeStatusInfo.tenantRef)&&
   Objects.equals(this.objCloudRef, objUpgradeStatusInfo.objCloudRef)&&
   Objects.equals(this.seUpgradeEvents, objUpgradeStatusInfo.seUpgradeEvents)&&
   Objects.equals(this.history, objUpgradeStatusInfo.history)&&
   Objects.equals(this.fipsMode, objUpgradeStatusInfo.fipsMode)&&
-  Objects.equals(this.statediffRef, objUpgradeStatusInfo.statediffRef);
+  Objects.equals(this.statediffRef, objUpgradeStatusInfo.statediffRef)&&
+  Objects.equals(this.reason, objUpgradeStatusInfo.reason);
     }
 
     @Override
@@ -1473,6 +1531,7 @@ public class UpgradeStatusInfo extends AviRestResource  {
                         sb.append("    previousPatchVersion: ").append(toIndentedString(previousPatchVersion)).append("\n");
                         sb.append("    previousVersion: ").append(toIndentedString(previousVersion)).append("\n");
                         sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
+                        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
                         sb.append("    sePatchImagePath: ").append(toIndentedString(sePatchImagePath)).append("\n");
                         sb.append("    sePatchImageRef: ").append(toIndentedString(sePatchImageRef)).append("\n");
                         sb.append("    seUpgradeEvents: ").append(toIndentedString(seUpgradeEvents)).append("\n");
@@ -1487,6 +1546,7 @@ public class UpgradeStatusInfo extends AviRestResource  {
                         sb.append("    totalTasks: ").append(toIndentedString(totalTasks)).append("\n");
                         sb.append("    upgradeEvents: ").append(toIndentedString(upgradeEvents)).append("\n");
                         sb.append("    upgradeOps: ").append(toIndentedString(upgradeOps)).append("\n");
+                        sb.append("    upgradeReadiness: ").append(toIndentedString(upgradeReadiness)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                         sb.append("    version: ").append(toIndentedString(version)).append("\n");
                   sb.append("}");
