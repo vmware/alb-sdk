@@ -3738,6 +3738,10 @@ definitions:
                 description: "Access token type. Enum options - ACCESS_TOKEN_TYPE_JWT, ACCESS_TOKEN_TYPE_OPAQUE. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
                 default: "ACCESS_TOKEN_TYPE_JWT"
+            introspection_data_timeout:
+                description: "Lifetime of the cached introspection data. Allowed values are 0-1440. Special values are 0- No caching of introspection data. Field introduced in 22.1.3. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
             jwt_params:
                 description: "Validation parameters to be used when access token type is JWT. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/JWTValidationParams'
@@ -4240,7 +4244,7 @@ definitions:
                 description: "Constant string to use as a token. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: "Token type for constructing the URI. Enum options - URI_TOKEN_TYPE_HOST, URI_TOKEN_TYPE_PATH, URI_TOKEN_TYPE_STRING, URI_TOKEN_TYPE_STRING_GROUP, URI_TOKEN_TYPE_REGEX. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Token type for constructing the URI. Enum options - URI_TOKEN_TYPE_HOST, URI_TOKEN_TYPE_PATH, URI_TOKEN_TYPE_STRING, URI_TOKEN_TYPE_STRING_GROUP, URI_TOKEN_TYPE_REGEX, URI_TOKEN_TYPE_REGEX_QUERY. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     VHMatch:
         type: object
