@@ -682,7 +682,8 @@ font-style: italic;
           "opaque_token_params" : {
             "server_secret" : "aeiou",
             "server_id" : "aeiou"
-          }
+          },
+          "introspection_data_timeout" : 123
         },
         "auth_profile_ref" : "aeiou"
       } ],
@@ -1125,7 +1126,8 @@ font-style: italic;
         "opaque_token_params" : {
           "server_secret" : "aeiou",
           "server_id" : "aeiou"
-        }
+        },
+        "introspection_data_timeout" : 123
       },
       "auth_profile_ref" : "aeiou"
     } ],
@@ -2373,7 +2375,8 @@ font-style: italic;
         "opaque_token_params" : {
           "server_secret" : "aeiou",
           "server_id" : "aeiou"
-        }
+        },
+        "introspection_data_timeout" : 123
       },
       "auth_profile_ref" : "aeiou"
     } ],
@@ -3931,7 +3934,8 @@ font-style: italic;
         "opaque_token_params" : {
           "server_secret" : "aeiou",
           "server_id" : "aeiou"
-        }
+        },
+        "introspection_data_timeout" : 123
       },
       "auth_profile_ref" : "aeiou"
     } ],
@@ -4593,7 +4597,8 @@ font-style: italic;
         "opaque_token_params" : {
           "server_secret" : "aeiou",
           "server_id" : "aeiou"
-        }
+        },
+        "introspection_data_timeout" : 123
       },
       "auth_profile_ref" : "aeiou"
     } ],
@@ -6253,6 +6258,7 @@ font-style: italic;
     <h3 class="field-label"><a name="OAuthResourceServer">OAuthResourceServer</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">access_type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Access token type. Enum options - ACCESS_TOKEN_TYPE_JWT, ACCESS_TOKEN_TYPE_OPAQUE. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">introspection_data_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Lifetime of the cached introspection data. Allowed values are 0-1440. Special values are 0- No caching of introspection data. Field introduced in 22.1.3. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">jwt_params (optional)</div><div class="param-desc"><span class="param-type"><a href="#JWTValidationParams">JWTValidationParams</a></span> Validation parameters to be used when access token type is JWT. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">opaque_token_params (optional)</div><div class="param-desc"><span class="param-type"><a href="#OpaqueTokenValidationParams">OpaqueTokenValidationParams</a></span> Validation parameters to be used when access token type is opaque. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
@@ -6494,7 +6500,7 @@ font-style: italic;
       <div class="param">end_index (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - end of string. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">start_index (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Index of the starting token in the incoming URI. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">str_value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Constant string to use as a token. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Token type for constructing the URI. Enum options - URI_TOKEN_TYPE_HOST, URI_TOKEN_TYPE_PATH, URI_TOKEN_TYPE_STRING, URI_TOKEN_TYPE_STRING_GROUP, URI_TOKEN_TYPE_REGEX. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Token type for constructing the URI. Enum options - URI_TOKEN_TYPE_HOST, URI_TOKEN_TYPE_PATH, URI_TOKEN_TYPE_STRING, URI_TOKEN_TYPE_STRING_GROUP, URI_TOKEN_TYPE_REGEX, URI_TOKEN_TYPE_REGEX_QUERY. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
