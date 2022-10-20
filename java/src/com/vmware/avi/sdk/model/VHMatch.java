@@ -25,14 +25,16 @@ public class VHMatch  {
     private String host = null;
 
     @JsonProperty("path")
-    private List<PathMatch> path = null;
+    private List<PathMatch> path;
+
+    @JsonProperty("rules")
+    private List<VHMatchRule> rules = null;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
      * Host/domain name match configuration.
-     * Must be configured along with at least one path match criteria.
      * Field introduced in 20.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -45,7 +47,6 @@ public class VHMatch  {
     /**
      * This is the setter method to the attribute.
      * Host/domain name match configuration.
-     * Must be configured along with at least one path match criteria.
      * Field introduced in 20.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -58,10 +59,10 @@ public class VHMatch  {
      * This is the getter method this will return the attribute value.
      * Resource/uri path match configuration.
      * Must be configured along with host match criteria.
+     * Field deprecated in 22.1.3.
      * Field introduced in 20.1.3.
      * Minimum of 1 items required.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return path
      */
     public List<PathMatch> getPath() {
@@ -72,10 +73,10 @@ public class VHMatch  {
      * This is the setter method. this will set the path
      * Resource/uri path match configuration.
      * Must be configured along with host match criteria.
+     * Field deprecated in 22.1.3.
      * Field introduced in 20.1.3.
      * Minimum of 1 items required.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return path
      */
     public void setPath(List<PathMatch>  path) {
@@ -86,10 +87,10 @@ public class VHMatch  {
      * This is the setter method this will set the path
      * Resource/uri path match configuration.
      * Must be configured along with host match criteria.
+     * Field deprecated in 22.1.3.
      * Field introduced in 20.1.3.
      * Minimum of 1 items required.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return path
      */
     public VHMatch addPathItem(PathMatch pathItem) {
@@ -97,6 +98,51 @@ public class VHMatch  {
         this.path = new ArrayList<PathMatch>();
       }
       this.path.add(pathItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Add rules for selecting the virtual service.
+     * At least one rule must be configured.
+     * Field introduced in 22.1.3.
+     * Minimum of 1 items required.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return rules
+     */
+    public List<VHMatchRule> getRules() {
+        return rules;
+    }
+
+    /**
+     * This is the setter method. this will set the rules
+     * Add rules for selecting the virtual service.
+     * At least one rule must be configured.
+     * Field introduced in 22.1.3.
+     * Minimum of 1 items required.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return rules
+     */
+    public void setRules(List<VHMatchRule>  rules) {
+        this.rules = rules;
+    }
+
+    /**
+     * This is the setter method this will set the rules
+     * Add rules for selecting the virtual service.
+     * At least one rule must be configured.
+     * Field introduced in 22.1.3.
+     * Minimum of 1 items required.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return rules
+     */
+    public VHMatch addRulesItem(VHMatchRule rulesItem) {
+      if (this.rules == null) {
+        this.rules = new ArrayList<VHMatchRule>();
+      }
+      this.rules.add(rulesItem);
       return this;
     }
 
@@ -111,7 +157,8 @@ public class VHMatch  {
       }
       VHMatch objVHMatch = (VHMatch) o;
       return   Objects.equals(this.host, objVHMatch.host)&&
-  Objects.equals(this.path, objVHMatch.path);
+  Objects.equals(this.path, objVHMatch.path)&&
+  Objects.equals(this.rules, objVHMatch.rules);
     }
 
     @Override
@@ -120,6 +167,7 @@ public class VHMatch  {
       sb.append("class VHMatch {\n");
                   sb.append("    host: ").append(toIndentedString(host)).append("\n");
                         sb.append("    path: ").append(toIndentedString(path)).append("\n");
+                        sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
