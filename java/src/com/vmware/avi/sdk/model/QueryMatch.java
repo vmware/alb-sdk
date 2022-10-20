@@ -27,6 +27,9 @@ public class QueryMatch  {
     @JsonProperty("match_criteria")
     private String matchCriteria = null;
 
+    @JsonProperty("match_decoded_string")
+    private Boolean matchDecodedString = true;
+
     @JsonProperty("match_str")
     private List<String> matchStr = null;
 
@@ -85,6 +88,30 @@ public class QueryMatch  {
      */
     public void setMatchCriteria(String  matchCriteria) {
         this.matchCriteria = matchCriteria;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Match against the decoded uri query.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return matchDecodedString
+     */
+    public Boolean getMatchDecodedString() {
+        return matchDecodedString;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Match against the decoded uri query.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param matchDecodedString set the matchDecodedString.
+     */
+    public void setMatchDecodedString(Boolean  matchDecodedString) {
+        this.matchDecodedString = matchDecodedString;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -175,7 +202,8 @@ public class QueryMatch  {
       return   Objects.equals(this.matchCriteria, objQueryMatch.matchCriteria)&&
   Objects.equals(this.matchCase, objQueryMatch.matchCase)&&
   Objects.equals(this.matchStr, objQueryMatch.matchStr)&&
-  Objects.equals(this.stringGroupRefs, objQueryMatch.stringGroupRefs);
+  Objects.equals(this.stringGroupRefs, objQueryMatch.stringGroupRefs)&&
+  Objects.equals(this.matchDecodedString, objQueryMatch.matchDecodedString);
     }
 
     @Override
@@ -184,6 +212,7 @@ public class QueryMatch  {
       sb.append("class QueryMatch {\n");
                   sb.append("    matchCase: ").append(toIndentedString(matchCase)).append("\n");
                         sb.append("    matchCriteria: ").append(toIndentedString(matchCriteria)).append("\n");
+                        sb.append("    matchDecodedString: ").append(toIndentedString(matchDecodedString)).append("\n");
                         sb.append("    matchStr: ").append(toIndentedString(matchStr)).append("\n");
                         sb.append("    stringGroupRefs: ").append(toIndentedString(stringGroupRefs)).append("\n");
                   sb.append("}");

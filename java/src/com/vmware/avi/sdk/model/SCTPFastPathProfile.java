@@ -21,68 +21,68 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SCTPFastPathProfile  {
-    @JsonProperty("enable_syn_protection")
-    private Boolean enableSynProtection = false;
+    @JsonProperty("enable_init_chunk_protection")
+    private Boolean enableInitChunkProtection = false;
 
-    @JsonProperty("session_idle_timeout")
-    private Integer sessionIdleTimeout = 300;
+    @JsonProperty("idle_timeout")
+    private Integer idleTimeout = 0;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * When enabled, avi will complete the 3-way handshake with the client before forwarding any packets to the server.
-     * This will protect the server from syn flood and half open syn connections.
+     * When enabled, avi will complete the 4-way handshake with the client before forwarding any packets to the server.
+     * This will protect the server from init chunks flood and half open connections.
      * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
-     * @return enableSynProtection
+     * @return enableInitChunkProtection
      */
-    public Boolean getEnableSynProtection() {
-        return enableSynProtection;
+    public Boolean getEnableInitChunkProtection() {
+        return enableInitChunkProtection;
     }
 
     /**
      * This is the setter method to the attribute.
-     * When enabled, avi will complete the 3-way handshake with the client before forwarding any packets to the server.
-     * This will protect the server from syn flood and half open syn connections.
+     * When enabled, avi will complete the 4-way handshake with the client before forwarding any packets to the server.
+     * This will protect the server from init chunks flood and half open connections.
      * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
-     * @param enableSynProtection set the enableSynProtection.
+     * @param enableInitChunkProtection set the enableInitChunkProtection.
      */
-    public void setEnableSynProtection(Boolean  enableSynProtection) {
-        this.enableSynProtection = enableSynProtection;
+    public void setEnableInitChunkProtection(Boolean  enableInitChunkProtection) {
+        this.enableInitChunkProtection = enableInitChunkProtection;
     }
 
     /**
      * This is the getter method this will return the attribute value.
-     * The amount of time (in sec) for which a connection needs to be idle before it is eligible to be deleted.
-     * Allowed values are 5-14400.
-     * Special values are 0 - infinite.
+     * Sctp autoclose timeout.
+     * 0 means autoclose deactivated.
+     * Allowed values are 0-247483647.
      * Field introduced in 22.1.3.
      * Unit is sec.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 300.
-     * @return sessionIdleTimeout
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @return idleTimeout
      */
-    public Integer getSessionIdleTimeout() {
-        return sessionIdleTimeout;
+    public Integer getIdleTimeout() {
+        return idleTimeout;
     }
 
     /**
      * This is the setter method to the attribute.
-     * The amount of time (in sec) for which a connection needs to be idle before it is eligible to be deleted.
-     * Allowed values are 5-14400.
-     * Special values are 0 - infinite.
+     * Sctp autoclose timeout.
+     * 0 means autoclose deactivated.
+     * Allowed values are 0-247483647.
      * Field introduced in 22.1.3.
      * Unit is sec.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 300.
-     * @param sessionIdleTimeout set the sessionIdleTimeout.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @param idleTimeout set the idleTimeout.
      */
-    public void setSessionIdleTimeout(Integer  sessionIdleTimeout) {
-        this.sessionIdleTimeout = sessionIdleTimeout;
+    public void setIdleTimeout(Integer  idleTimeout) {
+        this.idleTimeout = idleTimeout;
     }
 
 
@@ -95,16 +95,16 @@ public class SCTPFastPathProfile  {
           return false;
       }
       SCTPFastPathProfile objSCTPFastPathProfile = (SCTPFastPathProfile) o;
-      return   Objects.equals(this.sessionIdleTimeout, objSCTPFastPathProfile.sessionIdleTimeout)&&
-  Objects.equals(this.enableSynProtection, objSCTPFastPathProfile.enableSynProtection);
+      return   Objects.equals(this.idleTimeout, objSCTPFastPathProfile.idleTimeout)&&
+  Objects.equals(this.enableInitChunkProtection, objSCTPFastPathProfile.enableInitChunkProtection);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class SCTPFastPathProfile {\n");
-                  sb.append("    enableSynProtection: ").append(toIndentedString(enableSynProtection)).append("\n");
-                        sb.append("    sessionIdleTimeout: ").append(toIndentedString(sessionIdleTimeout)).append("\n");
+                  sb.append("    enableInitChunkProtection: ").append(toIndentedString(enableInitChunkProtection)).append("\n");
+                        sb.append("    idleTimeout: ").append(toIndentedString(idleTimeout)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

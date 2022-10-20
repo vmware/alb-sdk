@@ -45,6 +45,12 @@ public class NsxtSegmentRuntime extends AviRestResource  {
     @JsonProperty("opaque_network_id")
     private String opaqueNetworkId = null;
 
+    @JsonProperty("origin_id")
+    private String originId = null;
+
+    @JsonProperty("security_only_nsxt")
+    private Boolean securityOnlyNsxt = false;
+
     @JsonProperty("segment_gw")
     private String segmentGw = null;
 
@@ -307,6 +313,54 @@ public class NsxtSegmentRuntime extends AviRestResource  {
      */
     public void setOpaqueNetworkId(String  opaqueNetworkId) {
         this.opaqueNetworkId = opaqueNetworkId;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Origin id applicable to security only cloud.
+     * Field introduced in 22.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return originId
+     */
+    public String getOriginId() {
+        return originId;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Origin id applicable to security only cloud.
+     * Field introduced in 22.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param originId set the originId.
+     */
+    public void setOriginId(String  originId) {
+        this.originId = originId;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Nsxt segment belongs to security only cloud.
+     * Field introduced in 22.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return securityOnlyNsxt
+     */
+    public Boolean getSecurityOnlyNsxt() {
+        return securityOnlyNsxt;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Nsxt segment belongs to security only cloud.
+     * Field introduced in 22.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param securityOnlyNsxt set the securityOnlyNsxt.
+     */
+    public void setSecurityOnlyNsxt(Boolean  securityOnlyNsxt) {
+        this.securityOnlyNsxt = securityOnlyNsxt;
     }
 
     /**
@@ -637,7 +691,9 @@ public class NsxtSegmentRuntime extends AviRestResource  {
   Objects.equals(this.dhcp6Ranges, objNsxtSegmentRuntime.dhcp6Ranges)&&
   Objects.equals(this.vlanIds, objNsxtSegmentRuntime.vlanIds)&&
   Objects.equals(this.tenantRef, objNsxtSegmentRuntime.tenantRef)&&
-  Objects.equals(this.cloudRef, objNsxtSegmentRuntime.cloudRef);
+  Objects.equals(this.cloudRef, objNsxtSegmentRuntime.cloudRef)&&
+  Objects.equals(this.securityOnlyNsxt, objNsxtSegmentRuntime.securityOnlyNsxt)&&
+  Objects.equals(this.originId, objNsxtSegmentRuntime.originId);
     }
 
     @Override
@@ -652,6 +708,8 @@ public class NsxtSegmentRuntime extends AviRestResource  {
                         sb.append("    nwName: ").append(toIndentedString(nwName)).append("\n");
                         sb.append("    nwRef: ").append(toIndentedString(nwRef)).append("\n");
                         sb.append("    opaqueNetworkId: ").append(toIndentedString(opaqueNetworkId)).append("\n");
+                        sb.append("    originId: ").append(toIndentedString(originId)).append("\n");
+                        sb.append("    securityOnlyNsxt: ").append(toIndentedString(securityOnlyNsxt)).append("\n");
                         sb.append("    segmentGw: ").append(toIndentedString(segmentGw)).append("\n");
                         sb.append("    segmentGw6: ").append(toIndentedString(segmentGw6)).append("\n");
                         sb.append("    segmentId: ").append(toIndentedString(segmentId)).append("\n");

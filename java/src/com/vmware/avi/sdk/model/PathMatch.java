@@ -27,6 +27,9 @@ public class PathMatch  {
     @JsonProperty("match_criteria")
     private String matchCriteria = "CONTAINS";
 
+    @JsonProperty("match_decoded_string")
+    private Boolean matchDecodedString = true;
+
     @JsonProperty("match_str")
     private List<String> matchStr = null;
 
@@ -89,6 +92,30 @@ public class PathMatch  {
      */
     public void setMatchCriteria(String  matchCriteria) {
         this.matchCriteria = matchCriteria;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Match against the decoded uri path.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return matchDecodedString
+     */
+    public Boolean getMatchDecodedString() {
+        return matchDecodedString;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Match against the decoded uri path.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param matchDecodedString set the matchDecodedString.
+     */
+    public void setMatchDecodedString(Boolean  matchDecodedString) {
+        this.matchDecodedString = matchDecodedString;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -179,7 +206,8 @@ public class PathMatch  {
       return   Objects.equals(this.matchCriteria, objPathMatch.matchCriteria)&&
   Objects.equals(this.matchCase, objPathMatch.matchCase)&&
   Objects.equals(this.matchStr, objPathMatch.matchStr)&&
-  Objects.equals(this.stringGroupRefs, objPathMatch.stringGroupRefs);
+  Objects.equals(this.stringGroupRefs, objPathMatch.stringGroupRefs)&&
+  Objects.equals(this.matchDecodedString, objPathMatch.matchDecodedString);
     }
 
     @Override
@@ -188,6 +216,7 @@ public class PathMatch  {
       sb.append("class PathMatch {\n");
                   sb.append("    matchCase: ").append(toIndentedString(matchCase)).append("\n");
                         sb.append("    matchCriteria: ").append(toIndentedString(matchCriteria)).append("\n");
+                        sb.append("    matchDecodedString: ").append(toIndentedString(matchDecodedString)).append("\n");
                         sb.append("    matchStr: ").append(toIndentedString(matchStr)).append("\n");
                         sb.append("    stringGroupRefs: ").append(toIndentedString(stringGroupRefs)).append("\n");
                   sb.append("}");
