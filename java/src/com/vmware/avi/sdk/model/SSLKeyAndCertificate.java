@@ -57,6 +57,9 @@ public class SSLKeyAndCertificate extends AviRestResource  {
     @JsonProperty("import_key_to_hsm")
     private Boolean importKeyToHsm = false;
 
+    @JsonProperty("is_federated")
+    private Boolean isFederated = false;
+
     @JsonProperty("key")
     private String key = null;
 
@@ -404,6 +407,30 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      */
     public void setImportKeyToHsm(Boolean  importKeyToHsm) {
         this.importKeyToHsm = importKeyToHsm;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * It specifies whether the object has to be replicated to the gslb followers.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return isFederated
+     */
+    public Boolean getIsFederated() {
+        return isFederated;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * It specifies whether the object has to be replicated to the gslb followers.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param isFederated set the isFederated.
+     */
+    public void setIsFederated(Boolean  isFederated) {
+        this.isFederated = isFederated;
     }
 
     /**
@@ -808,7 +835,8 @@ public class SSLKeyAndCertificate extends AviRestResource  {
   Objects.equals(this.ocspResponseInfo, objSSLKeyAndCertificate.ocspResponseInfo)&&
   Objects.equals(this.ocspErrorStatus, objSSLKeyAndCertificate.ocspErrorStatus)&&
   Objects.equals(this.markers, objSSLKeyAndCertificate.markers)&&
-  Objects.equals(this.importKeyToHsm, objSSLKeyAndCertificate.importKeyToHsm);
+  Objects.equals(this.importKeyToHsm, objSSLKeyAndCertificate.importKeyToHsm)&&
+  Objects.equals(this.isFederated, objSSLKeyAndCertificate.isFederated);
     }
 
     @Override
@@ -827,6 +855,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
                         sb.append("    format: ").append(toIndentedString(format)).append("\n");
                         sb.append("    hardwaresecuritymodulegroupRef: ").append(toIndentedString(hardwaresecuritymodulegroupRef)).append("\n");
                         sb.append("    importKeyToHsm: ").append(toIndentedString(importKeyToHsm)).append("\n");
+                        sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
                         sb.append("    key: ").append(toIndentedString(key)).append("\n");
                         sb.append("    keyBase64: ").append(toIndentedString(keyBase64)).append("\n");
                         sb.append("    keyParams: ").append(toIndentedString(keyParams)).append("\n");

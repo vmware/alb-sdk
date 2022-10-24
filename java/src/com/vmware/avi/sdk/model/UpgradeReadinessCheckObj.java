@@ -39,14 +39,11 @@ public class UpgradeReadinessCheckObj  {
     @JsonProperty("patch_image_ref")
     private String patchImageRef = null;
 
-    @JsonProperty("reason")
-    private String reason = null;
-
     @JsonProperty("start_time")
     private String startTime = null;
 
     @JsonProperty("state")
-    private String state = null;
+    private UpgradeOpsState state = null;
 
     @JsonProperty("total_checks")
     private Integer totalChecks = null;
@@ -225,30 +222,6 @@ public class UpgradeReadinessCheckObj  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Descriptive reason for the upgrade readiness check state.
-     * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return reason
-     */
-    public String getReason() {
-        return reason;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Descriptive reason for the upgrade readiness check state.
-     * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param reason set the reason.
-     */
-    public void setReason(String  reason) {
-        this.reason = reason;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Time at which execution of upgrade readiness checks was started.
      * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -274,32 +247,24 @@ public class UpgradeReadinessCheckObj  {
     /**
      * This is the getter method this will return the attribute value.
      * The upgrade readiness check operations current fsm-state.
-     * Enum options - UPGRADE_FSM_INIT, UPGRADE_FSM_STARTED, UPGRADE_FSM_WAITING, UPGRADE_FSM_IN_PROGRESS, UPGRADE_FSM_ENQUEUED, UPGRADE_FSM_ERROR,
-     * UPGRADE_FSM_SUSPENDED, UPGRADE_FSM_ENQUEUE_FAILED, UPGRADE_FSM_PAUSED, UPGRADE_FSM_COMPLETED, UPGRADE_FSM_ABORT_IN_PROGRESS, UPGRADE_FSM_ABORTED,
-     * UPGRADE_FSM_SE_UPGRADE_IN_PROGRESS, UPGRADE_FSM_CONTROLLER_COMPLETED, UPGRADE_FSM_DUMMY_3, UPGRADE_FSM_DUMMY_4, UPGRADE_FSM_DUMMY_5,
-     * UPGRADE_PRE_CHECK_STARTED, UPGRADE_PRE_CHECK_IN_PROGRESS, UPGRADE_PRE_CHECK_SUCCESS...
      * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return state
      */
-    public String getState() {
+    public UpgradeOpsState getState() {
         return state;
     }
 
     /**
      * This is the setter method to the attribute.
      * The upgrade readiness check operations current fsm-state.
-     * Enum options - UPGRADE_FSM_INIT, UPGRADE_FSM_STARTED, UPGRADE_FSM_WAITING, UPGRADE_FSM_IN_PROGRESS, UPGRADE_FSM_ENQUEUED, UPGRADE_FSM_ERROR,
-     * UPGRADE_FSM_SUSPENDED, UPGRADE_FSM_ENQUEUE_FAILED, UPGRADE_FSM_PAUSED, UPGRADE_FSM_COMPLETED, UPGRADE_FSM_ABORT_IN_PROGRESS, UPGRADE_FSM_ABORTED,
-     * UPGRADE_FSM_SE_UPGRADE_IN_PROGRESS, UPGRADE_FSM_CONTROLLER_COMPLETED, UPGRADE_FSM_DUMMY_3, UPGRADE_FSM_DUMMY_4, UPGRADE_FSM_DUMMY_5,
-     * UPGRADE_PRE_CHECK_STARTED, UPGRADE_PRE_CHECK_IN_PROGRESS, UPGRADE_PRE_CHECK_SUCCESS...
      * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param state set the state.
      */
-    public void setState(String  state) {
+    public void setState(UpgradeOpsState state) {
         this.state = state;
     }
 
@@ -373,7 +338,6 @@ public class UpgradeReadinessCheckObj  {
   Objects.equals(this.endTime, objUpgradeReadinessCheckObj.endTime)&&
   Objects.equals(this.duration, objUpgradeReadinessCheckObj.duration)&&
   Objects.equals(this.upgradeOps, objUpgradeReadinessCheckObj.upgradeOps)&&
-  Objects.equals(this.reason, objUpgradeReadinessCheckObj.reason)&&
   Objects.equals(this.imageRef, objUpgradeReadinessCheckObj.imageRef)&&
   Objects.equals(this.patchImageRef, objUpgradeReadinessCheckObj.patchImageRef)&&
   Objects.equals(this.totalChecks, objUpgradeReadinessCheckObj.totalChecks)&&
@@ -390,7 +354,6 @@ public class UpgradeReadinessCheckObj  {
                         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
                         sb.append("    imageRef: ").append(toIndentedString(imageRef)).append("\n");
                         sb.append("    patchImageRef: ").append(toIndentedString(patchImageRef)).append("\n");
-                        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
                         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
                         sb.append("    state: ").append(toIndentedString(state)).append("\n");
                         sb.append("    totalChecks: ").append(toIndentedString(totalChecks)).append("\n");
