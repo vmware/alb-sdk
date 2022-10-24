@@ -1283,6 +1283,30 @@ definitions:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
+            num_gssl_cert_cr_rxed:
+                description: "Used for federated ssl key and cert stats for create. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_gssl_cert_del_rxed:
+                description: "Used for federated ssl key and cert stats for delete. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_gssl_cert_upd_rxed:
+                description: "Used for federated ssl key and cert stats for update. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_gssl_cr_rxed:
+                description: "Used for federated ssl profile stats for create. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_gssl_del_rxed:
+                description: "Used for federated ssl profile stats for delete. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_gssl_upd_rxed:
+                description: "Used for federated ssl profile stats for update. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
             num_health_msgs_rxed:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
