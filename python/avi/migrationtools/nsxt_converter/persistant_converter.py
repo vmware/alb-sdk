@@ -270,7 +270,8 @@ class PersistantProfileConfigConv(object):
                 if lb_pp.get('cookie_time'):
                     cookie_max_idle = lb_pp['cookie_time'].get('cookie_max_idle', 0)
                     cookie_max_life = lb_pp['cookie_time'].get('cookie_max_life', 0)
-                script = "cookie_table={name=\"%s\",path=\"%s\",domain=\"%s\", \"%s\", \"%s\", \"%s\"}" \
+                script = "cookie_table={name=\"%s\",path=\"%s\",domain=\"%s\"," \
+                         "expires=\"%s\",maxage=\"%s\",httponly=\"%s\"}" \
                          " avi.http.add_cookie(cookie_table)" \
                          % (lb_pp.get('cookie_name'), lb_pp.get('cookie_path', '/'), lb_pp.get('cookie_domain'),
                             cookie_max_idle, cookie_max_life, lb_pp.get('cookie_httponly', False))
