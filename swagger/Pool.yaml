@@ -2054,6 +2054,9 @@ definitions:
                 description: "Enable TLS SNI for server connections. If disabled, Avi will not send the SNI extension as part of the handshake. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
+            sp_gs_info:
+                description: "GSLB service associated with the site persistence pool. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/SpGslbServiceInfo'
             ssl_key_and_certificate_ref:
                 description: "Service Engines will present a client SSL certificate to the server. It is a reference to an object of type SSLKeyAndCertificate. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -2295,6 +2298,17 @@ definitions:
                 type: string
             uuid:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+    SpGslbServiceInfo:
+        type: object
+        properties:
+            fqdns:
+                description: "FQDNs associated with the GSLB service. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            gs_ref:
+                description: "GSLB service uuid associated with the site persistence pool. It is a reference to an object of type GslbService. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
     URIParam:
         type: object
