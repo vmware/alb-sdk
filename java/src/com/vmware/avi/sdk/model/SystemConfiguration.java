@@ -54,6 +54,12 @@ public class SystemConfiguration extends AviRestResource  {
     @JsonProperty("global_tenant_config")
     private TenantConfiguration globalTenantConfig = null;
 
+    @JsonProperty("host_key_algorithm_exclude")
+    private String hostKeyAlgorithmExclude = null;
+
+    @JsonProperty("kex_algorithm_exclude")
+    private String kexAlgorithmExclude = null;
+
     @JsonProperty("linux_configuration")
     private LinuxConfiguration linuxConfiguration = null;
 
@@ -361,6 +367,58 @@ public class SystemConfiguration extends AviRestResource  {
      */
     public void setGlobalTenantConfig(TenantConfiguration globalTenantConfig) {
         this.globalTenantConfig = globalTenantConfig;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Users can specify comma separated list of deprecated host key algorithm.if nothing is specified, all known algorithms provided by openssh will be
+     * supported.this change could only apply on the controller node.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return hostKeyAlgorithmExclude
+     */
+    public String getHostKeyAlgorithmExclude() {
+        return hostKeyAlgorithmExclude;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Users can specify comma separated list of deprecated host key algorithm.if nothing is specified, all known algorithms provided by openssh will be
+     * supported.this change could only apply on the controller node.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param hostKeyAlgorithmExclude set the hostKeyAlgorithmExclude.
+     */
+    public void setHostKeyAlgorithmExclude(String  hostKeyAlgorithmExclude) {
+        this.hostKeyAlgorithmExclude = hostKeyAlgorithmExclude;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Users can specify comma separated list of deprecated key exchange algorithm.if nothing is specified, all known algorithms provided by openssh
+     * will be supported.this change could only apply on the controller node.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return kexAlgorithmExclude
+     */
+    public String getKexAlgorithmExclude() {
+        return kexAlgorithmExclude;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Users can specify comma separated list of deprecated key exchange algorithm.if nothing is specified, all known algorithms provided by openssh
+     * will be supported.this change could only apply on the controller node.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param kexAlgorithmExclude set the kexAlgorithmExclude.
+     */
+    public void setKexAlgorithmExclude(String  kexAlgorithmExclude) {
+        this.kexAlgorithmExclude = kexAlgorithmExclude;
     }
 
     /**
@@ -679,7 +737,9 @@ public class SystemConfiguration extends AviRestResource  {
   Objects.equals(this.fipsMode, objSystemConfiguration.fipsMode)&&
   Objects.equals(this.enableCors, objSystemConfiguration.enableCors)&&
   Objects.equals(this.commonCriteriaMode, objSystemConfiguration.commonCriteriaMode)&&
-  Objects.equals(this.controllerAnalyticsPolicy, objSystemConfiguration.controllerAnalyticsPolicy);
+  Objects.equals(this.controllerAnalyticsPolicy, objSystemConfiguration.controllerAnalyticsPolicy)&&
+  Objects.equals(this.hostKeyAlgorithmExclude, objSystemConfiguration.hostKeyAlgorithmExclude)&&
+  Objects.equals(this.kexAlgorithmExclude, objSystemConfiguration.kexAlgorithmExclude);
     }
 
     @Override
@@ -697,6 +757,8 @@ public class SystemConfiguration extends AviRestResource  {
                         sb.append("    enableCors: ").append(toIndentedString(enableCors)).append("\n");
                         sb.append("    fipsMode: ").append(toIndentedString(fipsMode)).append("\n");
                         sb.append("    globalTenantConfig: ").append(toIndentedString(globalTenantConfig)).append("\n");
+                        sb.append("    hostKeyAlgorithmExclude: ").append(toIndentedString(hostKeyAlgorithmExclude)).append("\n");
+                        sb.append("    kexAlgorithmExclude: ").append(toIndentedString(kexAlgorithmExclude)).append("\n");
                         sb.append("    linuxConfiguration: ").append(toIndentedString(linuxConfiguration)).append("\n");
                         sb.append("    mgmtIpAccessControl: ").append(toIndentedString(mgmtIpAccessControl)).append("\n");
                         sb.append("    ntpConfiguration: ").append(toIndentedString(ntpConfiguration)).append("\n");
