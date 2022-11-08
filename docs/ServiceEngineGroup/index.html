@@ -515,7 +515,8 @@ font-style: italic;
     "upstream_connect_timeout" : 123,
     "mgmt_network_ref" : "aeiou",
     "vcenter_datastores" : [ {
-      "datastore_name" : "aeiou"
+      "datastore_name" : "aeiou",
+      "managed_object_id" : "aeiou"
     } ],
     "se_dp_vnic_queue_stall_timeout" : 123,
     "vcenters" : [ {
@@ -996,7 +997,8 @@ font-style: italic;
   "upstream_connect_timeout" : 123,
   "mgmt_network_ref" : "aeiou",
   "vcenter_datastores" : [ {
-    "datastore_name" : "aeiou"
+    "datastore_name" : "aeiou",
+    "managed_object_id" : "aeiou"
   } ],
   "se_dp_vnic_queue_stall_timeout" : 123,
   "vcenters" : [ {
@@ -1548,7 +1550,8 @@ font-style: italic;
   "upstream_connect_timeout" : 123,
   "mgmt_network_ref" : "aeiou",
   "vcenter_datastores" : [ {
-    "datastore_name" : "aeiou"
+    "datastore_name" : "aeiou",
+    "managed_object_id" : "aeiou"
   } ],
   "se_dp_vnic_queue_stall_timeout" : 123,
   "vcenters" : [ {
@@ -2040,7 +2043,8 @@ font-style: italic;
   "upstream_connect_timeout" : 123,
   "mgmt_network_ref" : "aeiou",
   "vcenter_datastores" : [ {
-    "datastore_name" : "aeiou"
+    "datastore_name" : "aeiou",
+    "managed_object_id" : "aeiou"
   } ],
   "se_dp_vnic_queue_stall_timeout" : 123,
   "vcenters" : [ {
@@ -2688,7 +2692,8 @@ font-style: italic;
   "upstream_connect_timeout" : 123,
   "mgmt_network_ref" : "aeiou",
   "vcenter_datastores" : [ {
-    "datastore_name" : "aeiou"
+    "datastore_name" : "aeiou",
+    "managed_object_id" : "aeiou"
   } ],
   "se_dp_vnic_queue_stall_timeout" : 123,
   "vcenters" : [ {
@@ -3629,7 +3634,8 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="VcenterDatastore">VcenterDatastore</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">datastore_name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+      <div class="param">datastore_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">managed_object_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Will be used by default, if not set fallback to datastore_name. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
