@@ -30,6 +30,9 @@ public class vCenterConfiguration  {
     @JsonProperty("deactivate_vm_discovery")
     private Boolean deactivateVmDiscovery = false;
 
+    @JsonProperty("is_nsx_environment")
+    private Boolean isNsxEnvironment = false;
+
     @JsonProperty("management_ip_subnet")
     private IpAddrPrefix managementIpSubnet = null;
 
@@ -124,6 +127,30 @@ public class vCenterConfiguration  {
      */
     public void setDeactivateVmDiscovery(Boolean  deactivateVmDiscovery) {
         this.deactivateVmDiscovery = deactivateVmDiscovery;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * If true, nsx-t segment spanning multiple vds with vcenter cloud are merged to a single network in avi.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return isNsxEnvironment
+     */
+    public Boolean getIsNsxEnvironment() {
+        return isNsxEnvironment;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * If true, nsx-t segment spanning multiple vds with vcenter cloud are merged to a single network in avi.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param isNsxEnvironment set the isNsxEnvironment.
+     */
+    public void setIsNsxEnvironment(Boolean  isNsxEnvironment) {
+        this.isNsxEnvironment = isNsxEnvironment;
     }
 
     /**
@@ -330,7 +357,8 @@ public class vCenterConfiguration  {
   Objects.equals(this.vcenterTemplateSeLocation, objvCenterConfiguration.vcenterTemplateSeLocation)&&
   Objects.equals(this.deactivateVmDiscovery, objvCenterConfiguration.deactivateVmDiscovery)&&
   Objects.equals(this.useContentLib, objvCenterConfiguration.useContentLib)&&
-  Objects.equals(this.contentLib, objvCenterConfiguration.contentLib);
+  Objects.equals(this.contentLib, objvCenterConfiguration.contentLib)&&
+  Objects.equals(this.isNsxEnvironment, objvCenterConfiguration.isNsxEnvironment);
     }
 
     @Override
@@ -340,6 +368,7 @@ public class vCenterConfiguration  {
                   sb.append("    contentLib: ").append(toIndentedString(contentLib)).append("\n");
                         sb.append("    datacenter: ").append(toIndentedString(datacenter)).append("\n");
                         sb.append("    deactivateVmDiscovery: ").append(toIndentedString(deactivateVmDiscovery)).append("\n");
+                        sb.append("    isNsxEnvironment: ").append(toIndentedString(isNsxEnvironment)).append("\n");
                         sb.append("    managementIpSubnet: ").append(toIndentedString(managementIpSubnet)).append("\n");
                         sb.append("    managementNetwork: ").append(toIndentedString(managementNetwork)).append("\n");
                         sb.append("    password: ").append(toIndentedString(password)).append("\n");
