@@ -4,6 +4,7 @@
 import logging
 import copy
 import re
+import yaml
 import avi.migrationtools.f5_converter.converter_constants as conv_const
 from avi.migrationtools.f5_converter.conversion_util import F5Util
 from avi.migrationtools.avi_migration_utils import update_count
@@ -212,7 +213,7 @@ class PoolConfigConv(object):
         return is_pool_group, pg_dict
 
     def add_status(self, name, skipped_attr, member_skipped, skipped_monitors,
-                   converted_objs, user_ignore, skipped_servers):
+                   converted_objs, user_ignore, skipped_servers,f5_pool):
         skipped = []
         conv_status = dict()
         conv_status['user_ignore'] = []
@@ -256,7 +257,7 @@ class PoolConfigConv(object):
         conv_status['status'] = status
 
         conv_utils.add_conv_status('pool', None, name, conv_status,
-                                   converted_objs)
+                                   converted_objs,yaml.dump(f5_pool))
 
     def convert_for_pg(self, pg_dict, pool_obj, name, tenant, avi_config,
                        cloud_ref):
@@ -422,7 +423,7 @@ class PoolConfigConvV11(PoolConfigConv):
             skipped_attr.append('Skipped: length of servers more than 400')
         super(PoolConfigConvV11, self).add_status(
             pool_name, skipped_attr, member_skipped_config, skipped_monitors,
-            converted_objs, user_ignore, skipped_servers)
+            converted_objs, user_ignore, skipped_servers,f5_pool)
 
         return converted_objs
 
@@ -666,7 +667,7 @@ class PoolConfigConvV10(PoolConfigConv):
             skipped_attr.append('Skipped: length of servers more than 400')
         super(PoolConfigConvV10, self).add_status(
             pool_name, skipped_attr, member_skipped_config, skipped_monitors,
-            converted_objs, user_ignore, skipped_servers)
+            converted_objs, user_ignore, skipped_servers,f5_pool)
         return converted_objs
 
     def get_avi_lb_algorithm(self, f5_algorithm):

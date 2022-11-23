@@ -5,7 +5,7 @@ import logging
 import avi.migrationtools.f5_converter.converter_constants as final
 from avi.migrationtools.f5_converter.conversion_util import F5Util
 from avi.migrationtools.avi_migration_utils import update_count
-
+import yaml
 LOG = logging.getLogger(__name__)
 
 # Creating f5 object for util library.
@@ -15,6 +15,7 @@ parameters_dict = {'starts-with': 'BEGINS_WITH', 'equals': 'EQUALS',
                    'contains': 'CONTAINS', 'ends-with': 'ENDS_WITH',
                    'not': 'DOES_NOT_'}
 used_pools = {}
+http_to_https_policy_rule=[]
 
 
 class PolicyConfigConv(object):
@@ -32,7 +33,7 @@ class PolicyConfigConv(object):
         if version in ['11', '12']:
             return PolicyConfigConvV11(prefix, f5_profile_attributes)
 
-    def convert(self, f5_config, avi_config, tenant_ref):
+    def convert(self, f5_config, avi_config, tenant_ref, cloud_name):
         """
         Main method for conversion of policy
         :param f5_config: parsed f5 config dict
@@ -53,7 +54,7 @@ class PolicyConfigConv(object):
                 httppolicy = dict()
                 config = policy_config[each_policy]
                 skip = self.create_rules(config, httppolicy, avi_config,
-                                         policy_name)
+                                         policy_name, cloud_name, tenant)
                 if httppolicy.get('http_request_policy', httppolicy.get(
                         'http_response_policy')):
                     httppolicy['name'] = policy_name
@@ -74,7 +75,7 @@ class PolicyConfigConv(object):
                     conv_status['indirect'] = indirect
                     conv_utils.add_conv_status('policy', None, each_policy,
                                                conv_status,
-                                               [{'policy_set': httppolicy}])
+                                               [{'policy_set': httppolicy}],f5_object=yaml.dump(config))
                 else:
                     conv_utils.add_conv_status("policy", None, each_policy,
                                          {'status': final.STATUS_SKIPPED}, skip)
@@ -86,7 +87,7 @@ class PolicyConfigConv(object):
                           exc_info=True)
 
     def create_rules(self, config, httppolicy, avi_config,
-                     policy_name):
+                     policy_name,cloud_name, tenant):
         """
         This method create rules for each policy
         :param config: f5 policy config dict
@@ -118,7 +119,7 @@ class PolicyConfigConv(object):
                                   '%s in policy %s', each_rule, policy_name)
                     action_rule = config['rules'][each_rule]['actions']
                     actions, skip_action, log = self.create_action_rule(
-                                action_rule, avi_config, each_rule, policy_name)
+                                action_rule, avi_config, each_rule, policy_name,cloud_name,tenant)
                     if not actions:
                         msg = 'All actions not supported for rule {} in ' \
                               'policy {}'.format(each_rule, policy_name)
@@ -158,6 +159,8 @@ class PolicyConfigConv(object):
                               'missing for policy {}'.format(policy_name)
                     LOG.debug(msg)
                     skip_rule[each_rule] = msg
+                if each_rule=="http_to_https_policy_rule":
+                    http_to_https_policy_rule.append(policy_name)
             return skip_rule
         else:
             msg = 'No rule found for policy {}'.format(policy_name)
@@ -832,7 +835,7 @@ class PolicyConfigConv(object):
         return pol_type, match, skip_match
 
     def create_action_rule(self, action_dict, avi_config, each_rule,
-                           policy_name):
+                           policy_name,cloud_name,tenant):
         """
         This method create action dict for each rule
         :param action_dict: f5 action dict
@@ -868,6 +871,8 @@ class PolicyConfigConv(object):
                         }
                         p_tenant, poolname = conv_utils.get_tenant_ref(
                             result['pool'])
+                        if tenant:
+                            p_tenant=tenant
                         if self.prefix:
                             poolname = '%s-%s' % (self.prefix, poolname)
                         poolobj = [obj for obj in avi_config['Pool'] if
@@ -876,7 +881,7 @@ class PolicyConfigConv(object):
                                    'tenant_ref']) == p_tenant]
                         if poolobj:
                             pool_ref = conv_utils.get_object_ref(
-                                poolobj[0]['name'], 'pool', tenant=p_tenant)
+                                poolobj[0]['name'], 'pool', tenant=p_tenant,cloud_name=cloud_name)
                             action['switching_action']['action'] = \
                                 'HTTP_SWITCHING_SELECT_POOL'
                             action['switching_action']['pool_ref'] = pool_ref
@@ -893,7 +898,7 @@ class PolicyConfigConv(object):
                             if pgobj:
                                 pg_ref = conv_utils.get_object_ref(
                                     pgobj[0]['name'], 'poolgroup',
-                                    tenant=p_tenant)
+                                    tenant=p_tenant,cloud_name=cloud_name)
                                 action['switching_action']['action'] = \
                                     'HTTP_SWITCHING_SELECT_POOLGROUP'
                                 action['switching_action']['pool_group_ref'] = \

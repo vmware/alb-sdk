@@ -290,6 +290,12 @@ VERSION_11:
     - 'defaults-from'
     - 'peer-cert-mode'
     - "partition"
+    - "passphrase"
+    - "ocsp-stapling"
+    - "alert-timeout"
+    - "session-ticket-timeout"
+    - "sni-default"
+    - "server-name"
 
     Profile_na_http:
     - 'lws-width'
@@ -312,6 +318,9 @@ VERSION_11:
     - "header-insert"
     - "partition"
     - "redirect-rewrite"
+    - "via-host-name"
+    - "via-request"
+    - "hsts"
 
     Profile_supported_http_enforcement:
     - "max-header-size"
@@ -418,6 +427,7 @@ VERSION_11:
     - 'pva-flow-aging'
     - 'pva-flow-evict'
     - 'pva-offload-state'
+    - 'link-qos-to-client'
 
     Profile_indirect_l4:
     - 'reset-on-timeout'
@@ -437,13 +447,14 @@ VERSION_11:
     - 'syn-cookie-whitelist'
     - 'rtt-from-client'
     - 'rtt-from-server'
-    - 'link-qos-to-client'
     - 'tcp-generate-isn'
     - 'ip-tos-to-client'
     - 'server-sack'
     - 'receive-window-size'
     - 'reassemble-fragments'
     - 'syn-cookie-enable'
+    - 'keep-alive-interval'
+    - 'init-rwnd'
 
     Profile_supported_fh:
     - "description"
@@ -510,6 +521,8 @@ VERSION_11:
     - 'early-retransmit'
     - 'ack-on-push'
     - 'close-wait-timeout'
+    - 'init-rwnd'
+    - 'keep-alive-interval'
 
     Profile_na_tcp:
     - 'hardware-syn-cookie'
@@ -529,6 +542,7 @@ VERSION_11:
     - "syn-rto-base"
     - "zero-window-timeout"
     - 'fin-wait-2-timeout'
+    - 'link-qos-to-client'
 
     Profile_supported_udp:
     - "description"
@@ -538,11 +552,15 @@ VERSION_11:
     - "partition"
 
     Profile_indirect_udp:
-    - 'link-qos-to-client'
     - 'proxy-mss'
     - 'ip-tos-to-client'
     - 'allow-no-payload'
     - 'datagram-load-balancing'
+    - 'keep-alive-interval'
+    - 'init-rwnd'
+
+    Profile_na_udp:
+    - 'link-qos-to-client'
 
     Profile_supported_oc:
     - 'defaults-from'
@@ -562,6 +580,8 @@ VERSION_11:
     - 'rate-limit'
     - 'connection-limit'
     - "partition"
+    - "mirror"
+    - "nat64"
 
     VS_na_attr:
     - 'vs-index'
@@ -960,13 +980,14 @@ VERSION_10:
     - 'syn cookie whitelist'
     - 'rtt from client'
     - 'rtt from server'
-    - 'link qos to client'
     - 'tcp generate isn'
     - 'ip tos to client'
     - 'server sack'
     - 'receive window size'
     - 'reassemble fragments'
     - 'syn-cookie-enable'
+    - 'init-rwnd'
+    - 'keep-alive-interval'
 
     profile_na_l4:
     - "hardware-syn-cookie"
@@ -977,6 +998,7 @@ VERSION_10:
     - 'pva-flow-aging'
     - 'pva-flow-evict'
     - 'pva-offload-state'
+    - 'link qos to client'
 
     Profile_supported_fh:
     - "description"
@@ -1037,6 +1059,8 @@ VERSION_10:
     - 'early retransmit'
     - 'ack-on-push'
     - 'close-wait-timeout'
+    - 'init-rwnd'
+    - 'keep-alive-interval'
 
     Profile_na_tcp:
     - 'hardware-syn-cookie'
@@ -1056,19 +1080,24 @@ VERSION_10:
     - "syn-rto-base"
     - "zero-window-timeout"
     - 'fin-wait-2-timeout'
+    - 'link qos to client'
 
 
     Profile_indirect_udp:
-    - 'link qos to client'
     - 'proxy mss'
     - 'ip tos to client'
     - 'allow no payload'
     - 'datagram load balancing'
+    - 'init-rwnd'
+    - 'keep-alive-interval'
 
     Profile_supported_udp:
     - "idle timeout"
     - "datagram lb"
     - "defaults from"
+
+    Profile_na_udp:
+    - 'link qos to client'
 
     Profile_supported_oc:
     - 'defaults from'
@@ -1088,6 +1117,7 @@ VERSION_10:
     - 'translate service'
     - 'source'
     - 'limit'
+    - "mirror"
 
     VS_na_attr:
     - 'vs-index'
