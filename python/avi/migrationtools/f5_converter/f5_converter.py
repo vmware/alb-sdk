@@ -64,7 +64,7 @@ ARG_DEFAULT_VALUE = {'version': False, 'skip_pki': False, 'ansible': False,
                                             'SeProperties',
                                             'ControllerProperties',
                                             'CloudProperties'],
-                     'input_folder_location': './', 'no_object_merge': True}
+                     'input_folder_location': './', 'object_merge': True}
 
 ARG_CHOICES = {
     'option': ['cli-upload', 'auto-upload'],
@@ -98,7 +98,7 @@ class F5Converter(AviConverter):
         self.ignore_config = args.ignore_config
         self.partition_config = args.partition_config
         self.version = args.version
-        self.object_merge_check = args.no_object_merge
+        self.object_merge_check = args.object_merge
         # config_patch.py args taken into class variable
         self.patch = args.patch
         # vs_filter.py args taken into classs variable
@@ -272,6 +272,8 @@ class F5Converter(AviConverter):
             avi_config = wipe_out_not_in_use(avi_config)
         self.write_output(avi_config, output_dir, '%s-Output.json' %
                           report_name)
+        if self.vs_filter:
+            F5Util().remove_vs_names_when_vs_filter_is_provided(output_dir=output_dir,report_name=report_name,vs_names=self.vs_filter)
         # Call to create ansible playbook if create ansible flag set.
         if self.create_ansible:
             avi_traffic = AviAnsibleConverterMigration(
@@ -503,8 +505,8 @@ if __name__ == "__main__":
     Usecase: 
         When auto-download option enable. It will download the files from different f5 partitions with comma separated path provided with partition config option.
 
-    Example to use no object merge option:
-        f5_converter.py -f bigip.conf --no_object_merge
+    Example to use  object merge option:
+        f5_converter.py -f bigip.conf --object_merge
     Usecase: 
         When we don't need to merge two of the same objects (Multiple objects with matching attributes but different names)
 
@@ -611,7 +613,7 @@ if __name__ == "__main__":
     # Create Ansible Script based on Flag
     parser.add_argument('--ansible',
                         help='Flag for create ansible files (Create and Delete playbooks)',
-                        action='store_true')
+                        action='store_false')
     # Added command line args to take skip type for ansible playbook
     parser.add_argument('--ansible_skip_types',
                         help='Comma separated list of Avi Object types to skip '
@@ -629,9 +631,9 @@ if __name__ == "__main__":
                         'File containing baseline profiles')
     parser.add_argument('-c', '--controller_ip',
                         help='Destination controller ip or fqdn for config upload')
-    parser.add_argument('--cloud_name', help='Destination cloud name')
+    parser.add_argument('--cloud_name', help='Destination cloud name',required=True)
     parser.add_argument('--controller_version',
-                        help='Target Avi controller version')
+                        help='Target Avi controller version',required=True)
     # Added snatpool conversion option
     parser.add_argument('--convertsnat',
                         help='Flag for converting snatpool into '
@@ -664,12 +666,12 @@ if __name__ == "__main__":
                         help='Location of input files like cert files ' +
                              'external monitor scripts')
     # Changed the command line option to more generic term object
-    parser.add_argument('--no_object_merge',
-                        help='Flag for skipping object merge', action='store_false')
+    parser.add_argument('--object_merge',
+                        help='Flag for enabling object merge', action='store_true')
     # Added not in use flag
     parser.add_argument('--not_in_use',
-                        help='Flag for skipping not in use object',
-                        action="store_true")
+                        help='Flag for migrating not in use object',
+                        action="store_false")
     parser.add_argument('-o', '--output_file_path',
                         help='Folder path for output files to be created in',
                         )
@@ -690,13 +692,13 @@ if __name__ == "__main__":
     parser.add_argument('-s', '--vs_state', choices=ARG_CHOICES['vs_state'],
                         help='traffic_enabled state of VS created')
     parser.add_argument('--segroup',
-                        help='Update the available segroup ref with the custom ref')
+                        help='Update the available segroup ref with the custom ref' ,required=True)
     parser.add_argument('--skip_default_file',
                         help='Flag for skip default file', action='store_true')
     parser.add_argument('--skip_pki',
                         help='Skip migration of PKI profile',
                         action='store_true')
-    parser.add_argument('-t', '--tenant', help='Destination tenant name')
+    parser.add_argument('-t', '--tenant', help='Destination tenant name',required=True)
     # Adding support for test vip
     parser.add_argument('--test_vip',
                         help='Enable test vip for ansible generated file '
@@ -712,7 +714,7 @@ if __name__ == "__main__":
                         action='store_true')
     parser.add_argument('--vrf',
                         help='Update the available vrf ref with the custom vrf'
-                             'reference')
+                             'reference',required=True)
     # Added command line args to execute vs_filter.py with vs_name.
     parser.add_argument('--vs_filter',
                         help='Comma seperated names of virtualservices. vs1,vs3,vs5\n'
