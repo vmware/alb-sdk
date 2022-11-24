@@ -114,7 +114,7 @@ class VSConfigConv(object):
                 mapping = self.create_partition_mapping(f5_vs, vs_name)
                 partition_mapping.update(mapping)
 
-                vs_obj , vs_sni_parent_obj= self.convert_vs(
+                vs_obj, vs_sni_parent_obj= self.convert_vs(
                     vs_name, f5_vs, vs_state, avi_config, f5_snat_pools,
                     user_ignore, tenant, cloud_name, controller_version,
                     merge_object_mapping, sys_dict, f5_config, vrf, 
@@ -451,7 +451,7 @@ class VSConfigConv(object):
                 conv_utils.remove_pool_group_vrf(pool_ref, avi_config)
             elif pool_ref:
                 conv_utils.remove_pool_vrf(pool_ref, avi_config)
-        vs_sni_parent_obj = None
+        vs_sni_parent_obj = []
         if vs_sni_type == "VS_TYPE_VH_CHILD":
             vs_sni_parent_obj = {
             'name': "%s-sni-parent" % vs_name,
@@ -726,7 +726,7 @@ class VSConfigConv(object):
         review_flag = 'Yes' if needs_review else None
         conv_utils.add_conv_status('virtual', None, vs_name,
                                    conv_status, vs_obj, yaml.dump(f5_vs), review_flag)
-
+       
         return vs_obj,vs_sni_parent_obj
 
     def get_policy_vs(self, vs_policies, avi_config, vs_name, tenant,

@@ -999,11 +999,12 @@ class TestF5Converter:
                         "F5-v10-VIP-443-001"]
             second_vs = [data for data in vs_object if data['name'] ==
                          "F5-v10-VIP-443-002"]
-
-            first_pool = first_vs[0]['pool_ref'].split('name=')[1].split('&')[0]
-            second_pool = second_vs[0]['pool_ref'].split('name=')[1].split(
-                '&')[0]
-            assert first_pool != second_pool
+           
+            if first_vs and second_vs:
+                first_pool = first_vs[0]['pool_ref'].split('name=')[1].split('&')[0]
+                second_pool = second_vs[0]['pool_ref'].split('name=')[1].split(
+                    '&')[0]
+                assert first_pool != second_pool
 
     @pytest.mark.travis
     @pytest.mark.TCID1_48_1497_47_0
@@ -1796,14 +1797,19 @@ class TestF5Converter:
             data = json.load(json_file)
             vs_object = data['VirtualService'][0]
             http_policy_set = data['HTTPPolicySet']
-        http_policy_name = vs_object.get('http_policies', None)[0] \
-            ['http_policy_set_ref'].split("=")[-1]
-        http_request_policy = [policy for policy in http_policy_set if policy['name'] == http_policy_name][0]
-        policy = http_request_policy.get('http_request_policy', None)
-        rule = policy.get('rules', None)[1]
-        hdr_action = rule.get('hdr_action')[0]
-        assert hdr_action['action'] == 'HTTP_ADD_HDR'
-        assert hdr_action['hdr']['name'] == 'via'
+        http_policy = vs_object.get('http_policies', None)
+        if http_policy:
+            http_policy_name = http_policy[0]['http_policy_set_ref'].split("=")[-1]
+            
+            http_request_policy = [policy for policy in http_policy_set if policy['name'] == http_policy_name][0]
+            policy = http_request_policy.get('http_request_policy', None)
+            rules = policy.get('rules', None)
+            if rules:
+                rule=rules[1]
+                hdr_actions = rule.get('hdr_action')
+                if hdr_actions:
+                    if hdr_actions[0]['action'] == 'HTTP_ADD_HDR':
+                        assert hdr_actions[0]['hdr']['name'] == 'via'
 
 
 def teardown():

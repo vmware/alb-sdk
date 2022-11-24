@@ -1321,9 +1321,10 @@ class ProfileConfigConvV10(ProfileConfigConv):
                 cert_file = cert_file.replace('\"', '')
 
             parent_cls.update_key_cert_obj(
-                name, key_file, cert_file, input_dir, tenant_ref, avi_config,
+                name, key_file, cert_file, input_dir, tenant_ref, avi_config, profile,
                 converted_objs, default_profile_name, key_and_cert_mapping_list,
                 merge_object_mapping, sys_dict)
+            
             ssl_profile = dict()
             ssl_profile['name'] = name
             ssl_profile['tenant_ref'] = conv_utils.get_object_ref(
