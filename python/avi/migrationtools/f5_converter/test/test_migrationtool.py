@@ -161,7 +161,7 @@ def f5_conv(
                      f5_ssh_port=f5_ssh_port, f5_key_file=f5_key_file,
                      ignore_config=ignore_config,
                      partition_config=partition_config, version=version,
-                     no_object_merge=no_profile_merge, patch=patch,
+                     object_merge=no_profile_merge, patch=patch,
                      vs_filter=vs_filter, ansible_skip_types=ansible_skip_types,
                      ansible_filter_types=ansible_filter_types, ansible=ansible,
                      prefix=prefix, convertsnat=convertsnat,
@@ -186,8 +186,11 @@ class TestF5Converter:
     @pytest.fixture
     def cleanup(self):
         import avi.migrationtools.f5_converter.conversion_util as conv
+        import avi.migrationtools.f5_converter.vs_converter as via_header
         import shutil
         conv.csv_writer_dict_list = list()
+        via_header.via_header_rule_dict = dict()
+        via_header.policy_with_via_header = dict()
         if os.path.exists(output_file):
             for each_file in os.listdir(output_file):
                 file_path = os.path.join(output_file, each_file)
@@ -1716,7 +1719,6 @@ class TestF5Converter:
                                     assert item in ['pipeline']
                                 break
 
-
     def test_profile_http_skipped_enforcement(self, cleanup):
         f5_conv(bigip_config_file=setup.get('config_file_name_v11'),
                 f5_config_version=setup.get('file_version_v11'),
@@ -1777,6 +1779,31 @@ class TestF5Converter:
             assert not name.__contains__("name=")
             assert not name.__contains__("/")
             assert not name.__contains__("=")
+
+    def test_via_headers_in_HTTP_v11(self, cleanup):
+        f5_conv(bigip_config_file=setup.get('config_file_name_v11'),
+                f5_config_version=setup.get('file_version_v11'),
+                controller_version=setup.get('controller_version_v17'),
+                tenant=file_attribute['tenant'],
+                cloud_name=file_attribute['cloud_name'],
+                no_profile_merge=file_attribute['no_profile_merge'],
+                output_file_path=setup.get('output_file_path'),
+                f5_ssh_port=setup.get('f5_ssh_port'),
+                vs_filter='81-hol-advanced-http-vs-dmz')
+
+        o_file = "%s/%s" % (output_file, "hol_advanced_bigip-Output.json")
+        with open(o_file) as json_file:
+            data = json.load(json_file)
+            vs_object = data['VirtualService'][0]
+            http_policy_set = data['HTTPPolicySet']
+        http_policy_name = vs_object.get('http_policies', None)[0] \
+            ['http_policy_set_ref'].split("=")[-1]
+        http_request_policy = [policy for policy in http_policy_set if policy['name'] == http_policy_name][0]
+        policy = http_request_policy.get('http_request_policy', None)
+        rule = policy.get('rules', None)[1]
+        hdr_action = rule.get('hdr_action')[0]
+        assert hdr_action['action'] == 'HTTP_ADD_HDR'
+        assert hdr_action['hdr']['name'] == 'via'
 
 
 def teardown():
