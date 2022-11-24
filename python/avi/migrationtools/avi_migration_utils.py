@@ -861,7 +861,7 @@ class MigrationUtil(object):
                 sername = obj_dict[key]
                 if avi_graph.has_node(sername):
                     node_type = [n[1]['type'] for n in list(
-                        avi_graph.nodes().data()) if n[0] == sername]
+                        avi_graph.nodes(data=True)) if n[0] == sername]
                     node_type = '{}-{}'.format(node_type[0], 'Server')
                     avi_graph.add_node(sername, type=node_type)
                     avi_graph.add_edge(vsname, sername)
@@ -872,7 +872,7 @@ class MigrationUtil(object):
                 rule_name = obj_dict[key]
                 if avi_graph.has_node(rule_name):
                     node_type = [n[1]['type'] for n in list(
-                        avi_graph.nodes().data()) if n[0] == rule_name]
+                        avi_graph.nodes(data=True)) if n[0] == rule_name]
                     node_type = '{}-{}'.format(node_type[0], 'Rule')
                     avi_graph.add_node(rule_name, type=node_type)
                     avi_graph.add_edge(vsname, rule_name)
@@ -901,7 +901,7 @@ class MigrationUtil(object):
             found_obj = found_obj[0]
             if avi_graph.has_node(name):
                 nod_type = [node[1]['type'] for node in list(
-                    avi_graph.nodes().data()) if node[0] == name]
+                    avi_graph.nodes(data=True)) if node[0] == name]
                 nod_type = '{}-{}'.format(nod_type[0], path_key_map[entity])
                 avi_graph.add_node(name, type=nod_type)
                 avi_graph.add_edge(vsname, name)
@@ -1135,7 +1135,7 @@ class MigrationUtil(object):
                 nodelist = [node]
                 self.get_predecessor(nodelist, avi_graph, vs, tmplist)
         elif len(predecessor):
-            node_obj = [nod for nod in list(avi_graph.nodes().data()) if
+            node_obj = [nod for nod in list(avi_graph.nodes(data=True)) if
                         nod[0] == predecessor[0]]
             if node_obj and (node_obj[0][1]['type'] == 'VS' or 'VS' in node_obj[
                 0][1]['type']):

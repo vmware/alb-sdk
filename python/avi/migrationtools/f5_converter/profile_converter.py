@@ -13,7 +13,8 @@ LOG = logging.getLogger(__name__)
 ssl_count = {'count': 0}
 # Creating f5 object for util library.
 conv_utils = F5Util()
-
+ssl_profile_with_sni_parent=[]
+ssl_profile_with_sni_child = dict()
 
 class ProfileConfigConv(object):
     @classmethod
@@ -120,6 +121,7 @@ class ProfileConfigConv(object):
                     input_dir, u_ignore, tenant, key_and_cert_mapping_list,
                     merge_object_mapping, sys_dict)
                 LOG.debug("Conversion successful for profile: %s" % name)
+                            
             except:
                 update_count('error')
                 LOG.error("Failed to convert profile: %s" % key, exc_info=True)
@@ -140,7 +142,16 @@ class ProfileConfigConv(object):
         LOG.debug("Converted %s profiles" % count)
         f5_config.pop("profile")
         del key_and_cert_mapping_list
-
+    
+        if len(merge_object_mapping.get('ssl_profile'))>1:
+          
+            for ssl_index,ssl_parent in enumerate(ssl_profile_with_sni_parent):
+                merged_ssl_parent = merge_object_mapping['ssl_profile'].get(ssl_parent)
+                ssl_profile_with_sni_parent[ssl_index]=merged_ssl_parent
+             
+            temp_ssl_child= dict((merge_object_mapping['ssl_profile'].get(k), v) for k, v in ssl_profile_with_sni_child.items())
+            ssl_profile_with_sni_child.update(temp_ssl_child)   
+            
     def update_with_default_profile(self, profile_type, profile,
                                     profile_config, profile_name):
         """
@@ -168,7 +179,7 @@ class ProfileConfigConv(object):
         return profile
 
     def update_key_cert_obj(self, name, key_file_name, cert_file_name,
-                            input_dir, tenant, avi_config, converted_objs,
+                            input_dir, tenant, avi_config, profile,converted_objs,
                             default_profile_name, key_and_cert_mapping_list,
                             merge_object_mapping, sys_dict):
         """
@@ -215,7 +226,7 @@ class ProfileConfigConv(object):
             # Check kay is passphrase protected or not
             is_key_protected = conv_utils.is_certificate_key_protected(
                 input_dir + os.path.sep + key_file_name)
-
+            
         if cert and key:
             # Flag to check expiry date of certificate. if expired then
             # create placeholder certificate.
@@ -248,6 +259,8 @@ class ProfileConfigConv(object):
                 'certificate': cert,
                 'type': 'SSL_CERTIFICATE_TYPE_VIRTUALSERVICE'
             }
+        if profile.get("ocsp-stapling")=="enabled":
+            ssl_kc_obj['enable_ocsp_stapling']=True
         if key_passphrase:
             ssl_kc_obj['key_passphrase'] = key_passphrase
         if ssl_kc_obj:
@@ -275,7 +288,7 @@ class ProfileConfigConv(object):
                 avi_config['SSLKeyAndCertificate'].append(ssl_kc_obj)
 
     def update_ca_cert_obj(self, name, ca_cert_file_name, input_dir, tenant,
-                           avi_config, converted_objs, merge_object_mapping,
+                           avi_config, profile,converted_objs, merge_object_mapping,
                            sys_dict):
         """
         This method create the certs if certificate not present at location
@@ -340,6 +353,8 @@ class ProfileConfigConv(object):
                 'type': 'SSL_CERTIFICATE_TYPE_CA'
             }
             LOG.info('Added new ca certificate for %s' % name)
+            if profile.get("ocsp-stapling")=="enabled":
+                ca_cert_obj['enable_ocsp_stapling']=True
         if ca_cert_obj and self.object_merge_check:
             if final.PLACE_HOLDER_STR not in ca_cert_obj['name']:
                 conv_utils.update_skip_duplicates(
@@ -421,6 +436,7 @@ class ProfileConfigConvV11(ProfileConfigConv):
         self.na_tcp = f5_profile_attributes['Profile_na_tcp']
         self.supported_udp = f5_profile_attributes['Profile_supported_udp']
         self.indirect_udp = f5_profile_attributes['Profile_indirect_udp']
+        self.na_udp = f5_profile_attributes['Profile_na_udp']
         self.supported_oc = f5_profile_attributes['Profile_supported_oc']
         self.supported_enf = \
             f5_profile_attributes['Profile_supported_http_enforcement']
@@ -531,7 +547,7 @@ class ProfileConfigConvV11(ProfileConfigConv):
                             '/', 1)[-1]
             parent_cls.update_key_cert_obj(
                 cert_name, key_file, cert_file, input_dir, tenant_ref,
-                avi_config, converted_objs, default_profile_name,
+                avi_config, profile,converted_objs, default_profile_name,
                 key_and_cert_mapping_list, merge_object_mapping, sys_dict)
             if profile.get('chain', 'none') != 'none':
                 LOG.debug("Migrating root/intermediate cert for %s" % name)
@@ -545,7 +561,7 @@ class ProfileConfigConvV11(ProfileConfigConv):
                             'cache-path'].rsplit('/', 1)[-1]
                         break
                 self.update_ca_cert_obj(
-                    name, ca_cert_file, input_dir, tenant, avi_config,
+                    name, ca_cert_file, input_dir, tenant, avi_config, profile,
                     converted_objs, merge_object_mapping,
                     sys_dict)
 
@@ -578,6 +594,11 @@ class ProfileConfigConvV11(ProfileConfigConv):
                 accepted_versions.append({"type": "SSL_VERSION_TLS1_2"})
             if accepted_versions:
                 ssl_profile["accepted_versions"] = accepted_versions
+            if profile.get('alert-timeout'):
+                ssl_profile["ssl_session_timeout"]=profile.get('alert-timeout')
+            if profile.get("session-ticket-timeout"):
+                ssl_profile["ssl_session_timeout"]=profile.get('session-ticket-timeout')
+                
             if self.object_merge_check:
                 conv_utils.update_skip_duplicates(
                     ssl_profile, avi_config['SSLProfile'], 'ssl_profile',
@@ -588,8 +609,14 @@ class ProfileConfigConvV11(ProfileConfigConv):
             else:
                 converted_objs.append({'ssl_profile': ssl_profile})
                 avi_config['SSLProfile'].append(ssl_profile)
+            if profile.get("sni-default") == 'true':
+                ssl_profile_with_sni_parent.append(ssl_profile.get("name"))
+            elif profile.get("server-name") != "none": 
+                ssl_profile_with_sni_child[ssl_profile.get("name")]=profile.get("server-name") 
             crl_file_name = profile.get('crl-file', None)
             ca_file_name = profile.get('ca-file', None)
+            if ca_file_name == None:
+                ca_file_name = profile.get("client-cert-ca",None)
             if crl_file_name and crl_file_name != 'none':
                 crl_file_name = crl_file_name.replace('\"', '').strip()
             else:
@@ -598,7 +625,7 @@ class ProfileConfigConvV11(ProfileConfigConv):
                 ca_file_name = ca_file_name.replace('\"', '').strip()
             else:
                 ca_file_name = None
-
+            
             if ca_file_name and not self.skip_pki:
                 pki_profile = dict()
                 file_path = input_dir + os.path.sep + ca_file_name
@@ -669,8 +696,14 @@ class ProfileConfigConvV11(ProfileConfigConv):
             http_profile['secure_cookie_enabled'] = encpt_cookie
             http_profile['xff_enabled'] = insert_xff
             http_profile['connection_multiplexing_enabled'] = con_mltplxng
+            if profile.get('via-host-name'):
+                app_profile['via-host-name'] = profile.get('via-host-name')
+                app_profile['via-request'] = profile.get('via-request')
             if not profile.get('redirect-rewrite'):
                 http_profile['hsts_enabled'] = True
+            if profile.get("hsts"):
+                if profile["hsts"].get("mode")=="enabled":
+                    http_profile["hsts_enabled"] = True
             enforcement = profile.get('enforcement', None)
             if enforcement:
                 header_size = enforcement.get('max-header-size',
@@ -1125,6 +1158,7 @@ class ProfileConfigConvV11(ProfileConfigConv):
         elif profile_type == 'udp':
             supported_attr = self.supported_udp
             indirect = self.indirect_udp
+            na_list = self.na_udp
             u_ignore = user_ignore.get('udp', [])
             skipped = [attr for attr in profile.keys()
                        if attr not in supported_attr]
@@ -1161,7 +1195,7 @@ class ProfileConfigConvV11(ProfileConfigConv):
             conv_status['default_skip'].append(
                 {"enforcement": enf_skip_defaults})
         conv_utils.add_conv_status('profile', profile_type, name, conv_status,
-                                   converted_objs)
+                                   converted_objs,yaml.dump(profile) )
 
 
 class ProfileConfigConvV10(ProfileConfigConv):
@@ -1198,6 +1232,7 @@ class ProfileConfigConvV10(ProfileConfigConv):
         self.supported_udp = f5_profile_attributes['Profile_supported_udp']
         self.na_tcp = f5_profile_attributes['Profile_na_tcp']
         self.indirect_udp = []
+        self.na_udp = f5_profile_attributes['Profile_na_udp']
         self.supported_oc = f5_profile_attributes['Profile_supported_oc']
         self.supported_enf = []
         self.ignore_for_defaults_enf = []
@@ -1286,13 +1321,19 @@ class ProfileConfigConvV10(ProfileConfigConv):
                 cert_file = cert_file.replace('\"', '')
 
             parent_cls.update_key_cert_obj(
-                name, key_file, cert_file, input_dir, tenant_ref, avi_config,
+                name, key_file, cert_file, input_dir, tenant_ref, avi_config, profile,
                 converted_objs, default_profile_name, key_and_cert_mapping_list,
                 merge_object_mapping, sys_dict)
+            
             ssl_profile = dict()
             ssl_profile['name'] = name
             ssl_profile['tenant_ref'] = conv_utils.get_object_ref(
                 tenant, 'tenant')
+            if profile.get('alert-timeout'):
+                ssl_profile["ssl_session_timeout"]=profile.get('alert-timeout')
+            if profile.get("ssl-ticket-timeout"):
+                ssl_profile["ssl_session_timeout"]=profile.get('ssl-ticket-timeout')
+                
             ssl_profile['accepted_ciphers'] = self.ciphers
             close_notify = profile.get('unclean shutdown', None)
             if close_notify and close_notify == 'enabled':
@@ -1631,6 +1672,7 @@ class ProfileConfigConvV10(ProfileConfigConv):
         elif profile_type == 'udp':
             u_ignore = user_ignore.get('udp', [])
             supported_attr = self.supported_udp
+            na_list = self.na_udp
             skipped = [attr for attr in profile.keys()
                        if attr not in supported_attr]
             per_pkt = profile.get("datagram lb", 'disable')
@@ -1668,7 +1710,7 @@ class ProfileConfigConvV10(ProfileConfigConv):
         conv_status = conv_utils.get_conv_status(
             skipped, indirect, default_ignore, profile, u_ignore, na_list)
         conv_utils.add_conv_status('profile', profile_type, name, conv_status,
-                                   converted_objs)
+                                   converted_objs,yaml.dump(profile))
 
     def convert_http_profile(self, profile, name, avi_config, converted_objs,
                              tenant):

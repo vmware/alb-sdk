@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache License 2.0
 
 import logging
+import yaml
 import avi.migrationtools.f5_converter.converter_constants as final
 from avi.migrationtools.f5_converter.conversion_util import F5Util
 from avi.migrationtools.avi_migration_utils import update_count
@@ -36,7 +37,7 @@ class DataGroupConfigConv(object):
                                   final.STATUS_NOT_SUPPORTED, msg)
 
     def update_conversion_status(self, conv_status, dg_type, name,
-                                 data_group):
+                                 data_group,f5_dg_config):
         """
 
         :param conv_status:  state of conversion
@@ -46,7 +47,7 @@ class DataGroupConfigConv(object):
         :return:
         """
         conv_utils.add_conv_status('data-group', dg_type, name, conv_status,
-                                   [{'data-group': data_group}])
+                                   [{'data-group': data_group}],f5_object=yaml.dump(f5_dg_config))
         LOG.debug("Conversion successful for data group: %s" %
                   name)
 
@@ -134,7 +135,7 @@ class DataGroupConfigConv(object):
                 conv_status = conv_utils.get_conv_status(
                     skipped, dict(), dict(), ip_group, user_ignore)
                 self.update_conversion_status(conv_status, dg_type, name,
-                                              ip_group)
+                                              ip_group,dg_config)
             except:
                 update_count('error')
                 LOG.error("Failed to convert data-group : %s" % key,

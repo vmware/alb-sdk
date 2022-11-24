@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache License 2.0
 
 import logging
+import yaml
 import avi.migrationtools.f5_converter.converter_constants as final
 import avi.migrationtools.f5_converter.converter_constants as conv_const
 from avi.migrationtools.f5_converter.profile_converter import ProfileConfigConv
@@ -44,7 +45,7 @@ class PersistenceConfigConv(object):
         pass
 
     def update_conversion_status(self, conv_status, persist_mode, name,
-                                 persist_profile):
+                                 persist_profile,f5_profile):
         pass
 
     def update_conv_status_for_error(self, name, persist_mode, key):
@@ -154,7 +155,7 @@ class PersistenceConfigConv(object):
                     skipped, self.indirect, ignore_for_defaults,
                     profile, u_ignore)
                 self.update_conversion_status(conv_status, persist_mode,
-                                              name, persist_profile)
+                                              name, persist_profile, profile)
             except:
                 update_count('error')
                 LOG.error("Failed to convert persistance profile : %s" % key,
@@ -304,7 +305,7 @@ class PersistenceConfigConvV11(PersistenceConfigConv):
         return persist_profile
 
     def update_conversion_status(self, conv_status, persist_mode, name,
-                                 persist_profile):
+                                 persist_profile,f5_profile):
         """
 
         :param conv_status:  state of conversion
@@ -315,7 +316,7 @@ class PersistenceConfigConvV11(PersistenceConfigConv):
         """
         conv_utils.add_conv_status('persistence', persist_mode, name,
                                    conv_status,
-                                   [{'app_per_profile': persist_profile}])
+                                   [{'app_per_profile': persist_profile}],f5_object=yaml.dump(f5_profile))
         LOG.debug("Conversion successful for persistence profile: %s" %
                   name)
 
@@ -452,7 +453,7 @@ class PersistenceConfigConvV10(PersistenceConfigConv):
         return persist_profile
 
     def update_conversion_status(self, conv_status, persist_mode, name,
-                                 persist_profile):
+                                 persist_profile,f5_profile):
         """
 
         :param conv_status:  state of conversion
@@ -462,7 +463,7 @@ class PersistenceConfigConvV10(PersistenceConfigConv):
         :return:
         """
         conv_utils.add_conv_status('persistence', 'persist', name, conv_status,
-                                   [{'app_per_profile': persist_profile}])
+                                   [{'app_per_profile': persist_profile}],f5_object=yaml.dump(f5_profile))
         LOG.debug("Conversion successful for persistence profile: %s" %
                   name)
 

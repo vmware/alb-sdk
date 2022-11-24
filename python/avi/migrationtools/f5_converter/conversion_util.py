@@ -60,7 +60,7 @@ class F5Util(MigrationUtil):
         return avi_algo_val
 
     def add_conv_status(self, f5_type, f5_sub_type, f5_id, conv_status,
-                        avi_object=None, need_review=None):
+                        avi_object=None, f5_object=None,need_review=None):
         """
         Adds as status row in conversion status csv
         :param f5_type: Object type
@@ -81,6 +81,7 @@ class F5Util(MigrationUtil):
             'Indirect mapping': str(conv_status.get('indirect', '')),
             'Not Applicable': str(conv_status.get('na_list', '')),
             'User Ignored': str(conv_status.get('user_ignore', '')),
+            'F5 Object' : str(f5_object),
             'Avi Object': str(avi_object),
             'Needs Review': need_review
         }
@@ -508,7 +509,9 @@ class F5Util(MigrationUtil):
         :return: services_obj, ip_addr of vs and ref of vsvip
         """
 
-        parts = destination.split(':')
+        parts = destination.split('.')
+        if len(parts)>2:
+            parts = destination.split(':')
         ip_addr = parts[0]
         ip_addr = ip_addr.strip()
         vrf = None
@@ -522,11 +525,12 @@ class F5Util(MigrationUtil):
         # Added check for IP V4
         matches = re.findall('^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$', ip_addr)
         if not matches or ip_addr == '0.0.0.0':
-            LOG.warning(
-                'Avi does not support IPv6 Generated random ipv4 for vs:'
-                ' %s' % ip_addr)
-            ip_addr = ".".join(map(str, (
-                random.randint(0, 255) for _ in range(4))))
+           # LOG.warning(
+           #     'Avi does not support IPv6 Generated random ipv4 for vs:'
+           #     ' %s' % ip_addr)
+           # ip_addr = ".".join(map(str, (
+           #     random.randint(0, 255) for _ in range(4))))
+           ip_type='V6'
         port = parts[1] if len(parts) == 2 else conv_const.DEFAULT_PORT
         # Get the list of vs which shared the same vip
         if parse_version(controller_version) >= parse_version('17.1'):
@@ -536,13 +540,15 @@ class F5Util(MigrationUtil):
             #      ip_addr]
             vs_dup_ips = []
             for vs in avi_config['VirtualService']:
-                vs_ip = vs['vsvip_ref'].split('name=')[1].split('-')[0]
+                vs_ip=None
+                if vs.get("vsvip_ref"):
+                    vs_ip = vs['vsvip_ref'].split('name=')[1].split('-')[0]
                 if ip_addr == vs_ip:
                     vs_dup_ips.append(vs)
         else:
             vs_dup_ips = \
                 [vs for vs in avi_config['VirtualService'] if
-                 vs['ip_address']['addr'] == ip_addr]
+                 vs.get("ip_address") and vs['ip_address']['addr'] == ip_addr]
 
         if port == 'any':
             port = '0'
@@ -872,14 +878,15 @@ class F5Util(MigrationUtil):
         members = snat_pool.get("members")
         ips = []
         if isinstance(members, dict):
-            ips = members.keys() + members.values()
+            ips = list(members.keys()) + list(members.values())
         elif isinstance(members, str):
             ips = [members]
         ips = [ip for ip in ips if ip]
         for ip in ips:
             # Removed unwanted string from ip address
-            if '/' in ip or '%' in ip:
+            if '/' in ip :
                 ip = ip.split('/')[-1]
+            if '%' in ip : 
                 ip = ip.split('%')[-2]
             snat_obj = {
                 "type": "V4",
@@ -912,6 +919,7 @@ class F5Util(MigrationUtil):
             for tenant in avi_config['Tenant']:
                 if tenant['name'] == 'admin':
                     avi_config['Tenant'].remove(tenant)
+
 
     def create_hdr_erase_rule(self, name, hdr_name, rule_index):
         return self.create_header_rule(
@@ -1250,13 +1258,13 @@ class F5Util(MigrationUtil):
                           'Not Applicable', 'User Ignored',
                           'Skipped for defaults', 'Complexity Level',
                           'VS Reference', 'Overall skipped settings',
-                          'Avi Object', 'Needs Review']
+                          'F5 Object','Avi Object', 'Needs Review']
         else:
             fieldnames = ['F5 type', 'F5 SubType', 'F5 ID', 'Status',
                           'Skipped settings', 'Indirect mapping',
                           'Not Applicable',
                           'User Ignored', 'Skipped for defaults',
-                          'Complexity Level', 'Avi Object', 'Needs Review']
+                          'Complexity Level', 'F5 Object','Avi Object','Needs Review']
 
         # xlsx workbook
         report_path = output_dir + os.path.sep + "%s-ConversionStatus.xlsx" % \
@@ -1290,13 +1298,13 @@ class F5Util(MigrationUtil):
                                values=[], aggfunc=[len], fill_value=0)
         # create dataframe for pivot table using pandas
         pivot_df = pandas.DataFrame(pivot_table)
-        master_book = \
+        main_book = \
             load_workbook(report_path)
-        master_writer = pandas.ExcelWriter(report_path, engine='openpyxl')
-        master_writer.book = master_book
+        main_writer = pandas.ExcelWriter(report_path, engine='openpyxl')
+        main_writer.book = main_book
         # Add pivot table in Pivot sheet
-        pivot_df.to_excel(master_writer, 'Pivot Sheet')
-        master_writer.save()
+        pivot_df.to_excel(main_writer, 'Pivot Sheet')
+        main_writer.save()
 
     def format_string_to_json(self, avi_string):
         """
@@ -1702,6 +1710,12 @@ class F5Util(MigrationUtil):
                 name = ''
         # If VSVIP object not present then create new VSVIP object.
         else:
+            vip_ip_type="V4"
+            ip_address_feild = "ip_address"
+            matches = re.findall('^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$', vip)
+            if not matches or vip== '0.0.0.0':
+                vip_ip_type="V6"
+                ip_address_feild = "ip6_address"
             vsvip_object = {
                 "name": name,
                 "tenant_ref": tenant_ref,
@@ -1709,9 +1723,11 @@ class F5Util(MigrationUtil):
                 "vip": [
                     {
                         "vip_id": "0",
-                        "ip_address": {
-                            "type": "V4",
-                            "addr": vip
+                        ip_address_feild: {
+                          #  "type": "V4",
+                            "addr": vip,
+                            "type":vip_ip_type
+                            
                         }
                     }
                 ],
@@ -2213,7 +2229,7 @@ class F5Util(MigrationUtil):
                 nodelist = [node]
                 self.get_predecessor(nodelist, avi_graph, vs, tmplist)
         elif len(predecessor):
-            node_obj = [nod for nod in list(avi_graph.nodes().data()) if
+            node_obj = [nod for nod in list(avi_graph.nodes(data=True)) if
                         nod[0] == predecessor[0]]
             if node_obj and (node_obj[0][1]['type'] == 'VS' or 'VS' in node_obj[
               0][1]['type']):
@@ -2389,4 +2405,30 @@ class F5Util(MigrationUtil):
     def remove_verified_accept_from_network_profile(self, avi_config_dict):
         for ntwk_profile in avi_config_dict['NetworkProfile']:
             if ntwk_profile.get('verified-accept'):
-                del(ntwk_profile['verified_accept'])
+                del(ntwk_profile['verified-accept'])
+
+    def remove_via_host_from_app_profiles(self,avi_config_dict):
+        for app_profile in avi_config_dict['ApplicationProfile']:
+            if app_profile.get('via-host-name'):
+                del(app_profile['via-host-name'])
+                del(app_profile['via-request'])
+    
+    def remove_vs_names_when_vs_filter_is_provided(self,output_dir="",report_name="",vs_names=""):
+       
+        excel_path = output_dir + os.path.sep + "%s-ConversionStatus.xlsx" % \
+                                                 report_name
+        virtual_services = []
+        if vs_names and type(vs_names) == str:
+            virtual_services = vs_names.split(',')
+        elif vs_names and type(vs_names) == list:
+            virtual_services = vs_names
+    
+        wb=load_workbook(excel_path)
+        sh=wb["Status Sheet"]
+    
+        for index in range(sh.max_row,2,-1):
+            if sh.cell(index,1).value=="virtual" and sh.cell(index,3).value  not in virtual_services:
+                sh.delete_rows(index)  
+       
+        wb.save( output_dir + os.path.sep + "%s-ConversionStatus.xlsx" % \
+                                                 report_name)

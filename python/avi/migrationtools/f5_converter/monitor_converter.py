@@ -4,6 +4,7 @@
 import copy
 import logging
 import os
+import yaml
 import avi.migrationtools.f5_converter.converter_constants as conv_const
 from pkg_resources import parse_version
 from avi.migrationtools.f5_converter.profile_converter import ssl_count
@@ -267,7 +268,7 @@ class MonitorConfigConv(object):
                 conv_utils.add_conv_status(
                     'monitor', monitor_type, m_name, {
                         'status': conv_const.STATUS_SUCCESSFUL
-                    }, [{'health_monitor': avi_monitor}])
+                    }, [{'health_monitor': avi_monitor}],yaml.dump(f5_monitor))
                 continue
             # Added prefix for objects
             if self.prefix:
@@ -451,7 +452,7 @@ class MonitorConfigConv(object):
             u_ignore, na_list)
 
         conv_utils.add_conv_status('monitor', monitor_type, name, conv_status,
-                                   [{'health_monitor': monitor_dict}])
+                                   [{'health_monitor': monitor_dict}],yaml.dump(f5_monitor))
         return monitor_dict
 
 

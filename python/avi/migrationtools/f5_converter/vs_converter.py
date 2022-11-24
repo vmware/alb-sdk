@@ -5,10 +5,12 @@ import logging
 import copy
 import random
 import re
+import yaml
 import avi.migrationtools.f5_converter.converter_constants as final
 from avi.migrationtools.f5_converter.conversion_util import F5Util
-from avi.migrationtools.f5_converter.policy_converter import used_pools
+from avi.migrationtools.f5_converter.policy_converter import used_pools , http_to_https_policy_rule
 from avi.migrationtools.avi_migration_utils import update_count
+from avi.migrationtools.f5_converter.profile_converter import ssl_profile_with_sni_parent, ssl_profile_with_sni_child
 from pkg_resources import parse_version
 
 LOG = logging.getLogger(__name__)
@@ -16,6 +18,8 @@ LOG = logging.getLogger(__name__)
 conv_utils = F5Util()
 used_policy = list()
 used_app_profiles = list()
+via_header_rule_dict=dict()
+policy_with_via_header=dict()
 
 class VSConfigConv(object):
     @classmethod
@@ -81,7 +85,8 @@ class VSConfigConv(object):
         :param vrf: vrf user input to put vrf ref in VS object
         :param segroup: segroup user input to put se-group ref in VS object
         :return:
-        """
+        """  
+        
         f5_snat_pools = f5_config.get("snatpool", {})
         vs_config = f5_config.get("virtual", {})
         avi_config['VirtualService'] = []
@@ -109,7 +114,7 @@ class VSConfigConv(object):
                 mapping = self.create_partition_mapping(f5_vs, vs_name)
                 partition_mapping.update(mapping)
 
-                vs_obj = self.convert_vs(
+                vs_obj, vs_sni_parent_obj= self.convert_vs(
                     vs_name, f5_vs, vs_state, avi_config, f5_snat_pools,
                     user_ignore, tenant, cloud_name, controller_version,
                     merge_object_mapping, sys_dict, f5_config, vrf, 
@@ -117,11 +122,20 @@ class VSConfigConv(object):
                 if vs_obj:
                     if segroup:
                         segroup_ref = conv_utils.get_object_ref(
-                            segroup, 'serviceenginegroup', tenant=tenant,
+                            segroup, 'serviceenginegroup', tenant="admin",
                             cloud_name=cloud_name)
                         vs_obj['se_group_ref'] = segroup_ref
                     avi_config['VirtualService'].append(vs_obj)
                     LOG.debug("Conversion successful for VS: %s" % vs_name)
+                    if vs_sni_parent_obj:
+                        if segroup:
+                            segroup_ref = conv_utils.get_object_ref(
+                            segroup, 'serviceenginegroup', tenant="admin",
+                            cloud_name=cloud_name)
+                            vs_sni_parent_obj['se_group_ref'] = segroup_ref
+                        avi_config['VirtualService'].append(vs_sni_parent_obj)
+                   # LOG.debug("Conversion successful for VS: %s" % vs_name)
+                        
             except:
                 update_count('error')
                 LOG.error("Failed to convert VS: %s" % vs_name, exc_info=True)
@@ -138,7 +152,7 @@ class VSConfigConv(object):
                    merge_object_mapping, sys_dict, f5_config, vrf=None,
                    reuse_http_policy=False):
         """
-
+    
         :param vs_name: name of virtual service.
         :param f5_vs: parsed dict of f5 virtual service.
         :param vs_state: State of created Avi VS object
@@ -182,8 +196,20 @@ class VSConfigConv(object):
             if prof_name in avi_config.get('OneConnect', []):
                 oc_prof = True
         enable_ssl = False
+        vs_sni_type = "VS_TYPE_NORMAL"
+        vh_type = "VS_TYPE_VH_SNI"
+        child_domain_name = None
+        
         if ssl_vs:
             enable_ssl = True
+            ssl_profile_name = ssl_vs[0]["profile"].split("name=")[-1]
+            if ssl_profile_name in ssl_profile_with_sni_parent:
+                vs_sni_type = "VS_TYPE_VH_PARENT"
+                
+            child_domain_name =  ssl_profile_with_sni_child.get(ssl_profile_name)
+            if child_domain_name:
+                vs_sni_type = "VS_TYPE_VH_CHILD"
+            
         app_prof_conf = conv_utils.get_vs_app_profiles(
             profiles, avi_config, tenant, self.prefix, oc_prof, enable_ssl,
             merge_object_mapping, sys_dict)
@@ -249,6 +275,7 @@ class VSConfigConv(object):
                     app_name, 'applicationprofile',
                     tenant=conv_utils.get_name(app_prof_cmd['tenant_ref']))
         destination = f5_vs.get("destination", None)
+        description =f5_vs.get("description",None)
         d_tenant, destination = conv_utils.get_tenant_ref(destination)
         # if destination is not present then skip vs.
         services_obj, ip_addr, vsvip_ref, vrf_ref = conv_utils.get_service_obj(
@@ -364,13 +391,17 @@ class VSConfigConv(object):
                 conv_utils.update_pool_for_fallback(
                     f_host, avi_config['Pool'], pool_ref)
         ip_addr = ip_addr.strip()
+        ip_type="V4"
+        if f5_vs.get("nat64",None):
+            ip_type="v6"
         matches = re.findall('^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$', ip_addr)
-        if not matches or ip_addr == '0.0.0.0':
-            LOG.warning('Avi does not support IPv6 : %s. '
-                        'Generated random ipv4 for vs: %s' % (ip_addr, vs_name))
-            vs_name += '-needs-ipv6-ip'
-            ip_addr = ".".join(map(str, (
-                random.randint(0, 255) for _ in range(4))))
+       # if not matches or ip_addr == '0.0.0.0':
+          #  LOG.warning('Avi does not support IPv6 : %s. '
+          #              'Generated random ipv4 for vs: %s' % (ip_addr, vs_name))
+          #  vs_name += '-needs-ipv6-ip'
+          #  ip_addr = ".".join(map(str, (
+          #      random.randint(0, 255) for _ in range(4))))
+        #  ip_type="V6"
 
         if app_prof_obj:
             if self.distinct_app_profile and app_prof[0] in used_app_profiles:
@@ -389,7 +420,7 @@ class VSConfigConv(object):
         vs_obj = {
             'name': vs_name,
             'description': description,
-            'type': 'VS_TYPE_NORMAL',
+            'type': vs_sni_type,
             'enabled': enabled,
             'traffic_enabled': enabled,
             'cloud_ref': conv_utils.get_object_ref(
@@ -397,9 +428,10 @@ class VSConfigConv(object):
             'services': services_obj,
             'application_profile_ref': app_prof[0],
             'vs_datascripts': [],
-            'tenant_ref': conv_utils.get_object_ref(tenant, 'tenant')
+            'tenant_ref': conv_utils.get_object_ref(tenant, 'tenant'),
+            'vh_type': vh_type
         }
-
+        
         if vrf:
             vrf_ref = conv_utils.get_object_ref(vrf, 'vrfcontext',
                                                 tenant=tenant_name,
@@ -419,17 +451,45 @@ class VSConfigConv(object):
                 conv_utils.remove_pool_group_vrf(pool_ref, avi_config)
             elif pool_ref:
                 conv_utils.remove_pool_vrf(pool_ref, avi_config)
-
+        vs_sni_parent_obj = []
+        if vs_sni_type == "VS_TYPE_VH_CHILD":
+            vs_sni_parent_obj = {
+            'name': "%s-sni-parent" % vs_name,
+            'description': description,
+            'type': "VS_TYPE_VH_PARENT",
+            'enabled': enabled,
+            'services': services_obj,
+            'traffic_enabled': enabled,
+            'cloud_ref': conv_utils.get_object_ref(
+                cloud_name, 'cloud', tenant=tenant),
+            'tenant_ref': conv_utils.get_object_ref(tenant, 'tenant'),
+            'vh_type': vh_type
+            }    
+            
         vsvip_addr = {
                 'addr': ip_addr,
-                'type': 'V4'
+                'type':ip_type
             }
         if parse_version(controller_version) >= parse_version('17.1'):
             # vs_obj['vip'] = [vip]
-            vs_obj['vsvip_ref'] = vsvip_ref
+            if vs_sni_type == "VS_TYPE_VH_CHILD":
+                vs_sni_parent_obj['vsvip_ref'] = vsvip_ref
+            else:
+                vs_obj['vsvip_ref'] = vsvip_ref
             # vs_obj['ip_address'] = vsvip_addr
         else:
-            vs_obj['ip_address'] = vsvip_addr
+            if vs_sni_type == "VS_TYPE_VH_CHILD":
+                vs_sni_parent_obj['ip_address'] = vsvip_addr
+            else:
+                vs_obj['ip_address'] = vsvip_addr
+        
+        if vs_sni_type == "VS_TYPE_VH_CHILD": 
+            vs_obj['vh_parent_vs_ref'] = conv_utils.get_object_ref( vs_sni_parent_obj.get("name"),"virtualservice",tenant=tenant,
+                                                                   cloud_name=cloud_name)
+            vs_obj["vh_domain_name"] = [child_domain_name]
+            vs_obj.pop("services")
+          #  avi_config['VirtualService'].append(vs_sni_parent_obj)
+        
         # Policy tracking starts from here
         vs_policies = [app_pol_name] if app_pol_name else []
         vs_ds_rules = None
@@ -513,7 +573,7 @@ class VSConfigConv(object):
         self.convert_translate_port(avi_config, f5_vs, app_prof[0], pool_ref,
                                     sys_dict)
         conn_limit = int(f5_vs.get(self.connection_limit, '0'))
-        if conn_limit > 0:
+        if conn_limit > 0 and vs_sni_type!="VS_TYPE_VH_CHILD":
             vs_obj["performance_limits"] = {
                 "max_concurrent_connections": conn_limit
             }
@@ -553,7 +613,7 @@ class VSConfigConv(object):
 
         if nw_policy:
             vs_obj['network_security_policy_ref'] = conv_utils.get_object_ref(
-                nw_policy, 'networksecuritypolicy', tenant=tenant)
+                nw_policy, 'networksecuritypolicy', tenant=tenant,cloud_name=cloud_name)
 
         # Checking snat conversion flag and snat info for creating
         # snat ip object
@@ -592,6 +652,8 @@ class VSConfigConv(object):
             ntwk_verified_accept = ntwk_prof_config[0].get('verified-accept')
             if ntwk_verified_accept and ntwk_verified_accept != 'disabled':
                 vs_obj['"remove_listening_port_on_vs_down'] = True
+            if ntwk_prof_config[0]['profile'].get("tcp_fast_path_profile") and  f5_vs.get("mirror")=="enabled":
+                ntwk_prof_config[0]['connection_mirror']=True
 
         if enable_ssl:
             vs_obj['ssl_profile_ref'] = ssl_vs[0]["profile"]
@@ -626,6 +688,9 @@ class VSConfigConv(object):
                                               final.STATUS_SKIPPED,
                                               msg)
                     return
+        if app_prof:
+            self.app_profile_with_via_host_name(app_name,vs_obj,avi_config,tenant,cloud_name,sys_dict,profiles,merge_object_mapping)
+            self.enabling_http_to_https_redirects_in_app_profile(app_name,vs_obj,avi_config,sys_dict)
         for attr in self.ignore_for_value:
             ignore_val = self.ignore_for_value[attr]
             actual_val = f5_vs.get(attr, None)
@@ -660,9 +725,9 @@ class VSConfigConv(object):
         conv_status['status'] = status
         review_flag = 'Yes' if needs_review else None
         conv_utils.add_conv_status('virtual', None, vs_name,
-                                   conv_status, vs_obj, review_flag)
-
-        return vs_obj
+                                   conv_status, vs_obj, yaml.dump(f5_vs), review_flag)
+       
+        return vs_obj,vs_sni_parent_obj
 
     def get_policy_vs(self, vs_policies, avi_config, vs_name, tenant,
                       cloud_name, vs_obj, reuse_http_policy=False):
@@ -694,6 +759,8 @@ class VSConfigConv(object):
                         avi_config['HTTPPolicySet'].append(clone_policy)
                         LOG.debug('Policy cloned %s for vs %s', pol_name,
                                   vs_name)
+                        if policy_obj[0]["name"] in http_to_https_policy_rule:
+                            http_to_https_policy_rule.append(pol_name)
                     else:
                         LOG.debug('Policy with different tenant not '
                                    'supported  %s for vs %s', pol_name,
@@ -717,7 +784,108 @@ class VSConfigConv(object):
                     pol['index'] = ind + 1
                 vs_obj['http_policies'].append(pol)
 
+    def create_rule_action_for_via_header(self,via_header,via_request):
+        rule_dict={
+        "enable": True,
+         "hdr_action":
+             [{"action": "HTTP_ADD_HDR",
+               "hdr":
+                   {"name": "via",
+                    "value":
+                        {
+                            "val": via_header
+                            }
+                        }
+                   }
+              ],
+             "index" : "1",
+             "name": "Rule 1"}
+        if via_request=="append":
+            rule_dict["hdr_action"][0]["action"]="HTTP_ADD_HDR"
+        if via_request == "remove":
+            rule_dict["hdr_action"][0]["action"]="HTTP_REMOVE_HDR"
+        via_header_key="%s-%s" % (via_header,via_request)
+        via_header_rule_dict[via_header_key]=rule_dict
+        return rule_dict
 
+    def add_via_header_rule_to_http_policy(self,rule_dict,vs_obj,http_policy,tenant,avi_config,cloud_name):
+        http_policy_name = None
+        if http_policy :
+            if http_policy['http_request_policy']:
+                index=len(http_policy['http_request_policy']['rules'])+1
+                if rule_dict not in http_policy['http_request_policy']['rules']:
+                    rule_dict['index']=index
+                    http_policy['http_request_policy']["rules"].append(rule_dict)
+            else:
+                http_policy['http_request_policy']["rules"]=[rule_dict]
+            http_policy_name=http_policy['name']
+        else:
+            policy_set={
+                "name" :  "%s-HTTP-Policy-Set" % vs_obj['name'],
+                'tenant_ref' : conv_utils.get_object_ref(tenant,'tenant'),
+                'http_request_policy':{
+                    'rules':[rule_dict]
+                }
+            }
+            http_policy_name = policy_set['name']
+            avi_config['HTTPPolicySet'].append(policy_set)
+            vs_policies=[policy_set.get('name')]
+            self.get_policy_vs(vs_policies, avi_config, vs_obj['name'], tenant,
+                      cloud_name, vs_obj)
+        return http_policy_name
+
+    def app_profile_with_via_host_name(self,app_name,vs_obj,avi_config,tenant,cloud_name,sys_dict,profiles,merge_object_mapping):
+
+        application_profile_obj = \
+                [obj for obj in (sys_dict['ApplicationProfile'] +
+                                 avi_config['ApplicationProfile'])
+                 if obj['name'] == app_name]
+        f5_prof_obj = application_profile_obj
+        if f5_prof_obj and f5_prof_obj[0].get("via-host-name"):
+            f5_prof_obj = f5_prof_obj[0]
+            via_host_name = f5_prof_obj.get("via-host-name")
+            via_request = f5_prof_obj.get('via-request')
+            if via_request in ['append','remove']:
+                if via_header_rule_dict.get("%s-%s" % (via_host_name,via_request)):
+                    via_rule = via_header_rule_dict.get("%s-%s" % (via_host_name,via_request))
+                else:
+                    via_rule = self.create_rule_action_for_via_header(via_host_name,via_request)
+                pol_name = vs_obj.get('http_policies')
+                via_header_request = "%s-%s" % (via_host_name,via_request)
+                policy_name= None
+                if pol_name :
+                    http_policy_ref = pol_name[0].get("http_policy_set_ref")
+                    http_policy_name = http_policy_ref.split("name=")[-1]
+                    if http_policy_name :
+                        policy_obj = [ob for ob in avi_config['HTTPPolicySet'] if ob[
+                                'name'] == http_policy_name]
+                        if policy_with_via_header.get(http_policy_name) :
+                            if not via_header_request in policy_with_via_header.get(http_policy_name):
+                                policy_name = self.add_via_header_rule_to_http_policy(via_rule,vs_obj,policy_obj[0],tenant,avi_config,cloud_name)
+                        else:
+                            policy_name = self.add_via_header_rule_to_http_policy(via_rule,vs_obj,policy_obj[0],tenant,avi_config,cloud_name)
+                else :
+                    policy_name = self.add_via_header_rule_to_http_policy(via_rule,vs_obj,pol_name,tenant,avi_config,cloud_name)
+                if policy_name:
+                    if not policy_with_via_header.get(policy_name):
+                        policy_with_via_header[policy_name] = [via_header_request]
+                    else:
+                        policy_with_via_header[policy_name].append(via_header_request)
+
+    def enabling_http_to_https_redirects_in_app_profile(self,app_name,vs_obj,avi_config,sys_dict):
+        policy = vs_obj.get('http_policies')
+        if policy :
+            http_policy_ref = policy[0].get("http_policy_set_ref")
+            http_policy_name = http_policy_ref.split("name=")[-1]
+
+            if http_policy_name and http_policy_name in http_to_https_policy_rule:
+                app_profile_obj = \
+                        [obj for obj in (sys_dict['ApplicationProfile'] +
+                                         avi_config['ApplicationProfile'])
+                        if obj['name'] == app_name]
+                if app_profile_obj:
+                    app_profile_obj[0]['http_profile']['http_to_https']=True
+                
 class VSConfigConvV11(VSConfigConv):
     def __init__(self, f5_virtualservice_attributes, prefix, con_snatpool,
                  custom_mappings, distinct_app_profile):
