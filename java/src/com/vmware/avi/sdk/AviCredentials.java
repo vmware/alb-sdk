@@ -4,6 +4,8 @@
  */
 package com.vmware.avi.sdk;
 
+import javax.net.ssl.SSLContext;
+
 /**
  * This is a POJO class contains all parameters for AVI controller credentials.
  * 
@@ -154,6 +156,7 @@ public class AviCredentials
     private Boolean lazyAuthentication = false;
     private Integer connectionTimeout = 60; // 1 min default
     private Boolean isUnAuthenticatedApi = false;// for unauthenticated apis
+    private SSLContext sslContext; // for sslContext
 
     /**
      * Gets the controller's IP.
@@ -526,6 +529,24 @@ public class AviCredentials
 		this.isUnAuthenticatedApi = isUnAuthenticatedApi;
 	}
 
+    /**
+	 * Gets the setSslContext.
+	 *
+	 * @return sslContext  representing SSLContext.
+	 */
+    public SSLContext getSslContext() {
+        return sslContext;
+    }
+
+    /**
+	 * Sets the setSslContext.
+	 *
+	 * @param sslcontext containing SSLContext.
+	 */
+    public void setSslContext(SSLContext sslContext) {
+        this.sslContext = sslContext;
+    }
+
 	@Override
 	public String toString() {
 		return "AviCredentials [controller=" + controller + ", username=" + username + ", password=" + password
@@ -534,6 +555,6 @@ public class AviCredentials
                 + ", csrftoken=" + csrftoken + ", token=" + token + ", verify=" + verify
                 + ", retryConxnErrors=" + retryConxnErrors + ", numApiRetries=" + numApiRetries
 				+ ", retryWaitTime=" + retryWaitTime + ", lazyAuthentication=" + lazyAuthentication
-                + ", isUnauthenticatedApi=" + isUnAuthenticatedApi + "]";
+                + ", isUnauthenticatedApi=" + isUnAuthenticatedApi + ", sslContext=" + sslContext + "]";
 	}
 }

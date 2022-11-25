@@ -164,10 +164,14 @@ public class AviRestUtils {
 		HttpClientBuilder clientBuilder;
 		if (!creds.getVerify()) {
 			SSLContext sslcontext = null;
-			try {
-				sslcontext = SSLContexts.custom().loadTrustMaterial(null, new TrustSelfSignedStrategy()).build();
-			} catch (Exception e) {
-				e.printStackTrace();
+			if (creds.getSslContext() != null){
+				sslcontext = creds.getSslContext();
+			} else {
+				try {
+					sslcontext = SSLContexts.custom().loadTrustMaterial(null, new TrustSelfSignedStrategy()).build();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 
 			SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslcontext,
