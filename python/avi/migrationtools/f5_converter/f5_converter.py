@@ -127,7 +127,7 @@ class F5Converter(AviConverter):
         self.vrf = args.vrf
         self.segroup = args.segroup
         self.reuse_http_policy = args.reuse_http_policy
-
+        self.skip_disabled_vs = args.skip_disabled_vs
         # Created f5 util object.
         self.conversion_util = F5Util()
 
@@ -264,7 +264,7 @@ class F5Converter(AviConverter):
             self.con_snatpool, user_ignore, self.profile_path,
             self.tenant, self.cloud_name, self.f5_passphrase_file,
             self.vs_level_status, self.vrf, self.segroup, custom_mappings,
-            self.skip_pki, self.distinct_app_profile, self.reuse_http_policy)
+            self.skip_pki, self.distinct_app_profile, self.reuse_http_policy, self.skip_disabled_vs)
 
         avi_config = self.process_for_utils(avi_config_dict)
         # Check if flag true then skip not in use object
@@ -733,7 +733,8 @@ if __name__ == "__main__":
                              'of this script. Argument values provided '
                              'on terminal take precedence over config file '
                              'argument values')
-
+    parser.add_argument('--skip_disabled_vs',
+                       help='Flag for skipping those vs/s which are disabled on f5', action='store_true')
     terminal_args = parser.parse_args()
     args = get_terminal_args(terminal_args)
 

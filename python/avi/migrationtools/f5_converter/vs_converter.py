@@ -70,7 +70,7 @@ class VSConfigConv(object):
     def convert(self, f5_config, avi_config, vs_state, user_ignore, tenant,
                 cloud_name, controller_version, merge_object_mapping, sys_dict,
                 vrf=None, segroup=None, partition_mapping=None,
-                reuse_http_policy=False):
+                reuse_http_policy=False,skip_disabled_vs=False):
         """
 
         :param f5_config: Parsed f5 config dict
@@ -107,6 +107,13 @@ class VSConfigConv(object):
                 if vs_type:
                     msg = ("VS type: %s not supported by Avi skipped VS: %s" %
                            (vs_type, vs_name))
+                    LOG.warn(msg)
+                    conv_utils.add_status_row('virtual', None, vs_name,
+                                              final.STATUS_SKIPPED, msg)
+                    continue
+                if skip_disabled_vs and "disabled" in f5_vs.keys():
+                    msg = ("VS : Skipping %s , As it is disabled on f5 " %
+                          ( vs_name))
                     LOG.warn(msg)
                     conv_utils.add_status_row('virtual', None, vs_name,
                                               final.STATUS_SKIPPED, msg)
@@ -827,6 +834,7 @@ class VSConfigConv(object):
                     'rules':[rule_dict]
                 }
             }
+                
             http_policy_name = policy_set['name']
             avi_config['HTTPPolicySet'].append(policy_set)
             vs_policies=[policy_set.get('name')]

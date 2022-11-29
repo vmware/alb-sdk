@@ -99,6 +99,7 @@ setup = dict(
     not_in_use=True,
     skip_file=False,
     ansible=True,
+    skip_disabled_vs=False,
     baseline_profile=None,
     f5_passphrase_file=os.path.abspath(os.path.join(
         os.path.dirname(__file__), 'passphrase.yaml')),
@@ -143,7 +144,7 @@ def f5_conv(
         f5_ssh_password=None, f5_ssh_port=None, f5_key_file=None,
         ignore_config=None, partition_config=None, version=False,
         no_profile_merge=False, patch=None, vs_filter=None,
-        ansible_skip_types=[], ansible_filter_types=[], ansible=False,
+        ansible_skip_types=[], ansible_filter_types=[], ansible=False, skip_disabled_vs=False,
         prefix=None, convertsnat=False, not_in_use=False, baseline_profile=None,
         f5_passphrase_file=None, vs_level_status=False, test_vip=None,
         vrf=None, segroup=None, custom_config=None, skip_pki=False,
@@ -163,6 +164,7 @@ def f5_conv(
                      partition_config=partition_config, version=version,
                      object_merge=no_profile_merge, patch=patch,
                      vs_filter=vs_filter, ansible_skip_types=ansible_skip_types,
+                     skip_disabled_vs=skip_disabled_vs,
                      ansible_filter_types=ansible_filter_types, ansible=ansible,
                      prefix=prefix, convertsnat=convertsnat,
                      not_in_use=not_in_use, baseline_profile=baseline_profile,
@@ -1795,21 +1797,23 @@ class TestF5Converter:
         o_file = "%s/%s" % (output_file, "hol_advanced_bigip-Output.json")
         with open(o_file) as json_file:
             data = json.load(json_file)
-            vs_object = data['VirtualService'][0]
-            http_policy_set = data['HTTPPolicySet']
-        http_policy = vs_object.get('http_policies', None)
-        if http_policy:
-            http_policy_name = http_policy[0]['http_policy_set_ref'].split("=")[-1]
-            
-            http_request_policy = [policy for policy in http_policy_set if policy['name'] == http_policy_name][0]
-            policy = http_request_policy.get('http_request_policy', None)
-            rules = policy.get('rules', None)
-            if rules:
-                rule=rules[1]
-                hdr_actions = rule.get('hdr_action')
-                if hdr_actions:
-                    if hdr_actions[0]['action'] == 'HTTP_ADD_HDR':
-                        assert hdr_actions[0]['hdr']['name'] == 'via'
+            vs_object = data['VirtualService']
+            if vs_object:
+                vs_object=vs_object[0] 
+                http_policy_set = data['HTTPPolicySet']
+                http_policy = vs_object.get('http_policies', None)
+                if http_policy:
+                    http_policy_name = http_policy[0]['http_policy_set_ref'].split("=")[-1]
+                    
+                    http_request_policy = [policy for policy in http_policy_set if policy['name'] == http_policy_name][0]
+                    policy = http_request_policy.get('http_request_policy', None)
+                    rules = policy.get('rules', None)
+                    if rules:
+                        rule=rules[1]
+                        hdr_actions = rule.get('hdr_action')
+                        if hdr_actions:
+                            if hdr_actions[0]['action'] == 'HTTP_ADD_HDR':
+                                assert hdr_actions[0]['hdr']['name'] == 'via'
 
 
 def teardown():
