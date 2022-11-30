@@ -206,6 +206,9 @@ type Pool struct {
 	// Enable TLS SNI for server connections. If disabled, Avi will not send the SNI extension as part of the handshake. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SniEnabled *bool `json:"sni_enabled,omitempty"`
 
+	// GSLB service associated with the site persistence pool. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
+	SpGsInfo *SpGslbServiceInfo `json:"sp_gs_info,omitempty"`
+
 	// Service Engines will present a client SSL certificate to the server. It is a reference to an object of type SSLKeyAndCertificate. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslKeyAndCertificateRef *string `json:"ssl_key_and_certificate_ref,omitempty"`
 
