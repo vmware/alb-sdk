@@ -11,12 +11,14 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
+	"log"
 	"math"
 	"mime/multipart"
 	"net/http"
 	"net/http/httputil"
 	"os"
 	"reflect"
+	"regexp"
 	"strings"
 	"sync"
 	"time"
@@ -1026,7 +1028,11 @@ type AviCollectionResult struct {
 
 func debug(data []byte, err error) {
 	if err == nil {
-		glog.Infof("%s\n\n", data)
+		dataString := string(data)
+		re := regexp.MustCompile(`"password":"([^\s]+?)","username":"([^\s]+?)"`)
+		updatedDataString := re.ReplaceAllString(dataString, "{\"password\":\"<sensitive>\",\"username\":\"<sensitive>\"}")
+		log.Println("data = ", updatedDataString)
+		glog.Infof("%s\n\n", updatedDataString)
 	} else {
 		glog.Errorf("%s\n\n", err)
 	}
