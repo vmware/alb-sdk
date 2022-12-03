@@ -1046,8 +1046,7 @@ func debug(data []byte, err error) {
 func (avisess *AviSession) CheckControllerStatus() (bool, *http.Response, error) {
 	url := avisess.prefix + "/api/cluster/status"
 	var isControllerUp bool
-	// for round := 0; round < avisess.ctrlStatusCheckRetryCount; round++ {
-	for round := 0; round < 2; round++ {
+	for round := 0; round < avisess.ctrlStatusCheckRetryCount; round++ {
 		checkReq, err := http.NewRequest("GET", url, nil)
 		if err != nil {
 			glog.Errorf("CheckControllerStatus Error %v while generating http request.", err)
