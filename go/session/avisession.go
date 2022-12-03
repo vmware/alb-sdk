@@ -1025,12 +1025,17 @@ type AviCollectionResult struct {
 	Next    string
 }
 
+func removeSensitiveFields(data []byte) []byte {
+	dataString := string(data)
+	re := regexp.MustCompile(`"password":"([^\s]+?)","username":"([^\s]+?)"`)
+	updatedDataString := re.ReplaceAllString(dataString, "")
+	return []byte(updatedDataString)
+}
+
 func debug(data []byte, err error) {
 	if err == nil {
-		dataString := string(data)
-		re := regexp.MustCompile(`"password":"([^\s]+?)","username":"([^\s]+?)"`)
-		updatedDataString := re.ReplaceAllString(dataString, "{\"password\":\"<sensitive>\",\"username\":\"<sensitive>\"}")
-		glog.Infof("%s\n\n", updatedDataString)
+		data = removeSensitiveFields(data)
+		glog.Infof("%s\n\n", data)
 	} else {
 		glog.Errorf("%s\n\n", err)
 	}
@@ -1041,7 +1046,8 @@ func debug(data []byte, err error) {
 func (avisess *AviSession) CheckControllerStatus() (bool, *http.Response, error) {
 	url := avisess.prefix + "/api/cluster/status"
 	var isControllerUp bool
-	for round := 0; round < avisess.ctrlStatusCheckRetryCount; round++ {
+	// for round := 0; round < avisess.ctrlStatusCheckRetryCount; round++ {
+	for round := 0; round < 2; round++ {
 		checkReq, err := http.NewRequest("GET", url, nil)
 		if err != nil {
 			glog.Errorf("CheckControllerStatus Error %v while generating http request.", err)
