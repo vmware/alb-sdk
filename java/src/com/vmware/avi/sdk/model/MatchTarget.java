@@ -57,6 +57,9 @@ public class MatchTarget  {
     @JsonProperty("source_ip")
     private IpAddrMatch sourceIp = null;
 
+    @JsonProperty("tls_fingerprint_match")
+    private TlsFingerprintMatch tlsFingerprintMatch = null;
+
     @JsonProperty("version")
     private HTTPVersionMatch version = null;
 
@@ -374,6 +377,30 @@ public class MatchTarget  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Configure the tls fingerprint.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return tlsFingerprintMatch
+     */
+    public TlsFingerprintMatch getTlsFingerprintMatch() {
+        return tlsFingerprintMatch;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Configure the tls fingerprint.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param tlsFingerprintMatch set the tlsFingerprintMatch.
+     */
+    public void setTlsFingerprintMatch(TlsFingerprintMatch tlsFingerprintMatch) {
+        this.tlsFingerprintMatch = tlsFingerprintMatch;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Configure versions of the http protocol.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -439,7 +466,8 @@ public class MatchTarget  {
   Objects.equals(this.ipReputationType, objMatchTarget.ipReputationType)&&
   Objects.equals(this.geoMatches, objMatchTarget.geoMatches)&&
   Objects.equals(this.botDetectionResult, objMatchTarget.botDetectionResult)&&
-  Objects.equals(this.sourceIp, objMatchTarget.sourceIp);
+  Objects.equals(this.sourceIp, objMatchTarget.sourceIp)&&
+  Objects.equals(this.tlsFingerprintMatch, objMatchTarget.tlsFingerprintMatch);
     }
 
     @Override
@@ -458,6 +486,7 @@ public class MatchTarget  {
                         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
                         sb.append("    query: ").append(toIndentedString(query)).append("\n");
                         sb.append("    sourceIp: ").append(toIndentedString(sourceIp)).append("\n");
+                        sb.append("    tlsFingerprintMatch: ").append(toIndentedString(tlsFingerprintMatch)).append("\n");
                         sb.append("    version: ").append(toIndentedString(version)).append("\n");
                         sb.append("    vsPort: ").append(toIndentedString(vsPort)).append("\n");
                   sb.append("}");

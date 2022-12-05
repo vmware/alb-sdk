@@ -1136,7 +1136,7 @@ public class ConnectionLog  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP.
+     * Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP, PROTOCOL_SCTP.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return protocol
@@ -1147,7 +1147,7 @@ public class ConnectionLog  {
 
     /**
      * This is the setter method to the attribute.
-     * Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP.
+     * Enum options - PROTOCOL_ICMP, PROTOCOL_TCP, PROTOCOL_UDP, PROTOCOL_SCTP.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param protocol set the protocol.
