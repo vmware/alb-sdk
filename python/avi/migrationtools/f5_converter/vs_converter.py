@@ -139,6 +139,13 @@ class VSConfigConv(object):
                     conv_utils.add_status_row(
                         "virtual", None, vs_name, final.STATUS_SKIPPED, msg)
                     continue
+                if skip_disabled_vs and "disabled" in f5_vs.keys():
+                    msg = ("VS : Skipping %s , As it is disabled on f5 " %
+                           (vs_name))
+                    LOG.warn(msg)
+                    conv_utils.add_status_row('virtual', None, vs_name,
+                                              final.STATUS_SKIPPED, msg)
+                    continue
                 mapping = self.create_partition_mapping(f5_vs, vs_name)
                 partition_mapping.update(mapping)
 
@@ -902,17 +909,12 @@ class VSConfigConv(object):
                 "tenant_ref": conv_utils.get_object_ref(tenant, "tenant"),
                 "http_request_policy": {"rules": [rule_dict]},
             }
+            http_policy_name = policy_set['name']
+            avi_config['HTTPPolicySet'].append(policy_set)
+            vs_policies = [policy_set.get('name')]
+            self.get_policy_vs(vs_policies, avi_config, vs_obj['name'], tenant,
+                               cloud_name, vs_obj)
 
-            http_policy_name = policy_set["name"]
-            avi_config["HTTPPolicySet"].append(policy_set)
-            vs_policies = [policy_set.get("name")]
-            self.get_policy_vs(
-                vs_policies,
-                avi_config,
-                vs_obj["name"],
-                tenant,
-                cloud_name,
-                vs_obj)
         return http_policy_name
 
     def app_profile_with_via_host_name(

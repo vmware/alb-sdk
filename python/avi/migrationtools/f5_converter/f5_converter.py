@@ -296,28 +296,11 @@ class F5Converter(AviConverter):
         f5_config_dict = f5_defaults_dict
         report_name = os.path.splitext(os.path.basename(source_file.name))[0]
         avi_config_dict, part_mapping = f5_config_converter.convert(
-            f5_config_dict,
-            output_dir,
-            self.vs_state,
-            input_dir,
-            self.f5_config_version,
-            self.object_merge_check,
-            self.controller_version,
-            report_name,
-            self.prefix,
-            self.con_snatpool,
-            user_ignore,
-            self.profile_path,
-            self.tenant,
-            self.cloud_name,
-            self.f5_passphrase_file,
-            self.vs_level_status,
-            self.vrf,
-            self.segroup,
-            custom_mappings,
-            self.skip_pki,
-            self.distinct_app_profile,
-            self.reuse_http_policy,
+            f5_config_dict, output_dir, self.vs_state, input_dir, self.f5_config_version,
+            self.object_merge_check, self.controller_version, report_name, self.prefix,
+            self.con_snatpool, user_ignore, self.profile_path, self.tenant, self.cloud_name,
+            self.f5_passphrase_file, self.vs_level_status, self.vrf, self.segroup,
+            custom_mappings, self.skip_pki, self.distinct_app_profile, self.reuse_http_policy,
             self.skip_disabled_vs,
         )
         # validating avi config dict for object length
@@ -522,7 +505,8 @@ if __name__ == "__main__":
     Example to convert F5 config file to Avi json config:
         f5_converter.py -f bigip.conf
     Usecase:
-        Runs migration tool against local bipip.conf. (bigip.conf doesn't contain certificates and keys. Migration tool will auto-generate place holder ones)
+        Runs migration tool against local bipip.conf. (bigip.conf doesn't contain certificates and keys.
+        Migration tool will auto-generate place holder ones)
 
     Example to skip default file in f5:
         f5_converter.py -f bigip.conf --skip_default_file
@@ -902,6 +886,7 @@ if __name__ == "__main__":
         "shared across multiple VS",
     )
     # Config file to override all parameters of this script
+
     parser.add_argument(
         "--args_config_file",
         help="Config file to specify all the arguments "
@@ -914,6 +899,7 @@ if __name__ == "__main__":
         help="Flag for skipping those vs/s which are disabled on f5",
         action="store_true",
     )
+
     terminal_args = parser.parse_args()
     args = get_terminal_args(terminal_args)
 
