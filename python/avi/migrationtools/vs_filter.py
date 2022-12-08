@@ -13,9 +13,7 @@
 import argparse
 import json
 import os
-import yaml
 from avi.migrationtools.avi_migration_utils import MigrationUtil
-from urllib.parse import urlparse
 
 # Read avi object to API path map from yaml file.
 mg_util = MigrationUtil()
@@ -35,31 +33,33 @@ def filter_for_vs(avi_config, vs_names, prefix=None, skip_ref_objects=skip_ref_o
     :param skip_ref_objects: comma separated names of objects ref to be skipped
     :return: Filtered config dict
     """
-    new_config = dict()
+    new_config = {}
     new_config['VirtualService'] = []
     virtual_services = []
-    if vs_names and type(vs_names) == str:
+    if vs_names and isinstance(vs_names, str):
         virtual_services = vs_names.split(',')
-    elif vs_names and type(vs_names) == list:
+    elif vs_names and isinstance(vs_names, list):
         virtual_services = vs_names
 
     for vs_name in virtual_services:
         if prefix:
             if not vs_name.startswith(prefix):
-                vs_name = prefix+"-"+vs_name
+                vs_name = f"{prefix}-{vs_name}"
+        if len(vs_name) > 256:
+            vs_name = mg_util.get_updated_vs_name_after_triming(vs_name, avi_config)
         vs = [vs for vs in avi_config['VirtualService']
               if vs['name'] == vs_name]
         if not vs:
-            vs_log = 'WARNING: VS object not found with name %s' % vs_name
+            vs_log = f'WARNING: VS object not found with name {vs_name}'
             warning_list.append(vs_log)
             continue
         vs = vs[0]
         new_config['VirtualService'].append(vs)
-        print('%s(VirtualService)' % vs_name)
+        print(f'{vs_name}(VirtualService)')
         find_and_add_objects(vs, avi_config, new_config, depth=0, skip_ref_objects=skip_ref_objects)
 
     for warn in warning_list:
-        print("\033[1;33;50m  %s   \033[0m" %(warn))
+        print(f"\033[1;33;50m  {warn}   \033[0m")
 
     return new_config
 
@@ -80,7 +80,7 @@ def search_obj(entity, name, new_config, avi_config, depth, skip_ref_objects=ski
     found_obj = [obj for obj in found_obj_list if obj['name'] == name]
     if found_obj:
         found_obj = found_obj[0]
-        print('| '*depth + '|- %s(%s)' % (name, path_key_map[entity]))
+        print('| '*depth + f'|- {name}({path_key_map[entity]})')
     elif entity in ['applicationprofile', 'networkprofile', 'healthmonitor',
                     'sslkeyandcertificate', 'sslprofile']:
         if str.startswith(str(name), 'System-'):
@@ -88,7 +88,7 @@ def search_obj(entity, name, new_config, avi_config, depth, skip_ref_objects=ski
     elif entity == 'vrfcontext':
         return
     else:
-        print('WARNING: Reference not found for %s with name %s' % (entity, name))
+        print(f'WARNING: Reference not found for {entity} with name {name}')
         return
     if avi_conf_key in new_config:
         if not any(d['name'] == found_obj['name'] for d in
@@ -165,7 +165,7 @@ if __name__ == '__main__':
     if not args.skip_ref_objects:
         args.skip_ref_objects = skip_ref_object_list
     else:
-        if type(args.skip_ref_objects) == str:
+        if isinstance(args.skip_ref_objects, str):
             args.skip_ref_objects = args.skip_ref_objects.split(',')
 
     avi_config_file = open(args.avi_config_file)
@@ -180,5 +180,5 @@ if __name__ == '__main__':
         json.dump(new_avi_config, text_file, indent=4)
         text_file.close()
 
-        print('\nWritten filtered avi config file to:', \
-              '%s%sFilterOutput.json' % (output_dir, os.path.sep))
+        print('\nWritten filtered avi config file to:',
+              f'{output_dir}{os.path.sep}FilterOutput.json')

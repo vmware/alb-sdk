@@ -1,23 +1,23 @@
 # Copyright 2021 VMware, Inc.
 # SPDX-License-Identifier: Apache License 2.0
 
-import pandas
 import argparse
 import ast
 import copy
 import getpass
 import logging
+import networkx as nx
 import os
+import pandas
+import pexpect
 import random
 import string
+import yaml
 from functools import reduce
 from urllib.parse import urlparse, parse_qs
 from datetime import datetime
 from socket import gethostname
 
-import networkx as nx
-import pexpect
-import yaml
 from OpenSSL import crypto
 from openpyxl import load_workbook, Workbook
 
@@ -39,6 +39,9 @@ def set_update_count():
 
 
 def update_count(type='warning'):
+    '''
+    Method for updating warning and error count
+    '''
     global warning_count, error_count
     if type == 'warning':
         warning_count += 1
@@ -47,6 +50,9 @@ def update_count(type='warning'):
 
 
 def get_count(type='None'):
+    '''
+    Method for getting error and warning count
+    '''
     if type == 'warning':
         return warning_count
     elif type == 'error':
@@ -65,9 +71,15 @@ class PasswordPromptAction(argparse.Action):
 class MigrationUtil(object):
 
     def add_conv_status(self, **args):
+        '''
+        Method for addding conversion status
+        '''
         pass
 
     def add_status_row(self, **args):
+        '''
+        Method for adding rows
+        '''
         pass
 
     def get_conv_status(self, skipped, indirect_list, ignore_dict, input_object,
@@ -116,12 +128,15 @@ class MigrationUtil(object):
         return conv_status
 
     def get_tenant_ref(self, name):
+        '''
+        returns tenant ref
+        '''
         tenant = 'admin'
         if name and name.startswith('/'):
             parts = name.split('/', 2)
             tenant = parts[1]
             if not parts[2]:
-                LOG.warning('Invalid tenant ref : %s' % name)
+                LOG.warning('Invalid tenant ref : %s', name)
             name = parts[2]
         elif name and '/' in name:
             parts = name.split('/')
@@ -139,6 +154,9 @@ class MigrationUtil(object):
         return tenant, name
 
     def create_self_signed_cert(self):
+        '''
+        Method for creating self signed certifiates
+        '''
         # create a key pair
         key = crypto.PKey()
         key.generate_key(crypto.TYPE_RSA, 2048)
@@ -166,7 +184,7 @@ class MigrationUtil(object):
         """
         try:
             child = pexpect.spawn(
-                'openssl rsa -in %s -check -noout' % key_file)
+                f'openssl rsa -in {key_file} -check -noout')
             # Expect for enter pass phrase if key is protected else it will raise
             # an exception
             child.expect('Enter pass phrase for')
@@ -187,7 +205,10 @@ class MigrationUtil(object):
         :param profile_csv_list: List of profile(NsxT type) csv rows
         :return:
         """
-        pool_group_objects = list(filter(lambda pg: pg["name"] == pool_group_name, avi_config['PoolGroup']))
+        pool_group_objects = list(
+            filter(
+                lambda pg: pg["name"] == pool_group_name,
+                avi_config['PoolGroup']))
         pool_members = pool_group_objects[0]['members']
         skipped_setting = {
             'pools': []
@@ -244,12 +265,12 @@ class MigrationUtil(object):
             if pool_object[0].get('ssl_key_and_certificate_ref', None):
                 ssl_key_cert = self.get_name(
                     pool_object[0]['ssl_key_and_certificate_ref'])
-                LOG.debug('[SslKeyAndCertificate] certificate {}'.format(ssl_key_cert))
+                LOG.debug('[SslKeyAndCertificate] certificate %s', ssl_key_cert)
                 sslkc_skip = self.get_csv_skipped_list(
                     profile_csv_list, ssl_key_cert, vs_ref,
                     field_key='ssl_cert_key')
                 if sslkc_skip:
-                    LOG.debug('[SslKeyAndCertificate] Skipped Attribute {}'.format(sslkc_skip))
+                    LOG.debug('[SslKeyAndCertificate] Skipped Attribute %s', sslkc_skip)
                     pool_skipped_setting['pool_name'] = pool_name
                     pool_skipped_setting['ssl_key_and_certificate'] = sslkc_skip
             else:
@@ -279,7 +300,7 @@ class MigrationUtil(object):
             if pool_skipped_setting:
                 skipped_setting['pools'].append(pool_skipped_setting)
         else:
-            LOG.debug('[PoolObject] Not Found for pool {}'.format(pool_name))
+            LOG.debug('[PoolObject] Not Found for pool %s', pool_name)
 
     def get_pool_skipped(self, csv_objects, pool_name, vs_ref):
         """
@@ -428,6 +449,9 @@ class MigrationUtil(object):
             vs_csv_row['Complexity Level'] = conv_const.COMPLEXITY_BASIC
 
     def remove_dup_key(self, obj_list):
+        '''
+        Method for removing dup key from converted config
+        '''
         for obj in obj_list:
             obj.pop('dup_of', None)
 
@@ -464,9 +488,9 @@ class MigrationUtil(object):
                 if tmp_obj["name"] in merge_object_mapping[obj_type].keys():
                     merge_object_mapping[obj_type]['no'] += 1
                     no = merge_object_mapping[obj_type]['no']
-                    mid_name = ent_type and ('Merged-%s-%s-%s-%s' % (ent_type,
-                                                                     obj_type, ran_str, str(no))) or (
-                                       'Merged-%s-%s-%s' % (obj_type, ran_str, str(no)))
+                    mid_name = ent_type and ('Merged-%s-%s-%s-%s' %
+                                             (ent_type, obj_type, ran_str, str(no))) or (
+                        'Merged-%s-%s-%s' % (obj_type, ran_str, str(no)))
                     new_name = '%s-%s' % (prefix, mid_name) if prefix else \
                         mid_name
                     tmp_obj["name"] = new_name
@@ -497,14 +521,14 @@ class MigrationUtil(object):
                 file_str = file_str  # .decode('latin-1')
             except:
                 update_count('error')
-                LOG.error("[UnicodeDecode] Error to read file %s" % file_path,
+                LOG.error("[UnicodeDecode] Error to read file %s", file_path,
                           exc_info=True)
         except IOError:
             update_count('warning')
-            LOG.warn("Cannot read file %s" % file_path)
+            LOG.warning("Cannot read file %s", file_path)
         except:
             update_count('error')
-            LOG.error("Error accessing file %s" % file_path, exc_info=True)
+            LOG.error("Error accessing file %s", file_path, exc_info=True)
         return file_str
 
     def get_name(self, url):
@@ -529,7 +553,7 @@ class MigrationUtil(object):
         return url.split('/api/')[1].split('/')[0].split('?')[0]
 
     def get_object_ref(self, object_name, object_type, tenant='admin',
-                       cloud_name='Default-Cloud', prefix=None, cloud_tenant ="admin"):
+                       cloud_name='Default-Cloud', prefix=None, cloud_tenant="admin"):
         """
         This function defines that to genarte object ref in the format of
         /api/object_type/?tenant=tenant_name&name=object_name&cloud=cloud_name
@@ -542,19 +566,20 @@ class MigrationUtil(object):
         """
         # Added prefix for objects
         if prefix:
-            object_name = prefix + '-' + object_name
+            object_name = f"{prefix}-{object_name}"
 
-        cloud_supported_types = ['pool', 'poolgroup', 'vsvip', 'vrfcontext',
-                                 'serviceenginegroup', 'network', 'vsdatascriptset','networksecuritypolicy']
+        cloud_supported_types = [
+            'pool', 'poolgroup', 'vsvip', 'vrfcontext', 'serviceenginegroup', 'network',
+            'vsdatascriptset', 'networksecuritypolicy']
         if not cloud_name:
             cloud_name = "Default-Cloud"
 
         if object_type == 'tenant':
-            ref = '/api/tenant/?name=%s' % object_name
+            ref = f'/api/tenant/?name={object_name}'
             if object_name not in tenants:
                 tenants.append(object_name)
         elif object_type == 'cloud':
-            ref = '/api/%s/?tenant=%s&name=%s' % (object_type ,cloud_tenant, object_name)
+            ref = '/api/%s/?tenant=%s&name=%s' % (object_type, cloud_tenant, object_name)
         elif object_type == 'vrfcontext':
             ref = '/api/%s/?tenant=%s&name=%s&cloud=%s' % (
                 object_type, cloud_tenant, object_name, cloud_name)
@@ -570,7 +595,7 @@ class MigrationUtil(object):
 
     # Print iterations progress
     def print_progress_bar(self, iteration, total, msg, prefix='', suffix='',
-                           decimals=1, length=50, fill='#', printEnd="\\"):
+                           decimals=1, length=50, fill='#', print_end="\\"):
         """
         Call in a loop to create terminal progress bar
         @params:
@@ -585,16 +610,15 @@ class MigrationUtil(object):
         """
         percent = ("{0:." + str(decimals) + "f}"). \
             format(100 * (iteration / float(total)))
-        filledLength = int(length * iteration // total)
-        bar = fill * filledLength + '-' * (length - filledLength)
-        if (iteration < total):
-            print(f'\r{prefix} |{bar}| {percent}% {suffix}', end=printEnd)
+        filled_length = int(length * iteration // total)
+        bar = fill * filled_length + '-' * (length - filled_length)
+        if iteration < total:
+            print(f'\r{prefix} |{bar}| {percent}% {suffix}', end=print_end)
         else:
             print(f'\r{prefix} |{bar}| {percent}% {suffix}')
 
     def validate_value(self, entity_names, prop_name, value, limit_data, obj,
                        valname):
-
         """
         :param entity_names: list of name of the avi entity/object
         :param prop_name: property name
@@ -605,11 +629,11 @@ class MigrationUtil(object):
         """
         valid = None
         new_value = value
-        msgvar = valname and entity_names and '%s-->%s-->%s' % (valname,
-                                                                '-->'.join(entity_names),
-                                                                prop_name) or valname and '%s-->%s' \
-                 % (valname, prop_name) or entity_names and '%s-->%s' % (
-                     '-->'.join(entity_names), prop_name) or '%s' % prop_name
+        msgvar = valname and entity_names and '%s-->%s-->%s' % \
+            (valname, '-->'.join(entity_names), prop_name) or valname and '%s-->%s' % (
+                valname, prop_name) or entity_names and '%s-->%s' %\
+            ('-->'.join(entity_names), prop_name)\
+            or '%s' % prop_name
         for key, val in limit_data.items():
             pr = val.get(obj, {})
             if not pr:
@@ -628,10 +652,10 @@ class MigrationUtil(object):
             return None, None
         if new_value is not None:
             # commenting this since now in Python 3 strings are already in unicode format.
-            if type(new_value) == str:
+            if isinstance(new_value, str):
                 new_value = new_value.encode()
-            if type(new_value) == eval(typ) or (eval(typ) == int and
-                                                str(new_value).isdigit()):
+            if isinstance(new_value, eval(typ)) or (eval(typ) == int and
+                                                    str(new_value).isdigit()):
                 special_value = p_key.get('special_values')
                 if typ == 'int':
                     new_value = int(new_value)
@@ -712,7 +736,6 @@ class MigrationUtil(object):
             return p_key
 
     def validation(self, avi_config):
-
         """
         Validator function for all avi objects
         :param avi_config:
@@ -744,10 +767,10 @@ class MigrationUtil(object):
                      'pki_profile_ref', 'pool_ref', 'pool_group_ref',
                      'http_policy_set_ref', 'ssl_key_and_certificate_refs',
                      'vsvip_ref', 'description']:
-                msvar = valname and heir and '%s-->%s-->%s' % (valname,
-                                                               '-->'.join(heir), k) or valname and '%s-->%s' % (
-                            valname, k) or heir and '%s-->%s' % ('-->'.join(heir),
-                                                                 k) or '%s' % k
+                msvar = valname and heir and '%s-->%s-->%s' % \
+                    (valname, '-->'.join(heir), k) or valname and '%s-->%s' % (
+                        valname, k) or heir and '%s-->%s' % ('-->'.join(heir),
+                                                             k) or '%s' % k
                 LOG.debug("Skipping validation checks for '%s'", msvar)
                 continue
             else:
@@ -761,8 +784,8 @@ class MigrationUtil(object):
                         else:
                             mgvar = valname and heir and '%s-->%s-->%s' % (
                                 valname, '-->'.join(heir), k) or valname \
-                                    and '%s-->%s' % (valname, k) or heir and \
-                                    '%s-->%s' % ('-->'.join(heir), k) or \
+                                and '%s-->%s' % (valname, k) or heir and \
+                                '%s-->%s' % ('-->'.join(heir), k) or \
                                     '%s' % k
                             LOG.debug("Property '%s' has value as a list %s, "
                                       "not supported currently", mgvar, str(v))
@@ -780,9 +803,10 @@ class MigrationUtil(object):
                                                      obj, valname)
                     if valid is False:
                         mvar = valname and heir and '%s-->%s-->%s' % (valname,
-                                                                      '-->'.join(heir), k) or valname and '%s-->%s' % (
-                                   valname, k) or heir and '%s-->%s' % (
-                                   '-->'.join(heir), k) or '%s' % k
+                                                                      '-->'.join(heir), k) \
+                            or valname and '%s-->%s' % (
+                            valname, k) or heir and '%s-->%s' % (
+                            '-->'.join(heir), k) or '%s' % k
                         LOG.debug("Correcting the value for '%s' from '%s' to "
                                   "'%s'", mvar, str(v), str(val))
                         dictval[k] = val
@@ -799,7 +823,7 @@ class MigrationUtil(object):
             present_date = datetime.now()
             if expiry_date < present_date:
                 LOG.warning("Certificate %s is expired creating self "
-                            "signed cert." % cert_file_name)
+                            "signed cert.", cert_file_name)
                 return False
             else:
                 return True
@@ -817,7 +841,7 @@ class MigrationUtil(object):
         """
         avi_graph = nx.DiGraph()
         avi_graph.add_node('AVI', type='Tree')
-        for vs in avi_config.get('VirtualService',[]):
+        for vs in avi_config.get('VirtualService', []):
             name = vs['name']
             avi_graph.add_node(name, type='VS')
             avi_graph.add_edge('AVI', name)
@@ -915,11 +939,11 @@ class MigrationUtil(object):
                 return
         else:
             update_count()
-            LOG.warning('Reference not found for %s with name %s' % (
-                entity, name))
+            LOG.warning('Reference not found for %s with name %s',
+                        entity, name)
             return
         depth += 1
-        new_name=""
+        new_name = ""
         if found_obj:
             new_name = found_obj.get('name')
         if new_name:
@@ -937,7 +961,7 @@ class MigrationUtil(object):
         """
         parsed = urlparse(url)
         return parsed.path.split('/')[2], \
-               parse_qs(parsed.query)['name'][0]
+            parse_qs(parsed.query)['name'][0]
 
     def get_path_key_map(self):
         yml_file = os.path.join(self.get_project_path(),
@@ -954,7 +978,7 @@ class MigrationUtil(object):
                                  tenant, avi_config):
         app_prof_name = self.get_name(app_prof_ref)
         new_app_profile = copy.deepcopy(app_prof_obj)
-        new_profile_name = '%s-%s' % (app_prof_name, vs_name)
+        new_profile_name = f'{app_prof_name}-{vs_name}'
         new_app_profile['name'] = new_profile_name
         avi_config['ApplicationProfile'].append(new_app_profile)
         new_ref = self.get_object_ref(
@@ -969,7 +993,7 @@ class MigrationUtil(object):
         for status in conv_const.STATUS_LIST:
             status_list = [row for row in csv_writer_dict_list if
                            row['Status'] == status]
-            print('%s: %s' % (status, len(status_list)))
+            print(f'{status}: {len(status_list)}')
         print("Writing Excel Sheet For Converted Configuration...")
         ptotal_count = ptotal_count + len(csv_writer_dict_list)
         if vs_level_status:
@@ -1009,8 +1033,7 @@ class MigrationUtil(object):
                           'Complexity Level', 'Avi Object', 'Needs Review']
 
         # xlsx workbook
-        report_path = output_dir + os.path.sep + "%s-ConversionStatus.xlsx" % \
-                      report_name
+        report_path = output_dir + os.path.sep + f"{report_name}-ConversionStatus.xlsx"
         status_wb = Workbook(report_path)
         # xlsx worksheet
         status_ws = status_wb.add_worksheet("Status Sheet")
@@ -1106,7 +1129,7 @@ class MigrationUtil(object):
         tmplist = []
         if isinstance(obj, str) and obj.startswith('Duplicate of'):
             obj_name = None
-            LOG.debug("Object has merged: %s" % obj)
+            LOG.debug("Object has merged: %s", obj)
         else:
             obj_name = obj.get('name', obj.get('hostname'))
         if obj_name:
@@ -1138,7 +1161,7 @@ class MigrationUtil(object):
             node_obj = [nod for nod in list(avi_graph.nodes(data=True)) if
                         nod[0] == predecessor[0]]
             if node_obj and (node_obj[0][1]['type'] == 'VS' or 'VS' in node_obj[
-                0][1]['type']):
+                    0][1]['type']):
                 LOG.debug("Predecessor %s found", predecessor[0])
                 vs.extend(predecessor)
             else:
@@ -1247,9 +1270,10 @@ class MigrationUtil(object):
                     pool_csv_rows = \
                         self.get_csv_object_list(csv_writer_dict_list, ['pool'])
                     for each_http_policy in avi_config['HTTPPolicySet']:
-                        if each_http_policy['name'] == policy_set_name and 'http_request_policy' in each_http_policy:
+                        if each_http_policy['name'] == policy_set_name and\
+                                'http_request_policy' in each_http_policy:
                             for http_req in each_http_policy[
-                              'http_request_policy']['rules']:
+                                    'http_request_policy']['rules']:
                                 if http_req.get('switching_action', {}):
                                     self.get_skip_pools_policy(
                                         policy_set_name, http_req,
@@ -1380,7 +1404,6 @@ class MigrationUtil(object):
     def update_skip_duplicates(self, obj, obj_list, obj_type, converted_objs,
                                name, default_profile_name, merge_object_mapping,
                                ent_type, prefix, syslist):
-
         """
         Merge duplicate profiles
         :param obj: Source object to find duplicates for
@@ -1407,7 +1430,7 @@ class MigrationUtil(object):
         if dup_of:
             converted_objs.append({obj_type: "Duplicate of %s" % dup_of})
             LOG.info(
-                "Duplicate profiles: %s merged in %s" % (obj['name'], dup_of))
+                "Duplicate profiles: %s merged in %s", obj['name'], dup_of)
             if isinstance(merge_object_mapping, dict):
                 if old_name in merge_object_mapping[obj_type].keys():
                     merge_object_mapping[obj_type].update({old_name: dup_of})
@@ -1415,3 +1438,10 @@ class MigrationUtil(object):
         else:
             obj_list.append(obj)
             converted_objs.append({obj_type: obj})
+
+    def get_updated_vs_name_after_triming(self, vs_name, avi_config):
+        vs = [vs for vs in avi_config['VirtualService']
+              if vs['description'] == vs_name]
+        if vs:
+            vs_name = vs[0]['name']
+        return vs_name

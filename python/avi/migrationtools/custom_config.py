@@ -4,10 +4,11 @@
 # SPDX-License-Identifier: Apache License 2.0
 # Version 0.06
 
+import argparse
+import re
 import urllib3
 import yaml
-import re
-import argparse
+
 from avi.sdk.avi_api import ApiSession
 urllib3.disable_warnings()
 api_results = {}
@@ -47,7 +48,7 @@ def object_update(obj):
     match_api = re.match(".*(/api/\w+).*#(.*)", obj)
     if match_api:
 
-        return "%s/?name=%s" % (match_api.group(1), match_api.group(2))
+        return f"{match_api.group(1)}/?name={match_api.group(2)}"
     else:
         return obj
 
@@ -99,8 +100,7 @@ def policyset(policytype, objecttype):
             if suffix_match:
                 rule_name_match = (re.match("^(.*)--(\w+)$", v['name'])
                                    or re.match(".*-(\w+)$", v['name']))
-                policy_name_string = ("%s-%s" % (
-                    default_policy_name, suffix_match.group(1)))
+                policy_name_string = (f"{default_policy_name}-{suffix_match.group(1)}")
                 rule_name_list.append(policy_name_string)
                 if policy_name_string in rule_list:
                     indexer += 1
@@ -182,7 +182,7 @@ def build_custom_config():
                                             'evt': ds['evt'],
                                             'script': ds['script']
                                         }]
-                                }
+                            }
                         }
                     )
         if "NetworkSecurityPolicy" == k:
@@ -248,18 +248,21 @@ if __name__ == '__main__':
         HTTP Request policy
         HTTP Response policy
         DataScript
-    
-    Script converts all Network Security, HTTP Security, HTTP Request, HTTP Response polices and Datascripts on controller into YAML file to run with the F5 Migration tool
 
-    Script will complete a GET API call to controller for policies and datascripts, convert the RAW JSON to YAML, and write it to a file called converted_irules.yml.
+    Script converts all Network Security, HTTP Security, HTTP Request,
+    HTTP Response polices and Datascripts on controller into YAML file to run with the F5 Migration tool
+
+    Script will complete a GET API call to controller for policies and datascripts,
+    convert the RAW JSON to YAML, and write it to a file called converted_irules.yml.
 
     For policies that require multiple indexes
         You must save each policy with a unique name while configuring it in the UI
- 
-        The script parses the longest match for the policy name. The longest match should be exactly what the irule name is on the F5. 
+
+        The script parses the longest match for the policy name.
+        The longest match should be exactly what the irule name is on the F5. 
             Example
                 mobile-https.redirect.irule (Actual iRule name)
-                mobile-https.redirect.irule-mobilesecure.com 
+                mobile-https.redirect.irule-mobilesecure.com
             The longest match between the two policies is "mobile-https.redirect.irule”
 
         Suffix

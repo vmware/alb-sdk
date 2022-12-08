@@ -24,8 +24,8 @@ try:
     from bigsuds import BIGIP               # version 10
     from f5.bigip import ManagementRoot     # version 11+
 except ImportError:
-    print ("Please Install bigsuds and f5 sdk python packages using "
-           "`pip install bigsuds f5-sdk`")
+    print("Please Install bigsuds and f5 sdk python packages using "
+          "`pip install bigsuds f5-sdk`")
     sys.exit(1)
 
 profile_mappings = {
@@ -105,7 +105,7 @@ class F5InventoryConv(object):
                         traffic_global_dict[k].append(unpacked_entries)
                     else:
                         traffic_global_dict[k] = [unpacked_entries]
-    
+
         new_traffic_global_dict = {}
 
         for k in traffic_global_dict.keys():
@@ -150,7 +150,7 @@ class F5InventoryConv(object):
 
         # Print the Summary
         workbook = xlsxwriter.Workbook(
-            path + os.sep + '{}_discovery_data.xlsx'.format(ip))
+            path + os.sep + f'{ip}_discovery_data.xlsx')
 
         bold = workbook.add_format({'bold': True})
         disabled = workbook.add_format({'font_color': 'red'})
@@ -243,7 +243,7 @@ class F5InventoryConv(object):
                         'vs_enabled': vs_state,
                     })
                     if pool_details.get('state') == 'up':
-                        total_enabled_pools = total_enabled_pools + 1 
+                        total_enabled_pools = total_enabled_pools + 1
                 else:
                     # using vs state for now
                     pool_list.append({'name': vsval['pool'].get(
@@ -279,12 +279,12 @@ class F5InventoryConv(object):
                 for keys in vs['details'].keys():
                     col = col + 1
                     worksheet.write(row, col, keys.strip(), bold)
-                worksheet.write(row, col+1, "Max Connections", bold)    
-                worksheet.write(row, col+2, "Number of Open connections", bold)    
-                worksheet.write(row, col+3, "Requests / sec", bold)    
-                worksheet.write(row, col+4, "Connections / sec", bold)    
-                worksheet.write(row, col+5, "bytes / sec", bold)    
-                worksheet.write(row, col+6, "pkts / sec", bold)  
+                worksheet.write(row, col+1, "Max Connections", bold)
+                worksheet.write(row, col+2, "Number of Open connections", bold)
+                worksheet.write(row, col+3, "Requests / sec", bold)
+                worksheet.write(row, col+4, "Connections / sec", bold)
+                worksheet.write(row, col+5, "bytes / sec", bold)
+                worksheet.write(row, col+6, "pkts / sec", bold)
                 row = row + 2
             init = init + 1
             col = 2
@@ -310,8 +310,8 @@ class F5InventoryConv(object):
                 worksheet.write(row, col, vs['max_conn'].get('value'), bold)
             else:
                 worksheet.write(row, col, vs['max_conn'], bold)
-            
-            # write necessary details 
+
+            # write necessary details
             if int(version) > 10:
                 open_conn = (new_traffic_global_dict[vs_name]
                              ['clientside.curConns'])
@@ -334,15 +334,15 @@ class F5InventoryConv(object):
                               ['STATISTIC_CLIENT_SIDE_BYTES_OUT'])
                 pkts_psec = (new_traffic_global_dict[vs_name]
                              ['STATISTIC_CLIENT_SIDE_PACKETS_OUT'])
-              
-            worksheet.write(row, col+1, open_conn, bold)    
-            worksheet.write(row, col+2, req_psec, bold)    
-            worksheet.write(row, col+3, conn_psec, bold)    
-            worksheet.write(row, col+4, bytes_psec, bold)    
+
+            worksheet.write(row, col+1, open_conn, bold)
+            worksheet.write(row, col+2, req_psec, bold)
+            worksheet.write(row, col+3, conn_psec, bold)
+            worksheet.write(row, col+4, bytes_psec, bold)
             worksheet.write(row, col+5, pkts_psec, bold)
 
             row = row + 1
-        
+
             # write total
             if init == len(vs_list):
                 # doing offset
@@ -354,8 +354,7 @@ class F5InventoryConv(object):
                     from_row = chr(ord('A') + col) + "3"
                     to_row = chr(ord('A') + col) + str(end_row)
                     worksheet.write_formula(
-                        row, col, '=COUNTIF({}:{},"Y")'.format(
-                            from_row, to_row), bold)
+                        row, col, f'=COUNTIF({from_row}:{to_row},"Y")', bold)
 
         # write pools
         row = 0
@@ -385,7 +384,7 @@ class F5InventoryConv(object):
             sheet = sheet + 1
             traffic_list = []
             worksheet_traffic = workbook.add_worksheet(
-                'Traffic-Sheet -{}'.format(sheet))
+                f'Traffic-Sheet -{sheet}')
             for vs in all_vs.keys():
                 vsval = all_vs[vs]
                 # Traffic Details
@@ -401,7 +400,7 @@ class F5InventoryConv(object):
                     else:
                         traffic_list.append(
                             {'name': vs, 'details': vsval['traffic']})
-    
+
                 # write traffic details on different page
                 row, col = 0, 0
                 worksheet_traffic.write('A1', 'Vs Name', bold)
@@ -441,10 +440,10 @@ class F5InventoryConv(object):
 
         worksheet_summary.write(10, 5, "Total enabled vs", bold)
         worksheet_summary.write(10, 6, str(total_enabled_vs))
-        
+
         worksheet_summary.write(11, 5, "Total pools", bold)
         worksheet_summary.write(11, 6, str(total_pools))
-        
+
         print("====================")
         print(" Summary")
         print("====================")
@@ -567,7 +566,7 @@ class F5InventoryConvV10(F5InventoryConv):
                     if (t.get('type') ==
                             'STATISTIC_CLIENT_SIDE_MAXIMUM_CONNECTIONS'):
                         max_conn = int(t['value']['high'])
-                
+
                 vs_object['max_conn'] = max_conn
 
                 if traffic and len(traffic['statistics']):
@@ -681,7 +680,7 @@ class F5InventoryConvV11(F5InventoryConv):
                 #     print "========  ========"
                 #     print virtual_obj.stats.load().entries
                 #     print "================"
-                    
+
                 self.avi_object_temp[vs_object['name']] = vs_object
             self.avi_object.append(self.avi_object_temp)
         # print 'Inventory: %s' % self.avi_object
@@ -708,7 +707,7 @@ if __name__ == '__main__':
 
     parser.add_argument('-c', '--cli-out', action='store_true',
                         help='Print the human readable output')
-    
+
     parser.add_argument('-i', '--interval', default=2,
                         help='Take the sample data with interval '
                              '[default 2 mins]')
@@ -720,13 +719,13 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if not args.f5_ip:
         print('Please provide f5 host')
-        exit(0)
+        sys.exit(0)
     if not args.f5_user:
         print('Please provide ssh username of f5 host')
-        exit(0)
+        sys.exit(0)
     if not args.f5_password:
         print('Please provide ssh password of f5 host')
-        exit(0)
+        sys.exit(0)
 
     if not os.path.isdir(args.output_file_path):
         print("Creating output directory ...")
