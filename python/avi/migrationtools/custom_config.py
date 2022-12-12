@@ -16,7 +16,7 @@ api_results = {}
 def ref_clean_up(obj):
     """
     Loops through list of policies and datascripts and removes un-needed fields
-    :param obj: Object for which referances to clean up
+    :param obj: Object for which references to clean up
     :return Updated object
     """
     clean_up = ['uuid', 'url', '_last_modified', 'is_internal_policy']

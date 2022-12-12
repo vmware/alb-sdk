@@ -30,7 +30,7 @@ class NsxtAlbRollback(AviConverter):
         '''
         self.nsxt_ip = args.nsxt_ip
         self.nsxt_user = args.nsxt_user
-        self.nsxt_passord = args.nsxt_password
+        self.nsxt_password = args.nsxt_password
         self.nsxt_port = args.nsxt_port
 
         self.controller_ip = args.alb_controller_ip
@@ -87,7 +87,7 @@ class NsxtAlbRollback(AviConverter):
             os.mkdir(self.output_file_path)
         self.init_logger_path()
 
-        nsx_util = NSXUtil(self.nsxt_user, self.nsxt_passord, self.nsxt_ip, self.nsxt_port,
+        nsx_util = NSXUtil(self.nsxt_user, self.nsxt_password, self.nsxt_ip, self.nsxt_port,
                            self.controller_ip, self.user, self.password, self.controller_version)
         vs_not_found, vs_with_no_lb = nsx_util.rollback_vs(self.vs_filter, self.input_data,
                                                            self.prefix, self.alb_controller_tenant)
@@ -128,7 +128,7 @@ if __name__ == "__main__":
                         help='controller password. Input '
                              'prompt will appear if no value provided')
     parser.add_argument('-n', '--nsxt_ip',
-                        help='Ip of NSXT', required=True)
+                        help='Ip of NSX-T', required=True)
     parser.add_argument('-u', '--nsxt_user',
                         help='NSX-T User name')
     parser.add_argument('-p', '--nsxt_password',

@@ -531,7 +531,7 @@ class MigrationUtil(object):
     def get_object_ref(self, object_name, object_type, tenant='admin',
                        cloud_name='Default-Cloud', prefix=None, cloud_tenant ="admin"):
         """
-        This function defines that to genarte object ref in the format of
+        This function defines that to generate object ref in the format of
         /api/object_type/?tenant=tenant_name&name=object_name&cloud=cloud_name
         :param object_name: Name of object
         :param object_type: Type of object
@@ -1230,7 +1230,7 @@ class MigrationUtil(object):
                     vs_ref, profile_csv_list, pool_skipped_settings)
                 if pool_skipped_settings['pools']:
                     skipped_setting['Pool'] = pool_skipped_settings
-            # Get the skipepd list for http policy.
+            # Get the skipped list for http policy.
             if 'http_policies' in virtual_service:
                 policy_csv_list = self.get_csv_object_list(
                     csv_writer_dict_list, ['policy', 'profile'])
