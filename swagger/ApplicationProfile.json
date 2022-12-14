@@ -1225,9 +1225,9 @@
                     "format": "int32"
                 },
                 "max_header_count": {
-                    "description": "Maximum number of headers allowed in HTTP request and response. Allowed values are 0-4096. Special values are 0- unlimited headers in request and response. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition. Special default for Essentials edition is 0, Basic edition is 0, Enterprise is 64.",
+                    "description": "Maximum number of headers allowed in HTTP request and response. Allowed values are 0-4096. Special values are 0- unlimited headers in request and response. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition. Special default for Essentials edition is 0, Basic edition is 0, Enterprise is 256.",
                     "type": "integer",
-                    "default": 64,
+                    "default": 256,
                     "format": "int32"
                 },
                 "max_keepalive_requests": {
