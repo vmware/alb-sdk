@@ -17,6 +17,7 @@ import (
 	"net/http/httputil"
 	"os"
 	"reflect"
+	"regexp"
 	"strings"
 	"sync"
 	"time"
@@ -1024,8 +1025,16 @@ type AviCollectionResult struct {
 	Next    string
 }
 
+func removeSensitiveFields(data []byte) []byte {
+	dataString := string(data)
+	re := regexp.MustCompile(`"password":"([^\s]+?)","username":"([^\s]+?)"`)
+	updatedDataString := re.ReplaceAllString(dataString, "")
+	return []byte(updatedDataString)
+}
+
 func debug(data []byte, err error) {
 	if err == nil {
+		data = removeSensitiveFields(data)
 		glog.Infof("%s\n\n", data)
 	} else {
 		glog.Errorf("%s\n\n", err)
