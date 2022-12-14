@@ -60,7 +60,7 @@ public class IpReputationConfig  {
     /**
      * This is the getter method this will return the attribute value.
      * Ip reputation db sync interval in minutes.
-     * Allowed values are 2-1440.
+     * Allowed values are 30-1440.
      * Field introduced in 20.1.1.
      * Unit is min.
      * Allowed in enterprise edition with any value, essentials edition(allowed values- 60), basic edition(allowed values- 60), enterprise with cloud
@@ -75,7 +75,7 @@ public class IpReputationConfig  {
     /**
      * This is the setter method to the attribute.
      * Ip reputation db sync interval in minutes.
-     * Allowed values are 2-1440.
+     * Allowed values are 30-1440.
      * Field introduced in 20.1.1.
      * Unit is min.
      * Allowed in enterprise edition with any value, essentials edition(allowed values- 60), basic edition(allowed values- 60), enterprise with cloud

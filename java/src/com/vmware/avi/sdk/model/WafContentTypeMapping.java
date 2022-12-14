@@ -24,6 +24,9 @@ public class WafContentTypeMapping  {
     @JsonProperty("content_type")
     private String contentType = null;
 
+    @JsonProperty("match_op")
+    private String matchOp = "EQUALS";
+
     @JsonProperty("request_body_parser")
     private String requestBodyParser = null;
 
@@ -53,6 +56,38 @@ public class WafContentTypeMapping  {
      */
     public void setContentType(String  contentType) {
         this.contentType = contentType;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * String operation to use for matching the content_type.
+     * Only equals and regex_match are supported string operations here.
+     * All equals matches are checked before regex_match matches.
+     * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
+     * REGEX_DOES_NOT_MATCH.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "EQUALS".
+     * @return matchOp
+     */
+    public String getMatchOp() {
+        return matchOp;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * String operation to use for matching the content_type.
+     * Only equals and regex_match are supported string operations here.
+     * All equals matches are checked before regex_match matches.
+     * Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH,
+     * REGEX_DOES_NOT_MATCH.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "EQUALS".
+     * @param matchOp set the matchOp.
+     */
+    public void setMatchOp(String  matchOp) {
+        this.matchOp = matchOp;
     }
 
     /**
@@ -94,7 +129,8 @@ public class WafContentTypeMapping  {
       }
       WafContentTypeMapping objWafContentTypeMapping = (WafContentTypeMapping) o;
       return   Objects.equals(this.contentType, objWafContentTypeMapping.contentType)&&
-  Objects.equals(this.requestBodyParser, objWafContentTypeMapping.requestBodyParser);
+  Objects.equals(this.requestBodyParser, objWafContentTypeMapping.requestBodyParser)&&
+  Objects.equals(this.matchOp, objWafContentTypeMapping.matchOp);
     }
 
     @Override
@@ -102,6 +138,7 @@ public class WafContentTypeMapping  {
       StringBuilder sb = new StringBuilder();
       sb.append("class WafContentTypeMapping {\n");
                   sb.append("    contentType: ").append(toIndentedString(contentType)).append("\n");
+                        sb.append("    matchOp: ").append(toIndentedString(matchOp)).append("\n");
                         sb.append("    requestBodyParser: ").append(toIndentedString(requestBodyParser)).append("\n");
                   sb.append("}");
       return sb.toString();
