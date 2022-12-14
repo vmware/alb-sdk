@@ -267,7 +267,7 @@ public class ControllerInterface  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Ipv6 address mode dhcp/static.
+     * Ipv6 address mode static.
      * Enum options - DHCP, STATIC, VIP, DOCKER_HOST.
      * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -280,7 +280,7 @@ public class ControllerInterface  {
 
     /**
      * This is the setter method to the attribute.
-     * Ipv6 address mode dhcp/static.
+     * Ipv6 address mode static.
      * Enum options - DHCP, STATIC, VIP, DOCKER_HOST.
      * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
