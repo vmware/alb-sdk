@@ -2146,7 +2146,7 @@ public class Pool extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Virtual routing context that the pool is bound to.
      * This is used to provide the isolation of the set of networks the pool is attached to.
-     * The pool inherits the virtual routing conext of the virtual service, and this field is used only internally, and is set by pb-transform.
+     * The pool inherits the virtual routing context of the virtual service, and this field is used only internally, and is set by pb-transform.
      * It is a reference to an object of type vrfcontext.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -2160,7 +2160,7 @@ public class Pool extends AviRestResource  {
      * This is the setter method to the attribute.
      * Virtual routing context that the pool is bound to.
      * This is used to provide the isolation of the set of networks the pool is attached to.
-     * The pool inherits the virtual routing conext of the virtual service, and this field is used only internally, and is set by pb-transform.
+     * The pool inherits the virtual routing context of the virtual service, and this field is used only internally, and is set by pb-transform.
      * It is a reference to an object of type vrfcontext.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.

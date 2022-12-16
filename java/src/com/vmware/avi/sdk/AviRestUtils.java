@@ -7,6 +7,8 @@ package com.vmware.avi.sdk;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.apache.hc.client5.http.classic.HttpClient;
 import org.apache.http.Header;
 import org.apache.http.HttpEntityEnclosingRequest;
 import org.apache.http.HttpRequest;
@@ -38,7 +40,7 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.DefaultUriTemplateHandler;
+import org.springframework.web.util.DefaultUriBuilderFactory;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLException;
@@ -76,9 +78,8 @@ public class AviRestUtils {
 			}
 			try {
 				restTemplate = getInitializedRestTemplate(creds);
-				DefaultUriTemplateHandler templateHandler = new DefaultUriTemplateHandler();
-				templateHandler.setBaseUrl(getControllerURL(creds) + API_PREFIX);
-				restTemplate.setUriTemplateHandler(templateHandler);
+				DefaultUriBuilderFactory uriBuilderFactory = new DefaultUriBuilderFactory(getControllerURL(creds) + API_PREFIX);
+				restTemplate.setUriTemplateHandler(uriBuilderFactory);
 				List<ClientHttpRequestInterceptor> interceptors = Collections
 						.<ClientHttpRequestInterceptor>singletonList(new AviAuthorizationInterceptor(creds));
 				restTemplate.setInterceptors(interceptors);
@@ -111,7 +112,9 @@ public class AviRestUtils {
 	private static RestTemplate getInitializedRestTemplate(AviCredentials creds) {
 		try {
 			CloseableHttpClient client = buildHttpClient(creds);
-			return new RestTemplate(new HttpComponentsClientHttpRequestFactory(client));
+			HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory();
+			clientHttpRequestFactory.setHttpClient((HttpClient) client);
+			return new RestTemplate(clientHttpRequestFactory);
 
 		} catch (Exception e) {
 			LOGGER.severe("Exception in creating rest template for AVI connection");

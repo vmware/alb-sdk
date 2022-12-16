@@ -24,9 +24,6 @@ public class VHMatch  {
     @JsonProperty("host")
     private String host = null;
 
-    @JsonProperty("path")
-    private List<PathMatch> path;
-
     @JsonProperty("rules")
     private List<VHMatchRule> rules = null;
 
@@ -54,51 +51,6 @@ public class VHMatch  {
      */
     public void setHost(String  host) {
         this.host = host;
-    }
-    /**
-     * This is the getter method this will return the attribute value.
-     * Resource/uri path match configuration.
-     * Must be configured along with host match criteria.
-     * Field deprecated in 22.1.3.
-     * Field introduced in 20.1.3.
-     * Minimum of 1 items required.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * @return path
-     */
-    public List<PathMatch> getPath() {
-        return path;
-    }
-
-    /**
-     * This is the setter method. this will set the path
-     * Resource/uri path match configuration.
-     * Must be configured along with host match criteria.
-     * Field deprecated in 22.1.3.
-     * Field introduced in 20.1.3.
-     * Minimum of 1 items required.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * @return path
-     */
-    public void setPath(List<PathMatch>  path) {
-        this.path = path;
-    }
-
-    /**
-     * This is the setter method this will set the path
-     * Resource/uri path match configuration.
-     * Must be configured along with host match criteria.
-     * Field deprecated in 22.1.3.
-     * Field introduced in 20.1.3.
-     * Minimum of 1 items required.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * @return path
-     */
-    public VHMatch addPathItem(PathMatch pathItem) {
-      if (this.path == null) {
-        this.path = new ArrayList<PathMatch>();
-      }
-      this.path.add(pathItem);
-      return this;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -157,7 +109,6 @@ public class VHMatch  {
       }
       VHMatch objVHMatch = (VHMatch) o;
       return   Objects.equals(this.host, objVHMatch.host)&&
-  Objects.equals(this.path, objVHMatch.path)&&
   Objects.equals(this.rules, objVHMatch.rules);
     }
 
@@ -166,7 +117,6 @@ public class VHMatch  {
       StringBuilder sb = new StringBuilder();
       sb.append("class VHMatch {\n");
                   sb.append("    host: ").append(toIndentedString(host)).append("\n");
-                        sb.append("    path: ").append(toIndentedString(path)).append("\n");
                         sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
                   sb.append("}");
       return sb.toString();

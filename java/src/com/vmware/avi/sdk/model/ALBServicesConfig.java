@@ -39,6 +39,9 @@ public class ALBServicesConfig extends AviRestResource  {
     @JsonProperty("mode")
     private String mode = "MYVMWARE";
 
+    @JsonProperty("operations_config")
+    private OperationsConfig operationsConfig = null;
+
     @JsonProperty("polling_interval")
     private Integer pollingInterval = 10;
 
@@ -219,6 +222,32 @@ public class ALBServicesConfig extends AviRestResource  {
      */
     public void setMode(String  mode) {
         this.mode = mode;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Operations configuration.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return operationsConfig
+     */
+    public OperationsConfig getOperationsConfig() {
+        return operationsConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Operations configuration.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param operationsConfig set the operationsConfig.
+     */
+    public void setOperationsConfig(OperationsConfig operationsConfig) {
+        this.operationsConfig = operationsConfig;
     }
 
     /**
@@ -484,7 +513,8 @@ public class ALBServicesConfig extends AviRestResource  {
   Objects.equals(this.userAgentDbConfig, objALBServicesConfig.userAgentDbConfig)&&
   Objects.equals(this.wafConfig, objALBServicesConfig.wafConfig)&&
   Objects.equals(this.caseConfig, objALBServicesConfig.caseConfig)&&
-  Objects.equals(this.saasLicensingConfig, objALBServicesConfig.saasLicensingConfig);
+  Objects.equals(this.saasLicensingConfig, objALBServicesConfig.saasLicensingConfig)&&
+  Objects.equals(this.operationsConfig, objALBServicesConfig.operationsConfig);
     }
 
     @Override
@@ -497,6 +527,7 @@ public class ALBServicesConfig extends AviRestResource  {
                         sb.append("    featureOptInStatus: ").append(toIndentedString(featureOptInStatus)).append("\n");
                         sb.append("    ipReputationConfig: ").append(toIndentedString(ipReputationConfig)).append("\n");
                         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+                        sb.append("    operationsConfig: ").append(toIndentedString(operationsConfig)).append("\n");
                         sb.append("    pollingInterval: ").append(toIndentedString(pollingInterval)).append("\n");
                         sb.append("    portalUrl: ").append(toIndentedString(portalUrl)).append("\n");
                         sb.append("    saasLicensingConfig: ").append(toIndentedString(saasLicensingConfig)).append("\n");
