@@ -397,6 +397,7 @@ font-style: italic;
     "vcenter_datastore_mode" : "aeiou",
     "license_type" : "aeiou",
     "flow_table_new_syn_max_entries" : 123,
+    "use_dp_util_for_scaleout" : true,
     "log_agent_file_sz_debug" : 123,
     "vs_scalein_timeout_for_upgrade" : 123,
     "objsync_config" : {
@@ -547,6 +548,7 @@ font-style: italic;
     "mgmt_subnet" : "",
     "connection_memory_percentage" : 123,
     "dp_hb_frequency" : 123,
+    "replay_vrf_routes_interval" : 123,
     "extra_shared_config_memory" : 123,
     "se_delayed_flow_delete" : true,
     "se_name_prefix" : "aeiou",
@@ -879,6 +881,7 @@ font-style: italic;
   "vcenter_datastore_mode" : "aeiou",
   "license_type" : "aeiou",
   "flow_table_new_syn_max_entries" : 123,
+  "use_dp_util_for_scaleout" : true,
   "log_agent_file_sz_debug" : 123,
   "vs_scalein_timeout_for_upgrade" : 123,
   "objsync_config" : {
@@ -1029,6 +1032,7 @@ font-style: italic;
   "mgmt_subnet" : "",
   "connection_memory_percentage" : 123,
   "dp_hb_frequency" : 123,
+  "replay_vrf_routes_interval" : 123,
   "extra_shared_config_memory" : 123,
   "se_delayed_flow_delete" : true,
   "se_name_prefix" : "aeiou",
@@ -1432,6 +1436,7 @@ font-style: italic;
   "vcenter_datastore_mode" : "aeiou",
   "license_type" : "aeiou",
   "flow_table_new_syn_max_entries" : 123,
+  "use_dp_util_for_scaleout" : true,
   "log_agent_file_sz_debug" : 123,
   "vs_scalein_timeout_for_upgrade" : 123,
   "objsync_config" : {
@@ -1582,6 +1587,7 @@ font-style: italic;
   "mgmt_subnet" : "",
   "connection_memory_percentage" : 123,
   "dp_hb_frequency" : 123,
+  "replay_vrf_routes_interval" : 123,
   "extra_shared_config_memory" : 123,
   "se_delayed_flow_delete" : true,
   "se_name_prefix" : "aeiou",
@@ -1925,6 +1931,7 @@ font-style: italic;
   "vcenter_datastore_mode" : "aeiou",
   "license_type" : "aeiou",
   "flow_table_new_syn_max_entries" : 123,
+  "use_dp_util_for_scaleout" : true,
   "log_agent_file_sz_debug" : 123,
   "vs_scalein_timeout_for_upgrade" : 123,
   "objsync_config" : {
@@ -2075,6 +2082,7 @@ font-style: italic;
   "mgmt_subnet" : "",
   "connection_memory_percentage" : 123,
   "dp_hb_frequency" : 123,
+  "replay_vrf_routes_interval" : 123,
   "extra_shared_config_memory" : 123,
   "se_delayed_flow_delete" : true,
   "se_name_prefix" : "aeiou",
@@ -2574,6 +2582,7 @@ font-style: italic;
   "vcenter_datastore_mode" : "aeiou",
   "license_type" : "aeiou",
   "flow_table_new_syn_max_entries" : 123,
+  "use_dp_util_for_scaleout" : true,
   "log_agent_file_sz_debug" : 123,
   "vs_scalein_timeout_for_upgrade" : 123,
   "objsync_config" : {
@@ -2724,6 +2733,7 @@ font-style: italic;
   "mgmt_subnet" : "",
   "connection_memory_percentage" : 123,
   "dp_hb_frequency" : 123,
+  "replay_vrf_routes_interval" : 123,
   "extra_shared_config_memory" : 123,
   "se_delayed_flow_delete" : true,
   "se_name_prefix" : "aeiou",
@@ -3481,6 +3491,7 @@ font-style: italic;
 <div class="param">placement_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> If placement mode is &#39;Auto&#39;, Virtual Services are automatically placed on Service Engines. Enum options - PLACEMENT_MODE_AUTO. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">realtime_se_metrics (optional)</div><div class="param-desc"><span class="param-type"><a href="#MetricsRealTimeUpdate">MetricsRealTimeUpdate</a></span> Enable or deactivate real time SE metrics. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">reboot_on_panic (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Reboot the VM or host on kernel panic. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">replay_vrf_routes_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Routes in VRF are replayed at the specified interval. This should be increased if there are large number of routes. Allowed values are 0-3000. Field introduced in 22.1.3. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">resync_time_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time interval to re-sync SE&#39;s time with wall clock time. Allowed values are 8-600000. Field introduced in 20.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">sdb_flush_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> SDB pipeline flush interval. Allowed values are 1-10000. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">sdb_pipeline_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> SDB pipeline size. Allowed values are 1-10000. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
@@ -3514,7 +3525,7 @@ font-style: italic;
 <div class="param">se_log_buffer_app_blocking_dequeue (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Internal flag that blocks dataplane until all application logs are flushed to log-agent process. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">se_log_buffer_conn_blocking_dequeue (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Internal flag that blocks dataplane until all connection logs are flushed to log-agent process. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">se_log_buffer_events_blocking_dequeue (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Internal flag that blocks dataplane until all outstanding events are flushed to log-agent process. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">se_lro (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable or disable Large Receive Optimization for vnics. Requires SE Reboot. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">se_lro (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable or disable Large Receive Optimization for vnics.Supported on VMXnet3.Requires SE Reboot. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">se_mp_ring_retry_count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The retry count for the multi-producer enqueue before yielding the CPU. To be used under surveillance of Avi Support. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 500), Basic edition(Allowed values- 500), Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">se_mtu (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> MTU for the VNICs of SEs in the SE group. Allowed values are 512-9000. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">se_name_prefix (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Prefix to use for virtual machine name of Service Engines. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -3562,6 +3573,7 @@ font-style: italic;
 <div class="param">upstream_read_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Timeout for data to be received from backend. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">upstream_send_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Timeout for upstream to become writable. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 3600000), Basic edition(Allowed values- 3600000), Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
+<div class="param">use_dp_util_for_scaleout (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If enabled, the datapath CPU utilization is consulted by the auto scale-out logic. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">use_hyperthreaded_cores (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enables the use of hyper-threaded cores on SE. Requires SE Reboot. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">use_legacy_netlink (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable legacy model of netlink notifications. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">use_objsync (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable InterSE Objsyc distribution framework. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
