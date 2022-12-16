@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "22.1.3",
+        "version": "23.1.1",
         "title": "Avi AnalyticsProfile Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -1122,6 +1122,13 @@
                     "description": "Type of logs to stream to the external server. Default is LOGS_ALL, i.e., send all logs. Enum options - LOGS_SIGNIFICANT_ONLY, LOGS_UDF_ONLY, LOGS_UDF_SIGNIFICANT, LOGS_ALL. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "LOGS_ALL"
+                },
+                "marker_keys": {
+                    "description": "One or more keys which should exist in VirtualService RBAC markers. Key along with values will be streamed out in log. If key is not found in RBAC markers, it will not be streamed. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RoleFilterMatchLabel"
+                    }
                 },
                 "max_logs_per_second": {
                     "description": "Maximum number of logs per second streamed to the remote server. By default, 100 logs per second are streamed. Set this to zero(0) to not enforce any limit. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
