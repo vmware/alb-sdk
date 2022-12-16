@@ -269,7 +269,7 @@ public class ALBServicesJob extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * The status of the albservicesjob.
-     * Enum options - UNDETERMINED, PENDING, IN_PROGRESS, COMPLETED, FAILED.
+     * Enum options - UNDETERMINED, PENDING, IN_PROGRESS, COMPLETED, FAILED, NOT_ENABLED.
      * Field introduced in 21.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PENDING".
@@ -282,7 +282,7 @@ public class ALBServicesJob extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * The status of the albservicesjob.
-     * Enum options - UNDETERMINED, PENDING, IN_PROGRESS, COMPLETED, FAILED.
+     * Enum options - UNDETERMINED, PENDING, IN_PROGRESS, COMPLETED, FAILED, NOT_ENABLED.
      * Field introduced in 21.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PENDING".
