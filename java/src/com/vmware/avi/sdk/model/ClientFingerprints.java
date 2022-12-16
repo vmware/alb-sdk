@@ -27,6 +27,9 @@ public class ClientFingerprints  {
     @JsonProperty("full_tls_fingerprint")
     private String fullTlsFingerprint = null;
 
+    @JsonProperty("normalized_tls_fingerprint")
+    private String normalizedTlsFingerprint = null;
+
     @JsonProperty("tls_client_info")
     private TlsClientInfo tlsClientInfo = null;
 
@@ -86,6 +89,34 @@ public class ClientFingerprints  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Message digest (md5) of normalized ja3 from clienthello.
+     * This can deviate from 'full_tls_fingerprint' because extensions 21 and 35 are removed and the remaining values are sorted numerically before the
+     * md5 is calculated.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return normalizedTlsFingerprint
+     */
+    public String getNormalizedTlsFingerprint() {
+        return normalizedTlsFingerprint;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Message digest (md5) of normalized ja3 from clienthello.
+     * This can deviate from 'full_tls_fingerprint' because extensions 21 and 35 are removed and the remaining values are sorted numerically before the
+     * md5 is calculated.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param normalizedTlsFingerprint set the normalizedTlsFingerprint.
+     */
+    public void setNormalizedTlsFingerprint(String  normalizedTlsFingerprint) {
+        this.normalizedTlsFingerprint = normalizedTlsFingerprint;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Values of selected fields from the clienthello.
      * Field introduced in 22.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -120,7 +151,8 @@ public class ClientFingerprints  {
       ClientFingerprints objClientFingerprints = (ClientFingerprints) o;
       return   Objects.equals(this.tlsClientInfo, objClientFingerprints.tlsClientInfo)&&
   Objects.equals(this.fullTlsFingerprint, objClientFingerprints.fullTlsFingerprint)&&
-  Objects.equals(this.filteredTlsFingerprint, objClientFingerprints.filteredTlsFingerprint);
+  Objects.equals(this.filteredTlsFingerprint, objClientFingerprints.filteredTlsFingerprint)&&
+  Objects.equals(this.normalizedTlsFingerprint, objClientFingerprints.normalizedTlsFingerprint);
     }
 
     @Override
@@ -129,6 +161,7 @@ public class ClientFingerprints  {
       sb.append("class ClientFingerprints {\n");
                   sb.append("    filteredTlsFingerprint: ").append(toIndentedString(filteredTlsFingerprint)).append("\n");
                         sb.append("    fullTlsFingerprint: ").append(toIndentedString(fullTlsFingerprint)).append("\n");
+                        sb.append("    normalizedTlsFingerprint: ").append(toIndentedString(normalizedTlsFingerprint)).append("\n");
                         sb.append("    tlsClientInfo: ").append(toIndentedString(tlsClientInfo)).append("\n");
                   sb.append("}");
       return sb.toString();
