@@ -153,6 +153,7 @@ type AviClient struct {
 	WafPolicyPSMGroup               *WafPolicyPSMGroupClient
 	WafPolicyPSMGroupInventory      *WafPolicyPSMGroupInventoryClient
 	WafProfile                      *WafProfileClient
+	WebappUT                        *WebappUTClient
 	Webhook                         *WebhookClient
 }
 
@@ -307,6 +308,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.WafPolicyPSMGroup = NewWafPolicyPSMGroupClient(aviSession)
 	aviClient.WafPolicyPSMGroupInventory = NewWafPolicyPSMGroupInventoryClient(aviSession)
 	aviClient.WafProfile = NewWafProfileClient(aviSession)
+	aviClient.WebappUT = NewWebappUTClient(aviSession)
 	aviClient.Webhook = NewWebhookClient(aviSession)
 	return &aviClient, nil
 }

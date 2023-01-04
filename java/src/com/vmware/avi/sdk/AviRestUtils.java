@@ -7,10 +7,15 @@ package com.vmware.avi.sdk;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.apache.hc.client5.http.classic.HttpClient;
 import org.apache.http.Header;
 import org.apache.http.HttpEntityEnclosingRequest;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.CredentialsProvider;
 import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpPost;
@@ -21,6 +26,7 @@ import org.apache.http.conn.HttpHostConnectException;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultServiceUnavailableRetryStrategy;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -34,7 +40,7 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.DefaultUriTemplateHandler;
+import org.springframework.web.util.DefaultUriBuilderFactory;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLException;
@@ -72,9 +78,8 @@ public class AviRestUtils {
 			}
 			try {
 				restTemplate = getInitializedRestTemplate(creds);
-				DefaultUriTemplateHandler templateHandler = new DefaultUriTemplateHandler();
-				templateHandler.setBaseUrl(getControllerURL(creds) + API_PREFIX);
-				restTemplate.setUriTemplateHandler(templateHandler);
+				DefaultUriBuilderFactory uriBuilderFactory = new DefaultUriBuilderFactory(getControllerURL(creds) + API_PREFIX);
+				restTemplate.setUriTemplateHandler(uriBuilderFactory);
 				List<ClientHttpRequestInterceptor> interceptors = Collections
 						.<ClientHttpRequestInterceptor>singletonList(new AviAuthorizationInterceptor(creds));
 				restTemplate.setInterceptors(interceptors);
@@ -107,7 +112,9 @@ public class AviRestUtils {
 	private static RestTemplate getInitializedRestTemplate(AviCredentials creds) {
 		try {
 			CloseableHttpClient client = buildHttpClient(creds);
-			return new RestTemplate(new HttpComponentsClientHttpRequestFactory(client));
+			HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory();
+			clientHttpRequestFactory.setHttpClient((HttpClient) client);
+			return new RestTemplate(clientHttpRequestFactory);
 
 		} catch (Exception e) {
 			LOGGER.severe("Exception in creating rest template for AVI connection");
@@ -160,10 +167,14 @@ public class AviRestUtils {
 		HttpClientBuilder clientBuilder;
 		if (!creds.getVerify()) {
 			SSLContext sslcontext = null;
-			try {
-				sslcontext = SSLContexts.custom().loadTrustMaterial(null, new TrustSelfSignedStrategy()).build();
-			} catch (Exception e) {
-				e.printStackTrace();
+			if (creds.getSslContext() != null){
+				sslcontext = creds.getSslContext();
+			} else {
+				try {
+					sslcontext = SSLContexts.custom().loadTrustMaterial(null, new TrustSelfSignedStrategy()).build();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 
 			SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslcontext,
@@ -173,6 +184,9 @@ public class AviRestUtils {
 					setConnectionRequestTimeout((creds.getTimeout())*1000).
 					setConnectTimeout((creds.getConnectionTimeout())*1000).
 					build();
+
+			CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+			credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(creds.getUsername(), creds.getPassword()));
 
 			clientBuilder = HttpClients.custom().
 					setSSLSocketFactory(sslConnectionSocketFactory).

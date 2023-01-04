@@ -33,6 +33,9 @@ public class L7limits  {
     @JsonProperty("num_matches_per_rule")
     private Integer numMatchesPerRule = null;
 
+    @JsonProperty("num_rules_per_evh_host")
+    private Integer numRulesPerEvhHost = null;
+
     @JsonProperty("num_rules_per_http_policy")
     private Integer numRulesPerHttpPolicy = null;
 
@@ -153,6 +156,30 @@ public class L7limits  {
      */
     public void setNumMatchesPerRule(Integer  numMatchesPerRule) {
         this.numMatchesPerRule = numMatchesPerRule;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Number of rules per evh host.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return numRulesPerEvhHost
+     */
+    public Integer getNumRulesPerEvhHost() {
+        return numRulesPerEvhHost;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Number of rules per evh host.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param numRulesPerEvhHost set the numRulesPerEvhHost.
+     */
+    public void setNumRulesPerEvhHost(Integer  numRulesPerEvhHost) {
+        this.numRulesPerEvhHost = numRulesPerEvhHost;
     }
 
     /**
@@ -368,7 +395,8 @@ public class L7limits  {
   Objects.equals(this.numRulesPerHttpPolicy, objL7limits.numRulesPerHttpPolicy)&&
   Objects.equals(this.numMatchesPerRule, objL7limits.numMatchesPerRule)&&
   Objects.equals(this.numStrgroupsPerMatch, objL7limits.numStrgroupsPerMatch)&&
-  Objects.equals(this.numCustomStr, objL7limits.numCustomStr);
+  Objects.equals(this.numCustomStr, objL7limits.numCustomStr)&&
+  Objects.equals(this.numRulesPerEvhHost, objL7limits.numRulesPerEvhHost);
     }
 
     @Override
@@ -379,6 +407,7 @@ public class L7limits  {
                         sb.append("    numCompressionFilters: ").append(toIndentedString(numCompressionFilters)).append("\n");
                         sb.append("    numCustomStr: ").append(toIndentedString(numCustomStr)).append("\n");
                         sb.append("    numMatchesPerRule: ").append(toIndentedString(numMatchesPerRule)).append("\n");
+                        sb.append("    numRulesPerEvhHost: ").append(toIndentedString(numRulesPerEvhHost)).append("\n");
                         sb.append("    numRulesPerHttpPolicy: ").append(toIndentedString(numRulesPerHttpPolicy)).append("\n");
                         sb.append("    numStrgroupsPerMatch: ").append(toIndentedString(numStrgroupsPerMatch)).append("\n");
                         sb.append("    strCacheMime: ").append(toIndentedString(strCacheMime)).append("\n");

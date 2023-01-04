@@ -292,7 +292,7 @@ public class AuditComplianceEventInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Protocol used for communication to the external entity.
-     * Enum options - SSH1_0, TLS1_2, HTTPS1_0, HTTP_PLAIN_TEXT, HTTPS_INSECURE, SSH2_0.
+     * Enum options - SSH1_0, AVI_TLS1_2, HTTPS1_0, HTTP_PLAIN_TEXT, HTTPS_INSECURE, SSH2_0.
      * Field introduced in 20.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -305,7 +305,7 @@ public class AuditComplianceEventInfo  {
     /**
      * This is the setter method to the attribute.
      * Protocol used for communication to the external entity.
-     * Enum options - SSH1_0, TLS1_2, HTTPS1_0, HTTP_PLAIN_TEXT, HTTPS_INSECURE, SSH2_0.
+     * Enum options - SSH1_0, AVI_TLS1_2, HTTPS1_0, HTTP_PLAIN_TEXT, HTTPS_INSECURE, SSH2_0.
      * Field introduced in 20.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.

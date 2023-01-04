@@ -1,6 +1,10 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 import json
 import logging
 import os
+import sys
 import avi.migrationtools.nsxt_converter.converter_constants as conv_const
 from avi.migrationtools.avi_migration_utils import update_count
 from avi.migrationtools.avi_orphan_object import wipe_out_not_in_use
@@ -35,13 +39,17 @@ merge_object_mapping = {
     'pki_profile': {'no': 0},
     'health_monitor': {'no': 0},
     'ssl_cert_key': {'no': 0},
-    'ip_group': {'no': 0}
+    'ip_group': {'no': 0},
+    'vs_ds': {'no': 0}
 }
 
 
-def convert(nsx_lb_config, input_path, output_path, tenant, cloud_name, prefix,
-            migrate_to, object_merge_check, controller_version, vs_state=False, vs_level_status=False, vrf=None,
-            segroup=None, not_in_use=True, custom_mapping=None):
+def convert(nsx_lb_config, input_path, output_path, tenant, prefix,
+            migrate_to, object_merge_check, controller_version, ssh_root_password, nsxt_util, migration_input_config=None,
+            vs_state=False, vs_level_status=False, vrf=None,
+            segroup=None, not_in_use=True, custom_mapping=None, traffic_enabled=False, cloud_tenant="admin",
+            nsxt_ip=None, nsxt_passord=None):
+
     # load the yaml file attribute in nsxt_attributes.
     nsxt_attributes = conv_const.init()
     input_config = input_path + os.path.sep + "config.json"
@@ -55,16 +63,16 @@ def convert(nsx_lb_config, input_path, output_path, tenant, cloud_name, prefix,
         merge_object_type = ['ApplicationProfile', 'NetworkProfile',
                              'SSLProfile', 'PKIProfile', 'SSLKeyAndCertificate',
                              'ApplicationPersistenceProfile', 'HealthMonitor',
-                             'IpAddrGroup']
+                             'IpAddrGroup', 'VSDataScriptSet']
         for key in merge_object_type:
             sys_dict[key] = []
             avi_config_dict[key] = []
-
+        
         monitor_converter = MonitorConfigConv(nsxt_attributes, object_merge_check, merge_object_mapping, sys_dict)
         monitor_converter.convert(avi_config_dict, nsx_lb_config, prefix,tenant,custom_mapping)
 
         pool_converter = PoolConfigConv(nsxt_attributes, object_merge_check, merge_object_mapping, sys_dict)
-        pool_converter.convert(avi_config_dict, nsx_lb_config, cloud_name, prefix,tenant)
+        pool_converter.convert(avi_config_dict, nsx_lb_config,nsxt_util, prefix, tenant)
 
         profile_converter = ProfileConfigConv(nsxt_attributes, object_merge_check, merge_object_mapping, sys_dict)
         profile_converter.convert(avi_config_dict, nsx_lb_config, prefix,tenant)
@@ -75,10 +83,13 @@ def convert(nsx_lb_config, input_path, output_path, tenant, cloud_name, prefix,
         persist_conv = PersistantProfileConfigConv(nsxt_attributes, object_merge_check, merge_object_mapping, sys_dict)
         persist_conv.convert(avi_config_dict, nsx_lb_config, prefix,tenant)
 
-
-        vs_converter = VsConfigConv(nsxt_attributes,object_merge_check, merge_object_mapping,sys_dict)
-        vs_converter.convert(avi_config_dict,nsx_lb_config,cloud_name,prefix,tenant,vs_state,controller_version,vrf,segroup)
-
+        vs_converter = VsConfigConv(nsxt_attributes,object_merge_check, merge_object_mapping,sys_dict,
+                                    nsxt_ip, nsxt_passord)
+        vs_converter.convert(avi_config_dict, nsx_lb_config, prefix,
+                             tenant, vs_state, controller_version, traffic_enabled,
+                             cloud_tenant, ssh_root_password, nsxt_util, migration_input_config,
+                             vrf, segroup)
+        conv_utils.remove_dup_of(avi_config_dict)
         # Validating the aviconfig after generation
         conv_utils.validation(avi_config_dict)
     except Exception as e:
@@ -87,28 +98,35 @@ def convert(nsx_lb_config, input_path, output_path, tenant, cloud_name, prefix,
         LOG.error("Conversion error", exc_info=True)
 
     output_config = output_path + os.path.sep + "avi_config.json"
+
    # with open(output_config, "w", encoding='utf-8') as text_file:
        # json.dump(avi_config_dict, text_file, indent=4)
 
     # Add nsxt converter status report in xslx report
-    conv_utils.add_complete_conv_status(
-        output_path, avi_config_dict, "nsxt-report", vs_level_status)
+    try:
+        conv_utils.add_complete_conv_status(
+            output_path, avi_config_dict, "nsxt-report", vs_level_status)
+    except Exception as e:
+        msg = "Error in writing excel sheet for converted configuration."
+        LOG.error(msg)
+        print("\033[91m" + msg + " Message: ", str(e) +"\033[0m")
+        sys.exit(1)
 
     for key in avi_config_dict:
         if key != 'META':
             if key == 'VirtualService':
                 if vs_level_status:
-                    LOG.info('Total Objects of %s : %s (%s full conversions)'
-                             % (key, len(avi_config_dict[key]),
+                    LOG.info('Total Objects of %s : %s (%s  migrated , %s full conversions)'
+                             % (key,len(nsx_lb_config['LbVirtualServers']), len(avi_config_dict[key]),
                                 conversion_util.fully_migrated))
-                    print('Total Objects of %s : %s (%s full conversions)' \
-                          % (key, len(avi_config_dict[key]),
+                    print('Total Objects of %s : %s (%s  migrated , %s full conversions)' \
+                          % (key, len(nsx_lb_config['LbVirtualServers']), len(avi_config_dict[key]),
                              conversion_util.fully_migrated))
                 else:
-                    LOG.info('Total Objects of %s : %s'
-                             % (key, len(avi_config_dict[key])))
-                    print('Total Objects of %s : %s' \
-                          % (key, len(avi_config_dict[key])))
+                    LOG.info('Total Objects of %s : %s (%s  migrated)'
+                             % (key, len(nsx_lb_config['LbVirtualServers']), len(avi_config_dict[key])))
+                    print('Total Objects of %s : %s (%s  migrated)' \
+                          % (key,len(nsx_lb_config['LbVirtualServers']),  len(avi_config_dict[key])))
 
                 continue
             # Added code to print merged count.
@@ -190,6 +208,5 @@ def convert(nsx_lb_config, input_path, output_path, tenant, cloud_name, prefix,
     if migrate_to == 'NSX':
         alb_converter = ALBConverter(output_config, output_path)
         alb_converter.convert()
-
 
     return avi_config_dict

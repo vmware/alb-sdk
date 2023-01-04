@@ -24,6 +24,9 @@ public class OAuthProfile  {
     @JsonProperty("authorization_endpoint")
     private String authorizationEndpoint = null;
 
+    @JsonProperty("end_session_endpoint")
+    private String endSessionEndpoint = null;
+
     @JsonProperty("introspection_endpoint")
     private String introspectionEndpoint = null;
 
@@ -31,7 +34,7 @@ public class OAuthProfile  {
     private String issuer = null;
 
     @JsonProperty("jwks_timeout")
-    private Integer jwksTimeout = null;
+    private Integer jwksTimeout = 0;
 
     @JsonProperty("jwks_uri")
     private String jwksUri = null;
@@ -72,6 +75,30 @@ public class OAuthProfile  {
      */
     public void setAuthorizationEndpoint(String  authorizationEndpoint) {
         this.authorizationEndpoint = authorizationEndpoint;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Logout uri of idp server.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return endSessionEndpoint
+     */
+    public String getEndSessionEndpoint() {
+        return endSessionEndpoint;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Logout uri of idp server.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param endSessionEndpoint set the endSessionEndpoint.
+     */
+    public void setEndSessionEndpoint(String  endSessionEndpoint) {
+        this.endSessionEndpoint = endSessionEndpoint;
     }
 
     /**
@@ -125,9 +152,11 @@ public class OAuthProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Lifetime of the cached jwks keys.
+     * Allowed values are 0-1440.
      * Field introduced in 21.1.3.
+     * Unit is min.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @return jwksTimeout
      */
     public Integer getJwksTimeout() {
@@ -137,9 +166,11 @@ public class OAuthProfile  {
     /**
      * This is the setter method to the attribute.
      * Lifetime of the cached jwks keys.
+     * Allowed values are 0-1440.
      * Field introduced in 21.1.3.
+     * Unit is min.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
      * @param jwksTimeout set the jwksTimeout.
      */
     public void setJwksTimeout(Integer  jwksTimeout) {
@@ -286,7 +317,8 @@ public class OAuthProfile  {
   Objects.equals(this.issuer, objOAuthProfile.issuer)&&
   Objects.equals(this.poolRef, objOAuthProfile.poolRef)&&
   Objects.equals(this.oauthRespBufferSz, objOAuthProfile.oauthRespBufferSz)&&
-  Objects.equals(this.userinfoEndpoint, objOAuthProfile.userinfoEndpoint);
+  Objects.equals(this.userinfoEndpoint, objOAuthProfile.userinfoEndpoint)&&
+  Objects.equals(this.endSessionEndpoint, objOAuthProfile.endSessionEndpoint);
     }
 
     @Override
@@ -294,6 +326,7 @@ public class OAuthProfile  {
       StringBuilder sb = new StringBuilder();
       sb.append("class OAuthProfile {\n");
                   sb.append("    authorizationEndpoint: ").append(toIndentedString(authorizationEndpoint)).append("\n");
+                        sb.append("    endSessionEndpoint: ").append(toIndentedString(endSessionEndpoint)).append("\n");
                         sb.append("    introspectionEndpoint: ").append(toIndentedString(introspectionEndpoint)).append("\n");
                         sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
                         sb.append("    jwksTimeout: ").append(toIndentedString(jwksTimeout)).append("\n");

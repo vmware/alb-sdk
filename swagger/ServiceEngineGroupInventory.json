@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "22.1.1",
+        "version": "23.1.1",
         "title": "Avi ServiceEngineGroupInventory Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -2246,8 +2246,7 @@
                 },
                 "disable_gro": {
                     "description": "Disable Generic Receive Offload (GRO) in DPDK poll-mode driver packet receive path.  GRO is on by default on NICs that do not support LRO (Large Receive Offload) or do not gain performance boost from LRO. Field introduced in 17.2.5, 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean",
-                    "default": true
+                    "type": "boolean"
                 },
                 "disable_se_memory_check": {
                     "description": "If set, disable the config memory check done in service engine. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2394,6 +2393,12 @@
                     "description": "GratArp periodicity for VIP-IP. Allowed values are 5-30. Field introduced in 18.2.3. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
+                    "format": "int32"
+                },
+                "grpc_channel_connect_timeout": {
+                    "description": "Timeout in seconds that SE waits for a grpc channel to connect to server, before it retries. Allowed values are 5-45. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 15,
                     "format": "int32"
                 },
                 "ha_mode": {
@@ -2793,13 +2798,22 @@
                     "default": 20,
                     "format": "int32"
                 },
+                "ntp_sync_fail_event": {
+                    "description": "Toggle SE NTP synchronization failure events generation. Disabled by default. Field introduced in 22.1.2. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "ntp_sync_status_interval": {
+                    "description": "Configures the interval at which SE synchronization status with NTP server(s) is verified. A value of zero disables SE NTP synchronization status validation. Allowed values are 120-900. Special values are 0- disable. Field introduced in 22.1.2. Unit is SEC. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                },
                 "num_dispatcher_cores": {
                     "description": "Number of dispatcher cores (0,1,2,4,8 or 16). If set to 0, then number of dispatcher cores is deduced automatically.Requires SE Reboot. Allowed values are 0,1,2,4,8,16. Field introduced in 17.2.12, 18.1.3, 18.2.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_dispatcher_queues": {
-                    "description": "Number of queues to each dispatcher. Allowed values are 2-8. Special values are 0 - auto-compute, 1 - single-queue. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Number of queues to each dispatcher. Allowed values are 1-2. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "int32"
@@ -2872,6 +2886,12 @@
                     "description": "Reboot the VM or host on kernel panic. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
+                },
+                "replay_vrf_routes_interval": {
+                    "description": "Routes in VRF are replayed at the specified interval. This should be increased if there are large number of routes. Allowed values are 0-3000. Field introduced in 22.1.3. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 1000,
+                    "format": "int32"
                 },
                 "resync_time_interval": {
                     "description": "Time interval to re-sync SE's time with wall clock time. Allowed values are 8-600000. Field introduced in 20.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3047,9 +3067,8 @@
                     "default": true
                 },
                 "se_lro": {
-                    "description": "Enable or disable Large Receive Optimization for vnics. Requires SE Reboot. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean",
-                    "default": true
+                    "description": "Enable or disable Large Receive Optimization for vnics.Supported on VMXnet3.Requires SE Reboot. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
                 },
                 "se_mp_ring_retry_count": {
                     "description": "The retry count for the multi-producer enqueue before yielding the CPU. To be used under surveillance of Avi Support. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 500), Basic edition(Allowed values- 500), Enterprise with Cloud Services edition.",
@@ -3306,6 +3325,10 @@
                     "description": "url",
                     "readOnly": true,
                     "type": "string"
+                },
+                "use_dp_util_for_scaleout": {
+                    "description": "If enabled, the datapath CPU utilization is consulted by the auto scale-out logic. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
                 },
                 "use_hyperthreaded_cores": {
                     "description": "Enables the use of hyper-threaded cores on SE. Requires SE Reboot. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3639,7 +3662,7 @@
                     "type": "boolean"
                 },
                 "state": {
-                    "description": "The upgrade operations current fsm-state. Enum options - UPGRADE_FSM_INIT, UPGRADE_FSM_STARTED, UPGRADE_FSM_WAITING, UPGRADE_FSM_IN_PROGRESS, UPGRADE_FSM_ENQUEUED, UPGRADE_FSM_ERROR, UPGRADE_FSM_SUSPENDED, UPGRADE_FSM_ENQUEUE_FAILED, UPGRADE_FSM_PAUSED, UPGRADE_FSM_COMPLETED, UPGRADE_FSM_ABORT_IN_PROGRESS, UPGRADE_FSM_ABORTED, UPGRADE_FSM_SE_UPGRADE_IN_PROGRESS, UPGRADE_FSM_CONTROLLER_COMPLETED, UPGRADE_FSM_DUMMY_3, UPGRADE_FSM_DUMMY_4, UPGRADE_FSM_DUMMY_5. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The upgrade operations current fsm-state. Enum options - UPGRADE_FSM_INIT, UPGRADE_FSM_STARTED, UPGRADE_FSM_WAITING, UPGRADE_FSM_IN_PROGRESS, UPGRADE_FSM_ENQUEUED, UPGRADE_FSM_ERROR, UPGRADE_FSM_SUSPENDED, UPGRADE_FSM_ENQUEUE_FAILED, UPGRADE_FSM_PAUSED, UPGRADE_FSM_COMPLETED, UPGRADE_FSM_ABORT_IN_PROGRESS, UPGRADE_FSM_ABORTED, UPGRADE_FSM_SE_UPGRADE_IN_PROGRESS, UPGRADE_FSM_CONTROLLER_COMPLETED, UPGRADE_FSM_DUMMY_3, UPGRADE_FSM_DUMMY_4, UPGRADE_FSM_DUMMY_5, UPGRADE_PRE_CHECK_STARTED, UPGRADE_PRE_CHECK_IN_PROGRESS, UPGRADE_PRE_CHECK_SUCCESS, UPGRADE_PRE_CHECK_ERROR, UPGRADE_PRE_CHECK_WARNING. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -3707,7 +3730,7 @@
                     "format": "int32"
                 },
                 "upgrade_ops": {
-                    "description": "Upgrade operations requested. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Upgrade operations requested. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH, EVAL_SEGROUP_RESUME. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -3848,12 +3871,13 @@
         },
         "VcenterDatastore": {
             "type": "object",
-            "required": [
-                "datastore_name"
-            ],
             "properties": {
                 "datastore_name": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "managed_object_id": {
+                    "description": "Will be used by default, if not set fallback to datastore_name. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

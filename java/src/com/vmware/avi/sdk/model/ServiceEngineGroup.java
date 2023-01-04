@@ -130,7 +130,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean deactivateKniFilteringAtDispatcher = null;
 
     @JsonProperty("dedicated_dispatcher_core")
-    private Boolean dedicatedDispatcherCore = false;
+    private Boolean dedicatedDispatcherCore = null;
 
     @JsonProperty("description")
     private String description = null;
@@ -145,7 +145,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean disableFlowProbes = false;
 
     @JsonProperty("disable_gro")
-    private Boolean disableGro = true;
+    private Boolean disableGro = null;
 
     @JsonProperty("disable_se_memory_check")
     private Boolean disableSeMemoryCheck = false;
@@ -233,6 +233,9 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     @JsonProperty("gratarp_permanent_periodicity")
     private Integer gratarpPermanentPeriodicity = 10;
+
+    @JsonProperty("grpc_channel_connect_timeout")
+    private Integer grpcChannelConnectTimeout = 15;
 
     @JsonProperty("ha_mode")
     private String haMode;
@@ -450,6 +453,12 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("ns_helper_deq_interval_msec")
     private Integer nsHelperDeqIntervalMsec = 20;
 
+    @JsonProperty("ntp_sync_fail_event")
+    private Boolean ntpSyncFailEvent = false;
+
+    @JsonProperty("ntp_sync_status_interval")
+    private Integer ntpSyncStatusInterval = 0;
+
     @JsonProperty("num_dispatcher_cores")
     private Integer numDispatcherCores = 0;
 
@@ -497,6 +506,9 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     @JsonProperty("reboot_on_panic")
     private Boolean rebootOnPanic = true;
+
+    @JsonProperty("replay_vrf_routes_interval")
+    private Integer replayVrfRoutesInterval = 1000;
 
     @JsonProperty("resync_time_interval")
     private Integer resyncTimeInterval = 65536;
@@ -598,7 +610,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean seLogBufferEventsBlockingDequeue = true;
 
     @JsonProperty("se_lro")
-    private Boolean seLro = true;
+    private Boolean seLro = null;
 
     @JsonProperty("se_mp_ring_retry_count")
     private Integer seMpRingRetryCount = 500;
@@ -740,6 +752,9 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     @JsonProperty("url")
     private String url = "url";
+
+    @JsonProperty("use_dp_util_for_scaleout")
+    private Boolean useDpUtilForScaleout = false;
 
     @JsonProperty("use_hyperthreaded_cores")
     private Boolean useHyperthreadedCores = true;
@@ -1848,7 +1863,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Dedicate the core that handles packet receive/transmit from the network to just the dispatching function.
      * Don't use it for tcp/ip and ssl functions.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dedicatedDispatcherCore
      */
     public Boolean getDedicatedDispatcherCore() {
@@ -1860,7 +1875,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Dedicate the core that handles packet receive/transmit from the network to just the dispatching function.
      * Don't use it for tcp/ip and ssl functions.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dedicatedDispatcherCore set the dedicatedDispatcherCore.
      */
     public void setDedicatedDispatcherCore(Boolean  dedicatedDispatcherCore) {
@@ -1971,7 +1986,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Gro is on by default on nics that do not support lro (large receive offload) or do not gain performance boost from lro.
      * Field introduced in 17.2.5, 18.1.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return disableGro
      */
     public Boolean getDisableGro() {
@@ -1984,7 +1999,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Gro is on by default on nics that do not support lro (large receive offload) or do not gain performance boost from lro.
      * Field introduced in 17.2.5, 18.1.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param disableGro set the disableGro.
      */
     public void setDisableGro(Boolean  disableGro) {
@@ -2747,6 +2762,32 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setGratarpPermanentPeriodicity(Integer  gratarpPermanentPeriodicity) {
         this.gratarpPermanentPeriodicity = gratarpPermanentPeriodicity;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Timeout in seconds that se waits for a grpc channel to connect to server, before it retries.
+     * Allowed values are 5-45.
+     * Field introduced in 22.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 15.
+     * @return grpcChannelConnectTimeout
+     */
+    public Integer getGrpcChannelConnectTimeout() {
+        return grpcChannelConnectTimeout;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Timeout in seconds that se waits for a grpc channel to connect to server, before it retries.
+     * Allowed values are 5-45.
+     * Field introduced in 22.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 15.
+     * @param grpcChannelConnectTimeout set the grpcChannelConnectTimeout.
+     */
+    public void setGrpcChannelConnectTimeout(Integer  grpcChannelConnectTimeout) {
+        this.grpcChannelConnectTimeout = grpcChannelConnectTimeout;
     }
 
     /**
@@ -4663,6 +4704,68 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Toggle se ntp synchronization failure events generation.
+     * Disabled by default.
+     * Field introduced in 22.1.2.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return ntpSyncFailEvent
+     */
+    public Boolean getNtpSyncFailEvent() {
+        return ntpSyncFailEvent;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Toggle se ntp synchronization failure events generation.
+     * Disabled by default.
+     * Field introduced in 22.1.2.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param ntpSyncFailEvent set the ntpSyncFailEvent.
+     */
+    public void setNtpSyncFailEvent(Boolean  ntpSyncFailEvent) {
+        this.ntpSyncFailEvent = ntpSyncFailEvent;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Configures the interval at which se synchronization status with ntp server(s) is verified.
+     * A value of zero disables se ntp synchronization status validation.
+     * Allowed values are 120-900.
+     * Special values are 0- disable.
+     * Field introduced in 22.1.2.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @return ntpSyncStatusInterval
+     */
+    public Integer getNtpSyncStatusInterval() {
+        return ntpSyncStatusInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Configures the interval at which se synchronization status with ntp server(s) is verified.
+     * A value of zero disables se ntp synchronization status validation.
+     * Allowed values are 120-900.
+     * Special values are 0- disable.
+     * Field introduced in 22.1.2.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @param ntpSyncStatusInterval set the ntpSyncStatusInterval.
+     */
+    public void setNtpSyncStatusInterval(Integer  ntpSyncStatusInterval) {
+        this.ntpSyncStatusInterval = ntpSyncStatusInterval;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Number of dispatcher cores (0,1,2,4,8 or 16).
      * If set to 0, then number of dispatcher cores is deduced automatically.requires se reboot.
      * Allowed values are 0,1,2,4,8,16.
@@ -4694,8 +4797,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Number of queues to each dispatcher.
-     * Allowed values are 2-8.
-     * Special values are 0 - auto-compute, 1 - single-queue.
+     * Allowed values are 1-2.
      * Field introduced in 21.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
@@ -4708,8 +4810,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Number of queues to each dispatcher.
-     * Allowed values are 2-8.
-     * Special values are 0 - auto-compute, 1 - single-queue.
+     * Allowed values are 1-2.
      * Field introduced in 21.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
@@ -5084,6 +5185,36 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setRebootOnPanic(Boolean  rebootOnPanic) {
         this.rebootOnPanic = rebootOnPanic;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Routes in vrf are replayed at the specified interval.
+     * This should be increased if there are large number of routes.
+     * Allowed values are 0-3000.
+     * Field introduced in 22.1.3.
+     * Unit is milliseconds.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
+     * @return replayVrfRoutesInterval
+     */
+    public Integer getReplayVrfRoutesInterval() {
+        return replayVrfRoutesInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Routes in vrf are replayed at the specified interval.
+     * This should be increased if there are large number of routes.
+     * Allowed values are 0-3000.
+     * Field introduced in 22.1.3.
+     * Unit is milliseconds.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
+     * @param replayVrfRoutesInterval set the replayVrfRoutesInterval.
+     */
+    public void setReplayVrfRoutesInterval(Integer  replayVrfRoutesInterval) {
+        this.replayVrfRoutesInterval = replayVrfRoutesInterval;
     }
 
     /**
@@ -5972,11 +6103,10 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Enable or disable large receive optimization for vnics.
-     * Requires se reboot.
+     * Enable or disable large receive optimization for vnics.supported on vmxnet3.requires se reboot.
      * Field introduced in 18.2.5.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seLro
      */
     public Boolean getSeLro() {
@@ -5985,11 +6115,10 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Enable or disable large receive optimization for vnics.
-     * Requires se reboot.
+     * Enable or disable large receive optimization for vnics.supported on vmxnet3.requires se reboot.
      * Field introduced in 18.2.5.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seLro set the seLro.
      */
     public void setSeLro(Boolean  seLro) {
@@ -7287,6 +7416,32 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * If enabled, the datapath cpu utilization is consulted by the auto scale-out logic.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return useDpUtilForScaleout
+     */
+    public Boolean getUseDpUtilForScaleout() {
+        return useDpUtilForScaleout;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * If enabled, the datapath cpu utilization is consulted by the auto scale-out logic.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param useDpUtilForScaleout set the useDpUtilForScaleout.
+     */
+    public void setUseDpUtilForScaleout(Boolean  useDpUtilForScaleout) {
+        this.useDpUtilForScaleout = useDpUtilForScaleout;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Enables the use of hyper-threaded cores on se.
      * Requires se reboot.
      * Field introduced in 20.1.1.
@@ -8437,7 +8592,12 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.deactivateKniFilteringAtDispatcher, objServiceEngineGroup.deactivateKniFilteringAtDispatcher)&&
   Objects.equals(this.vcenterParkingVnicPg, objServiceEngineGroup.vcenterParkingVnicPg)&&
   Objects.equals(this.dpdkGroTimeoutInterval, objServiceEngineGroup.dpdkGroTimeoutInterval)&&
-  Objects.equals(this.seTimeTrackerProps, objServiceEngineGroup.seTimeTrackerProps);
+  Objects.equals(this.seTimeTrackerProps, objServiceEngineGroup.seTimeTrackerProps)&&
+  Objects.equals(this.grpcChannelConnectTimeout, objServiceEngineGroup.grpcChannelConnectTimeout)&&
+  Objects.equals(this.ntpSyncFailEvent, objServiceEngineGroup.ntpSyncFailEvent)&&
+  Objects.equals(this.ntpSyncStatusInterval, objServiceEngineGroup.ntpSyncStatusInterval)&&
+  Objects.equals(this.useDpUtilForScaleout, objServiceEngineGroup.useDpUtilForScaleout)&&
+  Objects.equals(this.replayVrfRoutesInterval, objServiceEngineGroup.replayVrfRoutesInterval);
     }
 
     @Override
@@ -8515,6 +8675,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    freeListSize: ").append(toIndentedString(freeListSize)).append("\n");
                         sb.append("    gcpConfig: ").append(toIndentedString(gcpConfig)).append("\n");
                         sb.append("    gratarpPermanentPeriodicity: ").append(toIndentedString(gratarpPermanentPeriodicity)).append("\n");
+                        sb.append("    grpcChannelConnectTimeout: ").append(toIndentedString(grpcChannelConnectTimeout)).append("\n");
                         sb.append("    haMode: ").append(toIndentedString(haMode)).append("\n");
                         sb.append("    handlePerPktAttack: ").append(toIndentedString(handlePerPktAttack)).append("\n");
                         sb.append("    hardwaresecuritymodulegroupRef: ").append(toIndentedString(hardwaresecuritymodulegroupRef)).append("\n");
@@ -8587,6 +8748,8 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    ngxFreeConnectionStack: ").append(toIndentedString(ngxFreeConnectionStack)).append("\n");
                         sb.append("    nonSignificantLogThrottle: ").append(toIndentedString(nonSignificantLogThrottle)).append("\n");
                         sb.append("    nsHelperDeqIntervalMsec: ").append(toIndentedString(nsHelperDeqIntervalMsec)).append("\n");
+                        sb.append("    ntpSyncFailEvent: ").append(toIndentedString(ntpSyncFailEvent)).append("\n");
+                        sb.append("    ntpSyncStatusInterval: ").append(toIndentedString(ntpSyncStatusInterval)).append("\n");
                         sb.append("    numDispatcherCores: ").append(toIndentedString(numDispatcherCores)).append("\n");
                         sb.append("    numDispatcherQueues: ").append(toIndentedString(numDispatcherQueues)).append("\n");
                         sb.append("    numFlowCoresSumChangesToIgnore: ").append(toIndentedString(numFlowCoresSumChangesToIgnore)).append("\n");
@@ -8603,6 +8766,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    placementMode: ").append(toIndentedString(placementMode)).append("\n");
                         sb.append("    realtimeSeMetrics: ").append(toIndentedString(realtimeSeMetrics)).append("\n");
                         sb.append("    rebootOnPanic: ").append(toIndentedString(rebootOnPanic)).append("\n");
+                        sb.append("    replayVrfRoutesInterval: ").append(toIndentedString(replayVrfRoutesInterval)).append("\n");
                         sb.append("    resyncTimeInterval: ").append(toIndentedString(resyncTimeInterval)).append("\n");
                         sb.append("    sdbFlushInterval: ").append(toIndentedString(sdbFlushInterval)).append("\n");
                         sb.append("    sdbPipelineSize: ").append(toIndentedString(sdbPipelineSize)).append("\n");
@@ -8683,7 +8847,8 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    upstreamConnpoolEnable: ").append(toIndentedString(upstreamConnpoolEnable)).append("\n");
                         sb.append("    upstreamReadTimeout: ").append(toIndentedString(upstreamReadTimeout)).append("\n");
                         sb.append("    upstreamSendTimeout: ").append(toIndentedString(upstreamSendTimeout)).append("\n");
-                                    sb.append("    useHyperthreadedCores: ").append(toIndentedString(useHyperthreadedCores)).append("\n");
+                                    sb.append("    useDpUtilForScaleout: ").append(toIndentedString(useDpUtilForScaleout)).append("\n");
+                        sb.append("    useHyperthreadedCores: ").append(toIndentedString(useHyperthreadedCores)).append("\n");
                         sb.append("    useLegacyNetlink: ").append(toIndentedString(useLegacyNetlink)).append("\n");
                         sb.append("    useObjsync: ").append(toIndentedString(useObjsync)).append("\n");
                         sb.append("    useStandardAlb: ").append(toIndentedString(useStandardAlb)).append("\n");

@@ -38,6 +38,7 @@ import re
 import collections
 from copy import deepcopy
 from avi.migrationtools.avi_migration_utils import MigrationUtil
+import avi.migrationtools.ansible.avi_config_to_ansible as avi_config_to_ansible
 
 log = logging.getLogger(__name__)
 
@@ -213,17 +214,15 @@ class ConfigPatch(object):
             if isinstance(v, collections.Mapping):
                 d[k] = self.deep_update(d.get(k, {}), v)
             elif isinstance(v, list):
-                for i in v:
-                    cnt = 0
-                    if isinstance(i, collections.Mapping) and k in d and len(d[k]) >= cnt + 1:
-                        d[k][cnt] = self.deep_update(d[k][cnt], i)
-                    elif k in d and len(d[k]) >= cnt + 1:
-                        d[k][cnt] = i
+                for index, i in enumerate(v):
+                    if isinstance(i, collections.Mapping) and k in d and len(d[k]) >= index + 1:
+                        d[k][index] = self.deep_update(d[k][index], i)
+                    elif k in d and len(d[k]) >= index + 1:
+                        d[k][index] = i
                     elif k in d and d[k]:
                         d[k].append(i)
                     else:
                         d[k] = [i]
-                    cnt += 1
             else:
                 d[k] = v
         return d
@@ -330,6 +329,13 @@ if __name__ == '__main__':
     parser.add_argument('-p', '--patchconfig',
                         help='Avi configuration objects to be patched. '
                              'It is list of patterns and object overrides')
+    group = parser.add_mutually_exclusive_group(required=False)
+    group.add_argument('--ansible',
+                       help='Converts Avi Config JSON to Ansible Playbooks.',
+                       action='store_true')
+    group.add_argument('--yaml',
+                       help='Export it as yaml output that can be used with Avi ansible role aviconfig',
+                       action='store_true')
     args = parser.parse_args()
 
     with open(args.aviconfig) as f:
@@ -341,3 +347,13 @@ if __name__ == '__main__':
     patched_cfg = cp.patch()
     with open(args.aviconfig + '.patched', 'w') as f:
         f.write(json.dumps(patched_cfg, indent=4))
+
+    with open(args.aviconfig + '.patched', "r+") as f:
+        avi_cfg = json.loads(f.read())
+    output_dir = args.aviconfig[0:args.aviconfig.rindex("/") + 1]
+    aac = avi_config_to_ansible.AviAnsibleConverter(
+        avi_cfg, output_dir)
+    if args.yaml:
+        aac.write_yaml()
+    elif args.ansible:
+        aac.write_ansible_playbook()

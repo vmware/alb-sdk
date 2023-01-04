@@ -241,7 +241,7 @@ public class AnalyticsProfile extends AviRestResource  {
     private Float hsSecurityTls12Score = 5.0f;
 
     @JsonProperty("hs_security_tls13_score")
-    private Float hsSecurityTls13Score;
+    private Float hsSecurityTls13Score = 5.0f;
 
     @JsonProperty("hs_security_weak_signature_algo_penalty")
     private Float hsSecurityWeakSignatureAlgoPenalty = 1.0f;
@@ -2231,6 +2231,7 @@ public class AnalyticsProfile extends AviRestResource  {
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials edition(allowed values- 5.0), basic edition(allowed values- 5.0), enterprise with cloud
      * services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
      * @return hsSecurityTls13Score
      */
     public Float getHsSecurityTls13Score() {
@@ -2244,6 +2245,7 @@ public class AnalyticsProfile extends AviRestResource  {
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials edition(allowed values- 5.0), basic edition(allowed values- 5.0), enterprise with cloud
      * services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.0f.
      * @param hsSecurityTls13Score set the hsSecurityTls13Score.
      */
     public void setHsSecurityTls13Score(Float  hsSecurityTls13Score) {

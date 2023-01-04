@@ -120,6 +120,9 @@ public class Pool extends AviRestResource  {
     @JsonProperty("ipaddrgroup_ref")
     private String ipaddrgroupRef = null;
 
+    @JsonProperty("lb_algo_rr_per_se")
+    private Boolean lbAlgoRrPerSe = false;
+
     @JsonProperty("lb_algorithm")
     private String lbAlgorithm = "LB_ALGORITHM_LEAST_CONNECTIONS";
 
@@ -1139,6 +1142,30 @@ public class Pool extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Do round robin load load balancing at se level instead of the default per core load balancing.
+     * Field introduced in 21.1.5, 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return lbAlgoRrPerSe
+     */
+    public Boolean getLbAlgoRrPerSe() {
+        return lbAlgoRrPerSe;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Do round robin load load balancing at se level instead of the default per core load balancing.
+     * Field introduced in 21.1.5, 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param lbAlgoRrPerSe set the lbAlgoRrPerSe.
+     */
+    public void setLbAlgoRrPerSe(Boolean  lbAlgoRrPerSe) {
+        this.lbAlgoRrPerSe = lbAlgoRrPerSe;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * The load balancing algorithm will pick a server within the pool's list of available servers.
      * Values lb_algorithm_nearest_server and lb_algorithm_topology are only allowed for gslb pool.
      * Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH,
@@ -2119,7 +2146,7 @@ public class Pool extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Virtual routing context that the pool is bound to.
      * This is used to provide the isolation of the set of networks the pool is attached to.
-     * The pool inherits the virtual routing conext of the virtual service, and this field is used only internally, and is set by pb-transform.
+     * The pool inherits the virtual routing context of the virtual service, and this field is used only internally, and is set by pb-transform.
      * It is a reference to an object of type vrfcontext.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -2133,7 +2160,7 @@ public class Pool extends AviRestResource  {
      * This is the setter method to the attribute.
      * Virtual routing context that the pool is bound to.
      * This is used to provide the isolation of the set of networks the pool is attached to.
-     * The pool inherits the virtual routing conext of the virtual service, and this field is used only internally, and is set by pb-transform.
+     * The pool inherits the virtual routing context of the virtual service, and this field is used only internally, and is set by pb-transform.
      * It is a reference to an object of type vrfcontext.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -2221,7 +2248,8 @@ public class Pool extends AviRestResource  {
   Objects.equals(this.serverDisableType, objPool.serverDisableType)&&
   Objects.equals(this.useServiceSslMode, objPool.useServiceSslMode)&&
   Objects.equals(this.horizonProfile, objPool.horizonProfile)&&
-  Objects.equals(this.poolType, objPool.poolType);
+  Objects.equals(this.poolType, objPool.poolType)&&
+  Objects.equals(this.lbAlgoRrPerSe, objPool.lbAlgoRrPerSe);
     }
 
     @Override
@@ -2261,6 +2289,7 @@ public class Pool extends AviRestResource  {
                         sb.append("    ignoreServerPort: ").append(toIndentedString(ignoreServerPort)).append("\n");
                         sb.append("    inlineHealthMonitor: ").append(toIndentedString(inlineHealthMonitor)).append("\n");
                         sb.append("    ipaddrgroupRef: ").append(toIndentedString(ipaddrgroupRef)).append("\n");
+                        sb.append("    lbAlgoRrPerSe: ").append(toIndentedString(lbAlgoRrPerSe)).append("\n");
                         sb.append("    lbAlgorithm: ").append(toIndentedString(lbAlgorithm)).append("\n");
                         sb.append("    lbAlgorithmConsistentHashHdr: ").append(toIndentedString(lbAlgorithmConsistentHashHdr)).append("\n");
                         sb.append("    lbAlgorithmCoreNonaffinity: ").append(toIndentedString(lbAlgorithmCoreNonaffinity)).append("\n");

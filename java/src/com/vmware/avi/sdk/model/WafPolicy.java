@@ -30,6 +30,9 @@ public class WafPolicy extends AviRestResource  {
     @JsonProperty("application_signatures")
     private WafApplicationSignatures applicationSignatures = null;
 
+    @JsonProperty("auto_update_crs")
+    private Boolean autoUpdateCrs = false;
+
     @JsonProperty("bypass_static_extensions")
     private Boolean bypassStaticExtensions = true;
 
@@ -86,6 +89,9 @@ public class WafPolicy extends AviRestResource  {
 
     @JsonProperty("tenant_ref")
     private String tenantRef = null;
+
+    @JsonProperty("updated_crs_rules_in_detection_mode")
+    private Boolean updatedCrsRulesInDetectionMode = true;
 
     @JsonProperty("url")
     private String url = "url";
@@ -175,6 +181,34 @@ public class WafPolicy extends AviRestResource  {
      */
     public void setApplicationSignatures(WafApplicationSignatures applicationSignatures) {
         this.applicationSignatures = applicationSignatures;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * If this flag is set, the system will try to keep the crs version used in this policy up-to-date.
+     * If a newer crs object is available on this controller, the system will issue the crs upgrade process for this waf policy.
+     * It will not update polices if the current crs version is crs-version-not-applicable.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return autoUpdateCrs
+     */
+    public Boolean getAutoUpdateCrs() {
+        return autoUpdateCrs;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * If this flag is set, the system will try to keep the crs version used in this policy up-to-date.
+     * If a newer crs object is available on this controller, the system will issue the crs upgrade process for this waf policy.
+     * It will not update polices if the current crs version is crs-version-not-applicable.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param autoUpdateCrs set the autoUpdateCrs.
+     */
+    public void setAutoUpdateCrs(Boolean  autoUpdateCrs) {
+        this.autoUpdateCrs = autoUpdateCrs;
     }
 
     /**
@@ -721,6 +755,38 @@ public class WafPolicy extends AviRestResource  {
     public void setTenantRef(String  tenantRef) {
         this.tenantRef = tenantRef;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * While updating crs, the system will make sure that new rules are added in detection mode.
+     * It only has an effect if the policy is in enforcement mode.
+     * In this case, the update will set new rules into detection mode by adding crs_overrides for the new rules.
+     * If this flag is not set or if the policy mode is detection, rules will be added without new crs_overrides.
+     * This option is used for the auto_update_crs workflow as well as for the ui based crs update workflow.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return updatedCrsRulesInDetectionMode
+     */
+    public Boolean getUpdatedCrsRulesInDetectionMode() {
+        return updatedCrsRulesInDetectionMode;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * While updating crs, the system will make sure that new rules are added in detection mode.
+     * It only has an effect if the policy is in enforcement mode.
+     * In this case, the update will set new rules into detection mode by adding crs_overrides for the new rules.
+     * If this flag is not set or if the policy mode is detection, rules will be added without new crs_overrides.
+     * This option is used for the auto_update_crs workflow as well as for the ui based crs update workflow.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param updatedCrsRulesInDetectionMode set the updatedCrsRulesInDetectionMode.
+     */
+    public void setUpdatedCrsRulesInDetectionMode(Boolean  updatedCrsRulesInDetectionMode) {
+        this.updatedCrsRulesInDetectionMode = updatedCrsRulesInDetectionMode;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Avi controller URL of the object.
@@ -847,7 +913,9 @@ public class WafPolicy extends AviRestResource  {
   Objects.equals(this.geoDbRef, objWafPolicy.geoDbRef)&&
   Objects.equals(this.markers, objWafPolicy.markers)&&
   Objects.equals(this.crsOverrides, objWafPolicy.crsOverrides)&&
-  Objects.equals(this.bypassStaticExtensions, objWafPolicy.bypassStaticExtensions);
+  Objects.equals(this.bypassStaticExtensions, objWafPolicy.bypassStaticExtensions)&&
+  Objects.equals(this.autoUpdateCrs, objWafPolicy.autoUpdateCrs)&&
+  Objects.equals(this.updatedCrsRulesInDetectionMode, objWafPolicy.updatedCrsRulesInDetectionMode);
     }
 
     @Override
@@ -857,6 +925,7 @@ public class WafPolicy extends AviRestResource  {
                   sb.append("    allowModeDelegation: ").append(toIndentedString(allowModeDelegation)).append("\n");
                         sb.append("    allowlist: ").append(toIndentedString(allowlist)).append("\n");
                         sb.append("    applicationSignatures: ").append(toIndentedString(applicationSignatures)).append("\n");
+                        sb.append("    autoUpdateCrs: ").append(toIndentedString(autoUpdateCrs)).append("\n");
                         sb.append("    bypassStaticExtensions: ").append(toIndentedString(bypassStaticExtensions)).append("\n");
                         sb.append("    confidenceOverride: ").append(toIndentedString(confidenceOverride)).append("\n");
                         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
@@ -876,6 +945,7 @@ public class WafPolicy extends AviRestResource  {
                         sb.append("    postCrsGroups: ").append(toIndentedString(postCrsGroups)).append("\n");
                         sb.append("    preCrsGroups: ").append(toIndentedString(preCrsGroups)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+                        sb.append("    updatedCrsRulesInDetectionMode: ").append(toIndentedString(updatedCrsRulesInDetectionMode)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                         sb.append("    wafCrsRef: ").append(toIndentedString(wafCrsRef)).append("\n");
                         sb.append("    wafProfileRef: ").append(toIndentedString(wafProfileRef)).append("\n");

@@ -90,6 +90,9 @@ public class HealthMonitor extends AviRestResource  {
     @JsonProperty("receive_timeout")
     private Integer receiveTimeout = 4;
 
+    @JsonProperty("sctp_monitor")
+    private HealthMonitorSctp sctpMonitor = null;
+
     @JsonProperty("send_interval")
     private Integer sendInterval = 10;
 
@@ -705,6 +708,30 @@ public class HealthMonitor extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Health monitor for sctp.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sctpMonitor
+     */
+    public HealthMonitorSctp getSctpMonitor() {
+        return sctpMonitor;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Health monitor for sctp.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sctpMonitor set the sctpMonitor.
+     */
+    public void setSctpMonitor(HealthMonitorSctp sctpMonitor) {
+        this.sctpMonitor = sctpMonitor;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Frequency, in seconds, that monitors are sent to a server.
      * Allowed values are 1-3600.
      * Unit is sec.
@@ -873,7 +900,7 @@ public class HealthMonitor extends AviRestResource  {
      * Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP,
      * HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS, HEALTH_MONITOR_SMTP, HEALTH_MONITOR_SMTPS,
      * HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS, HEALTH_MONITOR_FTP, HEALTH_MONITOR_FTPS,
-     * HEALTH_MONITOR_LDAP, HEALTH_MONITOR_LDAPS.
+     * HEALTH_MONITOR_LDAP, HEALTH_MONITOR_LDAPS...
      * Allowed in enterprise edition with any value, essentials edition(allowed values- health_monitor_ping,health_monitor_tcp,health_monitor_udp),
      * basic edition(allowed values- health_monitor_ping,health_monitor_tcp,health_monitor_udp,health_monitor_http,health_monitor_https), enterprise with
      * cloud services edition.
@@ -890,7 +917,7 @@ public class HealthMonitor extends AviRestResource  {
      * Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP,
      * HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS, HEALTH_MONITOR_SMTP, HEALTH_MONITOR_SMTPS,
      * HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS, HEALTH_MONITOR_FTP, HEALTH_MONITOR_FTPS,
-     * HEALTH_MONITOR_LDAP, HEALTH_MONITOR_LDAPS.
+     * HEALTH_MONITOR_LDAP, HEALTH_MONITOR_LDAPS...
      * Allowed in enterprise edition with any value, essentials edition(allowed values- health_monitor_ping,health_monitor_tcp,health_monitor_udp),
      * basic edition(allowed values- health_monitor_ping,health_monitor_tcp,health_monitor_udp,health_monitor_http,health_monitor_https), enterprise with
      * cloud services edition.
@@ -1002,7 +1029,8 @@ public class HealthMonitor extends AviRestResource  {
   Objects.equals(this.ldapsMonitor, objHealthMonitor.ldapsMonitor)&&
   Objects.equals(this.isFederated, objHealthMonitor.isFederated)&&
   Objects.equals(this.description, objHealthMonitor.description)&&
-  Objects.equals(this.tenantRef, objHealthMonitor.tenantRef);
+  Objects.equals(this.tenantRef, objHealthMonitor.tenantRef)&&
+  Objects.equals(this.sctpMonitor, objHealthMonitor.sctpMonitor);
     }
 
     @Override
@@ -1032,6 +1060,7 @@ public class HealthMonitor extends AviRestResource  {
                         sb.append("    pop3sMonitor: ").append(toIndentedString(pop3sMonitor)).append("\n");
                         sb.append("    radiusMonitor: ").append(toIndentedString(radiusMonitor)).append("\n");
                         sb.append("    receiveTimeout: ").append(toIndentedString(receiveTimeout)).append("\n");
+                        sb.append("    sctpMonitor: ").append(toIndentedString(sctpMonitor)).append("\n");
                         sb.append("    sendInterval: ").append(toIndentedString(sendInterval)).append("\n");
                         sb.append("    sipMonitor: ").append(toIndentedString(sipMonitor)).append("\n");
                         sb.append("    smtpMonitor: ").append(toIndentedString(smtpMonitor)).append("\n");

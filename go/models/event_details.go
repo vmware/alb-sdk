@@ -614,6 +614,9 @@ type EventDetails struct {
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterObjDeleteDetails *VinfraVcenterObjDeleteDetails `json:"vcenter_obj_delete_details,omitempty"`
 
+	// Failed to tag SEs with custom tags. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	VcenterTagEventDetails *VcenterTagEventDetails `json:"vcenter_tag_event_details,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	VipAutoscale *VipScaleDetails `json:"vip_autoscale,omitempty"`
 

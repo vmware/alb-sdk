@@ -30,8 +30,8 @@ public class HTTPHdrAction  {
     @JsonProperty("hdr")
     private HTTPHdrData hdr = null;
 
-    @JsonProperty("index")
-    private Integer index = null;
+    @JsonProperty("hdr_index")
+    private Integer hdrIndex = null;
 
 
 
@@ -118,10 +118,10 @@ public class HTTPHdrAction  {
      * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
      * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return index
+     * @return hdrIndex
      */
-    public Integer getIndex() {
-        return index;
+    public Integer getHdrIndex() {
+        return hdrIndex;
     }
 
     /**
@@ -131,10 +131,10 @@ public class HTTPHdrAction  {
      * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
      * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param index set the index.
+     * @param hdrIndex set the hdrIndex.
      */
-    public void setIndex(Integer  index) {
-        this.index = index;
+    public void setHdrIndex(Integer  hdrIndex) {
+        this.hdrIndex = hdrIndex;
     }
 
 
@@ -150,7 +150,7 @@ public class HTTPHdrAction  {
       return   Objects.equals(this.action, objHTTPHdrAction.action)&&
   Objects.equals(this.hdr, objHTTPHdrAction.hdr)&&
   Objects.equals(this.cookie, objHTTPHdrAction.cookie)&&
-  Objects.equals(this.index, objHTTPHdrAction.index);
+  Objects.equals(this.hdrIndex, objHTTPHdrAction.hdrIndex);
     }
 
     @Override
@@ -160,7 +160,7 @@ public class HTTPHdrAction  {
                   sb.append("    action: ").append(toIndentedString(action)).append("\n");
                         sb.append("    cookie: ").append(toIndentedString(cookie)).append("\n");
                         sb.append("    hdr: ").append(toIndentedString(hdr)).append("\n");
-                        sb.append("    index: ").append(toIndentedString(index)).append("\n");
+                        sb.append("    hdrIndex: ").append(toIndentedString(hdrIndex)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

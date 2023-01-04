@@ -4,6 +4,8 @@
  */
 package com.vmware.avi.sdk;
 
+import javax.net.ssl.SSLContext;
+
 /**
  * This is a POJO class contains all parameters for AVI controller credentials.
  * 
@@ -69,12 +71,14 @@ public class AviCredentials
      *            For check SSL is want.
      * @param retryConxnErrors
      *            Retry connection timeout.
+     * @param numApiRetries
+     *            API retry count.
      * @param connectionTimeout
      *            Connection timeout for socket
      */
     public AviCredentials(String controller, String username, String password, String tenant, String version,
             String tenantUuid, Integer port, Integer timeout, String sessionID, String csrftoken,
-            String token, Boolean verify, Boolean retryConxnErrors, Integer connectionTimeout)
+            String token, Boolean verify, Boolean retryConxnErrors, Integer numApiRetries, Integer connectionTimeout)
     {
         this.controller = controller;
         this.username = username;
@@ -89,7 +93,54 @@ public class AviCredentials
         this.token = token;
         this.verify = verify;
         this.retryConxnErrors = retryConxnErrors;
+        this.numApiRetries = numApiRetries;
         this.connectionTimeout = connectionTimeout;
+    }
+
+    /**
+     * Constructor to instantiate class with all parameters
+     * include unauthenticated APIs parameters
+     *
+     * @param controller
+     *            Controller IP.
+     * @param username
+     *            Username of controller.
+     * @param password
+     *            Password of controller.
+     * @param tenant
+     *            Tenant name from controller.
+     * @param version
+     *            Version of AVI controller.
+     * @param tenantUuid
+     *            Tenant ID.
+     * @param port
+     *            Port for creating new object.
+     * @param timeout
+     *            Timeout for AVI Session.
+     * @param sessionID
+     *            The session ID.
+     * @param csrftoken
+     *            Csrftoken.
+     * @param token
+     *            Token for REST call if have.
+     * @param verify
+     *            For check SSL is want.
+     * @param retryConxnErrors
+     *            Retry connection timeout.
+     * @param numApiRetries
+     *            API retry count.
+     * @param connectionTimeout
+     *            Connection timeout for socket
+     * @param isUnauthenticatedApi
+     *            For check unauthenticated API is want.
+     */
+    public AviCredentials(String controller, String username, String password, String tenant, String version,
+            String tenantUuid, Integer port, Integer timeout, String sessionID, String csrftoken,
+            String token, Boolean verify, Boolean retryConxnErrors, Integer numApiRetries, Integer connectionTimeout, Boolean isUnAuthenticatedApi)
+    {
+        this(controller, username, password, tenant, version, tenantUuid, port, timeout, sessionID, csrftoken, token,
+				verify, retryConxnErrors, numApiRetries, connectionTimeout);
+		this.isUnAuthenticatedApi = isUnAuthenticatedApi;
     }
 
     private String controller;
@@ -105,10 +156,12 @@ public class AviCredentials
     private String token;
     private Boolean verify = false;// for SSL and HTTPS
     private Boolean retryConxnErrors;
-    private Integer numApiRetries = 3;
+    private Integer numApiRetries = 3; // 3 retries default
     private Integer retryWaitTime = 5;
     private Boolean lazyAuthentication = false;
     private Integer connectionTimeout = 60; // 1 min default
+    private Boolean isUnAuthenticatedApi = false;// for unauthenticated apis
+    private SSLContext sslContext; // for sslContext
 
     /**
      * Gets the controller's IP.
@@ -463,6 +516,42 @@ public class AviCredentials
         this.connectionTimeout = connectionTimeout;
     }
 
+    /**
+     * Gets unauthenticate api.
+	 *
+	 * @return A Boolean representing unauthenticate apis.
+	 */
+	public Boolean getIsUnAuthenticatedApi() {
+		return isUnAuthenticatedApi;
+	}
+
+	/**
+	 * Sets the unauthenticate apis
+	 *
+	 * @param isUnauthenticatedApi A Boolean containing unauthenticate api or not.
+	 */
+	public void setIsUnAuthenticatedApi(Boolean isUnAuthenticatedApi) {
+		this.isUnAuthenticatedApi = isUnAuthenticatedApi;
+	}
+
+    /**
+	 * Gets the setSslContext
+	 *
+	 * @return sslcontext  representing SSLContext.
+	 */
+    public SSLContext getSslContext() {
+        return sslContext;
+    }
+
+    /**
+	 * Sets the setSslContext
+	 *
+	 * @param sslcontext  containing SSLContext.
+	 */
+    public void setSslContext(SSLContext sslContext) {
+        this.sslContext = sslContext;
+    }
+
 	@Override
 	public String toString() {
 		return "AviCredentials [controller=" + controller + ", username=" + username + ", password=" + password
@@ -470,6 +559,7 @@ public class AviCredentials
 				+ ", timeout=" + timeout + ", connectionTimeout=" + connectionTimeout + ", sessionID=" + sessionID
                 + ", csrftoken=" + csrftoken + ", token=" + token + ", verify=" + verify
                 + ", retryConxnErrors=" + retryConxnErrors + ", numApiRetries=" + numApiRetries
-				+ ", retryWaitTime=" + retryWaitTime + ", lazyAuthentication=" + lazyAuthentication + "]";
+				+ ", retryWaitTime=" + retryWaitTime + ", lazyAuthentication=" + lazyAuthentication
+                + ", isUnauthenticatedApi=" + isUnAuthenticatedApi + ", sslContext=" + sslContext + "]";
 	}
 }

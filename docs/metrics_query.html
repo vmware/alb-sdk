@@ -561,6 +561,14 @@ Virtualservice, Pool and Backend Network (Layer 4) Metrics
 <td> False </td>
 </tr>
 <tr>
+<td> l4_server.max_connection_estb_time_be </td>
+<td> Maximum connection establishment time on the server side. </td>
+<td> MILLISECONDS </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> False </td>
+</tr>
+<tr>
 <td> l4_server.max_open_conns </td>
 <td> Max number of open connections </td>
 <td> METRIC_COUNT </td>
@@ -622,6 +630,14 @@ Virtualservice, Pool and Backend Network (Layer 4) Metrics
 <td> MILLISECONDS </td>
 <td> False </td>
 <td>  </td>
+<td> False </td>
+</tr>
+<tr>
+<td> l4_server.sum_conn_est_time_exceeded_flows_be </td>
+<td> Total number of times server side connection establishment time was breached. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
 <td> False </td>
 </tr>
 <tr>
@@ -1141,7 +1157,7 @@ Virtualservice frontend Network (Layer 4) Metrics
 <td> Average rate of SYN DDoS attacks on Virtual Service. </td>
 <td> PER_SECOND </td>
 <td> True </td>
-<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS </td>
 <td> False </td>
 </tr>
 <tr>
@@ -1273,6 +1289,14 @@ Virtualservice frontend Network (Layer 4) Metrics
 <td> True </td>
 </tr>
 <tr>
+<td> l4_client.max_connection_estb_time_fe </td>
+<td> Maximum connection establishment time on the client side. </td>
+<td> MILLISECONDS </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> False </td>
+</tr>
+<tr>
 <td> l4_client.max_num_active_se </td>
 <td> Max number of SEs. </td>
 <td> METRIC_COUNT </td>
@@ -1393,6 +1417,14 @@ Virtualservice frontend Network (Layer 4) Metrics
 <td> False </td>
 </tr>
 <tr>
+<td> l4_client.sum_conn_est_time_exceeded_flows_fe </td>
+<td> Total number of times client side connection establishment time was breached. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> False </td>
+</tr>
+<tr>
 <td> l4_client.sum_connection_dropped_user_limit </td>
 <td> Total number of connection dropped due to vserver connection limit </td>
 <td> METRIC_COUNT </td>
@@ -1455,6 +1487,14 @@ Virtualservice frontend Network (Layer 4) Metrics
 <td> False </td>
 <td>  </td>
 <td> True </td>
+</tr>
+<tr>
+<td> l4_client.sum_ingress_latency_exceeded_flows </td>
+<td> Total number of times 'latency_threshold' was breached during ingress. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> False </td>
 </tr>
 <tr>
 <td> l4_client.sum_lossy_connections </td>
@@ -3857,6 +3897,22 @@ ServiceEngine Metrics
 <td> True </td>
 </tr>
 <tr>
+<td> se_stats.avg_egress_latency </td>
+<td> Average egress queueing latency. </td>
+<td> MILLISECONDS </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> False </td>
+</tr>
+<tr>
+<td> se_stats.avg_ingress_latency </td>
+<td> Average ingress queueing latency. </td>
+<td> MILLISECONDS </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> False </td>
+</tr>
+<tr>
 <td> se_stats.avg_mem_usage </td>
 <td> Memory usage as percentage of total configured or available memory </td>
 <td> PERCENT </td>
@@ -3959,6 +4015,22 @@ ServiceEngine Metrics
 <td> True </td>
 <td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
 <td> True </td>
+</tr>
+<tr>
+<td> se_stats.avg_worst_egress_latency </td>
+<td> Average of the worst case egress queueing latency. </td>
+<td> MILLISECONDS </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> False </td>
+</tr>
+<tr>
+<td> se_stats.avg_worst_ingress_latency </td>
+<td> Average of the worst case ingress queueing latency. </td>
+<td> MILLISECONDS </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> False </td>
 </tr>
 <tr>
 <td> se_stats.max_connection_mem_total </td>
@@ -4199,6 +4271,22 @@ ServiceEngine Metrics
 <td> True </td>
 <td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
 <td> True </td>
+</tr>
+<tr>
+<td> se_stats.sum_num_egress_latency_exceeded_pkts </td>
+<td> Total number of times 'egress_threshold' was breached during egress. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> False </td>
+</tr>
+<tr>
+<td> se_stats.sum_num_ingress_latency_exceeded_pkts </td>
+<td> Total number of times 'ingress_threshold' was breached during ingress. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> False </td>
 </tr>
 <tr>
 <td> se_stats.sum_packet_buffer_allocation_failure </td>

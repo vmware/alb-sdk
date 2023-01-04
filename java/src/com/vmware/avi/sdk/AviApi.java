@@ -17,6 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.UUID;
 import java.util.logging.Logger;
 
 import org.apache.http.HttpResponse;
@@ -26,7 +27,9 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.HttpMultipartMode;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
@@ -54,6 +57,11 @@ public class AviApi {
 	 * Sets the logger for get all logs.
 	 */
 	static final Logger LOGGER = Logger.getLogger(AviApi.class.getName());
+
+	/**
+	 * Sets the properties file name
+	 */
+    private static final String PROPERTIES_FILE = "config.properties";
 
 	/**
 	 * Constructor for AviApi Class.
@@ -277,7 +285,8 @@ public class AviApi {
 	 */
 	private boolean hasMatchingSubstring(String path) throws AviApiException {
 		try {
-			InputStream inputStream = new FileInputStream("resources/config.properties");
+			ClassLoader loader = Thread.currentThread().getContextClassLoader();
+			InputStream inputStream = loader.getResourceAsStream(PROPERTIES_FILE);
 			Properties properties = new Properties();
 			properties.load(inputStream);
 			String putObjectsNotAllowed = properties.getProperty("api.put.not.allowed");
@@ -329,7 +338,10 @@ public class AviApi {
 			ResponseEntity<String> response = (ResponseEntity<String>) restTemplate.exchange(putUrl, HttpMethod.PUT,
 					requestEntity, String.class);
 
-			JSONObject jsonObject = new JSONObject(response.getBody());
+			JSONObject jsonObject = null;
+			if (response.getBody() != null) {
+				jsonObject = new JSONObject(response.getBody());
+			}
 			LOGGER.info("__DONE__Executing PUT is completed..");
 			return jsonObject;
 
@@ -482,17 +494,21 @@ public class AviApi {
 			httpClient = AviRestUtils.buildHttpClient(this.aviCredentials);
 			LOGGER.info("Inside upload file :: Path is :" + uri);
 			String postUrl = AviRestUtils.getControllerURL(this.aviCredentials) + "/api/" + uri;
+			String boundary = "---------------"+UUID.randomUUID().toString();
+
 			HttpPost request = new HttpPost(postUrl);
 			AviRestUtils.buildHeaders(request, null, this.aviCredentials);
-			request.removeHeaders("Content-Type");
-			MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-			builder.addTextBody("uri", fileUploadUri, ContentType.TEXT_PLAIN);
+			request.setHeader("Content-Type", ContentType.MULTIPART_FORM_DATA.getMimeType()+";boundary="+ boundary);
 
 			// This attaches the file to the POST:
 			File f = new File(filePath);
-			builder.addBinaryBody("file", new FileInputStream(f), ContentType.APPLICATION_OCTET_STREAM, f.getName());
-			HttpEntity multipart = (HttpEntity) builder.build();
-			request.setEntity((org.apache.http.HttpEntity) multipart);
+			FileBody fileBody = new FileBody(f, ContentType.MULTIPART_FORM_DATA);
+			MultipartEntityBuilder entityBuilder = MultipartEntityBuilder.create().setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
+			entityBuilder.addPart("file", fileBody);
+			entityBuilder.setBoundary(boundary);
+			org.apache.http.HttpEntity entity = entityBuilder.build();
+
+			request.setEntity(entity);
 			CloseableHttpResponse response = httpClient.execute(request);
 			int responseCode = response.getStatusLine().getStatusCode();
 			if (responseCode > 299) {

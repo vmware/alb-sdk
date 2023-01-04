@@ -187,7 +187,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - configure wafpolicy <key> - show wafpolicy <key> - updatecrsrules virtualservice <key> ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 22.1.1</div>
+    <div class="app-desc">Version: 23.1.1</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -208,7 +208,7 @@ font-style: italic;
   <li><a href="#wafpolicyUuidGet"><code><span class="http-method">get</span> /wafpolicy/{uuid}</code></a></li>
   <li><a href="#wafpolicyUuidPatch"><code><span class="http-method">patch</span> /wafpolicy/{uuid}</code></a></li>
   <li><a href="#wafpolicyUuidPut"><code><span class="http-method">put</span> /wafpolicy/{uuid}</code></a></li>
-  <li><a href="#wafpolicyUuidUpdatecrsrulesPut"><code><span class="http-method">put</span> /wafpolicy/{uuid}/updatecrsrules</code></a></li>
+  <li><a href="#wafpolicyUuidUpdateCrsRulesPut"><code><span class="http-method">put</span> /wafpolicy/{uuid}/update-crs-rules</code></a></li>
   </ol>
 
   <div class="method"><a name="wafpolicyGet"/>
@@ -262,6 +262,7 @@ font-style: italic;
   "count" : 123,
   "results" : [ {
     "description" : "aeiou",
+    "updated_crs_rules_in_detection_mode" : true,
     "allow_mode_delegation" : true,
     "uuid" : "aeiou",
     "bypass_static_extensions" : true,
@@ -293,6 +294,7 @@ font-style: italic;
           "query" : {
             "match_criteria" : "aeiou",
             "string_group_refs" : [ "aeiou" ],
+            "match_decoded_string" : true,
             "match_str" : [ "aeiou" ],
             "match_case" : "aeiou"
           },
@@ -310,10 +312,16 @@ font-style: italic;
             "match_criteria" : "aeiou",
             "versions" : [ "aeiou" ]
           },
+          "tls_fingerprint_match" : {
+            "match_operation" : "aeiou",
+            "string_group_refs" : [ "aeiou" ],
+            "fingerprints" : [ "aeiou" ]
+          },
           "source_ip" : "",
           "path" : {
             "match_criteria" : "aeiou",
             "string_group_refs" : [ "aeiou" ],
+            "match_decoded_string" : true,
             "match_str" : [ "aeiou" ],
             "match_case" : "aeiou"
           },
@@ -379,6 +387,11 @@ font-style: italic;
       "exclude_list" : [ "" ]
     } ],
     "min_confidence" : "aeiou",
+    "required_data_files" : [ {
+      "name" : "aeiou",
+      "type" : "aeiou"
+    } ],
+    "auto_update_crs" : true,
     "crs_overrides" : [ {
       "mode" : "aeiou",
       "enable" : true,
@@ -415,6 +428,7 @@ font-style: italic;
           },
           "description" : "aeiou"
         } ],
+        "paranoia_level" : "aeiou",
         "tags" : [ "aeiou" ]
       } ],
       "ruleset_version" : "aeiou",
@@ -499,6 +513,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "description" : "aeiou",
+  "updated_crs_rules_in_detection_mode" : true,
   "allow_mode_delegation" : true,
   "uuid" : "aeiou",
   "bypass_static_extensions" : true,
@@ -530,6 +545,7 @@ font-style: italic;
         "query" : {
           "match_criteria" : "aeiou",
           "string_group_refs" : [ "aeiou" ],
+          "match_decoded_string" : true,
           "match_str" : [ "aeiou" ],
           "match_case" : "aeiou"
         },
@@ -547,10 +563,16 @@ font-style: italic;
           "match_criteria" : "aeiou",
           "versions" : [ "aeiou" ]
         },
+        "tls_fingerprint_match" : {
+          "match_operation" : "aeiou",
+          "string_group_refs" : [ "aeiou" ],
+          "fingerprints" : [ "aeiou" ]
+        },
         "source_ip" : "",
         "path" : {
           "match_criteria" : "aeiou",
           "string_group_refs" : [ "aeiou" ],
+          "match_decoded_string" : true,
           "match_str" : [ "aeiou" ],
           "match_case" : "aeiou"
         },
@@ -616,6 +638,11 @@ font-style: italic;
     "exclude_list" : [ "" ]
   } ],
   "min_confidence" : "aeiou",
+  "required_data_files" : [ {
+    "name" : "aeiou",
+    "type" : "aeiou"
+  } ],
+  "auto_update_crs" : true,
   "crs_overrides" : [ {
     "mode" : "aeiou",
     "enable" : true,
@@ -652,6 +679,7 @@ font-style: italic;
         },
         "description" : "aeiou"
       } ],
+      "paranoia_level" : "aeiou",
       "tags" : [ "aeiou" ]
     } ],
     "ruleset_version" : "aeiou",
@@ -807,6 +835,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "description" : "aeiou",
+  "updated_crs_rules_in_detection_mode" : true,
   "allow_mode_delegation" : true,
   "uuid" : "aeiou",
   "bypass_static_extensions" : true,
@@ -838,6 +867,7 @@ font-style: italic;
         "query" : {
           "match_criteria" : "aeiou",
           "string_group_refs" : [ "aeiou" ],
+          "match_decoded_string" : true,
           "match_str" : [ "aeiou" ],
           "match_case" : "aeiou"
         },
@@ -855,10 +885,16 @@ font-style: italic;
           "match_criteria" : "aeiou",
           "versions" : [ "aeiou" ]
         },
+        "tls_fingerprint_match" : {
+          "match_operation" : "aeiou",
+          "string_group_refs" : [ "aeiou" ],
+          "fingerprints" : [ "aeiou" ]
+        },
         "source_ip" : "",
         "path" : {
           "match_criteria" : "aeiou",
           "string_group_refs" : [ "aeiou" ],
+          "match_decoded_string" : true,
           "match_str" : [ "aeiou" ],
           "match_case" : "aeiou"
         },
@@ -924,6 +960,11 @@ font-style: italic;
     "exclude_list" : [ "" ]
   } ],
   "min_confidence" : "aeiou",
+  "required_data_files" : [ {
+    "name" : "aeiou",
+    "type" : "aeiou"
+  } ],
+  "auto_update_crs" : true,
   "crs_overrides" : [ {
     "mode" : "aeiou",
     "enable" : true,
@@ -960,6 +1001,7 @@ font-style: italic;
         },
         "description" : "aeiou"
       } ],
+      "paranoia_level" : "aeiou",
       "tags" : [ "aeiou" ]
     } ],
     "ruleset_version" : "aeiou",
@@ -1055,6 +1097,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "description" : "aeiou",
+  "updated_crs_rules_in_detection_mode" : true,
   "allow_mode_delegation" : true,
   "uuid" : "aeiou",
   "bypass_static_extensions" : true,
@@ -1086,6 +1129,7 @@ font-style: italic;
         "query" : {
           "match_criteria" : "aeiou",
           "string_group_refs" : [ "aeiou" ],
+          "match_decoded_string" : true,
           "match_str" : [ "aeiou" ],
           "match_case" : "aeiou"
         },
@@ -1103,10 +1147,16 @@ font-style: italic;
           "match_criteria" : "aeiou",
           "versions" : [ "aeiou" ]
         },
+        "tls_fingerprint_match" : {
+          "match_operation" : "aeiou",
+          "string_group_refs" : [ "aeiou" ],
+          "fingerprints" : [ "aeiou" ]
+        },
         "source_ip" : "",
         "path" : {
           "match_criteria" : "aeiou",
           "string_group_refs" : [ "aeiou" ],
+          "match_decoded_string" : true,
           "match_str" : [ "aeiou" ],
           "match_case" : "aeiou"
         },
@@ -1172,6 +1222,11 @@ font-style: italic;
     "exclude_list" : [ "" ]
   } ],
   "min_confidence" : "aeiou",
+  "required_data_files" : [ {
+    "name" : "aeiou",
+    "type" : "aeiou"
+  } ],
+  "auto_update_crs" : true,
   "crs_overrides" : [ {
     "mode" : "aeiou",
     "enable" : true,
@@ -1208,6 +1263,7 @@ font-style: italic;
         },
         "description" : "aeiou"
       } ],
+      "paranoia_level" : "aeiou",
       "tags" : [ "aeiou" ]
     } ],
     "ruleset_version" : "aeiou",
@@ -1303,6 +1359,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "description" : "aeiou",
+  "updated_crs_rules_in_detection_mode" : true,
   "allow_mode_delegation" : true,
   "uuid" : "aeiou",
   "bypass_static_extensions" : true,
@@ -1334,6 +1391,7 @@ font-style: italic;
         "query" : {
           "match_criteria" : "aeiou",
           "string_group_refs" : [ "aeiou" ],
+          "match_decoded_string" : true,
           "match_str" : [ "aeiou" ],
           "match_case" : "aeiou"
         },
@@ -1351,10 +1409,16 @@ font-style: italic;
           "match_criteria" : "aeiou",
           "versions" : [ "aeiou" ]
         },
+        "tls_fingerprint_match" : {
+          "match_operation" : "aeiou",
+          "string_group_refs" : [ "aeiou" ],
+          "fingerprints" : [ "aeiou" ]
+        },
         "source_ip" : "",
         "path" : {
           "match_criteria" : "aeiou",
           "string_group_refs" : [ "aeiou" ],
+          "match_decoded_string" : true,
           "match_str" : [ "aeiou" ],
           "match_case" : "aeiou"
         },
@@ -1420,6 +1484,11 @@ font-style: italic;
     "exclude_list" : [ "" ]
   } ],
   "min_confidence" : "aeiou",
+  "required_data_files" : [ {
+    "name" : "aeiou",
+    "type" : "aeiou"
+  } ],
+  "auto_update_crs" : true,
   "crs_overrides" : [ {
     "mode" : "aeiou",
     "enable" : true,
@@ -1456,6 +1525,7 @@ font-style: italic;
         },
         "description" : "aeiou"
       } ],
+      "paranoia_level" : "aeiou",
       "tags" : [ "aeiou" ]
     } ],
     "ruleset_version" : "aeiou",
@@ -1503,11 +1573,11 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="wafpolicyUuidUpdatecrsrulesPut"/>
+  <div class="method"><a name="wafpolicyUuidUpdateCrsRulesPut"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /wafpolicy/{uuid}/updatecrsrules</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">wafpolicyUuidUpdatecrsrulesPut</span>)</div>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /wafpolicy/{uuid}/update-crs-rules</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">wafpolicyUuidUpdateCrsRulesPut</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -1591,6 +1661,7 @@ font-style: italic;
     <li><a href="#ProtocolMatch"><code>ProtocolMatch</code></a></li>
     <li><a href="#QueryMatch"><code>QueryMatch</code></a></li>
     <li><a href="#RoleFilterMatchLabel"><code>RoleFilterMatchLabel</code></a></li>
+    <li><a href="#TlsFingerprintMatch"><code>TlsFingerprintMatch</code></a></li>
     <li><a href="#WafApplicationSignatures"><code>WafApplicationSignatures</code></a></li>
     <li><a href="#WafExcludeListEntry"><code>WafExcludeListEntry</code></a></li>
     <li><a href="#WafExclusionType"><code>WafExclusionType</code></a></li>
@@ -1599,6 +1670,7 @@ font-style: italic;
     <li><a href="#WafPolicyAllowlistRule"><code>WafPolicyAllowlistRule</code></a></li>
     <li><a href="#WafPolicyApiResponse"><code>WafPolicyApiResponse</code></a></li>
     <li><a href="#WafPolicyCRSUpdate"><code>WafPolicyCRSUpdate</code></a></li>
+    <li><a href="#WafPolicyRequiredDataFile"><code>WafPolicyRequiredDataFile</code></a></li>
     <li><a href="#WafPositiveSecurityModel"><code>WafPositiveSecurityModel</code></a></li>
     <li><a href="#WafRule"><code>WafRule</code></a></li>
     <li><a href="#WafRuleGroup"><code>WafRuleGroup</code></a></li>
@@ -1749,6 +1821,7 @@ font-style: italic;
 <div class="param">protocol (optional)</div><div class="param-desc"><span class="param-type"><a href="#ProtocolMatch">ProtocolMatch</a></span> Configure the type of HTTP protocol. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">query (optional)</div><div class="param-desc"><span class="param-type"><a href="#QueryMatch">QueryMatch</a></span> Configure request query. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">source_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrMatch">IpAddrMatch</a></span> Configure source ip addresses. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">tls_fingerprint_match (optional)</div><div class="param-desc"><span class="param-type"><a href="#TlsFingerprintMatch">TlsFingerprintMatch</a></span> Configure the TLS fingerprint. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#HTTPVersionMatch">HTTPVersionMatch</a></span> Configure versions of the HTTP protocol. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">vs_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#PortMatch">PortMatch</a></span> Configure virtual service ports. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
@@ -1765,6 +1838,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">match_case (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Case sensitivity to use for the matching. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for matching the path in the HTTP request URI. Enum options - BEGINS_WITH, DOES_NOT_BEGIN_WITH, CONTAINS, DOES_NOT_CONTAIN, ENDS_WITH, DOES_NOT_END_WITH, EQUALS, DOES_NOT_EQUAL, REGEX_MATCH, REGEX_DOES_NOT_MATCH. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL), Basic edition(Allowed values- BEGINS_WITH,DOES_NOT_BEGIN_WITH,CONTAINS,DOES_NOT_CONTAIN,ENDS_WITH,DOES_NOT_END_WITH,EQUALS,DOES_NOT_EQUAL), Enterprise with Cloud Services edition. </div>
+<div class="param">match_decoded_string (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Match against the decoded URI path. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">match_str (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> String values. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">string_group_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> UUID of the string group(s). It is a reference to an object of type StringGroup. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
@@ -1787,7 +1861,8 @@ font-style: italic;
     <h3 class="field-label"><a name="QueryMatch">QueryMatch</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">match_case (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Case sensitivity to use for the match. Enum options - SENSITIVE, INSENSITIVE. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for matching the query in HTTP request URI. Enum options - QUERY_MATCH_CONTAINS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">match_criteria </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Criterion to use for matching the query in HTTP request URI. Enum options - QUERY_MATCH_CONTAINS, QUERY_MATCH_DOES_NOT_CONTAIN, QUERY_MATCH_EXISTS, QUERY_MATCH_DOES_NOT_EXIST, QUERY_MATCH_BEGINS_WITH, QUERY_MATCH_DOES_NOT_BEGIN_WITH, QUERY_MATCH_ENDS_WITH, QUERY_MATCH_DOES_NOT_END_WITH, QUERY_MATCH_EQUALS, QUERY_MATCH_DOES_NOT_EQUAL, QUERY_MATCH_REGEX_MATCH, QUERY_MATCH_REGEX_DOES_NOT_MATCH. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">match_decoded_string (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Match against the decoded URI query. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">match_str (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> String value(s). Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">string_group_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> UUID of the string group(s). It is a reference to an object of type StringGroup. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
@@ -1797,6 +1872,14 @@ font-style: italic;
     <div class="field-items">
       <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">values (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Values for filter match. Multiple values will be evaluated as OR. Example  key &#x3D; value1 OR key &#x3D; value2. Behavior for match is key &#x3D; * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="TlsFingerprintMatch">TlsFingerprintMatch</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">fingerprints (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> The list of fingerprints. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">match_operation </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">string_group_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> UUIDs of the string groups. It is a reference to an object of type StringGroup. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1834,6 +1917,7 @@ font-style: italic;
 <div class="param">allow_mode_delegation (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Allow Rules to overwrite the policy mode. This must be set if the policy mode is set to enforcement. Field introduced in 18.1.5, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">allowlist (optional)</div><div class="param-desc"><span class="param-type"><a href="#WafPolicyAllowlist">WafPolicyAllowlist</a></span> A set of rules which describe conditions under which the request will bypass the WAF. This will be processed in the request header phase before any other WAF related code. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">application_signatures (optional)</div><div class="param-desc"><span class="param-type"><a href="#WafApplicationSignatures">WafApplicationSignatures</a></span> Application Specific Signatures. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">auto_update_crs (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If this flag is set, the system will try to keep the CRS version used in this policy up-to-date. If a newer CRS object is available on this controller, the system will issue the CRS upgrade process for this WAF Policy. It will not update polices if the current CRS version is CRS-VERSION-NOT-APPLICABLE. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">bypass_static_extensions (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable the functionality to bypass WAF for static file extensions. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">confidence_override (optional)</div><div class="param-desc"><span class="param-type"><a href="#AppLearningConfidenceOverride">AppLearningConfidenceOverride</a></span> Configure thresholds for confidence labels. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
@@ -1854,7 +1938,9 @@ font-style: italic;
 <div class="param">positive_security_model (optional)</div><div class="param-desc"><span class="param-type"><a href="#WafPositiveSecurityModel">WafPositiveSecurityModel</a></span> The Positive Security Model. This is used to describe how the request or parts of the request should look like. It is executed in the Request Body Phase of Avi WAF. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">post_crs_groups (optional)</div><div class="param-desc"><span class="param-type"><a href="#WafRuleGroup">array[WafRuleGroup]</a></span> WAF Rules are categorized in to groups based on their characterization. These groups are created by the user and will be enforced after the CRS groups. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">pre_crs_groups (optional)</div><div class="param-desc"><span class="param-type"><a href="#WafRuleGroup">array[WafRuleGroup]</a></span> WAF Rules are categorized in to groups based on their characterization. These groups are created by the user and will be  enforced before the CRS groups. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">required_data_files (optional)</div><div class="param-desc"><span class="param-type"><a href="#WafPolicyRequiredDataFile">array[WafPolicyRequiredDataFile]</a></span> The data files and types referred in this WAF policy. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">updated_crs_rules_in_detection_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> While updating CRS, the system will make sure that new rules are added in DETECTION mode. It only has an effect if the Policy is in ENFORCEMENT mode. In this case, the update will set new rules into DETECTION mode by adding crs_overrides for the new rules. If this flag is not set or if the policy mode is DETECTION, rules will be added without new crs_overrides. This option is used for the auto_update_crs workflow as well as for the UI based CRS update workflow. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
 <div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">waf_crs_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> WAF core ruleset used for the CRS part of this Policy. It is a reference to an object of type WafCRS. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -1895,6 +1981,13 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3 class="field-label"><a name="WafPolicyRequiredDataFile">WafPolicyRequiredDataFile</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the data file. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of the data file. Enum options - WAF_DATAFILE_PM_FROM_FILE, WAF_DATAFILE_DTD, WAF_DATAFILE_XSD, WAF_DATAFILE_IP_MATCH_FROM_FILE. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="WafPositiveSecurityModel">WafPositiveSecurityModel</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">group_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> These groups should be used to separate different levels of concern. The order of the groups matters, one group may mark parts of the request as valid, so that subsequent groups will not check these parts. It is a reference to an object of type WafPolicyPSMGroup. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -1909,6 +2002,7 @@ font-style: italic;
 <div class="param">is_sensitive (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> The rule field is sensitive and will not be displayed. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> WAF Rule mode. This can be detection or enforcement. If this is not set, the Policy mode is used. This only takes effect if the policy allows delegation. Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT. Field introduced in 18.1.5, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> User-friendly optional name for a rule. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">paranoia_level (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> WAF rule paranoia level. This field is informative, like rule_id and tags, it is generated by the system from the rule text. This field is filled for CRS rules. Enum options - WAF_PARANOIA_LEVEL_LOW, WAF_PARANOIA_LEVEL_MEDIUM, WAF_PARANOIA_LEVEL_HIGH, WAF_PARANOIA_LEVEL_EXTREME. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">phase (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The execution phase where this rule will be executed. Enum options - WAF_PHASE_CONNECTION, WAF_PHASE_REQUEST_HEADER, WAF_PHASE_REQUEST_BODY, WAF_PHASE_RESPONSE_HEADER, WAF_PHASE_RESPONSE_BODY, WAF_PHASE_LOGGING. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">rule </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Rule as per Modsec language. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">rule_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Identifier (id) for a rule per Modsec language. All SecRule and SecAction directives require an id. It is extracted from the id action in a Modsec rule. Rules within a single WAF Policy are required to have unique rule_ids. Field introduced in 17.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>

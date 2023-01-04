@@ -187,7 +187,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - configure pool <key> - show pool <key> - scaleout pool <key> - scalein pool <key> - clear pool <key> ```  Examples - **pool_example**: To create a basic pool object that uses the least connections algorithm and has a couple of application servers in the backend   ```json     {'name': 'production_pool', 'default_server_port': 80, 'servers': [{'ip': {'addr': '10.10.90.120', 'type': 'V4'}}, {'ip': {'addr': '10.10.90.121', 'type': 'V4'}}], 'lb_algorithm': 'LB_ALGORITHM_LEAST_CONNECTIONS'}   ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 22.1.1</div>
+    <div class="app-desc">Version: 23.1.1</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -369,6 +369,7 @@ font-style: italic;
     "application_persistence_profile_ref" : "aeiou",
     "lb_algorithm_core_nonaffinity" : 123,
     "autoscale_launch_config_ref" : "aeiou",
+    "lb_algo_rr_per_se" : true,
     "routing_pool" : true,
     "placement_networks" : [ {
       "subnet" : {
@@ -525,6 +526,10 @@ font-style: italic;
     "url" : "aeiou",
     "nsx_securitygroup" : [ "aeiou" ],
     "pki_profile_ref" : "aeiou",
+    "sp_gs_info" : {
+      "gs_ref" : "aeiou",
+      "fqdns" : [ "aeiou" ]
+    },
     "connection_ramp_duration" : 123,
     "tenant_ref" : "aeiou",
     "conn_pool_properties" : {
@@ -621,6 +626,7 @@ font-style: italic;
   "application_persistence_profile_ref" : "aeiou",
   "lb_algorithm_core_nonaffinity" : 123,
   "autoscale_launch_config_ref" : "aeiou",
+  "lb_algo_rr_per_se" : true,
   "routing_pool" : true,
   "placement_networks" : [ {
     "subnet" : {
@@ -777,6 +783,10 @@ font-style: italic;
   "url" : "aeiou",
   "nsx_securitygroup" : [ "aeiou" ],
   "pki_profile_ref" : "aeiou",
+  "sp_gs_info" : {
+    "gs_ref" : "aeiou",
+    "fqdns" : [ "aeiou" ]
+  },
   "connection_ramp_duration" : 123,
   "tenant_ref" : "aeiou",
   "conn_pool_properties" : {
@@ -1106,6 +1116,7 @@ font-style: italic;
   "application_persistence_profile_ref" : "aeiou",
   "lb_algorithm_core_nonaffinity" : 123,
   "autoscale_launch_config_ref" : "aeiou",
+  "lb_algo_rr_per_se" : true,
   "routing_pool" : true,
   "placement_networks" : [ {
     "subnet" : {
@@ -1262,6 +1273,10 @@ font-style: italic;
   "url" : "aeiou",
   "nsx_securitygroup" : [ "aeiou" ],
   "pki_profile_ref" : "aeiou",
+  "sp_gs_info" : {
+    "gs_ref" : "aeiou",
+    "fqdns" : [ "aeiou" ]
+  },
   "connection_ramp_duration" : 123,
   "tenant_ref" : "aeiou",
   "conn_pool_properties" : {
@@ -1629,6 +1644,7 @@ font-style: italic;
   "application_persistence_profile_ref" : "aeiou",
   "lb_algorithm_core_nonaffinity" : 123,
   "autoscale_launch_config_ref" : "aeiou",
+  "lb_algo_rr_per_se" : true,
   "routing_pool" : true,
   "placement_networks" : [ {
     "subnet" : {
@@ -1785,6 +1801,10 @@ font-style: italic;
   "url" : "aeiou",
   "nsx_securitygroup" : [ "aeiou" ],
   "pki_profile_ref" : "aeiou",
+  "sp_gs_info" : {
+    "gs_ref" : "aeiou",
+    "fqdns" : [ "aeiou" ]
+  },
   "connection_ramp_duration" : 123,
   "tenant_ref" : "aeiou",
   "conn_pool_properties" : {
@@ -1944,6 +1964,7 @@ font-style: italic;
   "application_persistence_profile_ref" : "aeiou",
   "lb_algorithm_core_nonaffinity" : 123,
   "autoscale_launch_config_ref" : "aeiou",
+  "lb_algo_rr_per_se" : true,
   "routing_pool" : true,
   "placement_networks" : [ {
     "subnet" : {
@@ -2100,6 +2121,10 @@ font-style: italic;
   "url" : "aeiou",
   "nsx_securitygroup" : [ "aeiou" ],
   "pki_profile_ref" : "aeiou",
+  "sp_gs_info" : {
+    "gs_ref" : "aeiou",
+    "fqdns" : [ "aeiou" ]
+  },
   "connection_ramp_duration" : 123,
   "tenant_ref" : "aeiou",
   "conn_pool_properties" : {
@@ -2978,6 +3003,7 @@ font-style: italic;
     <li><a href="#ServerId"><code>ServerId</code></a></li>
     <li><a href="#ServerScaleInParams"><code>ServerScaleInParams</code></a></li>
     <li><a href="#ServerScaleOutParams"><code>ServerScaleOutParams</code></a></li>
+    <li><a href="#SpGslbServiceInfo"><code>SpGslbServiceInfo</code></a></li>
     <li><a href="#URIParam"><code>URIParam</code></a></li>
     <li><a href="#URIParamToken"><code>URIParamToken</code></a></li>
   </ol>
@@ -3216,6 +3242,7 @@ font-style: italic;
 <div class="param">ignore_server_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Ignore the server port in building the load balancing state.Applicable only for consistent hash load balancing algorithm or Disable Port translation (use_service_port) use cases. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">inline_health_monitor (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> The Passive monitor will monitor client to server connections and requests and adjust traffic load to servers based on successful responses.  This may alter the expected behavior of the LB method, such as Round Robin. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ipaddrgroup_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Use list of servers from Ip Address Group. It is a reference to an object of type IpAddrGroup. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">lb_algo_rr_per_se (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Do Round Robin load load balancing at SE level instead of the default per core load balancing. Field introduced in 21.1.5, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">lb_algorithm (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The load balancing algorithm will pick a server within the pool&#39;s list of available servers. Values LB_ALGORITHM_NEAREST_SERVER and LB_ALGORITHM_TOPOLOGY are only allowed for GSLB pool. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- LB_ALGORITHM_LEAST_CONNECTIONS,LB_ALGORITHM_ROUND_ROBIN,LB_ALGORITHM_CONSISTENT_HASH), Basic edition(Allowed values- LB_ALGORITHM_LEAST_CONNECTIONS,LB_ALGORITHM_ROUND_ROBIN,LB_ALGORITHM_CONSISTENT_HASH), Enterprise with Cloud Services edition. </div>
 <div class="param">lb_algorithm_consistent_hash_hdr (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP header name to be used for the hash key. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">lb_algorithm_core_nonaffinity (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Degree of non-affinity for core affinity based server selection. Allowed values are 1-65535. Field introduced in 17.1.3. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 2), Basic edition(Allowed values- 2), Enterprise with Cloud Services edition. format: int32</div>
@@ -3245,6 +3272,7 @@ font-style: italic;
 <div class="param">servers (optional)</div><div class="param-desc"><span class="param-type"><a href="#Server">array[Server]</a></span> The pool directs load balanced traffic to this list of destination servers. The servers can be configured by IP address, name, network or via IP Address Group. Maximum of 5000 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">service_metadata (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Metadata pertaining to the service provided by this Pool. In Openshift/Kubernetes environments, app metadata info is stored. Any user input to this field will be overwritten by Avi Vantage. Field introduced in 17.2.14,18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">sni_enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable TLS SNI for server connections. If disabled, Avi will not send the SNI extension as part of the handshake. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">sp_gs_info (optional)</div><div class="param-desc"><span class="param-type"><a href="#SpGslbServiceInfo">SpGslbServiceInfo</a></span> GSLB service associated with the site persistence pool. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">ssl_key_and_certificate_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Service Engines will present a client SSL certificate to the server. It is a reference to an object of type SSLKeyAndCertificate. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ssl_profile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When enabled, Avi re-encrypts traffic to the backend servers. The specific SSL profile defines which ciphers and SSL versions will be supported. It is a reference to an object of type SSLProfile. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -3253,7 +3281,7 @@ font-style: italic;
 <div class="param">use_service_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Do not translate the client&#39;s destination port when sending the connection to the server. Monitor port needs to be specified for health monitors. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">use_service_ssl_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> This applies only when use_service_port is set to true. If enabled, SSL mode of the connection to the server is decided by the SSL mode on the Virtualservice service port, on which the request was received. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">vrf_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Virtual Routing Context that the pool is bound to. This is used to provide the isolation of the set of networks the pool is attached to. The pool inherits the Virtual Routing Conext of the Virtual Service, and this field is used only internally, and is set by pb-transform. It is a reference to an object of type VrfContext. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">vrf_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Virtual Routing Context that the pool is bound to. This is used to provide the isolation of the set of networks the pool is attached to. The pool inherits the Virtual Routing Context of the Virtual Service, and this field is used only internally, and is set by pb-transform. It is a reference to an object of type VrfContext. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -3322,7 +3350,7 @@ font-style: italic;
 <div class="param">mac_address (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> MAC address of server. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">nw_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> (internal-use) This field is used internally by Avi, not editable by the user. It is a reference to an object of type VIMgrNWRuntime. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Optionally specify the servers port number.  This will override the pool&#39;s default server port attribute. Allowed values are 1-65535. Special values are 0- use backend port in pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">preference_order (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Preference order of this member in the group. The DNS Service chooses the member with the lowest preference that is operationally up. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">preference_order (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Preference order of this member in the group. The DNS Service chooses the member with the lowest preference that is operationally up. Allowed values are 1-128. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">prst_hdr_val (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Header value for custom header persistence. . Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">ratio (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Ratio of selecting eligible servers in the pool. Allowed values are 1-20. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">resolve_server_by_dns (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Auto resolve server&#39;s IP using DNS name. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. </div>
@@ -3357,6 +3385,13 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3 class="field-label"><a name="SpGslbServiceInfo">SpGslbServiceInfo</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">fqdns (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> FQDNs associated with the GSLB service. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">gs_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> GSLB service uuid associated with the site persistence pool. It is a reference to an object of type GslbService. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="URIParam">URIParam</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">tokens (optional)</div><div class="param-desc"><span class="param-type"><a href="#URIParamToken">array[URIParamToken]</a></span> Token config either for the URI components or a constant string. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -3369,7 +3404,7 @@ font-style: italic;
       <div class="param">end_index (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Index of the ending token in the incoming URI. Allowed values are 0-65534. Special values are 65535 - end of string. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">start_index (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Index of the starting token in the incoming URI. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">str_value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Constant string to use as a token. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Token type for constructing the URI. Enum options - URI_TOKEN_TYPE_HOST, URI_TOKEN_TYPE_PATH, URI_TOKEN_TYPE_STRING, URI_TOKEN_TYPE_STRING_GROUP, URI_TOKEN_TYPE_REGEX. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Token type for constructing the URI. Enum options - URI_TOKEN_TYPE_HOST, URI_TOKEN_TYPE_PATH, URI_TOKEN_TYPE_STRING, URI_TOKEN_TYPE_STRING_GROUP, URI_TOKEN_TYPE_REGEX, URI_TOKEN_TYPE_REGEX_QUERY. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   </body>

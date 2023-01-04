@@ -42,6 +42,9 @@ public class ApplicationProfile extends AviRestResource  {
     @JsonProperty("http_profile")
     private HTTPApplicationProfile httpProfile = null;
 
+    @JsonProperty("l4_ssl_profile")
+    private L4SSLApplicationProfile l4SslProfile = null;
+
     @JsonProperty("markers")
     private List<RoleFilterMatchLabel> markers = null;
 
@@ -237,6 +240,30 @@ public class ApplicationProfile extends AviRestResource  {
      */
     public void setHttpProfile(HTTPApplicationProfile httpProfile) {
         this.httpProfile = httpProfile;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Specifies various l4 ssl service related controls for virtual service.
+     * Field introduced in 22.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return l4SslProfile
+     */
+    public L4SSLApplicationProfile getL4SslProfile() {
+        return l4SslProfile;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Specifies various l4 ssl service related controls for virtual service.
+     * Field introduced in 22.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param l4SslProfile set the l4SslProfile.
+     */
+    public void setL4SslProfile(L4SSLApplicationProfile l4SslProfile) {
+        this.l4SslProfile = l4SslProfile;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -536,6 +563,7 @@ public class ApplicationProfile extends AviRestResource  {
   Objects.equals(this.createdBy, objApplicationProfile.createdBy)&&
   Objects.equals(this.preserveDestIpPort, objApplicationProfile.preserveDestIpPort)&&
   Objects.equals(this.markers, objApplicationProfile.markers)&&
+  Objects.equals(this.l4SslProfile, objApplicationProfile.l4SslProfile)&&
   Objects.equals(this.description, objApplicationProfile.description)&&
   Objects.equals(this.tenantRef, objApplicationProfile.tenantRef)&&
   Objects.equals(this.appServiceType, objApplicationProfile.appServiceType);
@@ -552,6 +580,7 @@ public class ApplicationProfile extends AviRestResource  {
                         sb.append("    dnsServiceProfile: ").append(toIndentedString(dnsServiceProfile)).append("\n");
                         sb.append("    dosRlProfile: ").append(toIndentedString(dosRlProfile)).append("\n");
                         sb.append("    httpProfile: ").append(toIndentedString(httpProfile)).append("\n");
+                        sb.append("    l4SslProfile: ").append(toIndentedString(l4SslProfile)).append("\n");
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    preserveClientIp: ").append(toIndentedString(preserveClientIp)).append("\n");

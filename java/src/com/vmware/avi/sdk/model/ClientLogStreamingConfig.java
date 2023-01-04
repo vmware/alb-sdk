@@ -33,6 +33,9 @@ public class ClientLogStreamingConfig  {
     @JsonProperty("log_types_to_send")
     private String logTypesToSend = "LOGS_ALL";
 
+    @JsonProperty("marker_keys")
+    private List<RoleFilterMatchLabel> markerKeys = null;
+
     @JsonProperty("max_logs_per_second")
     private Integer maxLogsPerSecond = 100;
 
@@ -48,8 +51,9 @@ public class ClientLogStreamingConfig  {
      * This is the getter method this will return the attribute value.
      * Ip address or hostnames (fqdns) of destination servers.
      * If an fqdn is provided, this should be resolvable on avi service engines.
-     * Multiple servers are supported by furnishing a comma-separated list of ip addresses or host names, for example, 11.11.11.11,23.12.12.4.
-     * Optionally, a separate port can be specified for each external server in the list, for example, 11.11.11.11 234,12.12.12.12 343.
+     * Multiple servers are supported by furnishing a comma-separated list of ip addresses or host names, for example, 11.11.11.11,23.12.12.4,2001 123
+     * 1.
+     * Optionally, a separate port can be specified for each external server in the list, for example,11.11.11.11 234,12.12.12.12 343,[2001 123  1] 234.
      * Field introduced in 17.1.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -63,8 +67,9 @@ public class ClientLogStreamingConfig  {
      * This is the setter method to the attribute.
      * Ip address or hostnames (fqdns) of destination servers.
      * If an fqdn is provided, this should be resolvable on avi service engines.
-     * Multiple servers are supported by furnishing a comma-separated list of ip addresses or host names, for example, 11.11.11.11,23.12.12.4.
-     * Optionally, a separate port can be specified for each external server in the list, for example, 11.11.11.11 234,12.12.12.12 343.
+     * Multiple servers are supported by furnishing a comma-separated list of ip addresses or host names, for example, 11.11.11.11,23.12.12.4,2001 123
+     * 1.
+     * Optionally, a separate port can be specified for each external server in the list, for example,11.11.11.11 234,12.12.12.12 343,[2001 123  1] 234.
      * Field introduced in 17.1.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -154,6 +159,51 @@ public class ClientLogStreamingConfig  {
      */
     public void setLogTypesToSend(String  logTypesToSend) {
         this.logTypesToSend = logTypesToSend;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * One or more keys which should exist in virtualservice rbac markers.
+     * Key along with values will be streamed out in log.
+     * If key is not found in rbac markers, it will not be streamed.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markerKeys
+     */
+    public List<RoleFilterMatchLabel> getMarkerKeys() {
+        return markerKeys;
+    }
+
+    /**
+     * This is the setter method. this will set the markerKeys
+     * One or more keys which should exist in virtualservice rbac markers.
+     * Key along with values will be streamed out in log.
+     * If key is not found in rbac markers, it will not be streamed.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markerKeys
+     */
+    public void setMarkerKeys(List<RoleFilterMatchLabel>  markerKeys) {
+        this.markerKeys = markerKeys;
+    }
+
+    /**
+     * This is the setter method this will set the markerKeys
+     * One or more keys which should exist in virtualservice rbac markers.
+     * Key along with values will be streamed out in log.
+     * If key is not found in rbac markers, it will not be streamed.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return markerKeys
+     */
+    public ClientLogStreamingConfig addMarkerKeysItem(RoleFilterMatchLabel markerKeysItem) {
+      if (this.markerKeys == null) {
+        this.markerKeys = new ArrayList<RoleFilterMatchLabel>();
+      }
+      this.markerKeys.add(markerKeysItem);
+      return this;
     }
 
     /**
@@ -252,7 +302,8 @@ public class ClientLogStreamingConfig  {
   Objects.equals(this.logTypesToSend, objClientLogStreamingConfig.logTypesToSend)&&
   Objects.equals(this.maxLogsPerSecond, objClientLogStreamingConfig.maxLogsPerSecond)&&
   Objects.equals(this.syslogConfig, objClientLogStreamingConfig.syslogConfig)&&
-  Objects.equals(this.formatConfig, objClientLogStreamingConfig.formatConfig);
+  Objects.equals(this.formatConfig, objClientLogStreamingConfig.formatConfig)&&
+  Objects.equals(this.markerKeys, objClientLogStreamingConfig.markerKeys);
     }
 
     @Override
@@ -263,6 +314,7 @@ public class ClientLogStreamingConfig  {
                         sb.append("    externalServerPort: ").append(toIndentedString(externalServerPort)).append("\n");
                         sb.append("    formatConfig: ").append(toIndentedString(formatConfig)).append("\n");
                         sb.append("    logTypesToSend: ").append(toIndentedString(logTypesToSend)).append("\n");
+                        sb.append("    markerKeys: ").append(toIndentedString(markerKeys)).append("\n");
                         sb.append("    maxLogsPerSecond: ").append(toIndentedString(maxLogsPerSecond)).append("\n");
                         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
                         sb.append("    syslogConfig: ").append(toIndentedString(syslogConfig)).append("\n");

@@ -125,7 +125,7 @@ class AviAnsibleConverter(AviAnsibleConverterBase):
         with open('%s/avi_config.yml' % self.outdir, "w") as outf:
             outf.write('# Auto-generated from Avi Configuration\n')
             outf.write('---\n')
-            yaml.safe_dump([ad], outf, default_flow_style=False, indent=2)
+            yaml.safe_dump([ad], outf, default_flow_style=False, indent=2, sort_keys=False)
 
         tasks = [task for task in reversed(ad['tasks'])]
         for task in tasks:
@@ -135,13 +135,13 @@ class AviAnsibleConverter(AviAnsibleConverterBase):
                 if v.get('system_default'):
                     tasks.remove(task)
                     continue
-                v['state'] = 'absent'
                 v['api_version'] = self.api_version
         ad['tasks'] = tasks
+        ad['vars']['state'] = 'absent'
         with open('%s/avi_config_delete.yml' % self.outdir, "w") as outf:
             outf.write('# Auto-generated from Avi Configuration\n')
             outf.write('---\n')
-            yaml.safe_dump([ad], outf, default_flow_style=False, indent=2)
+            yaml.safe_dump([ad], outf, default_flow_style=False, indent=2, sort_keys=False)
 
     def write_yaml(self):
         ad = deepcopy(self.ansible_avi_config)

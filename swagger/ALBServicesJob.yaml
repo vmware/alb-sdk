@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '22.1.1'
+    version: '23.1.1'
     title: Avi ALBServicesJob Object API
     contact:
         name: Avi Networks Inc.
@@ -387,7 +387,7 @@ definitions:
                 description: "The time at which the albservicesjob is started. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/TimeStamp'
             status:
-                description: "The status of the albservicesjob. Enum options - UNDETERMINED, PENDING, IN_PROGRESS, COMPLETED, FAILED. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "The status of the albservicesjob. Enum options - UNDETERMINED, PENDING, IN_PROGRESS, COMPLETED, FAILED, NOT_ENABLED. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
                 default: "PENDING"
             tenant_ref:

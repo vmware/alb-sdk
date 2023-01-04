@@ -187,7 +187,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - configure systemlimits - show systemlimits ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 22.1.1</div>
+    <div class="app-desc">Version: 23.1.1</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -318,16 +318,17 @@ font-style: italic;
       },
       "l7_limits" : {
         "http_policies_per_vs" : 123,
+        "str_no_cache_uri" : 123,
+        "str_groups_no_cache_mime" : 123,
+        "num_rules_per_http_policy" : 123,
+        "num_rules_per_evh_host" : 123,
+        "str_groups_no_cache_uri" : 123,
+        "str_cache_mime" : 123,
         "num_matches_per_rule" : 123,
         "num_custom_str" : 123,
-        "str_no_cache_uri" : 123,
         "num_strgroups_per_match" : 123,
-        "str_groups_no_cache_mime" : 123,
         "str_no_cache_mime" : 123,
-        "num_rules_per_http_policy" : 123,
-        "str_groups_no_cache_uri" : 123,
         "num_compression_filters" : 123,
-        "str_cache_mime" : 123,
         "str_groups_cache_mime" : 123
       },
       "controller_cloud_limits" : [ {
@@ -475,16 +476,17 @@ font-style: italic;
     },
     "l7_limits" : {
       "http_policies_per_vs" : 123,
+      "str_no_cache_uri" : 123,
+      "str_groups_no_cache_mime" : 123,
+      "num_rules_per_http_policy" : 123,
+      "num_rules_per_evh_host" : 123,
+      "str_groups_no_cache_uri" : 123,
+      "str_cache_mime" : 123,
       "num_matches_per_rule" : 123,
       "num_custom_str" : 123,
-      "str_no_cache_uri" : 123,
       "num_strgroups_per_match" : 123,
-      "str_groups_no_cache_mime" : 123,
       "str_no_cache_mime" : 123,
-      "num_rules_per_http_policy" : 123,
-      "str_groups_no_cache_uri" : 123,
       "num_compression_filters" : 123,
-      "str_cache_mime" : 123,
       "str_groups_cache_mime" : 123
     },
     "controller_cloud_limits" : [ {
@@ -703,16 +705,17 @@ font-style: italic;
     },
     "l7_limits" : {
       "http_policies_per_vs" : 123,
+      "str_no_cache_uri" : 123,
+      "str_groups_no_cache_mime" : 123,
+      "num_rules_per_http_policy" : 123,
+      "num_rules_per_evh_host" : 123,
+      "str_groups_no_cache_uri" : 123,
+      "str_cache_mime" : 123,
       "num_matches_per_rule" : 123,
       "num_custom_str" : 123,
-      "str_no_cache_uri" : 123,
       "num_strgroups_per_match" : 123,
-      "str_groups_no_cache_mime" : 123,
       "str_no_cache_mime" : 123,
-      "num_rules_per_http_policy" : 123,
-      "str_groups_no_cache_uri" : 123,
       "num_compression_filters" : 123,
-      "str_cache_mime" : 123,
       "str_groups_cache_mime" : 123
     },
     "controller_cloud_limits" : [ {
@@ -871,16 +874,17 @@ font-style: italic;
     },
     "l7_limits" : {
       "http_policies_per_vs" : 123,
+      "str_no_cache_uri" : 123,
+      "str_groups_no_cache_mime" : 123,
+      "num_rules_per_http_policy" : 123,
+      "num_rules_per_evh_host" : 123,
+      "str_groups_no_cache_uri" : 123,
+      "str_cache_mime" : 123,
       "num_matches_per_rule" : 123,
       "num_custom_str" : 123,
-      "str_no_cache_uri" : 123,
       "num_strgroups_per_match" : 123,
-      "str_groups_no_cache_mime" : 123,
       "str_no_cache_mime" : 123,
-      "num_rules_per_http_policy" : 123,
-      "str_groups_no_cache_uri" : 123,
       "num_compression_filters" : 123,
-      "str_cache_mime" : 123,
       "str_groups_cache_mime" : 123
     },
     "controller_cloud_limits" : [ {
@@ -1039,16 +1043,17 @@ font-style: italic;
     },
     "l7_limits" : {
       "http_policies_per_vs" : 123,
+      "str_no_cache_uri" : 123,
+      "str_groups_no_cache_mime" : 123,
+      "num_rules_per_http_policy" : 123,
+      "num_rules_per_evh_host" : 123,
+      "str_groups_no_cache_uri" : 123,
+      "str_cache_mime" : 123,
       "num_matches_per_rule" : 123,
       "num_custom_str" : 123,
-      "str_no_cache_uri" : 123,
       "num_strgroups_per_match" : 123,
-      "str_groups_no_cache_mime" : 123,
       "str_no_cache_mime" : 123,
-      "num_rules_per_http_policy" : 123,
-      "str_groups_no_cache_uri" : 123,
       "num_compression_filters" : 123,
-      "str_cache_mime" : 123,
       "str_groups_cache_mime" : 123
     },
     "controller_cloud_limits" : [ {
@@ -1218,6 +1223,7 @@ font-style: italic;
 <div class="param">num_compression_filters (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of Compression Filters. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">num_custom_str (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of Custom strings per match/action. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">num_matches_per_rule (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of Matches per Rule. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">num_rules_per_evh_host (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of rules per EVH Host. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">num_rules_per_http_policy (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of rules per HTTPRequest/HTTPResponse/HTTPSecurity Policy. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">num_strgroups_per_match (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of Stringgroups/IPgroups per match. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">str_cache_mime (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of implicit strings for Cacheable MIME types. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>

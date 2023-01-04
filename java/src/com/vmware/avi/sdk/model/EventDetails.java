@@ -627,6 +627,9 @@ public class EventDetails  {
     @JsonProperty("vcenter_obj_delete_details")
     private VinfraVcenterObjDeleteDetails vcenterObjDeleteDetails = null;
 
+    @JsonProperty("vcenter_tag_event_details")
+    private VcenterTagEventDetails vcenterTagEventDetails = null;
+
     @JsonProperty("vip_autoscale")
     private VipScaleDetails vipAutoscale = null;
 
@@ -4834,6 +4837,30 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Failed to tag ses with custom tags.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return vcenterTagEventDetails
+     */
+    public VcenterTagEventDetails getVcenterTagEventDetails() {
+        return vcenterTagEventDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Failed to tag ses with custom tags.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param vcenterTagEventDetails set the vcenterTagEventDetails.
+     */
+    public void setVcenterTagEventDetails(VcenterTagEventDetails vcenterTagEventDetails) {
+        this.vcenterTagEventDetails = vcenterTagEventDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vipAutoscale
@@ -5120,6 +5147,7 @@ public class EventDetails  {
   Objects.equals(this.vcenterDiscFailure, objEventDetails.vcenterDiscFailure)&&
   Objects.equals(this.vcenterConnectivityStatus, objEventDetails.vcenterConnectivityStatus)&&
   Objects.equals(this.vcenterNetworkLimit, objEventDetails.vcenterNetworkLimit)&&
+  Objects.equals(this.vcenterTagEventDetails, objEventDetails.vcenterTagEventDetails)&&
   Objects.equals(this.seDetails, objEventDetails.seDetails)&&
   Objects.equals(this.spawnSeDetails, objEventDetails.spawnSeDetails)&&
   Objects.equals(this.modifyNetworksDetails, objEventDetails.modifyNetworksDetails)&&
@@ -5533,6 +5561,7 @@ public class EventDetails  {
                         sb.append("    vcenterImgDetails: ").append(toIndentedString(vcenterImgDetails)).append("\n");
                         sb.append("    vcenterNetworkLimit: ").append(toIndentedString(vcenterNetworkLimit)).append("\n");
                         sb.append("    vcenterObjDeleteDetails: ").append(toIndentedString(vcenterObjDeleteDetails)).append("\n");
+                        sb.append("    vcenterTagEventDetails: ").append(toIndentedString(vcenterTagEventDetails)).append("\n");
                         sb.append("    vipAutoscale: ").append(toIndentedString(vipAutoscale)).append("\n");
                         sb.append("    vipDnsInfo: ").append(toIndentedString(vipDnsInfo)).append("\n");
                         sb.append("    vipSymmetryDetails: ").append(toIndentedString(vipSymmetryDetails)).append("\n");

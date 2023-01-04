@@ -187,7 +187,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - configure healthmonitor <key> - show healthmonitor <key> ```  Examples - **healthmonitor_example**: To create a basic HTTP health monitor that uses GET / to determine if the service is alive   ```json     {'name': 'http-hmon', 'send_interval': 10, 'receive_timeout': 4, 'failed_checks': 3, 'type': 'HEALTH_MONITOR_HTTP', 'http_monitor': {'http_request': 'GET / HTTP/1.0'}}   ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 22.1.1</div>
+    <div class="app-desc">Version: 23.1.1</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -292,6 +292,10 @@ font-style: italic;
     },
     "_last_modified" : "aeiou",
     "send_interval" : 123,
+    "sctp_monitor" : {
+      "sctp_request" : "aeiou",
+      "sctp_response" : "aeiou"
+    },
     "allow_duplicate_monitors" : true,
     "smtp_monitor" : {
       "ssl_attributes" : "",
@@ -455,6 +459,10 @@ font-style: italic;
   },
   "_last_modified" : "aeiou",
   "send_interval" : 123,
+  "sctp_monitor" : {
+    "sctp_request" : "aeiou",
+    "sctp_response" : "aeiou"
+  },
   "allow_duplicate_monitors" : true,
   "smtp_monitor" : {
     "ssl_attributes" : "",
@@ -741,6 +749,10 @@ font-style: italic;
   },
   "_last_modified" : "aeiou",
   "send_interval" : 123,
+  "sctp_monitor" : {
+    "sctp_request" : "aeiou",
+    "sctp_response" : "aeiou"
+  },
   "allow_duplicate_monitors" : true,
   "smtp_monitor" : {
     "ssl_attributes" : "",
@@ -915,6 +927,10 @@ font-style: italic;
   },
   "_last_modified" : "aeiou",
   "send_interval" : 123,
+  "sctp_monitor" : {
+    "sctp_request" : "aeiou",
+    "sctp_response" : "aeiou"
+  },
   "allow_duplicate_monitors" : true,
   "smtp_monitor" : {
     "ssl_attributes" : "",
@@ -1089,6 +1105,10 @@ font-style: italic;
   },
   "_last_modified" : "aeiou",
   "send_interval" : 123,
+  "sctp_monitor" : {
+    "sctp_request" : "aeiou",
+    "sctp_response" : "aeiou"
+  },
   "allow_duplicate_monitors" : true,
   "smtp_monitor" : {
     "ssl_attributes" : "",
@@ -1206,6 +1226,7 @@ font-style: italic;
     <li><a href="#HealthMonitorRadius"><code>HealthMonitorRadius</code></a></li>
     <li><a href="#HealthMonitorSIP"><code>HealthMonitorSIP</code></a></li>
     <li><a href="#HealthMonitorSSLAttributes"><code>HealthMonitorSSLAttributes</code></a></li>
+    <li><a href="#HealthMonitorSctp"><code>HealthMonitorSctp</code></a></li>
     <li><a href="#HealthMonitorSmtp"><code>HealthMonitorSmtp</code></a></li>
     <li><a href="#HealthMonitorTcp"><code>HealthMonitorTcp</code></a></li>
     <li><a href="#HealthMonitorUdp"><code>HealthMonitorUdp</code></a></li>
@@ -1246,6 +1267,7 @@ font-style: italic;
 <div class="param">pop3s_monitor (optional)</div><div class="param-desc"><span class="param-type"><a href="#HealthMonitorPop3">HealthMonitorPop3</a></span> Health monitor for POP3S. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">radius_monitor (optional)</div><div class="param-desc"><span class="param-type"><a href="#HealthMonitorRadius">HealthMonitorRadius</a></span> Health monitor for Radius. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">receive_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> A valid response from the server is expected within the receive timeout window.  This timeout must be less than the send interval.  If server status is regularly flapping up and down, consider increasing this value. Allowed values are 1-2400. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">sctp_monitor (optional)</div><div class="param-desc"><span class="param-type"><a href="#HealthMonitorSctp">HealthMonitorSctp</a></span> Health monitor for SCTP. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">send_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Frequency, in seconds, that monitors are sent to a server. Allowed values are 1-3600. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">sip_monitor (optional)</div><div class="param-desc"><span class="param-type"><a href="#HealthMonitorSIP">HealthMonitorSIP</a></span> Health monitor for SIP. Field introduced in 17.2.8, 18.1.3, 18.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">smtp_monitor (optional)</div><div class="param-desc"><span class="param-type"><a href="#HealthMonitorSmtp">HealthMonitorSmtp</a></span> Health monitor for SMTP. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
@@ -1253,7 +1275,7 @@ font-style: italic;
 <div class="param">successful_checks (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of continuous successful health checks before server is marked up. Allowed values are 1-50. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">tcp_monitor (optional)</div><div class="param-desc"><span class="param-type"><a href="#HealthMonitorTcp">HealthMonitorTcp</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of the health monitor. Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP, HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS, HEALTH_MONITOR_SMTP, HEALTH_MONITOR_SMTPS, HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS, HEALTH_MONITOR_FTP, HEALTH_MONITOR_FTPS, HEALTH_MONITOR_LDAP, HEALTH_MONITOR_LDAPS. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- HEALTH_MONITOR_PING,HEALTH_MONITOR_TCP,HEALTH_MONITOR_UDP), Basic edition(Allowed values- HEALTH_MONITOR_PING,HEALTH_MONITOR_TCP,HEALTH_MONITOR_UDP,HEALTH_MONITOR_HTTP,HEALTH_MONITOR_HTTPS), Enterprise with Cloud Services edition. </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of the health monitor. Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP, HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS, HEALTH_MONITOR_SMTP, HEALTH_MONITOR_SMTPS, HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS, HEALTH_MONITOR_FTP, HEALTH_MONITOR_FTPS, HEALTH_MONITOR_LDAP, HEALTH_MONITOR_LDAPS, HEALTH_MONITOR_SCTP. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- HEALTH_MONITOR_PING,HEALTH_MONITOR_TCP,HEALTH_MONITOR_UDP), Basic edition(Allowed values- HEALTH_MONITOR_PING,HEALTH_MONITOR_TCP,HEALTH_MONITOR_UDP,HEALTH_MONITOR_HTTP,HEALTH_MONITOR_HTTPS), Enterprise with Cloud Services edition. </div>
 <div class="param">udp_monitor (optional)</div><div class="param-desc"><span class="param-type"><a href="#HealthMonitorUdp">HealthMonitorUdp</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
 <div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the health monitor. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -1362,6 +1384,13 @@ font-style: italic;
 <div class="param">server_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Fully qualified DNS hostname which will be used in the TLS SNI extension in server connections indicating SNI is enabled. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ssl_key_and_certificate_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Service engines will present this SSL certificate to the server. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ssl_profile_ref </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> SSL profile defines ciphers and SSL versions to be used for healthmonitor traffic to the back-end servers. It is a reference to an object of type SSLProfile. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="HealthMonitorSctp">HealthMonitorSctp</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">sctp_request (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Request data to send after completing the SCTP handshake. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">sctp_response (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Match for the desired keyword in the first 2Kb of the server&#39;s SCTP response. If this field is left blank, no server response is required. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "22.1.1",
+        "version": "23.1.1",
         "title": "Avi SnmpTrapProfile Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -500,7 +500,7 @@
                 }
             }
         },
-        "/snmptrapprofile/{uuid}/alerttestsnmptrap": {
+        "/snmptrapprofile/{uuid}/testsnmptrap": {
             "post": {
                 "consumes": [
                     "application/json"

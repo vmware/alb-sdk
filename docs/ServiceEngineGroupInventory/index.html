@@ -187,7 +187,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - show serviceenginegroupinventory <key> ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 22.1.1</div>
+    <div class="app-desc">Version: 23.1.1</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -285,6 +285,7 @@ font-style: italic;
         "max_value" : 123
       } ]
     },
+    "grpc_channel_connect_timeout" : 123,
     "se_flow_probe_retry_timer" : 123,
     "l7_resvd_listen_conns_per_core" : 123,
     "vs_scalein_timeout" : 123,
@@ -346,6 +347,7 @@ font-style: italic;
     "vcenter_datastore_mode" : "aeiou",
     "license_type" : "aeiou",
     "flow_table_new_syn_max_entries" : 123,
+    "use_dp_util_for_scaleout" : true,
     "log_agent_file_sz_debug" : 123,
     "vs_scalein_timeout_for_upgrade" : 123,
     "objsync_config" : {
@@ -410,6 +412,7 @@ font-style: italic;
     "free_list_size" : 123,
     "se_hyperthreaded_mode" : "aeiou",
     "min_cpu_usage" : 123,
+    "ntp_sync_status_interval" : 123,
     "cpu_socket_affinity" : true,
     "se_group_analytics_policy" : {
       "metrics_event_thresholds" : [ {
@@ -463,7 +466,8 @@ font-style: italic;
     "upstream_connect_timeout" : 123,
     "mgmt_network_ref" : "aeiou",
     "vcenter_datastores" : [ {
-      "datastore_name" : "aeiou"
+      "datastore_name" : "aeiou",
+      "managed_object_id" : "aeiou"
     } ],
     "se_dp_vnic_queue_stall_timeout" : 123,
     "vcenters" : [ {
@@ -494,6 +498,7 @@ font-style: italic;
     "mgmt_subnet" : "",
     "connection_memory_percentage" : 123,
     "dp_hb_frequency" : 123,
+    "replay_vrf_routes_interval" : 123,
     "extra_shared_config_memory" : 123,
     "se_delayed_flow_delete" : true,
     "se_name_prefix" : "aeiou",
@@ -507,6 +512,7 @@ font-style: italic;
     "buffer_se" : 123,
     "deactivate_kni_filtering_at_dispatcher" : true,
     "max_public_ips_per_lb" : 123,
+    "ntp_sync_fail_event" : true,
     "mem_reserve" : true,
     "l7_conns_per_core" : 123,
     "openstack_mgmt_network_name" : "aeiou",
@@ -763,6 +769,7 @@ font-style: italic;
       "max_value" : 123
     } ]
   },
+  "grpc_channel_connect_timeout" : 123,
   "se_flow_probe_retry_timer" : 123,
   "l7_resvd_listen_conns_per_core" : 123,
   "vs_scalein_timeout" : 123,
@@ -824,6 +831,7 @@ font-style: italic;
   "vcenter_datastore_mode" : "aeiou",
   "license_type" : "aeiou",
   "flow_table_new_syn_max_entries" : 123,
+  "use_dp_util_for_scaleout" : true,
   "log_agent_file_sz_debug" : 123,
   "vs_scalein_timeout_for_upgrade" : 123,
   "objsync_config" : {
@@ -888,6 +896,7 @@ font-style: italic;
   "free_list_size" : 123,
   "se_hyperthreaded_mode" : "aeiou",
   "min_cpu_usage" : 123,
+  "ntp_sync_status_interval" : 123,
   "cpu_socket_affinity" : true,
   "se_group_analytics_policy" : {
     "metrics_event_thresholds" : [ {
@@ -941,7 +950,8 @@ font-style: italic;
   "upstream_connect_timeout" : 123,
   "mgmt_network_ref" : "aeiou",
   "vcenter_datastores" : [ {
-    "datastore_name" : "aeiou"
+    "datastore_name" : "aeiou",
+    "managed_object_id" : "aeiou"
   } ],
   "se_dp_vnic_queue_stall_timeout" : 123,
   "vcenters" : [ {
@@ -972,6 +982,7 @@ font-style: italic;
   "mgmt_subnet" : "",
   "connection_memory_percentage" : 123,
   "dp_hb_frequency" : 123,
+  "replay_vrf_routes_interval" : 123,
   "extra_shared_config_memory" : 123,
   "se_delayed_flow_delete" : true,
   "se_name_prefix" : "aeiou",
@@ -985,6 +996,7 @@ font-style: italic;
   "buffer_se" : 123,
   "deactivate_kni_filtering_at_dispatcher" : true,
   "max_public_ips_per_lb" : 123,
+  "ntp_sync_fail_event" : true,
   "mem_reserve" : true,
   "l7_conns_per_core" : 123,
   "openstack_mgmt_network_name" : "aeiou",
@@ -1312,6 +1324,7 @@ font-style: italic;
       "max_value" : 123
     } ]
   },
+  "grpc_channel_connect_timeout" : 123,
   "se_flow_probe_retry_timer" : 123,
   "l7_resvd_listen_conns_per_core" : 123,
   "vs_scalein_timeout" : 123,
@@ -1373,6 +1386,7 @@ font-style: italic;
   "vcenter_datastore_mode" : "aeiou",
   "license_type" : "aeiou",
   "flow_table_new_syn_max_entries" : 123,
+  "use_dp_util_for_scaleout" : true,
   "log_agent_file_sz_debug" : 123,
   "vs_scalein_timeout_for_upgrade" : 123,
   "objsync_config" : {
@@ -1437,6 +1451,7 @@ font-style: italic;
   "free_list_size" : 123,
   "se_hyperthreaded_mode" : "aeiou",
   "min_cpu_usage" : 123,
+  "ntp_sync_status_interval" : 123,
   "cpu_socket_affinity" : true,
   "se_group_analytics_policy" : {
     "metrics_event_thresholds" : [ {
@@ -1490,7 +1505,8 @@ font-style: italic;
   "upstream_connect_timeout" : 123,
   "mgmt_network_ref" : "aeiou",
   "vcenter_datastores" : [ {
-    "datastore_name" : "aeiou"
+    "datastore_name" : "aeiou",
+    "managed_object_id" : "aeiou"
   } ],
   "se_dp_vnic_queue_stall_timeout" : 123,
   "vcenters" : [ {
@@ -1521,6 +1537,7 @@ font-style: italic;
   "mgmt_subnet" : "",
   "connection_memory_percentage" : 123,
   "dp_hb_frequency" : 123,
+  "replay_vrf_routes_interval" : 123,
   "extra_shared_config_memory" : 123,
   "se_delayed_flow_delete" : true,
   "se_name_prefix" : "aeiou",
@@ -1534,6 +1551,7 @@ font-style: italic;
   "buffer_se" : 123,
   "deactivate_kni_filtering_at_dispatcher" : true,
   "max_public_ips_per_lb" : 123,
+  "ntp_sync_fail_event" : true,
   "mem_reserve" : true,
   "l7_conns_per_core" : 123,
   "openstack_mgmt_network_name" : "aeiou",
@@ -1801,6 +1819,7 @@ font-style: italic;
       "max_value" : 123
     } ]
   },
+  "grpc_channel_connect_timeout" : 123,
   "se_flow_probe_retry_timer" : 123,
   "l7_resvd_listen_conns_per_core" : 123,
   "vs_scalein_timeout" : 123,
@@ -1862,6 +1881,7 @@ font-style: italic;
   "vcenter_datastore_mode" : "aeiou",
   "license_type" : "aeiou",
   "flow_table_new_syn_max_entries" : 123,
+  "use_dp_util_for_scaleout" : true,
   "log_agent_file_sz_debug" : 123,
   "vs_scalein_timeout_for_upgrade" : 123,
   "objsync_config" : {
@@ -1926,6 +1946,7 @@ font-style: italic;
   "free_list_size" : 123,
   "se_hyperthreaded_mode" : "aeiou",
   "min_cpu_usage" : 123,
+  "ntp_sync_status_interval" : 123,
   "cpu_socket_affinity" : true,
   "se_group_analytics_policy" : {
     "metrics_event_thresholds" : [ {
@@ -1979,7 +2000,8 @@ font-style: italic;
   "upstream_connect_timeout" : 123,
   "mgmt_network_ref" : "aeiou",
   "vcenter_datastores" : [ {
-    "datastore_name" : "aeiou"
+    "datastore_name" : "aeiou",
+    "managed_object_id" : "aeiou"
   } ],
   "se_dp_vnic_queue_stall_timeout" : 123,
   "vcenters" : [ {
@@ -2010,6 +2032,7 @@ font-style: italic;
   "mgmt_subnet" : "",
   "connection_memory_percentage" : 123,
   "dp_hb_frequency" : 123,
+  "replay_vrf_routes_interval" : 123,
   "extra_shared_config_memory" : 123,
   "se_delayed_flow_delete" : true,
   "se_name_prefix" : "aeiou",
@@ -2023,6 +2046,7 @@ font-style: italic;
   "buffer_se" : 123,
   "deactivate_kni_filtering_at_dispatcher" : true,
   "max_public_ips_per_lb" : 123,
+  "ntp_sync_fail_event" : true,
   "mem_reserve" : true,
   "l7_conns_per_core" : 123,
   "openstack_mgmt_network_name" : "aeiou",
@@ -2290,6 +2314,7 @@ font-style: italic;
       "max_value" : 123
     } ]
   },
+  "grpc_channel_connect_timeout" : 123,
   "se_flow_probe_retry_timer" : 123,
   "l7_resvd_listen_conns_per_core" : 123,
   "vs_scalein_timeout" : 123,
@@ -2351,6 +2376,7 @@ font-style: italic;
   "vcenter_datastore_mode" : "aeiou",
   "license_type" : "aeiou",
   "flow_table_new_syn_max_entries" : 123,
+  "use_dp_util_for_scaleout" : true,
   "log_agent_file_sz_debug" : 123,
   "vs_scalein_timeout_for_upgrade" : 123,
   "objsync_config" : {
@@ -2415,6 +2441,7 @@ font-style: italic;
   "free_list_size" : 123,
   "se_hyperthreaded_mode" : "aeiou",
   "min_cpu_usage" : 123,
+  "ntp_sync_status_interval" : 123,
   "cpu_socket_affinity" : true,
   "se_group_analytics_policy" : {
     "metrics_event_thresholds" : [ {
@@ -2468,7 +2495,8 @@ font-style: italic;
   "upstream_connect_timeout" : 123,
   "mgmt_network_ref" : "aeiou",
   "vcenter_datastores" : [ {
-    "datastore_name" : "aeiou"
+    "datastore_name" : "aeiou",
+    "managed_object_id" : "aeiou"
   } ],
   "se_dp_vnic_queue_stall_timeout" : 123,
   "vcenters" : [ {
@@ -2499,6 +2527,7 @@ font-style: italic;
   "mgmt_subnet" : "",
   "connection_memory_percentage" : 123,
   "dp_hb_frequency" : 123,
+  "replay_vrf_routes_interval" : 123,
   "extra_shared_config_memory" : 123,
   "se_delayed_flow_delete" : true,
   "se_name_prefix" : "aeiou",
@@ -2512,6 +2541,7 @@ font-style: italic;
   "buffer_se" : 123,
   "deactivate_kni_filtering_at_dispatcher" : true,
   "max_public_ips_per_lb" : 123,
+  "ntp_sync_fail_event" : true,
   "mem_reserve" : true,
   "l7_conns_per_core" : 123,
   "openstack_mgmt_network_name" : "aeiou",
@@ -2817,6 +2847,7 @@ font-style: italic;
           "max_value" : 123
         } ]
       },
+      "grpc_channel_connect_timeout" : 123,
       "se_flow_probe_retry_timer" : 123,
       "l7_resvd_listen_conns_per_core" : 123,
       "vs_scalein_timeout" : 123,
@@ -2878,6 +2909,7 @@ font-style: italic;
       "vcenter_datastore_mode" : "aeiou",
       "license_type" : "aeiou",
       "flow_table_new_syn_max_entries" : 123,
+      "use_dp_util_for_scaleout" : true,
       "log_agent_file_sz_debug" : 123,
       "vs_scalein_timeout_for_upgrade" : 123,
       "objsync_config" : {
@@ -2942,6 +2974,7 @@ font-style: italic;
       "free_list_size" : 123,
       "se_hyperthreaded_mode" : "aeiou",
       "min_cpu_usage" : 123,
+      "ntp_sync_status_interval" : 123,
       "cpu_socket_affinity" : true,
       "se_group_analytics_policy" : {
         "metrics_event_thresholds" : [ {
@@ -2995,7 +3028,8 @@ font-style: italic;
       "upstream_connect_timeout" : 123,
       "mgmt_network_ref" : "aeiou",
       "vcenter_datastores" : [ {
-        "datastore_name" : "aeiou"
+        "datastore_name" : "aeiou",
+        "managed_object_id" : "aeiou"
       } ],
       "se_dp_vnic_queue_stall_timeout" : 123,
       "vcenters" : [ {
@@ -3026,6 +3060,7 @@ font-style: italic;
       "mgmt_subnet" : "",
       "connection_memory_percentage" : 123,
       "dp_hb_frequency" : 123,
+      "replay_vrf_routes_interval" : 123,
       "extra_shared_config_memory" : 123,
       "se_delayed_flow_delete" : true,
       "se_name_prefix" : "aeiou",
@@ -3039,6 +3074,7 @@ font-style: italic;
       "buffer_se" : 123,
       "deactivate_kni_filtering_at_dispatcher" : true,
       "max_public_ips_per_lb" : 123,
+      "ntp_sync_fail_event" : true,
       "mem_reserve" : true,
       "l7_conns_per_core" : 123,
       "openstack_mgmt_network_name" : "aeiou",
@@ -3334,6 +3370,7 @@ font-style: italic;
         "max_value" : 123
       } ]
     },
+    "grpc_channel_connect_timeout" : 123,
     "se_flow_probe_retry_timer" : 123,
     "l7_resvd_listen_conns_per_core" : 123,
     "vs_scalein_timeout" : 123,
@@ -3395,6 +3432,7 @@ font-style: italic;
     "vcenter_datastore_mode" : "aeiou",
     "license_type" : "aeiou",
     "flow_table_new_syn_max_entries" : 123,
+    "use_dp_util_for_scaleout" : true,
     "log_agent_file_sz_debug" : 123,
     "vs_scalein_timeout_for_upgrade" : 123,
     "objsync_config" : {
@@ -3459,6 +3497,7 @@ font-style: italic;
     "free_list_size" : 123,
     "se_hyperthreaded_mode" : "aeiou",
     "min_cpu_usage" : 123,
+    "ntp_sync_status_interval" : 123,
     "cpu_socket_affinity" : true,
     "se_group_analytics_policy" : {
       "metrics_event_thresholds" : [ {
@@ -3512,7 +3551,8 @@ font-style: italic;
     "upstream_connect_timeout" : 123,
     "mgmt_network_ref" : "aeiou",
     "vcenter_datastores" : [ {
-      "datastore_name" : "aeiou"
+      "datastore_name" : "aeiou",
+      "managed_object_id" : "aeiou"
     } ],
     "se_dp_vnic_queue_stall_timeout" : 123,
     "vcenters" : [ {
@@ -3543,6 +3583,7 @@ font-style: italic;
     "mgmt_subnet" : "",
     "connection_memory_percentage" : 123,
     "dp_hb_frequency" : 123,
+    "replay_vrf_routes_interval" : 123,
     "extra_shared_config_memory" : 123,
     "se_delayed_flow_delete" : true,
     "se_name_prefix" : "aeiou",
@@ -3556,6 +3597,7 @@ font-style: italic;
     "buffer_se" : 123,
     "deactivate_kni_filtering_at_dispatcher" : true,
     "max_public_ips_per_lb" : 123,
+    "ntp_sync_fail_event" : true,
     "mem_reserve" : true,
     "l7_conns_per_core" : 123,
     "openstack_mgmt_network_name" : "aeiou",
@@ -3922,6 +3964,7 @@ font-style: italic;
         "max_value" : 123
       } ]
     },
+    "grpc_channel_connect_timeout" : 123,
     "se_flow_probe_retry_timer" : 123,
     "l7_resvd_listen_conns_per_core" : 123,
     "vs_scalein_timeout" : 123,
@@ -3983,6 +4026,7 @@ font-style: italic;
     "vcenter_datastore_mode" : "aeiou",
     "license_type" : "aeiou",
     "flow_table_new_syn_max_entries" : 123,
+    "use_dp_util_for_scaleout" : true,
     "log_agent_file_sz_debug" : 123,
     "vs_scalein_timeout_for_upgrade" : 123,
     "objsync_config" : {
@@ -4047,6 +4091,7 @@ font-style: italic;
     "free_list_size" : 123,
     "se_hyperthreaded_mode" : "aeiou",
     "min_cpu_usage" : 123,
+    "ntp_sync_status_interval" : 123,
     "cpu_socket_affinity" : true,
     "se_group_analytics_policy" : {
       "metrics_event_thresholds" : [ {
@@ -4100,7 +4145,8 @@ font-style: italic;
     "upstream_connect_timeout" : 123,
     "mgmt_network_ref" : "aeiou",
     "vcenter_datastores" : [ {
-      "datastore_name" : "aeiou"
+      "datastore_name" : "aeiou",
+      "managed_object_id" : "aeiou"
     } ],
     "se_dp_vnic_queue_stall_timeout" : 123,
     "vcenters" : [ {
@@ -4131,6 +4177,7 @@ font-style: italic;
     "mgmt_subnet" : "",
     "connection_memory_percentage" : 123,
     "dp_hb_frequency" : 123,
+    "replay_vrf_routes_interval" : 123,
     "extra_shared_config_memory" : 123,
     "se_delayed_flow_delete" : true,
     "se_name_prefix" : "aeiou",
@@ -4144,6 +4191,7 @@ font-style: italic;
     "buffer_se" : 123,
     "deactivate_kni_filtering_at_dispatcher" : true,
     "max_public_ips_per_lb" : 123,
+    "ntp_sync_fail_event" : true,
     "mem_reserve" : true,
     "l7_conns_per_core" : 123,
     "openstack_mgmt_network_name" : "aeiou",
@@ -4450,6 +4498,7 @@ font-style: italic;
         "max_value" : 123
       } ]
     },
+    "grpc_channel_connect_timeout" : 123,
     "se_flow_probe_retry_timer" : 123,
     "l7_resvd_listen_conns_per_core" : 123,
     "vs_scalein_timeout" : 123,
@@ -4511,6 +4560,7 @@ font-style: italic;
     "vcenter_datastore_mode" : "aeiou",
     "license_type" : "aeiou",
     "flow_table_new_syn_max_entries" : 123,
+    "use_dp_util_for_scaleout" : true,
     "log_agent_file_sz_debug" : 123,
     "vs_scalein_timeout_for_upgrade" : 123,
     "objsync_config" : {
@@ -4575,6 +4625,7 @@ font-style: italic;
     "free_list_size" : 123,
     "se_hyperthreaded_mode" : "aeiou",
     "min_cpu_usage" : 123,
+    "ntp_sync_status_interval" : 123,
     "cpu_socket_affinity" : true,
     "se_group_analytics_policy" : {
       "metrics_event_thresholds" : [ {
@@ -4628,7 +4679,8 @@ font-style: italic;
     "upstream_connect_timeout" : 123,
     "mgmt_network_ref" : "aeiou",
     "vcenter_datastores" : [ {
-      "datastore_name" : "aeiou"
+      "datastore_name" : "aeiou",
+      "managed_object_id" : "aeiou"
     } ],
     "se_dp_vnic_queue_stall_timeout" : 123,
     "vcenters" : [ {
@@ -4659,6 +4711,7 @@ font-style: italic;
     "mgmt_subnet" : "",
     "connection_memory_percentage" : 123,
     "dp_hb_frequency" : 123,
+    "replay_vrf_routes_interval" : 123,
     "extra_shared_config_memory" : 123,
     "se_delayed_flow_delete" : true,
     "se_name_prefix" : "aeiou",
@@ -4672,6 +4725,7 @@ font-style: italic;
     "buffer_se" : 123,
     "deactivate_kni_filtering_at_dispatcher" : true,
     "max_public_ips_per_lb" : 123,
+    "ntp_sync_fail_event" : true,
     "mem_reserve" : true,
     "l7_conns_per_core" : 123,
     "openstack_mgmt_network_name" : "aeiou",
@@ -4978,6 +5032,7 @@ font-style: italic;
         "max_value" : 123
       } ]
     },
+    "grpc_channel_connect_timeout" : 123,
     "se_flow_probe_retry_timer" : 123,
     "l7_resvd_listen_conns_per_core" : 123,
     "vs_scalein_timeout" : 123,
@@ -5039,6 +5094,7 @@ font-style: italic;
     "vcenter_datastore_mode" : "aeiou",
     "license_type" : "aeiou",
     "flow_table_new_syn_max_entries" : 123,
+    "use_dp_util_for_scaleout" : true,
     "log_agent_file_sz_debug" : 123,
     "vs_scalein_timeout_for_upgrade" : 123,
     "objsync_config" : {
@@ -5103,6 +5159,7 @@ font-style: italic;
     "free_list_size" : 123,
     "se_hyperthreaded_mode" : "aeiou",
     "min_cpu_usage" : 123,
+    "ntp_sync_status_interval" : 123,
     "cpu_socket_affinity" : true,
     "se_group_analytics_policy" : {
       "metrics_event_thresholds" : [ {
@@ -5156,7 +5213,8 @@ font-style: italic;
     "upstream_connect_timeout" : 123,
     "mgmt_network_ref" : "aeiou",
     "vcenter_datastores" : [ {
-      "datastore_name" : "aeiou"
+      "datastore_name" : "aeiou",
+      "managed_object_id" : "aeiou"
     } ],
     "se_dp_vnic_queue_stall_timeout" : 123,
     "vcenters" : [ {
@@ -5187,6 +5245,7 @@ font-style: italic;
     "mgmt_subnet" : "",
     "connection_memory_percentage" : 123,
     "dp_hb_frequency" : 123,
+    "replay_vrf_routes_interval" : 123,
     "extra_shared_config_memory" : 123,
     "se_delayed_flow_delete" : true,
     "se_name_prefix" : "aeiou",
@@ -5200,6 +5259,7 @@ font-style: italic;
     "buffer_se" : 123,
     "deactivate_kni_filtering_at_dispatcher" : true,
     "max_public_ips_per_lb" : 123,
+    "ntp_sync_fail_event" : true,
     "mem_reserve" : true,
     "l7_conns_per_core" : 123,
     "openstack_mgmt_network_name" : "aeiou",
@@ -6266,6 +6326,7 @@ font-style: italic;
 <div class="param">free_list_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of entries in the free list. Field introduced in 17.2.10, 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">gcp_config (optional)</div><div class="param-desc"><span class="param-type"><a href="#GCPSeGroupConfig">GCPSeGroupConfig</a></span> Google Cloud Platform, Service Engine Group Configuration. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">gratarp_permanent_periodicity (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> GratArp periodicity for VIP-IP. Allowed values are 5-30. Field introduced in 18.2.3. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">grpc_channel_connect_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Timeout in seconds that SE waits for a grpc channel to connect to server, before it retries. Allowed values are 5-45. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">ha_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> High Availability mode for all the Virtual Services using this Service Engine group. Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- HA_MODE_LEGACY_ACTIVE_STANDBY), Basic edition(Allowed values- HA_MODE_LEGACY_ACTIVE_STANDBY), Enterprise with Cloud Services edition. Special default for Essentials edition is HA_MODE_LEGACY_ACTIVE_STANDBY, Basic edition is HA_MODE_LEGACY_ACTIVE_STANDBY, Enterprise is HA_MODE_SHARED. </div>
 <div class="param">handle_per_pkt_attack (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Configuration to handle per packet attack handling.For example, DNS Reflection Attack is a type of attack where a response packet is sent to the DNS VS.This configuration tells if such packets should be dropped without further processing. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">hardwaresecuritymodulegroup_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type HardwareSecurityModuleGroup. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
@@ -6339,8 +6400,10 @@ font-style: italic;
 <div class="param">ngx_free_connection_stack (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Free the connection stack. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">non_significant_log_throttle (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> This setting limits the number of non-significant logs generated per second per core on this SE. Default is 100 logs per second. Set it to zero (0) to deactivate throttling. Field introduced in 17.1.3. Unit is PER_SECOND. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">ns_helper_deq_interval_msec (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Dequeue interval for receive queue from NS HELPER. Allowed values are 1-1000. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">ntp_sync_fail_event (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Toggle SE NTP synchronization failure events generation. Disabled by default. Field introduced in 22.1.2. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">ntp_sync_status_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Configures the interval at which SE synchronization status with NTP server(s) is verified. A value of zero disables SE NTP synchronization status validation. Allowed values are 120-900. Special values are 0- disable. Field introduced in 22.1.2. Unit is SEC. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">num_dispatcher_cores (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of dispatcher cores (0,1,2,4,8 or 16). If set to 0, then number of dispatcher cores is deduced automatically.Requires SE Reboot. Allowed values are 0,1,2,4,8,16. Field introduced in 17.2.12, 18.1.3, 18.2.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">num_dispatcher_queues (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of queues to each dispatcher. Allowed values are 2-8. Special values are 0 - auto-compute, 1 - single-queue. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">num_dispatcher_queues (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of queues to each dispatcher. Allowed values are 1-2. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">num_flow_cores_sum_changes_to_ignore (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of changes in num flow cores sum to ignore. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">objsync_config (optional)</div><div class="param-desc"><span class="param-type"><a href="#ObjSyncConfig">ObjSyncConfig</a></span> Configuration knobs for InterSE Object Distribution. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">objsync_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> TCP port on SE management interface for InterSE Object Distribution. Supported only for externally managed security groups. Not supported on full access deployments. Requires SE reboot. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
@@ -6355,6 +6418,7 @@ font-style: italic;
 <div class="param">placement_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> If placement mode is &#39;Auto&#39;, Virtual Services are automatically placed on Service Engines. Enum options - PLACEMENT_MODE_AUTO. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">realtime_se_metrics (optional)</div><div class="param-desc"><span class="param-type"><a href="#MetricsRealTimeUpdate">MetricsRealTimeUpdate</a></span> Enable or deactivate real time SE metrics. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">reboot_on_panic (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Reboot the VM or host on kernel panic. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">replay_vrf_routes_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Routes in VRF are replayed at the specified interval. This should be increased if there are large number of routes. Allowed values are 0-3000. Field introduced in 22.1.3. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">resync_time_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time interval to re-sync SE&#39;s time with wall clock time. Allowed values are 8-600000. Field introduced in 20.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">sdb_flush_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> SDB pipeline flush interval. Allowed values are 1-10000. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">sdb_pipeline_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> SDB pipeline size. Allowed values are 1-10000. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
@@ -6388,7 +6452,7 @@ font-style: italic;
 <div class="param">se_log_buffer_app_blocking_dequeue (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Internal flag that blocks dataplane until all application logs are flushed to log-agent process. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">se_log_buffer_conn_blocking_dequeue (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Internal flag that blocks dataplane until all connection logs are flushed to log-agent process. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">se_log_buffer_events_blocking_dequeue (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Internal flag that blocks dataplane until all outstanding events are flushed to log-agent process. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">se_lro (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable or disable Large Receive Optimization for vnics. Requires SE Reboot. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">se_lro (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable or disable Large Receive Optimization for vnics.Supported on VMXnet3.Requires SE Reboot. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">se_mp_ring_retry_count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The retry count for the multi-producer enqueue before yielding the CPU. To be used under surveillance of Avi Support. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 500), Basic edition(Allowed values- 500), Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">se_mtu (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> MTU for the VNICs of SEs in the SE group. Allowed values are 512-9000. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">se_name_prefix (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Prefix to use for virtual machine name of Service Engines. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -6436,6 +6500,7 @@ font-style: italic;
 <div class="param">upstream_read_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Timeout for data to be received from backend. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">upstream_send_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Timeout for upstream to become writable. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 3600000), Basic edition(Allowed values- 3600000), Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
+<div class="param">use_dp_util_for_scaleout (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If enabled, the datapath CPU utilization is consulted by the auto scale-out logic. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">use_hyperthreaded_cores (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enables the use of hyper-threaded cores on SE. Requires SE Reboot. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">use_legacy_netlink (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable legacy model of netlink notifications. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">use_objsync (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable InterSE Objsyc distribution framework. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
@@ -6513,7 +6578,7 @@ font-style: italic;
       <div class="param">last_changed_time (optional)</div><div class="param-desc"><span class="param-type"><a href="#TimeStamp">TimeStamp</a></span> The last time the state changed. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">reason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Descriptive reason for the state-change. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">rebooted (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> State for keeping track of reboot status during upgrade operation. Field introduced in 20.1.2. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">state (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The upgrade operations current fsm-state. Enum options - UPGRADE_FSM_INIT, UPGRADE_FSM_STARTED, UPGRADE_FSM_WAITING, UPGRADE_FSM_IN_PROGRESS, UPGRADE_FSM_ENQUEUED, UPGRADE_FSM_ERROR, UPGRADE_FSM_SUSPENDED, UPGRADE_FSM_ENQUEUE_FAILED, UPGRADE_FSM_PAUSED, UPGRADE_FSM_COMPLETED, UPGRADE_FSM_ABORT_IN_PROGRESS, UPGRADE_FSM_ABORTED, UPGRADE_FSM_SE_UPGRADE_IN_PROGRESS, UPGRADE_FSM_CONTROLLER_COMPLETED, UPGRADE_FSM_DUMMY_3, UPGRADE_FSM_DUMMY_4, UPGRADE_FSM_DUMMY_5. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">state (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The upgrade operations current fsm-state. Enum options - UPGRADE_FSM_INIT, UPGRADE_FSM_STARTED, UPGRADE_FSM_WAITING, UPGRADE_FSM_IN_PROGRESS, UPGRADE_FSM_ENQUEUED, UPGRADE_FSM_ERROR, UPGRADE_FSM_SUSPENDED, UPGRADE_FSM_ENQUEUE_FAILED, UPGRADE_FSM_PAUSED, UPGRADE_FSM_COMPLETED, UPGRADE_FSM_ABORT_IN_PROGRESS, UPGRADE_FSM_ABORTED, UPGRADE_FSM_SE_UPGRADE_IN_PROGRESS, UPGRADE_FSM_CONTROLLER_COMPLETED, UPGRADE_FSM_DUMMY_3, UPGRADE_FSM_DUMMY_4, UPGRADE_FSM_DUMMY_5, UPGRADE_PRE_CHECK_STARTED, UPGRADE_PRE_CHECK_IN_PROGRESS, UPGRADE_PRE_CHECK_SUCCESS, UPGRADE_PRE_CHECK_ERROR, UPGRADE_PRE_CHECK_WARNING. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -6533,7 +6598,7 @@ font-style: italic;
 <div class="param">tasks_completed (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Upgrade tasks completed. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">total_tasks (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Total upgrade tasks. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">upgrade_ops (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Upgrade operations requested. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">upgrade_ops (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Upgrade operations requested. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH, EVAL_SEGROUP_RESUME. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
 <div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID Identifier for the system such as cluster, se group and se. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Current base image applied to this node. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -6575,7 +6640,8 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="VcenterDatastore">VcenterDatastore</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">datastore_name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+      <div class="param">datastore_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">managed_object_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Will be used by default, if not set fallback to datastore_name. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

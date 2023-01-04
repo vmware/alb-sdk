@@ -16,6 +16,8 @@ LOG = logging.getLogger(__name__)
 conv_utils = F5Util()
 used_policy = list()
 used_app_profiles = list()
+via_header_rule_dict=dict()
+policy_with_via_header=dict()
 
 class VSConfigConv(object):
     @classmethod
@@ -587,6 +589,12 @@ class VSConfigConv(object):
                                            conv_status, msg)
         if ntwk_prof:
             vs_obj['network_profile_ref'] = ntwk_prof[0]
+            ntwk_prof_name = ntwk_prof[0].split('name=')[-1]
+            ntwk_prof_config = [np for np in avi_config['NetworkProfile'] if np['name'] == ntwk_prof_name]
+            ntwk_verified_accept = ntwk_prof_config[0].get('verified-accept')
+            if ntwk_verified_accept and ntwk_verified_accept != 'disabled':
+                vs_obj['"remove_listening_port_on_vs_down'] = True
+
         if enable_ssl:
             vs_obj['ssl_profile_ref'] = ssl_vs[0]["profile"]
             if ssl_vs[0]["cert"]:
@@ -620,6 +628,8 @@ class VSConfigConv(object):
                                               final.STATUS_SKIPPED,
                                               msg)
                     return
+        if app_prof:
+            self.app_profile_with_via_host_name(app_name,vs_obj,avi_config,tenant,cloud_name,sys_dict,profiles,merge_object_mapping)  
         for attr in self.ignore_for_value:
             ignore_val = self.ignore_for_value[attr]
             actual_val = f5_vs.get(attr, None)
@@ -639,10 +649,14 @@ class VSConfigConv(object):
                              converted_rules]
             if skipped_rules:
                 skipped.append('rules: %s' % skipped_rules)
-        conv_status['na_list'] = [val for val in skipped if
-                                  val in self.vs_na_attr]
+        na_list = [val for val in skipped if val in self.vs_na_attr]
         skipped = [attr for attr in skipped if attr not in self.vs_na_attr]
         skipped = [attr for attr in skipped if attr not in user_ignore]
+        conv_status['indirect'] = [val for val in skipped if
+                                   val in self.vs_indirect_attr]
+        skipped = [attr for attr in skipped if attr not in self.vs_indirect_attr]
+        conv_status['na_list'] = [val for val in skipped if val in na_list]
+        skipped = [attr for attr in skipped if attr not in na_list]
         conv_status['skipped'] = skipped
         status = final.STATUS_SUCCESSFUL
         if skipped:
@@ -707,6 +721,93 @@ class VSConfigConv(object):
                     pol['index'] = ind + 1
                 vs_obj['http_policies'].append(pol)
 
+    def create_rule_action_for_via_header(self,via_header,via_request):
+        rule_dict={
+        "enable": True,
+         "hdr_action":
+             [{"action": "HTTP_ADD_HDR",
+               "hdr":
+                   {"name": "via",
+                    "value":
+                        {
+                            "val": via_header
+                            }
+                        }
+                   }
+              ],
+             "index" : "1",
+             "name": "Rule 1"}
+        if via_request=="append":
+            rule_dict["hdr_action"][0]["action"]="HTTP_ADD_HDR"
+        if via_request == "remove":
+            rule_dict["hdr_action"][0]["action"]="HTTP_REMOVE_HDR"
+        via_header_key="%s-%s" % (via_header,via_request)
+        via_header_rule_dict[via_header_key]=rule_dict
+        return rule_dict
+
+    def add_via_header_rule_to_http_policy(self,rule_dict,vs_obj,http_policy,tenant,avi_config,cloud_name):
+        http_policy_name = None
+        if http_policy :
+            if http_policy['http_request_policy']:
+                index=len(http_policy['http_request_policy']['rules'])+1
+                if rule_dict not in http_policy['http_request_policy']['rules']:
+                    rule_dict['index']=index
+                    http_policy['http_request_policy']["rules"].append(rule_dict)
+            else:
+                http_policy['http_request_policy']["rules"]=[rule_dict]
+            http_policy_name=http_policy['name']
+        else:
+            policy_set={
+                "name" :  "%s-HTTP-Policy-Set" % vs_obj['name'],
+                'tenant_ref' : conv_utils.get_object_ref(tenant,'tenant'),
+                'http_request_policy':{
+                    'rules':[rule_dict]
+                }
+            }
+            http_policy_name = policy_set['name']
+            avi_config['HTTPPolicySet'].append(policy_set)
+            vs_policies=[policy_set.get('name')]
+            self.get_policy_vs(vs_policies, avi_config, vs_obj['name'], tenant,
+                      cloud_name, vs_obj)
+        return http_policy_name
+
+    def app_profile_with_via_host_name(self,app_name,vs_obj,avi_config,tenant,cloud_name,sys_dict,profiles,merge_object_mapping):
+
+        application_profile_obj = \
+                [obj for obj in (sys_dict['ApplicationProfile'] +
+                                 avi_config['ApplicationProfile'])
+                 if obj['name'] == app_name]
+        f5_prof_obj = application_profile_obj
+        if f5_prof_obj and f5_prof_obj[0].get("via-host-name"):
+            f5_prof_obj = f5_prof_obj[0]
+            via_host_name = f5_prof_obj.get("via-host-name")
+            via_request = f5_prof_obj.get('via-request')
+            if via_request in ['append','remove']:
+                if via_header_rule_dict.get("%s-%s" % (via_host_name,via_request)):
+                    via_rule = via_header_rule_dict.get("%s-%s" % (via_host_name,via_request))
+                else:
+                    via_rule = self.create_rule_action_for_via_header(via_host_name,via_request)
+                pol_name = vs_obj.get('http_policies')
+                via_header_request = "%s-%s" % (via_host_name,via_request)
+                policy_name= None
+                if pol_name :
+                    http_policy_ref = pol_name[0].get("http_policy_set_ref")
+                    http_policy_name = http_policy_ref.split("name=")[-1]
+                    if http_policy_name :
+                        policy_obj = [ob for ob in avi_config['HTTPPolicySet'] if ob[
+                                'name'] == http_policy_name]
+                        if policy_with_via_header.get(http_policy_name) :
+                            if not via_header_request in policy_with_via_header.get(http_policy_name):
+                                policy_name = self.add_via_header_rule_to_http_policy(via_rule,vs_obj,policy_obj[0],tenant,avi_config,cloud_name)
+                        else:
+                            policy_name = self.add_via_header_rule_to_http_policy(via_rule,vs_obj,policy_obj[0],tenant,avi_config,cloud_name)
+                else :
+                    policy_name = self.add_via_header_rule_to_http_policy(via_rule,vs_obj,pol_name,tenant,avi_config,cloud_name)
+                if policy_name:
+                    if not policy_with_via_header.get(policy_name):
+                        policy_with_via_header[policy_name] = [via_header_request]
+                    else:
+                        policy_with_via_header[policy_name].append(via_header_request)
 
 class VSConfigConvV11(VSConfigConv):
     def __init__(self, f5_virtualservice_attributes, prefix, con_snatpool,
@@ -725,6 +826,8 @@ class VSConfigConvV11(VSConfigConv):
             f5_virtualservice_attributes['VS_unsupported_types']
         self.vs_na_attr = \
             f5_virtualservice_attributes['VS_na_attr']
+        self.vs_indirect_attr = \
+            f5_virtualservice_attributes['VS-indirect-attr']
         self.connection_limit = 'connection-limit'
         # Added prefix for objects
         self.prefix = prefix
@@ -784,6 +887,8 @@ class VSConfigConvV10(VSConfigConv):
             f5_virtualservice_attributes['VS_na_attr']
         self.unsupported_types = \
             f5_virtualservice_attributes['VS_unsupported_types']
+        self.vs_indirect_attr = \
+            f5_virtualservice_attributes['VS-indirect-attr']
         self.connection_limit = 'limit'
         # Added prefix for objects
         self.prefix = prefix

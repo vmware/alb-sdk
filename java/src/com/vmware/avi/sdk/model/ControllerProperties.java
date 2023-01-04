@@ -117,6 +117,9 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("enable_per_process_stop")
     private Boolean enablePerProcessStop = false;
 
+    @JsonProperty("false_positive_learning_config")
+    private FalsePositiveLearningConfig falsePositiveLearningConfig = null;
+
     @JsonProperty("fatal_error_lease_time")
     private Integer fatalErrorLeaseTime = 120;
 
@@ -125,6 +128,15 @@ public class ControllerProperties extends AviRestResource  {
 
     @JsonProperty("file_object_cleanup_period")
     private Integer fileObjectCleanupPeriod = 1440;
+
+    @JsonProperty("gslb_purge_batch_size")
+    private Integer gslbPurgeBatchSize = 50;
+
+    @JsonProperty("gslb_purge_rpc_batch_size")
+    private Integer gslbPurgeRpcBatchSize = 1000;
+
+    @JsonProperty("gslb_purge_sleep_time_ms")
+    private Integer gslbPurgeSleepTimeMs = 100;
 
     @JsonProperty("max_dead_se_in_grp")
     private Integer maxDeadSeInGrp = 1;
@@ -158,6 +170,9 @@ public class ControllerProperties extends AviRestResource  {
 
     @JsonProperty("portal_token")
     private String portalToken = null;
+
+    @JsonProperty("postgres_vacuum_period")
+    private Integer postgresVacuumPeriod = 20160;
 
     @JsonProperty("process_locked_useraccounts_timeout_period")
     private Integer processLockedUseraccountsTimeoutPeriod = 1;
@@ -193,7 +208,7 @@ public class ControllerProperties extends AviRestResource  {
     private Integer seSpawnRetryInterval = 300;
 
     @JsonProperty("se_upgrade_flow_cleanup_timeout")
-    private Integer seUpgradeFlowCleanupTimeout = 30;
+    private Integer seUpgradeFlowCleanupTimeout = 90;
 
     @JsonProperty("se_vnic_cooldown")
     private Integer seVnicCooldown = 120;
@@ -1102,6 +1117,30 @@ public class ControllerProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * False positive learning configuration.
+     * Field introduced in 22.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return falsePositiveLearningConfig
+     */
+    public FalsePositiveLearningConfig getFalsePositiveLearningConfig() {
+        return falsePositiveLearningConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * False positive learning configuration.
+     * Field introduced in 22.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param falsePositiveLearningConfig set the falsePositiveLearningConfig.
+     */
+    public void setFalsePositiveLearningConfig(FalsePositiveLearningConfig falsePositiveLearningConfig) {
+        this.falsePositiveLearningConfig = falsePositiveLearningConfig;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Unit is sec.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 120.
@@ -1172,6 +1211,84 @@ public class ControllerProperties extends AviRestResource  {
      */
     public void setFileObjectCleanupPeriod(Integer  fileObjectCleanupPeriod) {
         this.fileObjectCleanupPeriod = fileObjectCleanupPeriod;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Batch size for the vs_mgr to perform datastrorecleanup during a gslb purge.
+     * Allowed values are 50-200.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 50.
+     * @return gslbPurgeBatchSize
+     */
+    public Integer getGslbPurgeBatchSize() {
+        return gslbPurgeBatchSize;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Batch size for the vs_mgr to perform datastrorecleanup during a gslb purge.
+     * Allowed values are 50-200.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 50.
+     * @param gslbPurgeBatchSize set the gslbPurgeBatchSize.
+     */
+    public void setGslbPurgeBatchSize(Integer  gslbPurgeBatchSize) {
+        this.gslbPurgeBatchSize = gslbPurgeBatchSize;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Batch size for the gslb portal to execute the purgerpc for object types.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
+     * @return gslbPurgeRpcBatchSize
+     */
+    public Integer getGslbPurgeRpcBatchSize() {
+        return gslbPurgeRpcBatchSize;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Batch size for the gslb portal to execute the purgerpc for object types.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
+     * @param gslbPurgeRpcBatchSize set the gslbPurgeRpcBatchSize.
+     */
+    public void setGslbPurgeRpcBatchSize(Integer  gslbPurgeRpcBatchSize) {
+        this.gslbPurgeRpcBatchSize = gslbPurgeRpcBatchSize;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Sleep time in the vs_mgr during a federatedpurge rpc call.
+     * Allowed values are 100-150.
+     * Field introduced in 22.1.3.
+     * Unit is milliseconds.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+     * @return gslbPurgeSleepTimeMs
+     */
+    public Integer getGslbPurgeSleepTimeMs() {
+        return gslbPurgeSleepTimeMs;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Sleep time in the vs_mgr during a federatedpurge rpc call.
+     * Allowed values are 100-150.
+     * Field introduced in 22.1.3.
+     * Unit is milliseconds.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+     * @param gslbPurgeSleepTimeMs set the gslbPurgeSleepTimeMs.
+     */
+    public void setGslbPurgeSleepTimeMs(Integer  gslbPurgeSleepTimeMs) {
+        this.gslbPurgeSleepTimeMs = gslbPurgeSleepTimeMs;
     }
 
     /**
@@ -1442,6 +1559,36 @@ public class ControllerProperties extends AviRestResource  {
      */
     public void setPortalToken(String  portalToken) {
         this.portalToken = portalToken;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Period for which postgres vacuum are executed.
+     * Allowed values are 30-40320.
+     * Special values are 0 - deactivated.
+     * Field introduced in 22.1.3.
+     * Unit is min.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 20160.
+     * @return postgresVacuumPeriod
+     */
+    public Integer getPostgresVacuumPeriod() {
+        return postgresVacuumPeriod;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Period for which postgres vacuum are executed.
+     * Allowed values are 30-40320.
+     * Special values are 0 - deactivated.
+     * Field introduced in 22.1.3.
+     * Unit is min.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 20160.
+     * @param postgresVacuumPeriod set the postgresVacuumPeriod.
+     */
+    public void setPostgresVacuumPeriod(Integer  postgresVacuumPeriod) {
+        this.postgresVacuumPeriod = postgresVacuumPeriod;
     }
 
     /**
@@ -1722,7 +1869,7 @@ public class ControllerProperties extends AviRestResource  {
      * Field introduced in 22.1.1.
      * Unit is sec.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 90.
      * @return seUpgradeFlowCleanupTimeout
      */
     public Integer getSeUpgradeFlowCleanupTimeout() {
@@ -1735,7 +1882,7 @@ public class ControllerProperties extends AviRestResource  {
      * Field introduced in 22.1.1.
      * Unit is sec.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 30.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 90.
      * @param seUpgradeFlowCleanupTimeout set the seUpgradeFlowCleanupTimeout.
      */
     public void setSeUpgradeFlowCleanupTimeout(Integer  seUpgradeFlowCleanupTimeout) {
@@ -2711,7 +2858,12 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.restrictCloudReadAccess, objControllerProperties.restrictCloudReadAccess)&&
   Objects.equals(this.updateDnsEntryTimeout, objControllerProperties.updateDnsEntryTimeout)&&
   Objects.equals(this.updateDnsEntryRetryLimit, objControllerProperties.updateDnsEntryRetryLimit)&&
-  Objects.equals(this.seUpgradeFlowCleanupTimeout, objControllerProperties.seUpgradeFlowCleanupTimeout);
+  Objects.equals(this.seUpgradeFlowCleanupTimeout, objControllerProperties.seUpgradeFlowCleanupTimeout)&&
+  Objects.equals(this.falsePositiveLearningConfig, objControllerProperties.falsePositiveLearningConfig)&&
+  Objects.equals(this.gslbPurgeRpcBatchSize, objControllerProperties.gslbPurgeRpcBatchSize)&&
+  Objects.equals(this.gslbPurgeBatchSize, objControllerProperties.gslbPurgeBatchSize)&&
+  Objects.equals(this.gslbPurgeSleepTimeMs, objControllerProperties.gslbPurgeSleepTimeMs)&&
+  Objects.equals(this.postgresVacuumPeriod, objControllerProperties.postgresVacuumPeriod);
     }
 
     @Override
@@ -2750,9 +2902,13 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    enableApiSharding: ").append(toIndentedString(enableApiSharding)).append("\n");
                         sb.append("    enableMemoryBalancer: ").append(toIndentedString(enableMemoryBalancer)).append("\n");
                         sb.append("    enablePerProcessStop: ").append(toIndentedString(enablePerProcessStop)).append("\n");
+                        sb.append("    falsePositiveLearningConfig: ").append(toIndentedString(falsePositiveLearningConfig)).append("\n");
                         sb.append("    fatalErrorLeaseTime: ").append(toIndentedString(fatalErrorLeaseTime)).append("\n");
                         sb.append("    federatedDatastoreCleanupDuration: ").append(toIndentedString(federatedDatastoreCleanupDuration)).append("\n");
                         sb.append("    fileObjectCleanupPeriod: ").append(toIndentedString(fileObjectCleanupPeriod)).append("\n");
+                        sb.append("    gslbPurgeBatchSize: ").append(toIndentedString(gslbPurgeBatchSize)).append("\n");
+                        sb.append("    gslbPurgeRpcBatchSize: ").append(toIndentedString(gslbPurgeRpcBatchSize)).append("\n");
+                        sb.append("    gslbPurgeSleepTimeMs: ").append(toIndentedString(gslbPurgeSleepTimeMs)).append("\n");
                         sb.append("    maxDeadSeInGrp: ").append(toIndentedString(maxDeadSeInGrp)).append("\n");
                         sb.append("    maxPcapPerTenant: ").append(toIndentedString(maxPcapPerTenant)).append("\n");
                         sb.append("    maxSeSpawnIntervalDelay: ").append(toIndentedString(maxSeSpawnIntervalDelay)).append("\n");
@@ -2764,6 +2920,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    portalRequestBurstLimit: ").append(toIndentedString(portalRequestBurstLimit)).append("\n");
                         sb.append("    portalRequestRateLimit: ").append(toIndentedString(portalRequestRateLimit)).append("\n");
                         sb.append("    portalToken: ").append(toIndentedString(portalToken)).append("\n");
+                        sb.append("    postgresVacuumPeriod: ").append(toIndentedString(postgresVacuumPeriod)).append("\n");
                         sb.append("    processLockedUseraccountsTimeoutPeriod: ").append(toIndentedString(processLockedUseraccountsTimeoutPeriod)).append("\n");
                         sb.append("    processPkiProfileTimeoutPeriod: ").append(toIndentedString(processPkiProfileTimeoutPeriod)).append("\n");
                         sb.append("    queryHostFail: ").append(toIndentedString(queryHostFail)).append("\n");

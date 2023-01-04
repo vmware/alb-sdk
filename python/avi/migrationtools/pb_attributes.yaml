@@ -12295,6 +12295,13 @@ l4_internal:
         py_type: list
         ref_type: UdpStatRuntime
         required: 'False'
+      sctpstat:
+        array: true
+        doc_type: SctpStatRuntime
+        name: sctpstat
+        py_type: list
+        ref_type: SctpStatRuntime
+        required: 'False'
   SeVsHbStatEntry:
     name: SeVsHbStatEntry
     properties:

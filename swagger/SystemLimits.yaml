@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '22.1.1'
+    version: '23.1.1'
     title: Avi SystemLimits Object API
     contact:
         name: Avi Networks Inc.
@@ -568,6 +568,10 @@ definitions:
                 format: int32
             num_matches_per_rule:
                 description: "Number of Matches per Rule. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_rules_per_evh_host:
+                description: "Number of rules per EVH Host. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_rules_per_http_policy:

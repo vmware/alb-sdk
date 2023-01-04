@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "22.1.1",
+        "version": "23.1.1",
         "title": "Avi ALBServicesConfig Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -551,6 +551,7 @@
                 "case_config",
                 "feature_opt_in_status",
                 "ip_reputation_config",
+                "operations_config",
                 "portal_url",
                 "saas_licensing_config",
                 "split_proxy_configuration",
@@ -591,6 +592,10 @@
                     "description": "Mode helps log collection and upload. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE. Field introduced in 20.1.2. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Basic edition(Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "MYVMWARE"
+                },
+                "operations_config": {
+                    "description": "Operations configuration. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/OperationsConfig"
                 },
                 "polling_interval": {
                     "description": "Time interval in minutes. Allowed values are 5-60. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -699,7 +704,7 @@
             "type": "object",
             "properties": {
                 "app_signature_sync_interval": {
-                    "description": "Application Signature db sync interval in minutes. Allowed values are 60-10080. Field introduced in 20.1.4. Unit is MIN. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. Special default for Essentials edition is 1440, Basic edition is 1440, Enterprise is 1440.",
+                    "description": "Application Signature db sync interval in minutes. Allowed values are 1440-10080. Field introduced in 20.1.4. Unit is MIN. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. Special default for Essentials edition is 1440, Basic edition is 1440, Enterprise is 1440.",
                     "type": "integer",
                     "default": 1440,
                     "format": "int32"
@@ -735,6 +740,16 @@
                 }
             }
         },
+        "InventoryConfig": {
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "description": "Allow inventory stats to be regularly sent to pulse portal. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        },
         "IpReputationConfig": {
             "type": "object",
             "properties": {
@@ -745,10 +760,19 @@
                     "format": "int32"
                 },
                 "ip_reputation_sync_interval": {
-                    "description": "IP reputation db sync interval in minutes. Allowed values are 2-1440. Field introduced in 20.1.1. Unit is MIN. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 60), Basic edition(Allowed values- 60), Enterprise with Cloud Services edition.",
+                    "description": "IP reputation db sync interval in minutes. Allowed values are 30-1440. Field introduced in 20.1.1. Unit is MIN. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 60), Basic edition(Allowed values- 60), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
                     "format": "int32"
+                }
+            }
+        },
+        "OperationsConfig": {
+            "type": "object",
+            "properties": {
+                "inventory_config": {
+                    "description": "Inventory op config. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/InventoryConfig"
                 }
             }
         },

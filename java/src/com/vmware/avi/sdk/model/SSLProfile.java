@@ -45,6 +45,9 @@ public class SSLProfile extends AviRestResource  {
     @JsonProperty("enable_ssl_session_reuse")
     private Boolean enableSslSessionReuse = true;
 
+    @JsonProperty("is_federated")
+    private Boolean isFederated = false;
+
     @JsonProperty("markers")
     private List<RoleFilterMatchLabel> markers = null;
 
@@ -85,7 +88,7 @@ public class SSLProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Ciphers suites represented as defined by https //www.openssl.org/docs/apps/ciphers.html.
+     * Ciphers suites represented as defined by https //www.openssl.org/docs/man1.1.1/man1/ciphers.html.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "AES:3DES:RC4".
      * @return acceptedCiphers
@@ -96,7 +99,7 @@ public class SSLProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Ciphers suites represented as defined by https //www.openssl.org/docs/apps/ciphers.html.
+     * Ciphers suites represented as defined by https //www.openssl.org/docs/man1.1.1/man1/ciphers.html.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "AES:3DES:RC4".
      * @param acceptedCiphers set the acceptedCiphers.
@@ -209,7 +212,7 @@ public class SSLProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Tls 1.3 ciphers suites represented as defined by u(https //www.openssl.org/docs/manmaster/man1/ciphers.html).
+     * Tls 1.3 ciphers suites represented as defined by u(https //www.openssl.org/docs/man1.1.1/man1/ciphers.html).
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Special default for essentials edition is tls_aes_256_gcm_sha384-tls_aes_128_gcm_sha256, basic edition is
@@ -222,7 +225,7 @@ public class SSLProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Tls 1.3 ciphers suites represented as defined by u(https //www.openssl.org/docs/manmaster/man1/ciphers.html).
+     * Tls 1.3 ciphers suites represented as defined by u(https //www.openssl.org/docs/man1.1.1/man1/ciphers.html).
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Special default for essentials edition is tls_aes_256_gcm_sha384-tls_aes_128_gcm_sha256, basic edition is
@@ -325,6 +328,30 @@ public class SSLProfile extends AviRestResource  {
      */
     public void setEnableSslSessionReuse(Boolean  enableSslSessionReuse) {
         this.enableSslSessionReuse = enableSslSessionReuse;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * It specifies whether the object has to be replicated to the gslb followers.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return isFederated
+     */
+    public Boolean getIsFederated() {
+        return isFederated;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * It specifies whether the object has to be replicated to the gslb followers.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param isFederated set the isFederated.
+     */
+    public void setIsFederated(Boolean  isFederated) {
+        this.isFederated = isFederated;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -648,6 +675,7 @@ public class SSLProfile extends AviRestResource  {
   Objects.equals(this.ecNamedCurve, objSSLProfile.ecNamedCurve)&&
   Objects.equals(this.signatureAlgorithm, objSSLProfile.signatureAlgorithm)&&
   Objects.equals(this.markers, objSSLProfile.markers)&&
+  Objects.equals(this.isFederated, objSSLProfile.isFederated)&&
   Objects.equals(this.description, objSSLProfile.description)&&
   Objects.equals(this.tenantRef, objSSLProfile.tenantRef);
     }
@@ -664,6 +692,7 @@ public class SSLProfile extends AviRestResource  {
                         sb.append("    ecNamedCurve: ").append(toIndentedString(ecNamedCurve)).append("\n");
                         sb.append("    enableEarlyData: ").append(toIndentedString(enableEarlyData)).append("\n");
                         sb.append("    enableSslSessionReuse: ").append(toIndentedString(enableSslSessionReuse)).append("\n");
+                        sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    preferClientCipherOrdering: ").append(toIndentedString(preferClientCipherOrdering)).append("\n");

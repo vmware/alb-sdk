@@ -187,7 +187,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - show nsxt segment <key> ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 22.1.1</div>
+    <div class="app-desc">Version: 23.1.1</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -270,6 +270,7 @@ font-style: italic;
     "tier1_id" : "aeiou",
     "vrf_context_ref" : "aeiou",
     "segment_gw" : "aeiou",
+    "origin_id" : "aeiou",
     "dhcp_ranges" : [ "aeiou" ],
     "nw_name" : "aeiou",
     "uuid" : "aeiou",
@@ -283,6 +284,7 @@ font-style: italic;
     "cloud_ref" : "aeiou",
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
+    "security_only_nsxt" : true,
     "opaque_network_id" : "aeiou",
     "segment_id" : "aeiou"
   } ]
@@ -345,6 +347,7 @@ font-style: italic;
   "tier1_id" : "aeiou",
   "vrf_context_ref" : "aeiou",
   "segment_gw" : "aeiou",
+  "origin_id" : "aeiou",
   "dhcp_ranges" : [ "aeiou" ],
   "nw_name" : "aeiou",
   "uuid" : "aeiou",
@@ -358,6 +361,7 @@ font-style: italic;
   "cloud_ref" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "security_only_nsxt" : true,
   "opaque_network_id" : "aeiou",
   "segment_id" : "aeiou"
 }</code></pre>
@@ -491,6 +495,7 @@ font-style: italic;
   "tier1_id" : "aeiou",
   "vrf_context_ref" : "aeiou",
   "segment_gw" : "aeiou",
+  "origin_id" : "aeiou",
   "dhcp_ranges" : [ "aeiou" ],
   "nw_name" : "aeiou",
   "uuid" : "aeiou",
@@ -504,6 +509,7 @@ font-style: italic;
   "cloud_ref" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "security_only_nsxt" : true,
   "opaque_network_id" : "aeiou",
   "segment_id" : "aeiou"
 }</code></pre>
@@ -577,6 +583,7 @@ font-style: italic;
   "tier1_id" : "aeiou",
   "vrf_context_ref" : "aeiou",
   "segment_gw" : "aeiou",
+  "origin_id" : "aeiou",
   "dhcp_ranges" : [ "aeiou" ],
   "nw_name" : "aeiou",
   "uuid" : "aeiou",
@@ -590,6 +597,7 @@ font-style: italic;
   "cloud_ref" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "security_only_nsxt" : true,
   "opaque_network_id" : "aeiou",
   "segment_id" : "aeiou"
 }</code></pre>
@@ -663,6 +671,7 @@ font-style: italic;
   "tier1_id" : "aeiou",
   "vrf_context_ref" : "aeiou",
   "segment_gw" : "aeiou",
+  "origin_id" : "aeiou",
   "dhcp_ranges" : [ "aeiou" ],
   "nw_name" : "aeiou",
   "uuid" : "aeiou",
@@ -676,6 +685,7 @@ font-style: italic;
   "cloud_ref" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
+  "security_only_nsxt" : true,
   "opaque_network_id" : "aeiou",
   "segment_id" : "aeiou"
 }</code></pre>
@@ -719,6 +729,8 @@ font-style: italic;
 <div class="param">nw_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Network Name. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">nw_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Corresponding network object in Avi. It is a reference to an object of type Network. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">opaque_network_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Opaque network Id. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">origin_id </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Origin ID applicable to security only cloud. Field introduced in 22.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">security_only_nsxt (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Nsxt segment belongs to Security only cloud. Field introduced in 22.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">segment_gw (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Segment Gateway. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">segment_gw6 (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> V6 segment Gateway. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">segment_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Segment Id. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
