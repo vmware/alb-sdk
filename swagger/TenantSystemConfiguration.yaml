@@ -6,7 +6,7 @@
 swagger: '2.0'
 info:
     version: '23.1.1'
-    title: Avi SCVsStateInfo Object API
+    title: Avi TenantSystemConfiguration Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
@@ -14,7 +14,8 @@ info:
     description: |
         CLI
         ```
-        - show vsstateinfo
+        - show tenantsystemconfiguration <key>
+        - configure tenantsystemconfiguration <key>
         ```
 
 
@@ -24,7 +25,7 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /scvsstateinfo:
+    /tenantsystemconfiguration:
         get:
             consumes:
                 -   application/json
@@ -88,7 +89,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/SCVsStateInfoApiResponse"
+                        $ref: "#/definitions/TenantSystemConfigurationApiResponse"
                 401:
                     description: log in failed
         post:
@@ -119,20 +120,20 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: SCVsStateInfo object creation
+                    description: TenantSystemConfiguration object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/SCVsStateInfo"
+                        $ref: "#/definitions/TenantSystemConfiguration"
             security:
                 - basicAuth: []
             responses:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/SCVsStateInfo"
+                        $ref: "#/definitions/TenantSystemConfiguration"
                 401:
                     description: log in failed
-    /scvsstateinfo/{uuid}:
+    /tenantsystemconfiguration/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -193,7 +194,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/SCVsStateInfo"
+                        $ref: "#/definitions/TenantSystemConfiguration"
                 401:
                     description: log in failed
         put:
@@ -229,10 +230,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: SCVsStateInfo object creation
+                    description: TenantSystemConfiguration object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/SCVsStateInfo"
+                        $ref: "#/definitions/TenantSystemConfiguration"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -244,7 +245,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/SCVsStateInfo"
+                        $ref: "#/definitions/TenantSystemConfiguration"
                 401:
                     description: log in failed
         patch:
@@ -280,10 +281,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: SCVsStateInfo object creation
+                    description: TenantSystemConfiguration object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/SCVsStateInfo"
+                        $ref: "#/definitions/TenantSystemConfiguration"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -295,7 +296,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/SCVsStateInfo"
+                        $ref: "#/definitions/TenantSystemConfiguration"
                 401:
                     description: log in failed
         delete:
@@ -346,55 +347,45 @@ paths:
 
 
 definitions:
-    OperationalStatus:
+    ConfigPbAttributes:
         type: object
         properties:
-            last_changed_time:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/TimeStamp'
-            reason:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    type: string
-            reason_code:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+            version:
+                description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: int64
-            reason_code_string:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            state:
-                description: " Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING, OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING, OPER_FAILED, OPER_UNAVAIL, OPER_AGGREGATE_DOWN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-                default: "OPER_UNAVAIL"
-    SCVsStateInfo:
+                default: 1
+                format: int32
+    TenantSystemConfiguration:
         type: object
+        required:
+            -   name
         properties:
             _last_modified:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
                 readOnly: True
                 type: string
-            oper_status:
-                description: " Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/OperationalStatus'
+            configpb_attributes:
+                description: "Protobuf versioning for config pbs. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/ConfigPbAttributes'
+            dns_virtualservice_refs:
+                description: "DNS virtual services hosting FQDN records for applications configured within this tenant. It is a reference to an object of type VirtualService. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            name:
+                description: "Name of the Tenant System Configuration object. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Unique Identifier of the tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Tenant System Configuration UUID. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
-            vip_id:
-                description: " Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            vs_id:
-                description: " Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-    SCVsStateInfoApiResponse:
+    TenantSystemConfigurationApiResponse:
         type: object
         required:
             - count
@@ -406,20 +397,6 @@ definitions:
             results:
                 type: array
                 items:
-                    $ref: "#/definitions/SCVsStateInfo"
+                    $ref: "#/definitions/TenantSystemConfiguration"
             next:
                 type: string
-    TimeStamp:
-        type: object
-        required:
-            -   secs
-            -   usecs
-        properties:
-            secs:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: int64
-            usecs:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: int64

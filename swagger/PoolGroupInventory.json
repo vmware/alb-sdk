@@ -750,7 +750,7 @@
                     "type": "string"
                 },
                 "priority_label": {
-                    "description": "All pools with same label are treated similarly in a pool group. A pool with a higher priority is selected, as long as the pool is eligible or an explicit policy chooses a different pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "All pools with same priority are treated similarly in a pool group. The higher the number, the higher the priority.A pool with a higher priority is selected, as long as the pool is eligible or an explicit policy chooses a different pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ratio": {
