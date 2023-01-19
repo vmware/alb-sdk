@@ -30,6 +30,12 @@ public class WebappUT extends AviRestResource  {
     @JsonProperty("name")
     private String name = null;
 
+    @JsonProperty("sensitive_test")
+    private L1FSensitiveTestCase sensitiveTest = null;
+
+    @JsonProperty("sensitive_tests")
+    private List<L1FSensitiveTestCase> sensitiveTests = null;
+
     @JsonProperty("string_length_test")
     private L1StringLengthTestCase stringLengthTest = null;
 
@@ -38,6 +44,9 @@ public class WebappUT extends AviRestResource  {
 
     @JsonProperty("tenant_ref")
     private String tenantRef = null;
+
+    @JsonProperty("test_sensitive_string")
+    private String testSensitiveString = null;
 
     @JsonProperty("test_string")
     private String testString = null;
@@ -52,7 +61,7 @@ public class WebappUT extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Optional message for nested f_mandatory test cases defined at level0.
+     * Optional message for nested f_mandatory test cases defined at level1.
      * Field introduced in 21.1.5, 22.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -64,7 +73,7 @@ public class WebappUT extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Optional message for nested f_mandatory test cases defined at level0.
+     * Optional message for nested f_mandatory test cases defined at level1.
      * Field introduced in 21.1.5, 22.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -135,6 +144,69 @@ public class WebappUT extends AviRestResource  {
      */
     public void setName(String  name) {
         this.name = name;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Optional message for nested f_sensitive test cases defined at level1.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sensitiveTest
+     */
+    public L1FSensitiveTestCase getSensitiveTest() {
+        return sensitiveTest;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Optional message for nested f_sensitive test cases defined at level1.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sensitiveTest set the sensitiveTest.
+     */
+    public void setSensitiveTest(L1FSensitiveTestCase sensitiveTest) {
+        this.sensitiveTest = sensitiveTest;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Repeated message for nested f_sensitive test cases-level1.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sensitiveTests
+     */
+    public List<L1FSensitiveTestCase> getSensitiveTests() {
+        return sensitiveTests;
+    }
+
+    /**
+     * This is the setter method. this will set the sensitiveTests
+     * Repeated message for nested f_sensitive test cases-level1.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sensitiveTests
+     */
+    public void setSensitiveTests(List<L1FSensitiveTestCase>  sensitiveTests) {
+        this.sensitiveTests = sensitiveTests;
+    }
+
+    /**
+     * This is the setter method this will set the sensitiveTests
+     * Repeated message for nested f_sensitive test cases-level1.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sensitiveTests
+     */
+    public WebappUT addSensitiveTestsItem(L1FSensitiveTestCase sensitiveTestsItem) {
+      if (this.sensitiveTests == null) {
+        this.sensitiveTests = new ArrayList<L1FSensitiveTestCase>();
+      }
+      this.sensitiveTests.add(sensitiveTestsItem);
+      return this;
     }
 
     /**
@@ -228,6 +300,32 @@ public class WebappUT extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * The string for sensitive (secret) field.
+     * Object-level0.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return testSensitiveString
+     */
+    public String getTestSensitiveString() {
+        return testSensitiveString;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The string for sensitive (secret) field.
+     * Object-level0.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param testSensitiveString set the testSensitiveString.
+     */
+    public void setTestSensitiveString(String  testSensitiveString) {
+        this.testSensitiveString = testSensitiveString;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * The maximum string length.
      * Field introduced in 21.1.5, 22.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -308,7 +406,10 @@ public class WebappUT extends AviRestResource  {
   Objects.equals(this.mandatoryTest, objWebappUT.mandatoryTest)&&
   Objects.equals(this.mandatoryTests, objWebappUT.mandatoryTests)&&
   Objects.equals(this.stringLengthTest, objWebappUT.stringLengthTest)&&
-  Objects.equals(this.stringLengthTests, objWebappUT.stringLengthTests);
+  Objects.equals(this.stringLengthTests, objWebappUT.stringLengthTests)&&
+  Objects.equals(this.testSensitiveString, objWebappUT.testSensitiveString)&&
+  Objects.equals(this.sensitiveTest, objWebappUT.sensitiveTest)&&
+  Objects.equals(this.sensitiveTests, objWebappUT.sensitiveTests);
     }
 
     @Override
@@ -318,9 +419,12 @@ public class WebappUT extends AviRestResource  {
                   sb.append("    mandatoryTest: ").append(toIndentedString(mandatoryTest)).append("\n");
                         sb.append("    mandatoryTests: ").append(toIndentedString(mandatoryTests)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                        sb.append("    sensitiveTest: ").append(toIndentedString(sensitiveTest)).append("\n");
+                        sb.append("    sensitiveTests: ").append(toIndentedString(sensitiveTests)).append("\n");
                         sb.append("    stringLengthTest: ").append(toIndentedString(stringLengthTest)).append("\n");
                         sb.append("    stringLengthTests: ").append(toIndentedString(stringLengthTests)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+                        sb.append("    testSensitiveString: ").append(toIndentedString(testSensitiveString)).append("\n");
                         sb.append("    testString: ").append(toIndentedString(testString)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");

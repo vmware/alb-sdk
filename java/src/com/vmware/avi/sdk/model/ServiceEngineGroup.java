@@ -6627,7 +6627,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Protobuf versioning for config pbs.
+     * Se per-packet latency tracking configuration.
      * Field introduced in 22.1.1.
      * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
      * edition.
@@ -6640,7 +6640,7 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Protobuf versioning for config pbs.
+     * Se per-packet latency tracking configuration.
      * Field introduced in 22.1.1.
      * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
      * edition.

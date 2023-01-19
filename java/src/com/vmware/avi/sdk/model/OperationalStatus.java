@@ -135,7 +135,7 @@ public class OperationalStatus  {
      * This is the getter method this will return the attribute value.
      * Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING,
      * OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING,
-     * OPER_FAILED, OPER_UNAVAIL.
+     * OPER_FAILED, OPER_UNAVAIL, OPER_AGGREGATE_DOWN.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "OPER_UNAVAIL".
      * @return state
@@ -148,7 +148,7 @@ public class OperationalStatus  {
      * This is the setter method to the attribute.
      * Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING,
      * OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING,
-     * OPER_FAILED, OPER_UNAVAIL.
+     * OPER_FAILED, OPER_UNAVAIL, OPER_AGGREGATE_DOWN.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "OPER_UNAVAIL".
      * @param state set the state.
