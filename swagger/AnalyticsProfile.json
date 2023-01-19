@@ -1037,7 +1037,7 @@
                     "type": "string"
                 },
                 "time_tracker_props": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "SE connection establishment latency tracking configuration. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TimeTrackerProperties"
                 },
                 "url": {

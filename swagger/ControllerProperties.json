@@ -482,21 +482,15 @@
                     "format": "int32"
                 },
                 "gslb_purge_batch_size": {
-                    "description": "Batch size for the vs_mgr to perform datastrorecleanup during a GSLB purge. Allowed values are 50-200. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "default": 50,
-                    "format": "int32"
-                },
-                "gslb_purge_rpc_batch_size": {
-                    "description": "Batch size for the gslb portal to execute the purgeRPC for object types. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Batch size for the vs_mgr to perform datastrorecleanup during a GSLB purge. Allowed values are 50-1200. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000,
                     "format": "int32"
                 },
                 "gslb_purge_sleep_time_ms": {
-                    "description": "Sleep time in the vs_mgr during a FederatedPurge RPC call. Allowed values are 100-150. Field introduced in 22.1.3. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Sleep time in the vs_mgr during a FederatedPurge RPC call. Allowed values are 50-100. Field introduced in 22.1.3. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "default": 100,
+                    "default": 50,
                     "format": "int32"
                 },
                 "max_dead_se_in_grp": {
