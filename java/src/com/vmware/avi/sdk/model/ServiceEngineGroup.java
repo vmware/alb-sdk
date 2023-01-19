@@ -8131,7 +8131,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Wait time for sending scaleout ready notification after virtual service is marked up.
      * In certain deployments, there may be an additional delay to accept traffic.
      * For example, for bgp, some time is needed for route advertisement.
-     * Allowed values are 0-20.
+     * Allowed values are 0-300.
      * Field introduced in 18.1.5,18.2.1.
      * Unit is sec.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -8147,7 +8147,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Wait time for sending scaleout ready notification after virtual service is marked up.
      * In certain deployments, there may be an additional delay to accept traffic.
      * For example, for bgp, some time is needed for route advertisement.
-     * Allowed values are 0-20.
+     * Allowed values are 0-300.
      * Field introduced in 18.1.5,18.2.1.
      * Unit is sec.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.

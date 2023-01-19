@@ -130,13 +130,10 @@ public class ControllerProperties extends AviRestResource  {
     private Integer fileObjectCleanupPeriod = 1440;
 
     @JsonProperty("gslb_purge_batch_size")
-    private Integer gslbPurgeBatchSize = 50;
-
-    @JsonProperty("gslb_purge_rpc_batch_size")
-    private Integer gslbPurgeRpcBatchSize = 1000;
+    private Integer gslbPurgeBatchSize = 1000;
 
     @JsonProperty("gslb_purge_sleep_time_ms")
-    private Integer gslbPurgeSleepTimeMs = 100;
+    private Integer gslbPurgeSleepTimeMs = 50;
 
     @JsonProperty("max_dead_se_in_grp")
     private Integer maxDeadSeInGrp = 1;
@@ -1216,10 +1213,10 @@ public class ControllerProperties extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Batch size for the vs_mgr to perform datastrorecleanup during a gslb purge.
-     * Allowed values are 50-200.
+     * Allowed values are 50-1200.
      * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 50.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
      * @return gslbPurgeBatchSize
      */
     public Integer getGslbPurgeBatchSize() {
@@ -1229,10 +1226,10 @@ public class ControllerProperties extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Batch size for the vs_mgr to perform datastrorecleanup during a gslb purge.
-     * Allowed values are 50-200.
+     * Allowed values are 50-1200.
      * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 50.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
      * @param gslbPurgeBatchSize set the gslbPurgeBatchSize.
      */
     public void setGslbPurgeBatchSize(Integer  gslbPurgeBatchSize) {
@@ -1241,36 +1238,12 @@ public class ControllerProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Batch size for the gslb portal to execute the purgerpc for object types.
-     * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
-     * @return gslbPurgeRpcBatchSize
-     */
-    public Integer getGslbPurgeRpcBatchSize() {
-        return gslbPurgeRpcBatchSize;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Batch size for the gslb portal to execute the purgerpc for object types.
-     * Field introduced in 22.1.3.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 1000.
-     * @param gslbPurgeRpcBatchSize set the gslbPurgeRpcBatchSize.
-     */
-    public void setGslbPurgeRpcBatchSize(Integer  gslbPurgeRpcBatchSize) {
-        this.gslbPurgeRpcBatchSize = gslbPurgeRpcBatchSize;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Sleep time in the vs_mgr during a federatedpurge rpc call.
-     * Allowed values are 100-150.
+     * Allowed values are 50-100.
      * Field introduced in 22.1.3.
      * Unit is milliseconds.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 50.
      * @return gslbPurgeSleepTimeMs
      */
     public Integer getGslbPurgeSleepTimeMs() {
@@ -1280,11 +1253,11 @@ public class ControllerProperties extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Sleep time in the vs_mgr during a federatedpurge rpc call.
-     * Allowed values are 100-150.
+     * Allowed values are 50-100.
      * Field introduced in 22.1.3.
      * Unit is milliseconds.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 100.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 50.
      * @param gslbPurgeSleepTimeMs set the gslbPurgeSleepTimeMs.
      */
     public void setGslbPurgeSleepTimeMs(Integer  gslbPurgeSleepTimeMs) {
@@ -2860,7 +2833,6 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.updateDnsEntryRetryLimit, objControllerProperties.updateDnsEntryRetryLimit)&&
   Objects.equals(this.seUpgradeFlowCleanupTimeout, objControllerProperties.seUpgradeFlowCleanupTimeout)&&
   Objects.equals(this.falsePositiveLearningConfig, objControllerProperties.falsePositiveLearningConfig)&&
-  Objects.equals(this.gslbPurgeRpcBatchSize, objControllerProperties.gslbPurgeRpcBatchSize)&&
   Objects.equals(this.gslbPurgeBatchSize, objControllerProperties.gslbPurgeBatchSize)&&
   Objects.equals(this.gslbPurgeSleepTimeMs, objControllerProperties.gslbPurgeSleepTimeMs)&&
   Objects.equals(this.postgresVacuumPeriod, objControllerProperties.postgresVacuumPeriod);
@@ -2907,7 +2879,6 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    federatedDatastoreCleanupDuration: ").append(toIndentedString(federatedDatastoreCleanupDuration)).append("\n");
                         sb.append("    fileObjectCleanupPeriod: ").append(toIndentedString(fileObjectCleanupPeriod)).append("\n");
                         sb.append("    gslbPurgeBatchSize: ").append(toIndentedString(gslbPurgeBatchSize)).append("\n");
-                        sb.append("    gslbPurgeRpcBatchSize: ").append(toIndentedString(gslbPurgeRpcBatchSize)).append("\n");
                         sb.append("    gslbPurgeSleepTimeMs: ").append(toIndentedString(gslbPurgeSleepTimeMs)).append("\n");
                         sb.append("    maxDeadSeInGrp: ").append(toIndentedString(maxDeadSeInGrp)).append("\n");
                         sb.append("    maxPcapPerTenant: ").append(toIndentedString(maxPcapPerTenant)).append("\n");
