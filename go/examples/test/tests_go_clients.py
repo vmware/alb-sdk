@@ -1,7 +1,6 @@
 import shlex
 import pytest
 import logging
-from cStringIO import StringIO
 from string import Template
 import subprocess
 logging.basicConfig(filename='go_tests.log', level=logging.INFO)

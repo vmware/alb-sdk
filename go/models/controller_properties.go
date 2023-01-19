@@ -126,13 +126,10 @@ type ControllerProperties struct {
 	// Period for file object cleanup job. Field introduced in 20.1.1. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	FileObjectCleanupPeriod *int32 `json:"file_object_cleanup_period,omitempty"`
 
-	// Batch size for the vs_mgr to perform datastrorecleanup during a GSLB purge. Allowed values are 50-200. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Batch size for the vs_mgr to perform datastrorecleanup during a GSLB purge. Allowed values are 50-1200. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	GslbPurgeBatchSize *int32 `json:"gslb_purge_batch_size,omitempty"`
 
-	// Batch size for the gslb portal to execute the purgeRPC for object types. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
-	GslbPurgeRPCBatchSize *int32 `json:"gslb_purge_rpc_batch_size,omitempty"`
-
-	// Sleep time in the vs_mgr during a FederatedPurge RPC call. Allowed values are 100-150. Field introduced in 22.1.3. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Sleep time in the vs_mgr during a FederatedPurge RPC call. Allowed values are 50-100. Field introduced in 22.1.3. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	GslbPurgeSleepTimeMs *int32 `json:"gslb_purge_sleep_time_ms,omitempty"`
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
