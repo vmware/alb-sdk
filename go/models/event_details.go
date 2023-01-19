@@ -341,6 +341,9 @@ type EventDetails struct {
 	// NSX-T ServiceInsertion Service event. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	NsxtServiceDetails *NsxtSIServiceDetails `json:"nsxt_service_details,omitempty"`
 
+	// NSX-T Tier1(s) Segment(s) event details. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	NsxtT1SegDetails *NsxtT1SegDetails `json:"nsxt_t1_seg_details,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	NwSubnetClashDetails *NetworkSubnetClash `json:"nw_subnet_clash_details,omitempty"`
 
