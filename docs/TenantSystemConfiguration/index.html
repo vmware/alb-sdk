@@ -5,7 +5,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Avi SCVsStateInfo Object API</title>
+    <title>Avi TenantSystemConfiguration Object API</title>
     <style type="text/css">
       body { 
 	font-family: Trebuchet MS, sans-serif;
@@ -183,8 +183,8 @@ font-style: italic;
     </style>
   </head>
   <body>
-  <h1>Avi SCVsStateInfo Object API</h1>
-    <div class="app-desc">CLI ``` - show vsstateinfo ``` </div>
+  <h1>Avi TenantSystemConfiguration Object API</h1>
+    <div class="app-desc">CLI ``` - show tenantsystemconfiguration <key> - configure tenantsystemconfiguration <key> ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
     <div class="app-desc">Version: 23.1.1</div>
@@ -202,19 +202,19 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#scvsstateinfoGet"><code><span class="http-method">get</span> /scvsstateinfo</code></a></li>
-  <li><a href="#scvsstateinfoPost"><code><span class="http-method">post</span> /scvsstateinfo</code></a></li>
-  <li><a href="#scvsstateinfoUuidDelete"><code><span class="http-method">delete</span> /scvsstateinfo/{uuid}</code></a></li>
-  <li><a href="#scvsstateinfoUuidGet"><code><span class="http-method">get</span> /scvsstateinfo/{uuid}</code></a></li>
-  <li><a href="#scvsstateinfoUuidPatch"><code><span class="http-method">patch</span> /scvsstateinfo/{uuid}</code></a></li>
-  <li><a href="#scvsstateinfoUuidPut"><code><span class="http-method">put</span> /scvsstateinfo/{uuid}</code></a></li>
+  <li><a href="#tenantsystemconfigurationGet"><code><span class="http-method">get</span> /tenantsystemconfiguration</code></a></li>
+  <li><a href="#tenantsystemconfigurationPost"><code><span class="http-method">post</span> /tenantsystemconfiguration</code></a></li>
+  <li><a href="#tenantsystemconfigurationUuidDelete"><code><span class="http-method">delete</span> /tenantsystemconfiguration/{uuid}</code></a></li>
+  <li><a href="#tenantsystemconfigurationUuidGet"><code><span class="http-method">get</span> /tenantsystemconfiguration/{uuid}</code></a></li>
+  <li><a href="#tenantsystemconfigurationUuidPatch"><code><span class="http-method">patch</span> /tenantsystemconfiguration/{uuid}</code></a></li>
+  <li><a href="#tenantsystemconfigurationUuidPut"><code><span class="http-method">put</span> /tenantsystemconfiguration/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="scvsstateinfoGet"/>
+  <div class="method"><a name="tenantsystemconfigurationGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /scvsstateinfo</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">scvsstateinfoGet</span>)</div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /tenantsystemconfiguration</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">tenantsystemconfigurationGet</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -248,7 +248,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#SCVsStateInfoApiResponse">SCVsStateInfoApiResponse</a>
+      <a href="#TenantSystemConfigurationApiResponse">TenantSystemConfigurationApiResponse</a>
       
     </div>
 
@@ -261,18 +261,11 @@ font-style: italic;
   "count" : 123,
   "results" : [ {
     "tenant_ref" : "aeiou",
-    "vs_id" : "aeiou",
-    "vip_id" : "aeiou",
-    "oper_status" : {
-      "reason_code" : 123456789,
-      "reason" : [ "aeiou" ],
-      "last_changed_time" : {
-        "usecs" : 123456789,
-        "secs" : 123456789
-      },
-      "state" : "aeiou",
-      "reason_code_string" : "aeiou"
+    "name" : "aeiou",
+    "configpb_attributes" : {
+      "version" : 123
     },
+    "dns_virtualservice_refs" : [ "aeiou" ],
     "uuid" : "aeiou",
     "url" : "aeiou",
     "_last_modified" : "aeiou"
@@ -289,17 +282,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#SCVsStateInfoApiResponse">SCVsStateInfoApiResponse</a>
+        <a href="#TenantSystemConfigurationApiResponse">TenantSystemConfigurationApiResponse</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="scvsstateinfoPost"/>
+  <div class="method"><a name="tenantsystemconfigurationPost"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /scvsstateinfo</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">scvsstateinfoPost</span>)</div>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /tenantsystemconfiguration</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">tenantsystemconfigurationPost</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -313,7 +306,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; SCVsStateInfo object creation </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; TenantSystemConfiguration object creation </div>
     </div>  <!-- field-items -->
 
 
@@ -321,7 +314,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#SCVsStateInfo">SCVsStateInfo</a>
+      <a href="#TenantSystemConfiguration">TenantSystemConfiguration</a>
       
     </div>
 
@@ -331,18 +324,11 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "tenant_ref" : "aeiou",
-  "vs_id" : "aeiou",
-  "vip_id" : "aeiou",
-  "oper_status" : {
-    "reason_code" : 123456789,
-    "reason" : [ "aeiou" ],
-    "last_changed_time" : {
-      "usecs" : 123456789,
-      "secs" : 123456789
-    },
-    "state" : "aeiou",
-    "reason_code_string" : "aeiou"
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123
   },
+  "dns_virtualservice_refs" : [ "aeiou" ],
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
@@ -358,17 +344,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#SCVsStateInfo">SCVsStateInfo</a>
+        <a href="#TenantSystemConfiguration">TenantSystemConfiguration</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="scvsstateinfoUuidDelete"/>
+  <div class="method"><a name="tenantsystemconfigurationUuidDelete"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /scvsstateinfo/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">scvsstateinfoUuidDelete</span>)</div>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /tenantsystemconfiguration/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">tenantsystemconfigurationUuidDelete</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -422,11 +408,11 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="scvsstateinfoUuidGet"/>
+  <div class="method"><a name="tenantsystemconfigurationUuidGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /scvsstateinfo/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">scvsstateinfoUuidGet</span>)</div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /tenantsystemconfiguration/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">tenantsystemconfigurationUuidGet</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -462,7 +448,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#SCVsStateInfo">SCVsStateInfo</a>
+      <a href="#TenantSystemConfiguration">TenantSystemConfiguration</a>
       
     </div>
 
@@ -472,18 +458,11 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "tenant_ref" : "aeiou",
-  "vs_id" : "aeiou",
-  "vip_id" : "aeiou",
-  "oper_status" : {
-    "reason_code" : 123456789,
-    "reason" : [ "aeiou" ],
-    "last_changed_time" : {
-      "usecs" : 123456789,
-      "secs" : 123456789
-    },
-    "state" : "aeiou",
-    "reason_code_string" : "aeiou"
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123
   },
+  "dns_virtualservice_refs" : [ "aeiou" ],
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
@@ -499,17 +478,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#SCVsStateInfo">SCVsStateInfo</a>
+        <a href="#TenantSystemConfiguration">TenantSystemConfiguration</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="scvsstateinfoUuidPatch"/>
+  <div class="method"><a name="tenantsystemconfigurationUuidPatch"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /scvsstateinfo/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">scvsstateinfoUuidPatch</span>)</div>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /tenantsystemconfiguration/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">tenantsystemconfigurationUuidPatch</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -529,7 +508,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; SCVsStateInfo object creation </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; TenantSystemConfiguration object creation </div>
     </div>  <!-- field-items -->
 
 
@@ -543,7 +522,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#SCVsStateInfo">SCVsStateInfo</a>
+      <a href="#TenantSystemConfiguration">TenantSystemConfiguration</a>
       
     </div>
 
@@ -553,18 +532,11 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "tenant_ref" : "aeiou",
-  "vs_id" : "aeiou",
-  "vip_id" : "aeiou",
-  "oper_status" : {
-    "reason_code" : 123456789,
-    "reason" : [ "aeiou" ],
-    "last_changed_time" : {
-      "usecs" : 123456789,
-      "secs" : 123456789
-    },
-    "state" : "aeiou",
-    "reason_code_string" : "aeiou"
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123
   },
+  "dns_virtualservice_refs" : [ "aeiou" ],
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
@@ -580,17 +552,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#SCVsStateInfo">SCVsStateInfo</a>
+        <a href="#TenantSystemConfiguration">TenantSystemConfiguration</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="scvsstateinfoUuidPut"/>
+  <div class="method"><a name="tenantsystemconfigurationUuidPut"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /scvsstateinfo/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">scvsstateinfoUuidPut</span>)</div>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /tenantsystemconfiguration/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">tenantsystemconfigurationUuidPut</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -610,7 +582,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; SCVsStateInfo object creation </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; TenantSystemConfiguration object creation </div>
     </div>  <!-- field-items -->
 
 
@@ -624,7 +596,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#SCVsStateInfo">SCVsStateInfo</a>
+      <a href="#TenantSystemConfiguration">TenantSystemConfiguration</a>
       
     </div>
 
@@ -634,18 +606,11 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "tenant_ref" : "aeiou",
-  "vs_id" : "aeiou",
-  "vip_id" : "aeiou",
-  "oper_status" : {
-    "reason_code" : 123456789,
-    "reason" : [ "aeiou" ],
-    "last_changed_time" : {
-      "usecs" : 123456789,
-      "secs" : 123456789
-    },
-    "state" : "aeiou",
-    "reason_code_string" : "aeiou"
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : 123
   },
+  "dns_virtualservice_refs" : [ "aeiou" ],
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
@@ -661,7 +626,7 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#SCVsStateInfo">SCVsStateInfo</a>
+        <a href="#TenantSystemConfiguration">TenantSystemConfiguration</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
@@ -674,47 +639,35 @@ font-style: italic;
 
   <h2>Table of Contents</h2>
   <ol>
-    <li><a href="#OperationalStatus"><code>OperationalStatus</code></a></li>
-    <li><a href="#SCVsStateInfo"><code>SCVsStateInfo</code></a></li>
-    <li><a href="#SCVsStateInfoApiResponse"><code>SCVsStateInfoApiResponse</code></a></li>
-    <li><a href="#TimeStamp"><code>TimeStamp</code></a></li>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
+    <li><a href="#TenantSystemConfiguration"><code>TenantSystemConfiguration</code></a></li>
+    <li><a href="#TenantSystemConfigurationApiResponse"><code>TenantSystemConfigurationApiResponse</code></a></li>
   </ol>
 
   <div class="model">
-    <h3 class="field-label"><a name="OperationalStatus">OperationalStatus</a> <a class="up" href="#__Models">Up</a></h3>
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">last_changed_time (optional)</div><div class="param-desc"><span class="param-type"><a href="#TimeStamp">TimeStamp</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">reason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">reason_code (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int64</div>
-<div class="param">reason_code_string (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">state (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - OPER_UP, OPER_DOWN, OPER_CREATING, OPER_RESOURCES, OPER_INACTIVE, OPER_DISABLED, OPER_UNUSED, OPER_UNKNOWN, OPER_PROCESSING, OPER_INITIALIZING, OPER_ERROR_DISABLED, OPER_AWAIT_MANUAL_PLACEMENT, OPER_UPGRADING, OPER_SE_PROCESSING, OPER_PARTITIONED, OPER_DISABLING, OPER_FAILED, OPER_UNAVAIL, OPER_AGGREGATE_DOWN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
-    <h3 class="field-label"><a name="SCVsStateInfo">SCVsStateInfo</a> <a class="up" href="#__Models">Up</a></h3>
+    <h3 class="field-label"><a name="TenantSystemConfiguration">TenantSystemConfiguration</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
-<div class="param">oper_status (optional)</div><div class="param-desc"><span class="param-type"><a href="#OperationalStatus">OperationalStatus</a></span>  Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">dns_virtualservice_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> DNS virtual services hosting FQDN records for applications configured within this tenant. It is a reference to an object of type VirtualService. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the Tenant System Configuration object. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Unique Identifier of the tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
-<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">vip_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">vs_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tenant System Configuration UUID. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
-    <h3 class="field-label"><a name="SCVsStateInfoApiResponse">SCVsStateInfoApiResponse</a> <a class="up" href="#__Models">Up</a></h3>
+    <h3 class="field-label"><a name="TenantSystemConfigurationApiResponse">TenantSystemConfigurationApiResponse</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">count </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
-<div class="param">results </div><div class="param-desc"><span class="param-type"><a href="#SCVsStateInfo">array[SCVsStateInfo]</a></span>  </div>
+<div class="param">results </div><div class="param-desc"><span class="param-type"><a href="#TenantSystemConfiguration">array[TenantSystemConfiguration]</a></span>  </div>
 <div class="param">next (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
-    </div>  <!-- field-items -->
-  </div>
-  <div class="model">
-    <h3 class="field-label"><a name="TimeStamp">TimeStamp</a> <a class="up" href="#__Models">Up</a></h3>
-    <div class="field-items">
-      <div class="param">secs </div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int64</div>
-<div class="param">usecs </div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int64</div>
     </div>  <!-- field-items -->
   </div>
   </body>
