@@ -123,6 +123,7 @@ type AviClient struct {
 	SystemConfiguration             *SystemConfigurationClient
 	SystemLimits                    *SystemLimitsClient
 	Tenant                          *TenantClient
+	TenantSystemConfiguration       *TenantSystemConfigurationClient
 	TestSeDatastoreLevel1           *TestSeDatastoreLevel1Client
 	TestSeDatastoreLevel2           *TestSeDatastoreLevel2Client
 	TestSeDatastoreLevel3           *TestSeDatastoreLevel3Client
@@ -278,6 +279,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.SystemConfiguration = NewSystemConfigurationClient(aviSession)
 	aviClient.SystemLimits = NewSystemLimitsClient(aviSession)
 	aviClient.Tenant = NewTenantClient(aviSession)
+	aviClient.TenantSystemConfiguration = NewTenantSystemConfigurationClient(aviSession)
 	aviClient.TestSeDatastoreLevel1 = NewTestSeDatastoreLevel1Client(aviSession)
 	aviClient.TestSeDatastoreLevel2 = NewTestSeDatastoreLevel2Client(aviSession)
 	aviClient.TestSeDatastoreLevel3 = NewTestSeDatastoreLevel3Client(aviSession)
