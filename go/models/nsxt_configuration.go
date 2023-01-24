@@ -32,9 +32,6 @@ type NsxtConfiguration struct {
 	// Required: true
 	NsxtURL *string `json:"nsxt_url"`
 
-	// Organisation path. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
-	OrgPath *string `json:"org_path,omitempty"`
-
 	// Site where transport zone belongs to. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SiteID *string `json:"site_id,omitempty"`
 
