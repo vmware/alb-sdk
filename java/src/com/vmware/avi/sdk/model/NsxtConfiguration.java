@@ -42,9 +42,6 @@ public class NsxtConfiguration  {
     @JsonProperty("nsxt_url")
     private String nsxtUrl = null;
 
-    @JsonProperty("org_path")
-    private String orgPath = "/orgs/default";
-
     @JsonProperty("site_id")
     private String siteId = "default";
 
@@ -225,30 +222,6 @@ public class NsxtConfiguration  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Organisation path.
-     * Field introduced in 23.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "/orgs/default".
-     * @return orgPath
-     */
-    public String getOrgPath() {
-        return orgPath;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Organisation path.
-     * Field introduced in 23.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "/orgs/default".
-     * @param orgPath set the orgPath.
-     */
-    public void setOrgPath(String  orgPath) {
-        this.orgPath = orgPath;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Site where transport zone belongs to.
      * Field introduced in 20.1.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -313,8 +286,7 @@ public class NsxtConfiguration  {
   Objects.equals(this.automateDfwRules, objNsxtConfiguration.automateDfwRules)&&
   Objects.equals(this.managementNetworkConfig, objNsxtConfiguration.managementNetworkConfig)&&
   Objects.equals(this.dataNetworkConfig, objNsxtConfiguration.dataNetworkConfig)&&
-  Objects.equals(this.vpcMode, objNsxtConfiguration.vpcMode)&&
-  Objects.equals(this.orgPath, objNsxtConfiguration.orgPath);
+  Objects.equals(this.vpcMode, objNsxtConfiguration.vpcMode);
     }
 
     @Override
@@ -328,7 +300,6 @@ public class NsxtConfiguration  {
                         sb.append("    managementNetworkConfig: ").append(toIndentedString(managementNetworkConfig)).append("\n");
                         sb.append("    nsxtCredentialsRef: ").append(toIndentedString(nsxtCredentialsRef)).append("\n");
                         sb.append("    nsxtUrl: ").append(toIndentedString(nsxtUrl)).append("\n");
-                        sb.append("    orgPath: ").append(toIndentedString(orgPath)).append("\n");
                         sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
                         sb.append("    vpcMode: ").append(toIndentedString(vpcMode)).append("\n");
                   sb.append("}");
