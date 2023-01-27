@@ -3949,6 +3949,12 @@ font-style: italic;
         },
         "log_agent_event_details" : {
           "protocol" : "aeiou",
+          "rapid_connection" : {
+            "error_reason" : "aeiou",
+            "port" : "aeiou",
+            "host" : "aeiou",
+            "error_code" : "aeiou"
+          },
           "tcp_detail" : {
             "error_reason" : "aeiou",
             "port" : "aeiou",
@@ -7848,6 +7854,12 @@ font-style: italic;
       },
       "log_agent_event_details" : {
         "protocol" : "aeiou",
+        "rapid_connection" : {
+          "error_reason" : "aeiou",
+          "port" : "aeiou",
+          "host" : "aeiou",
+          "error_code" : "aeiou"
+        },
         "tcp_detail" : {
           "error_reason" : "aeiou",
           "port" : "aeiou",
@@ -11818,6 +11830,12 @@ font-style: italic;
       },
       "log_agent_event_details" : {
         "protocol" : "aeiou",
+        "rapid_connection" : {
+          "error_reason" : "aeiou",
+          "port" : "aeiou",
+          "host" : "aeiou",
+          "error_code" : "aeiou"
+        },
         "tcp_detail" : {
           "error_reason" : "aeiou",
           "port" : "aeiou",
@@ -15728,6 +15746,12 @@ font-style: italic;
       },
       "log_agent_event_details" : {
         "protocol" : "aeiou",
+        "rapid_connection" : {
+          "error_reason" : "aeiou",
+          "port" : "aeiou",
+          "host" : "aeiou",
+          "error_code" : "aeiou"
+        },
         "tcp_detail" : {
           "error_reason" : "aeiou",
           "port" : "aeiou",
@@ -19638,6 +19662,12 @@ font-style: italic;
       },
       "log_agent_event_details" : {
         "protocol" : "aeiou",
+        "rapid_connection" : {
+          "error_reason" : "aeiou",
+          "port" : "aeiou",
+          "host" : "aeiou",
+          "error_code" : "aeiou"
+        },
         "tcp_detail" : {
           "error_reason" : "aeiou",
           "port" : "aeiou",
@@ -25247,6 +25277,7 @@ font-style: italic;
     <li><a href="#LicenseTransactionDetails"><code>LicenseTransactionDetails</code></a></li>
     <li><a href="#LogAgentEventDetail"><code>LogAgentEventDetail</code></a></li>
     <li><a href="#LogAgentTCPClientEventDetail"><code>LogAgentTCPClientEventDetail</code></a></li>
+    <li><a href="#LogAgentTCPConnEstRateExcdEvent"><code>LogAgentTCPConnEstRateExcdEvent</code></a></li>
     <li><a href="#MarathonServicePortConflict"><code>MarathonServicePortConflict</code></a></li>
     <li><a href="#MatchTarget"><code>MatchTarget</code></a></li>
     <li><a href="#Matches"><code>Matches</code></a></li>
@@ -28274,6 +28305,7 @@ font-style: italic;
     <h3 class="field-label"><a name="LogAgentEventDetail">LogAgentEventDetail</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">protocol </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Protocol used for communication to the external entity. Enum options - TCP_CONN. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">rapid_connection (optional)</div><div class="param-desc"><span class="param-type"><a href="#LogAgentTCPConnEstRateExcdEvent">LogAgentTCPConnEstRateExcdEvent</a></span> Event for TCP connection restablishment rate exceeds configured threshold. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">tcp_detail (optional)</div><div class="param-desc"><span class="param-type"><a href="#LogAgentTCPClientEventDetail">LogAgentTCPClientEventDetail</a></span> Event details for TCP connection event. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of log agent event. Enum options - LOG_AGENT_CONNECTION_ERROR. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
@@ -28285,6 +28317,15 @@ font-style: italic;
 <div class="param">error_reason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">host (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="LogAgentTCPConnEstRateExcdEvent">LogAgentTCPConnEstRateExcdEvent</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">error_code (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">error_reason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">host (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
