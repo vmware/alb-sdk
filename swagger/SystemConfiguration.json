@@ -573,7 +573,7 @@
                     "default": "admin@avicontroller.net"
                 },
                 "from_name": {
-                    "description": "Friendly name in From field. Field introduced in 21.1.4. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Friendly name in From field. Field introduced in 21.1.4, 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "mail_server_name": {
