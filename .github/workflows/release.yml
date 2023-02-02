@@ -101,7 +101,8 @@ jobs:
           mkdir dist
           if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
             ./create_sdk_pip_packages.sh sdk
-          elif [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET }} == true ]]; then
+          fi
+          if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET }} == true ]]; then
             ./create_sdk_pip_packages.sh migrationtools
           fi
           if [[ ${{ steps.publish_target.outputs.TAG_NAME }} == "test-"* ]]; then
@@ -120,7 +121,8 @@ jobs:
           ls dist/
           if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET }} == true ]]; then
             mv dist/avimigrationtools-$AVI_VERSION.tar.gz ../avimigrationtools-$AVI_VERSION.tar.gz
-          elif [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
+          fi
+          if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
             mv dist/avisdk-$AVI_VERSION.tar.gz ../avisdk-$AVI_VERSION.tar.gz
             #mv dist/python-avisdk_0_all.deb ../avisdk-$AVI_VERSION.deb
             mv dist/avisdk-$AVI_VERSION-1.noarch.rpm ../avisdk-$AVI_VERSION.rpm
