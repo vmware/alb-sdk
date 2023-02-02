@@ -149,8 +149,7 @@ def get_certificate_data(certificate_ref, nsxt_ip, ssh_root_password):
         ssh = paramiko.SSHClient()
         ssh.load_system_host_keys()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        ssh.connect(nsxt_ip, username='root', password=ssh_root_password,
-                    allow_agent=False, look_for_keys=False, banner_timeout=60)
+        ssh.connect(nsxt_ip, username='root', password=ssh_root_password, allow_agent=False, look_for_keys=False)
 
         cmd = "curl --header 'Content-Type: application/json' --header 'x-nsx-username: admin' " \
               "http://'admin':'{}'@127.0.0.1:7440/nsxapi/api/v1/trust-management/certificates".\
@@ -408,17 +407,17 @@ class NSXUtil():
                         tz = cl["nsxt_configuration"]["data_network_config"].get("transport_zone")
                         if cl["nsxt_configuration"]["data_network_config"].get("tz_type") == "OVERLAY":
                             tz_type = "OVERLAY"
-                            data_netwrk = cl["nsxt_configuration"]["data_network_config"]
-                            if data_netwrk.get("tier1_segment_config"):
-                                if data_netwrk["tier1_segment_config"].get("manual"):
-                                    tier1_lrs = data_netwrk["tier1_segment_config"]["manual"].get("tier1_lrs")
+                            data_network = cl["nsxt_configuration"]["data_network_config"]
+                            if data_network.get("tier1_segment_config"):
+                                if data_network["tier1_segment_config"].get("manual"):
+                                    tier1_lrs = data_network["tier1_segment_config"]["manual"].get("tier1_lrs")
                                     if tier1_lrs:
                                         is_seg_present = [True for tier in tier1_lrs if
                                                           get_name_and_entity(tier.get("segment_id"))[-1] == seg_id]
                         elif cl["nsxt_configuration"]["data_network_config"].get("tz_type") == "VLAN":
                             tz_type = "VLAN"
-                            data_netwrk = cl["nsxt_configuration"]["data_network_config"]
-                            vlan_seg = data_netwrk.get("vlan_segments")
+                            data_network = cl["nsxt_configuration"]["data_network_config"]
+                            vlan_seg = data_network.get("vlan_segments")
                             is_seg_present = [True for seg in vlan_seg if get_name_and_entity(seg)[-1] == seg_id]
                     if tz.find("/") != -1:
                         tz = tz.split("/")[-1]
@@ -508,12 +507,18 @@ class NSXUtil():
             else:
                 segment_list = self.nsx_api_client.infra.Segments.list().to_dict().get('results', [])
 
-                is_tier_linked_segment_found = False
+                if len(segment_list)==0:
+                    self.lb_services[lb["id"]] = {
+                        "lb_name": lb["id"],
+                        "lb_skip_reason": "Skipping because NSX Load Balancer has no segments "
+                                          "or service interfaces configured"
+                    }
+                    continue
+
                 for seg in segment_list:
                     if seg.get("connectivity_path"):
                         gateway_name = get_name_and_entity(seg["connectivity_path"])[-1]
                         if gateway_name == tier:
-                            is_tier_linked_segment_found = True
                             tz_path = seg.get("transport_zone_path")
                             tz_id = get_name_and_entity(tz_path)[-1]
                             dhcp_present = False
@@ -522,15 +527,12 @@ class NSXUtil():
                                     dhcp_present = True
                             cloud_name = self.get_cloud_type(self.cloud, tz_id, seg.get("id"), tier)
                             if cloud_name == "Cloud Not Found":
-                                continue
-                            is_dhcp_configured_on_avi, is_static_ip_pool_configured, is_ip_subnet_configured,\
-                            static_ip_for_se_flag = self.get_dhcp_config_details_on_avi_side(cloud_name, seg.get("id"))
+                                    continue
+                            is_dhcp_configured_on_avi,is_static_ip_pool_configured,is_ip_subnet_configured,static_ip_for_se_flag = \
+                            self.get_dhcp_config_details_on_avi_side(cloud_name,seg.get("id"))
 
-                            if not is_dhcp_configured_on_avi and (not is_static_ip_pool_configured or
-                                                                  not is_ip_subnet_configured or
-                                                                  not static_ip_for_se_flag):
-                                warning_mesg = "Warning : configuration of  %s network is incomplete ," \
-                                               "please check it once " % seg.get("display_name")
+                            if not is_dhcp_configured_on_avi and (not is_static_ip_pool_configured or not is_ip_subnet_configured or not static_ip_for_se_flag):
+                                warning_mesg = "Warning : configuration of  %s network is incomplete , please check it once " % seg.get("display_name")
 
                             if seg.get("vlan_ids"):
                                 network = "Vlan"
@@ -546,18 +548,10 @@ class NSXUtil():
                                     "name": seg.get("id"),
                                     "subnet": subnets}
                                 lb_details.append(segments)
-                            
+
                             if cloud_name == "Cloud Not Found":
                                 continue
                             break
-
-                if not is_tier_linked_segment_found:
-                    self.lb_services[lb["id"]] = {
-                        "lb_name": lb["id"],
-                        "lb_skip_reason": "Skipping because NSX Load Balancer has no segments "
-                                          "or service interfaces configured"
-                    }
-                    continue
 
             self.lb_services[lb["id"]] = {
                 "lb_name": lb["id"],
@@ -579,7 +573,7 @@ class NSXUtil():
         segment_list = self.session.get("network/?&cloud_ref.uuid=" + cloud_id[0]).json()["results"]
         segment = [seg for seg in segment_list if seg.get("attrs")[0].get("value").split('segments/')[-1] == seg_id]
         if segment :
-            is_dhcp_configured_on_avi = segment[0].get("dhcp_enabled") 
+            is_dhcp_configured_on_avi = segment[0].get("dhcp_enabled")
             if segment[0].get("configured_subnets"):
                 configured_subnets = segment[0].get("configured_subnets")
                 if configured_subnets[0].get("prefix"):
@@ -590,7 +584,7 @@ class NSXUtil():
                              static_ip_for_se_flag = True
 
         return is_dhcp_configured_on_avi,is_static_ip_pool_configured,is_ip_subnet_configured,static_ip_for_se_flag
-           
+
     def get_all_virtual_service(self):
         """
         :return:list of virtual server objects
@@ -994,19 +988,6 @@ class NSXUtil():
                 ]
         }
         return new_network_service
-
-    def update_network_service_obj(self, network_obj, floating_ip):
-        floating_ip_list = network_obj.get("routing_service").get("floating_intf_ip")
-        is_floating_ip_found = False
-        for obj in floating_ip_list:
-            if obj.get("addr") == floating_ip:
-                is_floating_ip_found = True
-                break
-        if not is_floating_ip_found:
-            floating_ip_list.append({
-                            "addr": floating_ip,
-                            "type": "V4"
-                        })
 
     def get_nsx_group_details(self,group_path):
         domain_id = group_path.split('domains/')[1].split("/groups")[0]

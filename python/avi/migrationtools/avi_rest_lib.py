@@ -1,17 +1,31 @@
 # Copyright 2021 VMware, Inc.
 # SPDX-License-Identifier: Apache License 2.0
 
-from avi.sdk.avi_api import ApiSession
 import logging
+from avi.sdk.avi_api import ApiSession
 from requests.packages import urllib3
 
 LOG = logging.getLogger(__name__)
 
-#disabling warning for SSL
+# disabling warning for SSL
 urllib3.disable_warnings()
+
 
 def upload_config_to_controller(avi_config_dict, controller_ip, username,
                                 password, tenant='admin', api_version='18.2.6'):
+    """
+    Method to upload migrated config to controller
+
+    Args:
+        avi_config_dict : Passed migrated avi configuration
+        controller_ip : destination controller ip address
+        username : destination controller username
+        password : destination controller password
+        tenant : tenant ref
+        api_version : controller versioion . Defaults to '18.2.6'.
+
+
+    """
     LOG.debug("Uploading config to controller")
     session = ApiSession.get_session(controller_ip, username, password=password,
                                      tenant=tenant, api_version=api_version)
@@ -22,12 +36,12 @@ def upload_config_to_controller(avi_config_dict, controller_ip, username,
         if resp.status_code < 300:
             LOG.info("Config uploaded to controller successfully")
         else:
-            LOG.error("Upload error response:" + resp.text)
+            LOG.error("Upload error response: %s", resp.text)
             raise Exception("Upload error response:" + resp.text)
-    except Exception as e:
+    except Exception as exception:
         LOG.error("Failed config upload", exc_info=True)
         print("Error")
-        raise Exception(e)
+        raise Exception(exception)
 
 
 def download_gslb_from_controller(controller_ip, username, password, tenant='admin'):
@@ -39,10 +53,11 @@ def download_gslb_from_controller(controller_ip, username, password, tenant='adm
         path = 'gslb'
         resp = session.get(path)
         return resp.text
-    except Exception as e:
+    except Exception as exception:
         LOG.error("Failed gslb config download", exec_info=True)
         print("Error in Downloading gslb config")
-        raise Exception(e)
+        raise Exception(exception)
+
 
 def get_object_from_controller(object_type, object_name, controller_ip, username, password, tenant):
     """

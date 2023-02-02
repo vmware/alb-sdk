@@ -32,13 +32,14 @@ import json
 import logging
 import sys
 import traceback
+import os
 
 import yaml
 import re
 import collections
 from copy import deepcopy
 from avi.migrationtools.avi_migration_utils import MigrationUtil
-import avi.migrationtools.ansible.avi_config_to_ansible as avi_config_to_ansible
+from avi.migrationtools.ansible import avi_config_to_ansible
 
 log = logging.getLogger(__name__)
 
@@ -48,6 +49,7 @@ class ConfigPatch(object):
     This class implements patching of configuration object that are either
     exported from Avi Controller or created by the configuration migration
     """
+
     def __init__(self, avi_cfg, patches):
         """
         :param avi_cfg: Avi config dictionary
@@ -96,7 +98,7 @@ class ConfigPatch(object):
                             # need to remove and add the item.
                             log.debug('refs changed %s to %s', old_ref, new_ref)
                             new_refs = set(v)
-                            new_refs.pop(old_ref)
+                            new_refs.remove(old_ref)
                             new_refs.add(new_ref)
                             obj[k] = list(new_refs)
                     elif v == old_ref:
@@ -244,8 +246,8 @@ class ConfigPatch(object):
             self.update_tenant_references(
                 new_cfg, patch_data['match_name'], patch_data['patch']['name'])
         if not cfg_objs:
-            log.warn('Could not apply patch %s: %s as no matching obj found',
-                     obj_type, patch_data)
+            log.warning('Could not apply patch %s: %s as no matching obj found',
+                        obj_type, patch_data)
             return new_cfg
         for obj in cfg_objs:
             obj_name = obj['name']
@@ -347,10 +349,10 @@ if __name__ == '__main__':
     patched_cfg = cp.patch()
     with open(args.aviconfig + '.patched', 'w') as f:
         f.write(json.dumps(patched_cfg, indent=4))
-
     with open(args.aviconfig + '.patched', "r+") as f:
         avi_cfg = json.loads(f.read())
-    output_dir = args.aviconfig[0:args.aviconfig.rindex("/") + 1]
+
+    output_dir = os.getcwd()
     aac = avi_config_to_ansible.AviAnsibleConverter(
         avi_cfg, output_dir)
     if args.yaml:

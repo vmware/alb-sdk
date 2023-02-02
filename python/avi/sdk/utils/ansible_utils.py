@@ -59,10 +59,10 @@ def ansible_return(module, rsp, changed, req=None, existing_obj=None,
     api_creds.update_from_ansible_module(module)
     key = '%s:%s:%s' % (api_creds.controller, api_creds.username,
                         api_creds.port)
-    disable_fact = module.params.get('avi_disable_session_cache_as_fact')
+    deactivate_fact = module.params.get('avi_deactivate_session_cache_as_fact')
 
     fact_context = None
-    if not disable_fact:
+    if not deactivate_fact:
         fact_context = module.params.get('api_context', {})
         if fact_context:
             fact_context.update({key: api_context})
@@ -81,9 +81,9 @@ def ansible_return(module, rsp, changed, req=None, existing_obj=None,
             "state" in obj_val):
         obj_val["obj_state"] = obj_val["state"]
     old_obj_val = existing_obj if changed and existing_obj else None
-    api_context_val = api_context if disable_fact else None
+    api_context_val = api_context if deactivate_fact else None
     ansible_facts_val = dict(
-        avi_api_context=fact_context) if not disable_fact else {}
+        avi_api_context=fact_context) if not deactivate_fact else {}
 
     return module.exit_json(
         changed=changed, obj=obj_val, old_obj=old_obj_val,
@@ -333,15 +333,15 @@ def avi_obj_cmp(x, y, sensitive_fields=None):
 
 POP_FIELDS = ['state', 'controller', 'username', 'password', 'api_version',
               'avi_credentials', 'avi_api_update_method', 'avi_api_patch_op', 'avi_patch_path',
-              'avi_patch_value', 'api_context', 'tenant', 'tenant_uuid', 'avi_disable_session_cache_as_fact']
+              'avi_patch_value', 'api_context', 'tenant', 'tenant_uuid', 'avi_deactivate_session_cache_as_fact']
 
 
 def get_api_context(module, api_creds):
     api_context = module.params.get('api_context')
-    if api_context and module.params.get('avi_disable_session_cache_as_fact'):
+    if api_context and module.params.get('avi_deactivate_session_cache_as_fact'):
         return api_context
     elif api_context and not module.params.get(
-            'avi_disable_session_cache_as_fact'):
+            'avi_deactivate_session_cache_as_fact'):
         key = '%s:%s:%s' % (api_creds.controller, api_creds.username,
                             api_creds.port)
         return api_context.get(key)
@@ -349,7 +349,7 @@ def get_api_context(module, api_creds):
         return None
 
 
-NO_UUID_OBJ = ['cluster', 'systemconfiguration']
+NO_UUID_OBJ = ['cluster', 'systemconfiguration', 'inventoryfaultconfig']
 SKIP_DELETE_ERROR = ["Cannot delete system default object", "Method \'DELETE\' not allowed"]
 
 
@@ -597,4 +597,4 @@ def avi_common_argument_spec():
         avi_credentials=dict(default=None, type='dict',
                              options=credentials_spec),
         api_context=dict(type='dict'),
-        avi_disable_session_cache_as_fact=dict(default=False, type='bool'))
+        avi_deactivate_session_cache_as_fact=dict(default=False, type='bool'))

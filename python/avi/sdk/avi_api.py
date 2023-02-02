@@ -417,6 +417,8 @@ class ApiSession(Session):
         OneloginApiSession
         """
 
+        if max_api_retries == 0:
+            max_api_retries = 1
         if not idp_class:
             idp_class = ApiSession
         else:

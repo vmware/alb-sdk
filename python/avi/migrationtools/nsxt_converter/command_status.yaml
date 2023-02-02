@@ -302,6 +302,9 @@ NSXT:
         - "is_secure"
         - "is_fips"
 
+    SSLProfile_NA_Attributes:
+    - "cipher_group_label"
+
     PersistenceProfile_Supported_Attributes:
     - "display_name"
     - "id"
@@ -353,16 +356,16 @@ NSXT:
 
     Common_Na_List:
     - "path"
-    - "relative_path" 
-    - "parent_path" 
-    - "unique_id" 
-    - "realization_id" 
-    - "marked_for_delete" 
-    - "overridden" 
-    - "_create_time" 
-    - "_create_user" 
-    - "_last_modified_time" 
-    - "_last_modified_user" 
-    - "_system_owned" 
-    - "_protection" 
+    - "relative_path"
+    - "parent_path"
+    - "unique_id"
+    - "realization_id"
+    - "marked_for_delete"
+    - "overridden"
+    - "_create_time"
+    - "_create_user"
+    - "_last_modified_time"
+    - "_last_modified_user"
+    - "_system_owned"
+    - "_protection"
     - "_revision"
