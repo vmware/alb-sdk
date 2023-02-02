@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import org.apache.hc.client5.http.classic.HttpClient;
+
 import org.apache.http.Header;
 import org.apache.http.HttpEntityEnclosingRequest;
 import org.apache.http.HttpRequest;
@@ -113,7 +113,7 @@ public class AviRestUtils {
 		try {
 			CloseableHttpClient client = buildHttpClient(creds);
 			HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory();
-			clientHttpRequestFactory.setHttpClient((HttpClient) client);
+			clientHttpRequestFactory.setHttpClient(client);
 			return new RestTemplate(clientHttpRequestFactory);
 
 		} catch (Exception e) {
