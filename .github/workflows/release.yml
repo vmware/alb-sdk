@@ -108,7 +108,11 @@ jobs:
             echo "Test tag found. Skipping python assets upload to public repo."
           else
             echo "Normal tag found. Uploading python assets to public repo."
-            ./create_sdk_pypi.sh sdk
+            if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
+              ./create_sdk_pypi.sh sdk
+            elif [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET }} == true ]]; then
+              ./create_sdk_pypi.sh
+            fi
           fi
           ./create_sdk_pkgs.sh
           echo "AVI VERSION=== $AVI_VERSION"
