@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Tenant extends AviRestResource  {
+    @JsonProperty("attrs")
+    private List<KeyValue> attrs = null;
+
     @JsonProperty("config_settings")
     private TenantConfiguration configSettings = null;
 
@@ -49,6 +52,45 @@ public class Tenant extends AviRestResource  {
     private String uuid = null;
 
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Key/value tenant attributes.
+     * Field introduced in 23.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return attrs
+     */
+    public List<KeyValue> getAttrs() {
+        return attrs;
+    }
+
+    /**
+     * This is the setter method. this will set the attrs
+     * Key/value tenant attributes.
+     * Field introduced in 23.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return attrs
+     */
+    public void setAttrs(List<KeyValue>  attrs) {
+        this.attrs = attrs;
+    }
+
+    /**
+     * This is the setter method this will set the attrs
+     * Key/value tenant attributes.
+     * Field introduced in 23.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return attrs
+     */
+    public Tenant addAttrsItem(KeyValue attrsItem) {
+      if (this.attrs == null) {
+        this.attrs = new ArrayList<KeyValue>();
+      }
+      this.attrs.add(attrsItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -277,14 +319,16 @@ public class Tenant extends AviRestResource  {
   Objects.equals(this.configSettings, objTenant.configSettings)&&
   Objects.equals(this.createdBy, objTenant.createdBy)&&
   Objects.equals(this.enforceLabelGroup, objTenant.enforceLabelGroup)&&
-  Objects.equals(this.labelGroupRefs, objTenant.labelGroupRefs);
+  Objects.equals(this.labelGroupRefs, objTenant.labelGroupRefs)&&
+  Objects.equals(this.attrs, objTenant.attrs);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class Tenant {\n");
-                  sb.append("    configSettings: ").append(toIndentedString(configSettings)).append("\n");
+                  sb.append("    attrs: ").append(toIndentedString(attrs)).append("\n");
+                        sb.append("    configSettings: ").append(toIndentedString(configSettings)).append("\n");
                         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
                         sb.append("    enforceLabelGroup: ").append(toIndentedString(enforceLabelGroup)).append("\n");

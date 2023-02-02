@@ -45,6 +45,9 @@ public class NsxtConfiguration  {
     @JsonProperty("site_id")
     private String siteId = "default";
 
+    @JsonProperty("vpc_mode")
+    private Boolean vpcMode = null;
+
 
 
     /**
@@ -241,6 +244,30 @@ public class NsxtConfiguration  {
         this.siteId = siteId;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Vpc mode.
+     * Field introduced in 23.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return vpcMode
+     */
+    public Boolean getVpcMode() {
+        return vpcMode;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Vpc mode.
+     * Field introduced in 23.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param vpcMode set the vpcMode.
+     */
+    public void setVpcMode(Boolean  vpcMode) {
+        this.vpcMode = vpcMode;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -258,7 +285,8 @@ public class NsxtConfiguration  {
   Objects.equals(this.domainId, objNsxtConfiguration.domainId)&&
   Objects.equals(this.automateDfwRules, objNsxtConfiguration.automateDfwRules)&&
   Objects.equals(this.managementNetworkConfig, objNsxtConfiguration.managementNetworkConfig)&&
-  Objects.equals(this.dataNetworkConfig, objNsxtConfiguration.dataNetworkConfig);
+  Objects.equals(this.dataNetworkConfig, objNsxtConfiguration.dataNetworkConfig)&&
+  Objects.equals(this.vpcMode, objNsxtConfiguration.vpcMode);
     }
 
     @Override
@@ -273,6 +301,7 @@ public class NsxtConfiguration  {
                         sb.append("    nsxtCredentialsRef: ").append(toIndentedString(nsxtCredentialsRef)).append("\n");
                         sb.append("    nsxtUrl: ").append(toIndentedString(nsxtUrl)).append("\n");
                         sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
+                        sb.append("    vpcMode: ").append(toIndentedString(vpcMode)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

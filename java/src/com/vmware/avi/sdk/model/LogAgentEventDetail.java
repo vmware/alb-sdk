@@ -24,6 +24,9 @@ public class LogAgentEventDetail  {
     @JsonProperty("protocol")
     private String protocol = null;
 
+    @JsonProperty("rapid_connection")
+    private LogAgentTCPConnEstRateExcdEvent rapidConnection = null;
+
     @JsonProperty("tcp_detail")
     private LogAgentTCPClientEventDetail tcpDetail = null;
 
@@ -56,6 +59,30 @@ public class LogAgentEventDetail  {
      */
     public void setProtocol(String  protocol) {
         this.protocol = protocol;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Event for tcp connection restablishment rate exceeds configured threshold.
+     * Field introduced in 23.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return rapidConnection
+     */
+    public LogAgentTCPConnEstRateExcdEvent getRapidConnection() {
+        return rapidConnection;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Event for tcp connection restablishment rate exceeds configured threshold.
+     * Field introduced in 23.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param rapidConnection set the rapidConnection.
+     */
+    public void setRapidConnection(LogAgentTCPConnEstRateExcdEvent rapidConnection) {
+        this.rapidConnection = rapidConnection;
     }
 
     /**
@@ -120,7 +147,8 @@ public class LogAgentEventDetail  {
       LogAgentEventDetail objLogAgentEventDetail = (LogAgentEventDetail) o;
       return   Objects.equals(this.type, objLogAgentEventDetail.type)&&
   Objects.equals(this.protocol, objLogAgentEventDetail.protocol)&&
-  Objects.equals(this.tcpDetail, objLogAgentEventDetail.tcpDetail);
+  Objects.equals(this.tcpDetail, objLogAgentEventDetail.tcpDetail)&&
+  Objects.equals(this.rapidConnection, objLogAgentEventDetail.rapidConnection);
     }
 
     @Override
@@ -128,6 +156,7 @@ public class LogAgentEventDetail  {
       StringBuilder sb = new StringBuilder();
       sb.append("class LogAgentEventDetail {\n");
                   sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
+                        sb.append("    rapidConnection: ").append(toIndentedString(rapidConnection)).append("\n");
                         sb.append("    tcpDetail: ").append(toIndentedString(tcpDetail)).append("\n");
                         sb.append("    type: ").append(toIndentedString(type)).append("\n");
                   sb.append("}");
