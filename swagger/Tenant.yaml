@@ -355,6 +355,17 @@ definitions:
                 type: integer
                 default: 1
                 format: int32
+    KeyValue:
+        type: object
+        required:
+            -   key
+        properties:
+            key:
+                description: "Key. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            value:
+                description: "Value. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
     Tenant:
         type: object
         required:
@@ -364,6 +375,11 @@ definitions:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
                 readOnly: True
                 type: string
+            attrs:
+                description: "Key/value tenant attributes. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/KeyValue'
             config_settings:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/TenantConfiguration'
