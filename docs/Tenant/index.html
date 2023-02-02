@@ -276,7 +276,11 @@ font-style: italic;
     "uuid" : "aeiou",
     "local" : true,
     "url" : "aeiou",
-    "_last_modified" : "aeiou"
+    "_last_modified" : "aeiou",
+    "attrs" : [ {
+      "value" : "aeiou",
+      "key" : "aeiou"
+    } ]
   } ]
 }</code></pre>
 
@@ -347,7 +351,11 @@ font-style: italic;
   "uuid" : "aeiou",
   "local" : true,
   "url" : "aeiou",
-  "_last_modified" : "aeiou"
+  "_last_modified" : "aeiou",
+  "attrs" : [ {
+    "value" : "aeiou",
+    "key" : "aeiou"
+  } ]
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -489,7 +497,11 @@ font-style: italic;
   "uuid" : "aeiou",
   "local" : true,
   "url" : "aeiou",
-  "_last_modified" : "aeiou"
+  "_last_modified" : "aeiou",
+  "attrs" : [ {
+    "value" : "aeiou",
+    "key" : "aeiou"
+  } ]
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -571,7 +583,11 @@ font-style: italic;
   "uuid" : "aeiou",
   "local" : true,
   "url" : "aeiou",
-  "_last_modified" : "aeiou"
+  "_last_modified" : "aeiou",
+  "attrs" : [ {
+    "value" : "aeiou",
+    "key" : "aeiou"
+  } ]
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -653,7 +669,11 @@ font-style: italic;
   "uuid" : "aeiou",
   "local" : true,
   "url" : "aeiou",
-  "_last_modified" : "aeiou"
+  "_last_modified" : "aeiou",
+  "attrs" : [ {
+    "value" : "aeiou",
+    "key" : "aeiou"
+  } ]
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -680,6 +700,7 @@ font-style: italic;
   <h2>Table of Contents</h2>
   <ol>
     <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
+    <li><a href="#KeyValue"><code>KeyValue</code></a></li>
     <li><a href="#Tenant"><code>Tenant</code></a></li>
     <li><a href="#TenantApiResponse"><code>TenantApiResponse</code></a></li>
     <li><a href="#TenantConfiguration"><code>TenantConfiguration</code></a></li>
@@ -693,9 +714,17 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3 class="field-label"><a name="KeyValue">KeyValue</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">key </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Key. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Value. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="Tenant">Tenant</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
+<div class="param">attrs (optional)</div><div class="param-desc"><span class="param-type"><a href="#KeyValue">array[KeyValue]</a></span> Key/value tenant attributes. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">config_settings (optional)</div><div class="param-desc"><span class="param-type"><a href="#TenantConfiguration">TenantConfiguration</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">created_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Creator of this tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
