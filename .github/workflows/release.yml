@@ -29,6 +29,22 @@ jobs:
         with:
           python-version: 3.8
 
+      # Set publish target as either of all targets, python sdk, java sdk or migration tools
+      - name: Set publish target
+        id: publish_target
+        run: |
+          echo "::set-output name=PUBLISH_ALL_TARGET::true"
+          echo "::set-output name=TAG_NAME::${{ github.event.release.tag_name }}"
+          echo "::set-output name=PUBLISH_MIGRATION_TARGET::true"
+          echo "::set-output name=PUBLISH_SDK_TARGET::true"
+          if [[ ${{ github.event.release.tag_name }} == *"migration-tool"* ]]; then
+            echo "::set-output name=PUBLISH_SDK_TARGET::false"
+            echo "::set-output name=PUBLISH_ALL_TARGET::false"
+          elif [[ ${{ github.event.release.tag_name }} == *"java-sdk"* ]] || [[ ${{ github.event.release.tag_name }} == *"python-sdk"* ]]; then
+            echo "::set-output name=PUBLISH_MIGRATION_TARGET::false"
+            echo "::set-output name=PUBLISH_ALL_TARGET::false"
+          fi
+
       - name: Get the version
         id: get_sdk_version
         run: | 
