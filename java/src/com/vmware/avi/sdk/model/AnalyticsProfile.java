@@ -2547,7 +2547,7 @@ public class AnalyticsProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Protobuf versioning for config pbs.
+     * Time tracker properties for connection establishment audit.
      * Field introduced in 22.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -2559,7 +2559,7 @@ public class AnalyticsProfile extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Protobuf versioning for config pbs.
+     * Time tracker properties for connection establishment audit.
      * Field introduced in 22.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
