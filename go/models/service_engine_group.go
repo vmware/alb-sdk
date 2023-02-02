@@ -667,7 +667,7 @@ type ServiceEngineGroup struct {
 	// Multiplier for SE threads based on vCPU. Allowed values are 1-10. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 1), Basic edition(Allowed values- 1), Enterprise with Cloud Services edition.
 	SeThreadMultiplier *int32 `json:"se_thread_multiplier,omitempty"`
 
-	// Protobuf versioning for config pbs. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
+	// Time Tracker Properties for latency audit. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	SeTimeTrackerProps *SETimeTrackerProperties `json:"se_time_tracker_props,omitempty"`
 
 	// Traceroute port range. Field introduced in 17.2.8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
