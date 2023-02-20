@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '23.1.1'
+    version: '30.2.1'
     title: Avi VirtualService Object API
     contact:
         name: Avi Networks Inc.
@@ -688,12 +688,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: empty
+                    description: VirtualService
                     required: true
                     schema:
-                        type: object
-                        additionalProperties:
-                            type: string
+                        $ref: "#/definitions/VirtualService"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch

@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "23.1.1",
+        "version": "30.2.1",
         "title": "Avi Cloud Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -2661,11 +2661,6 @@
         },
         "NsxtConfiguration": {
             "type": "object",
-            "required": [
-                "management_network_config",
-                "nsxt_credentials_ref",
-                "nsxt_url"
-            ],
             "properties": {
                 "automate_dfw_rules": {
                     "description": "Automatically create DFW rules for VirtualService in NSX-T Manager. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Basic edition(Allowed values- false), Essentials, Enterprise with Cloud Services edition.",
@@ -2701,6 +2696,10 @@
                     "description": "Site where transport zone belongs to. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "default"
+                },
+                "vmc_mode": {
+                    "description": "VMC mode. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
                 },
                 "vpc_mode": {
                     "description": "VPC Mode. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
