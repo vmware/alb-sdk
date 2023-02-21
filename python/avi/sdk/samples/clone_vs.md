@@ -16,9 +16,7 @@ When cloning to a different tenant or Controller, the default behaviour is as be
 
 * If a re-usable object was defined in the source (non-admin) tenant, the script will use an identically-named object in the target tenant if one is found. Otherwise, the object will be cloned.
 
-The user can override the default behaviour and forcibly clone particular object types rather than attempting to re-use existing objects using the `forceclone` option. For example, to forcibly clone all health monitors, use the option:
-
-> --forceclone pool-healthmonitor
+The user can override the default behaviour and forcibly clone particular object types rather than attempting to re-use existing objects using the `forceclone` option. For example, to forcibly clone all health monitors, use the option `--forceclone pool-healthmonitor` or `-fc pool-healthmonitor`.
 
 The full list of supported options is displayed in the help.
 
@@ -108,6 +106,38 @@ Note: Azure subnet name (subnet_uuid) must be specified, e.g. vip-subnet.
 
 > clone_vs.py -c controller1.acme.com vs example cloned-example -v 10.0.0.0/16 -v6 fd00:dead:beef:bad:f00d::/64
 
+## WAF Policy handling
+
+The cloning of WAF Policies requires some special consideration depending on the use case.
+
+### Cloning a Virtual Service using a shared WAF Policy
+
+This scenario applies when the cloned VS is on the same Controller and in the same tenant (or the WAF Policy is in the admin tenant). The default operation of the script supports this scenario. WAF Policy referenced by a Virtual Service will not be cloned by default when cloning a VS within the same Controller.
+
+This will result in a failure if the WAF Policy is configured for PSM learning as this is not supported for shared WAF Policies - for this scenario, clone the WAF Policy as per the below.
+
+If cloning a Virtual Service between Controllers or to a different tenant, the default operation will clone the referenced WAF Policy. For this scenario check the caveats below.
+
+### Cloning a Virtual Service using a cloned WAF Policy
+
+A WAF Policy and its referenced PSM groups can be forced cloned using the -fc flag. This supports the scenarios where the cloned VS should have its own WAF Policy rather than sharing the same WAF policy (including the case where learning is enabled).
+
+In this case, if learning is enabled in the source WAF Policy, it will remain enabled in the cloned WAF Policy resulting in indepdent learning for the cloned VS.
+
+The below example clones a VS and forces cloning of the WAF Policy and any PSM groups also.
+
+> clone_vs.py -c controller1.acme.com -fc vs-wafpolicy,positive-security-model vs example cloned-example -v *
+
+### Disabling learning in the cloned WAF Policy
+
+It may desirable to disable learning for the cloned WAF Policy and its referenced PSM groups, for example if the source Virtual Service was used for learning and the cloned Virtual Service will be an instance of the same application, but independent learning is not desired. This can be achieved with the option  `-flag disablelearning`:
+
+> clone_vs.py -c controller1.acme.com -fc vs-wafpolicy,positive-security-model -flag disablelearning vs example cloned-example -v *
+
+This flag can also be used when cloning a WAF Policy individually:
+
+> clone_vs.py -c controller1.acme.com -fc positive-security-model -flag disablelearning generic wafpolicy example cloned-example
+
 ## Cross-Version support
 
 By default, the API version is automatically determined based on the minimum of the software versions of the source and destination Controllers. It is also possible to specify the specific API version to be used with the -x parameter.
@@ -116,7 +146,7 @@ By default, the API version is automatically determined based on the minimum of 
 
 * Depending on the version of Avi Vantage and configuration, it may be possible for a VS in a non-admin tenant to reference and use SSL certificates in the admin tenant. However by default, this script will instead clone certificates to the target tenant.
 
-This behaviour can be enabled with the option -flags adminssl
+This behaviour can be enabled with the option `-flag adminssl`
 
 * Cloning a VS to a cloud of a different type to the source cloud is more likely to fail as it may reference shared objects which do not make sense in the destination cloud.
 
@@ -134,3 +164,4 @@ Changelog:
 * Enhancements for cross-cloud and cross-VRF cloning to cater for more scenarios
 * Moved several function parameters to instance variables
 * Removed specific option for cloning pools - pools can now be cloned using the "generic" option
+* Added enhanced support for cloning of WAF Policies
