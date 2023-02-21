@@ -111,7 +111,7 @@ class AviClone:
 
     def __init__(self, source_api, dest_api=None, flags=None, tenant=None,
                  other_tenant=None, other_cloud=None,
-                 other_vrf=None, server_map=None):
+                 other_vrf=None, server_map=None, ssl_key_pps=None):
         self.api = source_api
         self.dest_api = dest_api or source_api
         self.flush_actions()
@@ -159,6 +159,7 @@ class AviClone:
                                                   cloud_uuid=self.ocloud_uuid)
 
         self.server_map = server_map
+        self.ssl_key_pps = ssl_key_pps or dict()
 
     def flush_actions(self):
         self.actions = []
@@ -390,6 +391,7 @@ class AviClone:
         old_obj.pop('uuid', None)
         old_obj.pop('_last_modified', None)
         old_obj_url = old_obj.pop('url', None)
+        old_obj['_clonevs_old_name'] = old_obj['name']
         old_obj['name'] = new_name
 
         try:
@@ -405,6 +407,8 @@ class AviClone:
             # the source object)
 
             logger.debug('Creating %s "%s"...', object_type, new_name)
+
+            old_obj.pop('_clonevs_old_name')
 
             r = self.dest_api.post(object_type, old_obj,
                                    tenant_uuid=self.otenant_uuid)
@@ -816,6 +820,10 @@ class AviClone:
                 obj.pop('certificate_base64', None)
 
             obj.pop('ocsp_error_status', None)
+
+            if 'key_passphrase' in obj:
+                old_name = obj['_clonevs_old_name']
+                obj['key_passphrase'] = self.ssl_key_pps.get(old_name, '')
 
             valid_ref_objects = self.VALID_SSLCERT_REF_OBJECTS
 
@@ -2227,6 +2235,10 @@ if __name__ == '__main__':
                         action='store_true')
     parser.add_argument('-flags', help='Comma-separated list of special flags.',
                         default='')
+    parser.add_argument('-skp', '--sslkeypassphrases',
+                        help='List of SSL Key and Certificate passphrases. '
+                        'Format as cert1,passphrase1;cert2,passphrase2. '
+                        'Specify * for passphrase to be prompted.')
     parser.add_argument('-t', '--tenant',
                         help='Scope to a particular tenant',
                         metavar='tenant')
@@ -2367,6 +2379,30 @@ if __name__ == '__main__':
 
             flags = set(args.flags.split(','))
 
+            if args.sslkeypassphrases:
+                ssl_key_pps = {}
+                for pair in args.sslkeypassphrases.split(';'):
+                    ssl_key = pair.split(',')
+                    ssl_cert = ssl_key[0]
+                    if ssl_cert:
+                        if len(ssl_key) == 1 or ssl_key[1] == '*':
+                            passphrase = getpass.getpass('Passphrase for cert '
+                                                         '"%s":' % ssl_cert)
+                        else:
+                            passphrase = ssl_key[1]
+                        ssl_key_pps[ssl_cert] = passphrase
+            else:
+                ssl_key_pps = None
+
+            force_clone = (args.forceclone.split(',')
+                           if args.forceclone else None)
+
+            if args.mapservers:
+                server_map = [tuple(pair.split(','))
+                              for pair in args.mapservers.split(';')]
+            else:
+                server_map = []
+
             while True:
                 # Create the API session
 
@@ -2419,16 +2455,6 @@ if __name__ == '__main__':
                 if api2:
                     api2.delete_session()
 
-            force_clone = (args.forceclone.split(',')
-                           if args.forceclone else None)
-
-            if 'mapservers' in args:
-                server_map = ([tuple(pair.split(','))
-                               for pair in args.mapservers.split(';')]
-                              if args.mapservers else None)
-            else:
-                server_map = []
-
             # Create an instance of our cloning class
 
             cl = AviClone(source_api=api, dest_api=api2,
@@ -2436,7 +2462,8 @@ if __name__ == '__main__':
                           other_tenant=args.totenant,
                           other_cloud=args.tocloud,
                           other_vrf=args.tovrf,
-                          server_map=server_map)
+                          server_map=server_map,
+                          ssl_key_pps=ssl_key_pps)
 
             if args.obj_type == 'vs':
                 # Loop through the clone names and clone the source VS for

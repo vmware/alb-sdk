@@ -106,6 +106,20 @@ Note: Azure subnet name (subnet_uuid) must be specified, e.g. vip-subnet.
 
 > clone_vs.py -c controller1.acme.com vs example cloned-example -v 10.0.0.0/16 -v6 fd00:dead:beef:bad:f00d::/64
 
+## SSL Certificate handling
+
+SSLKeyAndCertificate objects that contain a private key secured by a passphrase will not clone successfully by default. The user must provide the required passphrase in order to clone such objects. This is achieved using the option `-skp certname1,passphrase1;certname2,passphrase2`. When cloning certificates with a passphrase set, the passphrase will be looked up against the name of the SSLKeyAndCertificate object in this list.
+
+If the passphrase is omitted for a certificate or * is specified, the user will be prompted to enter the passphrase by the script.
+
+### Cloning a Virtual Service specifying SSL key passphrases
+
+In this example, the user will be prompted to enter the passphrase for the certificate object called "MyCert1". The passphrase for the certificate called "MyCert2" is explicitly given as "mysecretphrase".
+
+> clone_vs.py -c controller1.acme.com -skp MyCert1,*;MyCert2,mysecretphrase vs example cloned-example
+
+
+
 ## WAF Policy handling
 
 The cloning of WAF Policies requires some special consideration depending on the use case.
