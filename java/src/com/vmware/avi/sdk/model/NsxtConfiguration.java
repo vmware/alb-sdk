@@ -45,6 +45,9 @@ public class NsxtConfiguration  {
     @JsonProperty("site_id")
     private String siteId = "default";
 
+    @JsonProperty("vmc_mode")
+    private Boolean vmcMode = false;
+
     @JsonProperty("vpc_mode")
     private Boolean vpcMode = null;
 
@@ -246,6 +249,30 @@ public class NsxtConfiguration  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Vmc mode.
+     * Field introduced in 23.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return vmcMode
+     */
+    public Boolean getVmcMode() {
+        return vmcMode;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Vmc mode.
+     * Field introduced in 23.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param vmcMode set the vmcMode.
+     */
+    public void setVmcMode(Boolean  vmcMode) {
+        this.vmcMode = vmcMode;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Vpc mode.
      * Field introduced in 23.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -286,7 +313,8 @@ public class NsxtConfiguration  {
   Objects.equals(this.automateDfwRules, objNsxtConfiguration.automateDfwRules)&&
   Objects.equals(this.managementNetworkConfig, objNsxtConfiguration.managementNetworkConfig)&&
   Objects.equals(this.dataNetworkConfig, objNsxtConfiguration.dataNetworkConfig)&&
-  Objects.equals(this.vpcMode, objNsxtConfiguration.vpcMode);
+  Objects.equals(this.vpcMode, objNsxtConfiguration.vpcMode)&&
+  Objects.equals(this.vmcMode, objNsxtConfiguration.vmcMode);
     }
 
     @Override
@@ -301,6 +329,7 @@ public class NsxtConfiguration  {
                         sb.append("    nsxtCredentialsRef: ").append(toIndentedString(nsxtCredentialsRef)).append("\n");
                         sb.append("    nsxtUrl: ").append(toIndentedString(nsxtUrl)).append("\n");
                         sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
+                        sb.append("    vmcMode: ").append(toIndentedString(vmcMode)).append("\n");
                         sb.append("    vpcMode: ").append(toIndentedString(vpcMode)).append("\n");
                   sb.append("}");
       return sb.toString();
