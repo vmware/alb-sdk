@@ -530,18 +530,18 @@ public class AviCredentials
 	}
 
     /**
-	 * Gets the setSslContext.
+	 * Gets the setSslContext
 	 *
-	 * @return sslContext  representing SSLContext.
+	 * @return sslcontext  representing SSLContext.
 	 */
     public SSLContext getSslContext() {
         return sslContext;
     }
 
     /**
-	 * Sets the setSslContext.
+	 * Sets the setSslContext
 	 *
-	 * @param sslcontext containing SSLContext.
+	 * @param sslcontext  containing SSLContext.
 	 */
     public void setSslContext(SSLContext sslContext) {
         this.sslContext = sslContext;
