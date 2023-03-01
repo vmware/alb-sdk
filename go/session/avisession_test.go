@@ -22,6 +22,7 @@ import (
 
 var AVI_CONTROLLER = os.Getenv("AVI_CONTROLLER")
 var AVI_USERNAME = os.Getenv("AVI_USERNAME")
+var AVI_VERSION = os.Getenv("AVI_VERSION")
 var AVI_TENANT = os.Getenv("AVI_TENANT")
 var AVI_PASSWORD = os.Getenv("AVI_PASSWORD")
 var AVI_POOL_NAME = os.Getenv("")
@@ -676,11 +677,11 @@ func TestApiLazyAuthentication(t *testing.T) {
 	var avisess *AviSession
 	var err error
 	if AVI_PASSWORD != "" {
-		avisess, err = NewAviSession(AVI_CONTROLLER, "admin",
+		avisess, err = NewAviSession(AVI_CONTROLLER, "admin", SetVersion(AVI_VERSION),
 			SetPassword(AVI_PASSWORD), SetLazyAuthentication(true),
 			SetInsecure)
 	} else {
-		avisess, err = NewAviSession(AVI_CONTROLLER, "admin",
+		avisess, err = NewAviSession(AVI_CONTROLLER, "admin", SetVersion(AVI_VERSION),
 			SetAuthToken(AVI_AUTH_TOKEN), SetLazyAuthentication(true),
 			SetInsecure)
 	}
@@ -710,14 +711,14 @@ func TestSetClient(t *testing.T) {
 		Timeout: 10 * time.Second,
 	}
 	if AVI_PASSWORD != "" {
-		avisess, err = NewAviSession(AVI_CONTROLLER, "admin",
+		avisess, err = NewAviSession(AVI_CONTROLLER, "admin", SetVersion(AVI_VERSION),
 			SetPassword(AVI_PASSWORD), SetLazyAuthentication(true),
 			SetInsecure, SetClient(client))
 		if err != nil {
 			t.Fatal(err)
 		}
 	} else {
-		avisess, err = NewAviSession(AVI_CONTROLLER, "admin",
+		avisess, err = NewAviSession(AVI_CONTROLLER, "admin", SetVersion(AVI_VERSION),
 			SetAuthToken(AVI_AUTH_TOKEN), SetLazyAuthentication(true),
 			SetInsecure, SetClient(client))
 		if err != nil {
