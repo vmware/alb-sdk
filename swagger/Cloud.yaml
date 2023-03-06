@@ -1180,9 +1180,6 @@ definitions:
                 type: string
     DataNetworkConfig:
         type: object
-        required:
-            -   transport_zone
-            -   tz_type
         properties:
             tier1_segment_config:
                 description: "Nsxt tier1 segment configuration for Avi Service Engine data path. This should be set only when transport zone is of type OVERLAY. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
