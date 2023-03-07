@@ -144,13 +144,13 @@ The below example clones a VS and forces cloning of the WAF Policy and any PSM g
 
 ### Disabling learning in the cloned WAF Policy
 
-It may desirable to disable learning for the cloned WAF Policy and its referenced PSM groups, for example if the source Virtual Service was used for learning and the cloned Virtual Service will be an instance of the same application, but independent learning is not desired. This can be achieved with the option  `-flag disablelearning`:
+It may desirable to disable learning for the cloned WAF Policy and its referenced PSM groups, for example if the source Virtual Service was used for learning and the cloned Virtual Service will be an instance of the same application, but independent learning is not desired. This can be achieved with the option  `-flags disablelearning`:
 
-> clone_vs.py -c controller1.acme.com -fc vs-wafpolicy,positive-security-model -flag disablelearning vs example cloned-example -v *
+> clone_vs.py -c controller1.acme.com -fc vs-wafpolicy,positive-security-model -flags disablelearning vs example cloned-example -v *
 
 This flag can also be used when cloning a WAF Policy individually:
 
-> clone_vs.py -c controller1.acme.com -fc positive-security-model -flag disablelearning generic wafpolicy example cloned-example
+> clone_vs.py -c controller1.acme.com -fc positive-security-model -flags disablelearning generic wafpolicy example cloned-example
 
 ## Cross-Version support
 
@@ -160,7 +160,7 @@ By default, the API version is automatically determined based on the minimum of 
 
 * Depending on the version of Avi Vantage and configuration, it may be possible for a VS in a non-admin tenant to reference and use SSL certificates in the admin tenant. However by default, this script will instead clone certificates to the target tenant.
 
-This behaviour can be enabled with the option `-flag adminssl`
+This behaviour can be enabled with the option `-flags adminssl`
 
 * Cloning a VS to a cloud of a different type to the source cloud is more likely to fail as it may reference shared objects which do not make sense in the destination cloud.
 
