@@ -179,3 +179,4 @@ Changelog:
 * Moved several function parameters to instance variables
 * Removed specific option for cloning pools - pools can now be cloned using the "generic" option
 * Added enhanced support for cloning of WAF Policies
+* Added support for cloning SSLKeyAndCertificate objects that have passphrases protecting the private key

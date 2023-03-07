@@ -89,8 +89,8 @@ class AviClone:
         'gs-healthmonitor': 'health_monitor_refs'
     }
     VALID_APPLICATIONPROFILE_REF_OBJECTS = {
-        'appprofile-cachemimetypesblacklist':
-            'http_profile/cache_config/mime_types_black_group_refs',
+        'appprofile-cachemimetypesblocklist':
+            'http_profile/cache_config/mime_types_block_group_refs',
         'appprofile-cachemimetypes':
             'http_profile/cache_config/mime_types_group_refs',
         'appprofile-compressiblecontent':
