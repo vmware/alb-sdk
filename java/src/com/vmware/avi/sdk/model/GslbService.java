@@ -82,7 +82,7 @@ public class GslbService extends AviRestResource  {
     private String tenantRef = null;
 
     @JsonProperty("topology_policy_enabled")
-    private Boolean topologyPolicyEnabled = null;
+    private Boolean topologyPolicyEnabled = false;
 
     @JsonProperty("ttl")
     private Integer ttl = null;
@@ -668,7 +668,7 @@ public class GslbService extends AviRestResource  {
      * If no valid member is found using the topology policy rules, configured gslb algorithms for pool selection and member selection are used.
      * Field introduced in 22.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return topologyPolicyEnabled
      */
     public Boolean getTopologyPolicyEnabled() {
@@ -681,7 +681,7 @@ public class GslbService extends AviRestResource  {
      * If no valid member is found using the topology policy rules, configured gslb algorithms for pool selection and member selection are used.
      * Field introduced in 22.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param topologyPolicyEnabled set the topologyPolicyEnabled.
      */
     public void setTopologyPolicyEnabled(Boolean  topologyPolicyEnabled) {
