@@ -132,6 +132,9 @@ type ControllerProperties struct {
 	// Sleep time in the vs_mgr during a FederatedPurge RPC call. Allowed values are 50-100. Field introduced in 22.1.3. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	GslbPurgeSleepTimeMs *int32 `json:"gslb_purge_sleep_time_ms,omitempty"`
 
+	// Ignore the vrf_context filter for /networksubnetlist API. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	IgnoreVrfInNetworksubnetlist *bool `json:"ignore_vrf_in_networksubnetlist,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxDeadSeInGrp *int32 `json:"max_dead_se_in_grp,omitempty"`
 
