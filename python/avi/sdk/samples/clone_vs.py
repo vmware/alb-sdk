@@ -1609,7 +1609,7 @@ class AviClone:
         is_child_vs = (v_obj['type'] == 'VS_TYPE_VH_CHILD')
 
         if is_child_vs:
-            logger.debug('Source Virtual Service is an SNI child VS')
+            logger.debug('Source Virtual Service is an SNI/EVH child VS')
 
         c_obj = self.api.get(v_obj['cloud_ref'].split('/api/')[1],
                              tenant_uuid=self.tenant_uuid).json()
@@ -1621,27 +1621,6 @@ class AviClone:
             # Allocate new VIPs. If auto-allocating then remove existing IP
             # addresses and allow auto_allocate_ip to do the work. Otherwise
             # build a new array of VIPs.
-
-            new_vsvip_name = 'vsvip-%s-%s' % (new_vs_name,
-                                              self.other_cloud if
-                                              self.other_cloud
-                                              else c_obj['name'])
-
-            new_vsvip_name = self.get_new_name('vsvip', new_vsvip_name,
-                                               force_unique_name=True)
-
-            vsvip_obj = self.api.get(
-                v_obj['vsvip_ref'].split('/api/')[1],
-                tenant_uuid=self.tenant_uuid).json()
-
-            vsvip_obj.pop('uuid', None)
-            vsvip_obj.pop('_last_modified', None)
-            vsvip_obj.pop('url', None)
-            vsvip_obj['name'] = new_vsvip_name
-            v_obj.pop('vip', None)
-            v_obj.pop('dns_info', None)
-            v_obj.pop('east_west_placement', None)
-            v_obj.pop('vsvip_ref', None)
 
             if is_child_vs:
                 # VS is a child VS
@@ -1656,226 +1635,250 @@ class AviClone:
                                         (new_parent, (' in tenant "%s"' %
                                                       self.other_tenant) if
                                          self.other_tenant else ''))
-            elif new_vs_vips == ['*']:
-                # Use auto-allocation from the same subnets as the source
-                # VS (IPv4 and IPv6)
-
-                for vip in vsvip_obj['vip']:
-                    vip.pop('port_uuid', None)
-                    vip.pop('discovered_networks', None)
-                    if 'ipam_network_subnet' in vip:
-                        vip['ipam_network_subnet'].pop('network_ref', None)
-                    if vip['auto_allocate_ip'] is True:
-                        vip.pop('ip_address', None)
-                        vip.pop('ip6_address', None)
-                    else:
-                        raise Exception('Existing VS does not have '
-                                        'auto-allocate enabled')
-                    if vip['auto_allocate_floating_ip'] is True:
-                        vip.pop('floating_ip', None)
+                vsvip_obj = None
             else:
-                # Update VIPs in destination VS
 
-                if len(new_vs_vips) != len(new_vs_v6vips):
-                    raise Exception('Number of V4 and V6 VIPs should match.')
+                new_vsvip_name = 'vsvip-%s-%s' % (new_vs_name,
+                                                self.other_cloud if
+                                                self.other_cloud
+                                                else c_obj['name'])
 
-                vsvip_obj['vip'] = []
-                for c, (new_vs_vip,
-                        new_vs_fip,
-                        new_vs_v6vip,
-                        new_vs_placement) in enumerate(zip(new_vs_vips,
-                                                           new_vs_fips,
-                                                           new_vs_v6vips,
-                                                           new_vs_placements)):
-                    # For multi-VIPs, allow any of V4, V6 or Floating VIP
-                    # or placement network to be omitted (specified as '-')
+                new_vsvip_name = self.get_new_name('vsvip', new_vsvip_name,
+                                                force_unique_name=True)
 
-                    if new_vs_vip == '-':
-                        new_vs_vip = None
-                    if new_vs_v6vip == '-':
-                        new_vs_v6vip = None
-                    if new_vs_fip == '-':
-                        new_vs_fip = None
-                    if new_vs_placement == '-':
-                        new_vs_placement = None
+                vsvip_obj = self.api.get(
+                    v_obj['vsvip_ref'].split('/api/')[1],
+                    tenant_uuid=self.tenant_uuid).json()
 
-                    new_vip = {'enabled': True,
-                               'vip_id': str(c+1)}
-                    if new_vs_vip:
-                        if '/' in new_vs_vip:
-                            # New VIP is a subnet for auto-allocation
+                vsvip_obj.pop('uuid', None)
+                vsvip_obj.pop('_last_modified', None)
+                vsvip_obj.pop('url', None)
+                vsvip_obj['name'] = new_vsvip_name
+                v_obj.pop('vip', None)
+                v_obj.pop('dns_info', None)
+                v_obj.pop('east_west_placement', None)
+                v_obj.pop('vsvip_ref', None)
 
-                            new_vip['auto_allocate_ip'] = True
-                            subnet = new_vs_vip.split('/')
-                            subnet_uuid = (subnet[2] if len(subnet) > 2
-                                           else None)
-                            if use_internal_ipam:
-                                new_vip['ipam_network_subnet'] = {
-                                    'subnet': {
-                                        'ip_addr': {
-                                            'type': 'V4',
-                                            'addr': subnet[0]},
-                                        'mask': int(subnet[1])}}
-                                if subnet_uuid:
-                                    new_vip['ipam_network_subnet'][
-                                        'subnet_uuid'] = subnet_uuid
-                            else:
-                                new_vip['subnet'] = {
-                                    'ip_addr': {'type': 'V4',
-                                                'addr': subnet[0]},
-                                    'mask': int(subnet[1])}
-                                if subnet_uuid:
-                                    new_vip['subnet_uuid'] = subnet_uuid
+                if new_vs_vips == ['*']:
+                    # Use auto-allocation from the same subnets as the source
+                    # VS (IPv4 and IPv6)
+
+                    for vip in vsvip_obj['vip']:
+                        vip.pop('port_uuid', None)
+                        vip.pop('discovered_networks', None)
+                        if 'ipam_network_subnet' in vip:
+                            vip['ipam_network_subnet'].pop('network_ref', None)
+                        if vip['auto_allocate_ip'] is True:
+                            vip.pop('ip_address', None)
+                            vip.pop('ip6_address', None)
                         else:
-                            # New VIP is an individual IP so do not
-                            # do auto-allocation
+                            raise Exception('Existing VS does not have '
+                                            'auto-allocate enabled')
+                        if vip['auto_allocate_floating_ip'] is True:
+                            vip.pop('floating_ip', None)
+                else:
+                    # Update VIPs in destination VS
 
-                            new_vip['auto_allocate_ip'] = False
-                            new_vip['ip_address'] = {'type': 'V4',
-                                                     'addr': new_vs_vip}
-                    if new_vs_v6vip:
-                        if '/' in new_vs_v6vip:
-                            # New VIP is a subnet for auto-allocation
+                    if len(new_vs_vips) != len(new_vs_v6vips):
+                        raise Exception('Number of V4 and V6 VIPs should match.')
 
-                            new_vip['auto_allocate_ip'] = True
-                            new_vip['auto_allocate_ip_type'] = (
-                                'V4_V6' if new_vs_vip else 'V6_ONLY')
+                    vsvip_obj['vip'] = []
+                    for c, (new_vs_vip,
+                            new_vs_fip,
+                            new_vs_v6vip,
+                            new_vs_placement) in enumerate(zip(new_vs_vips,
+                                                            new_vs_fips,
+                                                            new_vs_v6vips,
+                                                            new_vs_placements)):
+                        # For multi-VIPs, allow any of V4, V6 or Floating VIP
+                        # or placement network to be omitted (specified as '-')
 
-                            subnet = new_vs_v6vip.split('/')
-                            subnet_uuid = (subnet[2] if len(subnet) > 2
-                                           else None)
-                            if use_internal_ipam:
-                                new_vip['ipam_network_subnet'] = {
-                                    'subnet6': {
-                                        'ip_addr': {
-                                            'type': 'V6',
-                                            'addr': subnet[0]},
-                                        'mask': int(subnet[1])}}
-                                if subnet_uuid:
-                                    new_vip['ipam_network_subnet'][
-                                        'subnet6_uuid'] = subnet_uuid
-                            else:
+                        if new_vs_vip == '-':
+                            new_vs_vip = None
+                        if new_vs_v6vip == '-':
+                            new_vs_v6vip = None
+                        if new_vs_fip == '-':
+                            new_vs_fip = None
+                        if new_vs_placement == '-':
+                            new_vs_placement = None
 
-                                new_vip['subnet6'] = {
-                                    'ip_addr': {'type': 'V6',
+                        new_vip = {'enabled': True,
+                                'vip_id': str(c+1)}
+                        if new_vs_vip:
+                            if '/' in new_vs_vip:
+                                # New VIP is a subnet for auto-allocation
+
+                                new_vip['auto_allocate_ip'] = True
+                                subnet = new_vs_vip.split('/')
+                                subnet_uuid = (subnet[2] if len(subnet) > 2
+                                            else None)
+                                if use_internal_ipam:
+                                    new_vip['ipam_network_subnet'] = {
+                                        'subnet': {
+                                            'ip_addr': {
+                                                'type': 'V4',
                                                 'addr': subnet[0]},
-                                    'mask': int(subnet[1])}
-                                if subnet_uuid:
-                                    new_vip['subnet6_uuid'] = subnet_uuid
-                        else:
-                            # New VIP is an individual IP so do not
-                            # do auto-allocation
+                                            'mask': int(subnet[1])}}
+                                    if subnet_uuid:
+                                        new_vip['ipam_network_subnet'][
+                                            'subnet_uuid'] = subnet_uuid
+                                else:
+                                    new_vip['subnet'] = {
+                                        'ip_addr': {'type': 'V4',
+                                                    'addr': subnet[0]},
+                                        'mask': int(subnet[1])}
+                                    if subnet_uuid:
+                                        new_vip['subnet_uuid'] = subnet_uuid
+                            else:
+                                # New VIP is an individual IP so do not
+                                # do auto-allocation
 
-                            new_vip['auto_allocate_ip'] = False
-                            new_vip['ip6_address'] = {'type': 'V6',
-                                                      'addr': new_vs_v6vip}
+                                new_vip['auto_allocate_ip'] = False
+                                new_vip['ip_address'] = {'type': 'V4',
+                                                        'addr': new_vs_vip}
+                        if new_vs_v6vip:
+                            if '/' in new_vs_v6vip:
+                                # New VIP is a subnet for auto-allocation
 
-                    if new_vs_fip:
-                        if new_vs_fip == '*':
-                            new_vip['auto_allocate_floating_ip'] = True
+                                new_vip['auto_allocate_ip'] = True
+                                new_vip['auto_allocate_ip_type'] = (
+                                    'V4_V6' if new_vs_vip else 'V6_ONLY')
+
+                                subnet = new_vs_v6vip.split('/')
+                                subnet_uuid = (subnet[2] if len(subnet) > 2
+                                            else None)
+                                if use_internal_ipam:
+                                    new_vip['ipam_network_subnet'] = {
+                                        'subnet6': {
+                                            'ip_addr': {
+                                                'type': 'V6',
+                                                'addr': subnet[0]},
+                                            'mask': int(subnet[1])}}
+                                    if subnet_uuid:
+                                        new_vip['ipam_network_subnet'][
+                                            'subnet6_uuid'] = subnet_uuid
+                                else:
+
+                                    new_vip['subnet6'] = {
+                                        'ip_addr': {'type': 'V6',
+                                                    'addr': subnet[0]},
+                                        'mask': int(subnet[1])}
+                                    if subnet_uuid:
+                                        new_vip['subnet6_uuid'] = subnet_uuid
+                            else:
+                                # New VIP is an individual IP so do not
+                                # do auto-allocation
+
+                                new_vip['auto_allocate_ip'] = False
+                                new_vip['ip6_address'] = {'type': 'V6',
+                                                        'addr': new_vs_v6vip}
+
+                        if new_vs_fip:
+                            if new_vs_fip == '*':
+                                new_vip['auto_allocate_floating_ip'] = True
+                            else:
+                                new_vip['auto_allocate_floating_ip'] = False
+                                new_vip['floating_ip'] = {
+                                    'type': 'V4',
+                                    'addr': new_vs_fip}
                         else:
                             new_vip['auto_allocate_floating_ip'] = False
-                            new_vip['floating_ip'] = {
-                                'type': 'V4',
-                                'addr': new_vs_fip}
-                    else:
-                        new_vip['auto_allocate_floating_ip'] = False
 
-                    if new_vs_placement:
-                        placement_networks = []
-                        for vs_placement_data in new_vs_placement.split(';'):
-                            vs_placement_data_split = vs_placement_data.split(
-                                '/')
-                            placement_network = {}
-                            if len(vs_placement_data_split) == 2:
-                                # Placement data is subnet/mask only
-                                subnet, mask = vs_placement_data_split
-                                if ':' in subnet:
-                                    placement_network['subnet6'] = {
-                                        'ip_addr': {
-                                            'type': 'V6',
-                                            'addr': subnet
+                        if new_vs_placement:
+                            placement_networks = []
+                            for vs_placement_data in new_vs_placement.split(';'):
+                                vs_placement_data_split = vs_placement_data.split(
+                                    '/')
+                                placement_network = {}
+                                if len(vs_placement_data_split) == 2:
+                                    # Placement data is subnet/mask only
+                                    subnet, mask = vs_placement_data_split
+                                    if ':' in subnet:
+                                        placement_network['subnet6'] = {
+                                            'ip_addr': {
+                                                'type': 'V6',
+                                                'addr': subnet
+                                            },
+                                            'mask': mask
+                                        }
+                                    else:
+                                        placement_network['subnet'] = {
+                                            'ip_addr': {
+                                                'type': 'V4',
+                                                'addr': subnet
+                                            },
+                                            'mask': mask
+                                        }
+                                elif len(vs_placement_data_split) == 3:
+                                    # Placement data is network/subnet/mask
+                                    network, subnet, mask = vs_placement_data_split
+                                    (n_obj, n_name, n_uuid) = self._get_obj_info(
+                                        obj_type='network',
+                                        obj_name=network,
+                                        api_to_use=self.dest_api,
+                                        cloud_uuid=self.ocloud_uuid or c_obj['uuid'])
+                                    if n_obj:
+                                        placement_network['network_ref'] = n_obj['url']
+                                    else:
+                                        raise('Unable to find referenced placement '
+                                            'network "%s" in the cloud.'
+                                            % network)
+                                    if ':' in subnet:
+                                        placement_network['subnet6'] = {
+                                            'ip_addr': {
+                                                'type': 'V6',
+                                                'addr': subnet
+                                            },
+                                            'mask': mask
+                                        }
+                                    else:
+                                        placement_network['subnet'] = {
+                                            'ip_addr': {
+                                                'type': 'V4',
+                                                'addr': subnet
+                                            },
+                                            'mask': mask
+                                        }
+                                elif len(vs_placement_data_split) == 5:
+                                    # Placement data is
+                                    # network/subnet/mask/subnet6/mask
+                                    (network, subnet, mask,
+                                    subnet6, mask6) = vs_placement_data_split
+                                    (n_obj, n_name, n_uuid) = self._get_obj_info(
+                                        obj_type='network',
+                                        obj_name=network,
+                                        api_to_use=self.dest_api,
+                                        cloud_uuid=self.ocloud_uuid or c_obj['uuid'])
+                                    if not n_obj:
+                                        raise('Unable to find referenced placement '
+                                            'network "%s" in the cloud.'
+                                            % network)
+                                    placement_network = {
+                                        'network_ref': n_obj['url'],
+                                        'subnet': {
+                                            'ip_addr': {
+                                                'type': 'V4',
+                                                'addr': subnet
+                                            },
+                                            'mask': mask
                                         },
-                                        'mask': mask
+                                        'subnet6': {
+                                            'ip_addr': {
+                                                'type': 'V6',
+                                                'addr': subnet6
+                                            },
+                                            'mask': mask6
+                                        }
                                     }
                                 else:
-                                    placement_network['subnet'] = {
-                                        'ip_addr': {
-                                            'type': 'V4',
-                                            'addr': subnet
-                                        },
-                                        'mask': mask
-                                    }
-                            elif len(vs_placement_data_split) == 3:
-                                # Placement data is network/subnet/mask
-                                network, subnet, mask = vs_placement_data_split
-                                (n_obj, n_name, n_uuid) = self._get_obj_info(
-                                    obj_type='network',
-                                    obj_name=network,
-                                    api_to_use=self.dest_api,
-                                    cloud_uuid=self.ocloud_uuid or c_obj['uuid'])
-                                if n_obj:
-                                    placement_network['network_ref'] = n_obj['url']
-                                else:
-                                    raise('Unable to find referenced placement '
-                                          'network "%s" in the cloud.'
-                                          % network)
-                                if ':' in subnet:
-                                    placement_network['subnet6'] = {
-                                        'ip_addr': {
-                                            'type': 'V6',
-                                            'addr': subnet
-                                        },
-                                        'mask': mask
-                                    }
-                                else:
-                                    placement_network['subnet'] = {
-                                        'ip_addr': {
-                                            'type': 'V4',
-                                            'addr': subnet
-                                        },
-                                        'mask': mask
-                                    }
-                            elif len(vs_placement_data_split) == 5:
-                                # Placement data is
-                                # network/subnet/mask/subnet6/mask
-                                (network, subnet, mask,
-                                 subnet6, mask6) = vs_placement_data_split
-                                (n_obj, n_name, n_uuid) = self._get_obj_info(
-                                    obj_type='network',
-                                    obj_name=network,
-                                    api_to_use=self.dest_api,
-                                    cloud_uuid=self.ocloud_uuid or c_obj['uuid'])
-                                if not n_obj:
-                                    raise('Unable to find referenced placement '
-                                          'network "%s" in the cloud.'
-                                          % network)
-                                placement_network = {
-                                    'network_ref': n_obj['url'],
-                                    'subnet': {
-                                        'ip_addr': {
-                                            'type': 'V4',
-                                            'addr': subnet
-                                        },
-                                        'mask': mask
-                                    },
-                                    'subnet6': {
-                                        'ip_addr': {
-                                            'type': 'V6',
-                                            'addr': subnet6
-                                        },
-                                        'mask': mask6
-                                    }
-                                }
-                            else:
-                                raise Exception(
-                                    'Unable to parse placement networks.')
+                                    raise Exception(
+                                        'Unable to parse placement networks.')
 
-                            placement_networks.append(placement_network)
+                                placement_networks.append(placement_network)
 
-                        new_vip['placement_networks'] = placement_networks
+                            new_vip['placement_networks'] = placement_networks
 
-                    vsvip_obj['vip'].append(new_vip)
+                        vsvip_obj['vip'].append(new_vip)
 
             # Allocate new FQDNs or create a single FQDN derived from the first
             # FQDN, replacing the hostname part with the new VS name
@@ -1898,7 +1901,7 @@ class AviClone:
                     else:
                         vsvip_obj['dns_info'] = [{'type': 'DNS_RECORD_A',
                                                   'fqdn': new_fqdn} for new_fqdn in new_fqdns]
-                else:
+                elif vsvip_obj:
                     vsvip_obj.pop('dns_info', None)
 
             # Clone the pool/pool group used by the VS
@@ -1968,7 +1971,8 @@ class AviClone:
 
             if self.oc_obj:
                 v_obj['cloud_ref'] = self.oc_obj['url']
-                vsvip_obj['cloud_ref'] = self.oc_obj['url']
+                if vsvip_obj:
+                    vsvip_obj['cloud_ref'] = self.oc_obj['url']
                 v_obj.pop('cloud_type', None)
 
                 # If moving to a different cloud and a new SE group is not
@@ -1984,17 +1988,17 @@ class AviClone:
                 # If moving to a different cloud, Virtual Service will be moved
                 # to the default global VRF in the target cloud unless a
                 # specific target VRF is specified.
-
-                vsvip_obj.pop('vrf_context_ref', None)
-                vsvip_obj.pop('tier1_lr', None)
+                if vsvip_obj:
+                    vsvip_obj.pop('vrf_context_ref', None)
+                    vsvip_obj.pop('tier1_lr', None)
 
             # Update VRF or T1_LR reference if a target VRF is specified
-
-            if self.ov_obj:
-                vsvip_obj['vrf_context_ref'] = self.ov_obj['url']
-            elif self.other_vrf:
-                # Case where target is NSX-T Cloud with overlay
-                vsvip_obj['tier1_lr'] = self.other_vrf
+            if vsvip_obj:
+                if self.ov_obj:
+                    vsvip_obj['vrf_context_ref'] = self.ov_obj['url']
+                elif self.other_vrf:
+                    # Case where target is NSX-T Cloud with overlay
+                    vsvip_obj['tier1_lr'] = self.other_vrf
 
             if new_segroup:
                 # Locate SE group by name in the appropriate cloud
@@ -2115,30 +2119,33 @@ class AviClone:
             created_objs.extend(new_objs)
             warnings.extend(new_warnings)
 
-            # Create new vsvip object
+            if vsvip_obj:
+                # Create new vsvip object
 
-            r = self.dest_api.post('vsvip', vsvip_obj,
-                                   tenant_uuid=self.otenant_uuid)
-            if r.status_code < 300:
-                new_vsvip_obj = r.json()
-                logger.debug('Created vsvip "%s"', new_vsvip_obj['url'])
+                r = self.dest_api.post('vsvip', vsvip_obj,
+                                    tenant_uuid=self.otenant_uuid)
+                if r.status_code < 300:
+                    new_vsvip_obj = r.json()
+                    logger.debug('Created vsvip "%s"', new_vsvip_obj['url'])
+                else:
+                    exception_string = ('Unable to create vsvip "%s" (%d:%s)'
+                                        % (vsvip_obj['name'], r.status_code,
+                                        r.text))
+                    logger.debug(exception_string)
+                    logger.debug(vsvip_obj)
+                    raise Exception(exception_string)
+                created_objs.append(new_vsvip_obj)
+                self.actions += ['Cloned vsvip "%s"%s'
+                                % (new_vsvip_obj['name'],
+                                    (' in tenant "%s"' % self.other_tenant)
+                                    if self.other_tenant else '')]
+                v_obj['vsvip_ref'] = new_vsvip_obj['url']
+
+                # Set VS VRF Context to match VsVip VRF Context
+
+                v_obj['vrf_context_ref'] = new_vsvip_obj['vrf_context_ref']
             else:
-                exception_string = ('Unable to create vsvip "%s" (%d:%s)'
-                                    % (vsvip_obj['name'], r.status_code,
-                                       r.text))
-                logger.debug(exception_string)
-                logger.debug(vsvip_obj)
-                raise Exception(exception_string)
-            created_objs.append(new_vsvip_obj)
-            self.actions += ['Cloned vsvip "%s"%s'
-                             % (new_vsvip_obj['name'],
-                                (' in tenant "%s"' % self.other_tenant)
-                                if self.other_tenant else '')]
-            v_obj['vsvip_ref'] = new_vsvip_obj['url']
-
-            # Set VS VRF Context to match VsVip VRF Context
-
-            v_obj['vrf_context_ref'] = new_vsvip_obj['vrf_context_ref']
+                v_obj.pop()
 
             # Try to create the new VS (possibly in a different tenant to the
             # source)
@@ -2583,7 +2590,7 @@ if __name__ == '__main__':
 
                     # Get VsVip object
                     for cloned_obj in cloned_objs:
-                        if cloned_obj['url'] == new_vs['vsvip_ref']:
+                        if cloned_obj['url'] == new_vs.get('vsvip_ref', ''):
                             new_vsvip = cloned_obj
 
                             # Pre-20.1.1 we can remove the VsVip object from

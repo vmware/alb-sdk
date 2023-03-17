@@ -78,6 +78,16 @@ Note: Azure subnet name (subnet_uuid) must be specified, e.g. vip-subnet.
 
 > clone_vs.py -c controller.acme.com vs example cloned-example -fc pool-healthmonitor,vs-appprofile
 
+### Cloning an SNI/EVH Child VS (same parent VS, different child FQDN)
+
+> clone_vs.py -c controller.acme.com vs example cloned-example -dn cloned-example.acme.com
+
+### Cloning an SNI/EVH Child VS (different parent VS, keeping same child FQDN)
+
+> clone_vs.py -c controller.acme.com vs example cloned-example -np other-parent-vs
+
+Note: When cloning a child VS to a different Controller, Cloud or tenant, you must always specify the new parent VS name
+
 ### Cloning an Application Profile to a different tenant on a different controller
 
 > clone_vs.py -c controller1.acme.com -dc controller2.acme.com -t tenant1 -2t tenant2 -2c Default-Cloud generic health-monitor cloned-health-monitor
