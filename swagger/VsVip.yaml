@@ -621,6 +621,14 @@ definitions:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
                 readOnly: True
                 type: string
+            bgp_local_preference:
+                description: "LOCAL_PREF to be used for VsVip advertised. Applicable only over iBGP. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            bgp_num_as_path_prepend:
+                description: "Number of times the local AS should be prepended additionally to VsVip. Applicable only over eBGP. Allowed values are 1-10. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
             bgp_peer_labels:
                 description: "Select BGP peers, using peer label, for VsVip advertisement. Field introduced in 20.1.5. Maximum of 128 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array
