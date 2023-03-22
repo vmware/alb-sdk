@@ -265,6 +265,7 @@ font-style: italic;
   "count" : 123,
   "results" : [ {
     "use_standard_alb" : true,
+    "bgp_local_preference" : 123,
     "ipam_selector" : {
       "type" : "aeiou",
       "labels" : [ {
@@ -346,7 +347,8 @@ font-style: italic;
       } ]
     } ],
     "vsvip_cloud_config_cksum" : "aeiou",
-    "east_west_placement" : true
+    "east_west_placement" : true,
+    "bgp_num_as_path_prepend" : 123
   } ]
 }</code></pre>
 
@@ -402,6 +404,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "use_standard_alb" : true,
+  "bgp_local_preference" : 123,
   "ipam_selector" : {
     "type" : "aeiou",
     "labels" : [ {
@@ -483,7 +486,8 @@ font-style: italic;
     } ]
   } ],
   "vsvip_cloud_config_cksum" : "aeiou",
-  "east_west_placement" : true
+  "east_west_placement" : true,
+  "bgp_num_as_path_prepend" : 123
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -610,6 +614,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "use_standard_alb" : true,
+  "bgp_local_preference" : 123,
   "ipam_selector" : {
     "type" : "aeiou",
     "labels" : [ {
@@ -691,7 +696,8 @@ font-style: italic;
     } ]
   } ],
   "vsvip_cloud_config_cksum" : "aeiou",
-  "east_west_placement" : true
+  "east_west_placement" : true,
+  "bgp_num_as_path_prepend" : 123
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -758,6 +764,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "use_standard_alb" : true,
+  "bgp_local_preference" : 123,
   "ipam_selector" : {
     "type" : "aeiou",
     "labels" : [ {
@@ -839,7 +846,8 @@ font-style: italic;
     } ]
   } ],
   "vsvip_cloud_config_cksum" : "aeiou",
-  "east_west_placement" : true
+  "east_west_placement" : true,
+  "bgp_num_as_path_prepend" : 123
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -906,6 +914,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "use_standard_alb" : true,
+  "bgp_local_preference" : 123,
   "ipam_selector" : {
     "type" : "aeiou",
     "labels" : [ {
@@ -987,7 +996,8 @@ font-style: italic;
     } ]
   } ],
   "vsvip_cloud_config_cksum" : "aeiou",
-  "east_west_placement" : true
+  "east_west_placement" : true,
+  "bgp_num_as_path_prepend" : 123
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -1155,6 +1165,8 @@ font-style: italic;
     <h3 class="field-label"><a name="VsVip">VsVip</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
+<div class="param">bgp_local_preference (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> LOCAL_PREF to be used for VsVip advertised. Applicable only over iBGP. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">bgp_num_as_path_prepend (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of times the local AS should be prepended additionally to VsVip. Applicable only over eBGP. Allowed values are 1-10. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">bgp_peer_labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Select BGP peers, using peer label, for VsVip advertisement. Field introduced in 20.1.5. Maximum of 128 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">cloud_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Cloud. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
