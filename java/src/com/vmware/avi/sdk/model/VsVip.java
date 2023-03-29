@@ -21,6 +21,12 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VsVip extends AviRestResource  {
+    @JsonProperty("bgp_local_preference")
+    private Integer bgpLocalPreference = null;
+
+    @JsonProperty("bgp_num_as_path_prepend")
+    private Integer bgpNumAsPathPrepend = null;
+
     @JsonProperty("bgp_peer_labels")
     private List<String> bgpPeerLabels = null;
 
@@ -67,6 +73,60 @@ public class VsVip extends AviRestResource  {
     private String vsvipCloudConfigCksum = null;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Local_pref to be used for vsvip advertised.
+     * Applicable only over ibgp.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return bgpLocalPreference
+     */
+    public Integer getBgpLocalPreference() {
+        return bgpLocalPreference;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Local_pref to be used for vsvip advertised.
+     * Applicable only over ibgp.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param bgpLocalPreference set the bgpLocalPreference.
+     */
+    public void setBgpLocalPreference(Integer  bgpLocalPreference) {
+        this.bgpLocalPreference = bgpLocalPreference;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Number of times the local as should be prepended additionally to vsvip.
+     * Applicable only over ebgp.
+     * Allowed values are 1-10.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return bgpNumAsPathPrepend
+     */
+    public Integer getBgpNumAsPathPrepend() {
+        return bgpNumAsPathPrepend;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Number of times the local as should be prepended additionally to vsvip.
+     * Applicable only over ebgp.
+     * Allowed values are 1-10.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param bgpNumAsPathPrepend set the bgpNumAsPathPrepend.
+     */
+    public void setBgpNumAsPathPrepend(Integer  bgpNumAsPathPrepend) {
+        this.bgpNumAsPathPrepend = bgpNumAsPathPrepend;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Select bgp peers, using peer label, for vsvip advertisement.
@@ -525,6 +585,8 @@ public class VsVip extends AviRestResource  {
   Objects.equals(this.ipamSelector, objVsVip.ipamSelector)&&
   Objects.equals(this.bgpPeerLabels, objVsVip.bgpPeerLabels)&&
   Objects.equals(this.markers, objVsVip.markers)&&
+  Objects.equals(this.bgpLocalPreference, objVsVip.bgpLocalPreference)&&
+  Objects.equals(this.bgpNumAsPathPrepend, objVsVip.bgpNumAsPathPrepend)&&
   Objects.equals(this.tenantRef, objVsVip.tenantRef)&&
   Objects.equals(this.cloudRef, objVsVip.cloudRef)&&
   Objects.equals(this.vsvipCloudConfigCksum, objVsVip.vsvipCloudConfigCksum);
@@ -534,7 +596,9 @@ public class VsVip extends AviRestResource  {
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class VsVip {\n");
-                  sb.append("    bgpPeerLabels: ").append(toIndentedString(bgpPeerLabels)).append("\n");
+                  sb.append("    bgpLocalPreference: ").append(toIndentedString(bgpLocalPreference)).append("\n");
+                        sb.append("    bgpNumAsPathPrepend: ").append(toIndentedString(bgpNumAsPathPrepend)).append("\n");
+                        sb.append("    bgpPeerLabels: ").append(toIndentedString(bgpPeerLabels)).append("\n");
                         sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
                         sb.append("    dnsInfo: ").append(toIndentedString(dnsInfo)).append("\n");
                         sb.append("    eastWestPlacement: ").append(toIndentedString(eastWestPlacement)).append("\n");
