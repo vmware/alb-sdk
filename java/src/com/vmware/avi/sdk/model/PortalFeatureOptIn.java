@@ -92,7 +92,7 @@ public class PortalFeatureOptIn  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Enable pulse case management.
+     * Enable pulse cloud services case management.
      * Field introduced in 21.1.1.
      * Allowed in enterprise edition only with addon license, essentials edition(allowed values- false), basic edition(allowed values- false),
      * enterprise with cloud services edition.
@@ -105,7 +105,7 @@ public class PortalFeatureOptIn  {
 
     /**
      * This is the setter method to the attribute.
-     * Enable pulse case management.
+     * Enable pulse cloud services case management.
      * Field introduced in 21.1.1.
      * Allowed in enterprise edition only with addon license, essentials edition(allowed values- false), basic edition(allowed values- false),
      * enterprise with cloud services edition.

@@ -28,7 +28,7 @@ public class InventoryConfig  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allow inventory stats to be regularly sent to pulse portal.
+     * Allow inventory stats to be regularly sent to pulse cloud services.
      * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
@@ -40,7 +40,7 @@ public class InventoryConfig  {
 
     /**
      * This is the setter method to the attribute.
-     * Allow inventory stats to be regularly sent to pulse portal.
+     * Allow inventory stats to be regularly sent to pulse cloud services.
      * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
