@@ -980,10 +980,13 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "VirtualService",
+                        "description": "empty",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/VirtualService"
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
                         }
                     },
                     {

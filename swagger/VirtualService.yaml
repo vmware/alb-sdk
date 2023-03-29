@@ -688,10 +688,12 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: VirtualService
+                    description: empty
                     required: true
                     schema:
-                        $ref: "#/definitions/VirtualService"
+                        type: object
+                        additionalProperties:
+                            type: string
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
