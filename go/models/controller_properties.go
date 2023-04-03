@@ -225,7 +225,7 @@ type ControllerProperties struct {
 	// This parameter defines the number of simultaneous SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. A value of 0 will disable the pacing scheme and all the SE(s) in the SeGroup will attempt to download the image. . Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeupgradeCopyPoolSize *int32 `json:"seupgrade_copy_pool_size,omitempty"`
 
-	// Pool size used for all fabric commands during se upgrade. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// The pool size is used to control the number of concurrent segroup upgrades. This field value takes affect upon controller warm reboot. Allowed values are 2-20. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeupgradeFabricPoolSize *int32 `json:"seupgrade_fabric_pool_size,omitempty"`
 
 	// Time to wait before marking segroup upgrade as stuck. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
