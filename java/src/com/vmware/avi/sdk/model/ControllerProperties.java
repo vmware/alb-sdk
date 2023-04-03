@@ -2037,7 +2037,9 @@ public class ControllerProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Pool size used for all fabric commands during se upgrade.
+     * The pool size is used to control the number of concurrent segroup upgrades.
+     * This field value takes affect upon controller warm reboot.
+     * Allowed values are 2-20.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @return seupgradeFabricPoolSize
@@ -2048,7 +2050,9 @@ public class ControllerProperties extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Pool size used for all fabric commands during se upgrade.
+     * The pool size is used to control the number of concurrent segroup upgrades.
+     * This field value takes affect upon controller warm reboot.
+     * Allowed values are 2-20.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 20.
      * @param seupgradeFabricPoolSize set the seupgradeFabricPoolSize.
