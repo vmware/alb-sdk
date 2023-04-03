@@ -78,16 +78,6 @@ Note: Azure subnet name (subnet_uuid) must be specified, e.g. vip-subnet.
 
 > clone_vs.py -c controller.acme.com vs example cloned-example -fc pool-healthmonitor,vs-appprofile
 
-### Cloning an SNI/EVH Child VS (same parent VS, different child FQDN)
-
-> clone_vs.py -c controller.acme.com vs example cloned-example -dn cloned-example.acme.com
-
-### Cloning an SNI/EVH Child VS (different parent VS, keeping same child FQDN)
-
-> clone_vs.py -c controller.acme.com vs example cloned-example -np other-parent-vs
-
-Note: When cloning a child VS to a different Controller, Cloud or tenant, you must always specify the new parent VS name
-
 ### Cloning an Application Profile to a different tenant on a different controller
 
 > clone_vs.py -c controller1.acme.com -dc controller2.acme.com -t tenant1 -2t tenant2 -2c Default-Cloud generic health-monitor cloned-health-monitor
@@ -128,8 +118,6 @@ In this example, the user will be prompted to enter the passphrase for the certi
 
 > clone_vs.py -c controller1.acme.com -skp MyCert1,*;MyCert2,mysecretphrase vs example cloned-example
 
-
-
 ## WAF Policy handling
 
 The cloning of WAF Policies requires some special consideration depending on the use case.
@@ -162,6 +150,44 @@ This flag can also be used when cloning a WAF Policy individually:
 
 > clone_vs.py -c controller1.acme.com -fc positive-security-model -flags disablelearning generic wafpolicy example cloned-example
 
+## Handling of SNI and EVH Parent/Child Virtual Services
+
+The script supports cloning of Parent and Child Virtual Hosting VSs (both EVH and SNI). During cloning, it is possible to change both the Virtual Hosting type (EVH vs. SNI). It is also possible to clone a parent VS to be a child VS and to clone a child VS to be either a parent VS or a normal VS.
+
+### Cloning an SNI/EVH Child VS (same parent VS, different child FQDN)
+
+> clone_vs.py -c controller.acme.com vs example cloned-example -dn cloned-example.acme.com
+
+### Cloning an SNI/EVH Child VS (different parent VS, keeping same child FQDN)
+
+> clone_vs.py -c controller.acme.com vs example cloned-example -np other-parent-vs
+
+Note: When cloning a child VS to a different Controller, Cloud or tenant, you must always specify the new parent VS name
+
+### Cloning an SNI Child VS to an EVH Child VS
+
+> clone_vs.py -c controller.acme.com vs example cloned-example -np other-parent-vs -vh evh_child
+
+Note: "other-parent-vs" must be an EVH Parent VS. The SNI hostname from the source VS will be mapped to EVH host matching rules in the cloned VS.
+
+### Cloning an EVH Child VS to an SNI Child VS
+
+> clone_vs.py -c controller.acme.com vs example cloned-example -np other-parent-vs -vh sni_child
+
+Note: "other-parent-vs" must be an SNI Parent VS. The EVH hostname from the first matching rule in the source VS will be mapped to the SNI hostname in the cloned VS. Other matching criteria from the source VS will be discarded.
+
+### Cloning a child VS to a new SNI parent VS
+
+> clone_vs.py -c controller.acme.com vs example cloned-example -vh sni_parent
+
+Note: If the source VS is an SNI child, the cloned VS will inherit its SSL profile and certificates and the services will be configured for port 443 (SSL). If the source VS is an EVH child, the cloned VS is created as a non-SSL VS using port 80 (no SSL).
+
+### Cloning a child VS to a new standalone VS
+
+> clone_vs.py -c controller.acme.com vs example cloned-example -vh no_vh -mv example-vsvip
+
+Note: A VsVip ("example-vsvip" in this example) must be manually created in advance. If the source VS is an SNI child, the cloned VS will inherit its SSL profile and certificates and the services will be configured for port 443 (SSL). If the source VS is an EVH child, the cloned VS is created as a non-SSL VS using port 80 (no SSL).
+
 ## Cross-Version support
 
 By default, the API version is automatically determined based on the minimum of the software versions of the source and destination Controllers. It is also possible to specify the specific API version to be used with the -x parameter.
@@ -190,3 +216,4 @@ Changelog:
 * Removed specific option for cloning pools - pools can now be cloned using the "generic" option
 * Added enhanced support for cloning of WAF Policies
 * Added support for cloning SSLKeyAndCertificate objects that have passphrases protecting the private key
+* Added support for SNI/EVH Parent/Child migration scenarios

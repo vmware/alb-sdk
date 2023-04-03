@@ -29,7 +29,7 @@ logger = logging.getLogger(__name__)
 
 urllib3.disable_warnings()
 
-AVICLONE_VERSION = [2, 0, 0]
+AVICLONE_VERSION = [2, 0, 1]
 
 # Try to obtain the terminal width to allow spprint() to wrap output neatly.
 # If unable to determine, assume terminal width is 70 characters
@@ -62,7 +62,8 @@ class AviClone:
         'pool-ipaddrgroup': 'ipaddrgroup_ref',
         'pool-pkiprofile': 'pki_profile_ref',
         'pool-sslcert': 'ssl_key_and_certificate_ref',
-        'pool-analyticsprofile': 'analytics_profile_ref'}
+        'pool-analyticsprofile': 'analytics_profile_ref',
+        'pool-autoscalepolicy': 'autoscale_policy_ref'}
     VALID_DATASCRIPT_REF_OBJECTS = {
         'ds-ipgroup': 'ipgroup_refs',
         'ds-stringgroup': 'string_group_refs'}
@@ -1522,7 +1523,8 @@ class AviClone:
                  new_vs_vips=None, new_vs_v6vips=None, new_vs_fips=None,
                  new_fqdns=None, new_segroup=None,
                  force_clone=None, vs_flags=None,
-                 new_parent=None,
+                 new_parent=None, vh_type=None,
+                 manual_vsvip=None,
                  new_vs_placements=None):
         """
         Clones a Virtual Service object
@@ -1561,9 +1563,14 @@ class AviClone:
                          scaleout_ecmp: tristate - enable/disable scaleout_ecmp
                             with None implying preserve setting from source
                          enable_rhi: tristate - enable/disable enable_rhi with
-                         None impluying preserve setting from source
+                            None implying preserve setting from source
         :param new_parent: When cloning an SNI child VS, specifies a different
                            VS name to be a parent for the cloned child VS
+        :param vh_type: Specifies Virtual Hosting type for cloned VS, valid
+                        values are sni_parent, sni_child, evh_parent, evh_child
+                        or no_vh
+        :param manual_vsvip: Specifies an existing VsVip to attach to the cloned
+                             Virtual Service
         :param new_vs_placements: Specifies the placement network(s) for
                                   the VsVip
         :return: tuple - json representation of the cloned VS object, list of
@@ -1606,16 +1613,107 @@ class AviClone:
             raise Exception('Virtual Service %s could not be found' %
                             old_vs_name)
 
+
         is_child_vs = (v_obj['type'] == 'VS_TYPE_VH_CHILD')
-
-        if is_child_vs:
-            logger.debug('Source Virtual Service is an SNI/EVH child VS')
-
-        c_obj = self.api.get(v_obj['cloud_ref'].split('/api/')[1],
-                             tenant_uuid=self.tenant_uuid).json()
+        is_evh_vs = (v_obj['type'] != 'VS_TYPE_NORMAL' and
+                     v_obj['vh_type'] == 'VS_TYPE_VH_ENHANCED')
 
         created_objs = []
         warnings = []
+
+        if vh_type:
+            if (vh_type in ('sni_parent', 'evh_parent', 'no_vh')
+                and is_child_vs and not(manual_vsvip)):
+                raise Exception('Existing VsVip must be specified in order to '
+                                'clone a child VS to a parent/non-VH VS')
+            if (vh_type in ('sni_child', 'ech_child') and not(is_child_vs)
+                and not(new_parent)):
+                raise Exception('Parent Virtual Service must be specified')
+            if vh_type == 'sni_parent':
+                v_obj['vh_type'] = 'VS_TYPE_VH_SNI'
+                v_obj['type'] = 'VS_TYPE_VH_PARENT'
+                v_obj.pop('vh_parent_vs_ref', None)
+                v_obj.pop('vh_domain_name', None)
+                is_child_vs = False
+                is_evh_vs = False
+            elif vh_type == 'evh_parent':
+                v_obj['vh_type'] = 'VS_TYPE_VH_ENHANCED'
+                v_obj['type'] = 'VS_TYPE_VH_PARENT'
+                v_obj.pop('vh_parent_vs_ref', None)
+                v_obj.pop('vh_domain_name', None)
+                is_child_vs = False
+                is_evh_vs = True
+            elif vh_type == 'sni_child':
+                v_obj['vh_type'] = 'VS_TYPE_VH_SNI'
+                v_obj['type'] = 'VS_TYPE_VH_CHILD'
+                v_obj.pop('vsvip_ref', None)
+                v_obj.pop('services', None)
+                if is_child_vs and is_evh_vs:
+                    # Set SNI hostname from first EVH host rule
+                    v_obj['vh_domain_name'] = [v_obj['vh_matches'][0]['host']]
+                    v_obj.pop('vh_matches', None)
+                    warnings.append('Mapped host from first EVH match rule to '
+                                    'SNI hostame.')
+                is_child_vs = True
+                is_evh_vs = False
+                if v_obj.pop('network_security_policy_ref', None):
+                    warnings.append('Removed network security policy from '
+                                    'child VS.')
+            elif vh_type == 'evh_child':
+                v_obj['vh_type'] = 'VS_TYPE_VH_ENHANCED'
+                v_obj['type'] = 'VS_TYPE_VH_CHILD'
+                v_obj.pop('vsvip_ref', None)
+                v_obj.pop('services', None)
+                if is_child_vs and not is_evh_vs:
+                    # Set EVH rule from SNI hostname and remove SSL config
+                    v_obj['vh_matches']=[{'host': v_obj['vh_domain_name'][0],
+                                          'rules': [{
+                                              'name': 'All paths',
+                                              'matches': {
+                                                'path': {
+                                                    'match_criteria':
+                                                        'BEGINS_WITH',
+                                                    'match_case':
+                                                        'INSENSITIVE',
+                                                    'match_str': ['/'],
+                                                    'match_decoded_string':
+                                                        True}
+                                                }
+                                              }]
+                                          }]
+                    warnings.append('Mapped SNI Hostname to EVH match rule.')
+                if v_obj.pop('ssl_profile_ref', None):
+                    v_obj.pop('ssl_key_and_certificate_refs', None)
+                    v_obj.pop('vh_domain_name', None)
+                    warnings.append('You may need to attach correct certificate'
+                                    ' to EVH parent VS.')
+                if v_obj.pop('network_security_policy_ref', None):
+                    warnings.append('Removed network security policy from '
+                                    'child VS.')
+                is_child_vs = True
+                is_evh_vs = True
+            elif vh_type == 'no_vh':
+                v_obj['type'] = 'VS_TYPE_NORMAL'
+                v_obj.pop('vh_parent_vs_ref', None)
+                v_obj.pop('vh_domain_name', None)
+                is_child_vs = False
+                is_evh_vs = False
+            if not(is_child_vs) and not('services' in v_obj):
+                if 'ssl_profile_ref' in v_obj:
+                    v_obj['services'] = [{'port': '443', 'enable_ssl': 'true'}]
+                    warnings.append('Check service ports for cloned VS. '
+                                    'Defaulted to using port 443:SSL')
+                else:
+                    v_obj['services'] = [{'port': '80', 'enable_ssl': 'false'}]
+                    warnings.append('Check service ports for cloned VS. '
+                                    'Defaulted to using port 80:NoSSL')
+
+        if is_child_vs:
+            logger.debug('Source Virtual Service is an SNI/EVH child VS')
+            v_obj.pop('vrf_context_ref', None)
+
+        c_obj = self.api.get(v_obj['cloud_ref'].split('/api/')[1],
+                             tenant_uuid=self.tenant_uuid).json()
 
         try:
             # Allocate new VIPs. If auto-allocating then remove existing IP
@@ -1636,6 +1734,14 @@ class AviClone:
                                                       self.other_tenant) if
                                          self.other_tenant else ''))
                 vsvip_obj = None
+            elif manual_vsvip:
+                vsvip_obj = self.dest_api.get_object_by_name(
+                    'vsvip', manual_vsvip, tenant_uuid=self.otenant_uuid)
+                if not(vsvip_obj):
+                    raise Exception('Unable to locate VsVip "%s"'
+                                    % manual_vsvip)
+                logger.debug('Trying to use existing VsVip "%s":%s' %
+                             (manual_vsvip, vsvip_obj['uuid']))
             else:
 
                 new_vsvip_name = 'vsvip-%s-%s' % (new_vs_name,
@@ -1887,7 +1993,24 @@ class AviClone:
                 if is_child_vs:
                     new_fqdn = (new_vs_name + '.' +
                                 v_obj['vh_domain_name'][0].split('.', 1)[1])
-                    v_obj['vh_domain_name'][0] = new_fqdn
+                    if is_evh_vs:
+                        v_obj['vh_matches']=[{'host': new_fqdn,
+                        'rules': [{
+                            'name': 'All paths',
+                            'matches': {
+                            'path': {
+                                'match_criteria':
+                                    'BEGINS_WITH',
+                                'match_case':
+                                    'INSENSITIVE',
+                                'match_str': ['/'],
+                                'match_decoded_string':
+                                    True}
+                            }
+                            }]
+                        }]
+                    else:
+                      v_obj['vh_domain_name'] = [new_fqdn]
                 elif 'dns_info' in vsvip_obj:
                     new_fqdn = (new_vs_name + '.' +
                                 vsvip_obj['dns_info'][0]['fqdn'].split(
@@ -1897,7 +2020,24 @@ class AviClone:
             else:
                 if new_fqdns != [None]:
                     if is_child_vs:
-                        v_obj['vh_domain_name'][0] = new_fqdns[0]
+                        if is_evh_vs:
+                            v_obj['vh_matches']=[{'host': new_fqdns[0],
+                            'rules': [{
+                                'name': 'All paths',
+                                'matches': {
+                                'path': {
+                                    'match_criteria':
+                                        'BEGINS_WITH',
+                                    'match_case':
+                                        'INSENSITIVE',
+                                    'match_str': ['/'],
+                                    'match_decoded_string':
+                                        True}
+                                }
+                                }]
+                            }]
+                        else:
+                            v_obj['vh_domain_name'] = new_fqdns
                     else:
                         vsvip_obj['dns_info'] = [{'type': 'DNS_RECORD_A',
                                                   'fqdn': new_fqdn} for new_fqdn in new_fqdns]
@@ -2120,32 +2260,33 @@ class AviClone:
             warnings.extend(new_warnings)
 
             if vsvip_obj:
-                # Create new vsvip object
-
-                r = self.dest_api.post('vsvip', vsvip_obj,
-                                    tenant_uuid=self.otenant_uuid)
-                if r.status_code < 300:
-                    new_vsvip_obj = r.json()
-                    logger.debug('Created vsvip "%s"', new_vsvip_obj['url'])
+                if manual_vsvip:
+                    v_obj['vsvip_ref'] = vsvip_obj['url']
                 else:
-                    exception_string = ('Unable to create vsvip "%s" (%d:%s)'
-                                        % (vsvip_obj['name'], r.status_code,
-                                        r.text))
-                    logger.debug(exception_string)
-                    logger.debug(vsvip_obj)
-                    raise Exception(exception_string)
-                created_objs.append(new_vsvip_obj)
-                self.actions += ['Cloned vsvip "%s"%s'
-                                % (new_vsvip_obj['name'],
-                                    (' in tenant "%s"' % self.other_tenant)
-                                    if self.other_tenant else '')]
-                v_obj['vsvip_ref'] = new_vsvip_obj['url']
+                    # Create new vsvip object
 
-                # Set VS VRF Context to match VsVip VRF Context
+                    r = self.dest_api.post('vsvip', vsvip_obj,
+                                        tenant_uuid=self.otenant_uuid)
+                    if r.status_code < 300:
+                        new_vsvip_obj = r.json()
+                        logger.debug('Created vsvip "%s"', new_vsvip_obj['url'])
+                    else:
+                        exception_string = ('Error creating vsvip "%s" (%d:%s)'
+                                            % (vsvip_obj['name'], r.status_code,
+                                            r.text))
+                        logger.debug(exception_string)
+                        logger.debug(vsvip_obj)
+                        raise Exception(exception_string)
+                    created_objs.append(new_vsvip_obj)
+                    self.actions += ['Cloned vsvip "%s"%s'
+                                    % (new_vsvip_obj['name'],
+                                        (' in tenant "%s"' % self.other_tenant)
+                                        if self.other_tenant else '')]
+                    v_obj['vsvip_ref'] = new_vsvip_obj['url']
 
-                v_obj['vrf_context_ref'] = new_vsvip_obj['vrf_context_ref']
-            else:
-                v_obj.pop()
+                    # Set VS VRF Context to match VsVip VRF Context
+
+                    v_obj['vrf_context_ref'] = new_vsvip_obj['vrf_context_ref']
 
             # Try to create the new VS (possibly in a different tenant to the
             # source)
@@ -2306,6 +2447,12 @@ if __name__ == '__main__':
     vs_parser.add_argument('-np', '--newparent',
                            help='Specify a new parent VS name for a child VS',
                            metavar='new_parent')
+    vs_parser.add_argument('-vh', '--vhtype',
+                           help='Specify the Virtual Hosting type for the '
+                           'cloned VS',
+                           choices=['sni_parent', 'sni_child', 'evh_parent', 'evh_child', 'no_vh'])
+    vs_parser.add_argument('-mv', '--manualvsvip',
+                           help='Specify an existing VsVip to use for the cloned VS')
     vs_parser.add_argument('-g', '--segroup',
                            help='The optional new SE group for the cloned Virtual Service',
                            metavar='se_group')
@@ -2564,6 +2711,8 @@ if __name__ == '__main__':
                             'scaleout_ecmp': flag_map(args.scaleout_ecmp),
                             'enable_rhi': flag_map(args.enable_rhi)}
 
+                vh_type = args.vhtype
+
                 for (new_vs_name, new_vips,
                      new_fips, new_fqdns, new_v6vips, new_vsplacement) in zip(
                          new_vs_names, vips, fips, fqdns, v6vips, vsplacements):
@@ -2586,6 +2735,8 @@ if __name__ == '__main__':
                         force_clone=force_clone,
                         vs_flags=vs_flags,
                         new_parent=args.newparent,
+                        vh_type=vh_type,
+                        manual_vsvip=args.manualvsvip,
                         new_vs_placements=new_vsplacement)
 
                     # Get VsVip object
