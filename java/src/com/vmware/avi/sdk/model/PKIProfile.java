@@ -65,7 +65,7 @@ public class PKIProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Exempt errors during certificate verification.
      * Enum options - ALLOW_EXPIRED_CRL, ALLOW_ALL_ERRORS.
-     * Field introduced in 22.1.4.
+     * Field introduced in 30.1.1.
      * Maximum of 1 items allowed.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -79,7 +79,7 @@ public class PKIProfile extends AviRestResource  {
      * This is the setter method. this will set the allowPkiErrors
      * Exempt errors during certificate verification.
      * Enum options - ALLOW_EXPIRED_CRL, ALLOW_ALL_ERRORS.
-     * Field introduced in 22.1.4.
+     * Field introduced in 30.1.1.
      * Maximum of 1 items allowed.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -93,7 +93,7 @@ public class PKIProfile extends AviRestResource  {
      * This is the setter method this will set the allowPkiErrors
      * Exempt errors during certificate verification.
      * Enum options - ALLOW_EXPIRED_CRL, ALLOW_ALL_ERRORS.
-     * Field introduced in 22.1.4.
+     * Field introduced in 30.1.1.
      * Maximum of 1 items allowed.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
