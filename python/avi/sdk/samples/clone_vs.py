@@ -17,6 +17,7 @@ import argparse
 import getpass
 import textwrap
 import logging
+import ipaddress
 
 from avi.sdk.avi_api import ApiSession
 from requests.packages import urllib3
@@ -29,7 +30,7 @@ logger = logging.getLogger(__name__)
 
 urllib3.disable_warnings()
 
-AVICLONE_VERSION = [2, 0, 1]
+AVICLONE_VERSION = [2, 0, 2]
 
 # Try to obtain the terminal width to allow spprint() to wrap output neatly.
 # If unable to determine, assume terminal width is 70 characters
@@ -112,7 +113,8 @@ class AviClone:
 
     def __init__(self, source_api, dest_api=None, flags=None, tenant=None,
                  other_tenant=None, other_cloud=None,
-                 other_vrf=None, server_map=None, ssl_key_pps=None):
+                 other_vrf=None, server_map=None, pool_placement=None,
+                 ssl_key_pps=None):
         self.api = source_api
         self.dest_api = dest_api or source_api
         self.flush_actions()
@@ -160,6 +162,7 @@ class AviClone:
                                                   cloud_uuid=self.ocloud_uuid)
 
         self.server_map = server_map
+        self.pool_placement = pool_placement
         self.ssl_key_pps = ssl_key_pps or dict()
 
     def flush_actions(self):
@@ -458,6 +461,8 @@ class AviClone:
 
         obj.pop('gslb_sp_enabled', None)
 
+        cloud_uuid = obj['cloud_ref'].split('/api/cloud/')[1]
+
         # If cloning to a different cloud or VRF remove network references
 
         if self.oc_obj or self.server_map or self.ov_obj or self.other_vrf:
@@ -477,7 +482,71 @@ class AviClone:
                                          map_spec[1])
             obj.pop('networks', None)
 
-            if obj.pop('placement_networks', None):
+            if self.pool_placement:
+                new_placements = set()
+                for server in servers:
+                    server_ip = server['ip']['addr']
+                    server_type = server['ip']['type']
+                    for pool_match, new_placement in self.pool_placement:
+                        if '.' in pool_match and server_type == 'V4':
+                            if (ipaddress.IPv4Address(server_ip) in
+                                ipaddress.IPv4Network(pool_match)):
+                                new_placements.add(new_placement)
+                                logger.debug('Matched server %s to subnet %s'
+                                            % (server_ip, pool_match))
+                                break
+                        elif ':' in pool_match and server_type == 'V6':
+                            if (ipaddress.IPv6Address(server_ip) in
+                                ipaddress.IPv6Network(pool_match)):
+                                new_placements.add(new_placement)
+                                logger.debug('Matched server %s to subnet %s'
+                                            % (server_ip, pool_match))
+                                break
+                logger.debug('Generated pool placement networks: %s'
+                              % new_placements)
+                placement_networks = []
+                for new_placement in new_placements:
+                    new_placement_split = new_placement.split('/')
+                    if len(new_placement_split) == 3:
+                        network, subnet, mask = new_placement_split
+                    elif len(new_placement_split) == 2:
+                        subnet, mask = new_placement_split
+                        network = None
+                    else:
+                        raise('Unable to parse placement network info "%s".'
+                              % new_placement)
+                    placement_network = {}
+                    if network:
+                        (n_obj, n_name, n_uuid) = self._get_obj_info(
+                            obj_type='network',
+                            obj_name=network,
+                            api_to_use=self.dest_api,
+                            cloud_uuid=self.ocloud_uuid or cloud_uuid)
+                        if n_obj:
+                            placement_network['network_ref'] = n_obj['url']
+                        else:
+                            raise('Unable to find referenced placement '
+                                    'network "%s" in the cloud.'
+                                    % new_placement[1])
+                        if ':' in subnet:
+                            placement_network['subnet6'] = {
+                                'ip_addr': {
+                                    'type': 'V6',
+                                    'addr': subnet
+                                },
+                                'mask': mask
+                            }
+                        else:
+                            placement_network['subnet'] = {
+                                'ip_addr': {
+                                    'type': 'V4',
+                                    'addr': subnet
+                                },
+                                'mask': mask
+                            }
+                    placement_networks.append(placement_network)
+                obj['placement_networks'] = placement_networks
+            elif obj.pop('placement_networks', None):
                 warnings.append('Pool %s had placement networks configured '
                                 'that may need to be re-entered manually.'
                                 % obj['name'])
@@ -1896,28 +1965,25 @@ class AviClone:
                                 vs_placement_data_split = vs_placement_data.split(
                                     '/')
                                 placement_network = {}
-                                if len(vs_placement_data_split) == 2:
-                                    # Placement data is subnet/mask only
-                                    subnet, mask = vs_placement_data_split
-                                    if ':' in subnet:
-                                        placement_network['subnet6'] = {
-                                            'ip_addr': {
-                                                'type': 'V6',
-                                                'addr': subnet
-                                            },
-                                            'mask': mask
-                                        }
-                                    else:
-                                        placement_network['subnet'] = {
-                                            'ip_addr': {
-                                                'type': 'V4',
-                                                'addr': subnet
-                                            },
-                                            'mask': mask
-                                        }
+                                if len(vs_placement_data_split) == 6:
+                                    (network, subnet, mask,
+                                     subnet6, mask6) = vs_placement_data_split
                                 elif len(vs_placement_data_split) == 3:
                                     # Placement data is network/subnet/mask
-                                    network, subnet, mask = vs_placement_data_split
+                                    (network, subnet,
+                                     mask) = vs_placement_data_split
+                                    subnet6 = None
+                                    mask6 = None
+                                elif len(vs_placement_data_split) == 2:
+                                    # Placement data is subnet/mask only
+                                    subnet, mask = vs_placement_data_split
+                                    subnet6 = None
+                                    mask6 = None
+                                    network = None
+                                else:
+                                    raise('Unable to parse placement network '
+                                          'info "%s".' % vs_placement_data)
+                                if network:
                                     (n_obj, n_name, n_uuid) = self._get_obj_info(
                                         obj_type='network',
                                         obj_name=network,
@@ -1929,6 +1995,22 @@ class AviClone:
                                         raise('Unable to find referenced placement '
                                             'network "%s" in the cloud.'
                                             % network)
+                                if subnet6:
+                                    placement_network['subnet'] = {
+                                            'ip_addr': {
+                                                'type': 'V4',
+                                                'addr': subnet
+                                            },
+                                            'mask': mask
+                                        }
+                                    placement_network['subnet6'] = {
+                                            'ip_addr': {
+                                                'type': 'V6',
+                                                'addr': subnet6
+                                            },
+                                            'mask': mask6
+                                        }
+                                else:
                                     if ':' in subnet:
                                         placement_network['subnet6'] = {
                                             'ip_addr': {
@@ -1945,40 +2027,6 @@ class AviClone:
                                             },
                                             'mask': mask
                                         }
-                                elif len(vs_placement_data_split) == 5:
-                                    # Placement data is
-                                    # network/subnet/mask/subnet6/mask
-                                    (network, subnet, mask,
-                                    subnet6, mask6) = vs_placement_data_split
-                                    (n_obj, n_name, n_uuid) = self._get_obj_info(
-                                        obj_type='network',
-                                        obj_name=network,
-                                        api_to_use=self.dest_api,
-                                        cloud_uuid=self.ocloud_uuid or c_obj['uuid'])
-                                    if not n_obj:
-                                        raise('Unable to find referenced placement '
-                                            'network "%s" in the cloud.'
-                                            % network)
-                                    placement_network = {
-                                        'network_ref': n_obj['url'],
-                                        'subnet': {
-                                            'ip_addr': {
-                                                'type': 'V4',
-                                                'addr': subnet
-                                            },
-                                            'mask': mask
-                                        },
-                                        'subnet6': {
-                                            'ip_addr': {
-                                                'type': 'V6',
-                                                'addr': subnet6
-                                            },
-                                            'mask': mask6
-                                        }
-                                    }
-                                else:
-                                    raise Exception(
-                                        'Unable to parse placement networks.')
 
                                 placement_networks.append(placement_network)
 
@@ -2403,6 +2451,11 @@ if __name__ == '__main__':
                         help='List of server IP address pairs to match '
                         'and replace in a pool. Format as '
                         'match1,replace1;match2,replace2;...')
+    parser.add_argument('-ppn', '--poolplacement',
+                        help='List of pool placement networks '
+                        'and replace in a pool. Format as '
+                        '<server ip>/<mask>,{<network/>}<subnet>/<mask>'
+                        ';...')
     parser.add_argument('-fc', '--forceclone',
                         help='List of references to forcibly clone '
                         'rather than re-use. Valid values are: %s'
@@ -2557,6 +2610,12 @@ if __name__ == '__main__':
             else:
                 server_map = []
 
+            if args.poolplacement:
+                pool_placement = [tuple(pair.split(','))
+                                  for pair in args.poolplacement.split(';')]
+            else:
+                pool_placement = []
+
             while True:
                 # Create the API session
 
@@ -2617,6 +2676,7 @@ if __name__ == '__main__':
                           other_cloud=args.tocloud,
                           other_vrf=args.tovrf,
                           server_map=server_map,
+                          pool_placement=pool_placement,
                           ssl_key_pps=ssl_key_pps)
 
             if args.obj_type == 'vs':

@@ -1,10 +1,34 @@
-# Description
+# README for clone_vs.py
+
+## Usage
+
+> clone_vs.py [-h] [-c CONTROLLER] [-u USER] [-p PASSWORD] [-x API_VERSION] [-dc DESTCONTROLLER] [-du DESTUSER] [-dp DESTPASSWORD] [-debug] [-dryrun] [-flags FLAGS] [-skp SSLKEYPASSPHRASES] [-t tenant] [-2t other_tenant] [-2c other_cloud] [-2v other_vrf] [-map MAPSERVERS] [-ppn POOLPLACEMENT] [-fc ref_list] object_type ...
+
+Where `object_type` is `vs` (Virtual Service), `gs` (GSLB Service) or `generic` (any other simple object).
+
+Use `clone_vs.py object_type -h` for more detailed help.
+
+The script implements a class `AviClone` which can be used directly from another script for more advanced use cases if desired.
+
+## Description
 
 The clone_vs.py script allows the cloning of Virtual Services, Pools, Pool Groups and other objects.
 
 The script intelligently handles recursively cloning referenced objects as needed. For example, when cloning a Virtual Service, the script will automatically clone referenced Pools, Pool Groups and other objects that are unique to the application.
 
-The script also allows the cloning of objects into a different tenant and/or cloud than the source - the destination may also be on a different Avi Vantage controller.
+The script also allows the cloning of objects into a different tenant, VRF and/or cloud than the source - the destination may also be on a different Avi Vantage controller.
+
+It is also possible to create multiple clones of the source object by specifying multiple target object names.
+
+## Object types
+
+The script can clone a Virtual Service, handling the various changes needed due to differences between source and target clouds. See the *Examples* below for various scenarios that have been tested. When cloning a VS, the script can also modify VS parameters such as *ecmp_scaleout* (`-ecmp true|false`), *enable_rhi* (`-rhi true|false`) and VS/Pool placement networks that may need to change when cloning to a different cloud type.
+
+The script can also clone a GSLB Service within the same Controller.
+
+The script can generically clone any simple object using the `generic` action by specifying the type of object (e.g. applicationprofile, pool, healthmonitor).
+
+When cloning Pools, it is possible to specify a mapping between server IPs in the source Pool and server IPs in the cloned Pool.
 
 ## Handling of re-usable objects
 
@@ -21,6 +45,56 @@ The user can override the default behaviour and forcibly clone particular object
 The full list of supported options is displayed in the help.
 
 When cloning child objects, the script will try to preserve object names if possible but will generate a unique name by appending a numerical index if there is a naming conflict.
+
+## Testing and troubleshooting: Debugging and dry-run
+
+Use the `-debug` parameter to have the script output detailed steps as it performs its task. This can be particularly useful to understand how the script is handling re-usable objects, as well as providing some additional detail around some of the modifications being made to the cloned objects.
+
+Use the `-dryrun` parameter to have the script perform the cloning operation and then pause to allow the user to inspect the cloned objects for correct operation. The script then cleans up by deleting all the objects that were cloned to restore the target system to its original state.
+
+## Specifying the VIP for the target Virtual Service
+
+When cloning a Virtual Service, the `-v` parameter must be supplied to specify the VIP for the target VS.
+
+### Static VIP
+
+Simply specify the VIP directly:
+
+> -v 10.10.10.100
+
+### Auto-allocated VIP by subnet
+
+Specify the VIP as a subnet/mask. This must match an auto-allocation subnet in IPAM.
+
+> -v 10.10.10.0/24
+
+### Auto-allocated VIP in same allocation network as the source
+
+If the source VIP was auto-allocated, the target can simply inherit the auto-allocation network:
+
+> -v *
+
+### Specifying public/elastic/floating IP for clouds that support this (e.g. public clouds, OpenStack)
+
+Separate the public/floating IP using a `;`. A static public/floating IP can be specified explicitly, or o auto-allocate a public IP, use the `auto` keyword:
+
+> -v 10.10.10.0/24;203.0.113.100
+> -v 10.10.10.0/24;auto
+
+### Avi Internal IPAM
+
+When using Avi Internal IPAM for auto-allocation, it may be necessary in some clouds (e.g. NSX-T Cloud) to supply the `-int` parameter to ensure the VsVip is populated with all the correct fields. Other clouds (e.g. vCenter Cloud) are more forgiving and usually work without specifying this parameter.
+
+## Special flags
+
+The optional `-flags` parameter is used to invoke workarounds or special handling in certain uncommon use cases/scenarios. Multiple flags can be specified (comma-separated). Current flags are:
+
+|Flag|Meaning|
+---|---|
+disablelearning|Disables WAF learning in a cloned WAF Policy and/or PSM Group.
+dep20|Removes deprecated HTTP/2 support flag from Application Profile. Use when cloning from pre-20.1 to post-20.1.
+adminssl|Indicates that the target Controller supports the ability for a non-admin tenant to use an SSL certificate in the admin tenant and that cloning the certificate to the non-admin tenant is not desired.
+reuseds|Indicates that DataScripts can be re-used rather than cloned.
 
 ## Examples
 
@@ -50,19 +124,23 @@ Note: The -2v parameter is used but the target tier1_LR is specified rather than
 
 ### Cloning a VS and child objects to an NSX-T Cloud using VLAN-backed networking
 
-VS Placement network and subnet is specified here.
+This requires specifying the placement network of both VsVip (using the `-vpn` parameter) and Pool(s) (using the `-ppn` parameter).
 
-Note: Pools will require manual placement network configuration.
+For example, consider a Virtual Service that makes use of a Pool Group with two Pools. The first Pool has members in the subnet 10.10.20.0/24, the second Pool has members in the subnet 10.20.20.0/24.
 
-> clone_vs.py -c controller.acme.com -2c NSX-T-Cloud vs example cloned-example -v 10.10.10.2 -vsp example-network/10.10.10.0/24
+The desired Pool placement is to place the first Pool directly in the network `pool-network-1` which is directly conected to subnet 10.10.20.0/24, and to place the second Pool in the network `pool-network-2` (subnet 10.10.30.0/24) which has reachability to subnet 10.20.20.0/24 via a static route.
+
+The script matches the members of each Pool against the Pool placement list and selects the appropriate placement networks for each Pool.
+
+> clone_vs.py -c controller.acme.com -2c NSX-T-Cloud -ppn 10.10.20.0/24,pool-network-1/10.10.20.0/24;10.20.20.0/24,pool-network-2/10.10.30.0/24 vs example cloned-example -v 10.10.10.2 -vpn example-network/10.10.10.0/24
+
+Note: In the simple case where a single Pool placement network is needed, just specify a wildcard match with e.g. `-ppn 0.0.0.0/0,pool-network/10.10.20.0/24`.
 
 ### Cloning a VS and child objects between overlay and VLAN-backed NSX-T Clouds
 
-The `-ecmp false` flag is required as this would be enabled in the source cloud but not required in the destination cloud.
+The `-ecmp false` flag is required here as this would be enabled in the source cloud but not required in the destination cloud.
 
-Note: Pools will require manual placement network configuration after cloning.
-
-> clone_vs.py -c controller.acme.com -2c NSX-T-Cloud vs example cloned-example -ecmp false -v 10.10.10.2 -vsp example-network/10.10.10.0/24
+> clone_vs.py -c controller.acme.com -2c NSX-T-Cloud -ppn 10.10.20.0/24,pool-network-1/10.10.20.0/24 vs example cloned-example -ecmp false -v 10.10.10.2 -vpn example-network/10.10.10.0/24
 
 ### Cloning a VS and child objects between two Azure clouds
 
@@ -77,14 +155,6 @@ Note: Azure subnet name (subnet_uuid) must be specified, e.g. vip-subnet.
 ### Cloning a VS but forcing health monitors and application profiles to be cloned rather than re-used in the cloned VS
 
 > clone_vs.py -c controller.acme.com vs example cloned-example -fc pool-healthmonitor,vs-appprofile
-
-### Cloning an Application Profile to a different tenant on a different controller
-
-> clone_vs.py -c controller1.acme.com -dc controller2.acme.com -t tenant1 -2t tenant2 -2c Default-Cloud generic health-monitor cloned-health-monitor
-
-### Cloning a GSLB Service within a tenant
-
-> clone_vs.py -c controller.acme.com gs example cloned-example -dn cloned-example.gslb.acme.com
 
 ### Cloning a GSLB Service to a different tenant with auto-assignment of FQDN based on new service name and domain from source service
 
@@ -105,6 +175,14 @@ Note: Azure subnet name (subnet_uuid) must be specified, e.g. vip-subnet.
 ### Cloning a VS with a new auto-allocation for IPv4 and IPv6
 
 > clone_vs.py -c controller1.acme.com vs example cloned-example -v 10.0.0.0/16 -v6 fd00:dead:beef:bad:f00d::/64
+
+### Cloning a GSLB Service within a tenant
+
+> clone_vs.py -c controller.acme.com gs example cloned-example -dn cloned-example.gslb.acme.com
+
+### Cloning a Health Monitor to a different tenant on a different controller
+
+> clone_vs.py -c controller1.acme.com -dc controller2.acme.com -t tenant1 -2t tenant2 -2c Default-Cloud generic healthmonitor example-health-monitor cloned-health-monitor
 
 ## SSL Certificate handling
 
@@ -194,13 +272,11 @@ By default, the API version is automatically determined based on the minimum of 
 
 ## Known limitations and caveats
 
-* Depending on the version of Avi Vantage and configuration, it may be possible for a VS in a non-admin tenant to reference and use SSL certificates in the admin tenant. However by default, this script will instead clone certificates to the target tenant.
-
-This behaviour can be enabled with the option `-flags adminssl`
-
-* Cloning a VS to a cloud of a different type to the source cloud is more likely to fail as it may reference shared objects which do not make sense in the destination cloud.
+* Cloning a VS to a cloud of a different type than the source cloud is more likely to fail as it may reference shared objects or specific configuration options that do not make sense or that are not supported in the destination cloud.
 
 * Cloning a GSLB Service to a different Controller is not possible
+
+Note: This script is provided only as an example of using the Python SDK to deliver advanced functionality. It is not a formally-supported tool.
 
 Changelog:
 
@@ -216,4 +292,11 @@ Changelog:
 * Removed specific option for cloning pools - pools can now be cloned using the "generic" option
 * Added enhanced support for cloning of WAF Policies
 * Added support for cloning SSLKeyAndCertificate objects that have passphrases protecting the private key
+
+2.0.1:
+
 * Added support for SNI/EVH Parent/Child migration scenarios
+
+2.0.2:
+
+* Added support for flexibly handling specification of pool placement networks for cloned pools
