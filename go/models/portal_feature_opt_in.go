@@ -14,7 +14,7 @@ type PortalFeatureOptIn struct {
 	// Enable to receive IP reputation updates. Field introduced in 20.1.1. Allowed in Enterprise edition only with addon license, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition.
 	EnableIPReputation *bool `json:"enable_ip_reputation,omitempty"`
 
-	// Enable Pulse Case Management. Field introduced in 21.1.1. Allowed in Enterprise edition only with addon license, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Enterprise edition is false, Essentials edition is false, Basic edition is false, Enterprise is True.
+	// Enable Pulse Cloud Services Case Management. Field introduced in 21.1.1. Allowed in Enterprise edition only with addon license, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Enterprise edition is false, Essentials edition is false, Basic edition is false, Enterprise is True.
 	EnablePulseCaseManagement *bool `json:"enable_pulse_case_management,omitempty"`
 
 	// Enable to receive WAF CRS updates. Field introduced in 21.1.1. Allowed in Enterprise edition only with addon license, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Enterprise edition is false, Essentials edition is false, Basic edition is false, Enterprise is True.

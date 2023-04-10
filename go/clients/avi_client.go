@@ -55,6 +55,7 @@ type AviClient struct {
 	FederationCheckpoint            *FederationCheckpointClient
 	FederationCheckpointInventory   *FederationCheckpointInventoryClient
 	FileObject                      *FileObjectClient
+	Generic                         *GenericClient
 	GeoDB                           *GeoDBClient
 	Gslb                            *GslbClient
 	GslbGeoDbProfile                *GslbGeoDbProfileClient
@@ -211,6 +212,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.FederationCheckpoint = NewFederationCheckpointClient(aviSession)
 	aviClient.FederationCheckpointInventory = NewFederationCheckpointInventoryClient(aviSession)
 	aviClient.FileObject = NewFileObjectClient(aviSession)
+	aviClient.Generic = NewGenericClient(aviSession)
 	aviClient.GeoDB = NewGeoDBClient(aviSession)
 	aviClient.Gslb = NewGslbClient(aviSession)
 	aviClient.GslbGeoDbProfile = NewGslbGeoDbProfileClient(aviSession)
