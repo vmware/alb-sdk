@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IpamDnsInfobloxProfile  {
     @JsonProperty("dns_view")
-    private String dnsView = "default";
+    private String dnsView = null;
 
     @JsonProperty("extensible_attributes")
     private List<CustomParams> extensibleAttributes = null;
@@ -31,7 +31,7 @@ public class IpamDnsInfobloxProfile  {
     private IpAddr ipAddress = null;
 
     @JsonProperty("network_view")
-    private String networkView = "default";
+    private String networkView = null;
 
     @JsonProperty("password")
     private String password = null;
@@ -52,9 +52,9 @@ public class IpamDnsInfobloxProfile  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Dns view.
+     * Dns view used for infoblox host record creation, if this field is not configured by the user, then its value will be set to 'default'.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "default".
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsView
      */
     public String getDnsView() {
@@ -63,9 +63,9 @@ public class IpamDnsInfobloxProfile  {
 
     /**
      * This is the setter method to the attribute.
-     * Dns view.
+     * Dns view used for infoblox host record creation, if this field is not configured by the user, then its value will be set to 'default'.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "default".
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dnsView set the dnsView.
      */
     public void setDnsView(String  dnsView) {
@@ -135,9 +135,9 @@ public class IpamDnsInfobloxProfile  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Network view.
+     * Network view used for infoblox host record creation, if this field is not configured by the user, then its value will be set to 'default'.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "default".
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return networkView
      */
     public String getNetworkView() {
@@ -146,9 +146,9 @@ public class IpamDnsInfobloxProfile  {
 
     /**
      * This is the setter method to the attribute.
-     * Network view.
+     * Network view used for infoblox host record creation, if this field is not configured by the user, then its value will be set to 'default'.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "default".
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param networkView set the networkView.
      */
     public void setNetworkView(String  networkView) {
