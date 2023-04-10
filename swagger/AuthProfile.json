@@ -707,6 +707,11 @@
         },
         "LdapDirectorySettings": {
             "type": "object",
+            "required": [
+                "admin_bind_dn",
+                "password",
+                "user_id_attribute"
+            ],
             "properties": {
                 "admin_bind_dn": {
                     "description": "LDAP Admin User DN. Administrator credentials are required to search for users under user search DN or groups under group search DN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -768,6 +773,11 @@
         },
         "LdapUserBindSettings": {
             "type": "object",
+            "required": [
+                "dn_template",
+                "token",
+                "user_id_attribute"
+            ],
             "properties": {
                 "dn_template": {
                     "description": "LDAP user DN pattern is used to bind LDAP user after replacing the user token with real username. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",

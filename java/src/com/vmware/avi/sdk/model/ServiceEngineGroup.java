@@ -837,6 +837,12 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("vs_scaleout_timeout")
     private Integer vsScaleoutTimeout = 600;
 
+    @JsonProperty("vs_se_primary_switchover_additional_wait_time")
+    private Integer vsSePrimarySwitchoverAdditionalWaitTime = 0;
+
+    @JsonProperty("vs_se_scalein_additional_wait_time")
+    private Integer vsSeScaleinAdditionalWaitTime = 0;
+
     @JsonProperty("vs_se_scaleout_additional_wait_time")
     private Integer vsSeScaleoutAdditionalWaitTime = 0;
 
@@ -8128,6 +8134,70 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Wait time for primary switchover ready notification after flows are completed.
+     * In certain deployments, there may be an additional delay to accept traffic.
+     * For example, for bgp, some time is needed for route advertisement.
+     * Allowed values are 0-300.
+     * Field introduced in 30.2.1.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @return vsSePrimarySwitchoverAdditionalWaitTime
+     */
+    public Integer getVsSePrimarySwitchoverAdditionalWaitTime() {
+        return vsSePrimarySwitchoverAdditionalWaitTime;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Wait time for primary switchover ready notification after flows are completed.
+     * In certain deployments, there may be an additional delay to accept traffic.
+     * For example, for bgp, some time is needed for route advertisement.
+     * Allowed values are 0-300.
+     * Field introduced in 30.2.1.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @param vsSePrimarySwitchoverAdditionalWaitTime set the vsSePrimarySwitchoverAdditionalWaitTime.
+     */
+    public void setVsSePrimarySwitchoverAdditionalWaitTime(Integer  vsSePrimarySwitchoverAdditionalWaitTime) {
+        this.vsSePrimarySwitchoverAdditionalWaitTime = vsSePrimarySwitchoverAdditionalWaitTime;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Wait time for sending scalein ready notification after flows are completed.
+     * In certain deployments, there may be an additional delay to accept traffic.
+     * For example, for bgp, some time is needed for route advertisement.
+     * Allowed values are 0-300.
+     * Field introduced in 30.2.1.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @return vsSeScaleinAdditionalWaitTime
+     */
+    public Integer getVsSeScaleinAdditionalWaitTime() {
+        return vsSeScaleinAdditionalWaitTime;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Wait time for sending scalein ready notification after flows are completed.
+     * In certain deployments, there may be an additional delay to accept traffic.
+     * For example, for bgp, some time is needed for route advertisement.
+     * Allowed values are 0-300.
+     * Field introduced in 30.2.1.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @param vsSeScaleinAdditionalWaitTime set the vsSeScaleinAdditionalWaitTime.
+     */
+    public void setVsSeScaleinAdditionalWaitTime(Integer  vsSeScaleinAdditionalWaitTime) {
+        this.vsSeScaleinAdditionalWaitTime = vsSeScaleinAdditionalWaitTime;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Wait time for sending scaleout ready notification after virtual service is marked up.
      * In certain deployments, there may be an additional delay to accept traffic.
      * For example, for bgp, some time is needed for route advertisement.
@@ -8597,7 +8667,9 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.ntpSyncFailEvent, objServiceEngineGroup.ntpSyncFailEvent)&&
   Objects.equals(this.ntpSyncStatusInterval, objServiceEngineGroup.ntpSyncStatusInterval)&&
   Objects.equals(this.useDpUtilForScaleout, objServiceEngineGroup.useDpUtilForScaleout)&&
-  Objects.equals(this.replayVrfRoutesInterval, objServiceEngineGroup.replayVrfRoutesInterval);
+  Objects.equals(this.replayVrfRoutesInterval, objServiceEngineGroup.replayVrfRoutesInterval)&&
+  Objects.equals(this.vsSeScaleinAdditionalWaitTime, objServiceEngineGroup.vsSeScaleinAdditionalWaitTime)&&
+  Objects.equals(this.vsSePrimarySwitchoverAdditionalWaitTime, objServiceEngineGroup.vsSePrimarySwitchoverAdditionalWaitTime);
     }
 
     @Override
@@ -8875,6 +8947,8 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    vsScaleinTimeout: ").append(toIndentedString(vsScaleinTimeout)).append("\n");
                         sb.append("    vsScaleinTimeoutForUpgrade: ").append(toIndentedString(vsScaleinTimeoutForUpgrade)).append("\n");
                         sb.append("    vsScaleoutTimeout: ").append(toIndentedString(vsScaleoutTimeout)).append("\n");
+                        sb.append("    vsSePrimarySwitchoverAdditionalWaitTime: ").append(toIndentedString(vsSePrimarySwitchoverAdditionalWaitTime)).append("\n");
+                        sb.append("    vsSeScaleinAdditionalWaitTime: ").append(toIndentedString(vsSeScaleinAdditionalWaitTime)).append("\n");
                         sb.append("    vsSeScaleoutAdditionalWaitTime: ").append(toIndentedString(vsSeScaleoutAdditionalWaitTime)).append("\n");
                         sb.append("    vsSeScaleoutReadyTimeout: ").append(toIndentedString(vsSeScaleoutReadyTimeout)).append("\n");
                         sb.append("    vsSwitchoverTimeout: ").append(toIndentedString(vsSwitchoverTimeout)).append("\n");
