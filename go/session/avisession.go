@@ -710,7 +710,7 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 		debug(dump, dumpErr)
 		retryReq = true
 	}
-	if resp.StatusCode == 500 {
+	if resp != nil && resp.StatusCode == 500 {
 		if _, err = avisess.fetchBody(verb, uri, resp); err != nil {
 			glog.Errorf("Client error for URI: %+v. Error: %+v", uri, err.Error())
 		}
