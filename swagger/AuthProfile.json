@@ -1027,6 +1027,7 @@
         "SamlSettings": {
             "type": "object",
             "required": [
+                "idp",
                 "sp"
             ],
             "properties": {
