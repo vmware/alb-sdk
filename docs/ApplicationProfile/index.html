@@ -377,6 +377,12 @@ font-style: italic;
       "detect_ntlm_app" : true,
       "max_bad_rps_cip_uri" : 123,
       "max_bad_rps_uri" : 123,
+      "session_config" : {
+        "session_cookie_samesite" : "aeiou",
+        "session_cookie_httponly" : true,
+        "session_cookie_name" : "aeiou",
+        "session_cookie_secure" : true
+      },
       "max_rps_unknown_cip" : 123,
       "use_true_client_ip" : true,
       "client_max_body_size" : 123456789,
@@ -683,6 +689,12 @@ font-style: italic;
     "detect_ntlm_app" : true,
     "max_bad_rps_cip_uri" : 123,
     "max_bad_rps_uri" : 123,
+    "session_config" : {
+      "session_cookie_samesite" : "aeiou",
+      "session_cookie_httponly" : true,
+      "session_cookie_name" : "aeiou",
+      "session_cookie_secure" : true
+    },
     "max_rps_unknown_cip" : 123,
     "use_true_client_ip" : true,
     "client_max_body_size" : 123456789,
@@ -1060,6 +1072,12 @@ font-style: italic;
     "detect_ntlm_app" : true,
     "max_bad_rps_cip_uri" : 123,
     "max_bad_rps_uri" : 123,
+    "session_config" : {
+      "session_cookie_samesite" : "aeiou",
+      "session_cookie_httponly" : true,
+      "session_cookie_name" : "aeiou",
+      "session_cookie_secure" : true
+    },
     "max_rps_unknown_cip" : 123,
     "use_true_client_ip" : true,
     "client_max_body_size" : 123456789,
@@ -1377,6 +1395,12 @@ font-style: italic;
     "detect_ntlm_app" : true,
     "max_bad_rps_cip_uri" : 123,
     "max_bad_rps_uri" : 123,
+    "session_config" : {
+      "session_cookie_samesite" : "aeiou",
+      "session_cookie_httponly" : true,
+      "session_cookie_name" : "aeiou",
+      "session_cookie_secure" : true
+    },
     "max_rps_unknown_cip" : 123,
     "use_true_client_ip" : true,
     "client_max_body_size" : 123456789,
@@ -1694,6 +1718,12 @@ font-style: italic;
     "detect_ntlm_app" : true,
     "max_bad_rps_cip_uri" : 123,
     "max_bad_rps_uri" : 123,
+    "session_config" : {
+      "session_cookie_samesite" : "aeiou",
+      "session_cookie_httponly" : true,
+      "session_cookie_name" : "aeiou",
+      "session_cookie_secure" : true
+    },
     "max_rps_unknown_cip" : 123,
     "use_true_client_ip" : true,
     "client_max_body_size" : 123456789,
@@ -1922,6 +1952,7 @@ font-style: italic;
     <li><a href="#HTTPApplicationProfile"><code>HTTPApplicationProfile</code></a></li>
     <li><a href="#HTTPLocalFile"><code>HTTPLocalFile</code></a></li>
     <li><a href="#HTTPRedirectAction"><code>HTTPRedirectAction</code></a></li>
+    <li><a href="#HTTPSessionConfig"><code>HTTPSessionConfig</code></a></li>
     <li><a href="#HttpCacheConfig"><code>HttpCacheConfig</code></a></li>
     <li><a href="#IpAddr"><code>IpAddr</code></a></li>
     <li><a href="#IpAddrPrefix"><code>IpAddrPrefix</code></a></li>
@@ -2134,6 +2165,7 @@ font-style: italic;
 <div class="param">respond_with_100_continue (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Avi will respond with 100-Continue response if Expect  100-Continue header received from client. Field introduced in 17.2.8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">secure_cookie_enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Mark server cookies with the &#39;Secure&#39; attribute.  Client browsers will not send a cookie marked as secure over an unencrypted connection.  If Avi is terminating SSL from clients and passing it as HTTP to the server, the server may return cookies without the secure flag set. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. </div>
 <div class="param">server_side_redirect_to_https (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> When terminating client SSL sessions at Avi, servers may incorrectly send redirect to clients as HTTP.  This option will rewrite the server&#39;s redirect responses for this virtual service from HTTP to HTTPS. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. </div>
+<div class="param">session_config (optional)</div><div class="param-desc"><span class="param-type"><a href="#HTTPSessionConfig">HTTPSessionConfig</a></span> HTTP session configuration. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">ssl_client_certificate_action (optional)</div><div class="param-desc"><span class="param-type"><a href="#SSLClientCertificateAction">SSLClientCertificateAction</a></span> Set of match/action rules that govern what happens when the client certificate request is enabled. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">ssl_client_certificate_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Specifies whether the client side verification is set to none, request or require. Enum options - SSL_CLIENT_CERTIFICATE_NONE, SSL_CLIENT_CERTIFICATE_REQUEST, SSL_CLIENT_CERTIFICATE_REQUIRE. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- SSL_CLIENT_CERTIFICATE_NONE,SSL_CLIENT_CERTIFICATE_REQUIRE), Basic edition(Allowed values- SSL_CLIENT_CERTIFICATE_NONE,SSL_CLIENT_CERTIFICATE_REQUIRE), Enterprise with Cloud Services edition. </div>
 <div class="param">true_client_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#TrueClientIPConfig">TrueClientIPConfig</a></span> Detect client IP from user specified header at the configured index in the specified direction. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
@@ -2164,6 +2196,15 @@ font-style: italic;
 <div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Port to which redirect the request. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">protocol </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Protocol type. Enum options - HTTP, HTTPS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">status_code (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP redirect status code. Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="HTTPSessionConfig">HTTPSessionConfig</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">session_cookie_httponly (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If set, HTTP session cookie will use &#39;HttpOnly&#39; attribute. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">session_cookie_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP session cookie name to use. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">session_cookie_samesite (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> HTTP session cookie SameSite attribute. Enum options - SAMESITE_NONE, SAMESITE_LAX, SAMESITE_STRICT. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">session_cookie_secure (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If set, HTTP session cookie will use &#39;Secure&#39; attribute. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
