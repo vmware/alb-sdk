@@ -187,7 +187,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - show serviceenginegroupinventory <key> ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 23.1.1</div>
+    <div class="app-desc">Version: 30.1.1</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -203,17 +203,17 @@ font-style: italic;
   <div class="method-summary"></div>
   <ol>
   <li><a href="#serviceenginegroupGet"><code><span class="http-method">get</span> /serviceenginegroup</code></a></li>
+  <li><a href="#serviceenginegroupInventoryGet"><code><span class="http-method">get</span> /serviceenginegroup-inventory</code></a></li>
+  <li><a href="#serviceenginegroupInventoryPost"><code><span class="http-method">post</span> /serviceenginegroup-inventory</code></a></li>
+  <li><a href="#serviceenginegroupInventoryUuidDelete"><code><span class="http-method">delete</span> /serviceenginegroup-inventory/{uuid}</code></a></li>
+  <li><a href="#serviceenginegroupInventoryUuidGet"><code><span class="http-method">get</span> /serviceenginegroup-inventory/{uuid}</code></a></li>
+  <li><a href="#serviceenginegroupInventoryUuidPatch"><code><span class="http-method">patch</span> /serviceenginegroup-inventory/{uuid}</code></a></li>
+  <li><a href="#serviceenginegroupInventoryUuidPut"><code><span class="http-method">put</span> /serviceenginegroup-inventory/{uuid}</code></a></li>
   <li><a href="#serviceenginegroupPost"><code><span class="http-method">post</span> /serviceenginegroup</code></a></li>
   <li><a href="#serviceenginegroupUuidDelete"><code><span class="http-method">delete</span> /serviceenginegroup/{uuid}</code></a></li>
   <li><a href="#serviceenginegroupUuidGet"><code><span class="http-method">get</span> /serviceenginegroup/{uuid}</code></a></li>
   <li><a href="#serviceenginegroupUuidPatch"><code><span class="http-method">patch</span> /serviceenginegroup/{uuid}</code></a></li>
   <li><a href="#serviceenginegroupUuidPut"><code><span class="http-method">put</span> /serviceenginegroup/{uuid}</code></a></li>
-  <li><a href="#serviceenginegroupinventoryGet"><code><span class="http-method">get</span> /serviceenginegroupinventory</code></a></li>
-  <li><a href="#serviceenginegroupinventoryPost"><code><span class="http-method">post</span> /serviceenginegroupinventory</code></a></li>
-  <li><a href="#serviceenginegroupinventoryUuidDelete"><code><span class="http-method">delete</span> /serviceenginegroupinventory/{uuid}</code></a></li>
-  <li><a href="#serviceenginegroupinventoryUuidGet"><code><span class="http-method">get</span> /serviceenginegroupinventory/{uuid}</code></a></li>
-  <li><a href="#serviceenginegroupinventoryUuidPatch"><code><span class="http-method">patch</span> /serviceenginegroupinventory/{uuid}</code></a></li>
-  <li><a href="#serviceenginegroupinventoryUuidPut"><code><span class="http-method">put</span> /serviceenginegroupinventory/{uuid}</code></a></li>
   <li><a href="#upgradestatussummaryGet"><code><span class="http-method">get</span> /upgradestatussummary</code></a></li>
   <li><a href="#upgradestatussummaryPost"><code><span class="http-method">post</span> /upgradestatussummary</code></a></li>
   <li><a href="#upgradestatussummaryUuidDelete"><code><span class="http-method">delete</span> /upgradestatussummary/{uuid}</code></a></li>
@@ -716,6 +716,2728 @@ font-style: italic;
     <h4 class="field-label">200</h4>
     OK
         <a href="#ServiceEngineGroupApiResponse">ServiceEngineGroupApiResponse</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="serviceenginegroupInventoryGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /serviceenginegroup-inventory</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceenginegroupInventoryGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ServiceEngineGroupInventoryApiResponse">ServiceEngineGroupInventoryApiResponse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "next" : "aeiou",
+  "count" : 123,
+  "results" : [ {
+    "serviceengins" : [ {
+      "ref" : "aeiou"
+    } ],
+    "virtualservices" : [ {
+      "ref" : "aeiou"
+    } ],
+    "upgradestatus" : {
+      "image_ref" : "aeiou",
+      "enable_rollback" : true,
+      "obj_cloud_ref" : "aeiou",
+      "end_time" : "aeiou",
+      "patch_image_ref" : "aeiou",
+      "total_tasks" : 123,
+      "uuid" : "aeiou",
+      "version" : "aeiou",
+      "url" : "aeiou",
+      "_last_modified" : "aeiou",
+      "start_time" : "aeiou",
+      "node_type" : "aeiou",
+      "tasks_completed" : 123,
+      "tenant_ref" : "aeiou",
+      "name" : "aeiou",
+      "state" : {
+        "reason" : "aeiou",
+        "rebooted" : true,
+        "last_changed_time" : {
+          "usecs" : 123456789,
+          "secs" : 123456789
+        },
+        "state" : "aeiou"
+      },
+      "enable_patch_rollback" : true,
+      "upgrade_ops" : "aeiou"
+    },
+    "config" : {
+      "se_rum_sampling_res_interval" : 123,
+      "se_log_buffer_conn_blocking_dequeue" : true,
+      "extra_config_multiplier" : 1.3579000000000001069366817318950779736042022705078125,
+      "core_shm_app_cache" : true,
+      "host_gateway_monitor" : true,
+      "se_dos_profile" : {
+        "thresh_period" : 123,
+        "thresh_info" : [ {
+          "min_value" : 123,
+          "attack" : "aeiou",
+          "max_value" : 123
+        } ]
+      },
+      "grpc_channel_connect_timeout" : 123,
+      "se_flow_probe_retry_timer" : 123,
+      "l7_resvd_listen_conns_per_core" : 123,
+      "vs_scalein_timeout" : 123,
+      "se_dump_core_on_assert" : true,
+      "se_pcap_qdisc_bypass" : true,
+      "se_dp_log_nf_enqueue_percent" : 123,
+      "se_l3_encap_ipc" : 123,
+      "vs_se_scaleout_additional_wait_time" : 123,
+      "active_standby" : true,
+      "service_ip6_subnets" : [ "" ],
+      "se_kni_burst_factor" : 123,
+      "vnic_dhcp_ip_max_retries" : 123,
+      "http_rum_min_content_length" : 123,
+      "resync_time_interval" : 123,
+      "se_log_buffer_app_blocking_dequeue" : true,
+      "log_agent_file_sz_event" : 123,
+      "log_message_max_file_list_size" : 123,
+      "min_scaleout_per_vs" : 123,
+      "self_se_election" : true,
+      "labels" : [ {
+        "value" : "aeiou",
+        "key" : "aeiou"
+      } ],
+      "vcenter_datastores_include" : true,
+      "disk_per_se" : 123,
+      "memory_for_config_update" : 123,
+      "host_attribute_key" : "aeiou",
+      "accelerated_networking" : true,
+      "app_cache_threshold" : 123,
+      "kni_allowed_server_ports" : [ {
+        "protocol" : "aeiou",
+        "range" : ""
+      } ],
+      "instance_flavor" : "aeiou",
+      "se_time_tracker_props" : {
+        "egress_audit_mode" : "aeiou",
+        "ingress_threshold" : 123,
+        "egress_threshold" : 123,
+        "event_gen_window" : 123456789,
+        "ingress_audit_mode" : "aeiou"
+      },
+      "disable_se_memory_check" : true,
+      "log_agent_trace_enabled" : true,
+      "se_probe_port" : 123,
+      "app_learning_memory_percent" : 123,
+      "dp_hb_timeout_count" : 123,
+      "se_vnic_tx_sw_queue_flush_frequency" : 123,
+      "max_skb_frags" : 123,
+      "data_network_id" : "aeiou",
+      "log_disksz" : 123,
+      "sdb_pipeline_size" : 123,
+      "ingress_access_data" : "aeiou",
+      "se_sb_dedicated_core" : true,
+      "gratarp_permanent_periodicity" : 123,
+      "log_agent_max_concurrent_rsync" : 123,
+      "se_vs_hb_max_pkts_in_batch" : 123,
+      "se_dp_vnic_queue_stall_event_sleep" : 123,
+      "log_malloc_failure" : true,
+      "vcenter_datastore_mode" : "aeiou",
+      "license_type" : "aeiou",
+      "flow_table_new_syn_max_entries" : 123,
+      "use_dp_util_for_scaleout" : true,
+      "log_agent_file_sz_debug" : 123,
+      "vs_scalein_timeout_for_upgrade" : 123,
+      "objsync_config" : {
+        "objsync_cpu_limit" : 123,
+        "objsync_hub_elect_interval" : 123,
+        "objsync_reconcile_interval" : 123
+      },
+      "custom_tag" : [ {
+        "tag_key" : "aeiou",
+        "tag_val" : "aeiou"
+      } ],
+      "num_flow_cores_sum_changes_to_ignore" : 123,
+      "openstack_mgmt_network_uuid" : "aeiou",
+      "core_shm_app_learning" : true,
+      "per_app" : true,
+      "vcenter_folder" : "aeiou",
+      "vnicdb_cmd_history_size" : 123,
+      "algo" : "aeiou",
+      "max_se" : 123,
+      "user_agent_cache_config" : {
+        "se_cache_size" : 123,
+        "batch_size" : 123,
+        "percent_reserved_for_good_bots" : 123,
+        "percent_reserved_for_browsers" : 123,
+        "max_upstream_queries" : 123,
+        "upstream_update_interval" : 123,
+        "num_entries_upstream_update" : 123,
+        "max_last_hit_time" : 123,
+        "max_age" : 123,
+        "controller_cache_size" : 123,
+        "percent_reserved_for_bad_bots" : 123,
+        "max_wait_time" : 123,
+        "percent_reserved_for_outstanding" : 123
+      },
+      "per_vs_admission_control" : true,
+      "shm_minimum_config_memory" : 123,
+      "lbaction_rq_per_request_max_retries" : 123,
+      "hardwaresecuritymodulegroup_ref" : "aeiou",
+      "http_rum_console_log" : true,
+      "vnic_probe_interval" : 123,
+      "handle_per_pkt_attack" : true,
+      "compress_ip_rules_for_each_ns_subnet" : true,
+      "log_agent_min_storage_per_vs" : 123,
+      "se_dp_vnic_queue_stall_threshold" : 123,
+      "se_dp_log_udf_enqueue_percent" : 123,
+      "udf_log_throttle" : 123,
+      "sdb_flush_interval" : 123,
+      "se_dp_vnic_restart_on_queue_stall_count" : 123,
+      "custom_securitygroups_mgmt" : [ "aeiou" ],
+      "min_se" : 123,
+      "waf_mempool_size" : 123,
+      "disable_avi_securitygroups" : true,
+      "se_packet_buffer_max" : 123,
+      "max_cpu_usage" : 123,
+      "ngx_free_connection_stack" : true,
+      "enable_hsm_log" : true,
+      "hm_on_standby" : true,
+      "name" : "aeiou",
+      "se_rum_sampling_nav_percent" : 123,
+      "sdb_scan_count" : 123,
+      "vs_switchover_timeout" : 123,
+      "free_list_size" : 123,
+      "se_hyperthreaded_mode" : "aeiou",
+      "min_cpu_usage" : 123,
+      "ntp_sync_status_interval" : 123,
+      "cpu_socket_affinity" : true,
+      "se_group_analytics_policy" : {
+        "metrics_event_thresholds" : [ {
+          "reset_threshold" : 1.3579000000000001069366817318950779736042022705078125,
+          "watermark_thresholds" : [ "" ],
+          "metrics_event_threshold_type" : "aeiou"
+        } ]
+      },
+      "se_rum_sampling_res_percent" : 123,
+      "dp_deq_interval_msec" : 123,
+      "description" : "aeiou",
+      "log_agent_max_storage_ignore_percent" : 1.3579000000000001069366817318950779736042022705078125,
+      "se_emulated_cores" : 123,
+      "se_tracert_port_range" : "",
+      "async_ssl_threads" : 123,
+      "enable_gratarp_permanent" : true,
+      "realtime_se_metrics" : {
+        "duration" : 123,
+        "enabled" : true
+      },
+      "archive_shm_limit" : 123,
+      "max_num_se_dps" : 123,
+      "se_dp_max_hb_version" : 123,
+      "log_agent_file_sz_conn" : 123,
+      "log_agent_unknown_vs_timer" : 123,
+      "ignore_docker_mac_change" : true,
+      "se_pcap_reinit_frequency" : 123,
+      "se_dp_hm_drops" : 123,
+      "send_se_ready_timeout" : 123,
+      "se_dp_isolation" : true,
+      "disable_csum_offloads" : true,
+      "cpu_reserve" : true,
+      "se_deprovision_delay" : 123,
+      "distribute_vnics" : true,
+      "max_rules_per_lb" : 123,
+      "vip_asg" : {
+        "configuration" : {
+          "zones" : [ {
+            "availability_zone" : "aeiou",
+            "subnet_uuid" : "aeiou",
+            "fip_capable" : true
+          } ]
+        },
+        "policy" : {
+          "suspend" : true,
+          "min_size" : 123,
+          "dns_cooldown" : 123,
+          "max_size" : 123
+        }
+      },
+      "upstream_connect_timeout" : 123,
+      "mgmt_network_ref" : "aeiou",
+      "vcenter_datastores" : [ {
+        "datastore_name" : "aeiou",
+        "managed_object_id" : "aeiou"
+      } ],
+      "se_dp_vnic_queue_stall_timeout" : 123,
+      "vcenters" : [ {
+        "nsxt_datastores" : {
+          "include" : true,
+          "ds_ids" : [ "aeiou" ]
+        },
+        "nsxt_clusters" : {
+          "include" : true,
+          "cluster_ids" : [ "aeiou" ]
+        },
+        "vcenter_folder" : "aeiou",
+        "nsxt_hosts" : {
+          "include" : true,
+          "host_ids" : [ "aeiou" ]
+        },
+        "clusters" : [ {
+          "cluster_id" : "aeiou",
+          "override_vsphere_ha" : true,
+          "vmg_name" : "aeiou"
+        } ],
+        "vcenter_ref" : "aeiou"
+      } ],
+      "netlink_poller_threads" : 123,
+      "upstream_connpool_enable" : true,
+      "minimum_connection_memory" : 123,
+      "log_agent_compress_logs" : true,
+      "mgmt_subnet" : "",
+      "connection_memory_percentage" : 123,
+      "dp_hb_frequency" : 123,
+      "replay_vrf_routes_interval" : 123,
+      "extra_shared_config_memory" : 123,
+      "se_delayed_flow_delete" : true,
+      "se_name_prefix" : "aeiou",
+      "se_vnic_tx_sw_queue_size" : 123,
+      "cloud_ref" : "aeiou",
+      "se_sb_threads" : 123,
+      "configpb_attributes" : {
+        "version" : 123
+      },
+      "num_dispatcher_queues" : 123,
+      "buffer_se" : 123,
+      "deactivate_kni_filtering_at_dispatcher" : true,
+      "max_public_ips_per_lb" : 123,
+      "ntp_sync_fail_event" : true,
+      "mem_reserve" : true,
+      "l7_conns_per_core" : 123,
+      "openstack_mgmt_network_name" : "aeiou",
+      "pcap_tx_ring_rd_balancing_factor" : 123,
+      "ssl_sess_cache_per_vs" : 123,
+      "max_scaleout_per_vs" : 123,
+      "se_use_dpdk" : 123,
+      "enable_multi_lb" : true,
+      "hybrid_rss_mode" : true,
+      "os_reserved_memory" : 123,
+      "vcenter_clusters" : {
+        "include" : true,
+        "cluster_refs" : [ "aeiou" ]
+      },
+      "vss_placement" : {
+        "num_subcores" : 123,
+        "core_nonaffinity" : 123
+      },
+      "availability_zone_refs" : [ "aeiou" ],
+      "datascript_timeout" : 123456789,
+      "dp_aggressive_hb_timeout_count" : 123,
+      "dp_aggressive_hb_frequency" : 123,
+      "app_cache_percent" : 123,
+      "license_tier" : "aeiou",
+      "log_agent_log_storage_min_sz" : 123,
+      "bgp_state_update_interval" : 123,
+      "host_attribute_value" : "aeiou",
+      "vcpus_per_se" : 123,
+      "netlink_sock_buf_size" : 123,
+      "non_significant_log_throttle" : 123,
+      "ns_helper_deq_interval_msec" : 123,
+      "vnic_rpc_retry_interval" : 123,
+      "allow_burst" : true,
+      "reboot_on_panic" : true,
+      "transient_shared_memory_max" : 123,
+      "dp_enq_interval_msec" : 123,
+      "se_tunnel_udp_port" : 123,
+      "se_pcap_pkt_sz" : 123,
+      "auto_rebalance" : true,
+      "ha_mode" : "aeiou",
+      "disable_tso" : true,
+      "log_agent_max_storage_excess_percent" : 123,
+      "se_dpdk_pmd" : 123,
+      "vss_placement_enabled" : true,
+      "se_dp_vnic_stall_se_restart_window" : 123,
+      "distribute_load_active_standby" : true,
+      "deactivate_ipv6_discovery" : true,
+      "auto_rebalance_interval" : 123,
+      "max_queues_per_vnic" : 123,
+      "auto_rebalance_criteria" : [ "aeiou" ],
+      "max_memory_per_mempool" : 123,
+      "n_log_streaming_threads" : 123,
+      "url" : "aeiou",
+      "se_bandwidth_type" : "aeiou",
+      "dp_aggressive_enq_interval_msec" : 123,
+      "num_dispatcher_cores" : 123,
+      "use_objsync" : true,
+      "markers" : [ {
+        "values" : [ "aeiou" ],
+        "key" : "aeiou"
+      } ],
+      "upstream_read_timeout" : 123,
+      "ingress_access_mgmt" : "aeiou",
+      "se_pcap_lookahead" : true,
+      "ignore_rtt_threshold" : 123,
+      "waf_mempool" : true,
+      "heap_minimum_config_memory" : 123,
+      "openstack_availability_zones" : [ "aeiou" ],
+      "se_tunnel_mode" : 123,
+      "max_concurrent_external_hm" : 123,
+      "config_debugs_on_all_cores" : true,
+      "se_vs_hb_max_vs_in_pkt" : 123,
+      "least_load_core_selection" : true,
+      "uuid" : "aeiou",
+      "vs_se_scaleout_ready_timeout" : 123,
+      "se_rl_prop" : {
+        "msf_num_stages" : 123,
+        "msf_stage_size" : 123456789
+      },
+      "enable_hsm_priming" : true,
+      "log_agent_debug_enabled" : true,
+      "se_ip_encap_ipc" : 123,
+      "se_udp_encap_ipc" : 123,
+      "vcenter_hosts" : {
+        "include" : true,
+        "host_refs" : [ "aeiou" ]
+      },
+      "log_agent_file_sz_appl" : 123,
+      "bgp_peer_monitor_failover_enabled" : true,
+      "se_dp_isolation_num_non_dp_cpus" : 123,
+      "use_standard_alb" : true,
+      "disable_gro" : true,
+      "pcap_tx_mode" : "aeiou",
+      "instance_flavor_info" : {
+        "cost" : "aeiou",
+        "ram_mb" : 123,
+        "max_ips_per_nic" : 123,
+        "vcpus" : 123,
+        "enhanced_nw" : true,
+        "is_recommended" : true,
+        "public" : true,
+        "max_nics" : 123,
+        "meta" : [ {
+          "value" : "aeiou",
+          "key" : "aeiou"
+        } ],
+        "max_ip6s_per_nic" : 123,
+        "name" : "aeiou",
+        "id" : "aeiou",
+        "disk_gb" : 123
+      },
+      "se_pcap_pkt_count" : 123,
+      "se_thread_multiplier" : 123,
+      "ephemeral_portrange_start" : 123,
+      "log_agent_sleep_interval" : 123,
+      "se_flow_probe_retries" : 123,
+      "se_mp_ring_retry_count" : 123,
+      "baremetal_dispatcher_handles_flows" : true,
+      "dedicated_dispatcher_core" : true,
+      "auto_redistribute_active_standby_load" : true,
+      "enable_pcap_tx_ring" : true,
+      "se_mtu" : 123,
+      "se_tx_batch_size" : 123,
+      "user_defined_metric_age" : 123,
+      "custom_securitygroups_data" : [ "aeiou" ],
+      "disable_flow_probes" : true,
+      "downstream_send_timeout" : 123,
+      "iptables" : [ {
+        "chain" : "aeiou",
+        "rules" : [ {
+          "src_ip" : "",
+          "src_port" : "",
+          "input_interface" : "aeiou",
+          "proto" : "aeiou",
+          "dnat_ip" : {
+            "addr" : "aeiou",
+            "type" : "aeiou"
+          },
+          "dst_port" : {
+            "start" : 123,
+            "end" : 123
+          },
+          "action" : "aeiou",
+          "output_interface" : "aeiou",
+          "tag" : "aeiou",
+          "dst_ip" : {
+            "ip_addr" : "",
+            "mask" : 123
+          }
+        } ],
+        "table" : "aeiou"
+      } ],
+      "upstream_send_timeout" : 123,
+      "se_pcap_reinit_threshold" : 123,
+      "aggressive_failure_detection" : true,
+      "se_lro" : true,
+      "dpdk_gro_timeout_interval" : 123,
+      "max_vs_per_se" : 123,
+      "vnic_dhcp_ip_check_interval" : 123,
+      "_last_modified" : "aeiou",
+      "significant_log_throttle" : 123,
+      "se_rum_sampling_nav_interval" : 123,
+      "vcenter_parking_vnic_pg" : "aeiou",
+      "hypervisor" : "aeiou",
+      "use_legacy_netlink" : true,
+      "use_hyperthreaded_cores" : true,
+      "se_dp_if_state_poll_interval" : 123,
+      "service_ip_subnets" : [ "" ],
+      "memory_per_se" : 123,
+      "auto_rebalance_capacity_per_se" : [ "" ],
+      "dp_aggressive_deq_interval_msec" : 123,
+      "se_log_buffer_events_blocking_dequeue" : true,
+      "ssl_preprocess_sni_hostname" : true,
+      "vs_host_redundancy" : true,
+      "placement_mode" : "aeiou",
+      "distribute_queues" : true,
+      "se_txq_threshold" : 123,
+      "vnic_ip_delete_interval" : 123,
+      "async_ssl" : true,
+      "ephemeral_portrange_end" : 123,
+      "vs_scaleout_timeout" : 123,
+      "tenant_ref" : "aeiou",
+      "objsync_port" : 123,
+      "gcp_config" : {
+        "backend_data_vpc_network_name" : "aeiou",
+        "backend_data_vpc_subnet_name" : "aeiou",
+        "backend_data_vpc_project_id" : "aeiou"
+      },
+      "lbaction_num_requests_to_dispatch" : 123
+    },
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#ServiceEngineGroupInventoryApiResponse">ServiceEngineGroupInventoryApiResponse</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="serviceenginegroupInventoryPost"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /serviceenginegroup-inventory</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceenginegroupInventoryPost</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; ServiceEngineGroupInventory object creation </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ServiceEngineGroupInventory">ServiceEngineGroupInventory</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "serviceengins" : [ {
+    "ref" : "aeiou"
+  } ],
+  "virtualservices" : [ {
+    "ref" : "aeiou"
+  } ],
+  "upgradestatus" : {
+    "image_ref" : "aeiou",
+    "enable_rollback" : true,
+    "obj_cloud_ref" : "aeiou",
+    "end_time" : "aeiou",
+    "patch_image_ref" : "aeiou",
+    "total_tasks" : 123,
+    "uuid" : "aeiou",
+    "version" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou",
+    "start_time" : "aeiou",
+    "node_type" : "aeiou",
+    "tasks_completed" : 123,
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "state" : {
+      "reason" : "aeiou",
+      "rebooted" : true,
+      "last_changed_time" : {
+        "usecs" : 123456789,
+        "secs" : 123456789
+      },
+      "state" : "aeiou"
+    },
+    "enable_patch_rollback" : true,
+    "upgrade_ops" : "aeiou"
+  },
+  "config" : {
+    "se_rum_sampling_res_interval" : 123,
+    "se_log_buffer_conn_blocking_dequeue" : true,
+    "extra_config_multiplier" : 1.3579000000000001069366817318950779736042022705078125,
+    "core_shm_app_cache" : true,
+    "host_gateway_monitor" : true,
+    "se_dos_profile" : {
+      "thresh_period" : 123,
+      "thresh_info" : [ {
+        "min_value" : 123,
+        "attack" : "aeiou",
+        "max_value" : 123
+      } ]
+    },
+    "grpc_channel_connect_timeout" : 123,
+    "se_flow_probe_retry_timer" : 123,
+    "l7_resvd_listen_conns_per_core" : 123,
+    "vs_scalein_timeout" : 123,
+    "se_dump_core_on_assert" : true,
+    "se_pcap_qdisc_bypass" : true,
+    "se_dp_log_nf_enqueue_percent" : 123,
+    "se_l3_encap_ipc" : 123,
+    "vs_se_scaleout_additional_wait_time" : 123,
+    "active_standby" : true,
+    "service_ip6_subnets" : [ "" ],
+    "se_kni_burst_factor" : 123,
+    "vnic_dhcp_ip_max_retries" : 123,
+    "http_rum_min_content_length" : 123,
+    "resync_time_interval" : 123,
+    "se_log_buffer_app_blocking_dequeue" : true,
+    "log_agent_file_sz_event" : 123,
+    "log_message_max_file_list_size" : 123,
+    "min_scaleout_per_vs" : 123,
+    "self_se_election" : true,
+    "labels" : [ {
+      "value" : "aeiou",
+      "key" : "aeiou"
+    } ],
+    "vcenter_datastores_include" : true,
+    "disk_per_se" : 123,
+    "memory_for_config_update" : 123,
+    "host_attribute_key" : "aeiou",
+    "accelerated_networking" : true,
+    "app_cache_threshold" : 123,
+    "kni_allowed_server_ports" : [ {
+      "protocol" : "aeiou",
+      "range" : ""
+    } ],
+    "instance_flavor" : "aeiou",
+    "se_time_tracker_props" : {
+      "egress_audit_mode" : "aeiou",
+      "ingress_threshold" : 123,
+      "egress_threshold" : 123,
+      "event_gen_window" : 123456789,
+      "ingress_audit_mode" : "aeiou"
+    },
+    "disable_se_memory_check" : true,
+    "log_agent_trace_enabled" : true,
+    "se_probe_port" : 123,
+    "app_learning_memory_percent" : 123,
+    "dp_hb_timeout_count" : 123,
+    "se_vnic_tx_sw_queue_flush_frequency" : 123,
+    "max_skb_frags" : 123,
+    "data_network_id" : "aeiou",
+    "log_disksz" : 123,
+    "sdb_pipeline_size" : 123,
+    "ingress_access_data" : "aeiou",
+    "se_sb_dedicated_core" : true,
+    "gratarp_permanent_periodicity" : 123,
+    "log_agent_max_concurrent_rsync" : 123,
+    "se_vs_hb_max_pkts_in_batch" : 123,
+    "se_dp_vnic_queue_stall_event_sleep" : 123,
+    "log_malloc_failure" : true,
+    "vcenter_datastore_mode" : "aeiou",
+    "license_type" : "aeiou",
+    "flow_table_new_syn_max_entries" : 123,
+    "use_dp_util_for_scaleout" : true,
+    "log_agent_file_sz_debug" : 123,
+    "vs_scalein_timeout_for_upgrade" : 123,
+    "objsync_config" : {
+      "objsync_cpu_limit" : 123,
+      "objsync_hub_elect_interval" : 123,
+      "objsync_reconcile_interval" : 123
+    },
+    "custom_tag" : [ {
+      "tag_key" : "aeiou",
+      "tag_val" : "aeiou"
+    } ],
+    "num_flow_cores_sum_changes_to_ignore" : 123,
+    "openstack_mgmt_network_uuid" : "aeiou",
+    "core_shm_app_learning" : true,
+    "per_app" : true,
+    "vcenter_folder" : "aeiou",
+    "vnicdb_cmd_history_size" : 123,
+    "algo" : "aeiou",
+    "max_se" : 123,
+    "user_agent_cache_config" : {
+      "se_cache_size" : 123,
+      "batch_size" : 123,
+      "percent_reserved_for_good_bots" : 123,
+      "percent_reserved_for_browsers" : 123,
+      "max_upstream_queries" : 123,
+      "upstream_update_interval" : 123,
+      "num_entries_upstream_update" : 123,
+      "max_last_hit_time" : 123,
+      "max_age" : 123,
+      "controller_cache_size" : 123,
+      "percent_reserved_for_bad_bots" : 123,
+      "max_wait_time" : 123,
+      "percent_reserved_for_outstanding" : 123
+    },
+    "per_vs_admission_control" : true,
+    "shm_minimum_config_memory" : 123,
+    "lbaction_rq_per_request_max_retries" : 123,
+    "hardwaresecuritymodulegroup_ref" : "aeiou",
+    "http_rum_console_log" : true,
+    "vnic_probe_interval" : 123,
+    "handle_per_pkt_attack" : true,
+    "compress_ip_rules_for_each_ns_subnet" : true,
+    "log_agent_min_storage_per_vs" : 123,
+    "se_dp_vnic_queue_stall_threshold" : 123,
+    "se_dp_log_udf_enqueue_percent" : 123,
+    "udf_log_throttle" : 123,
+    "sdb_flush_interval" : 123,
+    "se_dp_vnic_restart_on_queue_stall_count" : 123,
+    "custom_securitygroups_mgmt" : [ "aeiou" ],
+    "min_se" : 123,
+    "waf_mempool_size" : 123,
+    "disable_avi_securitygroups" : true,
+    "se_packet_buffer_max" : 123,
+    "max_cpu_usage" : 123,
+    "ngx_free_connection_stack" : true,
+    "enable_hsm_log" : true,
+    "hm_on_standby" : true,
+    "name" : "aeiou",
+    "se_rum_sampling_nav_percent" : 123,
+    "sdb_scan_count" : 123,
+    "vs_switchover_timeout" : 123,
+    "free_list_size" : 123,
+    "se_hyperthreaded_mode" : "aeiou",
+    "min_cpu_usage" : 123,
+    "ntp_sync_status_interval" : 123,
+    "cpu_socket_affinity" : true,
+    "se_group_analytics_policy" : {
+      "metrics_event_thresholds" : [ {
+        "reset_threshold" : 1.3579000000000001069366817318950779736042022705078125,
+        "watermark_thresholds" : [ "" ],
+        "metrics_event_threshold_type" : "aeiou"
+      } ]
+    },
+    "se_rum_sampling_res_percent" : 123,
+    "dp_deq_interval_msec" : 123,
+    "description" : "aeiou",
+    "log_agent_max_storage_ignore_percent" : 1.3579000000000001069366817318950779736042022705078125,
+    "se_emulated_cores" : 123,
+    "se_tracert_port_range" : "",
+    "async_ssl_threads" : 123,
+    "enable_gratarp_permanent" : true,
+    "realtime_se_metrics" : {
+      "duration" : 123,
+      "enabled" : true
+    },
+    "archive_shm_limit" : 123,
+    "max_num_se_dps" : 123,
+    "se_dp_max_hb_version" : 123,
+    "log_agent_file_sz_conn" : 123,
+    "log_agent_unknown_vs_timer" : 123,
+    "ignore_docker_mac_change" : true,
+    "se_pcap_reinit_frequency" : 123,
+    "se_dp_hm_drops" : 123,
+    "send_se_ready_timeout" : 123,
+    "se_dp_isolation" : true,
+    "disable_csum_offloads" : true,
+    "cpu_reserve" : true,
+    "se_deprovision_delay" : 123,
+    "distribute_vnics" : true,
+    "max_rules_per_lb" : 123,
+    "vip_asg" : {
+      "configuration" : {
+        "zones" : [ {
+          "availability_zone" : "aeiou",
+          "subnet_uuid" : "aeiou",
+          "fip_capable" : true
+        } ]
+      },
+      "policy" : {
+        "suspend" : true,
+        "min_size" : 123,
+        "dns_cooldown" : 123,
+        "max_size" : 123
+      }
+    },
+    "upstream_connect_timeout" : 123,
+    "mgmt_network_ref" : "aeiou",
+    "vcenter_datastores" : [ {
+      "datastore_name" : "aeiou",
+      "managed_object_id" : "aeiou"
+    } ],
+    "se_dp_vnic_queue_stall_timeout" : 123,
+    "vcenters" : [ {
+      "nsxt_datastores" : {
+        "include" : true,
+        "ds_ids" : [ "aeiou" ]
+      },
+      "nsxt_clusters" : {
+        "include" : true,
+        "cluster_ids" : [ "aeiou" ]
+      },
+      "vcenter_folder" : "aeiou",
+      "nsxt_hosts" : {
+        "include" : true,
+        "host_ids" : [ "aeiou" ]
+      },
+      "clusters" : [ {
+        "cluster_id" : "aeiou",
+        "override_vsphere_ha" : true,
+        "vmg_name" : "aeiou"
+      } ],
+      "vcenter_ref" : "aeiou"
+    } ],
+    "netlink_poller_threads" : 123,
+    "upstream_connpool_enable" : true,
+    "minimum_connection_memory" : 123,
+    "log_agent_compress_logs" : true,
+    "mgmt_subnet" : "",
+    "connection_memory_percentage" : 123,
+    "dp_hb_frequency" : 123,
+    "replay_vrf_routes_interval" : 123,
+    "extra_shared_config_memory" : 123,
+    "se_delayed_flow_delete" : true,
+    "se_name_prefix" : "aeiou",
+    "se_vnic_tx_sw_queue_size" : 123,
+    "cloud_ref" : "aeiou",
+    "se_sb_threads" : 123,
+    "configpb_attributes" : {
+      "version" : 123
+    },
+    "num_dispatcher_queues" : 123,
+    "buffer_se" : 123,
+    "deactivate_kni_filtering_at_dispatcher" : true,
+    "max_public_ips_per_lb" : 123,
+    "ntp_sync_fail_event" : true,
+    "mem_reserve" : true,
+    "l7_conns_per_core" : 123,
+    "openstack_mgmt_network_name" : "aeiou",
+    "pcap_tx_ring_rd_balancing_factor" : 123,
+    "ssl_sess_cache_per_vs" : 123,
+    "max_scaleout_per_vs" : 123,
+    "se_use_dpdk" : 123,
+    "enable_multi_lb" : true,
+    "hybrid_rss_mode" : true,
+    "os_reserved_memory" : 123,
+    "vcenter_clusters" : {
+      "include" : true,
+      "cluster_refs" : [ "aeiou" ]
+    },
+    "vss_placement" : {
+      "num_subcores" : 123,
+      "core_nonaffinity" : 123
+    },
+    "availability_zone_refs" : [ "aeiou" ],
+    "datascript_timeout" : 123456789,
+    "dp_aggressive_hb_timeout_count" : 123,
+    "dp_aggressive_hb_frequency" : 123,
+    "app_cache_percent" : 123,
+    "license_tier" : "aeiou",
+    "log_agent_log_storage_min_sz" : 123,
+    "bgp_state_update_interval" : 123,
+    "host_attribute_value" : "aeiou",
+    "vcpus_per_se" : 123,
+    "netlink_sock_buf_size" : 123,
+    "non_significant_log_throttle" : 123,
+    "ns_helper_deq_interval_msec" : 123,
+    "vnic_rpc_retry_interval" : 123,
+    "allow_burst" : true,
+    "reboot_on_panic" : true,
+    "transient_shared_memory_max" : 123,
+    "dp_enq_interval_msec" : 123,
+    "se_tunnel_udp_port" : 123,
+    "se_pcap_pkt_sz" : 123,
+    "auto_rebalance" : true,
+    "ha_mode" : "aeiou",
+    "disable_tso" : true,
+    "log_agent_max_storage_excess_percent" : 123,
+    "se_dpdk_pmd" : 123,
+    "vss_placement_enabled" : true,
+    "se_dp_vnic_stall_se_restart_window" : 123,
+    "distribute_load_active_standby" : true,
+    "deactivate_ipv6_discovery" : true,
+    "auto_rebalance_interval" : 123,
+    "max_queues_per_vnic" : 123,
+    "auto_rebalance_criteria" : [ "aeiou" ],
+    "max_memory_per_mempool" : 123,
+    "n_log_streaming_threads" : 123,
+    "url" : "aeiou",
+    "se_bandwidth_type" : "aeiou",
+    "dp_aggressive_enq_interval_msec" : 123,
+    "num_dispatcher_cores" : 123,
+    "use_objsync" : true,
+    "markers" : [ {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    } ],
+    "upstream_read_timeout" : 123,
+    "ingress_access_mgmt" : "aeiou",
+    "se_pcap_lookahead" : true,
+    "ignore_rtt_threshold" : 123,
+    "waf_mempool" : true,
+    "heap_minimum_config_memory" : 123,
+    "openstack_availability_zones" : [ "aeiou" ],
+    "se_tunnel_mode" : 123,
+    "max_concurrent_external_hm" : 123,
+    "config_debugs_on_all_cores" : true,
+    "se_vs_hb_max_vs_in_pkt" : 123,
+    "least_load_core_selection" : true,
+    "uuid" : "aeiou",
+    "vs_se_scaleout_ready_timeout" : 123,
+    "se_rl_prop" : {
+      "msf_num_stages" : 123,
+      "msf_stage_size" : 123456789
+    },
+    "enable_hsm_priming" : true,
+    "log_agent_debug_enabled" : true,
+    "se_ip_encap_ipc" : 123,
+    "se_udp_encap_ipc" : 123,
+    "vcenter_hosts" : {
+      "include" : true,
+      "host_refs" : [ "aeiou" ]
+    },
+    "log_agent_file_sz_appl" : 123,
+    "bgp_peer_monitor_failover_enabled" : true,
+    "se_dp_isolation_num_non_dp_cpus" : 123,
+    "use_standard_alb" : true,
+    "disable_gro" : true,
+    "pcap_tx_mode" : "aeiou",
+    "instance_flavor_info" : {
+      "cost" : "aeiou",
+      "ram_mb" : 123,
+      "max_ips_per_nic" : 123,
+      "vcpus" : 123,
+      "enhanced_nw" : true,
+      "is_recommended" : true,
+      "public" : true,
+      "max_nics" : 123,
+      "meta" : [ {
+        "value" : "aeiou",
+        "key" : "aeiou"
+      } ],
+      "max_ip6s_per_nic" : 123,
+      "name" : "aeiou",
+      "id" : "aeiou",
+      "disk_gb" : 123
+    },
+    "se_pcap_pkt_count" : 123,
+    "se_thread_multiplier" : 123,
+    "ephemeral_portrange_start" : 123,
+    "log_agent_sleep_interval" : 123,
+    "se_flow_probe_retries" : 123,
+    "se_mp_ring_retry_count" : 123,
+    "baremetal_dispatcher_handles_flows" : true,
+    "dedicated_dispatcher_core" : true,
+    "auto_redistribute_active_standby_load" : true,
+    "enable_pcap_tx_ring" : true,
+    "se_mtu" : 123,
+    "se_tx_batch_size" : 123,
+    "user_defined_metric_age" : 123,
+    "custom_securitygroups_data" : [ "aeiou" ],
+    "disable_flow_probes" : true,
+    "downstream_send_timeout" : 123,
+    "iptables" : [ {
+      "chain" : "aeiou",
+      "rules" : [ {
+        "src_ip" : "",
+        "src_port" : "",
+        "input_interface" : "aeiou",
+        "proto" : "aeiou",
+        "dnat_ip" : {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        },
+        "dst_port" : {
+          "start" : 123,
+          "end" : 123
+        },
+        "action" : "aeiou",
+        "output_interface" : "aeiou",
+        "tag" : "aeiou",
+        "dst_ip" : {
+          "ip_addr" : "",
+          "mask" : 123
+        }
+      } ],
+      "table" : "aeiou"
+    } ],
+    "upstream_send_timeout" : 123,
+    "se_pcap_reinit_threshold" : 123,
+    "aggressive_failure_detection" : true,
+    "se_lro" : true,
+    "dpdk_gro_timeout_interval" : 123,
+    "max_vs_per_se" : 123,
+    "vnic_dhcp_ip_check_interval" : 123,
+    "_last_modified" : "aeiou",
+    "significant_log_throttle" : 123,
+    "se_rum_sampling_nav_interval" : 123,
+    "vcenter_parking_vnic_pg" : "aeiou",
+    "hypervisor" : "aeiou",
+    "use_legacy_netlink" : true,
+    "use_hyperthreaded_cores" : true,
+    "se_dp_if_state_poll_interval" : 123,
+    "service_ip_subnets" : [ "" ],
+    "memory_per_se" : 123,
+    "auto_rebalance_capacity_per_se" : [ "" ],
+    "dp_aggressive_deq_interval_msec" : 123,
+    "se_log_buffer_events_blocking_dequeue" : true,
+    "ssl_preprocess_sni_hostname" : true,
+    "vs_host_redundancy" : true,
+    "placement_mode" : "aeiou",
+    "distribute_queues" : true,
+    "se_txq_threshold" : 123,
+    "vnic_ip_delete_interval" : 123,
+    "async_ssl" : true,
+    "ephemeral_portrange_end" : 123,
+    "vs_scaleout_timeout" : 123,
+    "tenant_ref" : "aeiou",
+    "objsync_port" : 123,
+    "gcp_config" : {
+      "backend_data_vpc_network_name" : "aeiou",
+      "backend_data_vpc_subnet_name" : "aeiou",
+      "backend_data_vpc_project_id" : "aeiou"
+    },
+    "lbaction_num_requests_to_dispatch" : 123
+  },
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#ServiceEngineGroupInventory">ServiceEngineGroupInventory</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="serviceenginegroupInventoryUuidDelete"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /serviceenginegroup-inventory/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceenginegroupInventoryUuidDelete</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="serviceenginegroupInventoryUuidGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /serviceenginegroup-inventory/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceenginegroupInventoryUuidGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ServiceEngineGroupInventory">ServiceEngineGroupInventory</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "serviceengins" : [ {
+    "ref" : "aeiou"
+  } ],
+  "virtualservices" : [ {
+    "ref" : "aeiou"
+  } ],
+  "upgradestatus" : {
+    "image_ref" : "aeiou",
+    "enable_rollback" : true,
+    "obj_cloud_ref" : "aeiou",
+    "end_time" : "aeiou",
+    "patch_image_ref" : "aeiou",
+    "total_tasks" : 123,
+    "uuid" : "aeiou",
+    "version" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou",
+    "start_time" : "aeiou",
+    "node_type" : "aeiou",
+    "tasks_completed" : 123,
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "state" : {
+      "reason" : "aeiou",
+      "rebooted" : true,
+      "last_changed_time" : {
+        "usecs" : 123456789,
+        "secs" : 123456789
+      },
+      "state" : "aeiou"
+    },
+    "enable_patch_rollback" : true,
+    "upgrade_ops" : "aeiou"
+  },
+  "config" : {
+    "se_rum_sampling_res_interval" : 123,
+    "se_log_buffer_conn_blocking_dequeue" : true,
+    "extra_config_multiplier" : 1.3579000000000001069366817318950779736042022705078125,
+    "core_shm_app_cache" : true,
+    "host_gateway_monitor" : true,
+    "se_dos_profile" : {
+      "thresh_period" : 123,
+      "thresh_info" : [ {
+        "min_value" : 123,
+        "attack" : "aeiou",
+        "max_value" : 123
+      } ]
+    },
+    "grpc_channel_connect_timeout" : 123,
+    "se_flow_probe_retry_timer" : 123,
+    "l7_resvd_listen_conns_per_core" : 123,
+    "vs_scalein_timeout" : 123,
+    "se_dump_core_on_assert" : true,
+    "se_pcap_qdisc_bypass" : true,
+    "se_dp_log_nf_enqueue_percent" : 123,
+    "se_l3_encap_ipc" : 123,
+    "vs_se_scaleout_additional_wait_time" : 123,
+    "active_standby" : true,
+    "service_ip6_subnets" : [ "" ],
+    "se_kni_burst_factor" : 123,
+    "vnic_dhcp_ip_max_retries" : 123,
+    "http_rum_min_content_length" : 123,
+    "resync_time_interval" : 123,
+    "se_log_buffer_app_blocking_dequeue" : true,
+    "log_agent_file_sz_event" : 123,
+    "log_message_max_file_list_size" : 123,
+    "min_scaleout_per_vs" : 123,
+    "self_se_election" : true,
+    "labels" : [ {
+      "value" : "aeiou",
+      "key" : "aeiou"
+    } ],
+    "vcenter_datastores_include" : true,
+    "disk_per_se" : 123,
+    "memory_for_config_update" : 123,
+    "host_attribute_key" : "aeiou",
+    "accelerated_networking" : true,
+    "app_cache_threshold" : 123,
+    "kni_allowed_server_ports" : [ {
+      "protocol" : "aeiou",
+      "range" : ""
+    } ],
+    "instance_flavor" : "aeiou",
+    "se_time_tracker_props" : {
+      "egress_audit_mode" : "aeiou",
+      "ingress_threshold" : 123,
+      "egress_threshold" : 123,
+      "event_gen_window" : 123456789,
+      "ingress_audit_mode" : "aeiou"
+    },
+    "disable_se_memory_check" : true,
+    "log_agent_trace_enabled" : true,
+    "se_probe_port" : 123,
+    "app_learning_memory_percent" : 123,
+    "dp_hb_timeout_count" : 123,
+    "se_vnic_tx_sw_queue_flush_frequency" : 123,
+    "max_skb_frags" : 123,
+    "data_network_id" : "aeiou",
+    "log_disksz" : 123,
+    "sdb_pipeline_size" : 123,
+    "ingress_access_data" : "aeiou",
+    "se_sb_dedicated_core" : true,
+    "gratarp_permanent_periodicity" : 123,
+    "log_agent_max_concurrent_rsync" : 123,
+    "se_vs_hb_max_pkts_in_batch" : 123,
+    "se_dp_vnic_queue_stall_event_sleep" : 123,
+    "log_malloc_failure" : true,
+    "vcenter_datastore_mode" : "aeiou",
+    "license_type" : "aeiou",
+    "flow_table_new_syn_max_entries" : 123,
+    "use_dp_util_for_scaleout" : true,
+    "log_agent_file_sz_debug" : 123,
+    "vs_scalein_timeout_for_upgrade" : 123,
+    "objsync_config" : {
+      "objsync_cpu_limit" : 123,
+      "objsync_hub_elect_interval" : 123,
+      "objsync_reconcile_interval" : 123
+    },
+    "custom_tag" : [ {
+      "tag_key" : "aeiou",
+      "tag_val" : "aeiou"
+    } ],
+    "num_flow_cores_sum_changes_to_ignore" : 123,
+    "openstack_mgmt_network_uuid" : "aeiou",
+    "core_shm_app_learning" : true,
+    "per_app" : true,
+    "vcenter_folder" : "aeiou",
+    "vnicdb_cmd_history_size" : 123,
+    "algo" : "aeiou",
+    "max_se" : 123,
+    "user_agent_cache_config" : {
+      "se_cache_size" : 123,
+      "batch_size" : 123,
+      "percent_reserved_for_good_bots" : 123,
+      "percent_reserved_for_browsers" : 123,
+      "max_upstream_queries" : 123,
+      "upstream_update_interval" : 123,
+      "num_entries_upstream_update" : 123,
+      "max_last_hit_time" : 123,
+      "max_age" : 123,
+      "controller_cache_size" : 123,
+      "percent_reserved_for_bad_bots" : 123,
+      "max_wait_time" : 123,
+      "percent_reserved_for_outstanding" : 123
+    },
+    "per_vs_admission_control" : true,
+    "shm_minimum_config_memory" : 123,
+    "lbaction_rq_per_request_max_retries" : 123,
+    "hardwaresecuritymodulegroup_ref" : "aeiou",
+    "http_rum_console_log" : true,
+    "vnic_probe_interval" : 123,
+    "handle_per_pkt_attack" : true,
+    "compress_ip_rules_for_each_ns_subnet" : true,
+    "log_agent_min_storage_per_vs" : 123,
+    "se_dp_vnic_queue_stall_threshold" : 123,
+    "se_dp_log_udf_enqueue_percent" : 123,
+    "udf_log_throttle" : 123,
+    "sdb_flush_interval" : 123,
+    "se_dp_vnic_restart_on_queue_stall_count" : 123,
+    "custom_securitygroups_mgmt" : [ "aeiou" ],
+    "min_se" : 123,
+    "waf_mempool_size" : 123,
+    "disable_avi_securitygroups" : true,
+    "se_packet_buffer_max" : 123,
+    "max_cpu_usage" : 123,
+    "ngx_free_connection_stack" : true,
+    "enable_hsm_log" : true,
+    "hm_on_standby" : true,
+    "name" : "aeiou",
+    "se_rum_sampling_nav_percent" : 123,
+    "sdb_scan_count" : 123,
+    "vs_switchover_timeout" : 123,
+    "free_list_size" : 123,
+    "se_hyperthreaded_mode" : "aeiou",
+    "min_cpu_usage" : 123,
+    "ntp_sync_status_interval" : 123,
+    "cpu_socket_affinity" : true,
+    "se_group_analytics_policy" : {
+      "metrics_event_thresholds" : [ {
+        "reset_threshold" : 1.3579000000000001069366817318950779736042022705078125,
+        "watermark_thresholds" : [ "" ],
+        "metrics_event_threshold_type" : "aeiou"
+      } ]
+    },
+    "se_rum_sampling_res_percent" : 123,
+    "dp_deq_interval_msec" : 123,
+    "description" : "aeiou",
+    "log_agent_max_storage_ignore_percent" : 1.3579000000000001069366817318950779736042022705078125,
+    "se_emulated_cores" : 123,
+    "se_tracert_port_range" : "",
+    "async_ssl_threads" : 123,
+    "enable_gratarp_permanent" : true,
+    "realtime_se_metrics" : {
+      "duration" : 123,
+      "enabled" : true
+    },
+    "archive_shm_limit" : 123,
+    "max_num_se_dps" : 123,
+    "se_dp_max_hb_version" : 123,
+    "log_agent_file_sz_conn" : 123,
+    "log_agent_unknown_vs_timer" : 123,
+    "ignore_docker_mac_change" : true,
+    "se_pcap_reinit_frequency" : 123,
+    "se_dp_hm_drops" : 123,
+    "send_se_ready_timeout" : 123,
+    "se_dp_isolation" : true,
+    "disable_csum_offloads" : true,
+    "cpu_reserve" : true,
+    "se_deprovision_delay" : 123,
+    "distribute_vnics" : true,
+    "max_rules_per_lb" : 123,
+    "vip_asg" : {
+      "configuration" : {
+        "zones" : [ {
+          "availability_zone" : "aeiou",
+          "subnet_uuid" : "aeiou",
+          "fip_capable" : true
+        } ]
+      },
+      "policy" : {
+        "suspend" : true,
+        "min_size" : 123,
+        "dns_cooldown" : 123,
+        "max_size" : 123
+      }
+    },
+    "upstream_connect_timeout" : 123,
+    "mgmt_network_ref" : "aeiou",
+    "vcenter_datastores" : [ {
+      "datastore_name" : "aeiou",
+      "managed_object_id" : "aeiou"
+    } ],
+    "se_dp_vnic_queue_stall_timeout" : 123,
+    "vcenters" : [ {
+      "nsxt_datastores" : {
+        "include" : true,
+        "ds_ids" : [ "aeiou" ]
+      },
+      "nsxt_clusters" : {
+        "include" : true,
+        "cluster_ids" : [ "aeiou" ]
+      },
+      "vcenter_folder" : "aeiou",
+      "nsxt_hosts" : {
+        "include" : true,
+        "host_ids" : [ "aeiou" ]
+      },
+      "clusters" : [ {
+        "cluster_id" : "aeiou",
+        "override_vsphere_ha" : true,
+        "vmg_name" : "aeiou"
+      } ],
+      "vcenter_ref" : "aeiou"
+    } ],
+    "netlink_poller_threads" : 123,
+    "upstream_connpool_enable" : true,
+    "minimum_connection_memory" : 123,
+    "log_agent_compress_logs" : true,
+    "mgmt_subnet" : "",
+    "connection_memory_percentage" : 123,
+    "dp_hb_frequency" : 123,
+    "replay_vrf_routes_interval" : 123,
+    "extra_shared_config_memory" : 123,
+    "se_delayed_flow_delete" : true,
+    "se_name_prefix" : "aeiou",
+    "se_vnic_tx_sw_queue_size" : 123,
+    "cloud_ref" : "aeiou",
+    "se_sb_threads" : 123,
+    "configpb_attributes" : {
+      "version" : 123
+    },
+    "num_dispatcher_queues" : 123,
+    "buffer_se" : 123,
+    "deactivate_kni_filtering_at_dispatcher" : true,
+    "max_public_ips_per_lb" : 123,
+    "ntp_sync_fail_event" : true,
+    "mem_reserve" : true,
+    "l7_conns_per_core" : 123,
+    "openstack_mgmt_network_name" : "aeiou",
+    "pcap_tx_ring_rd_balancing_factor" : 123,
+    "ssl_sess_cache_per_vs" : 123,
+    "max_scaleout_per_vs" : 123,
+    "se_use_dpdk" : 123,
+    "enable_multi_lb" : true,
+    "hybrid_rss_mode" : true,
+    "os_reserved_memory" : 123,
+    "vcenter_clusters" : {
+      "include" : true,
+      "cluster_refs" : [ "aeiou" ]
+    },
+    "vss_placement" : {
+      "num_subcores" : 123,
+      "core_nonaffinity" : 123
+    },
+    "availability_zone_refs" : [ "aeiou" ],
+    "datascript_timeout" : 123456789,
+    "dp_aggressive_hb_timeout_count" : 123,
+    "dp_aggressive_hb_frequency" : 123,
+    "app_cache_percent" : 123,
+    "license_tier" : "aeiou",
+    "log_agent_log_storage_min_sz" : 123,
+    "bgp_state_update_interval" : 123,
+    "host_attribute_value" : "aeiou",
+    "vcpus_per_se" : 123,
+    "netlink_sock_buf_size" : 123,
+    "non_significant_log_throttle" : 123,
+    "ns_helper_deq_interval_msec" : 123,
+    "vnic_rpc_retry_interval" : 123,
+    "allow_burst" : true,
+    "reboot_on_panic" : true,
+    "transient_shared_memory_max" : 123,
+    "dp_enq_interval_msec" : 123,
+    "se_tunnel_udp_port" : 123,
+    "se_pcap_pkt_sz" : 123,
+    "auto_rebalance" : true,
+    "ha_mode" : "aeiou",
+    "disable_tso" : true,
+    "log_agent_max_storage_excess_percent" : 123,
+    "se_dpdk_pmd" : 123,
+    "vss_placement_enabled" : true,
+    "se_dp_vnic_stall_se_restart_window" : 123,
+    "distribute_load_active_standby" : true,
+    "deactivate_ipv6_discovery" : true,
+    "auto_rebalance_interval" : 123,
+    "max_queues_per_vnic" : 123,
+    "auto_rebalance_criteria" : [ "aeiou" ],
+    "max_memory_per_mempool" : 123,
+    "n_log_streaming_threads" : 123,
+    "url" : "aeiou",
+    "se_bandwidth_type" : "aeiou",
+    "dp_aggressive_enq_interval_msec" : 123,
+    "num_dispatcher_cores" : 123,
+    "use_objsync" : true,
+    "markers" : [ {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    } ],
+    "upstream_read_timeout" : 123,
+    "ingress_access_mgmt" : "aeiou",
+    "se_pcap_lookahead" : true,
+    "ignore_rtt_threshold" : 123,
+    "waf_mempool" : true,
+    "heap_minimum_config_memory" : 123,
+    "openstack_availability_zones" : [ "aeiou" ],
+    "se_tunnel_mode" : 123,
+    "max_concurrent_external_hm" : 123,
+    "config_debugs_on_all_cores" : true,
+    "se_vs_hb_max_vs_in_pkt" : 123,
+    "least_load_core_selection" : true,
+    "uuid" : "aeiou",
+    "vs_se_scaleout_ready_timeout" : 123,
+    "se_rl_prop" : {
+      "msf_num_stages" : 123,
+      "msf_stage_size" : 123456789
+    },
+    "enable_hsm_priming" : true,
+    "log_agent_debug_enabled" : true,
+    "se_ip_encap_ipc" : 123,
+    "se_udp_encap_ipc" : 123,
+    "vcenter_hosts" : {
+      "include" : true,
+      "host_refs" : [ "aeiou" ]
+    },
+    "log_agent_file_sz_appl" : 123,
+    "bgp_peer_monitor_failover_enabled" : true,
+    "se_dp_isolation_num_non_dp_cpus" : 123,
+    "use_standard_alb" : true,
+    "disable_gro" : true,
+    "pcap_tx_mode" : "aeiou",
+    "instance_flavor_info" : {
+      "cost" : "aeiou",
+      "ram_mb" : 123,
+      "max_ips_per_nic" : 123,
+      "vcpus" : 123,
+      "enhanced_nw" : true,
+      "is_recommended" : true,
+      "public" : true,
+      "max_nics" : 123,
+      "meta" : [ {
+        "value" : "aeiou",
+        "key" : "aeiou"
+      } ],
+      "max_ip6s_per_nic" : 123,
+      "name" : "aeiou",
+      "id" : "aeiou",
+      "disk_gb" : 123
+    },
+    "se_pcap_pkt_count" : 123,
+    "se_thread_multiplier" : 123,
+    "ephemeral_portrange_start" : 123,
+    "log_agent_sleep_interval" : 123,
+    "se_flow_probe_retries" : 123,
+    "se_mp_ring_retry_count" : 123,
+    "baremetal_dispatcher_handles_flows" : true,
+    "dedicated_dispatcher_core" : true,
+    "auto_redistribute_active_standby_load" : true,
+    "enable_pcap_tx_ring" : true,
+    "se_mtu" : 123,
+    "se_tx_batch_size" : 123,
+    "user_defined_metric_age" : 123,
+    "custom_securitygroups_data" : [ "aeiou" ],
+    "disable_flow_probes" : true,
+    "downstream_send_timeout" : 123,
+    "iptables" : [ {
+      "chain" : "aeiou",
+      "rules" : [ {
+        "src_ip" : "",
+        "src_port" : "",
+        "input_interface" : "aeiou",
+        "proto" : "aeiou",
+        "dnat_ip" : {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        },
+        "dst_port" : {
+          "start" : 123,
+          "end" : 123
+        },
+        "action" : "aeiou",
+        "output_interface" : "aeiou",
+        "tag" : "aeiou",
+        "dst_ip" : {
+          "ip_addr" : "",
+          "mask" : 123
+        }
+      } ],
+      "table" : "aeiou"
+    } ],
+    "upstream_send_timeout" : 123,
+    "se_pcap_reinit_threshold" : 123,
+    "aggressive_failure_detection" : true,
+    "se_lro" : true,
+    "dpdk_gro_timeout_interval" : 123,
+    "max_vs_per_se" : 123,
+    "vnic_dhcp_ip_check_interval" : 123,
+    "_last_modified" : "aeiou",
+    "significant_log_throttle" : 123,
+    "se_rum_sampling_nav_interval" : 123,
+    "vcenter_parking_vnic_pg" : "aeiou",
+    "hypervisor" : "aeiou",
+    "use_legacy_netlink" : true,
+    "use_hyperthreaded_cores" : true,
+    "se_dp_if_state_poll_interval" : 123,
+    "service_ip_subnets" : [ "" ],
+    "memory_per_se" : 123,
+    "auto_rebalance_capacity_per_se" : [ "" ],
+    "dp_aggressive_deq_interval_msec" : 123,
+    "se_log_buffer_events_blocking_dequeue" : true,
+    "ssl_preprocess_sni_hostname" : true,
+    "vs_host_redundancy" : true,
+    "placement_mode" : "aeiou",
+    "distribute_queues" : true,
+    "se_txq_threshold" : 123,
+    "vnic_ip_delete_interval" : 123,
+    "async_ssl" : true,
+    "ephemeral_portrange_end" : 123,
+    "vs_scaleout_timeout" : 123,
+    "tenant_ref" : "aeiou",
+    "objsync_port" : 123,
+    "gcp_config" : {
+      "backend_data_vpc_network_name" : "aeiou",
+      "backend_data_vpc_subnet_name" : "aeiou",
+      "backend_data_vpc_project_id" : "aeiou"
+    },
+    "lbaction_num_requests_to_dispatch" : 123
+  },
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#ServiceEngineGroupInventory">ServiceEngineGroupInventory</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="serviceenginegroupInventoryUuidPatch"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /serviceenginegroup-inventory/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceenginegroupInventoryUuidPatch</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; ServiceEngineGroupInventory object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ServiceEngineGroupInventory">ServiceEngineGroupInventory</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "serviceengins" : [ {
+    "ref" : "aeiou"
+  } ],
+  "virtualservices" : [ {
+    "ref" : "aeiou"
+  } ],
+  "upgradestatus" : {
+    "image_ref" : "aeiou",
+    "enable_rollback" : true,
+    "obj_cloud_ref" : "aeiou",
+    "end_time" : "aeiou",
+    "patch_image_ref" : "aeiou",
+    "total_tasks" : 123,
+    "uuid" : "aeiou",
+    "version" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou",
+    "start_time" : "aeiou",
+    "node_type" : "aeiou",
+    "tasks_completed" : 123,
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "state" : {
+      "reason" : "aeiou",
+      "rebooted" : true,
+      "last_changed_time" : {
+        "usecs" : 123456789,
+        "secs" : 123456789
+      },
+      "state" : "aeiou"
+    },
+    "enable_patch_rollback" : true,
+    "upgrade_ops" : "aeiou"
+  },
+  "config" : {
+    "se_rum_sampling_res_interval" : 123,
+    "se_log_buffer_conn_blocking_dequeue" : true,
+    "extra_config_multiplier" : 1.3579000000000001069366817318950779736042022705078125,
+    "core_shm_app_cache" : true,
+    "host_gateway_monitor" : true,
+    "se_dos_profile" : {
+      "thresh_period" : 123,
+      "thresh_info" : [ {
+        "min_value" : 123,
+        "attack" : "aeiou",
+        "max_value" : 123
+      } ]
+    },
+    "grpc_channel_connect_timeout" : 123,
+    "se_flow_probe_retry_timer" : 123,
+    "l7_resvd_listen_conns_per_core" : 123,
+    "vs_scalein_timeout" : 123,
+    "se_dump_core_on_assert" : true,
+    "se_pcap_qdisc_bypass" : true,
+    "se_dp_log_nf_enqueue_percent" : 123,
+    "se_l3_encap_ipc" : 123,
+    "vs_se_scaleout_additional_wait_time" : 123,
+    "active_standby" : true,
+    "service_ip6_subnets" : [ "" ],
+    "se_kni_burst_factor" : 123,
+    "vnic_dhcp_ip_max_retries" : 123,
+    "http_rum_min_content_length" : 123,
+    "resync_time_interval" : 123,
+    "se_log_buffer_app_blocking_dequeue" : true,
+    "log_agent_file_sz_event" : 123,
+    "log_message_max_file_list_size" : 123,
+    "min_scaleout_per_vs" : 123,
+    "self_se_election" : true,
+    "labels" : [ {
+      "value" : "aeiou",
+      "key" : "aeiou"
+    } ],
+    "vcenter_datastores_include" : true,
+    "disk_per_se" : 123,
+    "memory_for_config_update" : 123,
+    "host_attribute_key" : "aeiou",
+    "accelerated_networking" : true,
+    "app_cache_threshold" : 123,
+    "kni_allowed_server_ports" : [ {
+      "protocol" : "aeiou",
+      "range" : ""
+    } ],
+    "instance_flavor" : "aeiou",
+    "se_time_tracker_props" : {
+      "egress_audit_mode" : "aeiou",
+      "ingress_threshold" : 123,
+      "egress_threshold" : 123,
+      "event_gen_window" : 123456789,
+      "ingress_audit_mode" : "aeiou"
+    },
+    "disable_se_memory_check" : true,
+    "log_agent_trace_enabled" : true,
+    "se_probe_port" : 123,
+    "app_learning_memory_percent" : 123,
+    "dp_hb_timeout_count" : 123,
+    "se_vnic_tx_sw_queue_flush_frequency" : 123,
+    "max_skb_frags" : 123,
+    "data_network_id" : "aeiou",
+    "log_disksz" : 123,
+    "sdb_pipeline_size" : 123,
+    "ingress_access_data" : "aeiou",
+    "se_sb_dedicated_core" : true,
+    "gratarp_permanent_periodicity" : 123,
+    "log_agent_max_concurrent_rsync" : 123,
+    "se_vs_hb_max_pkts_in_batch" : 123,
+    "se_dp_vnic_queue_stall_event_sleep" : 123,
+    "log_malloc_failure" : true,
+    "vcenter_datastore_mode" : "aeiou",
+    "license_type" : "aeiou",
+    "flow_table_new_syn_max_entries" : 123,
+    "use_dp_util_for_scaleout" : true,
+    "log_agent_file_sz_debug" : 123,
+    "vs_scalein_timeout_for_upgrade" : 123,
+    "objsync_config" : {
+      "objsync_cpu_limit" : 123,
+      "objsync_hub_elect_interval" : 123,
+      "objsync_reconcile_interval" : 123
+    },
+    "custom_tag" : [ {
+      "tag_key" : "aeiou",
+      "tag_val" : "aeiou"
+    } ],
+    "num_flow_cores_sum_changes_to_ignore" : 123,
+    "openstack_mgmt_network_uuid" : "aeiou",
+    "core_shm_app_learning" : true,
+    "per_app" : true,
+    "vcenter_folder" : "aeiou",
+    "vnicdb_cmd_history_size" : 123,
+    "algo" : "aeiou",
+    "max_se" : 123,
+    "user_agent_cache_config" : {
+      "se_cache_size" : 123,
+      "batch_size" : 123,
+      "percent_reserved_for_good_bots" : 123,
+      "percent_reserved_for_browsers" : 123,
+      "max_upstream_queries" : 123,
+      "upstream_update_interval" : 123,
+      "num_entries_upstream_update" : 123,
+      "max_last_hit_time" : 123,
+      "max_age" : 123,
+      "controller_cache_size" : 123,
+      "percent_reserved_for_bad_bots" : 123,
+      "max_wait_time" : 123,
+      "percent_reserved_for_outstanding" : 123
+    },
+    "per_vs_admission_control" : true,
+    "shm_minimum_config_memory" : 123,
+    "lbaction_rq_per_request_max_retries" : 123,
+    "hardwaresecuritymodulegroup_ref" : "aeiou",
+    "http_rum_console_log" : true,
+    "vnic_probe_interval" : 123,
+    "handle_per_pkt_attack" : true,
+    "compress_ip_rules_for_each_ns_subnet" : true,
+    "log_agent_min_storage_per_vs" : 123,
+    "se_dp_vnic_queue_stall_threshold" : 123,
+    "se_dp_log_udf_enqueue_percent" : 123,
+    "udf_log_throttle" : 123,
+    "sdb_flush_interval" : 123,
+    "se_dp_vnic_restart_on_queue_stall_count" : 123,
+    "custom_securitygroups_mgmt" : [ "aeiou" ],
+    "min_se" : 123,
+    "waf_mempool_size" : 123,
+    "disable_avi_securitygroups" : true,
+    "se_packet_buffer_max" : 123,
+    "max_cpu_usage" : 123,
+    "ngx_free_connection_stack" : true,
+    "enable_hsm_log" : true,
+    "hm_on_standby" : true,
+    "name" : "aeiou",
+    "se_rum_sampling_nav_percent" : 123,
+    "sdb_scan_count" : 123,
+    "vs_switchover_timeout" : 123,
+    "free_list_size" : 123,
+    "se_hyperthreaded_mode" : "aeiou",
+    "min_cpu_usage" : 123,
+    "ntp_sync_status_interval" : 123,
+    "cpu_socket_affinity" : true,
+    "se_group_analytics_policy" : {
+      "metrics_event_thresholds" : [ {
+        "reset_threshold" : 1.3579000000000001069366817318950779736042022705078125,
+        "watermark_thresholds" : [ "" ],
+        "metrics_event_threshold_type" : "aeiou"
+      } ]
+    },
+    "se_rum_sampling_res_percent" : 123,
+    "dp_deq_interval_msec" : 123,
+    "description" : "aeiou",
+    "log_agent_max_storage_ignore_percent" : 1.3579000000000001069366817318950779736042022705078125,
+    "se_emulated_cores" : 123,
+    "se_tracert_port_range" : "",
+    "async_ssl_threads" : 123,
+    "enable_gratarp_permanent" : true,
+    "realtime_se_metrics" : {
+      "duration" : 123,
+      "enabled" : true
+    },
+    "archive_shm_limit" : 123,
+    "max_num_se_dps" : 123,
+    "se_dp_max_hb_version" : 123,
+    "log_agent_file_sz_conn" : 123,
+    "log_agent_unknown_vs_timer" : 123,
+    "ignore_docker_mac_change" : true,
+    "se_pcap_reinit_frequency" : 123,
+    "se_dp_hm_drops" : 123,
+    "send_se_ready_timeout" : 123,
+    "se_dp_isolation" : true,
+    "disable_csum_offloads" : true,
+    "cpu_reserve" : true,
+    "se_deprovision_delay" : 123,
+    "distribute_vnics" : true,
+    "max_rules_per_lb" : 123,
+    "vip_asg" : {
+      "configuration" : {
+        "zones" : [ {
+          "availability_zone" : "aeiou",
+          "subnet_uuid" : "aeiou",
+          "fip_capable" : true
+        } ]
+      },
+      "policy" : {
+        "suspend" : true,
+        "min_size" : 123,
+        "dns_cooldown" : 123,
+        "max_size" : 123
+      }
+    },
+    "upstream_connect_timeout" : 123,
+    "mgmt_network_ref" : "aeiou",
+    "vcenter_datastores" : [ {
+      "datastore_name" : "aeiou",
+      "managed_object_id" : "aeiou"
+    } ],
+    "se_dp_vnic_queue_stall_timeout" : 123,
+    "vcenters" : [ {
+      "nsxt_datastores" : {
+        "include" : true,
+        "ds_ids" : [ "aeiou" ]
+      },
+      "nsxt_clusters" : {
+        "include" : true,
+        "cluster_ids" : [ "aeiou" ]
+      },
+      "vcenter_folder" : "aeiou",
+      "nsxt_hosts" : {
+        "include" : true,
+        "host_ids" : [ "aeiou" ]
+      },
+      "clusters" : [ {
+        "cluster_id" : "aeiou",
+        "override_vsphere_ha" : true,
+        "vmg_name" : "aeiou"
+      } ],
+      "vcenter_ref" : "aeiou"
+    } ],
+    "netlink_poller_threads" : 123,
+    "upstream_connpool_enable" : true,
+    "minimum_connection_memory" : 123,
+    "log_agent_compress_logs" : true,
+    "mgmt_subnet" : "",
+    "connection_memory_percentage" : 123,
+    "dp_hb_frequency" : 123,
+    "replay_vrf_routes_interval" : 123,
+    "extra_shared_config_memory" : 123,
+    "se_delayed_flow_delete" : true,
+    "se_name_prefix" : "aeiou",
+    "se_vnic_tx_sw_queue_size" : 123,
+    "cloud_ref" : "aeiou",
+    "se_sb_threads" : 123,
+    "configpb_attributes" : {
+      "version" : 123
+    },
+    "num_dispatcher_queues" : 123,
+    "buffer_se" : 123,
+    "deactivate_kni_filtering_at_dispatcher" : true,
+    "max_public_ips_per_lb" : 123,
+    "ntp_sync_fail_event" : true,
+    "mem_reserve" : true,
+    "l7_conns_per_core" : 123,
+    "openstack_mgmt_network_name" : "aeiou",
+    "pcap_tx_ring_rd_balancing_factor" : 123,
+    "ssl_sess_cache_per_vs" : 123,
+    "max_scaleout_per_vs" : 123,
+    "se_use_dpdk" : 123,
+    "enable_multi_lb" : true,
+    "hybrid_rss_mode" : true,
+    "os_reserved_memory" : 123,
+    "vcenter_clusters" : {
+      "include" : true,
+      "cluster_refs" : [ "aeiou" ]
+    },
+    "vss_placement" : {
+      "num_subcores" : 123,
+      "core_nonaffinity" : 123
+    },
+    "availability_zone_refs" : [ "aeiou" ],
+    "datascript_timeout" : 123456789,
+    "dp_aggressive_hb_timeout_count" : 123,
+    "dp_aggressive_hb_frequency" : 123,
+    "app_cache_percent" : 123,
+    "license_tier" : "aeiou",
+    "log_agent_log_storage_min_sz" : 123,
+    "bgp_state_update_interval" : 123,
+    "host_attribute_value" : "aeiou",
+    "vcpus_per_se" : 123,
+    "netlink_sock_buf_size" : 123,
+    "non_significant_log_throttle" : 123,
+    "ns_helper_deq_interval_msec" : 123,
+    "vnic_rpc_retry_interval" : 123,
+    "allow_burst" : true,
+    "reboot_on_panic" : true,
+    "transient_shared_memory_max" : 123,
+    "dp_enq_interval_msec" : 123,
+    "se_tunnel_udp_port" : 123,
+    "se_pcap_pkt_sz" : 123,
+    "auto_rebalance" : true,
+    "ha_mode" : "aeiou",
+    "disable_tso" : true,
+    "log_agent_max_storage_excess_percent" : 123,
+    "se_dpdk_pmd" : 123,
+    "vss_placement_enabled" : true,
+    "se_dp_vnic_stall_se_restart_window" : 123,
+    "distribute_load_active_standby" : true,
+    "deactivate_ipv6_discovery" : true,
+    "auto_rebalance_interval" : 123,
+    "max_queues_per_vnic" : 123,
+    "auto_rebalance_criteria" : [ "aeiou" ],
+    "max_memory_per_mempool" : 123,
+    "n_log_streaming_threads" : 123,
+    "url" : "aeiou",
+    "se_bandwidth_type" : "aeiou",
+    "dp_aggressive_enq_interval_msec" : 123,
+    "num_dispatcher_cores" : 123,
+    "use_objsync" : true,
+    "markers" : [ {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    } ],
+    "upstream_read_timeout" : 123,
+    "ingress_access_mgmt" : "aeiou",
+    "se_pcap_lookahead" : true,
+    "ignore_rtt_threshold" : 123,
+    "waf_mempool" : true,
+    "heap_minimum_config_memory" : 123,
+    "openstack_availability_zones" : [ "aeiou" ],
+    "se_tunnel_mode" : 123,
+    "max_concurrent_external_hm" : 123,
+    "config_debugs_on_all_cores" : true,
+    "se_vs_hb_max_vs_in_pkt" : 123,
+    "least_load_core_selection" : true,
+    "uuid" : "aeiou",
+    "vs_se_scaleout_ready_timeout" : 123,
+    "se_rl_prop" : {
+      "msf_num_stages" : 123,
+      "msf_stage_size" : 123456789
+    },
+    "enable_hsm_priming" : true,
+    "log_agent_debug_enabled" : true,
+    "se_ip_encap_ipc" : 123,
+    "se_udp_encap_ipc" : 123,
+    "vcenter_hosts" : {
+      "include" : true,
+      "host_refs" : [ "aeiou" ]
+    },
+    "log_agent_file_sz_appl" : 123,
+    "bgp_peer_monitor_failover_enabled" : true,
+    "se_dp_isolation_num_non_dp_cpus" : 123,
+    "use_standard_alb" : true,
+    "disable_gro" : true,
+    "pcap_tx_mode" : "aeiou",
+    "instance_flavor_info" : {
+      "cost" : "aeiou",
+      "ram_mb" : 123,
+      "max_ips_per_nic" : 123,
+      "vcpus" : 123,
+      "enhanced_nw" : true,
+      "is_recommended" : true,
+      "public" : true,
+      "max_nics" : 123,
+      "meta" : [ {
+        "value" : "aeiou",
+        "key" : "aeiou"
+      } ],
+      "max_ip6s_per_nic" : 123,
+      "name" : "aeiou",
+      "id" : "aeiou",
+      "disk_gb" : 123
+    },
+    "se_pcap_pkt_count" : 123,
+    "se_thread_multiplier" : 123,
+    "ephemeral_portrange_start" : 123,
+    "log_agent_sleep_interval" : 123,
+    "se_flow_probe_retries" : 123,
+    "se_mp_ring_retry_count" : 123,
+    "baremetal_dispatcher_handles_flows" : true,
+    "dedicated_dispatcher_core" : true,
+    "auto_redistribute_active_standby_load" : true,
+    "enable_pcap_tx_ring" : true,
+    "se_mtu" : 123,
+    "se_tx_batch_size" : 123,
+    "user_defined_metric_age" : 123,
+    "custom_securitygroups_data" : [ "aeiou" ],
+    "disable_flow_probes" : true,
+    "downstream_send_timeout" : 123,
+    "iptables" : [ {
+      "chain" : "aeiou",
+      "rules" : [ {
+        "src_ip" : "",
+        "src_port" : "",
+        "input_interface" : "aeiou",
+        "proto" : "aeiou",
+        "dnat_ip" : {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        },
+        "dst_port" : {
+          "start" : 123,
+          "end" : 123
+        },
+        "action" : "aeiou",
+        "output_interface" : "aeiou",
+        "tag" : "aeiou",
+        "dst_ip" : {
+          "ip_addr" : "",
+          "mask" : 123
+        }
+      } ],
+      "table" : "aeiou"
+    } ],
+    "upstream_send_timeout" : 123,
+    "se_pcap_reinit_threshold" : 123,
+    "aggressive_failure_detection" : true,
+    "se_lro" : true,
+    "dpdk_gro_timeout_interval" : 123,
+    "max_vs_per_se" : 123,
+    "vnic_dhcp_ip_check_interval" : 123,
+    "_last_modified" : "aeiou",
+    "significant_log_throttle" : 123,
+    "se_rum_sampling_nav_interval" : 123,
+    "vcenter_parking_vnic_pg" : "aeiou",
+    "hypervisor" : "aeiou",
+    "use_legacy_netlink" : true,
+    "use_hyperthreaded_cores" : true,
+    "se_dp_if_state_poll_interval" : 123,
+    "service_ip_subnets" : [ "" ],
+    "memory_per_se" : 123,
+    "auto_rebalance_capacity_per_se" : [ "" ],
+    "dp_aggressive_deq_interval_msec" : 123,
+    "se_log_buffer_events_blocking_dequeue" : true,
+    "ssl_preprocess_sni_hostname" : true,
+    "vs_host_redundancy" : true,
+    "placement_mode" : "aeiou",
+    "distribute_queues" : true,
+    "se_txq_threshold" : 123,
+    "vnic_ip_delete_interval" : 123,
+    "async_ssl" : true,
+    "ephemeral_portrange_end" : 123,
+    "vs_scaleout_timeout" : 123,
+    "tenant_ref" : "aeiou",
+    "objsync_port" : 123,
+    "gcp_config" : {
+      "backend_data_vpc_network_name" : "aeiou",
+      "backend_data_vpc_subnet_name" : "aeiou",
+      "backend_data_vpc_project_id" : "aeiou"
+    },
+    "lbaction_num_requests_to_dispatch" : 123
+  },
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#ServiceEngineGroupInventory">ServiceEngineGroupInventory</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="serviceenginegroupInventoryUuidPut"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /serviceenginegroup-inventory/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceenginegroupInventoryUuidPut</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; ServiceEngineGroupInventory object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ServiceEngineGroupInventory">ServiceEngineGroupInventory</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "serviceengins" : [ {
+    "ref" : "aeiou"
+  } ],
+  "virtualservices" : [ {
+    "ref" : "aeiou"
+  } ],
+  "upgradestatus" : {
+    "image_ref" : "aeiou",
+    "enable_rollback" : true,
+    "obj_cloud_ref" : "aeiou",
+    "end_time" : "aeiou",
+    "patch_image_ref" : "aeiou",
+    "total_tasks" : 123,
+    "uuid" : "aeiou",
+    "version" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou",
+    "start_time" : "aeiou",
+    "node_type" : "aeiou",
+    "tasks_completed" : 123,
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "state" : {
+      "reason" : "aeiou",
+      "rebooted" : true,
+      "last_changed_time" : {
+        "usecs" : 123456789,
+        "secs" : 123456789
+      },
+      "state" : "aeiou"
+    },
+    "enable_patch_rollback" : true,
+    "upgrade_ops" : "aeiou"
+  },
+  "config" : {
+    "se_rum_sampling_res_interval" : 123,
+    "se_log_buffer_conn_blocking_dequeue" : true,
+    "extra_config_multiplier" : 1.3579000000000001069366817318950779736042022705078125,
+    "core_shm_app_cache" : true,
+    "host_gateway_monitor" : true,
+    "se_dos_profile" : {
+      "thresh_period" : 123,
+      "thresh_info" : [ {
+        "min_value" : 123,
+        "attack" : "aeiou",
+        "max_value" : 123
+      } ]
+    },
+    "grpc_channel_connect_timeout" : 123,
+    "se_flow_probe_retry_timer" : 123,
+    "l7_resvd_listen_conns_per_core" : 123,
+    "vs_scalein_timeout" : 123,
+    "se_dump_core_on_assert" : true,
+    "se_pcap_qdisc_bypass" : true,
+    "se_dp_log_nf_enqueue_percent" : 123,
+    "se_l3_encap_ipc" : 123,
+    "vs_se_scaleout_additional_wait_time" : 123,
+    "active_standby" : true,
+    "service_ip6_subnets" : [ "" ],
+    "se_kni_burst_factor" : 123,
+    "vnic_dhcp_ip_max_retries" : 123,
+    "http_rum_min_content_length" : 123,
+    "resync_time_interval" : 123,
+    "se_log_buffer_app_blocking_dequeue" : true,
+    "log_agent_file_sz_event" : 123,
+    "log_message_max_file_list_size" : 123,
+    "min_scaleout_per_vs" : 123,
+    "self_se_election" : true,
+    "labels" : [ {
+      "value" : "aeiou",
+      "key" : "aeiou"
+    } ],
+    "vcenter_datastores_include" : true,
+    "disk_per_se" : 123,
+    "memory_for_config_update" : 123,
+    "host_attribute_key" : "aeiou",
+    "accelerated_networking" : true,
+    "app_cache_threshold" : 123,
+    "kni_allowed_server_ports" : [ {
+      "protocol" : "aeiou",
+      "range" : ""
+    } ],
+    "instance_flavor" : "aeiou",
+    "se_time_tracker_props" : {
+      "egress_audit_mode" : "aeiou",
+      "ingress_threshold" : 123,
+      "egress_threshold" : 123,
+      "event_gen_window" : 123456789,
+      "ingress_audit_mode" : "aeiou"
+    },
+    "disable_se_memory_check" : true,
+    "log_agent_trace_enabled" : true,
+    "se_probe_port" : 123,
+    "app_learning_memory_percent" : 123,
+    "dp_hb_timeout_count" : 123,
+    "se_vnic_tx_sw_queue_flush_frequency" : 123,
+    "max_skb_frags" : 123,
+    "data_network_id" : "aeiou",
+    "log_disksz" : 123,
+    "sdb_pipeline_size" : 123,
+    "ingress_access_data" : "aeiou",
+    "se_sb_dedicated_core" : true,
+    "gratarp_permanent_periodicity" : 123,
+    "log_agent_max_concurrent_rsync" : 123,
+    "se_vs_hb_max_pkts_in_batch" : 123,
+    "se_dp_vnic_queue_stall_event_sleep" : 123,
+    "log_malloc_failure" : true,
+    "vcenter_datastore_mode" : "aeiou",
+    "license_type" : "aeiou",
+    "flow_table_new_syn_max_entries" : 123,
+    "use_dp_util_for_scaleout" : true,
+    "log_agent_file_sz_debug" : 123,
+    "vs_scalein_timeout_for_upgrade" : 123,
+    "objsync_config" : {
+      "objsync_cpu_limit" : 123,
+      "objsync_hub_elect_interval" : 123,
+      "objsync_reconcile_interval" : 123
+    },
+    "custom_tag" : [ {
+      "tag_key" : "aeiou",
+      "tag_val" : "aeiou"
+    } ],
+    "num_flow_cores_sum_changes_to_ignore" : 123,
+    "openstack_mgmt_network_uuid" : "aeiou",
+    "core_shm_app_learning" : true,
+    "per_app" : true,
+    "vcenter_folder" : "aeiou",
+    "vnicdb_cmd_history_size" : 123,
+    "algo" : "aeiou",
+    "max_se" : 123,
+    "user_agent_cache_config" : {
+      "se_cache_size" : 123,
+      "batch_size" : 123,
+      "percent_reserved_for_good_bots" : 123,
+      "percent_reserved_for_browsers" : 123,
+      "max_upstream_queries" : 123,
+      "upstream_update_interval" : 123,
+      "num_entries_upstream_update" : 123,
+      "max_last_hit_time" : 123,
+      "max_age" : 123,
+      "controller_cache_size" : 123,
+      "percent_reserved_for_bad_bots" : 123,
+      "max_wait_time" : 123,
+      "percent_reserved_for_outstanding" : 123
+    },
+    "per_vs_admission_control" : true,
+    "shm_minimum_config_memory" : 123,
+    "lbaction_rq_per_request_max_retries" : 123,
+    "hardwaresecuritymodulegroup_ref" : "aeiou",
+    "http_rum_console_log" : true,
+    "vnic_probe_interval" : 123,
+    "handle_per_pkt_attack" : true,
+    "compress_ip_rules_for_each_ns_subnet" : true,
+    "log_agent_min_storage_per_vs" : 123,
+    "se_dp_vnic_queue_stall_threshold" : 123,
+    "se_dp_log_udf_enqueue_percent" : 123,
+    "udf_log_throttle" : 123,
+    "sdb_flush_interval" : 123,
+    "se_dp_vnic_restart_on_queue_stall_count" : 123,
+    "custom_securitygroups_mgmt" : [ "aeiou" ],
+    "min_se" : 123,
+    "waf_mempool_size" : 123,
+    "disable_avi_securitygroups" : true,
+    "se_packet_buffer_max" : 123,
+    "max_cpu_usage" : 123,
+    "ngx_free_connection_stack" : true,
+    "enable_hsm_log" : true,
+    "hm_on_standby" : true,
+    "name" : "aeiou",
+    "se_rum_sampling_nav_percent" : 123,
+    "sdb_scan_count" : 123,
+    "vs_switchover_timeout" : 123,
+    "free_list_size" : 123,
+    "se_hyperthreaded_mode" : "aeiou",
+    "min_cpu_usage" : 123,
+    "ntp_sync_status_interval" : 123,
+    "cpu_socket_affinity" : true,
+    "se_group_analytics_policy" : {
+      "metrics_event_thresholds" : [ {
+        "reset_threshold" : 1.3579000000000001069366817318950779736042022705078125,
+        "watermark_thresholds" : [ "" ],
+        "metrics_event_threshold_type" : "aeiou"
+      } ]
+    },
+    "se_rum_sampling_res_percent" : 123,
+    "dp_deq_interval_msec" : 123,
+    "description" : "aeiou",
+    "log_agent_max_storage_ignore_percent" : 1.3579000000000001069366817318950779736042022705078125,
+    "se_emulated_cores" : 123,
+    "se_tracert_port_range" : "",
+    "async_ssl_threads" : 123,
+    "enable_gratarp_permanent" : true,
+    "realtime_se_metrics" : {
+      "duration" : 123,
+      "enabled" : true
+    },
+    "archive_shm_limit" : 123,
+    "max_num_se_dps" : 123,
+    "se_dp_max_hb_version" : 123,
+    "log_agent_file_sz_conn" : 123,
+    "log_agent_unknown_vs_timer" : 123,
+    "ignore_docker_mac_change" : true,
+    "se_pcap_reinit_frequency" : 123,
+    "se_dp_hm_drops" : 123,
+    "send_se_ready_timeout" : 123,
+    "se_dp_isolation" : true,
+    "disable_csum_offloads" : true,
+    "cpu_reserve" : true,
+    "se_deprovision_delay" : 123,
+    "distribute_vnics" : true,
+    "max_rules_per_lb" : 123,
+    "vip_asg" : {
+      "configuration" : {
+        "zones" : [ {
+          "availability_zone" : "aeiou",
+          "subnet_uuid" : "aeiou",
+          "fip_capable" : true
+        } ]
+      },
+      "policy" : {
+        "suspend" : true,
+        "min_size" : 123,
+        "dns_cooldown" : 123,
+        "max_size" : 123
+      }
+    },
+    "upstream_connect_timeout" : 123,
+    "mgmt_network_ref" : "aeiou",
+    "vcenter_datastores" : [ {
+      "datastore_name" : "aeiou",
+      "managed_object_id" : "aeiou"
+    } ],
+    "se_dp_vnic_queue_stall_timeout" : 123,
+    "vcenters" : [ {
+      "nsxt_datastores" : {
+        "include" : true,
+        "ds_ids" : [ "aeiou" ]
+      },
+      "nsxt_clusters" : {
+        "include" : true,
+        "cluster_ids" : [ "aeiou" ]
+      },
+      "vcenter_folder" : "aeiou",
+      "nsxt_hosts" : {
+        "include" : true,
+        "host_ids" : [ "aeiou" ]
+      },
+      "clusters" : [ {
+        "cluster_id" : "aeiou",
+        "override_vsphere_ha" : true,
+        "vmg_name" : "aeiou"
+      } ],
+      "vcenter_ref" : "aeiou"
+    } ],
+    "netlink_poller_threads" : 123,
+    "upstream_connpool_enable" : true,
+    "minimum_connection_memory" : 123,
+    "log_agent_compress_logs" : true,
+    "mgmt_subnet" : "",
+    "connection_memory_percentage" : 123,
+    "dp_hb_frequency" : 123,
+    "replay_vrf_routes_interval" : 123,
+    "extra_shared_config_memory" : 123,
+    "se_delayed_flow_delete" : true,
+    "se_name_prefix" : "aeiou",
+    "se_vnic_tx_sw_queue_size" : 123,
+    "cloud_ref" : "aeiou",
+    "se_sb_threads" : 123,
+    "configpb_attributes" : {
+      "version" : 123
+    },
+    "num_dispatcher_queues" : 123,
+    "buffer_se" : 123,
+    "deactivate_kni_filtering_at_dispatcher" : true,
+    "max_public_ips_per_lb" : 123,
+    "ntp_sync_fail_event" : true,
+    "mem_reserve" : true,
+    "l7_conns_per_core" : 123,
+    "openstack_mgmt_network_name" : "aeiou",
+    "pcap_tx_ring_rd_balancing_factor" : 123,
+    "ssl_sess_cache_per_vs" : 123,
+    "max_scaleout_per_vs" : 123,
+    "se_use_dpdk" : 123,
+    "enable_multi_lb" : true,
+    "hybrid_rss_mode" : true,
+    "os_reserved_memory" : 123,
+    "vcenter_clusters" : {
+      "include" : true,
+      "cluster_refs" : [ "aeiou" ]
+    },
+    "vss_placement" : {
+      "num_subcores" : 123,
+      "core_nonaffinity" : 123
+    },
+    "availability_zone_refs" : [ "aeiou" ],
+    "datascript_timeout" : 123456789,
+    "dp_aggressive_hb_timeout_count" : 123,
+    "dp_aggressive_hb_frequency" : 123,
+    "app_cache_percent" : 123,
+    "license_tier" : "aeiou",
+    "log_agent_log_storage_min_sz" : 123,
+    "bgp_state_update_interval" : 123,
+    "host_attribute_value" : "aeiou",
+    "vcpus_per_se" : 123,
+    "netlink_sock_buf_size" : 123,
+    "non_significant_log_throttle" : 123,
+    "ns_helper_deq_interval_msec" : 123,
+    "vnic_rpc_retry_interval" : 123,
+    "allow_burst" : true,
+    "reboot_on_panic" : true,
+    "transient_shared_memory_max" : 123,
+    "dp_enq_interval_msec" : 123,
+    "se_tunnel_udp_port" : 123,
+    "se_pcap_pkt_sz" : 123,
+    "auto_rebalance" : true,
+    "ha_mode" : "aeiou",
+    "disable_tso" : true,
+    "log_agent_max_storage_excess_percent" : 123,
+    "se_dpdk_pmd" : 123,
+    "vss_placement_enabled" : true,
+    "se_dp_vnic_stall_se_restart_window" : 123,
+    "distribute_load_active_standby" : true,
+    "deactivate_ipv6_discovery" : true,
+    "auto_rebalance_interval" : 123,
+    "max_queues_per_vnic" : 123,
+    "auto_rebalance_criteria" : [ "aeiou" ],
+    "max_memory_per_mempool" : 123,
+    "n_log_streaming_threads" : 123,
+    "url" : "aeiou",
+    "se_bandwidth_type" : "aeiou",
+    "dp_aggressive_enq_interval_msec" : 123,
+    "num_dispatcher_cores" : 123,
+    "use_objsync" : true,
+    "markers" : [ {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    } ],
+    "upstream_read_timeout" : 123,
+    "ingress_access_mgmt" : "aeiou",
+    "se_pcap_lookahead" : true,
+    "ignore_rtt_threshold" : 123,
+    "waf_mempool" : true,
+    "heap_minimum_config_memory" : 123,
+    "openstack_availability_zones" : [ "aeiou" ],
+    "se_tunnel_mode" : 123,
+    "max_concurrent_external_hm" : 123,
+    "config_debugs_on_all_cores" : true,
+    "se_vs_hb_max_vs_in_pkt" : 123,
+    "least_load_core_selection" : true,
+    "uuid" : "aeiou",
+    "vs_se_scaleout_ready_timeout" : 123,
+    "se_rl_prop" : {
+      "msf_num_stages" : 123,
+      "msf_stage_size" : 123456789
+    },
+    "enable_hsm_priming" : true,
+    "log_agent_debug_enabled" : true,
+    "se_ip_encap_ipc" : 123,
+    "se_udp_encap_ipc" : 123,
+    "vcenter_hosts" : {
+      "include" : true,
+      "host_refs" : [ "aeiou" ]
+    },
+    "log_agent_file_sz_appl" : 123,
+    "bgp_peer_monitor_failover_enabled" : true,
+    "se_dp_isolation_num_non_dp_cpus" : 123,
+    "use_standard_alb" : true,
+    "disable_gro" : true,
+    "pcap_tx_mode" : "aeiou",
+    "instance_flavor_info" : {
+      "cost" : "aeiou",
+      "ram_mb" : 123,
+      "max_ips_per_nic" : 123,
+      "vcpus" : 123,
+      "enhanced_nw" : true,
+      "is_recommended" : true,
+      "public" : true,
+      "max_nics" : 123,
+      "meta" : [ {
+        "value" : "aeiou",
+        "key" : "aeiou"
+      } ],
+      "max_ip6s_per_nic" : 123,
+      "name" : "aeiou",
+      "id" : "aeiou",
+      "disk_gb" : 123
+    },
+    "se_pcap_pkt_count" : 123,
+    "se_thread_multiplier" : 123,
+    "ephemeral_portrange_start" : 123,
+    "log_agent_sleep_interval" : 123,
+    "se_flow_probe_retries" : 123,
+    "se_mp_ring_retry_count" : 123,
+    "baremetal_dispatcher_handles_flows" : true,
+    "dedicated_dispatcher_core" : true,
+    "auto_redistribute_active_standby_load" : true,
+    "enable_pcap_tx_ring" : true,
+    "se_mtu" : 123,
+    "se_tx_batch_size" : 123,
+    "user_defined_metric_age" : 123,
+    "custom_securitygroups_data" : [ "aeiou" ],
+    "disable_flow_probes" : true,
+    "downstream_send_timeout" : 123,
+    "iptables" : [ {
+      "chain" : "aeiou",
+      "rules" : [ {
+        "src_ip" : "",
+        "src_port" : "",
+        "input_interface" : "aeiou",
+        "proto" : "aeiou",
+        "dnat_ip" : {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        },
+        "dst_port" : {
+          "start" : 123,
+          "end" : 123
+        },
+        "action" : "aeiou",
+        "output_interface" : "aeiou",
+        "tag" : "aeiou",
+        "dst_ip" : {
+          "ip_addr" : "",
+          "mask" : 123
+        }
+      } ],
+      "table" : "aeiou"
+    } ],
+    "upstream_send_timeout" : 123,
+    "se_pcap_reinit_threshold" : 123,
+    "aggressive_failure_detection" : true,
+    "se_lro" : true,
+    "dpdk_gro_timeout_interval" : 123,
+    "max_vs_per_se" : 123,
+    "vnic_dhcp_ip_check_interval" : 123,
+    "_last_modified" : "aeiou",
+    "significant_log_throttle" : 123,
+    "se_rum_sampling_nav_interval" : 123,
+    "vcenter_parking_vnic_pg" : "aeiou",
+    "hypervisor" : "aeiou",
+    "use_legacy_netlink" : true,
+    "use_hyperthreaded_cores" : true,
+    "se_dp_if_state_poll_interval" : 123,
+    "service_ip_subnets" : [ "" ],
+    "memory_per_se" : 123,
+    "auto_rebalance_capacity_per_se" : [ "" ],
+    "dp_aggressive_deq_interval_msec" : 123,
+    "se_log_buffer_events_blocking_dequeue" : true,
+    "ssl_preprocess_sni_hostname" : true,
+    "vs_host_redundancy" : true,
+    "placement_mode" : "aeiou",
+    "distribute_queues" : true,
+    "se_txq_threshold" : 123,
+    "vnic_ip_delete_interval" : 123,
+    "async_ssl" : true,
+    "ephemeral_portrange_end" : 123,
+    "vs_scaleout_timeout" : 123,
+    "tenant_ref" : "aeiou",
+    "objsync_port" : 123,
+    "gcp_config" : {
+      "backend_data_vpc_network_name" : "aeiou",
+      "backend_data_vpc_subnet_name" : "aeiou",
+      "backend_data_vpc_project_id" : "aeiou"
+    },
+    "lbaction_num_requests_to_dispatch" : 123
+  },
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#ServiceEngineGroupInventory">ServiceEngineGroupInventory</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
@@ -2744,2728 +5466,6 @@ font-style: italic;
     <h4 class="field-label">200</h4>
     OK
         <a href="#ServiceEngineGroup">ServiceEngineGroup</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="serviceenginegroupinventoryGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /serviceenginegroupinventory</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">serviceenginegroupinventoryGet</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#ServiceEngineGroupInventoryApiResponse">ServiceEngineGroupInventoryApiResponse</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "next" : "aeiou",
-  "count" : 123,
-  "results" : [ {
-    "serviceengins" : [ {
-      "ref" : "aeiou"
-    } ],
-    "virtualservices" : [ {
-      "ref" : "aeiou"
-    } ],
-    "upgradestatus" : {
-      "image_ref" : "aeiou",
-      "enable_rollback" : true,
-      "obj_cloud_ref" : "aeiou",
-      "end_time" : "aeiou",
-      "patch_image_ref" : "aeiou",
-      "total_tasks" : 123,
-      "uuid" : "aeiou",
-      "version" : "aeiou",
-      "url" : "aeiou",
-      "_last_modified" : "aeiou",
-      "start_time" : "aeiou",
-      "node_type" : "aeiou",
-      "tasks_completed" : 123,
-      "tenant_ref" : "aeiou",
-      "name" : "aeiou",
-      "state" : {
-        "reason" : "aeiou",
-        "rebooted" : true,
-        "last_changed_time" : {
-          "usecs" : 123456789,
-          "secs" : 123456789
-        },
-        "state" : "aeiou"
-      },
-      "enable_patch_rollback" : true,
-      "upgrade_ops" : "aeiou"
-    },
-    "config" : {
-      "se_rum_sampling_res_interval" : 123,
-      "se_log_buffer_conn_blocking_dequeue" : true,
-      "extra_config_multiplier" : 1.3579000000000001069366817318950779736042022705078125,
-      "core_shm_app_cache" : true,
-      "host_gateway_monitor" : true,
-      "se_dos_profile" : {
-        "thresh_period" : 123,
-        "thresh_info" : [ {
-          "min_value" : 123,
-          "attack" : "aeiou",
-          "max_value" : 123
-        } ]
-      },
-      "grpc_channel_connect_timeout" : 123,
-      "se_flow_probe_retry_timer" : 123,
-      "l7_resvd_listen_conns_per_core" : 123,
-      "vs_scalein_timeout" : 123,
-      "se_dump_core_on_assert" : true,
-      "se_pcap_qdisc_bypass" : true,
-      "se_dp_log_nf_enqueue_percent" : 123,
-      "se_l3_encap_ipc" : 123,
-      "vs_se_scaleout_additional_wait_time" : 123,
-      "active_standby" : true,
-      "service_ip6_subnets" : [ "" ],
-      "se_kni_burst_factor" : 123,
-      "vnic_dhcp_ip_max_retries" : 123,
-      "http_rum_min_content_length" : 123,
-      "resync_time_interval" : 123,
-      "se_log_buffer_app_blocking_dequeue" : true,
-      "log_agent_file_sz_event" : 123,
-      "log_message_max_file_list_size" : 123,
-      "min_scaleout_per_vs" : 123,
-      "self_se_election" : true,
-      "labels" : [ {
-        "value" : "aeiou",
-        "key" : "aeiou"
-      } ],
-      "vcenter_datastores_include" : true,
-      "disk_per_se" : 123,
-      "memory_for_config_update" : 123,
-      "host_attribute_key" : "aeiou",
-      "accelerated_networking" : true,
-      "app_cache_threshold" : 123,
-      "kni_allowed_server_ports" : [ {
-        "protocol" : "aeiou",
-        "range" : ""
-      } ],
-      "instance_flavor" : "aeiou",
-      "se_time_tracker_props" : {
-        "egress_audit_mode" : "aeiou",
-        "ingress_threshold" : 123,
-        "egress_threshold" : 123,
-        "event_gen_window" : 123456789,
-        "ingress_audit_mode" : "aeiou"
-      },
-      "disable_se_memory_check" : true,
-      "log_agent_trace_enabled" : true,
-      "se_probe_port" : 123,
-      "app_learning_memory_percent" : 123,
-      "dp_hb_timeout_count" : 123,
-      "se_vnic_tx_sw_queue_flush_frequency" : 123,
-      "max_skb_frags" : 123,
-      "data_network_id" : "aeiou",
-      "log_disksz" : 123,
-      "sdb_pipeline_size" : 123,
-      "ingress_access_data" : "aeiou",
-      "se_sb_dedicated_core" : true,
-      "gratarp_permanent_periodicity" : 123,
-      "log_agent_max_concurrent_rsync" : 123,
-      "se_vs_hb_max_pkts_in_batch" : 123,
-      "se_dp_vnic_queue_stall_event_sleep" : 123,
-      "log_malloc_failure" : true,
-      "vcenter_datastore_mode" : "aeiou",
-      "license_type" : "aeiou",
-      "flow_table_new_syn_max_entries" : 123,
-      "use_dp_util_for_scaleout" : true,
-      "log_agent_file_sz_debug" : 123,
-      "vs_scalein_timeout_for_upgrade" : 123,
-      "objsync_config" : {
-        "objsync_cpu_limit" : 123,
-        "objsync_hub_elect_interval" : 123,
-        "objsync_reconcile_interval" : 123
-      },
-      "custom_tag" : [ {
-        "tag_key" : "aeiou",
-        "tag_val" : "aeiou"
-      } ],
-      "num_flow_cores_sum_changes_to_ignore" : 123,
-      "openstack_mgmt_network_uuid" : "aeiou",
-      "core_shm_app_learning" : true,
-      "per_app" : true,
-      "vcenter_folder" : "aeiou",
-      "vnicdb_cmd_history_size" : 123,
-      "algo" : "aeiou",
-      "max_se" : 123,
-      "user_agent_cache_config" : {
-        "se_cache_size" : 123,
-        "batch_size" : 123,
-        "percent_reserved_for_good_bots" : 123,
-        "percent_reserved_for_browsers" : 123,
-        "max_upstream_queries" : 123,
-        "upstream_update_interval" : 123,
-        "num_entries_upstream_update" : 123,
-        "max_last_hit_time" : 123,
-        "max_age" : 123,
-        "controller_cache_size" : 123,
-        "percent_reserved_for_bad_bots" : 123,
-        "max_wait_time" : 123,
-        "percent_reserved_for_outstanding" : 123
-      },
-      "per_vs_admission_control" : true,
-      "shm_minimum_config_memory" : 123,
-      "lbaction_rq_per_request_max_retries" : 123,
-      "hardwaresecuritymodulegroup_ref" : "aeiou",
-      "http_rum_console_log" : true,
-      "vnic_probe_interval" : 123,
-      "handle_per_pkt_attack" : true,
-      "compress_ip_rules_for_each_ns_subnet" : true,
-      "log_agent_min_storage_per_vs" : 123,
-      "se_dp_vnic_queue_stall_threshold" : 123,
-      "se_dp_log_udf_enqueue_percent" : 123,
-      "udf_log_throttle" : 123,
-      "sdb_flush_interval" : 123,
-      "se_dp_vnic_restart_on_queue_stall_count" : 123,
-      "custom_securitygroups_mgmt" : [ "aeiou" ],
-      "min_se" : 123,
-      "waf_mempool_size" : 123,
-      "disable_avi_securitygroups" : true,
-      "se_packet_buffer_max" : 123,
-      "max_cpu_usage" : 123,
-      "ngx_free_connection_stack" : true,
-      "enable_hsm_log" : true,
-      "hm_on_standby" : true,
-      "name" : "aeiou",
-      "se_rum_sampling_nav_percent" : 123,
-      "sdb_scan_count" : 123,
-      "vs_switchover_timeout" : 123,
-      "free_list_size" : 123,
-      "se_hyperthreaded_mode" : "aeiou",
-      "min_cpu_usage" : 123,
-      "ntp_sync_status_interval" : 123,
-      "cpu_socket_affinity" : true,
-      "se_group_analytics_policy" : {
-        "metrics_event_thresholds" : [ {
-          "reset_threshold" : 1.3579000000000001069366817318950779736042022705078125,
-          "watermark_thresholds" : [ "" ],
-          "metrics_event_threshold_type" : "aeiou"
-        } ]
-      },
-      "se_rum_sampling_res_percent" : 123,
-      "dp_deq_interval_msec" : 123,
-      "description" : "aeiou",
-      "log_agent_max_storage_ignore_percent" : 1.3579000000000001069366817318950779736042022705078125,
-      "se_emulated_cores" : 123,
-      "se_tracert_port_range" : "",
-      "async_ssl_threads" : 123,
-      "enable_gratarp_permanent" : true,
-      "realtime_se_metrics" : {
-        "duration" : 123,
-        "enabled" : true
-      },
-      "archive_shm_limit" : 123,
-      "max_num_se_dps" : 123,
-      "se_dp_max_hb_version" : 123,
-      "log_agent_file_sz_conn" : 123,
-      "log_agent_unknown_vs_timer" : 123,
-      "ignore_docker_mac_change" : true,
-      "se_pcap_reinit_frequency" : 123,
-      "se_dp_hm_drops" : 123,
-      "send_se_ready_timeout" : 123,
-      "se_dp_isolation" : true,
-      "disable_csum_offloads" : true,
-      "cpu_reserve" : true,
-      "se_deprovision_delay" : 123,
-      "distribute_vnics" : true,
-      "max_rules_per_lb" : 123,
-      "vip_asg" : {
-        "configuration" : {
-          "zones" : [ {
-            "availability_zone" : "aeiou",
-            "subnet_uuid" : "aeiou",
-            "fip_capable" : true
-          } ]
-        },
-        "policy" : {
-          "suspend" : true,
-          "min_size" : 123,
-          "dns_cooldown" : 123,
-          "max_size" : 123
-        }
-      },
-      "upstream_connect_timeout" : 123,
-      "mgmt_network_ref" : "aeiou",
-      "vcenter_datastores" : [ {
-        "datastore_name" : "aeiou",
-        "managed_object_id" : "aeiou"
-      } ],
-      "se_dp_vnic_queue_stall_timeout" : 123,
-      "vcenters" : [ {
-        "nsxt_datastores" : {
-          "include" : true,
-          "ds_ids" : [ "aeiou" ]
-        },
-        "nsxt_clusters" : {
-          "include" : true,
-          "cluster_ids" : [ "aeiou" ]
-        },
-        "vcenter_folder" : "aeiou",
-        "nsxt_hosts" : {
-          "include" : true,
-          "host_ids" : [ "aeiou" ]
-        },
-        "clusters" : [ {
-          "cluster_id" : "aeiou",
-          "override_vsphere_ha" : true,
-          "vmg_name" : "aeiou"
-        } ],
-        "vcenter_ref" : "aeiou"
-      } ],
-      "netlink_poller_threads" : 123,
-      "upstream_connpool_enable" : true,
-      "minimum_connection_memory" : 123,
-      "log_agent_compress_logs" : true,
-      "mgmt_subnet" : "",
-      "connection_memory_percentage" : 123,
-      "dp_hb_frequency" : 123,
-      "replay_vrf_routes_interval" : 123,
-      "extra_shared_config_memory" : 123,
-      "se_delayed_flow_delete" : true,
-      "se_name_prefix" : "aeiou",
-      "se_vnic_tx_sw_queue_size" : 123,
-      "cloud_ref" : "aeiou",
-      "se_sb_threads" : 123,
-      "configpb_attributes" : {
-        "version" : 123
-      },
-      "num_dispatcher_queues" : 123,
-      "buffer_se" : 123,
-      "deactivate_kni_filtering_at_dispatcher" : true,
-      "max_public_ips_per_lb" : 123,
-      "ntp_sync_fail_event" : true,
-      "mem_reserve" : true,
-      "l7_conns_per_core" : 123,
-      "openstack_mgmt_network_name" : "aeiou",
-      "pcap_tx_ring_rd_balancing_factor" : 123,
-      "ssl_sess_cache_per_vs" : 123,
-      "max_scaleout_per_vs" : 123,
-      "se_use_dpdk" : 123,
-      "enable_multi_lb" : true,
-      "hybrid_rss_mode" : true,
-      "os_reserved_memory" : 123,
-      "vcenter_clusters" : {
-        "include" : true,
-        "cluster_refs" : [ "aeiou" ]
-      },
-      "vss_placement" : {
-        "num_subcores" : 123,
-        "core_nonaffinity" : 123
-      },
-      "availability_zone_refs" : [ "aeiou" ],
-      "datascript_timeout" : 123456789,
-      "dp_aggressive_hb_timeout_count" : 123,
-      "dp_aggressive_hb_frequency" : 123,
-      "app_cache_percent" : 123,
-      "license_tier" : "aeiou",
-      "log_agent_log_storage_min_sz" : 123,
-      "bgp_state_update_interval" : 123,
-      "host_attribute_value" : "aeiou",
-      "vcpus_per_se" : 123,
-      "netlink_sock_buf_size" : 123,
-      "non_significant_log_throttle" : 123,
-      "ns_helper_deq_interval_msec" : 123,
-      "vnic_rpc_retry_interval" : 123,
-      "allow_burst" : true,
-      "reboot_on_panic" : true,
-      "transient_shared_memory_max" : 123,
-      "dp_enq_interval_msec" : 123,
-      "se_tunnel_udp_port" : 123,
-      "se_pcap_pkt_sz" : 123,
-      "auto_rebalance" : true,
-      "ha_mode" : "aeiou",
-      "disable_tso" : true,
-      "log_agent_max_storage_excess_percent" : 123,
-      "se_dpdk_pmd" : 123,
-      "vss_placement_enabled" : true,
-      "se_dp_vnic_stall_se_restart_window" : 123,
-      "distribute_load_active_standby" : true,
-      "deactivate_ipv6_discovery" : true,
-      "auto_rebalance_interval" : 123,
-      "max_queues_per_vnic" : 123,
-      "auto_rebalance_criteria" : [ "aeiou" ],
-      "max_memory_per_mempool" : 123,
-      "n_log_streaming_threads" : 123,
-      "url" : "aeiou",
-      "se_bandwidth_type" : "aeiou",
-      "dp_aggressive_enq_interval_msec" : 123,
-      "num_dispatcher_cores" : 123,
-      "use_objsync" : true,
-      "markers" : [ {
-        "values" : [ "aeiou" ],
-        "key" : "aeiou"
-      } ],
-      "upstream_read_timeout" : 123,
-      "ingress_access_mgmt" : "aeiou",
-      "se_pcap_lookahead" : true,
-      "ignore_rtt_threshold" : 123,
-      "waf_mempool" : true,
-      "heap_minimum_config_memory" : 123,
-      "openstack_availability_zones" : [ "aeiou" ],
-      "se_tunnel_mode" : 123,
-      "max_concurrent_external_hm" : 123,
-      "config_debugs_on_all_cores" : true,
-      "se_vs_hb_max_vs_in_pkt" : 123,
-      "least_load_core_selection" : true,
-      "uuid" : "aeiou",
-      "vs_se_scaleout_ready_timeout" : 123,
-      "se_rl_prop" : {
-        "msf_num_stages" : 123,
-        "msf_stage_size" : 123456789
-      },
-      "enable_hsm_priming" : true,
-      "log_agent_debug_enabled" : true,
-      "se_ip_encap_ipc" : 123,
-      "se_udp_encap_ipc" : 123,
-      "vcenter_hosts" : {
-        "include" : true,
-        "host_refs" : [ "aeiou" ]
-      },
-      "log_agent_file_sz_appl" : 123,
-      "bgp_peer_monitor_failover_enabled" : true,
-      "se_dp_isolation_num_non_dp_cpus" : 123,
-      "use_standard_alb" : true,
-      "disable_gro" : true,
-      "pcap_tx_mode" : "aeiou",
-      "instance_flavor_info" : {
-        "cost" : "aeiou",
-        "ram_mb" : 123,
-        "max_ips_per_nic" : 123,
-        "vcpus" : 123,
-        "enhanced_nw" : true,
-        "is_recommended" : true,
-        "public" : true,
-        "max_nics" : 123,
-        "meta" : [ {
-          "value" : "aeiou",
-          "key" : "aeiou"
-        } ],
-        "max_ip6s_per_nic" : 123,
-        "name" : "aeiou",
-        "id" : "aeiou",
-        "disk_gb" : 123
-      },
-      "se_pcap_pkt_count" : 123,
-      "se_thread_multiplier" : 123,
-      "ephemeral_portrange_start" : 123,
-      "log_agent_sleep_interval" : 123,
-      "se_flow_probe_retries" : 123,
-      "se_mp_ring_retry_count" : 123,
-      "baremetal_dispatcher_handles_flows" : true,
-      "dedicated_dispatcher_core" : true,
-      "auto_redistribute_active_standby_load" : true,
-      "enable_pcap_tx_ring" : true,
-      "se_mtu" : 123,
-      "se_tx_batch_size" : 123,
-      "user_defined_metric_age" : 123,
-      "custom_securitygroups_data" : [ "aeiou" ],
-      "disable_flow_probes" : true,
-      "downstream_send_timeout" : 123,
-      "iptables" : [ {
-        "chain" : "aeiou",
-        "rules" : [ {
-          "src_ip" : "",
-          "src_port" : "",
-          "input_interface" : "aeiou",
-          "proto" : "aeiou",
-          "dnat_ip" : {
-            "addr" : "aeiou",
-            "type" : "aeiou"
-          },
-          "dst_port" : {
-            "start" : 123,
-            "end" : 123
-          },
-          "action" : "aeiou",
-          "output_interface" : "aeiou",
-          "tag" : "aeiou",
-          "dst_ip" : {
-            "ip_addr" : "",
-            "mask" : 123
-          }
-        } ],
-        "table" : "aeiou"
-      } ],
-      "upstream_send_timeout" : 123,
-      "se_pcap_reinit_threshold" : 123,
-      "aggressive_failure_detection" : true,
-      "se_lro" : true,
-      "dpdk_gro_timeout_interval" : 123,
-      "max_vs_per_se" : 123,
-      "vnic_dhcp_ip_check_interval" : 123,
-      "_last_modified" : "aeiou",
-      "significant_log_throttle" : 123,
-      "se_rum_sampling_nav_interval" : 123,
-      "vcenter_parking_vnic_pg" : "aeiou",
-      "hypervisor" : "aeiou",
-      "use_legacy_netlink" : true,
-      "use_hyperthreaded_cores" : true,
-      "se_dp_if_state_poll_interval" : 123,
-      "service_ip_subnets" : [ "" ],
-      "memory_per_se" : 123,
-      "auto_rebalance_capacity_per_se" : [ "" ],
-      "dp_aggressive_deq_interval_msec" : 123,
-      "se_log_buffer_events_blocking_dequeue" : true,
-      "ssl_preprocess_sni_hostname" : true,
-      "vs_host_redundancy" : true,
-      "placement_mode" : "aeiou",
-      "distribute_queues" : true,
-      "se_txq_threshold" : 123,
-      "vnic_ip_delete_interval" : 123,
-      "async_ssl" : true,
-      "ephemeral_portrange_end" : 123,
-      "vs_scaleout_timeout" : 123,
-      "tenant_ref" : "aeiou",
-      "objsync_port" : 123,
-      "gcp_config" : {
-        "backend_data_vpc_network_name" : "aeiou",
-        "backend_data_vpc_subnet_name" : "aeiou",
-        "backend_data_vpc_project_id" : "aeiou"
-      },
-      "lbaction_num_requests_to_dispatch" : 123
-    },
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou"
-  } ]
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#ServiceEngineGroupInventoryApiResponse">ServiceEngineGroupInventoryApiResponse</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="serviceenginegroupinventoryPost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /serviceenginegroupinventory</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">serviceenginegroupinventoryPost</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; ServiceEngineGroupInventory object creation </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#ServiceEngineGroupInventory">ServiceEngineGroupInventory</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "serviceengins" : [ {
-    "ref" : "aeiou"
-  } ],
-  "virtualservices" : [ {
-    "ref" : "aeiou"
-  } ],
-  "upgradestatus" : {
-    "image_ref" : "aeiou",
-    "enable_rollback" : true,
-    "obj_cloud_ref" : "aeiou",
-    "end_time" : "aeiou",
-    "patch_image_ref" : "aeiou",
-    "total_tasks" : 123,
-    "uuid" : "aeiou",
-    "version" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou",
-    "start_time" : "aeiou",
-    "node_type" : "aeiou",
-    "tasks_completed" : 123,
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "state" : {
-      "reason" : "aeiou",
-      "rebooted" : true,
-      "last_changed_time" : {
-        "usecs" : 123456789,
-        "secs" : 123456789
-      },
-      "state" : "aeiou"
-    },
-    "enable_patch_rollback" : true,
-    "upgrade_ops" : "aeiou"
-  },
-  "config" : {
-    "se_rum_sampling_res_interval" : 123,
-    "se_log_buffer_conn_blocking_dequeue" : true,
-    "extra_config_multiplier" : 1.3579000000000001069366817318950779736042022705078125,
-    "core_shm_app_cache" : true,
-    "host_gateway_monitor" : true,
-    "se_dos_profile" : {
-      "thresh_period" : 123,
-      "thresh_info" : [ {
-        "min_value" : 123,
-        "attack" : "aeiou",
-        "max_value" : 123
-      } ]
-    },
-    "grpc_channel_connect_timeout" : 123,
-    "se_flow_probe_retry_timer" : 123,
-    "l7_resvd_listen_conns_per_core" : 123,
-    "vs_scalein_timeout" : 123,
-    "se_dump_core_on_assert" : true,
-    "se_pcap_qdisc_bypass" : true,
-    "se_dp_log_nf_enqueue_percent" : 123,
-    "se_l3_encap_ipc" : 123,
-    "vs_se_scaleout_additional_wait_time" : 123,
-    "active_standby" : true,
-    "service_ip6_subnets" : [ "" ],
-    "se_kni_burst_factor" : 123,
-    "vnic_dhcp_ip_max_retries" : 123,
-    "http_rum_min_content_length" : 123,
-    "resync_time_interval" : 123,
-    "se_log_buffer_app_blocking_dequeue" : true,
-    "log_agent_file_sz_event" : 123,
-    "log_message_max_file_list_size" : 123,
-    "min_scaleout_per_vs" : 123,
-    "self_se_election" : true,
-    "labels" : [ {
-      "value" : "aeiou",
-      "key" : "aeiou"
-    } ],
-    "vcenter_datastores_include" : true,
-    "disk_per_se" : 123,
-    "memory_for_config_update" : 123,
-    "host_attribute_key" : "aeiou",
-    "accelerated_networking" : true,
-    "app_cache_threshold" : 123,
-    "kni_allowed_server_ports" : [ {
-      "protocol" : "aeiou",
-      "range" : ""
-    } ],
-    "instance_flavor" : "aeiou",
-    "se_time_tracker_props" : {
-      "egress_audit_mode" : "aeiou",
-      "ingress_threshold" : 123,
-      "egress_threshold" : 123,
-      "event_gen_window" : 123456789,
-      "ingress_audit_mode" : "aeiou"
-    },
-    "disable_se_memory_check" : true,
-    "log_agent_trace_enabled" : true,
-    "se_probe_port" : 123,
-    "app_learning_memory_percent" : 123,
-    "dp_hb_timeout_count" : 123,
-    "se_vnic_tx_sw_queue_flush_frequency" : 123,
-    "max_skb_frags" : 123,
-    "data_network_id" : "aeiou",
-    "log_disksz" : 123,
-    "sdb_pipeline_size" : 123,
-    "ingress_access_data" : "aeiou",
-    "se_sb_dedicated_core" : true,
-    "gratarp_permanent_periodicity" : 123,
-    "log_agent_max_concurrent_rsync" : 123,
-    "se_vs_hb_max_pkts_in_batch" : 123,
-    "se_dp_vnic_queue_stall_event_sleep" : 123,
-    "log_malloc_failure" : true,
-    "vcenter_datastore_mode" : "aeiou",
-    "license_type" : "aeiou",
-    "flow_table_new_syn_max_entries" : 123,
-    "use_dp_util_for_scaleout" : true,
-    "log_agent_file_sz_debug" : 123,
-    "vs_scalein_timeout_for_upgrade" : 123,
-    "objsync_config" : {
-      "objsync_cpu_limit" : 123,
-      "objsync_hub_elect_interval" : 123,
-      "objsync_reconcile_interval" : 123
-    },
-    "custom_tag" : [ {
-      "tag_key" : "aeiou",
-      "tag_val" : "aeiou"
-    } ],
-    "num_flow_cores_sum_changes_to_ignore" : 123,
-    "openstack_mgmt_network_uuid" : "aeiou",
-    "core_shm_app_learning" : true,
-    "per_app" : true,
-    "vcenter_folder" : "aeiou",
-    "vnicdb_cmd_history_size" : 123,
-    "algo" : "aeiou",
-    "max_se" : 123,
-    "user_agent_cache_config" : {
-      "se_cache_size" : 123,
-      "batch_size" : 123,
-      "percent_reserved_for_good_bots" : 123,
-      "percent_reserved_for_browsers" : 123,
-      "max_upstream_queries" : 123,
-      "upstream_update_interval" : 123,
-      "num_entries_upstream_update" : 123,
-      "max_last_hit_time" : 123,
-      "max_age" : 123,
-      "controller_cache_size" : 123,
-      "percent_reserved_for_bad_bots" : 123,
-      "max_wait_time" : 123,
-      "percent_reserved_for_outstanding" : 123
-    },
-    "per_vs_admission_control" : true,
-    "shm_minimum_config_memory" : 123,
-    "lbaction_rq_per_request_max_retries" : 123,
-    "hardwaresecuritymodulegroup_ref" : "aeiou",
-    "http_rum_console_log" : true,
-    "vnic_probe_interval" : 123,
-    "handle_per_pkt_attack" : true,
-    "compress_ip_rules_for_each_ns_subnet" : true,
-    "log_agent_min_storage_per_vs" : 123,
-    "se_dp_vnic_queue_stall_threshold" : 123,
-    "se_dp_log_udf_enqueue_percent" : 123,
-    "udf_log_throttle" : 123,
-    "sdb_flush_interval" : 123,
-    "se_dp_vnic_restart_on_queue_stall_count" : 123,
-    "custom_securitygroups_mgmt" : [ "aeiou" ],
-    "min_se" : 123,
-    "waf_mempool_size" : 123,
-    "disable_avi_securitygroups" : true,
-    "se_packet_buffer_max" : 123,
-    "max_cpu_usage" : 123,
-    "ngx_free_connection_stack" : true,
-    "enable_hsm_log" : true,
-    "hm_on_standby" : true,
-    "name" : "aeiou",
-    "se_rum_sampling_nav_percent" : 123,
-    "sdb_scan_count" : 123,
-    "vs_switchover_timeout" : 123,
-    "free_list_size" : 123,
-    "se_hyperthreaded_mode" : "aeiou",
-    "min_cpu_usage" : 123,
-    "ntp_sync_status_interval" : 123,
-    "cpu_socket_affinity" : true,
-    "se_group_analytics_policy" : {
-      "metrics_event_thresholds" : [ {
-        "reset_threshold" : 1.3579000000000001069366817318950779736042022705078125,
-        "watermark_thresholds" : [ "" ],
-        "metrics_event_threshold_type" : "aeiou"
-      } ]
-    },
-    "se_rum_sampling_res_percent" : 123,
-    "dp_deq_interval_msec" : 123,
-    "description" : "aeiou",
-    "log_agent_max_storage_ignore_percent" : 1.3579000000000001069366817318950779736042022705078125,
-    "se_emulated_cores" : 123,
-    "se_tracert_port_range" : "",
-    "async_ssl_threads" : 123,
-    "enable_gratarp_permanent" : true,
-    "realtime_se_metrics" : {
-      "duration" : 123,
-      "enabled" : true
-    },
-    "archive_shm_limit" : 123,
-    "max_num_se_dps" : 123,
-    "se_dp_max_hb_version" : 123,
-    "log_agent_file_sz_conn" : 123,
-    "log_agent_unknown_vs_timer" : 123,
-    "ignore_docker_mac_change" : true,
-    "se_pcap_reinit_frequency" : 123,
-    "se_dp_hm_drops" : 123,
-    "send_se_ready_timeout" : 123,
-    "se_dp_isolation" : true,
-    "disable_csum_offloads" : true,
-    "cpu_reserve" : true,
-    "se_deprovision_delay" : 123,
-    "distribute_vnics" : true,
-    "max_rules_per_lb" : 123,
-    "vip_asg" : {
-      "configuration" : {
-        "zones" : [ {
-          "availability_zone" : "aeiou",
-          "subnet_uuid" : "aeiou",
-          "fip_capable" : true
-        } ]
-      },
-      "policy" : {
-        "suspend" : true,
-        "min_size" : 123,
-        "dns_cooldown" : 123,
-        "max_size" : 123
-      }
-    },
-    "upstream_connect_timeout" : 123,
-    "mgmt_network_ref" : "aeiou",
-    "vcenter_datastores" : [ {
-      "datastore_name" : "aeiou",
-      "managed_object_id" : "aeiou"
-    } ],
-    "se_dp_vnic_queue_stall_timeout" : 123,
-    "vcenters" : [ {
-      "nsxt_datastores" : {
-        "include" : true,
-        "ds_ids" : [ "aeiou" ]
-      },
-      "nsxt_clusters" : {
-        "include" : true,
-        "cluster_ids" : [ "aeiou" ]
-      },
-      "vcenter_folder" : "aeiou",
-      "nsxt_hosts" : {
-        "include" : true,
-        "host_ids" : [ "aeiou" ]
-      },
-      "clusters" : [ {
-        "cluster_id" : "aeiou",
-        "override_vsphere_ha" : true,
-        "vmg_name" : "aeiou"
-      } ],
-      "vcenter_ref" : "aeiou"
-    } ],
-    "netlink_poller_threads" : 123,
-    "upstream_connpool_enable" : true,
-    "minimum_connection_memory" : 123,
-    "log_agent_compress_logs" : true,
-    "mgmt_subnet" : "",
-    "connection_memory_percentage" : 123,
-    "dp_hb_frequency" : 123,
-    "replay_vrf_routes_interval" : 123,
-    "extra_shared_config_memory" : 123,
-    "se_delayed_flow_delete" : true,
-    "se_name_prefix" : "aeiou",
-    "se_vnic_tx_sw_queue_size" : 123,
-    "cloud_ref" : "aeiou",
-    "se_sb_threads" : 123,
-    "configpb_attributes" : {
-      "version" : 123
-    },
-    "num_dispatcher_queues" : 123,
-    "buffer_se" : 123,
-    "deactivate_kni_filtering_at_dispatcher" : true,
-    "max_public_ips_per_lb" : 123,
-    "ntp_sync_fail_event" : true,
-    "mem_reserve" : true,
-    "l7_conns_per_core" : 123,
-    "openstack_mgmt_network_name" : "aeiou",
-    "pcap_tx_ring_rd_balancing_factor" : 123,
-    "ssl_sess_cache_per_vs" : 123,
-    "max_scaleout_per_vs" : 123,
-    "se_use_dpdk" : 123,
-    "enable_multi_lb" : true,
-    "hybrid_rss_mode" : true,
-    "os_reserved_memory" : 123,
-    "vcenter_clusters" : {
-      "include" : true,
-      "cluster_refs" : [ "aeiou" ]
-    },
-    "vss_placement" : {
-      "num_subcores" : 123,
-      "core_nonaffinity" : 123
-    },
-    "availability_zone_refs" : [ "aeiou" ],
-    "datascript_timeout" : 123456789,
-    "dp_aggressive_hb_timeout_count" : 123,
-    "dp_aggressive_hb_frequency" : 123,
-    "app_cache_percent" : 123,
-    "license_tier" : "aeiou",
-    "log_agent_log_storage_min_sz" : 123,
-    "bgp_state_update_interval" : 123,
-    "host_attribute_value" : "aeiou",
-    "vcpus_per_se" : 123,
-    "netlink_sock_buf_size" : 123,
-    "non_significant_log_throttle" : 123,
-    "ns_helper_deq_interval_msec" : 123,
-    "vnic_rpc_retry_interval" : 123,
-    "allow_burst" : true,
-    "reboot_on_panic" : true,
-    "transient_shared_memory_max" : 123,
-    "dp_enq_interval_msec" : 123,
-    "se_tunnel_udp_port" : 123,
-    "se_pcap_pkt_sz" : 123,
-    "auto_rebalance" : true,
-    "ha_mode" : "aeiou",
-    "disable_tso" : true,
-    "log_agent_max_storage_excess_percent" : 123,
-    "se_dpdk_pmd" : 123,
-    "vss_placement_enabled" : true,
-    "se_dp_vnic_stall_se_restart_window" : 123,
-    "distribute_load_active_standby" : true,
-    "deactivate_ipv6_discovery" : true,
-    "auto_rebalance_interval" : 123,
-    "max_queues_per_vnic" : 123,
-    "auto_rebalance_criteria" : [ "aeiou" ],
-    "max_memory_per_mempool" : 123,
-    "n_log_streaming_threads" : 123,
-    "url" : "aeiou",
-    "se_bandwidth_type" : "aeiou",
-    "dp_aggressive_enq_interval_msec" : 123,
-    "num_dispatcher_cores" : 123,
-    "use_objsync" : true,
-    "markers" : [ {
-      "values" : [ "aeiou" ],
-      "key" : "aeiou"
-    } ],
-    "upstream_read_timeout" : 123,
-    "ingress_access_mgmt" : "aeiou",
-    "se_pcap_lookahead" : true,
-    "ignore_rtt_threshold" : 123,
-    "waf_mempool" : true,
-    "heap_minimum_config_memory" : 123,
-    "openstack_availability_zones" : [ "aeiou" ],
-    "se_tunnel_mode" : 123,
-    "max_concurrent_external_hm" : 123,
-    "config_debugs_on_all_cores" : true,
-    "se_vs_hb_max_vs_in_pkt" : 123,
-    "least_load_core_selection" : true,
-    "uuid" : "aeiou",
-    "vs_se_scaleout_ready_timeout" : 123,
-    "se_rl_prop" : {
-      "msf_num_stages" : 123,
-      "msf_stage_size" : 123456789
-    },
-    "enable_hsm_priming" : true,
-    "log_agent_debug_enabled" : true,
-    "se_ip_encap_ipc" : 123,
-    "se_udp_encap_ipc" : 123,
-    "vcenter_hosts" : {
-      "include" : true,
-      "host_refs" : [ "aeiou" ]
-    },
-    "log_agent_file_sz_appl" : 123,
-    "bgp_peer_monitor_failover_enabled" : true,
-    "se_dp_isolation_num_non_dp_cpus" : 123,
-    "use_standard_alb" : true,
-    "disable_gro" : true,
-    "pcap_tx_mode" : "aeiou",
-    "instance_flavor_info" : {
-      "cost" : "aeiou",
-      "ram_mb" : 123,
-      "max_ips_per_nic" : 123,
-      "vcpus" : 123,
-      "enhanced_nw" : true,
-      "is_recommended" : true,
-      "public" : true,
-      "max_nics" : 123,
-      "meta" : [ {
-        "value" : "aeiou",
-        "key" : "aeiou"
-      } ],
-      "max_ip6s_per_nic" : 123,
-      "name" : "aeiou",
-      "id" : "aeiou",
-      "disk_gb" : 123
-    },
-    "se_pcap_pkt_count" : 123,
-    "se_thread_multiplier" : 123,
-    "ephemeral_portrange_start" : 123,
-    "log_agent_sleep_interval" : 123,
-    "se_flow_probe_retries" : 123,
-    "se_mp_ring_retry_count" : 123,
-    "baremetal_dispatcher_handles_flows" : true,
-    "dedicated_dispatcher_core" : true,
-    "auto_redistribute_active_standby_load" : true,
-    "enable_pcap_tx_ring" : true,
-    "se_mtu" : 123,
-    "se_tx_batch_size" : 123,
-    "user_defined_metric_age" : 123,
-    "custom_securitygroups_data" : [ "aeiou" ],
-    "disable_flow_probes" : true,
-    "downstream_send_timeout" : 123,
-    "iptables" : [ {
-      "chain" : "aeiou",
-      "rules" : [ {
-        "src_ip" : "",
-        "src_port" : "",
-        "input_interface" : "aeiou",
-        "proto" : "aeiou",
-        "dnat_ip" : {
-          "addr" : "aeiou",
-          "type" : "aeiou"
-        },
-        "dst_port" : {
-          "start" : 123,
-          "end" : 123
-        },
-        "action" : "aeiou",
-        "output_interface" : "aeiou",
-        "tag" : "aeiou",
-        "dst_ip" : {
-          "ip_addr" : "",
-          "mask" : 123
-        }
-      } ],
-      "table" : "aeiou"
-    } ],
-    "upstream_send_timeout" : 123,
-    "se_pcap_reinit_threshold" : 123,
-    "aggressive_failure_detection" : true,
-    "se_lro" : true,
-    "dpdk_gro_timeout_interval" : 123,
-    "max_vs_per_se" : 123,
-    "vnic_dhcp_ip_check_interval" : 123,
-    "_last_modified" : "aeiou",
-    "significant_log_throttle" : 123,
-    "se_rum_sampling_nav_interval" : 123,
-    "vcenter_parking_vnic_pg" : "aeiou",
-    "hypervisor" : "aeiou",
-    "use_legacy_netlink" : true,
-    "use_hyperthreaded_cores" : true,
-    "se_dp_if_state_poll_interval" : 123,
-    "service_ip_subnets" : [ "" ],
-    "memory_per_se" : 123,
-    "auto_rebalance_capacity_per_se" : [ "" ],
-    "dp_aggressive_deq_interval_msec" : 123,
-    "se_log_buffer_events_blocking_dequeue" : true,
-    "ssl_preprocess_sni_hostname" : true,
-    "vs_host_redundancy" : true,
-    "placement_mode" : "aeiou",
-    "distribute_queues" : true,
-    "se_txq_threshold" : 123,
-    "vnic_ip_delete_interval" : 123,
-    "async_ssl" : true,
-    "ephemeral_portrange_end" : 123,
-    "vs_scaleout_timeout" : 123,
-    "tenant_ref" : "aeiou",
-    "objsync_port" : 123,
-    "gcp_config" : {
-      "backend_data_vpc_network_name" : "aeiou",
-      "backend_data_vpc_subnet_name" : "aeiou",
-      "backend_data_vpc_project_id" : "aeiou"
-    },
-    "lbaction_num_requests_to_dispatch" : 123
-  },
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#ServiceEngineGroupInventory">ServiceEngineGroupInventory</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="serviceenginegroupinventoryUuidDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /serviceenginegroupinventory/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">serviceenginegroupinventoryUuidDelete</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="serviceenginegroupinventoryUuidGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /serviceenginegroupinventory/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">serviceenginegroupinventoryUuidGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">fields (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#ServiceEngineGroupInventory">ServiceEngineGroupInventory</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "serviceengins" : [ {
-    "ref" : "aeiou"
-  } ],
-  "virtualservices" : [ {
-    "ref" : "aeiou"
-  } ],
-  "upgradestatus" : {
-    "image_ref" : "aeiou",
-    "enable_rollback" : true,
-    "obj_cloud_ref" : "aeiou",
-    "end_time" : "aeiou",
-    "patch_image_ref" : "aeiou",
-    "total_tasks" : 123,
-    "uuid" : "aeiou",
-    "version" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou",
-    "start_time" : "aeiou",
-    "node_type" : "aeiou",
-    "tasks_completed" : 123,
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "state" : {
-      "reason" : "aeiou",
-      "rebooted" : true,
-      "last_changed_time" : {
-        "usecs" : 123456789,
-        "secs" : 123456789
-      },
-      "state" : "aeiou"
-    },
-    "enable_patch_rollback" : true,
-    "upgrade_ops" : "aeiou"
-  },
-  "config" : {
-    "se_rum_sampling_res_interval" : 123,
-    "se_log_buffer_conn_blocking_dequeue" : true,
-    "extra_config_multiplier" : 1.3579000000000001069366817318950779736042022705078125,
-    "core_shm_app_cache" : true,
-    "host_gateway_monitor" : true,
-    "se_dos_profile" : {
-      "thresh_period" : 123,
-      "thresh_info" : [ {
-        "min_value" : 123,
-        "attack" : "aeiou",
-        "max_value" : 123
-      } ]
-    },
-    "grpc_channel_connect_timeout" : 123,
-    "se_flow_probe_retry_timer" : 123,
-    "l7_resvd_listen_conns_per_core" : 123,
-    "vs_scalein_timeout" : 123,
-    "se_dump_core_on_assert" : true,
-    "se_pcap_qdisc_bypass" : true,
-    "se_dp_log_nf_enqueue_percent" : 123,
-    "se_l3_encap_ipc" : 123,
-    "vs_se_scaleout_additional_wait_time" : 123,
-    "active_standby" : true,
-    "service_ip6_subnets" : [ "" ],
-    "se_kni_burst_factor" : 123,
-    "vnic_dhcp_ip_max_retries" : 123,
-    "http_rum_min_content_length" : 123,
-    "resync_time_interval" : 123,
-    "se_log_buffer_app_blocking_dequeue" : true,
-    "log_agent_file_sz_event" : 123,
-    "log_message_max_file_list_size" : 123,
-    "min_scaleout_per_vs" : 123,
-    "self_se_election" : true,
-    "labels" : [ {
-      "value" : "aeiou",
-      "key" : "aeiou"
-    } ],
-    "vcenter_datastores_include" : true,
-    "disk_per_se" : 123,
-    "memory_for_config_update" : 123,
-    "host_attribute_key" : "aeiou",
-    "accelerated_networking" : true,
-    "app_cache_threshold" : 123,
-    "kni_allowed_server_ports" : [ {
-      "protocol" : "aeiou",
-      "range" : ""
-    } ],
-    "instance_flavor" : "aeiou",
-    "se_time_tracker_props" : {
-      "egress_audit_mode" : "aeiou",
-      "ingress_threshold" : 123,
-      "egress_threshold" : 123,
-      "event_gen_window" : 123456789,
-      "ingress_audit_mode" : "aeiou"
-    },
-    "disable_se_memory_check" : true,
-    "log_agent_trace_enabled" : true,
-    "se_probe_port" : 123,
-    "app_learning_memory_percent" : 123,
-    "dp_hb_timeout_count" : 123,
-    "se_vnic_tx_sw_queue_flush_frequency" : 123,
-    "max_skb_frags" : 123,
-    "data_network_id" : "aeiou",
-    "log_disksz" : 123,
-    "sdb_pipeline_size" : 123,
-    "ingress_access_data" : "aeiou",
-    "se_sb_dedicated_core" : true,
-    "gratarp_permanent_periodicity" : 123,
-    "log_agent_max_concurrent_rsync" : 123,
-    "se_vs_hb_max_pkts_in_batch" : 123,
-    "se_dp_vnic_queue_stall_event_sleep" : 123,
-    "log_malloc_failure" : true,
-    "vcenter_datastore_mode" : "aeiou",
-    "license_type" : "aeiou",
-    "flow_table_new_syn_max_entries" : 123,
-    "use_dp_util_for_scaleout" : true,
-    "log_agent_file_sz_debug" : 123,
-    "vs_scalein_timeout_for_upgrade" : 123,
-    "objsync_config" : {
-      "objsync_cpu_limit" : 123,
-      "objsync_hub_elect_interval" : 123,
-      "objsync_reconcile_interval" : 123
-    },
-    "custom_tag" : [ {
-      "tag_key" : "aeiou",
-      "tag_val" : "aeiou"
-    } ],
-    "num_flow_cores_sum_changes_to_ignore" : 123,
-    "openstack_mgmt_network_uuid" : "aeiou",
-    "core_shm_app_learning" : true,
-    "per_app" : true,
-    "vcenter_folder" : "aeiou",
-    "vnicdb_cmd_history_size" : 123,
-    "algo" : "aeiou",
-    "max_se" : 123,
-    "user_agent_cache_config" : {
-      "se_cache_size" : 123,
-      "batch_size" : 123,
-      "percent_reserved_for_good_bots" : 123,
-      "percent_reserved_for_browsers" : 123,
-      "max_upstream_queries" : 123,
-      "upstream_update_interval" : 123,
-      "num_entries_upstream_update" : 123,
-      "max_last_hit_time" : 123,
-      "max_age" : 123,
-      "controller_cache_size" : 123,
-      "percent_reserved_for_bad_bots" : 123,
-      "max_wait_time" : 123,
-      "percent_reserved_for_outstanding" : 123
-    },
-    "per_vs_admission_control" : true,
-    "shm_minimum_config_memory" : 123,
-    "lbaction_rq_per_request_max_retries" : 123,
-    "hardwaresecuritymodulegroup_ref" : "aeiou",
-    "http_rum_console_log" : true,
-    "vnic_probe_interval" : 123,
-    "handle_per_pkt_attack" : true,
-    "compress_ip_rules_for_each_ns_subnet" : true,
-    "log_agent_min_storage_per_vs" : 123,
-    "se_dp_vnic_queue_stall_threshold" : 123,
-    "se_dp_log_udf_enqueue_percent" : 123,
-    "udf_log_throttle" : 123,
-    "sdb_flush_interval" : 123,
-    "se_dp_vnic_restart_on_queue_stall_count" : 123,
-    "custom_securitygroups_mgmt" : [ "aeiou" ],
-    "min_se" : 123,
-    "waf_mempool_size" : 123,
-    "disable_avi_securitygroups" : true,
-    "se_packet_buffer_max" : 123,
-    "max_cpu_usage" : 123,
-    "ngx_free_connection_stack" : true,
-    "enable_hsm_log" : true,
-    "hm_on_standby" : true,
-    "name" : "aeiou",
-    "se_rum_sampling_nav_percent" : 123,
-    "sdb_scan_count" : 123,
-    "vs_switchover_timeout" : 123,
-    "free_list_size" : 123,
-    "se_hyperthreaded_mode" : "aeiou",
-    "min_cpu_usage" : 123,
-    "ntp_sync_status_interval" : 123,
-    "cpu_socket_affinity" : true,
-    "se_group_analytics_policy" : {
-      "metrics_event_thresholds" : [ {
-        "reset_threshold" : 1.3579000000000001069366817318950779736042022705078125,
-        "watermark_thresholds" : [ "" ],
-        "metrics_event_threshold_type" : "aeiou"
-      } ]
-    },
-    "se_rum_sampling_res_percent" : 123,
-    "dp_deq_interval_msec" : 123,
-    "description" : "aeiou",
-    "log_agent_max_storage_ignore_percent" : 1.3579000000000001069366817318950779736042022705078125,
-    "se_emulated_cores" : 123,
-    "se_tracert_port_range" : "",
-    "async_ssl_threads" : 123,
-    "enable_gratarp_permanent" : true,
-    "realtime_se_metrics" : {
-      "duration" : 123,
-      "enabled" : true
-    },
-    "archive_shm_limit" : 123,
-    "max_num_se_dps" : 123,
-    "se_dp_max_hb_version" : 123,
-    "log_agent_file_sz_conn" : 123,
-    "log_agent_unknown_vs_timer" : 123,
-    "ignore_docker_mac_change" : true,
-    "se_pcap_reinit_frequency" : 123,
-    "se_dp_hm_drops" : 123,
-    "send_se_ready_timeout" : 123,
-    "se_dp_isolation" : true,
-    "disable_csum_offloads" : true,
-    "cpu_reserve" : true,
-    "se_deprovision_delay" : 123,
-    "distribute_vnics" : true,
-    "max_rules_per_lb" : 123,
-    "vip_asg" : {
-      "configuration" : {
-        "zones" : [ {
-          "availability_zone" : "aeiou",
-          "subnet_uuid" : "aeiou",
-          "fip_capable" : true
-        } ]
-      },
-      "policy" : {
-        "suspend" : true,
-        "min_size" : 123,
-        "dns_cooldown" : 123,
-        "max_size" : 123
-      }
-    },
-    "upstream_connect_timeout" : 123,
-    "mgmt_network_ref" : "aeiou",
-    "vcenter_datastores" : [ {
-      "datastore_name" : "aeiou",
-      "managed_object_id" : "aeiou"
-    } ],
-    "se_dp_vnic_queue_stall_timeout" : 123,
-    "vcenters" : [ {
-      "nsxt_datastores" : {
-        "include" : true,
-        "ds_ids" : [ "aeiou" ]
-      },
-      "nsxt_clusters" : {
-        "include" : true,
-        "cluster_ids" : [ "aeiou" ]
-      },
-      "vcenter_folder" : "aeiou",
-      "nsxt_hosts" : {
-        "include" : true,
-        "host_ids" : [ "aeiou" ]
-      },
-      "clusters" : [ {
-        "cluster_id" : "aeiou",
-        "override_vsphere_ha" : true,
-        "vmg_name" : "aeiou"
-      } ],
-      "vcenter_ref" : "aeiou"
-    } ],
-    "netlink_poller_threads" : 123,
-    "upstream_connpool_enable" : true,
-    "minimum_connection_memory" : 123,
-    "log_agent_compress_logs" : true,
-    "mgmt_subnet" : "",
-    "connection_memory_percentage" : 123,
-    "dp_hb_frequency" : 123,
-    "replay_vrf_routes_interval" : 123,
-    "extra_shared_config_memory" : 123,
-    "se_delayed_flow_delete" : true,
-    "se_name_prefix" : "aeiou",
-    "se_vnic_tx_sw_queue_size" : 123,
-    "cloud_ref" : "aeiou",
-    "se_sb_threads" : 123,
-    "configpb_attributes" : {
-      "version" : 123
-    },
-    "num_dispatcher_queues" : 123,
-    "buffer_se" : 123,
-    "deactivate_kni_filtering_at_dispatcher" : true,
-    "max_public_ips_per_lb" : 123,
-    "ntp_sync_fail_event" : true,
-    "mem_reserve" : true,
-    "l7_conns_per_core" : 123,
-    "openstack_mgmt_network_name" : "aeiou",
-    "pcap_tx_ring_rd_balancing_factor" : 123,
-    "ssl_sess_cache_per_vs" : 123,
-    "max_scaleout_per_vs" : 123,
-    "se_use_dpdk" : 123,
-    "enable_multi_lb" : true,
-    "hybrid_rss_mode" : true,
-    "os_reserved_memory" : 123,
-    "vcenter_clusters" : {
-      "include" : true,
-      "cluster_refs" : [ "aeiou" ]
-    },
-    "vss_placement" : {
-      "num_subcores" : 123,
-      "core_nonaffinity" : 123
-    },
-    "availability_zone_refs" : [ "aeiou" ],
-    "datascript_timeout" : 123456789,
-    "dp_aggressive_hb_timeout_count" : 123,
-    "dp_aggressive_hb_frequency" : 123,
-    "app_cache_percent" : 123,
-    "license_tier" : "aeiou",
-    "log_agent_log_storage_min_sz" : 123,
-    "bgp_state_update_interval" : 123,
-    "host_attribute_value" : "aeiou",
-    "vcpus_per_se" : 123,
-    "netlink_sock_buf_size" : 123,
-    "non_significant_log_throttle" : 123,
-    "ns_helper_deq_interval_msec" : 123,
-    "vnic_rpc_retry_interval" : 123,
-    "allow_burst" : true,
-    "reboot_on_panic" : true,
-    "transient_shared_memory_max" : 123,
-    "dp_enq_interval_msec" : 123,
-    "se_tunnel_udp_port" : 123,
-    "se_pcap_pkt_sz" : 123,
-    "auto_rebalance" : true,
-    "ha_mode" : "aeiou",
-    "disable_tso" : true,
-    "log_agent_max_storage_excess_percent" : 123,
-    "se_dpdk_pmd" : 123,
-    "vss_placement_enabled" : true,
-    "se_dp_vnic_stall_se_restart_window" : 123,
-    "distribute_load_active_standby" : true,
-    "deactivate_ipv6_discovery" : true,
-    "auto_rebalance_interval" : 123,
-    "max_queues_per_vnic" : 123,
-    "auto_rebalance_criteria" : [ "aeiou" ],
-    "max_memory_per_mempool" : 123,
-    "n_log_streaming_threads" : 123,
-    "url" : "aeiou",
-    "se_bandwidth_type" : "aeiou",
-    "dp_aggressive_enq_interval_msec" : 123,
-    "num_dispatcher_cores" : 123,
-    "use_objsync" : true,
-    "markers" : [ {
-      "values" : [ "aeiou" ],
-      "key" : "aeiou"
-    } ],
-    "upstream_read_timeout" : 123,
-    "ingress_access_mgmt" : "aeiou",
-    "se_pcap_lookahead" : true,
-    "ignore_rtt_threshold" : 123,
-    "waf_mempool" : true,
-    "heap_minimum_config_memory" : 123,
-    "openstack_availability_zones" : [ "aeiou" ],
-    "se_tunnel_mode" : 123,
-    "max_concurrent_external_hm" : 123,
-    "config_debugs_on_all_cores" : true,
-    "se_vs_hb_max_vs_in_pkt" : 123,
-    "least_load_core_selection" : true,
-    "uuid" : "aeiou",
-    "vs_se_scaleout_ready_timeout" : 123,
-    "se_rl_prop" : {
-      "msf_num_stages" : 123,
-      "msf_stage_size" : 123456789
-    },
-    "enable_hsm_priming" : true,
-    "log_agent_debug_enabled" : true,
-    "se_ip_encap_ipc" : 123,
-    "se_udp_encap_ipc" : 123,
-    "vcenter_hosts" : {
-      "include" : true,
-      "host_refs" : [ "aeiou" ]
-    },
-    "log_agent_file_sz_appl" : 123,
-    "bgp_peer_monitor_failover_enabled" : true,
-    "se_dp_isolation_num_non_dp_cpus" : 123,
-    "use_standard_alb" : true,
-    "disable_gro" : true,
-    "pcap_tx_mode" : "aeiou",
-    "instance_flavor_info" : {
-      "cost" : "aeiou",
-      "ram_mb" : 123,
-      "max_ips_per_nic" : 123,
-      "vcpus" : 123,
-      "enhanced_nw" : true,
-      "is_recommended" : true,
-      "public" : true,
-      "max_nics" : 123,
-      "meta" : [ {
-        "value" : "aeiou",
-        "key" : "aeiou"
-      } ],
-      "max_ip6s_per_nic" : 123,
-      "name" : "aeiou",
-      "id" : "aeiou",
-      "disk_gb" : 123
-    },
-    "se_pcap_pkt_count" : 123,
-    "se_thread_multiplier" : 123,
-    "ephemeral_portrange_start" : 123,
-    "log_agent_sleep_interval" : 123,
-    "se_flow_probe_retries" : 123,
-    "se_mp_ring_retry_count" : 123,
-    "baremetal_dispatcher_handles_flows" : true,
-    "dedicated_dispatcher_core" : true,
-    "auto_redistribute_active_standby_load" : true,
-    "enable_pcap_tx_ring" : true,
-    "se_mtu" : 123,
-    "se_tx_batch_size" : 123,
-    "user_defined_metric_age" : 123,
-    "custom_securitygroups_data" : [ "aeiou" ],
-    "disable_flow_probes" : true,
-    "downstream_send_timeout" : 123,
-    "iptables" : [ {
-      "chain" : "aeiou",
-      "rules" : [ {
-        "src_ip" : "",
-        "src_port" : "",
-        "input_interface" : "aeiou",
-        "proto" : "aeiou",
-        "dnat_ip" : {
-          "addr" : "aeiou",
-          "type" : "aeiou"
-        },
-        "dst_port" : {
-          "start" : 123,
-          "end" : 123
-        },
-        "action" : "aeiou",
-        "output_interface" : "aeiou",
-        "tag" : "aeiou",
-        "dst_ip" : {
-          "ip_addr" : "",
-          "mask" : 123
-        }
-      } ],
-      "table" : "aeiou"
-    } ],
-    "upstream_send_timeout" : 123,
-    "se_pcap_reinit_threshold" : 123,
-    "aggressive_failure_detection" : true,
-    "se_lro" : true,
-    "dpdk_gro_timeout_interval" : 123,
-    "max_vs_per_se" : 123,
-    "vnic_dhcp_ip_check_interval" : 123,
-    "_last_modified" : "aeiou",
-    "significant_log_throttle" : 123,
-    "se_rum_sampling_nav_interval" : 123,
-    "vcenter_parking_vnic_pg" : "aeiou",
-    "hypervisor" : "aeiou",
-    "use_legacy_netlink" : true,
-    "use_hyperthreaded_cores" : true,
-    "se_dp_if_state_poll_interval" : 123,
-    "service_ip_subnets" : [ "" ],
-    "memory_per_se" : 123,
-    "auto_rebalance_capacity_per_se" : [ "" ],
-    "dp_aggressive_deq_interval_msec" : 123,
-    "se_log_buffer_events_blocking_dequeue" : true,
-    "ssl_preprocess_sni_hostname" : true,
-    "vs_host_redundancy" : true,
-    "placement_mode" : "aeiou",
-    "distribute_queues" : true,
-    "se_txq_threshold" : 123,
-    "vnic_ip_delete_interval" : 123,
-    "async_ssl" : true,
-    "ephemeral_portrange_end" : 123,
-    "vs_scaleout_timeout" : 123,
-    "tenant_ref" : "aeiou",
-    "objsync_port" : 123,
-    "gcp_config" : {
-      "backend_data_vpc_network_name" : "aeiou",
-      "backend_data_vpc_subnet_name" : "aeiou",
-      "backend_data_vpc_project_id" : "aeiou"
-    },
-    "lbaction_num_requests_to_dispatch" : 123
-  },
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#ServiceEngineGroupInventory">ServiceEngineGroupInventory</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="serviceenginegroupinventoryUuidPatch"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /serviceenginegroupinventory/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">serviceenginegroupinventoryUuidPatch</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; ServiceEngineGroupInventory object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#ServiceEngineGroupInventory">ServiceEngineGroupInventory</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "serviceengins" : [ {
-    "ref" : "aeiou"
-  } ],
-  "virtualservices" : [ {
-    "ref" : "aeiou"
-  } ],
-  "upgradestatus" : {
-    "image_ref" : "aeiou",
-    "enable_rollback" : true,
-    "obj_cloud_ref" : "aeiou",
-    "end_time" : "aeiou",
-    "patch_image_ref" : "aeiou",
-    "total_tasks" : 123,
-    "uuid" : "aeiou",
-    "version" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou",
-    "start_time" : "aeiou",
-    "node_type" : "aeiou",
-    "tasks_completed" : 123,
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "state" : {
-      "reason" : "aeiou",
-      "rebooted" : true,
-      "last_changed_time" : {
-        "usecs" : 123456789,
-        "secs" : 123456789
-      },
-      "state" : "aeiou"
-    },
-    "enable_patch_rollback" : true,
-    "upgrade_ops" : "aeiou"
-  },
-  "config" : {
-    "se_rum_sampling_res_interval" : 123,
-    "se_log_buffer_conn_blocking_dequeue" : true,
-    "extra_config_multiplier" : 1.3579000000000001069366817318950779736042022705078125,
-    "core_shm_app_cache" : true,
-    "host_gateway_monitor" : true,
-    "se_dos_profile" : {
-      "thresh_period" : 123,
-      "thresh_info" : [ {
-        "min_value" : 123,
-        "attack" : "aeiou",
-        "max_value" : 123
-      } ]
-    },
-    "grpc_channel_connect_timeout" : 123,
-    "se_flow_probe_retry_timer" : 123,
-    "l7_resvd_listen_conns_per_core" : 123,
-    "vs_scalein_timeout" : 123,
-    "se_dump_core_on_assert" : true,
-    "se_pcap_qdisc_bypass" : true,
-    "se_dp_log_nf_enqueue_percent" : 123,
-    "se_l3_encap_ipc" : 123,
-    "vs_se_scaleout_additional_wait_time" : 123,
-    "active_standby" : true,
-    "service_ip6_subnets" : [ "" ],
-    "se_kni_burst_factor" : 123,
-    "vnic_dhcp_ip_max_retries" : 123,
-    "http_rum_min_content_length" : 123,
-    "resync_time_interval" : 123,
-    "se_log_buffer_app_blocking_dequeue" : true,
-    "log_agent_file_sz_event" : 123,
-    "log_message_max_file_list_size" : 123,
-    "min_scaleout_per_vs" : 123,
-    "self_se_election" : true,
-    "labels" : [ {
-      "value" : "aeiou",
-      "key" : "aeiou"
-    } ],
-    "vcenter_datastores_include" : true,
-    "disk_per_se" : 123,
-    "memory_for_config_update" : 123,
-    "host_attribute_key" : "aeiou",
-    "accelerated_networking" : true,
-    "app_cache_threshold" : 123,
-    "kni_allowed_server_ports" : [ {
-      "protocol" : "aeiou",
-      "range" : ""
-    } ],
-    "instance_flavor" : "aeiou",
-    "se_time_tracker_props" : {
-      "egress_audit_mode" : "aeiou",
-      "ingress_threshold" : 123,
-      "egress_threshold" : 123,
-      "event_gen_window" : 123456789,
-      "ingress_audit_mode" : "aeiou"
-    },
-    "disable_se_memory_check" : true,
-    "log_agent_trace_enabled" : true,
-    "se_probe_port" : 123,
-    "app_learning_memory_percent" : 123,
-    "dp_hb_timeout_count" : 123,
-    "se_vnic_tx_sw_queue_flush_frequency" : 123,
-    "max_skb_frags" : 123,
-    "data_network_id" : "aeiou",
-    "log_disksz" : 123,
-    "sdb_pipeline_size" : 123,
-    "ingress_access_data" : "aeiou",
-    "se_sb_dedicated_core" : true,
-    "gratarp_permanent_periodicity" : 123,
-    "log_agent_max_concurrent_rsync" : 123,
-    "se_vs_hb_max_pkts_in_batch" : 123,
-    "se_dp_vnic_queue_stall_event_sleep" : 123,
-    "log_malloc_failure" : true,
-    "vcenter_datastore_mode" : "aeiou",
-    "license_type" : "aeiou",
-    "flow_table_new_syn_max_entries" : 123,
-    "use_dp_util_for_scaleout" : true,
-    "log_agent_file_sz_debug" : 123,
-    "vs_scalein_timeout_for_upgrade" : 123,
-    "objsync_config" : {
-      "objsync_cpu_limit" : 123,
-      "objsync_hub_elect_interval" : 123,
-      "objsync_reconcile_interval" : 123
-    },
-    "custom_tag" : [ {
-      "tag_key" : "aeiou",
-      "tag_val" : "aeiou"
-    } ],
-    "num_flow_cores_sum_changes_to_ignore" : 123,
-    "openstack_mgmt_network_uuid" : "aeiou",
-    "core_shm_app_learning" : true,
-    "per_app" : true,
-    "vcenter_folder" : "aeiou",
-    "vnicdb_cmd_history_size" : 123,
-    "algo" : "aeiou",
-    "max_se" : 123,
-    "user_agent_cache_config" : {
-      "se_cache_size" : 123,
-      "batch_size" : 123,
-      "percent_reserved_for_good_bots" : 123,
-      "percent_reserved_for_browsers" : 123,
-      "max_upstream_queries" : 123,
-      "upstream_update_interval" : 123,
-      "num_entries_upstream_update" : 123,
-      "max_last_hit_time" : 123,
-      "max_age" : 123,
-      "controller_cache_size" : 123,
-      "percent_reserved_for_bad_bots" : 123,
-      "max_wait_time" : 123,
-      "percent_reserved_for_outstanding" : 123
-    },
-    "per_vs_admission_control" : true,
-    "shm_minimum_config_memory" : 123,
-    "lbaction_rq_per_request_max_retries" : 123,
-    "hardwaresecuritymodulegroup_ref" : "aeiou",
-    "http_rum_console_log" : true,
-    "vnic_probe_interval" : 123,
-    "handle_per_pkt_attack" : true,
-    "compress_ip_rules_for_each_ns_subnet" : true,
-    "log_agent_min_storage_per_vs" : 123,
-    "se_dp_vnic_queue_stall_threshold" : 123,
-    "se_dp_log_udf_enqueue_percent" : 123,
-    "udf_log_throttle" : 123,
-    "sdb_flush_interval" : 123,
-    "se_dp_vnic_restart_on_queue_stall_count" : 123,
-    "custom_securitygroups_mgmt" : [ "aeiou" ],
-    "min_se" : 123,
-    "waf_mempool_size" : 123,
-    "disable_avi_securitygroups" : true,
-    "se_packet_buffer_max" : 123,
-    "max_cpu_usage" : 123,
-    "ngx_free_connection_stack" : true,
-    "enable_hsm_log" : true,
-    "hm_on_standby" : true,
-    "name" : "aeiou",
-    "se_rum_sampling_nav_percent" : 123,
-    "sdb_scan_count" : 123,
-    "vs_switchover_timeout" : 123,
-    "free_list_size" : 123,
-    "se_hyperthreaded_mode" : "aeiou",
-    "min_cpu_usage" : 123,
-    "ntp_sync_status_interval" : 123,
-    "cpu_socket_affinity" : true,
-    "se_group_analytics_policy" : {
-      "metrics_event_thresholds" : [ {
-        "reset_threshold" : 1.3579000000000001069366817318950779736042022705078125,
-        "watermark_thresholds" : [ "" ],
-        "metrics_event_threshold_type" : "aeiou"
-      } ]
-    },
-    "se_rum_sampling_res_percent" : 123,
-    "dp_deq_interval_msec" : 123,
-    "description" : "aeiou",
-    "log_agent_max_storage_ignore_percent" : 1.3579000000000001069366817318950779736042022705078125,
-    "se_emulated_cores" : 123,
-    "se_tracert_port_range" : "",
-    "async_ssl_threads" : 123,
-    "enable_gratarp_permanent" : true,
-    "realtime_se_metrics" : {
-      "duration" : 123,
-      "enabled" : true
-    },
-    "archive_shm_limit" : 123,
-    "max_num_se_dps" : 123,
-    "se_dp_max_hb_version" : 123,
-    "log_agent_file_sz_conn" : 123,
-    "log_agent_unknown_vs_timer" : 123,
-    "ignore_docker_mac_change" : true,
-    "se_pcap_reinit_frequency" : 123,
-    "se_dp_hm_drops" : 123,
-    "send_se_ready_timeout" : 123,
-    "se_dp_isolation" : true,
-    "disable_csum_offloads" : true,
-    "cpu_reserve" : true,
-    "se_deprovision_delay" : 123,
-    "distribute_vnics" : true,
-    "max_rules_per_lb" : 123,
-    "vip_asg" : {
-      "configuration" : {
-        "zones" : [ {
-          "availability_zone" : "aeiou",
-          "subnet_uuid" : "aeiou",
-          "fip_capable" : true
-        } ]
-      },
-      "policy" : {
-        "suspend" : true,
-        "min_size" : 123,
-        "dns_cooldown" : 123,
-        "max_size" : 123
-      }
-    },
-    "upstream_connect_timeout" : 123,
-    "mgmt_network_ref" : "aeiou",
-    "vcenter_datastores" : [ {
-      "datastore_name" : "aeiou",
-      "managed_object_id" : "aeiou"
-    } ],
-    "se_dp_vnic_queue_stall_timeout" : 123,
-    "vcenters" : [ {
-      "nsxt_datastores" : {
-        "include" : true,
-        "ds_ids" : [ "aeiou" ]
-      },
-      "nsxt_clusters" : {
-        "include" : true,
-        "cluster_ids" : [ "aeiou" ]
-      },
-      "vcenter_folder" : "aeiou",
-      "nsxt_hosts" : {
-        "include" : true,
-        "host_ids" : [ "aeiou" ]
-      },
-      "clusters" : [ {
-        "cluster_id" : "aeiou",
-        "override_vsphere_ha" : true,
-        "vmg_name" : "aeiou"
-      } ],
-      "vcenter_ref" : "aeiou"
-    } ],
-    "netlink_poller_threads" : 123,
-    "upstream_connpool_enable" : true,
-    "minimum_connection_memory" : 123,
-    "log_agent_compress_logs" : true,
-    "mgmt_subnet" : "",
-    "connection_memory_percentage" : 123,
-    "dp_hb_frequency" : 123,
-    "replay_vrf_routes_interval" : 123,
-    "extra_shared_config_memory" : 123,
-    "se_delayed_flow_delete" : true,
-    "se_name_prefix" : "aeiou",
-    "se_vnic_tx_sw_queue_size" : 123,
-    "cloud_ref" : "aeiou",
-    "se_sb_threads" : 123,
-    "configpb_attributes" : {
-      "version" : 123
-    },
-    "num_dispatcher_queues" : 123,
-    "buffer_se" : 123,
-    "deactivate_kni_filtering_at_dispatcher" : true,
-    "max_public_ips_per_lb" : 123,
-    "ntp_sync_fail_event" : true,
-    "mem_reserve" : true,
-    "l7_conns_per_core" : 123,
-    "openstack_mgmt_network_name" : "aeiou",
-    "pcap_tx_ring_rd_balancing_factor" : 123,
-    "ssl_sess_cache_per_vs" : 123,
-    "max_scaleout_per_vs" : 123,
-    "se_use_dpdk" : 123,
-    "enable_multi_lb" : true,
-    "hybrid_rss_mode" : true,
-    "os_reserved_memory" : 123,
-    "vcenter_clusters" : {
-      "include" : true,
-      "cluster_refs" : [ "aeiou" ]
-    },
-    "vss_placement" : {
-      "num_subcores" : 123,
-      "core_nonaffinity" : 123
-    },
-    "availability_zone_refs" : [ "aeiou" ],
-    "datascript_timeout" : 123456789,
-    "dp_aggressive_hb_timeout_count" : 123,
-    "dp_aggressive_hb_frequency" : 123,
-    "app_cache_percent" : 123,
-    "license_tier" : "aeiou",
-    "log_agent_log_storage_min_sz" : 123,
-    "bgp_state_update_interval" : 123,
-    "host_attribute_value" : "aeiou",
-    "vcpus_per_se" : 123,
-    "netlink_sock_buf_size" : 123,
-    "non_significant_log_throttle" : 123,
-    "ns_helper_deq_interval_msec" : 123,
-    "vnic_rpc_retry_interval" : 123,
-    "allow_burst" : true,
-    "reboot_on_panic" : true,
-    "transient_shared_memory_max" : 123,
-    "dp_enq_interval_msec" : 123,
-    "se_tunnel_udp_port" : 123,
-    "se_pcap_pkt_sz" : 123,
-    "auto_rebalance" : true,
-    "ha_mode" : "aeiou",
-    "disable_tso" : true,
-    "log_agent_max_storage_excess_percent" : 123,
-    "se_dpdk_pmd" : 123,
-    "vss_placement_enabled" : true,
-    "se_dp_vnic_stall_se_restart_window" : 123,
-    "distribute_load_active_standby" : true,
-    "deactivate_ipv6_discovery" : true,
-    "auto_rebalance_interval" : 123,
-    "max_queues_per_vnic" : 123,
-    "auto_rebalance_criteria" : [ "aeiou" ],
-    "max_memory_per_mempool" : 123,
-    "n_log_streaming_threads" : 123,
-    "url" : "aeiou",
-    "se_bandwidth_type" : "aeiou",
-    "dp_aggressive_enq_interval_msec" : 123,
-    "num_dispatcher_cores" : 123,
-    "use_objsync" : true,
-    "markers" : [ {
-      "values" : [ "aeiou" ],
-      "key" : "aeiou"
-    } ],
-    "upstream_read_timeout" : 123,
-    "ingress_access_mgmt" : "aeiou",
-    "se_pcap_lookahead" : true,
-    "ignore_rtt_threshold" : 123,
-    "waf_mempool" : true,
-    "heap_minimum_config_memory" : 123,
-    "openstack_availability_zones" : [ "aeiou" ],
-    "se_tunnel_mode" : 123,
-    "max_concurrent_external_hm" : 123,
-    "config_debugs_on_all_cores" : true,
-    "se_vs_hb_max_vs_in_pkt" : 123,
-    "least_load_core_selection" : true,
-    "uuid" : "aeiou",
-    "vs_se_scaleout_ready_timeout" : 123,
-    "se_rl_prop" : {
-      "msf_num_stages" : 123,
-      "msf_stage_size" : 123456789
-    },
-    "enable_hsm_priming" : true,
-    "log_agent_debug_enabled" : true,
-    "se_ip_encap_ipc" : 123,
-    "se_udp_encap_ipc" : 123,
-    "vcenter_hosts" : {
-      "include" : true,
-      "host_refs" : [ "aeiou" ]
-    },
-    "log_agent_file_sz_appl" : 123,
-    "bgp_peer_monitor_failover_enabled" : true,
-    "se_dp_isolation_num_non_dp_cpus" : 123,
-    "use_standard_alb" : true,
-    "disable_gro" : true,
-    "pcap_tx_mode" : "aeiou",
-    "instance_flavor_info" : {
-      "cost" : "aeiou",
-      "ram_mb" : 123,
-      "max_ips_per_nic" : 123,
-      "vcpus" : 123,
-      "enhanced_nw" : true,
-      "is_recommended" : true,
-      "public" : true,
-      "max_nics" : 123,
-      "meta" : [ {
-        "value" : "aeiou",
-        "key" : "aeiou"
-      } ],
-      "max_ip6s_per_nic" : 123,
-      "name" : "aeiou",
-      "id" : "aeiou",
-      "disk_gb" : 123
-    },
-    "se_pcap_pkt_count" : 123,
-    "se_thread_multiplier" : 123,
-    "ephemeral_portrange_start" : 123,
-    "log_agent_sleep_interval" : 123,
-    "se_flow_probe_retries" : 123,
-    "se_mp_ring_retry_count" : 123,
-    "baremetal_dispatcher_handles_flows" : true,
-    "dedicated_dispatcher_core" : true,
-    "auto_redistribute_active_standby_load" : true,
-    "enable_pcap_tx_ring" : true,
-    "se_mtu" : 123,
-    "se_tx_batch_size" : 123,
-    "user_defined_metric_age" : 123,
-    "custom_securitygroups_data" : [ "aeiou" ],
-    "disable_flow_probes" : true,
-    "downstream_send_timeout" : 123,
-    "iptables" : [ {
-      "chain" : "aeiou",
-      "rules" : [ {
-        "src_ip" : "",
-        "src_port" : "",
-        "input_interface" : "aeiou",
-        "proto" : "aeiou",
-        "dnat_ip" : {
-          "addr" : "aeiou",
-          "type" : "aeiou"
-        },
-        "dst_port" : {
-          "start" : 123,
-          "end" : 123
-        },
-        "action" : "aeiou",
-        "output_interface" : "aeiou",
-        "tag" : "aeiou",
-        "dst_ip" : {
-          "ip_addr" : "",
-          "mask" : 123
-        }
-      } ],
-      "table" : "aeiou"
-    } ],
-    "upstream_send_timeout" : 123,
-    "se_pcap_reinit_threshold" : 123,
-    "aggressive_failure_detection" : true,
-    "se_lro" : true,
-    "dpdk_gro_timeout_interval" : 123,
-    "max_vs_per_se" : 123,
-    "vnic_dhcp_ip_check_interval" : 123,
-    "_last_modified" : "aeiou",
-    "significant_log_throttle" : 123,
-    "se_rum_sampling_nav_interval" : 123,
-    "vcenter_parking_vnic_pg" : "aeiou",
-    "hypervisor" : "aeiou",
-    "use_legacy_netlink" : true,
-    "use_hyperthreaded_cores" : true,
-    "se_dp_if_state_poll_interval" : 123,
-    "service_ip_subnets" : [ "" ],
-    "memory_per_se" : 123,
-    "auto_rebalance_capacity_per_se" : [ "" ],
-    "dp_aggressive_deq_interval_msec" : 123,
-    "se_log_buffer_events_blocking_dequeue" : true,
-    "ssl_preprocess_sni_hostname" : true,
-    "vs_host_redundancy" : true,
-    "placement_mode" : "aeiou",
-    "distribute_queues" : true,
-    "se_txq_threshold" : 123,
-    "vnic_ip_delete_interval" : 123,
-    "async_ssl" : true,
-    "ephemeral_portrange_end" : 123,
-    "vs_scaleout_timeout" : 123,
-    "tenant_ref" : "aeiou",
-    "objsync_port" : 123,
-    "gcp_config" : {
-      "backend_data_vpc_network_name" : "aeiou",
-      "backend_data_vpc_subnet_name" : "aeiou",
-      "backend_data_vpc_project_id" : "aeiou"
-    },
-    "lbaction_num_requests_to_dispatch" : 123
-  },
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#ServiceEngineGroupInventory">ServiceEngineGroupInventory</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="serviceenginegroupinventoryUuidPut"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /serviceenginegroupinventory/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">serviceenginegroupinventoryUuidPut</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; ServiceEngineGroupInventory object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#ServiceEngineGroupInventory">ServiceEngineGroupInventory</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "serviceengins" : [ {
-    "ref" : "aeiou"
-  } ],
-  "virtualservices" : [ {
-    "ref" : "aeiou"
-  } ],
-  "upgradestatus" : {
-    "image_ref" : "aeiou",
-    "enable_rollback" : true,
-    "obj_cloud_ref" : "aeiou",
-    "end_time" : "aeiou",
-    "patch_image_ref" : "aeiou",
-    "total_tasks" : 123,
-    "uuid" : "aeiou",
-    "version" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou",
-    "start_time" : "aeiou",
-    "node_type" : "aeiou",
-    "tasks_completed" : 123,
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "state" : {
-      "reason" : "aeiou",
-      "rebooted" : true,
-      "last_changed_time" : {
-        "usecs" : 123456789,
-        "secs" : 123456789
-      },
-      "state" : "aeiou"
-    },
-    "enable_patch_rollback" : true,
-    "upgrade_ops" : "aeiou"
-  },
-  "config" : {
-    "se_rum_sampling_res_interval" : 123,
-    "se_log_buffer_conn_blocking_dequeue" : true,
-    "extra_config_multiplier" : 1.3579000000000001069366817318950779736042022705078125,
-    "core_shm_app_cache" : true,
-    "host_gateway_monitor" : true,
-    "se_dos_profile" : {
-      "thresh_period" : 123,
-      "thresh_info" : [ {
-        "min_value" : 123,
-        "attack" : "aeiou",
-        "max_value" : 123
-      } ]
-    },
-    "grpc_channel_connect_timeout" : 123,
-    "se_flow_probe_retry_timer" : 123,
-    "l7_resvd_listen_conns_per_core" : 123,
-    "vs_scalein_timeout" : 123,
-    "se_dump_core_on_assert" : true,
-    "se_pcap_qdisc_bypass" : true,
-    "se_dp_log_nf_enqueue_percent" : 123,
-    "se_l3_encap_ipc" : 123,
-    "vs_se_scaleout_additional_wait_time" : 123,
-    "active_standby" : true,
-    "service_ip6_subnets" : [ "" ],
-    "se_kni_burst_factor" : 123,
-    "vnic_dhcp_ip_max_retries" : 123,
-    "http_rum_min_content_length" : 123,
-    "resync_time_interval" : 123,
-    "se_log_buffer_app_blocking_dequeue" : true,
-    "log_agent_file_sz_event" : 123,
-    "log_message_max_file_list_size" : 123,
-    "min_scaleout_per_vs" : 123,
-    "self_se_election" : true,
-    "labels" : [ {
-      "value" : "aeiou",
-      "key" : "aeiou"
-    } ],
-    "vcenter_datastores_include" : true,
-    "disk_per_se" : 123,
-    "memory_for_config_update" : 123,
-    "host_attribute_key" : "aeiou",
-    "accelerated_networking" : true,
-    "app_cache_threshold" : 123,
-    "kni_allowed_server_ports" : [ {
-      "protocol" : "aeiou",
-      "range" : ""
-    } ],
-    "instance_flavor" : "aeiou",
-    "se_time_tracker_props" : {
-      "egress_audit_mode" : "aeiou",
-      "ingress_threshold" : 123,
-      "egress_threshold" : 123,
-      "event_gen_window" : 123456789,
-      "ingress_audit_mode" : "aeiou"
-    },
-    "disable_se_memory_check" : true,
-    "log_agent_trace_enabled" : true,
-    "se_probe_port" : 123,
-    "app_learning_memory_percent" : 123,
-    "dp_hb_timeout_count" : 123,
-    "se_vnic_tx_sw_queue_flush_frequency" : 123,
-    "max_skb_frags" : 123,
-    "data_network_id" : "aeiou",
-    "log_disksz" : 123,
-    "sdb_pipeline_size" : 123,
-    "ingress_access_data" : "aeiou",
-    "se_sb_dedicated_core" : true,
-    "gratarp_permanent_periodicity" : 123,
-    "log_agent_max_concurrent_rsync" : 123,
-    "se_vs_hb_max_pkts_in_batch" : 123,
-    "se_dp_vnic_queue_stall_event_sleep" : 123,
-    "log_malloc_failure" : true,
-    "vcenter_datastore_mode" : "aeiou",
-    "license_type" : "aeiou",
-    "flow_table_new_syn_max_entries" : 123,
-    "use_dp_util_for_scaleout" : true,
-    "log_agent_file_sz_debug" : 123,
-    "vs_scalein_timeout_for_upgrade" : 123,
-    "objsync_config" : {
-      "objsync_cpu_limit" : 123,
-      "objsync_hub_elect_interval" : 123,
-      "objsync_reconcile_interval" : 123
-    },
-    "custom_tag" : [ {
-      "tag_key" : "aeiou",
-      "tag_val" : "aeiou"
-    } ],
-    "num_flow_cores_sum_changes_to_ignore" : 123,
-    "openstack_mgmt_network_uuid" : "aeiou",
-    "core_shm_app_learning" : true,
-    "per_app" : true,
-    "vcenter_folder" : "aeiou",
-    "vnicdb_cmd_history_size" : 123,
-    "algo" : "aeiou",
-    "max_se" : 123,
-    "user_agent_cache_config" : {
-      "se_cache_size" : 123,
-      "batch_size" : 123,
-      "percent_reserved_for_good_bots" : 123,
-      "percent_reserved_for_browsers" : 123,
-      "max_upstream_queries" : 123,
-      "upstream_update_interval" : 123,
-      "num_entries_upstream_update" : 123,
-      "max_last_hit_time" : 123,
-      "max_age" : 123,
-      "controller_cache_size" : 123,
-      "percent_reserved_for_bad_bots" : 123,
-      "max_wait_time" : 123,
-      "percent_reserved_for_outstanding" : 123
-    },
-    "per_vs_admission_control" : true,
-    "shm_minimum_config_memory" : 123,
-    "lbaction_rq_per_request_max_retries" : 123,
-    "hardwaresecuritymodulegroup_ref" : "aeiou",
-    "http_rum_console_log" : true,
-    "vnic_probe_interval" : 123,
-    "handle_per_pkt_attack" : true,
-    "compress_ip_rules_for_each_ns_subnet" : true,
-    "log_agent_min_storage_per_vs" : 123,
-    "se_dp_vnic_queue_stall_threshold" : 123,
-    "se_dp_log_udf_enqueue_percent" : 123,
-    "udf_log_throttle" : 123,
-    "sdb_flush_interval" : 123,
-    "se_dp_vnic_restart_on_queue_stall_count" : 123,
-    "custom_securitygroups_mgmt" : [ "aeiou" ],
-    "min_se" : 123,
-    "waf_mempool_size" : 123,
-    "disable_avi_securitygroups" : true,
-    "se_packet_buffer_max" : 123,
-    "max_cpu_usage" : 123,
-    "ngx_free_connection_stack" : true,
-    "enable_hsm_log" : true,
-    "hm_on_standby" : true,
-    "name" : "aeiou",
-    "se_rum_sampling_nav_percent" : 123,
-    "sdb_scan_count" : 123,
-    "vs_switchover_timeout" : 123,
-    "free_list_size" : 123,
-    "se_hyperthreaded_mode" : "aeiou",
-    "min_cpu_usage" : 123,
-    "ntp_sync_status_interval" : 123,
-    "cpu_socket_affinity" : true,
-    "se_group_analytics_policy" : {
-      "metrics_event_thresholds" : [ {
-        "reset_threshold" : 1.3579000000000001069366817318950779736042022705078125,
-        "watermark_thresholds" : [ "" ],
-        "metrics_event_threshold_type" : "aeiou"
-      } ]
-    },
-    "se_rum_sampling_res_percent" : 123,
-    "dp_deq_interval_msec" : 123,
-    "description" : "aeiou",
-    "log_agent_max_storage_ignore_percent" : 1.3579000000000001069366817318950779736042022705078125,
-    "se_emulated_cores" : 123,
-    "se_tracert_port_range" : "",
-    "async_ssl_threads" : 123,
-    "enable_gratarp_permanent" : true,
-    "realtime_se_metrics" : {
-      "duration" : 123,
-      "enabled" : true
-    },
-    "archive_shm_limit" : 123,
-    "max_num_se_dps" : 123,
-    "se_dp_max_hb_version" : 123,
-    "log_agent_file_sz_conn" : 123,
-    "log_agent_unknown_vs_timer" : 123,
-    "ignore_docker_mac_change" : true,
-    "se_pcap_reinit_frequency" : 123,
-    "se_dp_hm_drops" : 123,
-    "send_se_ready_timeout" : 123,
-    "se_dp_isolation" : true,
-    "disable_csum_offloads" : true,
-    "cpu_reserve" : true,
-    "se_deprovision_delay" : 123,
-    "distribute_vnics" : true,
-    "max_rules_per_lb" : 123,
-    "vip_asg" : {
-      "configuration" : {
-        "zones" : [ {
-          "availability_zone" : "aeiou",
-          "subnet_uuid" : "aeiou",
-          "fip_capable" : true
-        } ]
-      },
-      "policy" : {
-        "suspend" : true,
-        "min_size" : 123,
-        "dns_cooldown" : 123,
-        "max_size" : 123
-      }
-    },
-    "upstream_connect_timeout" : 123,
-    "mgmt_network_ref" : "aeiou",
-    "vcenter_datastores" : [ {
-      "datastore_name" : "aeiou",
-      "managed_object_id" : "aeiou"
-    } ],
-    "se_dp_vnic_queue_stall_timeout" : 123,
-    "vcenters" : [ {
-      "nsxt_datastores" : {
-        "include" : true,
-        "ds_ids" : [ "aeiou" ]
-      },
-      "nsxt_clusters" : {
-        "include" : true,
-        "cluster_ids" : [ "aeiou" ]
-      },
-      "vcenter_folder" : "aeiou",
-      "nsxt_hosts" : {
-        "include" : true,
-        "host_ids" : [ "aeiou" ]
-      },
-      "clusters" : [ {
-        "cluster_id" : "aeiou",
-        "override_vsphere_ha" : true,
-        "vmg_name" : "aeiou"
-      } ],
-      "vcenter_ref" : "aeiou"
-    } ],
-    "netlink_poller_threads" : 123,
-    "upstream_connpool_enable" : true,
-    "minimum_connection_memory" : 123,
-    "log_agent_compress_logs" : true,
-    "mgmt_subnet" : "",
-    "connection_memory_percentage" : 123,
-    "dp_hb_frequency" : 123,
-    "replay_vrf_routes_interval" : 123,
-    "extra_shared_config_memory" : 123,
-    "se_delayed_flow_delete" : true,
-    "se_name_prefix" : "aeiou",
-    "se_vnic_tx_sw_queue_size" : 123,
-    "cloud_ref" : "aeiou",
-    "se_sb_threads" : 123,
-    "configpb_attributes" : {
-      "version" : 123
-    },
-    "num_dispatcher_queues" : 123,
-    "buffer_se" : 123,
-    "deactivate_kni_filtering_at_dispatcher" : true,
-    "max_public_ips_per_lb" : 123,
-    "ntp_sync_fail_event" : true,
-    "mem_reserve" : true,
-    "l7_conns_per_core" : 123,
-    "openstack_mgmt_network_name" : "aeiou",
-    "pcap_tx_ring_rd_balancing_factor" : 123,
-    "ssl_sess_cache_per_vs" : 123,
-    "max_scaleout_per_vs" : 123,
-    "se_use_dpdk" : 123,
-    "enable_multi_lb" : true,
-    "hybrid_rss_mode" : true,
-    "os_reserved_memory" : 123,
-    "vcenter_clusters" : {
-      "include" : true,
-      "cluster_refs" : [ "aeiou" ]
-    },
-    "vss_placement" : {
-      "num_subcores" : 123,
-      "core_nonaffinity" : 123
-    },
-    "availability_zone_refs" : [ "aeiou" ],
-    "datascript_timeout" : 123456789,
-    "dp_aggressive_hb_timeout_count" : 123,
-    "dp_aggressive_hb_frequency" : 123,
-    "app_cache_percent" : 123,
-    "license_tier" : "aeiou",
-    "log_agent_log_storage_min_sz" : 123,
-    "bgp_state_update_interval" : 123,
-    "host_attribute_value" : "aeiou",
-    "vcpus_per_se" : 123,
-    "netlink_sock_buf_size" : 123,
-    "non_significant_log_throttle" : 123,
-    "ns_helper_deq_interval_msec" : 123,
-    "vnic_rpc_retry_interval" : 123,
-    "allow_burst" : true,
-    "reboot_on_panic" : true,
-    "transient_shared_memory_max" : 123,
-    "dp_enq_interval_msec" : 123,
-    "se_tunnel_udp_port" : 123,
-    "se_pcap_pkt_sz" : 123,
-    "auto_rebalance" : true,
-    "ha_mode" : "aeiou",
-    "disable_tso" : true,
-    "log_agent_max_storage_excess_percent" : 123,
-    "se_dpdk_pmd" : 123,
-    "vss_placement_enabled" : true,
-    "se_dp_vnic_stall_se_restart_window" : 123,
-    "distribute_load_active_standby" : true,
-    "deactivate_ipv6_discovery" : true,
-    "auto_rebalance_interval" : 123,
-    "max_queues_per_vnic" : 123,
-    "auto_rebalance_criteria" : [ "aeiou" ],
-    "max_memory_per_mempool" : 123,
-    "n_log_streaming_threads" : 123,
-    "url" : "aeiou",
-    "se_bandwidth_type" : "aeiou",
-    "dp_aggressive_enq_interval_msec" : 123,
-    "num_dispatcher_cores" : 123,
-    "use_objsync" : true,
-    "markers" : [ {
-      "values" : [ "aeiou" ],
-      "key" : "aeiou"
-    } ],
-    "upstream_read_timeout" : 123,
-    "ingress_access_mgmt" : "aeiou",
-    "se_pcap_lookahead" : true,
-    "ignore_rtt_threshold" : 123,
-    "waf_mempool" : true,
-    "heap_minimum_config_memory" : 123,
-    "openstack_availability_zones" : [ "aeiou" ],
-    "se_tunnel_mode" : 123,
-    "max_concurrent_external_hm" : 123,
-    "config_debugs_on_all_cores" : true,
-    "se_vs_hb_max_vs_in_pkt" : 123,
-    "least_load_core_selection" : true,
-    "uuid" : "aeiou",
-    "vs_se_scaleout_ready_timeout" : 123,
-    "se_rl_prop" : {
-      "msf_num_stages" : 123,
-      "msf_stage_size" : 123456789
-    },
-    "enable_hsm_priming" : true,
-    "log_agent_debug_enabled" : true,
-    "se_ip_encap_ipc" : 123,
-    "se_udp_encap_ipc" : 123,
-    "vcenter_hosts" : {
-      "include" : true,
-      "host_refs" : [ "aeiou" ]
-    },
-    "log_agent_file_sz_appl" : 123,
-    "bgp_peer_monitor_failover_enabled" : true,
-    "se_dp_isolation_num_non_dp_cpus" : 123,
-    "use_standard_alb" : true,
-    "disable_gro" : true,
-    "pcap_tx_mode" : "aeiou",
-    "instance_flavor_info" : {
-      "cost" : "aeiou",
-      "ram_mb" : 123,
-      "max_ips_per_nic" : 123,
-      "vcpus" : 123,
-      "enhanced_nw" : true,
-      "is_recommended" : true,
-      "public" : true,
-      "max_nics" : 123,
-      "meta" : [ {
-        "value" : "aeiou",
-        "key" : "aeiou"
-      } ],
-      "max_ip6s_per_nic" : 123,
-      "name" : "aeiou",
-      "id" : "aeiou",
-      "disk_gb" : 123
-    },
-    "se_pcap_pkt_count" : 123,
-    "se_thread_multiplier" : 123,
-    "ephemeral_portrange_start" : 123,
-    "log_agent_sleep_interval" : 123,
-    "se_flow_probe_retries" : 123,
-    "se_mp_ring_retry_count" : 123,
-    "baremetal_dispatcher_handles_flows" : true,
-    "dedicated_dispatcher_core" : true,
-    "auto_redistribute_active_standby_load" : true,
-    "enable_pcap_tx_ring" : true,
-    "se_mtu" : 123,
-    "se_tx_batch_size" : 123,
-    "user_defined_metric_age" : 123,
-    "custom_securitygroups_data" : [ "aeiou" ],
-    "disable_flow_probes" : true,
-    "downstream_send_timeout" : 123,
-    "iptables" : [ {
-      "chain" : "aeiou",
-      "rules" : [ {
-        "src_ip" : "",
-        "src_port" : "",
-        "input_interface" : "aeiou",
-        "proto" : "aeiou",
-        "dnat_ip" : {
-          "addr" : "aeiou",
-          "type" : "aeiou"
-        },
-        "dst_port" : {
-          "start" : 123,
-          "end" : 123
-        },
-        "action" : "aeiou",
-        "output_interface" : "aeiou",
-        "tag" : "aeiou",
-        "dst_ip" : {
-          "ip_addr" : "",
-          "mask" : 123
-        }
-      } ],
-      "table" : "aeiou"
-    } ],
-    "upstream_send_timeout" : 123,
-    "se_pcap_reinit_threshold" : 123,
-    "aggressive_failure_detection" : true,
-    "se_lro" : true,
-    "dpdk_gro_timeout_interval" : 123,
-    "max_vs_per_se" : 123,
-    "vnic_dhcp_ip_check_interval" : 123,
-    "_last_modified" : "aeiou",
-    "significant_log_throttle" : 123,
-    "se_rum_sampling_nav_interval" : 123,
-    "vcenter_parking_vnic_pg" : "aeiou",
-    "hypervisor" : "aeiou",
-    "use_legacy_netlink" : true,
-    "use_hyperthreaded_cores" : true,
-    "se_dp_if_state_poll_interval" : 123,
-    "service_ip_subnets" : [ "" ],
-    "memory_per_se" : 123,
-    "auto_rebalance_capacity_per_se" : [ "" ],
-    "dp_aggressive_deq_interval_msec" : 123,
-    "se_log_buffer_events_blocking_dequeue" : true,
-    "ssl_preprocess_sni_hostname" : true,
-    "vs_host_redundancy" : true,
-    "placement_mode" : "aeiou",
-    "distribute_queues" : true,
-    "se_txq_threshold" : 123,
-    "vnic_ip_delete_interval" : 123,
-    "async_ssl" : true,
-    "ephemeral_portrange_end" : 123,
-    "vs_scaleout_timeout" : 123,
-    "tenant_ref" : "aeiou",
-    "objsync_port" : 123,
-    "gcp_config" : {
-      "backend_data_vpc_network_name" : "aeiou",
-      "backend_data_vpc_subnet_name" : "aeiou",
-      "backend_data_vpc_project_id" : "aeiou"
-    },
-    "lbaction_num_requests_to_dispatch" : 123
-  },
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#ServiceEngineGroupInventory">ServiceEngineGroupInventory</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>

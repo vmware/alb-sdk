@@ -187,7 +187,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - configure pkiprofile <key> - show pkiprofile <key> ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 23.1.1</div>
+    <div class="app-desc">Version: 30.1.1</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -306,6 +306,7 @@ font-style: italic;
     "url" : "aeiou",
     "_last_modified" : "aeiou",
     "validate_only_leaf_crl" : true,
+    "allow_pki_errors" : [ "aeiou" ],
     "tenant_ref" : "aeiou",
     "crl_check" : true,
     "crls" : [ {
@@ -429,6 +430,7 @@ font-style: italic;
   "url" : "aeiou",
   "_last_modified" : "aeiou",
   "validate_only_leaf_crl" : true,
+  "allow_pki_errors" : [ "aeiou" ],
   "tenant_ref" : "aeiou",
   "crl_check" : true,
   "crls" : [ {
@@ -675,6 +677,7 @@ font-style: italic;
   "url" : "aeiou",
   "_last_modified" : "aeiou",
   "validate_only_leaf_crl" : true,
+  "allow_pki_errors" : [ "aeiou" ],
   "tenant_ref" : "aeiou",
   "crl_check" : true,
   "crls" : [ {
@@ -809,6 +812,7 @@ font-style: italic;
   "url" : "aeiou",
   "_last_modified" : "aeiou",
   "validate_only_leaf_crl" : true,
+  "allow_pki_errors" : [ "aeiou" ],
   "tenant_ref" : "aeiou",
   "crl_check" : true,
   "crls" : [ {
@@ -943,6 +947,7 @@ font-style: italic;
   "url" : "aeiou",
   "_last_modified" : "aeiou",
   "validate_only_leaf_crl" : true,
+  "allow_pki_errors" : [ "aeiou" ],
   "tenant_ref" : "aeiou",
   "crl_check" : true,
   "crls" : [ {
@@ -1038,6 +1043,7 @@ font-style: italic;
     <h3 class="field-label"><a name="PKIProfile">PKIProfile</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
+<div class="param">allow_pki_errors (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Exempt errors during certificate verification. Enum options - ALLOW_EXPIRED_CRL, ALLOW_ALL_ERRORS. Field introduced in 30.1.1. Maximum of 1 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">ca_certs (optional)</div><div class="param-desc"><span class="param-type"><a href="#SSLCertificate">array[SSLCertificate]</a></span> List of Certificate Authorities (Root and Intermediate) trusted that is used for certificate validation. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">created_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Creator name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
