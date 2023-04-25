@@ -300,3 +300,7 @@ Changelog:
 2.0.2:
 
 * Added support for flexibly handling specification of pool placement networks for cloned pools
+
+2.0.3:
+
+* Added some additional reference handling for less-common DataScript and WAF Profile configurations
