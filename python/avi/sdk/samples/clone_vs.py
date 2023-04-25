@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 
 urllib3.disable_warnings()
 
-AVICLONE_VERSION = [2, 0, 2]
+AVICLONE_VERSION = [2, 0, 3]
 
 # Try to obtain the terminal width to allow spprint() to wrap output neatly.
 # If unable to determine, assume terminal width is 70 characters
@@ -67,10 +67,17 @@ class AviClone:
         'pool-autoscalepolicy': 'autoscale_policy_ref'}
     VALID_DATASCRIPT_REF_OBJECTS = {
         'ds-ipgroup': 'ipgroup_refs',
-        'ds-stringgroup': 'string_group_refs'}
+        'ds-stringgroup': 'string_group_refs',
+        'ds-protocolparser': 'protocol_parser_refs',
+        'ds-sslprofile': 'ssl_profile_refs',
+        'ds-pkiprofile': 'pki_profile_refs',
+        'ds-geodb': 'geo_db_ref',
+        'ds-ipreputation': 'ip_reputation_db_ref'}
     VALID_POLICYSET_REF_OBJECTS = {
         'policy-ipgroup': 'group_refs',
-        'policy-stringgroup': 'string_group_refs'}
+        'policy-stringgroup': 'string_group_refs',
+        'policy-geodb': 'geo_db_ref',
+        'policy-ipreputation': 'ip_reputation_db_ref'}
     VALID_VS_REF_OBJECTS = {
         'vs-appprofile': 'application_profile_ref',
         'vs-networkprofile': 'network_profile_ref',
@@ -102,7 +109,9 @@ class AviClone:
     VALID_WAFPOLICY_REF_OBJECTS = {'waf-profile': 'waf_profile_ref',
                                    'waf-crs': 'waf_crs_ref',
                                    'positive-security-model':
-                                       'positive_security_model/group_refs'}
+                                       'positive_security_model/group_refs',
+                                   'waf-appsignatures':
+                                       'application_signatures/provider_ref'}
     VALID_WAFPOLICYPSMGROUP_REF_OBJECTS = {'wafpsm-stringgroup':
                                            'match_value_string_group_ref'}
     VALID_SSLCERT_REF_OBJECTS = {
