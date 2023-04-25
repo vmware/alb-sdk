@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "23.1.1",
+        "version": "30.1.1",
         "title": "Avi VsInventory Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -18,7 +18,7 @@
     },
     "basePath": "/api",
     "paths": {
-        "/vsinventory": {
+        "/virtualservice-inventory": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -182,7 +182,7 @@
                 }
             }
         },
-        "/vsinventory/{uuid}": {
+        "/virtualservice-inventory/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"

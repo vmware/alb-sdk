@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '23.1.1'
+    version: '30.1.1'
     title: Avi NetworkInventory Object API
     contact:
         name: Avi Networks Inc.
@@ -24,7 +24,7 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /networkinventory:
+    /network-inventory:
         get:
             consumes:
                 -   application/json
@@ -132,7 +132,7 @@ paths:
                         $ref: "#/definitions/NetworkInventory"
                 401:
                     description: log in failed
-    /networkinventory/{uuid}:
+    /network-inventory/{uuid}:
         get:
             consumes:
                 -   application/json

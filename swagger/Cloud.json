@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "23.1.1",
+        "version": "30.1.1",
         "title": "Avi Cloud Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -1711,10 +1711,6 @@
         },
         "DataNetworkConfig": {
             "type": "object",
-            "required": [
-                "transport_zone",
-                "tz_type"
-            ],
             "properties": {
                 "tier1_segment_config": {
                     "description": "Nsxt tier1 segment configuration for Avi Service Engine data path. This should be set only when transport zone is of type OVERLAY. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
@@ -2661,11 +2657,6 @@
         },
         "NsxtConfiguration": {
             "type": "object",
-            "required": [
-                "management_network_config",
-                "nsxt_credentials_ref",
-                "nsxt_url"
-            ],
             "properties": {
                 "automate_dfw_rules": {
                     "description": "Automatically create DFW rules for VirtualService in NSX-T Manager. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Basic edition(Allowed values- false), Essentials, Enterprise with Cloud Services edition.",
@@ -2701,6 +2692,10 @@
                     "description": "Site where transport zone belongs to. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "default"
+                },
+                "vmc_mode": {
+                    "description": "VMC mode. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
                 },
                 "vpc_mode": {
                     "description": "VPC Mode. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -2758,7 +2753,7 @@
             "type": "object",
             "properties": {
                 "tier1_lrs": {
-                    "description": "Tier1 logical router placement information. Field introduced in 20.1.1. Minimum of 1 items required. Maximum of 128 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Tier1 logical router placement information. Field introduced in 20.1.1. Minimum of 1 items required. Maximum of 300 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/Tier1LogicalRouterInfo"
@@ -3724,7 +3719,7 @@
                     "type": "string"
                 },
                 "deactivate_vm_discovery": {
-                    "description": "If true, VM's on the vCenter will not be discovered.Set it to true if there are more than 10000 VMs in the datacenter. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "If true, VM's on the vCenter will not be discovered.Set it to true if there are more than 10000 VMs in the datacenter. Field deprecated in 30.1.1. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "is_nsx_environment": {
