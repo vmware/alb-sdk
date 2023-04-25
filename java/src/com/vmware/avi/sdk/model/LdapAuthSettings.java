@@ -37,7 +37,7 @@ public class LdapAuthSettings  {
     private Integer port = 389;
 
     @JsonProperty("security_mode")
-    private String securityMode = null;
+    private String securityMode = "AUTH_LDAP_SECURE_USE_LDAPS";
 
     @JsonProperty("server")
     private List<String> server = null;
@@ -167,7 +167,7 @@ public class LdapAuthSettings  {
      * Ldap connection security mode.
      * Enum options - AUTH_LDAP_SECURE_NONE, AUTH_LDAP_SECURE_USE_LDAPS.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_LDAP_SECURE_USE_LDAPS".
      * @return securityMode
      */
     public String getSecurityMode() {
@@ -179,7 +179,7 @@ public class LdapAuthSettings  {
      * Ldap connection security mode.
      * Enum options - AUTH_LDAP_SECURE_NONE, AUTH_LDAP_SECURE_USE_LDAPS.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "AUTH_LDAP_SECURE_USE_LDAPS".
      * @param securityMode set the securityMode.
      */
     public void setSecurityMode(String  securityMode) {

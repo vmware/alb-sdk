@@ -173,7 +173,7 @@ public class EmailConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Friendly name in from field.
-     * Field introduced in 21.1.4.
+     * Field introduced in 21.1.4, 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fromName
@@ -185,7 +185,7 @@ public class EmailConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Friendly name in from field.
-     * Field introduced in 21.1.4.
+     * Field introduced in 21.1.4, 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fromName set the fromName.
