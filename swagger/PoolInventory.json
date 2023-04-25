@@ -18,7 +18,7 @@
     },
     "basePath": "/api",
     "paths": {
-        "/poolinventory": {
+        "/pool-inventory": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -182,7 +182,7 @@
                 }
             }
         },
-        "/poolinventory/{uuid}": {
+        "/pool-inventory/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"

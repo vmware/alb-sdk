@@ -18,7 +18,7 @@
     },
     "basePath": "/api",
     "paths": {
-        "/serviceengineinventory": {
+        "/serviceengine-inventory": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -182,7 +182,7 @@
                 }
             }
         },
-        "/serviceengineinventory/{uuid}": {
+        "/serviceengine-inventory/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"

@@ -24,7 +24,7 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /cloudinventory:
+    /cloud-inventory:
         get:
             consumes:
                 -   application/json
@@ -132,7 +132,7 @@ paths:
                         $ref: "#/definitions/CloudInventory"
                 401:
                     description: log in failed
-    /cloudinventory/{uuid}:
+    /cloud-inventory/{uuid}:
         get:
             consumes:
                 -   application/json

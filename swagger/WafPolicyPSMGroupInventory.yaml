@@ -24,7 +24,7 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /wafpolicypsmgroupinventory:
+    /wafpolicypsmgroup-inventory:
         get:
             consumes:
                 -   application/json
@@ -132,7 +132,7 @@ paths:
                         $ref: "#/definitions/WafPolicyPSMGroupInventory"
                 401:
                     description: log in failed
-    /wafpolicypsmgroupinventory/{uuid}:
+    /wafpolicypsmgroup-inventory/{uuid}:
         get:
             consumes:
                 -   application/json

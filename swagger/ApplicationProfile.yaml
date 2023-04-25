@@ -951,6 +951,9 @@ definitions:
             server_side_redirect_to_https:
                 description: "When terminating client SSL sessions at Avi, servers may incorrectly send redirect to clients as HTTP.  This option will rewrite the server's redirect responses for this virtual service from HTTP to HTTPS. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition."
                 type: boolean
+            session_config:
+                description: "HTTP session configuration. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/HTTPSessionConfig'
             ssl_client_certificate_action:
                 description: "Set of match/action rules that govern what happens when the client certificate request is enabled. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SSLClientCertificateAction'
@@ -1103,6 +1106,25 @@ definitions:
                 description: "HTTP redirect status code. Enum options - HTTP_REDIRECT_STATUS_CODE_301, HTTP_REDIRECT_STATUS_CODE_302, HTTP_REDIRECT_STATUS_CODE_307. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "HTTP_REDIRECT_STATUS_CODE_302"
+    HTTPSessionConfig:
+        type: object
+        properties:
+            session_cookie_httponly:
+                description: "If set, HTTP session cookie will use 'HttpOnly' attribute. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
+                default: True
+            session_cookie_name:
+                description: "HTTP session cookie name to use. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+                default: "albsessid"
+            session_cookie_samesite:
+                description: "HTTP session cookie SameSite attribute. Enum options - SAMESITE_NONE, SAMESITE_LAX, SAMESITE_STRICT. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+                default: "SAMESITE_LAX"
+            session_cookie_secure:
+                description: "If set, HTTP session cookie will use 'Secure' attribute. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
+                default: True
     IpAddr:
         type: object
         required:
