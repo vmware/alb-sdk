@@ -21,19 +21,19 @@ type NsxtConfiguration struct {
 	EnforcementpointID *string `json:"enforcementpoint_id,omitempty"`
 
 	// Management network configuration for Avi Service Engines. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
-	// Required: true
-	ManagementNetworkConfig *ManagementNetworkConfig `json:"management_network_config"`
+	ManagementNetworkConfig *ManagementNetworkConfig `json:"management_network_config,omitempty"`
 
 	// Credentials to access NSX-T manager. It is a reference to an object of type CloudConnectorUser. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	// Required: true
-	NsxtCredentialsRef *string `json:"nsxt_credentials_ref"`
+	NsxtCredentialsRef *string `json:"nsxt_credentials_ref,omitempty"`
 
 	// NSX-T manager hostname or IP address. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	// Required: true
-	NsxtURL *string `json:"nsxt_url"`
+	NsxtURL *string `json:"nsxt_url,omitempty"`
 
 	// Site where transport zone belongs to. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SiteID *string `json:"site_id,omitempty"`
+
+	// VMC mode. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	VmcMode *bool `json:"vmc_mode,omitempty"`
 
 	// VPC Mode. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	VpcMode *bool `json:"vpc_mode,omitempty"`
