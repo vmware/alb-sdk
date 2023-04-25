@@ -130,7 +130,7 @@ class MonitorConfigConv(object):
                 if '/' in monitor_type:
                     monitor_type = monitor_type.split('/')[-1]
                 m_tenant, m_name = conv_utils.get_tenant_ref(name)
-                # Check if custom cofig present for this HM
+                # Check if custom config present for this HM
                 r_hm = [obj for obj in custom_config if
                         obj['monitor_name'] == m_name]
                 if r_hm:
@@ -420,7 +420,7 @@ class MonitorConfigConv(object):
         if not ca_cert:
             key, ca_cert = conv_utils.create_self_signed_cert()
             name = '%s-%s' % (name, final.PLACE_HOLDER_STR)
-            LOG.warning('Create self cerificate and key for : %s' % name)
+            LOG.warning('Create self certificate and key for : %s' % name)
 
         ssl_kc_obj = None
 

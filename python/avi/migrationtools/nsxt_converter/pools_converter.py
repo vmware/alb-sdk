@@ -130,7 +130,7 @@ class PoolConfigConv(object):
 
                     if pool_skip:
                         skipped_pools_list.append(name)
-                        skip_msg = 'Member ip not falling in segment rnge'
+                        skip_msg = 'Member ip not falling in segment range'
                         conv_utils.add_status_row('pool', None, lb_pl['display_name'],
                                                   conv_const.STATUS_SKIPPED, skip_msg)
                         LOG.warning("POOL {} not migrated. Reason: {}".format(name,

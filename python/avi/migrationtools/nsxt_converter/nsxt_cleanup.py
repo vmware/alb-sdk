@@ -30,7 +30,7 @@ class NsxtAlbCleanup(AviConverter):
         '''
         self.nsxt_ip = args.nsxt_ip
         self.nsxt_user = args.nsxt_user
-        self.nsxt_passord = args.nsxt_password
+        self.nsxt_password = args.nsxt_password
         self.nsxt_port = args.nsxt_port
         self.cleanup_vs_names = args.vs_filter
         self.output_file_path = args.output_file_path if args.output_file_path \
@@ -66,7 +66,7 @@ class NsxtAlbCleanup(AviConverter):
         self.init_logger_path()
 
         if self.cleanup_vs_names:
-            nsx_c = NSXCleanup(self.nsxt_user, self.nsxt_passord, self.nsxt_ip, self.nsxt_port)
+            nsx_c = NSXCleanup(self.nsxt_user, self.nsxt_password, self.nsxt_ip, self.nsxt_port)
             nsx_c.nsx_cleanup(self.cleanup_vs_names)
 
             if nsx_c.vs_not_found:
@@ -97,7 +97,7 @@ if __name__ == "__main__":
                         help='comma separated vs names that we want to cleanup from nsx-t side',
                         required=True)
     parser.add_argument('-n', '--nsxt_ip',
-                        help='Ip of NSXT', required=True)
+                        help='Ip of NSX-T', required=True)
     parser.add_argument('-u', '--nsxt_user',
                         help='NSX-T User name')
     parser.add_argument('-p', '--nsxt_password',

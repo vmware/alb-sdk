@@ -408,17 +408,17 @@ class NSXUtil():
                         tz = cl["nsxt_configuration"]["data_network_config"].get("transport_zone")
                         if cl["nsxt_configuration"]["data_network_config"].get("tz_type") == "OVERLAY":
                             tz_type = "OVERLAY"
-                            data_netwrk = cl["nsxt_configuration"]["data_network_config"]
-                            if data_netwrk.get("tier1_segment_config"):
-                                if data_netwrk["tier1_segment_config"].get("manual"):
-                                    tier1_lrs = data_netwrk["tier1_segment_config"]["manual"].get("tier1_lrs")
+                            data_network = cl["nsxt_configuration"]["data_network_config"]
+                            if data_network.get("tier1_segment_config"):
+                                if data_network["tier1_segment_config"].get("manual"):
+                                    tier1_lrs = data_network["tier1_segment_config"]["manual"].get("tier1_lrs")
                                     if tier1_lrs:
                                         is_seg_present = [True for tier in tier1_lrs if
                                                           get_name_and_entity(tier.get("segment_id"))[-1] == seg_id]
                         elif cl["nsxt_configuration"]["data_network_config"].get("tz_type") == "VLAN":
                             tz_type = "VLAN"
-                            data_netwrk = cl["nsxt_configuration"]["data_network_config"]
-                            vlan_seg = data_netwrk.get("vlan_segments")
+                            data_network = cl["nsxt_configuration"]["data_network_config"]
+                            vlan_seg = data_network.get("vlan_segments")
                             is_seg_present = [True for seg in vlan_seg if get_name_and_entity(seg)[-1] == seg_id]
                     if tz.find("/") != -1:
                         tz = tz.split("/")[-1]
