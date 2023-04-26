@@ -312,6 +312,7 @@ font-style: italic;
   "vs_se_ping_fail" : 123,
   "file_object_cleanup_period" : 123,
   "gslb_purge_sleep_time_ms" : 123,
+  "ignore_vrf_in_networksubnetlist" : true,
   "enable_memory_balancer" : true,
   "vs_awaiting_se_timeout" : 123,
   "vs_scaleout_ready_check_interval" : 123,
@@ -492,6 +493,7 @@ font-style: italic;
   "vs_se_ping_fail" : 123,
   "file_object_cleanup_period" : 123,
   "gslb_purge_sleep_time_ms" : 123,
+  "ignore_vrf_in_networksubnetlist" : true,
   "enable_memory_balancer" : true,
   "vs_awaiting_se_timeout" : 123,
   "vs_scaleout_ready_check_interval" : 123,
@@ -672,6 +674,7 @@ font-style: italic;
   "vs_se_ping_fail" : 123,
   "file_object_cleanup_period" : 123,
   "gslb_purge_sleep_time_ms" : 123,
+  "ignore_vrf_in_networksubnetlist" : true,
   "enable_memory_balancer" : true,
   "vs_awaiting_se_timeout" : 123,
   "vs_scaleout_ready_check_interval" : 123,
@@ -817,6 +820,7 @@ font-style: italic;
 <div class="param">file_object_cleanup_period (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Period for file object cleanup job. Field introduced in 20.1.1. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">gslb_purge_batch_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Batch size for the vs_mgr to perform datastrorecleanup during a GSLB purge. Allowed values are 50-1200. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">gslb_purge_sleep_time_ms (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Sleep time in the vs_mgr during a FederatedPurge RPC call. Allowed values are 50-100. Field introduced in 22.1.3. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">ignore_vrf_in_networksubnetlist (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Ignore the vrf_context filter for /networksubnetlist API. Field introduced in 22.1.4. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">max_dead_se_in_grp (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">max_pcap_per_tenant (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of pcap files stored per tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">max_se_spawn_interval_delay (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum delay possible to add to se_spawn_retry_interval after successive SE spawn failure. Field introduced in 20.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
@@ -847,7 +851,7 @@ font-style: italic;
 <div class="param">secure_channel_controller_token_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">secure_channel_se_token_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">seupgrade_copy_pool_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> This parameter defines the number of simultaneous SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. A value of 0 will disable the pacing scheme and all the SE(s) in the SeGroup will attempt to download the image. . Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">seupgrade_fabric_pool_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Pool size used for all fabric commands during se upgrade. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">seupgrade_fabric_pool_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The pool size is used to control the number of concurrent segroup upgrades. This field value takes affect upon controller warm reboot. Allowed values are 2-20. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">seupgrade_segroup_min_dead_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time to wait before marking segroup upgrade as stuck. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">shared_ssl_certificates (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> SSL Certificates in the admin tenant can be used in non-admin tenants. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ssl_certificate_expiry_warning_days (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">array[Integer]</a></span> Number of days for SSL Certificate expiry warning. Unit is DAYS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
