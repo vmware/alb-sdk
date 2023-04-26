@@ -156,6 +156,9 @@ public class HTTPApplicationProfile  {
     @JsonProperty("server_side_redirect_to_https")
     private Boolean serverSideRedirectToHttps = false;
 
+    @JsonProperty("session_config")
+    private HTTPSessionConfig sessionConfig = null;
+
     @JsonProperty("ssl_client_certificate_action")
     private SSLClientCertificateAction sslClientCertificateAction = null;
 
@@ -1388,6 +1391,30 @@ public class HTTPApplicationProfile  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Http session configuration.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sessionConfig
+     */
+    public HTTPSessionConfig getSessionConfig() {
+        return sessionConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Http session configuration.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sessionConfig set the sessionConfig.
+     */
+    public void setSessionConfig(HTTPSessionConfig sessionConfig) {
+        this.sessionConfig = sessionConfig;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Set of match/action rules that govern what happens when the client certificate request is enabled.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -1698,7 +1725,8 @@ public class HTTPApplicationProfile  {
   Objects.equals(this.trueClientIp, objHTTPApplicationProfile.trueClientIp)&&
   Objects.equals(this.passThroughXAccelHeaders, objHTTPApplicationProfile.passThroughXAccelHeaders)&&
   Objects.equals(this.collectClientTlsFingerprint, objHTTPApplicationProfile.collectClientTlsFingerprint)&&
-  Objects.equals(this.maxHeaderCount, objHTTPApplicationProfile.maxHeaderCount);
+  Objects.equals(this.maxHeaderCount, objHTTPApplicationProfile.maxHeaderCount)&&
+  Objects.equals(this.sessionConfig, objHTTPApplicationProfile.sessionConfig);
     }
 
     @Override
@@ -1750,6 +1778,7 @@ public class HTTPApplicationProfile  {
                         sb.append("    respondWith100Continue: ").append(toIndentedString(respondWith100Continue)).append("\n");
                         sb.append("    secureCookieEnabled: ").append(toIndentedString(secureCookieEnabled)).append("\n");
                         sb.append("    serverSideRedirectToHttps: ").append(toIndentedString(serverSideRedirectToHttps)).append("\n");
+                        sb.append("    sessionConfig: ").append(toIndentedString(sessionConfig)).append("\n");
                         sb.append("    sslClientCertificateAction: ").append(toIndentedString(sslClientCertificateAction)).append("\n");
                         sb.append("    sslClientCertificateMode: ").append(toIndentedString(sslClientCertificateMode)).append("\n");
                         sb.append("    trueClientIp: ").append(toIndentedString(trueClientIp)).append("\n");
