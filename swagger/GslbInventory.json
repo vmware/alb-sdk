@@ -18,7 +18,7 @@
     },
     "basePath": "/api",
     "paths": {
-        "/gslbinventory": {
+        "/gslb-inventory": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -182,7 +182,7 @@
                 }
             }
         },
-        "/gslbinventory/{uuid}": {
+        "/gslb-inventory/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"

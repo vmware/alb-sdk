@@ -18,7 +18,7 @@
     },
     "basePath": "/api",
     "paths": {
-        "/federationcheckpointinventory": {
+        "/federationcheckpoint-inventory": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -182,7 +182,7 @@
                 }
             }
         },
-        "/federationcheckpointinventory/{uuid}": {
+        "/federationcheckpoint-inventory/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"

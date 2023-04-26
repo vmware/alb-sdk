@@ -24,7 +24,7 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /serviceenginegroupinventory:
+    /serviceenginegroup-inventory:
         get:
             consumes:
                 -   application/json
@@ -132,7 +132,7 @@ paths:
                         $ref: "#/definitions/ServiceEngineGroupInventory"
                 401:
                     description: log in failed
-    /serviceenginegroupinventory/{uuid}:
+    /serviceenginegroup-inventory/{uuid}:
         get:
             consumes:
                 -   application/json
