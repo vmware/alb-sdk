@@ -279,6 +279,15 @@ type AviSession struct {
 
 	// Lock to synchronise the cookies collection from API response
 	cookiesCollectLock sync.Mutex
+
+	// CSP_HOST specifies the CSP Host name
+	CSP_HOST string
+
+	// CSP_TOKEN specifies the API token of the csp host with which we can generate the access token
+	CSP_TOKEN string
+
+	// internal: variable to store generated csp access token
+	CSP_ACCESS_TOKEN string
 }
 
 const DEFAULT_AVI_VERSION = "18.2.6"
@@ -286,6 +295,7 @@ const DEFAULT_API_TIMEOUT = time.Duration(60 * time.Second)
 const DEFAULT_API_TENANT = "admin"
 const DEFAULT_MAX_API_RETRIES = 3
 const DEFAULT_API_RETRY_INTERVAL = 500
+const DEFAULT_CSP_HOST = "console.cloud.vmware.com"
 
 // NewAviSession initiates a session to AviController and returns it
 func NewAviSession(host string, username string, options ...func(*AviSession) error) (*AviSession, error) {
@@ -326,6 +336,10 @@ func NewAviSession(host string, username string, options ...func(*AviSession) er
 		avisess.api_retry_interval = DEFAULT_API_RETRY_INTERVAL
 	}
 
+	if avisess.CSP_HOST == "" {
+		avisess.CSP_HOST = DEFAULT_CSP_HOST
+	}
+
 	// set default timeout
 	if avisess.timeout == 0 {
 		avisess.timeout = DEFAULT_API_TIMEOUT
@@ -346,11 +360,66 @@ func NewAviSession(host string, username string, options ...func(*AviSession) er
 		}
 	}
 
+	if avisess.CSP_TOKEN != "" {
+		err := avisess.getCSPAccessToken()
+		return avisess, err
+	}
+
 	if !avisess.lazyAuthentication {
 		err := avisess.initiateSession()
 		return avisess, err
 	}
 	return avisess, nil
+}
+
+func requestForAccessToken(retries int, url string, payload *strings.Reader) (*http.Response, error) {
+	client := &http.Client{}
+	req, err := http.NewRequest("POST", url, payload)
+	if err != nil {
+		glog.Errorf("Request error: %v ", err)
+	}
+	req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
+	resp, err := client.Do(req)
+	if err != nil {
+		glog.Errorf("Response error: %v ", err)
+	}
+	return resp, err
+}
+
+func (avisess *AviSession) getCSPAccessToken() error {
+	url := "https://" + avisess.CSP_HOST + "/csp/gateway/am/api/auth/api-tokens/authorize"
+	payload := strings.NewReader("api_token=" + avisess.CSP_TOKEN)
+	var (
+		retries  int = 0
+		resp     *http.Response
+		err      error
+		response map[string]interface{}
+	)
+	for retries < DEFAULT_MAX_API_RETRIES {
+		resp, err = requestForAccessToken(retries, url, payload)
+		if err != nil {
+			glog.Errorf("Request error: %v ", err)
+		}
+		if resp.StatusCode == 200 {
+			break
+		} else {
+			glog.Errorf("Unable to get the access token, retrying : %v", retries)
+			time.Sleep(10 * time.Second)
+			retries += 1
+		}
+	}
+	body, err := ioutil.ReadAll(resp.Body)
+	defer resp.Body.Close()
+	json.Unmarshal(body, &response)
+	if retries == DEFAULT_MAX_API_RETRIES && resp.StatusCode != 200 {
+		glog.Errorf("Unable to get the access token due to: %v", response["message"].(string))
+		// Exiting from here because not getting any error in err var, From CSP Always getting an error in resp var.
+		os.Exit(0)
+	} else {
+		access_token := response["access_token"].(string)
+		avisess.CSP_ACCESS_TOKEN = access_token
+	}
+	return nil
 }
 
 func (avisess *AviSession) initiateSession() error {
@@ -546,6 +615,28 @@ func (avisess *AviSession) setTimeout(timeout time.Duration) error {
 	return nil
 }
 
+func SetCSPToken(csptoken string) func(*AviSession) error {
+	return func(sess *AviSession) error {
+		return sess.setCSPToken(csptoken)
+	}
+}
+
+func (avisess *AviSession) setCSPToken(csptoken string) error {
+	avisess.CSP_TOKEN = csptoken
+	return nil
+}
+
+func SetCSPHost(csphost string) func(*AviSession) error {
+	return func(sess *AviSession) error {
+		return sess.setCSPHost(csphost)
+	}
+}
+
+func (avisess *AviSession) setCSPHost(csphost string) error {
+	avisess.CSP_HOST = csphost
+	return nil
+}
+
 func (avisess *AviSession) isTokenAuth() bool {
 	return avisess.authToken != "" || avisess.refreshAuthToken != nil || avisess.refreshAuthTokenV2 != nil
 }
@@ -608,7 +699,11 @@ func (avisess *AviSession) newAviRequest(verb string, url string, payload io.Rea
 		errorResult.err = fmt.Errorf("http.NewRequest failed: %v", err)
 		return nil, errorResult
 	}
+	if avisess.CSP_ACCESS_TOKEN != "" {
+		req.Header.Set("Authorization", "Bearer "+string(avisess.CSP_ACCESS_TOKEN))
+	}
 	req.Header.Set("Content-Type", "application/json")
+
 	//req.Header.Set("Accept", "application/json")
 	req.Header.Set("X-Avi-Version", avisess.version)
 	if tenant == "" {
@@ -670,7 +765,6 @@ func (avisess *AviSession) RestRequest(verb string, uri string, payload interfac
 func (avisess *AviSession) restRequest(verb string, uri string, payload interface{}, tenant string, lastError error,
 	retryNum ...int) (*http.Response, error) {
 	url := avisess.prefix + uri
-
 	// If optional retryNum arg is provided, then count which retry number this is
 	retry := 0
 	if len(retryNum) > 0 {
@@ -697,7 +791,6 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 	if errorResult.err != nil {
 		return nil, errorResult
 	}
-
 	retryReq := false
 	resp, err := avisess.client.Do(req)
 	if err != nil {
@@ -710,7 +803,7 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 		debug(dump, dumpErr)
 		retryReq = true
 	}
-	if resp.StatusCode == 500 {
+	if resp != nil && resp.StatusCode == 500 {
 		if _, err = avisess.fetchBody(verb, uri, resp); err != nil {
 			glog.Errorf("Client error for URI: %+v. Error: %+v", uri, err.Error())
 		}
@@ -1459,7 +1552,6 @@ func (avisess *AviSession) GetObjectByName(obj string, name string, result inter
 // GetControllerVersion gets the version number from the Avi Controller
 func (avisess *AviSession) GetControllerVersion() (string, error) {
 	var resp interface{}
-
 	err := avisess.Get("/api/initial-data", &resp)
 	if err != nil {
 		return "", err
