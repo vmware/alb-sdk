@@ -143,6 +143,9 @@ type HTTPApplicationProfile struct {
 	// When terminating client SSL sessions at Avi, servers may incorrectly send redirect to clients as HTTP.  This option will rewrite the server's redirect responses for this virtual service from HTTP to HTTPS. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition.
 	ServerSideRedirectToHTTPS *bool `json:"server_side_redirect_to_https,omitempty"`
 
+	// HTTP session configuration. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	SessionConfig *HttpsessionConfig `json:"session_config,omitempty"`
+
 	// Set of match/action rules that govern what happens when the client certificate request is enabled. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	SslClientCertificateAction *SSLClientCertificateAction `json:"ssl_client_certificate_action,omitempty"`
 

@@ -97,6 +97,9 @@ type VirtualService struct {
 	// Enable Route Health Injection for Source NAT'ted floating IP Address using the BGP Config in the vrf context. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	EnableRhiSnat *bool `json:"enable_rhi_snat,omitempty"`
 
+	// Enable HTTP sessions for this virtual service. If enabled, a session cookie will be added to HTTP responses and persistent key-value store will be activated. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	EnableSession *bool `json:"enable_session,omitempty"`
+
 	// Enable or disable the Virtual Service. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Enabled *bool `json:"enabled,omitempty"`
 
