@@ -375,6 +375,9 @@ definitions:
                 type: integer
                 default: 50
                 format: int32
+            ignore_vrf_in_networksubnetlist:
+                description: "Ignore the vrf_context filter for /networksubnetlist API. Field introduced in 22.1.4. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
             max_dead_se_in_grp:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
@@ -514,7 +517,7 @@ definitions:
                 default: 5
                 format: int32
             seupgrade_fabric_pool_size:
-                description: "Pool size used for all fabric commands during se upgrade. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The pool size is used to control the number of concurrent segroup upgrades. This field value takes affect upon controller warm reboot. Allowed values are 2-20. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 20
                 format: int32
