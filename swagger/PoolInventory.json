@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "23.1.1",
+        "version": "30.1.1",
         "title": "Avi PoolInventory Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -18,7 +18,7 @@
     },
     "basePath": "/api",
     "paths": {
-        "/poolinventory": {
+        "/pool-inventory": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -182,7 +182,7 @@
                 }
             }
         },
-        "/poolinventory/{uuid}": {
+        "/pool-inventory/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"

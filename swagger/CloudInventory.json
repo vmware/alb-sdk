@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "23.1.1",
+        "version": "30.1.1",
         "title": "Avi CloudInventory Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -18,7 +18,7 @@
     },
     "basePath": "/api",
     "paths": {
-        "/cloudinventory": {
+        "/cloud-inventory": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -182,7 +182,7 @@
                 }
             }
         },
-        "/cloudinventory/{uuid}": {
+        "/cloud-inventory/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -828,7 +828,7 @@
                     "type": "string"
                 },
                 "deactivate_vm_discovery": {
-                    "description": "If true, VM's on the vCenter will not be discovered.Set it to true if there are more than 10000 VMs in the datacenter. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "If true, VM's on the vCenter will not be discovered.Set it to true if there are more than 10000 VMs in the datacenter. Field deprecated in 30.1.1. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "is_nsx_environment": {
