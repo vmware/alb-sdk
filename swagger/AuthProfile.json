@@ -866,16 +866,16 @@
                     "type": "string"
                 },
                 "oauth_controller_settings": {
-                    "description": "OAuth App Settings for controller authentication. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "OAuth App Settings for controller authentication. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/OAuthAppSettings"
                 },
                 "oauth_profile_type": {
-                    "description": "Type of OAuth profile which defines the usage type. Enum options - CLIENT_OAUTH, CONTROLLER_OAUTH. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Type of OAuth profile which defines the usage type. Enum options - CLIENT_OAUTH, CONTROLLER_OAUTH. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "CLIENT_OAUTH"
                 },
                 "oauth_provider": {
-                    "description": "Type of OAuth Provider when using controller oauth as oauth profile type. Enum options - OAUTH_CSP. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Type of OAuth Provider when using controller oauth as oauth profile type. Enum options - OAUTH_CSP. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "oauth_resp_buffer_sz": {
@@ -885,7 +885,7 @@
                     "format": "int32"
                 },
                 "org_id": {
-                    "description": "Organization Id for OAuth. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Organization Id for OAuth. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "pool_ref": {
@@ -893,7 +893,7 @@
                     "type": "string"
                 },
                 "redirect_uri": {
-                    "description": "Redirect URI specified in the request to Authorization Server. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Redirect URI specified in the request to Authorization Server. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "service_id": {
