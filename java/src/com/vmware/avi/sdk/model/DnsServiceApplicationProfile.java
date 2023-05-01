@@ -27,6 +27,9 @@ public class DnsServiceApplicationProfile  {
     @JsonProperty("admin_email")
     private String adminEmail = "hostmaster";
 
+    @JsonProperty("close_tcp_connection_post_response")
+    private Boolean closeTcpConnectionPostResponse = false;
+
     @JsonProperty("dns_over_tcp_enabled")
     private Boolean dnsOverTcpEnabled = true;
 
@@ -110,6 +113,32 @@ public class DnsServiceApplicationProfile  {
      */
     public void setAdminEmail(String  adminEmail) {
         this.adminEmail = adminEmail;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * If enabled, the service engine initiates closure of client tcp connections after the first dns response, for pass-through/proxy cases.
+     * This behavior applies to all dns request types other than ax-fr.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return closeTcpConnectionPostResponse
+     */
+    public Boolean getCloseTcpConnectionPostResponse() {
+        return closeTcpConnectionPostResponse;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * If enabled, the service engine initiates closure of client tcp connections after the first dns response, for pass-through/proxy cases.
+     * This behavior applies to all dns request types other than ax-fr.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param closeTcpConnectionPostResponse set the closeTcpConnectionPostResponse.
+     */
+    public void setCloseTcpConnectionPostResponse(Boolean  closeTcpConnectionPostResponse) {
+        this.closeTcpConnectionPostResponse = closeTcpConnectionPostResponse;
     }
 
     /**
@@ -472,7 +501,8 @@ public class DnsServiceApplicationProfile  {
   Objects.equals(this.negativeCachingTtl, objDnsServiceApplicationProfile.negativeCachingTtl)&&
   Objects.equals(this.nameServer, objDnsServiceApplicationProfile.nameServer)&&
   Objects.equals(this.adminEmail, objDnsServiceApplicationProfile.adminEmail)&&
-  Objects.equals(this.dnsZones, objDnsServiceApplicationProfile.dnsZones);
+  Objects.equals(this.dnsZones, objDnsServiceApplicationProfile.dnsZones)&&
+  Objects.equals(this.closeTcpConnectionPostResponse, objDnsServiceApplicationProfile.closeTcpConnectionPostResponse);
     }
 
     @Override
@@ -481,6 +511,7 @@ public class DnsServiceApplicationProfile  {
       sb.append("class DnsServiceApplicationProfile {\n");
                   sb.append("    aaaaEmptyResponse: ").append(toIndentedString(aaaaEmptyResponse)).append("\n");
                         sb.append("    adminEmail: ").append(toIndentedString(adminEmail)).append("\n");
+                        sb.append("    closeTcpConnectionPostResponse: ").append(toIndentedString(closeTcpConnectionPostResponse)).append("\n");
                         sb.append("    dnsOverTcpEnabled: ").append(toIndentedString(dnsOverTcpEnabled)).append("\n");
                         sb.append("    dnsZones: ").append(toIndentedString(dnsZones)).append("\n");
                         sb.append("    domainNames: ").append(toIndentedString(domainNames)).append("\n");
