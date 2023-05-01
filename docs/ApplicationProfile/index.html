@@ -277,6 +277,7 @@ font-style: italic;
       "negative_caching_ttl" : 123,
       "name_server" : "aeiou",
       "error_response" : "aeiou",
+      "close_tcp_connection_post_response" : true,
       "num_dns_ip" : 123,
       "ecs_stripping_enabled" : true
     },
@@ -583,6 +584,7 @@ font-style: italic;
     "negative_caching_ttl" : 123,
     "name_server" : "aeiou",
     "error_response" : "aeiou",
+    "close_tcp_connection_post_response" : true,
     "num_dns_ip" : 123,
     "ecs_stripping_enabled" : true
   },
@@ -960,6 +962,7 @@ font-style: italic;
     "negative_caching_ttl" : 123,
     "name_server" : "aeiou",
     "error_response" : "aeiou",
+    "close_tcp_connection_post_response" : true,
     "num_dns_ip" : 123,
     "ecs_stripping_enabled" : true
   },
@@ -1277,6 +1280,7 @@ font-style: italic;
     "negative_caching_ttl" : 123,
     "name_server" : "aeiou",
     "error_response" : "aeiou",
+    "close_tcp_connection_post_response" : true,
     "num_dns_ip" : 123,
     "ecs_stripping_enabled" : true
   },
@@ -1594,6 +1598,7 @@ font-style: italic;
     "negative_caching_ttl" : 123,
     "name_server" : "aeiou",
     "error_response" : "aeiou",
+    "close_tcp_connection_post_response" : true,
     "num_dns_ip" : 123,
     "ecs_stripping_enabled" : true
   },
@@ -2022,6 +2027,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">aaaa_empty_response (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Respond to AAAA queries with empty response when there are only IPV4 records. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">admin_email (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Email address of the administrator responsible for this zone . This field is used in SOA records (rname) pertaining to all domain names specified as authoritative domain names. If not configured, the default value &#39;hostmaster&#39; is used in SOA responses. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">close_tcp_connection_post_response (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If enabled, the Service Engine initiates closure of client TCP connections after the first DNS response, for pass-through/proxy cases. This behavior applies to all DNS request types other than AX-FR. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">dns_over_tcp_enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable DNS query/response over TCP. This enables analytics for pass-through queries as well. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">dns_zones (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsZone">array[DnsZone]</a></span> DNS zones hosted on this Virtual Service. Field introduced in 18.2.6. Maximum of 100 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">domain_names (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Subdomain names serviced by this Virtual Service. These are configured as Ends-With semantics. Maximum of 100 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
