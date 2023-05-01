@@ -776,6 +776,7 @@ font-style: italic;
           "omitted_match_elements" : 123,
           "tags" : [ "aeiou" ]
         } ],
+        "learning_status" : "aeiou",
         "allowlist_processed" : true,
         "rules_processed" : true,
         "application_rules_processed" : true,
@@ -4688,6 +4689,7 @@ font-style: italic;
         "omitted_match_elements" : 123,
         "tags" : [ "aeiou" ]
       } ],
+      "learning_status" : "aeiou",
       "allowlist_processed" : true,
       "rules_processed" : true,
       "application_rules_processed" : true,
@@ -8671,6 +8673,7 @@ font-style: italic;
         "omitted_match_elements" : 123,
         "tags" : [ "aeiou" ]
       } ],
+      "learning_status" : "aeiou",
       "allowlist_processed" : true,
       "rules_processed" : true,
       "application_rules_processed" : true,
@@ -12594,6 +12597,7 @@ font-style: italic;
         "omitted_match_elements" : 123,
         "tags" : [ "aeiou" ]
       } ],
+      "learning_status" : "aeiou",
       "allowlist_processed" : true,
       "rules_processed" : true,
       "application_rules_processed" : true,
@@ -16517,6 +16521,7 @@ font-style: italic;
         "omitted_match_elements" : 123,
         "tags" : [ "aeiou" ]
       } ],
+      "learning_status" : "aeiou",
       "allowlist_processed" : true,
       "rules_processed" : true,
       "application_rules_processed" : true,
@@ -31401,6 +31406,7 @@ font-style: italic;
 <div class="param">latency_request_header_phase (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Latency (in microseconds) in WAF Request Header Phase. Field introduced in 17.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int64</div>
 <div class="param">latency_response_body_phase (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Latency (in microseconds) in WAF Response Body Phase. Field introduced in 17.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int64</div>
 <div class="param">latency_response_header_phase (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Latency (in microseconds) in WAF Response Header Phase. Field introduced in 17.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int64</div>
+<div class="param">learning_status (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Indicate if this request is used for learning. If it is not used, this field contains the reason for this decision. Enum options - NOT_ACTIVE, LEARNED, NOTHING_TO_LEARN, SERVER_ERROR, FLAGGED_BY_WAF, SKIPPED_BY_SAMPLING, CLIENT_IS_NOT_AUTHENTICATED, CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">memory_allocated (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> The total memory (in bytes) consumed by WAF to process this request. Field introduced in 22.1.1. Unit is BYTES. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int64</div>
 <div class="param">omitted_app_rule_stats (optional)</div><div class="param-desc"><span class="param-type"><a href="#OmittedWafLogStats">OmittedWafLogStats</a></span> Omitted Application rule log stats. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">omitted_signature_stats (optional)</div><div class="param-desc"><span class="param-type"><a href="#OmittedWafLogStats">OmittedWafLogStats</a></span> Omitted WAF rule log stats. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>

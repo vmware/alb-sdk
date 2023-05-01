@@ -372,6 +372,7 @@ font-style: italic;
       "max_uris" : 123,
       "update_interval" : 123,
       "sampling_percent" : 123,
+      "learn_from_bots" : "",
       "learn_from_authenticated_clients_only" : true,
       "max_params" : 123,
       "trusted_ipgroup_ref" : "aeiou"
@@ -623,6 +624,7 @@ font-style: italic;
     "max_uris" : 123,
     "update_interval" : 123,
     "sampling_percent" : 123,
+    "learn_from_bots" : "",
     "learn_from_authenticated_clients_only" : true,
     "max_params" : 123,
     "trusted_ipgroup_ref" : "aeiou"
@@ -945,6 +947,7 @@ font-style: italic;
     "max_uris" : 123,
     "update_interval" : 123,
     "sampling_percent" : 123,
+    "learn_from_bots" : "",
     "learn_from_authenticated_clients_only" : true,
     "max_params" : 123,
     "trusted_ipgroup_ref" : "aeiou"
@@ -1207,6 +1210,7 @@ font-style: italic;
     "max_uris" : 123,
     "update_interval" : 123,
     "sampling_percent" : 123,
+    "learn_from_bots" : "",
     "learn_from_authenticated_clients_only" : true,
     "max_params" : 123,
     "trusted_ipgroup_ref" : "aeiou"
@@ -1469,6 +1473,7 @@ font-style: italic;
     "max_uris" : 123,
     "update_interval" : 123,
     "sampling_percent" : 123,
+    "learn_from_bots" : "",
     "learn_from_authenticated_clients_only" : true,
     "max_params" : 123,
     "trusted_ipgroup_ref" : "aeiou"
@@ -1692,6 +1697,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">enable_per_uri_learning (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Learn the params per URI path. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">learn_from_authenticated_clients_only (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If true, learning will only be performed on requests from clients who have passed the authentication process configured in the Virtual Service&#39;s Auth Profile. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">learn_from_bots (optional)</div><div class="param-desc"><span class="param-type"><a href="#BotDetectionMatch">BotDetectionMatch</a></span> If Bot detection is active for this Virtual Service, learning will only be performed on requests from clients within the configured bot classification types. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">max_params (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of params programmed for an application. Allowed values are 10-1000. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">max_uris (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of URI paths programmed for an application. Allowed values are 10-10000. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">min_hits_to_learn (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Minimum number of occurances required for a Param to qualify for learning. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int64</div>
