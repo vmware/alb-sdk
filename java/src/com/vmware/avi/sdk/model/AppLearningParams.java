@@ -27,6 +27,9 @@ public class AppLearningParams  {
     @JsonProperty("learn_from_authenticated_clients_only")
     private Boolean learnFromAuthenticatedClientsOnly = false;
 
+    @JsonProperty("learn_from_bots")
+    private BotDetectionMatch learnFromBots = null;
+
     @JsonProperty("max_params")
     private Integer maxParams = 100;
 
@@ -95,6 +98,32 @@ public class AppLearningParams  {
      */
     public void setLearnFromAuthenticatedClientsOnly(Boolean  learnFromAuthenticatedClientsOnly) {
         this.learnFromAuthenticatedClientsOnly = learnFromAuthenticatedClientsOnly;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * If bot detection is active for this virtual service, learning will only be performed on requests from clients within the configured bot
+     * classification types.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return learnFromBots
+     */
+    public BotDetectionMatch getLearnFromBots() {
+        return learnFromBots;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * If bot detection is active for this virtual service, learning will only be performed on requests from clients within the configured bot
+     * classification types.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param learnFromBots set the learnFromBots.
+     */
+    public void setLearnFromBots(BotDetectionMatch learnFromBots) {
+        this.learnFromBots = learnFromBots;
     }
 
     /**
@@ -272,7 +301,8 @@ public class AppLearningParams  {
   Objects.equals(this.enablePerUriLearning, objAppLearningParams.enablePerUriLearning)&&
   Objects.equals(this.minHitsToLearn, objAppLearningParams.minHitsToLearn)&&
   Objects.equals(this.learnFromAuthenticatedClientsOnly, objAppLearningParams.learnFromAuthenticatedClientsOnly)&&
-  Objects.equals(this.trustedIpgroupRef, objAppLearningParams.trustedIpgroupRef);
+  Objects.equals(this.trustedIpgroupRef, objAppLearningParams.trustedIpgroupRef)&&
+  Objects.equals(this.learnFromBots, objAppLearningParams.learnFromBots);
     }
 
     @Override
@@ -281,6 +311,7 @@ public class AppLearningParams  {
       sb.append("class AppLearningParams {\n");
                   sb.append("    enablePerUriLearning: ").append(toIndentedString(enablePerUriLearning)).append("\n");
                         sb.append("    learnFromAuthenticatedClientsOnly: ").append(toIndentedString(learnFromAuthenticatedClientsOnly)).append("\n");
+                        sb.append("    learnFromBots: ").append(toIndentedString(learnFromBots)).append("\n");
                         sb.append("    maxParams: ").append(toIndentedString(maxParams)).append("\n");
                         sb.append("    maxUris: ").append(toIndentedString(maxUris)).append("\n");
                         sb.append("    minHitsToLearn: ").append(toIndentedString(minHitsToLearn)).append("\n");
