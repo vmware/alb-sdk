@@ -30,6 +30,9 @@ public class WafRuleMatchData  {
     @JsonProperty("match_value")
     private String matchValue = null;
 
+    @JsonProperty("match_value_offset")
+    private Integer matchValueOffset = 0;
+
 
 
     /**
@@ -84,7 +87,12 @@ public class WafRuleMatchData  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Value for a field from a transaction that matches the rule, for instance if the request parameter is password=foobar, then match_value is foobar.
+     * Value of the field from a transaction that matches the rule.
+     * For instance, if the request parameter is password=foo, then match_value is foo.
+     * The value can be truncated if it is too long.
+     * In this case, this field starts at the position where the actual match started inside the value, and that position is stored in
+     * match_value_offset.
+     * This is done to ensure the relevant part is shown.
      * Field introduced in 17.2.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -96,7 +104,12 @@ public class WafRuleMatchData  {
 
     /**
      * This is the setter method to the attribute.
-     * Value for a field from a transaction that matches the rule, for instance if the request parameter is password=foobar, then match_value is foobar.
+     * Value of the field from a transaction that matches the rule.
+     * For instance, if the request parameter is password=foo, then match_value is foo.
+     * The value can be truncated if it is too long.
+     * In this case, this field starts at the position where the actual match started inside the value, and that position is stored in
+     * match_value_offset.
+     * This is done to ensure the relevant part is shown.
      * Field introduced in 17.2.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -104,6 +117,30 @@ public class WafRuleMatchData  {
      */
     public void setMatchValue(String  matchValue) {
         this.matchValue = matchValue;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * The starting index of the first character of match_value field with respect to original match value.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @return matchValueOffset
+     */
+    public Integer getMatchValueOffset() {
+        return matchValueOffset;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The starting index of the first character of match_value field with respect to original match value.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @param matchValueOffset set the matchValueOffset.
+     */
+    public void setMatchValueOffset(Integer  matchValueOffset) {
+        this.matchValueOffset = matchValueOffset;
     }
 
 
@@ -118,7 +155,8 @@ public class WafRuleMatchData  {
       WafRuleMatchData objWafRuleMatchData = (WafRuleMatchData) o;
       return   Objects.equals(this.matchElement, objWafRuleMatchData.matchElement)&&
   Objects.equals(this.matchValue, objWafRuleMatchData.matchValue)&&
-  Objects.equals(this.isInternal, objWafRuleMatchData.isInternal);
+  Objects.equals(this.isInternal, objWafRuleMatchData.isInternal)&&
+  Objects.equals(this.matchValueOffset, objWafRuleMatchData.matchValueOffset);
     }
 
     @Override
@@ -128,6 +166,7 @@ public class WafRuleMatchData  {
                   sb.append("    isInternal: ").append(toIndentedString(isInternal)).append("\n");
                         sb.append("    matchElement: ").append(toIndentedString(matchElement)).append("\n");
                         sb.append("    matchValue: ").append(toIndentedString(matchValue)).append("\n");
+                        sb.append("    matchValueOffset: ").append(toIndentedString(matchValueOffset)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
