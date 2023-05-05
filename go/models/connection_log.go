@@ -74,6 +74,9 @@ type ConnectionLog struct {
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSResponse *DNSResponse `json:"dns_response,omitempty"`
 
+	// Service engine closed the TCP connection after the first DNS response. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	DNSTCPConnCloseFromSe *bool `json:"dns_tcp_conn_close_from_se,omitempty"`
+
 	// Datascript Log. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	DsLog *string `json:"ds_log,omitempty"`
 

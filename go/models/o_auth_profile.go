@@ -30,25 +30,25 @@ type OAuthProfile struct {
 	// JWKS URL of the endpoint that hosts the public keys that can be used to verify any JWT issued by the authorization server. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	JwksURI *string `json:"jwks_uri,omitempty"`
 
-	// OAuth App Settings for controller authentication. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// OAuth App Settings for controller authentication. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	OauthControllerSettings *OAuthAppSettings `json:"oauth_controller_settings,omitempty"`
 
-	// Type of OAuth profile which defines the usage type. Enum options - CLIENT_OAUTH, CONTROLLER_OAUTH. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Type of OAuth profile which defines the usage type. Enum options - CLIENT_OAUTH, CONTROLLER_OAUTH. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	OauthProfileType *string `json:"oauth_profile_type,omitempty"`
 
-	// Type of OAuth Provider when using controller oauth as oauth profile type. Enum options - OAUTH_CSP. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Type of OAuth Provider when using controller oauth as oauth profile type. Enum options - OAUTH_CSP. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	OauthProvider *string `json:"oauth_provider,omitempty"`
 
 	// Buffering size for the responses from the OAUTH enpoints. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	OauthRespBufferSz *int32 `json:"oauth_resp_buffer_sz,omitempty"`
 
-	// Organization Id for OAuth. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Organization Id for OAuth. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	OrgID *string `json:"org_id,omitempty"`
 
 	// Pool object to interface with Authorization Server endpoints. It is a reference to an object of type Pool. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	PoolRef *string `json:"pool_ref,omitempty"`
 
-	// Redirect URI specified in the request to Authorization Server. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Redirect URI specified in the request to Authorization Server. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	RedirectURI *string `json:"redirect_uri,omitempty"`
 
 	// Uuid value of csp service. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
