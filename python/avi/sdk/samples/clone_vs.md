@@ -212,7 +212,7 @@ If cloning a Virtual Service between Controllers or to a different tenant, the d
 
 A WAF Policy and its referenced PSM groups can be forced cloned using the -fc flag. This supports the scenarios where the cloned VS should have its own WAF Policy rather than sharing the same WAF policy (including the case where learning is enabled).
 
-In this case, if learning is enabled in the source WAF Policy, it will remain enabled in the cloned WAF Policy resulting in indepdent learning for the cloned VS.
+In this case, if learning is enabled in the source WAF Policy, it will remain enabled in the cloned WAF Policy resulting in independent learning for the cloned VS.
 
 The below example clones a VS and forces cloning of the WAF Policy and any PSM groups also.
 
