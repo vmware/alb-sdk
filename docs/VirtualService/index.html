@@ -830,6 +830,7 @@ font-style: italic;
       } ]
     } ],
     "tenant_ref" : "aeiou",
+    "csrf_policy_ref" : "aeiou",
     "ign_pool_net_reach" : true,
     "markers" : [ {
       "values" : [ "aeiou" ],
@@ -1346,6 +1347,7 @@ font-style: italic;
     } ]
   } ],
   "tenant_ref" : "aeiou",
+  "csrf_policy_ref" : "aeiou",
   "ign_pool_net_reach" : true,
   "markers" : [ {
     "values" : [ "aeiou" ],
@@ -2667,6 +2669,7 @@ font-style: italic;
     } ]
   } ],
   "tenant_ref" : "aeiou",
+  "csrf_policy_ref" : "aeiou",
   "ign_pool_net_reach" : true,
   "markers" : [ {
     "values" : [ "aeiou" ],
@@ -4298,6 +4301,7 @@ font-style: italic;
     } ]
   } ],
   "tenant_ref" : "aeiou",
+  "csrf_policy_ref" : "aeiou",
   "ign_pool_net_reach" : true,
   "markers" : [ {
     "values" : [ "aeiou" ],
@@ -5033,6 +5037,7 @@ font-style: italic;
     } ]
   } ],
   "tenant_ref" : "aeiou",
+  "csrf_policy_ref" : "aeiou",
   "ign_pool_net_reach" : true,
   "markers" : [ {
     "values" : [ "aeiou" ],
@@ -7065,6 +7070,7 @@ font-style: italic;
 <div class="param">connections_rate_limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#RateProfile">RateProfile</a></span> Rate limit the incoming connections to this virtual service. Allowed in Enterprise edition with any value, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">content_rewrite (optional)</div><div class="param-desc"><span class="param-type"><a href="#ContentRewriteProfile">ContentRewriteProfile</a></span> Profile used to match and rewrite strings in request and/or response body. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">created_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Creator name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">csrf_policy_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> CSRF Protection policy for the Virtual Service. It is a reference to an object of type CSRFPolicy. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">delay_fairness (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Select the algorithm for QoS fairness.  This determines how multiple Virtual Services sharing the same Service Engines will prioritize traffic over a congested network. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. </div>
 <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">dns_info (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsInfo">array[DnsInfo]</a></span> Service discovery specific data including fully qualified domain name, type and Time-To-Live of the DNS record. Note that only one of fqdn and dns_info setting is allowed. Maximum of 1000 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
