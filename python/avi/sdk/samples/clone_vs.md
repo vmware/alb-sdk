@@ -72,18 +72,20 @@ Specify the VIP as a subnet/mask. This must match an auto-allocation subnet in I
 
 If the source VIP was auto-allocated, the target can simply inherit the auto-allocation network:
 
-> -v *
+> -v auto (or -v *)
+
+(Note: On Linux/Unix/Mac systems, use the `auto` option as `*` would need to be escaped to prevent it being treated as a filename glob)
 
 ### Specifying public/elastic/floating IP for clouds that support this (e.g. public clouds, OpenStack)
 
-Separate the public/floating IP using a `;`. A static public/floating IP can be specified explicitly, or o auto-allocate a public IP, use the `auto` keyword:
+Separate the public/floating IP using a `;`. A static public/floating IP can be specified explicitly, or to auto-allocate a public IP, use the `auto` keyword:
 
 > -v 10.10.10.0/24;203.0.113.100
 > -v 10.10.10.0/24;auto
 
 ### Avi Internal IPAM
 
-When using Avi Internal IPAM for auto-allocation, it may be necessary in some clouds (e.g. NSX-T Cloud) to supply the `-int` parameter to ensure the VsVip is populated with all the correct fields. Other clouds (e.g. vCenter Cloud) are more forgiving and usually work without specifying this parameter.
+When using Avi Internal IPAM for auto-allocation, it may be necessary in some clouds (e.g. NSX-T Cloud) to supply the `-int` parameter to ensure the VsVip is populated with all the correct fields. Other clouds (e.g. vCenter Cloud) are more forgiving and generally work without specifying this parameter if there is only a single IPAM subnet specified.
 
 ## Special flags
 
@@ -216,13 +218,13 @@ In this case, if learning is enabled in the source WAF Policy, it will remain en
 
 The below example clones a VS and forces cloning of the WAF Policy and any PSM groups also.
 
-> clone_vs.py -c controller1.acme.com -fc vs-wafpolicy,positive-security-model vs example cloned-example -v *
+> clone_vs.py -c controller1.acme.com -fc vs-wafpolicy,positive-security-model vs example cloned-example -v auto
 
 ### Disabling learning in the cloned WAF Policy
 
 It may desirable to disable learning for the cloned WAF Policy and its referenced PSM groups, for example if the source Virtual Service was used for learning and the cloned Virtual Service will be an instance of the same application, but independent learning is not desired. This can be achieved with the option  `-flags disablelearning`:
 
-> clone_vs.py -c controller1.acme.com -fc vs-wafpolicy,positive-security-model -flags disablelearning vs example cloned-example -v *
+> clone_vs.py -c controller1.acme.com -fc vs-wafpolicy,positive-security-model -flags disablelearning vs example cloned-example -v auto
 
 This flag can also be used when cloning a WAF Policy individually:
 
