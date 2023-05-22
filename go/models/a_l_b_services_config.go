@@ -40,10 +40,6 @@ type ALBServicesConfig struct {
 	// Name of the ALBServicesConfig object. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
-	// Operations configuration. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
-	// Required: true
-	OperationsConfig *OperationsConfig `json:"operations_config"`
-
 	// Time interval in minutes. Allowed values are 5-60. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	PollingInterval *int32 `json:"polling_interval,omitempty"`
 

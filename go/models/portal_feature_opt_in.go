@@ -17,6 +17,9 @@ type PortalFeatureOptIn struct {
 	// Enable Pulse Cloud Services Case Management. Field introduced in 21.1.1. Allowed in Enterprise edition only with addon license, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Enterprise edition is false, Essentials edition is false, Basic edition is false, Enterprise is True.
 	EnablePulseCaseManagement *bool `json:"enable_pulse_case_management,omitempty"`
 
+	// Enable Pulse Cloud Services Inventory. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is False.
+	EnablePulseInventory *bool `json:"enable_pulse_inventory,omitempty"`
+
 	// Enable to receive WAF CRS updates. Field introduced in 21.1.1. Allowed in Enterprise edition only with addon license, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Enterprise edition is false, Essentials edition is false, Basic edition is false, Enterprise is True.
 	EnablePulseWafManagement *bool `json:"enable_pulse_waf_management,omitempty"`
 
