@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class InventoryConfig  {
     @JsonProperty("enable")
-    private Boolean enable = true;
+    private Boolean enable = null;
 
 
 
@@ -31,7 +31,7 @@ public class InventoryConfig  {
      * Allow inventory stats to be regularly sent to pulse cloud services.
      * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return enable
      */
     public Boolean getEnable() {
@@ -43,7 +43,7 @@ public class InventoryConfig  {
      * Allow inventory stats to be regularly sent to pulse cloud services.
      * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param enable set the enable.
      */
     public void setEnable(Boolean  enable) {

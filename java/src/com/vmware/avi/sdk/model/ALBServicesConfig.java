@@ -43,7 +43,7 @@ public class ALBServicesConfig extends AviRestResource  {
     private String name = null;
 
     @JsonProperty("operations_config")
-    private OperationsConfig operationsConfig = null;
+    private OperationsConfig operationsConfig;
 
     @JsonProperty("polling_interval")
     private Integer pollingInterval = 10;
@@ -257,10 +257,10 @@ public class ALBServicesConfig extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Operations configuration.
+     * Field deprecated in 30.1.1.
      * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
      * edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return operationsConfig
      */
     public OperationsConfig getOperationsConfig() {
@@ -270,10 +270,10 @@ public class ALBServicesConfig extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Operations configuration.
+     * Field deprecated in 30.1.1.
      * Field introduced in 22.1.3.
      * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
      * edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param operationsConfig set the operationsConfig.
      */
     public void setOperationsConfig(OperationsConfig operationsConfig) {
