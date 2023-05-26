@@ -42,6 +42,9 @@ public class MetricThresoldUpDetails  {
     @JsonProperty("threshold")
     private Float threshold = null;
 
+    @JsonProperty("vm_type")
+    private String vmType = null;
+
 
 
     /**
@@ -190,6 +193,28 @@ public class MetricThresoldUpDetails  {
         this.threshold = threshold;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Vm at which metric thresold details collected.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return vmType
+     */
+    public String getVmType() {
+        return vmType;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Vm at which metric thresold details collected.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param vmType set the vmType.
+     */
+    public void setVmType(String  vmType) {
+        this.vmType = vmType;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -206,7 +231,8 @@ public class MetricThresoldUpDetails  {
   Objects.equals(this.threshold, objMetricThresoldUpDetails.threshold)&&
   Objects.equals(this.server, objMetricThresoldUpDetails.server)&&
   Objects.equals(this.poolUuid, objMetricThresoldUpDetails.poolUuid)&&
-  Objects.equals(this.entityUuid, objMetricThresoldUpDetails.entityUuid);
+  Objects.equals(this.entityUuid, objMetricThresoldUpDetails.entityUuid)&&
+  Objects.equals(this.vmType, objMetricThresoldUpDetails.vmType);
     }
 
     @Override
@@ -220,6 +246,7 @@ public class MetricThresoldUpDetails  {
                         sb.append("    poolUuid: ").append(toIndentedString(poolUuid)).append("\n");
                         sb.append("    server: ").append(toIndentedString(server)).append("\n");
                         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
+                        sb.append("    vmType: ").append(toIndentedString(vmType)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
