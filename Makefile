@@ -12,6 +12,7 @@ compile:
 	go build ./go/examples/create_vs.go
 	go build ./go/examples/metrics_collection.go
 	rm -rf create_vs metrics_collection
+	echo "DEBUG:compile done"
 
 test: test_clients test_avisession
 
@@ -22,7 +23,9 @@ endif
 	go test ./go/examples/test/create_cloud_test.go ./go/examples/test/create_tenant_test.go ./go/examples/test/create_profiles_test.go ./go/examples/test/create_healthmonitor_test.go ./go/examples/test/create_virtualservice_test.go ./go/examples/test/api_filters_test.go ./go/examples/test/delete_configuration_test.go -v
 
 test_avisession:
+	echo "DEBUG:testavi start"
 	go test ./go/session/. -v
 
 fmt:
+	echo "DEBUG:fmt start"
 	go fmt ./go/clients ./go/models ./go/examples
