@@ -314,7 +314,7 @@ def new_psmgroup(args, handler_type, vulnerability_data):
             rule["rule_id"] = str(rule_id)
             rule["name"] = "{}-{}".format(vuln["param"], vuln["attack_type"])
             rule["description"] = "Type: {}. {}.".format(vuln["attack_type"],
-                                                         vuln["description"])
+                                         vuln["description"].replace(">", "greater ").replace("<", "less "))
             if vuln.get("qid"):
                 rule["description"] = "{} QID:{}.".format(rule["description"],
                                                           vuln["qid"])
