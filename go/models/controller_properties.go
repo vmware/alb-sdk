@@ -132,6 +132,9 @@ type ControllerProperties struct {
 	// Sleep time in the vs_mgr during a FederatedPurge RPC call. Allowed values are 50-100. Field introduced in 22.1.3. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	GslbPurgeSleepTimeMs *int32 `json:"gslb_purge_sleep_time_ms,omitempty"`
 
+	// Ignore the vrf_context filter for /networksubnetlist API. Field introduced in 22.1.4. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	IgnoreVrfInNetworksubnetlist *bool `json:"ignore_vrf_in_networksubnetlist,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxDeadSeInGrp *int32 `json:"max_dead_se_in_grp,omitempty"`
 
@@ -219,10 +222,13 @@ type ControllerProperties struct {
 	//  Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SecureChannelSeTokenTimeout *int32 `json:"secure_channel_se_token_timeout,omitempty"`
 
+	// This parameter defines the buffer size during SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. Field introduced in 22.1.4. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	SeupgradeCopyBufferSize *int32 `json:"seupgrade_copy_buffer_size,omitempty"`
+
 	// This parameter defines the number of simultaneous SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. A value of 0 will disable the pacing scheme and all the SE(s) in the SeGroup will attempt to download the image. . Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeupgradeCopyPoolSize *int32 `json:"seupgrade_copy_pool_size,omitempty"`
 
-	// Pool size used for all fabric commands during se upgrade. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// The pool size is used to control the number of concurrent segroup upgrades. This field value takes affect upon controller warm reboot. Allowed values are 2-20. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeupgradeFabricPoolSize *int32 `json:"seupgrade_fabric_pool_size,omitempty"`
 
 	// Time to wait before marking segroup upgrade as stuck. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
