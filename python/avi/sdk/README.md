@@ -91,6 +91,7 @@ To set up SAML SSO controller, [click here](https://avinetworks.com/docs/17.2/si
 Currently, the SDK supports two IDPs for SAML-based authentication:
 1) Okta
 2) Onelogin
+3) WS1login
 
 ## SAML-based Session Usage for the Okta IDP
 
@@ -160,14 +161,50 @@ for vs in resp.json()['results']:
 resp = api.delete_by_name('virtualservice', 'sample_vs')
 ```
 
+## SAML-based Session Usage for the WS1 IDP
+
+```python
+from avi.sdk.saml_avi_api import WS1loginSAMLApiSession
+# create Avi API Session
+session = WS1loginSAMLApiSession("10.10.10.42", "ws1_username", "ws1_password")
+
+# create pool with one server
+pool_obj = {'name': 'sample_pool', 'servers': [{'ip': {'addr': '192.0.0.1', 'type': 'V4'}}]}
+pool_resp = session.post('pool', data=pool_obj)
+print(pool_resp.json())
+
+# create vsvip
+vsvip_obj = {'name': 'sample_vsvip', 'vip': [{'vip_id': '1',
+                                             'ip_address': {'addr': '11.11.11.42', 'type': 'V4'}}]}
+vsvip_resp = session.post('vsvip', data=vsvip_obj)
+print(vsvip_resp.json())
+
+# create virtualservice using sample_vsvip and sample_pool
+pool_ref = '/api/pool?name={}'.format(pool_obj.get('name'))
+vsvip_ref = '/api/vsvip?name={}'.format(vsvip_obj.get('name'))
+services_obj = [{'port': 80, 'enable_ssl': False}]
+vs_obj = {'name': 'sample_vs', 'services': services_obj, 'vsvip_ref': vsvip_ref, 'pool_ref': pool_ref}
+resp = session.post('virtualservice', data=vs_obj)
+
+# print list of all virtualservices
+resp = session.get('virtualservice')
+for vs in resp.json()['results']:
+    print vs['name']
+
+# delete virtualservice
+resp = session.delete_by_name('virtualservice', 'sample_vs')
+```
+
 SAML session can also be invoked by following:
 ```
 api = ApiSession.get_session("10.10.10.42", "onelogin_username", "onelogin_password", idp_class=OneloginSAMLApiSession)
 ```
 ```
-api = ApiSession.get_session("10.10.10.42", "onelogin_username", "onelogin_password", idp_class=OktaSAMLApiSession)
+api = ApiSession.get_session("10.10.10.42", "okta_username", "okta_password", idp_class=OktaSAMLApiSession)
 ```
-
+```
+api = ApiSession.get_session("10.10.10.42", "ws1_username", "ws1_password", idp_class=WS1loginSAMLApiSession)
+```
 
 
 # Control Script Usage

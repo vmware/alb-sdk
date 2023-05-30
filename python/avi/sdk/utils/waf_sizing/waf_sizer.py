@@ -25,7 +25,7 @@ class ApiResponseWriter:
     def __init__(self, outfile: str):
         if outfile:
             self.out_fd = gzip.open(outfile, "wt")
-            logging.info("Storing raw API responses in {}".format(outfile))
+            logging.info("Storing raw API responses in {:s}".format(outfile))
         else:
             self.out_fd = None
 
@@ -53,26 +53,28 @@ def post_process_metric(filename: str, data: list, total_num_reqs: list) -> list
 
     num_samples = len(total_num_reqs)
     if num_samples != len(data):
-        logging.warn("Length mismatch for file {0}: {1} != {2}".
+        logging.warning("Length mismatch for file {:s}: {} != {}".
                      format(filename, num_samples, len(data)))
-    logging.info("Opening new file: {0}".format(filename))
+        return [-1, -1, -1]
+
+    logging.info("Opening new file: {:s}".format(filename))
     (mi, ma, av, mi_i, ma_i) = (0, 0.0, 0.0, 0, 0)
-    fh = open(filename, 'w')
-    num_valid_samples = 0
-    for i in range(num_samples):
-        if total_num_reqs[i] > 0:
-            num_valid_samples += 1
-            sample = data[i] / total_num_reqs[i]
-            if sample > ma:
-                ma = sample
-                ma_i = i
+    with open(filename, 'w') as fh:
+        num_valid_samples = 0
+        for i in range(num_samples):
+            if total_num_reqs[i] > 0:
+                num_valid_samples += 1
+                sample = data[i] / total_num_reqs[i]
+                if sample > ma:
+                    ma = sample
+                    ma_i = i
 
-            if mi == 0 or sample < mi:
-                mi = sample
-                mi_i = i
+                if mi == 0 or sample < mi:
+                    mi = sample
+                    mi_i = i
 
-            av += sample
-            fh.write("{0}\n".format(sample))
+                av += sample
+                fh.write("{0}\n".format(sample))
 
     if num_valid_samples > 0:
         av /= num_valid_samples
@@ -93,7 +95,8 @@ def add_data_to_combined(name: str, combined: dict, data: dict):
         old = combined[name]['data']
         L = len(data)
         if L != len(old):
-            logging.warn("Length mis-match: new len = {0} -- old len = {1}".format(L, len(old)))
+            logging.warning("Cannot combine data '{:s}': new len = {:d} -- old len = {:d}".format(name, L, len(old)))
+            return
         L = min(L, len(old))
         for i in range(L):
             old[i] += data[i]
@@ -107,31 +110,31 @@ def process_vsdata(vs_name: str, data: dict, combined: dict):
     """
     series = data.get('series', {})
     if not series:
-        logging.warning("no data for {}".format(vs_name))
+        logging.warning("no data for VS '{:s}'".format(vs_name))
     for vs, metric_data in series.items():
         vs_uuid = '_'.join(vs.split('-')[1:])
         for stats in metric_data:
             metric_name = stats['header']['name']
-            logging.info("Processing metric '{}' for vs '{}'".format(metric_name, vs_name))
+            logging.info("Processing metric '{:s}' for vs '{:s}'".format(metric_name, vs_name))
             if 'data' not in stats:
-                logging.error("No Data!")
+                logging.error("No Data for metric '{:s}'".format(metric_name))
                 logging.error(json.dumps(stats))
                 continue
-            f = "{0}-{1}".format(vs_uuid, metric_name)
+            f = "{:s}-{:s}".format(vs_uuid, metric_name)
             f_out = open(f, 'w')
             data = stats['data']
             curr_series = []
             for sample in data:
                 value = sample['value']
-                f_out.write("{}\n".format(value))
+                f_out.write("{:f}\n".format(value))
                 curr_series.append(value)
             f_out.close()
             add_data_to_combined(metric_name, combined, curr_series)
-            logging.debug("For {0} max was {1}, min was {2}, avg was {3}".
+            logging.debug("For {:s} max was {}, min was {}, avg was {}".
                           format(f, max(curr_series), min(curr_series), sum(curr_series)/len(curr_series)))
 
 
-def fetch_VSs(api_session: ApiSession, tenant: str, vs_name: str, step: int, limit: int, apilogfile: str) -> dict:
+def fetch_VSs(api_session: ApiSession, tenant: str, vs_names: list, step: int, limit: int, apilogfile: str) -> dict:
 
     metrics = (
         "l7_client.sum_total_responses,"
@@ -165,7 +168,6 @@ def fetch_VSs(api_session: ApiSession, tenant: str, vs_name: str, step: int, lim
     j = result.json()
     file_writer.save_api_response(json.dumps(j, indent=2))
     vs_info = j.get('results', [])
-    vs_uuids = [v['uuid'] for v in vs_info if vs_name is None or v['name'] == vs_name]
     mq = {
         'metric_id': metrics,
         'step': step,
@@ -178,9 +180,9 @@ def fetch_VSs(api_session: ApiSession, tenant: str, vs_name: str, step: int, lim
     combined = {}  # { "metric_name": { "data": [1,0,3], "num_vs": 40}, "name2" : {...},...}
 
     for vs in vs_info:
-        if vs_name is not None and not vs['name'] == vs_name:
+        if vs_names and vs['name'] not in vs_names:
             continue
-        logging.debug("Fetching metrics for VS '{}' ({})".format(vs['name'], vs['uuid']))
+        logging.debug("Fetching metrics for VS '{:s}' ({:s})".format(vs['name'], vs['uuid']))
         mq['entity_uuid'] = vs['uuid']
         rsp = api_utils.get_metrics_collection(tenant=tenant,
                                                metric_requests=[mq])
@@ -192,10 +194,10 @@ def fetch_VSs(api_session: ApiSession, tenant: str, vs_name: str, step: int, lim
     # now write out combined data:
     for metric_name, info in combined.items():
         data = info['data']
-        filename = "combined-{0}".format(metric_name)
+        filename = "combined-{:s}".format(metric_name)
         if 'pct' in metric_name:
             continue
-        logging.info("Creating file for combined data: {0}".format(filename))
+        logging.info("Creating file for combined data: {:s}".format(filename))
         with open(filename, 'w') as fh:
             for item in data:
                 fh.write("{0}\n".format(item))
@@ -237,12 +239,12 @@ def complexity_from_metric(combined_data: str, metric: dict):
     result = metric['result']
 
     if name not in combined_data:
-        logging.warn('Missing metric in combined data: {}'.format(name))
+        logging.warning('Missing metric in combined data: {:s}'.format(name))
         return
     for type in range(3):  # 0 -> max, 1 -> avg 2 -> min
         number = combined_data[name][type]
         ascending = thresh[1] > thresh[0]
-        logging.info("Checking metrics value for {}: {} against thresholds {}".format(name, number, thresh))
+        logging.info("Checking metrics value for {:s}: {} against thresholds {}".format(name, number, thresh))
         for i, val in enumerate(thresh):
             if not ascending and number > val:
                 break
@@ -268,7 +270,7 @@ def determine_complexity(combined_data: dict) -> list:
         complexity_from_metric(combined_data, metric)
 
     for metric in metrics_info:
-        logging.info("{} has complexity {}".format(metric['metric_name'], metric['result']))
+        logging.info("{:s} has complexity {}".format(metric['metric_name'], metric['result']))
 
     complexity = [sum(p) for p in zip(
         metrics_info[0]['result'], metrics_info[1]['result'], metrics_info[2]['result']
@@ -287,9 +289,9 @@ def main():
                         'default 300',
                         type=int, default=300)
     parser.add_argument('-d', '--days', help='Number of days (before now) to analyze, default = 7',
-                        type=int, default=7)
+                        type=float, default=7)
     parser.add_argument('-t', '--tenant', help='Tenant name', default=None)
-    parser.add_argument('-v', '--vs_name', help='VS Name to restrict to one VS, default is all')
+    parser.add_argument('-v', '--vs_names', help='VS names, comma-separated, to restrict to some VSs, default is all')
     parser.add_argument('-c', '--controller', help='Controller ip', default='127.0.0.1')
     parser.add_argument('-u', '--username', help='User name', default='admin')
     parser.add_argument('-p', '--password', help='Password - deprecated, use authentication token instead')
@@ -325,10 +327,11 @@ def main():
 
     step = args.step
     seconds_per_day = 86400
-    limit = args.days * seconds_per_day / step
+    limit = int(args.days * seconds_per_day / step)
     logging.info("Fetching {} samples".format(limit))
 
-    combined = fetch_VSs(api_session, args.tenant, args.vs_name, step, limit, args.logapiresponses)
+    VSs = args.vs_names.split(',') if args.vs_names else []
+    combined = fetch_VSs(api_session, args.tenant, VSs, step, limit, args.logapiresponses)
 
     # 'complexity' is a vector of 3 elements. Each element encodes the
     # complexity according to one of the metrics - pct_get,
@@ -358,14 +361,16 @@ def main():
         observed_disabled = pct_disabled_observed[complexity[i]]  # fake_percent_disabled[i] ###
         logging.info("Can do for 80 percent bypass: {}, 0 percent: {}, observed disabled: {}".
                      format(can_do, can_do_00, observed_disabled))
-        if observed_disabled < 80:
+        if observed_disabled <= 0:
+            can_do = can_do_00
+        elif observed_disabled < 80:
             diff = can_do - can_do_00
             factor = observed_disabled / 80
             can_do = can_do_00 + factor*diff
         logging.info("Using {} rps per core".format(can_do))
         n_cores = [int(need[0]/can_do)+1, int(need[1]/can_do)+1]
         n_ses = [int(n_cores[0]/16)+1, int(n_cores[1]/16)+1]
-        print("For complexity {} found in {} case, Need {} cores"
+        print("For complexity {:s} found in {:s} case, Need {} cores"
               # " ({} SEs of 16 cores)"
               " for Max RPS, {} cores"
               # " ({} SEs of 16 cores)"

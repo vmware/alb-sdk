@@ -9,7 +9,7 @@ import sys
 
 from avi.sdk.avi_api import ApiSession
 
-API_VERSION = "18.2.13"
+API_VERSION = "20.1.1"
 SYSTEM_WAF_POLICY_VDI='System-WAF-Policy-VDI'
 
 logger = logging.getLogger(__name__)
@@ -120,7 +120,7 @@ def create_vdi_waf_policy(api, args):
     add_pre_crs_group(waf_policy_obj)
     resp = api.post('wafpolicy', data=json.dumps(waf_policy_obj))
     if resp.status_code in range(200, 300):
-        logger.debug('Create WAF policy successfully')
+        logger.debug('Created WAF policy successfully')
     else:
         logger.error('Error : %s' % resp.text)
 
@@ -130,7 +130,7 @@ def update_waf_policy(api, args, waf_policy_obj):
     add_pre_crs_group(waf_policy_obj)
     resp = api.put('wafpolicy/%s' %waf_policy_obj['uuid'], data=waf_policy_obj)
     if resp.status_code in range(200, 300):
-        logger.debug('Create WAF policy successfully')
+        logger.debug('Updated WAF policy successfully')
     else:
         logger.error('Error : %s' % resp.text)
 
@@ -145,6 +145,7 @@ if __name__ == '__main__':
                         default='admin')
     parser.add_argument('-a', '--authtoken', help='Authentication token')
     parser.add_argument('-c', '--controller_ip', action="store", help='controller ip')
+    parser.add_argument('--debug', action="store_true", help='increase loglevel')
 
     args = parser.parse_args()
     if args.password:
@@ -156,6 +157,10 @@ if __name__ == '__main__':
     else:
         logging.error("Either password or authtokentoken must be provided.")
         sys.exit(1)
+
+    if args.debug:
+        logging.basicConfig(level=logging.DEBUG)
+
 
     waf_policy_obj = api.get_object_by_name('wafpolicy', SYSTEM_WAF_POLICY_VDI)
 

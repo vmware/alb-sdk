@@ -1,10 +1,11 @@
 # Copyright 2021 VMware, Inc.
 # SPDX-License-Identifier: Apache License 2.0
 
-import paramiko
 import logging
 import os
 from stat import S_ISDIR
+import paramiko
+
 
 LOG = logging.getLogger(__name__)
 
@@ -76,8 +77,7 @@ class SCPUtil(object):
                 try:
                     self.get(remote_file, local_path + file + '_bigip.conf')
                 except IOError as e:
-                    LOG.error(
-                        "conf file not found in partition dir : %s" % file)
+                    LOG.error("conf file not found in partition dir : %s", file)
 
     def get_all_partition_certkey(self, partition_path, local_path):
         """
@@ -104,8 +104,7 @@ class SCPUtil(object):
                     self.get(partition_path + os.sep + filename, local_path +
                              os.sep + local_filename)
                 except IOError as e:
-                    LOG.error("cert key file not found in partition dir : %s" %
-                              filename)
+                    LOG.error("cert key file not found in partition dir : %s", filename)
 
     def isdir(self, path):
         self._openSFTPConnection()

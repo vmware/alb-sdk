@@ -134,7 +134,7 @@ class PolicyConfigConverter(object):
                 phase = policy.get("phase")
                 actions = policy.get("actions")
                 # if check all type of matches if any one not supported then check match_strategy is ALL
-                # then skip other migrate whaterver supported
+                # then skip other migrate whatever  supported
                 if match_strategy == "ALL" and match_conditions:
                     na_match_list = list(filter(lambda x: x["type"] in self.rule_match_na, match_conditions))
                     if len(na_match_list) > 0:

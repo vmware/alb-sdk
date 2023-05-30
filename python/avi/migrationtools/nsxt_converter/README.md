@@ -121,7 +121,7 @@ located in this repository will help you understand the basics about how Avi wor
     ```
 
 - Arguments
-  
+
   ```
   -h, --help            show this help message and exit
   --ansible             Flag for create ansible file
@@ -146,7 +146,7 @@ located in this repository will help you understand the basics about how Avi wor
   -i DEFAULT_PARAMS_FILE, --default_params_file DEFAULT_PARAMS_FILE
                         absolute path for nsx-t default params file
   -n NSXT_IP, --nsxt_ip NSXT_IP
-                        Ip of NSXT
+                        Ip of NSX-T
   -u NSXT_USER, --nsxt_user NSXT_USER
                         NSX-T User name
   -p NSXT_PASSWORD, --nsxt_password NSXT_PASSWORD

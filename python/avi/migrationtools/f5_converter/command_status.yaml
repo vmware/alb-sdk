@@ -138,6 +138,7 @@ VERSION_11:
     - 'slow-ramp-time'
     - 'reselect-tries'
     - "partition"
+    - "min-active-members"
 
     Pool_supported_attr_convert_servers_config:
     - 'address'
@@ -149,8 +150,6 @@ VERSION_11:
     - 'rate-limit'
     - 'priority-group'
 
-    Pool_ignore_val:
-        min-active-members: '1'
 
     Profile_supported_types:
     - "client-ssl"
@@ -290,6 +289,12 @@ VERSION_11:
     - 'defaults-from'
     - 'peer-cert-mode'
     - "partition"
+    - "passphrase"
+    - "ocsp-stapling"
+    - "alert-timeout"
+    - "session-ticket-timeout"
+    - "sni-default"
+    - "server-name"
 
     Profile_na_http:
     - 'lws-width'
@@ -314,6 +319,7 @@ VERSION_11:
     - "redirect-rewrite"
     - "via-host-name"
     - "via-request"
+    - "hsts"
 
     Profile_supported_http_enforcement:
     - "max-header-size"
@@ -573,6 +579,8 @@ VERSION_11:
     - 'rate-limit'
     - 'connection-limit'
     - "partition"
+    - "mirror"
+    - "nat64"
 
     VS_na_attr:
     - 'vs-index'
@@ -1108,6 +1116,7 @@ VERSION_10:
     - 'translate service'
     - 'source'
     - 'limit'
+    - "mirror"
 
     VS_na_attr:
     - 'vs-index'

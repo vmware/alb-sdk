@@ -1,8 +1,9 @@
 # Copyright 2021 VMware, Inc.
 # SPDX-License-Identifier: Apache License 2.0
 
-import yaml
 import os
+
+import yaml
 
 DEFAULT_TIMEOUT = 16
 DEFAULT_INTERVAL = 5
@@ -42,111 +43,94 @@ SOURCE_ADDR_TIMEOUT = 180
 MIN_SESSION_TIMEOUT = 60
 MAX_SESSION_TIMEOUT = 1800
 PLACE_HOLDER_STR = "auto_created"
-DEFAULT_CONTENT_TYPE = ['text/html', 'text/xml', 'text/plain',
-                        'application/pdf', 'text/javascript',
-                        'application/javascript', 'application/x-javascript',
-                        'application/xml', 'text/css']
+DEFAULT_CONTENT_TYPE = [
+    "text/html",
+    "text/xml",
+    "text/plain",
+    "application/pdf",
+    "text/javascript",
+    "application/javascript",
+    "application/x-javascript",
+    "application/xml",
+    "text/css",
+]
 
 # Status Constants which are used in CSV/report generation of the conversion
 # run.
-STATUS_SKIPPED = 'SKIPPED'
-STATUS_SUCCESSFUL = 'SUCCESSFUL'
-STATUS_ERROR = 'ERROR'
-STATUS_NOT_APPLICABLE = 'NOT APPLICABLE'  # Its specific netscalar commands
+STATUS_SKIPPED = "SKIPPED"
+STATUS_SUCCESSFUL = "SUCCESSFUL"
+STATUS_ERROR = "ERROR"
+STATUS_NOT_APPLICABLE = "NOT APPLICABLE"  # Its specific netscalar commands
 # which are not applicable in AVI
-STATUS_PARTIAL = 'PARTIAL'
-STATUS_DATASCRIPT = 'DATASCRIPT'
-STATUS_NOT_IN_USE = 'NOT IN USE'
+STATUS_PARTIAL = "PARTIAL"
+STATUS_DATASCRIPT = "DATASCRIPT"
+STATUS_NOT_IN_USE = "NOT IN USE"
 # External status which are not supported Health monitors
-STATUS_EXTERNAL_MONITOR = 'EXTERNAL MONITOR'
-STATUS_MISSING_FILE = 'MISSING FILE'
+STATUS_EXTERNAL_MONITOR = "EXTERNAL MONITOR"
+STATUS_MISSING_FILE = "MISSING FILE"
 # Object type constant which are used in object reference generation
-OBJECT_TYPE_SSL_PROFILE = 'sslprofile'
-OBJECT_TYPE_APPLICATION_PROFILE = 'applicationprofile'
-OBJECT_TYPE_HTTP_POLICY_SET = 'httppolicyset'
-OBJECT_TYPE_POOL_GROUP = 'poolgroup'
-OBJECT_TYPE_POOL = 'pool'
-OBJECT_TYPE_NETWORK_PROFILE = 'networkprofile'
-OBJECT_TYPE_PKI_PROFILE = 'pkiprofile'
-OBJECT_TYPE_SSL_KEY_AND_CERTIFICATE = 'sslkeyandcertificate'
-OBJECT_TYPE_APPLICATION_PERSISTENCE_PROFILE = 'applicationpersistenceprofile'
-OBJECT_TYPE_HEALTH_MONITOR = 'healthmonitor'
-OBJECT_TYPE_VIRTUAL_SERVICE = 'virtualservice'
-OBJECT_TYPE_STRING_GROUP = 'stringgroup'
+OBJECT_TYPE_SSL_PROFILE = "sslprofile"
+OBJECT_TYPE_APPLICATION_PROFILE = "applicationprofile"
+OBJECT_TYPE_HTTP_POLICY_SET = "httppolicyset"
+OBJECT_TYPE_POOL_GROUP = "poolgroup"
+OBJECT_TYPE_POOL = "pool"
+OBJECT_TYPE_NETWORK_PROFILE = "networkprofile"
+OBJECT_TYPE_PKI_PROFILE = "pkiprofile"
+OBJECT_TYPE_SSL_KEY_AND_CERTIFICATE = "sslkeyandcertificate"
+OBJECT_TYPE_APPLICATION_PERSISTENCE_PROFILE = "applicationpersistenceprofile"
+OBJECT_TYPE_HEALTH_MONITOR = "healthmonitor"
+OBJECT_TYPE_VIRTUAL_SERVICE = "virtualservice"
+OBJECT_TYPE_STRING_GROUP = "stringgroup"
 # Complexity status constant
-COMPLEXITY_ADVANCED = 'ADVANCED'
-COMPLEXITY_BASIC = 'BASIC'
+COMPLEXITY_ADVANCED = "ADVANCED"
+COMPLEXITY_BASIC = "BASIC"
 # Not supported constant.
-STATUS_NOT_SUPPORTED = 'NOT SUPPORTED'
-STATUS_LIST = [STATUS_SKIPPED, STATUS_SUCCESSFUL, STATUS_NOT_APPLICABLE,
-               STATUS_ERROR, STATUS_PARTIAL, STATUS_DATASCRIPT]
-HM_CUSTOM_KEY = 'healthmonitor_custom_config'
-RULE_CUSTOM_KEY = 'irule_custom_config'
+STATUS_NOT_SUPPORTED = "NOT SUPPORTED"
+STATUS_LIST = [
+    STATUS_SKIPPED,
+    STATUS_SUCCESSFUL,
+    STATUS_NOT_APPLICABLE,
+    STATUS_ERROR,
+    STATUS_PARTIAL,
+    STATUS_DATASCRIPT]
+HM_CUSTOM_KEY = "healthmonitor_custom_config"
+RULE_CUSTOM_KEY = "irule_custom_config"
 
 PLACE_HOLDER_DS = {
-    'datascript': [
+    "datascript": [
         {
-            'evt': 'VS_DATASCRIPT_EVT_HTTP_REQ',
-            'script': 'if avi.http.get_query("intro", "true") == "hello%20world" then avi.http.add_header("intro", "true") end'
+            "evt": "VS_DATASCRIPT_EVT_HTTP_REQ",
+            "script": 'if avi.http.get_query("intro", "true") == "hello%20world"\
+                then avi.http.add_header("intro", "true") end',
         }
     ]
 }
 
 PLACE_HOLDER_REQ_POLICY = {
-    'http_request_policy': {
-        'rules': [
+    "http_request_policy": {
+        "rules": [
             {
-                'index': 1,
-                'hdr_action': [
-                    {
-                        'action': "HTTP_REPLACE_HDR",
-                        'hdr': {
-                            'name': "placeholder",
-                            'value': {
-                                'val': "placeholder"
-                            }
-                        }
-                    }
-                ],
-                'all_headers': False,
-                'match':
-                {
-                    'hdrs': [
-                        {
-                            'hdr': "placeholder",
-                            'match_criteria': "HDR_EXISTS"
-                        }
-                    ]
-                },
-                'name': "Rule 1"
+                "index": 1,
+                "hdr_action": [{"action": "HTTP_REPLACE_HDR", "hdr":
+                                {"name": "placeholder", "value": {"val": "placeholder"}}}],
+                "all_headers": False,
+                "match": {"hdrs": [{"hdr": "placeholder", "match_criteria": "HDR_EXISTS"}]},
+                "name": "Rule 1",
             }
         ]
     },
-    'is_internal_policy': False
+    "is_internal_policy": False,
 }
 
-PLACE_HOLDER_NW_POLICY = {
-    'rules': [
-        {
-            'index': 1,
-            'enable': True,
-            'name': "Rule 1",
-            'action': "NETWORK_SECURITY_POLICY_ACTION_TYPE_ALLOW",
-            'match': {
-                'client_ip': {
-                    'addrs': [
-                        {
-                            'type': "V4",
-                            'addr': "1.1.1.1"
-                        }
-                    ],
-                    'match_criteria': "IS_IN"
-                }
-            },
-            'log': False
-        }
-    ]
-}
+PLACE_HOLDER_NW_POLICY = {"rules": [{"index": 1,
+                                     "enable": True,
+                                     "name": "Rule 1",
+                                     "action": "NETWORK_SECURITY_POLICY_ACTION_TYPE_ALLOW",
+                                     "match": {"client_ip": {"addrs": [{"type": "V4",
+                                                                        "addr": "1.1.1.1"}],
+                                                             "match_criteria": "IS_IN"}},
+                                     "log": False,
+                                     }]}
 
 HTTP_TO_HTTPS_REDIRECT_POL = {
     "http_request_policy": {
@@ -155,24 +139,19 @@ HTTP_TO_HTTPS_REDIRECT_POL = {
                 "index": 1,
                 "redirect_action": {
                     "keep_query": True,
-                    "status_code":
-                        "HTTP_REDIRECT_STATUS_CODE_302",
+                    "status_code": "HTTP_REDIRECT_STATUS_CODE_302",
                     "protocol": "HTTPS",
-                    "port": 443
-                },
+                    "port": 443},
                 "enable": True,
                 "name": "HTTP-To-HTTPS-Redirect",
                 "match": {
-                    "protocol": {
-                        "protocols": "HTTP",
-                        "match_criteria": "IS_IN"
-                    }
-                }
-            }
-        ]
-    },
-"is_internal_policy": False
+                        "protocol": {
+                            "protocols": "HTTP",
+                            "match_criteria": "IS_IN"}},
+            }]},
+    "is_internal_policy": False,
 }
+
 
 def init(version):
     """
@@ -182,7 +161,7 @@ def init(version):
     global f5_command_status
     with open(os.path.dirname(__file__) + "/command_status.yaml") as stream:
         f5_command_status = yaml.safe_load(stream)
-    if version == '10':
-        return f5_command_status['VERSION_10']
-    else:
-        return f5_command_status['VERSION_11']
+    if version == "10":
+        return f5_command_status["VERSION_10"]
+
+    return f5_command_status["VERSION_11"]

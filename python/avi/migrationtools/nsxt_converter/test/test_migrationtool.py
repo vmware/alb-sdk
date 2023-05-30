@@ -92,7 +92,7 @@ def Nsxt_conv(nsxt_ip=None, nsxt_user=None, nsxt_password=None, ssh_root_passwor
                      traffic_enabled=traffic_enabled, default_params_file=default_params_file, cloud_tenant=cloud_tenant
                      )
     nsxt_converter = NsxtConverter(args)
-    nsxt_converter.conver_lb_config(args)
+    nsxt_converter.convert_lb_config(args)
 
 
 class TestNSXTConverter:

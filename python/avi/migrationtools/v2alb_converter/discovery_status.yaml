@@ -1,0 +1,26 @@
+DISCOVERY:
+
+    Monitor_Type_Supported:
+     - "http"
+     - "https"
+     - "icmp"
+     - "tcp"
+     - "udp"
+     - "dns"
+
+    Monitor_Attributes_Not_Supported:
+    - "extension"
+
+    Pool_Attributes_Not_Supported:
+    - "ipVersionFilter"
+    - "monitorPort"
+    - "minConn"
+
+    Persistant_Method_Supported:
+    - "sourceip"
+    - "cookie"
+    - "ssl_sessionid"
+
+    VS_Attributes_Not_Supported:
+    - "enableServiceInsertion"
+    - "applicationRuleId"

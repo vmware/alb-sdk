@@ -142,7 +142,8 @@ class NetscalerConverter(AviConverter):
             vs_name_dict, self.profile_path, self.redirect,
             self.ns_passphrase_file, user_ignore, self.vs_level_status,
             self.vrf, self.segroup)
-
+        # validating avi config for max object length allowed
+        self.trim_object_length(avi_config)
         avi_config = self.process_for_utils(
             avi_config)
         # Check if flag true then skip not in use object
