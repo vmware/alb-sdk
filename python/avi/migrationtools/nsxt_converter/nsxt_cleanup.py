@@ -30,7 +30,7 @@ class NsxtAlbCleanup(AviConverter):
         '''
         self.nsxt_ip = args.nsxt_ip
         self.nsxt_user = args.nsxt_user
-        self.nsxt_passord = args.nsxt_password
+        self.nsxt_password = args.nsxt_password
         self.nsxt_port = args.nsxt_port
         self.cleanup_vs_names = args.vs_filter
         self.output_file_path = args.output_file_path if args.output_file_path \
@@ -66,7 +66,7 @@ class NsxtAlbCleanup(AviConverter):
         self.init_logger_path()
 
         if self.cleanup_vs_names:
-            nsx_c = NSXCleanup(self.nsxt_user, self.nsxt_passord, self.nsxt_ip, self.nsxt_port)
+            nsx_c = NSXCleanup(self.nsxt_user, self.nsxt_password, self.nsxt_ip, self.nsxt_port)
             nsx_c.nsx_cleanup(self.cleanup_vs_names)
 
             if nsx_c.vs_not_found:
@@ -86,7 +86,7 @@ class NsxtAlbCleanup(AviConverter):
 if __name__ == "__main__":
     HELP_STR = """
     Usage:
-    python nsxt_converter.py -n 192.168.100.101 -u admin -p password 
+    python nsxt_converter.py -n 192.168.100.101 -u admin -p password
     """
 
     parser = argparse.ArgumentParser(

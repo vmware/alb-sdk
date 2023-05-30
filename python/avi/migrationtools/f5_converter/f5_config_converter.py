@@ -46,7 +46,8 @@ def convert(f5_config, output_dir, vs_state, input_dir, version,
             cloud_name='Default-Cloud', keypassphrase=None,
             vs_level_status=False, vrf=None, segroup=None,
             custom_mappings=None, skip_pki=False, distinct_app_profile=False,
-            reuse_http_policy=False, skip_disabled_vs=False):
+            reuse_http_policy=False, skip_disabled_vs=False,
+            migrated_ciphers_dict=None ,migrated_ciphers_group_dict=None ):
     """
     Converts f5 config to avi config pops the config lists for conversion of
     each type from f5 config and remaining marked as skipped in the
@@ -107,7 +108,7 @@ def convert(f5_config, output_dir, vs_state, input_dir, version,
             distinct_app_profile)
         profile_conv.convert(
             f5_config, avi_config_dict, input_dir, user_ignore, tenant, cloud_name,
-            merge_object_mapping, sys_dict)
+            merge_object_mapping, sys_dict,migrated_ciphers_dict,migrated_ciphers_group_dict)
 
         # Added ssl profile merge flag.
         mon_conv = MonitorConfigConv.get_instance(

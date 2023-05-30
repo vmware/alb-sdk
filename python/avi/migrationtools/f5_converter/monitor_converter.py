@@ -647,8 +647,8 @@ class MonitorConfigConvV11(MonitorConfigConv):
             # Removed ssl cert key ref from monitor's ssl attribute
             # cipherlist and ssl-profile were present in config then it should
             # use ssl-profile as priority
-            if f5_monitor.get("cipherlist", None) or f5_monitor.get(
-                    "ssl-profile", None):
+            if (f5_monitor.get("cipherlist", None) and  (not f5_monitor.get("cipherlist") == "none"))\
+                or (f5_monitor.get("ssl-profile", None) and (not f5_monitor.get("ssl-profile"))):
                 if f5_monitor.get("ssl-profile", None):
                     _, ssl_ref = conv_utils.get_tenant_ref(
                         f5_monitor["ssl-profile"])

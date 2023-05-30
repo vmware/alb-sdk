@@ -9,14 +9,12 @@ import avi.migrationtools.f5_converter.converter_constants as final
 import yaml
 from avi.migrationtools.avi_migration_utils import update_count
 from avi.migrationtools.f5_converter.conversion_util import F5Util
-
 LOG = logging.getLogger(__name__)
 ssl_count = {"count": 0}
 # Creating f5 object for util library.
 conv_utils = F5Util()
 ssl_profile_with_sni_parent = []
 ssl_profile_with_sni_child = {}
-
 
 class ProfileConfigConv(object):
     '''
@@ -60,11 +58,12 @@ class ProfileConfigConv(object):
     def convert_profile(self, profile, key, f5_config, profile_config,
                         avi_config, input_dir, user_ignore, tenant_ref,
                         key_and_cert_mapping_list, merge_object_mapping,
-                        sys_dict):
+                        sys_dict,migrated_cipher,migrated_cipher_group):
         pass
 
     def convert(self, f5_config, avi_config, input_dir, user_ignore,
-                tenant_ref, cloud_ref, merge_object_mapping, sys_dict):
+                tenant_ref, cloud_ref, merge_object_mapping, sys_dict
+                ,migrated_cipher,migrated_cipher_group):
         """
 
         :param f5_config:  parsed f5 config dict.
@@ -127,7 +126,7 @@ class ProfileConfigConv(object):
                 self.convert_profile(
                     profile, key, f5_config, profile_config, avi_config,
                     input_dir, u_ignore, tenant, key_and_cert_mapping_list,
-                    merge_object_mapping, sys_dict)
+                    merge_object_mapping, sys_dict,migrated_cipher,migrated_cipher_group)
                 LOG.debug("Conversion successful for profile: %s", name)
 
             except BaseException:
@@ -504,7 +503,7 @@ class ProfileConfigConvV11(ProfileConfigConv):
     def convert_profile(self, profile, key, f5_config, profile_config,
                         avi_config, input_dir, user_ignore, tenant_ref,
                         key_and_cert_mapping_list, merge_object_mapping,
-                        sys_dict):
+                        sys_dict,migrated_cipher,migrated_cipher_group):
         """
 
         :param profile: parsed dict of profile
@@ -525,6 +524,7 @@ class ProfileConfigConvV11(ProfileConfigConv):
         converted_objs = []
         na_list = []
         u_ignore = []
+        partially_migrated_profiles=dict()
         parent_cls = super(ProfileConfigConvV11, self)
         profile_type, name = key.split(" ")
         tenant, name = conv_utils.get_tenant_ref(name)
@@ -603,16 +603,35 @@ class ProfileConfigConvV11(ProfileConfigConv):
                     converted_objs, merge_object_mapping, sys_dict
                 )
 
-            # ciphers = profile.get('ciphers', 'DEFAULT')
-            # ciphers = 'AES:3DES:RC4' if ciphers == 'DEFAULT' else ciphers
-            # ciphers = ciphers.replace(":@SPEED", "")
+
+            accepted_ciphers=self.ciphers
+            unsupported_ciphers=None
+            ciphers = profile.get('ciphers','none')
+            accepted_ciphers = 'AES:3DES:RC4' if ciphers == 'DEFAULT' else accepted_ciphers
+            if ciphers not in ['none']:
+                if migrated_cipher.get(ciphers):
+                    accepted_ciphers=migrated_cipher.get(ciphers).get('mig_cipher')
+                    unsupported_ciphers=migrated_cipher.get(ciphers).get('unsupported_ciphers')
+            else:
+                cipher_group = profile.get('cipher-group')
+                if cipher_group :
+                    cipher_group_name=conv_utils.get_tenant_ref(cipher_group)[1]
+                    if migrated_cipher_group.get(cipher_group_name):
+                        accepted_ciphers=migrated_cipher_group.get(cipher_group_name).get('mig_cipher')
+                        unsupported_ciphers=migrated_cipher_group.get(cipher_group_name).get('unsupported_ciphers')
+
+            if unsupported_ciphers:
+                unsupp_mesg="Profile partially migrated due to presence of unsupported ciphers %s" %unsupported_ciphers
+                partially_migrated_profiles[name]=unsupp_mesg
+                LOG.warning("ssl %s %s" %(name,unsupp_mesg))
+
             ssl_profile = {}
             ssl_profile["name"] = name
             ssl_profile["tenant_ref"] = conv_utils.get_object_ref(
                 tenant, "tenant")
             if cert_name:
                 ssl_profile["cert_name"] = cert_name
-            ssl_profile["accepted_ciphers"] = self.ciphers
+            ssl_profile["accepted_ciphers"] = accepted_ciphers
             close_notify = profile.get("unclean-shutdown", None)
             if close_notify and close_notify == "enabled":
                 ssl_profile["send_close_notify"] = True
@@ -633,8 +652,8 @@ class ProfileConfigConvV11(ProfileConfigConv):
             if accepted_versions:
                 ssl_profile["accepted_versions"] = accepted_versions
             if profile.get("alert-timeout"):
-                ssl_profile["ssl_session_timeout"] = profile.get(
-                    "alert-timeout")
+                alert_timeout=profile.get("alert-timeout")
+                ssl_profile["ssl_session_timeout"] = alert_timeout if alert_timeout not in ['indefinite'] else 86400
             if profile.get("session-ticket-timeout"):
                 ssl_profile["ssl_session_timeout"] = profile.get(
                     "session-ticket-timeout")
@@ -1259,13 +1278,19 @@ class ProfileConfigConvV11(ProfileConfigConv):
         if enf_skip_defaults:
             conv_status["default_skip"].append(
                 {"enforcement": enf_skip_defaults})
+        needs_review=None
+        if partially_migrated_profiles.get(name):
+            conv_status['status']='PARTIAL'
+            needs_review=partially_migrated_profiles.get(name)
+
         conv_utils.add_conv_status(
             "profile",
             profile_type,
             name,
             conv_status,
             converted_objs,
-            yaml.dump(profile))
+            yaml.dump(profile),
+            needs_review)
 
 
 class ProfileConfigConvV10(ProfileConfigConv):
@@ -1332,7 +1357,7 @@ class ProfileConfigConvV10(ProfileConfigConv):
     def convert_profile(self, profile, key, f5_config, profile_config,
                         avi_config, input_dir, user_ignore, tenant_ref,
                         key_and_cert_mapping_list, merge_object_mapping,
-                        sys_dict):
+                        sys_dict,migrated_cipher,migrated_cipher_group):
         """
 
         :param profile: parsed dict of profile
@@ -1353,6 +1378,7 @@ class ProfileConfigConvV10(ProfileConfigConv):
         converted_objs = []
         u_ignore = []
         na_list = []
+        partially_migrated_profiles=dict()
         parent_cls = super(ProfileConfigConvV10, self)
         profile_type, name = key.split(" ")
         default_profile_name = '%s %s' % (profile_type, profile_type)
@@ -1408,13 +1434,28 @@ class ProfileConfigConvV10(ProfileConfigConv):
             ssl_profile["tenant_ref"] = conv_utils.get_object_ref(
                 tenant, "tenant")
             if profile.get("alert-timeout"):
-                ssl_profile["ssl_session_timeout"] = profile.get(
-                    "alert-timeout")
+                alert_timeout=profile.get("alert-timeout")
+                ssl_profile["ssl_session_timeout"] = alert_timeout if alert_timeout not in ['indefinite'] else 86400
             if profile.get("ssl-ticket-timeout"):
                 ssl_profile["ssl_session_timeout"] = profile.get(
                     "ssl-ticket-timeout")
 
-            ssl_profile["accepted_ciphers"] = self.ciphers
+            accepted_ciphers=self.ciphers
+            unsupported_ciphers=None
+            ciphers = profile.get('ciphers','none')
+            accepted_ciphers = 'AES:3DES:RC4' if ciphers == 'DEFAULT' else accepted_ciphers
+            if ciphers not in ['none']:
+                if migrated_cipher.get(ciphers):
+                    accepted_ciphers=migrated_cipher.get(ciphers).get('mig_cipher')
+                    unsupported_ciphers=migrated_cipher.get(ciphers).get('unsupported_ciphers')
+
+            if unsupported_ciphers:
+                unsupp_mesg="Profile partially migrated due to presence of unsupported ciphers %s" %unsupported_ciphers
+                partially_migrated_profiles[name]=unsupp_mesg
+                LOG.warning("ssl %s %s" %(name,unsupp_mesg))
+
+
+            ssl_profile["accepted_ciphers"] = accepted_ciphers
             close_notify = profile.get("unclean shutdown", None)
             if close_notify and close_notify == "enabled":
                 ssl_profile["send_close_notify"] = True
@@ -1834,13 +1875,19 @@ class ProfileConfigConvV10(ProfileConfigConv):
 
         conv_status = conv_utils.get_conv_status(
             skipped, indirect, default_ignore, profile, u_ignore, na_list)
+        needs_review=None
+        if partially_migrated_profiles.get(name):
+            conv_status['status']='PARTIAL'
+            needs_review=partially_migrated_profiles.get(name)
+
         conv_utils.add_conv_status(
             "profile",
             profile_type,
             name,
             conv_status,
             converted_objs,
-            yaml.dump(profile))
+            yaml.dump(profile),
+            needs_review)
 
     def convert_http_profile(
             self, profile, name, avi_config, converted_objs, tenant):

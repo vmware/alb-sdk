@@ -26,7 +26,10 @@ setup(
              'avi/migrationtools/ansible/avi_config_to_ansible.py',
              'avi/migrationtools/f5_discovery.py',
              'avi/migrationtools/nsxt_converter/nsxt_converter.py',
-             'avi/migrationtools/nsxt_converter/install_nsx_dependencies.py'],
+             'avi/migrationtools/nsxt_converter/install_nsx_dependencies.py',
+             'avi/migrationtools/nsxt_converter/nsxt_cleanup.py',
+             'avi/migrationtools/nsxt_converter/nsxt_rollback.py',
+             'avi/migrationtools/nsxt_converter/nsxt_traffic_cutover.py'],
     classifiers=[
         'Operating System :: OS Independent',
         'Programming Language :: Python',
