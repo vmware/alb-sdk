@@ -81,6 +81,9 @@ public class ConnectionLog  {
     @JsonProperty("dns_response")
     private DnsResponse dnsResponse = null;
 
+    @JsonProperty("dns_tcp_conn_close_from_se")
+    private Boolean dnsTcpConnCloseFromSe = null;
+
     @JsonProperty("ds_log")
     private String dsLog = null;
 
@@ -730,6 +733,30 @@ public class ConnectionLog  {
      */
     public void setDnsResponse(DnsResponse dnsResponse) {
         this.dnsResponse = dnsResponse;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Service engine closed the tcp connection after the first dns response.
+     * Field introduced in 22.1.4.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return dnsTcpConnCloseFromSe
+     */
+    public Boolean getDnsTcpConnCloseFromSe() {
+        return dnsTcpConnCloseFromSe;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Service engine closed the tcp connection after the first dns response.
+     * Field introduced in 22.1.4.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param dnsTcpConnCloseFromSe set the dnsTcpConnCloseFromSe.
+     */
+    public void setDnsTcpConnCloseFromSe(Boolean  dnsTcpConnCloseFromSe) {
+        this.dnsTcpConnCloseFromSe = dnsTcpConnCloseFromSe;
     }
 
     /**
@@ -2246,7 +2273,8 @@ public class ConnectionLog  {
   Objects.equals(this.connEstTimeFe, objConnectionLog.connEstTimeFe)&&
   Objects.equals(this.maxIngressLatencyBe, objConnectionLog.maxIngressLatencyBe)&&
   Objects.equals(this.avgIngressLatencyBe, objConnectionLog.avgIngressLatencyBe)&&
-  Objects.equals(this.connEstTimeBe, objConnectionLog.connEstTimeBe);
+  Objects.equals(this.connEstTimeBe, objConnectionLog.connEstTimeBe)&&
+  Objects.equals(this.dnsTcpConnCloseFromSe, objConnectionLog.dnsTcpConnCloseFromSe);
     }
 
     @Override
@@ -2273,6 +2301,7 @@ public class ConnectionLog  {
                         sb.append("    dnsQtype: ").append(toIndentedString(dnsQtype)).append("\n");
                         sb.append("    dnsRequest: ").append(toIndentedString(dnsRequest)).append("\n");
                         sb.append("    dnsResponse: ").append(toIndentedString(dnsResponse)).append("\n");
+                        sb.append("    dnsTcpConnCloseFromSe: ").append(toIndentedString(dnsTcpConnCloseFromSe)).append("\n");
                         sb.append("    dsLog: ").append(toIndentedString(dsLog)).append("\n");
                         sb.append("    gslbpoolName: ").append(toIndentedString(gslbpoolName)).append("\n");
                         sb.append("    gslbservice: ").append(toIndentedString(gslbservice)).append("\n");
