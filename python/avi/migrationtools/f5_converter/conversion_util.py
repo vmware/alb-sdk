@@ -520,7 +520,7 @@ class F5Util(MigrationUtil):
             tenant_name,
             cloud_name,
             prefix,
-            vs_name,
+            vs_name,protocol,
             input_vrf=None):
         """
         Checks port overlapping scenario for port value 0 in F5 config
@@ -570,7 +570,14 @@ class F5Util(MigrationUtil):
             for vs in avi_config["VirtualService"]:
                 vs_ip = None
                 if vs.get("vsvip_ref"):
-                    vs_ip = vs["vsvip_ref"].split("name=")[1].split("-")[0]
+                    vsvip_name=self.get_name(vs["vsvip_ref"])
+                    if prefix:
+                        #vsvip_name=f5-1.1.1.1-vsvip
+                        vs_ip = vsvip_name.split(prefix+'-')[1].split('-')[0]
+                    else:
+                        #vsvip_name=1.1.1.1-vsvip
+                        vs_ip = vsvip_name.split("-")[0]
+
                 if ip_addr == vs_ip:
                     vs_dup_ips.append(vs)
         else:
@@ -585,15 +592,20 @@ class F5Util(MigrationUtil):
         if not port:
             LOG.debug("Skipped:Port not supported %s" % str(parts[1]))
             return None, None, None, None
+
         if int(port) > 0:
             for vs in vs_dup_ips:
                 service_updated = self.update_service(port, vs, enable_ssl)
                 if service_updated == "duplicate_ip_port":
-                    LOG.debug("Skipped: Duplicate IP-Port for vs %s", vs_name)
-                    return None, None, None, None
-                if service_updated:
-                    break
+                    dup_vs_protocol=self.get_protocol_of_vs(vs.get("network_profile_ref"),avi_config)
+                    if protocol == dup_vs_protocol:
+                        LOG.debug("Skipped: Duplicate Protocol for vs %s", vs_name)
+                        return None, None, None, None
+                    else:
+                        service_updated = True
+
             services_obj = [{"port": port, "enable_ssl": enable_ssl}]
+
         else:
             used_ports = []
             for vs in vs_dup_ips:
@@ -639,13 +651,13 @@ class F5Util(MigrationUtil):
             "virtual service",
             vs_name,
             cloud_name)
+
         if input_vrf:
             vrf_ref = self.get_object_ref(
                 input_vrf, "vrfcontext", cloud_name=cloud_name)
         if not vrf_ref:
             vrf_ref = self.get_object_ref(
                 "global", "vrfcontext", cloud_name=cloud_name)
-
         updated_vsvip_ref = None
         if parse_version(controller_version) >= parse_version("17.1"):
             vs_vip_name = self.create_update_vsvip(
@@ -2566,3 +2578,13 @@ class F5Util(MigrationUtil):
         wb.save(
             output_dir + os.path.sep + "%s-ConversionStatus.xlsx" % \
                                                  report_name)
+
+    def get_protocol_of_vs(self,ntwk_prof_ref,avi_config):
+        protocol ="tcp"
+        if ntwk_prof_ref:
+            prof_name=ntwk_prof_ref.split("name=")[-1]
+            ntwk_prof_config = [
+                np for np in avi_config["NetworkProfile"] if np["name"] == prof_name]
+            if ntwk_prof_config[0]["profile"].get("type")=="PROTOCOL_TYPE_UDP_FAST_PATH":
+                protocol="udp"
+        return protocol
