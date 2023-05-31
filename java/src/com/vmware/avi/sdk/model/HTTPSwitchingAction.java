@@ -27,6 +27,9 @@ public class HTTPSwitchingAction  {
     @JsonProperty("file")
     private HTTPLocalFile file = null;
 
+    @JsonProperty("other_status_code")
+    private Integer otherStatusCode = null;
+
     @JsonProperty("pool_group_ref")
     private String poolGroupRef = null;
 
@@ -87,6 +90,34 @@ public class HTTPSwitchingAction  {
      */
     public void setFile(HTTPLocalFile file) {
         this.file = file;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * User-defined http status code to use when serving the local response.
+     * Use this to provide codes not available in the list within status_code.
+     * Allowed values are 200-599.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return otherStatusCode
+     */
+    public Integer getOtherStatusCode() {
+        return otherStatusCode;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * User-defined http status code to use when serving the local response.
+     * Use this to provide codes not available in the list within status_code.
+     * Allowed values are 200-599.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param otherStatusCode set the otherStatusCode.
+     */
+    public void setOtherStatusCode(Integer  otherStatusCode) {
+        this.otherStatusCode = otherStatusCode;
     }
 
     /**
@@ -200,7 +231,8 @@ public class HTTPSwitchingAction  {
   Objects.equals(this.statusCode, objHTTPSwitchingAction.statusCode)&&
   Objects.equals(this.file, objHTTPSwitchingAction.file)&&
   Objects.equals(this.server, objHTTPSwitchingAction.server)&&
-  Objects.equals(this.poolGroupRef, objHTTPSwitchingAction.poolGroupRef);
+  Objects.equals(this.poolGroupRef, objHTTPSwitchingAction.poolGroupRef)&&
+  Objects.equals(this.otherStatusCode, objHTTPSwitchingAction.otherStatusCode);
     }
 
     @Override
@@ -209,6 +241,7 @@ public class HTTPSwitchingAction  {
       sb.append("class HTTPSwitchingAction {\n");
                   sb.append("    action: ").append(toIndentedString(action)).append("\n");
                         sb.append("    file: ").append(toIndentedString(file)).append("\n");
+                        sb.append("    otherStatusCode: ").append(toIndentedString(otherStatusCode)).append("\n");
                         sb.append("    poolGroupRef: ").append(toIndentedString(poolGroupRef)).append("\n");
                         sb.append("    poolRef: ").append(toIndentedString(poolRef)).append("\n");
                         sb.append("    server: ").append(toIndentedString(server)).append("\n");
