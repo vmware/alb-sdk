@@ -279,6 +279,9 @@ type AviSession struct {
 
 	// Lock to synchronise the cookies collection from API response
 	cookiesCollectLock sync.Mutex
+
+	// Update the request header with custom headers
+	user_headers map[string]string
 }
 
 const DEFAULT_AVI_VERSION = "18.2.6"
@@ -546,6 +549,18 @@ func (avisess *AviSession) setTimeout(timeout time.Duration) error {
 	return nil
 }
 
+// SetUserHeader -
+func SetUserHeader(user_headers map[string]string) func(*AviSession) error {
+	return func(sess *AviSession) error {
+		return sess.setUserHeader(user_headers)
+	}
+}
+
+func (avisess *AviSession) setUserHeader(user_headers map[string]string) error {
+	avisess.user_headers = user_headers
+	return nil
+}
+
 func (avisess *AviSession) isTokenAuth() bool {
 	return avisess.authToken != "" || avisess.refreshAuthToken != nil || avisess.refreshAuthTokenV2 != nil
 }
@@ -609,6 +624,13 @@ func (avisess *AviSession) newAviRequest(verb string, url string, payload io.Rea
 		return nil, errorResult
 	}
 	req.Header.Set("Content-Type", "application/json")
+
+	if avisess.user_headers != nil {
+		for k, v := range avisess.user_headers {
+			req.Header.Set(k, v)
+		}
+	}
+
 	//req.Header.Set("Accept", "application/json")
 	req.Header.Set("X-Avi-Version", avisess.version)
 	if tenant == "" {
@@ -710,7 +732,7 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 		debug(dump, dumpErr)
 		retryReq = true
 	}
-	if resp.StatusCode == 500 {
+	if resp != nil && resp.StatusCode == 500 {
 		if _, err = avisess.fetchBody(verb, uri, resp); err != nil {
 			glog.Errorf("Client error for URI: %+v. Error: %+v", uri, err.Error())
 		}
