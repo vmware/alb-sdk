@@ -199,7 +199,7 @@ func (err AviError) Error() string {
 	if err.err != nil {
 		msg = fmt.Sprintf("error: %v", err.err)
 	} else if err.Message != nil {
-		msg = fmt.Sprintf("HTTP code: %d; error from Avi: %s",
+		msg = fmt.Sprintf("HTTP code: %d; error from Controller: %s",
 			err.HttpStatusCode, *err.Message)
 	} else {
 		msg = fmt.Sprintf("HTTP code: %d.", err.HttpStatusCode)
@@ -209,7 +209,7 @@ func (err AviError) Error() string {
 		err.Verb, err.Url, msg)
 }
 
-//AviSession maintains a session to the specified Avi Controller
+// AviSession maintains a session to the specified Avi Controller
 type AviSession struct {
 	// host specifies the hostname or IP address of the Avi Controller
 	host string
@@ -279,6 +279,9 @@ type AviSession struct {
 
 	// Lock to synchronise the cookies collection from API response
 	cookiesCollectLock sync.Mutex
+
+	// Update the request header with custom headers
+	user_headers map[string]string
 }
 
 const DEFAULT_AVI_VERSION = "18.2.6"
@@ -287,7 +290,7 @@ const DEFAULT_API_TENANT = "admin"
 const DEFAULT_MAX_API_RETRIES = 3
 const DEFAULT_API_RETRY_INTERVAL = 500
 
-//NewAviSession initiates a session to AviController and returns it
+// NewAviSession initiates a session to AviController and returns it
 func NewAviSession(host string, username string, options ...func(*AviSession) error) (*AviSession, error) {
 	if flag.Parsed() == false {
 		flag.Parse()
@@ -546,6 +549,18 @@ func (avisess *AviSession) setTimeout(timeout time.Duration) error {
 	return nil
 }
 
+// SetUserHeader -
+func SetUserHeader(user_headers map[string]string) func(*AviSession) error {
+	return func(sess *AviSession) error {
+		return sess.setUserHeader(user_headers)
+	}
+}
+
+func (avisess *AviSession) setUserHeader(user_headers map[string]string) error {
+	avisess.user_headers = user_headers
+	return nil
+}
+
 func (avisess *AviSession) isTokenAuth() bool {
 	return avisess.authToken != "" || avisess.refreshAuthToken != nil || avisess.refreshAuthTokenV2 != nil
 }
@@ -609,6 +624,13 @@ func (avisess *AviSession) newAviRequest(verb string, url string, payload io.Rea
 		return nil, errorResult
 	}
 	req.Header.Set("Content-Type", "application/json")
+
+	if avisess.user_headers != nil {
+		for k, v := range avisess.user_headers {
+			req.Header.Set(k, v)
+		}
+	}
+
 	//req.Header.Set("Accept", "application/json")
 	req.Header.Set("X-Avi-Version", avisess.version)
 	if tenant == "" {
@@ -710,7 +732,16 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 		debug(dump, dumpErr)
 		retryReq = true
 	}
-
+	if resp != nil && resp.StatusCode == 500 {
+		if _, err = avisess.fetchBody(verb, uri, resp); err != nil {
+			glog.Errorf("Client error for URI: %+v. Error: %+v", uri, err.Error())
+		}
+		if err != nil {
+			return nil, err
+		} else {
+			retryReq = true
+		}
+	}
 	if !retryReq {
 		glog.Infof("Req for %s uri %v tenant %s RespCode %v", verb, url, tenant, resp.StatusCode)
 		errorResult.HttpStatusCode = resp.StatusCode
@@ -786,7 +817,7 @@ func (avisess *AviSession) fetchBody(verb, uri string, resp *http.Response) (res
 	defer resp.Body.Close()
 	result, err = ioutil.ReadAll(resp.Body)
 	if err == nil {
-		if resp.StatusCode < 200 || resp.StatusCode > 299 {
+		if resp.StatusCode < 200 || resp.StatusCode > 299 || resp.StatusCode == 500 {
 			mres, merr := convertAviResponseToMapInterface(result)
 			glog.Infof("Error code %v parsed resp: %v err %v",
 				resp.StatusCode, mres, merr)
@@ -1041,7 +1072,7 @@ func debug(data []byte, err error) {
 	}
 }
 
-//Checking for controller up state.
+// Checking for controller up state.
 // Flexible to wait on controller status infinitely or for fixed time span.
 func (avisess *AviSession) CheckControllerStatus() (bool, *http.Response, error) {
 	url := avisess.prefix + "/api/cluster/status"
@@ -1079,7 +1110,7 @@ func (avisess *AviSession) CheckControllerStatus() (bool, *http.Response, error)
 	return isControllerUp, &http.Response{Status: "408 Request Timeout", StatusCode: 408}, nil
 }
 
-//getMinTimeDuration returns the minimum time duration between two time values.
+// getMinTimeDuration returns the minimum time duration between two time values.
 func getMinTimeDuration(durationFirst, durationSecond time.Duration) time.Duration {
 	if durationFirst <= durationSecond {
 		return durationFirst
