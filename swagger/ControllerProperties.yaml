@@ -511,6 +511,11 @@ definitions:
                 type: integer
                 default: 60
                 format: int32
+            seupgrade_copy_buffer_size:
+                description: "This parameter defines the buffer size during SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. Field introduced in 22.1.4, 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                default: 128
+                format: int32
             seupgrade_copy_pool_size:
                 description: "This parameter defines the number of simultaneous SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. A value of 0 will disable the pacing scheme and all the SE(s) in the SeGroup will attempt to download the image. . Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
