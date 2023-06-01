@@ -30,11 +30,17 @@ public class DNSRegisterInfo  {
     @JsonProperty("fip")
     private IpAddr fip = null;
 
+    @JsonProperty("fip6")
+    private IpAddr fip6 = null;
+
     @JsonProperty("total_records")
     private Integer totalRecords = null;
 
     @JsonProperty("vip")
     private IpAddr vip = null;
+
+    @JsonProperty("vip6")
+    private IpAddr vip6 = null;
 
     @JsonProperty("vip_id")
     private String vipId = null;
@@ -124,6 +130,26 @@ public class DNSRegisterInfo  {
      * This is the getter method this will return the attribute value.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return fip6
+     */
+    public IpAddr getFip6() {
+        return fip6;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param fip6 set the fip6.
+     */
+    public void setFip6(IpAddr fip6) {
+        this.fip6 = fip6;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return totalRecords
      */
     public Integer getTotalRecords() {
@@ -158,6 +184,26 @@ public class DNSRegisterInfo  {
      */
     public void setVip(IpAddr vip) {
         this.vip = vip;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return vip6
+     */
+    public IpAddr getVip6() {
+        return vip6;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param vip6 set the vip6.
+     */
+    public void setVip6(IpAddr vip6) {
+        this.vip6 = vip6;
     }
 
     /**
@@ -263,7 +309,9 @@ public class DNSRegisterInfo  {
   Objects.equals(this.dnsInfo, objDNSRegisterInfo.dnsInfo)&&
   Objects.equals(this.vsNames, objDNSRegisterInfo.vsNames)&&
   Objects.equals(this.error, objDNSRegisterInfo.error)&&
-  Objects.equals(this.totalRecords, objDNSRegisterInfo.totalRecords);
+  Objects.equals(this.totalRecords, objDNSRegisterInfo.totalRecords)&&
+  Objects.equals(this.vip6, objDNSRegisterInfo.vip6)&&
+  Objects.equals(this.fip6, objDNSRegisterInfo.fip6);
     }
 
     @Override
@@ -273,8 +321,10 @@ public class DNSRegisterInfo  {
                   sb.append("    dnsInfo: ").append(toIndentedString(dnsInfo)).append("\n");
                         sb.append("    error: ").append(toIndentedString(error)).append("\n");
                         sb.append("    fip: ").append(toIndentedString(fip)).append("\n");
+                        sb.append("    fip6: ").append(toIndentedString(fip6)).append("\n");
                         sb.append("    totalRecords: ").append(toIndentedString(totalRecords)).append("\n");
                         sb.append("    vip: ").append(toIndentedString(vip)).append("\n");
+                        sb.append("    vip6: ").append(toIndentedString(vip6)).append("\n");
                         sb.append("    vipId: ").append(toIndentedString(vipId)).append("\n");
                         sb.append("    vsNames: ").append(toIndentedString(vsNames)).append("\n");
                         sb.append("    vsUuids: ").append(toIndentedString(vsUuids)).append("\n");
