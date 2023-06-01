@@ -234,6 +234,8 @@ font-style: italic;
   <li><a href="#virtualserviceUuidIcapstatsGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/icapstats/</code></a></li>
   <li><a href="#virtualserviceUuidKeyvalGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/keyval/</code></a></li>
   <li><a href="#virtualserviceUuidKeyvaldispatchGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/keyvaldispatch/</code></a></li>
+  <li><a href="#virtualserviceUuidKeyvalsessionGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/keyvalsession/</code></a></li>
+  <li><a href="#virtualserviceUuidKeyvalsessionsummaryGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/keyvalsessionsummary/</code></a></li>
   <li><a href="#virtualserviceUuidKeyvalsummaryGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/keyvalsummary/</code></a></li>
   <li><a href="#virtualserviceUuidKeyvalsummaryobjsyncGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/keyvalsummaryobjsync/</code></a></li>
   <li><a href="#virtualserviceUuidL4policysetstatsGet"><code><span class="http-method">get</span> /virtualservice/{uuid}/l4policysetstats/</code></a></li>
@@ -830,6 +832,7 @@ font-style: italic;
       } ]
     } ],
     "tenant_ref" : "aeiou",
+    "csrf_policy_ref" : "aeiou",
     "ign_pool_net_reach" : true,
     "markers" : [ {
       "values" : [ "aeiou" ],
@@ -1346,6 +1349,7 @@ font-style: italic;
     } ]
   } ],
   "tenant_ref" : "aeiou",
+  "csrf_policy_ref" : "aeiou",
   "ign_pool_net_reach" : true,
   "markers" : [ {
     "values" : [ "aeiou" ],
@@ -2667,6 +2671,7 @@ font-style: italic;
     } ]
   } ],
   "tenant_ref" : "aeiou",
+  "csrf_policy_ref" : "aeiou",
   "ign_pool_net_reach" : true,
   "markers" : [ {
     "values" : [ "aeiou" ],
@@ -3321,6 +3326,110 @@ font-style: italic;
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /virtualservice/{uuid}/keyvaldispatch/</code></pre></div>
     <div class="method-summary"> (<span class="nickname">virtualserviceUuidKeyvaldispatchGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="virtualserviceUuidKeyvalsessionGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /virtualservice/{uuid}/keyvalsession/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">virtualserviceUuidKeyvalsessionGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="virtualserviceUuidKeyvalsessionsummaryGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /virtualservice/{uuid}/keyvalsessionsummary/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">virtualserviceUuidKeyvalsessionsummaryGet</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -4298,6 +4407,7 @@ font-style: italic;
     } ]
   } ],
   "tenant_ref" : "aeiou",
+  "csrf_policy_ref" : "aeiou",
   "ign_pool_net_reach" : true,
   "markers" : [ {
     "values" : [ "aeiou" ],
@@ -5033,6 +5143,7 @@ font-style: italic;
     } ]
   } ],
   "tenant_ref" : "aeiou",
+  "csrf_policy_ref" : "aeiou",
   "ign_pool_net_reach" : true,
   "markers" : [ {
     "values" : [ "aeiou" ],
@@ -7065,6 +7176,7 @@ font-style: italic;
 <div class="param">connections_rate_limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#RateProfile">RateProfile</a></span> Rate limit the incoming connections to this virtual service. Allowed in Enterprise edition with any value, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">content_rewrite (optional)</div><div class="param-desc"><span class="param-type"><a href="#ContentRewriteProfile">ContentRewriteProfile</a></span> Profile used to match and rewrite strings in request and/or response body. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">created_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Creator name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">csrf_policy_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> CSRF Protection policy for the Virtual Service. It is a reference to an object of type CSRFPolicy. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">delay_fairness (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Select the algorithm for QoS fairness.  This determines how multiple Virtual Services sharing the same Service Engines will prioritize traffic over a congested network. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. </div>
 <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">dns_info (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsInfo">array[DnsInfo]</a></span> Service discovery specific data including fully qualified domain name, type and Time-To-Live of the DNS record. Note that only one of fqdn and dns_info setting is allowed. Maximum of 1000 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
