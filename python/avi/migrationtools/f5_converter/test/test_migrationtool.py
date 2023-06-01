@@ -1787,6 +1787,23 @@ class TestF5Converter:
                 f5_ssh_port=setup.get('f5_ssh_port'),
                 vs_filter='81-hol-advanced-http-vs-dmz')
 
+    def test_verify_vip_with_duplicate_protocol(self, cleanup):
+        f5_conv(bigip_config_file=setup.get('config_file_name_v11'),
+                f5_config_version=setup.get('file_version_v11'),
+                controller_version=setup.get('controller_version_v17'),
+                tenant=file_attribute['tenant'],
+                cloud_name=file_attribute['cloud_name'],
+                no_profile_merge=file_attribute['no_profile_merge'],
+                output_file_path=setup.get('output_file_path'),
+                f5_ssh_port=setup.get('f5_ssh_port'),
+                vs_filter='100-hol-advanced-http-vs,101-hol-advanced-http-vs')
+
+        o_file = "%s/%s" % (output_file, "hol_advanced_bigip-Output.json")
+        with open(o_file) as json_file:
+            data = json.load(json_file)
+            vs_object = data['VirtualService']
+            for each_vs in vs_object:
+                assert each_vs['name'] in ['100-hol-advanced-http-vs', '101-hol-advanced-http-vs']
 
 def teardown():
     pass

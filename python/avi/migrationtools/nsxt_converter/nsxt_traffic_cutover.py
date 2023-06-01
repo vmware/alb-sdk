@@ -30,7 +30,7 @@ class TrafficCutover(AviConverter):
         '''
         self.nsxt_ip = args.nsxt_ip
         self.nsxt_user = args.nsxt_user
-        self.nsxt_passord = args.nsxt_password
+        self.nsxt_password = args.nsxt_password
         self.nsxt_port = args.nsxt_port
 
         self.controller_ip = args.alb_controller_ip
@@ -77,7 +77,7 @@ class TrafficCutover(AviConverter):
             os.mkdir(self.output_file_path)
         self.init_logger_path()
 
-        nsx_util = NSXUtil(self.nsxt_user, self.nsxt_passord, self.nsxt_ip, self.nsxt_port,
+        nsx_util = NSXUtil(self.nsxt_user, self.nsxt_password, self.nsxt_ip, self.nsxt_port,
                            self.controller_ip, self.user, self.password, self.controller_version)
         vs_not_found = nsx_util.cutover_vs(self.vs_filter, self.prefix, self.alb_controller_tenant)
         if vs_not_found:
@@ -94,7 +94,7 @@ class TrafficCutover(AviConverter):
 if __name__ == "__main__":
     HELP_STR = """
     Usage:
-    python nsxt_converter.py -n 192.168.100.101 -u admin -p password 
+    python nsxt_converter.py -n 192.168.100.101 -u admin -p password
     """
 
     parser = argparse.ArgumentParser(
@@ -113,7 +113,7 @@ if __name__ == "__main__":
                         help='comma separated names of virtual services for performing cutover.\n',
                         required=True)
     parser.add_argument('-n', '--nsxt_ip',
-                        help='Ip of NSXT', required=True)
+                        help='Ip of NSX-T', required=True)
     parser.add_argument('-u', '--nsxt_user',
                         help='NSX-T User name')
     parser.add_argument('-p', '--nsxt_password',

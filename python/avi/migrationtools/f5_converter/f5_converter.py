@@ -8,12 +8,12 @@
 
 # Copyright 2021 VMware, Inc.
 # SPDX-License-Identifier: Apache License 2.0
-
+from datetime import datetime
 import argparse
 import logging
 import os
 import sys
-
+import paramiko
 import avi.migrationtools
 import avi.migrationtools.f5_converter.converter_constants as conv_const
 import yaml
@@ -27,6 +27,7 @@ from avi.migrationtools.avi_orphan_object import wipe_out_not_in_use
 from avi.migrationtools.f5_converter import (f5_config_converter, f5_parser,
                                              scp_util)
 from avi.migrationtools.f5_converter.conversion_util import F5Util
+from avi.migrationtools.f5_converter.ciphers_converter import CiphersConfigConv
 
 # urllib3.disable_warnings()
 LOG = logging.getLogger(__name__)
@@ -95,6 +96,9 @@ ARG_CHOICES = {
     "option": ["cli-upload", "auto-upload"],
     "vs_state": ["enable", "disable"],
 }
+
+
+is_host_present = False
 
 
 class F5Converter(AviConverter):
@@ -209,7 +213,9 @@ class F5Converter(AviConverter):
             if not os.path.exists(output_dir):
                 os.makedirs(output_dir)
             is_download_from_host = True
+        is_host_present=is_download_from_host
         user_ignore = {}
+
         # Read the attributes for user ignore val
         if self.ignore_config:
             with open(self.ignore_config) as stream:
@@ -254,6 +260,17 @@ class F5Converter(AviConverter):
         print("Parsing Input Configuration...")
         f5_config_dict, not_supported_list = f5_parser.parse_config(
             source_str, total_size, self.f5_config_version)
+
+
+        if is_download_from_host:
+            cipher_conf_file = open(input_dir + os.path.sep + "cipher.conf", "r")
+            cipher_config_dict=None
+            if cipher_conf_file:
+                cipher_source_str = cipher_conf_file.read()
+                cipher_total_size = cipher_conf_file.tell()
+                cipher_config_dict, cipher_not_supported_list = f5_parser.parse_config(
+                cipher_source_str, cipher_total_size, self.f5_config_version)
+
         LOG.debug("Config file %s parsed successfully", source_file.name)
         avi_config_dict = None
         LOG.debug("Parsing defaults files")
@@ -295,13 +312,26 @@ class F5Converter(AviConverter):
         self.dict_merge(f5_defaults_dict, f5_config_dict)
         f5_config_dict = f5_defaults_dict
         report_name = os.path.splitext(os.path.basename(source_file.name))[0]
+        start = datetime.now()
+
+        migrated_ciphers_dict={}
+        migrated_ciphers_group_dict={}
+        if is_download_from_host:
+            cipher_conv = CiphersConfigConv(self.f5_host_ip, self.f5_ssh_password,
+                                            self.f5_ssh_user,self.controller_ip,self.user,
+                                            self.password,self.f5_config_version)
+
+            migrated_ciphers_dict,migrated_ciphers_group_dict=cipher_conv.migrate_ciphers_and_cipher_group(
+                                                            f5_config_dict,cipher_config_dict,self.f5_config_version)
+
         avi_config_dict, part_mapping = f5_config_converter.convert(
             f5_config_dict, output_dir, self.vs_state, input_dir, self.f5_config_version,
             self.object_merge_check, self.controller_version, report_name, self.prefix,
             self.con_snatpool, user_ignore, self.profile_path, self.tenant, self.cloud_name,
             self.f5_passphrase_file, self.vs_level_status, self.vrf, self.segroup,
             custom_mappings, self.skip_pki, self.distinct_app_profile, self.reuse_http_policy,
-            self.skip_disabled_vs,
+            self.skip_disabled_vs,migrated_ciphers_dict=migrated_ciphers_dict,
+            migrated_ciphers_group_dict=migrated_ciphers_group_dict
         )
         # validating avi config dict for object length
         self.trim_object_length(avi_config_dict)
@@ -333,6 +363,7 @@ class F5Converter(AviConverter):
             self.upload_config_to_controller(avi_config)
         print("Total Warning: ", get_count("warning"))
         print("Total Errors: ", get_count("error"))
+
 
     def get_default_config(self, is_download, path):
         """
@@ -825,7 +856,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--segroup",
-        help="Update the available segroup ref with the custom ref", required=True)
+        help="Update the available segroup ref with the custom ref")
     parser.add_argument(
         "--skip_default_file",
         help="Flag for skip default file",

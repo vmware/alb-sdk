@@ -264,7 +264,7 @@ class VSConfigConv(object):
             LOG.warning(msg)
             conv_utils.add_status_row(
                 "virtual", None, vs_name, final.STATUS_SKIPPED, msg)
-            return None
+            return None, None
 
         ntwk_prof = conv_utils.get_vs_ntwk_profiles(
             profiles, avi_config, self.prefix, merge_object_mapping, sys_dict)
@@ -319,26 +319,30 @@ class VSConfigConv(object):
         destination = f5_vs.get("destination", None)
         description = f5_vs.get("description", None)
         d_tenant, destination = conv_utils.get_tenant_ref(destination)
+
+        ip_protocol=f5_vs.get("ip-protocol")
         # if destination is not present then skip vs.
         services_obj, ip_addr, vsvip_ref, vrf_ref = conv_utils.get_service_obj(
             destination, avi_config, enable_ssl, controller_version,
-            tenant, cloud_name, self.prefix, vs_name, vrf
+            tenant, cloud_name, self.prefix, vs_name, ip_protocol,vrf
         )
+
         # Added check for same vip in same vrf
         if vsvip_ref == '':
+
             msg = "Skipped: Virtualservice %s has repeated vip not in " \
                   "different vrf" % vs_name
             LOG.debug(msg)
             conv_utils.add_status_row(
                 "virtual", None, vs_name, final.STATUS_SKIPPED, msg)
-            return
+            return None, None
         # Added Check for if port is no digit skip vs.
         if not services_obj and not ip_addr and not vsvip_ref:
             msg = "Skipped Virtualservice : %s" % vs_name
             LOG.debug(msg)
             conv_utils.add_status_row(
                 "virtual", None, vs_name, final.STATUS_SKIPPED, msg)
-            return
+            return None, None
 
         is_pool_group = False
         if pool_ref:
@@ -421,7 +425,7 @@ class VSConfigConv(object):
                 LOG.warning(msg)
                 conv_utils.add_status_row(
                     "virtual", None, vs_name, final.STATUS_SKIPPED, msg)
-                return
+                return None, None
             # TODO: Followiong condition to be removed after controller adds
             # TODO: support for PERSISTENCE_TYPE_TLS for SSL VS
             if persist_type == "PERSISTENCE_TYPE_TLS" and \
@@ -431,7 +435,7 @@ class VSConfigConv(object):
                 LOG.warning(msg)
                 conv_utils.add_status_row(
                     "virtual", None, vs_name, final.STATUS_SKIPPED, msg)
-                return
+                return None, None
             if f_host:
                 conv_utils.update_pool_for_fallback(
                     f_host, avi_config["Pool"], pool_ref)
@@ -704,6 +708,7 @@ class VSConfigConv(object):
                 )
                 conv_utils.add_conv_status(
                     "snatpool", "", snat_pool_name, conv_status, msg)
+
         if ntwk_prof:
             vs_obj["network_profile_ref"] = ntwk_prof[0]
             ntwk_prof_name = ntwk_prof[0].split("name=")[-1]
@@ -744,7 +749,8 @@ class VSConfigConv(object):
                     LOG.debug(msg)
                     conv_utils.add_status_row(
                         "virtual", None, vs_name, final.STATUS_SKIPPED, msg)
-                    return
+                    return None, None
+
         if app_prof:
             self.app_profile_with_via_host_name(
                 app_name,

@@ -51,4 +51,8 @@ def get_files_from_f5(local_path, host, username, pw=None, key=None, port=22):
         scp.get_all_partition_config("/config/partitions/", local_path)
     except:
         pass
+    try:
+        scp.get('/config/cipher.conf', local_path + 'cipher.conf')
+    except:
+        pass
     scp.close()
