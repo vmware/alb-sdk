@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PKIProfile extends AviRestResource  {
+    @JsonProperty("allow_pki_errors")
+    private List<String> allowPkiErrors = null;
+
     @JsonProperty("ca_certs")
     private List<SSLCertificate> caCerts = null;
 
@@ -58,6 +61,51 @@ public class PKIProfile extends AviRestResource  {
     private Boolean validateOnlyLeafCrl = true;
 
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Exempt errors during certificate verification.
+     * Enum options - ALLOW_EXPIRED_CRL, ALLOW_ALL_ERRORS.
+     * Field introduced in 30.1.1.
+     * Maximum of 1 items allowed.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return allowPkiErrors
+     */
+    public List<String> getAllowPkiErrors() {
+        return allowPkiErrors;
+    }
+
+    /**
+     * This is the setter method. this will set the allowPkiErrors
+     * Exempt errors during certificate verification.
+     * Enum options - ALLOW_EXPIRED_CRL, ALLOW_ALL_ERRORS.
+     * Field introduced in 30.1.1.
+     * Maximum of 1 items allowed.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return allowPkiErrors
+     */
+    public void setAllowPkiErrors(List<String>  allowPkiErrors) {
+        this.allowPkiErrors = allowPkiErrors;
+    }
+
+    /**
+     * This is the setter method this will set the allowPkiErrors
+     * Exempt errors during certificate verification.
+     * Enum options - ALLOW_EXPIRED_CRL, ALLOW_ALL_ERRORS.
+     * Field introduced in 30.1.1.
+     * Maximum of 1 items allowed.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return allowPkiErrors
+     */
+    public PKIProfile addAllowPkiErrorsItem(String allowPkiErrorsItem) {
+      if (this.allowPkiErrors == null) {
+        this.allowPkiErrors = new ArrayList<String>();
+      }
+      this.allowPkiErrors.add(allowPkiErrorsItem);
+      return this;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * List of certificate authorities (root and intermediate) trusted that is used for certificate validation.
@@ -398,14 +446,16 @@ public class PKIProfile extends AviRestResource  {
   Objects.equals(this.createdBy, objPKIProfile.createdBy)&&
   Objects.equals(this.markers, objPKIProfile.markers)&&
   Objects.equals(this.isFederated, objPKIProfile.isFederated)&&
-  Objects.equals(this.tenantRef, objPKIProfile.tenantRef);
+  Objects.equals(this.tenantRef, objPKIProfile.tenantRef)&&
+  Objects.equals(this.allowPkiErrors, objPKIProfile.allowPkiErrors);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class PKIProfile {\n");
-                  sb.append("    caCerts: ").append(toIndentedString(caCerts)).append("\n");
+                  sb.append("    allowPkiErrors: ").append(toIndentedString(allowPkiErrors)).append("\n");
+                        sb.append("    caCerts: ").append(toIndentedString(caCerts)).append("\n");
                         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
                         sb.append("    crlCheck: ").append(toIndentedString(crlCheck)).append("\n");
                         sb.append("    crls: ").append(toIndentedString(crls)).append("\n");
