@@ -187,7 +187,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - configure cloud <key> - show cloud <key> - show cloud internals ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 23.1.1</div>
+    <div class="app-desc">Version: 30.1.1</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -540,6 +540,7 @@ font-style: italic;
       "nsxt_credentials_ref" : "aeiou",
       "automate_dfw_rules" : true,
       "site_id" : "aeiou",
+      "vmc_mode" : true,
       "vpc_mode" : true
     },
     "se_group_template_ref" : "aeiou",
@@ -1031,6 +1032,7 @@ font-style: italic;
     "nsxt_credentials_ref" : "aeiou",
     "automate_dfw_rules" : true,
     "site_id" : "aeiou",
+    "vmc_mode" : true,
     "vpc_mode" : true
   },
   "se_group_template_ref" : "aeiou",
@@ -1755,6 +1757,7 @@ font-style: italic;
     "nsxt_credentials_ref" : "aeiou",
     "automate_dfw_rules" : true,
     "site_id" : "aeiou",
+    "vmc_mode" : true,
     "vpc_mode" : true
   },
   "se_group_template_ref" : "aeiou",
@@ -2361,6 +2364,7 @@ font-style: italic;
     "nsxt_credentials_ref" : "aeiou",
     "automate_dfw_rules" : true,
     "site_id" : "aeiou",
+    "vmc_mode" : true,
     "vpc_mode" : true
   },
   "se_group_template_ref" : "aeiou",
@@ -2915,6 +2919,7 @@ font-style: italic;
     "nsxt_credentials_ref" : "aeiou",
     "automate_dfw_rules" : true,
     "site_id" : "aeiou",
+    "vmc_mode" : true,
     "vpc_mode" : true
   },
   "se_group_template_ref" : "aeiou",
@@ -3326,8 +3331,8 @@ font-style: italic;
     <h3 class="field-label"><a name="DataNetworkConfig">DataNetworkConfig</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">tier1_segment_config (optional)</div><div class="param-desc"><span class="param-type"><a href="#NsxtTier1SegmentConfig">NsxtTier1SegmentConfig</a></span> Nsxt tier1 segment configuration for Avi Service Engine data path. This should be set only when transport zone is of type OVERLAY. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">transport_zone </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Data transport zone path for Avi Service Engines. Example- /infra/sites/default/enforcement-points/default/transport-zones/xxx-xxx-xxxx. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">tz_type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Data transport zone type overlay or vlan. Enum options - OVERLAY, VLAN. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">transport_zone (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Data transport zone path for Avi Service Engines. Example- /infra/sites/default/enforcement-points/default/transport-zones/xxx-xxx-xxxx. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">tz_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Data transport zone type overlay or vlan. Enum options - OVERLAY, VLAN. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">vlan_segments (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Data vlan segments path to use for Avi Service Engines. Example- /infra/segments/vlanls. This should be set only when transport zone is of type VLAN. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
@@ -3645,10 +3650,11 @@ font-style: italic;
 <div class="param">data_network_config (optional)</div><div class="param-desc"><span class="param-type"><a href="#DataNetworkConfig">DataNetworkConfig</a></span> Data network configuration for Avi Service Engines. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">domain_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Domain where NSGroup objects belongs to. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">enforcementpoint_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Enforcement point is where the rules of a policy to apply. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">management_network_config </div><div class="param-desc"><span class="param-type"><a href="#ManagementNetworkConfig">ManagementNetworkConfig</a></span> Management network configuration for Avi Service Engines. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">nsxt_credentials_ref </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Credentials to access NSX-T manager. It is a reference to an object of type CloudConnectorUser. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">nsxt_url </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> NSX-T manager hostname or IP address. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">management_network_config (optional)</div><div class="param-desc"><span class="param-type"><a href="#ManagementNetworkConfig">ManagementNetworkConfig</a></span> Management network configuration for Avi Service Engines. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">nsxt_credentials_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Credentials to access NSX-T manager. It is a reference to an object of type CloudConnectorUser. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">nsxt_url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> NSX-T manager hostname or IP address. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">site_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Site where transport zone belongs to. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">vmc_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> VMC mode. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">vpc_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> VPC Mode. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
@@ -3671,7 +3677,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="NsxtTier1SegmentManualMode">NsxtTier1SegmentManualMode</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">tier1_lrs (optional)</div><div class="param-desc"><span class="param-type"><a href="#Tier1LogicalRouterInfo">array[Tier1LogicalRouterInfo]</a></span> Tier1 logical router placement information. Field introduced in 20.1.1. Minimum of 1 items required. Maximum of 128 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+      <div class="param">tier1_lrs (optional)</div><div class="param-desc"><span class="param-type"><a href="#Tier1LogicalRouterInfo">array[Tier1LogicalRouterInfo]</a></span> Tier1 logical router placement information. Field introduced in 20.1.1. Minimum of 1 items required. Maximum of 300 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -3919,7 +3925,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">content_lib (optional)</div><div class="param-desc"><span class="param-type"><a href="#ContentLibConfig">ContentLibConfig</a></span> vCenter content library where Service Engine images are stored. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">datacenter (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Datacenter for virtual infrastructure discovery. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">deactivate_vm_discovery (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If true, VM&#39;s on the vCenter will not be discovered.Set it to true if there are more than 10000 VMs in the datacenter. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">deactivate_vm_discovery (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If true, VM&#39;s on the vCenter will not be discovered.Set it to true if there are more than 10000 VMs in the datacenter. Field deprecated in 30.1.1. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">is_nsx_environment (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If true, NSX-T segment spanning multiple VDS with vCenter cloud are merged to a single network in Avi. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">management_ip_subnet (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrPrefix">IpAddrPrefix</a></span> Management subnet to use for Avi Service Engines. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">management_network (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Management network to use for Avi Service Engines. It is a reference to an object of type VIMgrNWRuntime. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
