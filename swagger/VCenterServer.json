@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "23.1.1",
+        "version": "30.1.1",
         "title": "Avi VCenterServer Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -541,10 +541,7 @@
         "VCenterServer": {
             "type": "object",
             "required": [
-                "content_lib",
-                "name",
-                "vcenter_credentials_ref",
-                "vcenter_url"
+                "name"
             ],
             "properties": {
                 "_last_modified": {

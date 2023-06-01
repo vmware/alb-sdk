@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '23.1.1'
+    version: '30.1.1'
     title: Avi AuthProfile Object API
     contact:
         name: Avi Networks Inc.
@@ -458,6 +458,8 @@ definitions:
                 format: int32
     LdapAuthSettings:
         type: object
+        required:
+            -   security_mode
         properties:
             base_dn:
                 description: "The LDAP base DN.  For example, avinetworks.com would be DC=avinetworks,DC=com. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -482,6 +484,7 @@ definitions:
             security_mode:
                 description: "LDAP connection security mode. Enum options - AUTH_LDAP_SECURE_NONE, AUTH_LDAP_SECURE_USE_LDAPS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+                default: "AUTH_LDAP_SECURE_USE_LDAPS"
             server:
                 description: "LDAP server IP address or Hostname. Use IP address if an auth profile is used to configure Virtual Service. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
@@ -557,11 +560,30 @@ definitions:
             user_id_attribute:
                 description: "LDAP user id attribute is the login attribute that uniquely identifies a single user record. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    OAuthAppSettings:
+        type: object
+        required:
+            -   client_id
+            -   client_secret
+        properties:
+            client_id:
+                description: "Application specific identifier. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            client_secret:
+                description: "Application specific identifier secret. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            oidc_config:
+                description: "OpenID Connect specific configuration. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/OIDCConfig'
+            scopes:
+                description: "Scope specified to give limited access to the app. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
     OAuthProfile:
         type: object
         required:
             -   authorization_endpoint
-            -   pool_ref
             -   token_endpoint
         properties:
             authorization_endpoint:
@@ -569,6 +591,9 @@ definitions:
                 type: string
             end_session_endpoint:
                 description: "Logout URI of IDP server. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            instance_id:
+                description: "Instance uuid of the csp service. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             introspection_endpoint:
                 description: "URL of token introspection server. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
@@ -583,13 +608,35 @@ definitions:
             jwks_uri:
                 description: "JWKS URL of the endpoint that hosts the public keys that can be used to verify any JWT issued by the authorization server. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
+            oauth_controller_settings:
+                description: "OAuth App Settings for controller authentication. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/OAuthAppSettings'
+            oauth_profile_type:
+                description: "Type of OAuth profile which defines the usage type. Enum options - CLIENT_OAUTH, CONTROLLER_OAUTH. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+                default: "CLIENT_OAUTH"
+            oauth_provider:
+                description: "Type of OAuth Provider when using controller oauth as oauth profile type. Enum options - OAUTH_CSP. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
             oauth_resp_buffer_sz:
                 description: "Buffering size for the responses from the OAUTH enpoints. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
                 default: 102400
                 format: int32
+            org_id:
+                description: "Organization Id for OAuth. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
             pool_ref:
                 description: "Pool object to interface with Authorization Server endpoints. It is a reference to an object of type Pool. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            redirect_uri:
+                description: "Redirect URI specified in the request to Authorization Server. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            service_id:
+                description: "Uuid value of csp service. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            service_name:
+                description: "Name of the csp service. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             token_endpoint:
                 description: "URL of token exchange server. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
@@ -597,6 +644,19 @@ definitions:
             userinfo_endpoint:
                 description: "URL of the Userinfo Endpoint. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
+    OIDCConfig:
+        type: object
+        properties:
+            oidc_enable:
+                description: "Adds openid as one of the scopes enabling OpenID Connect flow. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
+            profile:
+                description: "Fetch profile information by enabling profile scope. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
+                default: True
+            userinfo:
+                description: "Fetch profile information from Userinfo Endpoint. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
     RoleFilterMatchLabel:
         type: object
         required:
@@ -665,6 +725,7 @@ definitions:
     SamlSettings:
         type: object
         required:
+            -   idp
             -   sp
         properties:
             idp:

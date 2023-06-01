@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '23.1.1'
+    version: '30.1.1'
     title: Avi IpamDnsProviderProfile Object API
     contact:
         name: Avi Networks Inc.
@@ -623,9 +623,8 @@ definitions:
             -   username
         properties:
             dns_view:
-                description: "DNS view. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "DNS view used for Infoblox host record creation, If this field is not configured by the user, then its value will be set to 'default'. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-                default: "default"
             extensible_attributes:
                 description: "Custom parameters that will passed to the Infoblox provider as extensible attributes. Field introduced in 18.2.7, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
@@ -635,9 +634,8 @@ definitions:
                 description: "Address of Infoblox appliance. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             network_view:
-                description: "Network view. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Network view used for Infoblox host record creation, If this field is not configured by the user, then its value will be set to 'default'. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-                default: "default"
             password:
                 description: "Password for API access for Infoblox appliance. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string

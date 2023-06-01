@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '23.1.1'
+    version: '30.1.1'
     title: Avi ControllerPortalRegistration Object API
     contact:
         name: Avi Networks Inc.
@@ -358,10 +358,13 @@ definitions:
                 description: "Access Token to authenticate Customer Portal REST calls. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             instance_url:
-                description: "Salesforce instance URL. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Cloud services instance URL. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             jwt_token:
                 description: "Signed JWT to refresh the access token. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            tenant:
+                description: "Tenant information for which cloud services authentication information is persisted. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
     ControllerPortalRegistration:
         type: object

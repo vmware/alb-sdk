@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '23.1.1'
+    version: '30.1.1'
     title: Avi ALBServicesConfig Object API
     contact:
         name: Avi Networks Inc.
@@ -384,7 +384,6 @@ definitions:
             -   case_config
             -   feature_opt_in_status
             -   ip_reputation_config
-            -   operations_config
             -   portal_url
             -   saas_licensing_config
             -   split_proxy_configuration
@@ -396,19 +395,19 @@ definitions:
                 readOnly: True
                 type: string
             app_signature_config:
-                description: "Default values to be used for Application Signature sync. Field introduced in 20.1.4. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Default values for Application Signature sync. Field introduced in 20.1.4. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AppSignatureConfig'
             asset_contact:
-                description: "Information about the default contact for this controller cluster. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Default contact for this controller cluster. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ALBServicesUser'
             case_config:
-                description: "Default values to be used for pulse case management. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Default values for case management. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/CaseConfig'
             configpb_attributes:
                 description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             feature_opt_in_status:
-                description: "Information about the portal features opted in for controller. Field introduced in 20.1.1."
+                description: "Features opt-in for Pulse Cloud Services. Field introduced in 20.1.1."
                 $ref: '#/definitions/PortalFeatureOptIn'
             ip_reputation_config:
                 description: "Default values to be used for IP Reputation sync. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -417,42 +416,45 @@ definitions:
                 description: "Mode helps log collection and upload. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE. Field introduced in 20.1.2. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Basic edition(Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Enterprise with Cloud Services edition."
                 type: string
                 default: "MYVMWARE"
-            operations_config:
-                description: "Operations configuration. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/OperationsConfig'
+            name:
+                description: "Name of the ALBServicesConfig object. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
             polling_interval:
                 description: "Time interval in minutes. Allowed values are 5-60. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10
                 format: int32
             portal_url:
-                description: "The FQDN or IP address of the customer portal. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The FQDN or IP address of the Pulse Cloud Services. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             saas_licensing_config:
                 description: "Saas licensing configuration. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SaasLicensingInfo'
             split_proxy_configuration:
-                description: "Split proxy configuration to connect external pulse services. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Split proxy configuration to connect external Pulse Cloud Services. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ProxyConfiguration'
+            tenant_ref:
+                description: "Tenant UUID associated with the Object. It is a reference to an object of type Tenant. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             use_split_proxy:
-                description: "By default, pulse uses proxy added in system configuration. If pulse needs to use a seperate proxy, set this flag to true and configure split proxy configuration. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "By default, Pulse Cloud Services uses proxy added in system configuration. If it should use a separate proxy, set this flag to true and configure split proxy configuration. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             use_tls:
-                description: "Secure the controller to PULSE communication over TLS. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Secure the controller to Pulse Cloud Services communication over TLS. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             user_agent_db_config:
-                description: "Default values to be used for user agent DB Service. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Default values for user agent DB Service. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/UserAgentDBConfig'
             uuid:
                 description: " Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             waf_config:
-                description: "Default values to be used for pulse waf management. Field introduced in 21.1.1. Allowed in Essentials edition with any value, Basic edition with any value, Enterprise, Enterprise with Cloud Services edition."
+                description: "Default values for waf management. Field introduced in 21.1.1. Allowed in Essentials edition with any value, Basic edition with any value, Enterprise, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/WafCrsConfig'
     ALBServicesConfigApiResponse:
         type: object
@@ -527,9 +529,8 @@ definitions:
         type: object
         properties:
             enable:
-                description: "Allow inventory stats to be regularly sent to pulse portal. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Allow inventory stats to be regularly sent to Pulse Cloud Services. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: boolean
-                default: True
     IpReputationConfig:
         type: object
         properties:
@@ -559,9 +560,12 @@ definitions:
                 description: "Enable to receive IP reputation updates. Field introduced in 20.1.1. Allowed in Enterprise edition only with addon license, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition."
                 type: boolean
             enable_pulse_case_management:
-                description: "Enable Pulse Case Management. Field introduced in 21.1.1. Allowed in Enterprise edition only with addon license, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Enterprise edition is false, Essentials edition is false, Basic edition is false, Enterprise is True."
+                description: "Enable Pulse Cloud Services Case Management. Field introduced in 21.1.1. Allowed in Enterprise edition only with addon license, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Enterprise edition is false, Essentials edition is false, Basic edition is false, Enterprise is True."
                 type: boolean
                 default: True
+            enable_pulse_inventory:
+                description: "Enable Pulse Cloud Services Inventory. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is False."
+                type: boolean
             enable_pulse_waf_management:
                 description: "Enable to receive WAF CRS updates. Field introduced in 21.1.1. Allowed in Enterprise edition only with addon license, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Enterprise edition is false, Essentials edition is false, Basic edition is false, Enterprise is True."
                 type: boolean
