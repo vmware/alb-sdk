@@ -73,6 +73,9 @@ type VirtualService struct {
 	// Creator name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	CreatedBy *string `json:"created_by,omitempty"`
 
+	// CSRF Protection policy for the Virtual Service. It is a reference to an object of type CSRFPolicy. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	CsrfPolicyRef *string `json:"csrf_policy_ref,omitempty"`
+
 	// Select the algorithm for QoS fairness.  This determines how multiple Virtual Services sharing the same Service Engines will prioritize traffic over a congested network. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition.
 	DelayFairness *bool `json:"delay_fairness,omitempty"`
 

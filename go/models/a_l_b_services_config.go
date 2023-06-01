@@ -37,9 +37,8 @@ type ALBServicesConfig struct {
 	// Mode helps log collection and upload. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE. Field introduced in 20.1.2. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Basic edition(Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Enterprise with Cloud Services edition.
 	Mode *string `json:"mode,omitempty"`
 
-	// Operations configuration. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
-	// Required: true
-	OperationsConfig *OperationsConfig `json:"operations_config"`
+	// Name of the ALBServicesConfig object. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	Name *string `json:"name,omitempty"`
 
 	// Time interval in minutes. Allowed values are 5-60. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	PollingInterval *int32 `json:"polling_interval,omitempty"`
@@ -55,6 +54,9 @@ type ALBServicesConfig struct {
 	// Split proxy configuration to connect external Pulse Cloud Services. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	SplitProxyConfiguration *ProxyConfiguration `json:"split_proxy_configuration"`
+
+	// Tenant UUID associated with the Object. It is a reference to an object of type Tenant. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
+	TenantRef *string `json:"tenant_ref,omitempty"`
 
 	// url
 	// Read Only: true
