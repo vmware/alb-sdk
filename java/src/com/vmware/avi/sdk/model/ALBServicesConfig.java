@@ -234,7 +234,8 @@ public class ALBServicesConfig extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Name of the albservicesconfig object.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
      */
@@ -246,7 +247,8 @@ public class ALBServicesConfig extends AviRestResource  {
      * This is the setter method to the attribute.
      * Name of the albservicesconfig object.
      * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
      */

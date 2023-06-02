@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CaseConfig  {
+    @JsonProperty("additional_emails")
+    private List<String> additionalEmails = null;
+
     @JsonProperty("enable_auto_case_creation_on_controller_failure")
     private Boolean enableAutoCaseCreationOnControllerFailure = false;
 
@@ -31,6 +34,45 @@ public class CaseConfig  {
     private Boolean enableCleanupOfAttachedFiles;
 
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Additional emails to get notified when the case gets created.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return additionalEmails
+     */
+    public List<String> getAdditionalEmails() {
+        return additionalEmails;
+    }
+
+    /**
+     * This is the setter method. this will set the additionalEmails
+     * Additional emails to get notified when the case gets created.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return additionalEmails
+     */
+    public void setAdditionalEmails(List<String>  additionalEmails) {
+        this.additionalEmails = additionalEmails;
+    }
+
+    /**
+     * This is the setter method this will set the additionalEmails
+     * Additional emails to get notified when the case gets created.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return additionalEmails
+     */
+    public CaseConfig addAdditionalEmailsItem(String additionalEmailsItem) {
+      if (this.additionalEmails == null) {
+        this.additionalEmails = new ArrayList<String>();
+      }
+      this.additionalEmails.add(additionalEmailsItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -122,14 +164,16 @@ public class CaseConfig  {
       CaseConfig objCaseConfig = (CaseConfig) o;
       return   Objects.equals(this.enableAutoCaseCreationOnControllerFailure, objCaseConfig.enableAutoCaseCreationOnControllerFailure)&&
   Objects.equals(this.enableAutoCaseCreationOnSeFailure, objCaseConfig.enableAutoCaseCreationOnSeFailure)&&
-  Objects.equals(this.enableCleanupOfAttachedFiles, objCaseConfig.enableCleanupOfAttachedFiles);
+  Objects.equals(this.enableCleanupOfAttachedFiles, objCaseConfig.enableCleanupOfAttachedFiles)&&
+  Objects.equals(this.additionalEmails, objCaseConfig.additionalEmails);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class CaseConfig {\n");
-                  sb.append("    enableAutoCaseCreationOnControllerFailure: ").append(toIndentedString(enableAutoCaseCreationOnControllerFailure)).append("\n");
+                  sb.append("    additionalEmails: ").append(toIndentedString(additionalEmails)).append("\n");
+                        sb.append("    enableAutoCaseCreationOnControllerFailure: ").append(toIndentedString(enableAutoCaseCreationOnControllerFailure)).append("\n");
                         sb.append("    enableAutoCaseCreationOnSeFailure: ").append(toIndentedString(enableAutoCaseCreationOnSeFailure)).append("\n");
                         sb.append("    enableCleanupOfAttachedFiles: ").append(toIndentedString(enableCleanupOfAttachedFiles)).append("\n");
                   sb.append("}");
