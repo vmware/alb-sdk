@@ -417,7 +417,7 @@ definitions:
                 type: string
                 default: "MYVMWARE"
             name:
-                description: "Name of the ALBServicesConfig object. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Name of the ALBServicesConfig object. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 type: string
             polling_interval:
                 description: "Time interval in minutes. Allowed values are 5-60. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -507,6 +507,11 @@ definitions:
     CaseConfig:
         type: object
         properties:
+            additional_emails:
+                description: "Additional emails to get notified when the case gets created. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
             enable_auto_case_creation_on_controller_failure:
                 description: "Enable pro-active support case creation when a controller failure occurs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition."
                 type: boolean
