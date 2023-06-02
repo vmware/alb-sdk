@@ -13,11 +13,18 @@ import (
 func main() {
 	// flag.Lookup("logtostderr").Value.Set("false")
 	// Create a session and a generic client to Avi Controller
+	// Create a user header to pass with the client
+	user_headers := map[string]string{
+		"X-Avi-Version": "22.1.2",
+	}
+	user_headers["X-Avi-Tenant"] = "admin"
 	aviClient, err := clients.NewAviClient("10.10.28.91", "admin",
 		session.SetPassword("password"),
 		session.SetTenant("admin"),
 		session.SetVersion("20.1.1"),
-		session.SetInsecure)
+		session.SetInsecure,
+		session.SetUserHeader(user_headers),
+	)
 	if err != nil {
 		fmt.Println("Couldn't create session: ", err)
 		return

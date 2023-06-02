@@ -14,6 +14,8 @@ import logging
 from copy import deepcopy
 from avi.sdk.avi_api import ApiSession, ObjectNotFound, avi_sdk_syslog_logger, \
     AviCredentials
+from avi.sdk.csp_avi_api import CSPApiSession
+from avi.sdk.saml_avi_api import OneloginSAMLApiSession, OktaSAMLApiSession
 
 if os.environ.get('AVI_LOG_HANDLER', '') != 'syslog':
     log = logging.getLogger(__name__)
@@ -59,10 +61,10 @@ def ansible_return(module, rsp, changed, req=None, existing_obj=None,
     api_creds.update_from_ansible_module(module)
     key = '%s:%s:%s' % (api_creds.controller, api_creds.username,
                         api_creds.port)
-    disable_fact = module.params.get('avi_disable_session_cache_as_fact')
+    deactivate_fact = module.params.get('avi_deactivate_session_cache_as_fact')
 
     fact_context = None
-    if not disable_fact:
+    if not deactivate_fact:
         fact_context = module.params.get('api_context', {})
         if fact_context:
             fact_context.update({key: api_context})
@@ -81,9 +83,9 @@ def ansible_return(module, rsp, changed, req=None, existing_obj=None,
             "state" in obj_val):
         obj_val["obj_state"] = obj_val["state"]
     old_obj_val = existing_obj if changed and existing_obj else None
-    api_context_val = api_context if disable_fact else None
+    api_context_val = api_context if deactivate_fact else None
     ansible_facts_val = dict(
-        avi_api_context=fact_context) if not disable_fact else {}
+        avi_api_context=fact_context) if not deactivate_fact else {}
 
     return module.exit_json(
         changed=changed, obj=obj_val, old_obj=old_obj_val,
@@ -333,15 +335,15 @@ def avi_obj_cmp(x, y, sensitive_fields=None):
 
 POP_FIELDS = ['state', 'controller', 'username', 'password', 'api_version',
               'avi_credentials', 'avi_api_update_method', 'avi_api_patch_op', 'avi_patch_path',
-              'avi_patch_value', 'api_context', 'tenant', 'tenant_uuid', 'avi_disable_session_cache_as_fact']
+              'avi_patch_value', 'api_context', 'tenant', 'tenant_uuid', 'avi_deactivate_session_cache_as_fact']
 
 
 def get_api_context(module, api_creds):
     api_context = module.params.get('api_context')
-    if api_context and module.params.get('avi_disable_session_cache_as_fact'):
+    if api_context and module.params.get('avi_deactivate_session_cache_as_fact'):
         return api_context
     elif api_context and not module.params.get(
-            'avi_disable_session_cache_as_fact'):
+            'avi_deactivate_session_cache_as_fact'):
         key = '%s:%s:%s' % (api_creds.controller, api_creds.username,
                             api_creds.port)
         return api_context.get(key)
@@ -349,8 +351,25 @@ def get_api_context(module, api_creds):
         return None
 
 
-NO_UUID_OBJ = ['cluster', 'systemconfiguration']
+NO_UUID_OBJ = ['cluster', 'systemconfiguration', 'inventoryfaultconfig']
 SKIP_DELETE_ERROR = ["Cannot delete system default object", "Method \'DELETE\' not allowed"]
+
+
+def get_idp_class(idp):
+    """
+    This return corresponding idp class.
+    :param idp: idp type such as okta, onelogin, pingfed
+    :return: IDP class or ApiSession class
+    """
+    if str(idp).lower() == "cspapisession":
+        idp_class = CSPApiSession
+    elif str(idp).lower() == "oktasamlapisession":
+        idp_class = OktaSAMLApiSession
+    elif str(idp).lower() == 'oneloginsamlapisession':
+        idp_class = OneloginSAMLApiSession
+    else:
+        idp_class = None
+    return idp_class
 
 
 def avi_ansible_api(module, obj_type, sensitive_fields):
@@ -367,6 +386,11 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
     api_creds = AviCredentials()
     api_creds.update_from_ansible_module(module)
     api_context = get_api_context(module, api_creds)
+    idp_class = api_creds.idp_class
+    idp = get_idp_class(idp_class)
+    if idp_class and not idp:
+        msg = "IDP {0} not supported yet.".format(idp_class)
+        return module.fail_json(msg=msg)
     if api_context:
         api = ApiSession.get_session(
             api_creds.controller,
@@ -388,7 +412,10 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
             tenant=api_creds.tenant,
             tenant_uuid=api_creds.tenant_uuid,
             token=api_creds.token,
-            port=api_creds.port,)
+            port=api_creds.port,
+            idp_class=idp,
+            csp_host=api_creds.csp_host,
+            csp_token=api_creds.csp_token,)
     state = module.params['state']
     # Get the api version.
     avi_update_method = module.params.get('avi_api_update_method', 'put')
@@ -584,7 +611,10 @@ def avi_common_argument_spec():
         token=dict(default='', type='str', no_log=True),
         timeout=dict(default=300, type='int'),
         session_id=dict(default='', type='str', no_log=True),
-        csrftoken=dict(default='', type='str', no_log=True)
+        csrftoken=dict(default='', type='str', no_log=True),
+        idp_class=dict(default='', type='str'),
+        csp_host=dict(default='', type='str', no_log=True),
+        csp_token=dict(default='', type='str', no_log=True)
     )
 
     return dict(
@@ -597,4 +627,4 @@ def avi_common_argument_spec():
         avi_credentials=dict(default=None, type='dict',
                              options=credentials_spec),
         api_context=dict(type='dict'),
-        avi_disable_session_cache_as_fact=dict(default=False, type='bool'))
+        avi_deactivate_session_cache_as_fact=dict(default=False, type='bool'))

@@ -34,6 +34,7 @@ type AviClient struct {
 	BotDetectionPolicy              *BotDetectionPolicyClient
 	BotIPReputationTypeMapping      *BotIPReputationTypeMappingClient
 	BotMapping                      *BotMappingClient
+	CSRFPolicy                      *CSRFPolicyClient
 	CertificateManagementProfile    *CertificateManagementProfileClient
 	Cloud                           *CloudClient
 	CloudConnectorUser              *CloudConnectorUserClient
@@ -191,6 +192,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.BotDetectionPolicy = NewBotDetectionPolicyClient(aviSession)
 	aviClient.BotIPReputationTypeMapping = NewBotIPReputationTypeMappingClient(aviSession)
 	aviClient.BotMapping = NewBotMappingClient(aviSession)
+	aviClient.CSRFPolicy = NewCSRFPolicyClient(aviSession)
 	aviClient.CertificateManagementProfile = NewCertificateManagementProfileClient(aviSession)
 	aviClient.Cloud = NewCloudClient(aviSession)
 	aviClient.CloudConnectorUser = NewCloudConnectorUserClient(aviSession)

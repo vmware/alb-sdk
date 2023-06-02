@@ -112,6 +112,7 @@ NSXT:
      - "display_name"
      - "resource_type"
      - "id"
+     - "description"
 
     Monitor_http_attr:
     - "request_url"
@@ -171,6 +172,7 @@ NSXT:
     - "min_active_members"
     - "resource_type"
     - "id"
+    - "description"
 
     Pool_supported_attr_convert_servers_config:
     - "display_name"
@@ -215,6 +217,7 @@ NSXT:
     Network_Profile_supported_attr:
     - "display_name"
     - "resource_type"
+    - "description"
     - "id"
     - "idle_timeout"
     - 'ha_flow_mirroring_enabled'
@@ -284,6 +287,7 @@ NSXT:
     - "id"
     - "resource_type"
     - 'prefer_server_ciphers'
+    - "description"
 
     SSLProfile_Client_Indirect_Attributes:
      - "is_secure"
@@ -297,15 +301,20 @@ NSXT:
     - "display_name"
     - "id"
     - "resource_type"
+    - "description"
 
     SSLProfile_Server_Indirect_Attributes:
         - "is_secure"
         - "is_fips"
 
+    SSLProfile_NA_Attributes:
+    - "cipher_group_label"
+
     PersistenceProfile_Supported_Attributes:
     - "display_name"
     - "id"
     - "resource_type"
+    - "description"
 
     CookiePersistenceProfile_Supported_Attributes:
     - "cookie_name"
@@ -353,16 +362,16 @@ NSXT:
 
     Common_Na_List:
     - "path"
-    - "relative_path" 
-    - "parent_path" 
-    - "unique_id" 
-    - "realization_id" 
-    - "marked_for_delete" 
-    - "overridden" 
-    - "_create_time" 
-    - "_create_user" 
-    - "_last_modified_time" 
-    - "_last_modified_user" 
-    - "_system_owned" 
-    - "_protection" 
+    - "relative_path"
+    - "parent_path"
+    - "unique_id"
+    - "realization_id"
+    - "marked_for_delete"
+    - "overridden"
+    - "_create_time"
+    - "_create_user"
+    - "_last_modified_time"
+    - "_last_modified_user"
+    - "_system_owned"
+    - "_protection"
     - "_revision"

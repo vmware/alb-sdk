@@ -4,10 +4,11 @@
 # SPDX-License-Identifier: Apache License 2.0
 # Version 0.06
 
+import argparse
+import re
 import urllib3
 import yaml
-import re
-import argparse
+
 from avi.sdk.avi_api import ApiSession
 urllib3.disable_warnings()
 api_results = {}
@@ -16,7 +17,7 @@ api_results = {}
 def ref_clean_up(obj):
     """
     Loops through list of policies and datascripts and removes un-needed fields
-    :param obj: Object for which referances to clean up
+    :param obj: Object for which references to clean up
     :return Updated object
     """
     clean_up = ['uuid', 'url', '_last_modified', 'is_internal_policy']
@@ -182,7 +183,7 @@ def build_custom_config():
                                             'evt': ds['evt'],
                                             'script': ds['script']
                                         }]
-                                }
+                            }
                         }
                     )
         if "NetworkSecurityPolicy" == k:
@@ -248,18 +249,21 @@ if __name__ == '__main__':
         HTTP Request policy
         HTTP Response policy
         DataScript
-    
-    Script converts all Network Security, HTTP Security, HTTP Request, HTTP Response polices and Datascripts on controller into YAML file to run with the F5 Migration tool
 
-    Script will complete a GET API call to controller for policies and datascripts, convert the RAW JSON to YAML, and write it to a file called converted_irules.yml.
+    Script converts all Network Security, HTTP Security, HTTP Request,
+    HTTP Response polices and Datascripts on controller into YAML file to run with the F5 Migration tool
+
+    Script will complete a GET API call to controller for policies and datascripts,
+    convert the RAW JSON to YAML, and write it to a file called converted_irules.yml.
 
     For policies that require multiple indexes
         You must save each policy with a unique name while configuring it in the UI
- 
-        The script parses the longest match for the policy name. The longest match should be exactly what the irule name is on the F5. 
+
+        The script parses the longest match for the policy name.
+        The longest match should be exactly what the irule name is on the F5. 
             Example
                 mobile-https.redirect.irule (Actual iRule name)
-                mobile-https.redirect.irule-mobilesecure.com 
+                mobile-https.redirect.irule-mobilesecure.com
             The longest match between the two policies is "mobile-https.redirect.irule”
 
         Suffix

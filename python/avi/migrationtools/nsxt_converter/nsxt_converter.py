@@ -76,7 +76,7 @@ class NsxtConverter(AviConverter):
         self.cloud_tenant = args.cloud_tenant
         self.ssh_root_password = args.ssh_root_password
 
-    def conver_lb_config(self, args):
+    def convert_lb_config(self, args):
 
         try:
             if not os.path.exists(self.output_file_path):
@@ -399,7 +399,7 @@ if __name__ == "__main__":
     parser.add_argument('-i', '--default_params_file',
                         help='absolute path for nsx-t default params file')
     parser.add_argument('-n', '--nsxt_ip',
-                        help='Ip of NSXT', required=True)
+                        help='Ip of NSX-T', required=True)
     parser.add_argument('-u', '--nsxt_user',
                         help='NSX-T User name', required=True)
     parser.add_argument('-p', '--nsxt_password',
@@ -462,7 +462,7 @@ if __name__ == "__main__":
         if os.environ.get('ssh_root_password'):
             args.ssh_root_password = os.environ.get('ssh_root_password')
     nsxt_converter = NsxtConverter(args)
-    nsxt_converter.conver_lb_config(args)
+    nsxt_converter.convert_lb_config(args)
     end = datetime.now()
     print("The time of execution of above program is :",
           str(end - start))

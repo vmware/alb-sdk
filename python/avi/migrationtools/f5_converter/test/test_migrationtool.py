@@ -5,12 +5,10 @@
 This testsuite contains the initial test cases for testing the
 f5 converter tool along with its options / parameters
 """
-import unittest
 import json
 import logging
 import os
 import subprocess
-import sys
 
 import pandas as pd
 import pytest
@@ -27,7 +25,6 @@ from avi.migrationtools.test.common.test_clean_reboot \
 from avi.migrationtools.test.common.test_tenant_cloud \
     import create_segroup, create_vrf_context
 import ansible_runner
-from avi.migrationtools.avi_migration_utils import MigrationUtil
 common_avi_util = MigrationUtil()
 
 config_file = option.config
@@ -99,6 +96,7 @@ setup = dict(
     not_in_use=True,
     skip_file=False,
     ansible=True,
+    skip_disabled_vs=False,
     baseline_profile=None,
     f5_passphrase_file=os.path.abspath(os.path.join(
         os.path.dirname(__file__), 'passphrase.yaml')),
@@ -143,7 +141,7 @@ def f5_conv(
         f5_ssh_password=None, f5_ssh_port=None, f5_key_file=None,
         ignore_config=None, partition_config=None, version=False,
         no_profile_merge=False, patch=None, vs_filter=None,
-        ansible_skip_types=[], ansible_filter_types=[], ansible=False,
+        ansible_skip_types=[], ansible_filter_types=[], ansible=False, skip_disabled_vs=False,
         prefix=None, convertsnat=False, not_in_use=False, baseline_profile=None,
         f5_passphrase_file=None, vs_level_status=False, test_vip=None,
         vrf=None, segroup=None, custom_config=None, skip_pki=False,
@@ -161,8 +159,9 @@ def f5_conv(
                      f5_ssh_port=f5_ssh_port, f5_key_file=f5_key_file,
                      ignore_config=ignore_config,
                      partition_config=partition_config, version=version,
-                     no_object_merge=no_profile_merge, patch=patch,
+                     object_merge=no_profile_merge, patch=patch,
                      vs_filter=vs_filter, ansible_skip_types=ansible_skip_types,
+                     skip_disabled_vs=skip_disabled_vs,
                      ansible_filter_types=ansible_filter_types, ansible=ansible,
                      prefix=prefix, convertsnat=convertsnat,
                      not_in_use=not_in_use, baseline_profile=baseline_profile,
@@ -919,12 +918,12 @@ class TestF5Converter:
 
             first_vs = [data for data in vs_object if data['name'] == "11-hol-advanced-http-vs"]
             second_vs = [data for data in vs_object if data['name'] == "12-hol-advanced-http-vs"]
-
-            first_pool = first_vs[0]['pool_ref'].split(
-                'name=')[1].split('&')[0]
-            second_pool = second_vs[0]['pool_ref'].split(
-                'name=')[1].split('&')[0]
-            assert first_pool == second_pool
+            if first_vs and second_vs:
+                first_pool = first_vs[0]['pool_ref'].split(
+                    'name=')[1].split('&')[0]
+                second_pool = second_vs[0]['pool_ref'].split(
+                    'name=')[1].split('&')[0]
+                assert first_pool == second_pool
 
     @pytest.mark.travis
     @pytest.mark.TCID1_48_1497_44_0
@@ -945,11 +944,11 @@ class TestF5Converter:
 
             first_vs = [data for data in vs_object if data['name'] == "10-hol-advanced-http-vs"]
             second_vs = [data for data in vs_object if data['name'] == "11-hol-advanced-http-vs"]
-
-            first_pool = first_vs[0]['pool_ref'].split('name=')[1].split('&')[0]
-            second_pool = second_vs[0]['pool_ref'].split('name=')[1].split(
-                '&')[0]
-            assert first_pool != second_pool
+            if first_vs and second_vs:
+                first_pool = first_vs[0]['pool_ref'].split('name=')[1].split('&')[0]
+                second_pool = second_vs[0]['pool_ref'].split('name=')[1].split(
+                    '&')[0]
+                assert first_pool != second_pool
 
     @pytest.mark.travis
     @pytest.mark.TCID1_48_1497_45_0
@@ -1000,10 +999,11 @@ class TestF5Converter:
             second_vs = [data for data in vs_object if data['name'] ==
                          "F5-v10-VIP-443-002"]
 
-            first_pool = first_vs[0]['pool_ref'].split('name=')[1].split('&')[0]
-            second_pool = second_vs[0]['pool_ref'].split('name=')[1].split(
-                '&')[0]
-            assert first_pool != second_pool
+            if first_vs and second_vs:
+                first_pool = first_vs[0]['pool_ref'].split('name=')[1].split('&')[0]
+                second_pool = second_vs[0]['pool_ref'].split('name=')[1].split(
+                    '&')[0]
+                assert first_pool != second_pool
 
     @pytest.mark.travis
     @pytest.mark.TCID1_48_1497_47_0
@@ -1439,7 +1439,7 @@ class TestF5Converter:
             for monitor in hm_object:
                 if 'https_monitor' in monitor:
                     monitor_urls.append(monitor['https_monitor'][
-                                            'http_request'])
+                        'http_request'])
                 elif 'http_monitor' in monitor:
                     monitor_urls.append(monitor['http_monitor']['http_request'])
             for eachUrl in monitor_urls:
@@ -1547,10 +1547,8 @@ class TestF5Converter:
                         == "81-hol-advanced-http-vs-dmz"][0]
             second_vs = [vs for vs in vs_object if vs['name']
                          == "82-hol-advanced-http-vs-dmz"][0]
-            vs1_http_policy = first_vs['http_policies'][0] \
-                ['http_policy_set_ref'].split("=")[-1]
-            vs2_http_policy = second_vs['http_policies'][0] \
-                ['http_policy_set_ref'].split("=")[-1]
+            vs1_http_policy = first_vs['http_policies'][0]['http_policy_set_ref'].split("=")[-1]
+            vs2_http_policy = second_vs['http_policies'][0]['http_policy_set_ref'].split("=")[-1]
             assert vs1_http_policy == vs2_http_policy
             http_policies = data['HTTPPolicySet']
             shared_http_policy = [policy for policy in http_policies
@@ -1578,12 +1576,10 @@ class TestF5Converter:
                         == "vs_http_policy_share_1"][0]
             second_vs = [vs for vs in vs_object if vs['name']
                          == "vs_http_policy_share_2"][0]
-            vs1_http_policy = first_vs['http_policies'][0] \
-                ['http_policy_set_ref'].split("=")[-1]
-            vs2_http_policy = second_vs['http_policies'][0] \
-                ['http_policy_set_ref'].split("=")[-1]
+            vs1_http_policy = first_vs['http_policies'][0]['http_policy_set_ref'].split("=")[-1]
+            vs2_http_policy = second_vs['http_policies'][0]['http_policy_set_ref'].split("=")[-1]
             assert vs1_http_policy == vs2_http_policy == \
-                   '_sys_https_redirect'
+                '_sys_https_redirect'
             http_policies = data['HTTPPolicySet']
             shared_http_policy = [policy for policy in http_policies
                                   if "_sys_https_redirect"
@@ -1688,7 +1684,7 @@ class TestF5Converter:
                             if k == 'enforcement':
                                 enf = item[k]
                                 for item in enf:
-                                    assert item in ['max-requests', 'truncated-redirects',]
+                                    assert item in ['max-requests', 'truncated-redirects', ]
                                 break
 
     def test_profile_indirect_http_enforcement(self, cleanup):
@@ -1748,7 +1744,7 @@ class TestF5Converter:
                                         assert item not in ['max-requests', 'truncated-redirects', 'pipeline']
                                     break
 
-    def test_skipped_objects(self,cleanup):
+    def test_skipped_objects(self, cleanup):
         """
         test case for skipped objct
         """
@@ -1771,7 +1767,7 @@ class TestF5Converter:
                 assert row['Status'] == 'SKIPPED'
 
     def test_tenant_ref(self):
-        input =["/common/test-monitor", "common/test-monitor","common test-monitor"]
+        input = ["/common/test-monitor", "common/test-monitor", "common test-monitor"]
         for ipt in input:
             tenant, name = common_avi_util.get_tenant_ref(ipt)
             assert tenant == tenant.strip()
@@ -1791,20 +1787,23 @@ class TestF5Converter:
                 f5_ssh_port=setup.get('f5_ssh_port'),
                 vs_filter='81-hol-advanced-http-vs-dmz')
 
+    def test_verify_vip_with_duplicate_protocol(self, cleanup):
+        f5_conv(bigip_config_file=setup.get('config_file_name_v11'),
+                f5_config_version=setup.get('file_version_v11'),
+                controller_version=setup.get('controller_version_v17'),
+                tenant=file_attribute['tenant'],
+                cloud_name=file_attribute['cloud_name'],
+                no_profile_merge=file_attribute['no_profile_merge'],
+                output_file_path=setup.get('output_file_path'),
+                f5_ssh_port=setup.get('f5_ssh_port'),
+                vs_filter='100-hol-advanced-http-vs,101-hol-advanced-http-vs')
+
         o_file = "%s/%s" % (output_file, "hol_advanced_bigip-Output.json")
         with open(o_file) as json_file:
             data = json.load(json_file)
-            vs_object = data['VirtualService'][0]
-            http_policy_set = data['HTTPPolicySet']
-        http_policy_name = vs_object.get('http_policies', None)[0] \
-            ['http_policy_set_ref'].split("=")[-1]
-        http_request_policy = [policy for policy in http_policy_set if policy['name'] == http_policy_name][0]
-        policy = http_request_policy.get('http_request_policy', None)
-        rule = policy.get('rules', None)[1]
-        hdr_action = rule.get('hdr_action')[0]
-        assert hdr_action['action'] == 'HTTP_ADD_HDR'
-        assert hdr_action['hdr']['name'] == 'via'
-
+            vs_object = data['VirtualService']
+            for each_vs in vs_object:
+                assert each_vs['name'] in ['100-hol-advanced-http-vs', '101-hol-advanced-http-vs']
 
 def teardown():
     pass

@@ -26,6 +26,7 @@ class SslProfileConfigConv(object):
         self.common_na_attr = nsxt_profile_attributes['Common_Na_List']
         self.indirect_client_ssl_attr = nsxt_profile_attributes["SSLProfile_Client_Indirect_Attributes"]
         self.indirect_server_ssl_attr = nsxt_profile_attributes["SSLProfile_Server_Indirect_Attributes"]
+        self.ssl_na_attr=nsxt_profile_attributes["SSLProfile_NA_Attributes"]
         self.object_merge_check = object_merge_check
         self.merge_object_mapping = merge_object_mapping
         self.sys_dict = sys_dict
@@ -52,7 +53,7 @@ class SslProfileConfigConv(object):
                     skipped = [val for val in lb_ssl.keys()
                                if val not in self.supported_client_ssl_attributes]
                     na_attr = [val for val in lb_ssl.keys()
-                               if val in self.common_na_attr]
+                               if val in self.common_na_attr or val in self.ssl_na_attr]
                     na_list.append(na_attr)
                     progressbar_count += 1
                     name = lb_ssl.get('display_name')
@@ -161,7 +162,7 @@ class SslProfileConfigConv(object):
                     skipped = [val for val in lb_ssl.keys()
                                if val not in self.supported_client_ssl_attributes]
                     na_attr = [val for val in lb_ssl.keys()
-                               if val in self.common_na_attr]
+                               if val in self.common_na_attr or val in self.ssl_na_attr]
                     na_list.append(na_attr)
                     progressbar_count += 1
                     name = lb_ssl.get('display_name')

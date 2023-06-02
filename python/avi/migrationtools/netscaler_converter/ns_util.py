@@ -1426,12 +1426,12 @@ class NsUtil(MigrationUtil):
                                          values=[], aggfunc=[len], fill_value=0)
         # create dataframe for pivot table using pandas
         pivot_df = pandas.DataFrame(pivot_table)
-        master_book = load_workbook(xlsx_report)
-        master_writer = pandas.ExcelWriter(xlsx_report, engine='openpyxl')
-        master_writer.book = master_book
+        main_book = load_workbook(xlsx_report)
+        main_writer = pandas.ExcelWriter(xlsx_report, engine='openpyxl',mode='a')
+        main_writer._book = main_book
         # Add pivot table in Pivot sheet
-        pivot_df.to_excel(master_writer, 'Pivot Sheet')
-        master_writer.save()
+        pivot_df.to_excel(main_writer, 'Pivot Sheet')
+        main_writer.close()
 
     def update_skip_duplicates(self, obj, obj_list, obj_type,
                                merge_object_mapping, name, ent_type, prefix,
