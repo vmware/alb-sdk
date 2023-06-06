@@ -832,8 +832,7 @@
         "OAuthProfile": {
             "type": "object",
             "required": [
-                "authorization_endpoint",
-                "token_endpoint"
+                "authorization_endpoint"
             ],
             "properties": {
                 "authorization_endpoint": {

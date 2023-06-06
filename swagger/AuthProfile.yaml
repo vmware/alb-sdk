@@ -592,7 +592,6 @@ definitions:
         type: object
         required:
             -   authorization_endpoint
-            -   token_endpoint
         properties:
             authorization_endpoint:
                 description: "URL of authorization server. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."

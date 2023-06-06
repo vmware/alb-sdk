@@ -615,6 +615,11 @@ definitions:
                 type: integer
                 default: 480
                 format: int32
+            vs_se_bootup_fail_patch:
+                description: "Wait for longer for patch SEs to boot up. Field introduced in 30.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                default: 600
+                format: int32
             vs_se_create_fail:
                 description: " Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
