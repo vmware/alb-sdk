@@ -289,6 +289,9 @@ type ControllerProperties struct {
 	//  Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsSeBootupFail *int32 `json:"vs_se_bootup_fail,omitempty"`
 
+	// Wait for longer for patch SEs to boot up. Field introduced in 30.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	VsSeBootupFailPatch *int32 `json:"vs_se_bootup_fail_patch,omitempty"`
+
 	//  Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsSeCreateFail *int32 `json:"vs_se_create_fail,omitempty"`
 
