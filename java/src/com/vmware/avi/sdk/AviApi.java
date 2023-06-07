@@ -484,11 +484,10 @@ public class AviApi {
 	 * This method upload the file into the controller.
 	 * 
 	 * @param uri           is the api which upload a file
-	 * @param filePath      is file which we want to upload
-	 * @param fileUploadUri is uri where we have to upload file
+	 * @param filePath      is file path which we want to upload
 	 * @throws Exception
 	 */
-	public void fileUpload(String uri, String filePath, String fileUploadUri) throws Exception {
+	public void fileUpload(String uri, String filePath) throws Exception {
 		CloseableHttpClient httpClient = null;
 		try {
 			httpClient = AviRestUtils.buildHttpClient(this.aviCredentials);
