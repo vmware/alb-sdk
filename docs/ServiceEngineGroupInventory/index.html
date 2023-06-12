@@ -640,6 +640,8 @@ font-style: italic;
     "user_defined_metric_age" : 123,
     "custom_securitygroups_data" : [ "aeiou" ],
     "disable_flow_probes" : true,
+    "path_mtu_discovery_v4" : true,
+    "path_mtu_discovery_v6" : true,
     "downstream_send_timeout" : 123,
     "iptables" : [ {
       "chain" : "aeiou",
@@ -1176,6 +1178,8 @@ font-style: italic;
       "user_defined_metric_age" : 123,
       "custom_securitygroups_data" : [ "aeiou" ],
       "disable_flow_probes" : true,
+      "path_mtu_discovery_v4" : true,
+      "path_mtu_discovery_v6" : true,
       "downstream_send_timeout" : 123,
       "iptables" : [ {
         "chain" : "aeiou",
@@ -1701,6 +1705,8 @@ font-style: italic;
     "user_defined_metric_age" : 123,
     "custom_securitygroups_data" : [ "aeiou" ],
     "disable_flow_probes" : true,
+    "path_mtu_discovery_v4" : true,
+    "path_mtu_discovery_v6" : true,
     "downstream_send_timeout" : 123,
     "iptables" : [ {
       "chain" : "aeiou",
@@ -2297,6 +2303,8 @@ font-style: italic;
     "user_defined_metric_age" : 123,
     "custom_securitygroups_data" : [ "aeiou" ],
     "disable_flow_probes" : true,
+    "path_mtu_discovery_v4" : true,
+    "path_mtu_discovery_v6" : true,
     "downstream_send_timeout" : 123,
     "iptables" : [ {
       "chain" : "aeiou",
@@ -2833,6 +2841,8 @@ font-style: italic;
     "user_defined_metric_age" : 123,
     "custom_securitygroups_data" : [ "aeiou" ],
     "disable_flow_probes" : true,
+    "path_mtu_discovery_v4" : true,
+    "path_mtu_discovery_v6" : true,
     "downstream_send_timeout" : 123,
     "iptables" : [ {
       "chain" : "aeiou",
@@ -3369,6 +3379,8 @@ font-style: italic;
     "user_defined_metric_age" : 123,
     "custom_securitygroups_data" : [ "aeiou" ],
     "disable_flow_probes" : true,
+    "path_mtu_discovery_v4" : true,
+    "path_mtu_discovery_v6" : true,
     "downstream_send_timeout" : 123,
     "iptables" : [ {
       "chain" : "aeiou",
@@ -3858,6 +3870,8 @@ font-style: italic;
   "user_defined_metric_age" : 123,
   "custom_securitygroups_data" : [ "aeiou" ],
   "disable_flow_probes" : true,
+  "path_mtu_discovery_v4" : true,
+  "path_mtu_discovery_v6" : true,
   "downstream_send_timeout" : 123,
   "iptables" : [ {
     "chain" : "aeiou",
@@ -4415,6 +4429,8 @@ font-style: italic;
   "user_defined_metric_age" : 123,
   "custom_securitygroups_data" : [ "aeiou" ],
   "disable_flow_probes" : true,
+  "path_mtu_discovery_v4" : true,
+  "path_mtu_discovery_v6" : true,
   "downstream_send_timeout" : 123,
   "iptables" : [ {
     "chain" : "aeiou",
@@ -4912,6 +4928,8 @@ font-style: italic;
   "user_defined_metric_age" : 123,
   "custom_securitygroups_data" : [ "aeiou" ],
   "disable_flow_probes" : true,
+  "path_mtu_discovery_v4" : true,
+  "path_mtu_discovery_v6" : true,
   "downstream_send_timeout" : 123,
   "iptables" : [ {
     "chain" : "aeiou",
@@ -5409,6 +5427,8 @@ font-style: italic;
   "user_defined_metric_age" : 123,
   "custom_securitygroups_data" : [ "aeiou" ],
   "disable_flow_probes" : true,
+  "path_mtu_discovery_v4" : true,
+  "path_mtu_discovery_v6" : true,
   "downstream_send_timeout" : 123,
   "iptables" : [ {
     "chain" : "aeiou",
@@ -6431,6 +6451,8 @@ font-style: italic;
 <div class="param">openstack_mgmt_network_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Avi Management network name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">openstack_mgmt_network_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Management network UUID. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">os_reserved_memory (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Amount of extra memory to be reserved for use by the Operating System on a Service Engine. Unit is MB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">path_mtu_discovery_v4 (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable Path MTU Discovery feature for IPv4. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">path_mtu_discovery_v6 (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable Path MTU Discovery feature for IPv6. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">pcap_tx_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Determines the PCAP transmit mode of operation. Requires SE Reboot. Enum options - PCAP_TX_AUTO, PCAP_TX_SOCKET, PCAP_TX_RING. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">pcap_tx_ring_rd_balancing_factor (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> In PCAP mode, reserve a configured portion of TX ring resources for itself and the remaining portion for the RX ring to achieve better balance in terms of queue depth. Requires SE Reboot. Allowed values are 10-100. Field introduced in 20.1.3. Unit is PERCENT. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">per_app (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Per-app SE mode is designed for deploying dedicated load balancers per app (VS). In this mode, each SE is limited to a max of 2 VSs. vCPUs in per-app SEs count towards licensing usage at 25% rate. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. </div>
