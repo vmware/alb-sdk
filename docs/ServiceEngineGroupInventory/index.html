@@ -640,6 +640,8 @@ font-style: italic;
     "user_defined_metric_age" : 123,
     "custom_securitygroups_data" : [ "aeiou" ],
     "disable_flow_probes" : true,
+    "path_mtu_discovery_v4" : true,
+    "path_mtu_discovery_v6" : true,
     "downstream_send_timeout" : 123,
     "iptables" : [ {
       "chain" : "aeiou",
@@ -1176,6 +1178,8 @@ font-style: italic;
       "user_defined_metric_age" : 123,
       "custom_securitygroups_data" : [ "aeiou" ],
       "disable_flow_probes" : true,
+      "path_mtu_discovery_v4" : true,
+      "path_mtu_discovery_v6" : true,
       "downstream_send_timeout" : 123,
       "iptables" : [ {
         "chain" : "aeiou",
@@ -1701,6 +1705,8 @@ font-style: italic;
     "user_defined_metric_age" : 123,
     "custom_securitygroups_data" : [ "aeiou" ],
     "disable_flow_probes" : true,
+    "path_mtu_discovery_v4" : true,
+    "path_mtu_discovery_v6" : true,
     "downstream_send_timeout" : 123,
     "iptables" : [ {
       "chain" : "aeiou",
@@ -2297,6 +2303,8 @@ font-style: italic;
     "user_defined_metric_age" : 123,
     "custom_securitygroups_data" : [ "aeiou" ],
     "disable_flow_probes" : true,
+    "path_mtu_discovery_v4" : true,
+    "path_mtu_discovery_v6" : true,
     "downstream_send_timeout" : 123,
     "iptables" : [ {
       "chain" : "aeiou",
@@ -2833,6 +2841,8 @@ font-style: italic;
     "user_defined_metric_age" : 123,
     "custom_securitygroups_data" : [ "aeiou" ],
     "disable_flow_probes" : true,
+    "path_mtu_discovery_v4" : true,
+    "path_mtu_discovery_v6" : true,
     "downstream_send_timeout" : 123,
     "iptables" : [ {
       "chain" : "aeiou",
@@ -3369,6 +3379,8 @@ font-style: italic;
     "user_defined_metric_age" : 123,
     "custom_securitygroups_data" : [ "aeiou" ],
     "disable_flow_probes" : true,
+    "path_mtu_discovery_v4" : true,
+    "path_mtu_discovery_v6" : true,
     "downstream_send_timeout" : 123,
     "iptables" : [ {
       "chain" : "aeiou",
@@ -3858,6 +3870,8 @@ font-style: italic;
   "user_defined_metric_age" : 123,
   "custom_securitygroups_data" : [ "aeiou" ],
   "disable_flow_probes" : true,
+  "path_mtu_discovery_v4" : true,
+  "path_mtu_discovery_v6" : true,
   "downstream_send_timeout" : 123,
   "iptables" : [ {
     "chain" : "aeiou",
@@ -4415,6 +4429,8 @@ font-style: italic;
   "user_defined_metric_age" : 123,
   "custom_securitygroups_data" : [ "aeiou" ],
   "disable_flow_probes" : true,
+  "path_mtu_discovery_v4" : true,
+  "path_mtu_discovery_v6" : true,
   "downstream_send_timeout" : 123,
   "iptables" : [ {
     "chain" : "aeiou",
@@ -4912,6 +4928,8 @@ font-style: italic;
   "user_defined_metric_age" : 123,
   "custom_securitygroups_data" : [ "aeiou" ],
   "disable_flow_probes" : true,
+  "path_mtu_discovery_v4" : true,
+  "path_mtu_discovery_v6" : true,
   "downstream_send_timeout" : 123,
   "iptables" : [ {
     "chain" : "aeiou",
@@ -5409,6 +5427,8 @@ font-style: italic;
   "user_defined_metric_age" : 123,
   "custom_securitygroups_data" : [ "aeiou" ],
   "disable_flow_probes" : true,
+  "path_mtu_discovery_v4" : true,
+  "path_mtu_discovery_v6" : true,
   "downstream_send_timeout" : 123,
   "iptables" : [ {
     "chain" : "aeiou",
@@ -6277,7 +6297,7 @@ font-style: italic;
 <div class="param">accelerated_networking (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable accelerated networking option for Azure SE. Accelerated networking enables single root I/O virtualization (SR-IOV) to a SE VM. This improves networking performance. Field introduced in 17.2.14,18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">active_standby (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Service Engines in active/standby mode for HA failover. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">aggressive_failure_detection (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable aggressive failover configuration for ha. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. </div>
-<div class="param">algo (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> In compact placement, Virtual Services are placed on existing SEs until max_vs_per_se limit is reached. Enum options - PLACEMENT_ALGO_PACKED, PLACEMENT_ALGO_DISTRIBUTED. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">algo (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> In compact placement, Virtual Services are placed on existing SEs until max_vs_per_se limit is reached. In distributed placement, Virtual Services are placed on new SEs until max_se limit is reached. Once this limit is reached, Virtual Services are placed on SEs with least load. Enum options - PLACEMENT_ALGO_PACKED, PLACEMENT_ALGO_DISTRIBUTED. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">allow_burst (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Allow SEs to be created using burst license. Field introduced in 17.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">app_cache_percent (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> A percent value of total SE memory reserved for applicationcaching. This is an SE bootup property and requires SE restart.Requires SE Reboot. Allowed values are 0 - 100. Special values are 0- disable. Field introduced in 18.2.3. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition. Special default for Essentials edition is 0, Basic edition is 0, Enterprise is 10. format: int32</div>
 <div class="param">app_cache_threshold (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The max memory that can be allocated for the app cache. This value will act as an upper bound on the cache size specified in app_cache_percent. Special values are 0- disable. Field introduced in 20.1.1. Unit is GB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
@@ -6431,6 +6451,8 @@ font-style: italic;
 <div class="param">openstack_mgmt_network_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Avi Management network name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">openstack_mgmt_network_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Management network UUID. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">os_reserved_memory (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Amount of extra memory to be reserved for use by the Operating System on a Service Engine. Unit is MB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">path_mtu_discovery_v4 (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable Path MTU Discovery feature for IPv4. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">path_mtu_discovery_v6 (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable Path MTU Discovery feature for IPv6. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">pcap_tx_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Determines the PCAP transmit mode of operation. Requires SE Reboot. Enum options - PCAP_TX_AUTO, PCAP_TX_SOCKET, PCAP_TX_RING. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">pcap_tx_ring_rd_balancing_factor (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> In PCAP mode, reserve a configured portion of TX ring resources for itself and the remaining portion for the RX ring to achieve better balance in terms of queue depth. Requires SE Reboot. Allowed values are 10-100. Field introduced in 20.1.3. Unit is PERCENT. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">per_app (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Per-app SE mode is designed for deploying dedicated load balancers per app (VS). In this mode, each SE is limited to a max of 2 VSs. vCPUs in per-app SEs count towards licensing usage at 25% rate. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. </div>

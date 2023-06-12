@@ -410,6 +410,7 @@ font-style: italic;
         "seupgrade_segroup_min_dead_timeout" : 123,
         "secure_channel_cleanup_timeout" : 123,
         "vsphere_ha_timer_interval" : 123,
+        "vs_se_bootup_fail_patch" : 123,
         "bm_use_ansible" : true,
         "detach_ip_retry_limit" : 123,
         "vsphere_ha_detection_timeout" : 123,
@@ -639,6 +640,7 @@ font-style: italic;
       "seupgrade_segroup_min_dead_timeout" : 123,
       "secure_channel_cleanup_timeout" : 123,
       "vsphere_ha_timer_interval" : 123,
+      "vs_se_bootup_fail_patch" : 123,
       "bm_use_ansible" : true,
       "detach_ip_retry_limit" : 123,
       "vsphere_ha_detection_timeout" : 123,
@@ -939,6 +941,7 @@ font-style: italic;
       "seupgrade_segroup_min_dead_timeout" : 123,
       "secure_channel_cleanup_timeout" : 123,
       "vsphere_ha_timer_interval" : 123,
+      "vs_se_bootup_fail_patch" : 123,
       "bm_use_ansible" : true,
       "detach_ip_retry_limit" : 123,
       "vsphere_ha_detection_timeout" : 123,
@@ -1179,6 +1182,7 @@ font-style: italic;
       "seupgrade_segroup_min_dead_timeout" : 123,
       "secure_channel_cleanup_timeout" : 123,
       "vsphere_ha_timer_interval" : 123,
+      "vs_se_bootup_fail_patch" : 123,
       "bm_use_ansible" : true,
       "detach_ip_retry_limit" : 123,
       "vsphere_ha_detection_timeout" : 123,
@@ -1419,6 +1423,7 @@ font-style: italic;
       "seupgrade_segroup_min_dead_timeout" : 123,
       "secure_channel_cleanup_timeout" : 123,
       "vsphere_ha_timer_interval" : 123,
+      "vs_se_bootup_fail_patch" : 123,
       "bm_use_ansible" : true,
       "detach_ip_retry_limit" : 123,
       "vsphere_ha_detection_timeout" : 123,
@@ -1612,6 +1617,7 @@ font-style: italic;
     "seupgrade_segroup_min_dead_timeout" : 123,
     "secure_channel_cleanup_timeout" : 123,
     "vsphere_ha_timer_interval" : 123,
+    "vs_se_bootup_fail_patch" : 123,
     "bm_use_ansible" : true,
     "detach_ip_retry_limit" : 123,
     "vsphere_ha_detection_timeout" : 123,
@@ -1789,6 +1795,7 @@ font-style: italic;
   "seupgrade_segroup_min_dead_timeout" : 123,
   "secure_channel_cleanup_timeout" : 123,
   "vsphere_ha_timer_interval" : 123,
+  "vs_se_bootup_fail_patch" : 123,
   "bm_use_ansible" : true,
   "detach_ip_retry_limit" : 123,
   "vsphere_ha_detection_timeout" : 123,
@@ -2037,6 +2044,7 @@ font-style: italic;
   "seupgrade_segroup_min_dead_timeout" : 123,
   "secure_channel_cleanup_timeout" : 123,
   "vsphere_ha_timer_interval" : 123,
+  "vs_se_bootup_fail_patch" : 123,
   "bm_use_ansible" : true,
   "detach_ip_retry_limit" : 123,
   "vsphere_ha_detection_timeout" : 123,
@@ -2225,6 +2233,7 @@ font-style: italic;
   "seupgrade_segroup_min_dead_timeout" : 123,
   "secure_channel_cleanup_timeout" : 123,
   "vsphere_ha_timer_interval" : 123,
+  "vs_se_bootup_fail_patch" : 123,
   "bm_use_ansible" : true,
   "detach_ip_retry_limit" : 123,
   "vsphere_ha_detection_timeout" : 123,
@@ -2413,6 +2422,7 @@ font-style: italic;
   "seupgrade_segroup_min_dead_timeout" : 123,
   "secure_channel_cleanup_timeout" : 123,
   "vsphere_ha_timer_interval" : 123,
+  "vs_se_bootup_fail_patch" : 123,
   "bm_use_ansible" : true,
   "detach_ip_retry_limit" : 123,
   "vsphere_ha_detection_timeout" : 123,
@@ -2642,7 +2652,7 @@ font-style: italic;
 <div class="param">secure_channel_cleanup_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Period for secure channel cleanup job. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">secure_channel_controller_token_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">secure_channel_se_token_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">seupgrade_copy_buffer_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> This parameter defines the buffer size during SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. Field introduced in 22.1.4, 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">seupgrade_copy_buffer_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> This parameter defines the buffer size during SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. Field introduced in 22.1.4. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">seupgrade_copy_pool_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> This parameter defines the number of simultaneous SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. A value of 0 will disable the pacing scheme and all the SE(s) in the SeGroup will attempt to download the image. . Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">seupgrade_fabric_pool_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The pool size is used to control the number of concurrent segroup upgrades. This field value takes affect upon controller warm reboot. Allowed values are 2-20. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">seupgrade_segroup_min_dead_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time to wait before marking segroup upgrade as stuck. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
@@ -2664,6 +2674,7 @@ font-style: italic;
 <div class="param">vs_scaleout_ready_check_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Interval for checking scaleout_ready status while controller is waiting for ScaleOutReady RPC from the Service Engine. Field introduced in 18.2.2. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">vs_se_attach_ip_fail (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time to wait before marking attach IP operation on an SE as failed. Field introduced in 17.2.2. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">vs_se_bootup_fail (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">vs_se_bootup_fail_patch (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Wait for longer for patch SEs to boot up. Field introduced in 30.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">vs_se_create_fail (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">vs_se_ping_fail (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">vs_se_vnic_fail (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
