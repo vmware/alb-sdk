@@ -21,7 +21,7 @@ type ServiceEngineGroup struct {
 	// Enable aggressive failover configuration for ha. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition.
 	AggressiveFailureDetection *bool `json:"aggressive_failure_detection,omitempty"`
 
-	// In compact placement, Virtual Services are placed on existing SEs until max_vs_per_se limit is reached. Enum options - PLACEMENT_ALGO_PACKED, PLACEMENT_ALGO_DISTRIBUTED. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// In compact placement, Virtual Services are placed on existing SEs until max_vs_per_se limit is reached. In distributed placement, Virtual Services are placed on new SEs until max_se limit is reached. Once this limit is reached, Virtual Services are placed on SEs with least load. Enum options - PLACEMENT_ALGO_PACKED, PLACEMENT_ALGO_DISTRIBUTED. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Algo *string `json:"algo,omitempty"`
 
 	// Allow SEs to be created using burst license. Field introduced in 17.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -483,6 +483,12 @@ type ServiceEngineGroup struct {
 
 	// Amount of extra memory to be reserved for use by the Operating System on a Service Engine. Unit is MB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	OsReservedMemory *int32 `json:"os_reserved_memory,omitempty"`
+
+	// Enable Path MTU Discovery feature for IPv4. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	PathMtuDiscoveryV4 *bool `json:"path_mtu_discovery_v4,omitempty"`
+
+	// Enable Path MTU Discovery feature for IPv6. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	PathMtuDiscoveryV6 *bool `json:"path_mtu_discovery_v6,omitempty"`
 
 	// Determines the PCAP transmit mode of operation. Requires SE Reboot. Enum options - PCAP_TX_AUTO, PCAP_TX_SOCKET, PCAP_TX_RING. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	PcapTxMode *string `json:"pcap_tx_mode,omitempty"`
