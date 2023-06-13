@@ -40,7 +40,7 @@ public class PoolGroup extends AviRestResource  {
     private String description = null;
 
     @JsonProperty("enable_http2")
-    private Boolean enableHttp2 = false;
+    private Boolean enableHttp2;
 
     @JsonProperty("fail_action")
     private FailAction failAction = null;
@@ -218,10 +218,9 @@ public class PoolGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Enable http/2 for traffic from virtualservice to all the backend servers in all the pools configured under this poolgroup.
+     * Field deprecated in 30.2.1.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * @return enableHttp2
      */
     public Boolean getEnableHttp2() {
@@ -231,10 +230,9 @@ public class PoolGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Enable http/2 for traffic from virtualservice to all the backend servers in all the pools configured under this poolgroup.
+     * Field deprecated in 30.2.1.
      * Field introduced in 20.1.1.
-     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
-     * cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * @param enableHttp2 set the enableHttp2.
      */
     public void setEnableHttp2(Boolean  enableHttp2) {

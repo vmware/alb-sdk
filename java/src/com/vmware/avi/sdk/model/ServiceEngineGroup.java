@@ -486,6 +486,12 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("os_reserved_memory")
     private Integer osReservedMemory = 0;
 
+    @JsonProperty("path_mtu_discovery_v4")
+    private Boolean pathMtuDiscoveryV4 = true;
+
+    @JsonProperty("path_mtu_discovery_v6")
+    private Boolean pathMtuDiscoveryV6 = true;
+
     @JsonProperty("pcap_tx_mode")
     private String pcapTxMode = "PCAP_TX_AUTO";
 
@@ -943,6 +949,8 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * In compact placement, virtual services are placed on existing ses until max_vs_per_se limit is reached.
+     * In distributed placement, virtual services are placed on new ses until max_se limit is reached.
+     * Once this limit is reached, virtual services are placed on ses with least load.
      * Enum options - PLACEMENT_ALGO_PACKED, PLACEMENT_ALGO_DISTRIBUTED.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PLACEMENT_ALGO_PACKED".
@@ -955,6 +963,8 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * In compact placement, virtual services are placed on existing ses until max_vs_per_se limit is reached.
+     * In distributed placement, virtual services are placed on new ses until max_se limit is reached.
+     * Once this limit is reached, virtual services are placed on ses with least load.
      * Enum options - PLACEMENT_ALGO_PACKED, PLACEMENT_ALGO_DISTRIBUTED.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PLACEMENT_ALGO_PACKED".
@@ -5011,6 +5021,54 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Enable path mtu discovery feature for ipv4.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return pathMtuDiscoveryV4
+     */
+    public Boolean getPathMtuDiscoveryV4() {
+        return pathMtuDiscoveryV4;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable path mtu discovery feature for ipv4.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param pathMtuDiscoveryV4 set the pathMtuDiscoveryV4.
+     */
+    public void setPathMtuDiscoveryV4(Boolean  pathMtuDiscoveryV4) {
+        this.pathMtuDiscoveryV4 = pathMtuDiscoveryV4;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enable path mtu discovery feature for ipv6.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return pathMtuDiscoveryV6
+     */
+    public Boolean getPathMtuDiscoveryV6() {
+        return pathMtuDiscoveryV6;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable path mtu discovery feature for ipv6.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param pathMtuDiscoveryV6 set the pathMtuDiscoveryV6.
+     */
+    public void setPathMtuDiscoveryV6(Boolean  pathMtuDiscoveryV6) {
+        this.pathMtuDiscoveryV6 = pathMtuDiscoveryV6;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Determines the pcap transmit mode of operation.
      * Requires se reboot.
      * Enum options - PCAP_TX_AUTO, PCAP_TX_SOCKET, PCAP_TX_RING.
@@ -8669,7 +8727,9 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.useDpUtilForScaleout, objServiceEngineGroup.useDpUtilForScaleout)&&
   Objects.equals(this.replayVrfRoutesInterval, objServiceEngineGroup.replayVrfRoutesInterval)&&
   Objects.equals(this.vsSeScaleinAdditionalWaitTime, objServiceEngineGroup.vsSeScaleinAdditionalWaitTime)&&
-  Objects.equals(this.vsSePrimarySwitchoverAdditionalWaitTime, objServiceEngineGroup.vsSePrimarySwitchoverAdditionalWaitTime);
+  Objects.equals(this.vsSePrimarySwitchoverAdditionalWaitTime, objServiceEngineGroup.vsSePrimarySwitchoverAdditionalWaitTime)&&
+  Objects.equals(this.pathMtuDiscoveryV4, objServiceEngineGroup.pathMtuDiscoveryV4)&&
+  Objects.equals(this.pathMtuDiscoveryV6, objServiceEngineGroup.pathMtuDiscoveryV6);
     }
 
     @Override
@@ -8831,6 +8891,8 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    openstackMgmtNetworkName: ").append(toIndentedString(openstackMgmtNetworkName)).append("\n");
                         sb.append("    openstackMgmtNetworkUuid: ").append(toIndentedString(openstackMgmtNetworkUuid)).append("\n");
                         sb.append("    osReservedMemory: ").append(toIndentedString(osReservedMemory)).append("\n");
+                        sb.append("    pathMtuDiscoveryV4: ").append(toIndentedString(pathMtuDiscoveryV4)).append("\n");
+                        sb.append("    pathMtuDiscoveryV6: ").append(toIndentedString(pathMtuDiscoveryV6)).append("\n");
                         sb.append("    pcapTxMode: ").append(toIndentedString(pcapTxMode)).append("\n");
                         sb.append("    pcapTxRingRdBalancingFactor: ").append(toIndentedString(pcapTxRingRdBalancingFactor)).append("\n");
                         sb.append("    perApp: ").append(toIndentedString(perApp)).append("\n");

@@ -201,6 +201,9 @@ public class ApplicationLog  {
     @JsonProperty("oob_log")
     private OutOfBandRequestLog oobLog = null;
 
+    @JsonProperty("orig_uri")
+    private String origUri = null;
+
     @JsonProperty("paa_log")
     private PaaLog paaLog = null;
 
@@ -1765,6 +1768,30 @@ public class ApplicationLog  {
      */
     public void setOobLog(OutOfBandRequestLog oobLog) {
         this.oobLog = oobLog;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * The actual client request uri sent before normalization.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return origUri
+     */
+    public String getOrigUri() {
+        return origUri;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The actual client request uri sent before normalization.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param origUri set the origUri.
+     */
+    public void setOrigUri(String  origUri) {
+        this.origUri = origUri;
     }
 
     /**
@@ -3397,6 +3424,7 @@ public class ApplicationLog  {
   Objects.equals(this.httpVersion, objApplicationLog.httpVersion)&&
   Objects.equals(this.method, objApplicationLog.method)&&
   Objects.equals(this.uriPath, objApplicationLog.uriPath)&&
+  Objects.equals(this.origUri, objApplicationLog.origUri)&&
   Objects.equals(this.rewrittenUriPath, objApplicationLog.rewrittenUriPath)&&
   Objects.equals(this.uriQuery, objApplicationLog.uriQuery)&&
   Objects.equals(this.rewrittenUriQuery, objApplicationLog.rewrittenUriQuery)&&
@@ -3574,6 +3602,7 @@ public class ApplicationLog  {
                         sb.append("    oauthLog: ").append(toIndentedString(oauthLog)).append("\n");
                         sb.append("    ocspStatusRespSent: ").append(toIndentedString(ocspStatusRespSent)).append("\n");
                         sb.append("    oobLog: ").append(toIndentedString(oobLog)).append("\n");
+                        sb.append("    origUri: ").append(toIndentedString(origUri)).append("\n");
                         sb.append("    paaLog: ").append(toIndentedString(paaLog)).append("\n");
                         sb.append("    persistenceUsed: ").append(toIndentedString(persistenceUsed)).append("\n");
                         sb.append("    persistentSessionId: ").append(toIndentedString(persistentSessionId)).append("\n");

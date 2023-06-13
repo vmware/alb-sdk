@@ -135,7 +135,7 @@
 		</plugins>
 	</build>
 	<properties>
-		<jackson.version>2.13.4</jackson.version>
+		<jackson.version>2.12.7.1</jackson.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -154,7 +154,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.13.4.2</version>
+			<version>${jackson.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -214,7 +214,7 @@
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>20230227</version>
+			<version>20200518</version>
 			<scope>provided</scope>
 		</dependency>
 
