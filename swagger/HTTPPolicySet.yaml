@@ -863,6 +863,10 @@ definitions:
             file:
                 description: "File from which to serve local response to the request. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HTTPLocalFile'
+            other_status_code:
+                description: "User-defined HTTP status code to use when serving the local response. Use this to provide codes not available in the list within status_code. Allowed values are 200-599. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
             pool_group_ref:
                 description: "UUID of the pool group to serve the request. It is a reference to an object of type PoolGroup. Allowed in Enterprise edition with any value, Basic, Enterprise with Cloud Services edition."
                 type: string

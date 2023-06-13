@@ -979,7 +979,7 @@ definitions:
             controller_resource_info_collection_period:
                 description: "Periodically collect stats. Field introduced in 20.1.3. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                default: 30
+                default: 525600
                 format: int32
             crashed_se_reboot:
                 description: " Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1206,6 +1206,11 @@ definitions:
                 type: integer
                 default: 60
                 format: int32
+            seupgrade_copy_buffer_size:
+                description: "This parameter defines the buffer size during SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. Field introduced in 22.1.4. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                default: 512
+                format: int32
             seupgrade_copy_pool_size:
                 description: "This parameter defines the number of simultaneous SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. A value of 0 will disable the pacing scheme and all the SE(s) in the SeGroup will attempt to download the image. . Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
@@ -1304,6 +1309,11 @@ definitions:
                 description: " Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 480
+                format: int32
+            vs_se_bootup_fail_patch:
+                description: "Wait for longer for patch SEs to boot up. Field introduced in 30.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                default: 600
                 format: int32
             vs_se_create_fail:
                 description: " Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
