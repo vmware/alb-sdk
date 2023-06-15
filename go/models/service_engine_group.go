@@ -21,7 +21,7 @@ type ServiceEngineGroup struct {
 	// Enable aggressive failover configuration for ha. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition.
 	AggressiveFailureDetection *bool `json:"aggressive_failure_detection,omitempty"`
 
-	// In compact placement, Virtual Services are placed on existing SEs until max_vs_per_se limit is reached. Enum options - PLACEMENT_ALGO_PACKED, PLACEMENT_ALGO_DISTRIBUTED. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// In compact placement, Virtual Services are placed on existing SEs until max_vs_per_se limit is reached. In distributed placement, Virtual Services are placed on new SEs until max_se limit is reached. Once this limit is reached, Virtual Services are placed on SEs with least load. Enum options - PLACEMENT_ALGO_PACKED, PLACEMENT_ALGO_DISTRIBUTED. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Algo *string `json:"algo,omitempty"`
 
 	// Allow SEs to be created using burst license. Field introduced in 17.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
