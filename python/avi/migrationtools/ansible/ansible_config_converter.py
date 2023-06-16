@@ -442,10 +442,7 @@ class AviAnsibleConverterMigration(AviAnsibleConverterBase):
                 partition = data['partition-vs-mappings']
             else:
                 partition = self.partitions
-            #"/api/vsvip/?tenant=admin&name=3.3.3.3-vsvip&cloud=Default-Cloud"
-            vsvip = vs['vsvip_ref'].split('=')[2].split('&')[0]
-            vipobj = [vip for vip in self.avi_cfg['VsVip'] if vip[NAME] == vsvip][0]
-            ip = vipobj[VIP][0]['ip_address']['addr']
+            ip = vs[VIP][0]['ip_address']['addr']
             port = vs[SERVICES][0]['port']
             vip = '%s:%s' % (ip, port)
             if trafic_obj.get_status_vs(
@@ -454,7 +451,7 @@ class AviAnsibleConverterMigration(AviAnsibleConverterBase):
 
                 vs_dict = dict()
                 vs_dict[NAME] = vs[NAME]
-                vs_dict[VIP] = vipobj[VIP]
+                vs_dict[VIP] = vs[VIP]
                 vs_dict[SERVICES] = vs[SERVICES]
                 vs_dict[CONTROLLER] = CONTROLLER_INPUT
                 vs_dict[USERNAME] = USER_NAME
