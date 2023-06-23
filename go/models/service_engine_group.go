@@ -411,6 +411,9 @@ type ServiceEngineGroup struct {
 	// Amount of memory for each of the Service Engine virtual machines. Changes to this setting do not affect existing SEs. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	MemoryPerSe *int32 `json:"memory_per_se,omitempty"`
 
+	// Metrics collection mode, 0 = Pull mode.  se_agent pulls metrics from se_dp,  1 = Push mode. se_dp pushes metrics to se_agent.  9 = special value to reset read state in push mode. . Allowed values are 0-9. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	MetricsCollectionMode *int32 `json:"metrics_collection_mode,omitempty"`
+
 	// Management network to use for Avi Service Engines. It is a reference to an object of type Network. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	MgmtNetworkRef *string `json:"mgmt_network_ref,omitempty"`
 
