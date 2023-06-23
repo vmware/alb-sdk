@@ -414,6 +414,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("memory_per_se")
     private Integer memoryPerSe = 2048;
 
+    @JsonProperty("metrics_collection_mode")
+    private Integer metricsCollectionMode = 1;
+
     @JsonProperty("mgmt_network_ref")
     private String mgmtNetworkRef = null;
 
@@ -4376,6 +4379,38 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setMemoryPerSe(Integer  memoryPerSe) {
         this.memoryPerSe = memoryPerSe;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Metrics collection mode, 0 = pull mode.
+     * Se_agent pulls metrics from se_dp,  1 = push mode.
+     * Se_dp pushes metrics to se_agent.
+     * 9 = special value to reset read state in push mode.
+     * Allowed values are 0-9.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+     * @return metricsCollectionMode
+     */
+    public Integer getMetricsCollectionMode() {
+        return metricsCollectionMode;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Metrics collection mode, 0 = pull mode.
+     * Se_agent pulls metrics from se_dp,  1 = push mode.
+     * Se_dp pushes metrics to se_agent.
+     * 9 = special value to reset read state in push mode.
+     * Allowed values are 0-9.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+     * @param metricsCollectionMode set the metricsCollectionMode.
+     */
+    public void setMetricsCollectionMode(Integer  metricsCollectionMode) {
+        this.metricsCollectionMode = metricsCollectionMode;
     }
 
     /**
@@ -8729,7 +8764,8 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.vsSeScaleinAdditionalWaitTime, objServiceEngineGroup.vsSeScaleinAdditionalWaitTime)&&
   Objects.equals(this.vsSePrimarySwitchoverAdditionalWaitTime, objServiceEngineGroup.vsSePrimarySwitchoverAdditionalWaitTime)&&
   Objects.equals(this.pathMtuDiscoveryV4, objServiceEngineGroup.pathMtuDiscoveryV4)&&
-  Objects.equals(this.pathMtuDiscoveryV6, objServiceEngineGroup.pathMtuDiscoveryV6);
+  Objects.equals(this.pathMtuDiscoveryV6, objServiceEngineGroup.pathMtuDiscoveryV6)&&
+  Objects.equals(this.metricsCollectionMode, objServiceEngineGroup.metricsCollectionMode);
     }
 
     @Override
@@ -8867,6 +8903,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    memReserve: ").append(toIndentedString(memReserve)).append("\n");
                         sb.append("    memoryForConfigUpdate: ").append(toIndentedString(memoryForConfigUpdate)).append("\n");
                         sb.append("    memoryPerSe: ").append(toIndentedString(memoryPerSe)).append("\n");
+                        sb.append("    metricsCollectionMode: ").append(toIndentedString(metricsCollectionMode)).append("\n");
                         sb.append("    mgmtNetworkRef: ").append(toIndentedString(mgmtNetworkRef)).append("\n");
                         sb.append("    mgmtSubnet: ").append(toIndentedString(mgmtSubnet)).append("\n");
                         sb.append("    minCpuUsage: ").append(toIndentedString(minCpuUsage)).append("\n");
