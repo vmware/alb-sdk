@@ -13,6 +13,7 @@ from avi.migrationtools.nsxt_converter.monitor_converter \
     import MonitorConfigConv
 from avi.migrationtools.nsxt_converter.nsxt_util import NSXUtil
 import os
+import sys
 import json
 from avi.migrationtools.nsxt_converter.alb_converter import ALBConverter
 import avi.migrationtools.nsxt_converter.converter_constants as conv_const
@@ -102,8 +103,14 @@ def convert(nsx_lb_config, input_path, output_path, tenant, prefix,
        # json.dump(avi_config_dict, text_file, indent=4)
 
     # Add nsxt converter status report in xslx report
-    conv_utils.add_complete_conv_status(
-        output_path, avi_config_dict, "nsxt-report", vs_level_status)
+    try:
+        conv_utils.add_complete_conv_status(
+            output_path, avi_config_dict, "nsxt-report", vs_level_status)
+    except Exception as e:
+        msg = "Error in writing excel sheet for converted configuration."
+        LOG.error(msg)
+        print("\033[91m" + msg + " Message: ", str(e) + "\033[0m")
+        sys.exit(1)
 
     for key in avi_config_dict:
         if key != 'META':
