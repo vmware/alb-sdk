@@ -226,7 +226,7 @@ public class ControllerProperties extends AviRestResource  {
     private Integer secureChannelSeTokenTimeout = 60;
 
     @JsonProperty("seupgrade_copy_buffer_size")
-    private Integer seupgradeCopyBufferSize = 512;
+    private Integer seupgradeCopyBufferSize = 128;
 
     @JsonProperty("seupgrade_copy_pool_size")
     private Integer seupgradeCopyPoolSize = 5;
@@ -2016,7 +2016,7 @@ public class ControllerProperties extends AviRestResource  {
      * It is used to pace the se downloads so that controller network/cpu bandwidth is a bounded operation.
      * Field introduced in 22.1.4.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 512.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 128.
      * @return seupgradeCopyBufferSize
      */
     public Integer getSeupgradeCopyBufferSize() {
@@ -2029,7 +2029,7 @@ public class ControllerProperties extends AviRestResource  {
      * It is used to pace the se downloads so that controller network/cpu bandwidth is a bounded operation.
      * Field introduced in 22.1.4.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 512.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 128.
      * @param seupgradeCopyBufferSize set the seupgradeCopyBufferSize.
      */
     public void setSeupgradeCopyBufferSize(Integer  seupgradeCopyBufferSize) {
