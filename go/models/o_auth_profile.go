@@ -58,8 +58,7 @@ type OAuthProfile struct {
 	ServiceName *string `json:"service_name,omitempty"`
 
 	// URL of token exchange server. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
-	// Required: true
-	TokenEndpoint *string `json:"token_endpoint"`
+	TokenEndpoint *string `json:"token_endpoint,omitempty"`
 
 	// URL of the Userinfo Endpoint. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	UserinfoEndpoint *string `json:"userinfo_endpoint,omitempty"`

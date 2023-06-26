@@ -280,6 +280,9 @@ type AviSession struct {
 	// Lock to synchronise the cookies collection from API response
 	cookiesCollectLock sync.Mutex
 
+	// Update the request header with custom headers
+	user_headers map[string]string
+
 	// CSP_HOST specifies the CSP Host name
 	CSP_HOST string
 
@@ -615,6 +618,19 @@ func (avisess *AviSession) setTimeout(timeout time.Duration) error {
 	return nil
 }
 
+// SetUserHeader -
+func SetUserHeader(user_headers map[string]string) func(*AviSession) error {
+	return func(sess *AviSession) error {
+		return sess.setUserHeader(user_headers)
+	}
+}
+
+func (avisess *AviSession) setUserHeader(user_headers map[string]string) error {
+	avisess.user_headers = user_headers
+	return nil
+}
+
+// SetCSPToken
 func SetCSPToken(csptoken string) func(*AviSession) error {
 	return func(sess *AviSession) error {
 		return sess.setCSPToken(csptoken)
@@ -703,6 +719,12 @@ func (avisess *AviSession) newAviRequest(verb string, url string, payload io.Rea
 		req.Header.Set("Authorization", "Bearer "+string(avisess.CSP_ACCESS_TOKEN))
 	}
 	req.Header.Set("Content-Type", "application/json")
+
+	if avisess.user_headers != nil {
+		for k, v := range avisess.user_headers {
+			req.Header.Set(k, v)
+		}
+	}
 
 	//req.Header.Set("Accept", "application/json")
 	req.Header.Set("X-Avi-Version", avisess.version)
@@ -858,7 +880,7 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 			if err != nil {
 				glog.Errorf("Failed to invoke API. Error: %s", err.Error())
 			}
-			return nil, errors.New("Rest request error, returning to caller")
+			return nil, fmt.Errorf("Rest request error, returning to caller: %s", err.Error())
 
 		}
 	}
