@@ -13,6 +13,7 @@
 import logging
 from os import path, urandom
 import io
+import pytz
 import subprocess
 from hashlib import sha256
 from math import ceil
@@ -570,9 +571,8 @@ def analyze_logs(api_session: ApiSession,
 
 
 def compute_date(value: str):
-    my_tz = datetime.datetime.now(datetime.timezone(datetime.timedelta(0))).astimezone().tzinfo
-    result = datetime.datetime.now(tz=my_tz)
-
+    result = datetime.datetime.now().astimezone(pytz.UTC)
+    is_utc = False
     try:
         if value.endswith('d'):
             value = float(value[:-1]) * 24 * 3600  # days -> seconds
@@ -589,9 +589,15 @@ def compute_date(value: str):
             fmt += '.%f'
         if value.endswith('Z'):
             fmt += 'Z'
-            my_tz = datetime.timezone.utc
+            is_utc = True
+        # The strptime method formats value in correct date-time format 
         result = datetime.datetime.strptime(value, fmt)
-        result = result.replace(tzinfo=my_tz)
+        if not is_utc:
+            # If the timezone of machine is different, the time is converted to UTC
+            result = result.astimezone(pytz.UTC)
+        else:
+            # If the timezone is UTC, UTC timezone format is added at the end.
+            result = result.replace(tzinfo=pytz.UTC)
         # not supported in python 3.5
         # result = datetime.datetime.fromisoformat(value)
 

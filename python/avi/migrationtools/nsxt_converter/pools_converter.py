@@ -69,7 +69,7 @@ class PoolConfigConv(object):
                 vs_list = [vs["id"] for vs in nsx_lb_config["LbVirtualServers"] if
                            (vs.get("pool_path") and vs.get("pool_path").split("/")[-1] == lb_pl.get("id"))]
 
-                vs_list_for_sorry_pool = [vs["id"] for vs in nsx_lb_config["LbVirtualServers"] 
+                vs_list_for_sorry_pool = [vs["id"] for vs in nsx_lb_config["LbVirtualServers"]
                                           if vs.get("sorry_pool_path")
                                           and vs.get("sorry_pool_path").split("/")[-1] == lb_pl.get("id")]
 
@@ -130,7 +130,7 @@ class PoolConfigConv(object):
 
                     if pool_skip:
                         skipped_pools_list.append(name)
-                        skip_msg = 'Member ip not falling in segment rnge'
+                        skip_msg = 'Member ip not falling in segment range'
                         conv_utils.add_status_row('pool', None, lb_pl['display_name'],
                                                   conv_const.STATUS_SKIPPED, skip_msg)
                         LOG.warning("POOL {} not migrated. Reason: {}".format(name,
@@ -507,7 +507,7 @@ class PoolConfigConv(object):
                             "pool_name": pool_name,
                             "pool_segment": pool_segment
                         }
-                        lb_list[lb] = pool_segment_list.get(vs_id)    
+                        lb_list[lb] = pool_segment_list.get(vs_id)
                     else:
                         new_pool_name = '%s-%s' % (pool_name, pool_segment[0].get("subnets").get("network_range"))
                         new_pool_name = new_pool_name.replace('/', '-')
