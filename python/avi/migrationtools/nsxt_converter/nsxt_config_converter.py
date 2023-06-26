@@ -4,7 +4,6 @@
 import json
 import logging
 import os
-import sys
 import avi.migrationtools.nsxt_converter.converter_constants as conv_const
 from avi.migrationtools.avi_migration_utils import update_count
 from avi.migrationtools.avi_orphan_object import wipe_out_not_in_use
@@ -48,7 +47,7 @@ def convert(nsx_lb_config, input_path, output_path, tenant, prefix,
             migrate_to, object_merge_check, controller_version, ssh_root_password, nsxt_util, migration_input_config=None,
             vs_state=False, vs_level_status=False, vrf=None,
             segroup=None, not_in_use=True, custom_mapping=None, traffic_enabled=False, cloud_tenant="admin",
-            nsxt_ip=None, nsxt_passord=None):
+            nsxt_ip=None, nsxt_password=None):
 
     # load the yaml file attribute in nsxt_attributes.
     nsxt_attributes = conv_const.init()
@@ -67,7 +66,7 @@ def convert(nsx_lb_config, input_path, output_path, tenant, prefix,
         for key in merge_object_type:
             sys_dict[key] = []
             avi_config_dict[key] = []
-        
+
         monitor_converter = MonitorConfigConv(nsxt_attributes, object_merge_check, merge_object_mapping, sys_dict)
         monitor_converter.convert(avi_config_dict, nsx_lb_config, prefix,tenant,custom_mapping)
 
@@ -84,7 +83,7 @@ def convert(nsx_lb_config, input_path, output_path, tenant, prefix,
         persist_conv.convert(avi_config_dict, nsx_lb_config, prefix,tenant)
 
         vs_converter = VsConfigConv(nsxt_attributes,object_merge_check, merge_object_mapping,sys_dict,
-                                    nsxt_ip, nsxt_passord)
+                                    nsxt_ip, nsxt_password)
         vs_converter.convert(avi_config_dict, nsx_lb_config, prefix,
                              tenant, vs_state, controller_version, traffic_enabled,
                              cloud_tenant, ssh_root_password, nsxt_util, migration_input_config,
@@ -103,14 +102,8 @@ def convert(nsx_lb_config, input_path, output_path, tenant, prefix,
        # json.dump(avi_config_dict, text_file, indent=4)
 
     # Add nsxt converter status report in xslx report
-    try:
-        conv_utils.add_complete_conv_status(
-            output_path, avi_config_dict, "nsxt-report", vs_level_status)
-    except Exception as e:
-        msg = "Error in writing excel sheet for converted configuration."
-        LOG.error(msg)
-        print("\033[91m" + msg + " Message: ", str(e) +"\033[0m")
-        sys.exit(1)
+    conv_utils.add_complete_conv_status(
+        output_path, avi_config_dict, "nsxt-report", vs_level_status)
 
     for key in avi_config_dict:
         if key != 'META':

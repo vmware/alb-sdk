@@ -225,15 +225,17 @@ class NsxtConvUtil(MigrationUtil):
         pivot_table = \
             pandas.pivot_table(df, index=["Status", "NsxT type", "NsxT SubType"],
                                values=[], aggfunc=[len], fill_value=0)
+
         # create dataframe for pivot table using pandas
         pivot_df = pandas.DataFrame(pivot_table)
         main_book = \
             load_workbook(report_path)
-        main_writer = pandas.ExcelWriter(report_path, engine='openpyxl')
+        main_writer = pandas.ExcelWriter(report_path, engine="openpyxl",mode='a')
         main_writer._book = main_book
+
         # Add pivot table in Pivot sheet
         pivot_df.to_excel(main_writer, 'Pivot Sheet')
-        main_writer._save()
+        main_writer.close()
 
     def vs_complexity_level(self):
         """

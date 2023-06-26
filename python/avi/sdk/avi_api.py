@@ -152,6 +152,9 @@ class AviCredentials(object):
     timeout = 300
     session_id = None
     csrftoken = None
+    idp_class = None
+    csp_host = None
+    csp_token = None
 
     def __init__(self, **kwargs):
         for k, v in kwargs.items():
@@ -203,13 +206,14 @@ class ApiSession(Session):
     SESSION_CACHE_EXPIRY = 20 * 60
     SHARED_USER_HDRS = ['X-CSRFToken', 'Session-Id', 'Referer', 'Content-Type']
     MAX_API_RETRIES = 3
+    CSP_HOST = 'console.cloud.vmware.com'
 
     def __init__(self, controller_ip=None, username=None, password=None,
                  token=None, tenant=None, tenant_uuid=None, verify=False,
                  port=None, timeout=60, api_version=None,
                  retry_conxn_errors=True, data_log=False,
                  avi_credentials=None, session_id=None, csrftoken=None,
-                 lazy_authentication=False, max_api_retries=None, user_hdrs={}):
+                 lazy_authentication=False, max_api_retries=None, csp_host=CSP_HOST, csp_token=None, user_hdrs={}):
         """
          ApiSession takes ownership of avi_credentials and may update the
          information inside it.
@@ -248,7 +252,7 @@ class ApiSession(Session):
                 password=password, api_version=api_version,
                 tenant=tenant, tenant_uuid=tenant_uuid,
                 token=token, port=port, timeout=timeout,
-                session_id=session_id, csrftoken=csrftoken)
+                session_id=session_id, csp_host=csp_host, csp_token=csp_token, csrftoken=csrftoken)
         else:
             self.avi_credentials = avi_credentials
         self.headers = {}
@@ -300,6 +304,14 @@ class ApiSession(Session):
         elif lazy_authentication:
             sessionDict.get(self.key, {}).update(
                 {'api': self, "last_used": datetime.utcnow()})
+        elif self.avi_credentials.csp_token:
+            if self.avi_credentials.csp_host:
+                if self.avi_credentials.csp_host.startswith('https'):
+                    self.avi_credentials.csp_host = self.avi_credentials.csp_host.replace('https://', '')
+                self.csp_prefix = 'https://{x}/csp/gateway'.format(x=self.avi_credentials.csp_host)
+                self.generate_access_token()
+            else:
+                raise APIError("CSP host is not provided for csp login.")
         else:
             self.authenticate_session()
         self.num_session_retries = 0
@@ -384,8 +396,8 @@ class ApiSession(Session):
 
     def get_context(self):
         return {
-            'session_id': sessionDict[self.key]['session_id'],
-            'csrftoken': sessionDict[self.key]['csrftoken']
+            'session_id': sessionDict.get(self.key, {}).get('session_id'),
+            'csrftoken': sessionDict.get(self.key, {}).get('csrftoken')
         }
 
     @staticmethod
@@ -399,7 +411,7 @@ class ApiSession(Session):
             tenant=None, tenant_uuid=None, verify=False, port=None, timeout=60,
             retry_conxn_errors=True, api_version=None, data_log=False,
             avi_credentials=None, session_id=None, csrftoken=None,
-            lazy_authentication=False, max_api_retries=None, idp_class=None, user_hdrs=None):
+            lazy_authentication=False, max_api_retries=None, csp_host=None, csp_token=None, idp_class=None, user_hdrs=None):
         """
         returns the session object for same user and tenant
         calls init if session dose not exist and adds it to session cache
@@ -417,6 +429,8 @@ class ApiSession(Session):
         OneloginApiSession
         """
 
+        if max_api_retries == 0:
+            max_api_retries = 1
         if not idp_class:
             idp_class = ApiSession
         else:
@@ -432,7 +446,7 @@ class ApiSession(Session):
                 password=password, api_version=api_version,
                 tenant=tenant, tenant_uuid=tenant_uuid,
                 token=token, port=port, timeout=timeout,
-                session_id=session_id, csrftoken=csrftoken)
+                session_id=session_id, csrftoken=csrftoken, csp_host=csp_host, csp_token=csp_token)
 
         k_port = avi_credentials.port if avi_credentials.port else 443
         if avi_credentials.controller.startswith('http'):
@@ -454,7 +468,7 @@ class ApiSession(Session):
                 api_version=api_version, data_log=data_log,
                 avi_credentials=avi_credentials,
                 lazy_authentication=lazy_authentication,
-                max_api_retries=max_api_retries, user_hdrs=user_hdrs)
+                max_api_retries=max_api_retries, csp_host=csp_host, csp_token=csp_token, user_hdrs=user_hdrs)
         return user_session
 
     def reset_session(self):
@@ -468,7 +482,10 @@ class ApiSession(Session):
             if k not in self.SHARED_USER_HDRS:
                 self.user_hdrs[k] = v
         self.headers = self.user_hdrs
-        self.authenticate_session()
+        if self.avi_credentials.csp_token:
+            self.generate_access_token()
+        else:
+            self.authenticate_session()
 
     def authenticate_session(self):
         """

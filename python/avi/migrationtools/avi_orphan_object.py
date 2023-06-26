@@ -25,85 +25,85 @@ PATH_KEY_MAP = {'poolgroup': 'PoolGroup', 'healthmonitor': 'HealthMonitor',
                     'ApplicationPersistenceProfile', 'prioritylabels':
                     'PriorityLabels', 'vsvip': 'VsVip', 'tenant': "Tenant",
                 'serviceenginegroup': 'ServiceEngineGroup',
-                'virtualservice': 'VirtualService','ipaddrgroup': 'IpAddrGroup'}
+                'virtualservice': 'VirtualService', 'ipaddrgroup': 'IpAddrGroup'}
 
 DEFAULT_META_ORDER = [
-        "ControllerLicense",
-        "SeProperties",
-        "SecureChannelToken",
-        "SecureChannelMapping",
-        "VIMgrIPSubnetRuntime",
-        "Tenant",
-        "ControllerProperties",
-        "CloudProperties",
-        "SecureChannelAvailableLocalIPs",
-        "JobEntry",
-        "Role",
-        "DebugController",
-        "AutoScaleLaunchConfig",
-        "MicroService",
-        "AuthProfile",
-        "AnalyticsProfile",
-        "APICLifsRuntime",
-        "LogControllerMapping",
-        "SnmpTrapProfile",
-        "AlertSyslogConfig",
-        "NetworkRuntime",
-        "AlertObjectList",
-        "VIPGNameInfo",
-        "CertificateManagementProfile",
-        "CloudRuntime",
-        "CloudConnectorUser",
-        "DebugServiceEngine",
-        "HardwareSecurityModuleGroup",
-        "HealthMonitor",
-        "VIDCInfo",
-        "VIMgrControllerRuntime",
-        "GlobalHealthMonitor",
-        "IpamDnsProviderProfile",
-        "StringGroup",
-        "Backup",
-        "DebugVirtualService",
-        "AlertScriptConfig",
-        "NetworkProfile",
-        "GlobalLB",
-        "IpAddrGroup",
-        "Cluster",
-        "SSLProfile",
-        "PKIProfile",
-        "ApplicationPersistenceProfile",
-        "MicroServiceGroup",
-        "SSLKeyAndCertificate",
-        "GlobalService",
-        "ApplicationProfile",
-        "NetworkSecurityPolicy",
-        "SystemConfiguration",
-        "Cloud",
-        "AlertEmailConfig",
-        "PriorityLabels",
-        "PoolGroupDeploymentPolicy",
-        "VIMgrVMRuntime",
-        "VrfContext",
-        "ActionGroupConfig",
-        "VIMgrHostRuntime",
-        "AlertConfig",
-        "VIMgrNWRuntime",
-        "VIMgrClusterRuntime",
-        "VIMgrSEVMRuntime",
-        "ServerAutoScalePolicy",
-        "Network",
-        "VIMgrDCRuntime",
-        "ServiceEngineGroup",
-        "Pool",
-        "VIMgrVcenterRuntime",
-        "ServiceEngine",
-        "PoolGroup",
-        "HTTPPolicySet",
-        "VSDataScriptSet",
-        "VirtualService",
-        "Alert",
-        "Application"
-    ]
+    "ControllerLicense",
+    "SeProperties",
+    "SecureChannelToken",
+    "SecureChannelMapping",
+    "VIMgrIPSubnetRuntime",
+    "Tenant",
+    "ControllerProperties",
+    "CloudProperties",
+    "SecureChannelAvailableLocalIPs",
+    "JobEntry",
+    "Role",
+    "DebugController",
+    "AutoScaleLaunchConfig",
+    "MicroService",
+    "AuthProfile",
+    "AnalyticsProfile",
+    "APICLifsRuntime",
+    "LogControllerMapping",
+    "SnmpTrapProfile",
+    "AlertSyslogConfig",
+    "NetworkRuntime",
+    "AlertObjectList",
+    "VIPGNameInfo",
+    "CertificateManagementProfile",
+    "CloudRuntime",
+    "CloudConnectorUser",
+    "DebugServiceEngine",
+    "HardwareSecurityModuleGroup",
+    "HealthMonitor",
+    "VIDCInfo",
+    "VIMgrControllerRuntime",
+    "GlobalHealthMonitor",
+    "IpamDnsProviderProfile",
+    "StringGroup",
+    "Backup",
+    "DebugVirtualService",
+    "AlertScriptConfig",
+    "NetworkProfile",
+    "GlobalLB",
+    "IpAddrGroup",
+    "Cluster",
+    "SSLProfile",
+    "PKIProfile",
+    "ApplicationPersistenceProfile",
+    "MicroServiceGroup",
+    "SSLKeyAndCertificate",
+    "GlobalService",
+    "ApplicationProfile",
+    "NetworkSecurityPolicy",
+    "SystemConfiguration",
+    "Cloud",
+    "AlertEmailConfig",
+    "PriorityLabels",
+    "PoolGroupDeploymentPolicy",
+    "VIMgrVMRuntime",
+    "VrfContext",
+    "ActionGroupConfig",
+    "VIMgrHostRuntime",
+    "AlertConfig",
+    "VIMgrNWRuntime",
+    "VIMgrClusterRuntime",
+    "VIMgrSEVMRuntime",
+    "ServerAutoScalePolicy",
+    "Network",
+    "VIMgrDCRuntime",
+    "ServiceEngineGroup",
+    "Pool",
+    "VIMgrVcenterRuntime",
+    "ServiceEngine",
+    "PoolGroup",
+    "HTTPPolicySet",
+    "VSDataScriptSet",
+    "VirtualService",
+    "Alert",
+    "Application"
+]
 
 
 def get_name_and_entity(url):
@@ -133,7 +133,7 @@ def search_obj(entity, name, new_config, avi_config, vs_ref_dict):
         found_obj = [obj for obj in found_obj_list if obj['name'] == name]
     if found_obj:
         found_obj = found_obj[0]
-        tenant =  None
+        tenant = None
         if 'tenant_ref' in found_obj:
             link, tenant = get_name_and_entity(found_obj['tenant_ref'])
         name_obj = '%s-%s-%s' % (found_obj['name'], avi_conf_key, tenant)
@@ -161,7 +161,7 @@ def find_and_add_objects(obj_dict, avi_config, new_config, vs_ref_dict,
             # creating vs reference dict with unique keys
             if 'tenant_ref' in obj_dict:
                 ee, tenant_name = get_name_and_entity(obj_dict['tenant_ref'])
-            key = '%s$$%s$$%s' %(name, entity, tenant_name)
+            key = '%s$$%s$$%s' % (name, entity, tenant_name)
             if vs_flag:
                 vs_name = obj_dict['name']
             if vs_name:
@@ -206,12 +206,12 @@ def filter_for_vs(avi_config):
     """
     global vs_ref_dict_g
     new_config = []
-    vs_ref_dict = dict()
+    vs_ref_dict = {}
     for vs in avi_config.get('VirtualService'):
         vs_flag = True
         if 'tenant_ref' in vs:
             link, tenant = get_name_and_entity(vs['tenant_ref'])
-        else :
+        else:
             tenant = 'admin'
         name = '%s-%s-%s' % (vs['name'], 'VirtualService', tenant)
         new_config.append(name)

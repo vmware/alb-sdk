@@ -5,10 +5,9 @@ import json
 import pytest
 import vcr
 import unittest
-from avi.sdk.saml_avi_api import ApiSession, OktaSAMLApiSession, OneloginSAMLApiSession
+from avi.sdk.saml_avi_api import ApiSession, OktaSAMLApiSession, OneloginSAMLApiSession, WS1loginSAMLApiSession
 
-api_version = '18.2.2'
-
+api_version = '22.1.3'
 config_file = pytest.config.getoption("--config")
 with open(config_file) as f:
     cfg = json.load(f)
@@ -26,10 +25,12 @@ def setUpModule():
 
     global oktalogin_info
     global onelogin_info
+    global ws1login_info
     global login_info
     global api
     global oktaapi
     global onelogin
+    global ws1api
 
     oktalogin_info = gSAMPLE_CONFIG["OktaLoginInfo"]
     oktaapi = OktaSAMLApiSession(
@@ -47,6 +48,15 @@ def setUpModule():
         tenant=onelogin_info.get("tenant", "admin"),
         tenant_uuid=onelogin_info.get("tenant_uuid", None),
         api_version=onelogin_info.get("api_version", api_version),
+        verify=False)
+
+    ws1login_info = gSAMPLE_CONFIG["Ws1LoginInfo"]
+    ws1api = WS1loginSAMLApiSession(
+        ws1login_info["controller_ip"], ws1login_info.get("username", "admin"),
+        ws1login_info.get("password", "fr3sca$%^"),
+        tenant=ws1login_info.get("tenant", "admin"),
+        tenant_uuid=ws1login_info.get("tenant_uuid", None),
+        api_version=ws1login_info.get("api_version", api_version),
         verify=False)
 
     login_info = gSAMPLE_CONFIG["LoginInfo"]
@@ -109,6 +119,34 @@ class TestSaml(unittest.TestCase):
         assert resp.status_code in (200, 204)
         resp = onelogin.delete_by_name("pool", pool_name,
                                        api_version=api_version)
+        assert resp.status_code in (200, 204)
+
+    @pytest.mark.travis
+    @my_vcr.use_cassette()
+
+    def test_basic_vs_using_ws1(self):
+        basic_vs_cfg = gSAMPLE_CONFIG["BasicVS"]
+        vs_obj = basic_vs_cfg["vs_obj"]
+        resp = ws1api.post('pool', data=json.dumps(basic_vs_cfg["pool_obj"]),
+                            api_version=api_version)
+        assert resp.status_code in (200, 201)
+        vs_obj["pool_ref"] = ws1api.get_obj_ref(resp.json())
+        resp = ws1api.post('vsvip', data=json.dumps(basic_vs_cfg["vsvip_obj"]),
+                        api_version=ws1login_info.get("api_version"))
+        assert resp.status_code in (200, 201)
+        vs_obj["vsvip_ref"] = ws1api.get_obj_ref(resp.json())
+        resp = ws1api.post('virtualservice', data=json.dumps(vs_obj),
+                            api_version=ws1login_info.get("api_version"))
+        assert resp.status_code in (200, 201)
+        pool_name = gSAMPLE_CONFIG["BasicVS"]["pool_obj"]["name"]
+        resp = ws1api.get('virtualservice', tenant='admin',
+                           api_version=ws1login_info.get("api_version"))
+        assert resp.json()['count'] >= 1
+        resp = ws1api.delete_by_name('virtualservice', vs_obj['name'],
+                                      api_version=ws1login_info.get("api_version"))
+        assert resp.status_code in (200, 204)
+        resp = ws1api.delete_by_name("pool", pool_name,
+                                      api_version=ws1login_info.get("api_version"))
         assert resp.status_code in (200, 204)
 
     @pytest.mark.travis

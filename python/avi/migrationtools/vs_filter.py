@@ -13,9 +13,7 @@
 import argparse
 import json
 import os
-import yaml
 from avi.migrationtools.avi_migration_utils import MigrationUtil
-from urllib.parse import urlparse
 
 # Read avi object to API path map from yaml file.
 mg_util = MigrationUtil()
@@ -35,18 +33,20 @@ def filter_for_vs(avi_config, vs_names, prefix=None, skip_ref_objects=skip_ref_o
     :param skip_ref_objects: comma separated names of objects ref to be skipped
     :return: Filtered config dict
     """
-    new_config = dict()
+    new_config = {}
     new_config['VirtualService'] = []
     virtual_services = []
-    if vs_names and type(vs_names) == str:
+    if vs_names and isinstance(vs_names, str):
         virtual_services = vs_names.split(',')
-    elif vs_names and type(vs_names) == list:
+    elif vs_names and isinstance(vs_names, list):
         virtual_services = vs_names
 
     for vs_name in virtual_services:
         if prefix:
             if not vs_name.startswith(prefix):
                 vs_name = prefix+"-"+vs_name
+        if len(vs_name) > 256:
+            vs_name = mg_util.get_updated_vs_name_after_triming(vs_name, avi_config)
         vs = [vs for vs in avi_config['VirtualService']
               if vs['name'] == vs_name]
         if not vs:
@@ -165,7 +165,7 @@ if __name__ == '__main__':
     if not args.skip_ref_objects:
         args.skip_ref_objects = skip_ref_object_list
     else:
-        if type(args.skip_ref_objects) == str:
+        if isinstance(args.skip_ref_objects, str):
             args.skip_ref_objects = args.skip_ref_objects.split(',')
 
     avi_config_file = open(args.avi_config_file)
