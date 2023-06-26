@@ -37,7 +37,7 @@ type ALBServicesConfig struct {
 	// Mode helps log collection and upload. Enum options - MODE_UNKNOWN, SALESFORCE, SYSTEST, MYVMWARE. Field introduced in 20.1.2. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Basic edition(Allowed values- SALESFORCE,MYVMWARE,SYSTEST), Enterprise with Cloud Services edition.
 	Mode *string `json:"mode,omitempty"`
 
-	// Name of the ALBServicesConfig object. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Name of the ALBServicesConfig object. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
 	// Time interval in minutes. Allowed values are 5-60. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -55,7 +55,7 @@ type ALBServicesConfig struct {
 	// Required: true
 	SplitProxyConfiguration *ProxyConfiguration `json:"split_proxy_configuration"`
 
-	// Tenant UUID associated with the Object. It is a reference to an object of type Tenant. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Tenant UUID associated with the Object. It is a reference to an object of type Tenant. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
 	// url
