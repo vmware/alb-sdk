@@ -937,6 +937,8 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * In compact placement, virtual services are placed on existing ses until max_vs_per_se limit is reached.
+     * In distributed placement, virtual services are placed on new ses until max_se limit is reached.
+     * Once this limit is reached, virtual services are placed on ses with least load.
      * Enum options - PLACEMENT_ALGO_PACKED, PLACEMENT_ALGO_DISTRIBUTED.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PLACEMENT_ALGO_PACKED".
@@ -949,6 +951,8 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * In compact placement, virtual services are placed on existing ses until max_vs_per_se limit is reached.
+     * In distributed placement, virtual services are placed on new ses until max_se limit is reached.
+     * Once this limit is reached, virtual services are placed on ses with least load.
      * Enum options - PLACEMENT_ALGO_PACKED, PLACEMENT_ALGO_DISTRIBUTED.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PLACEMENT_ALGO_PACKED".
