@@ -575,7 +575,7 @@ class VsConfigConv(object):
                                 floating_ip = "0.0.0.0"
                                 if migration_input_config and migration_input_config.get('network_service'):
                                     floating_ip = migration_input_config.get('network_service'). \
-                                        get("{}-{}".format(tier_name, "floating-ip"))
+                                         get("{}-{}".format(tier_name, "floating-ip"))
                                 if cloud_type == "Vlan":
                                     ns_vrf_name = "global"
                                 else:
@@ -592,10 +592,12 @@ class VsConfigConv(object):
                                 else:
                                     ns_cloud_ref = conv_utils.get_object_ref(cloud_name, 'cloud',
                                                                              cloud_tenant=cloud_tenant)
+
                                     ns_vrf_ref = conv_utils.get_object_ref(ns_vrf_name, 'vrfcontext',
-                                                                           cloud_name=cloud_name,
-                                                                           cloud_tenant=cloud_tenant,
-                                                                           tenant=tenant)
+                                                                            cloud_name=cloud_name,
+                                                                            cloud_tenant=cloud_tenant,
+                                                                            tenant=tenant)
+
                                     tenant_ref = conv_utils.get_object_ref(cloud_tenant, 'tenant')
                                     new_network_service = nsxt_util.create_network_service_obj(ns_name,
                                                                                                alb_vs["se_group_ref"],
