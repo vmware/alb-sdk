@@ -770,7 +770,8 @@ class Test(unittest.TestCase):
                                         'basic_vs_cloned',
                                         new_vs_vips=['10.90.64.124'],
                                         new_vs_fips=[None],
-                                        new_vs_v6vips=[None])
+                                        new_vs_v6vips=[None],
+                                        new_vs_placements=[None])
         assert new_vs is not None
 
         pool_name = gSAMPLE_CONFIG['BasicVS']['pool_obj']['name']
@@ -790,7 +791,7 @@ class Test(unittest.TestCase):
 
         all_created_objs = [new_vs]
         all_created_objs.extend(created_objs)
-        avi_clone.delete_objects(objs=all_created_objs, tenant=None)
+        avi_clone.delete_objects(created_objs=all_created_objs)
 
     @pytest.mark.skip_travis
     def test_avi_file_upload(self):
