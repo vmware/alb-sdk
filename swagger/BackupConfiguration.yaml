@@ -395,6 +395,9 @@ definitions:
             remote_hostname:
                 description: "Remote Destination. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            s3_bucket_folder:
+                description: "The folder name in s3 bucket where backup will be stored. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
             save_local:
                 description: "Local Backup. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
