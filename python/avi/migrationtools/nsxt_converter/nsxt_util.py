@@ -597,8 +597,6 @@ class NSXUtil():
 
                 warning_mesg="cloud is not configured for load balancer %s with id %s " % (lb["display_name"],lb["id"])
                 LOG.debug(warning_mesg)
-               # lb_details=[]
-
 
 
             self.lb_services[lb["id"]] = {
