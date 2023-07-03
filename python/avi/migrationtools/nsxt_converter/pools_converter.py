@@ -91,6 +91,7 @@ class PoolConfigConv(object):
                 is_sry_pool_present = False
                 pool_skip = True
                 pool_count = 0
+                is_pool_orphan=True
                 pool_members_list = list()
                 if lb_pl.get('member_group'):
                     ns_grp_name, ip_addr_grp = nsxt_util.get_nsx_group_details(lb_pl['member_group']['group_path'])
@@ -115,6 +116,7 @@ class PoolConfigConv(object):
                     if vs_list:
                         pool_seg_list,is_member_ip_in_range,pool_skip = self.check_pool_member_ip_ranges\
                             (vs_list, pool_count, lb_list, pool_members_list, pool_skip, name, vs_pool_segment_list)
+                        is_pool_orphan=False
 
                     if vs_list_for_sorry_pool:
                         pool_seg_list,is_member_ip_in_range ,pool_skip= self.check_pool_member_ip_ranges \
@@ -122,11 +124,24 @@ class PoolConfigConv(object):
                              vs_sorry_pool_segment_list)
                         if is_member_ip_in_range:
                             is_sry_pool_present = True
+                        is_pool_orphan=False
 
                     if vs_list_for_rules_select_action_pool:
                         pool_seg_list,is_member_ip_in_range, pool_skip = self.check_pool_member_ip_ranges \
                             (vs_list_for_rules_select_action_pool, pool_count, lb_list, pool_members_list, pool_skip, name,
                              vs_select_pool_action_list)
+                        is_pool_orphan=False
+
+
+                    if is_pool_orphan:
+                        skipped_pools_list.append(name)
+                        skip_msg = 'Pool is orphan , it is not associated with any vs'
+                        conv_utils.add_status_row('pool', None, lb_pl['display_name'],
+                                                  conv_const.STATUS_SKIPPED, skip_msg)
+                        LOG.warning("POOL {} not migrated. Reason: {}".format(name,
+                                                                              skip_msg))
+                        conv_utils.print_progress_bar(progressbar_count, total_size, msg, prefix='Progress', suffix='')
+                        continue
 
                     if pool_skip:
                         skipped_pools_list.append(name)
@@ -492,6 +507,7 @@ class PoolConfigConv(object):
                     continue
                 lb = get_lb_service_name(vs_id)
                 if not lb:
+                    LOG.debug("lb not configured for vs %s" % vs_id)
                     continue
                 pool_segment = get_object_segments(vs_id,
                                                    member.get("ip_address"))
@@ -519,3 +535,5 @@ class PoolConfigConv(object):
                     pool_count += 1
 
         return pool_segment_list, is_member_ip_in_range,pool_skip
+
+

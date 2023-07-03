@@ -4,6 +4,7 @@
 import json
 import logging
 import os
+import sys
 import avi.migrationtools.nsxt_converter.converter_constants as conv_const
 from avi.migrationtools.avi_migration_utils import update_count
 from avi.migrationtools.avi_orphan_object import wipe_out_not_in_use
@@ -102,8 +103,14 @@ def convert(nsx_lb_config, input_path, output_path, tenant, prefix,
        # json.dump(avi_config_dict, text_file, indent=4)
 
     # Add nsxt converter status report in xslx report
-    conv_utils.add_complete_conv_status(
-        output_path, avi_config_dict, "nsxt-report", vs_level_status)
+    try:
+         conv_utils.add_complete_conv_status(
+             output_path, avi_config_dict, "nsxt-report", vs_level_status)
+     except Exception as e:
+         msg = "Error in writing excel sheet for converted configuration."
+         LOG.error(msg)
+         print("\033[91m" + msg + " Message: ", str(e) + "\033[0m")
+         sys.exit(1)
 
     for key in avi_config_dict:
         if key != 'META':
