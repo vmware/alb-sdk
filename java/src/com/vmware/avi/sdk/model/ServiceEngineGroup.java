@@ -4386,8 +4386,9 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Metrics collection mode, 0 = pull mode.
      * Se_agent pulls metrics from se_dp,  1 = push mode.
      * Se_dp pushes metrics to se_agent.
-     * 9 = special value to reset read state in push mode.
-     * Allowed values are 0-9.
+     * 9 = special value to reset collection state in push mode.
+     * Allowed values are 0-1.
+     * Special values are 9- reset metrics collection state.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
@@ -4402,8 +4403,9 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Metrics collection mode, 0 = pull mode.
      * Se_agent pulls metrics from se_dp,  1 = push mode.
      * Se_dp pushes metrics to se_agent.
-     * 9 = special value to reset read state in push mode.
-     * Allowed values are 0-9.
+     * 9 = special value to reset collection state in push mode.
+     * Allowed values are 0-1.
+     * Special values are 9- reset metrics collection state.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
