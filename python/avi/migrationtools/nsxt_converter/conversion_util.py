@@ -5,7 +5,7 @@ import copy
 import logging
 import os
 from functools import reduce
-
+import json
 import pandas
 import re
 import random
@@ -67,7 +67,8 @@ class NsxtConvUtil(MigrationUtil):
             'Skipped settings': str(conv_status.get('skipped', '')),
             'Indirect mapping': str(conv_status.get('indirect', '')),
             'Not Applicable': str(conv_status.get('na_list', '')),
-            'Avi Object': str(avi_object)
+            'Avi Object': str(avi_object),
+            'Needs Review' : str(need_review)
         }
         csv_writer_dict_list.append(row)
 
@@ -189,11 +190,11 @@ class NsxtConvUtil(MigrationUtil):
                           'Skipped settings', 'Indirect mapping',
                           'Not Applicable', 'Complexity Level',
                           'VS Reference', 'Overall skipped settings',
-                          'Avi Object']
+                          'Avi Object','Needs Review']
         else:
             fieldnames = ['NsxT type', 'NsxT SubType', 'NsxT ID', 'Status',
                           'Skipped settings', 'Indirect mapping',
-                          'Not Applicable', 'Complexity Level', 'Avi Object']
+                          'Not Applicable', 'Complexity Level', 'Avi Object','Needs Review']
 
         # xlsx workbook
         report_path = output_dir + os.path.sep + "%s-ConversionStatus.xlsx" % \
@@ -1386,3 +1387,14 @@ class NsxtConvUtil(MigrationUtil):
         self.remove_dup_key(avi_config["PKIProfile"])
         self.remove_dup_key(avi_config["ApplicationPersistenceProfile"])
         self.remove_dup_key(avi_config["HealthMonitor"])
+
+    def get_supported_n_unsupported_ciphers_dict(self):
+        cipher_dict_path=os.getcwd()+"/ciphers_dict.json"
+        sup_ciphers=[]
+        unsup_ciphers=[]
+        if os.path.exists(cipher_dict_path):
+            with open(cipher_dict_path) as ci_path:
+                ci_dict=json.load(ci_path)
+                sup_ciphers=ci_dict.get("supported_ciphers")
+                unsup_ciphers=ci_dict.get("unsupported_ciphers")
+        return sup_ciphers,unsup_ciphers
