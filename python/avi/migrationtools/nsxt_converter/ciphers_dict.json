@@ -1,5 +1,5 @@
 {
-    "supported_ciphers":
+    "supported_ciphers_in_nsxt":
 [
 "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
 "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
@@ -33,7 +33,7 @@
 "TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384",
 "TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384"
 ],
-    "unsupported_ciphers":
+    "openssl_unsupported_ciphers":
 [
 "ECDH-ECDSA-AES256-SHA",
 "ECDH-RSA-AES256-SHA",

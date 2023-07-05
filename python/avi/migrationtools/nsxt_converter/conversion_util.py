@@ -1395,6 +1395,6 @@ class NsxtConvUtil(MigrationUtil):
         if os.path.exists(cipher_dict_path):
             with open(cipher_dict_path) as ci_path:
                 ci_dict=json.load(ci_path)
-                sup_ciphers=ci_dict.get("supported_ciphers")
-                unsup_ciphers=ci_dict.get("unsupported_ciphers")
+                sup_ciphers=ci_dict.get("supported_ciphers_in_nsxt")
+                unsup_ciphers=ci_dict.get("openssl_unsupported_ciphers")
         return sup_ciphers,unsup_ciphers
