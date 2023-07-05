@@ -146,7 +146,7 @@ def get_object_segments(vs_id, obj_ip):
                         seg_name=seg_name,
                         subnets=subnet))
     else:
-        LOG.debug("segmnets are not configured  for vs %s " % vs_id )
+        LOG.debug("segmnets are not configured  for vs %s with  loadbalancer %s  " % (vs_id , vs.get("lb_name")))
         return None
 
     if segments:
