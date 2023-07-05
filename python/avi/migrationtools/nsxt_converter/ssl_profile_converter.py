@@ -284,7 +284,7 @@ class SslProfileConfigConv(object):
         cipher_str = cipher_str.replace('WITH-AES-128', 'AES128')
         cipher_str = cipher_str.replace('WITH-AES-256', 'AES256')
         unsup_cipher_from_cipher_str=[cipher for cipher in cipher_str.split(":") if cipher in  self.unsup_ciphers]
-        sup_cipher=cipher_str.split(":")-unsup_cipher_from_cipher_str
+        sup_cipher= set(cipher_str.split(":")).intersection(unsup_cipher_from_cipher_str)
         sup_cipher_str=":".join(sup_cipher)
         return sup_cipher_str,{"unsupported_cipher":unsup_cipher_from_cipher_str}
 
