@@ -138,14 +138,15 @@ class SslProfileConfigConv(object):
                 ssl_id = converted_alb_ssl[index]['id']
                 alb_mig_ssl = converted_alb_ssl[index]['alb_ssl']
                 resource_type = converted_alb_ssl[index]['resource_type']
+                unsup_ciphers=converted_alb_ssl[index]["unsup_cipher"]
                 if self.object_merge_check:
                     alb_mig_ssl = [pp for pp in alb_config['SSLProfile'] if
                                    pp.get('name') == self.merge_object_mapping['ssl_profile'].get(name)]
                     conv_utils.add_conv_status('sslprofile', resource_type, name, conv_status,
-                                               [{'ssl_profile': alb_mig_ssl[0]}])
+                                               [{'ssl_profile': alb_mig_ssl[0]}],unsup_ciphers)
                 else:
                     conv_utils.add_conv_status('sslprofile', resource_type, name, conv_status,
-                                               [{'ssl_profile': alb_mig_ssl}])
+                                               [{'ssl_profile': alb_mig_ssl}],unsup_ciphers)
                 if len(conv_status['skipped']) > 0:
                     LOG.debug(
                         '[SSL-PROFILE] Skipped Attribute {}:{}'.format(name,
@@ -284,7 +285,7 @@ class SslProfileConfigConv(object):
         cipher_str = cipher_str.replace('WITH-AES-128', 'AES128')
         cipher_str = cipher_str.replace('WITH-AES-256', 'AES256')
         unsup_cipher_from_cipher_str=[cipher for cipher in cipher_str.split(":") if cipher in  self.unsup_ciphers]
-        sup_cipher= set(cipher_str.split(":")).intersection(unsup_cipher_from_cipher_str)
+        sup_cipher= [cipher for cipher in cipher_str.split(":") if cipher not in unsup_cipher_from_cipher_str]
         sup_cipher_str=":".join(sup_cipher)
         return sup_cipher_str,{"unsupported_cipher":unsup_cipher_from_cipher_str}
 
