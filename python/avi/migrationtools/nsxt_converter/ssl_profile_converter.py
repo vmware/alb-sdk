@@ -278,7 +278,14 @@ class SslProfileConfigConv(object):
         This method will remove all the unsupported ciphers from cipher string
         e.g cipher_str := TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256:TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
         '''
-        sup_cipher_from_cipher_str=[cipher for cipher in cipher_str.split(":") if cipher in self.sup_ciphers]
+        cipher_str = cipher_str.replace('TLS_', '')
+        cipher_str=cipher_str.replace('CBC_','')
+        cipher_str = cipher_str.replace('_', '-')
+        cipher_str = cipher_str.replace('WITH-AES-128', 'AES128')
+        cipher_str = cipher_str.replace('WITH-AES-256', 'AES256')
         unsup_cipher_from_cipher_str=[cipher for cipher in cipher_str.split(":") if cipher in  self.unsup_ciphers]
-        cipher_str=":".join(sup_cipher_from_cipher_str)
-        return cipher_str,{"unsupported_cipher":unsup_cipher_from_cipher_str}
+        sup_cipher=cipher_str.split(":")-unsup_cipher_from_cipher_str
+        sup_cipher_str=":".join(sup_cipher)
+        return sup_cipher_str,{"unsupported_cipher":unsup_cipher_from_cipher_str}
+
+
