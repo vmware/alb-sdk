@@ -153,6 +153,7 @@ def get_object_segments(vs_id, obj_ip):
         LOG.debug("segments found for vs %s with attached pool server ip %s are %s" %(vs_id,obj_ip,segments))
         return segments
 
+    LOG.debug("Member ip %s not falling in segment range  %s " % (obj_ip,vs.get("Segments")))
     return None
 
 
