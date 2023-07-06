@@ -279,6 +279,7 @@ class SslProfileConfigConv(object):
         This method will remove all the unsupported ciphers from cipher string
         e.g cipher_str := TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256:TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
         '''
+        cipher_str = cipher_str.replace('TLS_RSA_', '')
         cipher_str = cipher_str.replace('TLS_', '')
         cipher_str=cipher_str.replace('CBC_','')
         cipher_str = cipher_str.replace('_', '-')
