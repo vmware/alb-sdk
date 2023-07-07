@@ -139,6 +139,10 @@ class SslProfileConfigConv(object):
                 alb_mig_ssl = converted_alb_ssl[index]['alb_ssl']
                 resource_type = converted_alb_ssl[index]['resource_type']
                 unsup_ciphers=converted_alb_ssl[index]["unsup_cipher"]
+                if conv_status["status"]=="SUCCESSFUL" and unsup_ciphers:
+                    conv_status["status"]="SUCCESSFUL WITH UNSUPPORTED CIPHERS"
+                if unsup_ciphers:
+                    unsup_ciphers={'Unsupported ciphers':unsup_ciphers}
                 if self.object_merge_check:
                     alb_mig_ssl = [pp for pp in alb_config['SSLProfile'] if
                                    pp.get('name') == self.merge_object_mapping['ssl_profile'].get(name)]
@@ -244,6 +248,10 @@ class SslProfileConfigConv(object):
                 alb_mig_ssl = converted_alb_ssl[index]['alb_ssl']
                 resource_type = converted_alb_ssl[index]['resource_type']
                 unsup_ciphers=converted_alb_ssl[index]["unsup_cipher"]
+                if conv_status["status"]=="SUCCESSFUL" and unsup_ciphers:
+                    conv_status["status"]="SUCCESSFUL WITH UNSUPPORTED CIPHERS"
+                if unsup_ciphers:
+                    unsup_ciphers={'Unsupported ciphers':unsup_ciphers}
                 if self.object_merge_check:
                     alb_mig_ssl = [pp for pp in alb_config['SSLProfile'] if
                                    pp.get('name') == self.merge_object_mapping['ssl_profile'].get(name)]
@@ -288,6 +296,6 @@ class SslProfileConfigConv(object):
         unsup_cipher_from_cipher_str=[cipher for cipher in cipher_str.split(":") if cipher in  self.unsup_ciphers]
         sup_cipher= [cipher for cipher in cipher_str.split(":") if cipher not in unsup_cipher_from_cipher_str]
         sup_cipher_str=":".join(sup_cipher)
-        return sup_cipher_str,{"unsupported_cipher":unsup_cipher_from_cipher_str}
+        return sup_cipher_str,unsup_cipher_from_cipher_str
 
 
