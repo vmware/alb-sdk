@@ -24,6 +24,9 @@ public class CentralLicenseSubscriptionDetails  {
     @JsonProperty("message")
     private String message = null;
 
+    @JsonProperty("tenant_uuid")
+    private String tenantUuid = null;
+
 
 
     /**
@@ -50,6 +53,30 @@ public class CentralLicenseSubscriptionDetails  {
         this.message = message;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Tenant uuid.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return tenantUuid
+     */
+    public String getTenantUuid() {
+        return tenantUuid;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Tenant uuid.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param tenantUuid set the tenantUuid.
+     */
+    public void setTenantUuid(String  tenantUuid) {
+        this.tenantUuid = tenantUuid;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -60,7 +87,8 @@ public class CentralLicenseSubscriptionDetails  {
           return false;
       }
       CentralLicenseSubscriptionDetails objCentralLicenseSubscriptionDetails = (CentralLicenseSubscriptionDetails) o;
-      return   Objects.equals(this.message, objCentralLicenseSubscriptionDetails.message);
+      return   Objects.equals(this.message, objCentralLicenseSubscriptionDetails.message)&&
+  Objects.equals(this.tenantUuid, objCentralLicenseSubscriptionDetails.tenantUuid);
     }
 
     @Override
@@ -68,6 +96,7 @@ public class CentralLicenseSubscriptionDetails  {
       StringBuilder sb = new StringBuilder();
       sb.append("class CentralLicenseSubscriptionDetails {\n");
                   sb.append("    message: ").append(toIndentedString(message)).append("\n");
+                        sb.append("    tenantUuid: ").append(toIndentedString(tenantUuid)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
