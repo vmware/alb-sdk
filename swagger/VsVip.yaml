@@ -97,6 +97,61 @@ paths:
                     in: query
                     description: Filter to get objects that belongs to a specific cloud usings its name. This uses cloud name rather than uuid. Eg. cloud_ref.name=Default-Cloud.
                     type: string
+                -   name: cloud_ref.uuid
+                    in: query
+                    description: Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_ref.uuid=cloud_uuid.
+                    type: string
+                    required: false
+                -   name: name.contains
+                    in: query
+                    description: Filter to get objects with name that contains the parameter. This is a case sensitive search. Eg. name.contains=pool-.
+                    type: string
+                    required: false
+                -   name: name.icontains
+                    in: query
+                    description: Filter to get objects with name that contains the parameter. This is a case insensitive search. Eg. name.icontains=pool-.
+                    type: string
+                    required: false
+                -   name: name.in
+                    in: query
+                    description: Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. name.in=pool-1,pool-12.
+                    type: string
+                    required: false
+                -   name: uuid.in
+                    in: query
+                    description: Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. uuid.in=<uuid-1>,<uuid-2>.
+                    type: string
+                    required: false
+                -   name: search
+                    in: query
+                    description: Filter to get objects that contains the search string as value for any of its fields. Eg. search=LEAST_CONN. The search filter can also be used to search under a specific field. This is achieved by sending the parameter as ?search=(<field>,<value>)|(<field>,<value>). Eg. search=(name,vs-pool-).
+                    type: string
+                    required: false
+                -   name: isearch
+                    in: query
+                    description: Filter to get objects that contains case insensitive search string. Eg. isearch=(name,Vs-Pool-).
+                    type: string
+                    required: false
+                -   name: limit_by
+                    in: query
+                    description: Filter to limit the number of objects in the response data. Eg. limit_by=3.
+                    type: string
+                    required: false
+                -   name: exclude
+                    in: query
+                    description: Filter to exclude the uuid(s) contained in the parameter. Eg. uuid.in=<uuid-1>,<uuid-2>&exclude=uuid.in.
+                    type: string
+                    required: false
+                -   name: sort
+                    in: query
+                    description: Parameter to sort the results with respect to a field. Eg. sort=name.
+                    type: string
+                    required: false
+                -   name: page_size
+                    in: query
+                    description: Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.
+                    type: string
+                    required: false
             security:
                 - basicAuth: []
             responses:
