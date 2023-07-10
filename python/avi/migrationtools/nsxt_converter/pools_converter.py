@@ -501,6 +501,8 @@ class PoolConfigConv(object):
         is_member_ip_in_range=False
         for member in pool_members_list:
             for vs_id in vs_list:
+                LOG.debug("Checking pool member ip  %s falling in range or not  , pool %s attached with vip %s " % (member.get("ip_address"),
+                                                                                                                pool_name,vs_id))
                 if vs_id in pool_segment_list.keys():
                     pool_skip = False
                     is_member_ip_in_range=True
