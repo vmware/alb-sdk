@@ -117,6 +117,9 @@ public class Cloud extends AviRestResource  {
     @JsonProperty("rancher_configuration")
     private RancherConfiguration rancherConfiguration = null;
 
+    @JsonProperty("resolve_fqdn_to_ipv6")
+    private Boolean resolveFqdnToIpv6 = false;
+
     @JsonProperty("se_group_template_ref")
     private String seGroupTemplateRef = null;
 
@@ -955,6 +958,30 @@ public class Cloud extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Resolve ipv6 address for pool member fqdns.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return resolveFqdnToIpv6
+     */
+    public Boolean getResolveFqdnToIpv6() {
+        return resolveFqdnToIpv6;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Resolve ipv6 address for pool member fqdns.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param resolveFqdnToIpv6 set the resolveFqdnToIpv6.
+     */
+    public void setResolveFqdnToIpv6(Boolean  resolveFqdnToIpv6) {
+        this.resolveFqdnToIpv6 = resolveFqdnToIpv6;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * The service engine group to use as template.
      * It is a reference to an object of type serviceenginegroup.
      * Field introduced in 18.2.5.
@@ -1197,6 +1224,7 @@ public class Cloud extends AviRestResource  {
   Objects.equals(this.dnsResolutionOnSe, objCloud.dnsResolutionOnSe)&&
   Objects.equals(this.enableVipOnAllInterfaces, objCloud.enableVipOnAllInterfaces)&&
   Objects.equals(this.maintenanceMode, objCloud.maintenanceMode)&&
+  Objects.equals(this.resolveFqdnToIpv6, objCloud.resolveFqdnToIpv6)&&
   Objects.equals(this.tenantRef, objCloud.tenantRef)&&
   Objects.equals(this.licenseTier, objCloud.licenseTier)&&
   Objects.equals(this.autoscalePollingInterval, objCloud.autoscalePollingInterval)&&
@@ -1244,6 +1272,7 @@ public class Cloud extends AviRestResource  {
                         sb.append("    preferStaticRoutes: ").append(toIndentedString(preferStaticRoutes)).append("\n");
                         sb.append("    proxyConfiguration: ").append(toIndentedString(proxyConfiguration)).append("\n");
                         sb.append("    rancherConfiguration: ").append(toIndentedString(rancherConfiguration)).append("\n");
+                        sb.append("    resolveFqdnToIpv6: ").append(toIndentedString(resolveFqdnToIpv6)).append("\n");
                         sb.append("    seGroupTemplateRef: ").append(toIndentedString(seGroupTemplateRef)).append("\n");
                         sb.append("    stateBasedDnsRegistration: ").append(toIndentedString(stateBasedDnsRegistration)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
