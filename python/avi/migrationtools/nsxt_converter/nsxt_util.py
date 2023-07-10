@@ -125,10 +125,11 @@ def get_object_segments(vs_id, obj_ip):
     if not vs:
         LOG.debug("virtual service not found with id %s " % vs_id)
         return None
-    cloud = vs.get("cloud")
+    cloud = vs.get("Cloud")
+
     if cloud == "Cloud Not Found":
         LOG.debug("cloud is not configured for vs %s " % vs_id)
-        return None
+       # return None
 
     segments = []
     if vs.get("Segments"):
@@ -145,13 +146,14 @@ def get_object_segments(vs_id, obj_ip):
                         seg_name=seg_name,
                         subnets=subnet))
     else:
-        LOG.debug("segmnets are not configured  for vs %s " % vs_id )
+        LOG.debug("segmnets are not configured  for vs %s with  loadbalancer %s  " % (vs_id , vs.get("lb_name")))
         return None
 
     if segments:
         LOG.debug("segments found for vs %s with attached pool server ip %s are %s" %(vs_id,obj_ip,segments))
         return segments
 
+    LOG.debug("Member ip %s not falling in segment range  %s " % (obj_ip,vs.get("Segments")))
     return None
 
 
@@ -542,13 +544,13 @@ class NSXUtil():
 
             else:
                 segment_list = self.nsx_api_client.infra.Segments.list().to_dict().get('results', [])
-
                 is_tier_linked_segment_found = False
 
                 for seg in segment_list:
                     if seg.get("connectivity_path"):
                         gateway_name = get_name_and_entity(seg["connectivity_path"])[-1]
                         if gateway_name == tier:
+                            is_tier_linked_segment_found=True
                             tz_path = seg.get("transport_zone_path")
                             tz_id = get_name_and_entity(tz_path)[-1]
                             dhcp_present = False
@@ -582,20 +584,22 @@ class NSXUtil():
                                     "subnet": subnets}
                                 lb_details.append(segments)
 
+                if not is_tier_linked_segment_found:
+                    lb_skip_reason = "Skipping because NSX Load Balancer has no segments "\
+                                           "or service interfaces configured"
+                    self.lb_services[lb["id"]] = {
+                         "lb_name": lb["id"],
+                         "lb_skip_reason": lb_skip_reason
+                     }
+                    LOG.debug("Lb skipped : %s reason %s" %(lb["id"],lb_skip_reason))
+                    continue
+
             if not is_cloud_configured:
 
                 warning_mesg="cloud is not configured for load balancer %s with id %s " % (lb["display_name"],lb["id"])
                 LOG.debug(warning_mesg)
-                lb_details=[]
 
 
-                if not is_tier_linked_segment_found:
-                     self.lb_services[lb["id"]] = {
-                         "lb_name": lb["id"],
-                         "lb_skip_reason": "Skipping because NSX Load Balancer has no segments "
-                                           "or service interfaces configured"
-                     }
-                     continue
             self.lb_services[lb["id"]] = {
                 "lb_name": lb["id"],
                 "Network": network,
