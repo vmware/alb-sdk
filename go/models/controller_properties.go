@@ -237,6 +237,12 @@ type ControllerProperties struct {
 	// SSL Certificates in the admin tenant can be used in non-admin tenants. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SharedSslCertificates *bool `json:"shared_ssl_certificates,omitempty"`
 
+	// Time interval (in seconds) between retires for skopeo commands. Field introduced in 30.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	SkopeoRetryInterval *int32 `json:"skopeo_retry_interval,omitempty"`
+
+	// Number of times to try skopeo commands for remote image registries. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	SkopeoRetryLimit *int32 `json:"skopeo_retry_limit,omitempty"`
+
 	// Number of days for SSL Certificate expiry warning. Unit is DAYS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslCertificateExpiryWarningDays []int64 `json:"ssl_certificate_expiry_warning_days,omitempty,omitempty"`
 
