@@ -3077,8 +3077,8 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Toggles se hybrid only mode of operation in dpdk mode with rss configured;where-in each se datapath instance operates as an independent
-     * standalonehybrid instance performing both dispatcher and proxy function.
+     * Toggles se hybrid only mode of operation in dpdk mode with rss configured;where-in each se datapath instance operates as a standalone hybrid
+     * instance performing both dispatcher and proxy function.
      * Requires reboot.
      * Field introduced in 21.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -3091,8 +3091,8 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Toggles se hybrid only mode of operation in dpdk mode with rss configured;where-in each se datapath instance operates as an independent
-     * standalonehybrid instance performing both dispatcher and proxy function.
+     * Toggles se hybrid only mode of operation in dpdk mode with rss configured;where-in each se datapath instance operates as a standalone hybrid
+     * instance performing both dispatcher and proxy function.
      * Requires reboot.
      * Field introduced in 21.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
