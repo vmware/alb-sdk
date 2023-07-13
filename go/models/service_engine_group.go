@@ -261,7 +261,7 @@ type ServiceEngineGroup struct {
 	// Minimum response size content length to sample for client insights. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 64), Basic edition(Allowed values- 64), Enterprise with Cloud Services edition.
 	HTTPRumMinContentLength *int32 `json:"http_rum_min_content_length,omitempty"`
 
-	// Toggles SE hybrid only mode of operation in DPDK mode with RSS configured;where-in each SE datapath instance operates as an independent standalonehybrid instance performing both dispatcher and proxy function. Requires reboot. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Toggles SE hybrid only mode of operation in DPDK mode with RSS configured;where-in each SE datapath instance operates as a standalone hybrid instance performing both dispatcher and proxy function. Requires reboot. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	HybridRssMode *bool `json:"hybrid_rss_mode,omitempty"`
 
 	// Override default hypervisor. Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
@@ -410,6 +410,9 @@ type ServiceEngineGroup struct {
 
 	// Amount of memory for each of the Service Engine virtual machines. Changes to this setting do not affect existing SEs. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	MemoryPerSe *int32 `json:"memory_per_se,omitempty"`
+
+	// Metrics collection mode, 0 = Pull mode.  se_agent pulls metrics from se_dp,  1 = Push mode. se_dp pushes metrics to se_agent.  9 = special value to reset collection state in push mode. . Allowed values are 0-1. Special values are 9- Reset metrics collection state. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	MetricsCollectionMode *int32 `json:"metrics_collection_mode,omitempty"`
 
 	// Management network to use for Avi Service Engines. It is a reference to an object of type Network. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	MgmtNetworkRef *string `json:"mgmt_network_ref,omitempty"`
