@@ -209,6 +209,7 @@ font-style: italic;
   <li><a href="#serviceengineUuidAppmapGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/appmap/</code></a></li>
   <li><a href="#serviceengineUuidArpstatGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/arpstat/</code></a></li>
   <li><a href="#serviceengineUuidArptableGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/arptable/</code></a></li>
+  <li><a href="#serviceengineUuidBfdRunningConfigGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/bfd/running_config/</code></a></li>
   <li><a href="#serviceengineUuidBfdSessionStatusGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/bfd/session_status/</code></a></li>
   <li><a href="#serviceengineUuidBgpAdvertisedRoutesGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/bgp/advertised_routes/</code></a></li>
   <li><a href="#serviceengineUuidBgpDebugGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/bgp/debug/</code></a></li>
@@ -828,6 +829,58 @@ font-style: italic;
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /serviceengine/{uuid}/arptable/</code></pre></div>
     <div class="method-summary"> (<span class="nickname">serviceengineUuidArptableGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="serviceengineUuidBfdRunningConfigGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /serviceengine/{uuid}/bfd/running_config/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceengineUuidBfdRunningConfigGet</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
