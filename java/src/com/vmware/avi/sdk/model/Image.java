@@ -42,6 +42,9 @@ public class Image extends AviRestResource  {
     @JsonProperty("events")
     private List<ImageEventMap> events = null;
 
+    @JsonProperty("fips_mode_transition_applicable")
+    private Boolean fipsModeTransitionApplicable = true;
+
     @JsonProperty("img_state")
     private ImageUploadOpsStatus imgState = null;
 
@@ -289,6 +292,30 @@ public class Image extends AviRestResource  {
       }
       this.events.add(eventsItem);
       return this;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Specifies whether fips mode can be enabled on this image.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return fipsModeTransitionApplicable
+     */
+    public Boolean getFipsModeTransitionApplicable() {
+        return fipsModeTransitionApplicable;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Specifies whether fips mode can be enabled on this image.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param fipsModeTransitionApplicable set the fipsModeTransitionApplicable.
+     */
+    public void setFipsModeTransitionApplicable(Boolean  fipsModeTransitionApplicable) {
+        this.fipsModeTransitionApplicable = fipsModeTransitionApplicable;
     }
 
     /**
@@ -684,6 +711,7 @@ public class Image extends AviRestResource  {
   Objects.equals(this.startTime, objImage.startTime)&&
   Objects.equals(this.endTime, objImage.endTime)&&
   Objects.equals(this.duration, objImage.duration)&&
+  Objects.equals(this.fipsModeTransitionApplicable, objImage.fipsModeTransitionApplicable)&&
   Objects.equals(this.tenantRef, objImage.tenantRef);
     }
 
@@ -698,6 +726,7 @@ public class Image extends AviRestResource  {
                         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
                         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
                         sb.append("    events: ").append(toIndentedString(events)).append("\n");
+                        sb.append("    fipsModeTransitionApplicable: ").append(toIndentedString(fipsModeTransitionApplicable)).append("\n");
                         sb.append("    imgState: ").append(toIndentedString(imgState)).append("\n");
                         sb.append("    migrations: ").append(toIndentedString(migrations)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");

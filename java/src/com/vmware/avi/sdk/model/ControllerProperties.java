@@ -240,6 +240,12 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("shared_ssl_certificates")
     private Boolean sharedSslCertificates = false;
 
+    @JsonProperty("skopeo_retry_interval")
+    private Integer skopeoRetryInterval = 5;
+
+    @JsonProperty("skopeo_retry_limit")
+    private Integer skopeoRetryLimit = 3;
+
     @JsonProperty("ssl_certificate_expiry_warning_days")
     private List<Integer> sslCertificateExpiryWarningDays = null;
 
@@ -2140,6 +2146,56 @@ public class ControllerProperties extends AviRestResource  {
     public void setSharedSslCertificates(Boolean  sharedSslCertificates) {
         this.sharedSslCertificates = sharedSslCertificates;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Time interval (in seconds) between retires for skopeo commands.
+     * Field introduced in 30.1.1.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * @return skopeoRetryInterval
+     */
+    public Integer getSkopeoRetryInterval() {
+        return skopeoRetryInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Time interval (in seconds) between retires for skopeo commands.
+     * Field introduced in 30.1.1.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * @param skopeoRetryInterval set the skopeoRetryInterval.
+     */
+    public void setSkopeoRetryInterval(Integer  skopeoRetryInterval) {
+        this.skopeoRetryInterval = skopeoRetryInterval;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Number of times to try skopeo commands for remote image registries.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 3.
+     * @return skopeoRetryLimit
+     */
+    public Integer getSkopeoRetryLimit() {
+        return skopeoRetryLimit;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Number of times to try skopeo commands for remote image registries.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 3.
+     * @param skopeoRetryLimit set the skopeoRetryLimit.
+     */
+    public void setSkopeoRetryLimit(Integer  skopeoRetryLimit) {
+        this.skopeoRetryLimit = skopeoRetryLimit;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Number of days for ssl certificate expiry warning.
@@ -2927,7 +2983,9 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.postgresVacuumPeriod, objControllerProperties.postgresVacuumPeriod)&&
   Objects.equals(this.ignoreVrfInNetworksubnetlist, objControllerProperties.ignoreVrfInNetworksubnetlist)&&
   Objects.equals(this.seupgradeCopyBufferSize, objControllerProperties.seupgradeCopyBufferSize)&&
-  Objects.equals(this.vsSeBootupFailPatch, objControllerProperties.vsSeBootupFailPatch);
+  Objects.equals(this.vsSeBootupFailPatch, objControllerProperties.vsSeBootupFailPatch)&&
+  Objects.equals(this.skopeoRetryLimit, objControllerProperties.skopeoRetryLimit)&&
+  Objects.equals(this.skopeoRetryInterval, objControllerProperties.skopeoRetryInterval);
     }
 
     @Override
@@ -3007,6 +3065,8 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    seupgradeFabricPoolSize: ").append(toIndentedString(seupgradeFabricPoolSize)).append("\n");
                         sb.append("    seupgradeSegroupMinDeadTimeout: ").append(toIndentedString(seupgradeSegroupMinDeadTimeout)).append("\n");
                         sb.append("    sharedSslCertificates: ").append(toIndentedString(sharedSslCertificates)).append("\n");
+                        sb.append("    skopeoRetryInterval: ").append(toIndentedString(skopeoRetryInterval)).append("\n");
+                        sb.append("    skopeoRetryLimit: ").append(toIndentedString(skopeoRetryLimit)).append("\n");
                         sb.append("    sslCertificateExpiryWarningDays: ").append(toIndentedString(sslCertificateExpiryWarningDays)).append("\n");
                         sb.append("    unresponsiveSeReboot: ").append(toIndentedString(unresponsiveSeReboot)).append("\n");
                         sb.append("    updateDnsEntryRetryLimit: ").append(toIndentedString(updateDnsEntryRetryLimit)).append("\n");
