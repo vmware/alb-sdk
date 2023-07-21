@@ -982,7 +982,7 @@
                 }
             }
         },
-        "/upgradestatusinfo": {
+        "/albservicesfileupload": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -1074,7 +1074,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfoApiResponse"
+                            "$ref": "#/definitions/ALBServicesFileUploadApiResponse"
                         }
                     },
                     "401": {
@@ -1121,10 +1121,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "UpgradeStatusInfo object creation",
+                        "description": "ALBServicesFileUpload object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     }
                 ],
@@ -1137,7 +1137,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     "401": {
@@ -1146,7 +1146,7 @@
                 }
             }
         },
-        "/upgradestatusinfo/{uuid}": {
+        "/albservicesfileupload/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -1233,7 +1233,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     "401": {
@@ -1287,10 +1287,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "UpgradeStatusInfo object creation",
+                        "description": "ALBServicesFileUpload object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     {
@@ -1310,7 +1310,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     "401": {
@@ -1364,10 +1364,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "UpgradeStatusInfo object creation",
+                        "description": "ALBServicesFileUpload object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     {
@@ -1387,7 +1387,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     "401": {
@@ -1946,7 +1946,7 @@
                 }
             }
         },
-        "/albservicesfileupload": {
+        "/upgradestatusinfo": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -2038,7 +2038,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUploadApiResponse"
+                            "$ref": "#/definitions/UpgradeStatusInfoApiResponse"
                         }
                     },
                     "401": {
@@ -2085,10 +2085,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "ALBServicesFileUpload object creation",
+                        "description": "UpgradeStatusInfo object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     }
                 ],
@@ -2101,7 +2101,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     "401": {
@@ -2110,7 +2110,7 @@
                 }
             }
         },
-        "/albservicesfileupload/{uuid}": {
+        "/upgradestatusinfo/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -2197,7 +2197,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     "401": {
@@ -2251,10 +2251,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "ALBServicesFileUpload object creation",
+                        "description": "UpgradeStatusInfo object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     {
@@ -2274,7 +2274,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     "401": {
@@ -2328,10 +2328,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "ALBServicesFileUpload object creation",
+                        "description": "UpgradeStatusInfo object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     {
@@ -2351,7 +2351,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     "401": {
