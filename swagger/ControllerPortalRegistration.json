@@ -518,6 +518,11 @@
                     "description": "Access Token to authenticate Customer Portal REST calls. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
+                "grant_type": {
+                    "description": "Grant type of the JWT token. Enum options - REFRESH_TOKEN, CLIENT_CREDENTIALS. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "REFRESH_TOKEN"
+                },
                 "instance_url": {
                     "description": "Cloud services instance URL. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
