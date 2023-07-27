@@ -1388,7 +1388,7 @@
                 "controller_resource_info_collection_period": {
                     "description": "Periodically collect stats. Field introduced in 20.1.3. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "default": 30,
+                    "default": 525600,
                     "format": "int32"
                 },
                 "crashed_se_reboot": {
@@ -1666,6 +1666,12 @@
                     "default": 60,
                     "format": "int32"
                 },
+                "seupgrade_copy_buffer_size": {
+                    "description": "This parameter defines the buffer size during SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. Field introduced in 22.1.4. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 512,
+                    "format": "int32"
+                },
                 "seupgrade_copy_pool_size": {
                     "description": "This parameter defines the number of simultaneous SE image downloads in a SeGroup. It is used to pace the SE downloads so that controller network/CPU bandwidth is a bounded operation. A value of 0 will disable the pacing scheme and all the SE(s) in the SeGroup will attempt to download the image. . Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
@@ -1687,6 +1693,18 @@
                 "shared_ssl_certificates": {
                     "description": "SSL Certificates in the admin tenant can be used in non-admin tenants. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
+                },
+                "skopeo_retry_interval": {
+                    "description": "Time interval (in seconds) between retires for skopeo commands. Field introduced in 30.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 5,
+                    "format": "int32"
+                },
+                "skopeo_retry_limit": {
+                    "description": "Number of times to try skopeo commands for remote image registries. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 3,
+                    "format": "int32"
                 },
                 "ssl_certificate_expiry_warning_days": {
                     "description": "Number of days for SSL Certificate expiry warning. Unit is DAYS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1785,6 +1803,12 @@
                     "description": " Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 480,
+                    "format": "int32"
+                },
+                "vs_se_bootup_fail_patch": {
+                    "description": "Wait for longer for patch SEs to boot up. Field introduced in 30.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 600,
                     "format": "int32"
                 },
                 "vs_se_create_fail": {
