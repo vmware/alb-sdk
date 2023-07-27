@@ -209,6 +209,7 @@ font-style: italic;
   <li><a href="#serviceengineUuidAppmapGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/appmap/</code></a></li>
   <li><a href="#serviceengineUuidArpstatGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/arpstat/</code></a></li>
   <li><a href="#serviceengineUuidArptableGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/arptable/</code></a></li>
+  <li><a href="#serviceengineUuidBfdRunningConfigGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/bfd/running_config/</code></a></li>
   <li><a href="#serviceengineUuidBfdSessionStatusGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/bfd/session_status/</code></a></li>
   <li><a href="#serviceengineUuidBgpAdvertisedRoutesGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/bgp/advertised_routes/</code></a></li>
   <li><a href="#serviceengineUuidBgpDebugGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/bgp/debug/</code></a></li>
@@ -391,7 +392,29 @@ font-style: italic;
 
       <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_uuid&#x3D;cloud-xyz. </div><div class="param">cloud_ref.name (optional)</div>
 
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to get objects that belongs to a specific cloud usings its name. This uses cloud name rather than uuid. Eg. cloud_ref.name&#x3D;Default-Cloud. </div>
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to get objects that belongs to a specific cloud usings its name. This uses cloud name rather than uuid. Eg. cloud_ref.name&#x3D;Default-Cloud. </div><div class="param">cloud_ref.uuid (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_ref.uuid&#x3D;cloud_uuid. </div><div class="param">name.contains (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to get objects with name that contains the parameter. This is a case sensitive search. Eg. name.contains&#x3D;pool-. </div><div class="param">name.icontains (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to get objects with name that contains the parameter. This is a case insensitive search. Eg. name.icontains&#x3D;pool-. </div><div class="param">name.in (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. name.in&#x3D;pool-1,pool-12. </div><div class="param">uuid.in (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. uuid.in&#x3D;&lt;uuid-1&gt;,&lt;uuid-2&gt;. </div><div class="param">search (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to get objects that contains the search string as value for any of its fields. Eg. search&#x3D;LEAST_CONN. The search filter can also be used to search under a specific field. This is achieved by sending the parameter as ?search&#x3D;(&lt;field&gt;,&lt;value&gt;)|(&lt;field&gt;,&lt;value&gt;). Eg. search&#x3D;(name,vs-pool-). </div><div class="param">isearch (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to get objects that contains case insensitive search string. Eg. isearch&#x3D;(name,Vs-Pool-). </div><div class="param">limit_by (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to limit the number of objects in the response data. Eg. limit_by&#x3D;3. </div><div class="param">exclude (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to exclude the uuid(s) contained in the parameter. Eg. uuid.in&#x3D;&lt;uuid-1&gt;,&lt;uuid-2&gt;&amp;exclude&#x3D;uuid.in. </div><div class="param">sort (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Parameter to sort the results with respect to a field. Eg. sort&#x3D;name. </div><div class="param">page_size (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size&#x3D;5. </div>
     </div>  <!-- field-items -->
 
 
@@ -806,6 +829,58 @@ font-style: italic;
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /serviceengine/{uuid}/arptable/</code></pre></div>
     <div class="method-summary"> (<span class="nickname">serviceengineUuidArptableGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="serviceengineUuidBfdRunningConfigGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /serviceengine/{uuid}/bfd/running_config/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceengineUuidBfdRunningConfigGet</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
