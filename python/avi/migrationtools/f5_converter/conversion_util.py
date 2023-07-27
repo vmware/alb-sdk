@@ -2547,7 +2547,7 @@ class F5Util(MigrationUtil):
 
     def remove_verified_accept_from_network_profile(self, avi_config_dict):
         for ntwk_profile in avi_config_dict["NetworkProfile"]:
-            if ntwk_profile.get("verified-accept"):
+            if "verified-accept" in ntwk_profile.keys():
                 del ntwk_profile["verified-accept"]
 
     def remove_via_host_from_app_profiles(self, avi_config_dict):
