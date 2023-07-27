@@ -24,11 +24,17 @@ public class ControllerPortalAuth  {
     @JsonProperty("access_token")
     private String accessToken = null;
 
+    @JsonProperty("grant_type")
+    private String grantType = "REFRESH_TOKEN";
+
     @JsonProperty("instance_url")
     private String instanceUrl = null;
 
     @JsonProperty("jwt_token")
     private String jwtToken = null;
+
+    @JsonProperty("tenant")
+    private String tenant = null;
 
 
 
@@ -58,7 +64,33 @@ public class ControllerPortalAuth  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Salesforce instance url.
+     * Grant type of the jwt token.
+     * Enum options - REFRESH_TOKEN, CLIENT_CREDENTIALS.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "REFRESH_TOKEN".
+     * @return grantType
+     */
+    public String getGrantType() {
+        return grantType;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Grant type of the jwt token.
+     * Enum options - REFRESH_TOKEN, CLIENT_CREDENTIALS.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "REFRESH_TOKEN".
+     * @param grantType set the grantType.
+     */
+    public void setGrantType(String  grantType) {
+        this.grantType = grantType;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Cloud services instance url.
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -70,7 +102,7 @@ public class ControllerPortalAuth  {
 
     /**
      * This is the setter method to the attribute.
-     * Salesforce instance url.
+     * Cloud services instance url.
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -104,6 +136,30 @@ public class ControllerPortalAuth  {
         this.jwtToken = jwtToken;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Tenant information for which cloud services authentication information is persisted.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return tenant
+     */
+    public String getTenant() {
+        return tenant;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Tenant information for which cloud services authentication information is persisted.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param tenant set the tenant.
+     */
+    public void setTenant(String  tenant) {
+        this.tenant = tenant;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -116,7 +172,9 @@ public class ControllerPortalAuth  {
       ControllerPortalAuth objControllerPortalAuth = (ControllerPortalAuth) o;
       return   Objects.equals(this.accessToken, objControllerPortalAuth.accessToken)&&
   Objects.equals(this.jwtToken, objControllerPortalAuth.jwtToken)&&
-  Objects.equals(this.instanceUrl, objControllerPortalAuth.instanceUrl);
+  Objects.equals(this.instanceUrl, objControllerPortalAuth.instanceUrl)&&
+  Objects.equals(this.tenant, objControllerPortalAuth.tenant)&&
+  Objects.equals(this.grantType, objControllerPortalAuth.grantType);
     }
 
     @Override
@@ -124,8 +182,10 @@ public class ControllerPortalAuth  {
       StringBuilder sb = new StringBuilder();
       sb.append("class ControllerPortalAuth {\n");
                   sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
+                        sb.append("    grantType: ").append(toIndentedString(grantType)).append("\n");
                         sb.append("    instanceUrl: ").append(toIndentedString(instanceUrl)).append("\n");
                         sb.append("    jwtToken: ").append(toIndentedString(jwtToken)).append("\n");
+                        sb.append("    tenant: ").append(toIndentedString(tenant)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

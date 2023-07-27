@@ -72,6 +72,9 @@ public class VirtualService extends AviRestResource  {
     @JsonProperty("created_by")
     private String createdBy = null;
 
+    @JsonProperty("csrf_policy_ref")
+    private String csrfPolicyRef = null;
+
     @JsonProperty("delay_fairness")
     private Boolean delayFairness = false;
 
@@ -95,6 +98,9 @@ public class VirtualService extends AviRestResource  {
 
     @JsonProperty("enable_rhi_snat")
     private Boolean enableRhiSnat = null;
+
+    @JsonProperty("enable_session")
+    private Boolean enableSession = false;
 
     @JsonProperty("enabled")
     private Boolean enabled = true;
@@ -746,6 +752,32 @@ public class VirtualService extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Csrf protection policy for the virtual service.
+     * It is a reference to an object of type csrfpolicy.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return csrfPolicyRef
+     */
+    public String getCsrfPolicyRef() {
+        return csrfPolicyRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Csrf protection policy for the virtual service.
+     * It is a reference to an object of type csrfpolicy.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param csrfPolicyRef set the csrfPolicyRef.
+     */
+    public void setCsrfPolicyRef(String  csrfPolicyRef) {
+        this.csrfPolicyRef = csrfPolicyRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Select the algorithm for qos fairness.
      * This determines how multiple virtual services sharing the same service engines will prioritize traffic over a congested network.
      * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
@@ -961,6 +993,32 @@ public class VirtualService extends AviRestResource  {
      */
     public void setEnableRhiSnat(Boolean  enableRhiSnat) {
         this.enableRhiSnat = enableRhiSnat;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enable http sessions for this virtual service.
+     * If enabled, a session cookie will be added to http responses and persistent key-value store will be activated.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return enableSession
+     */
+    public Boolean getEnableSession() {
+        return enableSession;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable http sessions for this virtual service.
+     * If enabled, a session cookie will be added to http responses and persistent key-value store will be activated.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param enableSession set the enableSession.
+     */
+    public void setEnableSession(Boolean  enableSession) {
+        this.enableSession = enableSession;
     }
 
     /**
@@ -2885,7 +2943,9 @@ public class VirtualService extends AviRestResource  {
   Objects.equals(this.vhType, objVirtualService.vhType)&&
   Objects.equals(this.botPolicyRef, objVirtualService.botPolicyRef)&&
   Objects.equals(this.ldapVsConfig, objVirtualService.ldapVsConfig)&&
-  Objects.equals(this.oauthVsConfig, objVirtualService.oauthVsConfig);
+  Objects.equals(this.oauthVsConfig, objVirtualService.oauthVsConfig)&&
+  Objects.equals(this.enableSession, objVirtualService.enableSession)&&
+  Objects.equals(this.csrfPolicyRef, objVirtualService.csrfPolicyRef);
     }
 
     @Override
@@ -2909,6 +2969,7 @@ public class VirtualService extends AviRestResource  {
                         sb.append("    connectionsRateLimit: ").append(toIndentedString(connectionsRateLimit)).append("\n");
                         sb.append("    contentRewrite: ").append(toIndentedString(contentRewrite)).append("\n");
                         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+                        sb.append("    csrfPolicyRef: ").append(toIndentedString(csrfPolicyRef)).append("\n");
                         sb.append("    delayFairness: ").append(toIndentedString(delayFairness)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
                         sb.append("    dnsInfo: ").append(toIndentedString(dnsInfo)).append("\n");
@@ -2917,6 +2978,7 @@ public class VirtualService extends AviRestResource  {
                         sb.append("    enableAutogw: ").append(toIndentedString(enableAutogw)).append("\n");
                         sb.append("    enableRhi: ").append(toIndentedString(enableRhi)).append("\n");
                         sb.append("    enableRhiSnat: ").append(toIndentedString(enableRhiSnat)).append("\n");
+                        sb.append("    enableSession: ").append(toIndentedString(enableSession)).append("\n");
                         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
                         sb.append("    errorPageProfileRef: ").append(toIndentedString(errorPageProfileRef)).append("\n");
                         sb.append("    flowDist: ").append(toIndentedString(flowDist)).append("\n");

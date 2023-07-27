@@ -414,6 +414,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("memory_per_se")
     private Integer memoryPerSe = 2048;
 
+    @JsonProperty("metrics_collection_mode")
+    private Integer metricsCollectionMode = 1;
+
     @JsonProperty("mgmt_network_ref")
     private String mgmtNetworkRef = null;
 
@@ -485,6 +488,12 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     @JsonProperty("os_reserved_memory")
     private Integer osReservedMemory = 0;
+
+    @JsonProperty("path_mtu_discovery_v4")
+    private Boolean pathMtuDiscoveryV4 = true;
+
+    @JsonProperty("path_mtu_discovery_v6")
+    private Boolean pathMtuDiscoveryV6 = true;
 
     @JsonProperty("pcap_tx_mode")
     private String pcapTxMode = "PCAP_TX_AUTO";
@@ -943,6 +952,8 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * In compact placement, virtual services are placed on existing ses until max_vs_per_se limit is reached.
+     * In distributed placement, virtual services are placed on new ses until max_se limit is reached.
+     * Once this limit is reached, virtual services are placed on ses with least load.
      * Enum options - PLACEMENT_ALGO_PACKED, PLACEMENT_ALGO_DISTRIBUTED.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PLACEMENT_ALGO_PACKED".
@@ -955,6 +966,8 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * In compact placement, virtual services are placed on existing ses until max_vs_per_se limit is reached.
+     * In distributed placement, virtual services are placed on new ses until max_se limit is reached.
+     * Once this limit is reached, virtual services are placed on ses with least load.
      * Enum options - PLACEMENT_ALGO_PACKED, PLACEMENT_ALGO_DISTRIBUTED.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "PLACEMENT_ALGO_PACKED".
@@ -3064,8 +3077,8 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Toggles se hybrid only mode of operation in dpdk mode with rss configured;where-in each se datapath instance operates as an independent
-     * standalonehybrid instance performing both dispatcher and proxy function.
+     * Toggles se hybrid only mode of operation in dpdk mode with rss configured;where-in each se datapath instance operates as a standalone hybrid
+     * instance performing both dispatcher and proxy function.
      * Requires reboot.
      * Field introduced in 21.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -3078,8 +3091,8 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Toggles se hybrid only mode of operation in dpdk mode with rss configured;where-in each se datapath instance operates as an independent
-     * standalonehybrid instance performing both dispatcher and proxy function.
+     * Toggles se hybrid only mode of operation in dpdk mode with rss configured;where-in each se datapath instance operates as a standalone hybrid
+     * instance performing both dispatcher and proxy function.
      * Requires reboot.
      * Field introduced in 21.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -4370,6 +4383,40 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Metrics collection mode, 0 = pull mode.
+     * Se_agent pulls metrics from se_dp,  1 = push mode.
+     * Se_dp pushes metrics to se_agent.
+     * 9 = special value to reset collection state in push mode.
+     * Allowed values are 0-1.
+     * Special values are 9- reset metrics collection state.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+     * @return metricsCollectionMode
+     */
+    public Integer getMetricsCollectionMode() {
+        return metricsCollectionMode;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Metrics collection mode, 0 = pull mode.
+     * Se_agent pulls metrics from se_dp,  1 = push mode.
+     * Se_dp pushes metrics to se_agent.
+     * 9 = special value to reset collection state in push mode.
+     * Allowed values are 0-1.
+     * Special values are 9- reset metrics collection state.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+     * @param metricsCollectionMode set the metricsCollectionMode.
+     */
+    public void setMetricsCollectionMode(Integer  metricsCollectionMode) {
+        this.metricsCollectionMode = metricsCollectionMode;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Management network to use for avi service engines.
      * It is a reference to an object of type network.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -5007,6 +5054,54 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setOsReservedMemory(Integer  osReservedMemory) {
         this.osReservedMemory = osReservedMemory;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enable path mtu discovery feature for ipv4.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return pathMtuDiscoveryV4
+     */
+    public Boolean getPathMtuDiscoveryV4() {
+        return pathMtuDiscoveryV4;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable path mtu discovery feature for ipv4.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param pathMtuDiscoveryV4 set the pathMtuDiscoveryV4.
+     */
+    public void setPathMtuDiscoveryV4(Boolean  pathMtuDiscoveryV4) {
+        this.pathMtuDiscoveryV4 = pathMtuDiscoveryV4;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enable path mtu discovery feature for ipv6.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return pathMtuDiscoveryV6
+     */
+    public Boolean getPathMtuDiscoveryV6() {
+        return pathMtuDiscoveryV6;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable path mtu discovery feature for ipv6.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param pathMtuDiscoveryV6 set the pathMtuDiscoveryV6.
+     */
+    public void setPathMtuDiscoveryV6(Boolean  pathMtuDiscoveryV6) {
+        this.pathMtuDiscoveryV6 = pathMtuDiscoveryV6;
     }
 
     /**
@@ -8669,7 +8764,10 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.useDpUtilForScaleout, objServiceEngineGroup.useDpUtilForScaleout)&&
   Objects.equals(this.replayVrfRoutesInterval, objServiceEngineGroup.replayVrfRoutesInterval)&&
   Objects.equals(this.vsSeScaleinAdditionalWaitTime, objServiceEngineGroup.vsSeScaleinAdditionalWaitTime)&&
-  Objects.equals(this.vsSePrimarySwitchoverAdditionalWaitTime, objServiceEngineGroup.vsSePrimarySwitchoverAdditionalWaitTime);
+  Objects.equals(this.vsSePrimarySwitchoverAdditionalWaitTime, objServiceEngineGroup.vsSePrimarySwitchoverAdditionalWaitTime)&&
+  Objects.equals(this.pathMtuDiscoveryV4, objServiceEngineGroup.pathMtuDiscoveryV4)&&
+  Objects.equals(this.pathMtuDiscoveryV6, objServiceEngineGroup.pathMtuDiscoveryV6)&&
+  Objects.equals(this.metricsCollectionMode, objServiceEngineGroup.metricsCollectionMode);
     }
 
     @Override
@@ -8807,6 +8905,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    memReserve: ").append(toIndentedString(memReserve)).append("\n");
                         sb.append("    memoryForConfigUpdate: ").append(toIndentedString(memoryForConfigUpdate)).append("\n");
                         sb.append("    memoryPerSe: ").append(toIndentedString(memoryPerSe)).append("\n");
+                        sb.append("    metricsCollectionMode: ").append(toIndentedString(metricsCollectionMode)).append("\n");
                         sb.append("    mgmtNetworkRef: ").append(toIndentedString(mgmtNetworkRef)).append("\n");
                         sb.append("    mgmtSubnet: ").append(toIndentedString(mgmtSubnet)).append("\n");
                         sb.append("    minCpuUsage: ").append(toIndentedString(minCpuUsage)).append("\n");
@@ -8831,6 +8930,8 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    openstackMgmtNetworkName: ").append(toIndentedString(openstackMgmtNetworkName)).append("\n");
                         sb.append("    openstackMgmtNetworkUuid: ").append(toIndentedString(openstackMgmtNetworkUuid)).append("\n");
                         sb.append("    osReservedMemory: ").append(toIndentedString(osReservedMemory)).append("\n");
+                        sb.append("    pathMtuDiscoveryV4: ").append(toIndentedString(pathMtuDiscoveryV4)).append("\n");
+                        sb.append("    pathMtuDiscoveryV6: ").append(toIndentedString(pathMtuDiscoveryV6)).append("\n");
                         sb.append("    pcapTxMode: ").append(toIndentedString(pcapTxMode)).append("\n");
                         sb.append("    pcapTxRingRdBalancingFactor: ").append(toIndentedString(pcapTxRingRdBalancingFactor)).append("\n");
                         sb.append("    perApp: ").append(toIndentedString(perApp)).append("\n");

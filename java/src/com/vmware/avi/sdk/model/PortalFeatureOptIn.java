@@ -30,6 +30,9 @@ public class PortalFeatureOptIn  {
     @JsonProperty("enable_pulse_case_management")
     private Boolean enablePulseCaseManagement;
 
+    @JsonProperty("enable_pulse_inventory")
+    private Boolean enablePulseInventory;
+
     @JsonProperty("enable_pulse_waf_management")
     private Boolean enablePulseWafManagement;
 
@@ -118,6 +121,32 @@ public class PortalFeatureOptIn  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Enable pulse cloud services inventory.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+     * cloud services edition.
+     * Special default for essentials edition is false, basic edition is false, enterprise is false.
+     * @return enablePulseInventory
+     */
+    public Boolean getEnablePulseInventory() {
+        return enablePulseInventory;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable pulse cloud services inventory.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, essentials edition(allowed values- false), basic edition(allowed values- false), enterprise with
+     * cloud services edition.
+     * Special default for essentials edition is false, basic edition is false, enterprise is false.
+     * @param enablePulseInventory set the enablePulseInventory.
+     */
+    public void setEnablePulseInventory(Boolean  enablePulseInventory) {
+        this.enablePulseInventory = enablePulseInventory;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Enable to receive waf crs updates.
      * Field introduced in 21.1.1.
      * Allowed in enterprise edition only with addon license, essentials edition(allowed values- false), basic edition(allowed values- false),
@@ -182,7 +211,8 @@ public class PortalFeatureOptIn  {
   Objects.equals(this.enableAppsignatureSync, objPortalFeatureOptIn.enableAppsignatureSync)&&
   Objects.equals(this.enableUserAgentDbSync, objPortalFeatureOptIn.enableUserAgentDbSync)&&
   Objects.equals(this.enablePulseWafManagement, objPortalFeatureOptIn.enablePulseWafManagement)&&
-  Objects.equals(this.enablePulseCaseManagement, objPortalFeatureOptIn.enablePulseCaseManagement);
+  Objects.equals(this.enablePulseCaseManagement, objPortalFeatureOptIn.enablePulseCaseManagement)&&
+  Objects.equals(this.enablePulseInventory, objPortalFeatureOptIn.enablePulseInventory);
     }
 
     @Override
@@ -192,6 +222,7 @@ public class PortalFeatureOptIn  {
                   sb.append("    enableAppsignatureSync: ").append(toIndentedString(enableAppsignatureSync)).append("\n");
                         sb.append("    enableIpReputation: ").append(toIndentedString(enableIpReputation)).append("\n");
                         sb.append("    enablePulseCaseManagement: ").append(toIndentedString(enablePulseCaseManagement)).append("\n");
+                        sb.append("    enablePulseInventory: ").append(toIndentedString(enablePulseInventory)).append("\n");
                         sb.append("    enablePulseWafManagement: ").append(toIndentedString(enablePulseWafManagement)).append("\n");
                         sb.append("    enableUserAgentDbSync: ").append(toIndentedString(enableUserAgentDbSync)).append("\n");
                   sb.append("}");
