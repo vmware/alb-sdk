@@ -6,7 +6,7 @@
 swagger: '2.0'
 info:
     version: '30.2.1'
-    title: Avi Role Object API
+    title: Avi ServiceAuthProfile Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
@@ -14,8 +14,8 @@ info:
     description: |
         CLI
         ```
-        - configure role <key>
-        - show role <key>
+        - configure serviceauthprofile <key>
+        - show serviceauthprofile <key>
         ```
 
 
@@ -25,7 +25,7 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /role:
+    /serviceauthprofile:
         get:
             consumes:
                 -   application/json
@@ -89,7 +89,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/RoleApiResponse"
+                        $ref: "#/definitions/ServiceAuthProfileApiResponse"
                 401:
                     description: log in failed
         post:
@@ -120,20 +120,20 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: Role object creation
+                    description: ServiceAuthProfile object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/Role"
+                        $ref: "#/definitions/ServiceAuthProfile"
             security:
                 - basicAuth: []
             responses:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/Role"
+                        $ref: "#/definitions/ServiceAuthProfile"
                 401:
                     description: log in failed
-    /role/{uuid}:
+    /serviceauthprofile/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -194,7 +194,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/Role"
+                        $ref: "#/definitions/ServiceAuthProfile"
                 401:
                     description: log in failed
         put:
@@ -230,10 +230,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: Role object creation
+                    description: ServiceAuthProfile object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/Role"
+                        $ref: "#/definitions/ServiceAuthProfile"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -245,7 +245,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/Role"
+                        $ref: "#/definitions/ServiceAuthProfile"
                 401:
                     description: log in failed
         patch:
@@ -281,10 +281,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: Role object creation
+                    description: ServiceAuthProfile object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/Role"
+                        $ref: "#/definitions/ServiceAuthProfile"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -296,7 +296,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/Role"
+                        $ref: "#/definitions/ServiceAuthProfile"
                 401:
                     description: log in failed
         delete:
@@ -355,61 +355,42 @@ definitions:
                 type: integer
                 default: 1
                 format: int32
-    Permission:
-        type: object
-        required:
-            -   resource
-            -   type
-        properties:
-            resource:
-                description: " Enum options - PERMISSION_CONTROLLER, PERMISSION_INTERNAL, PERMISSION_VIRTUALSERVICE, PERMISSION_POOL, PERMISSION_HEALTHMONITOR, PERMISSION_NETWORKPROFILE, PERMISSION_APPLICATIONPROFILE, PERMISSION_HTTPPOLICYSET, PERMISSION_IPADDRGROUP, PERMISSION_STRINGGROUP, PERMISSION_SSLPROFILE, PERMISSION_SSLKEYANDCERTIFICATE, PERMISSION_NETWORKSECURITYPOLICY, PERMISSION_APPLICATIONPERSISTENCEPROFILE, PERMISSION_ANALYTICSPROFILE, PERMISSION_VSDATASCRIPTSET, PERMISSION_TENANT, PERMISSION_PKIPROFILE, PERMISSION_AUTHPROFILE, PERMISSION_CLOUD, PERMISSION_SERVICEENGINE, PERMISSION_SERVICEENGINEGROUP, PERMISSION_NETWORK, PERMISSION_SYSTEMCONFIGURATION, PERMISSION_VRFCONTEXT, PERMISSION_USER, PERMISSION_ROLE, PERMISSION_ALERT, PERMISSION_ALERTCONFIG, PERMISSION_ALERTEMAILCONFIG, PERMISSION_ALERTSYSLOGCONFIG, PERMISSION_ACTIONGROUPCONFIG, PERMISSION_SNMPTRAPPROFILE, PERMISSION_UPGRADE, PERMISSION_REBOOT, PERMISSION_TECHSUPPORT, PERMISSION_EXEMPT, PERMISSION_VIRTUALSERVICE_MAINTENANCE, PERMISSION_POOL_MAINTENANCE, PERMISSION_TRAFFIC_CAPTURE, PERMISSION_MICROSERVICEGROUP, PERMISSION_IPAMDNSPROVIDERPROFILE, PERMISSION_CERTIFICATEMANAGEMENTPROFILE, PERMISSION_POOLGROUP, PERMISSION_PRIORITYLABELS, PERMISSION_POOLGROUPDEPLOYMENTPOLICY, PERMISSION_GSLB, PERMISSION_GSLBSERVICE, PERMISSION_GSLBGEODBPROFILE, PERMISSION_DNSPOLICY, PERMISSION_TRAFFICCLONEPROFILE, PERMISSION_SE_TOKEN, PERMISSION_WAFPOLICY, PERMISSION_WAFPROFILE, PERMISSION_USER_CREDENTIAL, PERMISSION_AUTOSCALE, PERMISSION_CUSTOMIPAMDNSPROFILE, PERMISSION_ERRORPAGEPROFILE, PERMISSION_ERRORPAGEBODY, PERMISSION_L4POLICYSET, PERMISSION_MICROSERVICE, PERMISSION_HARDWARESECURITYMODULEGROUP, PERMISSION_SECURITYPOLICY, PERMISSION_WAFPOLICYPSMGROUP, PERMISSION_PINGACCESSAGENT, PERMISSION_NETWORKSERVICE, PERMISSION_NATPOLICY, PERMISSION_PROTOCOLPARSER, PERMISSION_SSOPOLICY, PERMISSION_CONTROLLERSITE, PERMISSION_IMAGE, PERMISSION_UPGRADE_OPS, PERMISSION_UPGRADE_SEGROUP_OPS, PERMISSION_TESTSEDATASTORELEVEL1, PERMISSION_TESTSEDATASTORELEVEL2, PERMISSION_TESTSEDATASTORELEVEL3, PERMISSION_FILE_OBJECT, PERMISSION_IPREPUTATIONDB, PERMISSION_ICAP, PERMISSION_GSLBSERVICE_GROUP, PERMISSION_JWTSERVERPROFILE, PERMISSION_GEODB, PERMISSION_BOTDETECTIONPOLICY, PERMISSION_JWTPROFILE, PERMISSION_LABELGROUP, PERMISSION_WAFCRS, PERMISSION_AUTHMAPPINGPROFILE, PERMISSION_ALBSERVICESCONFIG, PERMISSION_ALBSERVICESSTATUS, PERMISSION_ALBSERVICESREG, PERMISSION_LICENSING, PERMISSION_ALBSERVICESUSERINFO, PERMISSION_TENANT_SYSTEM_CONFIGURATION, PERMISSION_CSRFPOLICY, PERMISSION_SERVICEAUTHPROFILE. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            subresource:
-                description: "Limits the scope of Write Access on the parent resource to modification of only the specified subresources. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/SubResource'
-            type:
-                description: " Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-    Role:
+    ServiceAuthProfile:
         type: object
         required:
             -   name
+            -   type
         properties:
             _last_modified:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
                 readOnly: True
                 type: string
-            allow_unlabelled_access:
-                description: "Allow access to unlabelled objects. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
-                type: boolean
-                default: True
             configpb_attributes:
-                description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
+                description: "Protobuf versioning for config pbs. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
-            filters:
-                description: "Filters for granular object access control based on object labels. Multiple filters are merged using the AND operator. If empty, all objects according to the privileges will be accessible to the user. Field introduced in 20.1.3. Maximum of 4 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    $ref: '#/definitions/RoleFilter'
-            name:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+            description:
+                description: "Description for the service Auth Profile. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
-            privileges:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    $ref: '#/definitions/Permission'
+            name:
+                description: "Name of the service Auth Profile. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            service_oauth_profile:
+                description: "OAuth Profile - Common endpoint information for service authentication. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/ServiceOAuth'
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Tenant ref for the service auth profile. It is a reference to an object of type Tenant. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            type:
+                description: "Type of the service Auth Profile. Enum options - SERVICE_AUTH_OAUTH. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "UUID of the service Auth Profile. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
-    RoleApiResponse:
+    ServiceAuthProfileApiResponse:
         type: object
         required:
             - count
@@ -421,49 +402,27 @@ definitions:
             results:
                 type: array
                 items:
-                    $ref: "#/definitions/Role"
+                    $ref: "#/definitions/ServiceAuthProfile"
             next:
                 type: string
-    RoleFilter:
+    ServiceOAuth:
         type: object
         required:
-            -   match_label
+            -   authorization_endpoint
+            -   client_id
         properties:
-            enabled:
-                description: "Enable this filter. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
-                type: boolean
-                default: True
-            match_label:
-                description: "Label key to match against objects for values. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/RoleFilterMatchLabel'
-            match_operation:
-                description: "Label match operation criteria. Enum options - ROLE_FILTER_EQUALS, ROLE_FILTER_DOES_NOT_EQUAL, ROLE_FILTER_GLOB_MATCH, ROLE_FILTER_GLOB_DOES_NOT_MATCH. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+            authorization_endpoint:
+                description: "URL of authorization server. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
-                default: "ROLE_FILTER_EQUALS"
-            name:
-                description: "Name for the filter. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+            client_id:
+                description: "Application specific identifier for service auth. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
-    RoleFilterMatchLabel:
-        type: object
-        required:
-            -   key
-        properties:
-            key:
-                description: "Key for filter match. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+            org_id:
+                description: "Organization Id for service OAuth(required for CSP). Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
-            values:
-                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    type: string
-    SubResource:
-        type: object
-        properties:
-            exclude_subresources:
-                description: "Allows modification of all fields except for the specified subresources. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
-                type: boolean
-            subresources:
-                description: "Subresources user can modify. Each subresource specifies and individual field. I.e. SUBRESOURCE_POOL_ENABLED allows modification of the enabled field in the Pool object. Enum options - SUBRESOURCE_POOL_ENABLED, SUBRESOURCE_POOL_SERVERS, SUBRESOURCE_POOL_SERVER_ENABLED, SUBRESOURCE_VIRTUALSERVICE_ENABLED, SUBRESOURCE_VIRTUALSERVICE_AUTO_ALLOCATE_FLOATING_IP, SUBRESOURCE_GSLBSERVICE_ENABLED, SUBRESOURCE_GSLBSERVICE_GROUPS, SUBRESOURCE_GSLBSERVICE_GROUP_ENABLED, SUBRESOURCE_GSLBSERVICE_GROUP_MEMBERS, SUBRESOURCE_GSLBSERVICE_GROUP_MEMBER_ENABLED. Field introduced in 20.1.5. Minimum of 1 items required. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    type: string
+            service_id:
+                description: "Uuid value of the service(required for CSP). Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            service_name:
+                description: "Name of the service(required for CSP). Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
