@@ -113,6 +113,7 @@ type AviClient struct {
 	SecurityManagerData             *SecurityManagerDataClient
 	SecurityPolicy                  *SecurityPolicyClient
 	ServerAutoScalePolicy           *ServerAutoScalePolicyClient
+	ServiceAuthProfile              *ServiceAuthProfileClient
 	ServiceEngine                   *ServiceEngineClient
 	ServiceEngineGroup              *ServiceEngineGroupClient
 	ServiceEngineGroupInventory     *ServiceEngineGroupInventoryClient
@@ -271,6 +272,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.SecurityManagerData = NewSecurityManagerDataClient(aviSession)
 	aviClient.SecurityPolicy = NewSecurityPolicyClient(aviSession)
 	aviClient.ServerAutoScalePolicy = NewServerAutoScalePolicyClient(aviSession)
+	aviClient.ServiceAuthProfile = NewServiceAuthProfileClient(aviSession)
 	aviClient.ServiceEngine = NewServiceEngineClient(aviSession)
 	aviClient.ServiceEngineGroup = NewServiceEngineGroupClient(aviSession)
 	aviClient.ServiceEngineGroupInventory = NewServiceEngineGroupInventoryClient(aviSession)
