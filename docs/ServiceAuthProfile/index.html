@@ -5,7 +5,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Avi User Object API</title>
+    <title>Avi ServiceAuthProfile Object API</title>
     <style type="text/css">
       body { 
 	font-family: Trebuchet MS, sans-serif;
@@ -183,8 +183,8 @@ font-style: italic;
     </style>
   </head>
   <body>
-  <h1>Avi User Object API</h1>
-    <div class="app-desc">CLI ``` - configure user <key> - show user <key> ``` </div>
+  <h1>Avi ServiceAuthProfile Object API</h1>
+    <div class="app-desc">CLI ``` - configure serviceauthprofile <key> - show serviceauthprofile <key> ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
     <div class="app-desc">Version: 30.2.1</div>
@@ -202,19 +202,19 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#userGet"><code><span class="http-method">get</span> /user</code></a></li>
-  <li><a href="#userPost"><code><span class="http-method">post</span> /user</code></a></li>
-  <li><a href="#userUuidDelete"><code><span class="http-method">delete</span> /user/{uuid}</code></a></li>
-  <li><a href="#userUuidGet"><code><span class="http-method">get</span> /user/{uuid}</code></a></li>
-  <li><a href="#userUuidPatch"><code><span class="http-method">patch</span> /user/{uuid}</code></a></li>
-  <li><a href="#userUuidPut"><code><span class="http-method">put</span> /user/{uuid}</code></a></li>
+  <li><a href="#serviceauthprofileGet"><code><span class="http-method">get</span> /serviceauthprofile</code></a></li>
+  <li><a href="#serviceauthprofilePost"><code><span class="http-method">post</span> /serviceauthprofile</code></a></li>
+  <li><a href="#serviceauthprofileUuidDelete"><code><span class="http-method">delete</span> /serviceauthprofile/{uuid}</code></a></li>
+  <li><a href="#serviceauthprofileUuidGet"><code><span class="http-method">get</span> /serviceauthprofile/{uuid}</code></a></li>
+  <li><a href="#serviceauthprofileUuidPatch"><code><span class="http-method">patch</span> /serviceauthprofile/{uuid}</code></a></li>
+  <li><a href="#serviceauthprofileUuidPut"><code><span class="http-method">put</span> /serviceauthprofile/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="userGet"/>
+  <div class="method"><a name="serviceauthprofileGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /user</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">userGet</span>)</div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /serviceauthprofile</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceauthprofileGet</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -248,7 +248,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#UserApiResponse">UserApiResponse</a>
+      <a href="#ServiceAuthProfileApiResponse">ServiceAuthProfileApiResponse</a>
       
     </div>
 
@@ -260,36 +260,23 @@ font-style: italic;
   "next" : "aeiou",
   "count" : 123,
   "results" : [ {
-    "access" : [ {
-      "all_tenants" : true,
-      "tenant_ref" : "aeiou",
-      "role_ref" : "aeiou"
-    } ],
-    "uuid" : "aeiou",
-    "local" : true,
-    "_last_modified" : "aeiou",
-    "uid" : 123,
-    "password" : "aeiou",
-    "user_profile_ref" : "aeiou",
-    "anonymous_user" : true,
-    "date_joined" : "aeiou",
-    "email" : "aeiou",
-    "is_active" : true,
-    "is_superuser" : true,
-    "passwordless" : true,
-    "service_user" : true,
-    "is_staff" : true,
-    "logged_in" : true,
-    "token_expiration_date" : "aeiou",
-    "is_internal_user" : true,
-    "url" : "aeiou",
-    "default_tenant_ref" : "aeiou",
-    "full_name" : "aeiou",
+    "tenant_ref" : "aeiou",
     "name" : "aeiou",
-    "ui_property" : "aeiou",
-    "recovery_token" : "aeiou",
-    "unix_crypt_password" : "aeiou",
-    "username" : "aeiou"
+    "configpb_attributes" : {
+      "version" : 123
+    },
+    "description" : "aeiou",
+    "type" : "aeiou",
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou",
+    "service_oauth_profile" : {
+      "org_id" : "aeiou",
+      "service_name" : "aeiou",
+      "service_id" : "aeiou",
+      "client_id" : "aeiou",
+      "authorization_endpoint" : "aeiou"
+    }
   } ]
 }</code></pre>
 
@@ -303,17 +290,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#UserApiResponse">UserApiResponse</a>
+        <a href="#ServiceAuthProfileApiResponse">ServiceAuthProfileApiResponse</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="userPost"/>
+  <div class="method"><a name="serviceauthprofilePost"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /user</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">userPost</span>)</div>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /serviceauthprofile</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceauthprofilePost</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -327,7 +314,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; User object creation </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; ServiceAuthProfile object creation </div>
     </div>  <!-- field-items -->
 
 
@@ -335,7 +322,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#User">User</a>
+      <a href="#ServiceAuthProfile">ServiceAuthProfile</a>
       
     </div>
 
@@ -344,36 +331,23 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "access" : [ {
-    "all_tenants" : true,
-    "tenant_ref" : "aeiou",
-    "role_ref" : "aeiou"
-  } ],
-  "uuid" : "aeiou",
-  "local" : true,
-  "_last_modified" : "aeiou",
-  "uid" : 123,
-  "password" : "aeiou",
-  "user_profile_ref" : "aeiou",
-  "anonymous_user" : true,
-  "date_joined" : "aeiou",
-  "email" : "aeiou",
-  "is_active" : true,
-  "is_superuser" : true,
-  "passwordless" : true,
-  "service_user" : true,
-  "is_staff" : true,
-  "logged_in" : true,
-  "token_expiration_date" : "aeiou",
-  "is_internal_user" : true,
-  "url" : "aeiou",
-  "default_tenant_ref" : "aeiou",
-  "full_name" : "aeiou",
+  "tenant_ref" : "aeiou",
   "name" : "aeiou",
-  "ui_property" : "aeiou",
-  "recovery_token" : "aeiou",
-  "unix_crypt_password" : "aeiou",
-  "username" : "aeiou"
+  "configpb_attributes" : {
+    "version" : 123
+  },
+  "description" : "aeiou",
+  "type" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "service_oauth_profile" : {
+    "org_id" : "aeiou",
+    "service_name" : "aeiou",
+    "service_id" : "aeiou",
+    "client_id" : "aeiou",
+    "authorization_endpoint" : "aeiou"
+  }
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -386,17 +360,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#User">User</a>
+        <a href="#ServiceAuthProfile">ServiceAuthProfile</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="userUuidDelete"/>
+  <div class="method"><a name="serviceauthprofileUuidDelete"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /user/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">userUuidDelete</span>)</div>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /serviceauthprofile/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceauthprofileUuidDelete</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -450,11 +424,11 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="userUuidGet"/>
+  <div class="method"><a name="serviceauthprofileUuidGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /user/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">userUuidGet</span>)</div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /serviceauthprofile/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceauthprofileUuidGet</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -490,7 +464,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#User">User</a>
+      <a href="#ServiceAuthProfile">ServiceAuthProfile</a>
       
     </div>
 
@@ -499,36 +473,23 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "access" : [ {
-    "all_tenants" : true,
-    "tenant_ref" : "aeiou",
-    "role_ref" : "aeiou"
-  } ],
-  "uuid" : "aeiou",
-  "local" : true,
-  "_last_modified" : "aeiou",
-  "uid" : 123,
-  "password" : "aeiou",
-  "user_profile_ref" : "aeiou",
-  "anonymous_user" : true,
-  "date_joined" : "aeiou",
-  "email" : "aeiou",
-  "is_active" : true,
-  "is_superuser" : true,
-  "passwordless" : true,
-  "service_user" : true,
-  "is_staff" : true,
-  "logged_in" : true,
-  "token_expiration_date" : "aeiou",
-  "is_internal_user" : true,
-  "url" : "aeiou",
-  "default_tenant_ref" : "aeiou",
-  "full_name" : "aeiou",
+  "tenant_ref" : "aeiou",
   "name" : "aeiou",
-  "ui_property" : "aeiou",
-  "recovery_token" : "aeiou",
-  "unix_crypt_password" : "aeiou",
-  "username" : "aeiou"
+  "configpb_attributes" : {
+    "version" : 123
+  },
+  "description" : "aeiou",
+  "type" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "service_oauth_profile" : {
+    "org_id" : "aeiou",
+    "service_name" : "aeiou",
+    "service_id" : "aeiou",
+    "client_id" : "aeiou",
+    "authorization_endpoint" : "aeiou"
+  }
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -541,17 +502,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#User">User</a>
+        <a href="#ServiceAuthProfile">ServiceAuthProfile</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="userUuidPatch"/>
+  <div class="method"><a name="serviceauthprofileUuidPatch"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /user/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">userUuidPatch</span>)</div>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /serviceauthprofile/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceauthprofileUuidPatch</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -571,7 +532,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; User object creation </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; ServiceAuthProfile object creation </div>
     </div>  <!-- field-items -->
 
 
@@ -585,7 +546,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#User">User</a>
+      <a href="#ServiceAuthProfile">ServiceAuthProfile</a>
       
     </div>
 
@@ -594,36 +555,23 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "access" : [ {
-    "all_tenants" : true,
-    "tenant_ref" : "aeiou",
-    "role_ref" : "aeiou"
-  } ],
-  "uuid" : "aeiou",
-  "local" : true,
-  "_last_modified" : "aeiou",
-  "uid" : 123,
-  "password" : "aeiou",
-  "user_profile_ref" : "aeiou",
-  "anonymous_user" : true,
-  "date_joined" : "aeiou",
-  "email" : "aeiou",
-  "is_active" : true,
-  "is_superuser" : true,
-  "passwordless" : true,
-  "service_user" : true,
-  "is_staff" : true,
-  "logged_in" : true,
-  "token_expiration_date" : "aeiou",
-  "is_internal_user" : true,
-  "url" : "aeiou",
-  "default_tenant_ref" : "aeiou",
-  "full_name" : "aeiou",
+  "tenant_ref" : "aeiou",
   "name" : "aeiou",
-  "ui_property" : "aeiou",
-  "recovery_token" : "aeiou",
-  "unix_crypt_password" : "aeiou",
-  "username" : "aeiou"
+  "configpb_attributes" : {
+    "version" : 123
+  },
+  "description" : "aeiou",
+  "type" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "service_oauth_profile" : {
+    "org_id" : "aeiou",
+    "service_name" : "aeiou",
+    "service_id" : "aeiou",
+    "client_id" : "aeiou",
+    "authorization_endpoint" : "aeiou"
+  }
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -636,17 +584,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#User">User</a>
+        <a href="#ServiceAuthProfile">ServiceAuthProfile</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="userUuidPut"/>
+  <div class="method"><a name="serviceauthprofileUuidPut"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /user/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">userUuidPut</span>)</div>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /serviceauthprofile/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceauthprofileUuidPut</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -666,7 +614,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; User object creation </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; ServiceAuthProfile object creation </div>
     </div>  <!-- field-items -->
 
 
@@ -680,7 +628,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#User">User</a>
+      <a href="#ServiceAuthProfile">ServiceAuthProfile</a>
       
     </div>
 
@@ -689,36 +637,23 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "access" : [ {
-    "all_tenants" : true,
-    "tenant_ref" : "aeiou",
-    "role_ref" : "aeiou"
-  } ],
-  "uuid" : "aeiou",
-  "local" : true,
-  "_last_modified" : "aeiou",
-  "uid" : 123,
-  "password" : "aeiou",
-  "user_profile_ref" : "aeiou",
-  "anonymous_user" : true,
-  "date_joined" : "aeiou",
-  "email" : "aeiou",
-  "is_active" : true,
-  "is_superuser" : true,
-  "passwordless" : true,
-  "service_user" : true,
-  "is_staff" : true,
-  "logged_in" : true,
-  "token_expiration_date" : "aeiou",
-  "is_internal_user" : true,
-  "url" : "aeiou",
-  "default_tenant_ref" : "aeiou",
-  "full_name" : "aeiou",
+  "tenant_ref" : "aeiou",
   "name" : "aeiou",
-  "ui_property" : "aeiou",
-  "recovery_token" : "aeiou",
-  "unix_crypt_password" : "aeiou",
-  "username" : "aeiou"
+  "configpb_attributes" : {
+    "version" : 123
+  },
+  "description" : "aeiou",
+  "type" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "service_oauth_profile" : {
+    "org_id" : "aeiou",
+    "service_name" : "aeiou",
+    "service_id" : "aeiou",
+    "client_id" : "aeiou",
+    "authorization_endpoint" : "aeiou"
+  }
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -731,7 +666,7 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#User">User</a>
+        <a href="#ServiceAuthProfile">ServiceAuthProfile</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
@@ -744,56 +679,48 @@ font-style: italic;
 
   <h2>Table of Contents</h2>
   <ol>
-    <li><a href="#User"><code>User</code></a></li>
-    <li><a href="#UserApiResponse"><code>UserApiResponse</code></a></li>
-    <li><a href="#UserRole"><code>UserRole</code></a></li>
+    <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
+    <li><a href="#ServiceAuthProfile"><code>ServiceAuthProfile</code></a></li>
+    <li><a href="#ServiceAuthProfileApiResponse"><code>ServiceAuthProfileApiResponse</code></a></li>
+    <li><a href="#ServiceOAuth"><code>ServiceOAuth</code></a></li>
   </ol>
 
   <div class="model">
-    <h3 class="field-label"><a name="User">User</a> <a class="up" href="#__Models">Up</a></h3>
+    <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
-<div class="param">access (optional)</div><div class="param-desc"><span class="param-type"><a href="#UserRole">array[UserRole]</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">anonymous_user (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">date_joined (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">default_tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">email (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">full_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">is_active (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">is_internal_user (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">is_staff (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">is_superuser (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">local (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">logged_in (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">password (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">passwordless (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">recovery_token (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">service_user (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">token_expiration_date (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">ui_property (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">uid (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">unix_crypt_password (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
-<div class="param">user_profile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type UserAccountProfile. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">username (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
-    <h3 class="field-label"><a name="UserApiResponse">UserApiResponse</a> <a class="up" href="#__Models">Up</a></h3>
+    <h3 class="field-label"><a name="ServiceAuthProfile">ServiceAuthProfile</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
+<div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Description for the service Auth Profile. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the service Auth Profile. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">service_oauth_profile (optional)</div><div class="param-desc"><span class="param-type"><a href="#ServiceOAuth">ServiceOAuth</a></span> OAuth Profile - Common endpoint information for service authentication. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tenant ref for the service auth profile. It is a reference to an object of type Tenant. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of the service Auth Profile. Enum options - SERVICE_AUTH_OAUTH. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the service Auth Profile. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="ServiceAuthProfileApiResponse">ServiceAuthProfileApiResponse</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">count </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
-<div class="param">results </div><div class="param-desc"><span class="param-type"><a href="#User">array[User]</a></span>  </div>
+<div class="param">results </div><div class="param-desc"><span class="param-type"><a href="#ServiceAuthProfile">array[ServiceAuthProfile]</a></span>  </div>
 <div class="param">next (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
-    <h3 class="field-label"><a name="UserRole">UserRole</a> <a class="up" href="#__Models">Up</a></h3>
+    <h3 class="field-label"><a name="ServiceOAuth">ServiceOAuth</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">all_tenants (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">role_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Role. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+      <div class="param">authorization_endpoint </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> URL of authorization server. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">client_id </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Application specific identifier for service auth. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">org_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Organization Id for service OAuth(required for CSP). Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">service_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Uuid value of the service(required for CSP). Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">service_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the service(required for CSP). Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   </body>
