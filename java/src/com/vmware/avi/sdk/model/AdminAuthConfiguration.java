@@ -27,6 +27,9 @@ public class AdminAuthConfiguration  {
     @JsonProperty("remote_auth_configurations")
     private List<RemoteAuthConfiguration> remoteAuthConfigurations = null;
 
+    @JsonProperty("service_auth_configurations")
+    private List<ServiceAuthConfiguration> serviceAuthConfigurations = null;
+
 
 
     /**
@@ -56,7 +59,6 @@ public class AdminAuthConfiguration  {
      * This is the getter method this will return the attribute value.
      * Remote auth configurations.
      * Field introduced in 22.1.1.
-     * Minimum of 1 items required.
      * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
      * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -70,7 +72,6 @@ public class AdminAuthConfiguration  {
      * This is the setter method. this will set the remoteAuthConfigurations
      * Remote auth configurations.
      * Field introduced in 22.1.1.
-     * Minimum of 1 items required.
      * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
      * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -84,7 +85,6 @@ public class AdminAuthConfiguration  {
      * This is the setter method this will set the remoteAuthConfigurations
      * Remote auth configurations.
      * Field introduced in 22.1.1.
-     * Minimum of 1 items required.
      * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
      * edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -95,6 +95,45 @@ public class AdminAuthConfiguration  {
         this.remoteAuthConfigurations = new ArrayList<RemoteAuthConfiguration>();
       }
       this.remoteAuthConfigurations.add(remoteAuthConfigurationsItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Service auth configurations.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return serviceAuthConfigurations
+     */
+    public List<ServiceAuthConfiguration> getServiceAuthConfigurations() {
+        return serviceAuthConfigurations;
+    }
+
+    /**
+     * This is the setter method. this will set the serviceAuthConfigurations
+     * Service auth configurations.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return serviceAuthConfigurations
+     */
+    public void setServiceAuthConfigurations(List<ServiceAuthConfiguration>  serviceAuthConfigurations) {
+        this.serviceAuthConfigurations = serviceAuthConfigurations;
+    }
+
+    /**
+     * This is the setter method this will set the serviceAuthConfigurations
+     * Service auth configurations.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return serviceAuthConfigurations
+     */
+    public AdminAuthConfiguration addServiceAuthConfigurationsItem(ServiceAuthConfiguration serviceAuthConfigurationsItem) {
+      if (this.serviceAuthConfigurations == null) {
+        this.serviceAuthConfigurations = new ArrayList<ServiceAuthConfiguration>();
+      }
+      this.serviceAuthConfigurations.add(serviceAuthConfigurationsItem);
       return this;
     }
 
@@ -109,7 +148,8 @@ public class AdminAuthConfiguration  {
       }
       AdminAuthConfiguration objAdminAuthConfiguration = (AdminAuthConfiguration) o;
       return   Objects.equals(this.allowLocalUserLogin, objAdminAuthConfiguration.allowLocalUserLogin)&&
-  Objects.equals(this.remoteAuthConfigurations, objAdminAuthConfiguration.remoteAuthConfigurations);
+  Objects.equals(this.remoteAuthConfigurations, objAdminAuthConfiguration.remoteAuthConfigurations)&&
+  Objects.equals(this.serviceAuthConfigurations, objAdminAuthConfiguration.serviceAuthConfigurations);
     }
 
     @Override
@@ -118,6 +158,7 @@ public class AdminAuthConfiguration  {
       sb.append("class AdminAuthConfiguration {\n");
                   sb.append("    allowLocalUserLogin: ").append(toIndentedString(allowLocalUserLogin)).append("\n");
                         sb.append("    remoteAuthConfigurations: ").append(toIndentedString(remoteAuthConfigurations)).append("\n");
+                        sb.append("    serviceAuthConfigurations: ").append(toIndentedString(serviceAuthConfigurations)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
