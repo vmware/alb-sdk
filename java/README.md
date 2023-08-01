@@ -91,7 +91,7 @@ apiInstance.delete(VirtualService.class, "virtualservice_uuid");
 ```
 - **Uploading file :**
 ```java
-apiInstance.fileUpload("fileservice?uri=controller://hsmpackages&hsmtype=safenet", "/mnt/files/hsmpackages/safenet.tar");
+apiInstance.fileUpload("fileservice/hsmpackages?hsmtype=safenet", "/mnt/files/hsmpackages/safenet.tar","controller://hsmpackages");
 ```
 
 - **Downloading file :**
