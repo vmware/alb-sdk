@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "22.1.4",
+        "version": "22.1.5",
         "title": "Avi Gslb Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -833,7 +833,7 @@
                     "type": "string"
                 },
                 "tenant_scoped": {
-                    "description": "This field indicates tenant visibility for GS pool member selection across the Gslb federated objects. Field introduced in 18.2.12,20.1.4. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "This field indicates tenant visibility for GS pool member selection across the Gslb federated objects.Tenant scope can be set only during the Gslb create and cannot be changed once it is set. Field introduced in 18.2.12,20.1.4. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
