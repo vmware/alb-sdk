@@ -21,10 +21,37 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbThirdPartySiteRuntime  {
+    @JsonProperty("health_monitor_info")
+    private String healthMonitorInfo = null;
+
     @JsonProperty("site_info")
     private GslbSiteRuntimeInfo siteInfo = null;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * This field will provide information on origin(site name) of the health monitoring information.
+     * Field introduced in 22.1.5.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return healthMonitorInfo
+     */
+    public String getHealthMonitorInfo() {
+        return healthMonitorInfo;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This field will provide information on origin(site name) of the health monitoring information.
+     * Field introduced in 22.1.5.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param healthMonitorInfo set the healthMonitorInfo.
+     */
+    public void setHealthMonitorInfo(String  healthMonitorInfo) {
+        this.healthMonitorInfo = healthMonitorInfo;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -58,14 +85,16 @@ public class GslbThirdPartySiteRuntime  {
           return false;
       }
       GslbThirdPartySiteRuntime objGslbThirdPartySiteRuntime = (GslbThirdPartySiteRuntime) o;
-      return   Objects.equals(this.siteInfo, objGslbThirdPartySiteRuntime.siteInfo);
+      return   Objects.equals(this.siteInfo, objGslbThirdPartySiteRuntime.siteInfo)&&
+  Objects.equals(this.healthMonitorInfo, objGslbThirdPartySiteRuntime.healthMonitorInfo);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class GslbThirdPartySiteRuntime {\n");
-                  sb.append("    siteInfo: ").append(toIndentedString(siteInfo)).append("\n");
+                  sb.append("    healthMonitorInfo: ").append(toIndentedString(healthMonitorInfo)).append("\n");
+                        sb.append("    siteInfo: ").append(toIndentedString(siteInfo)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
