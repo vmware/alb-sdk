@@ -687,6 +687,18 @@
                     "description": "SSL Certificates in the admin tenant can be used in non-admin tenants. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
+                "skopeo_retry_interval": {
+                    "description": "Time interval (in seconds) between retires for skopeo commands. Field introduced in 30.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 5,
+                    "format": "int32"
+                },
+                "skopeo_retry_limit": {
+                    "description": "Number of times to try skopeo commands for remote image registries. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 3,
+                    "format": "int32"
+                },
                 "ssl_certificate_expiry_warning_days": {
                     "description": "Number of days for SSL Certificate expiry warning. Unit is DAYS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
