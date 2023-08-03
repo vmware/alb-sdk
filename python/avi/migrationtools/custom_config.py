@@ -236,8 +236,23 @@ def login_api():
     global api_results
     api_query = ['NetworkSecurityPolicy', 'HTTPPolicySet', 'VSDataScriptSet']
     for q in api_query:
-        resp = api.get(q.lower()+"?include_name")
-        api_results[q] = resp.json()["results"]
+        api_results[q]=[]
+        # make api call with page_size and page # and then we loop through pages
+        page=1
+        page_end = False
+        while page_end is not True:
+            resp = api.get(f'{q.lower()}?include_name&page_size=200&page={page}')
+            if resp is None or resp.status_code != 200:
+                print(f"Failed to retrieve {q}!")
+                exit(1)
+            else:
+                resp = resp.json()
+                api_results[q].extend(resp["results"])
+            
+            if "next" in resp.keys():
+                page +=1
+            else:
+                page_end = True
     # return api_results[q]
 
 
