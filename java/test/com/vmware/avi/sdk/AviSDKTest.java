@@ -146,7 +146,8 @@ public class AviSDKTest {
 	public void testPostFileUpload() throws Exception {
 		try {
 			AviApi serv = new AviApi(AviSDKTest.getCredsPassword());
-			serv.fileUpload("fileservice?uri=controller://hsmpackages&hsmtype=safenet", "/mnt/files/hsmpackages/safenet.tar");
+			serv.fileUpload("fileservice/hsmpackages?hsmtype=safenet", "/mnt/files/hsmpackages/safenet.tar",
+					"controller://hsmpackages");
 		} catch (AviApiException e) {
 			e.printStackTrace(System.err);
 		}
