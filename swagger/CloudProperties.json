@@ -1706,6 +1706,12 @@
                     "default": 3,
                     "format": "int32"
                 },
+                "soft_min_mem_per_se_limit": {
+                    "description": "Soft Limit on the minimum SE Memory that an SE needs to have on SE Register. Field introduced in 30.1.1. Unit is MB. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 1900,
+                    "format": "int32"
+                },
                 "ssl_certificate_expiry_warning_days": {
                     "description": "Number of days for SSL Certificate expiry warning. Unit is DAYS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
