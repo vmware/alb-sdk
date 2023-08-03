@@ -243,6 +243,9 @@ type ControllerProperties struct {
 	// Number of times to try skopeo commands for remote image registries. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	SkopeoRetryLimit *int32 `json:"skopeo_retry_limit,omitempty"`
 
+	// Soft Limit on the minimum SE Memory that an SE needs to have on SE Register. Field introduced in 30.1.1. Unit is MB. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	SoftMinMemPerSeLimit *int32 `json:"soft_min_mem_per_se_limit,omitempty"`
+
 	// Number of days for SSL Certificate expiry warning. Unit is DAYS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslCertificateExpiryWarningDays []int64 `json:"ssl_certificate_expiry_warning_days,omitempty,omitempty"`
 
