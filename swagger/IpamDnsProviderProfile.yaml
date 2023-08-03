@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '22.1.4'
+    version: '22.1.5'
     title: Avi IpamDnsProviderProfile Object API
     contact:
         name: Avi Networks Inc.

@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '22.1.4'
+    version: '22.1.5'
     title: Avi GslbInventory Object API
     contact:
         name: Avi Networks Inc.
@@ -687,6 +687,11 @@ definitions:
             gs_uuid:
                 description: "The GSLB service to which this member belongs. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            health_monitor_info:
+                description: "This field will provide information on origin(site name) of the health monitoring information. Field introduced in 22.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
             ip:
                 description: "GSLB pool member's configured VIP. . Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
@@ -984,6 +989,9 @@ definitions:
                 format: int32
             glb_uuid:
                 description: "This field tracks the glb-uuid. Field introduced in 17.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            health_monitor_info:
+                description: "This field will provide information on origin(site name) of the health monitoring information. Field introduced in 22.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             replication_stats:
                 description: "Carries replication stats for a given site. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1347,6 +1355,9 @@ definitions:
     GslbThirdPartySiteRuntime:
         type: object
         properties:
+            health_monitor_info:
+                description: "This field will provide information on origin(site name) of the health monitoring information. Field introduced in 22.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
             site_info:
                 description: " Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/GslbSiteRuntimeInfo'
