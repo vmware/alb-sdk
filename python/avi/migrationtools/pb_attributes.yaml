@@ -12404,8 +12404,28 @@ l4_internal:
         py_type: list
         ref_type: SimpleconnEntry
         required: 'False'
+  SctpConnRuntime:
+    name: SctpConnRuntime
+    properties:
+      connection:
+        array: true
+        doc_type: SimpleconnEntry
+        name: connection
+        py_type: list
+        ref_type: SimpleconnEntry
+        required: 'False'
   TcpConnRuntimeDetail:
     name: TcpConnRuntimeDetail
+    properties:
+      conn_detail:
+        array: true
+        doc_type: DetailedConnEntry
+        name: conn_detail
+        py_type: list
+        ref_type: DetailedConnEntry
+        required: 'False'
+  SctpConnRuntimeDetail:
+    name: SctpConnRuntimeDetail
     properties:
       conn_detail:
         array: true
