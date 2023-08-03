@@ -261,7 +261,12 @@ font-style: italic;
       "auth_profile_ref" : "aeiou",
       "index" : 123
     } ],
-    "allow_local_user_login" : true
+    "allow_local_user_login" : true,
+    "service_auth_configurations" : [ {
+      "service_auth_mapping_profile_ref" : "aeiou",
+      "index" : 123,
+      "service_auth_profile_ref" : "aeiou"
+    } ]
   },
   "ssh_hmacs" : [ "aeiou" ],
   "email_configuration" : {
@@ -454,7 +459,12 @@ font-style: italic;
       "auth_profile_ref" : "aeiou",
       "index" : 123
     } ],
-    "allow_local_user_login" : true
+    "allow_local_user_login" : true,
+    "service_auth_configurations" : [ {
+      "service_auth_mapping_profile_ref" : "aeiou",
+      "index" : 123,
+      "service_auth_profile_ref" : "aeiou"
+    } ]
   },
   "ssh_hmacs" : [ "aeiou" ],
   "email_configuration" : {
@@ -647,7 +657,12 @@ font-style: italic;
       "auth_profile_ref" : "aeiou",
       "index" : 123
     } ],
-    "allow_local_user_login" : true
+    "allow_local_user_login" : true,
+    "service_auth_configurations" : [ {
+      "service_auth_mapping_profile_ref" : "aeiou",
+      "index" : 123,
+      "service_auth_profile_ref" : "aeiou"
+    } ]
   },
   "ssh_hmacs" : [ "aeiou" ],
   "email_configuration" : {
@@ -875,6 +890,7 @@ font-style: italic;
     <li><a href="#ProxyConfiguration"><code>ProxyConfiguration</code></a></li>
     <li><a href="#RemoteAuthConfiguration"><code>RemoteAuthConfiguration</code></a></li>
     <li><a href="#SecureChannelConfiguration"><code>SecureChannelConfiguration</code></a></li>
+    <li><a href="#ServiceAuthConfiguration"><code>ServiceAuthConfiguration</code></a></li>
     <li><a href="#SnmpConfiguration"><code>SnmpConfiguration</code></a></li>
     <li><a href="#SnmpV3Configuration"><code>SnmpV3Configuration</code></a></li>
     <li><a href="#SnmpV3UserParams"><code>SnmpV3UserParams</code></a></li>
@@ -888,7 +904,8 @@ font-style: italic;
     <h3 class="field-label"><a name="AdminAuthConfiguration">AdminAuthConfiguration</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">allow_local_user_login (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Allow any user created locally to login with local credentials. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">remote_auth_configurations (optional)</div><div class="param-desc"><span class="param-type"><a href="#RemoteAuthConfiguration">array[RemoteAuthConfiguration]</a></span> Remote Auth configurations. Field introduced in 22.1.1. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">remote_auth_configurations (optional)</div><div class="param-desc"><span class="param-type"><a href="#RemoteAuthConfiguration">array[RemoteAuthConfiguration]</a></span> Remote Auth configurations. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">service_auth_configurations (optional)</div><div class="param-desc"><span class="param-type"><a href="#ServiceAuthConfiguration">array[ServiceAuthConfiguration]</a></span> Service Auth configurations. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1089,6 +1106,14 @@ font-style: italic;
     <h3 class="field-label"><a name="SecureChannelConfiguration">SecureChannelConfiguration</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">sslkeyandcertificate_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Certificate for secure channel. Leave list empty to use system default certs. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 18.1.4, 18.2.1. Maximum of 1 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="ServiceAuthConfiguration">ServiceAuthConfiguration</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">index </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Index used for maintaining order of ServiceAuthConfiguration. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">service_auth_mapping_profile_ref </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the AuthMappingProfile(set of auth mapping rules) to be assigned to a user on successful match. It is a reference to an object of type AuthMappingProfile. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">service_auth_profile_ref </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the service auth profile. It is a reference to an object of type ServiceAuthProfile. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
