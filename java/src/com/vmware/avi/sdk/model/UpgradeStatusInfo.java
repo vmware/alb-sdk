@@ -90,6 +90,9 @@ public class UpgradeStatusInfo extends AviRestResource  {
     @JsonProperty("prev_patch_image_path")
     private String prevPatchImagePath = null;
 
+    @JsonProperty("prev_remote_image_ref")
+    private String prevRemoteImageRef = null;
+
     @JsonProperty("previous_image_ref")
     private String previousImageRef = null;
 
@@ -110,6 +113,9 @@ public class UpgradeStatusInfo extends AviRestResource  {
 
     @JsonProperty("reason")
     private String reason = null;
+
+    @JsonProperty("remote_image_ref")
+    private String remoteImageRef = null;
 
     @JsonProperty("se_patch_image_path")
     private String sePatchImagePath = null;
@@ -769,6 +775,30 @@ public class UpgradeStatusInfo extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Remote image reference of previous base image.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return prevRemoteImageRef
+     */
+    public String getPrevRemoteImageRef() {
+        return prevRemoteImageRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Remote image reference of previous base image.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param prevRemoteImageRef set the prevRemoteImageRef.
+     */
+    public void setPrevRemoteImageRef(String  prevRemoteImageRef) {
+        this.prevRemoteImageRef = prevRemoteImageRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Image uuid for identifying previous base image.example  base-image was 18.2.5 and an upgrade was done to 18.2.6, then this field will indicate
      * the 18.2.5 value.
      * It is a reference to an object of type image.
@@ -968,6 +998,30 @@ public class UpgradeStatusInfo extends AviRestResource  {
      */
     public void setReason(String  reason) {
         this.reason = reason;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Remote image reference of current base image.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return remoteImageRef
+     */
+    public String getRemoteImageRef() {
+        return remoteImageRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Remote image reference of current base image.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param remoteImageRef set the remoteImageRef.
+     */
+    public void setRemoteImageRef(String  remoteImageRef) {
+        this.remoteImageRef = remoteImageRef;
     }
 
     /**
@@ -1489,6 +1543,8 @@ public class UpgradeStatusInfo extends AviRestResource  {
   Objects.equals(this.afterRebootTaskName, objUpgradeStatusInfo.afterRebootTaskName)&&
   Objects.equals(this.afterRebootRollbackFnc, objUpgradeStatusInfo.afterRebootRollbackFnc)&&
   Objects.equals(this.upgradeReadiness, objUpgradeStatusInfo.upgradeReadiness)&&
+  Objects.equals(this.remoteImageRef, objUpgradeStatusInfo.remoteImageRef)&&
+  Objects.equals(this.prevRemoteImageRef, objUpgradeStatusInfo.prevRemoteImageRef)&&
   Objects.equals(this.tenantRef, objUpgradeStatusInfo.tenantRef)&&
   Objects.equals(this.objCloudRef, objUpgradeStatusInfo.objCloudRef)&&
   Objects.equals(this.seUpgradeEvents, objUpgradeStatusInfo.seUpgradeEvents)&&
@@ -1525,6 +1581,7 @@ public class UpgradeStatusInfo extends AviRestResource  {
                         sb.append("    patchVersion: ").append(toIndentedString(patchVersion)).append("\n");
                         sb.append("    prevImagePath: ").append(toIndentedString(prevImagePath)).append("\n");
                         sb.append("    prevPatchImagePath: ").append(toIndentedString(prevPatchImagePath)).append("\n");
+                        sb.append("    prevRemoteImageRef: ").append(toIndentedString(prevRemoteImageRef)).append("\n");
                         sb.append("    previousImageRef: ").append(toIndentedString(previousImageRef)).append("\n");
                         sb.append("    previousPatchImageRef: ").append(toIndentedString(previousPatchImageRef)).append("\n");
                         sb.append("    previousPatchList: ").append(toIndentedString(previousPatchList)).append("\n");
@@ -1532,6 +1589,7 @@ public class UpgradeStatusInfo extends AviRestResource  {
                         sb.append("    previousVersion: ").append(toIndentedString(previousVersion)).append("\n");
                         sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
                         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+                        sb.append("    remoteImageRef: ").append(toIndentedString(remoteImageRef)).append("\n");
                         sb.append("    sePatchImagePath: ").append(toIndentedString(sePatchImagePath)).append("\n");
                         sb.append("    sePatchImageRef: ").append(toIndentedString(sePatchImageRef)).append("\n");
                         sb.append("    seUpgradeEvents: ").append(toIndentedString(seUpgradeEvents)).append("\n");
