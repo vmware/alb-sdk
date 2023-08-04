@@ -475,7 +475,8 @@ class ApiSession(Session):
         """
         resets and re-authenticates the current session.
         """
-        sessionDict[self.key]['connected'] = False
+        if self.key in sessionDict:
+            sessionDict[self.key]['connected'] = False
         logger.info('resetting session for %s', self.key)
         self.user_hdrs = {}
         for k, v in self.headers.items():
@@ -689,10 +690,7 @@ class ApiSession(Session):
             else:
                 logger.info('received error %d %s so resetting connection',
                             resp.status_code, resp.text)
-            if 'Authorization' in api_hdrs:
-                logger.info("Retying using the basic authentication.")
-            else:
-                ApiSession.reset_session(self)
+            ApiSession.reset_session(self)
             self.num_api_retries += 1
             if self.num_api_retries > self.max_session_retries:
                 # Added this such that any code which re-tries can succeed
@@ -774,10 +772,7 @@ class ApiSession(Session):
                         timeout=timeout,
                         params=params, api_version=api_version, **kwargs)
         if resp.status_code in (401, 419):
-            if 'Authorization' in self.headers:
-                logger.info("Retying using the basic authentication.")
-            else:
-                ApiSession.reset_session(self)
+            ApiSession.reset_session(self)
             resp = self.get_object_by_name(
                 path, name, tenant, tenant_uuid, timeout=timeout,
                 params=params, **kwargs)
