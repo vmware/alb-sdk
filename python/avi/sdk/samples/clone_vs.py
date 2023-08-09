@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 
 urllib3.disable_warnings()
 
-AVICLONE_VERSION = [2, 0, 3]
+AVICLONE_VERSION = [2, 0, 4]
 
 # Try to obtain the terminal width to allow spprint() to wrap output neatly.
 # If unable to determine, assume terminal width is 70 characters
@@ -575,9 +575,11 @@ class AviClone:
                 # Remove tier1_lr in case source was NSX-T Cloud with
                 # overlay
                 obj['vrf_ref'] = self.ov_obj['url']
+                obj.pop('tier1_lr', None)
             elif self.other_vrf:
                 # Case where target is NSX-T Cloud with overlay
                 obj['tier1_lr'] = self.other_vrf
+                obj.pop('vrf_ref', None)
 
         try:
             valid_ref_objects = self.VALID_POOL_REF_OBJECTS
@@ -2168,7 +2170,7 @@ class AviClone:
 
             if self.oc_obj:
                 v_obj['cloud_ref'] = self.oc_obj['url']
-                if vsvip_obj:
+                if vsvip_obj and not(manual_vsvip):
                     vsvip_obj['cloud_ref'] = self.oc_obj['url']
                 v_obj.pop('cloud_type', None)
 
@@ -2185,17 +2187,19 @@ class AviClone:
                 # If moving to a different cloud, Virtual Service will be moved
                 # to the default global VRF in the target cloud unless a
                 # specific target VRF is specified.
-                if vsvip_obj:
+                if vsvip_obj and not(manual_vsvip):
                     vsvip_obj.pop('vrf_context_ref', None)
                     vsvip_obj.pop('tier1_lr', None)
 
             # Update VRF or T1_LR reference if a target VRF is specified
-            if vsvip_obj:
+            if vsvip_obj and not(manual_vsvip):
                 if self.ov_obj:
                     vsvip_obj['vrf_context_ref'] = self.ov_obj['url']
+                    vsvip_obj.pop('tier1_lr', None)
                 elif self.other_vrf:
                     # Case where target is NSX-T Cloud with overlay
                     vsvip_obj['tier1_lr'] = self.other_vrf
+                    vsvip_obj.pop('vrf_context_ref', None)
 
             if new_segroup:
                 # Locate SE group by name in the appropriate cloud
@@ -2342,8 +2346,12 @@ class AviClone:
                     v_obj['vsvip_ref'] = new_vsvip_obj['url']
 
                     # Set VS VRF Context to match VsVip VRF Context
-
                     v_obj['vrf_context_ref'] = new_vsvip_obj['vrf_context_ref']
+
+                if 'tier1_lr' in vsvip_obj:
+                    # If target is NSX-T Cloud with overlay, allow
+                    # Controller to manage VS's VRF from VsVip tier_1 config
+                    v_obj.pop('vrf_context_ref', None)
 
             # Try to create the new VS (possibly in a different tenant to the
             # source)

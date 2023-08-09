@@ -306,3 +306,7 @@ Changelog:
 2.0.3:
 
 * Added some additional reference handling for less-common DataScript and WAF Profile configurations
+
+2.0.4:
+
+* Fixed VRF handling for cloning to/from NSX-T Cloud in certain scenarios
