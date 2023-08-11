@@ -64,7 +64,7 @@ public class LogAgentEventDetail  {
     /**
      * This is the getter method this will return the attribute value.
      * Event for tcp connection restablishment rate exceeds configured threshold.
-     * Field introduced in 23.1.1.
+     * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return rapidConnection
@@ -76,7 +76,7 @@ public class LogAgentEventDetail  {
     /**
      * This is the setter method to the attribute.
      * Event for tcp connection restablishment rate exceeds configured threshold.
-     * Field introduced in 23.1.1.
+     * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param rapidConnection set the rapidConnection.
