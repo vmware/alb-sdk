@@ -32,9 +32,9 @@ type NsxtConfiguration struct {
 	// Site where transport zone belongs to. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SiteID *string `json:"site_id,omitempty"`
 
-	// VMC mode. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// VMC mode. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	VmcMode *bool `json:"vmc_mode,omitempty"`
 
-	// VPC Mode. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// VPC Mode. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	VpcMode *bool `json:"vpc_mode,omitempty"`
 }
