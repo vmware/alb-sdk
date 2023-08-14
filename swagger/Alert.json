@@ -500,7 +500,7 @@
                 }
             }
         },
-        "/upgradestatusinfo": {
+        "/albservicesfileupload": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -592,7 +592,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfoApiResponse"
+                            "$ref": "#/definitions/ALBServicesFileUploadApiResponse"
                         }
                     },
                     "401": {
@@ -639,10 +639,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "UpgradeStatusInfo object creation",
+                        "description": "ALBServicesFileUpload object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     }
                 ],
@@ -655,7 +655,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     "401": {
@@ -664,7 +664,7 @@
                 }
             }
         },
-        "/upgradestatusinfo/{uuid}": {
+        "/albservicesfileupload/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -751,7 +751,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     "401": {
@@ -805,10 +805,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "UpgradeStatusInfo object creation",
+                        "description": "ALBServicesFileUpload object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     {
@@ -828,7 +828,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     "401": {
@@ -882,10 +882,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "UpgradeStatusInfo object creation",
+                        "description": "ALBServicesFileUpload object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     {
@@ -905,7 +905,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusInfo"
+                            "$ref": "#/definitions/ALBServicesFileUpload"
                         }
                     },
                     "401": {
@@ -1464,7 +1464,7 @@
                 }
             }
         },
-        "/albservicesfileupload": {
+        "/upgradestatusinfo": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -1556,7 +1556,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUploadApiResponse"
+                            "$ref": "#/definitions/UpgradeStatusInfoApiResponse"
                         }
                     },
                     "401": {
@@ -1603,10 +1603,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "ALBServicesFileUpload object creation",
+                        "description": "UpgradeStatusInfo object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     }
                 ],
@@ -1619,7 +1619,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     "401": {
@@ -1628,7 +1628,7 @@
                 }
             }
         },
-        "/albservicesfileupload/{uuid}": {
+        "/upgradestatusinfo/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -1715,7 +1715,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     "401": {
@@ -1769,10 +1769,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "ALBServicesFileUpload object creation",
+                        "description": "UpgradeStatusInfo object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     {
@@ -1792,7 +1792,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     "401": {
@@ -1846,10 +1846,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "ALBServicesFileUpload object creation",
+                        "description": "UpgradeStatusInfo object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     {
@@ -1869,7 +1869,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ALBServicesFileUpload"
+                            "$ref": "#/definitions/UpgradeStatusInfo"
                         }
                     },
                     "401": {
@@ -5957,7 +5957,7 @@
                     "$ref": "#/definitions/DnsResponse"
                 },
                 "dns_tcp_conn_close_from_se": {
-                    "description": "Service engine closed the TCP connection after the first DNS response. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Service engine closed the TCP connection after the first DNS response. Field introduced in 21.1.7, 22.1.4, 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "ds_log": {
@@ -14234,12 +14234,12 @@
             ],
             "properties": {
                 "acs_index": {
-                    "description": "Index to be used in the AssertionConsumerServiceIndex attribute of the Authentication request, if the authn_req_acs_type is set to Use AssertionConsumerServiceIndex. Allowed values are 0-64. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Index to be used in the AssertionConsumerServiceIndex attribute of the Authentication request, if the authn_req_acs_type is set to Use AssertionConsumerServiceIndex. Allowed values are 0-64. Field introduced in 21.1.6, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "authn_req_acs_type": {
-                    "description": "Option to set the ACS attributes in the AuthnRequest . Enum options - SAML_AUTHN_REQ_ACS_TYPE_URL, SAML_AUTHN_REQ_ACS_TYPE_INDEX, SAML_AUTHN_REQ_ACS_TYPE_NONE. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Option to set the ACS attributes in the AuthnRequest . Enum options - SAML_AUTHN_REQ_ACS_TYPE_URL, SAML_AUTHN_REQ_ACS_TYPE_INDEX, SAML_AUTHN_REQ_ACS_TYPE_NONE. Field introduced in 21.1.6, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SAML_AUTHN_REQ_ACS_TYPE_NONE"
                 },
