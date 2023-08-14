@@ -1136,6 +1136,7 @@ font-style: italic;
             "name" : "aeiou",
             "scaleout_in_progress" : true,
             "detach_ip_in_progress" : true,
+            "snat_ip6_address" : "",
             "active_on_se" : true,
             "primary" : true
           } ],
@@ -3104,22 +3105,6 @@ font-style: italic;
               } ],
               "azure_availability_set" : "aeiou",
               "enable_autogw" : true,
-              "icap_request_profile_refs" : [ "aeiou" ],
-              "saml_sp_config" : {
-                "sp_metadata" : "aeiou",
-                "acs_index" : 123,
-                "authn_req_acs_type" : "aeiou",
-                "signing_ssl_key_and_certificate_ref" : "aeiou",
-                "cookie_timeout" : 123,
-                "use_idp_session_timeout" : true,
-                "entity_id" : "aeiou",
-                "key" : [ "" ],
-                "cookie_name" : "aeiou",
-                "single_signon_url" : "aeiou"
-              },
-              "vrf_context_ref" : "aeiou",
-              "flow_dist" : "aeiou",
-              "dns_info" : [ "" ],
               "content_rewrite" : {
                 "rewritable_content_ref" : "aeiou",
                 "rsp_rewrite_rules" : [ {
@@ -3140,20 +3125,13 @@ font-style: italic;
               },
               "type" : "aeiou",
               "traffic_enabled" : true,
-              "uuid" : "aeiou",
               "bgp_peer_labels" : [ "aeiou" ],
-              "vh_domain_name" : [ "aeiou" ],
               "pool_ref" : "aeiou",
               "delay_fairness" : true,
-              "snat_ip" : [ "" ],
               "cloud_ref" : "aeiou",
-              "microservice_ref" : "aeiou",
-              "error_page_profile_ref" : "aeiou",
               "configpb_attributes" : {
                 "version" : 123
               },
-              "server_network_profile_ref" : "aeiou",
-              "use_vip_as_snat" : true,
               "analytics_policy" : {
                 "significant_log_throttle" : 123,
                 "all_headers" : true,
@@ -3199,10 +3177,6 @@ font-style: italic;
                 }
               },
               "enable_rhi_snat" : true,
-              "sideband_profile" : {
-                "ip" : [ "" ],
-                "sideband_max_request_body_size" : 123
-              },
               "vip" : [ {
                 "availability_zone" : "aeiou",
                 "ip6_address" : "",
@@ -3240,15 +3214,118 @@ font-style: italic;
                 "discovered_networks" : [ "" ]
               } ],
               "min_pools_up" : 123,
+              "sp_pool_refs" : [ "aeiou" ],
+              "advertise_down_vs" : true,
+              "bulk_sync_kvcache" : true,
+              "waf_policy_ref" : "aeiou",
+              "security_policy_ref" : "aeiou",
+              "ssl_sess_cache_avg_size" : 123,
+              "cloud_type" : "aeiou",
+              "scaleout_ecmp" : true,
+              "cloud_config_cksum" : "aeiou",
+              "snat_ip6_addresses" : [ "" ],
+              "remove_listening_port_on_vs_down" : true,
+              "vsvip_ref" : "aeiou",
+              "network_security_policy_ref" : "aeiou",
+              "oauth_vs_config" : {
+                "oauth_settings" : [ {
+                  "app_settings" : {
+                    "oidc_config" : {
+                      "oidc_enable" : true,
+                      "profile" : true,
+                      "userinfo" : true
+                    },
+                    "client_secret" : "aeiou",
+                    "scopes" : [ "aeiou" ],
+                    "client_id" : "aeiou"
+                  },
+                  "resource_server" : {
+                    "access_type" : "aeiou",
+                    "jwt_params" : {
+                      "audience" : "aeiou"
+                    },
+                    "opaque_token_params" : {
+                      "server_secret" : "aeiou",
+                      "server_id" : "aeiou"
+                    },
+                    "introspection_data_timeout" : 123
+                  },
+                  "auth_profile_ref" : "aeiou"
+                } ],
+                "cookie_timeout" : 123,
+                "redirect_uri" : "aeiou",
+                "logout_uri" : "aeiou",
+                "post_logout_redirect_uri" : "aeiou",
+                "key" : [ {
+                  "hmac_key" : "aeiou",
+                  "aes_key" : "aeiou",
+                  "name" : "aeiou"
+                } ],
+                "cookie_name" : "aeiou"
+              },
+              "topology_policies" : [ "" ],
+              "jwt_config" : {
+                "jwt_name" : "aeiou",
+                "audience" : "aeiou",
+                "jwt_location" : "aeiou"
+              },
+              "pool_group_ref" : "aeiou",
+              "ssl_profile_ref" : "aeiou",
+              "enabled" : true,
+              "limit_doser" : true,
+              "max_cps_per_client" : 123,
+              "sso_policy_ref" : "aeiou",
+              "http_policies" : [ {
+                "http_policy_set_ref" : "aeiou",
+                "index" : 123
+              } ],
+              "enable_session" : true,
+              "bgp_local_preference" : 123,
+              "service_metadata" : "aeiou",
+              "bot_policy_ref" : "aeiou",
+              "services" : [ "" ],
+              "url" : "aeiou",
+              "active_standby_se_tag" : "aeiou",
+              "nsx_securitygroup" : [ "aeiou" ],
+              "markers" : [ {
+                "values" : [ "aeiou" ],
+                "key" : "aeiou"
+              } ],
+              "vsvip_cloud_config_cksum" : "aeiou",
+              "east_west_placement" : true,
+              "icap_request_profile_refs" : [ "aeiou" ],
+              "saml_sp_config" : {
+                "sp_metadata" : "aeiou",
+                "acs_index" : 123,
+                "authn_req_acs_type" : "aeiou",
+                "signing_ssl_key_and_certificate_ref" : "aeiou",
+                "cookie_timeout" : 123,
+                "use_idp_session_timeout" : true,
+                "entity_id" : "aeiou",
+                "key" : [ "" ],
+                "cookie_name" : "aeiou",
+                "single_signon_url" : "aeiou"
+              },
+              "vrf_context_ref" : "aeiou",
+              "flow_dist" : "aeiou",
+              "dns_info" : [ "" ],
+              "uuid" : "aeiou",
+              "vh_domain_name" : [ "aeiou" ],
+              "snat_ip" : [ "" ],
+              "microservice_ref" : "aeiou",
+              "error_page_profile_ref" : "aeiou",
+              "server_network_profile_ref" : "aeiou",
+              "use_vip_as_snat" : true,
+              "sideband_profile" : {
+                "ip" : [ "" ],
+                "sideband_max_request_body_size" : 123
+              },
               "performance_limits" : {
                 "max_concurrent_connections" : 123,
                 "max_throughput" : 123
               },
-              "sp_pool_refs" : [ "aeiou" ],
               "static_dns_records" : [ "" ],
-              "advertise_down_vs" : true,
               "fqdn" : "aeiou",
-              "bulk_sync_kvcache" : true,
               "vh_parent_vs_ref" : "aeiou",
               "weight" : 123,
               "ldap_vs_config" : {
@@ -3261,7 +3338,6 @@ font-style: italic;
                 "se_auth_ldap_request_timeout" : 123,
                 "se_auth_ldap_bind_timeout" : 123
               },
-              "waf_policy_ref" : "aeiou",
               "created_by" : "aeiou",
               "service_pool_select" : [ {
                 "service_protocol" : "aeiou",
@@ -3272,18 +3348,11 @@ font-style: italic;
               } ],
               "vh_type" : "aeiou",
               "allow_invalid_client_cert" : true,
-              "security_policy_ref" : "aeiou",
               "application_profile_ref" : "aeiou",
-              "ssl_sess_cache_avg_size" : 123,
-              "cloud_type" : "aeiou",
-              "scaleout_ecmp" : true,
               "flow_label_type" : "aeiou",
               "name" : "aeiou",
-              "cloud_config_cksum" : "aeiou",
               "traffic_clone_profile_ref" : "aeiou",
-              "remove_listening_port_on_vs_down" : true,
               "bgp_num_as_path_prepend" : 123,
-              "vsvip_ref" : "aeiou",
               "host_name_xlate" : "aeiou",
               "connections_rate_limit" : {
                 "rate_limiter" : {
@@ -3323,82 +3392,21 @@ font-style: italic;
                 "http_cookie" : "aeiou",
                 "http_header" : "aeiou"
               },
-              "network_security_policy_ref" : "aeiou",
-              "oauth_vs_config" : {
-                "oauth_settings" : [ {
-                  "app_settings" : {
-                    "oidc_config" : {
-                      "oidc_enable" : true,
-                      "profile" : true,
-                      "userinfo" : true
-                    },
-                    "client_secret" : "aeiou",
-                    "scopes" : [ "aeiou" ],
-                    "client_id" : "aeiou"
-                  },
-                  "resource_server" : {
-                    "access_type" : "aeiou",
-                    "jwt_params" : {
-                      "audience" : "aeiou"
-                    },
-                    "opaque_token_params" : {
-                      "server_secret" : "aeiou",
-                      "server_id" : "aeiou"
-                    },
-                    "introspection_data_timeout" : 123
-                  },
-                  "auth_profile_ref" : "aeiou"
-                } ],
-                "cookie_timeout" : 123,
-                "redirect_uri" : "aeiou",
-                "logout_uri" : "aeiou",
-                "post_logout_redirect_uri" : "aeiou",
-                "key" : [ {
-                  "hmac_key" : "aeiou",
-                  "aes_key" : "aeiou",
-                  "name" : "aeiou"
-                } ],
-                "cookie_name" : "aeiou"
-              },
-              "topology_policies" : [ "" ],
               "description" : "aeiou",
               "vs_datascripts" : [ {
                 "index" : 123,
                 "vs_datascript_set_ref" : "aeiou"
               } ],
-              "jwt_config" : {
-                "jwt_name" : "aeiou",
-                "audience" : "aeiou",
-                "jwt_location" : "aeiou"
-              },
-              "pool_group_ref" : "aeiou",
               "ssl_key_and_certificate_refs" : [ "aeiou" ],
-              "ssl_profile_ref" : "aeiou",
-              "enabled" : true,
               "_last_modified" : "aeiou",
-              "limit_doser" : true,
               "se_group_ref" : "aeiou",
               "network_profile_ref" : "aeiou",
               "close_client_conn_on_config_update" : true,
-              "max_cps_per_client" : 123,
-              "sso_policy_ref" : "aeiou",
-              "http_policies" : [ {
-                "http_policy_set_ref" : "aeiou",
-                "index" : 123
-              } ],
-              "enable_session" : true,
               "analytics_profile_ref" : "aeiou",
-              "bgp_local_preference" : 123,
-              "service_metadata" : "aeiou",
               "use_bridge_ip_as_vip" : true,
               "requests_rate_limit" : "",
-              "bot_policy_ref" : "aeiou",
               "enable_rhi" : true,
-              "services" : [ "" ],
-              "url" : "aeiou",
               "test_se_datastore_level_1_ref" : "aeiou",
-              "active_standby_se_tag" : "aeiou",
-              "nsx_securitygroup" : [ "aeiou" ],
               "ssl_profile_selectors" : [ {
                 "ssl_profile_ref" : "aeiou",
                 "client_ip_list" : ""
@@ -3480,13 +3488,7 @@ font-style: italic;
               } ],
               "tenant_ref" : "aeiou",
               "csrf_policy_ref" : "aeiou",
-              "ign_pool_net_reach" : true,
-              "markers" : [ {
-                "values" : [ "aeiou" ],
-                "key" : "aeiou"
-              } ],
-              "vsvip_cloud_config_cksum" : "aeiou",
-              "east_west_placement" : true
+              "ign_pool_net_reach" : true
             },
             "one_plus_one_ha" : true,
             "lif" : [ "aeiou" ],
@@ -3564,6 +3566,7 @@ font-style: italic;
                 } ],
                 "attach_ip_in_progress" : true,
                 "detach_ip_in_progress" : true,
+                "snat_ip6_address" : "",
                 "active_on_se" : true,
                 "se_programming_done" : true,
                 "se_ref" : "aeiou",
@@ -5061,6 +5064,7 @@ font-style: italic;
           "name" : "aeiou",
           "scaleout_in_progress" : true,
           "detach_ip_in_progress" : true,
+          "snat_ip6_address" : "",
           "active_on_se" : true,
           "primary" : true
         } ],
@@ -7029,22 +7033,6 @@ font-style: italic;
             } ],
             "azure_availability_set" : "aeiou",
             "enable_autogw" : true,
-            "icap_request_profile_refs" : [ "aeiou" ],
-            "saml_sp_config" : {
-              "sp_metadata" : "aeiou",
-              "acs_index" : 123,
-              "authn_req_acs_type" : "aeiou",
-              "signing_ssl_key_and_certificate_ref" : "aeiou",
-              "cookie_timeout" : 123,
-              "use_idp_session_timeout" : true,
-              "entity_id" : "aeiou",
-              "key" : [ "" ],
-              "cookie_name" : "aeiou",
-              "single_signon_url" : "aeiou"
-            },
-            "vrf_context_ref" : "aeiou",
-            "flow_dist" : "aeiou",
-            "dns_info" : [ "" ],
             "content_rewrite" : {
               "rewritable_content_ref" : "aeiou",
               "rsp_rewrite_rules" : [ {
@@ -7065,20 +7053,13 @@ font-style: italic;
             },
             "type" : "aeiou",
             "traffic_enabled" : true,
-            "uuid" : "aeiou",
             "bgp_peer_labels" : [ "aeiou" ],
-            "vh_domain_name" : [ "aeiou" ],
             "pool_ref" : "aeiou",
             "delay_fairness" : true,
-            "snat_ip" : [ "" ],
             "cloud_ref" : "aeiou",
-            "microservice_ref" : "aeiou",
-            "error_page_profile_ref" : "aeiou",
             "configpb_attributes" : {
               "version" : 123
             },
-            "server_network_profile_ref" : "aeiou",
-            "use_vip_as_snat" : true,
             "analytics_policy" : {
               "significant_log_throttle" : 123,
               "all_headers" : true,
@@ -7124,10 +7105,6 @@ font-style: italic;
               }
             },
             "enable_rhi_snat" : true,
-            "sideband_profile" : {
-              "ip" : [ "" ],
-              "sideband_max_request_body_size" : 123
-            },
             "vip" : [ {
               "availability_zone" : "aeiou",
               "ip6_address" : "",
@@ -7165,15 +7142,118 @@ font-style: italic;
               "discovered_networks" : [ "" ]
             } ],
             "min_pools_up" : 123,
+            "sp_pool_refs" : [ "aeiou" ],
+            "advertise_down_vs" : true,
+            "bulk_sync_kvcache" : true,
+            "waf_policy_ref" : "aeiou",
+            "security_policy_ref" : "aeiou",
+            "ssl_sess_cache_avg_size" : 123,
+            "cloud_type" : "aeiou",
+            "scaleout_ecmp" : true,
+            "cloud_config_cksum" : "aeiou",
+            "snat_ip6_addresses" : [ "" ],
+            "remove_listening_port_on_vs_down" : true,
+            "vsvip_ref" : "aeiou",
+            "network_security_policy_ref" : "aeiou",
+            "oauth_vs_config" : {
+              "oauth_settings" : [ {
+                "app_settings" : {
+                  "oidc_config" : {
+                    "oidc_enable" : true,
+                    "profile" : true,
+                    "userinfo" : true
+                  },
+                  "client_secret" : "aeiou",
+                  "scopes" : [ "aeiou" ],
+                  "client_id" : "aeiou"
+                },
+                "resource_server" : {
+                  "access_type" : "aeiou",
+                  "jwt_params" : {
+                    "audience" : "aeiou"
+                  },
+                  "opaque_token_params" : {
+                    "server_secret" : "aeiou",
+                    "server_id" : "aeiou"
+                  },
+                  "introspection_data_timeout" : 123
+                },
+                "auth_profile_ref" : "aeiou"
+              } ],
+              "cookie_timeout" : 123,
+              "redirect_uri" : "aeiou",
+              "logout_uri" : "aeiou",
+              "post_logout_redirect_uri" : "aeiou",
+              "key" : [ {
+                "hmac_key" : "aeiou",
+                "aes_key" : "aeiou",
+                "name" : "aeiou"
+              } ],
+              "cookie_name" : "aeiou"
+            },
+            "topology_policies" : [ "" ],
+            "jwt_config" : {
+              "jwt_name" : "aeiou",
+              "audience" : "aeiou",
+              "jwt_location" : "aeiou"
+            },
+            "pool_group_ref" : "aeiou",
+            "ssl_profile_ref" : "aeiou",
+            "enabled" : true,
+            "limit_doser" : true,
+            "max_cps_per_client" : 123,
+            "sso_policy_ref" : "aeiou",
+            "http_policies" : [ {
+              "http_policy_set_ref" : "aeiou",
+              "index" : 123
+            } ],
+            "enable_session" : true,
+            "bgp_local_preference" : 123,
+            "service_metadata" : "aeiou",
+            "bot_policy_ref" : "aeiou",
+            "services" : [ "" ],
+            "url" : "aeiou",
+            "active_standby_se_tag" : "aeiou",
+            "nsx_securitygroup" : [ "aeiou" ],
+            "markers" : [ {
+              "values" : [ "aeiou" ],
+              "key" : "aeiou"
+            } ],
+            "vsvip_cloud_config_cksum" : "aeiou",
+            "east_west_placement" : true,
+            "icap_request_profile_refs" : [ "aeiou" ],
+            "saml_sp_config" : {
+              "sp_metadata" : "aeiou",
+              "acs_index" : 123,
+              "authn_req_acs_type" : "aeiou",
+              "signing_ssl_key_and_certificate_ref" : "aeiou",
+              "cookie_timeout" : 123,
+              "use_idp_session_timeout" : true,
+              "entity_id" : "aeiou",
+              "key" : [ "" ],
+              "cookie_name" : "aeiou",
+              "single_signon_url" : "aeiou"
+            },
+            "vrf_context_ref" : "aeiou",
+            "flow_dist" : "aeiou",
+            "dns_info" : [ "" ],
+            "uuid" : "aeiou",
+            "vh_domain_name" : [ "aeiou" ],
+            "snat_ip" : [ "" ],
+            "microservice_ref" : "aeiou",
+            "error_page_profile_ref" : "aeiou",
+            "server_network_profile_ref" : "aeiou",
+            "use_vip_as_snat" : true,
+            "sideband_profile" : {
+              "ip" : [ "" ],
+              "sideband_max_request_body_size" : 123
+            },
             "performance_limits" : {
               "max_concurrent_connections" : 123,
               "max_throughput" : 123
             },
-            "sp_pool_refs" : [ "aeiou" ],
             "static_dns_records" : [ "" ],
-            "advertise_down_vs" : true,
             "fqdn" : "aeiou",
-            "bulk_sync_kvcache" : true,
             "vh_parent_vs_ref" : "aeiou",
             "weight" : 123,
             "ldap_vs_config" : {
@@ -7186,7 +7266,6 @@ font-style: italic;
               "se_auth_ldap_request_timeout" : 123,
               "se_auth_ldap_bind_timeout" : 123
             },
-            "waf_policy_ref" : "aeiou",
             "created_by" : "aeiou",
             "service_pool_select" : [ {
               "service_protocol" : "aeiou",
@@ -7197,18 +7276,11 @@ font-style: italic;
             } ],
             "vh_type" : "aeiou",
             "allow_invalid_client_cert" : true,
-            "security_policy_ref" : "aeiou",
             "application_profile_ref" : "aeiou",
-            "ssl_sess_cache_avg_size" : 123,
-            "cloud_type" : "aeiou",
-            "scaleout_ecmp" : true,
             "flow_label_type" : "aeiou",
             "name" : "aeiou",
-            "cloud_config_cksum" : "aeiou",
             "traffic_clone_profile_ref" : "aeiou",
-            "remove_listening_port_on_vs_down" : true,
             "bgp_num_as_path_prepend" : 123,
-            "vsvip_ref" : "aeiou",
             "host_name_xlate" : "aeiou",
             "connections_rate_limit" : {
               "rate_limiter" : {
@@ -7248,82 +7320,21 @@ font-style: italic;
               "http_cookie" : "aeiou",
               "http_header" : "aeiou"
             },
-            "network_security_policy_ref" : "aeiou",
-            "oauth_vs_config" : {
-              "oauth_settings" : [ {
-                "app_settings" : {
-                  "oidc_config" : {
-                    "oidc_enable" : true,
-                    "profile" : true,
-                    "userinfo" : true
-                  },
-                  "client_secret" : "aeiou",
-                  "scopes" : [ "aeiou" ],
-                  "client_id" : "aeiou"
-                },
-                "resource_server" : {
-                  "access_type" : "aeiou",
-                  "jwt_params" : {
-                    "audience" : "aeiou"
-                  },
-                  "opaque_token_params" : {
-                    "server_secret" : "aeiou",
-                    "server_id" : "aeiou"
-                  },
-                  "introspection_data_timeout" : 123
-                },
-                "auth_profile_ref" : "aeiou"
-              } ],
-              "cookie_timeout" : 123,
-              "redirect_uri" : "aeiou",
-              "logout_uri" : "aeiou",
-              "post_logout_redirect_uri" : "aeiou",
-              "key" : [ {
-                "hmac_key" : "aeiou",
-                "aes_key" : "aeiou",
-                "name" : "aeiou"
-              } ],
-              "cookie_name" : "aeiou"
-            },
-            "topology_policies" : [ "" ],
             "description" : "aeiou",
             "vs_datascripts" : [ {
               "index" : 123,
               "vs_datascript_set_ref" : "aeiou"
             } ],
-            "jwt_config" : {
-              "jwt_name" : "aeiou",
-              "audience" : "aeiou",
-              "jwt_location" : "aeiou"
-            },
-            "pool_group_ref" : "aeiou",
             "ssl_key_and_certificate_refs" : [ "aeiou" ],
-            "ssl_profile_ref" : "aeiou",
-            "enabled" : true,
             "_last_modified" : "aeiou",
-            "limit_doser" : true,
             "se_group_ref" : "aeiou",
             "network_profile_ref" : "aeiou",
             "close_client_conn_on_config_update" : true,
-            "max_cps_per_client" : 123,
-            "sso_policy_ref" : "aeiou",
-            "http_policies" : [ {
-              "http_policy_set_ref" : "aeiou",
-              "index" : 123
-            } ],
-            "enable_session" : true,
             "analytics_profile_ref" : "aeiou",
-            "bgp_local_preference" : 123,
-            "service_metadata" : "aeiou",
             "use_bridge_ip_as_vip" : true,
             "requests_rate_limit" : "",
-            "bot_policy_ref" : "aeiou",
             "enable_rhi" : true,
-            "services" : [ "" ],
-            "url" : "aeiou",
             "test_se_datastore_level_1_ref" : "aeiou",
-            "active_standby_se_tag" : "aeiou",
-            "nsx_securitygroup" : [ "aeiou" ],
             "ssl_profile_selectors" : [ {
               "ssl_profile_ref" : "aeiou",
               "client_ip_list" : ""
@@ -7405,13 +7416,7 @@ font-style: italic;
             } ],
             "tenant_ref" : "aeiou",
             "csrf_policy_ref" : "aeiou",
-            "ign_pool_net_reach" : true,
-            "markers" : [ {
-              "values" : [ "aeiou" ],
-              "key" : "aeiou"
-            } ],
-            "vsvip_cloud_config_cksum" : "aeiou",
-            "east_west_placement" : true
+            "ign_pool_net_reach" : true
           },
           "one_plus_one_ha" : true,
           "lif" : [ "aeiou" ],
@@ -7489,6 +7494,7 @@ font-style: italic;
               } ],
               "attach_ip_in_progress" : true,
               "detach_ip_in_progress" : true,
+              "snat_ip6_address" : "",
               "active_on_se" : true,
               "se_programming_done" : true,
               "se_ref" : "aeiou",
@@ -9057,6 +9063,7 @@ font-style: italic;
           "name" : "aeiou",
           "scaleout_in_progress" : true,
           "detach_ip_in_progress" : true,
+          "snat_ip6_address" : "",
           "active_on_se" : true,
           "primary" : true
         } ],
@@ -11025,22 +11032,6 @@ font-style: italic;
             } ],
             "azure_availability_set" : "aeiou",
             "enable_autogw" : true,
-            "icap_request_profile_refs" : [ "aeiou" ],
-            "saml_sp_config" : {
-              "sp_metadata" : "aeiou",
-              "acs_index" : 123,
-              "authn_req_acs_type" : "aeiou",
-              "signing_ssl_key_and_certificate_ref" : "aeiou",
-              "cookie_timeout" : 123,
-              "use_idp_session_timeout" : true,
-              "entity_id" : "aeiou",
-              "key" : [ "" ],
-              "cookie_name" : "aeiou",
-              "single_signon_url" : "aeiou"
-            },
-            "vrf_context_ref" : "aeiou",
-            "flow_dist" : "aeiou",
-            "dns_info" : [ "" ],
             "content_rewrite" : {
               "rewritable_content_ref" : "aeiou",
               "rsp_rewrite_rules" : [ {
@@ -11061,20 +11052,13 @@ font-style: italic;
             },
             "type" : "aeiou",
             "traffic_enabled" : true,
-            "uuid" : "aeiou",
             "bgp_peer_labels" : [ "aeiou" ],
-            "vh_domain_name" : [ "aeiou" ],
             "pool_ref" : "aeiou",
             "delay_fairness" : true,
-            "snat_ip" : [ "" ],
             "cloud_ref" : "aeiou",
-            "microservice_ref" : "aeiou",
-            "error_page_profile_ref" : "aeiou",
             "configpb_attributes" : {
               "version" : 123
             },
-            "server_network_profile_ref" : "aeiou",
-            "use_vip_as_snat" : true,
             "analytics_policy" : {
               "significant_log_throttle" : 123,
               "all_headers" : true,
@@ -11120,10 +11104,6 @@ font-style: italic;
               }
             },
             "enable_rhi_snat" : true,
-            "sideband_profile" : {
-              "ip" : [ "" ],
-              "sideband_max_request_body_size" : 123
-            },
             "vip" : [ {
               "availability_zone" : "aeiou",
               "ip6_address" : "",
@@ -11161,15 +11141,118 @@ font-style: italic;
               "discovered_networks" : [ "" ]
             } ],
             "min_pools_up" : 123,
+            "sp_pool_refs" : [ "aeiou" ],
+            "advertise_down_vs" : true,
+            "bulk_sync_kvcache" : true,
+            "waf_policy_ref" : "aeiou",
+            "security_policy_ref" : "aeiou",
+            "ssl_sess_cache_avg_size" : 123,
+            "cloud_type" : "aeiou",
+            "scaleout_ecmp" : true,
+            "cloud_config_cksum" : "aeiou",
+            "snat_ip6_addresses" : [ "" ],
+            "remove_listening_port_on_vs_down" : true,
+            "vsvip_ref" : "aeiou",
+            "network_security_policy_ref" : "aeiou",
+            "oauth_vs_config" : {
+              "oauth_settings" : [ {
+                "app_settings" : {
+                  "oidc_config" : {
+                    "oidc_enable" : true,
+                    "profile" : true,
+                    "userinfo" : true
+                  },
+                  "client_secret" : "aeiou",
+                  "scopes" : [ "aeiou" ],
+                  "client_id" : "aeiou"
+                },
+                "resource_server" : {
+                  "access_type" : "aeiou",
+                  "jwt_params" : {
+                    "audience" : "aeiou"
+                  },
+                  "opaque_token_params" : {
+                    "server_secret" : "aeiou",
+                    "server_id" : "aeiou"
+                  },
+                  "introspection_data_timeout" : 123
+                },
+                "auth_profile_ref" : "aeiou"
+              } ],
+              "cookie_timeout" : 123,
+              "redirect_uri" : "aeiou",
+              "logout_uri" : "aeiou",
+              "post_logout_redirect_uri" : "aeiou",
+              "key" : [ {
+                "hmac_key" : "aeiou",
+                "aes_key" : "aeiou",
+                "name" : "aeiou"
+              } ],
+              "cookie_name" : "aeiou"
+            },
+            "topology_policies" : [ "" ],
+            "jwt_config" : {
+              "jwt_name" : "aeiou",
+              "audience" : "aeiou",
+              "jwt_location" : "aeiou"
+            },
+            "pool_group_ref" : "aeiou",
+            "ssl_profile_ref" : "aeiou",
+            "enabled" : true,
+            "limit_doser" : true,
+            "max_cps_per_client" : 123,
+            "sso_policy_ref" : "aeiou",
+            "http_policies" : [ {
+              "http_policy_set_ref" : "aeiou",
+              "index" : 123
+            } ],
+            "enable_session" : true,
+            "bgp_local_preference" : 123,
+            "service_metadata" : "aeiou",
+            "bot_policy_ref" : "aeiou",
+            "services" : [ "" ],
+            "url" : "aeiou",
+            "active_standby_se_tag" : "aeiou",
+            "nsx_securitygroup" : [ "aeiou" ],
+            "markers" : [ {
+              "values" : [ "aeiou" ],
+              "key" : "aeiou"
+            } ],
+            "vsvip_cloud_config_cksum" : "aeiou",
+            "east_west_placement" : true,
+            "icap_request_profile_refs" : [ "aeiou" ],
+            "saml_sp_config" : {
+              "sp_metadata" : "aeiou",
+              "acs_index" : 123,
+              "authn_req_acs_type" : "aeiou",
+              "signing_ssl_key_and_certificate_ref" : "aeiou",
+              "cookie_timeout" : 123,
+              "use_idp_session_timeout" : true,
+              "entity_id" : "aeiou",
+              "key" : [ "" ],
+              "cookie_name" : "aeiou",
+              "single_signon_url" : "aeiou"
+            },
+            "vrf_context_ref" : "aeiou",
+            "flow_dist" : "aeiou",
+            "dns_info" : [ "" ],
+            "uuid" : "aeiou",
+            "vh_domain_name" : [ "aeiou" ],
+            "snat_ip" : [ "" ],
+            "microservice_ref" : "aeiou",
+            "error_page_profile_ref" : "aeiou",
+            "server_network_profile_ref" : "aeiou",
+            "use_vip_as_snat" : true,
+            "sideband_profile" : {
+              "ip" : [ "" ],
+              "sideband_max_request_body_size" : 123
+            },
             "performance_limits" : {
               "max_concurrent_connections" : 123,
               "max_throughput" : 123
             },
-            "sp_pool_refs" : [ "aeiou" ],
             "static_dns_records" : [ "" ],
-            "advertise_down_vs" : true,
             "fqdn" : "aeiou",
-            "bulk_sync_kvcache" : true,
             "vh_parent_vs_ref" : "aeiou",
             "weight" : 123,
             "ldap_vs_config" : {
@@ -11182,7 +11265,6 @@ font-style: italic;
               "se_auth_ldap_request_timeout" : 123,
               "se_auth_ldap_bind_timeout" : 123
             },
-            "waf_policy_ref" : "aeiou",
             "created_by" : "aeiou",
             "service_pool_select" : [ {
               "service_protocol" : "aeiou",
@@ -11193,18 +11275,11 @@ font-style: italic;
             } ],
             "vh_type" : "aeiou",
             "allow_invalid_client_cert" : true,
-            "security_policy_ref" : "aeiou",
             "application_profile_ref" : "aeiou",
-            "ssl_sess_cache_avg_size" : 123,
-            "cloud_type" : "aeiou",
-            "scaleout_ecmp" : true,
             "flow_label_type" : "aeiou",
             "name" : "aeiou",
-            "cloud_config_cksum" : "aeiou",
             "traffic_clone_profile_ref" : "aeiou",
-            "remove_listening_port_on_vs_down" : true,
             "bgp_num_as_path_prepend" : 123,
-            "vsvip_ref" : "aeiou",
             "host_name_xlate" : "aeiou",
             "connections_rate_limit" : {
               "rate_limiter" : {
@@ -11244,82 +11319,21 @@ font-style: italic;
               "http_cookie" : "aeiou",
               "http_header" : "aeiou"
             },
-            "network_security_policy_ref" : "aeiou",
-            "oauth_vs_config" : {
-              "oauth_settings" : [ {
-                "app_settings" : {
-                  "oidc_config" : {
-                    "oidc_enable" : true,
-                    "profile" : true,
-                    "userinfo" : true
-                  },
-                  "client_secret" : "aeiou",
-                  "scopes" : [ "aeiou" ],
-                  "client_id" : "aeiou"
-                },
-                "resource_server" : {
-                  "access_type" : "aeiou",
-                  "jwt_params" : {
-                    "audience" : "aeiou"
-                  },
-                  "opaque_token_params" : {
-                    "server_secret" : "aeiou",
-                    "server_id" : "aeiou"
-                  },
-                  "introspection_data_timeout" : 123
-                },
-                "auth_profile_ref" : "aeiou"
-              } ],
-              "cookie_timeout" : 123,
-              "redirect_uri" : "aeiou",
-              "logout_uri" : "aeiou",
-              "post_logout_redirect_uri" : "aeiou",
-              "key" : [ {
-                "hmac_key" : "aeiou",
-                "aes_key" : "aeiou",
-                "name" : "aeiou"
-              } ],
-              "cookie_name" : "aeiou"
-            },
-            "topology_policies" : [ "" ],
             "description" : "aeiou",
             "vs_datascripts" : [ {
               "index" : 123,
               "vs_datascript_set_ref" : "aeiou"
             } ],
-            "jwt_config" : {
-              "jwt_name" : "aeiou",
-              "audience" : "aeiou",
-              "jwt_location" : "aeiou"
-            },
-            "pool_group_ref" : "aeiou",
             "ssl_key_and_certificate_refs" : [ "aeiou" ],
-            "ssl_profile_ref" : "aeiou",
-            "enabled" : true,
             "_last_modified" : "aeiou",
-            "limit_doser" : true,
             "se_group_ref" : "aeiou",
             "network_profile_ref" : "aeiou",
             "close_client_conn_on_config_update" : true,
-            "max_cps_per_client" : 123,
-            "sso_policy_ref" : "aeiou",
-            "http_policies" : [ {
-              "http_policy_set_ref" : "aeiou",
-              "index" : 123
-            } ],
-            "enable_session" : true,
             "analytics_profile_ref" : "aeiou",
-            "bgp_local_preference" : 123,
-            "service_metadata" : "aeiou",
             "use_bridge_ip_as_vip" : true,
             "requests_rate_limit" : "",
-            "bot_policy_ref" : "aeiou",
             "enable_rhi" : true,
-            "services" : [ "" ],
-            "url" : "aeiou",
             "test_se_datastore_level_1_ref" : "aeiou",
-            "active_standby_se_tag" : "aeiou",
-            "nsx_securitygroup" : [ "aeiou" ],
             "ssl_profile_selectors" : [ {
               "ssl_profile_ref" : "aeiou",
               "client_ip_list" : ""
@@ -11401,13 +11415,7 @@ font-style: italic;
             } ],
             "tenant_ref" : "aeiou",
             "csrf_policy_ref" : "aeiou",
-            "ign_pool_net_reach" : true,
-            "markers" : [ {
-              "values" : [ "aeiou" ],
-              "key" : "aeiou"
-            } ],
-            "vsvip_cloud_config_cksum" : "aeiou",
-            "east_west_placement" : true
+            "ign_pool_net_reach" : true
           },
           "one_plus_one_ha" : true,
           "lif" : [ "aeiou" ],
@@ -11485,6 +11493,7 @@ font-style: italic;
               } ],
               "attach_ip_in_progress" : true,
               "detach_ip_in_progress" : true,
+              "snat_ip6_address" : "",
               "active_on_se" : true,
               "se_programming_done" : true,
               "se_ref" : "aeiou",
@@ -12993,6 +13002,7 @@ font-style: italic;
           "name" : "aeiou",
           "scaleout_in_progress" : true,
           "detach_ip_in_progress" : true,
+          "snat_ip6_address" : "",
           "active_on_se" : true,
           "primary" : true
         } ],
@@ -14961,22 +14971,6 @@ font-style: italic;
             } ],
             "azure_availability_set" : "aeiou",
             "enable_autogw" : true,
-            "icap_request_profile_refs" : [ "aeiou" ],
-            "saml_sp_config" : {
-              "sp_metadata" : "aeiou",
-              "acs_index" : 123,
-              "authn_req_acs_type" : "aeiou",
-              "signing_ssl_key_and_certificate_ref" : "aeiou",
-              "cookie_timeout" : 123,
-              "use_idp_session_timeout" : true,
-              "entity_id" : "aeiou",
-              "key" : [ "" ],
-              "cookie_name" : "aeiou",
-              "single_signon_url" : "aeiou"
-            },
-            "vrf_context_ref" : "aeiou",
-            "flow_dist" : "aeiou",
-            "dns_info" : [ "" ],
             "content_rewrite" : {
               "rewritable_content_ref" : "aeiou",
               "rsp_rewrite_rules" : [ {
@@ -14997,20 +14991,13 @@ font-style: italic;
             },
             "type" : "aeiou",
             "traffic_enabled" : true,
-            "uuid" : "aeiou",
             "bgp_peer_labels" : [ "aeiou" ],
-            "vh_domain_name" : [ "aeiou" ],
             "pool_ref" : "aeiou",
             "delay_fairness" : true,
-            "snat_ip" : [ "" ],
             "cloud_ref" : "aeiou",
-            "microservice_ref" : "aeiou",
-            "error_page_profile_ref" : "aeiou",
             "configpb_attributes" : {
               "version" : 123
             },
-            "server_network_profile_ref" : "aeiou",
-            "use_vip_as_snat" : true,
             "analytics_policy" : {
               "significant_log_throttle" : 123,
               "all_headers" : true,
@@ -15056,10 +15043,6 @@ font-style: italic;
               }
             },
             "enable_rhi_snat" : true,
-            "sideband_profile" : {
-              "ip" : [ "" ],
-              "sideband_max_request_body_size" : 123
-            },
             "vip" : [ {
               "availability_zone" : "aeiou",
               "ip6_address" : "",
@@ -15097,15 +15080,118 @@ font-style: italic;
               "discovered_networks" : [ "" ]
             } ],
             "min_pools_up" : 123,
+            "sp_pool_refs" : [ "aeiou" ],
+            "advertise_down_vs" : true,
+            "bulk_sync_kvcache" : true,
+            "waf_policy_ref" : "aeiou",
+            "security_policy_ref" : "aeiou",
+            "ssl_sess_cache_avg_size" : 123,
+            "cloud_type" : "aeiou",
+            "scaleout_ecmp" : true,
+            "cloud_config_cksum" : "aeiou",
+            "snat_ip6_addresses" : [ "" ],
+            "remove_listening_port_on_vs_down" : true,
+            "vsvip_ref" : "aeiou",
+            "network_security_policy_ref" : "aeiou",
+            "oauth_vs_config" : {
+              "oauth_settings" : [ {
+                "app_settings" : {
+                  "oidc_config" : {
+                    "oidc_enable" : true,
+                    "profile" : true,
+                    "userinfo" : true
+                  },
+                  "client_secret" : "aeiou",
+                  "scopes" : [ "aeiou" ],
+                  "client_id" : "aeiou"
+                },
+                "resource_server" : {
+                  "access_type" : "aeiou",
+                  "jwt_params" : {
+                    "audience" : "aeiou"
+                  },
+                  "opaque_token_params" : {
+                    "server_secret" : "aeiou",
+                    "server_id" : "aeiou"
+                  },
+                  "introspection_data_timeout" : 123
+                },
+                "auth_profile_ref" : "aeiou"
+              } ],
+              "cookie_timeout" : 123,
+              "redirect_uri" : "aeiou",
+              "logout_uri" : "aeiou",
+              "post_logout_redirect_uri" : "aeiou",
+              "key" : [ {
+                "hmac_key" : "aeiou",
+                "aes_key" : "aeiou",
+                "name" : "aeiou"
+              } ],
+              "cookie_name" : "aeiou"
+            },
+            "topology_policies" : [ "" ],
+            "jwt_config" : {
+              "jwt_name" : "aeiou",
+              "audience" : "aeiou",
+              "jwt_location" : "aeiou"
+            },
+            "pool_group_ref" : "aeiou",
+            "ssl_profile_ref" : "aeiou",
+            "enabled" : true,
+            "limit_doser" : true,
+            "max_cps_per_client" : 123,
+            "sso_policy_ref" : "aeiou",
+            "http_policies" : [ {
+              "http_policy_set_ref" : "aeiou",
+              "index" : 123
+            } ],
+            "enable_session" : true,
+            "bgp_local_preference" : 123,
+            "service_metadata" : "aeiou",
+            "bot_policy_ref" : "aeiou",
+            "services" : [ "" ],
+            "url" : "aeiou",
+            "active_standby_se_tag" : "aeiou",
+            "nsx_securitygroup" : [ "aeiou" ],
+            "markers" : [ {
+              "values" : [ "aeiou" ],
+              "key" : "aeiou"
+            } ],
+            "vsvip_cloud_config_cksum" : "aeiou",
+            "east_west_placement" : true,
+            "icap_request_profile_refs" : [ "aeiou" ],
+            "saml_sp_config" : {
+              "sp_metadata" : "aeiou",
+              "acs_index" : 123,
+              "authn_req_acs_type" : "aeiou",
+              "signing_ssl_key_and_certificate_ref" : "aeiou",
+              "cookie_timeout" : 123,
+              "use_idp_session_timeout" : true,
+              "entity_id" : "aeiou",
+              "key" : [ "" ],
+              "cookie_name" : "aeiou",
+              "single_signon_url" : "aeiou"
+            },
+            "vrf_context_ref" : "aeiou",
+            "flow_dist" : "aeiou",
+            "dns_info" : [ "" ],
+            "uuid" : "aeiou",
+            "vh_domain_name" : [ "aeiou" ],
+            "snat_ip" : [ "" ],
+            "microservice_ref" : "aeiou",
+            "error_page_profile_ref" : "aeiou",
+            "server_network_profile_ref" : "aeiou",
+            "use_vip_as_snat" : true,
+            "sideband_profile" : {
+              "ip" : [ "" ],
+              "sideband_max_request_body_size" : 123
+            },
             "performance_limits" : {
               "max_concurrent_connections" : 123,
               "max_throughput" : 123
             },
-            "sp_pool_refs" : [ "aeiou" ],
             "static_dns_records" : [ "" ],
-            "advertise_down_vs" : true,
             "fqdn" : "aeiou",
-            "bulk_sync_kvcache" : true,
             "vh_parent_vs_ref" : "aeiou",
             "weight" : 123,
             "ldap_vs_config" : {
@@ -15118,7 +15204,6 @@ font-style: italic;
               "se_auth_ldap_request_timeout" : 123,
               "se_auth_ldap_bind_timeout" : 123
             },
-            "waf_policy_ref" : "aeiou",
             "created_by" : "aeiou",
             "service_pool_select" : [ {
               "service_protocol" : "aeiou",
@@ -15129,18 +15214,11 @@ font-style: italic;
             } ],
             "vh_type" : "aeiou",
             "allow_invalid_client_cert" : true,
-            "security_policy_ref" : "aeiou",
             "application_profile_ref" : "aeiou",
-            "ssl_sess_cache_avg_size" : 123,
-            "cloud_type" : "aeiou",
-            "scaleout_ecmp" : true,
             "flow_label_type" : "aeiou",
             "name" : "aeiou",
-            "cloud_config_cksum" : "aeiou",
             "traffic_clone_profile_ref" : "aeiou",
-            "remove_listening_port_on_vs_down" : true,
             "bgp_num_as_path_prepend" : 123,
-            "vsvip_ref" : "aeiou",
             "host_name_xlate" : "aeiou",
             "connections_rate_limit" : {
               "rate_limiter" : {
@@ -15180,82 +15258,21 @@ font-style: italic;
               "http_cookie" : "aeiou",
               "http_header" : "aeiou"
             },
-            "network_security_policy_ref" : "aeiou",
-            "oauth_vs_config" : {
-              "oauth_settings" : [ {
-                "app_settings" : {
-                  "oidc_config" : {
-                    "oidc_enable" : true,
-                    "profile" : true,
-                    "userinfo" : true
-                  },
-                  "client_secret" : "aeiou",
-                  "scopes" : [ "aeiou" ],
-                  "client_id" : "aeiou"
-                },
-                "resource_server" : {
-                  "access_type" : "aeiou",
-                  "jwt_params" : {
-                    "audience" : "aeiou"
-                  },
-                  "opaque_token_params" : {
-                    "server_secret" : "aeiou",
-                    "server_id" : "aeiou"
-                  },
-                  "introspection_data_timeout" : 123
-                },
-                "auth_profile_ref" : "aeiou"
-              } ],
-              "cookie_timeout" : 123,
-              "redirect_uri" : "aeiou",
-              "logout_uri" : "aeiou",
-              "post_logout_redirect_uri" : "aeiou",
-              "key" : [ {
-                "hmac_key" : "aeiou",
-                "aes_key" : "aeiou",
-                "name" : "aeiou"
-              } ],
-              "cookie_name" : "aeiou"
-            },
-            "topology_policies" : [ "" ],
             "description" : "aeiou",
             "vs_datascripts" : [ {
               "index" : 123,
               "vs_datascript_set_ref" : "aeiou"
             } ],
-            "jwt_config" : {
-              "jwt_name" : "aeiou",
-              "audience" : "aeiou",
-              "jwt_location" : "aeiou"
-            },
-            "pool_group_ref" : "aeiou",
             "ssl_key_and_certificate_refs" : [ "aeiou" ],
-            "ssl_profile_ref" : "aeiou",
-            "enabled" : true,
             "_last_modified" : "aeiou",
-            "limit_doser" : true,
             "se_group_ref" : "aeiou",
             "network_profile_ref" : "aeiou",
             "close_client_conn_on_config_update" : true,
-            "max_cps_per_client" : 123,
-            "sso_policy_ref" : "aeiou",
-            "http_policies" : [ {
-              "http_policy_set_ref" : "aeiou",
-              "index" : 123
-            } ],
-            "enable_session" : true,
             "analytics_profile_ref" : "aeiou",
-            "bgp_local_preference" : 123,
-            "service_metadata" : "aeiou",
             "use_bridge_ip_as_vip" : true,
             "requests_rate_limit" : "",
-            "bot_policy_ref" : "aeiou",
             "enable_rhi" : true,
-            "services" : [ "" ],
-            "url" : "aeiou",
             "test_se_datastore_level_1_ref" : "aeiou",
-            "active_standby_se_tag" : "aeiou",
-            "nsx_securitygroup" : [ "aeiou" ],
             "ssl_profile_selectors" : [ {
               "ssl_profile_ref" : "aeiou",
               "client_ip_list" : ""
@@ -15337,13 +15354,7 @@ font-style: italic;
             } ],
             "tenant_ref" : "aeiou",
             "csrf_policy_ref" : "aeiou",
-            "ign_pool_net_reach" : true,
-            "markers" : [ {
-              "values" : [ "aeiou" ],
-              "key" : "aeiou"
-            } ],
-            "vsvip_cloud_config_cksum" : "aeiou",
-            "east_west_placement" : true
+            "ign_pool_net_reach" : true
           },
           "one_plus_one_ha" : true,
           "lif" : [ "aeiou" ],
@@ -15421,6 +15432,7 @@ font-style: italic;
               } ],
               "attach_ip_in_progress" : true,
               "detach_ip_in_progress" : true,
+              "snat_ip6_address" : "",
               "active_on_se" : true,
               "se_programming_done" : true,
               "se_ref" : "aeiou",
@@ -16929,6 +16941,7 @@ font-style: italic;
           "name" : "aeiou",
           "scaleout_in_progress" : true,
           "detach_ip_in_progress" : true,
+          "snat_ip6_address" : "",
           "active_on_se" : true,
           "primary" : true
         } ],
@@ -18897,22 +18910,6 @@ font-style: italic;
             } ],
             "azure_availability_set" : "aeiou",
             "enable_autogw" : true,
-            "icap_request_profile_refs" : [ "aeiou" ],
-            "saml_sp_config" : {
-              "sp_metadata" : "aeiou",
-              "acs_index" : 123,
-              "authn_req_acs_type" : "aeiou",
-              "signing_ssl_key_and_certificate_ref" : "aeiou",
-              "cookie_timeout" : 123,
-              "use_idp_session_timeout" : true,
-              "entity_id" : "aeiou",
-              "key" : [ "" ],
-              "cookie_name" : "aeiou",
-              "single_signon_url" : "aeiou"
-            },
-            "vrf_context_ref" : "aeiou",
-            "flow_dist" : "aeiou",
-            "dns_info" : [ "" ],
             "content_rewrite" : {
               "rewritable_content_ref" : "aeiou",
               "rsp_rewrite_rules" : [ {
@@ -18933,20 +18930,13 @@ font-style: italic;
             },
             "type" : "aeiou",
             "traffic_enabled" : true,
-            "uuid" : "aeiou",
             "bgp_peer_labels" : [ "aeiou" ],
-            "vh_domain_name" : [ "aeiou" ],
             "pool_ref" : "aeiou",
             "delay_fairness" : true,
-            "snat_ip" : [ "" ],
             "cloud_ref" : "aeiou",
-            "microservice_ref" : "aeiou",
-            "error_page_profile_ref" : "aeiou",
             "configpb_attributes" : {
               "version" : 123
             },
-            "server_network_profile_ref" : "aeiou",
-            "use_vip_as_snat" : true,
             "analytics_policy" : {
               "significant_log_throttle" : 123,
               "all_headers" : true,
@@ -18992,10 +18982,6 @@ font-style: italic;
               }
             },
             "enable_rhi_snat" : true,
-            "sideband_profile" : {
-              "ip" : [ "" ],
-              "sideband_max_request_body_size" : 123
-            },
             "vip" : [ {
               "availability_zone" : "aeiou",
               "ip6_address" : "",
@@ -19033,15 +19019,118 @@ font-style: italic;
               "discovered_networks" : [ "" ]
             } ],
             "min_pools_up" : 123,
+            "sp_pool_refs" : [ "aeiou" ],
+            "advertise_down_vs" : true,
+            "bulk_sync_kvcache" : true,
+            "waf_policy_ref" : "aeiou",
+            "security_policy_ref" : "aeiou",
+            "ssl_sess_cache_avg_size" : 123,
+            "cloud_type" : "aeiou",
+            "scaleout_ecmp" : true,
+            "cloud_config_cksum" : "aeiou",
+            "snat_ip6_addresses" : [ "" ],
+            "remove_listening_port_on_vs_down" : true,
+            "vsvip_ref" : "aeiou",
+            "network_security_policy_ref" : "aeiou",
+            "oauth_vs_config" : {
+              "oauth_settings" : [ {
+                "app_settings" : {
+                  "oidc_config" : {
+                    "oidc_enable" : true,
+                    "profile" : true,
+                    "userinfo" : true
+                  },
+                  "client_secret" : "aeiou",
+                  "scopes" : [ "aeiou" ],
+                  "client_id" : "aeiou"
+                },
+                "resource_server" : {
+                  "access_type" : "aeiou",
+                  "jwt_params" : {
+                    "audience" : "aeiou"
+                  },
+                  "opaque_token_params" : {
+                    "server_secret" : "aeiou",
+                    "server_id" : "aeiou"
+                  },
+                  "introspection_data_timeout" : 123
+                },
+                "auth_profile_ref" : "aeiou"
+              } ],
+              "cookie_timeout" : 123,
+              "redirect_uri" : "aeiou",
+              "logout_uri" : "aeiou",
+              "post_logout_redirect_uri" : "aeiou",
+              "key" : [ {
+                "hmac_key" : "aeiou",
+                "aes_key" : "aeiou",
+                "name" : "aeiou"
+              } ],
+              "cookie_name" : "aeiou"
+            },
+            "topology_policies" : [ "" ],
+            "jwt_config" : {
+              "jwt_name" : "aeiou",
+              "audience" : "aeiou",
+              "jwt_location" : "aeiou"
+            },
+            "pool_group_ref" : "aeiou",
+            "ssl_profile_ref" : "aeiou",
+            "enabled" : true,
+            "limit_doser" : true,
+            "max_cps_per_client" : 123,
+            "sso_policy_ref" : "aeiou",
+            "http_policies" : [ {
+              "http_policy_set_ref" : "aeiou",
+              "index" : 123
+            } ],
+            "enable_session" : true,
+            "bgp_local_preference" : 123,
+            "service_metadata" : "aeiou",
+            "bot_policy_ref" : "aeiou",
+            "services" : [ "" ],
+            "url" : "aeiou",
+            "active_standby_se_tag" : "aeiou",
+            "nsx_securitygroup" : [ "aeiou" ],
+            "markers" : [ {
+              "values" : [ "aeiou" ],
+              "key" : "aeiou"
+            } ],
+            "vsvip_cloud_config_cksum" : "aeiou",
+            "east_west_placement" : true,
+            "icap_request_profile_refs" : [ "aeiou" ],
+            "saml_sp_config" : {
+              "sp_metadata" : "aeiou",
+              "acs_index" : 123,
+              "authn_req_acs_type" : "aeiou",
+              "signing_ssl_key_and_certificate_ref" : "aeiou",
+              "cookie_timeout" : 123,
+              "use_idp_session_timeout" : true,
+              "entity_id" : "aeiou",
+              "key" : [ "" ],
+              "cookie_name" : "aeiou",
+              "single_signon_url" : "aeiou"
+            },
+            "vrf_context_ref" : "aeiou",
+            "flow_dist" : "aeiou",
+            "dns_info" : [ "" ],
+            "uuid" : "aeiou",
+            "vh_domain_name" : [ "aeiou" ],
+            "snat_ip" : [ "" ],
+            "microservice_ref" : "aeiou",
+            "error_page_profile_ref" : "aeiou",
+            "server_network_profile_ref" : "aeiou",
+            "use_vip_as_snat" : true,
+            "sideband_profile" : {
+              "ip" : [ "" ],
+              "sideband_max_request_body_size" : 123
+            },
             "performance_limits" : {
               "max_concurrent_connections" : 123,
               "max_throughput" : 123
             },
-            "sp_pool_refs" : [ "aeiou" ],
             "static_dns_records" : [ "" ],
-            "advertise_down_vs" : true,
             "fqdn" : "aeiou",
-            "bulk_sync_kvcache" : true,
             "vh_parent_vs_ref" : "aeiou",
             "weight" : 123,
             "ldap_vs_config" : {
@@ -19054,7 +19143,6 @@ font-style: italic;
               "se_auth_ldap_request_timeout" : 123,
               "se_auth_ldap_bind_timeout" : 123
             },
-            "waf_policy_ref" : "aeiou",
             "created_by" : "aeiou",
             "service_pool_select" : [ {
               "service_protocol" : "aeiou",
@@ -19065,18 +19153,11 @@ font-style: italic;
             } ],
             "vh_type" : "aeiou",
             "allow_invalid_client_cert" : true,
-            "security_policy_ref" : "aeiou",
             "application_profile_ref" : "aeiou",
-            "ssl_sess_cache_avg_size" : 123,
-            "cloud_type" : "aeiou",
-            "scaleout_ecmp" : true,
             "flow_label_type" : "aeiou",
             "name" : "aeiou",
-            "cloud_config_cksum" : "aeiou",
             "traffic_clone_profile_ref" : "aeiou",
-            "remove_listening_port_on_vs_down" : true,
             "bgp_num_as_path_prepend" : 123,
-            "vsvip_ref" : "aeiou",
             "host_name_xlate" : "aeiou",
             "connections_rate_limit" : {
               "rate_limiter" : {
@@ -19116,82 +19197,21 @@ font-style: italic;
               "http_cookie" : "aeiou",
               "http_header" : "aeiou"
             },
-            "network_security_policy_ref" : "aeiou",
-            "oauth_vs_config" : {
-              "oauth_settings" : [ {
-                "app_settings" : {
-                  "oidc_config" : {
-                    "oidc_enable" : true,
-                    "profile" : true,
-                    "userinfo" : true
-                  },
-                  "client_secret" : "aeiou",
-                  "scopes" : [ "aeiou" ],
-                  "client_id" : "aeiou"
-                },
-                "resource_server" : {
-                  "access_type" : "aeiou",
-                  "jwt_params" : {
-                    "audience" : "aeiou"
-                  },
-                  "opaque_token_params" : {
-                    "server_secret" : "aeiou",
-                    "server_id" : "aeiou"
-                  },
-                  "introspection_data_timeout" : 123
-                },
-                "auth_profile_ref" : "aeiou"
-              } ],
-              "cookie_timeout" : 123,
-              "redirect_uri" : "aeiou",
-              "logout_uri" : "aeiou",
-              "post_logout_redirect_uri" : "aeiou",
-              "key" : [ {
-                "hmac_key" : "aeiou",
-                "aes_key" : "aeiou",
-                "name" : "aeiou"
-              } ],
-              "cookie_name" : "aeiou"
-            },
-            "topology_policies" : [ "" ],
             "description" : "aeiou",
             "vs_datascripts" : [ {
               "index" : 123,
               "vs_datascript_set_ref" : "aeiou"
             } ],
-            "jwt_config" : {
-              "jwt_name" : "aeiou",
-              "audience" : "aeiou",
-              "jwt_location" : "aeiou"
-            },
-            "pool_group_ref" : "aeiou",
             "ssl_key_and_certificate_refs" : [ "aeiou" ],
-            "ssl_profile_ref" : "aeiou",
-            "enabled" : true,
             "_last_modified" : "aeiou",
-            "limit_doser" : true,
             "se_group_ref" : "aeiou",
             "network_profile_ref" : "aeiou",
             "close_client_conn_on_config_update" : true,
-            "max_cps_per_client" : 123,
-            "sso_policy_ref" : "aeiou",
-            "http_policies" : [ {
-              "http_policy_set_ref" : "aeiou",
-              "index" : 123
-            } ],
-            "enable_session" : true,
             "analytics_profile_ref" : "aeiou",
-            "bgp_local_preference" : 123,
-            "service_metadata" : "aeiou",
             "use_bridge_ip_as_vip" : true,
             "requests_rate_limit" : "",
-            "bot_policy_ref" : "aeiou",
             "enable_rhi" : true,
-            "services" : [ "" ],
-            "url" : "aeiou",
             "test_se_datastore_level_1_ref" : "aeiou",
-            "active_standby_se_tag" : "aeiou",
-            "nsx_securitygroup" : [ "aeiou" ],
             "ssl_profile_selectors" : [ {
               "ssl_profile_ref" : "aeiou",
               "client_ip_list" : ""
@@ -19273,13 +19293,7 @@ font-style: italic;
             } ],
             "tenant_ref" : "aeiou",
             "csrf_policy_ref" : "aeiou",
-            "ign_pool_net_reach" : true,
-            "markers" : [ {
-              "values" : [ "aeiou" ],
-              "key" : "aeiou"
-            } ],
-            "vsvip_cloud_config_cksum" : "aeiou",
-            "east_west_placement" : true
+            "ign_pool_net_reach" : true
           },
           "one_plus_one_ha" : true,
           "lif" : [ "aeiou" ],
@@ -19357,6 +19371,7 @@ font-style: italic;
               } ],
               "attach_ip_in_progress" : true,
               "detach_ip_in_progress" : true,
+              "snat_ip6_address" : "",
               "active_on_se" : true,
               "se_programming_done" : true,
               "se_ref" : "aeiou",
@@ -22542,32 +22557,6 @@ font-style: italic;
     } ],
     "azure_availability_set" : "aeiou",
     "enable_autogw" : true,
-    "icap_request_profile_refs" : [ "aeiou" ],
-    "saml_sp_config" : {
-      "sp_metadata" : "aeiou",
-      "acs_index" : 123,
-      "authn_req_acs_type" : "aeiou",
-      "signing_ssl_key_and_certificate_ref" : "aeiou",
-      "cookie_timeout" : 123,
-      "use_idp_session_timeout" : true,
-      "entity_id" : "aeiou",
-      "key" : [ "" ],
-      "cookie_name" : "aeiou",
-      "single_signon_url" : "aeiou"
-    },
-    "vrf_context_ref" : "aeiou",
-    "flow_dist" : "aeiou",
-    "dns_info" : [ {
-      "metadata" : "aeiou",
-      "fqdn" : "aeiou",
-      "num_records_in_response" : 123,
-      "cname" : {
-        "cname" : "aeiou"
-      },
-      "type" : "aeiou",
-      "ttl" : 123,
-      "algorithm" : "aeiou"
-    } ],
     "content_rewrite" : {
       "rewritable_content_ref" : "aeiou",
       "rsp_rewrite_rules" : [ {
@@ -22588,20 +22577,13 @@ font-style: italic;
     },
     "type" : "aeiou",
     "traffic_enabled" : true,
-    "uuid" : "aeiou",
     "bgp_peer_labels" : [ "aeiou" ],
-    "vh_domain_name" : [ "aeiou" ],
     "pool_ref" : "aeiou",
     "delay_fairness" : true,
-    "snat_ip" : [ "" ],
     "cloud_ref" : "aeiou",
-    "microservice_ref" : "aeiou",
-    "error_page_profile_ref" : "aeiou",
     "configpb_attributes" : {
       "version" : 123
     },
-    "server_network_profile_ref" : "aeiou",
-    "use_vip_as_snat" : true,
     "analytics_policy" : {
       "significant_log_throttle" : 123,
       "all_headers" : true,
@@ -22656,10 +22638,6 @@ font-style: italic;
       }
     },
     "enable_rhi_snat" : true,
-    "sideband_profile" : {
-      "ip" : [ "" ],
-      "sideband_max_request_body_size" : 123
-    },
     "vip" : [ {
       "availability_zone" : "aeiou",
       "ip6_address" : "",
@@ -22701,11 +22679,135 @@ font-style: italic;
       } ]
     } ],
     "min_pools_up" : 123,
+    "sp_pool_refs" : [ "aeiou" ],
+    "advertise_down_vs" : true,
+    "bulk_sync_kvcache" : true,
+    "waf_policy_ref" : "aeiou",
+    "security_policy_ref" : "aeiou",
+    "ssl_sess_cache_avg_size" : 123,
+    "cloud_type" : "aeiou",
+    "scaleout_ecmp" : true,
+    "cloud_config_cksum" : "aeiou",
+    "snat_ip6_addresses" : [ "" ],
+    "remove_listening_port_on_vs_down" : true,
+    "vsvip_ref" : "aeiou",
+    "network_security_policy_ref" : "aeiou",
+    "oauth_vs_config" : {
+      "oauth_settings" : [ {
+        "app_settings" : {
+          "oidc_config" : {
+            "oidc_enable" : true,
+            "profile" : true,
+            "userinfo" : true
+          },
+          "client_secret" : "aeiou",
+          "scopes" : [ "aeiou" ],
+          "client_id" : "aeiou"
+        },
+        "resource_server" : {
+          "access_type" : "aeiou",
+          "jwt_params" : {
+            "audience" : "aeiou"
+          },
+          "opaque_token_params" : {
+            "server_secret" : "aeiou",
+            "server_id" : "aeiou"
+          },
+          "introspection_data_timeout" : 123
+        },
+        "auth_profile_ref" : "aeiou"
+      } ],
+      "cookie_timeout" : 123,
+      "redirect_uri" : "aeiou",
+      "logout_uri" : "aeiou",
+      "post_logout_redirect_uri" : "aeiou",
+      "key" : [ {
+        "hmac_key" : "aeiou",
+        "aes_key" : "aeiou",
+        "name" : "aeiou"
+      } ],
+      "cookie_name" : "aeiou"
+    },
+    "topology_policies" : [ "" ],
+    "jwt_config" : {
+      "jwt_name" : "aeiou",
+      "audience" : "aeiou",
+      "jwt_location" : "aeiou"
+    },
+    "pool_group_ref" : "aeiou",
+    "ssl_profile_ref" : "aeiou",
+    "enabled" : true,
+    "limit_doser" : true,
+    "max_cps_per_client" : 123,
+    "sso_policy_ref" : "aeiou",
+    "http_policies" : [ {
+      "http_policy_set_ref" : "aeiou",
+      "index" : 123
+    } ],
+    "enable_session" : true,
+    "bgp_local_preference" : 123,
+    "service_metadata" : "aeiou",
+    "bot_policy_ref" : "aeiou",
+    "services" : [ {
+      "override_network_profile_ref" : "aeiou",
+      "port" : 123,
+      "port_range_end" : 123,
+      "is_active_ftp_data_port" : true,
+      "enable_http2" : true,
+      "horizon_internal_ports" : true,
+      "enable_ssl" : true,
+      "override_application_profile_ref" : "aeiou"
+    } ],
+    "url" : "aeiou",
+    "active_standby_se_tag" : "aeiou",
+    "nsx_securitygroup" : [ "aeiou" ],
+    "markers" : [ {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    } ],
+    "vsvip_cloud_config_cksum" : "aeiou",
+    "east_west_placement" : true,
+    "icap_request_profile_refs" : [ "aeiou" ],
+    "saml_sp_config" : {
+      "sp_metadata" : "aeiou",
+      "acs_index" : 123,
+      "authn_req_acs_type" : "aeiou",
+      "signing_ssl_key_and_certificate_ref" : "aeiou",
+      "cookie_timeout" : 123,
+      "use_idp_session_timeout" : true,
+      "entity_id" : "aeiou",
+      "key" : [ "" ],
+      "cookie_name" : "aeiou",
+      "single_signon_url" : "aeiou"
+    },
+    "vrf_context_ref" : "aeiou",
+    "flow_dist" : "aeiou",
+    "dns_info" : [ {
+      "metadata" : "aeiou",
+      "fqdn" : "aeiou",
+      "num_records_in_response" : 123,
+      "cname" : {
+        "cname" : "aeiou"
+      },
+      "type" : "aeiou",
+      "ttl" : 123,
+      "algorithm" : "aeiou"
+    } ],
+    "uuid" : "aeiou",
+    "vh_domain_name" : [ "aeiou" ],
+    "snat_ip" : [ "" ],
+    "microservice_ref" : "aeiou",
+    "error_page_profile_ref" : "aeiou",
+    "server_network_profile_ref" : "aeiou",
+    "use_vip_as_snat" : true,
+    "sideband_profile" : {
+      "ip" : [ "" ],
+      "sideband_max_request_body_size" : 123
+    },
     "performance_limits" : {
       "max_concurrent_connections" : 123,
       "max_throughput" : 123
     },
-    "sp_pool_refs" : [ "aeiou" ],
     "static_dns_records" : [ {
       "ip6_address" : [ {
         "ip6_address" : ""
@@ -22742,9 +22844,7 @@ font-style: italic;
       "delegated" : true,
       "algorithm" : "aeiou"
     } ],
-    "advertise_down_vs" : true,
     "fqdn" : "aeiou",
-    "bulk_sync_kvcache" : true,
     "vh_parent_vs_ref" : "aeiou",
     "weight" : 123,
     "ldap_vs_config" : {
@@ -22757,7 +22857,6 @@ font-style: italic;
       "se_auth_ldap_request_timeout" : 123,
       "se_auth_ldap_bind_timeout" : 123
     },
-    "waf_policy_ref" : "aeiou",
     "created_by" : "aeiou",
     "service_pool_select" : [ {
       "service_protocol" : "aeiou",
@@ -22768,18 +22867,11 @@ font-style: italic;
     } ],
     "vh_type" : "aeiou",
     "allow_invalid_client_cert" : true,
-    "security_policy_ref" : "aeiou",
     "application_profile_ref" : "aeiou",
-    "ssl_sess_cache_avg_size" : 123,
-    "cloud_type" : "aeiou",
-    "scaleout_ecmp" : true,
     "flow_label_type" : "aeiou",
     "name" : "aeiou",
-    "cloud_config_cksum" : "aeiou",
     "traffic_clone_profile_ref" : "aeiou",
-    "remove_listening_port_on_vs_down" : true,
     "bgp_num_as_path_prepend" : 123,
-    "vsvip_ref" : "aeiou",
     "host_name_xlate" : "aeiou",
     "connections_rate_limit" : {
       "rate_limiter" : {
@@ -22819,91 +22911,21 @@ font-style: italic;
       "http_cookie" : "aeiou",
       "http_header" : "aeiou"
     },
-    "network_security_policy_ref" : "aeiou",
-    "oauth_vs_config" : {
-      "oauth_settings" : [ {
-        "app_settings" : {
-          "oidc_config" : {
-            "oidc_enable" : true,
-            "profile" : true,
-            "userinfo" : true
-          },
-          "client_secret" : "aeiou",
-          "scopes" : [ "aeiou" ],
-          "client_id" : "aeiou"
-        },
-        "resource_server" : {
-          "access_type" : "aeiou",
-          "jwt_params" : {
-            "audience" : "aeiou"
-          },
-          "opaque_token_params" : {
-            "server_secret" : "aeiou",
-            "server_id" : "aeiou"
-          },
-          "introspection_data_timeout" : 123
-        },
-        "auth_profile_ref" : "aeiou"
-      } ],
-      "cookie_timeout" : 123,
-      "redirect_uri" : "aeiou",
-      "logout_uri" : "aeiou",
-      "post_logout_redirect_uri" : "aeiou",
-      "key" : [ {
-        "hmac_key" : "aeiou",
-        "aes_key" : "aeiou",
-        "name" : "aeiou"
-      } ],
-      "cookie_name" : "aeiou"
-    },
-    "topology_policies" : [ "" ],
     "description" : "aeiou",
     "vs_datascripts" : [ {
       "index" : 123,
       "vs_datascript_set_ref" : "aeiou"
     } ],
-    "jwt_config" : {
-      "jwt_name" : "aeiou",
-      "audience" : "aeiou",
-      "jwt_location" : "aeiou"
-    },
-    "pool_group_ref" : "aeiou",
     "ssl_key_and_certificate_refs" : [ "aeiou" ],
-    "ssl_profile_ref" : "aeiou",
-    "enabled" : true,
     "_last_modified" : "aeiou",
-    "limit_doser" : true,
     "se_group_ref" : "aeiou",
     "network_profile_ref" : "aeiou",
     "close_client_conn_on_config_update" : true,
-    "max_cps_per_client" : 123,
-    "sso_policy_ref" : "aeiou",
-    "http_policies" : [ {
-      "http_policy_set_ref" : "aeiou",
-      "index" : 123
-    } ],
-    "enable_session" : true,
     "analytics_profile_ref" : "aeiou",
-    "bgp_local_preference" : 123,
-    "service_metadata" : "aeiou",
     "use_bridge_ip_as_vip" : true,
     "requests_rate_limit" : "",
-    "bot_policy_ref" : "aeiou",
     "enable_rhi" : true,
-    "services" : [ {
-      "override_network_profile_ref" : "aeiou",
-      "port" : 123,
-      "port_range_end" : 123,
-      "is_active_ftp_data_port" : true,
-      "enable_http2" : true,
-      "horizon_internal_ports" : true,
-      "enable_ssl" : true,
-      "override_application_profile_ref" : "aeiou"
-    } ],
-    "url" : "aeiou",
     "test_se_datastore_level_1_ref" : "aeiou",
-    "active_standby_se_tag" : "aeiou",
-    "nsx_securitygroup" : [ "aeiou" ],
     "ssl_profile_selectors" : [ {
       "ssl_profile_ref" : "aeiou",
       "client_ip_list" : ""
@@ -22988,13 +23010,7 @@ font-style: italic;
     } ],
     "tenant_ref" : "aeiou",
     "csrf_policy_ref" : "aeiou",
-    "ign_pool_net_reach" : true,
-    "markers" : [ {
-      "values" : [ "aeiou" ],
-      "key" : "aeiou"
-    } ],
-    "vsvip_cloud_config_cksum" : "aeiou",
-    "east_west_placement" : true
+    "ign_pool_net_reach" : true
   } ]
 }</code></pre>
 
@@ -23059,32 +23075,6 @@ font-style: italic;
   } ],
   "azure_availability_set" : "aeiou",
   "enable_autogw" : true,
-  "icap_request_profile_refs" : [ "aeiou" ],
-  "saml_sp_config" : {
-    "sp_metadata" : "aeiou",
-    "acs_index" : 123,
-    "authn_req_acs_type" : "aeiou",
-    "signing_ssl_key_and_certificate_ref" : "aeiou",
-    "cookie_timeout" : 123,
-    "use_idp_session_timeout" : true,
-    "entity_id" : "aeiou",
-    "key" : [ "" ],
-    "cookie_name" : "aeiou",
-    "single_signon_url" : "aeiou"
-  },
-  "vrf_context_ref" : "aeiou",
-  "flow_dist" : "aeiou",
-  "dns_info" : [ {
-    "metadata" : "aeiou",
-    "fqdn" : "aeiou",
-    "num_records_in_response" : 123,
-    "cname" : {
-      "cname" : "aeiou"
-    },
-    "type" : "aeiou",
-    "ttl" : 123,
-    "algorithm" : "aeiou"
-  } ],
   "content_rewrite" : {
     "rewritable_content_ref" : "aeiou",
     "rsp_rewrite_rules" : [ {
@@ -23105,20 +23095,13 @@ font-style: italic;
   },
   "type" : "aeiou",
   "traffic_enabled" : true,
-  "uuid" : "aeiou",
   "bgp_peer_labels" : [ "aeiou" ],
-  "vh_domain_name" : [ "aeiou" ],
   "pool_ref" : "aeiou",
   "delay_fairness" : true,
-  "snat_ip" : [ "" ],
   "cloud_ref" : "aeiou",
-  "microservice_ref" : "aeiou",
-  "error_page_profile_ref" : "aeiou",
   "configpb_attributes" : {
     "version" : 123
   },
-  "server_network_profile_ref" : "aeiou",
-  "use_vip_as_snat" : true,
   "analytics_policy" : {
     "significant_log_throttle" : 123,
     "all_headers" : true,
@@ -23173,10 +23156,6 @@ font-style: italic;
     }
   },
   "enable_rhi_snat" : true,
-  "sideband_profile" : {
-    "ip" : [ "" ],
-    "sideband_max_request_body_size" : 123
-  },
   "vip" : [ {
     "availability_zone" : "aeiou",
     "ip6_address" : "",
@@ -23218,11 +23197,135 @@ font-style: italic;
     } ]
   } ],
   "min_pools_up" : 123,
+  "sp_pool_refs" : [ "aeiou" ],
+  "advertise_down_vs" : true,
+  "bulk_sync_kvcache" : true,
+  "waf_policy_ref" : "aeiou",
+  "security_policy_ref" : "aeiou",
+  "ssl_sess_cache_avg_size" : 123,
+  "cloud_type" : "aeiou",
+  "scaleout_ecmp" : true,
+  "cloud_config_cksum" : "aeiou",
+  "snat_ip6_addresses" : [ "" ],
+  "remove_listening_port_on_vs_down" : true,
+  "vsvip_ref" : "aeiou",
+  "network_security_policy_ref" : "aeiou",
+  "oauth_vs_config" : {
+    "oauth_settings" : [ {
+      "app_settings" : {
+        "oidc_config" : {
+          "oidc_enable" : true,
+          "profile" : true,
+          "userinfo" : true
+        },
+        "client_secret" : "aeiou",
+        "scopes" : [ "aeiou" ],
+        "client_id" : "aeiou"
+      },
+      "resource_server" : {
+        "access_type" : "aeiou",
+        "jwt_params" : {
+          "audience" : "aeiou"
+        },
+        "opaque_token_params" : {
+          "server_secret" : "aeiou",
+          "server_id" : "aeiou"
+        },
+        "introspection_data_timeout" : 123
+      },
+      "auth_profile_ref" : "aeiou"
+    } ],
+    "cookie_timeout" : 123,
+    "redirect_uri" : "aeiou",
+    "logout_uri" : "aeiou",
+    "post_logout_redirect_uri" : "aeiou",
+    "key" : [ {
+      "hmac_key" : "aeiou",
+      "aes_key" : "aeiou",
+      "name" : "aeiou"
+    } ],
+    "cookie_name" : "aeiou"
+  },
+  "topology_policies" : [ "" ],
+  "jwt_config" : {
+    "jwt_name" : "aeiou",
+    "audience" : "aeiou",
+    "jwt_location" : "aeiou"
+  },
+  "pool_group_ref" : "aeiou",
+  "ssl_profile_ref" : "aeiou",
+  "enabled" : true,
+  "limit_doser" : true,
+  "max_cps_per_client" : 123,
+  "sso_policy_ref" : "aeiou",
+  "http_policies" : [ {
+    "http_policy_set_ref" : "aeiou",
+    "index" : 123
+  } ],
+  "enable_session" : true,
+  "bgp_local_preference" : 123,
+  "service_metadata" : "aeiou",
+  "bot_policy_ref" : "aeiou",
+  "services" : [ {
+    "override_network_profile_ref" : "aeiou",
+    "port" : 123,
+    "port_range_end" : 123,
+    "is_active_ftp_data_port" : true,
+    "enable_http2" : true,
+    "horizon_internal_ports" : true,
+    "enable_ssl" : true,
+    "override_application_profile_ref" : "aeiou"
+  } ],
+  "url" : "aeiou",
+  "active_standby_se_tag" : "aeiou",
+  "nsx_securitygroup" : [ "aeiou" ],
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
+  "vsvip_cloud_config_cksum" : "aeiou",
+  "east_west_placement" : true,
+  "icap_request_profile_refs" : [ "aeiou" ],
+  "saml_sp_config" : {
+    "sp_metadata" : "aeiou",
+    "acs_index" : 123,
+    "authn_req_acs_type" : "aeiou",
+    "signing_ssl_key_and_certificate_ref" : "aeiou",
+    "cookie_timeout" : 123,
+    "use_idp_session_timeout" : true,
+    "entity_id" : "aeiou",
+    "key" : [ "" ],
+    "cookie_name" : "aeiou",
+    "single_signon_url" : "aeiou"
+  },
+  "vrf_context_ref" : "aeiou",
+  "flow_dist" : "aeiou",
+  "dns_info" : [ {
+    "metadata" : "aeiou",
+    "fqdn" : "aeiou",
+    "num_records_in_response" : 123,
+    "cname" : {
+      "cname" : "aeiou"
+    },
+    "type" : "aeiou",
+    "ttl" : 123,
+    "algorithm" : "aeiou"
+  } ],
+  "uuid" : "aeiou",
+  "vh_domain_name" : [ "aeiou" ],
+  "snat_ip" : [ "" ],
+  "microservice_ref" : "aeiou",
+  "error_page_profile_ref" : "aeiou",
+  "server_network_profile_ref" : "aeiou",
+  "use_vip_as_snat" : true,
+  "sideband_profile" : {
+    "ip" : [ "" ],
+    "sideband_max_request_body_size" : 123
+  },
   "performance_limits" : {
     "max_concurrent_connections" : 123,
     "max_throughput" : 123
   },
-  "sp_pool_refs" : [ "aeiou" ],
   "static_dns_records" : [ {
     "ip6_address" : [ {
       "ip6_address" : ""
@@ -23259,9 +23362,7 @@ font-style: italic;
     "delegated" : true,
     "algorithm" : "aeiou"
   } ],
-  "advertise_down_vs" : true,
   "fqdn" : "aeiou",
-  "bulk_sync_kvcache" : true,
   "vh_parent_vs_ref" : "aeiou",
   "weight" : 123,
   "ldap_vs_config" : {
@@ -23274,7 +23375,6 @@ font-style: italic;
     "se_auth_ldap_request_timeout" : 123,
     "se_auth_ldap_bind_timeout" : 123
   },
-  "waf_policy_ref" : "aeiou",
   "created_by" : "aeiou",
   "service_pool_select" : [ {
     "service_protocol" : "aeiou",
@@ -23285,18 +23385,11 @@ font-style: italic;
   } ],
   "vh_type" : "aeiou",
   "allow_invalid_client_cert" : true,
-  "security_policy_ref" : "aeiou",
   "application_profile_ref" : "aeiou",
-  "ssl_sess_cache_avg_size" : 123,
-  "cloud_type" : "aeiou",
-  "scaleout_ecmp" : true,
   "flow_label_type" : "aeiou",
   "name" : "aeiou",
-  "cloud_config_cksum" : "aeiou",
   "traffic_clone_profile_ref" : "aeiou",
-  "remove_listening_port_on_vs_down" : true,
   "bgp_num_as_path_prepend" : 123,
-  "vsvip_ref" : "aeiou",
   "host_name_xlate" : "aeiou",
   "connections_rate_limit" : {
     "rate_limiter" : {
@@ -23336,91 +23429,21 @@ font-style: italic;
     "http_cookie" : "aeiou",
     "http_header" : "aeiou"
   },
-  "network_security_policy_ref" : "aeiou",
-  "oauth_vs_config" : {
-    "oauth_settings" : [ {
-      "app_settings" : {
-        "oidc_config" : {
-          "oidc_enable" : true,
-          "profile" : true,
-          "userinfo" : true
-        },
-        "client_secret" : "aeiou",
-        "scopes" : [ "aeiou" ],
-        "client_id" : "aeiou"
-      },
-      "resource_server" : {
-        "access_type" : "aeiou",
-        "jwt_params" : {
-          "audience" : "aeiou"
-        },
-        "opaque_token_params" : {
-          "server_secret" : "aeiou",
-          "server_id" : "aeiou"
-        },
-        "introspection_data_timeout" : 123
-      },
-      "auth_profile_ref" : "aeiou"
-    } ],
-    "cookie_timeout" : 123,
-    "redirect_uri" : "aeiou",
-    "logout_uri" : "aeiou",
-    "post_logout_redirect_uri" : "aeiou",
-    "key" : [ {
-      "hmac_key" : "aeiou",
-      "aes_key" : "aeiou",
-      "name" : "aeiou"
-    } ],
-    "cookie_name" : "aeiou"
-  },
-  "topology_policies" : [ "" ],
   "description" : "aeiou",
   "vs_datascripts" : [ {
     "index" : 123,
     "vs_datascript_set_ref" : "aeiou"
   } ],
-  "jwt_config" : {
-    "jwt_name" : "aeiou",
-    "audience" : "aeiou",
-    "jwt_location" : "aeiou"
-  },
-  "pool_group_ref" : "aeiou",
   "ssl_key_and_certificate_refs" : [ "aeiou" ],
-  "ssl_profile_ref" : "aeiou",
-  "enabled" : true,
   "_last_modified" : "aeiou",
-  "limit_doser" : true,
   "se_group_ref" : "aeiou",
   "network_profile_ref" : "aeiou",
   "close_client_conn_on_config_update" : true,
-  "max_cps_per_client" : 123,
-  "sso_policy_ref" : "aeiou",
-  "http_policies" : [ {
-    "http_policy_set_ref" : "aeiou",
-    "index" : 123
-  } ],
-  "enable_session" : true,
   "analytics_profile_ref" : "aeiou",
-  "bgp_local_preference" : 123,
-  "service_metadata" : "aeiou",
   "use_bridge_ip_as_vip" : true,
   "requests_rate_limit" : "",
-  "bot_policy_ref" : "aeiou",
   "enable_rhi" : true,
-  "services" : [ {
-    "override_network_profile_ref" : "aeiou",
-    "port" : 123,
-    "port_range_end" : 123,
-    "is_active_ftp_data_port" : true,
-    "enable_http2" : true,
-    "horizon_internal_ports" : true,
-    "enable_ssl" : true,
-    "override_application_profile_ref" : "aeiou"
-  } ],
-  "url" : "aeiou",
   "test_se_datastore_level_1_ref" : "aeiou",
-  "active_standby_se_tag" : "aeiou",
-  "nsx_securitygroup" : [ "aeiou" ],
   "ssl_profile_selectors" : [ {
     "ssl_profile_ref" : "aeiou",
     "client_ip_list" : ""
@@ -23505,13 +23528,7 @@ font-style: italic;
   } ],
   "tenant_ref" : "aeiou",
   "csrf_policy_ref" : "aeiou",
-  "ign_pool_net_reach" : true,
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
-  } ],
-  "vsvip_cloud_config_cksum" : "aeiou",
-  "east_west_placement" : true
+  "ign_pool_net_reach" : true
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -23647,32 +23664,6 @@ font-style: italic;
   } ],
   "azure_availability_set" : "aeiou",
   "enable_autogw" : true,
-  "icap_request_profile_refs" : [ "aeiou" ],
-  "saml_sp_config" : {
-    "sp_metadata" : "aeiou",
-    "acs_index" : 123,
-    "authn_req_acs_type" : "aeiou",
-    "signing_ssl_key_and_certificate_ref" : "aeiou",
-    "cookie_timeout" : 123,
-    "use_idp_session_timeout" : true,
-    "entity_id" : "aeiou",
-    "key" : [ "" ],
-    "cookie_name" : "aeiou",
-    "single_signon_url" : "aeiou"
-  },
-  "vrf_context_ref" : "aeiou",
-  "flow_dist" : "aeiou",
-  "dns_info" : [ {
-    "metadata" : "aeiou",
-    "fqdn" : "aeiou",
-    "num_records_in_response" : 123,
-    "cname" : {
-      "cname" : "aeiou"
-    },
-    "type" : "aeiou",
-    "ttl" : 123,
-    "algorithm" : "aeiou"
-  } ],
   "content_rewrite" : {
     "rewritable_content_ref" : "aeiou",
     "rsp_rewrite_rules" : [ {
@@ -23693,20 +23684,13 @@ font-style: italic;
   },
   "type" : "aeiou",
   "traffic_enabled" : true,
-  "uuid" : "aeiou",
   "bgp_peer_labels" : [ "aeiou" ],
-  "vh_domain_name" : [ "aeiou" ],
   "pool_ref" : "aeiou",
   "delay_fairness" : true,
-  "snat_ip" : [ "" ],
   "cloud_ref" : "aeiou",
-  "microservice_ref" : "aeiou",
-  "error_page_profile_ref" : "aeiou",
   "configpb_attributes" : {
     "version" : 123
   },
-  "server_network_profile_ref" : "aeiou",
-  "use_vip_as_snat" : true,
   "analytics_policy" : {
     "significant_log_throttle" : 123,
     "all_headers" : true,
@@ -23761,10 +23745,6 @@ font-style: italic;
     }
   },
   "enable_rhi_snat" : true,
-  "sideband_profile" : {
-    "ip" : [ "" ],
-    "sideband_max_request_body_size" : 123
-  },
   "vip" : [ {
     "availability_zone" : "aeiou",
     "ip6_address" : "",
@@ -23806,11 +23786,135 @@ font-style: italic;
     } ]
   } ],
   "min_pools_up" : 123,
+  "sp_pool_refs" : [ "aeiou" ],
+  "advertise_down_vs" : true,
+  "bulk_sync_kvcache" : true,
+  "waf_policy_ref" : "aeiou",
+  "security_policy_ref" : "aeiou",
+  "ssl_sess_cache_avg_size" : 123,
+  "cloud_type" : "aeiou",
+  "scaleout_ecmp" : true,
+  "cloud_config_cksum" : "aeiou",
+  "snat_ip6_addresses" : [ "" ],
+  "remove_listening_port_on_vs_down" : true,
+  "vsvip_ref" : "aeiou",
+  "network_security_policy_ref" : "aeiou",
+  "oauth_vs_config" : {
+    "oauth_settings" : [ {
+      "app_settings" : {
+        "oidc_config" : {
+          "oidc_enable" : true,
+          "profile" : true,
+          "userinfo" : true
+        },
+        "client_secret" : "aeiou",
+        "scopes" : [ "aeiou" ],
+        "client_id" : "aeiou"
+      },
+      "resource_server" : {
+        "access_type" : "aeiou",
+        "jwt_params" : {
+          "audience" : "aeiou"
+        },
+        "opaque_token_params" : {
+          "server_secret" : "aeiou",
+          "server_id" : "aeiou"
+        },
+        "introspection_data_timeout" : 123
+      },
+      "auth_profile_ref" : "aeiou"
+    } ],
+    "cookie_timeout" : 123,
+    "redirect_uri" : "aeiou",
+    "logout_uri" : "aeiou",
+    "post_logout_redirect_uri" : "aeiou",
+    "key" : [ {
+      "hmac_key" : "aeiou",
+      "aes_key" : "aeiou",
+      "name" : "aeiou"
+    } ],
+    "cookie_name" : "aeiou"
+  },
+  "topology_policies" : [ "" ],
+  "jwt_config" : {
+    "jwt_name" : "aeiou",
+    "audience" : "aeiou",
+    "jwt_location" : "aeiou"
+  },
+  "pool_group_ref" : "aeiou",
+  "ssl_profile_ref" : "aeiou",
+  "enabled" : true,
+  "limit_doser" : true,
+  "max_cps_per_client" : 123,
+  "sso_policy_ref" : "aeiou",
+  "http_policies" : [ {
+    "http_policy_set_ref" : "aeiou",
+    "index" : 123
+  } ],
+  "enable_session" : true,
+  "bgp_local_preference" : 123,
+  "service_metadata" : "aeiou",
+  "bot_policy_ref" : "aeiou",
+  "services" : [ {
+    "override_network_profile_ref" : "aeiou",
+    "port" : 123,
+    "port_range_end" : 123,
+    "is_active_ftp_data_port" : true,
+    "enable_http2" : true,
+    "horizon_internal_ports" : true,
+    "enable_ssl" : true,
+    "override_application_profile_ref" : "aeiou"
+  } ],
+  "url" : "aeiou",
+  "active_standby_se_tag" : "aeiou",
+  "nsx_securitygroup" : [ "aeiou" ],
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
+  "vsvip_cloud_config_cksum" : "aeiou",
+  "east_west_placement" : true,
+  "icap_request_profile_refs" : [ "aeiou" ],
+  "saml_sp_config" : {
+    "sp_metadata" : "aeiou",
+    "acs_index" : 123,
+    "authn_req_acs_type" : "aeiou",
+    "signing_ssl_key_and_certificate_ref" : "aeiou",
+    "cookie_timeout" : 123,
+    "use_idp_session_timeout" : true,
+    "entity_id" : "aeiou",
+    "key" : [ "" ],
+    "cookie_name" : "aeiou",
+    "single_signon_url" : "aeiou"
+  },
+  "vrf_context_ref" : "aeiou",
+  "flow_dist" : "aeiou",
+  "dns_info" : [ {
+    "metadata" : "aeiou",
+    "fqdn" : "aeiou",
+    "num_records_in_response" : 123,
+    "cname" : {
+      "cname" : "aeiou"
+    },
+    "type" : "aeiou",
+    "ttl" : 123,
+    "algorithm" : "aeiou"
+  } ],
+  "uuid" : "aeiou",
+  "vh_domain_name" : [ "aeiou" ],
+  "snat_ip" : [ "" ],
+  "microservice_ref" : "aeiou",
+  "error_page_profile_ref" : "aeiou",
+  "server_network_profile_ref" : "aeiou",
+  "use_vip_as_snat" : true,
+  "sideband_profile" : {
+    "ip" : [ "" ],
+    "sideband_max_request_body_size" : 123
+  },
   "performance_limits" : {
     "max_concurrent_connections" : 123,
     "max_throughput" : 123
   },
-  "sp_pool_refs" : [ "aeiou" ],
   "static_dns_records" : [ {
     "ip6_address" : [ {
       "ip6_address" : ""
@@ -23847,9 +23951,7 @@ font-style: italic;
     "delegated" : true,
     "algorithm" : "aeiou"
   } ],
-  "advertise_down_vs" : true,
   "fqdn" : "aeiou",
-  "bulk_sync_kvcache" : true,
   "vh_parent_vs_ref" : "aeiou",
   "weight" : 123,
   "ldap_vs_config" : {
@@ -23862,7 +23964,6 @@ font-style: italic;
     "se_auth_ldap_request_timeout" : 123,
     "se_auth_ldap_bind_timeout" : 123
   },
-  "waf_policy_ref" : "aeiou",
   "created_by" : "aeiou",
   "service_pool_select" : [ {
     "service_protocol" : "aeiou",
@@ -23873,18 +23974,11 @@ font-style: italic;
   } ],
   "vh_type" : "aeiou",
   "allow_invalid_client_cert" : true,
-  "security_policy_ref" : "aeiou",
   "application_profile_ref" : "aeiou",
-  "ssl_sess_cache_avg_size" : 123,
-  "cloud_type" : "aeiou",
-  "scaleout_ecmp" : true,
   "flow_label_type" : "aeiou",
   "name" : "aeiou",
-  "cloud_config_cksum" : "aeiou",
   "traffic_clone_profile_ref" : "aeiou",
-  "remove_listening_port_on_vs_down" : true,
   "bgp_num_as_path_prepend" : 123,
-  "vsvip_ref" : "aeiou",
   "host_name_xlate" : "aeiou",
   "connections_rate_limit" : {
     "rate_limiter" : {
@@ -23924,91 +24018,21 @@ font-style: italic;
     "http_cookie" : "aeiou",
     "http_header" : "aeiou"
   },
-  "network_security_policy_ref" : "aeiou",
-  "oauth_vs_config" : {
-    "oauth_settings" : [ {
-      "app_settings" : {
-        "oidc_config" : {
-          "oidc_enable" : true,
-          "profile" : true,
-          "userinfo" : true
-        },
-        "client_secret" : "aeiou",
-        "scopes" : [ "aeiou" ],
-        "client_id" : "aeiou"
-      },
-      "resource_server" : {
-        "access_type" : "aeiou",
-        "jwt_params" : {
-          "audience" : "aeiou"
-        },
-        "opaque_token_params" : {
-          "server_secret" : "aeiou",
-          "server_id" : "aeiou"
-        },
-        "introspection_data_timeout" : 123
-      },
-      "auth_profile_ref" : "aeiou"
-    } ],
-    "cookie_timeout" : 123,
-    "redirect_uri" : "aeiou",
-    "logout_uri" : "aeiou",
-    "post_logout_redirect_uri" : "aeiou",
-    "key" : [ {
-      "hmac_key" : "aeiou",
-      "aes_key" : "aeiou",
-      "name" : "aeiou"
-    } ],
-    "cookie_name" : "aeiou"
-  },
-  "topology_policies" : [ "" ],
   "description" : "aeiou",
   "vs_datascripts" : [ {
     "index" : 123,
     "vs_datascript_set_ref" : "aeiou"
   } ],
-  "jwt_config" : {
-    "jwt_name" : "aeiou",
-    "audience" : "aeiou",
-    "jwt_location" : "aeiou"
-  },
-  "pool_group_ref" : "aeiou",
   "ssl_key_and_certificate_refs" : [ "aeiou" ],
-  "ssl_profile_ref" : "aeiou",
-  "enabled" : true,
   "_last_modified" : "aeiou",
-  "limit_doser" : true,
   "se_group_ref" : "aeiou",
   "network_profile_ref" : "aeiou",
   "close_client_conn_on_config_update" : true,
-  "max_cps_per_client" : 123,
-  "sso_policy_ref" : "aeiou",
-  "http_policies" : [ {
-    "http_policy_set_ref" : "aeiou",
-    "index" : 123
-  } ],
-  "enable_session" : true,
   "analytics_profile_ref" : "aeiou",
-  "bgp_local_preference" : 123,
-  "service_metadata" : "aeiou",
   "use_bridge_ip_as_vip" : true,
   "requests_rate_limit" : "",
-  "bot_policy_ref" : "aeiou",
   "enable_rhi" : true,
-  "services" : [ {
-    "override_network_profile_ref" : "aeiou",
-    "port" : 123,
-    "port_range_end" : 123,
-    "is_active_ftp_data_port" : true,
-    "enable_http2" : true,
-    "horizon_internal_ports" : true,
-    "enable_ssl" : true,
-    "override_application_profile_ref" : "aeiou"
-  } ],
-  "url" : "aeiou",
   "test_se_datastore_level_1_ref" : "aeiou",
-  "active_standby_se_tag" : "aeiou",
-  "nsx_securitygroup" : [ "aeiou" ],
   "ssl_profile_selectors" : [ {
     "ssl_profile_ref" : "aeiou",
     "client_ip_list" : ""
@@ -24093,13 +24117,7 @@ font-style: italic;
   } ],
   "tenant_ref" : "aeiou",
   "csrf_policy_ref" : "aeiou",
-  "ign_pool_net_reach" : true,
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
-  } ],
-  "vsvip_cloud_config_cksum" : "aeiou",
-  "east_west_placement" : true
+  "ign_pool_net_reach" : true
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -24175,32 +24193,6 @@ font-style: italic;
   } ],
   "azure_availability_set" : "aeiou",
   "enable_autogw" : true,
-  "icap_request_profile_refs" : [ "aeiou" ],
-  "saml_sp_config" : {
-    "sp_metadata" : "aeiou",
-    "acs_index" : 123,
-    "authn_req_acs_type" : "aeiou",
-    "signing_ssl_key_and_certificate_ref" : "aeiou",
-    "cookie_timeout" : 123,
-    "use_idp_session_timeout" : true,
-    "entity_id" : "aeiou",
-    "key" : [ "" ],
-    "cookie_name" : "aeiou",
-    "single_signon_url" : "aeiou"
-  },
-  "vrf_context_ref" : "aeiou",
-  "flow_dist" : "aeiou",
-  "dns_info" : [ {
-    "metadata" : "aeiou",
-    "fqdn" : "aeiou",
-    "num_records_in_response" : 123,
-    "cname" : {
-      "cname" : "aeiou"
-    },
-    "type" : "aeiou",
-    "ttl" : 123,
-    "algorithm" : "aeiou"
-  } ],
   "content_rewrite" : {
     "rewritable_content_ref" : "aeiou",
     "rsp_rewrite_rules" : [ {
@@ -24221,20 +24213,13 @@ font-style: italic;
   },
   "type" : "aeiou",
   "traffic_enabled" : true,
-  "uuid" : "aeiou",
   "bgp_peer_labels" : [ "aeiou" ],
-  "vh_domain_name" : [ "aeiou" ],
   "pool_ref" : "aeiou",
   "delay_fairness" : true,
-  "snat_ip" : [ "" ],
   "cloud_ref" : "aeiou",
-  "microservice_ref" : "aeiou",
-  "error_page_profile_ref" : "aeiou",
   "configpb_attributes" : {
     "version" : 123
   },
-  "server_network_profile_ref" : "aeiou",
-  "use_vip_as_snat" : true,
   "analytics_policy" : {
     "significant_log_throttle" : 123,
     "all_headers" : true,
@@ -24289,10 +24274,6 @@ font-style: italic;
     }
   },
   "enable_rhi_snat" : true,
-  "sideband_profile" : {
-    "ip" : [ "" ],
-    "sideband_max_request_body_size" : 123
-  },
   "vip" : [ {
     "availability_zone" : "aeiou",
     "ip6_address" : "",
@@ -24334,11 +24315,135 @@ font-style: italic;
     } ]
   } ],
   "min_pools_up" : 123,
+  "sp_pool_refs" : [ "aeiou" ],
+  "advertise_down_vs" : true,
+  "bulk_sync_kvcache" : true,
+  "waf_policy_ref" : "aeiou",
+  "security_policy_ref" : "aeiou",
+  "ssl_sess_cache_avg_size" : 123,
+  "cloud_type" : "aeiou",
+  "scaleout_ecmp" : true,
+  "cloud_config_cksum" : "aeiou",
+  "snat_ip6_addresses" : [ "" ],
+  "remove_listening_port_on_vs_down" : true,
+  "vsvip_ref" : "aeiou",
+  "network_security_policy_ref" : "aeiou",
+  "oauth_vs_config" : {
+    "oauth_settings" : [ {
+      "app_settings" : {
+        "oidc_config" : {
+          "oidc_enable" : true,
+          "profile" : true,
+          "userinfo" : true
+        },
+        "client_secret" : "aeiou",
+        "scopes" : [ "aeiou" ],
+        "client_id" : "aeiou"
+      },
+      "resource_server" : {
+        "access_type" : "aeiou",
+        "jwt_params" : {
+          "audience" : "aeiou"
+        },
+        "opaque_token_params" : {
+          "server_secret" : "aeiou",
+          "server_id" : "aeiou"
+        },
+        "introspection_data_timeout" : 123
+      },
+      "auth_profile_ref" : "aeiou"
+    } ],
+    "cookie_timeout" : 123,
+    "redirect_uri" : "aeiou",
+    "logout_uri" : "aeiou",
+    "post_logout_redirect_uri" : "aeiou",
+    "key" : [ {
+      "hmac_key" : "aeiou",
+      "aes_key" : "aeiou",
+      "name" : "aeiou"
+    } ],
+    "cookie_name" : "aeiou"
+  },
+  "topology_policies" : [ "" ],
+  "jwt_config" : {
+    "jwt_name" : "aeiou",
+    "audience" : "aeiou",
+    "jwt_location" : "aeiou"
+  },
+  "pool_group_ref" : "aeiou",
+  "ssl_profile_ref" : "aeiou",
+  "enabled" : true,
+  "limit_doser" : true,
+  "max_cps_per_client" : 123,
+  "sso_policy_ref" : "aeiou",
+  "http_policies" : [ {
+    "http_policy_set_ref" : "aeiou",
+    "index" : 123
+  } ],
+  "enable_session" : true,
+  "bgp_local_preference" : 123,
+  "service_metadata" : "aeiou",
+  "bot_policy_ref" : "aeiou",
+  "services" : [ {
+    "override_network_profile_ref" : "aeiou",
+    "port" : 123,
+    "port_range_end" : 123,
+    "is_active_ftp_data_port" : true,
+    "enable_http2" : true,
+    "horizon_internal_ports" : true,
+    "enable_ssl" : true,
+    "override_application_profile_ref" : "aeiou"
+  } ],
+  "url" : "aeiou",
+  "active_standby_se_tag" : "aeiou",
+  "nsx_securitygroup" : [ "aeiou" ],
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
+  "vsvip_cloud_config_cksum" : "aeiou",
+  "east_west_placement" : true,
+  "icap_request_profile_refs" : [ "aeiou" ],
+  "saml_sp_config" : {
+    "sp_metadata" : "aeiou",
+    "acs_index" : 123,
+    "authn_req_acs_type" : "aeiou",
+    "signing_ssl_key_and_certificate_ref" : "aeiou",
+    "cookie_timeout" : 123,
+    "use_idp_session_timeout" : true,
+    "entity_id" : "aeiou",
+    "key" : [ "" ],
+    "cookie_name" : "aeiou",
+    "single_signon_url" : "aeiou"
+  },
+  "vrf_context_ref" : "aeiou",
+  "flow_dist" : "aeiou",
+  "dns_info" : [ {
+    "metadata" : "aeiou",
+    "fqdn" : "aeiou",
+    "num_records_in_response" : 123,
+    "cname" : {
+      "cname" : "aeiou"
+    },
+    "type" : "aeiou",
+    "ttl" : 123,
+    "algorithm" : "aeiou"
+  } ],
+  "uuid" : "aeiou",
+  "vh_domain_name" : [ "aeiou" ],
+  "snat_ip" : [ "" ],
+  "microservice_ref" : "aeiou",
+  "error_page_profile_ref" : "aeiou",
+  "server_network_profile_ref" : "aeiou",
+  "use_vip_as_snat" : true,
+  "sideband_profile" : {
+    "ip" : [ "" ],
+    "sideband_max_request_body_size" : 123
+  },
   "performance_limits" : {
     "max_concurrent_connections" : 123,
     "max_throughput" : 123
   },
-  "sp_pool_refs" : [ "aeiou" ],
   "static_dns_records" : [ {
     "ip6_address" : [ {
       "ip6_address" : ""
@@ -24375,9 +24480,7 @@ font-style: italic;
     "delegated" : true,
     "algorithm" : "aeiou"
   } ],
-  "advertise_down_vs" : true,
   "fqdn" : "aeiou",
-  "bulk_sync_kvcache" : true,
   "vh_parent_vs_ref" : "aeiou",
   "weight" : 123,
   "ldap_vs_config" : {
@@ -24390,7 +24493,6 @@ font-style: italic;
     "se_auth_ldap_request_timeout" : 123,
     "se_auth_ldap_bind_timeout" : 123
   },
-  "waf_policy_ref" : "aeiou",
   "created_by" : "aeiou",
   "service_pool_select" : [ {
     "service_protocol" : "aeiou",
@@ -24401,18 +24503,11 @@ font-style: italic;
   } ],
   "vh_type" : "aeiou",
   "allow_invalid_client_cert" : true,
-  "security_policy_ref" : "aeiou",
   "application_profile_ref" : "aeiou",
-  "ssl_sess_cache_avg_size" : 123,
-  "cloud_type" : "aeiou",
-  "scaleout_ecmp" : true,
   "flow_label_type" : "aeiou",
   "name" : "aeiou",
-  "cloud_config_cksum" : "aeiou",
   "traffic_clone_profile_ref" : "aeiou",
-  "remove_listening_port_on_vs_down" : true,
   "bgp_num_as_path_prepend" : 123,
-  "vsvip_ref" : "aeiou",
   "host_name_xlate" : "aeiou",
   "connections_rate_limit" : {
     "rate_limiter" : {
@@ -24452,91 +24547,21 @@ font-style: italic;
     "http_cookie" : "aeiou",
     "http_header" : "aeiou"
   },
-  "network_security_policy_ref" : "aeiou",
-  "oauth_vs_config" : {
-    "oauth_settings" : [ {
-      "app_settings" : {
-        "oidc_config" : {
-          "oidc_enable" : true,
-          "profile" : true,
-          "userinfo" : true
-        },
-        "client_secret" : "aeiou",
-        "scopes" : [ "aeiou" ],
-        "client_id" : "aeiou"
-      },
-      "resource_server" : {
-        "access_type" : "aeiou",
-        "jwt_params" : {
-          "audience" : "aeiou"
-        },
-        "opaque_token_params" : {
-          "server_secret" : "aeiou",
-          "server_id" : "aeiou"
-        },
-        "introspection_data_timeout" : 123
-      },
-      "auth_profile_ref" : "aeiou"
-    } ],
-    "cookie_timeout" : 123,
-    "redirect_uri" : "aeiou",
-    "logout_uri" : "aeiou",
-    "post_logout_redirect_uri" : "aeiou",
-    "key" : [ {
-      "hmac_key" : "aeiou",
-      "aes_key" : "aeiou",
-      "name" : "aeiou"
-    } ],
-    "cookie_name" : "aeiou"
-  },
-  "topology_policies" : [ "" ],
   "description" : "aeiou",
   "vs_datascripts" : [ {
     "index" : 123,
     "vs_datascript_set_ref" : "aeiou"
   } ],
-  "jwt_config" : {
-    "jwt_name" : "aeiou",
-    "audience" : "aeiou",
-    "jwt_location" : "aeiou"
-  },
-  "pool_group_ref" : "aeiou",
   "ssl_key_and_certificate_refs" : [ "aeiou" ],
-  "ssl_profile_ref" : "aeiou",
-  "enabled" : true,
   "_last_modified" : "aeiou",
-  "limit_doser" : true,
   "se_group_ref" : "aeiou",
   "network_profile_ref" : "aeiou",
   "close_client_conn_on_config_update" : true,
-  "max_cps_per_client" : 123,
-  "sso_policy_ref" : "aeiou",
-  "http_policies" : [ {
-    "http_policy_set_ref" : "aeiou",
-    "index" : 123
-  } ],
-  "enable_session" : true,
   "analytics_profile_ref" : "aeiou",
-  "bgp_local_preference" : 123,
-  "service_metadata" : "aeiou",
   "use_bridge_ip_as_vip" : true,
   "requests_rate_limit" : "",
-  "bot_policy_ref" : "aeiou",
   "enable_rhi" : true,
-  "services" : [ {
-    "override_network_profile_ref" : "aeiou",
-    "port" : 123,
-    "port_range_end" : 123,
-    "is_active_ftp_data_port" : true,
-    "enable_http2" : true,
-    "horizon_internal_ports" : true,
-    "enable_ssl" : true,
-    "override_application_profile_ref" : "aeiou"
-  } ],
-  "url" : "aeiou",
   "test_se_datastore_level_1_ref" : "aeiou",
-  "active_standby_se_tag" : "aeiou",
-  "nsx_securitygroup" : [ "aeiou" ],
   "ssl_profile_selectors" : [ {
     "ssl_profile_ref" : "aeiou",
     "client_ip_list" : ""
@@ -24621,13 +24646,7 @@ font-style: italic;
   } ],
   "tenant_ref" : "aeiou",
   "csrf_policy_ref" : "aeiou",
-  "ign_pool_net_reach" : true,
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
-  } ],
-  "vsvip_cloud_config_cksum" : "aeiou",
-  "east_west_placement" : true
+  "ign_pool_net_reach" : true
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -24703,32 +24722,6 @@ font-style: italic;
   } ],
   "azure_availability_set" : "aeiou",
   "enable_autogw" : true,
-  "icap_request_profile_refs" : [ "aeiou" ],
-  "saml_sp_config" : {
-    "sp_metadata" : "aeiou",
-    "acs_index" : 123,
-    "authn_req_acs_type" : "aeiou",
-    "signing_ssl_key_and_certificate_ref" : "aeiou",
-    "cookie_timeout" : 123,
-    "use_idp_session_timeout" : true,
-    "entity_id" : "aeiou",
-    "key" : [ "" ],
-    "cookie_name" : "aeiou",
-    "single_signon_url" : "aeiou"
-  },
-  "vrf_context_ref" : "aeiou",
-  "flow_dist" : "aeiou",
-  "dns_info" : [ {
-    "metadata" : "aeiou",
-    "fqdn" : "aeiou",
-    "num_records_in_response" : 123,
-    "cname" : {
-      "cname" : "aeiou"
-    },
-    "type" : "aeiou",
-    "ttl" : 123,
-    "algorithm" : "aeiou"
-  } ],
   "content_rewrite" : {
     "rewritable_content_ref" : "aeiou",
     "rsp_rewrite_rules" : [ {
@@ -24749,20 +24742,13 @@ font-style: italic;
   },
   "type" : "aeiou",
   "traffic_enabled" : true,
-  "uuid" : "aeiou",
   "bgp_peer_labels" : [ "aeiou" ],
-  "vh_domain_name" : [ "aeiou" ],
   "pool_ref" : "aeiou",
   "delay_fairness" : true,
-  "snat_ip" : [ "" ],
   "cloud_ref" : "aeiou",
-  "microservice_ref" : "aeiou",
-  "error_page_profile_ref" : "aeiou",
   "configpb_attributes" : {
     "version" : 123
   },
-  "server_network_profile_ref" : "aeiou",
-  "use_vip_as_snat" : true,
   "analytics_policy" : {
     "significant_log_throttle" : 123,
     "all_headers" : true,
@@ -24817,10 +24803,6 @@ font-style: italic;
     }
   },
   "enable_rhi_snat" : true,
-  "sideband_profile" : {
-    "ip" : [ "" ],
-    "sideband_max_request_body_size" : 123
-  },
   "vip" : [ {
     "availability_zone" : "aeiou",
     "ip6_address" : "",
@@ -24862,11 +24844,135 @@ font-style: italic;
     } ]
   } ],
   "min_pools_up" : 123,
+  "sp_pool_refs" : [ "aeiou" ],
+  "advertise_down_vs" : true,
+  "bulk_sync_kvcache" : true,
+  "waf_policy_ref" : "aeiou",
+  "security_policy_ref" : "aeiou",
+  "ssl_sess_cache_avg_size" : 123,
+  "cloud_type" : "aeiou",
+  "scaleout_ecmp" : true,
+  "cloud_config_cksum" : "aeiou",
+  "snat_ip6_addresses" : [ "" ],
+  "remove_listening_port_on_vs_down" : true,
+  "vsvip_ref" : "aeiou",
+  "network_security_policy_ref" : "aeiou",
+  "oauth_vs_config" : {
+    "oauth_settings" : [ {
+      "app_settings" : {
+        "oidc_config" : {
+          "oidc_enable" : true,
+          "profile" : true,
+          "userinfo" : true
+        },
+        "client_secret" : "aeiou",
+        "scopes" : [ "aeiou" ],
+        "client_id" : "aeiou"
+      },
+      "resource_server" : {
+        "access_type" : "aeiou",
+        "jwt_params" : {
+          "audience" : "aeiou"
+        },
+        "opaque_token_params" : {
+          "server_secret" : "aeiou",
+          "server_id" : "aeiou"
+        },
+        "introspection_data_timeout" : 123
+      },
+      "auth_profile_ref" : "aeiou"
+    } ],
+    "cookie_timeout" : 123,
+    "redirect_uri" : "aeiou",
+    "logout_uri" : "aeiou",
+    "post_logout_redirect_uri" : "aeiou",
+    "key" : [ {
+      "hmac_key" : "aeiou",
+      "aes_key" : "aeiou",
+      "name" : "aeiou"
+    } ],
+    "cookie_name" : "aeiou"
+  },
+  "topology_policies" : [ "" ],
+  "jwt_config" : {
+    "jwt_name" : "aeiou",
+    "audience" : "aeiou",
+    "jwt_location" : "aeiou"
+  },
+  "pool_group_ref" : "aeiou",
+  "ssl_profile_ref" : "aeiou",
+  "enabled" : true,
+  "limit_doser" : true,
+  "max_cps_per_client" : 123,
+  "sso_policy_ref" : "aeiou",
+  "http_policies" : [ {
+    "http_policy_set_ref" : "aeiou",
+    "index" : 123
+  } ],
+  "enable_session" : true,
+  "bgp_local_preference" : 123,
+  "service_metadata" : "aeiou",
+  "bot_policy_ref" : "aeiou",
+  "services" : [ {
+    "override_network_profile_ref" : "aeiou",
+    "port" : 123,
+    "port_range_end" : 123,
+    "is_active_ftp_data_port" : true,
+    "enable_http2" : true,
+    "horizon_internal_ports" : true,
+    "enable_ssl" : true,
+    "override_application_profile_ref" : "aeiou"
+  } ],
+  "url" : "aeiou",
+  "active_standby_se_tag" : "aeiou",
+  "nsx_securitygroup" : [ "aeiou" ],
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
+  "vsvip_cloud_config_cksum" : "aeiou",
+  "east_west_placement" : true,
+  "icap_request_profile_refs" : [ "aeiou" ],
+  "saml_sp_config" : {
+    "sp_metadata" : "aeiou",
+    "acs_index" : 123,
+    "authn_req_acs_type" : "aeiou",
+    "signing_ssl_key_and_certificate_ref" : "aeiou",
+    "cookie_timeout" : 123,
+    "use_idp_session_timeout" : true,
+    "entity_id" : "aeiou",
+    "key" : [ "" ],
+    "cookie_name" : "aeiou",
+    "single_signon_url" : "aeiou"
+  },
+  "vrf_context_ref" : "aeiou",
+  "flow_dist" : "aeiou",
+  "dns_info" : [ {
+    "metadata" : "aeiou",
+    "fqdn" : "aeiou",
+    "num_records_in_response" : 123,
+    "cname" : {
+      "cname" : "aeiou"
+    },
+    "type" : "aeiou",
+    "ttl" : 123,
+    "algorithm" : "aeiou"
+  } ],
+  "uuid" : "aeiou",
+  "vh_domain_name" : [ "aeiou" ],
+  "snat_ip" : [ "" ],
+  "microservice_ref" : "aeiou",
+  "error_page_profile_ref" : "aeiou",
+  "server_network_profile_ref" : "aeiou",
+  "use_vip_as_snat" : true,
+  "sideband_profile" : {
+    "ip" : [ "" ],
+    "sideband_max_request_body_size" : 123
+  },
   "performance_limits" : {
     "max_concurrent_connections" : 123,
     "max_throughput" : 123
   },
-  "sp_pool_refs" : [ "aeiou" ],
   "static_dns_records" : [ {
     "ip6_address" : [ {
       "ip6_address" : ""
@@ -24903,9 +25009,7 @@ font-style: italic;
     "delegated" : true,
     "algorithm" : "aeiou"
   } ],
-  "advertise_down_vs" : true,
   "fqdn" : "aeiou",
-  "bulk_sync_kvcache" : true,
   "vh_parent_vs_ref" : "aeiou",
   "weight" : 123,
   "ldap_vs_config" : {
@@ -24918,7 +25022,6 @@ font-style: italic;
     "se_auth_ldap_request_timeout" : 123,
     "se_auth_ldap_bind_timeout" : 123
   },
-  "waf_policy_ref" : "aeiou",
   "created_by" : "aeiou",
   "service_pool_select" : [ {
     "service_protocol" : "aeiou",
@@ -24929,18 +25032,11 @@ font-style: italic;
   } ],
   "vh_type" : "aeiou",
   "allow_invalid_client_cert" : true,
-  "security_policy_ref" : "aeiou",
   "application_profile_ref" : "aeiou",
-  "ssl_sess_cache_avg_size" : 123,
-  "cloud_type" : "aeiou",
-  "scaleout_ecmp" : true,
   "flow_label_type" : "aeiou",
   "name" : "aeiou",
-  "cloud_config_cksum" : "aeiou",
   "traffic_clone_profile_ref" : "aeiou",
-  "remove_listening_port_on_vs_down" : true,
   "bgp_num_as_path_prepend" : 123,
-  "vsvip_ref" : "aeiou",
   "host_name_xlate" : "aeiou",
   "connections_rate_limit" : {
     "rate_limiter" : {
@@ -24980,91 +25076,21 @@ font-style: italic;
     "http_cookie" : "aeiou",
     "http_header" : "aeiou"
   },
-  "network_security_policy_ref" : "aeiou",
-  "oauth_vs_config" : {
-    "oauth_settings" : [ {
-      "app_settings" : {
-        "oidc_config" : {
-          "oidc_enable" : true,
-          "profile" : true,
-          "userinfo" : true
-        },
-        "client_secret" : "aeiou",
-        "scopes" : [ "aeiou" ],
-        "client_id" : "aeiou"
-      },
-      "resource_server" : {
-        "access_type" : "aeiou",
-        "jwt_params" : {
-          "audience" : "aeiou"
-        },
-        "opaque_token_params" : {
-          "server_secret" : "aeiou",
-          "server_id" : "aeiou"
-        },
-        "introspection_data_timeout" : 123
-      },
-      "auth_profile_ref" : "aeiou"
-    } ],
-    "cookie_timeout" : 123,
-    "redirect_uri" : "aeiou",
-    "logout_uri" : "aeiou",
-    "post_logout_redirect_uri" : "aeiou",
-    "key" : [ {
-      "hmac_key" : "aeiou",
-      "aes_key" : "aeiou",
-      "name" : "aeiou"
-    } ],
-    "cookie_name" : "aeiou"
-  },
-  "topology_policies" : [ "" ],
   "description" : "aeiou",
   "vs_datascripts" : [ {
     "index" : 123,
     "vs_datascript_set_ref" : "aeiou"
   } ],
-  "jwt_config" : {
-    "jwt_name" : "aeiou",
-    "audience" : "aeiou",
-    "jwt_location" : "aeiou"
-  },
-  "pool_group_ref" : "aeiou",
   "ssl_key_and_certificate_refs" : [ "aeiou" ],
-  "ssl_profile_ref" : "aeiou",
-  "enabled" : true,
   "_last_modified" : "aeiou",
-  "limit_doser" : true,
   "se_group_ref" : "aeiou",
   "network_profile_ref" : "aeiou",
   "close_client_conn_on_config_update" : true,
-  "max_cps_per_client" : 123,
-  "sso_policy_ref" : "aeiou",
-  "http_policies" : [ {
-    "http_policy_set_ref" : "aeiou",
-    "index" : 123
-  } ],
-  "enable_session" : true,
   "analytics_profile_ref" : "aeiou",
-  "bgp_local_preference" : 123,
-  "service_metadata" : "aeiou",
   "use_bridge_ip_as_vip" : true,
   "requests_rate_limit" : "",
-  "bot_policy_ref" : "aeiou",
   "enable_rhi" : true,
-  "services" : [ {
-    "override_network_profile_ref" : "aeiou",
-    "port" : 123,
-    "port_range_end" : 123,
-    "is_active_ftp_data_port" : true,
-    "enable_http2" : true,
-    "horizon_internal_ports" : true,
-    "enable_ssl" : true,
-    "override_application_profile_ref" : "aeiou"
-  } ],
-  "url" : "aeiou",
   "test_se_datastore_level_1_ref" : "aeiou",
-  "active_standby_se_tag" : "aeiou",
-  "nsx_securitygroup" : [ "aeiou" ],
   "ssl_profile_selectors" : [ {
     "ssl_profile_ref" : "aeiou",
     "client_ip_list" : ""
@@ -25149,13 +25175,7 @@ font-style: italic;
   } ],
   "tenant_ref" : "aeiou",
   "csrf_policy_ref" : "aeiou",
-  "ign_pool_net_reach" : true,
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
-  } ],
-  "vsvip_cloud_config_cksum" : "aeiou",
-  "east_west_placement" : true
+  "ign_pool_net_reach" : true
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -26885,7 +26905,7 @@ font-style: italic;
 <div class="param">dns_qtype (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">dns_request (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsRequest">DnsRequest</a></span>  Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">dns_response (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsResponse">DnsResponse</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">dns_tcp_conn_close_from_se (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Service engine closed the TCP connection after the first DNS response. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">dns_tcp_conn_close_from_se (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Service engine closed the TCP connection after the first DNS response. Field introduced in 21.1.7, 22.1.4, 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">ds_log (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Datascript Log. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">gslbpool_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">gslbservice (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -28446,7 +28466,7 @@ font-style: italic;
     <h3 class="field-label"><a name="LogAgentEventDetail">LogAgentEventDetail</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">protocol </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Protocol used for communication to the external entity. Enum options - TCP_CONN. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">rapid_connection (optional)</div><div class="param-desc"><span class="param-type"><a href="#LogAgentTCPConnEstRateExcdEvent">LogAgentTCPConnEstRateExcdEvent</a></span> Event for TCP connection restablishment rate exceeds configured threshold. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">rapid_connection (optional)</div><div class="param-desc"><span class="param-type"><a href="#LogAgentTCPConnEstRateExcdEvent">LogAgentTCPConnEstRateExcdEvent</a></span> Event for TCP connection restablishment rate exceeds configured threshold. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">tcp_detail (optional)</div><div class="param-desc"><span class="param-type"><a href="#LogAgentTCPClientEventDetail">LogAgentTCPClientEventDetail</a></span> Event details for TCP connection event. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of log agent event. Enum options - LOG_AGENT_CONNECTION_ERROR. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
@@ -28463,10 +28483,10 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="LogAgentTCPConnEstRateExcdEvent">LogAgentTCPConnEstRateExcdEvent</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">error_code (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">error_reason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">host (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+      <div class="param">error_code (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">error_reason (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">host (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -29904,6 +29924,7 @@ font-style: italic;
 <div class="param">se_ref </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type ServiceEngine. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">sec_idx (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">snat_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">snat_ip6_address (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> IPV6 address for SE snat. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">vcpus (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">vip6_subnet_mask (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">vip_intf_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -30850,6 +30871,7 @@ font-style: italic;
 <div class="param">scaleout_in_progress (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Vip is awaiting scaleout response from this ServiceEngine. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">se_ready_in_progress (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Vip is awaiting response from this ServiceEngine. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">snat_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">snat_ip6_address (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> IPV6 address for SE snat. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">standby (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
@@ -30938,6 +30960,7 @@ font-style: italic;
 <div class="param">services (optional)</div><div class="param-desc"><span class="param-type"><a href="#Service">array[Service]</a></span> List of Services defined for this Virtual Service. Maximum of 2048 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">sideband_profile (optional)</div><div class="param-desc"><span class="param-type"><a href="#SidebandProfile">SidebandProfile</a></span> Sideband configuration to be used for this virtualservice.It can be used for sending traffic to sideband VIPs for external inspection etc. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">snat_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">array[IpAddr]</a></span> NAT&#39;ted floating source IP Address(es) for upstream connection to servers. Maximum of 32 items allowed. Allowed in Enterprise edition with any value, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">snat_ip6_addresses (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">array[IpAddr]</a></span> IPV6 address for SE snat. Field introduced in 30.2.1. Maximum of 32 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">sp_pool_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> GSLB pools used to manage site-persistence functionality. Each site-persistence pool contains the virtualservices in all the other sites, that is auto-generated by the GSLB manager. This is a read-only field for the user. It is a reference to an object of type Pool. Field introduced in 17.2.2. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">ssl_key_and_certificate_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Select or create one or two certificates, EC and/or RSA, that will be presented to SSL/TLS terminated connections. It is a reference to an object of type SSLKeyAndCertificate. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ssl_profile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Determines the set of SSL versions and ciphers to accept for SSL/TLS terminated connections. It is a reference to an object of type SSLProfile. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
