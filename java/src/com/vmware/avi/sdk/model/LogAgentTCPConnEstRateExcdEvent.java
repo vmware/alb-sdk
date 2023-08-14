@@ -37,7 +37,7 @@ public class LogAgentTCPConnEstRateExcdEvent  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Field introduced in 23.1.1.
+     * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorCode
@@ -48,7 +48,7 @@ public class LogAgentTCPConnEstRateExcdEvent  {
 
     /**
      * This is the setter method to the attribute.
-     * Field introduced in 23.1.1.
+     * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorCode set the errorCode.
@@ -59,7 +59,7 @@ public class LogAgentTCPConnEstRateExcdEvent  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Field introduced in 23.1.1.
+     * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorReason
@@ -70,7 +70,7 @@ public class LogAgentTCPConnEstRateExcdEvent  {
 
     /**
      * This is the setter method to the attribute.
-     * Field introduced in 23.1.1.
+     * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorReason set the errorReason.
@@ -81,7 +81,7 @@ public class LogAgentTCPConnEstRateExcdEvent  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Field introduced in 23.1.1.
+     * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return host
@@ -92,7 +92,7 @@ public class LogAgentTCPConnEstRateExcdEvent  {
 
     /**
      * This is the setter method to the attribute.
-     * Field introduced in 23.1.1.
+     * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param host set the host.
@@ -103,7 +103,7 @@ public class LogAgentTCPConnEstRateExcdEvent  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Field introduced in 23.1.1.
+     * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
@@ -114,7 +114,7 @@ public class LogAgentTCPConnEstRateExcdEvent  {
 
     /**
      * This is the setter method to the attribute.
-     * Field introduced in 23.1.1.
+     * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.

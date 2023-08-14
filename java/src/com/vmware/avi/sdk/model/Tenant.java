@@ -55,7 +55,7 @@ public class Tenant extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Key/value tenant attributes.
-     * Field introduced in 23.1.1.
+     * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return attrs
@@ -67,7 +67,7 @@ public class Tenant extends AviRestResource  {
     /**
      * This is the setter method. this will set the attrs
      * Key/value tenant attributes.
-     * Field introduced in 23.1.1.
+     * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return attrs
@@ -79,7 +79,7 @@ public class Tenant extends AviRestResource  {
     /**
      * This is the setter method this will set the attrs
      * Key/value tenant attributes.
-     * Field introduced in 23.1.1.
+     * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return attrs

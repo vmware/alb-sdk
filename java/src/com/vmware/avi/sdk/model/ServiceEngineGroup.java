@@ -4361,6 +4361,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Amount of memory for each of the service engine virtual machines.
      * Changes to this setting do not affect existing ses.
+     * Allowed values are 2048-262144.
+     * Unit is mb.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2048.
      * @return memoryPerSe
@@ -4373,6 +4375,8 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Amount of memory for each of the service engine virtual machines.
      * Changes to this setting do not affect existing ses.
+     * Allowed values are 2048-262144.
+     * Unit is mb.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 2048.
      * @param memoryPerSe set the memoryPerSe.
@@ -4925,6 +4929,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Supported only for externally managed security groups.
      * Not supported on full access deployments.
      * Requires se reboot.
+     * Allowed values are 1024-65535.
      * Field introduced in 20.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 9001.
@@ -4940,6 +4945,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Supported only for externally managed security groups.
      * Not supported on full access deployments.
      * Requires se reboot.
+     * Allowed values are 1024-65535.
      * Field introduced in 20.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 9001.
