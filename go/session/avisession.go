@@ -786,8 +786,9 @@ func (avisess *AviSession) restRequest(verb string, uri string, payload interfac
 			glog.Error("CheckControllerStatus is disabled for this session, not going to retry.")
 			if err != nil {
 				glog.Errorf("Failed to invoke API. Error: %s", err.Error())
+				return nil, err
 			}
-			return nil, fmt.Errorf("Rest request error, returning to caller: %s", err.Error())
+			return nil, errors.New("Rest request error, returning to caller")
 
 		}
 	}
