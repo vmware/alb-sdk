@@ -844,7 +844,7 @@
                     "type": "string"
                 },
                 "instance_id": {
-                    "description": "Instance uuid of the csp service. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Instance uuid of the csp service. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "introspection_endpoint": {
@@ -896,11 +896,11 @@
                     "type": "string"
                 },
                 "service_id": {
-                    "description": "Uuid value of csp service. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Uuid value of csp service. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "service_name": {
-                    "description": "Name of the csp service. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Name of the csp service. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "token_endpoint": {

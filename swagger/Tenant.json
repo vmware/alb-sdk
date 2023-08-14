@@ -541,7 +541,7 @@
                     "type": "string"
                 },
                 "attrs": {
-                    "description": "Key/value tenant attributes. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Key/value tenant attributes. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/KeyValue"
