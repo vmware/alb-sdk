@@ -119,7 +119,7 @@ public class DnsServiceApplicationProfile  {
      * This is the getter method this will return the attribute value.
      * If enabled, the service engine initiates closure of client tcp connections after the first dns response, for pass-through/proxy cases.
      * This behavior applies to all dns request types other than ax-fr.
-     * Field introduced in 30.1.1.
+     * Field introduced in 21.1.7, 22.1.4, 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return closeTcpConnectionPostResponse
@@ -132,7 +132,7 @@ public class DnsServiceApplicationProfile  {
      * This is the setter method to the attribute.
      * If enabled, the service engine initiates closure of client tcp connections after the first dns response, for pass-through/proxy cases.
      * This behavior applies to all dns request types other than ax-fr.
-     * Field introduced in 30.1.1.
+     * Field introduced in 21.1.7, 22.1.4, 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param closeTcpConnectionPostResponse set the closeTcpConnectionPostResponse.
