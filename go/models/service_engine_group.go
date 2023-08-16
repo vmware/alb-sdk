@@ -794,7 +794,7 @@ type ServiceEngineGroup struct {
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterHosts *VcenterHosts `json:"vcenter_hosts,omitempty"`
 
-	// Parking port group to be used by 9 vnics at the time of SE creation. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Parking port group to be used by 9 vnics at the time of SE creation. Field introduced in 21.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	VcenterParkingVnicPg *string `json:"vcenter_parking_vnic_pg,omitempty"`
 
 	// VCenter information for scoping at Host/Cluster level. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.

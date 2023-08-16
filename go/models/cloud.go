@@ -81,7 +81,7 @@ type Cloud struct {
 	// List of labels to be used for granular RBAC. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
-	// Cloud metrics collector polling interval in seconds. Field introduced in 22.1.1. Unit is SECONDS. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
+	// Cloud metrics collector polling interval in seconds. Field introduced in 21.1.6. Unit is SECONDS. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	MetricsPollingInterval *int32 `json:"metrics_polling_interval,omitempty"`
 
 	// MTU setting for the cloud. Unit is BYTES. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
