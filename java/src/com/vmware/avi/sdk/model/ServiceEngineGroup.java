@@ -7762,7 +7762,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Parking port group to be used by 9 vnics at the time of se creation.
-     * Field introduced in 22.1.1.
+     * Field introduced in 21.1.6.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vcenterParkingVnicPg
@@ -7774,7 +7774,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Parking port group to be used by 9 vnics at the time of se creation.
-     * Field introduced in 22.1.1.
+     * Field introduced in 21.1.6.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vcenterParkingVnicPg set the vcenterParkingVnicPg.

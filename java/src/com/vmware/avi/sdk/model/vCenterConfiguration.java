@@ -27,9 +27,6 @@ public class vCenterConfiguration  {
     @JsonProperty("datacenter")
     private String datacenter = null;
 
-    @JsonProperty("deactivate_vm_discovery")
-    private Boolean deactivateVmDiscovery;
-
     @JsonProperty("is_nsx_environment")
     private Boolean isNsxEnvironment = false;
 
@@ -62,7 +59,7 @@ public class vCenterConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Vcenter content library where service engine images are stored.
-     * Field introduced in 22.1.1.
+     * Field introduced in 21.1.6.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return contentLib
@@ -74,7 +71,7 @@ public class vCenterConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Vcenter content library where service engine images are stored.
-     * Field introduced in 22.1.1.
+     * Field introduced in 21.1.6.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param contentLib set the contentLib.
@@ -103,30 +100,6 @@ public class vCenterConfiguration  {
      */
     public void setDatacenter(String  datacenter) {
         this.datacenter = datacenter;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * If true, vm's on the vcenter will not be discovered.set it to true if there are more than 10000 vms in the datacenter.
-     * Field deprecated in 30.1.1.
-     * Field introduced in 20.1.5.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * @return deactivateVmDiscovery
-     */
-    public Boolean getDeactivateVmDiscovery() {
-        return deactivateVmDiscovery;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * If true, vm's on the vcenter will not be discovered.set it to true if there are more than 10000 vms in the datacenter.
-     * Field deprecated in 30.1.1.
-     * Field introduced in 20.1.5.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * @param deactivateVmDiscovery set the deactivateVmDiscovery.
-     */
-    public void setDeactivateVmDiscovery(Boolean  deactivateVmDiscovery) {
-        this.deactivateVmDiscovery = deactivateVmDiscovery;
     }
 
     /**
@@ -250,7 +223,7 @@ public class vCenterConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * If false, service engine image will not be pushed to content library.
-     * Field introduced in 22.1.1.
+     * Field introduced in 21.1.6.
      * Allowed in enterprise edition with any value, essentials edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return useContentLib
@@ -262,7 +235,7 @@ public class vCenterConfiguration  {
     /**
      * This is the setter method to the attribute.
      * If false, service engine image will not be pushed to content library.
-     * Field introduced in 22.1.1.
+     * Field introduced in 21.1.6.
      * Allowed in enterprise edition with any value, essentials edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param useContentLib set the useContentLib.
@@ -355,7 +328,6 @@ public class vCenterConfiguration  {
   Objects.equals(this.managementNetwork, objvCenterConfiguration.managementNetwork)&&
   Objects.equals(this.managementIpSubnet, objvCenterConfiguration.managementIpSubnet)&&
   Objects.equals(this.vcenterTemplateSeLocation, objvCenterConfiguration.vcenterTemplateSeLocation)&&
-  Objects.equals(this.deactivateVmDiscovery, objvCenterConfiguration.deactivateVmDiscovery)&&
   Objects.equals(this.useContentLib, objvCenterConfiguration.useContentLib)&&
   Objects.equals(this.contentLib, objvCenterConfiguration.contentLib)&&
   Objects.equals(this.isNsxEnvironment, objvCenterConfiguration.isNsxEnvironment);
@@ -367,7 +339,6 @@ public class vCenterConfiguration  {
       sb.append("class vCenterConfiguration {\n");
                   sb.append("    contentLib: ").append(toIndentedString(contentLib)).append("\n");
                         sb.append("    datacenter: ").append(toIndentedString(datacenter)).append("\n");
-                        sb.append("    deactivateVmDiscovery: ").append(toIndentedString(deactivateVmDiscovery)).append("\n");
                         sb.append("    isNsxEnvironment: ").append(toIndentedString(isNsxEnvironment)).append("\n");
                         sb.append("    managementIpSubnet: ").append(toIndentedString(managementIpSubnet)).append("\n");
                         sb.append("    managementNetwork: ").append(toIndentedString(managementNetwork)).append("\n");

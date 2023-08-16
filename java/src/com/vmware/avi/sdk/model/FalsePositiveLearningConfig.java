@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class FalsePositiveLearningConfig  {
     @JsonProperty("max_apps_supported")
-    private Integer maxAppsSupported = 5;
+    private Integer maxAppsSupported = 2;
 
     @JsonProperty("min_monitor_time")
     private Integer minMonitorTime = 10080;
 
     @JsonProperty("min_trans_per_application")
-    private Integer minTransPerApplication = 5000000;
+    private Integer minTransPerApplication = 1000000;
 
     @JsonProperty("min_trans_per_uri")
     private Integer minTransPerUri = 10000;
@@ -40,7 +40,7 @@ public class FalsePositiveLearningConfig  {
      * Max number of applications supported to detect false positive.
      * Field introduced in 22.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @return maxAppsSupported
      */
     public Integer getMaxAppsSupported() {
@@ -52,7 +52,7 @@ public class FalsePositiveLearningConfig  {
      * Max number of applications supported to detect false positive.
      * Field introduced in 22.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 2.
      * @param maxAppsSupported set the maxAppsSupported.
      */
     public void setMaxAppsSupported(Integer  maxAppsSupported) {
@@ -92,7 +92,7 @@ public class FalsePositiveLearningConfig  {
      * Minimum number of transactions in one application required to automatically detect false positive.
      * Field introduced in 22.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 5000000.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1000000.
      * @return minTransPerApplication
      */
     public Integer getMinTransPerApplication() {
@@ -104,7 +104,7 @@ public class FalsePositiveLearningConfig  {
      * Minimum number of transactions in one application required to automatically detect false positive.
      * Field introduced in 22.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 5000000.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1000000.
      * @param minTransPerApplication set the minTransPerApplication.
      */
     public void setMinTransPerApplication(Integer  minTransPerApplication) {
