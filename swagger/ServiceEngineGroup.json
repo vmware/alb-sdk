@@ -2826,7 +2826,7 @@
                     "$ref": "#/definitions/VcenterHosts"
                 },
                 "vcenter_parking_vnic_pg": {
-                    "description": "Parking port group to be used by 9 vnics at the time of SE creation. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Parking port group to be used by 9 vnics at the time of SE creation. Field introduced in 21.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vcenters": {
