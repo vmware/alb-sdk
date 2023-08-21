@@ -28,6 +28,7 @@ from avi.migrationtools.f5_converter import (f5_config_converter, f5_parser,
                                              scp_util)
 from avi.migrationtools.f5_converter.conversion_util import F5Util
 from avi.migrationtools.f5_converter.ciphers_converter import CiphersConfigConv
+from avi.migrationtools.f5_converter.f5_config_parser import iRuleDiscovery
 
 # urllib3.disable_warnings()
 LOG = logging.getLogger(__name__)
@@ -156,6 +157,8 @@ class F5Converter(AviConverter):
         self.segroup = args.segroup
         self.reuse_http_policy = args.reuse_http_policy
         self.skip_disabled_vs = args.skip_disabled_vs
+        # f5 tenant for irule discovery
+        self.f5_tenant=args.f5_tenant if args.f5_tenant else "Common"
         # Created f5 util object.
         self.conversion_util = F5Util()
 
@@ -341,6 +344,11 @@ class F5Converter(AviConverter):
             avi_config = wipe_out_not_in_use(avi_config)
         self.write_output(avi_config, output_dir, '%s-Output.json' %
                           report_name)
+        
+        # Irule discovery
+        irule_dis=iRuleDiscovery(self.bigip_config_file,self.f5_tenant)
+        irule_dis.get_irule_discovery(output_dir,report_name)
+        
         if self.vs_filter:
             F5Util().remove_vs_names_when_vs_filter_is_provided(
                 output_dir=output_dir, report_name=report_name, vs_names=self.vs_filter)
@@ -927,6 +935,10 @@ if __name__ == "__main__":
         "--skip_disabled_vs",
         help="Flag for skipping those vs/s which are disabled on f5",
         action="store_true",
+    )
+    parser.add_argument(
+        "--f5_tenant",
+        help="f5 tenant for irule discovery"
     )
 
     terminal_args = parser.parse_args()
