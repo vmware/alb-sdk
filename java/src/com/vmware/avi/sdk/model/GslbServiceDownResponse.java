@@ -38,7 +38,7 @@ public class GslbServiceDownResponse  {
     /**
      * This is the getter method this will return the attribute value.
      * Fallback cname to use in response to the client query when the gslb service is down.
-     * Field introduced in 30.2.1.
+     * Field introduced in 30.2.1, 22.1.5.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fallbackCname
@@ -50,7 +50,7 @@ public class GslbServiceDownResponse  {
     /**
      * This is the setter method to the attribute.
      * Fallback cname to use in response to the client query when the gslb service is down.
-     * Field introduced in 30.2.1.
+     * Field introduced in 30.2.1, 22.1.5.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fallbackCname set the fallbackCname.
