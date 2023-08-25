@@ -5,7 +5,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Avi TenantSystemConfiguration Object API</title>
+    <title>Avi ServiceAuthProfile Object API</title>
     <style type="text/css">
       body { 
 	font-family: Trebuchet MS, sans-serif;
@@ -183,8 +183,8 @@ font-style: italic;
     </style>
   </head>
   <body>
-  <h1>Avi TenantSystemConfiguration Object API</h1>
-    <div class="app-desc">CLI ``` - show tenantsystemconfiguration <key> - configure tenantsystemconfiguration <key> ``` </div>
+  <h1>Avi ServiceAuthProfile Object API</h1>
+    <div class="app-desc">CLI ``` - configure serviceauthprofile <key> - show serviceauthprofile <key> ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
     <div class="app-desc">Version: 30.1.1</div>
@@ -202,19 +202,19 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#tenantsystemconfigurationGet"><code><span class="http-method">get</span> /tenantsystemconfiguration</code></a></li>
-  <li><a href="#tenantsystemconfigurationPost"><code><span class="http-method">post</span> /tenantsystemconfiguration</code></a></li>
-  <li><a href="#tenantsystemconfigurationUuidDelete"><code><span class="http-method">delete</span> /tenantsystemconfiguration/{uuid}</code></a></li>
-  <li><a href="#tenantsystemconfigurationUuidGet"><code><span class="http-method">get</span> /tenantsystemconfiguration/{uuid}</code></a></li>
-  <li><a href="#tenantsystemconfigurationUuidPatch"><code><span class="http-method">patch</span> /tenantsystemconfiguration/{uuid}</code></a></li>
-  <li><a href="#tenantsystemconfigurationUuidPut"><code><span class="http-method">put</span> /tenantsystemconfiguration/{uuid}</code></a></li>
+  <li><a href="#serviceauthprofileGet"><code><span class="http-method">get</span> /serviceauthprofile</code></a></li>
+  <li><a href="#serviceauthprofilePost"><code><span class="http-method">post</span> /serviceauthprofile</code></a></li>
+  <li><a href="#serviceauthprofileUuidDelete"><code><span class="http-method">delete</span> /serviceauthprofile/{uuid}</code></a></li>
+  <li><a href="#serviceauthprofileUuidGet"><code><span class="http-method">get</span> /serviceauthprofile/{uuid}</code></a></li>
+  <li><a href="#serviceauthprofileUuidPatch"><code><span class="http-method">patch</span> /serviceauthprofile/{uuid}</code></a></li>
+  <li><a href="#serviceauthprofileUuidPut"><code><span class="http-method">put</span> /serviceauthprofile/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="tenantsystemconfigurationGet"/>
+  <div class="method"><a name="serviceauthprofileGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /tenantsystemconfiguration</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">tenantsystemconfigurationGet</span>)</div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /serviceauthprofile</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceauthprofileGet</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -248,7 +248,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#TenantSystemConfigurationApiResponse">TenantSystemConfigurationApiResponse</a>
+      <a href="#ServiceAuthProfileApiResponse">ServiceAuthProfileApiResponse</a>
       
     </div>
 
@@ -265,10 +265,18 @@ font-style: italic;
     "configpb_attributes" : {
       "version" : 123
     },
-    "dns_virtualservice_refs" : [ "aeiou" ],
+    "description" : "aeiou",
+    "type" : "aeiou",
     "uuid" : "aeiou",
     "url" : "aeiou",
-    "_last_modified" : "aeiou"
+    "_last_modified" : "aeiou",
+    "service_oauth_profile" : {
+      "org_id" : "aeiou",
+      "service_name" : "aeiou",
+      "service_id" : "aeiou",
+      "client_id" : "aeiou",
+      "authorization_endpoint" : "aeiou"
+    }
   } ]
 }</code></pre>
 
@@ -282,17 +290,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#TenantSystemConfigurationApiResponse">TenantSystemConfigurationApiResponse</a>
+        <a href="#ServiceAuthProfileApiResponse">ServiceAuthProfileApiResponse</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="tenantsystemconfigurationPost"/>
+  <div class="method"><a name="serviceauthprofilePost"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /tenantsystemconfiguration</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">tenantsystemconfigurationPost</span>)</div>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /serviceauthprofile</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceauthprofilePost</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -306,7 +314,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; TenantSystemConfiguration object creation </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; ServiceAuthProfile object creation </div>
     </div>  <!-- field-items -->
 
 
@@ -314,7 +322,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#TenantSystemConfiguration">TenantSystemConfiguration</a>
+      <a href="#ServiceAuthProfile">ServiceAuthProfile</a>
       
     </div>
 
@@ -328,10 +336,18 @@ font-style: italic;
   "configpb_attributes" : {
     "version" : 123
   },
-  "dns_virtualservice_refs" : [ "aeiou" ],
+  "description" : "aeiou",
+  "type" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
-  "_last_modified" : "aeiou"
+  "_last_modified" : "aeiou",
+  "service_oauth_profile" : {
+    "org_id" : "aeiou",
+    "service_name" : "aeiou",
+    "service_id" : "aeiou",
+    "client_id" : "aeiou",
+    "authorization_endpoint" : "aeiou"
+  }
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -344,17 +360,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#TenantSystemConfiguration">TenantSystemConfiguration</a>
+        <a href="#ServiceAuthProfile">ServiceAuthProfile</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="tenantsystemconfigurationUuidDelete"/>
+  <div class="method"><a name="serviceauthprofileUuidDelete"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /tenantsystemconfiguration/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">tenantsystemconfigurationUuidDelete</span>)</div>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /serviceauthprofile/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceauthprofileUuidDelete</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -408,11 +424,11 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="tenantsystemconfigurationUuidGet"/>
+  <div class="method"><a name="serviceauthprofileUuidGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /tenantsystemconfiguration/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">tenantsystemconfigurationUuidGet</span>)</div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /serviceauthprofile/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceauthprofileUuidGet</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -448,7 +464,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#TenantSystemConfiguration">TenantSystemConfiguration</a>
+      <a href="#ServiceAuthProfile">ServiceAuthProfile</a>
       
     </div>
 
@@ -462,10 +478,18 @@ font-style: italic;
   "configpb_attributes" : {
     "version" : 123
   },
-  "dns_virtualservice_refs" : [ "aeiou" ],
+  "description" : "aeiou",
+  "type" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
-  "_last_modified" : "aeiou"
+  "_last_modified" : "aeiou",
+  "service_oauth_profile" : {
+    "org_id" : "aeiou",
+    "service_name" : "aeiou",
+    "service_id" : "aeiou",
+    "client_id" : "aeiou",
+    "authorization_endpoint" : "aeiou"
+  }
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -478,17 +502,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#TenantSystemConfiguration">TenantSystemConfiguration</a>
+        <a href="#ServiceAuthProfile">ServiceAuthProfile</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="tenantsystemconfigurationUuidPatch"/>
+  <div class="method"><a name="serviceauthprofileUuidPatch"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /tenantsystemconfiguration/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">tenantsystemconfigurationUuidPatch</span>)</div>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /serviceauthprofile/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceauthprofileUuidPatch</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -508,7 +532,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; TenantSystemConfiguration object creation </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; ServiceAuthProfile object creation </div>
     </div>  <!-- field-items -->
 
 
@@ -522,7 +546,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#TenantSystemConfiguration">TenantSystemConfiguration</a>
+      <a href="#ServiceAuthProfile">ServiceAuthProfile</a>
       
     </div>
 
@@ -536,10 +560,18 @@ font-style: italic;
   "configpb_attributes" : {
     "version" : 123
   },
-  "dns_virtualservice_refs" : [ "aeiou" ],
+  "description" : "aeiou",
+  "type" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
-  "_last_modified" : "aeiou"
+  "_last_modified" : "aeiou",
+  "service_oauth_profile" : {
+    "org_id" : "aeiou",
+    "service_name" : "aeiou",
+    "service_id" : "aeiou",
+    "client_id" : "aeiou",
+    "authorization_endpoint" : "aeiou"
+  }
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -552,17 +584,17 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#TenantSystemConfiguration">TenantSystemConfiguration</a>
+        <a href="#ServiceAuthProfile">ServiceAuthProfile</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="tenantsystemconfigurationUuidPut"/>
+  <div class="method"><a name="serviceauthprofileUuidPut"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /tenantsystemconfiguration/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">tenantsystemconfigurationUuidPut</span>)</div>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /serviceauthprofile/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceauthprofileUuidPut</span>)</div>
     <div class="method-notes"></div>
 
     <h3 class="field-label">Path parameters</h3>
@@ -582,7 +614,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; TenantSystemConfiguration object creation </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; ServiceAuthProfile object creation </div>
     </div>  <!-- field-items -->
 
 
@@ -596,7 +628,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#TenantSystemConfiguration">TenantSystemConfiguration</a>
+      <a href="#ServiceAuthProfile">ServiceAuthProfile</a>
       
     </div>
 
@@ -610,10 +642,18 @@ font-style: italic;
   "configpb_attributes" : {
     "version" : 123
   },
-  "dns_virtualservice_refs" : [ "aeiou" ],
+  "description" : "aeiou",
+  "type" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
-  "_last_modified" : "aeiou"
+  "_last_modified" : "aeiou",
+  "service_oauth_profile" : {
+    "org_id" : "aeiou",
+    "service_name" : "aeiou",
+    "service_id" : "aeiou",
+    "client_id" : "aeiou",
+    "authorization_endpoint" : "aeiou"
+  }
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -626,7 +666,7 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#TenantSystemConfiguration">TenantSystemConfiguration</a>
+        <a href="#ServiceAuthProfile">ServiceAuthProfile</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
@@ -640,8 +680,9 @@ font-style: italic;
   <h2>Table of Contents</h2>
   <ol>
     <li><a href="#ConfigPbAttributes"><code>ConfigPbAttributes</code></a></li>
-    <li><a href="#TenantSystemConfiguration"><code>TenantSystemConfiguration</code></a></li>
-    <li><a href="#TenantSystemConfigurationApiResponse"><code>TenantSystemConfigurationApiResponse</code></a></li>
+    <li><a href="#ServiceAuthProfile"><code>ServiceAuthProfile</code></a></li>
+    <li><a href="#ServiceAuthProfileApiResponse"><code>ServiceAuthProfileApiResponse</code></a></li>
+    <li><a href="#ServiceOAuth"><code>ServiceOAuth</code></a></li>
   </ol>
 
   <div class="model">
@@ -651,23 +692,35 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
-    <h3 class="field-label"><a name="TenantSystemConfiguration">TenantSystemConfiguration</a> <a class="up" href="#__Models">Up</a></h3>
+    <h3 class="field-label"><a name="ServiceAuthProfile">ServiceAuthProfile</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
 <div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">dns_virtualservice_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> DNS virtual services hosting FQDN records for applications configured within this tenant. It is a reference to an object of type VirtualService. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the Tenant System Configuration object. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Unique Identifier of the tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Description for the service Auth Profile. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the service Auth Profile. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">service_oauth_profile (optional)</div><div class="param-desc"><span class="param-type"><a href="#ServiceOAuth">ServiceOAuth</a></span> OAuth Profile - Common endpoint information for service authentication. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tenant ref for the service auth profile. It is a reference to an object of type Tenant. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Type of the service Auth Profile. Enum options - SERVICE_AUTH_OAUTH. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url </div>
-<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Tenant System Configuration UUID. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the service Auth Profile. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
-    <h3 class="field-label"><a name="TenantSystemConfigurationApiResponse">TenantSystemConfigurationApiResponse</a> <a class="up" href="#__Models">Up</a></h3>
+    <h3 class="field-label"><a name="ServiceAuthProfileApiResponse">ServiceAuthProfileApiResponse</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">count </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  format: int32</div>
-<div class="param">results </div><div class="param-desc"><span class="param-type"><a href="#TenantSystemConfiguration">array[TenantSystemConfiguration]</a></span>  </div>
+<div class="param">results </div><div class="param-desc"><span class="param-type"><a href="#ServiceAuthProfile">array[ServiceAuthProfile]</a></span>  </div>
 <div class="param">next (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="ServiceOAuth">ServiceOAuth</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">authorization_endpoint </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> URL of authorization server. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">client_id </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Application specific identifier for service auth. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">org_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Organization Id for service OAuth(required for CSP). Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">service_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Uuid value of the service(required for CSP). Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">service_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the service(required for CSP). Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   </body>
