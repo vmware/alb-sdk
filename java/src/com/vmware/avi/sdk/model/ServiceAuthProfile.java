@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The TenantSystemConfiguration is a POJO class extends AviRestResource that used for creating
- * TenantSystemConfiguration.
+ * The ServiceAuthProfile is a POJO class extends AviRestResource that used for creating
+ * ServiceAuthProfile.
  *
  * @version 1.0
  * @since 
@@ -20,15 +20,21 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class TenantSystemConfiguration extends AviRestResource  {
-    @JsonProperty("dns_virtualservice_refs")
-    private List<String> dnsVirtualserviceRefs = null;
+public class ServiceAuthProfile extends AviRestResource  {
+    @JsonProperty("description")
+    private String description = null;
 
     @JsonProperty("name")
     private String name = null;
 
+    @JsonProperty("service_oauth_profile")
+    private ServiceOAuth serviceOauthProfile = null;
+
     @JsonProperty("tenant_ref")
     private String tenantRef = null;
+
+    @JsonProperty("type")
+    private String type = null;
 
     @JsonProperty("url")
     private String url = "url";
@@ -37,52 +43,34 @@ public class TenantSystemConfiguration extends AviRestResource  {
     private String uuid = null;
 
 
+
     /**
      * This is the getter method this will return the attribute value.
-     * Dns virtual services hosting fqdn records for applications configured within this tenant.
-     * It is a reference to an object of type virtualservice.
+     * Description for the service auth profile.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return dnsVirtualserviceRefs
+     * @return description
      */
-    public List<String> getDnsVirtualserviceRefs() {
-        return dnsVirtualserviceRefs;
+    public String getDescription() {
+        return description;
     }
 
     /**
-     * This is the setter method. this will set the dnsVirtualserviceRefs
-     * Dns virtual services hosting fqdn records for applications configured within this tenant.
-     * It is a reference to an object of type virtualservice.
+     * This is the setter method to the attribute.
+     * Description for the service auth profile.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return dnsVirtualserviceRefs
+     * @param description set the description.
      */
-    public void setDnsVirtualserviceRefs(List<String>  dnsVirtualserviceRefs) {
-        this.dnsVirtualserviceRefs = dnsVirtualserviceRefs;
-    }
-
-    /**
-     * This is the setter method this will set the dnsVirtualserviceRefs
-     * Dns virtual services hosting fqdn records for applications configured within this tenant.
-     * It is a reference to an object of type virtualservice.
-     * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return dnsVirtualserviceRefs
-     */
-    public TenantSystemConfiguration addDnsVirtualserviceRefsItem(String dnsVirtualserviceRefsItem) {
-      if (this.dnsVirtualserviceRefs == null) {
-        this.dnsVirtualserviceRefs = new ArrayList<String>();
-      }
-      this.dnsVirtualserviceRefs.add(dnsVirtualserviceRefsItem);
-      return this;
+    public void setDescription(String  description) {
+        this.description = description;
     }
 
     /**
      * This is the getter method this will return the attribute value.
-     * Name of the tenant system configuration object.
+     * Name of the service auth profile.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -94,7 +82,7 @@ public class TenantSystemConfiguration extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Name of the tenant system configuration object.
+     * Name of the service auth profile.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -106,7 +94,31 @@ public class TenantSystemConfiguration extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Unique identifier of the tenant that this object belongs to.
+     * Oauth profile - common endpoint information for service authentication.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return serviceOauthProfile
+     */
+    public ServiceOAuth getServiceOauthProfile() {
+        return serviceOauthProfile;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Oauth profile - common endpoint information for service authentication.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param serviceOauthProfile set the serviceOauthProfile.
+     */
+    public void setServiceOauthProfile(ServiceOAuth serviceOauthProfile) {
+        this.serviceOauthProfile = serviceOauthProfile;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Tenant ref for the service auth profile.
      * It is a reference to an object of type tenant.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -119,7 +131,7 @@ public class TenantSystemConfiguration extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Unique identifier of the tenant that this object belongs to.
+     * Tenant ref for the service auth profile.
      * It is a reference to an object of type tenant.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -128,6 +140,32 @@ public class TenantSystemConfiguration extends AviRestResource  {
      */
     public void setTenantRef(String  tenantRef) {
         this.tenantRef = tenantRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Type of the service auth profile.
+     * Enum options - SERVICE_AUTH_OAUTH.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Type of the service auth profile.
+     * Enum options - SERVICE_AUTH_OAUTH.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param type set the type.
+     */
+    public void setType(String  type) {
+        this.type = type;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -149,7 +187,7 @@ public class TenantSystemConfiguration extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Tenant system configuration uuid.
+     * Uuid of the service auth profile.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -161,7 +199,7 @@ public class TenantSystemConfiguration extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Tenant system configuration uuid.
+     * Uuid of the service auth profile.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -180,20 +218,24 @@ public class TenantSystemConfiguration extends AviRestResource  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      TenantSystemConfiguration objTenantSystemConfiguration = (TenantSystemConfiguration) o;
-      return   Objects.equals(this.uuid, objTenantSystemConfiguration.uuid)&&
-  Objects.equals(this.name, objTenantSystemConfiguration.name)&&
-  Objects.equals(this.tenantRef, objTenantSystemConfiguration.tenantRef)&&
-  Objects.equals(this.dnsVirtualserviceRefs, objTenantSystemConfiguration.dnsVirtualserviceRefs);
+      ServiceAuthProfile objServiceAuthProfile = (ServiceAuthProfile) o;
+      return   Objects.equals(this.uuid, objServiceAuthProfile.uuid)&&
+  Objects.equals(this.name, objServiceAuthProfile.name)&&
+  Objects.equals(this.type, objServiceAuthProfile.type)&&
+  Objects.equals(this.description, objServiceAuthProfile.description)&&
+  Objects.equals(this.serviceOauthProfile, objServiceAuthProfile.serviceOauthProfile)&&
+  Objects.equals(this.tenantRef, objServiceAuthProfile.tenantRef);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class TenantSystemConfiguration {\n");
-                  sb.append("    dnsVirtualserviceRefs: ").append(toIndentedString(dnsVirtualserviceRefs)).append("\n");
+      sb.append("class ServiceAuthProfile {\n");
+                  sb.append("    description: ").append(toIndentedString(description)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                        sb.append("    serviceOauthProfile: ").append(toIndentedString(serviceOauthProfile)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+                        sb.append("    type: ").append(toIndentedString(type)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
       return sb.toString();

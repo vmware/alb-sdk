@@ -42,6 +42,9 @@ public class GslbPoolMemberRuntimeInfo  {
     @JsonProperty("gs_uuid")
     private String gsUuid = null;
 
+    @JsonProperty("health_monitor_info")
+    private List<String> healthMonitorInfo = null;
+
     @JsonProperty("ip")
     private IpAddr ip = null;
 
@@ -253,6 +256,45 @@ public class GslbPoolMemberRuntimeInfo  {
      */
     public void setGsUuid(String  gsUuid) {
         this.gsUuid = gsUuid;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * This field will provide information on origin(site name) of the health monitoring information.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return healthMonitorInfo
+     */
+    public List<String> getHealthMonitorInfo() {
+        return healthMonitorInfo;
+    }
+
+    /**
+     * This is the setter method. this will set the healthMonitorInfo
+     * This field will provide information on origin(site name) of the health monitoring information.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return healthMonitorInfo
+     */
+    public void setHealthMonitorInfo(List<String>  healthMonitorInfo) {
+        this.healthMonitorInfo = healthMonitorInfo;
+    }
+
+    /**
+     * This is the setter method this will set the healthMonitorInfo
+     * This field will provide information on origin(site name) of the health monitoring information.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return healthMonitorInfo
+     */
+    public GslbPoolMemberRuntimeInfo addHealthMonitorInfoItem(String healthMonitorInfoItem) {
+      if (this.healthMonitorInfo == null) {
+        this.healthMonitorInfo = new ArrayList<String>();
+      }
+      this.healthMonitorInfo.add(healthMonitorInfoItem);
+      return this;
     }
 
     /**
@@ -634,7 +676,8 @@ public class GslbPoolMemberRuntimeInfo  {
   Objects.equals(this.controllerStatus, objGslbPoolMemberRuntimeInfo.controllerStatus)&&
   Objects.equals(this.datapathStatus, objGslbPoolMemberRuntimeInfo.datapathStatus)&&
   Objects.equals(this.vserverL4Metrics, objGslbPoolMemberRuntimeInfo.vserverL4Metrics)&&
-  Objects.equals(this.vserverL7Metrics, objGslbPoolMemberRuntimeInfo.vserverL7Metrics);
+  Objects.equals(this.vserverL7Metrics, objGslbPoolMemberRuntimeInfo.vserverL7Metrics)&&
+  Objects.equals(this.healthMonitorInfo, objGslbPoolMemberRuntimeInfo.healthMonitorInfo);
     }
 
     @Override
@@ -648,6 +691,7 @@ public class GslbPoolMemberRuntimeInfo  {
                         sb.append("    fqdn: ").append(toIndentedString(fqdn)).append("\n");
                         sb.append("    gsName: ").append(toIndentedString(gsName)).append("\n");
                         sb.append("    gsUuid: ").append(toIndentedString(gsUuid)).append("\n");
+                        sb.append("    healthMonitorInfo: ").append(toIndentedString(healthMonitorInfo)).append("\n");
                         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
                         sb.append("    ipValueToSe: ").append(toIndentedString(ipValueToSe)).append("\n");
                         sb.append("    ipv6ValueToSe: ").append(toIndentedString(ipv6ValueToSe)).append("\n");

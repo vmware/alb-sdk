@@ -250,7 +250,7 @@ public class NsxtConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Vmc mode.
-     * Field introduced in 23.1.1.
+     * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return vmcMode
@@ -262,7 +262,7 @@ public class NsxtConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Vmc mode.
-     * Field introduced in 23.1.1.
+     * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param vmcMode set the vmcMode.
@@ -274,7 +274,7 @@ public class NsxtConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Vpc mode.
-     * Field introduced in 23.1.1.
+     * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vpcMode
@@ -286,7 +286,7 @@ public class NsxtConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Vpc mode.
-     * Field introduced in 23.1.1.
+     * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vpcMode set the vpcMode.

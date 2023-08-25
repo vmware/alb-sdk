@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The LogAgentTCPConnEstRateExcdEvent is a POJO class extends AviRestResource that used for creating
- * LogAgentTCPConnEstRateExcdEvent.
+ * The ServiceAuthConfiguration is a POJO class extends AviRestResource that used for creating
+ * ServiceAuthConfiguration.
  *
  * @version 1.0
  * @since 
@@ -20,107 +20,92 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class LogAgentTCPConnEstRateExcdEvent  {
-    @JsonProperty("error_code")
-    private String errorCode = null;
+public class ServiceAuthConfiguration  {
+    @JsonProperty("index")
+    private Integer index = null;
 
-    @JsonProperty("error_reason")
-    private String errorReason = null;
+    @JsonProperty("service_auth_mapping_profile_ref")
+    private String serviceAuthMappingProfileRef = null;
 
-    @JsonProperty("host")
-    private String host = null;
-
-    @JsonProperty("port")
-    private String port = null;
+    @JsonProperty("service_auth_profile_ref")
+    private String serviceAuthProfileRef = null;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
+     * Index used for maintaining order of serviceauthconfiguration.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return errorCode
+     * @return index
      */
-    public String getErrorCode() {
-        return errorCode;
+    public Integer getIndex() {
+        return index;
     }
 
     /**
      * This is the setter method to the attribute.
+     * Index used for maintaining order of serviceauthconfiguration.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param errorCode set the errorCode.
+     * @param index set the index.
      */
-    public void setErrorCode(String  errorCode) {
-        this.errorCode = errorCode;
+    public void setIndex(Integer  index) {
+        this.index = index;
     }
 
     /**
      * This is the getter method this will return the attribute value.
+     * Uuid of the authmappingprofile(set of auth mapping rules) to be assigned to a user on successful match.
+     * It is a reference to an object of type authmappingprofile.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return errorReason
+     * @return serviceAuthMappingProfileRef
      */
-    public String getErrorReason() {
-        return errorReason;
+    public String getServiceAuthMappingProfileRef() {
+        return serviceAuthMappingProfileRef;
     }
 
     /**
      * This is the setter method to the attribute.
+     * Uuid of the authmappingprofile(set of auth mapping rules) to be assigned to a user on successful match.
+     * It is a reference to an object of type authmappingprofile.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param errorReason set the errorReason.
+     * @param serviceAuthMappingProfileRef set the serviceAuthMappingProfileRef.
      */
-    public void setErrorReason(String  errorReason) {
-        this.errorReason = errorReason;
+    public void setServiceAuthMappingProfileRef(String  serviceAuthMappingProfileRef) {
+        this.serviceAuthMappingProfileRef = serviceAuthMappingProfileRef;
     }
 
     /**
      * This is the getter method this will return the attribute value.
+     * Uuid of the service auth profile.
+     * It is a reference to an object of type serviceauthprofile.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return host
+     * @return serviceAuthProfileRef
      */
-    public String getHost() {
-        return host;
+    public String getServiceAuthProfileRef() {
+        return serviceAuthProfileRef;
     }
 
     /**
      * This is the setter method to the attribute.
+     * Uuid of the service auth profile.
+     * It is a reference to an object of type serviceauthprofile.
      * Field introduced in 30.1.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param host set the host.
+     * @param serviceAuthProfileRef set the serviceAuthProfileRef.
      */
-    public void setHost(String  host) {
-        this.host = host;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return port
-     */
-    public String getPort() {
-        return port;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Field introduced in 30.1.1.
-     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param port set the port.
-     */
-    public void setPort(String  port) {
-        this.port = port;
+    public void setServiceAuthProfileRef(String  serviceAuthProfileRef) {
+        this.serviceAuthProfileRef = serviceAuthProfileRef;
     }
 
 
@@ -132,21 +117,19 @@ public class LogAgentTCPConnEstRateExcdEvent  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      LogAgentTCPConnEstRateExcdEvent objLogAgentTCPConnEstRateExcdEvent = (LogAgentTCPConnEstRateExcdEvent) o;
-      return   Objects.equals(this.host, objLogAgentTCPConnEstRateExcdEvent.host)&&
-  Objects.equals(this.port, objLogAgentTCPConnEstRateExcdEvent.port)&&
-  Objects.equals(this.errorCode, objLogAgentTCPConnEstRateExcdEvent.errorCode)&&
-  Objects.equals(this.errorReason, objLogAgentTCPConnEstRateExcdEvent.errorReason);
+      ServiceAuthConfiguration objServiceAuthConfiguration = (ServiceAuthConfiguration) o;
+      return   Objects.equals(this.index, objServiceAuthConfiguration.index)&&
+  Objects.equals(this.serviceAuthProfileRef, objServiceAuthConfiguration.serviceAuthProfileRef)&&
+  Objects.equals(this.serviceAuthMappingProfileRef, objServiceAuthConfiguration.serviceAuthMappingProfileRef);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class LogAgentTCPConnEstRateExcdEvent {\n");
-                  sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
-                        sb.append("    errorReason: ").append(toIndentedString(errorReason)).append("\n");
-                        sb.append("    host: ").append(toIndentedString(host)).append("\n");
-                        sb.append("    port: ").append(toIndentedString(port)).append("\n");
+      sb.append("class ServiceAuthConfiguration {\n");
+                  sb.append("    index: ").append(toIndentedString(index)).append("\n");
+                        sb.append("    serviceAuthMappingProfileRef: ").append(toIndentedString(serviceAuthMappingProfileRef)).append("\n");
+                        sb.append("    serviceAuthProfileRef: ").append(toIndentedString(serviceAuthProfileRef)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

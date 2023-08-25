@@ -27,6 +27,9 @@ public class GslbSiteRuntime  {
     @JsonProperty("glb_uuid")
     private String glbUuid = null;
 
+    @JsonProperty("health_monitor_info")
+    private String healthMonitorInfo = null;
+
     @JsonProperty("replication_stats")
     private GslbReplicationStats replicationStats = null;
 
@@ -99,6 +102,30 @@ public class GslbSiteRuntime  {
      */
     public void setGlbUuid(String  glbUuid) {
         this.glbUuid = glbUuid;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * This field will provide information on origin(site name) of the health monitoring information.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return healthMonitorInfo
+     */
+    public String getHealthMonitorInfo() {
+        return healthMonitorInfo;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This field will provide information on origin(site name) of the health monitoring information.
+     * Field introduced in 30.1.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param healthMonitorInfo set the healthMonitorInfo.
+     */
+    public void setHealthMonitorInfo(String  healthMonitorInfo) {
+        this.healthMonitorInfo = healthMonitorInfo;
     }
 
     /**
@@ -294,6 +321,7 @@ public class GslbSiteRuntime  {
   Objects.equals(this.siteStats, objGslbSiteRuntime.siteStats)&&
   Objects.equals(this.rxedSiteHs, objGslbSiteRuntime.rxedSiteHs)&&
   Objects.equals(this.replicationStats, objGslbSiteRuntime.replicationStats)&&
+  Objects.equals(this.healthMonitorInfo, objGslbSiteRuntime.healthMonitorInfo)&&
   Objects.equals(this.glbUuid, objGslbSiteRuntime.glbUuid)&&
   Objects.equals(this.viewId, objGslbSiteRuntime.viewId)&&
   Objects.equals(this.sendInterval, objGslbSiteRuntime.sendInterval)&&
@@ -307,6 +335,7 @@ public class GslbSiteRuntime  {
       sb.append("class GslbSiteRuntime {\n");
                   sb.append("    clearOnMaxRetries: ").append(toIndentedString(clearOnMaxRetries)).append("\n");
                         sb.append("    glbUuid: ").append(toIndentedString(glbUuid)).append("\n");
+                        sb.append("    healthMonitorInfo: ").append(toIndentedString(healthMonitorInfo)).append("\n");
                         sb.append("    replicationStats: ").append(toIndentedString(replicationStats)).append("\n");
                         sb.append("    rxedSiteHs: ").append(toIndentedString(rxedSiteHs)).append("\n");
                         sb.append("    sendInterval: ").append(toIndentedString(sendInterval)).append("\n");
