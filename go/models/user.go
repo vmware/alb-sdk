@@ -61,6 +61,9 @@ type User struct {
 	//  Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	RecoveryToken *string `json:"recovery_token,omitempty"`
 
+	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	ServiceUser *bool `json:"service_user,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	TokenExpirationDate *string `json:"token_expiration_date,omitempty"`
 

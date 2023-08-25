@@ -8,14 +8,11 @@ package models
 // swagger:model vCenterConfiguration
 type VCenterConfiguration struct {
 
-	// vCenter content library where Service Engine images are stored. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// vCenter content library where Service Engine images are stored. Field introduced in 21.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	ContentLib *ContentLibConfig `json:"content_lib,omitempty"`
 
 	// Datacenter for virtual infrastructure discovery. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Datacenter *string `json:"datacenter,omitempty"`
-
-	// If true, VM's on the vCenter will not be discovered.Set it to true if there are more than 10000 VMs in the datacenter. Field deprecated in 30.1.1. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
-	DeactivateVMDiscovery *bool `json:"deactivate_vm_discovery,omitempty"`
 
 	// If true, NSX-T segment spanning multiple VDS with vCenter cloud are merged to a single network in Avi. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	IsNsxEnvironment *bool `json:"is_nsx_environment,omitempty"`
@@ -33,7 +30,7 @@ type VCenterConfiguration struct {
 	// Required: true
 	Privilege *string `json:"privilege"`
 
-	// If false, Service Engine image will not be pushed to content library. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Enterprise with Cloud Services edition.
+	// If false, Service Engine image will not be pushed to content library. Field introduced in 21.1.6. Allowed in Enterprise edition with any value, Essentials edition with any value, Enterprise with Cloud Services edition.
 	UseContentLib *bool `json:"use_content_lib,omitempty"`
 
 	// The username Avi Vantage will use when authenticating with vCenter. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
