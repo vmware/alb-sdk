@@ -197,7 +197,7 @@ type ApplicationLog struct {
 	// Logs for HTTP Out-Of-Band Requests. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	OobLog *OutOfBandRequestLog `json:"oob_log,omitempty"`
 
-	// The actual client request URI sent before normalization. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// The actual client request URI sent before normalization. Only included if it differs from the normalized URI. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	OrigURI *string `json:"orig_uri,omitempty"`
 
 	// Logs for the PingAccess authentication process. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
