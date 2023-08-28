@@ -1401,7 +1401,7 @@ definitions:
             max_apps_supported:
                 description: "Max number of applications supported to detect false positive. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                default: 5
+                default: 2
                 format: int64
             min_monitor_time:
                 description: "Minimum monitor time required to automatically detect false positive. Unit is minutes. Field introduced in 22.1.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
@@ -1411,7 +1411,7 @@ definitions:
             min_trans_per_application:
                 description: "Minimum number of transactions in one application required to automatically detect false positive. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                default: 5000000
+                default: 1000000
                 format: int64
             min_trans_per_uri:
                 description: "Minimum number of transactions in one URI required to automatically detect false positive. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
