@@ -24,6 +24,9 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
     @JsonProperty("available_applications")
     private List<WafApplicationSignatureAppVersion> availableApplications;
 
+    @JsonProperty("filter_rules_on_import")
+    private Boolean filterRulesOnImport = true;
+
     @JsonProperty("name")
     private String name = null;
 
@@ -85,6 +88,36 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * If this is set to false, all provided rules are imported when updating this object.
+     * If this is set to true, only newer rules are considered for import.
+     * Newer rules are rules where the rule id is not in the range of 2,000,000 to 2,080,000 or where the rule has a tag with a cve from 2013 or newer.
+     * All other rules are ignored on rule import.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return filterRulesOnImport
+     */
+    public Boolean getFilterRulesOnImport() {
+        return filterRulesOnImport;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * If this is set to false, all provided rules are imported when updating this object.
+     * If this is set to true, only newer rules are considered for import.
+     * Newer rules are rules where the rule id is not in the range of 2,000,000 to 2,080,000 or where the rule has a tag with a cve from 2013 or newer.
+     * All other rules are ignored on rule import.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param filterRulesOnImport set the filterRulesOnImport.
+     */
+    public void setFilterRulesOnImport(Boolean  filterRulesOnImport) {
+        this.filterRulesOnImport = filterRulesOnImport;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Name of application specific ruleset provider.
      * Field introduced in 20.1.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -133,7 +166,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * If this object is managed by the application signatures update  service, this field contain the status of this syncronization.
+     * If this object is managed by the application signatures update service, this field contain the status of this syncronization.
      * Field introduced in 20.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -145,7 +178,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * If this object is managed by the application signatures update  service, this field contain the status of this syncronization.
+     * If this object is managed by the application signatures update service, this field contain the status of this syncronization.
      * Field introduced in 20.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -233,7 +266,8 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
   Objects.equals(this.tenantRef, objWafApplicationSignatureProvider.tenantRef)&&
   Objects.equals(this.rulesetVersion, objWafApplicationSignatureProvider.rulesetVersion)&&
   Objects.equals(this.availableApplications, objWafApplicationSignatureProvider.availableApplications)&&
-  Objects.equals(this.serviceStatus, objWafApplicationSignatureProvider.serviceStatus);
+  Objects.equals(this.serviceStatus, objWafApplicationSignatureProvider.serviceStatus)&&
+  Objects.equals(this.filterRulesOnImport, objWafApplicationSignatureProvider.filterRulesOnImport);
     }
 
     @Override
@@ -241,6 +275,7 @@ public class WafApplicationSignatureProvider extends AviRestResource  {
       StringBuilder sb = new StringBuilder();
       sb.append("class WafApplicationSignatureProvider {\n");
                   sb.append("    availableApplications: ").append(toIndentedString(availableApplications)).append("\n");
+                        sb.append("    filterRulesOnImport: ").append(toIndentedString(filterRulesOnImport)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    rulesetVersion: ").append(toIndentedString(rulesetVersion)).append("\n");
                         sb.append("    serviceStatus: ").append(toIndentedString(serviceStatus)).append("\n");

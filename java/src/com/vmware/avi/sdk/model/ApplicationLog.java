@@ -1773,6 +1773,7 @@ public class ApplicationLog  {
     /**
      * This is the getter method this will return the attribute value.
      * The actual client request uri sent before normalization.
+     * Only included if it differs from the normalized uri.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -1785,6 +1786,7 @@ public class ApplicationLog  {
     /**
      * This is the setter method to the attribute.
      * The actual client request uri sent before normalization.
+     * Only included if it differs from the normalized uri.
      * Field introduced in 30.2.1.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
