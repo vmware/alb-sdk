@@ -7,7 +7,7 @@ import logging
 import os
 import re
 from functools import reduce
-
+import json
 import avi.migrationtools.f5_converter.converter_constants as conv_const
 import pandas
 from avi.migrationtools.avi_migration_utils import MigrationUtil, tenants
@@ -1395,6 +1395,13 @@ class F5Util(MigrationUtil):
         status_wb.close()
         # create dataframe for row list
         df = pandas.DataFrame(csv_writer_dict_list, columns=fieldnames)
+        df_json = json.loads(df.to_json(orient = 'table'))
+        del df_json['schema']
+        df_json['status_sheet'] = df_json.pop('data')
+        json_report_path = output_dir + os.path.sep + "%s-ConversionStatus.json" % \
+                                                 report_name
+        print("Converted Output Location: %s" % (json_report_path))
+
         # create pivot table using pandas
         pivot_table = pandas.pivot_table(
             df,
@@ -1407,12 +1414,16 @@ class F5Util(MigrationUtil):
             fill_value=0)
         # create dataframe for pivot table using pandas
         pivot_df = pandas.DataFrame(pivot_table)
+        pivot_json = json.loads(pivot_df.to_json(orient = 'table'))
+        df_json['pivot_sheet'] = pivot_json.pop('data')
         main_book = load_workbook(report_path)
         main_writer = pandas.ExcelWriter(report_path, engine="openpyxl",mode='a')
         main_writer._book = main_book
         # Add pivot table in Pivot sheet
         pivot_df.to_excel(main_writer, "Pivot Sheet")
         main_writer.close()
+        with open(json_report_path, "w", encoding='utf-8') as text_file:
+            json.dump(df_json, text_file, indent=4)
 
     def format_string_to_json(self, avi_string):
         """
