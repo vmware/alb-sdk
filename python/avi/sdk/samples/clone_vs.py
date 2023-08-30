@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 
 urllib3.disable_warnings()
 
-AVICLONE_VERSION = [2, 0, 4]
+AVICLONE_VERSION = [2, 0, 5]
 
 # Try to obtain the terminal width to allow spprint() to wrap output neatly.
 # If unable to determine, assume terminal width is 70 characters
@@ -2323,6 +2323,7 @@ class AviClone:
             if vsvip_obj:
                 if manual_vsvip:
                     v_obj['vsvip_ref'] = vsvip_obj['url']
+                    v_obj['vrf_context_ref'] = vsvip_obj['vrf_context_ref']
                 else:
                     # Create new vsvip object
 
