@@ -310,3 +310,7 @@ Changelog:
 2.0.4:
 
 * Fixed VRF handling for cloning to/from NSX-T Cloud in certain scenarios
+
+2.0.5:
+
+* Fixed VRF handling with manual VsVip
