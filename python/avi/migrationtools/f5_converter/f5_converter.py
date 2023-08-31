@@ -13,7 +13,6 @@ import argparse
 import logging
 import os
 import sys
-import pandas as pd
 import paramiko
 import avi.migrationtools
 import avi.migrationtools.f5_converter.converter_constants as conv_const
@@ -159,7 +158,6 @@ class F5Converter(AviConverter):
         self.skip_disabled_vs = args.skip_disabled_vs
         # Created f5 util object.
         self.conversion_util = F5Util()
-        self.excel_mappings = args.excel_mappings
 
     def print_pip_and_controller_version(self):
         """
@@ -341,13 +339,6 @@ class F5Converter(AviConverter):
         # Check if flag true then skip not in use object
         if self.not_in_use:
             avi_config = wipe_out_not_in_use(avi_config)
-        if self.excel_mappings:
-            data = pd.read_excel(self.excel_mappings)
-            df = pd.DataFrame(data)
-            for _, row in df.iterrows():
-                avi_config = str(avi_config).replace(row['Current IP'], row['New IP'])
-            avi_config = eval(avi_config)
-            LOG.debug("Avi config updated with Excel Mappings")
         self.write_output(avi_config, output_dir, '%s-Output.json' %
                           report_name)
         if self.vs_filter:
@@ -370,7 +361,6 @@ class F5Converter(AviConverter):
                 self.f5_host_ip, self.f5_ssh_user, self.f5_ssh_password, "f5")
         if self.option == "auto-upload":
             self.upload_config_to_controller(avi_config)
-        
         print("Total Warning: ", get_count("warning"))
         print("Total Errors: ", get_count("error"))
 
@@ -786,9 +776,6 @@ if __name__ == "__main__":
         help="Option to create distinct application profile for"
         " each VS even though it is shared in F5 config",
     )
-    parser.add_argument(
-        "--excel_mappings",
-        help="Absolute path for excel mapping file")
     parser.add_argument(
         "-f",
         "--bigip_config_file",
