@@ -558,7 +558,7 @@ class PoolConfigConvV11(PoolConfigConv):
             if not port:
                 LOG.warning(
                     "Skipped: Server %s with ip %s has",
-                    server_name, ip_addr
+                    (server_name, ip_addr)
                     + ((" non protocol port %s",
                         orig_port) if orig_port else " no port")
                 )

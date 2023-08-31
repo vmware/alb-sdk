@@ -88,7 +88,7 @@ class AviConverter(object):
               (report_path))
         with open(report_path, "w", encoding='utf-8') as text_file:
             json.dump(avi_config, text_file, indent=4)
-        LOG.info('written avi config file %s %s output.json',
+        LOG.info('written avi config file %s %s output.son',
                  output_dir, os.path.sep)
 
     def init_logger_path(self):
@@ -105,7 +105,9 @@ class AviConverter(object):
         '''
         list_with_max_280_char = ['VsVip', 'PoolGroup', 'Pool', 'NetworkSecurityPolicy', 'HTTPPolicySet']
         for key in avi_config.keys():
-            if key in list_with_max_280_char:
+            if key in ['UnsupportedProfiles','OneConnect']:
+                pass
+            elif key in list_with_max_280_char:
                 self.trim_length_if_name_field_exceeds_max_char(avi_config[key], avi_config, key, 280)
             else:
                 self.trim_length_if_name_field_exceeds_max_char(avi_config[key], avi_config, key, 256)
