@@ -88,7 +88,7 @@ class AviConverter(object):
               (report_path))
         with open(report_path, "w", encoding='utf-8') as text_file:
             json.dump(avi_config, text_file, indent=4)
-        LOG.info('written avi config file %s %s output.son',
+        LOG.info('written avi config file %s %s output.json',
                  output_dir, os.path.sep)
 
     def init_logger_path(self):
