@@ -355,8 +355,9 @@ class F5Converter(AviConverter):
                           report_name)
         
         # Irule discovery
-        irule_dis=iRuleDiscovery(self.bigip_config_file,self.f5_tenant)
-        irule_dis.get_irule_discovery(output_dir,report_name)
+        if self.f5_config_version=="11":
+            irule_dis=iRuleDiscovery(self.bigip_config_file,self.f5_tenant)
+            irule_dis.get_irule_discovery(output_dir,report_name)
         
         if self.vs_filter:
             F5Util().remove_vs_names_when_vs_filter_is_provided(
