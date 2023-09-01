@@ -61,6 +61,8 @@ class iRuleDiscovery():
             j = 1
             irule_name=self.irule_list[i]
             self.irule_discovery_data[irule_name]=[]
+            if len(vs_list)<=1:
+                continue
             while j <= len(vs_list):
                 if irule_name in vs_list[j]:
                     vs_name = re.search(self.vs_pattern , vs_list[j])
