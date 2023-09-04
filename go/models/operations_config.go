@@ -8,6 +8,6 @@ package models
 // swagger:model OperationsConfig
 type OperationsConfig struct {
 
-	// Inventory op config. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Inventory op config. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	InventoryConfig *InventoryConfig `json:"inventory_config,omitempty"`
 }
