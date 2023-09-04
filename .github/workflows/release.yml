@@ -49,7 +49,8 @@ jobs:
         id: get_sdk_version
         run: | 
           echo "::set-output name=AVI_VERSION::$(python ./python/version.py)"
-          JAVA_VERSION=$(echo ${GITHUB_REF##*/} | cut -d - -f 2)
+          echo " Test version $(echo ${GITHUB_REF##*/} | cut -d - -f 2)"
+          JAVA_VERSION=$(echo ${{ github.ref }} | cut -d - -f 2)
           if [[ "$JAVA_VERSION" == *"post"* ]]; then
             echo "Java version post"
             JAVA_VERSION="${JAVA_VERSION/post/\.}"
@@ -63,153 +64,153 @@ jobs:
           echo "Java version ${JAVA_VERSION}"
           echo "::set-output name=JAVA_RELEASE_VERSION::${JAVA_VERSION}"
 
-      - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'java-sdk')
-        name: Publish JAVA
-        run: |
-          echo "Publish Java Version ${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}"
-          echo "Publish AVI VERSION ${{ steps.get_sdk_version.outputs.AVI_VERSION }}"
-          cd java
-          mvn versions:set -DnewVersion=${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}
-          if [[ ${{ steps.publish_target.outputs.TAG_NAME }} == "test-"* ]]; then
-            echo "Test tag found. Skipping java assets upload to public repo."
-            mvn clean install -Dgpg.skip=true
-          else
-            echo "Normal tag found. Uploading java assets to public repo."
-            mvn clean --batch-mode deploy -DskipTests -Dgpg.passphrase=${{ secrets.AVISDK_PGP_PASSPHRASE }} -Denv.MAVEN_USERNAME=${{ secrets.OSSRH_USERNAME }} -Denv.MAVEN_PASSWORD=${{ secrets.OSSRH_TOKEN }}
-          fi
-          cd ..
-          ls java/target/
-          cp java/target/avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}.jar .
-          cp java/target/avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-javadoc.jar .
-          cp java/target/avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-sources.jar .
+      # - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'java-sdk')
+      #   name: Publish JAVA
+      #   run: |
+      #     echo "Publish Java Version ${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}"
+      #     echo "Publish AVI VERSION ${{ steps.get_sdk_version.outputs.AVI_VERSION }}"
+      #     cd java
+      #     mvn versions:set -DnewVersion=${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}
+      #     if [[ ${{ steps.publish_target.outputs.TAG_NAME }} == "test-"* ]]; then
+      #       echo "Test tag found. Skipping java assets upload to public repo."
+      #       mvn clean install -Dgpg.skip=true
+      #     else
+      #       echo "Normal tag found. Uploading java assets to public repo."
+      #       mvn clean --batch-mode deploy -DskipTests -Dgpg.passphrase=${{ secrets.AVISDK_PGP_PASSPHRASE }} -Denv.MAVEN_USERNAME=${{ secrets.OSSRH_USERNAME }} -Denv.MAVEN_PASSWORD=${{ secrets.OSSRH_TOKEN }}
+      #     fi
+      #     cd ..
+      #     ls java/target/
+      #     cp java/target/avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}.jar .
+      #     cp java/target/avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-javadoc.jar .
+      #     cp java/target/avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-sources.jar .
 
-      # Installs and upgrades pip, installs other dependencies and installs the package from setup.py
-      - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'python-sdk') || steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET == 'true'
-        name: "Installs and upgrades pip, installs other dependencies and installs the package from setup.py"
-        run: |
-          AVI_VERSION=`python ./python/version.py`
-          # Upgrade pip
-          python3 -m pip install --upgrade pip
-          # Install build deps
-          python3 -m pip install wheel twine setuptools==47.1.1
-          sudo apt-get install debhelper
-          sudo apt-get install python-all
-          sudo apt-get install python3-all
-          # If requirements.txt exists, install from it
-          cd python
-          mkdir dist
-          if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
-            ./create_sdk_pip_packages.sh sdk
-          fi
-          if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET }} == true ]]; then
-            ./create_sdk_pip_packages.sh migrationtools
-          fi
-          if [[ ${{ steps.publish_target.outputs.TAG_NAME }} == "test-"* ]]; then
-            echo "Test tag found. Skipping python assets upload to public repo."
-          else
-            echo "Normal tag found. Uploading python assets to public repo."
-            if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
-              ./create_sdk_pypi.sh sdk
-            fi
-            if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET }} == true ]]; then
-              ./create_sdk_pypi.sh migrationtools
-            fi
-          fi
-          ./create_sdk_pkgs.sh
-          echo "AVI VERSION=== $AVI_VERSION"
-          ls dist/
-          if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET }} == true ]]; then
-            mv dist/avimigrationtools-$AVI_VERSION.tar.gz ../avimigrationtools-$AVI_VERSION.tar.gz
-          fi
-          if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
-            mv dist/avisdk-$AVI_VERSION.tar.gz ../avisdk-$AVI_VERSION.tar.gz
-            #mv dist/python-avisdk_0_all.deb ../avisdk-$AVI_VERSION.deb
-            mv dist/avisdk-$AVI_VERSION-1.noarch.rpm ../avisdk-$AVI_VERSION.rpm
-          fi
-        env:
-          TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.TWINE_TOKEN }}
-          TWINE_REPOSITORY: pypi
+      # # Installs and upgrades pip, installs other dependencies and installs the package from setup.py
+      # - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'python-sdk') || steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET == 'true'
+      #   name: "Installs and upgrades pip, installs other dependencies and installs the package from setup.py"
+      #   run: |
+      #     AVI_VERSION=`python ./python/version.py`
+      #     # Upgrade pip
+      #     python3 -m pip install --upgrade pip
+      #     # Install build deps
+      #     python3 -m pip install wheel twine setuptools==47.1.1
+      #     sudo apt-get install debhelper
+      #     sudo apt-get install python-all
+      #     sudo apt-get install python3-all
+      #     # If requirements.txt exists, install from it
+      #     cd python
+      #     mkdir dist
+      #     if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
+      #       ./create_sdk_pip_packages.sh sdk
+      #     fi
+      #     if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET }} == true ]]; then
+      #       ./create_sdk_pip_packages.sh migrationtools
+      #     fi
+      #     if [[ ${{ steps.publish_target.outputs.TAG_NAME }} == "test-"* ]]; then
+      #       echo "Test tag found. Skipping python assets upload to public repo."
+      #     else
+      #       echo "Normal tag found. Uploading python assets to public repo."
+      #       if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
+      #         ./create_sdk_pypi.sh sdk
+      #       fi
+      #       if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET }} == true ]]; then
+      #         ./create_sdk_pypi.sh migrationtools
+      #       fi
+      #     fi
+      #     ./create_sdk_pkgs.sh
+      #     echo "AVI VERSION=== $AVI_VERSION"
+      #     ls dist/
+      #     if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET }} == true ]]; then
+      #       mv dist/avimigrationtools-$AVI_VERSION.tar.gz ../avimigrationtools-$AVI_VERSION.tar.gz
+      #     fi
+      #     if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
+      #       mv dist/avisdk-$AVI_VERSION.tar.gz ../avisdk-$AVI_VERSION.tar.gz
+      #       #mv dist/python-avisdk_0_all.deb ../avisdk-$AVI_VERSION.deb
+      #       mv dist/avisdk-$AVI_VERSION-1.noarch.rpm ../avisdk-$AVI_VERSION.rpm
+      #     fi
+      #   env:
+      #     TWINE_USERNAME: __token__
+      #     TWINE_PASSWORD: ${{ secrets.TWINE_TOKEN }}
+      #     TWINE_REPOSITORY: pypi
 
-      - name: update release
-        id: update_release
-        uses: tubone24/update_release@v1.0
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      # - name: update release
+      #   id: update_release
+      #   uses: tubone24/update_release@v1.0
+      #   env:
+      #     GITHUB_TOKEN: ${{ github.token }}
 
-      - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'python-sdk')
-        name: Upload Avi API SDK pip package
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.github_token }}
-        with:
-          upload_url: ${{ steps.update_release.outputs.upload_url }}
-          asset_path: avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
-          asset_name: pip-package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
-          asset_content_type: application/gzip
+      # - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'python-sdk')
+      #   name: Upload Avi API SDK pip package
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.github_token }}
+      #   with:
+      #     upload_url: ${{ steps.update_release.outputs.upload_url }}
+      #     asset_path: avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
+      #     asset_name: pip-package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
+      #     asset_content_type: application/gzip
 
-      - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET == 'true'
-        name: Upload Avi Migration Tools pip package
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.github_token }}
-        with:
-          upload_url: ${{ steps.update_release.outputs.upload_url }}
-          asset_path: avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
-          asset_name: pip-package-avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
-          asset_content_type: application/gzip
+      # - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET == 'true'
+      #   name: Upload Avi Migration Tools pip package
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.github_token }}
+      #   with:
+      #     upload_url: ${{ steps.update_release.outputs.upload_url }}
+      #     asset_path: avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
+      #     asset_name: pip-package-avimigrationtools-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.tar.gz
+      #     asset_content_type: application/gzip
 
-      #- name: Upload Avi API SDK debian package
-      #  uses: actions/upload-release-asset@v1
-      #  env:
-      #    GITHUB_TOKEN: ${{ secrets.github_token }}
-      #  with:
-      #    upload_url: ${{ steps.update_release.outputs.upload_url }}
-      #    asset_path: avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.deb
-      #    asset_name: debian-package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}
-      #    asset_content_type: application/vnd.debian.binary-package
+      # #- name: Upload Avi API SDK debian package
+      # #  uses: actions/upload-release-asset@v1
+      # #  env:
+      # #    GITHUB_TOKEN: ${{ secrets.github_token }}
+      # #  with:
+      # #    upload_url: ${{ steps.update_release.outputs.upload_url }}
+      # #    asset_path: avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.deb
+      # #    asset_name: debian-package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}
+      # #    asset_content_type: application/vnd.debian.binary-package
 
-      - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'python-sdk')
-        name: Upload Avi API SDK rpm package
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.github_token }}
-        with:
-          upload_url: ${{ steps.update_release.outputs.upload_url }}
-          asset_path: avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.rpm
-          asset_name: rpm--package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.rpm
-          asset_content_type: application/x-rpm
+      # - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'python-sdk')
+      #   name: Upload Avi API SDK rpm package
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.github_token }}
+      #   with:
+      #     upload_url: ${{ steps.update_release.outputs.upload_url }}
+      #     asset_path: avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.rpm
+      #     asset_name: rpm--package-avisdk-${{ steps.get_sdk_version.outputs.AVI_VERSION }}.rpm
+      #     asset_content_type: application/x-rpm
 
-      - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'java-sdk')
-        name: Upload Avi API SDK Java package
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.github_token }}
-        with:
-          upload_url: ${{ steps.update_release.outputs.upload_url }}
-          asset_path: avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}.jar
-          asset_name: Java-avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}.jar
-          asset_content_type: application/java-archive
+      # - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'java-sdk')
+      #   name: Upload Avi API SDK Java package
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.github_token }}
+      #   with:
+      #     upload_url: ${{ steps.update_release.outputs.upload_url }}
+      #     asset_path: avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}.jar
+      #     asset_name: Java-avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}.jar
+      #     asset_content_type: application/java-archive
 
-      - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'java-sdk')
-        name: Upload Avi API SDK Javadoc package
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.github_token }}
-        with:
-          upload_url: ${{ steps.update_release.outputs.upload_url }}
-          asset_path: avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-javadoc.jar
-          asset_name: Java-avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-javadoc.jar
-          asset_content_type: application/java-archive
+      # - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'java-sdk')
+      #   name: Upload Avi API SDK Javadoc package
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.github_token }}
+      #   with:
+      #     upload_url: ${{ steps.update_release.outputs.upload_url }}
+      #     asset_path: avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-javadoc.jar
+      #     asset_name: Java-avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-javadoc.jar
+      #     asset_content_type: application/java-archive
 
-      - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'java-sdk')
-        name: Upload Avi API SDK Java sources package
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.github_token }}
-        with:
-          upload_url: ${{ steps.update_release.outputs.upload_url }}
-          asset_path: avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-sources.jar
-          asset_name: Java-avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-javasources.jar
-          asset_content_type: application/java-archive
+      # - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'java-sdk')
+      #   name: Upload Avi API SDK Java sources package
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.github_token }}
+      #   with:
+      #     upload_url: ${{ steps.update_release.outputs.upload_url }}
+      #     asset_path: avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-sources.jar
+      #     asset_name: Java-avisdk-${{ steps.get_sdk_version.outputs.JAVA_RELEASE_VERSION }}-javasources.jar
+      #     asset_content_type: application/java-archive
 
