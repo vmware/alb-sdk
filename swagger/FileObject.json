@@ -564,7 +564,7 @@
                     "type": "string"
                 },
                 "type": {
-                    "description": "Type of the file. Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- OTHER_FILE_TYPES), Basic edition(Allowed values- OTHER_FILE_TYPES), Enterprise with Cloud Services edition.",
+                    "description": "Type of the file. Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE, CRL_DATA. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- OTHER_FILE_TYPES), Basic edition(Allowed values- OTHER_FILE_TYPES), Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {

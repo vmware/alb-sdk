@@ -812,6 +812,9 @@ definitions:
                 type: integer
                 default: 48
                 format: int32
+            close_server_side_connection_on_error:
+                description: "Close server-side connection when an error response is received. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
             collect_client_tls_fingerprint:
                 description: "If enabled, the client's TLS fingerprint will be collected and included in the Application Log. For Virtual Services with Bot Detection enabled, TLS fingerprints are always computed if 'use_tls_fingerprint' is enabled in the Bot Detection Policy's User-Agent detection component. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: boolean
