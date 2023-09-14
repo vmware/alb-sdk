@@ -29,7 +29,7 @@ $clonedObj = Copy-AVIRestObject $myIpGroup
 Clone an object configuration by removing custom fields (autocomplete Excludes suggestions via TAB)
 
 ```
-$sslCert = Get-AVIRestSSLKeyAndCertificate -Name '*-cert'
+$sslCert = Get-AVIRestSSLKeyAndCertificate -Name 'myCert'
 Copy-AVIRestObject -InputOjbect $sslCert -Excludes ocsp_error_status
 ```
 
