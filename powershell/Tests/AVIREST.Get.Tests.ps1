@@ -1,12 +1,14 @@
 using Module ..\AVIRest.psd1
 
 BeforeAll {
+    $secret = 'simulatedproductionadmin' # Requires MS Secret Management module
+
     $errorActionPreference = 'Stop'
     Try {
         $aviModuleManifest = Get-ChildItem AVIRest.psd1 -Recurse
         Import-Module $aviModuleManifest.FullName -Force -Verbose
-        $credential = get-secret simulatedproductionadmin
-        $secretInfo = get-secretinfo simulatedproductionadmin
+        $credential = get-secret $secret
+        $secretInfo = get-secretinfo $secret
         Connect-AVIRest -Server $secretInfo.Metadata.Server -Credential $credential
     }
     Catch {

@@ -1,10 +1,10 @@
-Function Invoke-AVIRest{0} {
+Function Update-AVIRest{0} {
 <#
     .SYNOPSIS
         Configure {4}
 
     .EXAMPLE
-        Invoke-AviRest{0}
+        Update-AviRest{0}
         
     .NOTES
         Author:  Andy Grant
@@ -30,6 +30,7 @@ Function Invoke-AVIRest{0} {
         }
     }
     Process {
+        $uuid = ${0}.uuid
         $splat = @{
             Method = 'POST'
             Endpoint = "/api{1}"

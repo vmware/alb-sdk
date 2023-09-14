@@ -413,6 +413,7 @@ Try {
     [string[]]$global:AVIapiRevsionList = $jsonFileData | Group {$_.info.version} -NoElement | Select -ExpandProperty Name
     
     # $jsonData = $jsonFileData[0]
+    # $jsonData = $jsonFileData | Where {$_.info.title -match 'VirtualService'} | Select -Last 1
     Foreach ($jsonData in $jsonFileData) {
         $title = $jsonData.info.title
         Write-Verbose "Loading swagger endpoint [$title]"
@@ -449,8 +450,7 @@ Try {
             $apiName = Get-ApiPathName $get[0].ApiPath
             $functionGET = $templateFunctionGET -replace '\{0\}',$apiPath -replace '\{1\}',$joinResources -replace '\{2\}',$apiName -replace '\{3\}',$apiVersion -replace '\{4\}',$title
             Invoke-Expression -Command $functionGET
-            $pathCase = $jsonData.definitions.keys | Where {$_ -eq $apiName}
-            $exportName = "Get-AVIRest$pathCase"
+            $exportName = "Get-AVIRest$apiName"
             $dynamicExportList.Add($exportName)
         }
 
@@ -461,8 +461,7 @@ Try {
             $functionTemplate = Get-AVIFunctionTemplate $put $templateFunctionPUT $jsonData
             Invoke-Expression -Command $functionTemplate
             $apiName = Get-ApiPathName $put.ApiPath
-            $pathCase = $jsonData.definitions.keys | Where {$_ -eq $apiName}
-            $exportName = "Set-AVIRest$pathCase"
+            $exportName = "Set-AVIRest$apiName"
             $dynamicExportList.Add($exportName)
         }
 
@@ -475,8 +474,7 @@ Try {
             $functionTemplate = Get-AVIFunctionTemplate $post $templateFunctionPOST $jsonData
             Invoke-Expression -Command $functionTemplate
             $apiName = Get-ApiPathName $post.ApiPath
-            $pathCase = $jsonData.definitions.keys | Where {$_ -eq $apiName}
-            $exportName = "New-AVIRest$pathCase"
+            $exportName = "New-AVIRest$apiName"
             $dynamicExportList.Add($exportName)
         }
 
@@ -487,8 +485,7 @@ Try {
             $functionTemplate = Get-AVIFunctionTemplate $post $templateFunctionPOSTuuid $jsonData
             Invoke-Expression -Command $functionTemplate
             $apiName = Get-ApiPathName $post.ApiPath
-            $pathCase = $jsonData.definitions.keys | Where {$_ -eq $apiName}
-            $exportName = "New-AVIRest$pathCase"
+            $exportName = "Update-AVIRest$apiName"
             $dynamicExportList.Add($exportName)
         }
 
@@ -498,8 +495,7 @@ Try {
             $functionTemplate = Get-AVIFunctionTemplate $delete $templateFunctionDELETE $jsonData
             Invoke-Expression -Command $functionTemplate
             $apiName = Get-ApiPathName $delete.ApiPath
-            $pathCase = $jsonData.definitions.keys | Where {$_ -eq $apiName}
-            $exportName = "Remove-AVIRest$pathCase"
+            $exportName = "Remove-AVIRest$apiName"
             $dynamicExportList.Add($exportName)
         }
 
