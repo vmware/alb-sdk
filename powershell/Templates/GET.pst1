@@ -1,0 +1,59 @@
+Function Get-AVIRest{2} {
+<#
+    .SYNOPSIS
+        Configure {4}
+
+    .EXAMPLE
+        Get-AviRest{2}
+        
+    .NOTES
+        Author:  Andy Grant
+        Website: www.linkedin.com/in/andybgrant/
+#>
+    [CmdletBinding(
+    DefaultParameterSetName = 'Filter',
+    SupportsPaging=$true)]
+    Param (
+        [Parameter(
+            Mandatory=$false,
+            Position=0,
+            ParameterSetName = 'Filter')]
+        [ValidateNotNullOrEmpty()]
+        [string]$Name,
+        [Parameter(
+            Mandatory=$false,
+            Position=0,
+            ParameterSetName = 'Uuid',
+            ValueFromPipelineByPropertyName = $true)]
+        [ValidateNotNullOrEmpty()]
+        [string]$Uuid,
+        [Parameter(Mandatory=$false)]
+        [Parameter(ParameterSetName = 'Uuid')]
+        [Parameter(ParameterSetName = 'Filter')]
+        [ValidateNotNullOrEmpty()]
+        [string]$JoinResource = '{1}',
+        [Parameter(Mandatory=$false)]
+        [Parameter(ParameterSetName = 'Uuid')]
+        [Parameter(ParameterSetName = 'Filter')]
+        [ValidateNotNullOrEmpty()]
+        [string[]]$Fields
+    )
+    Begin {
+        $swaggerVersion = '{3}'
+        if ([version]$global:AVILbServerInfo.version.version -gt [version]$swaggerVersion) {
+            $InvalidOperation = [System.Management.automation.ErrorRecord]::New(
+                [System.Exception]::New("Requires AVI API revision [$swaggerVersion]"),0,
+                [System.Management.Automation.ErrorCategory]::InvalidOperation,$PSCmdlet.CommandOrigin
+            )
+            $PSCmdlet.ThrowTerminatingError($InvalidOperation)
+        }
+    }
+    Process {
+        $splat = @{
+            Method = 'GET'
+            Endpoint = $Uuid ? "/api{0}$Uuid" : '/api{0}'
+        }
+        Add-AVIRestParams $splat $PSBoundParameters $PsCmdlet.ParameterSetName
+        Invoke-AVIRest @splat -OutputType AVIRest{2}
+    }
+}
