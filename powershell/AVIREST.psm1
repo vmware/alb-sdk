@@ -413,7 +413,7 @@ Try {
     [string[]]$global:AVIapiRevsionList = $jsonFileData | Group {$_.info.version} -NoElement | Select -ExpandProperty Name
     
     # $jsonData = $jsonFileData[0]
-    # $jsonData = $jsonFileData | Where {$_.info.title -match 'VirtualService'} | Select -Last 1
+    # $jsonData = $jsonFileData | Where {$_.info.title -match 'Pool'} | Select -First 1
     Foreach ($jsonData in $jsonFileData) {
         $title = $jsonData.info.title
         Write-Verbose "Loading swagger endpoint [$title]"
@@ -471,22 +471,28 @@ Try {
         $noIdpostList = $postList | Where {$_.ApiPath -notmatch 'uuid'}
         # $post = $noIdpostList[1]
         foreach ($post in $noIdpostList) {
+            # New
             $functionTemplate = Get-AVIFunctionTemplate $post $templateFunctionPOST $jsonData
             Invoke-Expression -Command $functionTemplate
             $apiName = Get-ApiPathName $post.ApiPath
             $exportName = "New-AVIRest$apiName"
             $dynamicExportList.Add($exportName)
+
+            # New Object
         }
 
         ### Id POSTs
         $idpostList = $postList | Where {$_.ApiPath -match 'uuid'}
         # $post = $idpostList[-1]
         foreach ($post in $idpostList) {
+            # New
             $functionTemplate = Get-AVIFunctionTemplate $post $templateFunctionPOSTuuid $jsonData
             Invoke-Expression -Command $functionTemplate
             $apiName = Get-ApiPathName $post.ApiPath
-            $exportName = "Update-AVIRest$apiName"
+            $exportName = "Invoke-AVIRest$apiName"
             $dynamicExportList.Add($exportName)
+
+            # New Object
         }
 
         ## Delete
@@ -499,7 +505,7 @@ Try {
             $dynamicExportList.Add($exportName)
         }
 
-        # New Obj
+        # New Obj # this needs work to add body and body-less versions
         $path,$pathCase = $null
         $path = $keyList[0] -replace '/'
         $pathCase = $jsonData.definitions.keys | Where {$_ -eq $path}

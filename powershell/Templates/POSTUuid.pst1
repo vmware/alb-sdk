@@ -1,10 +1,10 @@
-Function Update-AVIRest{0} {
+Function Invoke-AVIRest{0} {
 <#
     .SYNOPSIS
         Configure {4}
 
     .EXAMPLE
-        Update-AviRest{0}
+        Invoke-AviRest{0}
         
     .NOTES
         Author:  Andy Grant
