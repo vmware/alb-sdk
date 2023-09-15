@@ -394,6 +394,39 @@ Function New-AVISwaggerJsonObj {
         [pscustomobject]$obj | ConvertTo-JSON -Depth 100
     }
 }
+Function New-AviRestFunctionExport ($methodList,$templateFunction,$jsonData,$ExportList) {
+    # $method = $methodList[-1]
+    foreach ($method in $methodList) {
+        # New
+        $functionTemplate = Get-AVIFunctionTemplate $method $templateFunction $jsonData
+        $functionTemplate
+        $apiName = Get-ApiPathName $method.ApiPath
+        $exportName = "Invoke-AVIRest$apiName"
+        $ExportList.Add($exportName)
+    }
+}
+Function New-AviRestFunctionParamExport ($methodList,$templateFunction,$jsonData,$ExportList) {
+    # $method = $methodList[-1]
+    foreach ($method in $methodList) {
+        # New Object
+        $apiName = Get-ApiPathName $method.ApiPath
+        $endpoint = $method.ApiPath -split '/',-2 | Select -Last 1
+        $endpoint = $endpoint -replace '-'
+        $definitionList = $jsonData.definitions
+        $endpointKey = $null
+        $endpointKey = Switch ($definitionList.keys) {
+            {$_ -match $endpoint} {$_}
+        }
+        if ($null -ne $endpointKey) {
+            $fullObj = New-AVISwaggerJsonObj -Definitions $definitionList -Path $endpointKey
+            $minObj = New-AVISwaggerJsonObj -Definitions $definitionList -Path $endpointKey -MinRequired
+            $objectFunction = $templateFunction -replace '\{0\}',$apiName -replace '\{1\}',$minObj -replace '\{2\}',$fullObj -replace '\{3\}',$apiVersion -replace '\{4\}',$title
+            $exportName = "New-AVIRest{0}Object" -f $apiName
+            $ExportList.Add($exportName)
+            $objectFunction
+        }
+    }
+}
 
 $dynamicExportList = [List[string]]::New()
 Try {
@@ -413,7 +446,7 @@ Try {
     [string[]]$global:AVIapiRevsionList = $jsonFileData | Group {$_.info.version} -NoElement | Select -ExpandProperty Name
     
     # $jsonData = $jsonFileData[0]
-    # $jsonData = $jsonFileData | Where {$_.info.title -match 'Pool'} | Select -First 1
+    # $jsonData = $jsonFileData | Where {$_.info.title -match 'VirtualService'} | Select -Last 1
     Foreach ($jsonData in $jsonFileData) {
         $title = $jsonData.info.title
         Write-Verbose "Loading swagger endpoint [$title]"
@@ -469,30 +502,20 @@ Try {
         $postList = $methodLookup.post
         ### no id POSTs
         $noIdpostList = $postList | Where {$_.ApiPath -notmatch 'uuid'}
-        # $post = $noIdpostList[1]
-        foreach ($post in $noIdpostList) {
-            # New
-            $functionTemplate = Get-AVIFunctionTemplate $post $templateFunctionPOST $jsonData
-            Invoke-Expression -Command $functionTemplate
-            $apiName = Get-ApiPathName $post.ApiPath
-            $exportName = "New-AVIRest$apiName"
-            $dynamicExportList.Add($exportName)
-
-            # New Object
+        New-AviRestFunctionExport $noIdpostList $templateFunctionPOST $jsonData $dynamicExportList | Foreach {
+            Invoke-Expression -Command $_
+        }
+        New-AviRestFunctionParamExport $noIdpostList $templateObject $jsonData $dynamicExportList | Foreach {
+            Invoke-Expression -Command $_
         }
 
         ### Id POSTs
         $idpostList = $postList | Where {$_.ApiPath -match 'uuid'}
-        # $post = $idpostList[-1]
-        foreach ($post in $idpostList) {
-            # New
-            $functionTemplate = Get-AVIFunctionTemplate $post $templateFunctionPOSTuuid $jsonData
-            Invoke-Expression -Command $functionTemplate
-            $apiName = Get-ApiPathName $post.ApiPath
-            $exportName = "Invoke-AVIRest$apiName"
-            $dynamicExportList.Add($exportName)
-
-            # New Object
+        New-AviRestFunctionExport $idpostList $templateFunctionPOSTuuid $jsonData $dynamicExportList | Foreach {
+            Invoke-Expression -Command $_
+        }
+        New-AviRestFunctionParamExport $idpostList $templateObject $jsonData $dynamicExportList | Foreach {
+            Invoke-Expression -Command $_
         }
 
         ## Delete
@@ -506,18 +529,18 @@ Try {
         }
 
         # New Obj # this needs work to add body and body-less versions
-        $path,$pathCase = $null
-        $path = $keyList[0] -replace '/'
-        $pathCase = $jsonData.definitions.keys | Where {$_ -eq $path}
-        if ($null -eq $pathCase) {continue}
+        # $path,$pathCase = $null
+        # $path = $keyList[0] -replace '/'
+        # $pathCase = $jsonData.definitions.keys | Where {$_ -eq $path}
+        # if ($null -eq $pathCase) {continue}
 
-        $definitionList = $jsonData.definitions
-        $fullObj = New-AVISwaggerJsonObj -Definitions $definitionList -Path $pathCase
-        $minObj = New-AVISwaggerJsonObj -Definitions $definitionList -Path $pathCase -MinRequired
-        $objectFunction = $templateObject -replace '\{0\}',$pathCase -replace '\{1\}',$minObj -replace '\{2\}',$fullObj -replace '\{3\}',$apiVersion -replace '\{4\}',$title
-        Invoke-Expression -Command $objectFunction
-        $exportName = "New-AVIRest{0}Object" -f $pathCase
-        $dynamicExportList.Add($exportName)
+        # $definitionList = $jsonData.definitions
+        # $fullObj = New-AVISwaggerJsonObj -Definitions $definitionList -Path $pathCase
+        # $minObj = New-AVISwaggerJsonObj -Definitions $definitionList -Path $pathCase -MinRequired
+        # $objectFunction = $templateObject -replace '\{0\}',$pathCase -replace '\{1\}',$minObj -replace '\{2\}',$fullObj -replace '\{3\}',$apiVersion -replace '\{4\}',$title
+        # Invoke-Expression -Command $objectFunction
+        # $exportName = "New-AVIRest{0}Object" -f $pathCase
+        # $dynamicExportList.Add($exportName)
     }
 }
 Catch {
