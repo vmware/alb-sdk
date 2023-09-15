@@ -394,14 +394,15 @@ Function New-AVISwaggerJsonObj {
         [pscustomobject]$obj | ConvertTo-JSON -Depth 100
     }
 }
-Function New-AviRestFunctionExport ($methodList,$templateFunction,$jsonData,$ExportList) {
+Function New-AviRestFunctionExport ($method,$methodList,$templateFunction,$jsonData,$ExportList) {
     # $method = $methodList[-1]
-    foreach ($method in $methodList) {
+    foreach ($methodObj in $methodList) {
         # New
-        $functionTemplate = Get-AVIFunctionTemplate $method $templateFunction $jsonData
+        $resetFunctionTemplate = $templateFunction.psobject.Copy()
+        $functionTemplate = Get-AVIFunctionTemplate $methodObj $resetFunctionTemplate $jsonData
         $functionTemplate
         $apiName = Get-ApiPathName $method.ApiPath
-        $exportName = "Invoke-AVIRest$apiName"
+        $exportName = "$method-AVIRest$apiName"
         $ExportList.Add($exportName)
     }
 }
@@ -420,7 +421,8 @@ Function New-AviRestFunctionParamExport ($methodList,$templateFunction,$jsonData
         if ($null -ne $endpointKey) {
             $fullObj = New-AVISwaggerJsonObj -Definitions $definitionList -Path $endpointKey
             $minObj = New-AVISwaggerJsonObj -Definitions $definitionList -Path $endpointKey -MinRequired
-            $objectFunction = $templateFunction -replace '\{0\}',$apiName -replace '\{1\}',$minObj -replace '\{2\}',$fullObj -replace '\{3\}',$apiVersion -replace '\{4\}',$title
+            $resetTemplateFunction = $templateFunction.psobject.Copy()
+            $objectFunction = $resetTemplateFunction -replace '\{0\}',$apiName -replace '\{1\}',$minObj -replace '\{2\}',$fullObj -replace '\{3\}',$apiVersion -replace '\{4\}',$title
             $exportName = "New-AVIRest{0}Object" -f $apiName
             $ExportList.Add($exportName)
             $objectFunction
@@ -446,7 +448,7 @@ Try {
     [string[]]$global:AVIapiRevsionList = $jsonFileData | Group {$_.info.version} -NoElement | Select -ExpandProperty Name
     
     # $jsonData = $jsonFileData[0]
-    # $jsonData = $jsonFileData | Where {$_.info.title -match 'VirtualService'} | Select -Last 1
+    $jsonData = $jsonFileData | Where {$_.info.title -match 'ipaddr'}
     Foreach ($jsonData in $jsonFileData) {
         $title = $jsonData.info.title
         Write-Verbose "Loading swagger endpoint [$title]"
@@ -501,21 +503,43 @@ Try {
         ## POST
         $postList = $methodLookup.post
         ### no id POSTs
+        $noIdpostList,$noIdpostFunctionList = $null
         $noIdpostList = $postList | Where {$_.ApiPath -notmatch 'uuid'}
-        New-AviRestFunctionExport $noIdpostList $templateFunctionPOST $jsonData $dynamicExportList | Foreach {
-            Invoke-Expression -Command $_
+
+        foreach ($post in $noIdpostList) {
+            $functionTemplate = Get-AVIFunctionTemplate $post $templateFunctionPOST $jsonData
+            Invoke-Expression -Command $functionTemplate
+            $apiName = Get-ApiPathName $post.ApiPath
+            $exportName = "New-AVIRest$apiName"
+            $dynamicExportList.Add($exportName)
         }
-        New-AviRestFunctionParamExport $noIdpostList $templateObject $jsonData $dynamicExportList | Foreach {
-            Invoke-Expression -Command $_
+        # $noIdpostFunctionList = New-AviRestFunctionExport New $noIdpostList $templateFunctionPOST $jsonData $dynamicExportList
+        # Foreach ($noIdFunction in $noIdpostFunctionList) {
+        #     Invoke-Expression -Command $noIdFunction
+        # }
+        $noIdpostFunctionParamList = New-AviRestFunctionParamExport $noIdpostList $templateObject $jsonData $dynamicExportList
+        Foreach ($noIdFunctionParam in $noIdpostFunctionParamList ) {
+            Invoke-Expression -Command $noIdFunctionParam
         }
 
         ### Id POSTs
+        $idpostList,$idpostFunctionList = $null
         $idpostList = $postList | Where {$_.ApiPath -match 'uuid'}
-        New-AviRestFunctionExport $idpostList $templateFunctionPOSTuuid $jsonData $dynamicExportList | Foreach {
-            Invoke-Expression -Command $_
+
+        foreach ($post in $idpostList) {
+            $functionTemplate = Get-AVIFunctionTemplate $post $templateFunctionPOSTuuid $jsonData
+            Invoke-Expression -Command $functionTemplate
+            $apiName = Get-ApiPathName $post.ApiPath
+            $exportName = "Invoke-AVIRest$apiName"
+            $dynamicExportList.Add($exportName)
         }
-        New-AviRestFunctionParamExport $idpostList $templateObject $jsonData $dynamicExportList | Foreach {
-            Invoke-Expression -Command $_
+        # $idpostFunctionList = New-AviRestFunctionExport Invoke $idpostList $templateFunctionPOSTuuid $jsonData $dynamicExportList
+        # Foreach ($idFunction in $idpostFunctionList) {
+        #     Invoke-Expression -Command $idFunction
+        # }
+        $idpostFunctionParamList = New-AviRestFunctionParamExport $idpostList $templateObject $jsonData $dynamicExportList
+        Foreach ($idFunctionParam in $idpostFunctionParamList) {
+            Invoke-Expression -Command $idFunctionParam
         }
 
         ## Delete
