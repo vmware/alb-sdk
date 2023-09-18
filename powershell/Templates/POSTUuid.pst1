@@ -1,0 +1,43 @@
+Function Invoke-AVIRest{0} {
+<#
+    .SYNOPSIS
+        Configure {4}
+
+    .EXAMPLE
+        Invoke-AviRest{0}
+        
+    .NOTES
+        Author:  Andy Grant
+        Website: www.linkedin.com/in/andybgrant/
+#>
+    [CmdletBinding(
+        ConfirmImpact = 'High',
+        SupportsShouldProcess = $true,
+        DefaultParameterSetName = 'Object')]
+    Param (
+        [Parameter(Mandatory=$true,ParameterSetName='Object')]
+        [ValidateNotNullOrEmpty()]
+        [PSTypeName('AVIRest{0}')]${0}
+    )
+    Begin {
+        $swaggerVersion = '{3}'
+        if ([version]$global:AVILbServerInfo.version.version -gt [version]$swaggerVersion) {
+            $InvalidOperation = [System.Management.automation.ErrorRecord]::New(
+                [System.Exception]::New("Requires AVI API revision [$swaggerVersion]"),0,
+                [System.Management.Automation.ErrorCategory]::InvalidOperation,$PSCmdlet.CommandOrigin
+            )
+            $PSCmdlet.ThrowTerminatingError($InvalidOperation)
+        }
+    }
+    Process {
+        $uuid = ${0}.uuid
+        $splat = @{
+            Method = 'POST'
+            Endpoint = "/api{1}"
+            Body = ConvertTo-JSON ${0} -Depth 100 -Compress
+        }
+        if ($pscmdlet.ShouldProcess("$(${0}.name)", "POST")) {
+            Invoke-AVIRest @splat -OutputType AVIRest{0}
+        }
+    }
+}

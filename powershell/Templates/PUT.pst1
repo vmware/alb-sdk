@@ -1,0 +1,50 @@
+Function Set-AVIRest{0} {
+<#
+    .SYNOPSIS
+        Configure {4}
+
+    .EXAMPLE
+        $object = Get-AviRest{0}
+        $object.name = 'New name'
+        Set-AviRest{0} $object
+        
+    .NOTES
+        Author:  Andy Grant
+        Website: www.linkedin.com/in/andybgrant/
+#>
+    [CmdletBinding(
+        ConfirmImpact = 'High',
+        SupportsShouldProcess = $true,
+        DefaultParameterSetName = 'Body')]
+    Param (
+        [Parameter(
+            Mandatory=$true,
+            Position=0,
+            ParameterSetName = 'Body',
+            ValueFromPipeline = $true)]
+        [ValidateNotNullOrEmpty()]
+        [PSTypeName('AVIRest{0}')]${0}
+    )
+    Begin {
+        $swaggerVersion = '{3}'
+        if ([version]$global:AVILbServerInfo.version.version -gt [version]$swaggerVersion) {
+            $InvalidOperation = [System.Management.automation.ErrorRecord]::New(
+                [System.Exception]::New("Requires AVI API revision [$swaggerVersion]"),0,
+                [System.Management.Automation.ErrorCategory]::InvalidOperation,$PSCmdlet.CommandOrigin
+            )
+            $PSCmdlet.ThrowTerminatingError($InvalidOperation)
+        }
+    }
+    Process {
+        $uuid = ${0}.uuid
+        $global:body = ConvertTo-JSON ${0} -Depth 100 -Compress
+        $splat = @{
+            Method = 'PUT'
+            Endpoint = "/api{1}"
+            Body = $body
+        }
+        if ($pscmdlet.ShouldProcess("$(${0}.name)", "PUT/EDIT")) {
+            Invoke-AVIRest @splat -OutputType AVIRest{0}
+        }
+    }
+}

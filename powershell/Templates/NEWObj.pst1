@@ -1,0 +1,42 @@
+Function New-AVIRest{0}Object {
+<#
+    .SYNOPSIS
+        Configure {4}
+
+    .EXAMPLE
+        New-AviRest{0}
+        
+    .NOTES
+        Author:  Andy Grant
+        Website: www.linkedin.com/in/andybgrant/
+#>
+    Param (
+        [Switch]$MinRequired
+    )
+    Begin {
+        $swaggerVersion = '{3}'
+        if ([version]$global:AVILbServerInfo.version.version -gt [version]$swaggerVersion) {
+            $InvalidOperation = [System.Management.automation.ErrorRecord]::New(
+                [System.Exception]::New("Requires AVI API revision [$swaggerVersion]"),0,
+                [System.Management.Automation.ErrorCategory]::InvalidOperation,$PSCmdlet.CommandOrigin
+            )
+            $PSCmdlet.ThrowTerminatingError($InvalidOperation)
+        }
+    }
+    Process {
+        if ($PSBoundParameters.minRequired.isPresent) {
+        $min = @'
+{1}
+'@
+        $result = $min | ConvertFrom-JSON -Depth 100
+        }
+        else {
+    $full = @'
+{2}
+'@
+        $result = $full | ConvertFrom-JSON -Depth 100
+        }
+        $result.PSObject.TypeNames.Insert(0,'AVIRest{0}')
+        $result
+    }
+}

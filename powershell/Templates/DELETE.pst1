@@ -1,0 +1,54 @@
+Function Remove-AVIRest{0} {
+<#
+    .SYNOPSIS
+        Configure {4}
+
+    .EXAMPLE
+        Get-AviRest{0} | Remove-AviRest{0}
+        
+    .NOTES
+        Author:  Andy Grant
+        Website: www.linkedin.com/in/andybgrant/
+#>
+    [CmdletBinding(
+        ConfirmImpact = 'High',
+        SupportsShouldProcess = $true,
+        DefaultParameterSetName = '{0}')]
+    Param (
+        [Parameter(
+            Mandatory=$true,
+            Position=0,
+            ParameterSetName = '{0}',
+            ValueFromPipeline = $true)]
+        [ValidateNotNullOrEmpty()]
+        [PSTypeName('AVIRest{0}')]${0},
+        [Parameter(
+            Mandatory=$true,
+            Position=0,
+            ParameterSetName = 'uuid')]
+        [ValidateNotNullOrEmpty()]
+        [string]$Uuid
+    )
+    Begin {
+        $swaggerVersion = '{3}'
+        if ([version]$global:AVILbServerInfo.version.version -gt [version]$swaggerVersion) {
+            $InvalidOperation = [System.Management.automation.ErrorRecord]::New(
+                [System.Exception]::New("Requires AVI API revision [$swaggerVersion]"),0,
+                [System.Management.Automation.ErrorCategory]::InvalidOperation,$PSCmdlet.CommandOrigin
+            )
+            $PSCmdlet.ThrowTerminatingError($InvalidOperation)
+        }
+    }
+    Process {
+        if ($PSCmdlet.ParameterSetName -eq '{0}') {
+            $uuid = ${0}.uuid
+        }
+        $splat = @{
+            Method = 'DELETE'
+            Endpoint = "/api{1}"
+        }
+        if ($pscmdlet.ShouldProcess("$(${0}.name)", "DELETE")) {
+            Invoke-AVIRest @splat
+        }
+    }
+}
