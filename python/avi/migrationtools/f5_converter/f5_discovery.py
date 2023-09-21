@@ -21,11 +21,10 @@ from collections import defaultdict
 from datetime import datetime
 
 try:
-    from bigsuds import BIGIP               # version 10
     from f5.bigip import ManagementRoot     # version 11+
 except ImportError:
-    print("Please Install bigsuds and f5 sdk python packages using "
-          "`pip install bigsuds f5-sdk`")
+    print("Please Install f5 sdk python packages using "
+          "`pip install f5-sdk`")
     sys.exit(1)
 
 profile_mappings = {
@@ -64,8 +63,6 @@ class F5InventoryConv(object):
         :param interval: Interval between two traffic stat samples
         :return: object of respective f5 version object.
         """
-        if version == '10':
-            return F5InventoryConvV10(host, port, username, password, interval)
         if int(version) > 10:
             return F5InventoryConvV11(host, port, username, password, interval)
 
@@ -473,108 +470,6 @@ class F5InventoryConv(object):
         with open(report_path, "w") as text_file:
             yaml.safe_dump([avi_object], text_file,
                            default_flow_style=False,  allow_unicode=True)
-
-
-class F5InventoryConvV10(F5InventoryConv):
-
-    def __init__(self, host, port, username, password, interval):
-        self.f5_client = BIGIP(host, port, username, password)
-        self.avi_object = []
-        self.version = '10'
-        self.avi_traffic_object = []
-        self.interval = interval
-        self.port = port
-        self.avi_object_temp = {}
-
-    def get_all_virtual_service(self):
-        """
-        :return:list of virtual server objects
-        """
-        virtual_services = self.f5_client.LocalLB.VirtualServer.get_list()
-        return virtual_services
-
-    def get_inventory(self):
-
-        i = 0
-        while i < 2:
-            self.avi_object_temp = {}
-            i += 1
-            if i == 1:
-                print("Running Sample for 1st time")
-            else:
-                time.sleep(60 * int(self.interval))
-                print("Running Sample for 2nd time")
-
-            virtual_services = self.get_all_virtual_service()
-            for vs in virtual_services:
-
-                vs_object = {
-                    'name': vs
-                }
-                state = self.f5_client.LocalLB.VirtualServer.get_enabled_state(
-                    [vs])
-                state = state[0].split('STATE_')[1]
-                if state == 'ENABLED':
-                    vs_object['enabled'] = True
-                else:
-                    vs_object['enabled'] = False
-                destination = (self.f5_client.LocalLB.VirtualServer.
-                               get_destination([vs]))
-                if destination:
-                    vs_object['destination'] = destination
-                persist = (self.f5_client.LocalLB.VirtualServer.
-                           get_persistence_profile([vs])[0])
-                if persist:
-                    persist = [persist_profile['profile_name'] for
-                               persist_profile in persist]
-                    vs_object['persist'] = persist
-                source_address_translation = (self.f5_client.LocalLB.
-                                              VirtualServer.get_snat_type([vs]))
-                source_address_translation = source_address_translation[
-                    0].split('SNAT_TYPE_')[1]
-                if source_address_translation != 'NONE':
-                    vs_object['source_address_translation'] = \
-                        source_address_translation
-                pool = (self.f5_client.LocalLB.VirtualServer.
-                        get_default_pool_name([vs])[0])
-                if pool:
-                    vs_object['pool'] = {
-                        'name': pool
-                    }
-                    members = self.f5_client.LocalLB.Pool.get_member([pool])[0]
-                    if members:
-                        vs_object['pool']['members'] = members
-                    health_monitors = (self.f5_client.LocalLB.Pool.
-                                       get_monitor_instance([pool])[0])
-                    if health_monitors:
-                        monitors = set(
-                            [monitor['instance']['template_name'] for
-                             monitor in health_monitors]
-                        )
-                        vs_object['pool']['health_monitors'] = list(monitors)
-                profiles = (self.f5_client.LocalLB.VirtualServer.
-                            get_profile([vs])[0])
-                if profiles:
-                    profiles = [profile['profile_name'] for profile in profiles]
-                    vs_object['profiles'] = profiles
-
-                traffic = (self.f5_client.LocalLB.VirtualServer.
-                           get_statistics([vs]))
-
-                max_conn = 0
-
-                for t in traffic['statistics'][0]['statistics']:
-                    if (t.get('type') ==
-                            'STATISTIC_CLIENT_SIDE_MAXIMUM_CONNECTIONS'):
-                        max_conn = int(t['value']['high'])
-
-                vs_object['max_conn'] = max_conn
-
-                if traffic and len(traffic['statistics']):
-                    vs_object['traffic_list'] = traffic['statistics'][0][
-                        'statistics']
-                self.avi_object_temp[vs_object['name']] = vs_object
-            self.avi_object.append(self.avi_object_temp)
 
 
 class F5InventoryConvV11(F5InventoryConv):
