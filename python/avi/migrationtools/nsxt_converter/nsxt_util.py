@@ -6,11 +6,7 @@ import os
 from datetime import datetime
 import random
 import time
-from com.vmware.vapi.std.errors_client import ServiceUnavailable
-from google.api_core.retry import Retry
-from google.api_core.retry import if_exception_type
 
-import copy
 import xlsxwriter
 import logging
 from avi.migrationtools.nsxt_converter.conversion_util import NsxtConvUtil
