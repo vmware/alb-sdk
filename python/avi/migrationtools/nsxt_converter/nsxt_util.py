@@ -5,6 +5,10 @@ import ipaddress
 import os
 from datetime import datetime
 import random
+import time
+from com.vmware.vapi.std.errors_client import ServiceUnavailable
+from google.api_core.retry import Retry
+from google.api_core.retry import if_exception_type
 
 import copy
 import xlsxwriter
@@ -126,10 +130,8 @@ def get_object_segments(vs_id, obj_ip):
         LOG.debug("virtual service not found with id %s " % vs_id)
         return None
     cloud = vs.get("Cloud")
-
     if cloud == "Cloud Not Found":
         LOG.debug("cloud is not configured for vs %s " % vs_id)
-       # return None
 
     segments = []
     if vs.get("Segments"):
@@ -242,52 +244,88 @@ class NSXUtil():
 
     def get_nsx_config(self):
         nsx_lb_config = dict()
-        nsx_lb_config["LBServices"] = self.nsx_api_client.infra.LbServices.list().to_dict().get("results", [])
-        nsx_lb_config["LbMonitorProfiles"] = self.nsx_api_client.infra.LbMonitorProfiles.list().to_dict().get("results",
-                                                                                                              [])
-        nsx_lb_config["LbPools"] = self.nsx_api_client.infra.LbPools.list().to_dict().get("results", [])
-        nsx_lb_config["LbAppProfiles"] = self.nsx_api_client.infra.LbAppProfiles.list().to_dict().get("results", [])
-        nsx_lb_config["LbClientSslProfiles"] = self.nsx_api_client.infra.LbClientSslProfiles.list().to_dict()["results"]
-        nsx_lb_config["LbServerSslProfiles"] = self.nsx_api_client.infra.LbServerSslProfiles.list().to_dict()["results"]
-        nsx_lb_config["LbPersistenceProfiles"] = self.nsx_api_client.infra.LbPersistenceProfiles.list().to_dict()[
-            "results"]
-        nsx_lb_config['LbVirtualServers'] = self.nsx_api_client.infra.LbVirtualServers.list().to_dict().get('results',
-                                                                                                            [])
+
+        nsx_lb_config["LBServices"] = self.call_api_with_retry(self.nsx_api_client.infra.LbServices.list)
+        nsx_lb_config["LbMonitorProfiles"] = self.call_api_with_retry(self.nsx_api_client.infra.LbMonitorProfiles.list)
+        nsx_lb_config["LbPools"] = self.call_api_with_retry(self.nsx_api_client.infra.LbPools.list)
+        nsx_lb_config["LbAppProfiles"] = self.call_api_with_retry(self.nsx_api_client.infra.LbAppProfiles.list)
+        nsx_lb_config["LbClientSslProfiles"] = self.call_api_with_retry(self.nsx_api_client.infra.
+                                                                        LbClientSslProfiles.list)
+        nsx_lb_config["LbServerSslProfiles"] = self.call_api_with_retry(self.nsx_api_client.infra.
+                                                                        LbServerSslProfiles.list)
+        nsx_lb_config["LbPersistenceProfiles"] = self.call_api_with_retry(self.nsx_api_client.infra.
+                                                                          LbPersistenceProfiles.list)
+        nsx_lb_config['LbVirtualServers'] = self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.list)
         return nsx_lb_config
+
+    def retry_with_backoff(retries=5, backoff_in_seconds=1):
+        def rwb(f):
+            def wrapper(*args, **kwargs):
+                x = 0
+                while True:
+                    try:
+                        return f(*args, **kwargs)
+                    except Exception as e:
+                        if x == retries:
+                            LOG.error("Failed retrying while fetching inventory details. Type: {}, Error: {}".
+                                      format(type(e), e))
+                            raise e
+
+                        error_message = repr(vars(e.data))
+                        if ('exceeded request rate' in error_message) or ('is overloaded' in error_message):
+                            sleep = (backoff_in_seconds * 2 ** x +
+                                     random.uniform(0, 1))
+                            LOG.debug(f"sleep for {sleep}")
+                            time.sleep(sleep)
+                            x += 1
+                        else:
+                            LOG.error("Failed while fetching inventory details. Type: {}, Error: {}".
+                                      format(type(e), e))
+                            raise e
+            return wrapper
+        return rwb
+
+    @retry_with_backoff(retries=10, backoff_in_seconds=1)
+    def call_api_with_retry(self, api, *args, **kwargs):
+        time.sleep(0.1)
+        results = api(*args, **kwargs)
+        if results and "results" in vars(results):
+            results = results.to_dict().get("results", [])
+        return results
 
     def nsx_cleanup(self):
         nsx_lb_config = self.get_nsx_config()
         if nsx_lb_config.get("LbVirtualServers", None):
             for vs in nsx_lb_config["LbVirtualServers"]:
                 if not vs["_system_owned"]:
-                    self.nsx_api_client.infra.LbVirtualServers.delete(vs["id"])
+                    self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.delete, vs["id"])
 
         if nsx_lb_config.get("LbPersistenceProfiles", None):
             for persis in nsx_lb_config["LbPersistenceProfiles"]:
                 if not persis["_system_owned"]:
-                    self.nsx_api_client.infra.LbPersistenceProfiles.delete(persis["id"])
+                    self.call_api_with_retry(self.nsx_api_client.infra.LbPersistenceProfiles.delete, persis["id"])
         if nsx_lb_config.get("LbServerSslProfiles", None):
             for server_ssl in nsx_lb_config["LbServerSslProfiles"]:
                 if not server_ssl["_system_owned"]:
-                    self.nsx_api_client.infra.LbServerSslProfiles.delete(server_ssl["id"])
+                    self.call_api_with_retry(self.nsx_api_client.infra.LbServerSslProfiles.delete, server_ssl["id"])
         if nsx_lb_config.get("LbClientSslProfiles", None):
             for client_ssl in nsx_lb_config["LbClientSslProfiles"]:
                 if not client_ssl["_system_owned"]:
-                    self.nsx_api_client.infra.LbClientSslProfiles.delete(client_ssl["id"])
+                    self.call_api_with_retry(self.nsx_api_client.infra.LbClientSslProfiles.delete, client_ssl["id"])
         if nsx_lb_config.get("LbAppProfiles", None):
             for app in nsx_lb_config["LbAppProfiles"]:
                 if not app["_system_owned"]:
-                    self.nsx_api_client.infra.LbAppProfiles.delete(app["id"])
+                    self.call_api_with_retry(self.nsx_api_client.infra.LbAppProfiles.delete, app["id"])
 
         if nsx_lb_config.get("LbPools", None):
             for pool in nsx_lb_config["LbPools"]:
                 if not pool["_system_owned"]:
-                    self.nsx_api_client.infra.LbPools.delete(pool["id"])
+                    self.call_api_with_retry(self.nsx_api_client.infra.LbPools.delete, pool["id"])
 
         if nsx_lb_config.get("LbMonitorProfiles", None):
             for monitor in nsx_lb_config["LbMonitorProfiles"]:
                 if not monitor["_system_owned"]:
-                    self.nsx_api_client.infra.LbMonitorProfiles.delete(monitor["id"])
+                    self.call_api_with_retry(self.nsx_api_client.infra.LbMonitorProfiles.delete, monitor["id"])
 
     def cutover_vs(self, vs_list, prefix, vs_tenant):
         vs_not_found = list()
@@ -312,14 +350,16 @@ class NSXUtil():
             alb_vs_list[vs["name"]] = vs
 
         for nsxt_vs_name in nsxt_vs_list:
-            vs_body = self.nsx_api_client.infra.LbVirtualServers.get(nsxt_vs_list[nsxt_vs_name]["id"])
+            vs_body = self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.get,
+                                               nsxt_vs_list[nsxt_vs_name]["id"])
             if not vs_body.system_owned:
                 cutover_msg = "Performing cutover for VS {} ...".format(nsxt_vs_name)
                 LOG.debug(cutover_msg)
                 print(cutover_msg)
                 vs_body.lb_service_path = None
                 vs_body.enabled = False
-                self.nsx_api_client.infra.LbVirtualServers.update(nsxt_vs_list[nsxt_vs_name]["id"], vs_body)
+                self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.update,
+                                         nsxt_vs_list[nsxt_vs_name]["id"], vs_body)
                 print("Disconnected traffic for VS {} on NSX-T".format(nsxt_vs_name))
 
                 for alb_vs in alb_vs_list:
@@ -382,7 +422,8 @@ class NSXUtil():
 
         # Perform roll back for vs filter list
         for nsxt_vs_name in nsxt_vs_list:
-            vs_body = self.nsx_api_client.infra.LbVirtualServers.get(nsxt_vs_list[nsxt_vs_name]["id"])
+            vs_body = self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.get,
+                                               nsxt_vs_list[nsxt_vs_name]["id"])
             if not vs_body.system_owned:
                 cutover_msg = "Performing rollback for VS {} ...".format(nsxt_vs_name)
                 LOG.debug(cutover_msg)
@@ -404,8 +445,8 @@ class NSXUtil():
                                                                         nsxt_vs_name))
                 vs_body.lb_service_path = lb_service_path
                 vs_body.enabled = True
-                self.nsx_api_client.infra.LbVirtualServers.update(nsxt_vs_list[nsxt_vs_name]["id"],
-                                                                  vs_body)
+                self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.update,
+                                         nsxt_vs_list[nsxt_vs_name]["id"], vs_body)
                 print("Enabled traffic for VS {} on NSX-T".format(nsxt_vs_name))
                 print("Completed rollback for VS {}\n".format(nsxt_vs_name))
 
@@ -488,14 +529,16 @@ class NSXUtil():
         return "Cloud Not Found"
 
     def get_lb_services_details(self):
-        lb_services = self.nsx_api_client.infra.LbServices.list().to_dict().get('results', [])
+        lb_services = self.call_api_with_retry(self.nsx_api_client.infra.LbServices.list)
         for lb in lb_services:
             self.cloud = self.session.get("cloud/", tenant=self.cloud_tenant).json()["results"]
             if not lb.get("connectivity_path"):
                 continue
             tier = get_name_and_entity(lb["connectivity_path"])[-1]
-            ls_id = self.nsx_api_client.infra.tier_1s.LocaleServices.list(tier).results[0].id
-            interface_list = self.nsx_api_client.infra.tier_1s.locale_services.Interfaces.list(tier, ls_id).results
+            results = self.call_api_with_retry(self.nsx_api_client.infra.tier_1s.LocaleServices.list, tier)
+            ls_id = results[0]["id"]
+            interface_list = self.call_api_with_retry(self.nsx_api_client.infra.tier_1s.locale_services.Interfaces.list,
+                                                      tier, ls_id)
             network = None
             tz_id = None
             cloud_name = None
@@ -509,7 +552,7 @@ class NSXUtil():
                 for intf in interface_list:
                     #segment_path="/infra/segments/virtualwire-1"
                     segment_id = get_name_and_entity(intf.segment_path)[-1]
-                    segment = self.nsx_api_client.infra.Segments.get(segment_id)
+                    segment = self.call_api_with_retry(self.nsx_api_client.infra.Segments.get, segment_id)
 
                     tz_path = segment.transport_zone_path
                     tz_id = get_name_and_entity(tz_path)[-1]
@@ -543,7 +586,8 @@ class NSXUtil():
                     lb_details.append(segments)
 
             else:
-                segment_list = self.nsx_api_client.infra.Segments.list().to_dict().get('results', [])
+                segment_list = self.call_api_with_retry(self.nsx_api_client.infra.Segments.list)
+
                 is_tier_linked_segment_found = False
 
                 for seg in segment_list:
@@ -594,11 +638,11 @@ class NSXUtil():
                     LOG.debug("Lb skipped : %s reason %s" %(lb["id"],lb_skip_reason))
                     continue
 
+
             if not is_cloud_configured:
 
                 warning_mesg="cloud is not configured for load balancer %s with id %s " % (lb["display_name"],lb["id"])
                 LOG.debug(warning_mesg)
-
 
             self.lb_services[lb["id"]] = {
                 "lb_name": lb["id"],
@@ -636,14 +680,14 @@ class NSXUtil():
         """
         :return:list of virtual server objects
         """
-        virtual_services = self.nsx_api_client.infra.LbVirtualServers.list().to_dict().get('results', [])
+        virtual_services = self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.list)
         return virtual_services
 
     def get_all_pool(self):
         """
         returns the list of all pools
         """
-        pool = self.nsx_api_client.infra.LbPools.list().to_dict().get("results", [])
+        pool = self.call_api_with_retry(self.nsx_api_client.infra.LbPools.list)
         return pool
 
     def get_inventory(self):
@@ -687,7 +731,7 @@ class NSXUtil():
                         'name': pool_id
                     }
                     self.enabled_pool_list.append(pool_id)
-                    pool_obj = self.nsx_api_client.infra.LbPools.get(pool_id)
+                    pool_obj = self.call_api_with_retry(self.nsx_api_client.infra.LbPools.get, pool_id)
                     vs_object["pool"]["pool_id"] = pool_obj.id
                     if pool_obj.active_monitor_paths:
                         health_monitors = [
@@ -715,7 +759,7 @@ class NSXUtil():
             if vs.get("application_profile_path"):
                 profile_id = get_name_and_entity(vs["application_profile_path"])[1]
                 vs_object["profiles"] = profile_id
-                prof_obj_list = self.nsx_api_client.infra.LbAppProfiles.list().to_dict().get("results", [])
+                prof_obj_list = self.call_api_with_retry(self.nsx_api_client.infra.LbAppProfiles.list)
                 prof_obj = [prof for prof in prof_obj_list if prof["id"] == profile_id]
                 prof_type = prof_obj[0].get("resource_type")
                 if prof_type == "LBHttpProfile":
@@ -841,8 +885,10 @@ class NSXUtil():
                 worksheet_pool.write(row, 1, pool_val['enabled'], enabled)
             elif pool_val.get("disabled"):
                 worksheet_pool.write(row, 1, pool_val['disabled'], deactivated)
-            pool_status = self.nsx_api_client.infra.realized_state.RealizedEntities. \
-                list(intent_path="/infra/lb-pools/" + pool_val["id"]).to_dict()["results"][0]["runtime_status"]
+            kwargs = {"intent_path": "/infra/lb-pools/" + pool_val["id"]}
+            response = self.call_api_with_retry(self.nsx_api_client.infra.realized_state.RealizedEntities.list,
+                                                **kwargs)
+            pool_status = response[0]["runtime_status"]
             if pool_status == "UP":
                 worksheet_pool.write(row, 2, pool_status, enabled)
             else:
@@ -882,8 +928,10 @@ class NSXUtil():
             if vsval.get("rules"):
                 complexity = "Advanced"
             worksheet.write(row, 3, complexity)
-            vs_status = self.nsx_api_client.infra.realized_state.RealizedEntities. \
-                list(intent_path="/infra/lb-virtual-servers/" + vs_id).to_dict()["results"][0]["runtime_status"]
+            kwargs = {"intent_path": "/infra/lb-virtual-servers/" + vs_id}
+            response = self.call_api_with_retry(self.nsx_api_client.infra.realized_state.RealizedEntities.list,
+                                                **kwargs)
+            vs_status = response[0]["runtime_status"]
             if vs_status == "UP":
                 worksheet.write(row, 4, vs_status, enabled)
             elif vs_status == "DISABLED":
@@ -957,20 +1005,21 @@ class NSXUtil():
         for hm in alb_hm_config:
             is_create_hm = False
             try:
-                hm_obj = self.nsx_api_client.infra.AlbHealthMonitors.get(hm["id"])
+                hm_obj = self.call_api_with_retry(self.nsx_api_client.infra.AlbHealthMonitors.get, hm["id"])
                 print(hm_obj)
             except Exception as e:
                 print(e)
                 is_create_hm = True
             if is_create_hm:
                 try:
-                    alb_hm_obj = self.nsx_api_client.infra.AlbHealthMonitors.update(hm["id"], hm)
+                    alb_hm_obj = self.call_api_with_retry(self.nsx_api_client.infra.AlbHealthMonitors.update, hm["id"],
+                                                          hm)
                     print(alb_hm_obj)
                 except Exception as e:
                     print(e)
 
     def create_and_update_nsgroup(self, pool_name, alb_config, pool_members):
-        domain_obj = self.nsx_api_client.infra.Domains.list().to_dict().get("results", [])
+        domain_obj = self.call_api_with_retry(self.nsx_api_client.infra.Domains.list)
         domain_id = None
 
         if domain_obj:
@@ -1056,11 +1105,12 @@ class NSXUtil():
     def get_nsx_group_details(self,group_path):
         domain_id = group_path.split('domains/')[1].split("/groups")[0]
         ns_group_id = group_path.split('groups/')[1]
-        ns_groups_list = self.nsx_api_client.infra.domains.Groups.list(domain_id).to_dict().get("results", [])
+        ns_groups_list = self.call_api_with_retry(self.nsx_api_client.infra.domains.Groups.list, domain_id)
         ns_group = [ns_g for ns_g in ns_groups_list if ns_g['id'] == ns_group_id]
         ns_group_name = ns_group[0]['display_name']
         ns_ip_addr = None
-        ip_addr=self.nsx_api_client.infra.domains.groups.members.IpAddresses.list(domain_id, ns_group_id).to_dict().get("results", [])
+        ip_addr = self.call_api_with_retry(self.nsx_api_client.infra.domains.groups.members.IpAddresses.list, domain_id,
+                                           ns_group_id)
         if ip_addr:
             ns_ip_addr=ip_addr
         return ns_group_name, ns_ip_addr
