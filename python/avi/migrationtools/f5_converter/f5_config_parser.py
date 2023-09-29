@@ -4,9 +4,8 @@ import xlsxwriter
 from openpyxl import load_workbook
 import os
 import pandas
-import logging
-LOG = logging.getLogger(__name__)
 
+irule_list=[]
 
 class iRuleDiscovery():
     def __init__(self,bigip_config,tenant):
@@ -15,7 +14,6 @@ class iRuleDiscovery():
        self.vs_pattern = '(?<=/'+re.escape(self.tenant)+'/)(.*)(?={)'
        self.pattern = '(?<=ltm rule /'+re.escape(self.tenant)+'/)(.*)(?= {)'
        self.irule_discovery_data={}
-       self.irule_list=[]
        
     def get_irule_discovery(self,output_dir,report_name):
         '''
@@ -37,7 +35,7 @@ class iRuleDiscovery():
             if match:
                 new_line = match.group()
                 num_lines += 1
-                self.irule_list.append(match.group())
+                irule_list.append(match.group())
         config.close()
 
     def vs_list(self):
@@ -50,19 +48,18 @@ class iRuleDiscovery():
         
     def irule_mapped_vs(self):
         self.list_irules()
-        self.irule_count=len(self.irule_list)
+        self.irule_count=len(irule_list)
         if self.irule_count == 0:
             print("There are no Irules Configured")
             return
         else:
             self.vs_list()
         i = 0
-        while i <= len(self.irule_list):
+       
+        while i <= len(irule_list):
             j = 1
-            irule_name=self.irule_list[i]
+            irule_name=irule_list[i]
             self.irule_discovery_data[irule_name]=[]
-            if len(vs_list)<=1:
-                continue
             while j <= len(vs_list):
                 if irule_name in vs_list[j]:
                     vs_name = re.search(self.vs_pattern , vs_list[j])
@@ -73,7 +70,7 @@ class iRuleDiscovery():
                 if j >= len(vs_list):
                     break
             i = i+1
-            if i >= len(self.irule_list):
+            if i >= len(irule_list):
                 break
       
     def add_data_to_excel(self,output_dir,report_name):
