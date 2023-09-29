@@ -30,6 +30,7 @@ from avi.migrationtools.f5_converter import (f5_config_converter, f5_parser,
 from avi.migrationtools.f5_converter.conversion_util import F5Util
 from avi.migrationtools.f5_converter.ciphers_converter import CiphersConfigConv
 from avi.migrationtools.f5_converter.f5_config_parser import iRuleDiscovery
+from avi.migrationtools.f5_discovery import F5InventoryConv
 
 # urllib3.disable_warnings()
 LOG = logging.getLogger(__name__)
@@ -355,9 +356,8 @@ class F5Converter(AviConverter):
                           report_name)
         
         # Irule discovery
-        if self.f5_config_version=="11":
-            irule_dis=iRuleDiscovery(self.bigip_config_file,self.f5_tenant)
-            irule_dis.get_irule_discovery(output_dir,report_name)
+        irule_dis=iRuleDiscovery(self.bigip_config_file,self.f5_tenant)
+        irule_dis.get_irule_discovery(output_dir,report_name)
         
         if self.vs_filter:
             F5Util().remove_vs_names_when_vs_filter_is_provided(
@@ -955,6 +955,12 @@ if __name__ == "__main__":
         help="f5 tenant for irule discovery"
     )
 
+    parser.add_argument(
+        "--discovery",
+        help="Run the discovery tool for f5 converter",
+        action="store_true",
+    )
+
     terminal_args = parser.parse_args()
     args = get_terminal_args(terminal_args)
 
@@ -963,5 +969,18 @@ if __name__ == "__main__":
         print("SDK Version: %s\nController Version: %s" % \
               (sdk_version, args.controller_version))
         exit(0)
+
+    if not os.path.isdir(args.output_file_path):
+        print("Creating output directory ...")
+        os.makedirs(args.output_file_path)
+
+    if args.discovery:
+        f5_inventory_conv = F5InventoryConv.get_instance(
+            args.f5_config_version, args.f5_host_ip, args.f5_ssh_port, args.f5_ssh_user,
+            args.f5_ssh_password, 2)
+        f5_inventory_conv.get_inventory()
+        f5_inventory_conv.print_human(
+            args.output_file_path, args.f5_config_version, args.f5_host_ip)
+
     f5_converter = F5Converter(args)
     f5_converter.convert()

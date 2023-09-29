@@ -448,10 +448,20 @@ class MigrationUtil(object):
         else:
             vs_csv_row['Complexity Level'] = conv_const.COMPLEXITY_BASIC
 
+    def remove_dup_of(self,avi_config):
+        self.remove_dup_key(avi_config["SSLKeyAndCertificate"])
+        self.remove_dup_key(avi_config["ApplicationProfile"])
+        self.remove_dup_key(avi_config["NetworkProfile"])
+        self.remove_dup_key(avi_config["SSLProfile"])
+        self.remove_dup_key(avi_config["PKIProfile"])
+        self.remove_dup_key(avi_config["ApplicationPersistenceProfile"])
+        self.remove_dup_key(avi_config["HealthMonitor"])
+
     def remove_dup_key(self, obj_list):
         '''
         Method for removing dup key from converted config
         '''
+
         for obj in obj_list:
             obj.pop('dup_of', None)
 
@@ -463,6 +473,7 @@ class MigrationUtil(object):
         :param obj_list: List of oll objects to search in
         :return: Name of object for which given object is duplicate of
         """
+
         if not syslist:
             syslist = []
         src_cp = copy.deepcopy(src_obj)
@@ -1419,6 +1430,8 @@ class MigrationUtil(object):
         :param syslist: System object list
         :return:
         """
+
+
         dup_of = None
         if isinstance(merge_object_mapping, dict):
             merge_object_mapping[obj_type].update({name: name})
