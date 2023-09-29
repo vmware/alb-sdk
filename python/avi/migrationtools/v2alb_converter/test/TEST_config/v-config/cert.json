@@ -1,0 +1,50 @@
+{
+    "trustObjects": [
+        {
+            "objectId": "certificate-1",
+            "objectTypeName": "Certificate",
+            "vsmUuid": "4201074E-E200-6E13-0D12-6C2D80007F59",
+            "nodeId": "6666b9ea-b82d-4a5e-bdc7-f7a70bcbfa53",
+            "revision": 1,
+            "type": {
+                "name": "Certificate"
+            },
+            "name": "www.dimi.fr",
+            "scope": {
+                "id": "edge-test",
+                "objectTypeName": "Edge",
+                "name": "Autogenerate-EDGE4"
+            },
+            "clientHandle": "",
+            "extendedAttributes": [],
+            "isUniversal": false,
+            "universalRevision": 0,
+            "isTemporal": false,
+            "pemEncoding": "-----BEGIN CERTIFICATE-----\nMIID0DCCArigAwIBAgIBATANBgkqhkiG9w0BAQUFADB/MQswCQYDVQQGEwJGUjET\nMBEGA1UECAwKU29tZS1TdGF0ZTEOMAwGA1UEBwwFUGFyaXMxDTALBgNVBAoMBERp\nbWkxDTALBgNVBAsMBE5TQlUxEDAOBgNVBAMMB0RpbWkgQ0ExGzAZBgkqhkiG9w0B\nCQEWDGRpbWlAZGltaS5mcjAeFw0xNDAxMjgyMDM2NTVaFw0yNDAxMjYyMDM2NTVa\nMFsxCzAJBgNVBAYTAkZSMRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYDVQQKDBhJ\nbnRlcm5ldCBXaWRnaXRzIFB0eSBMdGQxFDASBgNVBAMMC3d3dy5kaW1pLmZyMIIB\nIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvpnaPKLIKdvx98KW68lz8pGa\nRRcYersNGqPjpifMVjjE8LuCoXgPU0HePnNTUjpShBnynKCvrtWhN+haKbSp+QWX\nSxiTrW99HBfAl1MDQyWcukoEb9Cw6INctVUN4iRvkn9T8E6q174RbcnwA/7yTc7p\n1NCvw+6B/aAN9l1G2pQXgRdYC/+G6o1IZEHtWhqzE97nY5QKNuUVD0V09dc5CDYB\naKjqetwwv6DFk/GRdOSEd/6bW+20z0qSHpa3YNW6qSp+x5pyYmDrzRIR03os6Dau\nZkChSRyc/Whvurx6o85D6qpzywo8xwNaLZHxTQPgcIA5su9ZIytv9LH2E+lSwwID\nAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NMIEdlbmVy\nYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU+tugFtyN+cXe1wxUqeA7X+yS3bgw\nHwYDVR0jBBgwFoAUhMwqkbBrGp87HxfvwgPnlGgVR64wDQYJKoZIhvcNAQEFBQAD\nggEBAIEEmqqhEzeXZ4CKhE5UM9vCKzkj5Iv9TFs/a9CcQuepzplt7YVmevBFNOc0\n+1ZyR4tXgi4+5MHGzhYCIVvHo4hKqYm+J+o5mwQInf1qoAHuO7CLD3WNa1sKcVUV\nvepIxc/1aHZrG+dPeEHt0MdFfOw13YdUc2FH6AqEdcEL4aV5PXq2eYR8hR4zKbc1\nfBtuqUsvA8NWSIyzQ16fyGve+ANf6vXvUizyvwDrPRv/kfvLNa3ZPnLMMxU98Mvh\nPXy3PkB8++6U4Y3vdk2Ni2WYYlIls8yqbM4327IKmkDc2TimS8u60CT47mKU7aDY\ncbTV5RDkrlaYwm5yqlTIglvCv7o=\n-----END CERTIFICATE-----",
+            "privateKey": "YnoyUDBNZElMU1hEaUNDWGI5emxuMFZETG1Cc2RuUldZRzZJN252bVZWMndwekdpcUFJNnhIdVBDSFQ3NkIveVNSL2h3djdwWlk1dExMdVk2QThMUTJBMng4amVLVEdKSVBsRUpLOVg3K3NUaW5EcFBVWWZ6UmxHR3crZHAxdVVEU0Zrd0NHMU9Oc0xUZzEybjVXcmVreXlJZjVqdmRRRGpRb0VMa1Z5dklkUStvL29maUV5K0k1QWFDWGpPME84V1piUE8zcFcyTERxeUtBNzdSRGtHNElZSG55N3dyY1ptMkRvSkZWQlREVUtJblF3clhqSXRQUlQ3MTRweUtXVjJyalZFajZHQWlualpEODk0WWdzdVAyd202bEx5OE5XelFGQWhxbWYyUmtBVUVwWm5ZbjRRRktFeFpyanE1MEljdnJPTlh1M2M3NjlaMzh1QzZkUlNJZWJFUVhIVjBJZjlrZFE5bGN2WnlVUjRIZU52dmNWdnFScnc3T2RkNFpZd0svM1Jlc0dhd1NodXJSK0o1Ry92Y2Q0b3pPRjZ3QWRJOFVjLzVqUGZKa3pqQlZ5bThsY3VlU0tSQk9pTWdpNWtBK2U3b2JpeVVzbDRPbFQrcDN0R1lxMUVKK2Y3SHpQNy9Nc0gvSk5ldFNEUUNBVlc4ektnS0srVnVkU2xzQ001NGpWVGV4WGtjSzNiSHBGcHYySy9TZmsrR2dqTnM0akd5YnFzYVdHYnBqQTExdDFIdkI5cjk1RUxSczI5UHcxS0lMSXYzYzJCZXdHZ2tYRXhxTlZwMmhFZDN6aXUrKzJ0VWZkdjVrelhIVFVKTjBqLytwUDN4aDFielBWZS92bElHdDNEek5MSldlVW5VTVZWelV3VE5RR1ZIQVpSbzA2YWNhSDBCb2pFRnc0aCtSU1ZTbDZaZUl3NDYxcENNRVNMcHdhMm9kWVhPMDNJRFJGemNOd0xMaVZKSjRSSWNpOVYyZjZSYy9BeVIzY0NLeDllZkR6YVNaQ1MwWWJPNVpKMUNMcXVYeTJxR05IQlZvdWJsbVN6U2o5ZmpNRGtmT2hUa1RiVGlsTUVJRURiUFUwN0M5dUo5QndyeTFEOVl4OU5LdnZRWTQ1ZmFkZkltU2E5eE1rUGNCQzg2ejFBRmdHYW1JYStkZUd0ZzlEK3JuVUtEYU5ya3dqMGdscWhIbVRuTXQxU0w1NmtYUForMk1aNFpPNHFNaDNWRmNVc1dlbXlQRFJ4T2pza1djc3RMRTZRWnpJT0hYZ1RKUVpLaTZyTURpZ3lubm8wS1pRUGFSNmJnb1g0aTFMRXdyb0d5Y0hNVlAyU1dKaHBTbmZtL2h5Q2pDWnpFMkRZSERxdno5QkZMZVNsZXFpZWJ6d2dZSUNveFZERzVERUtSYzc0N2NCODI3Q1A0RWIxRGFLSkR2aGQxaHBPL0FlKzVGSlBFK0F6WU5iVFM4elBuaEZlNC92c09nMG02aHdFK0lOaTZGcDdHcms2YlltZzk3UHhjTnB6aUV4bDdDcFdpUjFsNHhydkl1M0FhZUh3VG5xSHpsV0pqcXBTbkhmQXpsck1wTktTV0xURUtRU2lyeHA2UytmbHBDM1VFMEkxWTU3Nkdjb0tlRXNud2daSmg2djFBbStzdUlMQVpLMTVNNVU3V0FROXRLYzl6ZExRdmF2YktrYlQ5RDljaG5nV2lUYjFlNERXcStvUm5ZYWYwei8weEg3Vis0d2l4RXplY0FoYjVUWWxTemVIRlZUdGxSQWloVTFQQ3JwT2JLSWdaOVMrbEVWaXRQdFFlNmx1eWNJZm1JNktoR20zbXdPWnE4dXNjMnhnaGRYZDMwdWJHYzhXb3VIVFVmN09TNnJmVDFhZngwdU1IRXhJZFdRT3FDcmwrWGVqOGdSSXJIc0JZa1RucGgwc24rN0hqbTBvR1dmM3hiajNvaGlnK1V6UitHK3dEdi82WXRsNGE4OFlzTlZxakIwRHVwSEYyU3RMbUNqNzQvT3BCeDhZSXorTGJ3S1puSUpkVWJKSm03R3JjdGhOaVpqNEpWZndKL2NrQXFydlRXMTN5Vnh4dVJPMGRGMW1QT09IZThIVTZ0dklTeTlFUmp5N2NSUTVqUzZXbWFoSVdqR2YzOGdsY0dpbjhCdDhDdFo1M3hIRXBPNVZ4eHo5Q3I2bGhha0p2cDZ6eVRQZlQrSHR5TkVLOFN1UEJlcTJjYmlUYVpHWEcwd3ZOVXY0bkt0a2lzSHZsRGtjVng5TGhIakxnbFBmUitQbWVXTVcyVkxXTTRvTThnOU5aMGZTc1B0emErL2tUQmF4emYzVGVJQzN6UGhnZGNYWTIyOXRLSkxvbEh3ODczbFAxRFJHR3c3Y0IwaDVMbWJJeFZ6T0xkamc3SE9sQi8rQ1pBWXg3SXhsVjVkTmhCdEl2bkNoRG1TTGsySXJ4WWhNZGJhRmduZWhEQ1BpVGdtdlBBdE1uQlhwNWZLb2E2WWJZVFZwdW9pSFFLWFR6SlN0SkRlQzFiRk5PUXMzajBJbm5VWGcxMVJOZHNZY2M5MWdCckpFc3pnQ1lINlo0bjhtNzBoVnd0MW00a3lrK3QyUXdDOVYrYlR1T2pvL1ROSk5rNXY2OEtqZE51MGJraStjUjBBYy9jNlR1WXRwYWhERjF4TVQ0c0Q1aHNUUWt6eVdaVWREcnBKbU5uL0tQZ3hEaDRTTys3aHJPdDZEY1VuR3VTdk5MQllEbTJhMzV3YlNvYVVySE5HVWhnN2k3TzRhanJqT0NoM2xsZ2laWnkvVWdyVHdodWtSMmhJNnc1dEtoVHZLNDI0OENVWmhJRmNuYURlczdaSXV6VWJwQ2ZMSWFHQVpXeWZlRG9GNjZUMy96ZkJQQ2pUWnEyWXlJeDN5aGpQL3RUcDBUYnpIU0dVajFiT1dqMWFIenRYdW9XZkVuOXcwK0R3QytBLzRTWWRmZStxTWNZSHhnS0xlYi9WUjd5VC9sdDBqVXJaTCs2VXFJS0swWUl4M3l1VHN3PT0=\n"
+        },
+        {
+            "objectId": "certificate-2",
+            "objectTypeName": "Certificate",
+            "vsmUuid": "4201074E-E200-6E13-0D12-6C2D80007F59",
+            "nodeId": "6666b9ea-b82d-4a5e-bdc7-f7a70bcbfa53",
+            "revision": 1,
+            "type": {
+                "name": "Certificate"
+            },
+            "name": "Dimi CA",
+            "scope": {
+                "id": "edge-test",
+                "objectTypeName": "Edge",
+                "name": "Autogenerate-EDGE4"
+            },
+            "clientHandle": "",
+            "extendedAttributes": [],
+            "isUniversal": false,
+            "universalRevision": 0,
+            "isTemporal": false,
+            "pemEncoding": "-----BEGIN CERTIFICATE-----\nMIIDyTCCArGgAwIBAgIBADANBgkqhkiG9w0BAQUFADB/MQswCQYDVQQGEwJGUjET\nMBEGA1UECAwKU29tZS1TdGF0ZTEOMAwGA1UEBwwFUGFyaXMxDTALBgNVBAoMBERp\nbWkxDTALBgNVBAsMBE5TQlUxEDAOBgNVBAMMB0RpbWkgQ0ExGzAZBgkqhkiG9w0B\nCQEWDGRpbWlAZGltaS5mcjAeFw0xNDAxMjgyMDI2NDRaFw0yNDAxMjYyMDI2NDRa\nMH8xCzAJBgNVBAYTAkZSMRMwEQYDVQQIDApTb21lLVN0YXRlMQ4wDAYDVQQHDAVQ\nYXJpczENMAsGA1UECgwERGltaTENMAsGA1UECwwETlNCVTEQMA4GA1UEAwwHRGlt\naSBDQTEbMBkGCSqGSIb3DQEJARYMZGltaUBkaW1pLmZyMIIBIjANBgkqhkiG9w0B\nAQEFAAOCAQ8AMIIBCgKCAQEAuxuG4QeBIGXj/AB/YRLLtpgpTpGnDntVlgsycZrL\n3qqyOdBNlwnvcB9etfY5iWzjeq7YZRr6i0dIV4sFNBR2NoK+YvdD9j1TRi7njZg0\nd6zth0xlsOhCsDlV/YCL1CTcYDlKA/QiKeIQa7GU3Rhf0t/KnAkr6mwoDbdKBQX1\nD5HgQuXJiFdh5XRebxF1ZB3gH+0kCEaEZPrjFDApkOXNxEARZdpBLpbvQljtVXtj\nHMsvrIOc7QqUSOU3GcbBMSHjT8cgg8ssf492Go3bDQkIzTROz9QgDHaqDqTC9Hoe\nvlIpTS+q/3BCY5AGWKl3CCR6dDyK6honnOR/8srezaN4PwIDAQABo1AwTjAdBgNV\nHQ4EFgQUhMwqkbBrGp87HxfvwgPnlGgVR64wHwYDVR0jBBgwFoAUhMwqkbBrGp87\nHxfvwgPnlGgVR64wDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQUFAAOCAQEAVqYq\nvhm5wAEKmvrKXRjeb5kiEIp7oZAFkYp6sKODuZ1VdkjMDD4wv46iqAe1QIIsfGwd\nDmv0oqSl+iPPy24ATMSZQbPLO5K64Hw7Q8KPos0yD8gHSg2d4SOukj+FD2IjAH17\na8auMw7TTHu6976JprQQKtPADRcfodGd5UFiz/6ZgLzUE23cktJMc2Bt18B9OZII\nJ9ef2PZxZirJg1OqF2KssDlJP5ECo9K3EmovC5M5Aly++s8ayjBnNivtklYL1VOT\nZrpPgcndTHUA5KS/Duf40dXm0snCxLAKNP28pMowDLSYc6IjVrD4+qqw3f1b7yGb\nbJcFgxKDeg5YecQOSg==\n-----END CERTIFICATE-----\n"
+        }
+    ],
+    "sessionKey": "(b'\\x9c1>\\x85~\\xaa,\\xad\\x0b\\t%\\x011E\\xce\\x93\\xd4\\xb6\\\\\\xe7m\\x86\\x8c\"\\xdf\\xaf0\\xbd\\xe0V\\xc1\\xfd\\xc9\\xdaH\\xc1R\\x1a\\xe7\\xc8\\xaf.\\xf3\\xccN_\\xb2:\\x98+\\x89\\x1b\\x91\\xbd^\\xdf8oA\\xe1\\xbeF\\xde\\xe2\\x05\\xd5r\\xed\\x98\\xd4zs\\xdb\\x03\\x07\\xb0\\x01\\xa3\\n\\xd0\\xf8\\xc4\\xfeI\\xdd\\xaf2\\xab\\xb40\\x95\\x16\\x8e\\xb733\\xb3\\xd1\\xbbw\\x14\\xa4\\xf8`\\xb8\\xd3/\\x96\\x04\\xbc\\x06\\xa9\\xd8I\\x98\\x9b\\xc1\\xdc\\x14\\xec.\\xe5\\xb4E\\x85u\\x18\\x99',)\n"
+}

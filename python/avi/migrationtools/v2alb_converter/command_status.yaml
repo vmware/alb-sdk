@@ -1,0 +1,110 @@
+NSXV:
+    Monitor_Supported_Types:
+    - "LBHttpMonitorProfile"
+    - "LBHttpsMonitorProfile"
+    - "LBIcmpMonitorProfile"
+    - "LBTcpMonitorProfile"
+    - "LBUdpMonitorProfile"
+
+    Monitor_Supported_Attributes:
+    - "maxRetries"
+    - "interval"
+    - "timeout"
+    - "name"
+    - "type"
+    - "monitorId"
+    - "description"
+
+    Monitor_http_attr:
+    - "url"
+    - "method"
+    - "send"
+    - "receive"
+    - "expected"
+
+    Monitor_https_attr:
+    - "url"
+    - "method"
+    - "send"
+    - "receive"
+    - "expected"
+
+    Monitor_tcp_attr:
+    - "send"
+    - "receive"
+
+    Monitor_udp_attr:
+    - "send"
+    - "receive"
+
+    Monitor_ping_attr:
+
+    Monitor_icmp_ignore:
+    - "data_length"
+
+    Pool_supported_attr:
+    - "name"
+    - "type"
+    - "monitorId"
+    - "member"
+    - "algorithm"
+    - "member_group"
+    - "active_monitor_paths"
+    - "min_active_members"
+    - "poolId"
+    - "description"
+    - "transparent"
+    - "algorithmParameters"
+
+    Pool_supported_attr_convert_servers_config:
+    - "name"
+    - "ipAddress"
+    - "port"
+    - "condition"
+    - "weight"
+    - "maxConn"
+    - "memberId"
+
+
+
+    Pool_na_list:
+    - "ipVersionFilter"
+    - "applicationRuleId"
+
+    Pool_server_na_list:
+    - ''
+
+
+    Pool_server_ignore_list:
+    - "minConn"
+    - "monitorPort"
+
+    VS_supported_attr:
+    - 'virtualServerId'
+    - 'name'
+    - 'protocol'
+    - 'port'
+    - 'connectionLimit'
+    - 'defaultPoolId'
+    - 'applicationProfileId'
+    - 'enabled'
+    - 'ipAddress'
+    - 'accelerationEnabled'
+    - 'description'
+    - 'connectionRateLimit'
+
+    VS_na_list:
+    - "applicationRuleId"
+    - "enableServiceInsertion"
+
+    Application_Profile_supported_attr:
+    - "applicationProfileId"
+    - "insertXForwardedFor"
+    - "template"
+    - "sslPassthrough"
+    - "persistence"
+    - "clientSsl"
+    - "serverSsl"
+    - "name"
+    - "serverSslEnabled"
+    - "clientSslEnabled"

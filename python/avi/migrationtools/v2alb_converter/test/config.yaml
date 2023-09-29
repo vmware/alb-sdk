@@ -1,0 +1,20 @@
+---
+nsxv_ip:  None
+nsxv_user: 'admin'
+nsxv_password: None
+nsxv_port: 443
+nsxt_ip: ''
+nsxt_user: 'admin'
+nsxt_password: ''
+nsxt_port :  443
+ssh_root_password:
+controller_ip: ''
+controller_user:  ''
+controller_password:  ''
+controller_version: ''
+output_file_path :  'output'
+prefix :
+tenant :  'admin'
+not_in_use :  False
+object_merge_check: False
+option :  'auto-upload'
