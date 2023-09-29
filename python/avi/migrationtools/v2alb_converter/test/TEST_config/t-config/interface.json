@@ -1,0 +1,83 @@
+{
+    "t1_1": [
+        {
+            "segment_path": "/infra/segments/virtualwire-1",
+            "urpf_mode": "STRICT",
+            "advanced_config": {},
+            "resource_type": "Tier1Interface",
+            "id": "virtualwire-1",
+            "display_name": "virtualwire-1",
+            "tags": [
+                {
+                    "scope": "v_origin",
+                    "tag": "t1_esg_csp-edge-4"
+                }
+            ],
+            "path": "/infra/tier-1s/t1_1/locale-services/default/interfaces/virtualwire-1",
+            "relative_path": "virtualwire-1",
+            "parent_path": "/infra/tier-1s/t1_1/locale-services/default",
+            "remote_path": "",
+            "unique_id": "d88e795b-d5f6-4b5c-a389-2bdb76264d89",
+            "realization_id": "d88e795b-d5f6-4b5c-a389-2bdb76264d89",
+            "owner_id": "2585f79f-77c0-41ab-af07-cf5d06032a40",
+            "marked_for_delete": false,
+            "overridden": false,
+            "subnets": [
+                {
+                    "ip_addresses": [
+                        "192.168.100.2"
+                    ],
+                    "prefix_len": 24
+                }
+            ],
+            "_create_time": 1694363736131,
+            "_create_user": "admin",
+            "_last_modified_time": 1694363736131,
+            "_last_modified_user": "admin",
+            "_system_owned": false,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+        }
+    ],
+    "t1_2": [
+        {
+            "segment_path": "/infra/segments/virtualwire-1",
+            "urpf_mode": "STRICT",
+            "advanced_config": {},
+            "resource_type": "Tier1Interface",
+            "id": "virtualwire-1",
+            "display_name": "virtualwire-1",
+            "tags": [
+                {
+                    "scope": "v_origin",
+                    "tag": "t1_esg_csp-edge-5"
+                }
+            ],
+            "path": "/infra/tier-1s/t1_2/locale-services/default/interfaces/virtualwire-1",
+            "relative_path": "virtualwire-1",
+            "parent_path": "/infra/tier-1s/t1_2/locale-services/default",
+            "remote_path": "",
+            "unique_id": "ef7801f2-edb5-4295-a000-0cc0fe6902dd",
+            "realization_id": "ef7801f2-edb5-4295-a000-0cc0fe6902dd",
+            "owner_id": "2585f79f-77c0-41ab-af07-cf5d06032a40",
+            "marked_for_delete": false,
+            "overridden": false,
+            "subnets": [
+                {
+                    "ip_addresses": [
+                        "192.168.100.3"
+                    ],
+                    "prefix_len": 24
+                }
+            ],
+            "_create_time": 1694363738021,
+            "_create_user": "admin",
+            "_last_modified_time": 1694363738021,
+            "_last_modified_user": "admin",
+            "_system_owned": false,
+            "_protection": "NOT_PROTECTED",
+            "_revision": 0
+        }
+    ],
+    "tier-temp": []
+}
