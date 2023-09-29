@@ -867,6 +867,12 @@
                     "type": "string",
                     "default": "hostmaster"
                 },
+                "client_dns_tcp_request_timeout": {
+                    "description": "The maximum time allowed for a client to transmit an entire DNS request over TCP. This helps mitigate various forms of SlowLoris attacks. Allowed values are 10-100000000. Field introduced in 22.1.5. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 10000,
+                    "format": "int32"
+                },
                 "close_tcp_connection_post_response": {
                     "description": "If enabled, the Service Engine initiates closure of client TCP connections after the first DNS response, for pass-through/proxy cases. This behavior applies to all DNS request types other than AX-FR. Field introduced in 22.1.4. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "boolean"
