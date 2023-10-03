@@ -1,0 +1,1168 @@
+
+{
+    "featureType": "loadbalancer_4.0",
+    "version": 47,
+    "enabled": true,
+    "enableServiceInsertion": false,
+    "accelerationEnabled": true,
+    "virtualServer": [
+        {
+            "virtualServerId": "virtualServer-2",
+            "name": "http_vip2",
+            "description": "http2_vip_desc",
+            "enabled": true,
+            "ipAddress": "192.168.100.2",
+            "protocol": "http",
+            "port": "8085",
+            "connectionLimit": 123,
+            "connectionRateLimit": 123,
+            "defaultPoolId": "pool-2",
+            "applicationProfileId": "applicationProfile-2",
+            "enableServiceInsertion": false,
+            "accelerationEnabled": false,
+            "applicationRuleId": []
+        },
+        {
+            "virtualServerId": "virtualServer-3",
+            "name": "tcp_vip",
+            "description": "tcp_vip_desc",
+            "enabled": true,
+            "ipAddress": "192.168.100.2",
+            "protocol": "tcp",
+            "port": "7000",
+            "connectionLimit": 123,
+            "connectionRateLimit": 123,
+            "defaultPoolId": "pool-3",
+            "applicationProfileId": "applicationProfile-3",
+            "enableServiceInsertion": false,
+            "accelerationEnabled": false,
+            "applicationRuleId": []
+        },
+        {
+            "virtualServerId": "virtualServer-4",
+            "name": "udp_vip",
+            "description": "udp_vip_desc",
+            "enabled": true,
+            "ipAddress": "192.168.100.2",
+            "protocol": "udp",
+            "port": "5030",
+            "connectionLimit": 123,
+            "connectionRateLimit": 123,
+            "defaultPoolId": "pool-4",
+            "applicationProfileId": "applicationProfile-4",
+            "enableServiceInsertion": false,
+            "accelerationEnabled": true,
+            "applicationRuleId": []
+        },
+        {
+            "virtualServerId": "virtualServer-5",
+            "name": "https_vip",
+            "description": "https_vip_desc",
+            "enabled": true,
+            "ipAddress": "192.168.100.2",
+            "protocol": "https",
+            "port": "8456",
+            "connectionLimit": 123,
+            "connectionRateLimit": 123,
+            "defaultPoolId": "pool-5",
+            "applicationProfileId": "applicationProfile-5",
+            "enableServiceInsertion": false,
+            "accelerationEnabled": false,
+            "applicationRuleId": []
+        },
+        {
+            "virtualServerId": "virtualServer-8",
+            "name": "vs_with_attached_http_header_pool",
+            "enabled": true,
+            "ipAddress": "192.168.100.2",
+            "protocol": "http",
+            "port": "80",
+            "connectionLimit": 0,
+            "defaultPoolId": "pool-16",
+            "applicationProfileId": "applicationProfile-1",
+            "enableServiceInsertion": false,
+            "accelerationEnabled": false,
+            "applicationRuleId": []
+        },
+        {
+            "virtualServerId": "virtualServer-1",
+            "name": "http_vip1",
+            "description": "http1_vip_desc",
+            "enabled": true,
+            "ipAddress": "192.168.100.2",
+            "protocol": "http",
+            "port": "8080",
+            "connectionLimit": 123,
+            "connectionRateLimit": 123,
+            "defaultPoolId": "pool-9",
+            "applicationProfileId": "applicationProfile-1",
+            "enableServiceInsertion": false,
+            "accelerationEnabled": false,
+            "applicationRuleId": []
+        },
+        {
+            "virtualServerId": "virtualServer-10",
+            "name": "vs_attached_with_transparent_pool",
+            "enabled": true,
+            "ipAddress": "192.168.100.2",
+            "protocol": "http",
+            "port": "81",
+            "connectionLimit": 0,
+            "defaultPoolId": "pool-21",
+            "applicationProfileId": "applicationProfile-9",
+            "enableServiceInsertion": false,
+            "accelerationEnabled": false,
+            "applicationRuleId": []
+        },
+        {
+            "virtualServerId": "virtualServer-20",
+            "name": "vs_with_serverssl_app_prof",
+            "enabled": true,
+            "ipAddress": "192.168.100.2",
+            "protocol": "http",
+            "port": "87",
+            "connectionLimit": 0,
+            "defaultPoolId": "pool-17",
+            "applicationProfileId": "applicationProfile-7",
+            "enableServiceInsertion": false,
+            "accelerationEnabled": false,
+            "applicationRuleId": []
+        },
+        {
+            "virtualServerId": "virtualServer-50",
+            "name": "vs_with_serverssl_auth_app_prof",
+            "enabled": true,
+            "ipAddress": "192.168.100.2",
+            "protocol": "http",
+            "port": "90",
+            "connectionLimit": 0,
+            "defaultPoolId": "pool-100",
+            "applicationProfileId": "applicationProfile-13",
+            "enableServiceInsertion": false,
+            "accelerationEnabled": false,
+            "applicationRuleId": []
+        },
+
+        {
+            "virtualServerId": "virtualServer-21",
+            "name": "vs_with_client_ssl_prof",
+            "enabled": true,
+            "ipAddress": "192.168.100.2",
+            "protocol": "http",
+            "port": "88",
+            "connectionLimit": 0,
+            "applicationProfileId": "applicationProfile-8",
+            "enableServiceInsertion": false,
+            "accelerationEnabled": false,
+            "applicationRuleId": []
+        },
+        {
+            "virtualServerId": "virtualServer-23",
+            "name": "vs_with_acceleration_enabled",
+            "enabled": true,
+            "ipAddress": "192.168.100.2",
+            "protocol": "http",
+            "port": "89",
+            "connectionLimit": 0,
+            "applicationProfileId": "applicationProfile-1",
+            "enableServiceInsertion": false,
+            "accelerationEnabled": true,
+            "applicationRuleId": []
+        },
+        {
+            "accelerationEnabled": true,
+            "applicationProfileId": "applicationProfile-1",
+            "applicationRuleId": [
+                "applicationRule-2",
+                "applicationRule-1"
+            ],
+            "connectionLimit": 0,
+            "defaultPoolId": "pool-1",
+            "enableServiceInsertion": false,
+            "enabled": true,
+            "ipAddress": "10.176.64.136",
+            "name": "vs-tcp-with-acceleration",
+            "port": "443",
+            "protocol": "tcp",
+            "virtualServerId": "virtualServer-1"
+        },
+        {
+            "accelerationEnabled": true,
+            "applicationProfileId": "applicationProfile-31",
+            "connectionLimit": 0,
+            "defaultPoolId": "pool-31",
+            "enableServiceInsertion": false,
+            "enabled": true,
+            "ipAddress": "10.176.64.151",
+            "name": "vs-tcp-with-acceleration",
+            "port": "443",
+            "protocol": "tcp",
+            "virtualServerId": "virtualServer-31"
+        },
+        {
+            "accelerationEnabled": true,
+            "applicationProfileId": "applicationProfile-32",
+            "connectionLimit": 0,
+            "defaultPoolId": "pool-31",
+            "enableServiceInsertion": false,
+            "enabled": true,
+            "ipAddress": "10.176.64.152",
+            "name": "vs-udp-with-acceleration",
+            "port": "443",
+            "protocol": "udp",
+            "virtualServerId": "virtualServer-32"
+        },
+        {
+            "accelerationEnabled": false,
+            "applicationProfileId": "applicationProfile-33",
+            "connectionLimit": 0,
+            "defaultPoolId": "pool-31",
+            "enableServiceInsertion": false,
+            "enabled": true,
+            "ipAddress": "10.176.64.153",
+            "name": "vs-http-with-acceleration-disabled",
+            "port": "443",
+            "protocol": "http",
+            "virtualServerId": "virtualServer-33"
+        },
+        {
+            "accelerationEnabled": false,
+            "applicationProfileId": "applicationProfile-34",
+            "connectionLimit": 0,
+            "defaultPoolId": "pool-31",
+            "enableServiceInsertion": false,
+            "enabled": true,
+            "ipAddress": "10.176.64.154",
+            "name": "vs-https-with-ssl-passthrough",
+            "port": "443",
+            "protocol": "https",
+            "virtualServerId": "virtualServer-34"
+        },
+        {
+            "accelerationEnabled": false,
+            "applicationProfileId": "applicationProfile-35",
+            "connectionLimit": 0,
+            "defaultPoolId": "pool-31",
+            "enableServiceInsertion": false,
+            "enabled": true,
+            "ipAddress": "10.176.64.155",
+            "name": "vs-https-with-client-and-server-ssl-enabled",
+            "port": "443",
+            "protocol": "https",
+            "virtualServerId": "virtualServer-35"
+        },
+        {
+            "accelerationEnabled": false,
+            "applicationProfileId": "applicationProfile-36",
+            "connectionLimit": 0,
+            "defaultPoolId": "pool-31",
+            "enableServiceInsertion": false,
+            "enabled": true,
+            "ipAddress": "10.176.64.156",
+            "name": "vs-https-with-ssl-passthrough-acceleration-and-client-ssl",
+            "port": "443",
+            "protocol": "https",
+            "virtualServerId": "virtualServer-36"
+        },
+        {
+            "accelerationEnabled": false,
+            "applicationProfileId": "applicationProfile-37",
+            "connectionLimit": 10,
+            "connectionRateLimit": 123,
+            "defaultPoolId": "pool-31",
+            "enableServiceInsertion": false,
+            "enabled": true,
+            "ipAddress": "10.176.64.157",
+            "name": "vs-connection-rate-limit",
+            "port": "443",
+            "protocol": "http",
+            "virtualServerId": "virtualServer-37"
+        },
+        {
+            "accelerationEnabled": false,
+            "applicationProfileId": "applicationProfile-38",
+            "connectionLimit": 0,
+            "defaultPoolId": "pool-31",
+            "enableServiceInsertion": false,
+            "enabled": true,
+            "ipAddress": "10.176.64.158",
+            "name": "vs-with-port-range",
+            "port": "9000,9010-9020",
+            "protocol": "tcp",
+            "virtualServerId": "virtualServer-38"
+        },
+        {
+            "accelerationEnabled": false,
+            "applicationProfileId": "applicationProfile-39",
+            "connectionLimit": 0,
+            "defaultPoolId": "pool-31",
+            "enableServiceInsertion": false,
+            "enabled": true,
+            "ipAddress": "10.176.64.159",
+            "name": "vs-with-ip-address",
+            "port": "443",
+            "protocol": "http",
+            "virtualServerId": "virtualServer-39"
+        },
+        {
+            "accelerationEnabled": false,
+            "applicationProfileId": "applicationProfile-40",
+            "applicationRuleId": [
+                "applicationRule-1"
+            ],
+            "connectionLimit": 0,
+            "defaultPoolId": "pool-31",
+            "enableServiceInsertion": false,
+            "enabled": true,
+            "ipAddress": "10.176.64.160",
+            "name": "vs-with-application-rule",
+            "port": "443",
+            "protocol": "http",
+            "virtualServerId": "virtualServer-40"
+        },
+        {
+            "accelerationEnabled": false,
+            "connectionLimit": 0,
+            "defaultPoolId": "pool-31",
+            "enableServiceInsertion": false,
+            "enabled": true,
+            "ipAddress": "10.176.64.161",
+            "name": "vs-with-pool-having-nsgroup",
+            "port": "443",
+            "protocol": "http",
+            "virtualServerId": "virtualServer-41"
+        }
+    ],
+    "pool": [
+        {
+            "poolId": "pool-3",
+            "name": "pool-tcp",
+            "description": "pool-tcp",
+            "algorithm": "round-robin",
+            "transparent": false,
+            "monitorId": [
+                "monitor-3"
+            ],
+            "applicationRuleId": [],
+            "member": [
+                {
+                    "memberId": "member-9",
+                    "ipAddress": "192.168.100.10",
+                    "weight": 1,
+                    "monitorPort": 80,
+                    "port": 80,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member1"
+                },
+                {
+                    "memberId": "member-10",
+                    "ipAddress": "192.168.100.11",
+                    "weight": 2,
+                    "monitorPort": 80,
+                    "port": 80,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member2"
+                },
+                {
+                    "memberId": "member-11",
+                    "ipAddress": "192.168.100.12",
+                    "weight": 3,
+                    "monitorPort": 80,
+                    "port": 80,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member3"
+                },
+                {
+                    "memberId": "member-12",
+                    "ipAddress": "192.168.100.13",
+                    "weight": 4,
+                    "monitorPort": 80,
+                    "port": 80,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member4"
+                }
+            ]
+        },
+        {
+            "poolId": "pool-4",
+            "name": "pool-udp",
+            "description": "pool-udp",
+            "algorithm": "round-robin",
+            "transparent": true,
+            "monitorId": [
+                "monitor-4"
+            ],
+            "applicationRuleId": [],
+            "member": [
+                {
+                    "memberId": "member-13",
+                    "ipAddress": "192.168.100.10",
+                    "weight": 1,
+                    "monitorPort": 10029,
+                    "port": 5000,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member1"
+                },
+                {
+                    "memberId": "member-14",
+                    "ipAddress": "192.168.100.11",
+                    "weight": 2,
+                    "monitorPort": 10029,
+                    "port": 5000,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member2"
+                },
+                {
+                    "memberId": "member-15",
+                    "ipAddress": "192.168.100.12",
+                    "weight": 3,
+                    "monitorPort": 10029,
+                    "port": 5000,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member3"
+                },
+                {
+                    "memberId": "member-16",
+                    "ipAddress": "192.168.100.13",
+                    "weight": 4,
+                    "monitorPort": 10029,
+                    "port": 5000,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member4"
+                }
+            ]
+        },
+        {
+            "poolId": "pool-5",
+            "name": "pool-https",
+            "description": "pool-https",
+            "algorithm": "round-robin",
+            "transparent": false,
+            "monitorId": [
+                "monitor-5"
+            ],
+            "applicationRuleId": [],
+            "member": [
+                {
+                    "memberId": "member-17",
+                    "ipAddress": "192.168.100.10",
+                    "weight": 1,
+                    "monitorPort": 443,
+                    "port": 443,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member1"
+                },
+                {
+                    "memberId": "member-18",
+                    "ipAddress": "192.168.100.11",
+                    "weight": 1,
+                    "monitorPort": 443,
+                    "port": 443,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member2"
+                },
+                {
+                    "memberId": "member-19",
+                    "ipAddress": "192.168.100.12",
+                    "weight": 1,
+                    "monitorPort": 443,
+                    "port": 443,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member3"
+                },
+                {
+                    "memberId": "member-20",
+                    "ipAddress": "192.168.100.13",
+                    "weight": 1,
+                    "monitorPort": 443,
+                    "port": 443,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member4"
+                }
+            ]
+        },
+
+        {
+            "poolId": "pool-10",
+            "name": "orphan_pool",
+            "description": "orphan_pool",
+            "ipVersionFilter": "any",
+            "algorithm": "round-robin",
+            "transparent": false,
+            "monitorId": [
+                "monitor-2"
+            ],
+            "applicationRuleId": [],
+            "member": [
+                {
+                    "memberId": "member-22",
+                    "ipAddress": "10.10.1.1",
+                    "weight": 1,
+                    "monitorPort": 80,
+                    "maxConn": 0,
+                    "minConn": 0,
+                    "condition": "enabled",
+                    "name": "member1"
+                }
+            ]
+        },
+        {
+            "poolId": "pool-100",
+            "name": "pool_attached_with_vs_serverssl_app",
+            "description": "pool_attached_with_vs_serverssl_app",
+            "ipVersionFilter": "any",
+            "algorithm": "round-robin",
+            "transparent": false,
+            "applicationRuleId": [],
+            "member": [
+                {
+                    "memberId": "member-22",
+                    "ipAddress": "10.10.1.1",
+                    "weight": 1,
+                    "monitorPort": 80,
+                    "maxConn": 0,
+                    "minConn": 0,
+                    "condition": "enabled",
+                    "name": "member1"
+                }
+            ]
+        },
+        {
+            "poolId": "pool-16",
+            "name": "pool_with_httpheader_algo",
+            "description": "pool_with_httpheader_algo",
+            "ipVersionFilter": "any",
+            "algorithm": "httpheader",
+            "algorithmParameters": "headerName=testheader",
+            "transparent": false,
+            "monitorId": [
+                "monitor-5"
+            ],
+            "applicationRuleId": [],
+            "member": [
+                {
+                    "memberId": "member-23",
+                    "ipAddress": "10.10.1.1",
+                    "weight": 1,
+                    "monitorPort": 80,
+                    "maxConn": 0,
+                    "minConn": 0,
+                    "condition": "enabled",
+                    "name": "member1"
+                }
+            ]
+        },
+        {
+            "poolId": "pool-17",
+            "name": "pool_without_hm",
+            "description": "pool without health monitor attached   ",
+            "ipVersionFilter": "any",
+            "algorithm": "round-robin",
+            "transparent": false,
+            "monitorId": [],
+            "applicationRuleId": [],
+            "member": [
+                {
+                    "memberId": "member-24",
+                    "ipAddress": "192.168.100.13",
+                    "weight": 1,
+                    "monitorPort": 80,
+                    "maxConn": 0,
+                    "minConn": 0,
+                    "condition": "enabled",
+                    "name": "mem1"
+                }
+            ]
+        },
+        {
+            "poolId": "pool-19",
+            "name": "pool_with_uri_algo",
+            "ipVersionFilter": "any",
+            "algorithm": "uri",
+            "algorithmParameters": "uriLength=3",
+            "transparent": false,
+            "monitorId": [],
+            "applicationRuleId": [],
+            "member": []
+        },
+        {
+            "poolId": "pool-1",
+            "name": "pool_http_with_ip_hash",
+            "description": "pool-http-1",
+            "ipVersionFilter": "any",
+            "algorithm": "ip-hash",
+            "transparent": true,
+            "monitorId": [
+                "monitor-1"
+            ],
+            "applicationRuleId": [],
+            "member": [
+                {
+                    "memberId": "member-1",
+                    "ipAddress": "192.168.100.10",
+                    "weight": 1,
+                    "monitorPort": 80,
+                    "port": 80,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member1"
+                },
+                {
+                    "memberId": "member-2",
+                    "ipAddress": "192.168.100.11",
+                    "weight": 1,
+                    "monitorPort": 80,
+                    "port": 80,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member2"
+                },
+                {
+                    "memberId": "member-3",
+                    "ipAddress": "192.168.100.12",
+                    "weight": 1,
+                    "monitorPort": 80,
+                    "port": 80,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member3"
+                },
+                {
+                    "memberId": "member-4",
+                    "ipAddress": "192.168.100.13",
+                    "weight": 1,
+                    "monitorPort": 80,
+                    "port": 80,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member4"
+                }
+            ]
+        },
+        {
+            "poolId": "pool-20",
+            "name": "pool_with_LeastConnection_algo",
+            "ipVersionFilter": "any",
+            "algorithm": "leastconn",
+            "transparent": false,
+            "monitorId": [
+                "monitor-1"
+            ],
+            "applicationRuleId": [],
+            "member": [
+                {
+                    "memberId": "member-25",
+                    "ipAddress": "192.168.100.2",
+                    "weight": 1,
+                    "monitorPort": 80,
+                    "maxConn": 0,
+                    "minConn": 0,
+                    "condition": "enabled",
+                    "name": "mem1"
+                }
+            ]
+        },
+        {
+            "poolId": "pool-2",
+            "name": "pool-http-2",
+            "description": "pool-http-2",
+            "ipVersionFilter": "any",
+            "algorithm": "round-robin",
+            "transparent": false,
+            "monitorId": [
+                "monitor-2"
+            ],
+            "applicationRuleId": [],
+            "member": [
+                {
+                    "memberId": "member-6",
+                    "ipAddress": "192.168.100.11",
+                    "weight": 1,
+                    "monitorPort": 80,
+                    "port": 80,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member2"
+                },
+                {
+                    "memberId": "member-8",
+                    "ipAddress": "192.168.100.13",
+                    "weight": 1,
+                    "monitorPort": 80,
+                    "port": 80,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member4"
+                },
+                {
+                    "memberId": "member-26",
+                    "ipAddress": "192.168.100.10",
+                    "weight": 1,
+                    "monitorPort": 8080,
+                    "port": 80,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member1"
+                },
+                {
+                    "memberId": "member-27",
+                    "ipAddress": "192.168.100.12",
+                    "weight": 1,
+                    "monitorPort": 85,
+                    "port": 80,
+                    "maxConn": 100,
+                    "minConn": 10,
+                    "condition": "enabled",
+                    "name": "member3"
+                }
+            ]
+        },
+        {
+            "poolId": "pool-21",
+            "name": "pool_configured_with_transparent",
+            "ipVersionFilter": "any",
+            "algorithm": "round-robin",
+            "transparent": true,
+            "monitorId": [
+                "monitor-2"
+            ],
+            "applicationRuleId": [],
+            "member": []
+        },
+        {
+            "algorithm": "round-robin",
+            "applicationRuleId": [],
+            "ipVersionFilter": "any",
+            "member": [
+                {
+                    "condition": "enabled",
+                    "groupingObjectId": "vm-552906",
+                    "groupingObjectName": "UATBBPCOUAPP01",
+                    "maxConn": 0,
+                    "memberId": "member-13",
+                    "minConn": 0,
+                    "monitorPort": 7003,
+                    "name": "Server_1",
+                    "port": 7003,
+                    "weight": 1
+                },
+                {
+                    "condition": "enabled",
+                    "ipAddress": "10.176.38.144",
+                    "maxConn": 0,
+                    "memberId": "member-14",
+                    "minConn": 0,
+                    "monitorPort": 7003,
+                    "name": "Server_2",
+                    "port": 7003,
+                    "weight": 1
+                }
+            ],
+            "name": "pool-31",
+            "poolId": "pool-31",
+            "transparent": false
+        }
+    ],
+    "applicationProfile": [
+        {
+            "applicationProfileId": "applicationProfile-1",
+            "persistence": {
+                "method": "cookie",
+                "cookieName": "JSESSIONID",
+                "cookieMode": "insert",
+                "expire": "360"
+            },
+            "name": "http_cookie_insert_mode",
+            "insertXForwardedFor": false,
+            "sslPassthrough": false,
+            "template": "http",
+            "serverSslEnabled": false
+        },
+        {
+            "applicationProfileId": "applicationProfile-2",
+            "persistence": {
+                "method": "cookie",
+                "cookieName": "JSESSIONID",
+                "cookieMode": "prefix"
+            },
+            "name": "http_cookie_prefix_mode",
+            "insertXForwardedFor": false,
+            "sslPassthrough": false,
+            "template": "http",
+            "serverSslEnabled": false
+        },
+        {
+            "applicationProfileId": "applicationProfile-3",
+            "persistence": {
+                "method": "sourceip",
+                "expire": "360"
+            },
+            "name": "tcp_src_ip",
+            "insertXForwardedFor": false,
+            "sslPassthrough": false,
+            "template": "tcp",
+            "serverSslEnabled": false
+        },
+        {
+            "applicationProfileId": "applicationProfile-4",
+            "persistence": {
+                "method": "sourceip",
+                "expire": "360"
+            },
+            "name": "udp_src_ip",
+            "insertXForwardedFor": false,
+            "sslPassthrough": false,
+            "template": "udp",
+            "serverSslEnabled": false
+        },
+        {
+            "applicationProfileId": "applicationProfile-6",
+            "name": "http_app_pr_with_sslpassthrough_disabled",
+            "insertXForwardedFor": false,
+            "sslPassthrough": false,
+            "template": "HTTP",
+            "serverSslEnabled": false
+        },
+        {
+            "applicationProfileId": "applicationProfile-9",
+            "name": "app_profile_with_xff",
+            "insertXForwardedFor": true,
+            "sslPassthrough": false,
+            "template": "HTTP",
+            "serverSslEnabled": false
+        },
+        {
+            "applicationProfileId": "applicationProfile-5",
+            "persistence": {
+                "method": "sourceip",
+                "expire": "360"
+            },
+            "name": "https_ssl_pass_through_enable_src_ip",
+            "insertXForwardedFor": false,
+            "sslPassthrough": true,
+            "template": "HTTPS",
+            "serverSslEnabled": false
+        },
+        {
+            "applicationProfileId": "applicationProfile-10",
+            "persistence": {
+                "method": "msrdp"
+            },
+            "name": "tcp_with_msrdp",
+            "insertXForwardedFor": false,
+            "sslPassthrough": false,
+            "template": "TCP",
+            "serverSslEnabled": false
+        },
+        {
+            "applicationProfileId": "applicationProfile-7",
+            "persistence": {
+                "method": "cookie",
+                "cookieName": "cookie1",
+                "cookieMode": "prefix"
+            },
+            "name": "https_app_with_server_ssl",
+            "insertXForwardedFor": true,
+            "sslPassthrough": false,
+            "template": "HTTPS",
+            "serverSslEnabled": true,
+            "serverSsl": {
+                "ciphers": "ECDHE-RSA-AES128-SHA",
+                "serviceCertificate": [
+                    "certificate-1"
+                ],
+                "caCertificate": [],
+                "crlCertificate": [],
+                "serverAuth": false
+            }
+        },
+        {
+            "applicationProfileId": "applicationProfile-8",
+            "persistence": {
+                "method": "sourceip"
+            },
+            "name": "https_with_client_ssl",
+            "insertXForwardedFor": false,
+            "sslPassthrough": false,
+            "template": "HTTPS",
+            "serverSslEnabled": false,
+            "clientSsl": {
+                "ciphers": "AES128-SHA256",
+                "clientAuth": "ignore",
+                "serviceCertificate": [
+                    "certificate-1"
+                ],
+                "caCertificate": [
+                    "certificate-2"
+                ],
+                "crlCertificate": []
+            }
+        },
+        {
+            "applicationProfileId": "applicationProfile-12",
+            "name": "app_with_client_auth_required",
+            "insertXForwardedFor": false,
+            "sslPassthrough": false,
+            "template": "HTTPS",
+            "serverSslEnabled": true,
+            "clientSsl": {
+                "ciphers": "DEFAULT",
+                "clientAuth": "required",
+                "serviceCertificate": [
+                    "certificate-1"
+                ],
+                "caCertificate": [
+                    "certificate-2"
+                ],
+                "crlCertificate": []
+            },
+            "serverSsl": {
+                "ciphers": "ECDHE-RSA-AES128-SHA",
+                "serviceCertificate": [
+                    "certificate-1"
+                ],
+                "caCertificate": [],
+                "crlCertificate": [],
+                "serverAuth": false
+            }
+        },
+        {
+            "applicationProfileId": "applicationProfile-13",
+            "name": "app_with_server_auth",
+            "insertXForwardedFor": false,
+            "sslPassthrough": false,
+            "template": "HTTPS",
+            "serverSslEnabled": true,
+            "serverSsl": {
+                "ciphers": "DEFAULT",
+                "serviceCertificate": [],
+                "caCertificate": [
+                    "certificate-2"
+                ],
+                "crlCertificate": [],
+                "serverAuth": true
+            }
+        },
+        {
+            "applicationProfileId": "applicationProfile-1",
+            "insertXForwardedFor": false,
+            "name": "app-tcp",
+            "serverSslEnabled": false,
+            "sslPassthrough": true,
+            "template": "tcp"
+        },
+        {
+            "applicationProfileId": "applicationProfile-31",
+            "insertXForwardedFor": false,
+            "name": "app-tcp-31",
+            "clientSslEnabled": false,
+            "serverSslEnabled": false,
+            "sslPassthrough": false,
+            "template": "TCP"
+        },
+        {
+            "applicationProfileId": "applicationProfile-32",
+            "insertXForwardedFor": false,
+            "name": "app-udp-32",
+            "clientSslEnabled": false,
+            "serverSslEnabled": false,
+            "sslPassthrough": false,
+            "template": "UDP"
+        },
+        {
+            "applicationProfileId": "applicationProfile-33",
+            "insertXForwardedFor": false,
+            "name": "app-http-33",
+            "clientSslEnabled": false,
+            "serverSslEnabled": false,
+            "sslPassthrough": false,
+            "template": "HTTP"
+        },
+        {
+            "applicationProfileId": "applicationProfile-34",
+            "insertXForwardedFor": false,
+            "name": "app-http-34",
+            "clientSslEnabled": false,
+            "serverSslEnabled": false,
+            "sslPassthrough": true,
+            "template": "HTTP"
+        },
+        {
+            "applicationProfileId": "applicationProfile-35",
+            "insertXForwardedFor": false,
+            "name": "app-http-35",
+            "clientSslEnabled": true,
+            "serverSslEnabled": true,
+            "sslPassthrough": false,
+            "template": "HTTP"
+        },
+        {
+            "applicationProfileId": "applicationProfile-36",
+            "insertXForwardedFor": false,
+            "name": "app-http-36",
+            "clientSslEnabled": true,
+            "serverSslEnabled": false,
+            "sslPassthrough": false,
+            "template": "HTTP"
+        },
+        {
+            "applicationProfileId": "applicationProfile-37",
+            "insertXForwardedFor": false,
+            "name": "app-http-37",
+            "clientSslEnabled": false,
+            "serverSslEnabled": false,
+            "sslPassthrough": false,
+            "template": "HTTP"
+        },
+        {
+            "applicationProfileId": "applicationProfile-38",
+            "insertXForwardedFor": false,
+            "name": "app-http-38",
+            "clientSslEnabled": false,
+            "serverSslEnabled": false,
+            "sslPassthrough": false,
+            "template": "HTTP"
+        },
+        {
+            "applicationProfileId": "applicationProfile-39",
+            "insertXForwardedFor": false,
+            "name": "app-http-39",
+            "clientSslEnabled": false,
+            "serverSslEnabled": false,
+            "sslPassthrough": false,
+            "template": "HTTP"
+        },
+        {
+            "applicationProfileId": "applicationProfile-40",
+            "insertXForwardedFor": false,
+            "name": "app-http-40",
+            "clientSslEnabled": false,
+            "serverSslEnabled": false,
+            "sslPassthrough": false,
+            "template": "HTTP"
+        }
+    ],
+    "applicationRule": [
+         {
+             "applicationRuleId": "applicationRule-1",
+             "name": "Disable TLSv1.1",
+             "script": "tlsv11 disable"
+         }
+     ],
+    "monitor": [
+        {
+            "monitorId": "monitor-1",
+            "type": "http",
+            "interval": 5,
+            "timeout": 15,
+            "maxRetries": 3,
+            "method": "GET",
+            "url": "/",
+            "expected": "HTTP/1",
+            "name": "http1"
+        },
+        {
+            "monitorId": "monitor-2",
+            "type": "http",
+            "interval": 5,
+            "timeout": 15,
+            "maxRetries": 3,
+            "method": "GET",
+            "url": "/",
+            "expected": "HTTP/1",
+            "name": "http2"
+        },
+        {
+            "monitorId": "monitor-3",
+            "type": "tcp",
+            "interval": 5,
+            "timeout": 15,
+            "maxRetries": 3,
+            "name": "tcp1"
+        },
+        {
+            "monitorId": "monitor-4",
+            "type": "udp",
+            "interval": 5,
+            "timeout": 15,
+            "maxRetries": 3,
+            "name": "udp1",
+            "send": "Hello",
+            "receive": "Hello"
+        },
+        {
+            "monitorId": "monitor-5",
+            "type": "https",
+            "interval": 5,
+            "timeout": 15,
+            "maxRetries": 3,
+            "method": "GET",
+            "url": "/",
+            "expected": "HTTP/1",
+            "name": "https1"
+        },
+        {
+            "monitorId": "monitor-6",
+            "type": "http",
+            "interval": 10,
+            "timeout": 15,
+            "maxRetries": 3,
+            "method": "GET",
+            "url": "/",
+            "name": "orphan_monitor"
+        },
+        {
+            "monitorId": "monitor-9",
+            "type": "icmp",
+            "interval": 10,
+            "timeout": 15,
+            "maxRetries": 3,
+            "name": "icmp_monitor",
+            "extension": "extension:ext"
+        },
+        {
+            "monitorId": "monitor-10",
+            "type": "mssql",
+            "interval": 10,
+            "timeout": 15,
+            "maxRetries": 3,
+            "name": "mssql_monitor",
+            "username": "admin"
+        }
+    ],
+    "logging": {
+        "enable": true,
+        "logLevel": "debug"
+    }
+}
