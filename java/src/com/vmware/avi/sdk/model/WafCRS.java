@@ -21,14 +21,23 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafCRS extends AviRestResource  {
+    @JsonProperty("allowed_request_content_type_charsets")
+    private List<String> allowedRequestContentTypeCharsets = null;
+
     @JsonProperty("description")
     private String description = null;
+
+    @JsonProperty("files")
+    private List<WafDataFile> files = null;
 
     @JsonProperty("groups")
     private List<WafRuleGroup> groups = null;
 
     @JsonProperty("integrity")
     private String integrity = null;
+
+    @JsonProperty("integrity_values")
+    private List<String> integrityValues = null;
 
     @JsonProperty("markers")
     private List<RoleFilterMatchLabel> markers = null;
@@ -38,6 +47,12 @@ public class WafCRS extends AviRestResource  {
 
     @JsonProperty("release_date")
     private String releaseDate = null;
+
+    @JsonProperty("restricted_extensions")
+    private List<String> restrictedExtensions = null;
+
+    @JsonProperty("restricted_headers")
+    private List<String> restrictedHeaders = null;
 
     @JsonProperty("tenant_ref")
     private String tenantRef = null;
@@ -52,6 +67,45 @@ public class WafCRS extends AviRestResource  {
     private String version = null;
 
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Allowed request content type character sets in waf.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return allowedRequestContentTypeCharsets
+     */
+    public List<String> getAllowedRequestContentTypeCharsets() {
+        return allowedRequestContentTypeCharsets;
+    }
+
+    /**
+     * This is the setter method. this will set the allowedRequestContentTypeCharsets
+     * Allowed request content type character sets in waf.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return allowedRequestContentTypeCharsets
+     */
+    public void setAllowedRequestContentTypeCharsets(List<String>  allowedRequestContentTypeCharsets) {
+        this.allowedRequestContentTypeCharsets = allowedRequestContentTypeCharsets;
+    }
+
+    /**
+     * This is the setter method this will set the allowedRequestContentTypeCharsets
+     * Allowed request content type character sets in waf.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return allowedRequestContentTypeCharsets
+     */
+    public WafCRS addAllowedRequestContentTypeCharsetsItem(String allowedRequestContentTypeCharsetsItem) {
+      if (this.allowedRequestContentTypeCharsets == null) {
+        this.allowedRequestContentTypeCharsets = new ArrayList<String>();
+      }
+      this.allowedRequestContentTypeCharsets.add(allowedRequestContentTypeCharsetsItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -75,6 +129,45 @@ public class WafCRS extends AviRestResource  {
      */
     public void setDescription(String  description) {
         this.description = description;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * List of data files used for waf rules.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return files
+     */
+    public List<WafDataFile> getFiles() {
+        return files;
+    }
+
+    /**
+     * This is the setter method. this will set the files
+     * List of data files used for waf rules.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return files
+     */
+    public void setFiles(List<WafDataFile>  files) {
+        this.files = files;
+    }
+
+    /**
+     * This is the setter method this will set the files
+     * List of data files used for waf rules.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return files
+     */
+    public WafCRS addFilesItem(WafDataFile filesItem) {
+      if (this.files == null) {
+        this.files = new ArrayList<WafDataFile>();
+      }
+      this.files.add(filesItem);
+      return this;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -141,6 +234,45 @@ public class WafCRS extends AviRestResource  {
      */
     public void setIntegrity(String  integrity) {
         this.integrity = integrity;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Integrity protection values for crs.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return integrityValues
+     */
+    public List<String> getIntegrityValues() {
+        return integrityValues;
+    }
+
+    /**
+     * This is the setter method. this will set the integrityValues
+     * Integrity protection values for crs.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return integrityValues
+     */
+    public void setIntegrityValues(List<String>  integrityValues) {
+        this.integrityValues = integrityValues;
+    }
+
+    /**
+     * This is the setter method this will set the integrityValues
+     * Integrity protection values for crs.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return integrityValues
+     */
+    public WafCRS addIntegrityValuesItem(String integrityValuesItem) {
+      if (this.integrityValues == null) {
+        this.integrityValues = new ArrayList<String>();
+      }
+      this.integrityValues.add(integrityValuesItem);
+      return this;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -231,6 +363,84 @@ public class WafCRS extends AviRestResource  {
      */
     public void setReleaseDate(String  releaseDate) {
         this.releaseDate = releaseDate;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Waf restricted file extensions.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return restrictedExtensions
+     */
+    public List<String> getRestrictedExtensions() {
+        return restrictedExtensions;
+    }
+
+    /**
+     * This is the setter method. this will set the restrictedExtensions
+     * Waf restricted file extensions.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return restrictedExtensions
+     */
+    public void setRestrictedExtensions(List<String>  restrictedExtensions) {
+        this.restrictedExtensions = restrictedExtensions;
+    }
+
+    /**
+     * This is the setter method this will set the restrictedExtensions
+     * Waf restricted file extensions.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return restrictedExtensions
+     */
+    public WafCRS addRestrictedExtensionsItem(String restrictedExtensionsItem) {
+      if (this.restrictedExtensions == null) {
+        this.restrictedExtensions = new ArrayList<String>();
+      }
+      this.restrictedExtensions.add(restrictedExtensionsItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Waf restricted http headers.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return restrictedHeaders
+     */
+    public List<String> getRestrictedHeaders() {
+        return restrictedHeaders;
+    }
+
+    /**
+     * This is the setter method. this will set the restrictedHeaders
+     * Waf restricted http headers.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return restrictedHeaders
+     */
+    public void setRestrictedHeaders(List<String>  restrictedHeaders) {
+        this.restrictedHeaders = restrictedHeaders;
+    }
+
+    /**
+     * This is the setter method this will set the restrictedHeaders
+     * Waf restricted http headers.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return restrictedHeaders
+     */
+    public WafCRS addRestrictedHeadersItem(String restrictedHeadersItem) {
+      if (this.restrictedHeaders == null) {
+        this.restrictedHeaders = new ArrayList<String>();
+      }
+      this.restrictedHeaders.add(restrictedHeadersItem);
+      return this;
     }
 
     /**
@@ -340,19 +550,29 @@ public class WafCRS extends AviRestResource  {
   Objects.equals(this.name, objWafCRS.name)&&
   Objects.equals(this.tenantRef, objWafCRS.tenantRef)&&
   Objects.equals(this.integrity, objWafCRS.integrity)&&
-  Objects.equals(this.markers, objWafCRS.markers);
+  Objects.equals(this.markers, objWafCRS.markers)&&
+  Objects.equals(this.files, objWafCRS.files)&&
+  Objects.equals(this.restrictedExtensions, objWafCRS.restrictedExtensions)&&
+  Objects.equals(this.restrictedHeaders, objWafCRS.restrictedHeaders)&&
+  Objects.equals(this.allowedRequestContentTypeCharsets, objWafCRS.allowedRequestContentTypeCharsets)&&
+  Objects.equals(this.integrityValues, objWafCRS.integrityValues);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class WafCRS {\n");
-                  sb.append("    description: ").append(toIndentedString(description)).append("\n");
+                  sb.append("    allowedRequestContentTypeCharsets: ").append(toIndentedString(allowedRequestContentTypeCharsets)).append("\n");
+                        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+                        sb.append("    files: ").append(toIndentedString(files)).append("\n");
                         sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
                         sb.append("    integrity: ").append(toIndentedString(integrity)).append("\n");
+                        sb.append("    integrityValues: ").append(toIndentedString(integrityValues)).append("\n");
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    releaseDate: ").append(toIndentedString(releaseDate)).append("\n");
+                        sb.append("    restrictedExtensions: ").append(toIndentedString(restrictedExtensions)).append("\n");
+                        sb.append("    restrictedHeaders: ").append(toIndentedString(restrictedHeaders)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                         sb.append("    version: ").append(toIndentedString(version)).append("\n");

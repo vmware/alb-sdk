@@ -27,6 +27,9 @@ public class AlertSyslogConfig extends AviRestResource  {
     @JsonProperty("name")
     private String name = null;
 
+    @JsonProperty("sender_hostname")
+    private String senderHostname = null;
+
     @JsonProperty("syslog_servers")
     private List<AlertSyslogServer> syslogServers = null;
 
@@ -83,6 +86,30 @@ public class AlertSyslogConfig extends AviRestResource  {
      */
     public void setName(String  name) {
         this.name = name;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * User defined sender hostname in syslog message.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return senderHostname
+     */
+    public String getSenderHostname() {
+        return senderHostname;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * User defined sender hostname in syslog message.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param senderHostname set the senderHostname.
+     */
+    public void setSenderHostname(String  senderHostname) {
+        this.senderHostname = senderHostname;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -194,7 +221,8 @@ public class AlertSyslogConfig extends AviRestResource  {
   Objects.equals(this.name, objAlertSyslogConfig.name)&&
   Objects.equals(this.syslogServers, objAlertSyslogConfig.syslogServers)&&
   Objects.equals(this.description, objAlertSyslogConfig.description)&&
-  Objects.equals(this.tenantRef, objAlertSyslogConfig.tenantRef);
+  Objects.equals(this.tenantRef, objAlertSyslogConfig.tenantRef)&&
+  Objects.equals(this.senderHostname, objAlertSyslogConfig.senderHostname);
     }
 
     @Override
@@ -203,6 +231,7 @@ public class AlertSyslogConfig extends AviRestResource  {
       sb.append("class AlertSyslogConfig {\n");
                   sb.append("    description: ").append(toIndentedString(description)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                        sb.append("    senderHostname: ").append(toIndentedString(senderHostname)).append("\n");
                         sb.append("    syslogServers: ").append(toIndentedString(syslogServers)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

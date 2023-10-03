@@ -33,6 +33,9 @@ public class CRL  {
     @JsonProperty("etag")
     private String etag = null;
 
+    @JsonProperty("file_ref")
+    private String fileRef = null;
+
     @JsonProperty("fingerprint")
     private String fingerprint = null;
 
@@ -144,6 +147,32 @@ public class CRL  {
      */
     public void setEtag(String  etag) {
         this.etag = etag;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Refers to fileobject containing crl body.
+     * It is a reference to an object of type fileobject.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return fileRef
+     */
+    public String getFileRef() {
+        return fileRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Refers to fileobject containing crl body.
+     * It is a reference to an object of type fileobject.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param fileRef set the fileRef.
+     */
+    public void setFileRef(String  fileRef) {
+        this.fileRef = fileRef;
     }
 
     /**
@@ -336,7 +365,8 @@ public class CRL  {
   Objects.equals(this.commonName, objCRL.commonName)&&
   Objects.equals(this.fingerprint, objCRL.fingerprint)&&
   Objects.equals(this.distinguishedName, objCRL.distinguishedName)&&
-  Objects.equals(this.lastRefreshed, objCRL.lastRefreshed);
+  Objects.equals(this.lastRefreshed, objCRL.lastRefreshed)&&
+  Objects.equals(this.fileRef, objCRL.fileRef);
     }
 
     @Override
@@ -347,6 +377,7 @@ public class CRL  {
                         sb.append("    commonName: ").append(toIndentedString(commonName)).append("\n");
                         sb.append("    distinguishedName: ").append(toIndentedString(distinguishedName)).append("\n");
                         sb.append("    etag: ").append(toIndentedString(etag)).append("\n");
+                        sb.append("    fileRef: ").append(toIndentedString(fileRef)).append("\n");
                         sb.append("    fingerprint: ").append(toIndentedString(fingerprint)).append("\n");
                         sb.append("    lastRefreshed: ").append(toIndentedString(lastRefreshed)).append("\n");
                         sb.append("    lastUpdate: ").append(toIndentedString(lastUpdate)).append("\n");
