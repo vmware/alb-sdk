@@ -582,6 +582,13 @@
                     "readOnly": true,
                     "type": "string"
                 },
+                "allowed_request_content_type_charsets": {
+                    "description": "Allowed request content type character sets in WAF. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "configpb_attributes": {
                     "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
@@ -589,6 +596,13 @@
                 "description": {
                     "description": "A short description of this ruleset. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
+                },
+                "files": {
+                    "description": "List of Data Files used for WAF Rules. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/WafDataFile"
+                    }
                 },
                 "groups": {
                     "description": "WAF Rules are sorted in groups based on their characterization. Field introduced in 18.1.1. Maximum of 64 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -600,6 +614,13 @@
                 "integrity": {
                     "description": "Integrity protection value. Field introduced in 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
+                },
+                "integrity_values": {
+                    "description": "Integrity protection values for CRS. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "markers": {
                     "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.6. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
@@ -615,6 +636,20 @@
                 "release_date": {
                     "description": "The release date of this version in RFC 3339 / ISO 8601 format. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
+                },
+                "restricted_extensions": {
+                    "description": "WAF Restricted File Extensions. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "restricted_headers": {
+                    "description": "WAF Restricted HTTP Headers. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 },
                 "tenant_ref": {
                     "description": "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -654,6 +689,28 @@
                 },
                 "next": {
                     "type": "string"
+                }
+            }
+        },
+        "WafDataFile": {
+            "type": "object",
+            "required": [
+                "data",
+                "name"
+            ],
+            "properties": {
+                "data": {
+                    "description": "Stringified WAF File Data. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "WAF Data File Name. Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "WAF data file type. Enum options - WAF_DATAFILE_PM_FROM_FILE, WAF_DATAFILE_DTD, WAF_DATAFILE_XSD, WAF_DATAFILE_IP_MATCH_FROM_FILE. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "WAF_DATAFILE_PM_FROM_FILE"
                 }
             }
         },

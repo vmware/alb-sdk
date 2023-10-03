@@ -6396,12 +6396,12 @@
             ],
             "properties": {
                 "acs_index": {
-                    "description": "Index to be used in the AssertionConsumerServiceIndex attribute of the Authentication request, if the authn_req_acs_type is set to Use AssertionConsumerServiceIndex. Allowed values are 0-64. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Index to be used in the AssertionConsumerServiceIndex attribute of the Authentication request, if the authn_req_acs_type is set to Use AssertionConsumerServiceIndex. Allowed values are 0-64. Field introduced in 21.1.6, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "authn_req_acs_type": {
-                    "description": "Option to set the ACS attributes in the AuthnRequest . Enum options - SAML_AUTHN_REQ_ACS_TYPE_URL, SAML_AUTHN_REQ_ACS_TYPE_INDEX, SAML_AUTHN_REQ_ACS_TYPE_NONE. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Option to set the ACS attributes in the AuthnRequest . Enum options - SAML_AUTHN_REQ_ACS_TYPE_URL, SAML_AUTHN_REQ_ACS_TYPE_INDEX, SAML_AUTHN_REQ_ACS_TYPE_NONE. Field introduced in 21.1.6, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SAML_AUTHN_REQ_ACS_TYPE_NONE"
                 },
@@ -7253,6 +7253,13 @@
                 },
                 "snat_ip": {
                     "description": "NAT'ted floating source IP Address(es) for upstream connection to servers. Maximum of 32 items allowed. Allowed in Enterprise edition with any value, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/IpAddr"
+                    }
+                },
+                "snat_ip6_addresses": {
+                    "description": "IPV6 address for SE snat. Field introduced in 30.2.1. Maximum of 32 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/IpAddr"

@@ -2,13 +2,13 @@
     "swagger": "2.0",
     "info": {
         "version": "30.2.1",
-        "title": "Avi Tenant Object API",
+        "title": "Avi ServiceAuthProfile Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "CLI\n```\n- configure tenant <key>\n- show tenant <key>\n```\n"
+        "description": "CLI\n```\n- configure serviceauthprofile <key>\n- show serviceauthprofile <key>\n```\n"
     },
     "securityDefinitions": {
         "basicAuth": {
@@ -18,7 +18,7 @@
     },
     "basePath": "/api",
     "paths": {
-        "/tenant": {
+        "/serviceauthprofile": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -110,7 +110,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/TenantApiResponse"
+                            "$ref": "#/definitions/ServiceAuthProfileApiResponse"
                         }
                     },
                     "401": {
@@ -157,10 +157,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Tenant object creation",
+                        "description": "ServiceAuthProfile object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Tenant"
+                            "$ref": "#/definitions/ServiceAuthProfile"
                         }
                     }
                 ],
@@ -173,7 +173,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Tenant"
+                            "$ref": "#/definitions/ServiceAuthProfile"
                         }
                     },
                     "401": {
@@ -182,7 +182,7 @@
                 }
             }
         },
-        "/tenant/{uuid}": {
+        "/serviceauthprofile/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -269,7 +269,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Tenant"
+                            "$ref": "#/definitions/ServiceAuthProfile"
                         }
                     },
                     "401": {
@@ -323,10 +323,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Tenant object creation",
+                        "description": "ServiceAuthProfile object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Tenant"
+                            "$ref": "#/definitions/ServiceAuthProfile"
                         }
                     },
                     {
@@ -346,7 +346,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Tenant"
+                            "$ref": "#/definitions/ServiceAuthProfile"
                         }
                     },
                     "401": {
@@ -400,10 +400,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Tenant object creation",
+                        "description": "ServiceAuthProfile object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Tenant"
+                            "$ref": "#/definitions/ServiceAuthProfile"
                         }
                     },
                     {
@@ -423,7 +423,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Tenant"
+                            "$ref": "#/definitions/ServiceAuthProfile"
                         }
                     },
                     "401": {
@@ -513,26 +513,11 @@
                 }
             }
         },
-        "KeyValue": {
+        "ServiceAuthProfile": {
             "type": "object",
             "required": [
-                "key"
-            ],
-            "properties": {
-                "key": {
-                    "description": "Key. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "value": {
-                    "description": "Value. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                }
-            }
-        },
-        "Tenant": {
-            "type": "object",
-            "required": [
-                "name"
+                "name",
+                "type"
             ],
             "properties": {
                 "_last_modified": {
@@ -540,47 +525,28 @@
                     "readOnly": true,
                     "type": "string"
                 },
-                "attrs": {
-                    "description": "Key/value tenant attributes. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/KeyValue"
-                    }
-                },
-                "config_settings": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/TenantConfiguration"
-                },
                 "configpb_attributes": {
-                    "description": "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Protobuf versioning for config pbs. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ConfigPbAttributes"
                 },
-                "created_by": {
-                    "description": "Creator of this tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
                 "description": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Description for the service Auth Profile. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
-                },
-                "enforce_label_group": {
-                    "description": "The referred label groups are enforced on the tenant if this is set to true.If this is set to false, the label groups are suggested for the tenant. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
-                },
-                "label_group_refs": {
-                    "description": "The label_groups to be enforced on the tenant. This is strictly enforced only if enforce_label_group is set to True. It is a reference to an object of type LabelGroup. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "local": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean",
-                    "default": true
                 },
                 "name": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Name of the service Auth Profile. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "service_oauth_profile": {
+                    "description": "OAuth Profile - Common endpoint information for service authentication. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/ServiceOAuth"
+                },
+                "tenant_ref": {
+                    "description": "Tenant ref for the service auth profile. It is a reference to an object of type Tenant. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Type of the service Auth Profile. Enum options - SERVICE_AUTH_OAUTH. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -589,12 +555,12 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the service Auth Profile. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
         },
-        "TenantApiResponse": {
+        "ServiceAuthProfileApiResponse": {
             "type": "object",
             "required": [
                 "count",
@@ -608,7 +574,7 @@
                 "results": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/Tenant"
+                        "$ref": "#/definitions/ServiceAuthProfile"
                     }
                 },
                 "next": {
@@ -616,37 +582,31 @@
                 }
             }
         },
-        "TenantConfiguration": {
-            "type": "object",
-            "properties": {
-                "se_in_provider_context": {
-                    "description": "Controls the ownership of ServiceEngines. Service Engines can either be exclusively owned by each tenant or owned by the administrator and shared by all tenants. When ServiceEngines are owned by the administrator, each tenant can have either read access or no access to their Service Engines. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean",
-                    "default": true
-                },
-                "tenant_access_to_provider_se": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean",
-                    "default": true
-                },
-                "tenant_vrf": {
-                    "description": "When 'Per Tenant IP Domain' is selected, each tenant gets its own routing domain that is not shared with any other tenant. When 'Share IP Domain across all tenants' is selected, all tenants share the same routing domain. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
-                }
-            }
-        },
-        "TenantLabel": {
+        "ServiceOAuth": {
             "type": "object",
             "required": [
-                "key"
+                "authorization_endpoint",
+                "client_id"
             ],
             "properties": {
-                "key": {
-                    "description": "Label key string. Field introduced in 20.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                "authorization_endpoint": {
+                    "description": "URL of authorization server. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
-                "value": {
-                    "description": "Label value string. Field introduced in 20.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                "client_id": {
+                    "description": "Application specific identifier for service auth. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "org_id": {
+                    "description": "Organization Id for service OAuth(required for CSP). Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "service_id": {
+                    "description": "Uuid value of the service(required for CSP). Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "service_name": {
+                    "description": "Name of the service(required for CSP). Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
