@@ -15,7 +15,7 @@ type OAuthProfile struct {
 	// Logout URI of IDP server. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	EndSessionEndpoint *string `json:"end_session_endpoint,omitempty"`
 
-	// Instance uuid of the csp service. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Instance uuid of the csp service. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	InstanceID *string `json:"instance_id,omitempty"`
 
 	// URL of token introspection server. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
@@ -51,10 +51,10 @@ type OAuthProfile struct {
 	// Redirect URI specified in the request to Authorization Server. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	RedirectURI *string `json:"redirect_uri,omitempty"`
 
-	// Uuid value of csp service. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Uuid value of csp service. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	ServiceID *string `json:"service_id,omitempty"`
 
-	// Name of the csp service. Field introduced in 23.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Name of the csp service. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	ServiceName *string `json:"service_name,omitempty"`
 
 	// URL of token exchange server. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.

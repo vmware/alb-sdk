@@ -29,6 +29,9 @@ type HTTPApplicationProfile struct {
 	// Maximum size in Kbytes of all the client HTTP request headers.This value can be overriden by client_max_header_size if that is larger. Allowed values are 1-256. Unit is KB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientMaxRequestSize *int32 `json:"client_max_request_size,omitempty"`
 
+	// Close server-side connection when an error response is received. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	CloseServerSideConnectionOnError *bool `json:"close_server_side_connection_on_error,omitempty"`
+
 	// If enabled, the client's TLS fingerprint will be collected and included in the Application Log. For Virtual Services with Bot Detection enabled, TLS fingerprints are always computed if 'use_tls_fingerprint' is enabled in the Bot Detection Policy's User-Agent detection component. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	CollectClientTLSFingerprint *bool `json:"collect_client_tls_fingerprint,omitempty"`
 

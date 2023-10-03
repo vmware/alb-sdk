@@ -8,7 +8,7 @@ package models
 // swagger:model GslbServiceDownResponse
 type GslbServiceDownResponse struct {
 
-	// Fallback CNAME to use in response to the client query when the GSLB service is DOWN. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Fallback CNAME to use in response to the client query when the GSLB service is DOWN. Field introduced in 30.2.1, 22.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	FallbackCname *string `json:"fallback_cname,omitempty"`
 
 	// Fallback IP address to use in A response to the client query when the GSLB service is DOWN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
