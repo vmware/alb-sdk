@@ -442,6 +442,7 @@ font-style: italic;
       "xff_update" : "aeiou",
       "enable_request_body_buffering" : true,
       "enable_request_body_metrics" : true,
+      "close_server_side_connection_on_error" : true,
       "max_rps_cip_uri" : 123,
       "pki_profile_ref" : "aeiou",
       "max_bad_rps_cip" : 123,
@@ -755,6 +756,7 @@ font-style: italic;
     "xff_update" : "aeiou",
     "enable_request_body_buffering" : true,
     "enable_request_body_metrics" : true,
+    "close_server_side_connection_on_error" : true,
     "max_rps_cip_uri" : 123,
     "pki_profile_ref" : "aeiou",
     "max_bad_rps_cip" : 123,
@@ -1139,6 +1141,7 @@ font-style: italic;
     "xff_update" : "aeiou",
     "enable_request_body_buffering" : true,
     "enable_request_body_metrics" : true,
+    "close_server_side_connection_on_error" : true,
     "max_rps_cip_uri" : 123,
     "pki_profile_ref" : "aeiou",
     "max_bad_rps_cip" : 123,
@@ -1463,6 +1466,7 @@ font-style: italic;
     "xff_update" : "aeiou",
     "enable_request_body_buffering" : true,
     "enable_request_body_metrics" : true,
+    "close_server_side_connection_on_error" : true,
     "max_rps_cip_uri" : 123,
     "pki_profile_ref" : "aeiou",
     "max_bad_rps_cip" : 123,
@@ -1787,6 +1791,7 @@ font-style: italic;
     "xff_update" : "aeiou",
     "enable_request_body_buffering" : true,
     "enable_request_body_metrics" : true,
+    "close_server_side_connection_on_error" : true,
     "max_rps_cip_uri" : 123,
     "pki_profile_ref" : "aeiou",
     "max_bad_rps_cip" : 123,
@@ -2058,7 +2063,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">aaaa_empty_response (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Respond to AAAA queries with empty response when there are only IPV4 records. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">admin_email (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Email address of the administrator responsible for this zone . This field is used in SOA records (rname) pertaining to all domain names specified as authoritative domain names. If not configured, the default value &#39;hostmaster&#39; is used in SOA responses. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">close_tcp_connection_post_response (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If enabled, the Service Engine initiates closure of client TCP connections after the first DNS response, for pass-through/proxy cases. This behavior applies to all DNS request types other than AX-FR. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">close_tcp_connection_post_response (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If enabled, the Service Engine initiates closure of client TCP connections after the first DNS response, for pass-through/proxy cases. This behavior applies to all DNS request types other than AX-FR. Field introduced in 21.1.7, 22.1.4, 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">dns_over_tcp_enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable DNS query/response over TCP. This enables analytics for pass-through queries as well. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">dns_zones (optional)</div><div class="param-desc"><span class="param-type"><a href="#DnsZone">array[DnsZone]</a></span> DNS zones hosted on this Virtual Service. Field introduced in 18.2.6. Maximum of 100 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">domain_names (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Subdomain names serviced by this Virtual Service. These are configured as Ends-With semantics. Maximum of 100 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -2133,6 +2138,7 @@ font-style: italic;
 <div class="param">client_max_body_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Maximum size for the client request body.  This limits the size of the client data that can be uploaded/posted as part of a single HTTP Request.  Default 0 &#x3D;&gt; Unlimited. Unit is KB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int64</div>
 <div class="param">client_max_header_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum size in Kbytes of a single HTTP header in the client request. Allowed values are 1-64. Unit is KB. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 12), Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">client_max_request_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum size in Kbytes of all the client HTTP request headers.This value can be overriden by client_max_header_size if that is larger. Allowed values are 1-256. Unit is KB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">close_server_side_connection_on_error (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Close server-side connection when an error response is received. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">collect_client_tls_fingerprint (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If enabled, the client&#39;s TLS fingerprint will be collected and included in the Application Log. For Virtual Services with Bot Detection enabled, TLS fingerprints are always computed if &#39;use_tls_fingerprint&#39; is enabled in the Bot Detection Policy&#39;s User-Agent detection component. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">compression_profile (optional)</div><div class="param-desc"><span class="param-type"><a href="#CompressionProfile">CompressionProfile</a></span> HTTP Compression settings to use with this HTTP Profile. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">connection_multiplexing_enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Allows HTTP requests, not just TCP connections, to be load balanced across servers.  Proxied TCP connections to servers may be reused by multiple clients to improve performance. Not compatible with Preserve Client IP. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
