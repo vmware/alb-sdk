@@ -312,7 +312,7 @@ class MigrationUtil(object):
         """
 
         for csv_object in csv_objects:
-            avi_object = self.format_string_to_json(csv_object['Avi Object'])
+            avi_object = self.format_string_to_json(csv_object['Avi_Object'])
             if 'pools' in avi_object:
                 pool_object = [pool for pool in avi_object['pools']
                                if pool['name'] == pool_name]
@@ -330,7 +330,7 @@ class MigrationUtil(object):
         :return: Return skipped attribute list
         """
         for csv_object in csv_objects:
-            avi_objects = self.format_string_to_json(csv_object['Avi Object'])
+            avi_objects = self.format_string_to_json(csv_object['Avi_Object'])
             if isinstance(avi_objects, dict):
                 avi_objects = [avi_objects]
             if not avi_objects:
@@ -359,14 +359,14 @@ class MigrationUtil(object):
         :return: Skipped attribute list
         """
 
-        if 'VS Reference' in csv_object and \
-                vs_ref not in csv_object['VS Reference']:
-            csv_object['VS Reference'] += ',' + vs_ref
+        if 'VS_Reference' in csv_object and \
+                vs_ref not in csv_object['VS_Reference']:
+            csv_object['VS_Reference'] += ',' + vs_ref
         else:
-            csv_object['VS Reference'] = vs_ref
+            csv_object['VS_Reference'] = vs_ref
         repls = ('[', ''), (']', '')
         skipped_setting_csv = reduce(
-            lambda a, kv: a.replace(*kv), repls, csv_object['Skipped settings'])
+            lambda a, kv: a.replace(*kv), repls, csv_object['Skipped_settings'])
         if skipped_setting_csv:
             return [skipped_setting_csv]
 
@@ -381,7 +381,7 @@ class MigrationUtil(object):
         csv_object = [row for row in csv_writer_dict_list if
                       row['Status'] in [conv_const.STATUS_PARTIAL,
                                         conv_const.STATUS_SUCCESSFUL] and
-                      '->' not in row['Avi Object'] and
+                      '->' not in row['Avi_Object'] and
                       row['NsxT type'] in command_list]
         return csv_object
 
@@ -444,9 +444,9 @@ class MigrationUtil(object):
             virtual_service['http_policies']) or \
                 ('vs_datascripts' in virtual_service and
                  virtual_service['vs_datascripts']):
-            vs_csv_row['Complexity Level'] = conv_const.COMPLEXITY_ADVANCED
+            vs_csv_row['Complexity_Level'] = conv_const.COMPLEXITY_ADVANCED
         else:
-            vs_csv_row['Complexity Level'] = conv_const.COMPLEXITY_BASIC
+            vs_csv_row['Complexity_Level'] = conv_const.COMPLEXITY_BASIC
 
     def remove_dup_of(self,avi_config):
         self.remove_dup_key(avi_config["SSLKeyAndCertificate"])
@@ -1030,18 +1030,18 @@ class MigrationUtil(object):
         global ptotal_count
         # List of fieldnames for headers
         if vs_level_status:
-            fieldnames = ['F5 type', 'F5 SubType', 'F5 ID', 'Status',
-                          'Skipped settings', 'Indirect mapping',
-                          'Not Applicable', 'User Ignored',
-                          'Skipped for defaults', 'Complexity Level',
-                          'VS Reference', 'Overall skipped settings',
-                          'Avi Object', 'Needs Review']
+            fieldnames = ['F5_type', 'F5_SubType', 'F5_ID', 'Status',
+                          'Skipped_settings', 'Indirect_mapping',
+                          'Not_Applicable', 'User_Ignored',
+                          'Skipped_for_defaults', 'Complexity_Level',
+                          'VS_Reference', 'Overall_skipped_settings',
+                          'Avi_Object', 'Needs_Review']
         else:
-            fieldnames = ['F5 type', 'F5 SubType', 'F5 ID', 'Status',
-                          'Skipped settings', 'Indirect mapping',
-                          'Not Applicable',
-                          'User Ignored', 'Skipped for defaults',
-                          'Complexity Level', 'Avi Object', 'Needs Review']
+            fieldnames = ['F5_type', 'F5_SubType', 'F5_ID', 'Status',
+                          'Skipped_settings', 'Indirect_mapping',
+                          'Not_Applicable',
+                          'User_Ignored', 'Skipped_for_defaults',
+                          'Complexity_Level', 'Avi_Object', 'Needs_Review']
 
         # xlsx workbook
         report_path = output_dir + os.path.sep + "%s-ConversionStatus.xlsx" % \
@@ -1071,7 +1071,7 @@ class MigrationUtil(object):
         df = pandas.DataFrame(csv_writer_dict_list, columns=fieldnames)
         # create pivot table using pandas
         pivot_table = \
-            pandas.pivot_table(df, index=["Status", "F5 type", "F5 SubType"],
+            pandas.pivot_table(df, index=["Status", "F5_type", "F5_SubType"],
                                values=[], aggfunc=[len], fill_value=0)
         # create dataframe for pivot table using pandas
         pivot_df = pandas.DataFrame(pivot_table)
@@ -1092,10 +1092,10 @@ class MigrationUtil(object):
         vs_csv_objects = [row for row in csv_writer_dict_list
                           if row['Status'] in [conv_const.STATUS_PARTIAL,
                                                conv_const.STATUS_SUCCESSFUL]
-                          and row['F5 type'] == 'virtual']
+                          and row['F5_type'] == 'virtual']
         for vs_csv_object in vs_csv_objects:
             virtual_service = self.format_string_to_json(
-                vs_csv_object['Avi Object'])
+                vs_csv_object['Avi_Object'])
             # Update the complexity level of VS as Basic or Advanced
             self.update_vs_complexity_level(vs_csv_object, virtual_service)
 
@@ -1108,11 +1108,11 @@ class MigrationUtil(object):
         global csv_writer_dict_list
         avi_graph = self.make_graph(avi_config)
         csv_dict_sub = [row for row in csv_writer_dict_list if row[
-                        'F5 type'] != 'virtual' and row['Status'] in
+                        'F5_type'] != 'virtual' and row['Status'] in
                         (conv_const.STATUS_PARTIAL,
                          conv_const.STATUS_SUCCESSFUL)]
         for dict_row in csv_dict_sub:
-            obj = dict_row['Avi Object']
+            obj = dict_row['Avi_Object']
             vs = []
             if obj.startswith('{'):
                 obj = eval(obj)
@@ -1126,9 +1126,9 @@ class MigrationUtil(object):
                         objval = objs[key]
                         self.add_vs_ref(objval, avi_graph, vs)
             if vs:
-                dict_row['VS Reference'] = str(list(set(vs)))
+                dict_row['VS_Reference'] = str(list(set(vs)))
             else:
-                dict_row['VS Reference'] = conv_const.STATUS_NOT_IN_USE
+                dict_row['VS_Reference'] = conv_const.STATUS_NOT_IN_USE
 
     def add_vs_ref(self, obj, avi_graph, vs):
         """
@@ -1200,7 +1200,7 @@ class MigrationUtil(object):
         vs_csv_objects = [row for row in csv_writer_dict_list
                           if row['Status'] in [conv_const.STATUS_PARTIAL,
                                                conv_const.STATUS_SUCCESSFUL]
-                          and row['F5 type'] == 'virtual']
+                          and row['F5_type'] == 'virtual']
         # Get the list of csv rows which has profile as F5 Type
         profile_csv_list = self.get_csv_object_list(
             csv_writer_dict_list, ['profile'])
@@ -1209,14 +1209,14 @@ class MigrationUtil(object):
             ppcount += 1
             skipped_setting = {}
             virtual_service = self.format_string_to_json(
-                vs_csv_object['Avi Object'])
+                vs_csv_object['Avi_Object'])
             # Update the complexity level of VS as Basic or Advanced
             self.update_vs_complexity_level(vs_csv_object, virtual_service)
             vs_ref = virtual_service['name']
             repls = ('[', ''), (']', '')
             # Get list of skipped setting attributes
             skipped_setting_csv = reduce(lambda a, kv: a.replace(*kv), repls,
-                                         vs_csv_object['Skipped settings'])
+                                         vs_csv_object['Skipped_settings'])
             if skipped_setting_csv:
                 skipped_setting['virtual_service'] = [skipped_setting_csv]
             # Get the skipped list for ssl key and cert
@@ -1320,10 +1320,10 @@ class MigrationUtil(object):
             # Update overall skipped setting of VS csv row
             if skipped_setting:
                 vs_csv_object.update(
-                    {'Overall skipped settings': str(skipped_setting)})
+                    {'Overall_skipped_settings': str(skipped_setting)})
             else:
                 vs_csv_object.update(
-                    {'Overall skipped settings': "FULLY MIGRATION"})
+                    {'Overall_skipped_settings': "FULLY MIGRATION"})
                 fully_migrated += 1
             # Added call for progress function.
             msg = "excel sheet conversion started..."
@@ -1333,19 +1333,19 @@ class MigrationUtil(object):
                        if row['Status'] in [
                            conv_const.STATUS_PARTIAL,
                            conv_const.STATUS_SUCCESSFUL]
-                       and row['F5 type'] != 'virtual']
+                       and row['F5_type'] != 'virtual']
 
         # Update the vs reference not in used if objects are not attached to
         # VS directly or indirectly
         for row in csv_objects:
-            if 'VS Reference' not in row or row['VS Reference'] == '':
-                row['VS Reference'] = conv_const.STATUS_NOT_IN_USE
+            if 'VS_Reference' not in row or row['VS_Reference'] == '':
+                row['VS_Reference'] = conv_const.STATUS_NOT_IN_USE
 
     def get_application_profile_skipped(self, profile_csv_list, app_profile_ref,
                                         vs_ref):
         """
         This functions defines that get the skipped list of CSV row
-        :param profile_csv_list: List of profile(F5 type) csv rows
+        :param profile_csv_list: List of profile(F5_type) csv rows
         :param app_profile_ref: Reference of application profile
         :param vs_ref: Name of VS
         :return: application profile name and skipped sttribute list
@@ -1360,7 +1360,7 @@ class MigrationUtil(object):
                                     vs_ref):
         """
         This functions defines that get the skipped list of CSV row
-        :param profile_csv_list: List of profile(F5 type) csv rows
+        :param profile_csv_list: List of profile(F5_type) csv rows
         :param network_profile_ref: Reference of Network profile
         :param vs_ref: Name of VS
         :return: network profile name and skipped sttribute list
@@ -1375,7 +1375,7 @@ class MigrationUtil(object):
     def get_policy_set_skipped(self, profile_csv_list, policy_set_ref, vs_ref):
         """
         This functions defines that get the skipped list of CSV row
-        :param profile_csv_list: List of profile(F5 type) csv rows
+        :param profile_csv_list: List of profile(F5_type) csv rows
         :param policy_set_ref: Reference of policy set
         :param vs_ref: Name of VS
         :return: policy set name and skipped sttribute list

@@ -796,6 +796,7 @@ class VSConfigConv(object):
             status = final.STATUS_PARTIAL
         conv_status['status'] = status
         review_flag = 'Yes' if needs_review else None
+        vs_refs = conv_utils.get_vs_references(vs_name, vs_obj, avi_config)
         conv_utils.add_conv_status(
             'virtual',
             None,
@@ -803,6 +804,7 @@ class VSConfigConv(object):
             conv_status,
             vs_obj,
             yaml.dump(f5_vs),
+            vs_refs,
             review_flag)
 
         return vs_obj, vs_sni_parent_obj
