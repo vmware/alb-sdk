@@ -346,7 +346,7 @@ paths:
                     description: not found
 
 
-    /debugvirtualservice:
+    /upgradestatusinfo:
         get:
             consumes:
                 -   application/json
@@ -410,7 +410,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualServiceApiResponse"
+                        $ref: "#/definitions/UpgradeStatusInfoApiResponse"
                 401:
                     description: log in failed
         post:
@@ -441,20 +441,20 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: DebugVirtualService object creation
+                    description: UpgradeStatusInfo object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/UpgradeStatusInfo"
             security:
                 - basicAuth: []
             responses:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/UpgradeStatusInfo"
                 401:
                     description: log in failed
-    /debugvirtualservice/{uuid}:
+    /upgradestatusinfo/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -515,7 +515,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/UpgradeStatusInfo"
                 401:
                     description: log in failed
         put:
@@ -551,10 +551,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: DebugVirtualService object creation
+                    description: UpgradeStatusInfo object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/UpgradeStatusInfo"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -566,7 +566,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/UpgradeStatusInfo"
                 401:
                     description: log in failed
         patch:
@@ -602,10 +602,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: DebugVirtualService object creation
+                    description: UpgradeStatusInfo object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/UpgradeStatusInfo"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -617,7 +617,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/UpgradeStatusInfo"
                 401:
                     description: log in failed
         delete:
@@ -988,7 +988,7 @@ paths:
                     description: not found
 
 
-    /upgradestatusinfo:
+    /debugvirtualservice:
         get:
             consumes:
                 -   application/json
@@ -1052,7 +1052,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/UpgradeStatusInfoApiResponse"
+                        $ref: "#/definitions/DebugVirtualServiceApiResponse"
                 401:
                     description: log in failed
         post:
@@ -1083,20 +1083,20 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: UpgradeStatusInfo object creation
+                    description: DebugVirtualService object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
+                        $ref: "#/definitions/DebugVirtualService"
             security:
                 - basicAuth: []
             responses:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
+                        $ref: "#/definitions/DebugVirtualService"
                 401:
                     description: log in failed
-    /upgradestatusinfo/{uuid}:
+    /debugvirtualservice/{uuid}:
         get:
             consumes:
                 -   application/json
@@ -1157,7 +1157,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
+                        $ref: "#/definitions/DebugVirtualService"
                 401:
                     description: log in failed
         put:
@@ -1193,10 +1193,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: UpgradeStatusInfo object creation
+                    description: DebugVirtualService object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
+                        $ref: "#/definitions/DebugVirtualService"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -1208,7 +1208,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
+                        $ref: "#/definitions/DebugVirtualService"
                 401:
                     description: log in failed
         patch:
@@ -1244,10 +1244,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: UpgradeStatusInfo object creation
+                    description: DebugVirtualService object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
+                        $ref: "#/definitions/DebugVirtualService"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -1259,7 +1259,7 @@ paths:
                 200:
                     description: OK
                     schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
+                        $ref: "#/definitions/DebugVirtualService"
                 401:
                     description: log in failed
         delete:
