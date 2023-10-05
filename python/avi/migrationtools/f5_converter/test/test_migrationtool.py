@@ -1677,8 +1677,8 @@ class TestF5Converter:
         )
         data = pd.read_excel(self.excel_path)
         for k, row in data.iterrows():
-            if row['F5 SubType'] in ["http"]:
-                na_attr = row['Not Applicable']
+            if row['F5_SubType'] in ["http"]:
+                na_attr = row['Not_Applicable']
                 na_attr = common_avi_util.format_string_to_json(na_attr)
                 for item in na_attr:
                     if isinstance(item, dict):
@@ -1705,8 +1705,8 @@ class TestF5Converter:
         )
         data = pd.read_excel(self.excel_path)
         for k, row in data.iterrows():
-            if row['F5 SubType'] in ["http"]:
-                indirect_attr = row['Indirect mapping']
+            if row['F5_SubType'] in ["http"]:
+                indirect_attr = row['Indirect_mapping']
                 indirect_attr = common_avi_util.format_string_to_json(indirect_attr)
                 for item in indirect_attr:
                     if isinstance(item, dict):
@@ -1733,9 +1733,9 @@ class TestF5Converter:
         )
         data = pd.read_excel(self.excel_path)
         for k, row in data.iterrows():
-            if row['F5 SubType'] in ["http"]:
+            if row['F5_SubType'] in ["http"]:
                 if row['Status'] not in ['SUCCESSFUL', 'SKIPPED']:
-                    skipped_attr = row['Skipped settings']
+                    skipped_attr = row['Skipped_settings']
                     skipped_attr = common_avi_util.format_string_to_json(skipped_attr)
                     for item in skipped_attr:
                         if isinstance(item, dict):
@@ -1765,7 +1765,7 @@ class TestF5Converter:
         )
         data = pd.read_excel(self.excel_path)
         for k, row in data.iterrows():
-            if row['F5 SubType'] in ["universal", "dest-addr"]:
+            if row['F5_SubType'] in ["universal", "dest-addr"]:
                 assert row['Status'] == 'SKIPPED'
 
     def test_tenant_ref(self):
