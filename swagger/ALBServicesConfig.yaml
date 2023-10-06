@@ -430,9 +430,15 @@ definitions:
             saas_licensing_config:
                 description: "Saas licensing configuration. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SaasLicensingInfo'
+            session_config:
+                description: "Session configuration data. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/PulseServicesSessionConfig'
             split_proxy_configuration:
                 description: "Split proxy configuration to connect external Pulse Cloud Services. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ProxyConfiguration'
+            tenant_config:
+                description: "Tenant based configuration data. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/PulseServicesTenantConfig'
             tenant_ref:
                 description: "Tenant UUID associated with the Object. It is a reference to an object of type Tenant. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 type: string
@@ -611,6 +617,29 @@ definitions:
             username:
                 description: "Username for proxy. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    PulseServicesSessionConfig:
+        type: object
+        properties:
+            session_headers:
+                description: "Session Headers. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/SessionHeaders'
+    PulseServicesTenantConfig:
+        type: object
+        properties:
+            heartbeat_interval:
+                description: "Heartbeat Interval duration. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            license_escrow_interval:
+                description: "License Escrow Interval duration. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            token_refresh_interval:
+                description: "Token Refresh Interval duration. Allowed values are 1-240. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
     SaasLicensingInfo:
         type: object
         properties:
@@ -622,6 +651,15 @@ definitions:
                 description: "Minimum service units that always remain reserved on controller. Allowed values are 0-1000. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: number
                 format: double
+    SessionHeaders:
+        type: object
+        properties:
+            name:
+                description: "Header Name. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+            value:
+                description: "Header Value. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
     UserAgentDBConfig:
         type: object
         properties:
