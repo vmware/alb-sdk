@@ -30,8 +30,14 @@ public class StreamingSyslogConfig  {
     @JsonProperty("hostname")
     private String hostname = "AviVantage";
 
+    @JsonProperty("msg_id")
+    private String msgId = "NILVALUE";
+
     @JsonProperty("non_significant_log_severity")
     private Integer nonSignificantLogSeverity = 6;
+
+    @JsonProperty("proc_id")
+    private String procId = "NILVALUE";
 
     @JsonProperty("significant_log_severity")
     private Integer significantLogSeverity = 4;
@@ -120,6 +126,30 @@ public class StreamingSyslogConfig  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * As per rfc, constant string to identify the type of message.
+     * Field introduced in 22.1.5.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "NILVALUE".
+     * @return msgId
+     */
+    public String getMsgId() {
+        return msgId;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * As per rfc, constant string to identify the type of message.
+     * Field introduced in 22.1.5.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "NILVALUE".
+     * @param msgId set the msgId.
+     */
+    public void setMsgId(String  msgId) {
+        this.msgId = msgId;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Severity code, as defined in rfc5424, for non-significant logs.
      * This must be between 0 and 7 inclusive.
      * Allowed values are 0-7.
@@ -144,6 +174,30 @@ public class StreamingSyslogConfig  {
      */
     public void setNonSignificantLogSeverity(Integer  nonSignificantLogSeverity) {
         this.nonSignificantLogSeverity = nonSignificantLogSeverity;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * As per rfc, if there is a change in value indicated there has been discontinuity in syslog reporting.
+     * Field introduced in 22.1.5.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "NILVALUE".
+     * @return procId
+     */
+    public String getProcId() {
+        return procId;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * As per rfc, if there is a change in value indicated there has been discontinuity in syslog reporting.
+     * Field introduced in 22.1.5.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "NILVALUE".
+     * @param procId set the procId.
+     */
+    public void setProcId(String  procId) {
+        this.procId = procId;
     }
 
     /**
@@ -188,7 +242,9 @@ public class StreamingSyslogConfig  {
   Objects.equals(this.significantLogSeverity, objStreamingSyslogConfig.significantLogSeverity)&&
   Objects.equals(this.filteredLogSeverity, objStreamingSyslogConfig.filteredLogSeverity)&&
   Objects.equals(this.nonSignificantLogSeverity, objStreamingSyslogConfig.nonSignificantLogSeverity)&&
-  Objects.equals(this.hostname, objStreamingSyslogConfig.hostname);
+  Objects.equals(this.hostname, objStreamingSyslogConfig.hostname)&&
+  Objects.equals(this.procId, objStreamingSyslogConfig.procId)&&
+  Objects.equals(this.msgId, objStreamingSyslogConfig.msgId);
     }
 
     @Override
@@ -198,7 +254,9 @@ public class StreamingSyslogConfig  {
                   sb.append("    facility: ").append(toIndentedString(facility)).append("\n");
                         sb.append("    filteredLogSeverity: ").append(toIndentedString(filteredLogSeverity)).append("\n");
                         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");
+                        sb.append("    msgId: ").append(toIndentedString(msgId)).append("\n");
                         sb.append("    nonSignificantLogSeverity: ").append(toIndentedString(nonSignificantLogSeverity)).append("\n");
+                        sb.append("    procId: ").append(toIndentedString(procId)).append("\n");
                         sb.append("    significantLogSeverity: ").append(toIndentedString(significantLogSeverity)).append("\n");
                   sb.append("}");
       return sb.toString();
