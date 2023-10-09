@@ -30,7 +30,7 @@ from avi.migrationtools.f5_converter import (f5_config_converter, f5_parser,
 from avi.migrationtools.f5_converter.conversion_util import F5Util
 from avi.migrationtools.f5_converter.ciphers_converter import CiphersConfigConv
 from avi.migrationtools.f5_converter.f5_config_parser import iRuleDiscovery
-from avi.migrationtools.f5_discovery import F5InventoryConv
+from avi.migrationtools.f5_converter.f5_discovery import F5InventoryConv
 
 # urllib3.disable_warnings()
 LOG = logging.getLogger(__name__)
