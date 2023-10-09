@@ -301,6 +301,8 @@ font-style: italic;
         "hostname" : "aeiou",
         "filtered_log_severity" : 123,
         "significant_log_severity" : 123,
+        "proc_id" : "aeiou",
+        "msg_id" : "aeiou",
         "facility" : 123,
         "non_significant_log_severity" : 123
       },
@@ -500,6 +502,8 @@ font-style: italic;
       "hostname" : "aeiou",
       "filtered_log_severity" : 123,
       "significant_log_severity" : 123,
+      "proc_id" : "aeiou",
+      "msg_id" : "aeiou",
       "facility" : 123,
       "non_significant_log_severity" : 123
     },
@@ -770,6 +774,8 @@ font-style: italic;
       "hostname" : "aeiou",
       "filtered_log_severity" : 123,
       "significant_log_severity" : 123,
+      "proc_id" : "aeiou",
+      "msg_id" : "aeiou",
       "facility" : 123,
       "non_significant_log_severity" : 123
     },
@@ -980,6 +986,8 @@ font-style: italic;
       "hostname" : "aeiou",
       "filtered_log_severity" : 123,
       "significant_log_severity" : 123,
+      "proc_id" : "aeiou",
+      "msg_id" : "aeiou",
       "facility" : 123,
       "non_significant_log_severity" : 123
     },
@@ -1190,6 +1198,8 @@ font-style: italic;
       "hostname" : "aeiou",
       "filtered_log_severity" : 123,
       "significant_log_severity" : 123,
+      "proc_id" : "aeiou",
+      "msg_id" : "aeiou",
       "facility" : 123,
       "non_significant_log_severity" : 123
     },
@@ -1580,7 +1590,9 @@ font-style: italic;
       <div class="param">facility (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Facility value, as defined in RFC5424, must be between 0 and 23 inclusive. Allowed values are 0-23. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">filtered_log_severity (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Severity code, as defined in RFC5424, for filtered logs. This must be between 0 and 7 inclusive. Allowed values are 0-7. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">hostname (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> String to use as the hostname in the syslog messages. This string can contain only printable ASCII characters (hex 21 to hex 7E; no space allowed). Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">msg_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> As per RFC, Constant string to identify the type of message. Field introduced in 22.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">non_significant_log_severity (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Severity code, as defined in RFC5424, for non-significant logs. This must be between 0 and 7 inclusive. Allowed values are 0-7. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">proc_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> As per RFC, if there is a change in value indicated there has been discontinuity in syslog reporting. Field introduced in 22.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">significant_log_severity (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Severity code, as defined in RFC5424, for significant logs. This must be between 0 and 7 inclusive. Allowed values are 0-7. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
