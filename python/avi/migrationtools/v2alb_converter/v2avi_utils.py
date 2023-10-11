@@ -207,6 +207,41 @@ class NsxvUtil:
         self.edge_to_tier1 = edge_tier1_mapping
 
         return edge_tier1_mapping
+    
+    def get_nsxv_Edges(self):
+
+        edge_url = "/api/4.0/edges"
+        url = "https://" + self.v_host + edge_url
+        response = requests.get(
+            url,
+            auth=(self.v_user, self.v_pass),
+            verify=False,
+            headers={"Accept": "application/json"},
+            stream=True,
+        )
+        if response.status_code == 200:
+            nsxv_config = dict()
+            config = json.loads(response.text)
+            for edge in config["edgePage"].get("data"):
+                nsxv_edge_id = edge.get("objectId")
+                path = f"{self.input_path}/{nsxv_edge_id}.json"
+                with open(path, "w", encoding="utf-8") as path:
+                    lb_url = f"{url}/{nsxv_edge_id}/loadbalancer/config"
+                    lb_res = requests.get(
+                        lb_url,
+                        auth=(self.v_user, self.v_pass),
+                        verify=False,
+                        headers={"Accept": "application/json"},
+                        stream=True,
+                    )
+                    edge_config = json.loads(lb_res.text)
+                    json.dump(edge_config, path, indent=4)
+                    nsxv_config[nsxv_edge_id] = edge_config
+
+            return nsxv_config
+        else:
+            raise Exception(f"Could not connect to NSX-V Manager. Error Code: {response.status_code}. "
+                            f"Reason: {response.reason}")
 
     def set_details_for_edge(self, edge_to_tier1):
         for edge, tier in edge_to_tier1.items():
@@ -218,31 +253,30 @@ class NsxvUtil:
             segment_info = []
             lb_tier1_lr = None
             warning_mesg = None
-            if interface_list and len(interface_list):
+            is_cloud_configured = False
+            
+            if len(interface_list):
+                for intf in interface_list:
+                    #segment_path="/infra/segments/virtualwire-1"
+                    segment_id = get_name_and_entity(intf.get("segment_path"))[-1]
+                    segment = [seg for seg in self.segment_list if seg.get("id") == segment_id ]
+                    segment = segment[0]
 
-                interface = interface_list[0].get("id")
+                    tz_path = segment.get("transport_zone_path")
+                    tz_id = get_name_and_entity(tz_path)[-1]
+                    if hasattr(segment, "vlan_ids") and segment.get("vlan_ids"):
+                        network = "Vlan"
+                    else:
+                        network = "Overlay"
 
-                segment_id = get_name_and_entity(interface_list[0].get("segment_path"))[
-                    -1
-                ]
-                segment = [
-                    seg for seg in self.segment_list if seg.get("id") == segment_id
-                ]
-                segment = segment[0]
-
-                if hasattr(segment, "vlan_ids") and segment.get("vlan_ids"):
-                    network = "Vlan"
-                else:
-                    network = "Overlay"
-
-                if network == "Overlay" and len(interface_list) > 0:
-                    lb_tier1_lr = segment.get("connectivity_path")
-
-                tz_path = segment.get("transport_zone_path")
-                tz_id = get_name_and_entity(tz_path)[-1]
-                cloud_name = self.get_cloud_type(
-                    self.cloud, tz_id, segment_id, lb_tier1_lr if lb_tier1_lr else tier
-                )
+                    if network == "Overlay" and len(interface_list) > 0:
+                        lb_tier1_lr = segment.get("connectivity_path")
+                    cloud_name = self.get_cloud_type(self.cloud, tz_id, segment_id, lb_tier1_lr if lb_tier1_lr else tier)
+                    
+                    if cloud_name == "Cloud Not Found":
+                        continue
+                    is_cloud_configured=True
+                    break
 
                 for intrf in interface_list:
                     segment_id = get_name_and_entity(
@@ -260,56 +294,51 @@ class NsxvUtil:
                         )
                     segments = {"name": segment_id, "subnet": subnets}
                     segment_info.append(segments)
-
+                    
             else:
                 segment_list = self.segment_list
-                if len(segment_list) == 0:
-                    self.lb_services[edge] = {
-                        "edge": edge,
-                        "edge_skip_reason": "Skipping because edge has no segments "
-                        "or service interfaces configured",
-                    }
-                    continue
-
+                is_tier_linked_segment_found = False
+                
                 for seg in segment_list:
                     if seg.get("connectivity_path"):
                         gateway_name = get_name_and_entity(
                             seg["connectivity_path"])[-1]
                         if gateway_name == tier:
+                            is_tier_linked_segment_found = True
                             tz_path = seg.get("transport_zone_path")
                             tz_id = get_name_and_entity(tz_path)[-1]
                             dhcp_present = False
                             for subnet in seg["subnets"]:
                                 if "dhcp_config" in subnet.keys() and not dhcp_present:
                                     dhcp_present = True
-                            cloud_name = self.get_cloud_type(
-                                self.cloud, tz_id, seg.get("id"), tier
-                            )
-                            if cloud_name == "Cloud Not Found":
-                                continue
-                            (
-                                is_dhcp_configured_on_avi,
-                                is_static_ip_pool_configured,
-                                is_ip_subnet_configured,
-                                static_ip_for_se_flag,
-                            ) = self.get_dhcp_config_details_on_avi_side(
-                                cloud_name, seg.get("id")
-                            )
-
-                            if not is_dhcp_configured_on_avi and (
-                                not is_static_ip_pool_configured
-                                or not is_ip_subnet_configured
-                                or not static_ip_for_se_flag
-                            ):
-                                warning_mesg = (
-                                    "Warning : configuration of  %s network is incomplete , please check it once "
-                                    % seg.get("display_name")
+                            if not is_cloud_configured:
+                                cloud_name = self.get_cloud_type(self.cloud, tz_id, seg.get("id"), tier)
+                                if cloud_name != "Cloud Not Found":
+                                    is_cloud_configured=True
+                                    if seg.get("vlan_ids"):
+                                        network = "Vlan"
+                                    else:
+                                        network = "Overlay"
+                                (
+                                    is_dhcp_configured_on_avi,
+                                    is_static_ip_pool_configured,
+                                    is_ip_subnet_configured,
+                                    static_ip_for_se_flag,
+                                ) = self.get_dhcp_config_details_on_avi_side(
+                                    cloud_name, seg.get("id")
                                 )
 
-                            if seg.get("vlan_ids"):
-                                network = "Vlan"
-                            else:
-                                network = "Overlay"
+                                if not is_dhcp_configured_on_avi and (
+                                    not is_static_ip_pool_configured
+                                    or not is_ip_subnet_configured
+                                    or not static_ip_for_se_flag
+                                ):
+                                    warning_mesg = (
+                                        "Warning : configuration of  %s network is incomplete , please check it once "
+                                        % seg.get("display_name")
+                                    )
+                                    LOG.debug(warning_mesg)
+
                             if seg.get("subnets"):
                                 subnets = []
                                 for subnet in seg["subnets"]:
@@ -318,11 +347,21 @@ class NsxvUtil:
                                 segments = {"name": seg.get(
                                     "id"), "subnet": subnets}
                                 segment_info.append(segments)
+                                
+                if not is_tier_linked_segment_found:
+                    skip_reason = "Skipping because edge has no segments or service interfaces configured"
+                    self.lb_services[edge] = {
+                        "edge": edge,
+                        "edge_skip_reason": "Skipping because edge has no segments "
+                        "or service interfaces configured",
+                    }
+                    LOG.debug("EDGE skipped : %s reason %s" %(edge, skip_reason))
+                    continue
 
-                            if cloud_name == "Cloud Not Found":
-                                continue
-                            break
-
+            if not is_cloud_configured:
+                warning_mesg = "cloud is not configured for edge %s " % (edge)
+                LOG.debug(warning_mesg)
+      
             self.edge_detailes[edge] = {
                 "Network": network,
                 "Cloud": cloud_name,
@@ -537,6 +576,7 @@ class NsxvUtil:
             print(v_cutover_msg)
             LOG.debug(v_cutover_msg)
 
+            vs_name = f"{edge}-{vs_name}"
             vs_name_with_prefix = f"{prefix}-{vs_name}" if prefix else vs_name
             if vs_name_with_prefix in alb_vs_list.keys():
                 for alb_vs in alb_vs_list:
@@ -597,8 +637,10 @@ class NsxvUtil:
             alb_vs_list[vs["name"]] = vs
 
         # Perform roll back for vs filter list
+        
         for vs_name in nsxv_vs_list:
-            vs_name_with_prefix = f"{prefix}-{vs_name}" if prefix else vs_name
+            vs_name_with_edge = f"{edge}-{vs_name}"
+            vs_name_with_prefix = f"{prefix}-{vs_name_with_edge}" if prefix else vs_name
             if vs_name_with_prefix in alb_vs_list.keys():
                 for alb_vs in alb_vs_list:
                     vs_name_with_prefix = (
@@ -681,13 +723,13 @@ class NsxvUtil:
                         print(cleanup_msg)
                         LOG.debug(cleanup_msg)
 
+                        
                         if vs.get("defaultPoolId"):
-                            if vs.get("defaultPoolId"):
-                                vs_attached_pools.append(vs["defaultPoolId"])
+                            vs_attached_pools.append(vs["defaultPoolId"])
+                        
                         if vs.get("applicationProfileId"):
-                            if vs.get("applicationProfileId"):
-                                vs_attached_profiles.append(
-                                    vs["applicationProfileId"])
+                            vs_attached_profiles.append(
+                                vs["applicationProfileId"])
 
                         self.delete_nsxv_virtual_server(
                             edge, nsxv_vs_list[vs_name]["virtualServerId"]
@@ -784,7 +826,7 @@ class NsxvUtil:
         """
         Returns AVI controller license type.
         """
-        LOG.debug("__INIT__ Inside executing get_controller_license_type")
+        LOG.debug(" Inside executing get_controller_license_type")
         response = self.session.get("systemconfiguration")
         config = json.loads(response.text)
         LOG.info(f"ALB Plugin : Licence Config : {config}")
