@@ -238,25 +238,32 @@ class F5Converter(AviConverter):
         elif self.partition_config and isinstance(self.partition_config, list):
             partitions = self.partition_config
         source_file = None
+        bigip_conf_path=None
         if is_download_from_host:
             LOG.debug("Copying files from host")
             print("Copying Files from Host...")
-            scp_util.get_files_from_f5(
-                input_dir,
-                self.f5_host_ip,
-                self.f5_ssh_user,
-                self.f5_ssh_password,
-                None,
-                self.f5_ssh_port,
-            )
+            try:
+                scp_util.get_files_from_f5(
+                    input_dir,
+                    self.f5_host_ip,
+                    self.f5_ssh_user,
+                    self.f5_ssh_password,
+                    None,
+                    self.f5_ssh_port
+                )
+            except Exception as e:
+                LOG.error("Error in copying files from host : %s ", e, stack_info=True, exc_info=True)
+                print(e); exit(1)
             LOG.debug("Copied input files")
             source_file = open(input_dir + os.path.sep + "bigip.conf", "r")
+            bigip_conf_path = input_dir + os.path.sep + "bigip.conf"
             files = os.listdir(input_dir)
             for file_name in files:
                 if file_name.endswith("_bigip.conf"):
                     partitions.append(input_dir + os.path.sep + file_name)
         elif self.bigip_config_file:
             source_file = open(self.bigip_config_file, "r")
+            bigip_conf_path = self.bigip_config_file
         if not source_file:
             print("Not found F5 configuration file")
             return
@@ -293,7 +300,7 @@ class F5Converter(AviConverter):
                 LOG.debug(
                     "Parsing partition config file: %s",
                     p_source_file.name)
-                print("Parsing Partitions Configuration...")
+                print("\nParsing Partitions Configuration...")
                 partition_dict, not_supported_list = f5_parser.parse_config(
                     p_src_str, total_size, self.f5_config_version)
                 LOG.debug(
@@ -356,7 +363,7 @@ class F5Converter(AviConverter):
                           report_name)
         
         # Irule discovery
-        irule_dis=iRuleDiscovery(self.bigip_config_file,self.f5_tenant)
+        irule_dis=iRuleDiscovery(bigip_conf_path,self.f5_tenant)
         irule_dis.get_irule_discovery(output_dir,report_name)
         
         if self.vs_filter:
@@ -393,7 +400,7 @@ class F5Converter(AviConverter):
         """
         f5_defaults_dict = {}
         if is_download:
-            print("Copying Files from Host...")
+            print("\nCopying Files from Host...")
             with open(path + os.path.sep + "profile_base.conf", "r") as profile:
                 profile_base = profile.read()
                 total_size = profile.tell()
@@ -847,7 +854,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "-o",
         "--output_file_path",
-        help="Folder path for output files to be created in",
+        help="Folder path for output files to be created in", default="output",
     )
     parser.add_argument(
         "-O",
@@ -974,13 +981,19 @@ if __name__ == "__main__":
         print("Creating output directory ...")
         os.makedirs(args.output_file_path)
 
+    f5_converter = F5Converter(args)
+
     if args.discovery:
-        f5_inventory_conv = F5InventoryConv.get_instance(
-            args.f5_config_version, args.f5_host_ip, args.f5_ssh_port, args.f5_ssh_user,
-            args.f5_ssh_password, 2)
+        try:
+            f5_converter.init_logger_path()
+            f5_inventory_conv = F5InventoryConv.get_instance(
+                args.f5_config_version, args.f5_host_ip, args.f5_ssh_port, args.f5_ssh_user,
+                args.f5_ssh_password, 2)
+        except Exception as e:
+            LOG.error("Error in F5InventoryConv: %s ", e, stack_info=True, exc_info=True)
+            print(e); exit(1)
         f5_inventory_conv.get_inventory()
         f5_inventory_conv.print_human(
             args.output_file_path, args.f5_config_version, args.f5_host_ip)
-
-    f5_converter = F5Converter(args)
-    f5_converter.convert()
+    else:
+        f5_converter.convert()

@@ -1,3 +1,5 @@
+# Copyright 2021 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
 
 from com.vmware import nsx_policy_client
 from vmware.vapi.bindings.stub import ApiClient
@@ -9,21 +11,6 @@ from vmware.vapi.stdlib.client.factories import StubConfigurationFactory
 import requests
 BASIC_AUTH = 1
 SESSION_AUTH = 2
-
-
-nsxv_ip='10.218.46.69'
-nsxv_password='TPGW2-mvvzF*Qa3b'
-user='admin'
-#nsxv=NSXVClient(nsxv_ip,user,nsxv_password)
-#nsxv.get_nsxv_Edges()
-
-
-#!/usr/bin/env python
-
-# Copyright 2021 VMware, Inc.
-# SPDX-License-Identifier: Apache License 2.0
-
-
 
 def get_basic_auth_stub_config(user, password, nsx_host, tcp_port=443):
     """

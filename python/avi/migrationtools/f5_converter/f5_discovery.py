@@ -19,7 +19,7 @@ import xlsxwriter
 import yaml
 from collections import defaultdict
 from datetime import datetime
-
+import json
 try:
     from f5.bigip import ManagementRoot     # version 11+
 except ImportError:
@@ -85,7 +85,7 @@ class F5InventoryConv(object):
                                    ['nestedStats']['entries'])
                     unpacked_entries = {
                         str(k): v[u'value'] for k, v in entries.items()
-                        if v.get(u'value', '') is not ''
+                        if v.get(u'value', '') != ''
                     }
                     if k in traffic_global_dict:
                         traffic_global_dict[k].append(unpacked_entries)
@@ -146,8 +146,10 @@ class F5InventoryConv(object):
                     new_traffic_global_dict[k] = {key: mean_val}
 
         # Print the Summary
-        workbook = xlsxwriter.Workbook(
-            path + os.sep + '{}_discovery_data.xlsx'.format(ip))
+        if not os.path.exists(path + os.sep + ip + os.sep + 'output'):
+            os.makedirs(path + os.sep + ip + os.sep + 'output')
+        xls_path = path + os.sep + ip + os.sep + 'output' + os.sep + 'bigip_discovery_data.xlsx'
+        workbook = xlsxwriter.Workbook(xls_path)
 
         bold = workbook.add_format({'bold': True})
         disabled = workbook.add_format({'font_color': 'red'})
@@ -157,20 +159,22 @@ class F5InventoryConv(object):
         large_heading.set_align('center')
 
         worksheet_summary = workbook.add_worksheet('Summary')
-        worksheet_summary.merge_range(3, 4, 3, 7, 'Summary', large_heading)
-        worksheet_summary.set_row(3, 40)
-        worksheet_summary.set_column(5, 6, width=24)
+        worksheet_summary.merge_range(0, 0, 0, 4, 'Summary', large_heading)
+        worksheet_summary.set_row(0, 40)
+        worksheet_summary.set_column(1, 2, width=24)
 
-        worksheet_summary.write(5, 5, "F5 Version", bold)
-        worksheet_summary.write(5, 6, str(version))
+        worksheet_summary.write(1, 0, "F5 Version", bold)
+        worksheet_summary.write(1, 1, str(version))
 
-        worksheet_summary.write(6, 5, "Ip Address", bold)
-        worksheet_summary.write(6, 6, str(ip))
+        worksheet_summary.write(2, 0, "Ip Address", bold)
+        worksheet_summary.write(2, 1, str(ip))
 
-        worksheet_summary.write(7, 5, "Created on", bold)
-        worksheet_summary.write(7, 6, str(datetime.now()).split('.')[0])
+        worksheet_summary.write(3, 0, "Created on", bold)
+        worksheet_summary.write(3, 1, str(datetime.now()).split('.')[0])
 
-        total_vs = total_pools = total_enabled_vs = total_enabled_pools = 0
+        total_vs = total_pools = total_enabled_vs = total_enabled_pools = \
+        l4_profile = l7_profile = dns_profile = udp_profile = total_irules = \
+        total_ssl = total_waf = 0
 
         obj_data = self.avi_object[0]
         total_input = self.avi_object
@@ -212,10 +216,22 @@ class F5InventoryConv(object):
             # filter with attributes
             if 'clientssl' in vsval.get('profiles'):
                 attr['ssl'] = 'Y'
+                total_ssl = total_ssl + 1
             if 'policies' in vsval.keys():
                 attr['waf'] = 'Y'
+                total_waf = total_waf + 1
             if 'rules' in vsval.keys():
                 attr['irules'] = 'Y'
+                total_irules = total_irules + 1
+
+            if profile['l4'] == 'Y':
+                l4_profile = l4_profile + 1
+            elif profile['l7'] == 'Y':
+                l7_profile = l7_profile + 1
+            elif profile['dns'] == 'Y':
+                dns_profile = dns_profile + 1
+            elif profile['udp'] == 'Y':
+                udp_profile = udp_profile + 1
 
             details_dict.update(profile)
             details_dict.update(attr)
@@ -433,14 +449,38 @@ class F5InventoryConv(object):
                         row = row + 1
 
         # adding some more summary
-        worksheet_summary.write(9, 5, "Total vs", bold)
-        worksheet_summary.write(9, 6, str(total_vs))
+        worksheet_summary.write(4, 0, "Total vs", bold)
+        worksheet_summary.write(4, 1, str(total_vs))
 
-        worksheet_summary.write(10, 5, "Total enabled vs", bold)
-        worksheet_summary.write(10, 6, str(total_enabled_vs))
+        worksheet_summary.write(5, 0, "Total enabled vs", bold)
+        worksheet_summary.write(5, 1, str(total_enabled_vs))
 
-        worksheet_summary.write(11, 5, "Total pools", bold)
-        worksheet_summary.write(11, 6, str(total_pools))
+        worksheet_summary.write(6, 0, "Total pools", bold)
+        worksheet_summary.write(6, 1, str(total_pools))
+
+        worksheet_summary.write(7, 0, "Total L4", bold)
+        worksheet_summary.write(7, 1, str(l4_profile))
+
+        worksheet_summary.write(8, 0, "Total L7", bold)
+        worksheet_summary.write(8, 1, str(l7_profile))
+
+        worksheet_summary.write(9, 0, "Total DNS", bold)
+        worksheet_summary.write(9, 1, str(dns_profile))
+
+        worksheet_summary.write(10, 0, "Total UDP", bold)
+        worksheet_summary.write(10, 1, str(udp_profile))
+
+        worksheet_summary.write(11, 0, "Total SSL", bold)
+        worksheet_summary.write(11, 1, str(total_ssl))
+
+        worksheet_summary.write(12, 0, "Total WAF", bold)
+        worksheet_summary.write(12, 1, str(total_waf))
+
+        worksheet_summary.write(12, 0, "Total iRules", bold)
+        worksheet_summary.write(12, 1, str(total_irules))
+
+        worksheet_summary.write(13, 0, "Total Tenant", bold)
+        worksheet_summary.write(13, 1, str(len(tenant_list)))
 
         print("====================")
         print(" Summary")
@@ -456,6 +496,36 @@ class F5InventoryConv(object):
         print("--------------------")
 
         workbook.close()
+
+        json_file_path = path + os.sep + ip + os.sep + 'output' + os.sep + 'bigip_discovery_data.json'
+        data = {
+            "pools": {
+                "total": total_pools,
+                "enabledCount": total_enabled_pools,
+                "deactivatedCount": total_pools - total_enabled_pools
+            },
+            "iRules": {
+                "total": total_irules
+            },
+            "tenants": {
+                "total": len(tenant_list)
+            },
+            "virtualServices": {
+                "total": total_vs,
+                "types" : {
+                    "L4": l4_profile,
+                    "L7": l7_profile,
+                    "DNS": dns_profile,
+                    "UDP": udp_profile,
+                    "SSL": total_ssl,
+                    "WAF": total_waf
+                },
+                "enabledCount": total_enabled_vs,
+                "deactivatedCount": total_vs - total_enabled_vs
+            }
+        }
+        with open(json_file_path, "w", encoding='utf-8') as text_file:
+            json.dump(data, text_file, indent=4)
 
     def write_output(self, output_dir, avi_object):
         """

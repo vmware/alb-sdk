@@ -82,7 +82,7 @@ setup = dict(
     vrf='test_vrf',
     segroup='test_se',
     distinct_app_profile=True,
-    docker_input_file=file_attribute['docker_input_file'],
+    docker_input_file='/alb-sdk/python/avi/migrationtools/f5_converter/test/bigip_v11.conf',
     docker_script_path='./run.sh'
 )
 
@@ -153,7 +153,9 @@ def f5_conv(
                                                 generated_f5_converter_cmd)
     f5_converter_result = subprocess.run(docker_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                          text=True)
-    avi_config = {'resp': f5_converter_result.stdout.strip(),
+    output_string = f5_converter_result.stdout.strip().split("\n")
+    output_string = '' if len(output_string) == 1 else f5_converter_result.stdout.strip().split("\n",1)[1]
+    avi_config = {'resp': output_string,
                   'error': f5_converter_result.stderr.strip()}
     return avi_config
 

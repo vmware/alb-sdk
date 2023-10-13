@@ -81,7 +81,7 @@ class VSConfigConv:
         )
         print("\nConverting VS ...")
         LOG.info("[VIRTUAL SERVICE] Converting VS...")
-
+        msg = "Virtual service conversion started..."
         for edge_name, edge_config in vedge_lb_config.items():
             if (
                 not edge_config.get("virtualServer")
@@ -370,8 +370,6 @@ class VSConfigConv:
                         "virtualservice", None, v_vs.get(
                             "name"), conv_status, avi_vs
                     )
-
-                    msg = "Virtual service conversion started..."
                     conv_utils.print_progress_bar(
                         progressbar_count,
                         self.total_vs_count,

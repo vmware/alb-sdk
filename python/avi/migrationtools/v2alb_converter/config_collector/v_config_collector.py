@@ -77,8 +77,15 @@ class NsxvExport:
             headers={"Accept": "application/json"},
             stream=True,
         )
+       
         nsxv_config = dict()
         config = json.loads(response.text)
+        if not config["edgePage"].get("data"):
+            msg = "No nsxv edges present on NSX-V instance."
+            LOG.error(msg)
+            print(msg)
+            sys.exit(1)
+          
         for edge in config["edgePage"].get("data"):
             nsxv_edge_id = edge.get("objectId")
             lb_url = f"{url}/{nsxv_edge_id}/loadbalancer/config"
