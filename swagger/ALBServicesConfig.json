@@ -611,7 +611,7 @@
                     "$ref": "#/definitions/SaasLicensingInfo"
                 },
                 "session_config": {
-                    "description": "Session configuration data. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Session configuration data. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/PulseServicesSessionConfig"
                 },
                 "split_proxy_configuration": {
@@ -619,7 +619,7 @@
                     "$ref": "#/definitions/ProxyConfiguration"
                 },
                 "tenant_config": {
-                    "description": "Tenant based configuration data. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Tenant based configuration data. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/PulseServicesTenantConfig"
                 },
                 "tenant_ref": {
