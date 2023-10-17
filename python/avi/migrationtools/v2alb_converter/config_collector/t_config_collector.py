@@ -153,7 +153,7 @@ class NsxtExport:
             response = json.loads(response.text)
             ns_path = response["path"]
         except Exception:
-            LOG.debug(f"Error in getting existing ns group for ns group {ns_name}")
+            LOG.debug(f"NS Group  {ns_name} not found")
         return ns_path
 
 

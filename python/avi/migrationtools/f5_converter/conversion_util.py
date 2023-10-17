@@ -2618,6 +2618,7 @@ class F5Util(MigrationUtil):
     def get_vs_references(self, vs_name, vs_obj, avi_config):
         vs_tree = dict()
         ref_obj = dict()
+        
         def get_vs_tree(vs, each_vs, top_level_entity=None):
             for each_key in each_vs:
                 if each_key.endswith("ref"):
@@ -2631,7 +2632,11 @@ class F5Util(MigrationUtil):
                             ref_obj[top_level_entity].update({avi_conf_key: name})
                         else:
                             ref_obj[avi_conf_key] = {"name": name}
-                        config = [ i for i in avi_config[avi_conf_key] if name == i["name"]][0]
+                        config = {}
+                        for obj in avi_config[avi_conf_key]:
+                            if name == obj.get("name"):
+                                config = obj
+                                break
                         get_vs_tree(vs, config, top_level_entity=avi_conf_key)
                 if each_key.endswith("refs"):
                     if isinstance(each_vs[each_key], list):

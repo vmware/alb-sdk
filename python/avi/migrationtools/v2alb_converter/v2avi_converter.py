@@ -1,3 +1,14 @@
+#!/usr/bin/env python3
+
+############################################################################
+# ========================================================================
+# Copyright 2023 VMware, Inc.  All rights reserved. VMware Confidential
+# ========================================================================
+###
+
+# Copyright 2023 VMware, Inc.
+# SPDX-License-Identifier: Apache License 2.0
+
 import argparse
 import copy
 import glob
