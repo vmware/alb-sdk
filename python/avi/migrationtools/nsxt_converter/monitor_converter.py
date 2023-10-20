@@ -312,24 +312,30 @@ class MonitorConfigConv(object):
             http_response=lb_hm.get('response_body'),
             http_response_code=self.get_alb_response_codes(lb_hm['response_status_codes']),
         )
+        
         if lb_hm.get('server_ssl_profile_binding', None):
             server_ssl_profile_binding = lb_hm.get('server_ssl_profile_binding', None)
-            ssl_profile_path = server_ssl_profile_binding["ssl_profile_path"]
-            ssl_profile_name = ssl_profile_path.split('/')[-1]
-            if prefix:
-                ssl_profile_name = prefix + '-' + ssl_profile_name
-            ssl_attributes = {
-                "ssl_profile_ref": conv_utils.get_object_ref(
-                    ssl_profile_name, 'sslprofile', tenant=tenant)
-            }
-
+            if server_ssl_profile_binding.get("ssl_profile_path"):
+                ssl_profile_path = server_ssl_profile_binding["ssl_profile_path"]
+                ssl_profile_name = ssl_profile_path.split('/')[-1]
+                if prefix:
+                    ssl_profile_name = prefix + '-' + ssl_profile_name
+                ssl_attributes = {
+                    "ssl_profile_ref": conv_utils.get_object_ref(
+                        ssl_profile_name, 'sslprofile', tenant=tenant)
+                }
+            else:
+                # attaching system default ssl profile to https type monitor
+                ssl_attributes =  {
+                            "ssl_profile_ref": "/api/sslprofile/?tenant=%s&name=%s"
+                            % ("admin", "System-Standard")
+                        }
             if server_ssl_profile_binding.get("client_certificate_path", None):
                 ca_cert_obj = self.update_ca_cert_obj(lb_hm['display_name'], alb_config, [], tenant, prefix,
                                                       cert_type='SSL_CERTIFICATE_TYPE_VIRTUALSERVICE')
                 ssl_attributes[
                     "ssl_key_and_certificate_ref"] = "/api/sslkeyandcertificate/?tenant=%s&name=%s" % (
-                tenant, ca_cert_obj.get(
-                    "name"))
+                    tenant, ca_cert_obj.get("name"))
                 converted_alb_ssl_certs.append(ca_cert_obj)
 
             alb_hm["https_monitor"]['ssl_attributes'] = ssl_attributes

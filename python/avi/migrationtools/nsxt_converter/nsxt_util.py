@@ -547,7 +547,7 @@ class NSXUtil():
 
                 for intf in interface_list:
                     #segment_path="/infra/segments/virtualwire-1"
-                    segment_id = get_name_and_entity(intf.segment_path)[-1]
+                    segment_id = get_name_and_entity(intf.get("segment_path"))[-1]
                     segment = self.call_api_with_retry(self.nsx_api_client.infra.Segments.get, segment_id)
 
                     tz_path = segment.transport_zone_path
@@ -570,11 +570,11 @@ class NSXUtil():
 
                 for intrf in interface_list:
                     #segment_path="/infra/segments/virtualwire-1"
-                    segment_id = get_name_and_entity(intrf.segment_path)[-1]
+                    segment_id = get_name_and_entity(intrf.get("segment_path"))[-1]
                     subnets = []
-                    for subnet in intrf.subnets:
+                    for subnet in intrf.get("subnets"):
                         subnets.append({
-                            "network_range": (str(subnet.ip_addresses[0]) + "/" + str(subnet.prefix_len))
+                            "network_range": (str(subnet.get("ip_addresses")[0]) + "/" + str(subnet.get("prefix_len")))
                         })
                     segments = {
                         "name": segment_id,
@@ -696,6 +696,8 @@ class NSXUtil():
         enab_vs = 0
         disab_vs = 0
         vs_stats["vs_count"] = len(virtual_service)
+        prof_obj_list = self.call_api_with_retry(self.nsx_api_client.infra.LbAppProfiles.list)
+        pool_obj_list = self.call_api_with_retry(self.nsx_api_client.infra.LbPools.list)
         for vs in virtual_service:
             vs_object = {
                 'name': vs["display_name"],
@@ -727,26 +729,26 @@ class NSXUtil():
                         'name': pool_id
                     }
                     self.enabled_pool_list.append(pool_id)
-                    pool_obj = self.call_api_with_retry(self.nsx_api_client.infra.LbPools.get, pool_id)
-                    vs_object["pool"]["pool_id"] = pool_obj.id
-                    if pool_obj.active_monitor_paths:
+                    pool_obj = [pool for pool in pool_obj_list if pool.get("id") == pool_id][0]
+                    vs_object["pool"]["pool_id"] = pool_obj.get("id")
+                    if pool_obj.get("active_monitor_paths"):
                         health_monitors = [
                             get_name_and_entity(monitors)[1]
-                            for monitors in pool_obj.active_monitor_paths
+                            for monitors in pool_obj.get("active_monitor_paths")
                             if monitors
                         ]
                         if health_monitors:
                             vs_object['pool']['health_monitors'] = \
                                 health_monitors
-                    if pool_obj.members:
+                    if pool_obj.get("members"):
                         members = [
                             {
-                                'name': pool_member.display_name,
-                                'address': pool_member.ip_address,
-                                'state': pool_member.admin_state
+                                'name': pool_member.get("display_name"),
+                                'address': pool_member.get("ip_address"),
+                                'state': pool_member.get("admin_state")
                             }
                             for pool_member in
-                            pool_obj.members if pool_member
+                            pool_obj.get("members") if pool_member
                         ]
                         if members:
                             vs_object['pool']['members'] = members
@@ -755,7 +757,6 @@ class NSXUtil():
             if vs.get("application_profile_path"):
                 profile_id = get_name_and_entity(vs["application_profile_path"])[1]
                 vs_object["profiles"] = profile_id
-                prof_obj_list = self.call_api_with_retry(self.nsx_api_client.infra.LbAppProfiles.list)
                 prof_obj = [prof for prof in prof_obj_list if prof["id"] == profile_id]
                 prof_type = prof_obj[0].get("resource_type")
                 if prof_type == "LBHttpProfile":
@@ -1167,3 +1168,4 @@ class NSXUtil():
         ip_group['tenant_ref'] = conv_utils.get_object_ref(tenant, 'tenant')
         alb_config['IpAddrGroup'].append(ip_group)
         return ip_group['name']
+
