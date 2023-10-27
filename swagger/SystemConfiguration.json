@@ -703,12 +703,12 @@
                     "type": "string"
                 },
                 "reset_threshold": {
-                    "description": "This value is used to reset the event state machine. Allowed values are 0-100. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "This value is used to reset the event state machine. Allowed values are 1-100. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "watermark_thresholds": {
-                    "description": "Threshold value for which event in raised. There can be multiple thresholds defined.Health score degrades when the the target is higher than this threshold. Allowed values are 0-100. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "description": "Threshold value for which event in raised. There can be multiple thresholds defined.Health score degrades when the the target is higher than this threshold. Allowed values are 1-100. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "integer"
