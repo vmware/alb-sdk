@@ -16,7 +16,7 @@ class SCPUtil(object):
         self.sftp = None
         self.sftp_open = False
         # open SSH Transport stream
-        self.transport = paramiko.Transport((hostname, port))
+        self.transport = paramiko.Transport((hostname, int(port)))
         self.transport.connect(username=username, password=password, pkey=pkey)
 
     def _openSFTPConnection(self):

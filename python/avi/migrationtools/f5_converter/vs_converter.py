@@ -750,7 +750,6 @@ class VSConfigConv(object):
                     conv_utils.add_status_row(
                         "virtual", None, vs_name, final.STATUS_SKIPPED, msg)
                     return None, None
-
         if app_prof:
             self.app_profile_with_via_host_name(
                 app_name,
@@ -797,6 +796,7 @@ class VSConfigConv(object):
             status = final.STATUS_PARTIAL
         conv_status['status'] = status
         review_flag = 'Yes' if needs_review else None
+        vs_refs = conv_utils.get_vs_references(vs_name, vs_obj, avi_config)
         conv_utils.add_conv_status(
             'virtual',
             None,
@@ -804,6 +804,7 @@ class VSConfigConv(object):
             conv_status,
             vs_obj,
             yaml.dump(f5_vs),
+            vs_refs,
             review_flag)
 
         return vs_obj, vs_sni_parent_obj
