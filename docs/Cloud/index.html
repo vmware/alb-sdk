@@ -538,6 +538,7 @@ font-style: italic;
       },
       "enforcementpoint_id" : "aeiou",
       "nsxt_url" : "aeiou",
+      "automate_dfw_objects" : true,
       "nsxt_credentials_ref" : "aeiou",
       "automate_dfw_rules" : true,
       "site_id" : "aeiou",
@@ -1031,6 +1032,7 @@ font-style: italic;
     },
     "enforcementpoint_id" : "aeiou",
     "nsxt_url" : "aeiou",
+    "automate_dfw_objects" : true,
     "nsxt_credentials_ref" : "aeiou",
     "automate_dfw_rules" : true,
     "site_id" : "aeiou",
@@ -1757,6 +1759,7 @@ font-style: italic;
     },
     "enforcementpoint_id" : "aeiou",
     "nsxt_url" : "aeiou",
+    "automate_dfw_objects" : true,
     "nsxt_credentials_ref" : "aeiou",
     "automate_dfw_rules" : true,
     "site_id" : "aeiou",
@@ -2365,6 +2368,7 @@ font-style: italic;
     },
     "enforcementpoint_id" : "aeiou",
     "nsxt_url" : "aeiou",
+    "automate_dfw_objects" : true,
     "nsxt_credentials_ref" : "aeiou",
     "automate_dfw_rules" : true,
     "site_id" : "aeiou",
@@ -2921,6 +2925,7 @@ font-style: italic;
     },
     "enforcementpoint_id" : "aeiou",
     "nsxt_url" : "aeiou",
+    "automate_dfw_objects" : true,
     "nsxt_credentials_ref" : "aeiou",
     "automate_dfw_rules" : true,
     "site_id" : "aeiou",
@@ -3652,7 +3657,8 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="NsxtConfiguration">NsxtConfiguration</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">automate_dfw_rules (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Automatically create DFW rules for VirtualService in NSX-T Manager. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Basic edition(Allowed values- false), Essentials, Enterprise with Cloud Services edition. </div>
+      <div class="param">automate_dfw_objects (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Automatically create/delete DFW objects such as NSGroups and NSServices in NSX-T Manager. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">automate_dfw_rules (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Automatically create DFW rules for VirtualService in NSX-T Manager. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Basic edition(Allowed values- false), Essentials, Enterprise with Cloud Services edition. </div>
 <div class="param">data_network_config (optional)</div><div class="param-desc"><span class="param-type"><a href="#DataNetworkConfig">DataNetworkConfig</a></span> Data network configuration for Avi Service Engines. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">domain_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Domain where NSGroup objects belongs to. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">enforcementpoint_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Enforcement point is where the rules of a policy to apply. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
