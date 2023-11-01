@@ -23,5 +23,6 @@ type CSRFRule struct {
 	Match *MatchTarget `json:"match"`
 
 	// A name describing the rule in a short form. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
-	Name *string `json:"name,omitempty"`
+	// Required: true
+	Name *string `json:"name"`
 }
