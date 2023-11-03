@@ -7,6 +7,8 @@ import copy
 import json
 import logging
 import time
+import ipaddress
+
 if sys.version_info < (3, 5):
     from urlparse import urlparse
 else:
@@ -203,6 +205,9 @@ class ApiSession(Session):
     SESSION_CACHE_EXPIRY = 20 * 60
     SHARED_USER_HDRS = ['X-CSRFToken', 'Session-Id', 'Referer', 'Content-Type']
     MAX_API_RETRIES = 3
+    CSP_HOST = 'console.cloud.vmware.com'
+    IPV4 = 4
+    IPV6 = 6
 
     def __init__(self, controller_ip=None, username=None, password=None,
                  token=None, tenant=None, tenant_uuid=None, verify=False,
@@ -265,23 +270,29 @@ class ApiSession(Session):
             else int(max_api_retries))
         # Refer Notes 01 and 02
         k_port = port if port else 443
-        if self.avi_credentials.controller.startswith('http'):
-            k_port = 80 if not self.avi_credentials.port else k_port
-            if self.avi_credentials.port is None or \
-                    self.avi_credentials.port == 80:
-                self.prefix = self.avi_credentials.controller
+
+        parsed_url = urlparse(self.avi_credentials.controller)
+        ip_address = parsed_url.netloc if parsed_url.netloc else self.avi_credentials.controller
+        ip_type = self.get_ip_version(ip_address)
+
+        if ip_type.version == self.IPV4:
+            if self.avi_credentials.controller.startswith('http'):
+                k_port = 80 if not self.avi_credentials.port else k_port
+                if self.avi_credentials.port is None or \
+                        self.avi_credentials.port == 80:
+                    self.prefix = self.avi_credentials.controller
+                else:
+                    self.prefix = '{x}:{y}'.format(
+                        x=self.avi_credentials.controller,
+                        y=self.avi_credentials.port)
+                self.prefix = self.avi_credentials.controller if self.avi_credentials.port is None or self.avi_credentials.port == 80 \
+                    else '{x}:{y}'.format(x=self.avi_credentials.controller, y=self.avi_credentials.port)
             else:
-                self.prefix = '{x}:{y}'.format(
-                    x=self.avi_credentials.controller,
-                    y=self.avi_credentials.port)
-        else:
-            if port is None or port == 443:
-                self.prefix = 'https://{x}'.format(
-                    x=self.avi_credentials.controller)
-            else:
-                self.prefix = 'https://{x}:{y}'.format(
-                    x=self.avi_credentials.controller,
-                    y=self.avi_credentials.port)
+                self.prefix = 'https://{x}'.format(x=self.avi_credentials.controller) if port is None or port == 443 else \
+                    'https://{x}:{y}'.format(x=self.avi_credentials.controller, y=self.avi_credentials.port)
+        elif ip_type.version == self.IPV6:
+            self.prefix = 'https://[{x}]'.format(x=ip_address)
+
         self.timeout = timeout
         self.key = '%s:%s:%s' % (self.avi_credentials.controller,
                                  self.avi_credentials.username, k_port)
@@ -1102,4 +1113,13 @@ class ApiSession(Session):
         logger.debug("Removed session for : %s", self.key)
         sessionDict.pop(self.key, None)
         return
+
+    def get_ip_version(self, controller_ip):
+        try:
+            ip = ipaddress.ip_address(controller_ip)
+            return ip
+        except ValueError as ve:
+            error_message = f"Invalid Controller IP Address {controller_ip}: {ve}"
+            logger.error(error_message)
+            raise ValueError(error_message)
 # End of file
