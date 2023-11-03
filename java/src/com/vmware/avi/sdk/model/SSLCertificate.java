@@ -142,6 +142,8 @@ public class SSLCertificate  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Valid range  1-3650.
+     * Allowed values are 1-3650.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 365.
      * @return daysUntilExpire
@@ -152,6 +154,8 @@ public class SSLCertificate  {
 
     /**
      * This is the setter method to the attribute.
+     * Valid range  1-3650.
+     * Allowed values are 1-3650.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 365.
      * @param daysUntilExpire set the daysUntilExpire.
