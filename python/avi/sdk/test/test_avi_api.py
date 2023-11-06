@@ -35,6 +35,22 @@ config_file = pytest.config.getoption("--config")
 with open(config_file) as f:
     cfg = json.load(f)
 
+ARG_DEFAULT_VALUE = {
+    'limit': 1,
+    'step': 300,
+    'se_fields': 'markers,name,uuid,tenant_ref'
+}
+
+DEFAULT_LICENSES = ['ENTERPRISE', 'ENTERPRISE_WITH_CLOUD_SERVICES']
+
+# All REST APIs used in Usage Meter
+GET_CLUSTER = '/cluster/runtime'
+GET_CLUSTER_VERSION = '/cluster/version'
+GET_CONTROLLER_METRICES = '/analytics/metrics/controller'
+GET_LICENSE_USAGE = '/licenseusage'
+GET_SERVICEENGINE_GROUP = '/serviceenginegroup'
+GET_SYSTEM_CONFIG = '/systemconfiguration'
+
 my_vcr = vcr.VCR(
     cassette_library_dir='python/avi/sdk/test/fixtures/cassettes/',
     serializer='json',
@@ -897,6 +913,83 @@ class Test(unittest.TestCase):
         resp = aviapi.delete_by_name("vsvip", vsvip_name,
                                   api_version=login_info.get("api_version"))
         assert resp.status_code in (200, 204)
+
+    # Added Usage Meter test cases to test APIs
+    def test_cluster_uuid_api(self):
+        """
+        Verify cluster UUID
+        """
+        resp = api.get(GET_CLUSTER)
+        assert resp.status_code == 200
+        cluster_uuid = resp.json()['node_info']['cluster_uuid']
+        assert cluster_uuid
+
+    def test_cluster_version_api(self):
+        """
+        Verify cluster version is correct
+        """
+        cluster_data = api.get(GET_CLUSTER_VERSION)
+        assert cluster_data.status_code == 200
+        assert login_info['api_version'] == cluster_data.json()['Version']
+
+    def test_default_license_tier(self):
+        """
+        Verify default license tier of AVI controller.
+        """
+        resp = api.get(GET_SYSTEM_CONFIG)
+        assert resp.status_code == 200
+
+        license_tier = resp.json()['default_license_tier']
+        assert license_tier in DEFAULT_LICENSES
+
+    def test_license_cores_api(self):
+        """
+        Verify license cores.
+        """
+        resp = api.get(GET_LICENSE_USAGE)
+        assert resp.status_code == 200
+
+        license_cores = resp.json()['licensed_cores']
+        assert license_cores
+
+    def test_get_metrics_api(self):
+        """
+        Verify AVI controller metrics API response.
+        """
+        params = {
+            'metric_id': 'controller_stats.avg_num_service_cores',
+            'limit': ARG_DEFAULT_VALUE['limit'],
+            'step': ARG_DEFAULT_VALUE['step']
+        }
+        core_usage = api.get(GET_CONTROLLER_METRICES, params=params)
+        assert core_usage.status_code == 200
+        response = core_usage.json()
+        analytics_metrics = response['results'][0]['series'][0]['header']['statistics']['mean']
+        assert analytics_metrics is not None
+
+    def test_per_segroup_consumed_cores_api(self):
+        """
+        Verify per service engine consumed cores API response.
+        """
+        service_engine_group = api.get(GET_SERVICEENGINE_GROUP, params={'fields': ARG_DEFAULT_VALUE['se_fields']})
+        assert service_engine_group.status_code == 200
+
+        service_engine_group_list = []
+        for service_engine in service_engine_group.json()['results']:
+            service_engine_group_list.append(service_engine['uuid'])
+        assert service_engine_group_list
+
+        for service_engine_uuid in service_engine_group_list:
+            params = {
+                'metric_id': 'segroup_stats.avg_license_usage',
+                'limit': ARG_DEFAULT_VALUE['limit'],
+                'step': ARG_DEFAULT_VALUE['step'],
+                'obj_id': service_engine_uuid
+            }
+            core_usage = api.get(GET_CONTROLLER_METRICES, params=params)
+            assert core_usage.status_code == 200
+            analytics_metrics = core_usage.json()['results'][0]['series'][0]['header']['statistics']['mean']
+            assert analytics_metrics is not None
 
 
 if __name__ == "__main__":

@@ -1,0 +1,5 @@
+- avi_config:
+    http_request_policy:
+    name: {{ name }}
+  rule_name: {{ name }}
+  type: HTTPPolicySet
