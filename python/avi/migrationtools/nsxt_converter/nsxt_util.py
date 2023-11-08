@@ -323,128 +323,173 @@ class NSXUtil():
                 if not monitor["_system_owned"]:
                     self.call_api_with_retry(self.nsx_api_client.infra.LbMonitorProfiles.delete, monitor["id"])
 
-    def cutover_vs(self, vs_list, prefix, vs_tenant):
+    def cutover_vs(self, vs_list, input_data, prefix, vs_tenant):
         vs_not_found = list()
-        nsxt_all_virtual_services = self.get_all_virtual_service()
 
-        # Create nsxt VS list from input vs list
-        nsxt_vs_list = dict()
-        for input_vs in vs_list:
-            vs_found = False
-            for nsxt_vs in nsxt_all_virtual_services:
-                if nsxt_vs["display_name"] == input_vs:
-                    nsxt_vs_list[nsxt_vs["display_name"]] = nsxt_vs
-                    vs_found = True
-                    break
-            if not vs_found:
-                vs_not_found.append(input_vs)
+        try:
+            nsxt_all_virtual_services = self.get_all_virtual_service()
 
-        # Get list of all ALB VS's
-        alb_vs_list = dict()
-        alb_all_vs_list = self.session.get("virtualservice/", tenant=vs_tenant).json()["results"]
-        for vs in alb_all_vs_list:
-            alb_vs_list[vs["name"]] = vs
-
-        for nsxt_vs_name in nsxt_vs_list:
-            vs_body = self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.get,
-                                               nsxt_vs_list[nsxt_vs_name]["id"])
-            if not vs_body.system_owned:
-                cutover_msg = "Performing cutover for VS {} ...".format(nsxt_vs_name)
-                LOG.debug(cutover_msg)
-                print(cutover_msg)
-                vs_body.lb_service_path = None
-                vs_body.enabled = False
-                self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.update,
-                                         nsxt_vs_list[nsxt_vs_name]["id"], vs_body)
-                print("Disconnected traffic for VS {} on NSX-T".format(nsxt_vs_name))
-
-                for alb_vs in alb_vs_list:
-                    vs_name_with_prefix = "{}-{}".format(prefix, nsxt_vs_name) if prefix else nsxt_vs_name
-                    if alb_vs == vs_name_with_prefix:
-                        vs_obj = alb_vs_list[alb_vs]
-                        vs_obj["traffic_enabled"] = True
-                        vs_obj["enabled"] = True
-                        if "analytics_policy" in vs_obj:
-                            vs_obj["analytics_policy"]["full_client_logs"]["enabled"] = True
-                        else:
-                            analytics_policy = {
-                                "full_client_logs": {
-                                    "duration": 30,
-                                    "enabled": True,
-                                    "throttle": 10
-                                }
-                            }
-                            vs_obj.update({"analytics_policy": analytics_policy})
-                        self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj, tenant=vs_tenant)
-                        print("Enabled traffic for VS {} on ALB".format(nsxt_vs_name))
-                        print("Completed cutover for VS {}\n".format(nsxt_vs_name))
+            # Create nsxt VS list from input vs list
+            nsxt_vs_list = dict()
+            for input_vs in vs_list:
+                vs_found = False
+                for nsxt_vs in nsxt_all_virtual_services:
+                    if nsxt_vs["display_name"] == input_vs:
+                        nsxt_vs_list[nsxt_vs["display_name"]] = nsxt_vs
+                        vs_found = True
                         break
+                if not vs_found:
+                    vs_not_found.append(input_vs)
+
+            # Get list of all ALB VS's
+            alb_vs_list = dict()
+            alb_all_vs_list = self.session.get("virtualservice/", tenant=vs_tenant).json()["results"]
+            for vs in alb_all_vs_list:
+                alb_vs_list[vs["name"]] = vs
+
+            # Retrieve old LB service path data from input json
+            vs_lb_mapping_list = dict()
+            old_nsxt_vs_list = input_data['LbVirtualServers']
+            vs_with_no_lb = list()
+            for vs in old_nsxt_vs_list:
+                if vs.get('lb_service_path'):
+                    vs_lb_mapping_list['{}_{}'.format(vs["id"], vs["display_name"])] \
+                        = vs['lb_service_path']
+                else:
+                    if vs.get("display_name") in vs_list:
+                        vs_with_no_lb.append(vs["display_name"])
+
+            for nsxt_vs_name in nsxt_vs_list:
+                vs_body = self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.get,
+                                                   nsxt_vs_list[nsxt_vs_name]["id"])
+                if not vs_body.system_owned:
+                    cutover_msg = "Performing cutover for VS {} ...".format(nsxt_vs_name)
+                    LOG.debug(cutover_msg)
+                    print(cutover_msg)
+                    vs_body.lb_service_path = None
+                    vs_body.enabled = False
+                    self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.update,
+                                             nsxt_vs_list[nsxt_vs_name]["id"], vs_body)
+                    print("Disconnected traffic for VS {} on NSX-T".format(nsxt_vs_name))
+
+                    for alb_vs in alb_vs_list:
+                        vs_name_with_prefix = "{}-{}".format(prefix, nsxt_vs_name) if prefix else nsxt_vs_name
+                        if alb_vs == vs_name_with_prefix:
+                            vs_obj = alb_vs_list[alb_vs]
+                            vs_obj["traffic_enabled"] = True
+                            vs_obj["enabled"] = True
+                            if "analytics_policy" in vs_obj:
+                                vs_obj["analytics_policy"]["full_client_logs"]["enabled"] = True
+                            else:
+                                analytics_policy = {
+                                    "full_client_logs": {
+                                        "duration": 30,
+                                        "enabled": True,
+                                        "throttle": 10
+                                    }
+                                }
+                                vs_obj.update({"analytics_policy": analytics_policy})
+                            alb_response = self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj,
+                                                            tenant=vs_tenant)
+                            if alb_response.status_code == 200:
+                                print("Enabled traffic for VS {} on ALB".format(nsxt_vs_name))
+                                print("Completed cutover for VS {}\n".format(nsxt_vs_name))
+                            else:
+                                print("\033[91m" + "Error in enabling traffic on ALB. Message: ", str(alb_response.text)
+                                      + "\033[0m")
+                                print("\033[93m" + "Rollback traffic for VS {} on NSX-T started...".format(nsxt_vs_name)
+                                      + "\033[0m")
+                                vs_body = self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.get,
+                                                                   nsxt_vs_list[nsxt_vs_name]["id"])
+                                lb_service_path = vs_lb_mapping_list.get("{}_{}".format(nsxt_vs_list[nsxt_vs_name]["id"]
+                                                                                        , nsxt_vs_name))
+                                vs_body.lb_service_path = lb_service_path
+                                vs_body.enabled = True
+                                self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.update,
+                                                         nsxt_vs_list[nsxt_vs_name]["id"], vs_body)
+                                print("\033[93m" + "Rollback for VS {} completed\n".format(nsxt_vs_name) + "\033[0m")
+                            break
+        except Exception as e:
+            print("\033[91m" + "Error while performing cutover. Message: ", str(e) + "\033[0m")
 
         return vs_not_found
 
     def rollback_vs(self, vs_list, input_data, prefix, vs_tenant):
         vs_not_found = list()
-        nsxt_all_virtual_services = self.get_all_virtual_service()
-
-        # Create nsxt VS list from input vs list
-        nsxt_vs_list = dict()
-        for input_vs in vs_list:
-            vs_found = False
-            for nsxt_vs in nsxt_all_virtual_services:
-                if nsxt_vs["display_name"] == input_vs:
-                    nsxt_vs_list[nsxt_vs["display_name"]] = nsxt_vs
-                    vs_found = True
-                    break
-            if not vs_found:
-                vs_not_found.append(input_vs)
-
-        # Get list of all ALB VS's
-        alb_vs_list = dict()
-        alb_all_vs_list = self.session.get("virtualservice/", tenant=vs_tenant).json()["results"]
-        for vs in alb_all_vs_list:
-            alb_vs_list[vs["name"]] = vs
-
-        # Retrieve old LB service path data from input json
-        vs_lb_mapping_list = dict()
-        old_nsxt_vs_list = input_data['LbVirtualServers']
         vs_with_no_lb = list()
-        for vs in old_nsxt_vs_list:
-            if vs.get('lb_service_path'):
-                vs_lb_mapping_list['{}_{}'.format(vs["id"], vs["display_name"])] \
-                    = vs['lb_service_path']
-            else:
-                if vs.get("display_name") in input_vs:
-                    vs_with_no_lb.append(vs["display_name"])
 
-        # Perform roll back for vs filter list
-        for nsxt_vs_name in nsxt_vs_list:
-            vs_body = self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.get,
-                                               nsxt_vs_list[nsxt_vs_name]["id"])
-            if not vs_body.system_owned:
-                cutover_msg = "Performing rollback for VS {} ...".format(nsxt_vs_name)
-                LOG.debug(cutover_msg)
-                print(cutover_msg)
+        try:
+            nsxt_all_virtual_services = self.get_all_virtual_service()
 
-                for alb_vs in alb_vs_list:
-                    vs_name_with_prefix = "{}-{}".format(prefix, nsxt_vs_name) if prefix else nsxt_vs_name
-                    if alb_vs == vs_name_with_prefix:
-                        vs_obj = alb_vs_list[alb_vs]
-                        vs_obj["traffic_enabled"] = False
-                        vs_obj["enabled"] = False
-                        if "analytics_policy" in vs_obj:
-                            vs_obj["analytics_policy"]["full_client_logs"]["enabled"] = False
-                        self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj, tenant=vs_tenant)
-                        print("Disconnected traffic for VS {} on ALB".format(nsxt_vs_name))
+            # Create nsxt VS list from input vs list
+            nsxt_vs_list = dict()
+            for input_vs in vs_list:
+                vs_found = False
+                for nsxt_vs in nsxt_all_virtual_services:
+                    if nsxt_vs["display_name"] == input_vs:
+                        nsxt_vs_list[nsxt_vs["display_name"]] = nsxt_vs
+                        vs_found = True
                         break
+                if not vs_found:
+                    vs_not_found.append(input_vs)
 
-                lb_service_path = vs_lb_mapping_list.get("{}_{}".format(nsxt_vs_list[nsxt_vs_name]["id"],
-                                                                        nsxt_vs_name))
-                vs_body.lb_service_path = lb_service_path
-                vs_body.enabled = True
-                self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.update,
-                                         nsxt_vs_list[nsxt_vs_name]["id"], vs_body)
-                print("Enabled traffic for VS {} on NSX-T".format(nsxt_vs_name))
-                print("Completed rollback for VS {}\n".format(nsxt_vs_name))
+            # Get list of all ALB VS's
+            alb_vs_list = dict()
+            alb_all_vs_list = self.session.get("virtualservice/", tenant=vs_tenant).json()["results"]
+            for vs in alb_all_vs_list:
+                alb_vs_list[vs["name"]] = vs
+
+            # Retrieve old LB service path data from input json
+            vs_lb_mapping_list = dict()
+            old_nsxt_vs_list = input_data['LbVirtualServers']
+
+            for vs in old_nsxt_vs_list:
+                if vs.get('lb_service_path'):
+                    vs_lb_mapping_list['{}_{}'.format(vs["id"], vs["display_name"])] \
+                        = vs['lb_service_path']
+                else:
+                    if vs.get("display_name") in vs_list:
+                        vs_with_no_lb.append(vs["display_name"])
+
+            # Perform roll back for vs filter list
+            for nsxt_vs_name in nsxt_vs_list:
+                is_alb_disconnected = False
+                vs_body = self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.get,
+                                                   nsxt_vs_list[nsxt_vs_name]["id"])
+                if not vs_body.system_owned:
+                    cutover_msg = "Performing rollback for VS {} ...".format(nsxt_vs_name)
+                    LOG.debug(cutover_msg)
+                    print(cutover_msg)
+
+                    for alb_vs in alb_vs_list:
+                        vs_name_with_prefix = "{}-{}".format(prefix, nsxt_vs_name) if prefix else nsxt_vs_name
+                        if alb_vs == vs_name_with_prefix:
+                            vs_obj = alb_vs_list[alb_vs]
+                            vs_obj["traffic_enabled"] = True
+                            vs_obj["enabled"] = False
+                            if "analytics_policy" in vs_obj:
+                                vs_obj["analytics_policy"]["full_client_logs"]["enabled"] = False
+                            alb_response = self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj,
+                                                            tenant=vs_tenant)
+                            if alb_response.status_code == 200:
+                                print("Disconnected traffic for VS {} on ALB".format(nsxt_vs_name))
+                                is_alb_disconnected = True
+                            else:
+                                print("\033[91m" + "Error in disconnecting traffic on ALB. Message: ",
+                                      str(alb_response.text) + "\033[0m")
+                            break
+
+                    if is_alb_disconnected:
+                        lb_service_path = vs_lb_mapping_list.get("{}_{}".format(nsxt_vs_list[nsxt_vs_name]["id"],
+                                                                                nsxt_vs_name))
+                        vs_body.lb_service_path = lb_service_path
+                        vs_body.enabled = True
+                        self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.update,
+                                                 nsxt_vs_list[nsxt_vs_name]["id"], vs_body)
+                        print("Enabled traffic for VS {} on NSX-T".format(nsxt_vs_name))
+                        print("Completed rollback for VS {}\n".format(nsxt_vs_name))
+        except Exception as e:
+            print("\033[91m" + "Error while performing rollback. Message: ", str(e) + "\033[0m")
 
         return vs_not_found, vs_with_no_lb
 

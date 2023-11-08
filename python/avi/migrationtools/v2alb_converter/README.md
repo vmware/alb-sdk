@@ -5,6 +5,23 @@ is an Open-Source tool developed to help NSX-V users seamlessly migrate their Vi
 
 It is a Python Package that can converts NSX-V configurations into Advanced Load Balancer (ALB) Configurations.
 
+This tool can be executed in either of both the modes - Online Or Offline mode
+
+- Online Mode: Whenever the NSX-V and NSX-T (for edge-tier1 mapping) details are provided, the tool works in Online mode
+and fetches the configuration realtime by connecting to these systems
+
+- Offline Mode: Whenever NSX-V and NSX-T details are not provided, the tool works in Offline mode which means it reads the
+configuration provided through 2 parameters - 'exported_config_path' and 'byot'
+
+exported_config_path - This config should have all the Load Balancer configuration for edges to be migrated<br>
+byot - This config should have the NSX-V edge to NSX-T tier1 mapping
+
+[NSX-V to ALB Discovery tool](https://github.com/vmware/alb-sdk/blob/22.1.5/python/avi/migrationtools/v2alb_converter/v2alb_discovery.py)
+is an optional tool that can be used to discover all the Load Balancer objects configurated on NSX-V.<br>
+It displays information about the virtual services (L4 and L7), pools, monitors and application profiles configured.<br>
+Discovery tool generates a report that contains information about what all objects are supported or skipped with proper
+message.
+
 ### Usage Examples
 
 - NSX-V to ALB Migration Tool help
@@ -115,4 +132,30 @@ It is a Python Package that can converts NSX-V configurations into Advanced Load
   --vs_filter VS_FILTER
                         only migrate selected vs/s
   --vs_level_status     Add columns of vs reference and overall skipped settings in status excel sheet
+  ```
+
+- NSX-V to ALB Discovery Tool help
+
+  ```
+  v2alb_discovery.py [-h]
+
+  usage: v2alb_discovery.py [-h]
+                             -c CONFIG
+
+  ```
+
+- Discovery tool usage
+
+  ```
+    Example to use -c or --config to provide directory containing NSX-V config file(s):
+        v2alb_discovery.py --c v_config_files/
+  ```
+
+- Discovery tool arguments
+
+  ```
+  options:
+    -h, --help            show this help message and exit
+    -c CONFIG, --config CONFIG
+                          Folder containing NSX-V config file(s)
   ```

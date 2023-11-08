@@ -29,7 +29,12 @@ setup(
              'avi/migrationtools/nsxt_converter/install_nsx_dependencies.py',
              'avi/migrationtools/nsxt_converter/nsxt_cleanup.py',
              'avi/migrationtools/nsxt_converter/nsxt_rollback.py',
-             'avi/migrationtools/nsxt_converter/nsxt_traffic_cutover.py'],
+             'avi/migrationtools/nsxt_converter/nsxt_traffic_cutover.py',
+             'avi/migrationtools/v2alb_converter/v2avi_converter.py',
+             'avi/migrationtools/v2alb_converter/v2avi_traffic_cutover.py',
+             'avi/migrationtools/v2alb_converter/v2avi_traffic_rollback.py',
+             'avi/migrationtools/v2alb_converter/v2avi_cleanup.py',
+             'avi/migrationtools/v2alb_converter/v2alb_discovery.py'],
     classifiers=[
         'Operating System :: OS Independent',
         'Programming Language :: Python',
