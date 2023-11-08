@@ -52,8 +52,9 @@ class TrafficCutover(AviConverter):
         # Load values from state file if not given on command line while executing script
         if self.nsxt_ip:
             output_path = output_dir + os.path.sep + self.nsxt_ip + os.path.sep + "output"
-        with open(output_path + os.path.sep + "state.json", 'r') as file:
-            data = json.load(file)
+        if os.path.isfile(output_path + os.path.sep + "state.json"):
+            with open(output_path + os.path.sep + "state.json", 'r') as file:
+                data = json.load(file)
         if not self.nsxt_user:
             self.nsxt_user = data.get('nsxt_user')
         if not self.nsxt_port:
@@ -71,6 +72,15 @@ class TrafficCutover(AviConverter):
         if not self.prefix:
             self.prefix = data.get('prefix')
 
+        input_path = None
+        self.input_data = None
+        if self.nsxt_ip:
+            input_path = output_dir + os.path.sep + self.nsxt_ip + os.path.sep + "input"
+        else:
+            input_path = output_dir + os.path.sep + "config-output" + os.path.sep + "input"
+        with open(input_path + os.path.sep + "config.json", 'r') as file:
+            self.input_data = json.load(file)
+
     def initiate_cutover_vs(self):
 
         if not os.path.exists(self.output_file_path):
@@ -79,7 +89,7 @@ class TrafficCutover(AviConverter):
 
         nsx_util = NSXUtil(self.nsxt_user, self.nsxt_password, self.nsxt_ip, self.nsxt_port,
                            self.controller_ip, self.user, self.password, self.controller_version)
-        vs_not_found = nsx_util.cutover_vs(self.vs_filter, self.prefix, self.alb_controller_tenant)
+        vs_not_found = nsx_util.cutover_vs(self.vs_filter, self.input_data, self.prefix, self.alb_controller_tenant)
         if vs_not_found:
             print_msg = "\033[93m" + "Warning: Following virtual service/s could not be found" + "\033[0m"
             print(print_msg)

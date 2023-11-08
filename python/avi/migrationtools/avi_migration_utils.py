@@ -31,6 +31,11 @@ ran_str = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase
 warning_count = 0
 error_count = 0
 
+HTTP_RESPONSE_CODE_1XX = "HTTP_1XX"
+HTTP_RESPONSE_CODE_2XX = "HTTP_2XX"
+HTTP_RESPONSE_CODE_3XX = "HTTP_3XX"
+HTTP_RESPONSE_CODE_4XX = "HTTP_4XX"
+HTTP_RESPONSE_CODE_5XX = "HTTP_5XX"
 
 def set_update_count():
     global warning_count, error_count
