@@ -10,9 +10,13 @@ import yaml
 from avi.migrationtools.avi_migration_utils import update_count
 from avi.migrationtools.f5_converter.conversion_util import F5Util
 from avi.migrationtools.f5_converter.policy_converter import (
-    http_to_https_policy_rule, used_pools)
+    http_to_https_policy_rule,
+    used_pools,
+)
 from avi.migrationtools.f5_converter.profile_converter import (
-    ssl_profile_with_sni_child, ssl_profile_with_sni_parent)
+    ssl_profile_with_sni_child,
+    ssl_profile_with_sni_parent,
+)
 from pkg_resources import parse_version
 
 LOG = logging.getLogger(__name__)
@@ -25,18 +29,21 @@ policy_with_via_header = {}
 
 
 class VSConfigConv(object):
-    '''
+
+    """
     Vs Conversion Class
-    '''
+    """
+
     @classmethod
     def get_instance(
-            cls,
-            version,
-            f5_virtualservice_attributes,
-            prefix,
-            con_snatpool,
-            custom_mappings,
-            distinct_app_profile):
+        cls,
+        version,
+        f5_virtualservice_attributes,
+        prefix,
+        con_snatpool,
+        custom_mappings,
+        distinct_app_profile,
+    ):
         """
 
         :param version:  version of f5 instance
@@ -52,32 +59,33 @@ class VSConfigConv(object):
                 prefix,
                 con_snatpool,
                 custom_mappings,
-                distinct_app_profile)
+                distinct_app_profile,
+            )
         if version in ["11", "12"]:
             return VSConfigConvV11(
                 f5_virtualservice_attributes,
                 prefix,
                 con_snatpool,
                 custom_mappings,
-                distinct_app_profile)
+                distinct_app_profile,
+            )
 
     def get_persist_ref(self, f5_vs):
-        '''
+        """
         get persistence reference
-        '''
+        """
         pass
 
-    def convert_translate_port(
-            self, avi_config, f5_vs, app_prof, pool_ref, sys_dict):
-        '''
+    def convert_translate_port(self, avi_config, f5_vs, app_prof, pool_ref, sys_dict):
+        """
         this methoud is used for converting translate port
-        '''
+        """
         pass
 
     def create_partition_mapping(self, f5_vs, vs_name):
         """
-            f5_vs : F5 vs confifguration
-            vs_name : virtual service name
+        f5_vs : F5 vs confifguration
+        vs_name : virtual service name
         """
         dest = f5_vs["destination"]
         tenant, vs_name = conv_utils.get_tenant_ref(vs_name)
@@ -90,10 +98,24 @@ class VSConfigConv(object):
         p_mapping = {vip: {"vs_name": vs_name, "partition": tenant}}
         return p_mapping
 
-    def convert(self, f5_config, avi_config, vs_state, user_ignore, tenant,
-                cloud_name, controller_version, merge_object_mapping, sys_dict,
-                vrf=None, segroup=None, partition_mapping=None,
-                reuse_http_policy=False, skip_disabled_vs=False):
+    def convert(
+        self,
+        f5_config,
+        avi_config,
+        f5_of_avi,
+        vs_state,
+        user_ignore,
+        tenant,
+        cloud_name,
+        controller_version,
+        merge_object_mapping,
+        sys_dict,
+        vrf=None,
+        segroup=None,
+        partition_mapping=None,
+        reuse_http_policy=False,
+        skip_disabled_vs=False,
+    ):
         """
 
         :param f5_config: Parsed f5 config dict
@@ -116,6 +138,12 @@ class VSConfigConv(object):
         avi_config["VSDataScriptSet"] = []
         avi_config["NetworkSecurityPolicy"] = []
         avi_config["VsVip"] = []
+
+        f5_of_avi["VirtualService"] = {}
+        f5_of_avi["VSDataScriptSet"] = {}
+        f5_of_avi["NetworkSecurityPolicy"] = {}
+        f5_of_avi["VsVip"] = {}
+
         print("Converting VirtualServices ...")
         # Added variable to get total object count.
         total_size = len(vs_config.keys())
@@ -125,51 +153,88 @@ class VSConfigConv(object):
             try:
                 LOG.debug("Converting VS: %s", vs_name)
                 f5_vs = vs_config[vs_name]
-                vs_type = [
-                    key for key in f5_vs.keys() if key in self.unsupported_types]
+                vs_type = [key for key in f5_vs.keys() if key in self.unsupported_types]
                 if vs_type:
-                    msg = ("VS type: %s not supported by Avi skipped VS: %s" %
-                           (vs_type, vs_name))
+                    msg = "VS type: %s not supported by Avi skipped VS: %s" % (
+                        vs_type,
+                        vs_name,
+                    )
                     LOG.warning(msg)
                     conv_utils.add_status_row(
-                        "virtual", None, vs_name, final.STATUS_SKIPPED, msg)
+                        "virtual", None, vs_name, final.STATUS_SKIPPED, msg
+                    )
                     continue
                 if skip_disabled_vs and "disabled" in f5_vs.keys():
-                    msg = ("VS : Skipping %s , As it is disabled on f5 " %
-                           (vs_name))
+                    msg = "VS : Skipping %s , As it is disabled on f5 " % (vs_name)
                     LOG.warning(msg)
                     conv_utils.add_status_row(
-                        "virtual", None, vs_name, final.STATUS_SKIPPED, msg)
+                        "virtual", None, vs_name, final.STATUS_SKIPPED, msg
+                    )
                     continue
                 if skip_disabled_vs and "disabled" in f5_vs.keys():
-                    msg = ("VS : Skipping %s , As it is disabled on f5 " %
-                           (vs_name))
+                    msg = "VS : Skipping %s , As it is disabled on f5 " % (vs_name)
                     LOG.warn(msg)
-                    conv_utils.add_status_row('virtual', None, vs_name,
-                                              final.STATUS_SKIPPED, msg)
+                    conv_utils.add_status_row(
+                        "virtual", None, vs_name, final.STATUS_SKIPPED, msg
+                    )
                     continue
                 mapping = self.create_partition_mapping(f5_vs, vs_name)
                 partition_mapping.update(mapping)
 
                 vs_obj, vs_sni_parent_obj = self.convert_vs(
-                    vs_name, f5_vs, vs_state, avi_config, f5_snat_pools,
-                    user_ignore, tenant, cloud_name, controller_version,
-                    merge_object_mapping, sys_dict, f5_config, vrf,
-                    reuse_http_policy)
+                    vs_name,
+                    f5_vs,
+                    vs_state,
+                    avi_config,
+                    f5_of_avi,
+                    f5_snat_pools,
+                    user_ignore,
+                    tenant,
+                    cloud_name,
+                    controller_version,
+                    merge_object_mapping,
+                    sys_dict,
+                    f5_config,
+                    vrf,
+                    reuse_http_policy,
+                )
                 if vs_obj:
                     if segroup:
                         segroup_ref = conv_utils.get_object_ref(
-                            segroup, "serviceenginegroup", tenant="admin", cloud_name=cloud_name)
+                            segroup,
+                            "serviceenginegroup",
+                            tenant="admin",
+                            cloud_name=cloud_name,
+                        )
                         vs_obj["se_group_ref"] = segroup_ref
                     avi_config["VirtualService"].append(vs_obj)
+                    f5_of_avi["VirtualService"].update(
+                        {
+                            vs_obj["name"]: {
+                                "F5_ID": vs_name.split("/")[-1],
+                                "F5_type": "virtual",
+                            }
+                        }
+                    )
                     LOG.debug("Conversion successful for VS: %s", vs_name)
                     if vs_sni_parent_obj:
                         if segroup:
                             segroup_ref = conv_utils.get_object_ref(
-                                segroup, "serviceenginegroup", tenant="admin",
-                                cloud_name=cloud_name)
+                                segroup,
+                                "serviceenginegroup",
+                                tenant="admin",
+                                cloud_name=cloud_name,
+                            )
                             vs_sni_parent_obj["se_group_ref"] = segroup_ref
                         avi_config["VirtualService"].append(vs_sni_parent_obj)
+                        f5_of_avi["VirtualService"].update(
+                            {
+                                vs_sni_parent_obj["name"]: {
+                                    "F5_ID": vs_name.split("/")[-1],
+                                    "F5_type": "virtual",
+                                }
+                            }
+                        )
                 # LOG.debug("Conversion successful for VS: %s" % vs_name)
 
             except BaseException:
@@ -178,18 +243,29 @@ class VSConfigConv(object):
             # Added call to get the progress.
             msg = "virtualservice conversion started..."
             conv_utils.print_progress_bar(
-                progressbar_count,
-                total_size,
-                msg,
-                prefix="Progress",
-                suffix="")
+                progressbar_count, total_size, msg, prefix="Progress", suffix=""
+            )
         LOG.debug("Converted %s VS", len(avi_config["VirtualService"]))
         f5_config.pop("virtual", {})
 
-    def convert_vs(self, vs_name, f5_vs, vs_state, avi_config, snat_config,
-                   user_ignore, tenant_ref, cloud_name, controller_version,
-                   merge_object_mapping, sys_dict, f5_config, vrf=None,
-                   reuse_http_policy=False):
+    def convert_vs(
+        self,
+        vs_name,
+        f5_vs,
+        vs_state,
+        avi_config,
+        f5_of_avi,
+        snat_config,
+        user_ignore,
+        tenant_ref,
+        cloud_name,
+        controller_version,
+        merge_object_mapping,
+        sys_dict,
+        f5_config,
+        vrf=None,
+        reuse_http_policy=False,
+    ):
         """
 
         :param vs_name: name of virtual service.
@@ -213,17 +289,17 @@ class VSConfigConv(object):
             tenant = tenant_ref
         # Added prefix for objects
         if self.prefix:
-            vs_name = '{}-{}'.format(self.prefix, vs_name)
+            vs_name = "{}-{}".format(self.prefix, vs_name)
         hash_profiles = avi_config.get("hash_algorithm", [])
         description = f5_vs.get("description", None)
-        skipped = [key for key in f5_vs.keys(
-        ) if key not in self.supported_attr]
+        skipped = [key for key in f5_vs.keys() if key not in self.supported_attr]
         enabled = vs_state == "enable"
         if enabled:
             enabled = False if "disabled" in f5_vs.keys() else True
         profiles = f5_vs.get("profiles", {})
         ssl_vs, ssl_pool = conv_utils.get_vs_ssl_profiles(
-            profiles, avi_config, self.prefix, merge_object_mapping, sys_dict, f5_config)
+            profiles, avi_config, self.prefix, merge_object_mapping, sys_dict, f5_config
+        )
 
         if (ssl_vs and len(ssl_vs) > 1) or (ssl_pool and len(ssl_pool) > 1):
             needs_review = True
@@ -244,14 +320,19 @@ class VSConfigConv(object):
             if ssl_profile_name in ssl_profile_with_sni_parent:
                 vs_sni_type = "VS_TYPE_VH_PARENT"
 
-            child_domain_name = ssl_profile_with_sni_child.get(
-                ssl_profile_name)
+            child_domain_name = ssl_profile_with_sni_child.get(ssl_profile_name)
             if child_domain_name:
                 vs_sni_type = "VS_TYPE_VH_CHILD"
 
         app_prof_conf = conv_utils.get_vs_app_profiles(
-            profiles, avi_config, tenant, self.prefix, oc_prof,
-            enable_ssl, merge_object_mapping, sys_dict
+            profiles,
+            avi_config,
+            tenant,
+            self.prefix,
+            oc_prof,
+            enable_ssl,
+            merge_object_mapping,
+            sys_dict,
         )
         app_prof = app_prof_conf.get("app_prof", None)
         f_host = app_prof_conf.get("f_host", None)
@@ -259,15 +340,16 @@ class VSConfigConv(object):
         app_pol_name = app_prof_conf.get("app_pol_name", None)
 
         if not app_prof:
-            msg = ('Profile type not supported by Avi Skipping VS : %s'
-                   % vs_name)
+            msg = "Profile type not supported by Avi Skipping VS : %s" % vs_name
             LOG.warning(msg)
             conv_utils.add_status_row(
-                "virtual", None, vs_name, final.STATUS_SKIPPED, msg)
+                "virtual", None, vs_name, final.STATUS_SKIPPED, msg
+            )
             return None, None
 
         ntwk_prof = conv_utils.get_vs_ntwk_profiles(
-            profiles, avi_config, self.prefix, merge_object_mapping, sys_dict)
+            profiles, avi_config, self.prefix, merge_object_mapping, sys_dict
+        )
 
         # If one connect profile is not assigned to f5 VS and avi app profile
         # assigned to VS has connection_multiplexing_enabled value True then
@@ -275,9 +357,12 @@ class VSConfigConv(object):
         pool_ref = f5_vs.get("pool", None)
         app_name = conv_utils.get_name(app_prof[0])
         app_prof_obj = [
-            obj for obj in (
-                sys_dict["ApplicationProfile"] +
-                avi_config["ApplicationProfile"]) if obj["name"] == app_name]
+            obj
+            for obj in (
+                sys_dict["ApplicationProfile"] + avi_config["ApplicationProfile"]
+            )
+            if obj["name"] == app_name
+        ]
         cme = True
         app_prof_type = None
         if app_prof_obj:
@@ -292,56 +377,83 @@ class VSConfigConv(object):
 
         if app_prof_type == "APPLICATION_PROFILE_TYPE_HTTP":
             cme = app_prof_obj[0]["http_profile"].get(
-                "connection_multiplexing_enabled", False)
+                "connection_multiplexing_enabled", False
+            )
         if app_prof_obj and not (cme and oc_prof):
             # Check if already cloned profile present
-            app_prof_cmd = [obj for obj in (
-                    sys_dict['ApplicationProfile'] +
-                    avi_config['ApplicationProfile']) if
-                            obj['name'] == '%s-cmd' % app_name]
+            app_prof_cmd = [
+                obj
+                for obj in (
+                    sys_dict["ApplicationProfile"] + avi_config["ApplicationProfile"]
+                )
+                if obj["name"] == "%s-cmd" % app_name
+            ]
             if app_prof_cmd:
                 app_name = app_prof_cmd[0]["name"]
                 app_prof[0] = conv_utils.get_object_ref(
-                    app_name, "applicationprofile",
-                    tenant=conv_utils.get_name(app_prof_cmd[0]["tenant_ref"])
+                    app_name,
+                    "applicationprofile",
+                    tenant=conv_utils.get_name(app_prof_cmd[0]["tenant_ref"]),
                 )
             else:
                 app_prof_cmd = copy.deepcopy(app_prof_obj[0])
-                app_prof_cmd['name'] = '%s-cmd' % app_prof_cmd['name']
-                if 'http_profile' in app_prof_cmd:
-                    app_prof_cmd['http_profile'][
-                        'connection_multiplexing_enabled'] = False
-                avi_config['ApplicationProfile'].append(app_prof_cmd)
-                app_name = app_prof_cmd['name']
+                app_cmd_name = app_prof_cmd["name"]
+                app_prof_cmd["name"] = "%s-cmd" % app_prof_cmd["name"]
+                if "http_profile" in app_prof_cmd:
+                    app_prof_cmd["http_profile"][
+                        "connection_multiplexing_enabled"
+                    ] = False
+                avi_config["ApplicationProfile"].append(app_prof_cmd)
+                f5_of_avi["ApplicationProfile"].update(
+                    {
+                        app_prof_cmd["name"]: f5_of_avi["ApplicationProfile"][
+                            app_cmd_name
+                        ]
+                    }
+                )
+                app_name = app_prof_cmd["name"]
                 app_prof[0] = conv_utils.get_object_ref(
-                    app_name, "applicationprofile", tenant=conv_utils.get_name(
-                        app_prof_cmd["tenant_ref"]))
+                    app_name,
+                    "applicationprofile",
+                    tenant=conv_utils.get_name(app_prof_cmd["tenant_ref"]),
+                )
         destination = f5_vs.get("destination", None)
         description = f5_vs.get("description", None)
         d_tenant, destination = conv_utils.get_tenant_ref(destination)
 
-        ip_protocol=f5_vs.get("ip-protocol")
+        ip_protocol = f5_vs.get("ip-protocol")
         # if destination is not present then skip vs.
         services_obj, ip_addr, vsvip_ref, vrf_ref = conv_utils.get_service_obj(
-            destination, avi_config, enable_ssl, controller_version,
-            tenant, cloud_name, self.prefix, vs_name, ip_protocol,vrf
+            destination,
+            avi_config,
+            enable_ssl,
+            controller_version,
+            tenant,
+            cloud_name,
+            self.prefix,
+            vs_name,
+            ip_protocol,
+            vrf,
         )
 
         # Added check for same vip in same vrf
-        if vsvip_ref == '':
-
-            msg = "Skipped: Virtualservice %s has repeated vip not in " \
-                  "different vrf" % vs_name
+        if vsvip_ref == "":
+            msg = (
+                "Skipped: Virtualservice %s has repeated vip not in "
+                "different vrf" % vs_name
+            )
             LOG.debug(msg)
             conv_utils.add_status_row(
-                "virtual", None, vs_name, final.STATUS_SKIPPED, msg)
+                "virtual", None, vs_name, final.STATUS_SKIPPED, msg
+            )
             return None, None
         # Added Check for if port is no digit skip vs.
         if not services_obj and not ip_addr and not vsvip_ref:
             msg = "Skipped Virtualservice : %s" % vs_name
             LOG.debug(msg)
             conv_utils.add_status_row(
-                "virtual", None, vs_name, final.STATUS_SKIPPED, msg)
+                "virtual", None, vs_name, final.STATUS_SKIPPED, msg
+            )
             return None, None
 
         is_pool_group = False
@@ -357,62 +469,103 @@ class VSConfigConv(object):
                 # Called tenant ref to get object name
                 persist_ref = conv_utils.get_tenant_ref(persist_ref)[1]
                 if self.prefix:
-                    persist_ref = '{}-{}'.format(self.prefix, persist_ref)
+                    persist_ref = "{}-{}".format(self.prefix, persist_ref)
                 persist_profile_objs = [
-                    ob for ob in syspersist if ob["name"] ==
-                    merge_object_mapping["app_per_profile"].get(persist_ref)
-                ] or [obj for obj in avi_persistence
-                      if (obj["name"] == persist_ref or
-                          persist_ref in obj.get("dup_of", []))]
-                persist_type = persist_profile_objs[0]["persistence_type"] \
-                    if persist_profile_objs else None
+                    ob
+                    for ob in syspersist
+                    if ob["name"]
+                    == merge_object_mapping["app_per_profile"].get(persist_ref)
+                ] or [
+                    obj
+                    for obj in avi_persistence
+                    if (
+                        obj["name"] == persist_ref
+                        or persist_ref in obj.get("dup_of", [])
+                    )
+                ]
+                persist_type = (
+                    persist_profile_objs[0]["persistence_type"]
+                    if persist_profile_objs
+                    else None
+                )
             # Pool cloned if controller version < 17.1.6 or VS has non http
             # cookie persistence or app profile type is different and poolgroup
             # cloned
             pool_ref, is_pool_group = conv_utils.clone_pool_if_shared(
-                pool_ref, avi_config, vs_name, tenant, p_tenant, persist_type,
-                controller_version, app_prof[0], sys_dict,
-                cloud_name=cloud_name, prefix=self.prefix)
+                pool_ref,
+                avi_config,
+                f5_of_avi,
+                vs_name,
+                tenant,
+                p_tenant,
+                persist_type,
+                controller_version,
+                app_prof[0],
+                sys_dict,
+                cloud_name=cloud_name,
+                prefix=self.prefix,
+            )
             if ssl_pool:
                 if is_pool_group:
                     conv_utils.add_ssl_to_pool_group(
-                        avi_config, pool_ref, ssl_pool[0], tenant)
+                        avi_config, pool_ref, ssl_pool[0], tenant
+                    )
                     conv_utils.remove_http_mon_from_pool_group(
-                        avi_config, pool_ref, tenant, sys_dict)
+                        avi_config, pool_ref, tenant, sys_dict
+                    )
                 else:
                     conv_utils.add_ssl_to_pool(
-                        avi_config["Pool"], pool_ref, ssl_pool[0], tenant)
+                        avi_config["Pool"], pool_ref, ssl_pool[0], tenant
+                    )
                     conv_utils.remove_http_mon_from_pool(
-                        avi_config, pool_ref, tenant, sys_dict)
+                        avi_config, pool_ref, tenant, sys_dict
+                    )
             else:
                 # TODO Remove this once controller support this scenario.
                 if is_pool_group:
                     conv_utils.remove_https_mon_from_pool_group(
-                        avi_config, pool_ref, tenant, sys_dict)
+                        avi_config, pool_ref, tenant, sys_dict
+                    )
                 else:
                     conv_utils.remove_https_mon_from_pool(
-                        avi_config, pool_ref, tenant, sys_dict)
+                        avi_config, pool_ref, tenant, sys_dict
+                    )
 
             persist_type = None
             if persist_ref:
                 if is_pool_group:
-                    pool_updated, persist_type = \
-                        conv_utils.update_pool_group_for_persist(
-                            avi_config, pool_ref, persist_ref, hash_profiles,
-                            avi_persistence, tenant, merge_object_mapping,
-                            syspersist, app_prof_type)
+                    (
+                        pool_updated,
+                        persist_type,
+                    ) = conv_utils.update_pool_group_for_persist(
+                        avi_config,
+                        pool_ref,
+                        persist_ref,
+                        hash_profiles,
+                        avi_persistence,
+                        tenant,
+                        merge_object_mapping,
+                        syspersist,
+                        app_prof_type,
+                    )
                 else:
-                    pool_updated, persist_type = \
-                        conv_utils.update_pool_for_persist(
-                            avi_config['Pool'], pool_ref, persist_ref,
-                            hash_profiles, avi_persistence, tenant,
-                            merge_object_mapping, syspersist, app_prof_type)
+                    pool_updated, persist_type = conv_utils.update_pool_for_persist(
+                        avi_config["Pool"],
+                        pool_ref,
+                        persist_ref,
+                        hash_profiles,
+                        avi_persistence,
+                        tenant,
+                        merge_object_mapping,
+                        syspersist,
+                        app_prof_type,
+                    )
 
                 if not pool_updated:
                     skipped.append("persist")
                     LOG.warning(
-                        "persist profile %s not found for vs:%s ",
-                        persist_ref, vs_name)
+                        "persist profile %s not found for vs:%s ", persist_ref, vs_name
+                    )
             if (
                 oc_prof
                 and not ssl_vs
@@ -420,31 +573,39 @@ class VSConfigConv(object):
                 or persist_type == "PERSISTENCE_TYPE_TLS"
                 and not enable_ssl
             ):
-                msg = ("Skipped VS : '%s' Secure persistence is applicable only"
-                       " if SSL is enabled for Virtual Service" % vs_name)
+                msg = (
+                    "Skipped VS : '%s' Secure persistence is applicable only"
+                    " if SSL is enabled for Virtual Service" % vs_name
+                )
                 LOG.warning(msg)
                 conv_utils.add_status_row(
-                    "virtual", None, vs_name, final.STATUS_SKIPPED, msg)
+                    "virtual", None, vs_name, final.STATUS_SKIPPED, msg
+                )
                 return None, None
             # TODO: Followiong condition to be removed after controller adds
             # TODO: support for PERSISTENCE_TYPE_TLS for SSL VS
-            if persist_type == "PERSISTENCE_TYPE_TLS" and \
-                    app_prof_type == "APPLICATION_PROFILE_TYPE_SSL":
-                msg = ("Skipped VS : '%s' Only client-ip persistence is "
-                       "applicable for SSL VS" % vs_name)
+            if (
+                persist_type == "PERSISTENCE_TYPE_TLS"
+                and app_prof_type == "APPLICATION_PROFILE_TYPE_SSL"
+            ):
+                msg = (
+                    "Skipped VS : '%s' Only client-ip persistence is "
+                    "applicable for SSL VS" % vs_name
+                )
                 LOG.warning(msg)
                 conv_utils.add_status_row(
-                    "virtual", None, vs_name, final.STATUS_SKIPPED, msg)
+                    "virtual", None, vs_name, final.STATUS_SKIPPED, msg
+                )
                 return None, None
             if f_host:
                 conv_utils.update_pool_for_fallback(
-                    f_host, avi_config["Pool"], pool_ref)
+                    f_host, avi_config["Pool"], pool_ref
+                )
         ip_addr = ip_addr.strip()
         ip_type = "V4"
         if f5_vs.get("nat64", None):
             ip_type = "v6"
-        matches = re.findall(
-            "^\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}$", ip_addr)
+        matches = re.findall("^\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}$", ip_addr)
         # if not matches or ip_addr == '0.0.0.0':
         #  LOG.warning('Avi does not support IPv6 : %s. '
         #              'Generated random ipv4 for vs: %s' % (ip_addr, vs_name))
@@ -456,7 +617,8 @@ class VSConfigConv(object):
         if app_prof_obj:
             if self.distinct_app_profile and app_prof[0] in used_app_profiles:
                 app_prof[0] = conv_utils.clone_app_profile_for_vs(
-                    app_prof[0], app_prof_obj[0], vs_name, tenant, avi_config)
+                    app_prof[0], app_prof_obj[0], vs_name, tenant, avi_config
+                )
             used_app_profiles.append(app_prof[0])
 
         # VIP object for virtual service
@@ -473,22 +635,18 @@ class VSConfigConv(object):
             "type": vs_sni_type,
             "enabled": enabled,
             "traffic_enabled": enabled,
-            "cloud_ref": conv_utils.get_object_ref(
-                cloud_name,
-                "cloud",
-                tenant=tenant),
+            "cloud_ref": conv_utils.get_object_ref(cloud_name, "cloud", tenant=tenant),
             "services": services_obj,
             "application_profile_ref": app_prof[0],
             "vs_datascripts": [],
-            "tenant_ref": conv_utils.get_object_ref(
-                tenant,
-                "tenant"),
+            "tenant_ref": conv_utils.get_object_ref(tenant, "tenant"),
             "vh_type": vh_type,
         }
 
         if vrf:
             vrf_ref = conv_utils.get_object_ref(
-                vrf, "vrfcontext", tenant=tenant_name, cloud_name=cloud_name)
+                vrf, "vrfcontext", tenant=tenant_name, cloud_name=cloud_name
+            )
         if vrf_ref:
             vs_obj["vrf_context_ref"] = vrf_ref
             # Added code for assigning VS's vrf ref to poolgroup/pool having no
@@ -514,12 +672,9 @@ class VSConfigConv(object):
                 "services": services_obj,
                 "traffic_enabled": enabled,
                 "cloud_ref": conv_utils.get_object_ref(
-                    cloud_name,
-                    "cloud",
-                    tenant=tenant),
-                "tenant_ref": conv_utils.get_object_ref(
-                    tenant,
-                    "tenant"),
+                    cloud_name, "cloud", tenant=tenant
+                ),
+                "tenant_ref": conv_utils.get_object_ref(tenant, "tenant"),
                 "vh_type": vh_type,
             }
 
@@ -540,7 +695,10 @@ class VSConfigConv(object):
         if vs_sni_type == "VS_TYPE_VH_CHILD":
             vs_obj["vh_parent_vs_ref"] = conv_utils.get_object_ref(
                 vs_sni_parent_obj.get("name"),
-                "virtualservice", tenant=tenant, cloud_name=cloud_name)
+                "virtualservice",
+                tenant=tenant,
+                cloud_name=cloud_name,
+            )
             vs_obj["vh_domain_name"] = [child_domain_name]
             vs_obj.pop("services")
         #  avi_config['VirtualService'].append(vs_sni_parent_obj)
@@ -555,53 +713,76 @@ class VSConfigConv(object):
             if isinstance(f5_vs["rules"], str):
                 vs_ds_rules = [conv_utils.get_tenant_ref(f5_vs["rules"])[1]]
             else:
-                vs_ds_rules = [conv_utils.get_tenant_ref(
-                    name)[1] for name in f5_vs["rules"].keys()]
+                vs_ds_rules = [
+                    conv_utils.get_tenant_ref(name)[1] for name in f5_vs["rules"].keys()
+                ]
 
-            vs_ds, req_policies, nw_policy, converted_rules = \
-                conv_utils.convert_irules(
-                    vs_ds_rules, self.rule_config, avi_config, self.prefix,
-                    vs_name, tenant, reuse_http_policy
-                )
+            vs_ds, req_policies, nw_policy, converted_rules = conv_utils.convert_irules(
+                vs_ds_rules,
+                self.rule_config,
+                avi_config,
+                self.prefix,
+                vs_name,
+                tenant,
+                reuse_http_policy,
+            )
             vs_policies = vs_policies + req_policies
         if vs_ds:
             vs_datascripts = []
             index = 1
             for data_script in vs_ds:
                 vs_datascripts.append(
-                    {"index": index, "vs_datascript_set_ref": conv_utils.get_object_ref(
-                        data_script, "vsdatascriptset", tenant=tenant)}
+                    {
+                        "index": index,
+                        "vs_datascript_set_ref": conv_utils.get_object_ref(
+                            data_script, "vsdatascriptset", tenant=tenant
+                        ),
+                    }
                 )
                 index += 1
             vs_obj["vs_datascripts"] = vs_datascripts
 
         if "policies" in f5_vs:
             if isinstance(f5_vs["policies"], str):
-                vs_policies.extend(['%s-%s' % (
-                    self.prefix, conv_utils.get_tenant_ref(
-                        f5_vs['policies'])[1]) if self.prefix else
-                                    conv_utils.get_tenant_ref(
-                                        f5_vs['policies'])[1]])
+                vs_policies.extend(
+                    [
+                        "%s-%s"
+                        % (self.prefix, conv_utils.get_tenant_ref(f5_vs["policies"])[1])
+                        if self.prefix
+                        else conv_utils.get_tenant_ref(f5_vs["policies"])[1]
+                    ]
+                )
             else:
-                vs_policies.extend(['%s-%s' % (
-                    self.prefix, conv_utils.get_tenant_ref(name)[1]) if
-                                    self.prefix else conv_utils.get_tenant_ref(
-                    name)[1] for name in f5_vs['policies'].keys()])
+                vs_policies.extend(
+                    [
+                        "%s-%s" % (self.prefix, conv_utils.get_tenant_ref(name)[1])
+                        if self.prefix
+                        else conv_utils.get_tenant_ref(name)[1]
+                        for name in f5_vs["policies"].keys()
+                    ]
+                )
         if app_prof_obj and "HTTPPolicySet" in app_prof_obj[0]:
             vs_policies.append(app_prof_obj[0]["HTTPPolicySet"])
         if vs_policies:
-            self.get_policy_vs(vs_policies, avi_config, vs_name, tenant,
-                               cloud_name, vs_obj, reuse_http_policy)
+            self.get_policy_vs(
+                vs_policies,
+                avi_config,
+                f5_of_avi,
+                vs_name,
+                tenant,
+                cloud_name,
+                vs_obj,
+                reuse_http_policy,
+            )
         p_ref = None
         if is_pool_group:
-            p_ref = conv_utils.get_object_ref(
-                pool_ref, "poolgroup", tenant=p_tenant)
+            p_ref = conv_utils.get_object_ref(pool_ref, "poolgroup", tenant=p_tenant)
         elif pool_ref:
-            p_ref = conv_utils.get_object_ref(
-                pool_ref, "pool", tenant=p_tenant)
+            p_ref = conv_utils.get_object_ref(pool_ref, "pool", tenant=p_tenant)
         if p_ref and used_pools.get(p_ref):
-            not_same = [pol_obj for pol_obj in used_pools[p_ref]
-                        if pol_obj not in vs_policies]
+            not_same = [
+                pol_obj for pol_obj in used_pools[p_ref] if pol_obj not in vs_policies
+            ]
             if not_same:
                 if is_pool_group:
                     LOG.debug(
@@ -612,27 +793,42 @@ class VSConfigConv(object):
                         str(not_same),
                     )
                     pool_ref = conv_utils.clone_pool_group(
-                        pool_ref, vs_name, avi_config,
-                        False, p_tenant, cloud_name=cloud_name)
+                        pool_ref,
+                        vs_name,
+                        avi_config,
+                        False,
+                        p_tenant,
+                        cloud_name=cloud_name,
+                    )
                 else:
                     LOG.debug(
                         "Pool %s attached to vs %s is shared with policy %s of another vs,\
-                            hence cloned", pool_ref, vs_name, str(not_same), )
+                            hence cloned",
+                        pool_ref,
+                        vs_name,
+                        str(not_same),
+                    )
                     pool_ref = conv_utils.clone_pool(
-                        pool_ref, vs_name, avi_config["Pool"], False, p_tenant)
+                        pool_ref,
+                        vs_name,
+                        f5_of_avi,
+                        avi_config["Pool"],
+                        False,
+                        p_tenant,
+                    )
         if is_pool_group:
             vs_obj["pool_group_ref"] = conv_utils.get_object_ref(
-                pool_ref, "poolgroup", tenant=tenant, cloud_name=cloud_name)
+                pool_ref, "poolgroup", tenant=tenant, cloud_name=cloud_name
+            )
         elif pool_ref:
             vs_obj["pool_ref"] = conv_utils.get_object_ref(
-                pool_ref, "pool", tenant=tenant, cloud_name=cloud_name)
+                pool_ref, "pool", tenant=tenant, cloud_name=cloud_name
+            )
         # app prof ref is not used inside the below method call
-        self.convert_translate_port(
-            avi_config, f5_vs, app_prof[0], pool_ref, sys_dict)
+        self.convert_translate_port(avi_config, f5_vs, app_prof[0], pool_ref, sys_dict)
         conn_limit = int(f5_vs.get(self.connection_limit, "0"))
         if conn_limit > 0 and vs_sni_type != "VS_TYPE_VH_CHILD":
-            vs_obj["performance_limits"] = {
-                "max_concurrent_connections": conn_limit}
+            vs_obj["performance_limits"] = {"max_concurrent_connections": conn_limit}
 
         if realm:
             vs_obj["client_auth"] = realm
@@ -651,15 +847,19 @@ class VSConfigConv(object):
             mask = 24
             if len(parts) > 1:
                 mask = parts[1]
-            policy_name = ('vs-%s-ns' % vs_name)
+            policy_name = "vs-%s-ns" % vs_name
             if self.prefix:
-                policy_name = '%s-%s' % (self.prefix, policy_name)
+                policy_name = "%s-%s" % (self.prefix, policy_name)
             policy = conv_utils.create_network_security_rule(
-                policy_name, parts[0], mask, tenant)
+                policy_name, parts[0], mask, tenant
+            )
 
             if nw_policy:
-                old_policy = [obj for obj in avi_config["NetworkSecurityPolicy"]
-                              if obj["name"] == nw_policy][0]
+                old_policy = [
+                    obj
+                    for obj in avi_config["NetworkSecurityPolicy"]
+                    if obj["name"] == nw_policy
+                ][0]
                 policy["rules"][0]["index"] = 2
                 policy["rules"][0]["name"] = "Rule 2"
                 old_policy["rules"].append(policy["rules"][0])
@@ -669,7 +869,8 @@ class VSConfigConv(object):
 
         if nw_policy:
             vs_obj["network_security_policy_ref"] = conv_utils.get_object_ref(
-                nw_policy, "networksecuritypolicy", tenant=tenant, cloud_name=cloud_name)
+                nw_policy, "networksecuritypolicy", tenant=tenant, cloud_name=cloud_name
+            )
 
         # Checking snat conversion flag and snat info for creating
         # snat ip object
@@ -679,24 +880,27 @@ class VSConfigConv(object):
         if snat_pool:
             if self.con_snatpool:
                 LOG.debug(
-                    "Converting the snat as input flag and snat "
-                    "information is set")
+                    "Converting the snat as input flag and snat " "information is set"
+                )
                 snat_list = conv_utils.get_snat_list_for_vs(snat_pool)
                 if len(snat_list) > 32:
                     vs_obj["snat_ip"] = snat_list[0:32]
                     LOG.warning(
-                        "Ignore the snat IPs, its count is beyond 32 "
-                        "for vs : %s",
-                        vs_name)
+                        "Ignore the snat IPs, its count is beyond 32 " "for vs : %s",
+                        vs_name,
+                    )
                 else:
                     vs_obj["snat_ip"] = snat_list
                 conv_status = {"status": final.STATUS_SUCCESSFUL}
                 message = "Mapped indirectly to VS -> SNAT IP Address"
                 conv_utils.add_conv_status(
-                    "snatpool", "", snat_pool_name, conv_status, message)
+                    "snatpool", "", snat_pool_name, conv_status, message
+                )
             else:
-                msg = ("Skipped: snat conversion as input flag is not set"
-                       " for vs : %s" % vs_name)
+                msg = (
+                    "Skipped: snat conversion as input flag is not set"
+                    " for vs : %s" % vs_name
+                )
                 LOG.debug(msg)
                 conv_status = {"status": final.STATUS_SKIPPED}
                 skipped.append(
@@ -707,18 +911,24 @@ class VSConfigConv(object):
                     else None
                 )
                 conv_utils.add_conv_status(
-                    "snatpool", "", snat_pool_name, conv_status, msg)
+                    "snatpool", "", snat_pool_name, conv_status, msg
+                )
 
         if ntwk_prof:
             vs_obj["network_profile_ref"] = ntwk_prof[0]
             ntwk_prof_name = ntwk_prof[0].split("name=")[-1]
             ntwk_prof_config = [
-                np for np in avi_config["NetworkProfile"] if np["name"] == ntwk_prof_name]
+                np
+                for np in avi_config["NetworkProfile"]
+                if np["name"] == ntwk_prof_name
+            ]
             ntwk_verified_accept = ntwk_prof_config[0].get("verified-accept")
             if ntwk_verified_accept and ntwk_verified_accept != "disabled":
                 vs_obj['"remove_listening_port_on_vs_down'] = True
-            if ntwk_prof_config[0]["profile"].get(
-                    "tcp_fast_path_profile") and f5_vs.get("mirror") == "enabled":
+            if (
+                ntwk_prof_config[0]["profile"].get("tcp_fast_path_profile")
+                and f5_vs.get("mirror") == "enabled"
+            ):
                 ntwk_prof_config[0]["connection_mirror"] = True
 
         if enable_ssl:
@@ -727,28 +937,43 @@ class VSConfigConv(object):
                 vs_obj["ssl_key_and_certificate_refs"] = [ssl_vs[0]["cert"]]
             if ssl_vs[0]["pki"] and app_name != "http":
                 app_profiles = [
-                    obj for obj in (
-                        sys_dict["ApplicationProfile"] +
-                        avi_config["ApplicationProfile"]) if obj["name"] == app_name]
+                    obj
+                    for obj in (
+                        sys_dict["ApplicationProfile"]
+                        + avi_config["ApplicationProfile"]
+                    )
+                    if obj["name"] == app_name
+                ]
                 if app_profiles[0]["type"] == "APPLICATION_PROFILE_TYPE_HTTP":
-                    app_profiles[0]["http_profile"]["ssl_client_certificate_mode"] =\
-                        ssl_vs[0]["mode"]
-                    app_profiles[0]["http_profile"]["pki_profile_ref"] = ssl_vs[0]["pki"]
+                    app_profiles[0]["http_profile"][
+                        "ssl_client_certificate_mode"
+                    ] = ssl_vs[0]["mode"]
+                    app_profiles[0]["http_profile"]["pki_profile_ref"] = ssl_vs[0][
+                        "pki"
+                    ]
 
         # Added code to skipped L4 VS if pool or pool group not present
         if vs_obj["application_profile_ref"]:
             application_profile_obj = [
-                obj for obj in (
-                    sys_dict["ApplicationProfile"] +
-                    avi_config["ApplicationProfile"]) if obj["name"] == app_name]
-            if application_profile_obj and application_profile_obj[
-                    0]["type"] == "APPLICATION_PROFILE_TYPE_L4":
+                obj
+                for obj in (
+                    sys_dict["ApplicationProfile"] + avi_config["ApplicationProfile"]
+                )
+                if obj["name"] == app_name
+            ]
+            if (
+                application_profile_obj
+                and application_profile_obj[0]["type"] == "APPLICATION_PROFILE_TYPE_L4"
+            ):
                 if not vs_obj.get("pool_ref", vs_obj.get("pool_group_ref")):
-                    msg = ("Failed to convert L4 VS dont have pool or pool "
-                           "group ref: %s" % vs_name)
+                    msg = (
+                        "Failed to convert L4 VS dont have pool or pool "
+                        "group ref: %s" % vs_name
+                    )
                     LOG.debug(msg)
                     conv_utils.add_status_row(
-                        "virtual", None, vs_name, final.STATUS_SKIPPED, msg)
+                        "virtual", None, vs_name, final.STATUS_SKIPPED, msg
+                    )
                     return None, None
         if app_prof:
             self.app_profile_with_via_host_name(
@@ -759,9 +984,11 @@ class VSConfigConv(object):
                 cloud_name,
                 sys_dict,
                 profiles,
-                merge_object_mapping)
+                merge_object_mapping,
+            )
             self.enabling_http_to_https_redirects_in_app_profile(
-                app_name, vs_obj, avi_config, sys_dict)
+                app_name, vs_obj, avi_config, sys_dict
+            )
         for attr in self.ignore_for_value:
             ignore_val = self.ignore_for_value[attr]
             actual_val = f5_vs.get(attr, None)
@@ -772,45 +999,53 @@ class VSConfigConv(object):
             elif isinstance(ignore_val, list) and actual_val in ignore_val:
                 skipped.remove(attr)
         conv_status = {}
-        conv_status["user_ignore"] = [
-            val for val in skipped if val in user_ignore]
+        conv_status["user_ignore"] = [val for val in skipped if val in user_ignore]
 
         if vs_ds_rules:
             vs_ds.append("_sys_https_redirect")
             skipped_rules = [
-                rule for rule in vs_ds_rules if rule not in converted_rules]
+                rule for rule in vs_ds_rules if rule not in converted_rules
+            ]
             if skipped_rules:
-                skipped.append('rules: %s' % skipped_rules)
+                skipped.append("rules: %s" % skipped_rules)
         na_list = [val for val in skipped if val in self.vs_na_attr]
         skipped = [attr for attr in skipped if attr not in self.vs_na_attr]
         skipped = [attr for attr in skipped if attr not in user_ignore]
         conv_status["indirect"] = [
-            val for val in skipped if val in self.vs_indirect_attr]
-        skipped = [
-            attr for attr in skipped if attr not in self.vs_indirect_attr]
+            val for val in skipped if val in self.vs_indirect_attr
+        ]
+        skipped = [attr for attr in skipped if attr not in self.vs_indirect_attr]
         conv_status["na_list"] = [val for val in skipped if val in na_list]
         skipped = [attr for attr in skipped if attr not in na_list]
         conv_status["skipped"] = skipped
         status = final.STATUS_SUCCESSFUL
         if skipped:
             status = final.STATUS_PARTIAL
-        conv_status['status'] = status
-        review_flag = 'Yes' if needs_review else None
-        vs_refs = conv_utils.get_vs_references(vs_name, vs_obj, avi_config)
+        conv_status["status"] = status
+        review_flag = "Yes" if needs_review else None
         conv_utils.add_conv_status(
-            'virtual',
+            "virtual",
             None,
             vs_name,
             conv_status,
             vs_obj,
             yaml.dump(f5_vs),
-            vs_refs,
-            review_flag)
+            review_flag,
+        )
 
         return vs_obj, vs_sni_parent_obj
 
-    def get_policy_vs(self, vs_policies, avi_config, vs_name,
-                      tenant, cloud_name, vs_obj, reuse_http_policy=False):
+    def get_policy_vs(
+        self,
+        vs_policies,
+        avi_config,
+        f5_of_avi,
+        vs_name,
+        tenant,
+        cloud_name,
+        vs_obj,
+        reuse_http_policy=False,
+    ):
         """
         This method gets all the policy attached to vs, also clone it if
         required
@@ -824,30 +1059,33 @@ class VSConfigConv(object):
         """
         for pol_name in vs_policies:
             policy_obj = [
-                ob for ob in avi_config["HTTPPolicySet"] if ob["name"] == pol_name]
+                ob for ob in avi_config["HTTPPolicySet"] if ob["name"] == pol_name
+            ]
             if policy_obj:
                 if reuse_http_policy:
                     pass
                 elif pol_name in used_policy:
-                    LOG.debug(
-                        "Cloning the policy %s for vs %s",
-                        pol_name,
-                        vs_name)
+                    LOG.debug("Cloning the policy %s for vs %s", pol_name, vs_name)
                     clone_policy = conv_utils.clone_http_policy_set(
-                        policy_obj[0], vs_name, avi_config, tenant, cloud_name)
+                        policy_obj[0], vs_name, avi_config, tenant, cloud_name
+                    )
                     pol_name = clone_policy["name"]
-                    pol_tenant = conv_utils.get_name(
-                        clone_policy["tenant_ref"])
+                    pol_tenant = conv_utils.get_name(clone_policy["tenant_ref"])
                     if pol_tenant == tenant:
                         avi_config["HTTPPolicySet"].append(clone_policy)
-                        LOG.debug(
-                            "Policy cloned %s for vs %s", pol_name, vs_name)
+                        f5_of_avi["HTTPPolicySet"].update(
+                            {vs_name: f5_of_avi["HTTPPolicySet"][vs_name]}
+                        )
+                        LOG.debug("Policy cloned %s for vs %s", pol_name, vs_name)
                         if policy_obj[0]["name"] in http_to_https_policy_rule:
                             http_to_https_policy_rule.append(pol_name)
                     else:
                         LOG.debug(
                             "Policy with different tenant not "
-                            "supported  %s for vs %s", pol_name, vs_name)
+                            "supported  %s for vs %s",
+                            pol_name,
+                            vs_name,
+                        )
                         continue
                 if pol_name not in used_policy:
                     used_policy.append(pol_name)
@@ -856,14 +1094,15 @@ class VSConfigConv(object):
                     "http_policy_set_ref": conv_utils.get_object_ref(
                         pol_name,
                         "httppolicyset",
-                        tenant=conv_utils.get_name(
-                            policy_obj[0]["tenant_ref"])),
+                        tenant=conv_utils.get_name(policy_obj[0]["tenant_ref"]),
+                    ),
                 }
                 if not vs_obj.get("http_policies"):
                     vs_obj["http_policies"] = []
                 else:
-                    ind = max(pol_index["index"]
-                              for pol_index in vs_obj["http_policies"])
+                    ind = max(
+                        pol_index["index"] for pol_index in vs_obj["http_policies"]
+                    )
                     pol["index"] = ind + 1
                 vs_obj["http_policies"].append(pol)
 
@@ -871,24 +1110,28 @@ class VSConfigConv(object):
         """
         This method will create rule action for via header
         """
-        rule_dict = {"enable": True, "hdr_action": [{"action": "HTTP_ADD_HDR", "hdr": {
-            "name": "via", "value": {"val": via_header}}}], "index": "1", "name": "Rule 1", }
+        rule_dict = {
+            "enable": True,
+            "hdr_action": [
+                {
+                    "action": "HTTP_ADD_HDR",
+                    "hdr": {"name": "via", "value": {"val": via_header}},
+                }
+            ],
+            "index": "1",
+            "name": "Rule 1",
+        }
         if via_request == "append":
             rule_dict["hdr_action"][0]["action"] = "HTTP_ADD_HDR"
         if via_request == "remove":
             rule_dict["hdr_action"][0]["action"] = "HTTP_REMOVE_HDR"
-        via_header_key="%s-%s" % (via_header,via_request)
+        via_header_key = "%s-%s" % (via_header, via_request)
         via_header_rule_dict[via_header_key] = rule_dict
         return rule_dict
 
     def add_via_header_rule_to_http_policy(
-            self,
-            rule_dict,
-            vs_obj,
-            http_policy,
-            tenant,
-            avi_config,
-            cloud_name):
+        self, rule_dict, vs_obj, http_policy, tenant, avi_config, cloud_name
+    ):
         """
         this method will add rule to http policy
 
@@ -906,86 +1149,113 @@ class VSConfigConv(object):
                 index = len(http_policy["http_request_policy"]["rules"]) + 1
                 if rule_dict not in http_policy["http_request_policy"]["rules"]:
                     rule_dict["index"] = index
-                    http_policy["http_request_policy"]["rules"].append(
-                        rule_dict)
+                    http_policy["http_request_policy"]["rules"].append(rule_dict)
             else:
                 http_policy["http_request_policy"]["rules"] = [rule_dict]
             http_policy_name = http_policy["name"]
         else:
             policy_set = {
-                "name" :  "%s-HTTP-Policy-Set" % vs_obj['name'],
+                "name": "%s-HTTP-Policy-Set" % vs_obj["name"],
                 "tenant_ref": conv_utils.get_object_ref(tenant, "tenant"),
                 "http_request_policy": {"rules": [rule_dict]},
             }
-            http_policy_name = policy_set['name']
-            avi_config['HTTPPolicySet'].append(policy_set)
-            vs_policies = [policy_set.get('name')]
-            self.get_policy_vs(vs_policies, avi_config, vs_obj['name'], tenant,
-                               cloud_name, vs_obj)
+            http_policy_name = policy_set["name"]
+            avi_config["HTTPPolicySet"].append(policy_set)
+            vs_policies = [policy_set.get("name")]
+            self.get_policy_vs(
+                vs_policies,
+                avi_config,
+                f5_of_avi,
+                vs_obj["name"],
+                tenant,
+                cloud_name,
+                vs_obj,
+            )
 
         return http_policy_name
 
     def app_profile_with_via_host_name(
-            self,
-            app_name,
-            vs_obj,
-            avi_config,
-            tenant,
-            cloud_name,
-            sys_dict,
-            profiles,
-            merge_object_mapping):
-        '''
+        self,
+        app_name,
+        vs_obj,
+        avi_config,
+        tenant,
+        cloud_name,
+        sys_dict,
+        profiles,
+        merge_object_mapping,
+    ):
+        """
         Application profile with via host name
-        '''
+        """
 
         application_profile_obj = [
-            obj for obj in (
-                sys_dict["ApplicationProfile"] +
-                avi_config["ApplicationProfile"]) if obj["name"] == app_name]
+            obj
+            for obj in (
+                sys_dict["ApplicationProfile"] + avi_config["ApplicationProfile"]
+            )
+            if obj["name"] == app_name
+        ]
         f5_prof_obj = application_profile_obj
         if f5_prof_obj and f5_prof_obj[0].get("via-host-name"):
             f5_prof_obj = f5_prof_obj[0]
             via_host_name = f5_prof_obj.get("via-host-name")
             via_request = f5_prof_obj.get("via-request")
             if via_request in ["append", "remove"]:
-                if via_header_rule_dict.get("%s-%s" % (via_host_name,via_request)):
-                    via_rule = via_header_rule_dict.get("%s-%s" % (via_host_name,via_request))
+                if via_header_rule_dict.get("%s-%s" % (via_host_name, via_request)):
+                    via_rule = via_header_rule_dict.get(
+                        "%s-%s" % (via_host_name, via_request)
+                    )
                 else:
                     via_rule = self.create_rule_action_for_via_header(
-                        via_host_name, via_request)
+                        via_host_name, via_request
+                    )
                 pol_name = vs_obj.get("http_policies")
-                via_header_request = "%s-%s" % (via_host_name,via_request)
+                via_header_request = "%s-%s" % (via_host_name, via_request)
                 policy_name = None
                 if pol_name:
                     http_policy_ref = pol_name[0].get("http_policy_set_ref")
                     http_policy_name = http_policy_ref.split("name=")[-1]
                     if http_policy_name:
                         policy_obj = [
-                            ob for ob in avi_config["HTTPPolicySet"]
-                            if ob["name"] == http_policy_name]
+                            ob
+                            for ob in avi_config["HTTPPolicySet"]
+                            if ob["name"] == http_policy_name
+                        ]
                         if policy_with_via_header.get(http_policy_name):
                             if via_header_request not in policy_with_via_header.get(
-                                    http_policy_name):
+                                http_policy_name
+                            ):
                                 policy_name = self.add_via_header_rule_to_http_policy(
-                                    via_rule, vs_obj, policy_obj[0], tenant, avi_config, cloud_name
+                                    via_rule,
+                                    vs_obj,
+                                    policy_obj[0],
+                                    tenant,
+                                    avi_config,
+                                    cloud_name,
                                 )
                         else:
                             policy_name = self.add_via_header_rule_to_http_policy(
-                                via_rule, vs_obj, policy_obj[0], tenant, avi_config, cloud_name)
+                                via_rule,
+                                vs_obj,
+                                policy_obj[0],
+                                tenant,
+                                avi_config,
+                                cloud_name,
+                            )
                 else:
                     policy_name = self.add_via_header_rule_to_http_policy(
-                        via_rule, vs_obj, pol_name, tenant, avi_config, cloud_name)
+                        via_rule, vs_obj, pol_name, tenant, avi_config, cloud_name
+                    )
                 if policy_name:
                     if not policy_with_via_header.get(policy_name):
-                        policy_with_via_header[policy_name] = [
-                            via_header_request]
+                        policy_with_via_header[policy_name] = [via_header_request]
                     else:
-                        policy_with_via_header[policy_name].append(
-                            via_header_request)
+                        policy_with_via_header[policy_name].append(via_header_request)
 
     def enabling_http_to_https_redirects_in_app_profile(
-            self, app_name, vs_obj, avi_config, sys_dict):
+        self, app_name, vs_obj, avi_config, sys_dict
+    ):
         """
         This method enable http_to_https flag in application profile
         Args:
@@ -1001,20 +1271,31 @@ class VSConfigConv(object):
 
             if http_policy_name and http_policy_name in http_to_https_policy_rule:
                 app_profile_obj = [
-                    obj for obj in (
-                        sys_dict["ApplicationProfile"] +
-                        avi_config["ApplicationProfile"]) if obj["name"] == app_name]
+                    obj
+                    for obj in (
+                        sys_dict["ApplicationProfile"]
+                        + avi_config["ApplicationProfile"]
+                    )
+                    if obj["name"] == app_name
+                ]
                 if app_profile_obj:
                     app_profile_obj[0]["http_profile"]["http_to_https"] = True
 
 
 class VSConfigConvV11(VSConfigConv):
-    '''
-    class for vs conversion for v11 version
-    '''
 
-    def __init__(self, f5_virtualservice_attributes, prefix,
-                 con_snatpool, custom_mappings, distinct_app_profile):
+    """
+    class for vs conversion for v11 version
+    """
+
+    def __init__(
+        self,
+        f5_virtualservice_attributes,
+        prefix,
+        con_snatpool,
+        custom_mappings,
+        distinct_app_profile,
+    ):
         """
 
         :param f5_virtualservice_attributes: yaml attribute file for object
@@ -1032,8 +1313,9 @@ class VSConfigConvV11(VSConfigConv):
         self.prefix = prefix
         # Added flag for snat conversion
         self.con_snatpool = con_snatpool
-        self.rule_config = custom_mappings.get(
-            final.RULE_CUSTOM_KEY, {}) if custom_mappings else {}
+        self.rule_config = (
+            custom_mappings.get(final.RULE_CUSTOM_KEY, {}) if custom_mappings else {}
+        )
         self.distinct_app_profile = distinct_app_profile
 
     def get_persist_ref(self, f5_vs):
@@ -1047,8 +1329,7 @@ class VSConfigConvV11(VSConfigConv):
             persist_ref = list(persist_ref.keys())[0]
         return persist_ref
 
-    def convert_translate_port(
-            self, avi_config, f5_vs, app_prof, pool_ref, sys_dict):
+    def convert_translate_port(self, avi_config, f5_vs, app_prof, pool_ref, sys_dict):
         """
         This method looks for translate-port property and sets the service
         port in pool and remove the monitor if monitor don't have port
@@ -1064,19 +1345,28 @@ class VSConfigConvV11(VSConfigConv):
             if port_translate == "disabled":
                 conv_utils.update_pool_for_service_port(
                     avi_config["Pool"],
-                    pool_ref, avi_config["HealthMonitor"],
-                    sys_dict["HealthMonitor"])
+                    pool_ref,
+                    avi_config["HealthMonitor"],
+                    sys_dict["HealthMonitor"],
+                )
             elif port_translate == "enabled":
                 return
 
 
 class VSConfigConvV10(VSConfigConv):
-    '''
-    class for vs conversion for v10 version
-    '''
 
-    def __init__(self, f5_virtualservice_attributes, prefix,
-                 con_snatpool, custom_mappings, distinct_app_profile):
+    """
+    class for vs conversion for v10 version
+    """
+
+    def __init__(
+        self,
+        f5_virtualservice_attributes,
+        prefix,
+        con_snatpool,
+        custom_mappings,
+        distinct_app_profile,
+    ):
         """
 
         :param f5_virtualservice_attributes: yaml attribute file for object
@@ -1094,8 +1384,9 @@ class VSConfigConvV10(VSConfigConv):
         self.prefix = prefix
         # Added flag for snat conversion
         self.con_snatpool = con_snatpool
-        self.rule_config = custom_mappings.get(
-            final.RULE_CUSTOM_KEY, {}) if custom_mappings else {}
+        self.rule_config = (
+            custom_mappings.get(final.RULE_CUSTOM_KEY, {}) if custom_mappings else {}
+        )
         self.distinct_app_profile = distinct_app_profile
 
     def get_persist_ref(self, f5_vs):
@@ -1105,8 +1396,7 @@ class VSConfigConvV10(VSConfigConv):
         persist_ref = f5_vs.get("persist", None)
         return persist_ref
 
-    def convert_translate_port(
-            self, avi_config, f5_vs, app_prof, pool_ref, sys_dict):
+    def convert_translate_port(self, avi_config, f5_vs, app_prof, pool_ref, sys_dict):
         """
         This method looks for translate-port property and sets the service
         port in pool and remove the monitor if monitor don't have port
@@ -1122,7 +1412,9 @@ class VSConfigConvV10(VSConfigConv):
             if port_translate == "disabled":
                 conv_utils.update_pool_for_service_port(
                     avi_config["Pool"],
-                    pool_ref, avi_config["HealthMonitor"],
-                    sys_dict["HealthMonitor"])
+                    pool_ref,
+                    avi_config["HealthMonitor"],
+                    sys_dict["HealthMonitor"],
+                )
             elif port_translate == "enabled":
                 return

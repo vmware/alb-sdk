@@ -47,7 +47,7 @@ def convert(f5_config, output_dir, vs_state, input_dir, version,
             vs_level_status=False, vrf=None, segroup=None,
             custom_mappings=None, skip_pki=False, distinct_app_profile=False,
             reuse_http_policy=False, skip_disabled_vs=False,
-            migrated_ciphers_dict=None ,migrated_ciphers_group_dict=None ):
+            migrated_ciphers_dict=None, migrated_ciphers_group_dict=None):
     """
     Converts f5 config to avi config pops the config lists for conversion of
     each type from f5 config and remaining marked as skipped in the
@@ -75,7 +75,7 @@ def convert(f5_config, output_dir, vs_state, input_dir, version,
     :param distinct_app_profile: create distinct application profile for each VS
     :return: Converted avi objects
     """
-
+    f5_of_avi = {}
     avi_config_dict = {}
     sys_dict = {}
     partition_vs_mapping = {}
@@ -96,6 +96,7 @@ def convert(f5_config, output_dir, vs_state, input_dir, version,
         for key in merge_object_type:
             sys_dict[key] = []
             avi_config_dict[key] = []
+            f5_of_avi[key] = {}
 
         if profile_path and os.path.exists(profile_path):
             with open(profile_path) as data:
@@ -107,36 +108,36 @@ def convert(f5_config, output_dir, vs_state, input_dir, version,
             version, f5_attributes, object_merge_check, prefix, keypassphrase, skip_pki,
             distinct_app_profile)
         profile_conv.convert(
-            f5_config, avi_config_dict, input_dir, user_ignore, tenant, cloud_name,
-            merge_object_mapping, sys_dict,migrated_ciphers_dict,migrated_ciphers_group_dict)
+            f5_config, avi_config_dict, f5_of_avi, input_dir, user_ignore, tenant, cloud_name,
+            merge_object_mapping, sys_dict, migrated_ciphers_dict, migrated_ciphers_group_dict)
 
         # Added ssl profile merge flag.
         mon_conv = MonitorConfigConv.get_instance(
             version, f5_attributes, prefix, object_merge_check)
         mon_conv.convert(
-            f5_config, avi_config_dict, input_dir, user_ignore, tenant, cloud_name,
+            f5_config, avi_config_dict, f5_of_avi, input_dir, user_ignore, tenant, cloud_name,
             controller_version, merge_object_mapping, sys_dict, custom_mappings,
         )
 
         pool_conv = PoolConfigConv.get_instance(version, f5_attributes, prefix)
         pool_conv.convert(
-            f5_config, avi_config_dict, user_ignore, tenant, cloud_name, merge_object_mapping,
+            f5_config, avi_config_dict, f5_of_avi, user_ignore, tenant, cloud_name, merge_object_mapping,
             sys_dict, vrf, segroup,
         )
 
         persist_conv = PersistenceConfigConv.get_instance(
             version, f5_attributes, prefix, object_merge_check)
         persist_conv.convert(
-            f5_config, avi_config_dict, user_ignore, tenant, merge_object_mapping, sys_dict,
+            f5_config, avi_config_dict, f5_of_avi, user_ignore, tenant, merge_object_mapping, sys_dict,
         )
 
         policy_conv = PolicyConfigConv.get_instance(
             version, f5_attributes, prefix)
-        policy_conv.convert(f5_config, avi_config_dict, tenant, cloud_name)
+        policy_conv.convert(f5_config, avi_config_dict, f5_of_avi, tenant, cloud_name)
         vs_conv = VSConfigConv.get_instance(
             version, f5_attributes, prefix, con_snatpool, custom_mappings, distinct_app_profile,
         )
-        vs_conv.convert(f5_config, avi_config_dict, vs_state, user_ignore,
+        vs_conv.convert(f5_config, avi_config_dict, f5_of_avi, vs_state, user_ignore,
                         tenant, cloud_name, controller_version,
                         merge_object_mapping, sys_dict, vrf, segroup,
                         partition_vs_mapping, reuse_http_policy, skip_disabled_vs)
@@ -197,7 +198,7 @@ def convert(f5_config, output_dir, vs_state, input_dir, version,
                     sub_type,
                     key,
                     conv_const.STATUS_NOT_APPLICABLE,
-                    f5_type + " object not applicable",
+                    {"warning": f5_type + " object not applicable"},
                 )
             elif f5_type in accept_list:
                 msg = "skipped because of object associated \
@@ -217,6 +218,7 @@ def convert(f5_config, output_dir, vs_state, input_dir, version,
     conv_utils.add_complete_conv_status(
         output_dir,
         avi_config_dict,
+        f5_of_avi,
         report_name,
         vs_level_status)
 
@@ -227,14 +229,14 @@ def convert(f5_config, output_dir, vs_state, input_dir, version,
                     LOG.info('Total Objects of %s : %s (%s full conversions)'
                              % (key, len(avi_config_dict[key]),
                                 conversion_util.fully_migrated))
-                    print('Total Objects of %s : %s (%s full conversions)' \
+                    print('Total Objects of %s : %s (%s full conversions)'
                           % (key, len(avi_config_dict[key]),
                              conversion_util.fully_migrated))
                 else:
                     LOG.info('Total Objects of %s : %s'
                              % (key, len(avi_config_dict[key])))
-                    print('Total Objects of %s : %s' \
-                        % (key, len(avi_config_dict[key])))
+                    print('Total Objects of %s : %s'
+                          % (key, len(avi_config_dict[key])))
 
                 continue
             # Added code to print merged count.

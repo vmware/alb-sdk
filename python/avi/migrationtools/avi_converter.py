@@ -54,7 +54,8 @@ class AviConverter(object):
             avi_config = cp.patch()
         # Check if vs_filter args present then execute vs_filter.py with args
         if self.vs_filter:
-            avi_config = filter_for_vs(avi_config, self.vs_filter, self.prefix, skip_ref_objects=skip_ref_objects)
+            avi_config = filter_for_vs(
+                avi_config, self.vs_filter, self.prefix, skip_ref_objects=skip_ref_objects)
         return avi_config
 
     def upload_config_to_controller(self, avi_config):
@@ -84,7 +85,7 @@ class AviConverter(object):
         :return: None
         """
         report_path = output_dir + os.path.sep + report_name
-        print("Converted Output Location: %s" % \
+        print("Converted Output Location: %s" %
               (report_path))
         with open(report_path, "w", encoding='utf-8') as text_file:
             json.dump(avi_config, text_file, indent=4)
@@ -103,14 +104,17 @@ class AviConverter(object):
         Method for triming object length when it exceeds max allowed length
         param: passed migrated avi configuration
         '''
-        list_with_max_280_char = ['VsVip', 'PoolGroup', 'Pool', 'NetworkSecurityPolicy', 'HTTPPolicySet']
+        list_with_max_280_char = [
+            'VsVip', 'PoolGroup', 'Pool', 'NetworkSecurityPolicy', 'HTTPPolicySet']
         for key in avi_config.keys():
-            if key in ['UnsupportedProfiles','OneConnect']:
+            if key in ['UnsupportedProfiles', 'OneConnect']:
                 pass
             elif key in list_with_max_280_char:
-                self.trim_length_if_name_field_exceeds_max_char(avi_config[key], avi_config, key, 280)
+                self.trim_length_if_name_field_exceeds_max_char(
+                    avi_config[key], avi_config, key, 280)
             else:
-                self.trim_length_if_name_field_exceeds_max_char(avi_config[key], avi_config, key, 256)
+                self.trim_length_if_name_field_exceeds_max_char(
+                    avi_config[key], avi_config, key, 256)
 
     def trim_length_if_name_field_exceeds_max_char(self, obj_config_dict, avi_config, obj_type, max_char):
         """
@@ -127,16 +131,19 @@ class AviConverter(object):
             if len(obj_config['name']) > max_char:
 
                 random_str = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase
-                                                   + string.digits) for _ in range(3))
+                                                    + string.digits) for _ in range(3))
 
                 obj_config['description'] = obj_config['name']
-                new_obj_name = "%s-%s" % ((obj_config['name'])[:200],random_str)
+                new_obj_name = "%s-%s" % (
+                    (obj_config['name'])[:200], random_str)
 
                 old_obj_ref, new_obj_ref = self.get_old_and_new_obj_ref(
                     avi_config, obj_config, new_obj_name, obj_config['name'], obj_type)
 
-                cp.update_references(obj_type, old_obj_ref, new_obj_ref, avi_cfg=avi_config)
-                obj_config['name'] = "%s-%s" % ((obj_config['name'])[:200],random_str)
+                cp.update_references(
+                    obj_type, old_obj_ref, new_obj_ref, avi_cfg=avi_config)
+                obj_config[
+                    'name'] = "%s-%s" % ((obj_config['name'])[:200], random_str)
 
     def get_old_and_new_obj_ref(self, avi_config, obj_config, new_name, old_name, obj_type):
         '''
@@ -150,6 +157,7 @@ class AviConverter(object):
                  if 'cloud_ref' in obj_config else '')
         new_obj_ref = mg_util.get_object_ref(
             new_name, obj_type.lower(), tenant, cloud_name=cloud)
-        old_obj_ref = mg_util.get_object_ref(old_name, obj_type.lower(), tenant, cloud_name=cloud)
+        old_obj_ref = mg_util.get_object_ref(
+            old_name, obj_type.lower(), tenant, cloud_name=cloud)
 
         return old_obj_ref, new_obj_ref
