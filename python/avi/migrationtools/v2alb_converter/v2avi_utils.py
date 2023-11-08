@@ -544,144 +544,210 @@ class NsxvUtil:
     def cutover_vs(self, vedge_lb_config, edge, vs_list_filter, prefix, vs_tenant):
         nsxv_vs_not_found = list()
         alb_vs_not_found = list()
-        nsxv_all_virtual_services = vedge_lb_config[edge]["virtualServer"]
 
-        # Create nsxv VS list from input vs list
-        nsxv_all_vs = dict()
-        for nsxv_vs in nsxv_all_virtual_services:
-            nsxv_all_vs[nsxv_vs["name"]] = nsxv_vs
+        try:
+            nsxv_all_virtual_services = vedge_lb_config[edge]["virtualServer"]
 
-        nsxv_vs_list = dict()
-        for input_filter_vs in vs_list_filter:
-            if input_filter_vs in nsxv_all_vs.keys():
-                nsxv_vs_list[input_filter_vs] = nsxv_all_vs[input_filter_vs]
-            else:
-                nsxv_vs_not_found.append(input_filter_vs)
+            # Create nsxv VS list from input vs list
+            nsxv_all_vs = dict()
+            for nsxv_vs in nsxv_all_virtual_services:
+                nsxv_all_vs[nsxv_vs["name"]] = nsxv_vs
 
-        # Get list of all ALB VS's
-        alb_vs_list = dict()
-        alb_all_vs_list = self.session.get("virtualservice/", tenant=vs_tenant).json()[
-            "results"
-        ]
-        for vs in alb_all_vs_list:
-            alb_vs_list[vs["name"]] = vs
+            nsxv_vs_list = dict()
+            for input_filter_vs in vs_list_filter:
+                if input_filter_vs in nsxv_all_vs.keys():
+                    nsxv_vs_list[input_filter_vs] = nsxv_all_vs[input_filter_vs]
+                else:
+                    nsxv_vs_not_found.append(input_filter_vs)
 
-        for vs_name in nsxv_vs_list:
-            v_cutover_msg = f"Performing cutover for VS {vs_name} ..."
-            print(v_cutover_msg)
-            LOG.debug(v_cutover_msg)
-            vs_config = self.get_virtual_server(edge, nsxv_vs_list[vs_name]["virtualServerId"])
-            vs_config["enabled"] = False
-            self.update_virtual_server(
-                edge, nsxv_vs_list[vs_name]["virtualServerId"], vs_config
-            )
-            v_cutover_msg = f"Disconnected traffic for VS {vs_name} on NSX-V"
-            print(v_cutover_msg)
-            LOG.debug(v_cutover_msg)
+            # Get list of all ALB VS's
+            alb_vs_list = dict()
+            alb_all_vs_list = self.session.get("virtualservice/", tenant=vs_tenant).json()[
+                "results"
+            ]
+            for vs in alb_all_vs_list:
+                alb_vs_list[vs["name"]] = vs
 
-            vs_name = f"{edge}-{vs_name}"
-            vs_name_with_prefix = f"{prefix}-{vs_name}" if prefix else vs_name
-            if vs_name_with_prefix in alb_vs_list.keys():
-                for alb_vs in alb_vs_list:
-                    if alb_vs == vs_name_with_prefix:
-                        vs_obj = alb_vs_list[alb_vs]
-                        vs_obj["traffic_enabled"] = True
-                        vs_obj["enabled"] = True
-                        if "analytics_policy" in vs_obj:
-                            vs_obj["analytics_policy"]["full_client_logs"][
-                                "enabled"
-                            ] = True
-                        else:
-                            analytics_policy = {
-                                "full_client_logs": {
-                                    "duration": 30,
-                                    "enabled": True,
-                                    "throttle": 10,
+            for vs_name in nsxv_vs_list:
+                v_cutover_msg = f"Performing cutover for VS {vs_name} ..."
+                print(v_cutover_msg)
+                LOG.debug(v_cutover_msg)
+                vs_config = self.get_virtual_server(edge, nsxv_vs_list[vs_name]["virtualServerId"])
+                vs_config["enabled"] = False
+                response = self.update_virtual_server(
+                    edge, nsxv_vs_list[vs_name]["virtualServerId"], vs_config
+                )
+                if response.status_code == 200:
+                    v_cutover_msg = f"Disconnected traffic for VS {vs_name} on NSX-V"
+                    print(v_cutover_msg)
+                    LOG.debug(v_cutover_msg)
+                else:
+                    msg = f"Error in disconnecting traffic on NSX-V for VS {vs_name}. Message: {str(response.text)}"
+                    print("\033[91m" + msg + "\033[0m")
+                    LOG.error(msg)
+                    continue
+
+                vs_name = f"{edge}-{vs_name}"
+                vs_name_with_prefix = f"{prefix}-{vs_name}" if prefix else vs_name
+                if vs_name_with_prefix in alb_vs_list.keys():
+                    for alb_vs in alb_vs_list:
+                        if alb_vs == vs_name_with_prefix:
+                            vs_obj = alb_vs_list[alb_vs]
+                            vs_obj["traffic_enabled"] = True
+                            vs_obj["enabled"] = True
+                            if "analytics_policy" in vs_obj:
+                                vs_obj["analytics_policy"]["full_client_logs"][
+                                    "enabled"
+                                ] = True
+                            else:
+                                analytics_policy = {
+                                    "full_client_logs": {
+                                        "duration": 30,
+                                        "enabled": True,
+                                        "throttle": 10,
+                                    }
                                 }
-                            }
-                            vs_obj.update({"analytics_policy": analytics_policy})
+                                vs_obj.update({"analytics_policy": analytics_policy})
 
-                        self.session.put("virtualservice/{}".format(vs_obj.get("uuid")),
-                                         vs_obj, tenant=vs_tenant)
-                        enable_traffic_msg = f"Enabled traffic for VS {vs_name} on ALB"
-                        print(enable_traffic_msg)
-                        LOG.debug(enable_traffic_msg)
+                            alb_response = self.session.put("virtualservice/{}".format(vs_obj.get("uuid")),
+                                                            vs_obj, tenant=vs_tenant)
+                            if alb_response.status_code == 200:
+                                enable_traffic_msg = f"Enabled traffic for VS {vs_name} on ALB"
+                                print(enable_traffic_msg)
+                                LOG.debug(enable_traffic_msg)
 
-                        cutover_msg = f"Completed cutover for VS {vs_name}\n"
-                        print(cutover_msg)
-                        LOG.debug(cutover_msg)
-                        break
-            else:
-                alb_vs_not_found.append(vs_name_with_prefix)
+                                cutover_msg = f"Completed cutover for VS {vs_name}\n"
+                                print(cutover_msg)
+                                LOG.debug(cutover_msg)
+                            else:
+                                msg = f"Error in enabling traffic on ALB. Message: {str(alb_response.text)}"
+                                print("\033[91m" + msg + "\033[0m")
+                                LOG.error(msg)
+
+                                print("\033[93m" + "Rollback traffic for VS {} on NSX-V started...".format(vs_name)
+                                      + "\033[0m")
+                                vs_config = self.get_virtual_server(edge, nsxv_vs_list[vs_name]["virtualServerId"])
+                                vs_config["enabled"] = True
+                                response = self.update_virtual_server(
+                                    edge, nsxv_vs_list[vs_name]["virtualServerId"], vs_config
+                                )
+                                if response.status_code == 200:
+                                    msg = "Traffic rollback for VS {} on NSX-V completed\n".format(vs_name)
+                                    print("\033[93m" + msg + "\033[0m")
+                                    LOG.debug(msg)
+                                else:
+                                    msg = "Failed to rollback traffic for VS {} on NSX-V\n".format(vs_name)
+                                    print("\033[93m" + msg + "\033[0m")
+                                    LOG.debug(msg)
+                            break
+                else:
+                    alb_vs_not_found.append(vs_name_with_prefix)
+        except Exception as e:
+            print("\033[91m" + "Error while performing cutover. Message: ", str(e) + "\033[0m")
 
         return nsxv_vs_not_found, alb_vs_not_found
 
     def rollback_vs(self, vedge_lb_config, edge, vs_list_filter, prefix, vs_tenant):
         nsxv_vs_not_found = list()
         alb_vs_not_found = list()
-        nsxv_all_virtual_services = vedge_lb_config[edge]["virtualServer"]
+        try:
+            nsxv_all_virtual_services = vedge_lb_config[edge]["virtualServer"]
 
-        # Create nsxv VS list from input vs list
-        nsxv_all_vs = dict()
-        for nsxv_vs in nsxv_all_virtual_services:
-            nsxv_all_vs[nsxv_vs["name"]] = nsxv_vs
+            # Create nsxv VS list from input vs list
+            nsxv_all_vs = dict()
+            for nsxv_vs in nsxv_all_virtual_services:
+                nsxv_all_vs[nsxv_vs["name"]] = nsxv_vs
 
-        nsxv_vs_list = dict()
-        for input_filter_vs in vs_list_filter:
-            if input_filter_vs in nsxv_all_vs.keys():
-                nsxv_vs_list[input_filter_vs] = nsxv_all_vs[input_filter_vs]
-            else:
-                nsxv_vs_not_found.append(input_filter_vs)
+            nsxv_vs_list = dict()
+            for input_filter_vs in vs_list_filter:
+                if input_filter_vs in nsxv_all_vs.keys():
+                    nsxv_vs_list[input_filter_vs] = nsxv_all_vs[input_filter_vs]
+                else:
+                    nsxv_vs_not_found.append(input_filter_vs)
 
-        # Get list of all ALB VS's
-        alb_vs_list = dict()
-        alb_all_vs_list = self.session.get("virtualservice/", tenant=vs_tenant).json()["results"]
-        for vs in alb_all_vs_list:
-            alb_vs_list[vs["name"]] = vs
+            # Get list of all ALB VS's
+            alb_vs_list = dict()
+            alb_all_vs_list = self.session.get("virtualservice/", tenant=vs_tenant).json()["results"]
+            for vs in alb_all_vs_list:
+                alb_vs_list[vs["name"]] = vs
 
-        # Perform roll back for vs filter list
-        
-        for vs_name in nsxv_vs_list:
-            vs_name_with_edge = f"{edge}-{vs_name}"
-            vs_name_with_prefix = f"{prefix}-{vs_name_with_edge}" if prefix else vs_name
-            if vs_name_with_prefix in alb_vs_list.keys():
-                for alb_vs in alb_vs_list:
-                    vs_name_with_prefix = (
-                        f"{prefix}-{vs_name}" if prefix else vs_name
-                    )
-                    if alb_vs == vs_name_with_prefix:
-                        cutover_msg = "Performing rollback for VS {} ...".format(vs_name)
-                        print(cutover_msg)
-                        LOG.debug(cutover_msg)
+            # Perform roll back for vs filter list
 
-                        vs_obj = alb_vs_list[alb_vs]
-                        vs_obj["traffic_enabled"] = False
-                        vs_obj["enabled"] = False
-                        if "analytics_policy" in vs_obj:
-                            vs_obj["analytics_policy"]["full_client_logs"][
-                                "enabled"
-                            ] = False
-                        self.session.put("virtualservice/{}".format(vs_obj.get("uuid")),
-                                         vs_obj, tenant=vs_tenant)
-                        disconnect_traffic_msg = f"Disconnected traffic for VS {vs_name} on ALB"
-                        print(disconnect_traffic_msg)
-                        LOG.debug(disconnect_traffic_msg)
-                        break
+            for vs_name in nsxv_vs_list:
+                is_alb_disconnected = False
+                vs_name_with_edge = f"{edge}-{vs_name}"
+                vs_name_with_prefix = f"{prefix}-{vs_name_with_edge}" if prefix else vs_name
+                vs_obj = None
+                if vs_name_with_prefix in alb_vs_list.keys():
+                    for alb_vs in alb_vs_list:
+                        if alb_vs == vs_name_with_prefix:
+                            rollback_msg = "Performing rollback for VS {} ...".format(vs_name)
+                            print(rollback_msg)
+                            LOG.debug(rollback_msg)
 
-                vs_config = self.get_virtual_server(edge, nsxv_vs_list[vs_name]["virtualServerId"])
-                vs_config["enabled"] = True
-                self.update_virtual_server(edge, nsxv_vs_list[vs_name]["virtualServerId"],
-                                           vs_config)
+                            vs_obj = alb_vs_list[alb_vs]
+                            vs_obj["traffic_enabled"] = True
+                            vs_obj["enabled"] = False
+                            if "analytics_policy" in vs_obj:
+                                vs_obj["analytics_policy"]["full_client_logs"][
+                                    "enabled"
+                                ] = False
+                            alb_response = self.session.put("virtualservice/{}".format(vs_obj.get("uuid")),
+                                                            vs_obj, tenant=vs_tenant)
+                            if alb_response.status_code == 200:
+                                disconnect_traffic_msg = f"Disconnected traffic for VS {vs_name} on ALB"
+                                print(disconnect_traffic_msg)
+                                LOG.debug(disconnect_traffic_msg)
+                                is_alb_disconnected = True
+                            else:
+                                error_msg = f"Error in disconnecting traffic on ALB. Message: {str(alb_response.text)}"
+                                print("\033[91m" + error_msg + "\033[0m")
+                                LOG.error(error_msg)
+                            break
 
-                enable_nsxv_traffic_msg = f"Enabled traffic for VS {vs_name} on NSX-V"
-                print(enable_nsxv_traffic_msg)
-                LOG.debug(enable_nsxv_traffic_msg)
+                    if is_alb_disconnected:
+                        vs_config = self.get_virtual_server(edge, nsxv_vs_list[vs_name]["virtualServerId"])
+                        vs_config["enabled"] = True
+                        response = self.update_virtual_server(edge, nsxv_vs_list[vs_name]["virtualServerId"],
+                                                              vs_config)
 
-                rollback_complete_msg = f"Completed rollback for VS {vs_name}\n"
-                print(rollback_complete_msg)
-                LOG.debug(rollback_complete_msg)
-            else:
-                alb_vs_not_found.append(vs_name_with_prefix)
+                        if response.status_code == 200:
+                            enable_nsxv_traffic_msg = f"Enabled traffic for VS {vs_name} on NSX-V"
+                            print(enable_nsxv_traffic_msg)
+                            LOG.debug(enable_nsxv_traffic_msg)
+
+                            rollback_msg = f"Completed rollback for VS {vs_name}\n"
+                            print(rollback_msg)
+                            LOG.debug(rollback_msg)
+                        else:
+                            error_msg = f"Error in enabling traffic on NSX-V for VS {vs_name}. " \
+                                        f"Message: {str(response.text)}"
+                            print("\033[91m" + error_msg + "\033[0m")
+                            LOG.error(error_msg)
+
+                            rollback_msg = "Rollback traffic for VS {} on ALB started...".format(vs_name)
+                            print("\033[93m" + rollback_msg + "\033[0m")
+                            LOG.debug(rollback_msg)
+
+                            vs_obj = alb_vs_list[alb_vs]
+                            vs_obj["traffic_enabled"] = True
+                            vs_obj["enabled"] = False
+                            if "analytics_policy" in vs_obj:
+                                vs_obj["analytics_policy"]["full_client_logs"]["enabled"] = False
+                            alb_response = self.session.put("virtualservice/{}".format(vs_obj.get("uuid")),
+                                                            vs_obj, tenant=vs_tenant)
+                            if alb_response.status_code == 200:
+                                msg = "Traffic rollback for VS {} completed\n".format(vs_name)
+                                print("\033[93m" + msg + "\033[0m")
+                                LOG.warning(msg)
+                            else:
+                                disconnect_traffic_msg = f"Failed to rollback traffic for VS {vs_name} on ALB"
+                                print("\033[91m" + disconnect_traffic_msg + "\033[0m")
+                                LOG.error(disconnect_traffic_msg)
+                else:
+                    alb_vs_not_found.append(vs_name_with_prefix)
+        except Exception as e:
+            print("\033[91m" + "Error while performing rollback. Message: ", str(e) + "\033[0m")
 
         return nsxv_vs_not_found, alb_vs_not_found
 
