@@ -36429,6 +36429,12 @@ vs_runtime:
         py_type: IpAddr
         ref_type: IpAddr
         required: 'False'
+      snat_ip6_address:
+        doc_type: IpAddr
+        name: snat_ip6_address
+        py_type: IpAddr
+        ref_type: IpAddr
+        required: 'False'
 waf:
   WafConfig:
     name: WafConfig
