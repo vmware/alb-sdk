@@ -68,7 +68,7 @@ class TrafficCutover(AviConverter):
         if not self.password:
             self.password = data.get('alb_controller_password')
         if not self.alb_controller_tenant:
-            self.alb_controller_tenant = ''
+            self.alb_controller_tenant = data.get('alb_controller_tenant')
         if not self.prefix:
             self.prefix = data.get('prefix')
 
