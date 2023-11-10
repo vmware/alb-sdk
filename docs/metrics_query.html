@@ -7346,7 +7346,7 @@ stats for processes running on controller
 </tr>
 <tr>
 <td> process_stats.avg_fds </td>
-<td> number of file descriptors currently opened by this process. </td>
+<td> Number of file descriptors currently opened by this process. </td>
 <td> METRIC_COUNT </td>
 <td> True </td>
 <td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
@@ -7395,7 +7395,7 @@ stats for processes running on controller
 <tr>
 <td> process_stats.avg_pss </td>
 <td> Average memory (in bytes) shared with other processes. </td>
-<td> BYTES </td>
+<td> KILO_BYTES </td>
 <td> True </td>
 <td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
 <td> True </td>
@@ -7403,7 +7403,7 @@ stats for processes running on controller
 <tr>
 <td> process_stats.avg_rss </td>
 <td> Average Resident Set Size (aka non-swapped physical memory which process is using). </td>
-<td> BYTES </td>
+<td> KILO_BYTES </td>
 <td> True </td>
 <td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
 <td> True </td>
@@ -7411,7 +7411,7 @@ stats for processes running on controller
 <tr>
 <td> process_stats.avg_swap </td>
 <td> Average Amount of memory that has been swapped out to disk. </td>
-<td> BYTES </td>
+<td> KILO_BYTES </td>
 <td> True </td>
 <td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
 <td> True </td>
@@ -7419,7 +7419,7 @@ stats for processes running on controller
 <tr>
 <td> process_stats.avg_vms </td>
 <td> Average Virtual Memory Size (aka total virtual memory which process is using). </td>
-<td> BYTES </td>
+<td> KILO_BYTES </td>
 <td> True </td>
 <td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
 <td> True </td>
@@ -10987,6 +10987,110 @@ Stats for SE Group.
 <tr>
 <td> segroup_stats.max_license_usage </td>
 <td> Maximum license units used by SE's belonging to SeGroup. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+</table>
+</div>
+<h2 class='text-primary'> Envoy_Upstream_Stats Metrics </h2>
+<div class='container-fluid'>
+<p>
+Envoy Upstream Metrics.
+</p>
+<table class='table table-bordered table-striped'>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Units</th>
+<th>Anomaly Detection</th>
+<th>Anomaly Models</th>
+<th>Priority</th>
+</tr>
+<tr>
+<td> envoy_upstream_stats.avg_membership_healthy </td>
+<td> Current cluster healthy total from upstream on controller Envoy. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> envoy_upstream_stats.avg_upstream_cx_active </td>
+<td> Total active connections from upstream on controller Envoy. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> envoy_upstream_stats.avg_upstream_cx_rx_bytes_buffered </td>
+<td> Received bytes currently buffered from upstream on controller Envoy. </td>
+<td> BYTES </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> envoy_upstream_stats.avg_upstream_cx_tx_bytes_buffered </td>
+<td> Sent bytes currently buffered from upstream on controller Envoy. </td>
+<td> BYTES </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> envoy_upstream_stats.avg_upstream_rq_active </td>
+<td> Total active requests from upstream on controller Envoy. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+</table>
+</div>
+<h2 class='text-primary'> Envoy_Downstream_Stats Metrics </h2>
+<div class='container-fluid'>
+<p>
+Envoy Downstream Metrics.
+</p>
+<table class='table table-bordered table-striped'>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Units</th>
+<th>Anomaly Detection</th>
+<th>Anomaly Models</th>
+<th>Priority</th>
+</tr>
+<tr>
+<td> envoy_downstream_stats.avg_downstream_cx_active </td>
+<td> Total active connections from downstream on controller Envoy. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> envoy_downstream_stats.avg_downstream_cx_rx_bytes_buffered </td>
+<td> Received bytes currently buffered from downstream on controller Envoy. </td>
+<td> BYTES </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> envoy_downstream_stats.avg_downstream_cx_tx_bytes_buffered </td>
+<td> Sent bytes currently buffered from downstream on controller Envoy. </td>
+<td> BYTES </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> envoy_downstream_stats.avg_downstream_rq_active </td>
+<td> Total active requests from downstream on controller Envoy. </td>
 <td> METRIC_COUNT </td>
 <td> True </td>
 <td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
