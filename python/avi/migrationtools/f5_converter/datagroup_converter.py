@@ -69,7 +69,7 @@ class DataGroupConfigConv(object):
                                    dg_type,
                                    name,
                                    conv_status,
-                                   [{"data-group": data_group}],
+                                   {"DataGroup": [data_group]},
                                    f5_object=yaml.dump(f5_dg_config))
         LOG.debug("Conversion successful for data group: %s", name)
 
@@ -141,7 +141,9 @@ class DataGroupConfigConv(object):
                     msg = 'data-group type not supported skipping ' \
                           'conversion: %s' % name
                     LOG.warning(msg)
-                    self.update_conv_status_for_skip(dg_type, name, msg)
+                    strMsg = dict()
+                    strMsg["warning"] = msg
+                    self.update_conv_status_for_skip(dg_type, name, strMsg)
                     continue
                 if not ip_group:
                     continue

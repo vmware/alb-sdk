@@ -593,6 +593,7 @@ VERSION_11:
     - 'vlans'
     - 'vlans-enabled'
     - 'cmp-enabled'
+    - 'serverssl-use-sni'
 
     VS_ignore_for_value:
         'ip-protocol': 'tcp'

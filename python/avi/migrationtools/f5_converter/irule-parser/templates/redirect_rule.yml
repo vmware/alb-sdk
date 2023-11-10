@@ -1,0 +1,8 @@
+- enable: true
+  index: 1
+  name: {{ name }}
+  redirect_action:
+    keep_query: true
+    port: 443
+    protocol: HTTPS
+    status_code: {{ status_code }}
