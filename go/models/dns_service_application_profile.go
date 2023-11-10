@@ -14,6 +14,9 @@ type DNSServiceApplicationProfile struct {
 	// Email address of the administrator responsible for this zone . This field is used in SOA records (rname) pertaining to all domain names specified as authoritative domain names. If not configured, the default value 'hostmaster' is used in SOA responses. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	AdminEmail *string `json:"admin_email,omitempty"`
 
+	// The maximum time allowed for a client to transmit an entire DNS request over TCP. This helps mitigate various forms of SlowLoris attacks. Allowed values are 10-100000000. Field introduced in 22.1.5, 30.1.2, 30.2.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	ClientDNSTCPRequestTimeout *int32 `json:"client_dns_tcp_request_timeout,omitempty"`
+
 	// If enabled, the Service Engine initiates closure of client TCP connections after the first DNS response, for pass-through/proxy cases. This behavior applies to all DNS request types other than AX-FR. Field introduced in 21.1.7, 22.1.4, 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	CloseTCPConnectionPostResponse *bool `json:"close_tcp_connection_post_response,omitempty"`
 
