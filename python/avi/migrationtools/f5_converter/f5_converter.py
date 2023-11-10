@@ -19,14 +19,13 @@ import avi.migrationtools
 import avi.migrationtools.f5_converter.converter_constants as conv_const
 import yaml
 from avi.migrationtools import avi_rest_lib
-from avi.migrationtools.ansible.ansible_config_converter import \
-    AviAnsibleConverterMigration
+from avi.migrationtools.ansible.ansible_config_converter import (
+    AviAnsibleConverterMigration,
+)
 from avi.migrationtools.avi_converter import AviConverter
-from avi.migrationtools.avi_migration_utils import (PasswordPromptAction,
-                                                    get_count)
+from avi.migrationtools.avi_migration_utils import PasswordPromptAction, get_count
 from avi.migrationtools.avi_orphan_object import wipe_out_not_in_use
-from avi.migrationtools.f5_converter import (f5_config_converter, f5_parser,
-                                             scp_util)
+from avi.migrationtools.f5_converter import f5_config_converter, f5_parser, scp_util
 from avi.migrationtools.f5_converter.conversion_util import F5Util
 from avi.migrationtools.f5_converter.ciphers_converter import CiphersConfigConv
 from avi.migrationtools.f5_converter.f5_config_parser import iRuleDiscovery
@@ -35,10 +34,7 @@ from avi.migrationtools.f5_converter.f5_discovery import F5InventoryConv
 # urllib3.disable_warnings()
 LOG = logging.getLogger(__name__)
 sdk_version = getattr(avi.migrationtools, "__version__", None)
-controller_version = getattr(
-    avi.migrationtools,
-    "__controller_version__",
-    None)
+controller_version = getattr(avi.migrationtools, "__controller_version__", None)
 
 DEFAULT_SKIP_TYPES = [
     "SystemConfiguration",
@@ -111,7 +107,9 @@ class F5Converter(AviConverter):
         self.skip_pki = args.skip_pki
         self.f5_config_version = args.f5_config_version
         self.input_folder_location = args.input_folder_location
-        self.output_file_path = args.output_file_path if args.output_file_path else "output"
+        self.output_file_path = (
+            args.output_file_path if args.output_file_path else "output"
+        )
         self.option = args.option
         self.user = args.user
         self.password = args.password
@@ -160,7 +158,7 @@ class F5Converter(AviConverter):
         self.reuse_http_policy = args.reuse_http_policy
         self.skip_disabled_vs = args.skip_disabled_vs
         # f5 tenant for irule discovery
-        self.f5_tenant=args.f5_tenant if args.f5_tenant else "Common"
+        self.f5_tenant = args.f5_tenant if args.f5_tenant else "Common"
         # Created f5 util object.
         self.conversion_util = F5Util()
         self.excel_mappings = args.excel_mappings
@@ -212,14 +210,18 @@ class F5Converter(AviConverter):
         input_dir = os.path.normpath(self.input_folder_location)
         is_download_from_host = False
         if self.f5_host_ip:
-            input_dir = output_dir + os.path.sep + self.f5_host_ip + os.path.sep + "input"
+            input_dir = (
+                output_dir + os.path.sep + self.f5_host_ip + os.path.sep + "input"
+            )
             if not os.path.exists(input_dir):
                 os.makedirs(input_dir)
-            output_dir = output_dir + os.path.sep + self.f5_host_ip + os.path.sep + "output"
+            output_dir = (
+                output_dir + os.path.sep + self.f5_host_ip + os.path.sep + "output"
+            )
             if not os.path.exists(output_dir):
                 os.makedirs(output_dir)
             is_download_from_host = True
-        is_host_present=is_download_from_host
+        is_host_present = is_download_from_host
         user_ignore = {}
 
         # Read the attributes for user ignore val
@@ -238,7 +240,7 @@ class F5Converter(AviConverter):
         elif self.partition_config and isinstance(self.partition_config, list):
             partitions = self.partition_config
         source_file = None
-        bigip_conf_path=None
+        bigip_conf_path = None
         if is_download_from_host:
             LOG.debug("Copying files from host")
             print("Copying Files from Host...")
@@ -249,11 +251,17 @@ class F5Converter(AviConverter):
                     self.f5_ssh_user,
                     self.f5_ssh_password,
                     None,
-                    self.f5_ssh_port
+                    self.f5_ssh_port,
                 )
             except Exception as e:
-                LOG.error("Error in copying files from host : %s ", e, stack_info=True, exc_info=True)
-                print(e); exit(1)
+                LOG.error(
+                    "Error in copying files from host : %s ",
+                    e,
+                    stack_info=True,
+                    exc_info=True,
+                )
+                print(e)
+                exit(1)
             LOG.debug("Copied input files")
             source_file = open(input_dir + os.path.sep + "bigip.conf", "r")
             bigip_conf_path = input_dir + os.path.sep + "bigip.conf"
@@ -272,23 +280,23 @@ class F5Converter(AviConverter):
         LOG.debug("Parsing config file: %s", source_file.name)
         print("Parsing Input Configuration...")
         f5_config_dict, not_supported_list = f5_parser.parse_config(
-            source_str, total_size, self.f5_config_version)
-
+            source_str, total_size, self.f5_config_version
+        )
 
         if is_download_from_host:
             cipher_conf_file = open(input_dir + os.path.sep + "cipher.conf", "r")
-            cipher_config_dict=None
+            cipher_config_dict = None
             if cipher_conf_file:
                 cipher_source_str = cipher_conf_file.read()
                 cipher_total_size = cipher_conf_file.tell()
                 cipher_config_dict, cipher_not_supported_list = f5_parser.parse_config(
-                cipher_source_str, cipher_total_size, self.f5_config_version)
+                    cipher_source_str, cipher_total_size, self.f5_config_version
+                )
 
         LOG.debug("Config file %s parsed successfully", source_file.name)
         avi_config_dict = None
         LOG.debug("Parsing defaults files")
-        f5_defaults_dict = self.get_default_config(
-            is_download_from_host, input_dir)
+        f5_defaults_dict = self.get_default_config(is_download_from_host, input_dir)
         # Added to get not supported parse config
         not_supported_list_partition = []
         if partitions:
@@ -297,17 +305,16 @@ class F5Converter(AviConverter):
                 with open(partition, "r") as p_source_file:
                     p_src_str = p_source_file.read()
                     total_size = p_source_file.tell()
-                LOG.debug(
-                    "Parsing partition config file: %s",
-                    p_source_file.name)
+                LOG.debug("Parsing partition config file: %s", p_source_file.name)
                 print("\nParsing Partitions Configuration...")
                 partition_dict, not_supported_list = f5_parser.parse_config(
-                    p_src_str, total_size, self.f5_config_version)
-                LOG.debug(
-                    "Config file %s parsed successfully",
-                    p_source_file.name)
+                    p_src_str, total_size, self.f5_config_version
+                )
+                LOG.debug("Config file %s parsed successfully", p_source_file.name)
                 # TO get all not supported configuration.
-                not_supported_list_partition = not_supported_list_partition + not_supported_list
+                not_supported_list_partition = (
+                    not_supported_list_partition + not_supported_list
+                )
                 self.dict_merge(partition_conf, partition_dict)
             self.dict_merge(partition_conf, f5_config_dict)
             f5_config_dict = partition_conf
@@ -317,9 +324,10 @@ class F5Converter(AviConverter):
         for command in merged_not_supported_list:
             d = command.rsplit("/", 1)
             object_type = d[0].rsplit(" ", 1)
-            object_name = '%s/%s' % (object_type[-1], d[-1])
+            object_name = "%s/%s" % (object_type[-1], d[-1])
             self.conversion_util.add_status_row(
-                object_type[0], "", object_name, conv_const.STATUS_NOT_SUPPORTED)
+                object_type[0], "", object_name, conv_const.STATUS_NOT_SUPPORTED
+            )
         LOG.debug("Defaults files parsed successfully")
         LOG.debug("Conversion started")
         self.dict_merge(f5_defaults_dict, f5_config_dict)
@@ -327,24 +335,52 @@ class F5Converter(AviConverter):
         report_name = os.path.splitext(os.path.basename(source_file.name))[0]
         start = datetime.now()
 
-        migrated_ciphers_dict={}
-        migrated_ciphers_group_dict={}
+        migrated_ciphers_dict = {}
+        migrated_ciphers_group_dict = {}
         if is_download_from_host:
-            cipher_conv = CiphersConfigConv(self.f5_host_ip, self.f5_ssh_password,
-                                            self.f5_ssh_user,self.controller_ip,self.user,
-                                            self.password,self.f5_config_version)
+            cipher_conv = CiphersConfigConv(
+                self.f5_host_ip,
+                self.f5_ssh_password,
+                self.f5_ssh_user,
+                self.controller_ip,
+                self.user,
+                self.password,
+                self.f5_config_version,
+            )
 
-            migrated_ciphers_dict,migrated_ciphers_group_dict=cipher_conv.migrate_ciphers_and_cipher_group(
-                                                            f5_config_dict,cipher_config_dict,self.f5_config_version)
+            (
+                migrated_ciphers_dict,
+                migrated_ciphers_group_dict,
+            ) = cipher_conv.migrate_ciphers_and_cipher_group(
+                f5_config_dict, cipher_config_dict, self.f5_config_version
+            )
 
         avi_config_dict, part_mapping = f5_config_converter.convert(
-            f5_config_dict, output_dir, self.vs_state, input_dir, self.f5_config_version,
-            self.object_merge_check, self.controller_version, report_name, self.prefix,
-            self.con_snatpool, user_ignore, self.profile_path, self.tenant, self.cloud_name,
-            self.f5_passphrase_file, self.vs_level_status, self.vrf, self.segroup,
-            custom_mappings, self.skip_pki, self.distinct_app_profile, self.reuse_http_policy,
-            self.skip_disabled_vs,migrated_ciphers_dict=migrated_ciphers_dict,
-            migrated_ciphers_group_dict=migrated_ciphers_group_dict
+            f5_config_dict,
+            output_dir,
+            self.vs_state,
+            input_dir,
+            self.f5_config_version,
+            self.object_merge_check,
+            self.controller_version,
+            report_name,
+            self.prefix,
+            self.con_snatpool,
+            user_ignore,
+            self.profile_path,
+            self.tenant,
+            self.cloud_name,
+            self.f5_passphrase_file,
+            self.vs_level_status,
+            self.vrf,
+            self.segroup,
+            custom_mappings,
+            self.skip_pki,
+            self.distinct_app_profile,
+            self.reuse_http_policy,
+            self.skip_disabled_vs,
+            migrated_ciphers_dict=migrated_ciphers_dict,
+            migrated_ciphers_group_dict=migrated_ciphers_group_dict,
         )
         # validating avi config dict for object length
         self.trim_object_length(avi_config_dict)
@@ -356,19 +392,19 @@ class F5Converter(AviConverter):
             data = pd.read_excel(self.excel_mappings)
             df = pd.DataFrame(data)
             for _, row in df.iterrows():
-                avi_config = str(avi_config).replace(row['Current IP'], row['New IP'])
+                avi_config = str(avi_config).replace(row["Current IP"], row["New IP"])
             avi_config = eval(avi_config)
             LOG.debug("Avi config updated with Excel Mappings")
-        self.write_output(avi_config, output_dir, '%s-Output.json' %
-                          report_name)
-        
+        self.write_output(avi_config, output_dir, "%s-Output.json" % report_name)
+
         # Irule discovery
-        irule_dis=iRuleDiscovery(bigip_conf_path,self.f5_tenant)
-        irule_dis.get_irule_discovery(output_dir,report_name)
-        
+        irule_dis = iRuleDiscovery(bigip_conf_path, self.f5_tenant)
+        irule_dis.get_irule_discovery(output_dir, report_name)
+
         if self.vs_filter:
             F5Util().remove_vs_names_when_vs_filter_is_provided(
-                output_dir=output_dir, report_name=report_name, vs_names=self.vs_filter)
+                output_dir=output_dir, report_name=report_name, vs_names=self.vs_filter
+            )
         # Call to create ansible playbook if create ansible flag set.
         if self.create_ansible:
             avi_traffic = AviAnsibleConverterMigration(
@@ -383,13 +419,13 @@ class F5Converter(AviConverter):
                 filter_types=self.ansible_filter_types,
             )
             avi_traffic.write_ansible_playbook(
-                self.f5_host_ip, self.f5_ssh_user, self.f5_ssh_password, "f5")
+                self.f5_host_ip, self.f5_ssh_user, self.f5_ssh_password, "f5"
+            )
         if self.option == "auto-upload":
             self.upload_config_to_controller(avi_config)
-        
+
         print("Total Warning: ", get_count("warning"))
         print("Total Errors: ", get_count("error"))
-
 
     def get_default_config(self, is_download, path):
         """
@@ -410,12 +446,17 @@ class F5Converter(AviConverter):
             if self.skip_default_file:
                 LOG.warning(
                     "Skipped default profile base file : %s\nSkipped "
-                    "default monitor base file : %s", profile.name, monitor.name, )
+                    "default monitor base file : %s",
+                    profile.name,
+                    monitor.name,
+                )
                 return f5_defaults_dict
             profile_dict, not_supported_list = f5_parser.parse_config(
-                profile_base, total_size, self.f5_config_version)
+                profile_base, total_size, self.f5_config_version
+            )
             monitor_dict, not_supported_list = f5_parser.parse_config(
-                monitor_base, total_size_mnt, self.f5_config_version)
+                monitor_base, total_size_mnt, self.f5_config_version
+            )
             if int(self.f5_config_version) == 10:
                 default_mon = monitor_dict.get("monitor", {})
                 root_mon = monitor_dict["monitorroot"]
@@ -436,15 +477,18 @@ class F5Converter(AviConverter):
                 # Added to get directory path.
                 dir_path = self.conversion_util.get_project_path()
                 dir_path = dir_path + os.path.sep + "f5_converter"
-            with open(dir_path + os.path.sep + "f5_v%s_defaults.conf" %
-                      self.f5_config_version, "r") as defaults_file:
+            with open(
+                dir_path
+                + os.path.sep
+                + "f5_v%s_defaults.conf" % self.f5_config_version,
+                "r",
+            ) as defaults_file:
                 if self.skip_default_file:
-                    LOG.warning(
-                        "Skipped default file : %s",
-                        defaults_file.name)
+                    LOG.warning("Skipped default file : %s", defaults_file.name)
                     return f5_defaults_dict
                 f5_defaults_dict, not_supported_list = f5_parser.parse_config(
-                    defaults_file.read(), defaults_file.tell(), self.f5_config_version)
+                    defaults_file.read(), defaults_file.tell(), self.f5_config_version
+                )
         return f5_defaults_dict
 
     def dict_merge(self, dct, merge_dct):
@@ -455,8 +499,11 @@ class F5Converter(AviConverter):
         :return:
         """
         for key in merge_dct:
-            if key in dct and isinstance(
-                    dct[key], dict) and isinstance(merge_dct[key], dict):
+            if (
+                key in dct
+                and isinstance(dct[key], dict)
+                and isinstance(merge_dct[key], dict)
+            ):
                 self.dict_merge(dct[key], merge_dct[key])
             else:
                 dct[key] = merge_dct[key]
@@ -467,8 +514,7 @@ def set_default_args(terminal_args):
     set default arguments
     """
     for argument in terminal_args.__dict__:
-        if argument in ARG_DEFAULT_VALUE and terminal_args.__dict__[
-                argument] is None:
+        if argument in ARG_DEFAULT_VALUE and terminal_args.__dict__[argument] is None:
             terminal_args.__dict__[argument] = ARG_DEFAULT_VALUE[argument]
 
 
@@ -478,16 +524,20 @@ def get_terminal_args(terminal_args):
     """
     if terminal_args.__dict__["ansible_skip_types"]:
         terminal_args.__dict__["ansible_skip_types"] = terminal_args.__dict__[
-            "ansible_skip_types"].split(",")
+            "ansible_skip_types"
+        ].split(",")
     if terminal_args.__dict__["ansible_filter_types"]:
         terminal_args.__dict__["ansible_filter_types"] = terminal_args.__dict__[
-            "ansible_filter_types"].split(",")
+            "ansible_filter_types"
+        ].split(",")
     if terminal_args.__dict__["vs_filter"]:
-        terminal_args.__dict__["vs_filter"] = terminal_args.__dict__[
-            "vs_filter"].split(",")
+        terminal_args.__dict__["vs_filter"] = terminal_args.__dict__["vs_filter"].split(
+            ","
+        )
     if terminal_args.__dict__["partition_config"]:
         terminal_args.__dict__["partition_config"] = terminal_args.__dict__[
-            "partition_config"].split(",")
+            "partition_config"
+        ].split(",")
 
     LOG.debug("\n TERMINAL ARGS: %s", terminal_args)
 
@@ -503,42 +553,59 @@ def get_terminal_args(terminal_args):
                         and terminal_args.__dict__[terminal_arg] is None
                         and terminal_arg in ARG_DEFAULT_VALUE.keys()
                     ):
-                        terminal_args.__dict__[
-                            terminal_arg] = ARG_DEFAULT_VALUE[terminal_arg]
+                        terminal_args.__dict__[terminal_arg] = ARG_DEFAULT_VALUE[
+                            terminal_arg
+                        ]
                     elif (
                         terminal_arg in config_file.keys()
                         and config_file[terminal_arg] is None
                         and terminal_args.__dict__[terminal_arg] is None
                         and terminal_arg in ARG_DEFAULT_VALUE.keys()
                     ):
-                        terminal_args.__dict__[
-                            terminal_arg] = ARG_DEFAULT_VALUE[terminal_arg]
-                    elif terminal_arg in config_file.keys() and terminal_arg in ARG_DEFAULT_VALUE.keys():
-                        if terminal_args.__dict__[terminal_arg] == ARG_DEFAULT_VALUE[terminal_arg] and not isinstance(
-                                terminal_args.__dict__[terminal_arg], bool):
+                        terminal_args.__dict__[terminal_arg] = ARG_DEFAULT_VALUE[
+                            terminal_arg
+                        ]
+                    elif (
+                        terminal_arg in config_file.keys()
+                        and terminal_arg in ARG_DEFAULT_VALUE.keys()
+                    ):
+                        if terminal_args.__dict__[terminal_arg] == ARG_DEFAULT_VALUE[
+                            terminal_arg
+                        ] and not isinstance(
+                            terminal_args.__dict__[terminal_arg], bool
+                        ):
                             continue
-                        if terminal_args.__dict__[
-                                terminal_arg] == ARG_DEFAULT_VALUE[terminal_arg]:
-                            terminal_args.__dict__[
-                                terminal_arg] = config_file[terminal_arg]
+                        if (
+                            terminal_args.__dict__[terminal_arg]
+                            == ARG_DEFAULT_VALUE[terminal_arg]
+                        ):
+                            terminal_args.__dict__[terminal_arg] = config_file[
+                                terminal_arg
+                            ]
                         elif terminal_args.__dict__[terminal_arg] is None:
-                            terminal_args.__dict__[
-                                terminal_arg] = config_file[terminal_arg]
+                            terminal_args.__dict__[terminal_arg] = config_file[
+                                terminal_arg
+                            ]
                     elif (
                         terminal_arg in config_file.keys()
                         and terminal_arg not in ARG_DEFAULT_VALUE.keys()
                         and terminal_args.__dict__[terminal_arg] is None
                     ):
-                        terminal_args.__dict__[
-                            terminal_arg] = config_file[terminal_arg]
+                        terminal_args.__dict__[terminal_arg] = config_file[terminal_arg]
 
                 # Validate argument choice values
                 for argument in ARG_CHOICES.keys():
                     if terminal_args.__dict__[argument] not in ARG_CHOICES[argument]:
-                        msg = "%s: error: argument --%s: invalid choice: " \
-                              "'%s' (choose from %s)" % (parser.prog, argument,
-                                                         terminal_args.__dict__[argument],
-                                                         ARG_CHOICES[argument])
+                        msg = (
+                            "%s: error: argument --%s: invalid choice: "
+                            "'%s' (choose from %s)"
+                            % (
+                                parser.prog,
+                                argument,
+                                terminal_args.__dict__[argument],
+                                ARG_CHOICES[argument],
+                            )
+                        )
                         LOG.debug(msg)
                         print(msg)
                         exit(1)
@@ -553,7 +620,6 @@ def get_terminal_args(terminal_args):
 
 
 if __name__ == "__main__":
-
     HELP_STR = """
     Converts F5 Config to Avi config.
 
@@ -742,8 +808,8 @@ if __name__ == "__main__":
     """
 
     parser = argparse.ArgumentParser(
-        formatter_class=argparse.RawTextHelpFormatter,
-        description=(HELP_STR))
+        formatter_class=argparse.RawTextHelpFormatter, description=(HELP_STR)
+    )
 
     # Create Ansible Script based on Flag
     parser.add_argument(
@@ -777,14 +843,10 @@ if __name__ == "__main__":
         "--controller_ip",
         help="Destination controller ip or fqdn for config upload",
     )
+    parser.add_argument("--cloud_name", help="Destination cloud name", required=True)
     parser.add_argument(
-        "--cloud_name",
-        help="Destination cloud name",
-        required=True)
-    parser.add_argument(
-        "--controller_version",
-        help="Target Avi controller version",
-        required=True)
+        "--controller_version", help="Target Avi controller version", required=True
+    )
     # Added snatpool conversion option
     parser.add_argument(
         "--convertsnat",
@@ -802,21 +864,16 @@ if __name__ == "__main__":
         help="Option to create distinct application profile for"
         " each VS even though it is shared in F5 config",
     )
+    parser.add_argument("--excel_mappings", help="Absolute path for excel mapping file")
     parser.add_argument(
-        "--excel_mappings",
-        help="Absolute path for excel mapping file")
-    parser.add_argument(
-        "-f",
-        "--bigip_config_file",
-        help="Absolute path for F5 config file")
+        "-f", "--bigip_config_file", help="Absolute path for F5 config file"
+    )
     parser.add_argument("--f5_host_ip", help="Host ip of f5 instance")
     parser.add_argument(
         "--f5_key_file",
         help="F5 host key file location if key based " + "authentication",
     )
-    parser.add_argument(
-        "--f5_passphrase_file",
-        help="F5 key passphrase yaml file path")
+    parser.add_argument("--f5_passphrase_file", help="F5 key passphrase yaml file path")
     parser.add_argument("--f5_ssh_user", help="f5 host ssh username")
     parser.add_argument(
         "--f5_ssh_password",
@@ -827,8 +884,8 @@ if __name__ == "__main__":
         "will appear if no value provided",
     )
     parser.add_argument(
-        "--f5_ssh_port",
-        help="F5 host ssh port id non default port is used ")
+        "--f5_ssh_port", help="F5 host ssh port id non default port is used "
+    )
     parser.add_argument(
         "--ignore_config",
         help="Config file to skip specific configuration in conversion",
@@ -837,14 +894,12 @@ if __name__ == "__main__":
     parser.add_argument(
         "-l",
         "--input_folder_location",
-        help="Location of input files like cert files " +
-        "external monitor scripts",
+        help="Location of input files like cert files " + "external monitor scripts",
     )
     # Changed the command line option to more generic term object
     parser.add_argument(
-        "--object_merge",
-        help="Flag for enabling object merge",
-        action="store_true")
+        "--object_merge", help="Flag for enabling object merge", action="store_true"
+    )
     # Added not in use flag
     parser.add_argument(
         "--not_in_use",
@@ -854,14 +909,16 @@ if __name__ == "__main__":
     parser.add_argument(
         "-o",
         "--output_file_path",
-        help="Folder path for output files to be created in", default="output",
+        help="Folder path for output files to be created in",
+        default="output",
     )
     parser.add_argument(
         "-O",
         "--option",
         choices=ARG_CHOICES["option"],
-        help="Upload option cli-upload genarates Avi config " +
-        "file auto upload will upload config to " + "controller",
+        help="Upload option cli-upload genarates Avi config "
+        + "file auto upload will upload config to "
+        + "controller",
     )
     parser.add_argument(
         "-p",
@@ -870,8 +927,8 @@ if __name__ == "__main__":
         "prompt will appear if no value provided",
     )
     parser.add_argument(
-        "--partition_config",
-        help="Comma separated partition config files")
+        "--partition_config", help="Comma separated partition config files"
+    )
     # Added command line args to execute config_patch file with related Avi
     # json file location and patch location
     parser.add_argument("--patch", help="Absolute path to patch.yaml file")
@@ -884,21 +941,15 @@ if __name__ == "__main__":
         help="traffic_enabled state of VS created",
     )
     parser.add_argument(
-        "--segroup",
-        help="Update the available segroup ref with the custom ref")
+        "--segroup", help="Update the available segroup ref with the custom ref"
+    )
     parser.add_argument(
-        "--skip_default_file",
-        help="Flag for skip default file",
-        action="store_true")
+        "--skip_default_file", help="Flag for skip default file", action="store_true"
+    )
     parser.add_argument(
-        "--skip_pki",
-        help="Skip migration of PKI profile",
-        action="store_true")
-    parser.add_argument(
-        "-t",
-        "--tenant",
-        help="Destination tenant name",
-        required=True)
+        "--skip_pki", help="Skip migration of PKI profile", action="store_true"
+    )
+    parser.add_argument("-t", "--tenant", help="Destination tenant name", required=True)
     # Adding support for test vip
     parser.add_argument(
         "--test_vip",
@@ -908,17 +959,12 @@ if __name__ == "__main__":
         "use it with caution ",
     )
     parser.add_argument(
-        "-u",
-        "--user",
-        help="Username on destination controller for config upload")
+        "-u", "--user", help="Username on destination controller for config upload"
+    )
+    parser.add_argument("-v", "--f5_config_version", help="Version of f5 config file")
     parser.add_argument(
-        "-v",
-        "--f5_config_version",
-        help="Version of f5 config file")
-    parser.add_argument(
-        "--version",
-        help="Print product version and exit",
-        action="store_true")
+        "--version", help="Print product version and exit", action="store_true"
+    )
     parser.add_argument(
         "--vrf",
         help="Update the available vrf ref with the custom vrf" "reference",
@@ -940,8 +986,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--reuse_http_policy",
         action="store_true",
-        help="Detect and reuse the HTTP policy that are "
-        "shared across multiple VS",
+        help="Detect and reuse the HTTP policy that are " "shared across multiple VS",
     )
     # Config file to override all parameters of this script
 
@@ -957,10 +1002,7 @@ if __name__ == "__main__":
         help="Flag for skipping those vs/s which are disabled on f5",
         action="store_true",
     )
-    parser.add_argument(
-        "--f5_tenant",
-        help="f5 tenant for irule discovery"
-    )
+    parser.add_argument("--f5_tenant", help="f5 tenant for irule discovery")
 
     parser.add_argument(
         "--discovery",
@@ -973,8 +1015,10 @@ if __name__ == "__main__":
 
     # print avi f5 converter version
     if args.version:
-        print("SDK Version: %s\nController Version: %s" % \
-              (sdk_version, args.controller_version))
+        print(
+            "SDK Version: %s\nController Version: %s"
+            % (sdk_version, args.controller_version)
+        )
         exit(0)
 
     if not os.path.isdir(args.output_file_path):
@@ -987,13 +1031,22 @@ if __name__ == "__main__":
         try:
             f5_converter.init_logger_path()
             f5_inventory_conv = F5InventoryConv.get_instance(
-                args.f5_config_version, args.f5_host_ip, args.f5_ssh_port, args.f5_ssh_user,
-                args.f5_ssh_password, 2)
+                args.f5_config_version,
+                args.f5_host_ip,
+                args.f5_ssh_port,
+                args.f5_ssh_user,
+                args.f5_ssh_password,
+                2,
+            )
         except Exception as e:
-            LOG.error("Error in F5InventoryConv: %s ", e, stack_info=True, exc_info=True)
-            print(e); exit(1)
+            LOG.error(
+                "Error in F5InventoryConv: %s ", e, stack_info=True, exc_info=True
+            )
+            print(e)
+            exit(1)
         f5_inventory_conv.get_inventory()
         f5_inventory_conv.print_human(
-            args.output_file_path, args.f5_config_version, args.f5_host_ip)
+            args.output_file_path, args.f5_config_version, args.f5_host_ip
+        )
     else:
         f5_converter.convert()

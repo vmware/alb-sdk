@@ -18,7 +18,8 @@ parameters_dict = {
     "equals": "EQUALS",
     "contains": "CONTAINS",
     "ends-with": "ENDS_WITH",
-    "not": "DOES_NOT_"}
+    "not": "DOES_NOT_",
+}
 used_pools = {}
 http_to_https_policy_rule = []
 
@@ -38,7 +39,7 @@ class PolicyConfigConv(object):
         if version in ["11", "12"]:
             return PolicyConfigConvV11(prefix, f5_profile_attributes)
 
-    def convert(self, f5_config, avi_config, tenant_ref, cloud_name):
+    def convert(self, f5_config, avi_config, f5_of_avi, tenant_ref, cloud_name):
         """
         Main method for conversion of policy
         :param f5_config: parsed f5 config dict
@@ -57,52 +58,70 @@ class PolicyConfigConv(object):
                 if tenant_ref:
                     tenant = tenant_ref
                 if self.prefix:
-                    policy_name = '%s-%s' % (self.prefix, policy_name)
+                    policy_name = "%s-%s" % (self.prefix, policy_name)
                 httppolicy = {}
                 config = policy_config[each_policy]
                 skip = self.create_rules(
-                    config,
-                    httppolicy,
-                    avi_config,
-                    policy_name,
-                    cloud_name,
-                    tenant)
-                if httppolicy.get("http_request_policy",
-                                  httppolicy.get("http_response_policy")):
+                    config, httppolicy, avi_config, policy_name, cloud_name, tenant
+                )
+                if httppolicy.get(
+                    "http_request_policy", httppolicy.get("http_response_policy")
+                ):
                     httppolicy["name"] = policy_name
                     httppolicy["tenant_ref"] = conv_utils.get_object_ref(
-                        tenant, "tenant")
+                        tenant, "tenant"
+                    )
                     httppolicy["is_internal_policy"] = False
                     avi_config["HTTPPolicySet"].append(httppolicy)
+                    f5_of_avi["HTTPPolicySet"].update(
+                        {
+                            httppolicy["name"]: {
+                                "F5_ID": policy_name,
+                                "F5_type": "policy",
+                            }
+                        }
+                    )
                     if isinstance(skip, dict):
                         if skip:
-                            na_list = [
-                                val for val in skip if val in self.na_list]
+                            na_list = [val for val in skip if val in self.na_list]
                             conv_status = {
                                 "skipped": [skip],
                                 "status": final.STATUS_PARTIAL,
-                                "na_list": na_list}
+                                "na_list": na_list,
+                            }
                         else:
                             conv_status = {"status": final.STATUS_SUCCESSFUL}
                     indirect = self.indirect
                     conv_status["indirect"] = indirect
-                    conv_utils.add_conv_status("policy", None, each_policy, conv_status, [
-                        {"policy_set": httppolicy}], f5_object=yaml.dump(config))
+                    conv_utils.add_conv_status(
+                        "policy",
+                        None,
+                        each_policy,
+                        conv_status,
+                        {"HTTPPolicySet": [httppolicy]},
+                        f5_object=yaml.dump(config),
+                    )
                 else:
                     conv_utils.add_conv_status(
-                        "policy", None, each_policy, {
-                            "status": final.STATUS_SKIPPED}, skip)
+                        "policy",
+                        None,
+                        each_policy,
+                        {"status": final.STATUS_SKIPPED},
+                        skip,
+                    )
                     LOG.debug(
-                        "Skipping:Conversion unsuccessful for the policy"
-                        " %s", each_policy)
+                        "Skipping:Conversion unsuccessful for the policy" " %s",
+                        each_policy,
+                    )
             except BaseException:
                 update_count("error")
                 LOG.error(
-                    "Error in conversion of policy %s",
-                    each_policy, exc_info=True)
+                    "Error in conversion of policy %s", each_policy, exc_info=True
+                )
 
-    def create_rules(self, config, httppolicy, avi_config,
-                     policy_name, cloud_name, tenant):
+    def create_rules(
+        self, config, httppolicy, avi_config, policy_name, cloud_name, tenant
+    ):
         """
         This method create rules for each policy
         :param config: f5 policy config dict
@@ -114,33 +133,43 @@ class PolicyConfigConv(object):
         if "rules" in config and not config["rules"] == "none":
             skip_rule = {}
             for index, each_rule in enumerate(config["rules"]):
-                if config["rules"][each_rule].get(
-                        "conditions") and config["rules"][each_rule].get("actions"):
-                    rule_name = '%s-%s-%s' % (policy_name, each_rule,
-                                              str(index + 1))
-                    rule_dict = {
-                        "name": rule_name,
-                        "enable": True,
-                        "index": index + 1}
+                if config["rules"][each_rule].get("conditions") and config["rules"][
+                    each_rule
+                ].get("actions"):
+                    rule_name = "%s-%s-%s" % (policy_name, each_rule, str(index + 1))
+                    rule_dict = {"name": rule_name, "enable": True, "index": index + 1}
                     match_rule = config["rules"][each_rule]["conditions"]
                     pol_type, match, skip_match = self.create_match_rule(
-                        match_rule, avi_config, rule_name, each_rule)
+                        match_rule, avi_config, rule_name, each_rule
+                    )
                     if not match:
-                        msg = 'All match conditions not supported for rule {}' \
-                              ' in policy {}'.format(each_rule, policy_name)
+                        msg = (
+                            "All match conditions not supported for rule {}"
+                            " in policy {}".format(each_rule, policy_name)
+                        )
                         LOG.debug(msg)
                         skip_rule[each_rule] = msg
                         continue
 
                     LOG.debug(
-                        "Rule match successfully converted for rule "
-                        "%s in policy %s", each_rule, policy_name)
+                        "Rule match successfully converted for rule " "%s in policy %s",
+                        each_rule,
+                        policy_name,
+                    )
                     action_rule = config["rules"][each_rule]["actions"]
                     actions, skip_action, log = self.create_action_rule(
-                        action_rule, avi_config, each_rule, policy_name, cloud_name, tenant)
+                        action_rule,
+                        avi_config,
+                        each_rule,
+                        policy_name,
+                        cloud_name,
+                        tenant,
+                    )
                     if not actions:
-                        msg = 'All actions not supported for rule {} in ' \
-                              'policy {}'.format(each_rule, policy_name)
+                        msg = (
+                            "All actions not supported for rule {} in "
+                            "policy {}".format(each_rule, policy_name)
+                        )
 
                         LOG.debug(msg)
                         skip_rule[each_rule] = msg
@@ -148,7 +177,10 @@ class PolicyConfigConv(object):
 
                     LOG.debug(
                         "Rule action successfully converted for rule "
-                        "%s in policy %s", each_rule, policy_name)
+                        "%s in policy %s",
+                        each_rule,
+                        policy_name,
+                    )
                     rule_dict.update({"match": match})
                     for act in actions:
                         rule_dict.update(act)
@@ -157,27 +189,33 @@ class PolicyConfigConv(object):
                     if pol_type:
                         if not httppolicy.get("http_" + pol_type + "_policy"):
                             httppolicy["http_" + pol_type + "_policy"] = dict()
-                            httppolicy["http_" + pol_type +
-                                       "_policy"]["rules"] = []
-                        httppolicy["http_" + pol_type +
-                                   "_policy"]["rules"].append(rule_dict)
+                            httppolicy["http_" + pol_type + "_policy"]["rules"] = []
+                        httppolicy["http_" + pol_type + "_policy"]["rules"].append(
+                            rule_dict
+                        )
                         skipped = skip_match + skip_action
                         if skipped:
                             skip_rule[each_rule] = skipped
                 elif config["rules"][each_rule].get("conditions"):
-                    msg = 'Skipping rule:No action found for rule {} in ' \
-                            'policy {}'.format(each_rule, policy_name)
+                    msg = (
+                        "Skipping rule:No action found for rule {} in "
+                        "policy {}".format(each_rule, policy_name)
+                    )
 
                     LOG.debug(msg)
                     skip_rule[each_rule] = msg
                 elif config["rules"][each_rule].get("actions"):
-                    msg = 'Skipping rule:No match condition found for rule ' \
-                              '{} in policy {}'.format(each_rule, policy_name)
+                    msg = (
+                        "Skipping rule:No match condition found for rule "
+                        "{} in policy {}".format(each_rule, policy_name)
+                    )
                     LOG.debug(msg)
                     skip_rule[each_rule] = msg
                 else:
-                    msg = 'Skipping rule:Match conditions and actions are ' \
-                              'missing for policy {}'.format(policy_name)
+                    msg = (
+                        "Skipping rule:Match conditions and actions are "
+                        "missing for policy {}".format(policy_name)
+                    )
 
                     LOG.debug(msg)
                     skip_rule[each_rule] = msg
@@ -185,7 +223,7 @@ class PolicyConfigConv(object):
                     http_to_https_policy_rule.append(policy_name)
             return skip_rule
         else:
-            msg = 'No rule found for policy {}'.format(policy_name)
+            msg = "No rule found for policy {}".format(policy_name)
             LOG.debug(msg)
             return msg
 
@@ -213,52 +251,62 @@ class PolicyConfigConv(object):
                 elif "ssl-client-hello" in result:
                     skip_event.append("ssl-client-hello")
                     LOG.debug(
-                        "Event 'ssl-client-hello' not supported for "
-                        "operand %s", op)
+                        "Event 'ssl-client-hello' not supported for " "operand %s", op
+                    )
                     continue
                 elif "ssl-server-handshake" in result:
                     skip_event.append("ssl-server-handshake")
                     LOG.debug(
-                        "Event 'ssl-server-handshake' not supported for "
-                        "operand %s", op)
+                        "Event 'ssl-server-handshake' not supported for " "operand %s",
+                        op,
+                    )
                     continue
                 elif "ssl-sever-hello" in result:
                     skip_event.append("ssl-sever-hello")
                     LOG.debug(
-                        "Event 'ssl-sever-hello' not supported for "
-                        "operand %s", op)
+                        "Event 'ssl-sever-hello' not supported for " "operand %s", op
+                    )
                     continue
                 else:
                     pol_type = "request"
                 if "country-code" in result:
-                    if "starts-with" not in result and "contains" not in result \
-                            and "ends-with" not in result:
+                    if (
+                        "starts-with" not in result
+                        and "contains" not in result
+                        and "ends-with" not in result
+                    ):
                         if "values" not in result:
                             LOG.debug(
                                 "Match rule is incomplete, values are "
-                                "mandatory for operand %s", op)
+                                "mandatory for operand %s",
+                                op,
+                            )
                             continue
                         client_ip = {
                             "group_refs": [],
-                            "match_criteria": "IS_NOT_IN" if "not" in result else "IS_IN"}
+                            "match_criteria": "IS_NOT_IN"
+                            if "not" in result
+                            else "IS_IN",
+                        }
                         if "Internal" in result:
                             client_ip["group_refs"].append(
-                                conv_utils.get_object_ref("Internal", "ipaddrgroup"))
+                                conv_utils.get_object_ref("Internal", "ipaddrgroup")
+                            )
                         if "local" in result:
                             skip_parameter.append("local")
-                        ipgrp_name = 'ipaddrgroup%s-%s' % (rule_name,
-                                                      str(each_index))
+                        ipgrp_name = "ipaddrgroup%s-%s" % (rule_name, str(each_index))
                         ip_addr_group = {
-                            "name": ipgrp_name, "tenant_ref": conv_utils.get_object_ref(
-                                "admin", "tenant"), "country_codes": list(
-                                result["values"].keys()), }
+                            "name": ipgrp_name,
+                            "tenant_ref": conv_utils.get_object_ref("admin", "tenant"),
+                            "country_codes": list(result["values"].keys()),
+                        }
 
                         if "IpAddrGroup" not in avi_config:
                             avi_config["IpAddrGroup"] = []
                         avi_config["IpAddrGroup"].append(ip_addr_group)
                         client_ip["group_refs"].append(
-                            conv_utils.get_object_ref(
-                                ipgrp_name, "ipaddrgroup"))
+                            conv_utils.get_object_ref(ipgrp_name, "ipaddrgroup")
+                        )
                         match["client_ip"] = client_ip
                     else:
                         if "starts-with" in result:
@@ -273,8 +321,10 @@ class PolicyConfigConv(object):
                             skip_op.append("missing")
                         if skip_op:
                             LOG.debug(
-                                "Condition '%s' not supported for operand"
-                                " %s", str(skip_op), op)
+                                "Condition '%s' not supported for operand" " %s",
+                                str(skip_op),
+                                op,
+                            )
                 else:
                     if "continent" in result:
                         skip_selector.append("continent")
@@ -292,7 +342,8 @@ class PolicyConfigConv(object):
                         LOG.debug(
                             "Selector '%s' not supported for operand %s",
                             str(skip_selector),
-                            op)
+                            op,
+                        )
             elif "http-cookie" in result:
                 op = "http-cookie"
                 pol_type = "response" if "response" in result else "request"
@@ -302,26 +353,29 @@ class PolicyConfigConv(object):
                 if "name" not in result or "values" not in result:
                     LOG.debug(
                         "Match rule is incomplete, Name and values are "
-                        "mandatory for operand %s", op)
+                        "mandatory for operand %s",
+                        op,
+                    )
                     continue
                 if "missing" in result:
                     skip_op.append("missing")
-                    LOG.debug(
-                        "Condition 'missing' not supported for operand %s", op)
+                    LOG.debug("Condition 'missing' not supported for operand %s", op)
                 if len(result["values"]) > 1:
                     LOG.debug(
                         "More than one value can not be used for op %s, "
-                        "using the any one", op)
+                        "using the any one",
+                        op,
+                    )
                 cookie = {
-                    "match_case": "SENSITIVE" if "case-sensitive" in result else "INSENSITIVE",
+                    "match_case": "SENSITIVE"
+                    if "case-sensitive" in result
+                    else "INSENSITIVE",
                     "name": result["name"],
-                    "value": list(
-                        result["values"].keys())[0],
+                    "value": list(result["values"].keys())[0],
                     "match_criteria": "",
                 }
 
-                match_criteria = [
-                    key for key in result if key in parameters_dict]
+                match_criteria = [key for key in result if key in parameters_dict]
                 if len(match_criteria) > 1:
                     cookie["match_criteria"] = "HDR_%s%s" % (
                         parameters_dict[match_criteria[0]],
@@ -329,11 +383,13 @@ class PolicyConfigConv(object):
                     )
                 elif len(match_criteria):
                     if "not" in match_criteria:
-                        cookie['match_criteria'] = 'HDR_%sEQUAL' % \
-                                              parameters_dict[match_criteria[0]]
+                        cookie["match_criteria"] = (
+                            "HDR_%sEQUAL" % parameters_dict[match_criteria[0]]
+                        )
                     else:
-                        cookie['match_criteria'] = 'HDR_%s' % parameters_dict[
-                                                              match_criteria[0]]
+                        cookie["match_criteria"] = (
+                            "HDR_%s" % parameters_dict[match_criteria[0]]
+                        )
                 else:
                     cookie["match_criteria"] = "HDR_EQUALS"
                 match["cookie"] = cookie
@@ -346,21 +402,22 @@ class PolicyConfigConv(object):
                 if "name" not in result or "values" not in result:
                     LOG.debug(
                         "Match rule is incomplete, Name and values are "
-                        "mandatory for operand %s", op)
+                        "mandatory for operand %s",
+                        op,
+                    )
                     continue
                 if "missing" in result:
                     skip_op.append("missing")
-                    LOG.debug(
-                        "Condition 'missing' not supported for operand %s", op)
+                    LOG.debug("Condition 'missing' not supported for operand %s", op)
                 header = {
-                    "match_case": "SENSITIVE" if "case-sensitive" in result else "INSENSITIVE",
+                    "match_case": "SENSITIVE"
+                    if "case-sensitive" in result
+                    else "INSENSITIVE",
                     "hdr": result["name"],
-                    "value": list(
-                        result["values"].keys()),
+                    "value": list(result["values"].keys()),
                     "match_criteria": "",
                 }
-                match_criteria = [
-                    key for key in result if key in parameters_dict]
+                match_criteria = [key for key in result if key in parameters_dict]
                 if len(match_criteria) > 1:
                     header["match_criteria"] = "HDR_%s%s" % (
                         parameters_dict[match_criteria[0]],
@@ -368,11 +425,13 @@ class PolicyConfigConv(object):
                     )
                 elif len(match_criteria):
                     if "not" in match_criteria:
-                        header['match_criteria'] = 'HDR_%sEQUAL' % \
-                                              parameters_dict[match_criteria[0]]
+                        header["match_criteria"] = (
+                            "HDR_%sEQUAL" % parameters_dict[match_criteria[0]]
+                        )
                     else:
-                        header['match_criteria'] = 'HDR_%s' % parameters_dict[
-                                                              match_criteria[0]]
+                        header["match_criteria"] = (
+                            "HDR_%s" % parameters_dict[match_criteria[0]]
+                        )
                 else:
                     header["match_criteria"] = "HDR_EQUALS"
                 if "hdrs" not in match:
@@ -382,8 +441,9 @@ class PolicyConfigConv(object):
                 op = "http-host"
                 if "values" not in result:
                     LOG.debug(
-                        "Match rule is incomplete, Values are "
-                        "mandatory for op %s", op)
+                        "Match rule is incomplete, Values are " "mandatory for op %s",
+                        op,
+                    )
                     continue
                 pol_type = "response" if "response" in result else "request"
                 if not pol_type:
@@ -391,31 +451,30 @@ class PolicyConfigConv(object):
                     continue
                 if "missing" in result:
                     skip_op.append("missing")
-                    LOG.debug(
-                        "Condition 'missing' not supported for "
-                        "operand %s", op)
+                    LOG.debug("Condition 'missing' not supported for " "operand %s", op)
                 if "port" not in result:
                     host_header = {
-                        "match_case": "SENSITIVE" if "case-sensitive" in result else "INSENSITIVE",
-                        "value": list(
-                            result["values"].keys()),
+                        "match_case": "SENSITIVE"
+                        if "case-sensitive" in result
+                        else "INSENSITIVE",
+                        "value": list(result["values"].keys()),
                         "match_criteria": "",
                     }
-                    match_criteria = [
-                        key for key in result if key in parameters_dict]
+                    match_criteria = [key for key in result if key in parameters_dict]
                     if len(match_criteria) > 1:
                         host_header["match_criteria"] = "HDR_%s%s" % (
                             parameters_dict[match_criteria[0]],
-                            (parameters_dict[match_criteria[1]].replace(
-                                "S", "")),
+                            (parameters_dict[match_criteria[1]].replace("S", "")),
                         )
                     elif len(match_criteria):
                         if "not" in match_criteria:
-                            host_header['match_criteria'] = 'HDR_%sEQUAL' % \
-                                              parameters_dict[match_criteria[0]]
+                            host_header["match_criteria"] = (
+                                "HDR_%sEQUAL" % parameters_dict[match_criteria[0]]
+                            )
                         else:
-                            host_header['match_criteria'] = 'HDR_%s' % \
-                                              parameters_dict[match_criteria[0]]
+                            host_header["match_criteria"] = (
+                                "HDR_%s" % parameters_dict[match_criteria[0]]
+                            )
                     else:
                         host_header["match_criteria"] = "HDR_EQUALS"
                     match["host_hdr"] = host_header
@@ -427,9 +486,10 @@ class PolicyConfigConv(object):
                         and "greater-or-equal" not in result
                     ):
                         service_port = {
-                            "ports": list(
-                                result["values"].keys()),
-                            "match_criteria": "IS_NOT_IN" if "not" in result else "IS_IN",
+                            "ports": list(result["values"].keys()),
+                            "match_criteria": "IS_NOT_IN"
+                            if "not" in result
+                            else "IS_IN",
                         }
                         match["vs_port"] = service_port
                     else:
@@ -447,45 +507,61 @@ class PolicyConfigConv(object):
                             LOG.debug(
                                 "Condition '%s' not supported for "
                                 "parameter 'port' in operand"
-                                " %s", str(skip_op), op)
+                                " %s",
+                                str(skip_op),
+                                op,
+                            )
             elif "http-method" in result:
                 op = "http-method"
                 if "values" not in result:
                     LOG.debug(
-                        "Match rule is incomplete, Values are "
-                        "mandatory for op %s", op)
+                        "Match rule is incomplete, Values are " "mandatory for op %s",
+                        op,
+                    )
                     continue
                 pol_type = "response" if "response" in result else "request"
                 if not pol_type:
                     LOG.debug("Event not supported for operand %s", op)
                     continue
-                if "starts-with" not in result and "contains" not in result \
-                        and "ends-with" not in result:
+                if (
+                    "starts-with" not in result
+                    and "contains" not in result
+                    and "ends-with" not in result
+                ):
                     avi_method = [
-                        "OPTIONS", "PUT", "HEAD",
-                        "DELETE", "GET", "POST",
-                        "TRACE", "options", "put",
-                        "head", "get", "delete",
-                        "post", "trace",
+                        "OPTIONS",
+                        "PUT",
+                        "HEAD",
+                        "DELETE",
+                        "GET",
+                        "POST",
+                        "TRACE",
+                        "options",
+                        "put",
+                        "head",
+                        "get",
+                        "delete",
+                        "post",
+                        "trace",
                     ]
                     invalid = [
-                        True if val not in avi_method else False for val in list(
-                            result["values"].keys())]
+                        True if val not in avi_method else False
+                        for val in list(result["values"].keys())
+                    ]
                     if all(invalid):
                         LOG.debug(
-                            "All methods %s are invalid", str(
-                                result["values"].keys()))
+                            "All methods %s are invalid", str(result["values"].keys())
+                        )
                         continue
 
                     valid = [
-                        val for val in list(
-                            result["values"].keys()) if val in avi_method]
-                    LOG.debug(
-                        "Only these %s methods are valid", str(valid))
+                        val
+                        for val in list(result["values"].keys())
+                        if val in avi_method
+                    ]
+                    LOG.debug("Only these %s methods are valid", str(valid))
                     method = {
-                        "methods": [
-                            "HTTP_METHOD_%s" %
-                            val.upper() for val in valid],
+                        "methods": ["HTTP_METHOD_%s" % val.upper() for val in valid],
                         "match_criteria": "IS_NOT_IN" if "not" in result else "IS_IN",
                     }
                     match["method"] = method
@@ -502,8 +578,10 @@ class PolicyConfigConv(object):
                         skip_op.append("missing")
                     if skip_op:
                         LOG.debug(
-                            "Condition '%s' not supported for operand"
-                            " %s", str(skip_op), op)
+                            "Condition '%s' not supported for operand" " %s",
+                            str(skip_op),
+                            op,
+                        )
             elif "http-referer" in result:
                 op = "http-referer"
                 pol_type = "response" if "response" in result else "request"
@@ -513,21 +591,22 @@ class PolicyConfigConv(object):
                 if "values" not in result:
                     LOG.debug(
                         "Match rule is incomplete, values are "
-                        "mandatory for operand %s", op)
+                        "mandatory for operand %s",
+                        op,
+                    )
                     continue
                 if "missing" in result:
                     skip_op.append("missing")
-                    LOG.debug(
-                        "Condition 'missing' not supported for operand %s", op)
+                    LOG.debug("Condition 'missing' not supported for operand %s", op)
                 header = {
-                    "match_case": "SENSITIVE" if "case-sensitive" in result else "INSENSITIVE",
+                    "match_case": "SENSITIVE"
+                    if "case-sensitive" in result
+                    else "INSENSITIVE",
                     "hdr": "referer",
-                    "value": list(
-                        result["values"].keys()),
+                    "value": list(result["values"].keys()),
                     "match_criteria": "",
                 }
-                match_criteria = [
-                    key for key in result if key in parameters_dict]
+                match_criteria = [key for key in result if key in parameters_dict]
                 if len(match_criteria) > 1:
                     header["match_criteria"] = "HDR_%s%s" % (
                         parameters_dict[match_criteria[0]],
@@ -535,11 +614,13 @@ class PolicyConfigConv(object):
                     )
                 elif len(match_criteria):
                     if "not" in match_criteria:
-                        header['match_criteria'] = 'HDR_%sEQUAL' % \
-                                              parameters_dict[match_criteria[0]]
+                        header["match_criteria"] = (
+                            "HDR_%sEQUAL" % parameters_dict[match_criteria[0]]
+                        )
                     else:
-                        header['match_criteria'] = 'HDR_%s' % parameters_dict[
-                                                              match_criteria[0]]
+                        header["match_criteria"] = (
+                            "HDR_%s" % parameters_dict[match_criteria[0]]
+                        )
                 else:
                     header["match_criteria"] = "HDR_EQUALS"
                 if "hdrs" not in match:
@@ -554,43 +635,51 @@ class PolicyConfigConv(object):
                 if "values" not in result:
                     LOG.debug(
                         "Match rule is incomplete, Values are "
-                        "mandatory for operand %s", op)
+                        "mandatory for operand %s",
+                        op,
+                    )
                     continue
                 if "missing" in result:
                     skip_op.append("missing")
-                    LOG.debug(
-                        "Condition 'missing' not supported for operand %s", op)
+                    LOG.debug("Condition 'missing' not supported for operand %s", op)
                 if "path" in result or "extension" in result:
                     path_query = {
-                        "match_str": list(
-                            result["values"].keys()),
+                        "match_str": list(result["values"].keys()),
                         "match_criteria": "",
-                        "match_case": "SENSITIVE" if "case-sensitive" in result else "INSENSITIVE",
+                        "match_case": "SENSITIVE"
+                        if "case-sensitive" in result
+                        else "INSENSITIVE",
                     }
                     if "path" in result:
                         match_criteria = [
-                            key for key in result if key in parameters_dict.keys()]
+                            key for key in result if key in parameters_dict.keys()
+                        ]
                         if len(match_criteria) > 1:
                             path_query["match_criteria"] = "%s%s" % (
                                 parameters_dict[match_criteria[0]],
-                                (parameters_dict[match_criteria[1]].replace(
-                                    "S", "")),
+                                (parameters_dict[match_criteria[1]].replace("S", "")),
                             )
                         elif len(match_criteria):
                             if "not" in match_criteria:
-                                path_query['match_criteria'] = '%sEQUAL' % \
-                                              parameters_dict[match_criteria[0]]
+                                path_query["match_criteria"] = (
+                                    "%sEQUAL" % parameters_dict[match_criteria[0]]
+                                )
                             else:
-                                path_query['match_criteria'] = '%s' % \
-                                              parameters_dict[match_criteria[0]]
+                                path_query["match_criteria"] = (
+                                    "%s" % parameters_dict[match_criteria[0]]
+                                )
                         else:
                             path_query["match_criteria"] = "EQUALS"
                         match["path"] = path_query
                     else:
-                        if "starts-with" not in result and "ends-with" not in result and \
-                                "contains" not in result:
-                            path_query["match_criteria"] = "DOES_NOT_END_WITH" \
-                                if "not" in result else "ENDS_WITH"
+                        if (
+                            "starts-with" not in result
+                            and "ends-with" not in result
+                            and "contains" not in result
+                        ):
+                            path_query["match_criteria"] = (
+                                "DOES_NOT_END_WITH" if "not" in result else "ENDS_WITH"
+                            )
                             match["path"] = path_query
                         else:
                             if "starts-with" in result:
@@ -601,14 +690,18 @@ class PolicyConfigConv(object):
                                 skip_op.append("ends-with")
                             if skip_op:
                                 LOG.debug(
-                                    "Condition '%s' not supported for operand"
-                                    " %s", str(skip_op), op)
+                                    "Condition '%s' not supported for operand" " %s",
+                                    str(skip_op),
+                                    op,
+                                )
                 elif "port" in result:
                     if "case-sensitive" in result:
                         skip_op.append("case-sensitive")
                         LOG.debug(
                             "Condition 'case-sensitive' not supported for"
-                            " operand %s with selector 'port'", op)
+                            " operand %s with selector 'port'",
+                            op,
+                        )
                     if (
                         "less" not in result
                         and "greater" not in result
@@ -616,9 +709,10 @@ class PolicyConfigConv(object):
                         and "greater-or-equal" not in result
                     ):
                         service_port = {
-                            "ports": list(
-                                result["values"].keys()),
-                            "match_criteria": "IS_NOT_IN" if "not" in result else "IS_IN",
+                            "ports": list(result["values"].keys()),
+                            "match_criteria": "IS_NOT_IN"
+                            if "not" in result
+                            else "IS_IN",
                         }
                         match["vs_port"] = service_port
                     else:
@@ -632,34 +726,45 @@ class PolicyConfigConv(object):
                             skip_op.append("greater-or-equal")
                         if skip_op:
                             LOG.debug(
-                                "Condition '%s' not supported for operand"
-                                " %s", str(skip_op), op)
+                                "Condition '%s' not supported for operand" " %s",
+                                str(skip_op),
+                                op,
+                            )
                 elif "scheme" in result:
-                    if "not" not in result and "starts-with" not in result and \
-                            "ends-with" not in result and "contains" not in result:
+                    if (
+                        "not" not in result
+                        and "starts-with" not in result
+                        and "ends-with" not in result
+                        and "contains" not in result
+                    ):
                         avi_protocol = ["HTTP", "HTTPS"]
                         invalid = [
-                            True if val not in avi_protocol else False for val in list(
-                                result["values"].keys())]
+                            True if val not in avi_protocol else False
+                            for val in list(result["values"].keys())
+                        ]
                         if all(invalid):
-                            LOG.debug("All protocols %s are invalid",
-                                      str(list(result["values"].keys())))
+                            LOG.debug(
+                                "All protocols %s are invalid",
+                                str(list(result["values"].keys())),
+                            )
                             continue
 
                         valid = [
-                            val for val in list(
-                                result["values"].keys()) if val in avi_protocol]
+                            val
+                            for val in list(result["values"].keys())
+                            if val in avi_protocol
+                        ]
                         LOG.debug(
-                            "Only these protocols %s are valid",
-                            str(avi_protocol))
+                            "Only these protocols %s are valid", str(avi_protocol)
+                        )
                         if len(valid) > 1:
                             LOG.debug(
                                 "Only one value is supported at a "
                                 "time for 'protocol' in operand %s, "
-                                "taking any one", op)
-                        protocol = {
-                            "protocols": valid[0],
-                            "match_criteria": "IS_IN"}
+                                "taking any one",
+                                op,
+                            )
+                        protocol = {"protocols": valid[0], "match_criteria": "IS_IN"}
                         match["protocol"] = protocol
                     else:
                         if "starts-with" in result:
@@ -672,42 +777,58 @@ class PolicyConfigConv(object):
                             skip_op.append("not")
                         if skip_op:
                             LOG.debug(
-                                "Condition '%s' not supported for operand"
-                                " %s", str(skip_op), op)
+                                "Condition '%s' not supported for operand" " %s",
+                                str(skip_op),
+                                op,
+                            )
                 elif "query-parameters" in result or "query-string" in result:
                     query = {
-                        "match_case": "SENSITIVE" if "case-sensitive" in result else "INSENSITIVE",
+                        "match_case": "SENSITIVE"
+                        if "case-sensitive" in result
+                        else "INSENSITIVE",
                         "string_group_refs": [],
                         "match_criteria": "QUERY_MATCH_CONTAINS",
                     }
                     if "contains" in result:
-                        strgrp_name = 'stringgroup%s-%s' % (rule_name,
-                                                           str(each_index))
+                        strgrp_name = "stringgroup%s-%s" % (rule_name, str(each_index))
                         string_group = {
-                            "name": strgrp_name, "tenant_ref": conv_utils.get_object_ref(
-                                "admin", "tenant"), "kv": None, "type": "", }
+                            "name": strgrp_name,
+                            "tenant_ref": conv_utils.get_object_ref("admin", "tenant"),
+                            "kv": None,
+                            "type": "",
+                        }
                         if "query-parameters" in result:
                             if "name" not in result:
                                 LOG.debug(
                                     "Match rule is incomplete, values are"
                                     " mandatory for operand %s with selector "
-                                    "query-parameter", op)
+                                    "query-parameter",
+                                    op,
+                                )
                                 continue
                             string_group["kv"] = [
-                                {"key": result["name"],
-                                 "value": result["values"].keys()[0]}]
+                                {
+                                    "key": result["name"],
+                                    "value": result["values"].keys()[0],
+                                }
+                            ]
                             string_group["type"] = "SG_TYPE_KEYVAL"
                             query["string_group_refs"].append(
                                 conv_utils.get_object_ref(
-                                    strgrp_name, final.OBJECT_TYPE_STRING_GROUP))
+                                    strgrp_name, final.OBJECT_TYPE_STRING_GROUP
+                                )
+                            )
                             match["query"] = query
                         else:
                             string_group["kv"] = list(
-                                {"key": val} for val in list(result["values"].keys()))
+                                {"key": val} for val in list(result["values"].keys())
+                            )
                             string_group["type"] = "SG_TYPE_STRING"
                             query["string_group_refs"].append(
                                 conv_utils.get_object_ref(
-                                    strgrp_name, final.OBJECT_TYPE_STRING_GROUP))
+                                    strgrp_name, final.OBJECT_TYPE_STRING_GROUP
+                                )
+                            )
                             match["query"] = query
                         if string_group["kv"]:
                             if "StringGroup" not in avi_config:
@@ -724,8 +845,10 @@ class PolicyConfigConv(object):
                             skip_op.append("not")
                         if skip_op:
                             LOG.debug(
-                                "Condition '%s' not supported for operand"
-                                " %s", str(skip_op), op)
+                                "Condition '%s' not supported for operand" " %s",
+                                str(skip_op),
+                                op,
+                            )
                 else:
                     if "host" in result:
                         skip_selector.append("host")
@@ -739,7 +862,8 @@ class PolicyConfigConv(object):
                         LOG.debug(
                             "Selector '%s' not supported for operand %s",
                             str(skip_selector),
-                            op)
+                            op,
+                        )
             elif "http-version" in result:
                 op = "http-version"
                 pol_type = "response" if "response" in result else "request"
@@ -749,75 +873,97 @@ class PolicyConfigConv(object):
                 if "values" not in result:
                     LOG.debug(
                         "Match rule is incomplete, values are "
-                        "mandatory for operand %s", op)
+                        "mandatory for operand %s",
+                        op,
+                    )
                     continue
                 if "case-sensitive" in result:
                     skip_op.append("case-sensitive")
                 if "missing" in result:
                     skip_op.append("missing")
-                if "starts-with" not in result and "contains" not in result and \
-                        "ends-with" not in result:
-                    if "major" not in result and "minor" not in result and \
-                            "protocol" not in result:
+                if (
+                    "starts-with" not in result
+                    and "contains" not in result
+                    and "ends-with" not in result
+                ):
+                    if (
+                        "major" not in result
+                        and "minor" not in result
+                        and "protocol" not in result
+                    ):
                         avi_version = [
                             "ZERO_NINE",
                             "ONE_ZERO",
                             "ONE_ONE",
                             "zero_nine",
                             "one_zero",
-                            "one_one"]
+                            "one_one",
+                        ]
                         invalid = [
-                            True if val not in avi_version else False for val in list(
-                                result["values"].keys())]
+                            True if val not in avi_version else False
+                            for val in list(result["values"].keys())
+                        ]
                         if all(invalid):
                             LOG.debug(
-                                "All versions %s are invalid", str(
-                                    result["values"].keys()))
+                                "All versions %s are invalid",
+                                str(result["values"].keys()),
+                            )
                             continue
 
                         valid = [
-                            val for val in list(
-                                result["values"].keys()) if val in avi_version]
-                        LOG.debug(
-                            "Only these %s versions are valid", str(valid))
+                            val
+                            for val in list(result["values"].keys())
+                            if val in avi_version
+                        ]
+                        LOG.debug("Only these %s versions are valid", str(valid))
                         version = {
-                            "versions": [
-                                val.upper() for val in valid],
-                            "match_criteria": "IS_NOT_IN" if "not" in result else "IS_IN",
+                            "versions": [val.upper() for val in valid],
+                            "match_criteria": "IS_NOT_IN"
+                            if "not" in result
+                            else "IS_IN",
                         }
                         match["version"] = version
                     elif "protocol" in result:
                         if "not" not in result:
                             avi_protocol = ["HTTP", "HTTPS"]
                             invalid = [
-                                True if val not in avi_protocol else False for val in list(
-                                    result["values"].keys())]
+                                True if val not in avi_protocol else False
+                                for val in list(result["values"].keys())
+                            ]
                             if all(invalid):
                                 LOG.debug(
-                                    "All protocols %s are invalid", str(
-                                        list(
-                                            result["values"].keys())))
+                                    "All protocols %s are invalid",
+                                    str(list(result["values"].keys())),
+                                )
                                 continue
 
                             valid = [
-                                val for val in list(
-                                    result["values"].keys()) if val in avi_protocol]
+                                val
+                                for val in list(result["values"].keys())
+                                if val in avi_protocol
+                            ]
                             LOG.debug(
-                                "Only these protocols %s are valid", str(avi_protocol))
+                                "Only these protocols %s are valid", str(avi_protocol)
+                            )
                             if len(valid) > 1:
                                 LOG.debug(
                                     "Only one value is supported at a "
                                     "time for 'protocol' in operand %s, "
-                                    "taking any one", op)
+                                    "taking any one",
+                                    op,
+                                )
                             protocol = {
                                 "protocols": valid[0],
-                                "match_criteria": "IS_IN"}
+                                "match_criteria": "IS_IN",
+                            }
                             match["protocol"] = protocol
                         else:
                             skip_op.append("not")
                             LOG.debug(
                                 "Condition 'not' not supported for "
-                                "'protocol' in operand %s", op)
+                                "'protocol' in operand %s",
+                                op,
+                            )
                     else:
                         if "major" in result:
                             skip_selector.append("major")
@@ -827,7 +973,8 @@ class PolicyConfigConv(object):
                             LOG.debug(
                                 "Selector '%s' not supported for operand %s",
                                 str(skip_selector),
-                                op)
+                                op,
+                            )
                 else:
                     if "starts-with" in result:
                         skip_op.append("starts-with")
@@ -837,8 +984,10 @@ class PolicyConfigConv(object):
                         skip_op.append("ends-with")
                     if skip_op:
                         LOG.debug(
-                            "Condition '%s' not supported for operand"
-                            " %s", str(skip_op), op)
+                            "Condition '%s' not supported for operand" " %s",
+                            str(skip_op),
+                            op,
+                        )
             elif "http-status" in result:
                 op = "http-status"
                 pol_type = "response" if "response" in result else None
@@ -855,17 +1004,25 @@ class PolicyConfigConv(object):
                         if "values" not in result:
                             LOG.debug(
                                 "Match rule is incomplete, Values are "
-                                "mandatory for operand %s", op)
+                                "mandatory for operand %s",
+                                op,
+                            )
                             continue
                         status = {
-                            "match_criteria": "IS_NOT_IN" if "not" in result else "IS_IN"}
+                            "match_criteria": "IS_NOT_IN"
+                            if "not" in result
+                            else "IS_IN"
+                        }
                         status_code = [
-                            val for val in result["values"].keys() if "-" not in val]
+                            val for val in result["values"].keys() if "-" not in val
+                        ]
                         if status_code:
                             status["status_codes"] = status_code
                         ranges = [
-                            {"begin": stat_code.split(
-                                "-")[0], "end": stat_code.split("-")[1]}
+                            {
+                                "begin": stat_code.split("-")[0],
+                                "end": stat_code.split("-")[1],
+                            }
                             for stat_code in list(result["values"].keys())
                             if "-" in stat_code
                         ]
@@ -887,8 +1044,10 @@ class PolicyConfigConv(object):
                             skip_op.append("missing")
                         if skip_op:
                             LOG.debug(
-                                "Condition '%s' not supported for "
-                                "operand %s", str(skip_op), op)
+                                "Condition '%s' not supported for " "operand %s",
+                                str(skip_op),
+                                op,
+                            )
                 else:
                     if "text" in result:
                         skip_selector.append("text")
@@ -898,12 +1057,12 @@ class PolicyConfigConv(object):
                         LOG.debug(
                             "Selector %s not supported for operand %s",
                             str(skip_selector),
-                            op)
+                            op,
+                        )
             else:
                 LOG.debug(
-                    "Rule match %s not supported for rule %s",
-                    str(result),
-                    each_rule)
+                    "Rule match %s not supported for rule %s", str(result), each_rule
+                )
             if op:
                 skip_set = {op: {}}
                 if skip_selector:
@@ -918,8 +1077,9 @@ class PolicyConfigConv(object):
                     skip_match.append(skip_set)
         return pol_type, match, skip_match
 
-    def create_action_rule(self, action_dict, avi_config,
-                           each_rule, policy_name, cloud_name, tenant):
+    def create_action_rule(
+        self, action_dict, avi_config, each_rule, policy_name, cloud_name, tenant
+    ):
         """
         This method create action dict for each rule
         :param action_dict: f5 action dict
@@ -936,7 +1096,9 @@ class PolicyConfigConv(object):
             if [act for act in action_list if act.get("redirect_action")]:
                 LOG.debug(
                     "Rule '%s' has 'redirect_action' hence, can't have "
-                    "any other action", each_rule)
+                    "any other action",
+                    each_rule,
+                )
                 return
             action = None
             target = None
@@ -950,22 +1112,30 @@ class PolicyConfigConv(object):
                     if "pool" in result:
                         action = {
                             "switching_action": {
-                                "status_code": "HTTP_LOCAL_RESPONSE_STATUS_CODE_200"}}
-                        p_tenant, poolname = conv_utils.get_tenant_ref(
-                            result["pool"])
+                                "status_code": "HTTP_LOCAL_RESPONSE_STATUS_CODE_200"
+                            }
+                        }
+                        p_tenant, poolname = conv_utils.get_tenant_ref(result["pool"])
                         if tenant:
                             p_tenant = tenant
                         if self.prefix:
-                            poolname = '%s-%s' % (self.prefix, poolname)
+                            poolname = "%s-%s" % (self.prefix, poolname)
                         poolobj = [
                             obj
                             for obj in avi_config["Pool"]
-                            if poolname == obj["name"] and conv_utils.get_name(obj["tenant_ref"]) == p_tenant
+                            if poolname == obj["name"]
+                            and conv_utils.get_name(obj["tenant_ref"]) == p_tenant
                         ]
                         if poolobj:
                             pool_ref = conv_utils.get_object_ref(
-                                poolobj[0]["name"], "pool", tenant=p_tenant, cloud_name=cloud_name)
-                            action["switching_action"]["action"] = "HTTP_SWITCHING_SELECT_POOL"
+                                poolobj[0]["name"],
+                                "pool",
+                                tenant=p_tenant,
+                                cloud_name=cloud_name,
+                            )
+                            action["switching_action"][
+                                "action"
+                            ] = "HTTP_SWITCHING_SELECT_POOL"
                             action["switching_action"]["pool_ref"] = pool_ref
 
                             if pool_ref not in used_pools:
@@ -976,21 +1146,26 @@ class PolicyConfigConv(object):
                             pgobj = [
                                 ob
                                 for ob in avi_config["PoolGroup"]
-                                if poolname == ob["name"] and conv_utils.get_name(ob["tenant_ref"]) == p_tenant
+                                if poolname == ob["name"]
+                                and conv_utils.get_name(ob["tenant_ref"]) == p_tenant
                             ]
                             if pgobj:
                                 pg_ref = conv_utils.get_object_ref(
                                     pgobj[0]["name"],
-                                    "poolgroup", tenant=p_tenant, cloud_name=cloud_name)
-                                action["switching_action"]["action"] = "HTTP_SWITCHING_SELECT_POOLGROUP"
+                                    "poolgroup",
+                                    tenant=p_tenant,
+                                    cloud_name=cloud_name,
+                                )
+                                action["switching_action"][
+                                    "action"
+                                ] = "HTTP_SWITCHING_SELECT_POOLGROUP"
                                 action["switching_action"]["pool_group_ref"] = pg_ref
                                 if pg_ref not in used_pools:
                                     used_pools[pg_ref] = set([policy_name])
                                 else:
                                     used_pools[pg_ref].add(policy_name)
                             else:
-                                LOG.debug(
-                                    "No pool/poolgroup '%s' found", poolname)
+                                LOG.debug("No pool/poolgroup '%s' found", poolname)
                                 continue
                     else:
                         if "clone-pool" in result:
@@ -1015,13 +1190,14 @@ class PolicyConfigConv(object):
                             skip_parameter.append("vlan_id")
                         if skip_parameter:
                             LOG.debug(
-                                "Parameter %s not supported for target "
-                                "%s", str(skip_parameter), target)
+                                "Parameter %s not supported for target " "%s",
+                                str(skip_parameter),
+                                target,
+                            )
                 else:
                     if "reset" in result:
                         skip_action.append("reset")
-                        LOG.debug(
-                            "Action 'reset' not supported for target %s", target)
+                        LOG.debug("Action 'reset' not supported for target %s", target)
             elif "http" in result:
                 target = "http"
                 if pol_type == "request":
@@ -1037,28 +1213,34 @@ class PolicyConfigConv(object):
                     else:
                         skip_action.append("disable")
                         LOG.debug(
-                            "Action 'disable' not supported for target "
-                            "%s", target)
+                            "Action 'disable' not supported for target " "%s", target
+                        )
                 else:
                     skip_event.append("response")
-                    LOG.debug(
-                        "Event 'response' not supported for target %s", target)
+                    LOG.debug("Event 'response' not supported for target %s", target)
             elif "http-header" in result:
                 target = "http-header"
                 if "name" not in result:
                     LOG.debug(
                         "Mandatory parameter 'name' is missing for "
-                        "target %s in rule %s", target, each_rule)
+                        "target %s in rule %s",
+                        target,
+                        each_rule,
+                    )
                     continue
-                action = {"hdr_action": [
-                    {"action": "", "hdr": {"name": result["name"]}}]}
+                action = {
+                    "hdr_action": [{"action": "", "hdr": {"name": result["name"]}}]
+                }
                 if "remove" in result:
                     action["hdr_action"][0]["action"] = "HTTP_REMOVE_HDR"
                 elif "replace" in result:
                     if "value" not in result:
                         LOG.debug(
                             "Mandatory parameter 'value' is missing for "
-                            "target %s in rule %s", target, each_rule)
+                            "target %s in rule %s",
+                            target,
+                            each_rule,
+                        )
                         continue
                     action["hdr_action"][0]["action"] = "HTTP_REPLACE_HDR"
                     action["hdr_action"][0]["hdr"]["value"] = {}
@@ -1067,7 +1249,10 @@ class PolicyConfigConv(object):
                     if "value" not in result:
                         LOG.debug(
                             "Mandatory parameter 'value' is missing for "
-                            "target %s in rule %s", target, each_rule)
+                            "target %s in rule %s",
+                            target,
+                            each_rule,
+                        )
                         continue
                     action["hdr_action"][0]["action"] = "HTTP_ADD_HDR"
                     action["hdr_action"][0]["hdr"]["value"] = {}
@@ -1084,7 +1269,12 @@ class PolicyConfigConv(object):
                                 "redirect_action": {
                                     "keep_query": True,
                                     "path": {
-                                        "tokens": [{"str_value": result["location"], "type": "URI_TOKEN_TYPE_STRING"}],
+                                        "tokens": [
+                                            {
+                                                "str_value": result["location"],
+                                                "type": "URI_TOKEN_TYPE_STRING",
+                                            }
+                                        ],
                                         "type": "URI_PARAM_TYPE_TOKENIZED",
                                     },
                                     "protocol": "HTTP",
@@ -1095,38 +1285,57 @@ class PolicyConfigConv(object):
                         else:
                             LOG.debug(
                                 "Mandatory parameter 'location' is "
-                                "missing for target %s in rule %s", target, each_rule)
+                                "missing for target %s in rule %s",
+                                target,
+                                each_rule,
+                            )
                     else:
                         LOG.debug("Action not supported for target %s", target)
                 else:
                     skip_event.append("response")
                     LOG.debug(
-                        "Event 'response' not supported for target "
-                        "'%s' in rule %s", target, each_rule)
+                        "Event 'response' not supported for target " "'%s' in rule %s",
+                        target,
+                        each_rule,
+                    )
             elif "http-host" in result:
                 target = "http-host"
                 if "value" not in result:
                     LOG.debug(
                         "Mandatory parameter 'value' is missing for "
-                        "target %s in rule %s", target, each_rule)
+                        "target %s in rule %s",
+                        target,
+                        each_rule,
+                    )
                     continue
                 if "replace" in result:
-                    action = {"hdr_action": [{"action": "HTTP_REPLACE_HDR", "hdr": {
-                        "name": "host", "value": {"val": result["value"]}}}]}
+                    action = {
+                        "hdr_action": [
+                            {
+                                "action": "HTTP_REPLACE_HDR",
+                                "hdr": {
+                                    "name": "host",
+                                    "value": {"val": result["value"]},
+                                },
+                            }
+                        ]
+                    }
                 else:
                     skip_target.append(target)
                     LOG.debug("Action not supported for target %s", target)
             elif "http-referer" in result:
                 target = "http-referer"
-                action = {"hdr_action": [
-                    {"action": "", "hdr": {"name": "referer"}}]}
+                action = {"hdr_action": [{"action": "", "hdr": {"name": "referer"}}]}
                 if "remove" in result:
                     action["hdr_action"][0]["action"] = "HTTP_REMOVE_HDR"
                 elif "replace" in result:
                     if "value" not in result:
                         LOG.debug(
                             "Mandatory parameter 'value' is missing for "
-                            "target %s in rule %s", target, each_rule)
+                            "target %s in rule %s",
+                            target,
+                            each_rule,
+                        )
                         continue
                     action["hdr_action"][0]["action"] = "HTTP_REPLACE_HDR"
                     action["hdr_action"][0]["hdr"]["value"] = {}
@@ -1135,7 +1344,10 @@ class PolicyConfigConv(object):
                     if "value" not in result:
                         LOG.debug(
                             "Mandatory parameter 'value' is missing for "
-                            "target %s in rule %s", target, each_rule)
+                            "target %s in rule %s",
+                            target,
+                            each_rule,
+                        )
                         continue
                     action["hdr_action"][0]["action"] = "HTTP_ADD_HDR"
                     action["hdr_action"][0]["hdr"]["value"] = {}
@@ -1148,14 +1360,22 @@ class PolicyConfigConv(object):
                 if "value" not in result:
                     LOG.debug(
                         "Mandatory parameter 'value' is missing for "
-                        "target %s in rule %s", target, each_rule)
+                        "target %s in rule %s",
+                        target,
+                        each_rule,
+                    )
                     continue
                 if "replace" in result:
                     if "path" in result:
                         action = {
                             "rewrite_url_action": {
                                 "path": {
-                                    "tokens": [{"str_value": result["value"], "type": "URI_TOKEN_TYPE_STRING"}],
+                                    "tokens": [
+                                        {
+                                            "str_value": result["value"],
+                                            "type": "URI_TOKEN_TYPE_STRING",
+                                        }
+                                    ],
                                     "type": "URI_PARAM_TYPE_TOKENIZED",
                                 },
                                 "query": {"keep_query": True},
@@ -1166,14 +1386,19 @@ class PolicyConfigConv(object):
                             "rewrite_url_action": {
                                 "query": {
                                     "keep_query": True,
-                                    "add_string": result["value"]}}}
+                                    "add_string": result["value"],
+                                }
+                            }
+                        }
                     else:
                         if "name" in result:
                             skip_parameter.append("name")
                         if skip_parameter:
                             LOG.debug(
-                                "Parameter %s not supported for target "
-                                "%s", str(skip_parameter), target)
+                                "Parameter %s not supported for target " "%s",
+                                str(skip_parameter),
+                                target,
+                            )
                 else:
                     skip_target.append(target)
                     LOG.debug("Action not supported for target %s", target)
@@ -1183,17 +1408,15 @@ class PolicyConfigConv(object):
                     log_dict = {"log": True, "all_headers": False}
                 else:
                     skip_event.append("response")
-                    LOG.debug(
-                        "Event 'response' not supported for target %s", target)
+                    LOG.debug("Event 'response' not supported for target %s", target)
             elif "l7dos" in result:
                 target = "l7dos"
                 skip_target.append(target)
                 LOG.debug("Datascript can be used for action %s", str(result))
             else:
                 LOG.debug(
-                    "Rule action %s not supported for rule %s",
-                    str(result),
-                    each_rule)
+                    "Rule action %s not supported for rule %s", str(result), each_rule
+                )
             if target:
                 sk_set = {target: {}}
                 if skip_action:
