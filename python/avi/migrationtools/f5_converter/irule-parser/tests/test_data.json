@@ -27,7 +27,9 @@
     ],
     "statement": [
         "log local0. \"ah.manage.mcafee.com.access.irule dropped connection from [IP::client_addr] to [HTTP::uri]\"",
-        "    switch [whereis [IP::client_addr] country] {\n        \"CU\" -\n        \"IR\" -\n        \"KP\" -\n        \"SD\" -\n        \"SY\" {\n            # Reset the TCP connection\n            reject\n        }\n    }",
+        "    switch [whereis [IP::client_addr] country] {\n        \"CU\" -\n        \"IR\" -\n        \"KP\" -\n        \"SD\" -\n        \"SY\" {\n            # Reset the TCP connection\n            reject\n        }\n    }"
+    ],
+    "commentstatement": [
         "    # Get the country client IP"
     ],
     "when": [
@@ -46,5 +48,9 @@
         "not (([HTTP::uri] contains \"/ws-polling/\"))",
         "not (( [class match [IP::client_addr] equals mcafee_ips]) || ([class match [IP::client_addr] equals intel_ips]))  ",
         "($my_uri starts_with \"/remote/\") or ($my_uri eq \"/core/config\")"
+    ],
+    "header_statement": [
+        "HTTP::header remove Content-Length",
+        "HTTP::header insert \"X-SOURCE\" \"Akamai\""
     ]
 }

@@ -4,8 +4,8 @@ import yaml
 import os
 
 root_dir = os.path.dirname(os.path.abspath(__file__))
-irule_name = "name"
 
+irule_name = 'irule_name'
 
 def fill_template(template_path, values):
     with open(template_path, "r") as f:
@@ -19,29 +19,16 @@ def parse_filled_yaml(filled_yaml_str):
     return yaml.safe_load(filled_yaml_str)
 
 
-# Load the YAML template and replace placeholders
-# Parse the filled YAML string
-
-
 def process_rule(toks):
-    return toks.when[0]
+    return {'avi_config': {'http_request_policy': toks.when[0], 'name': toks.rule_name}, 'rule_name': toks.rule_name, 'type': 'HTTPPolicySet'}
 
 
 def process_when(toks):
-    print(toks.statements)
     statement = toks.statements[0]
-    data = {"name": irule_name}
-    if isinstance(statement, dict) and "index" in statement:
-        filled_yaml_str = fill_template(root_dir + "/templates/redirect.yml", data)
-        data = parse_filled_yaml(filled_yaml_str)
-        data[0]["avi_config"]["http_request_policy"] = {}
-        data[0]["avi_config"]["http_request_policy"]["rules"] = statement
-        return data
     return statement
 
 
 def process_respond_statement(toks):
-    print(toks.respond_code)
     if toks.respond_code == "301":
         data = {"name": irule_name, "status_code": "HTTP_REDIRECT_STATUS_CODE_301"}
         filled_yaml_str = fill_template(root_dir + "/templates/redirect_rule.yml", data)
@@ -54,19 +41,18 @@ def process_respond_statement(toks):
         return data
     return toks
 
-
 def process_name(toks):
-    if toks.name:
-        global irule_name
-        irule_name = toks.name.split("/")[-1]
+    global irule_name
+    irule_name = toks[0].split("/")[-1]
+    return irule_name
 
 
 def process_switch_case(toks):
     if toks.match_str and toks.switch_action:
         if "redirect" not in toks.switch_action[0][0][0]:
             data = {
-                "pool_name": toks.switch_action[0][0][1],
-                "match_str": toks.match_str[0][1],
+                "pool_name": toks.switch_action[0][0],
+                "match_str": toks.match_str[0],
                 "rule_name": irule_name,
             }
             filled_yaml_str = fill_template(
@@ -78,15 +64,37 @@ def process_switch_case(toks):
 
 
 def process_switch(toks):
-    with open(root_dir + "/templates/switch.yml", "r") as f:
-        content = f.read()
-        data = yaml.safe_load(content)
-        data[0]["avi_config"]["http_request_policy"] = {}
-        http_request_policy = data[0]["avi_config"]["http_request_policy"]
-        http_request_policy["rules"] = []
-        for idx, switch_case in enumerate(toks.switch_cases, 1):
-            switch_case["index"] = idx
-            http_request_policy["rules"].append(switch_case)
+    http_request_policy = {}
+    http_request_policy["rules"] = []
+    idx = 1
+    match_list = []
+    while idx <= len(toks.switch_cases):
+        switch_case = toks.switch_cases[idx - 1]
+        if isinstance(switch_case, str):
+            match_list.append(switch_case)
+            idx += 1
+            continue
+        match_list.extend(switch_case['match']['path']['match_str'])
+        switch_case["index"] = idx
+        http_request_policy["rules"].append(switch_case)
+        idx += 1
+    return http_request_policy
+
+def process_header_statement(toks):
+    http_request_policy = {}
+    http_request_policy["rules"] = []
+    rules = http_request_policy["rules"]
+    rules.append({"header_action": toks['header_op']})
+    return http_request_policy
+
+def process_header_op(toks):
+    data = {'header_name': toks.header_name[0], 'header_op': toks.op}
+    filled_yaml_str = fill_template(root_dir+"/templates/header_op.yml", data)
+    data = parse_filled_yaml(filled_yaml_str)
+    data['action'] = 'HTTP_REMOVE_HDR' if data['action'] == 'remove' else 'HTTP_REPLACE_HDR'
+    if 'header_val' in toks:
+        data['hdr']['value'] = {}
+        data['hdr']['value']['val'] = toks['header_val'][0]
     return data
 
 
@@ -130,11 +138,9 @@ CloseBrace = pp.Literal("}").suppress()
 StringPart = (
     (~UnaryOperator + pp.Word(pp.alphanums + "_/.-:*")) | Variable | FunctionCall
 )
-String = pp.Group(pp.Literal('"') + pp.ZeroOrMore(StringPart) + pp.Literal('"'))
+String = pp.Literal('"').suppress() + pp.ZeroOrMore(StringPart) + pp.Literal('"').suppress()
 Value << (StringPart | String)
-RuleName = pp.Combine(pp.Char("/") + pp.Word(pp.alphanums + "_-./")).set_parse_action(
-    process_name
-)
+RuleName = pp.Combine(pp.Char("/") + pp.Word(pp.alphanums + "_-./")).set_parse_action(process_name)
 Number = pp.Word(pp.nums)
 
 
@@ -158,7 +164,7 @@ Condition << (base_condition | unary_condition | binary_condition | nested_condi
 
 
 Priority = pp.Literal("priority") + Number
-Comment = pp.Group(pp.Literal("#") + pp.restOfLine)
+Comment = (pp.Literal("#") + pp.restOfLine).suppress()
 
 ComplexString = String | pp.Combine(String + Variable + String)
 Expression = pp.Or([ComplexString, String, Variable, FunctionCall, LogicOperator])
@@ -169,9 +175,7 @@ Statement = pp.Forward()
 # Switch case statement
 SwitchCase = (
     (String | Keyword)("match_str")
-    + (pp.Suppress("-") | pp.nestedExpr("{", "}", content=pp.OneOrMore(Statement)))(
-        "switch_action"
-    )
+    + (pp.Suppress("-") | pp.nestedExpr("{", "}", content=pp.OneOrMore(Statement)))("switch_action")
 ).set_parse_action(process_switch_case)
 Switch = (
     pp.Literal("switch")
@@ -194,27 +198,32 @@ IfBlock = pp.Group(
 )
 IfBlockContent << (IfBlock | Statement)
 
+HeaderOp = (pp.Literal("remove")("op") + (String | StringPart)("header_name")
+            | pp.Literal("insert")("op") + String("header_name") + String("header_val")).set_parse_action(process_header_op)
+
+HeaderStatement = (pp.Literal("HTTP::header") + HeaderOp('header_op')).set_parse_action(process_header_statement)
+
+RuleStatement = ((pp.Literal("HTTP::respond") + Number("respond_code") + Keyword + Expression).set_parse_action(process_respond_statement)
+                 | (pp.Literal("HTTP::redirect") + String("redirect_url"))
+                 | HeaderStatement)
+
 # Statements inside a when block
 SetStatement = pp.Group(pp.Literal("set") + Keyword + FunctionCall)
-Statement << (
-    (
-        pp.Literal("HTTP::respond") + Number("respond_code") + Keyword + Expression
-    ).set_parse_action(process_respond_statement)
-    | pp.Group(pp.Literal("HTTP::redirect") + String)
-    | IfBlock
-    | Switch
-    | Comment
-    | pp.Literal("drop")
-    | pp.Literal("discard")
-    | pp.Literal("return")
-    | pp.Literal("reject")
-    | pp.Literal("persist") + pp.Literal("none")
-    | pp.Literal("log") + pp.Optional(StringPart) + String
-    | SetStatement
-    | pp.Group(pp.Literal("pool") + Value)
-    | pp.Group(Variable + Expression)
-    | pp.Group(Variable + Number + Keyword + Expression)
-)
+
+Statement << (RuleStatement
+              | IfBlock
+              | Switch
+              | Comment
+              | pp.Literal("drop")
+              | pp.Literal("discard")
+              | pp.Literal("return")
+              | pp.Literal("reject")
+              | pp.Literal("persist") + pp.Literal("none")
+              | pp.Literal("log") + pp.Optional(StringPart) + String
+              | SetStatement
+              | pp.Group(pp.Literal("pool") + Value)
+              | pp.Group(Variable + Expression)
+              | pp.Group(Variable + Number + Keyword + Expression))
 
 # Main when block
 WhenBlock = (
@@ -230,7 +239,7 @@ WhenBlock = (
 Rule = (
     pp.Literal("ltm")
     + pp.Literal("rule")
-    + RuleName("name")
+    + RuleName("rule_name")
     + pp.Literal("{")
     + pp.ZeroOrMore(Comment)
     + pp.OneOrMore(WhenBlock)("when")
@@ -252,3 +261,10 @@ if __name__ == "__main__":
     result = parse_input(f5_conf_details)
     print("result", result)
     yaml.dump(result[0], open(root_dir + "/output.yml", "w"))
+
+    header = "HTTP::header insert \"X-SOURCE\" \"Akamai\""
+    res = HeaderStatement.parse_string(header)
+    print(res)
+    header = "HTTP::header remove Content-Length"
+    res = HeaderStatement.parse_string(header)
+    print(res)
