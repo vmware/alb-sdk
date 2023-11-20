@@ -33,7 +33,7 @@ type IcapProfile struct {
 	// Use the ICAP preview feature as described in RFC 3507 section 4.5. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnablePreview *bool `json:"enable_preview,omitempty"`
 
-	// Decide what should happen if there is a problem with the ICAP server like communication timeout, protocol error, pool error, etc. If this is set to Fail Open, the request will continue, but will create a significant log entry. If this is set to Fail Closed, the request will be rejected with a 500 status code. Enum options - ICAP_FAIL_OPEN, ICAP_FAIL_CLOSED. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Decide what should happen if there is a problem with the ICAP server like communication timeout, protocol error, pool error, etc. If the ICAP server responds with 4xx-5xx error code the configured fail action is performed. If this is set to Fail Open, the request will continue, but will create a significant log entry. If this is set to Fail Closed, the request will be rejected with a 500 status code. Enum options - ICAP_FAIL_OPEN, ICAP_FAIL_CLOSED. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	FailAction *string `json:"fail_action,omitempty"`
 
 	// Name of the ICAP profile. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
