@@ -475,7 +475,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private ObjSyncConfig objsyncConfig = null;
 
     @JsonProperty("objsync_port")
-    private Integer objsyncPort = 9001;
+    private Integer objsyncPort = 4001;
 
     @JsonProperty("openstack_availability_zones")
     private List<String> openstackAvailabilityZones = null;
@@ -4932,7 +4932,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1024-65535.
      * Field introduced in 20.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 9001.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 4001.
      * @return objsyncPort
      */
     public Integer getObjsyncPort() {
@@ -4948,7 +4948,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Allowed values are 1024-65535.
      * Field introduced in 20.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as 9001.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 4001.
      * @param objsyncPort set the objsyncPort.
      */
     public void setObjsyncPort(Integer  objsyncPort) {
