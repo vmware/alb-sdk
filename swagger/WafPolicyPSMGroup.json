@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "22.1.5",
+        "version": "22.1.6",
         "title": "Avi WafPolicyPSMGroup Object API",
         "contact": {
             "name": "Avi Networks Inc.",
