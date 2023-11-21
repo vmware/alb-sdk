@@ -430,7 +430,7 @@ if __name__ == "__main__":
                              'custom ref')
     parser.add_argument('--traffic_enabled',
                         help='Traffic Enabled on all migrated VS VIPs',
-                        action="store_true")
+                        action="store_false")
     # Added command line args to execute vs_filter.py with vs_name.
     parser.add_argument('--vs_filter',
                         help='comma separated names of virtualservices.\n'
@@ -441,7 +441,8 @@ if __name__ == "__main__":
                         help='Add columns of vs reference and overall skipped '
                              'settings in status excel sheet')
     parser.add_argument('-s', '--vs_state', choices=ARG_CHOICES['vs_state'],
-                        help='State of created VS')
+                        help='State of created VS',
+                         default="deactivate")
 
 
     start = datetime.now()

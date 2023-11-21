@@ -173,11 +173,11 @@ class VSConfigConv:
 
                     avi_vs = dict(
                         name=vs_name,
-                        enabled=True,
+                        enabled=False,
                         performance_limits=performance_limits,
                         services=services,
                         cloud_ref=conv_utils.get_object_ref(cloud_name, "cloud"),
-                        traffic_enabled=False,
+                        traffic_enabled=True,
                     )
                     avi_vs["tenant_ref"] = conv_utils.get_object_ref(
                         tenant, "tenant")
@@ -185,7 +185,7 @@ class VSConfigConv:
                     if v_vs.get("ipAddress") not in self.vs_vip_obj_dict.keys():
                         avi_vsvip_obj = self.create_vsvip(v_vs, edge_name)
                         avi_vsvip_obj["cloud_ref"] = avi_vs.get("cloud_ref")
-                        avi_vsvip_obj["tennat_ref"] = conv_utils.get_object_ref(
+                        avi_vsvip_obj["tenant_ref"] = conv_utils.get_object_ref(
                             tenant, "tenant"
                         )
                         avi_config_dict["VsVip"].append(avi_vsvip_obj)

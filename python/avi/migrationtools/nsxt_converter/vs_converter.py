@@ -177,7 +177,7 @@ class VsConfigConv(object):
                     enabled = (vs_state == 'enable')
                 alb_vs = dict(
                     name=name,
-                    traffic_enabled=(enabled and traffic_enabled),
+                    traffic_enabled=traffic_enabled,
                     enabled=enabled,
                     cloud_ref=conv_utils.get_object_ref(cloud_name, 'cloud', cloud_tenant=cloud_tenant),
                     tenant_ref=conv_utils.get_object_ref(tenant, 'tenant')
