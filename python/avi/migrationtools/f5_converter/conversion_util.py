@@ -1606,9 +1606,7 @@ class F5Util(MigrationUtil):
             if data["F5_ID"] in json_dict.keys():
                 data["Vs_Mappings"] = json_dict[data["F5_ID"]]
             if data["Avi_Object"]:
-                df_json["status_sheet"][ind]["Avi_Object"] = ast.literal_eval(
-                    data["Avi_Object"]
-                )
+                df_json["status_sheet"][ind]["Avi_Object"] = ast.literal_eval(data["Avi_Object"])
         sorted_data = {}
         global f5_config_status
         for each_row in df_json["status_sheet"]:
@@ -2955,7 +2953,7 @@ class F5Util(MigrationUtil):
         f5_not_supported = ["VrfContext", "VsVip", "Cloud", "Tenant"]
         data_set = []
 
-        def get_vs_tree(vs, each_vs, top_level_entity=None):
+        def get_vs_tree(vs, each_vs):
             for each_key in each_vs:
                 data = {
                     "F5_type": None,
@@ -2975,16 +2973,17 @@ class F5Util(MigrationUtil):
                     data["avi_objects"].append(dataset)
                     if avi_conf_key in f5_not_supported or name.startswith("System"):
                         continue
-                    data["F5_ID"] = f5_of_avi[avi_conf_key][name]["F5_ID"]
-                    if "F5_SubType" in f5_of_avi[avi_conf_key][name].keys():
-                        data["F5_SubType"] = f5_of_avi[avi_conf_key][name]["F5_SubType"]
-                    data["F5_type"] = f5_of_avi[avi_conf_key][name]["F5_type"]
-                    val = df.query(
-                        "`F5_ID` == '%s' and `F5_type` == '%s'"
-                        % (data["F5_ID"], data["F5_type"])
-                    )
-                    data["Status"] = val.Status.values[0]
-                    data_set.append(data)
+                    if f5_of_avi.get(avi_conf_key).get(name):
+                        data["F5_ID"] = f5_of_avi.get(avi_conf_key).get(name).get("F5_ID")
+                        if "F5_SubType" in f5_of_avi.get(avi_conf_key).get(name).keys():
+                            data["F5_SubType"] = f5_of_avi[avi_conf_key][name]["F5_SubType"]
+                        data["F5_type"] = f5_of_avi.get(avi_conf_key).get(name).get("F5_type")
+                        val = df.query(
+                            "`F5_ID` == '%s' and `F5_type` == '%s'"
+                            % (data["F5_ID"], data["F5_type"])
+                        )
+                        data["Status"] = val.Status.values[0]
+                        data_set.append(data)
                     config = {}
                     for obj in avi_config[avi_conf_key]:
                         if name == obj.get("name"):
@@ -3008,17 +3007,18 @@ class F5Util(MigrationUtil):
                                     data_set[index]["avi_objects"].append(dataset)
                                     break
                             continue
-                        data["F5_ID"] = f5_of_avi[avi_conf_key][name]["F5_ID"]
-                        if "F5_SubType" in f5_of_avi[avi_conf_key][name].keys():
-                            data["F5_SubType"] = f5_of_avi[avi_conf_key][name][
-                                "F5_SubType"
-                            ]
-                        data["F5_type"] = f5_of_avi[avi_conf_key][name]["F5_type"]
-                        val = df.query(
-                            "`F5_ID` == '%s' and `F5_type` == '%s'"
-                            % (data["F5_ID"], data["F5_type"])
-                        )
-                        data["Status"] = val.Status.values[0]
+                        if f5_of_avi.get(avi_conf_key).get(name):
+                            data["F5_ID"] = f5_of_avi[avi_conf_key][name]["F5_ID"]
+                            if "F5_SubType" in f5_of_avi.get(avi_conf_key).get(name).keys():
+                                data["F5_SubType"] = f5_of_avi[avi_conf_key][name][
+                                    "F5_SubType"
+                                ]
+                            data["F5_type"] = f5_of_avi[avi_conf_key][name]["F5_type"]
+                            val = df.query(
+                                "`F5_ID` == '%s' and `F5_type` == '%s'"
+                                % (data["F5_ID"], data["F5_type"])
+                            )
+                            data["Status"] = val.Status.values[0]
                         data_set.append(data)
                 avi_object.append(data_set)
 

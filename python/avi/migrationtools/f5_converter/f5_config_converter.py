@@ -201,15 +201,15 @@ def convert(f5_config, output_dir, vs_state, input_dir, version,
                     {"warning": f5_type + " object not applicable"},
                 )
             elif f5_type in accept_list:
-                msg = "skipped because of object associated \
-                with this is skipped"
-
+                msg = "skipped because of object associated with this is skipped"
+                strMsg = dict()
+                strMsg["warning"] = f5_type + msg
                 conv_utils.add_status_row(
                     f5_type,
                     sub_type,
                     key,
                     conv_const.STATUS_SKIPPED,
-                    f5_type + msg)
+                    strMsg)
             else:
                 conv_utils.add_status_row(
                     f5_type, sub_type, key, conv_const.STATUS_NOT_SUPPORTED)

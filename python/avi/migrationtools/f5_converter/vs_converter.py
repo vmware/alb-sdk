@@ -152,6 +152,7 @@ class VSConfigConv(object):
             progressbar_count += 1
             try:
                 LOG.debug("Converting VS: %s", vs_name)
+                strMsg = dict()
                 f5_vs = vs_config[vs_name]
                 vs_type = [key for key in f5_vs.keys() if key in self.unsupported_types]
                 if vs_type:
@@ -160,22 +161,25 @@ class VSConfigConv(object):
                         vs_name,
                     )
                     LOG.warning(msg)
+                    strMsg["warning"] = msg
                     conv_utils.add_status_row(
-                        "virtual", None, vs_name, final.STATUS_SKIPPED, msg
+                        "virtual", None, vs_name, final.STATUS_SKIPPED, strMsg
                     )
                     continue
                 if skip_disabled_vs and "disabled" in f5_vs.keys():
                     msg = "VS : Skipping %s , As it is disabled on f5 " % (vs_name)
                     LOG.warning(msg)
+                    strMsg["warning"] = msg
                     conv_utils.add_status_row(
-                        "virtual", None, vs_name, final.STATUS_SKIPPED, msg
+                        "virtual", None, vs_name, final.STATUS_SKIPPED, strMsg
                     )
                     continue
                 if skip_disabled_vs and "disabled" in f5_vs.keys():
                     msg = "VS : Skipping %s , As it is disabled on f5 " % (vs_name)
                     LOG.warn(msg)
+                    strMsg["warning"] = msg
                     conv_utils.add_status_row(
-                        "virtual", None, vs_name, final.STATUS_SKIPPED, msg
+                        "virtual", None, vs_name, final.STATUS_SKIPPED, strMsg
                     )
                     continue
                 mapping = self.create_partition_mapping(f5_vs, vs_name)
@@ -902,6 +906,8 @@ class VSConfigConv(object):
                     " for vs : %s" % vs_name
                 )
                 LOG.debug(msg)
+                strMsg = dict()
+                strMsg["warning"] = msg
                 conv_status = {"status": final.STATUS_SKIPPED}
                 skipped.append(
                     "source-address-translation"
@@ -911,7 +917,7 @@ class VSConfigConv(object):
                     else None
                 )
                 conv_utils.add_conv_status(
-                    "snatpool", "", snat_pool_name, conv_status, msg
+                    "snatpool", "", snat_pool_name, conv_status, strMsg
                 )
 
         if ntwk_prof:
@@ -1074,7 +1080,7 @@ class VSConfigConv(object):
                     if pol_tenant == tenant:
                         avi_config["HTTPPolicySet"].append(clone_policy)
                         f5_of_avi["HTTPPolicySet"].update(
-                            {vs_name: f5_of_avi["HTTPPolicySet"][vs_name]}
+                            {vs_name: f5_of_avi["HTTPPolicySet"][policy_obj[0].get('name')]}
                         )
                         LOG.debug("Policy cloned %s for vs %s", pol_name, vs_name)
                         if policy_obj[0]["name"] in http_to_https_policy_rule:

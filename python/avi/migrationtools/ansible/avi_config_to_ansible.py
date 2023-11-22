@@ -19,7 +19,7 @@ from copy import deepcopy
 
 import argparse
 import yaml
-
+import os
 from avi.migrationtools.ansible.ansible_config_converter import \
     AviAnsibleConverterBase
 from avi.migrationtools.ansible.ansible_constant import DEFAULT_SKIP_TYPES
@@ -27,10 +27,13 @@ from avi.migrationtools.ansible.ansible_constant import DEFAULT_SKIP_TYPES
 
 class AviAnsibleConverter(AviAnsibleConverterBase):
 
-    def __init__(self, avi_cfg, outdir, skip_types=None, filter_types=None,
+    def __init__(self, avi_cfg, outdir, name=None, skip_types=None, filter_types=None,
                  controller_version=None):
         self.outdir = outdir
         self.avi_cfg = avi_cfg
+        self.name = name
+        if not os.path.exists(self.outdir):
+            os.makedirs(self.outdir)
         if 'META' in avi_cfg and avi_cfg['META']['version']['Version']:
             self.api_version = avi_cfg['META']['version']['Version']
         else:
@@ -122,7 +125,7 @@ class AviAnsibleConverter(AviAnsibleConverterBase):
             if obj_type not in self.avi_cfg or obj_type in self.skip_types:
                 continue
             self.build_ansible_objects(obj_type, self.avi_cfg[obj_type], ad)
-        with open('%s/avi_config.yml' % self.outdir, "w") as outf:
+        with open('%s/%s.yml' % (self.outdir, self.name), "w") as outf:
             outf.write('# Auto-generated from Avi Configuration\n')
             outf.write('---\n')
             yaml.safe_dump([ad], outf, default_flow_style=False, indent=2, sort_keys=False)
@@ -138,7 +141,7 @@ class AviAnsibleConverter(AviAnsibleConverterBase):
                 v['api_version'] = self.api_version
         ad['tasks'] = tasks
         ad['vars']['state'] = 'absent'
-        with open('%s/avi_config_delete.yml' % self.outdir, "w") as outf:
+        with open('%s/%s_delete.yml' % (self.outdir, self.name), "w") as outf:
             outf.write('# Auto-generated from Avi Configuration\n')
             outf.write('---\n')
             yaml.safe_dump([ad], outf, default_flow_style=False, indent=2, sort_keys=False)
@@ -186,6 +189,8 @@ if __name__ == '__main__':
         default='avi_config.json')
     parser.add_argument('-o', '--output_dir', help='Ansible dir',
                         default='.')
+    parser.add_argument("-n", "--name", help="name of the output file.",
+                        default="avi_config")
     parser.add_argument(
         '-s', '--skip_types',
         help='Comma separated list of Avi Object types to skip during conversion.\n  Eg. -s DebugController,ServiceEngineGroup will skip debugcontroller and serviceengine objects',
@@ -208,7 +213,7 @@ if __name__ == '__main__':
     with open(args.config_file, "r+") as f:
         avi_cfg = json.loads(f.read())
         aac = AviAnsibleConverter(
-            avi_cfg, args.output_dir, skip_types=args.skip_types,
+            avi_cfg, args.output_dir, args.name, skip_types=args.skip_types,
             filter_types=args.filter_types, controller_version=args.controller_version)
         if not args.yaml:
             aac.write_ansible_playbook()
