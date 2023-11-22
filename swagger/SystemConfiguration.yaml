@@ -817,6 +817,14 @@ definitions:
             proxy_configuration:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ProxyConfiguration'
+            rekey_time_limit:
+                description: "Users can specify and update the time limit of RekeyLimit in sshd_config.If nothing is specified, the default setting will be none. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+                default: "none"
+            rekey_volume_limit:
+                description: "Users can specify and update the size/volume limit of RekeyLimit in sshd_config.If nothing is specified, the default setting will be default. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+                default: "default"
             secure_channel_configuration:
                 description: "Configure Secure Channel properties. Field introduced in 18.1.4, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SecureChannelConfiguration'
