@@ -162,6 +162,8 @@ class F5Converter(AviConverter):
         # Created f5 util object.
         self.conversion_util = F5Util()
         self.excel_mappings = args.excel_mappings
+        self.autogen_irules = args.autogen_irules
+        self.use_avi_config = args.use_avi_config
 
     def print_pip_and_controller_version(self):
         """
@@ -228,10 +230,7 @@ class F5Converter(AviConverter):
         if self.ignore_config:
             with open(self.ignore_config) as stream:
                 user_ignore = yaml.safe_load(stream)
-        custom_mappings = None
-        if self.custom_config:
-            with open(self.custom_config) as stream:
-                custom_mappings = yaml.safe_load(stream)
+        
         partitions = []
         # Add logger and print avi f5 converter version
         self.print_pip_and_controller_version()
@@ -335,8 +334,20 @@ class F5Converter(AviConverter):
         report_name = os.path.splitext(os.path.basename(source_file.name))[0]
         start = datetime.now()
 
-        migrated_ciphers_dict = {}
-        migrated_ciphers_group_dict = {}
+        
+        # irule parsing
+        irule_dis=iRuleDiscovery(bigip_conf_path,self.f5_tenant)
+        
+        custom_mappings = None
+        if self.custom_config:
+            with open(self.custom_config) as stream:
+                custom_mappings = yaml.safe_load(stream)
+        elif self.autogen_irules:        
+            custom_mappings = irule_dis.load_irule_custom_config(output_dir)
+            
+        migrated_ciphers_dict={}
+        migrated_ciphers_group_dict={}
+
         if is_download_from_host:
             cipher_conv = CiphersConfigConv(
                 self.f5_host_ip,
@@ -395,12 +406,14 @@ class F5Converter(AviConverter):
                 avi_config = str(avi_config).replace(row["Current IP"], row["New IP"])
             avi_config = eval(avi_config)
             LOG.debug("Avi config updated with Excel Mappings")
-        self.write_output(avi_config, output_dir, "%s-Output.json" % report_name)
 
+        
+        self.write_output(avi_config, output_dir, '%s-Output.json' %
+                          report_name)
+        
         # Irule discovery
-        irule_dis = iRuleDiscovery(bigip_conf_path, self.f5_tenant)
-        irule_dis.get_irule_discovery(output_dir, report_name)
-
+        irule_dis.get_irule_discovery(output_dir,report_name)
+        
         if self.vs_filter:
             F5Util().remove_vs_names_when_vs_filter_is_provided(
                 output_dir=output_dir, report_name=report_name, vs_names=self.vs_filter
@@ -854,11 +867,6 @@ if __name__ == "__main__":
         action="store_true",
     )
     parser.add_argument(
-        "--custom_config",
-        help="iRule/monitor custom mapping yml file path.\
-            (File containing converted iRules or health monitors)",
-    )
-    parser.add_argument(
         "--distinct_app_profile",
         action="store_true",
         help="Option to create distinct application profile for"
@@ -1009,6 +1017,22 @@ if __name__ == "__main__":
         help="Run the discovery tool for f5 converter",
         action="store_true",
     )
+    parser.add_argument(
+        "--custom_config",
+        help="iRule/monitor custom mapping yml file path.\
+            (File containing converted iRules or health monitors)",
+    )
+    parser.add_argument(
+        "--autogen_irules",
+        help="flag to auto generate irules custom config",
+        action="store_true",
+    )
+    parser.add_argument(
+        "--use_avi_config",
+        help="flag to use avi config for creating custom config",
+        action="store_true",
+    )
+    
 
     terminal_args = parser.parse_args()
     args = get_terminal_args(terminal_args)
@@ -1050,3 +1074,4 @@ if __name__ == "__main__":
         )
     else:
         f5_converter.convert()
+        

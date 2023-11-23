@@ -4,6 +4,10 @@ import xlsxwriter
 from openpyxl import load_workbook
 import os
 import pandas
+import yaml
+import json
+from avi.migrationtools.f5_converter.irule_parser.irule_parser import parse_irule_for_f5_conv
+from avi.migrationtools.f5_converter.irule_parser.extract_irule import extract_irule_from_config
 
 irule_list=[]
 
@@ -32,7 +36,9 @@ class iRuleDiscovery():
 
         for line in lines:
             match = re.search(self.pattern, line)
+            
             if match:
+                
                 new_line = match.group()
                 num_lines += 1
                 irule_list.append(match.group())
@@ -60,7 +66,7 @@ class iRuleDiscovery():
             j = 1
             irule_name=irule_list[i]
             self.irule_discovery_data[irule_name]=[]
-            while j <= len(vs_list):
+            while j < len(vs_list):
                 if irule_name in vs_list[j]:
                     vs_name = re.search(self.vs_pattern , vs_list[j])
                     if vs_name:
@@ -94,9 +100,35 @@ class iRuleDiscovery():
        
         df.to_excel(main_writer, "Irule Discovery")
         main_writer.close()
-         
+        
+        # append irule discovery data to converted json file
+        convertedstatus_path = output_dir + os.path.sep + "%s-ConversionStatus.json" % \
+                                                 report_name
+        listObj = dict()
+        with open(convertedstatus_path) as fp:
+            listObj = json.load(fp)
+        
+            listObj["Irule_discovery"]=[]
+            for irule,vs in self.irule_discovery_data.items():
+                irule_dict={
+                    "Irule":irule,
+                    "Vs" : vs,
+                    "vs_count":len(vs)
+                }
+                listObj["Irule_discovery"].append(irule_dict)
+            
+        with open(convertedstatus_path, 'w') as json_file:
+            json.dump(listObj, json_file, 
+                    indent=4)
 
+    def load_irule_custom_config(self,output_dir):
 
-
-
-
+        with open(self.f5_config, "r") as file:
+            bigip_conf = file.read()
+        f5_irule_data = extract_irule_from_config(bigip_conf)
+        irule_custom_config = parse_irule_for_f5_conv(f5_irule_data)
+        yaml_data={"irule_custom_config":irule_custom_config}
+        
+        yaml.dump(yaml_data, open(output_dir+'/autogen_irules.yaml', 'w'))
+        return yaml_data
+            

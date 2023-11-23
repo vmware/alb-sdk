@@ -581,6 +581,8 @@ VERSION_11:
     - "partition"
     - "mirror"
     - "nat64"
+    - "rules"
+    
 
     VS_na_attr:
     - 'vs-index'
@@ -1118,6 +1120,7 @@ VERSION_10:
     - 'source'
     - 'limit'
     - "mirror"
+    - "rules"
 
     VS_na_attr:
     - 'vs-index'

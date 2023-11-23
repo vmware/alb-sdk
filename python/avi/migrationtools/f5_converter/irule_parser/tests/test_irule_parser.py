@@ -2,12 +2,16 @@ import sys
 sys.path.append('..')
 import pytest
 import irule_parser as ip
+import extract_irule as ep
 import json
 
 def load_data(key):
     return json.load(open('test_data.json', 'r'))[key]
 
-
+def load_f5_conf_file():
+    with open('f5_data.conf', "r") as file:
+        return file.read()
+        
 class TestIruleParser:
     # Test Data
     parser_test_data = load_data('irule')
@@ -126,3 +130,11 @@ class TestAviConfigGeneration:
 
         # Use an assertion to verify the expected outcome
         assert result == expected_outcome, f"Expected {expected_outcome}, but got {result}"
+
+class TestIruleExport:
+    def test_extract_irule_from_f5_conf(self):
+        #call the function to export irule data from f5 configuration
+        bigip_conf = load_f5_conf_file()
+        f5_irule_data = ep.extract_irule_from_config(bigip_conf)
+        assert f5_irule_data, "failed to export"
+        

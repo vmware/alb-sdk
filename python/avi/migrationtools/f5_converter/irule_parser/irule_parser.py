@@ -51,7 +51,7 @@ def process_switch_case(toks):
     if toks.match_str and toks.switch_action:
         if "redirect" not in toks.switch_action[0][0][0]:
             data = {
-                "pool_name": toks.switch_action[0][0],
+                "pool_name": toks.switch_action[0][0][1],
                 "match_str": toks.match_str[0],
                 "rule_name": irule_name,
             }
@@ -249,8 +249,21 @@ Rule = (
 
 # Parsing the input
 def parse_input(input_string):
-    parsed_result = Rule.parseString(input_string)
-    return parsed_result
+    try:
+        parsed_result = Rule.parseString(input_string)
+        return parsed_result
+    except:
+        return {}
+
+def parse_irule_for_f5_conv(f5_irule_data):
+    irule_custom_config=[]
+    for data in f5_irule_data:
+        parsed_rule = parse_input(data)
+        if "ParseResults" in str(parsed_rule[0]):
+            continue
+        if parsed_rule and type(parsed_rule[0])==dict:
+            irule_custom_config.append(parsed_rule[0])
+    return irule_custom_config
 
 
 if __name__ == "__main__":
