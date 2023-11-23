@@ -636,6 +636,22 @@ definitions:
                 description: "License Escrow Interval duration. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
+            license_expiry_interval:
+                description: "License Expiry Interval duration. Allowed values are 1-1440. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            license_reconcile_interval:
+                description: "License Reconcile Interval duration. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            license_refresh_interval:
+                description: "License Refresh Interval duration. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            license_renewal_interval:
+                description: "License Renewal Interval duration. Allowed values are 1-1440. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
             token_refresh_interval:
                 description: "Token Refresh Interval duration. Allowed values are 1-240. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
