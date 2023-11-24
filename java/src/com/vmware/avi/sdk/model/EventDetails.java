@@ -420,6 +420,9 @@ public class EventDetails  {
     @JsonProperty("reboot_se_details")
     private RmRebootSeEventDetails rebootSeDetails = null;
 
+    @JsonProperty("saml_metadata_failed_events")
+    private SamlMetadataUpdateFailedDetails samlMetadataFailedEvents = null;
+
     @JsonProperty("scheduler_action_info")
     private SchedulerActionDetails schedulerActionInfo = null;
 
@@ -3421,6 +3424,26 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return samlMetadataFailedEvents
+     */
+    public SamlMetadataUpdateFailedDetails getSamlMetadataFailedEvents() {
+        return samlMetadataFailedEvents;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param samlMetadataFailedEvents set the samlMetadataFailedEvents.
+     */
+    public void setSamlMetadataFailedEvents(SamlMetadataUpdateFailedDetails samlMetadataFailedEvents) {
+        this.samlMetadataFailedEvents = samlMetadataFailedEvents;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return schedulerActionInfo
      */
     public SchedulerActionDetails getSchedulerActionInfo() {
@@ -5291,6 +5314,7 @@ public class EventDetails  {
   Objects.equals(this.sslRenewFailedDetails, objEventDetails.sslRenewFailedDetails)&&
   Objects.equals(this.sslIgnoredDetails, objEventDetails.sslIgnoredDetails)&&
   Objects.equals(this.sslRevokedDetails, objEventDetails.sslRevokedDetails)&&
+  Objects.equals(this.samlMetadataFailedEvents, objEventDetails.samlMetadataFailedEvents)&&
   Objects.equals(this.clusterNodeAddDetails, objEventDetails.clusterNodeAddDetails)&&
   Objects.equals(this.clusterNodeRemoveDetails, objEventDetails.clusterNodeRemoveDetails)&&
   Objects.equals(this.clusterServiceFailedDetails, objEventDetails.clusterServiceFailedDetails)&&
@@ -5548,6 +5572,7 @@ public class EventDetails  {
                         sb.append("    rebalanceScaleinDetails: ").append(toIndentedString(rebalanceScaleinDetails)).append("\n");
                         sb.append("    rebalanceScaleoutDetails: ").append(toIndentedString(rebalanceScaleoutDetails)).append("\n");
                         sb.append("    rebootSeDetails: ").append(toIndentedString(rebootSeDetails)).append("\n");
+                        sb.append("    samlMetadataFailedEvents: ").append(toIndentedString(samlMetadataFailedEvents)).append("\n");
                         sb.append("    schedulerActionInfo: ").append(toIndentedString(schedulerActionInfo)).append("\n");
                         sb.append("    seBgpPeerDownDetails: ").append(toIndentedString(seBgpPeerDownDetails)).append("\n");
                         sb.append("    seBgpPeerStateChangeDetails: ").append(toIndentedString(seBgpPeerStateChangeDetails)).append("\n");

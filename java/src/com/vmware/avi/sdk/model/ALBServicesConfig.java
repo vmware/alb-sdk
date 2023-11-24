@@ -54,8 +54,14 @@ public class ALBServicesConfig extends AviRestResource  {
     @JsonProperty("saas_licensing_config")
     private SaasLicensingInfo saasLicensingConfig = null;
 
+    @JsonProperty("session_config")
+    private PulseServicesSessionConfig sessionConfig = null;
+
     @JsonProperty("split_proxy_configuration")
     private ProxyConfiguration splitProxyConfiguration = null;
+
+    @JsonProperty("tenant_config")
+    private PulseServicesTenantConfig tenantConfig = null;
 
     @JsonProperty("tenant_ref")
     private String tenantRef = null;
@@ -360,6 +366,32 @@ public class ALBServicesConfig extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Session configuration data.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sessionConfig
+     */
+    public PulseServicesSessionConfig getSessionConfig() {
+        return sessionConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Session configuration data.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sessionConfig set the sessionConfig.
+     */
+    public void setSessionConfig(PulseServicesSessionConfig sessionConfig) {
+        this.sessionConfig = sessionConfig;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Split proxy configuration to connect external pulse cloud services.
      * Field introduced in 20.1.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -380,6 +412,32 @@ public class ALBServicesConfig extends AviRestResource  {
      */
     public void setSplitProxyConfiguration(ProxyConfiguration splitProxyConfiguration) {
         this.splitProxyConfiguration = splitProxyConfiguration;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Tenant based configuration data.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return tenantConfig
+     */
+    public PulseServicesTenantConfig getTenantConfig() {
+        return tenantConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Tenant based configuration data.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param tenantConfig set the tenantConfig.
+     */
+    public void setTenantConfig(PulseServicesTenantConfig tenantConfig) {
+        this.tenantConfig = tenantConfig;
     }
 
     /**
@@ -576,7 +634,9 @@ public class ALBServicesConfig extends AviRestResource  {
   Objects.equals(this.saasLicensingConfig, objALBServicesConfig.saasLicensingConfig)&&
   Objects.equals(this.operationsConfig, objALBServicesConfig.operationsConfig)&&
   Objects.equals(this.tenantRef, objALBServicesConfig.tenantRef)&&
-  Objects.equals(this.name, objALBServicesConfig.name);
+  Objects.equals(this.name, objALBServicesConfig.name)&&
+  Objects.equals(this.tenantConfig, objALBServicesConfig.tenantConfig)&&
+  Objects.equals(this.sessionConfig, objALBServicesConfig.sessionConfig);
     }
 
     @Override
@@ -594,7 +654,9 @@ public class ALBServicesConfig extends AviRestResource  {
                         sb.append("    pollingInterval: ").append(toIndentedString(pollingInterval)).append("\n");
                         sb.append("    portalUrl: ").append(toIndentedString(portalUrl)).append("\n");
                         sb.append("    saasLicensingConfig: ").append(toIndentedString(saasLicensingConfig)).append("\n");
+                        sb.append("    sessionConfig: ").append(toIndentedString(sessionConfig)).append("\n");
                         sb.append("    splitProxyConfiguration: ").append(toIndentedString(splitProxyConfiguration)).append("\n");
+                        sb.append("    tenantConfig: ").append(toIndentedString(tenantConfig)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                                     sb.append("    useSplitProxy: ").append(toIndentedString(useSplitProxy)).append("\n");
                         sb.append("    useTls: ").append(toIndentedString(useTls)).append("\n");

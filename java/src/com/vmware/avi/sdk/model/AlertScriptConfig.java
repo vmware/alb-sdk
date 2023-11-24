@@ -30,6 +30,9 @@ public class AlertScriptConfig extends AviRestResource  {
     @JsonProperty("tenant_ref")
     private String tenantRef = null;
 
+    @JsonProperty("timeout")
+    private Integer timeout = null;
+
     @JsonProperty("url")
     private String url = "url";
 
@@ -105,6 +108,30 @@ public class AlertScriptConfig extends AviRestResource  {
     public void setTenantRef(String  tenantRef) {
         this.tenantRef = tenantRef;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Controlscript excution timeout.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return timeout
+     */
+    public Integer getTimeout() {
+        return timeout;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Controlscript excution timeout.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param timeout set the timeout.
+     */
+    public void setTimeout(Integer  timeout) {
+        this.timeout = timeout;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Avi controller URL of the object.
@@ -156,7 +183,8 @@ public class AlertScriptConfig extends AviRestResource  {
       return   Objects.equals(this.uuid, objAlertScriptConfig.uuid)&&
   Objects.equals(this.name, objAlertScriptConfig.name)&&
   Objects.equals(this.actionScript, objAlertScriptConfig.actionScript)&&
-  Objects.equals(this.tenantRef, objAlertScriptConfig.tenantRef);
+  Objects.equals(this.tenantRef, objAlertScriptConfig.tenantRef)&&
+  Objects.equals(this.timeout, objAlertScriptConfig.timeout);
     }
 
     @Override
@@ -166,6 +194,7 @@ public class AlertScriptConfig extends AviRestResource  {
                   sb.append("    actionScript: ").append(toIndentedString(actionScript)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+                        sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
       return sb.toString();

@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NsxtConfiguration  {
+    @JsonProperty("automate_dfw_objects")
+    private Boolean automateDfwObjects = true;
+
     @JsonProperty("automate_dfw_rules")
     private Boolean automateDfwRules = false;
 
@@ -52,6 +55,30 @@ public class NsxtConfiguration  {
     private Boolean vpcMode = null;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Automatically create/delete dfw objects such as nsgroups and nsservices in nsx-t manager.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return automateDfwObjects
+     */
+    public Boolean getAutomateDfwObjects() {
+        return automateDfwObjects;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Automatically create/delete dfw objects such as nsgroups and nsservices in nsx-t manager.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param automateDfwObjects set the automateDfwObjects.
+     */
+    public void setAutomateDfwObjects(Boolean  automateDfwObjects) {
+        this.automateDfwObjects = automateDfwObjects;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -314,14 +341,16 @@ public class NsxtConfiguration  {
   Objects.equals(this.managementNetworkConfig, objNsxtConfiguration.managementNetworkConfig)&&
   Objects.equals(this.dataNetworkConfig, objNsxtConfiguration.dataNetworkConfig)&&
   Objects.equals(this.vpcMode, objNsxtConfiguration.vpcMode)&&
-  Objects.equals(this.vmcMode, objNsxtConfiguration.vmcMode);
+  Objects.equals(this.vmcMode, objNsxtConfiguration.vmcMode)&&
+  Objects.equals(this.automateDfwObjects, objNsxtConfiguration.automateDfwObjects);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class NsxtConfiguration {\n");
-                  sb.append("    automateDfwRules: ").append(toIndentedString(automateDfwRules)).append("\n");
+                  sb.append("    automateDfwObjects: ").append(toIndentedString(automateDfwObjects)).append("\n");
+                        sb.append("    automateDfwRules: ").append(toIndentedString(automateDfwRules)).append("\n");
                         sb.append("    dataNetworkConfig: ").append(toIndentedString(dataNetworkConfig)).append("\n");
                         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
                         sb.append("    enforcementpointId: ").append(toIndentedString(enforcementpointId)).append("\n");

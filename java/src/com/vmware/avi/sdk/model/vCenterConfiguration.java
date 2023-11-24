@@ -27,6 +27,9 @@ public class vCenterConfiguration  {
     @JsonProperty("datacenter")
     private String datacenter = null;
 
+    @JsonProperty("datacenter_managed_object_id")
+    private String datacenterManagedObjectId = null;
+
     @JsonProperty("deactivate_vm_discovery")
     private Boolean deactivateVmDiscovery;
 
@@ -103,6 +106,30 @@ public class vCenterConfiguration  {
      */
     public void setDatacenter(String  datacenter) {
         this.datacenter = datacenter;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Managed object id of the datacenter.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return datacenterManagedObjectId
+     */
+    public String getDatacenterManagedObjectId() {
+        return datacenterManagedObjectId;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Managed object id of the datacenter.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param datacenterManagedObjectId set the datacenterManagedObjectId.
+     */
+    public void setDatacenterManagedObjectId(String  datacenterManagedObjectId) {
+        this.datacenterManagedObjectId = datacenterManagedObjectId;
     }
 
     /**
@@ -358,7 +385,8 @@ public class vCenterConfiguration  {
   Objects.equals(this.deactivateVmDiscovery, objvCenterConfiguration.deactivateVmDiscovery)&&
   Objects.equals(this.useContentLib, objvCenterConfiguration.useContentLib)&&
   Objects.equals(this.contentLib, objvCenterConfiguration.contentLib)&&
-  Objects.equals(this.isNsxEnvironment, objvCenterConfiguration.isNsxEnvironment);
+  Objects.equals(this.isNsxEnvironment, objvCenterConfiguration.isNsxEnvironment)&&
+  Objects.equals(this.datacenterManagedObjectId, objvCenterConfiguration.datacenterManagedObjectId);
     }
 
     @Override
@@ -367,6 +395,7 @@ public class vCenterConfiguration  {
       sb.append("class vCenterConfiguration {\n");
                   sb.append("    contentLib: ").append(toIndentedString(contentLib)).append("\n");
                         sb.append("    datacenter: ").append(toIndentedString(datacenter)).append("\n");
+                        sb.append("    datacenterManagedObjectId: ").append(toIndentedString(datacenterManagedObjectId)).append("\n");
                         sb.append("    deactivateVmDiscovery: ").append(toIndentedString(deactivateVmDiscovery)).append("\n");
                         sb.append("    isNsxEnvironment: ").append(toIndentedString(isNsxEnvironment)).append("\n");
                         sb.append("    managementIpSubnet: ").append(toIndentedString(managementIpSubnet)).append("\n");

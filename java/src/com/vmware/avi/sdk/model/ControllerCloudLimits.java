@@ -24,6 +24,9 @@ public class ControllerCloudLimits  {
     @JsonProperty("num_clouds")
     private Integer numClouds = null;
 
+    @JsonProperty("t1_lrs_per_cloud")
+    private Integer t1LrsPerCloud = null;
+
     @JsonProperty("type")
     private String type = null;
 
@@ -51,6 +54,30 @@ public class ControllerCloudLimits  {
      */
     public void setNumClouds(Integer  numClouds) {
         this.numClouds = numClouds;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum number of tier1 logical routers allowed per cloud.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return t1LrsPerCloud
+     */
+    public Integer getT1LrsPerCloud() {
+        return t1LrsPerCloud;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum number of tier1 logical routers allowed per cloud.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param t1LrsPerCloud set the t1LrsPerCloud.
+     */
+    public void setT1LrsPerCloud(Integer  t1LrsPerCloud) {
+        this.t1LrsPerCloud = t1LrsPerCloud;
     }
 
     /**
@@ -92,7 +119,8 @@ public class ControllerCloudLimits  {
       }
       ControllerCloudLimits objControllerCloudLimits = (ControllerCloudLimits) o;
       return   Objects.equals(this.type, objControllerCloudLimits.type)&&
-  Objects.equals(this.numClouds, objControllerCloudLimits.numClouds);
+  Objects.equals(this.numClouds, objControllerCloudLimits.numClouds)&&
+  Objects.equals(this.t1LrsPerCloud, objControllerCloudLimits.t1LrsPerCloud);
     }
 
     @Override
@@ -100,6 +128,7 @@ public class ControllerCloudLimits  {
       StringBuilder sb = new StringBuilder();
       sb.append("class ControllerCloudLimits {\n");
                   sb.append("    numClouds: ").append(toIndentedString(numClouds)).append("\n");
+                        sb.append("    t1LrsPerCloud: ").append(toIndentedString(t1LrsPerCloud)).append("\n");
                         sb.append("    type: ").append(toIndentedString(type)).append("\n");
                   sb.append("}");
       return sb.toString();

@@ -36,6 +36,9 @@ public class WebappUT extends AviRestResource  {
     @JsonProperty("sensitive_tests")
     private List<L1FSensitiveTestCase> sensitiveTests = null;
 
+    @JsonProperty("skip_optional_check_tests")
+    private Boolean skipOptionalCheckTests = null;
+
     @JsonProperty("string_length_test")
     private L1StringLengthTestCase stringLengthTest = null;
 
@@ -207,6 +210,30 @@ public class WebappUT extends AviRestResource  {
       }
       this.sensitiveTests.add(sensitiveTestsItem);
       return this;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Optional bool for nested skip_optional_check test cases-level1.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return skipOptionalCheckTests
+     */
+    public Boolean getSkipOptionalCheckTests() {
+        return skipOptionalCheckTests;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Optional bool for nested skip_optional_check test cases-level1.
+     * Field introduced in 22.1.3.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param skipOptionalCheckTests set the skipOptionalCheckTests.
+     */
+    public void setSkipOptionalCheckTests(Boolean  skipOptionalCheckTests) {
+        this.skipOptionalCheckTests = skipOptionalCheckTests;
     }
 
     /**
@@ -409,7 +436,8 @@ public class WebappUT extends AviRestResource  {
   Objects.equals(this.stringLengthTests, objWebappUT.stringLengthTests)&&
   Objects.equals(this.testSensitiveString, objWebappUT.testSensitiveString)&&
   Objects.equals(this.sensitiveTest, objWebappUT.sensitiveTest)&&
-  Objects.equals(this.sensitiveTests, objWebappUT.sensitiveTests);
+  Objects.equals(this.sensitiveTests, objWebappUT.sensitiveTests)&&
+  Objects.equals(this.skipOptionalCheckTests, objWebappUT.skipOptionalCheckTests);
     }
 
     @Override
@@ -421,6 +449,7 @@ public class WebappUT extends AviRestResource  {
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    sensitiveTest: ").append(toIndentedString(sensitiveTest)).append("\n");
                         sb.append("    sensitiveTests: ").append(toIndentedString(sensitiveTests)).append("\n");
+                        sb.append("    skipOptionalCheckTests: ").append(toIndentedString(skipOptionalCheckTests)).append("\n");
                         sb.append("    stringLengthTest: ").append(toIndentedString(stringLengthTest)).append("\n");
                         sb.append("    stringLengthTests: ").append(toIndentedString(stringLengthTests)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
