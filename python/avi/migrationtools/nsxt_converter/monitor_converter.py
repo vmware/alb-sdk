@@ -52,7 +52,6 @@ class MonitorConfigConv(object):
     def get_alb_response_codes(self, response_codes):
         if not response_codes:
             return None
-        HttpResponseCode = model_client.ALBHealthMonitorHttp
         codes = list()
         for code in response_codes:
             if code < 200:
@@ -230,7 +229,7 @@ class MonitorConfigConv(object):
                 # time.sleep(1)
 
                 LOG.info('[MONITOR] Migration completed for HM {}'.format(lb_hm['display_name']))
-            except:
+            except Exception as e:
                 update_count('error')
                 LOG.error("[MONITOR] Failed to convert Monitor: %s" % lb_hm['display_name'],
                           exc_info=True)

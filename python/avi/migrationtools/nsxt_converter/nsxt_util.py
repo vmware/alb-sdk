@@ -711,12 +711,15 @@ class NSXUtil():
                                     else:
                                         network = "Overlay"
 
-                                    is_dhcp_configured_on_avi,is_static_ip_pool_configured,is_ip_subnet_configured,static_ip_for_se_flag = \
-                                    self.get_dhcp_config_details_on_avi_side(cloud_name,seg.get("id"))
+                                    incomplete_networks = self.get_dhcp_config_details_on_avi_side(cloud_name,
+                                                                                                   seg.get("id"))
 
-                                    if not is_dhcp_configured_on_avi and (not is_static_ip_pool_configured or not is_ip_subnet_configured or not static_ip_for_se_flag):
-                                        warning_mesg = "Warning : configuration of  %s network is incomplete , please check it once " % seg.get("display_name")
-                                        LOG.debug(warning_mesg)
+                                    if incomplete_networks:
+                                        warning_msg = f"Warning: configuration of network(s) {incomplete_networks} " \
+                                                      f"for {seg.get('display_name')} is incomplete, " \
+                                                      f"please check it once."
+                                        print("\033[93m" + warning_msg + "\033[0m")
+                                        LOG.debug(warning_msg)
 
                             if seg.get("subnets"):
                                 subnets = []
@@ -757,25 +760,40 @@ class NSXUtil():
                 self.lb_services[lb["id"]]["warning_mesg"] = warning_mesg
 
     def get_dhcp_config_details_on_avi_side(self,cloud_name,seg_id):
-        is_dhcp_configured_on_avi = False
-        is_static_ip_pool_configured = False
-        is_ip_subnet_configured = False
-        static_ip_for_se_flag = False
-        cloud_id = [cl.get("uuid") for cl in self.cloud if cl.get("name") == cloud_name]
-        segment_list = self.session.get("network/?&cloud_ref.uuid=" + cloud_id[0]).json()["results"]
-        segment = [seg for seg in segment_list if seg.get("attrs")[0].get("value").split('segments/')[-1] == seg_id]
-        if segment :
-            is_dhcp_configured_on_avi = segment[0].get("dhcp_enabled")
-            if segment[0].get("configured_subnets"):
-                configured_subnets = segment[0].get("configured_subnets")
-                if configured_subnets[0].get("prefix"):
-                    is_ip_subnet_configured = True
-                    if configured_subnets[0].get("static_ip_ranges"):
-                        is_static_ip_pool_configured = True
-                        if configured_subnets[0].get("static_ip_ranges")[0].get("type") in ["STATIC_IPS_FOR_VIP_AND_SE","STATIC_IPS_FOR_SE"]:
-                             static_ip_for_se_flag = True
+        incomplete_networks = []
 
-        return is_dhcp_configured_on_avi,is_static_ip_pool_configured,is_ip_subnet_configured,static_ip_for_se_flag
+        cloud_id = [cl.get("uuid") for cl in self.cloud if cl.get("name") == cloud_name]
+        network_list = self.session.get("network/?&cloud_ref.uuid=" + cloud_id[0]).json()["results"]
+        for network in network_list:
+            if 'attrs' in network:
+                for attr in network.get("attrs"):
+                    if attr.get("value").split('segments/')[-1] == seg_id:
+                        LOG.debug(f"Network with segment id {seg_id} is {network}")
+
+                        is_dhcp_configured_on_avi = network.get("dhcp_enabled")
+                        is_static_ip_pool_configured = False
+                        is_ip_subnet_configured = False
+                        static_ip_for_se_flag = False
+
+                        configured_subnets = network.get("configured_subnets")
+                        if configured_subnets:
+                            for subnet in configured_subnets:
+                                if subnet.get("prefix"):
+                                    is_ip_subnet_configured = True
+                                    if subnet.get("static_ip_ranges"):
+                                        is_static_ip_pool_configured = True
+                                        for static_ip in subnet.get("static_ip_ranges"):
+                                            if static_ip.get("type") in ["STATIC_IPS_FOR_VIP_AND_SE",
+                                                                         "STATIC_IPS_FOR_SE"]:
+                                                static_ip_for_se_flag = True
+
+                        if not is_dhcp_configured_on_avi and (
+                                not is_static_ip_pool_configured or
+                                not is_ip_subnet_configured or
+                                not static_ip_for_se_flag):
+                            incomplete_networks.append(network)
+
+        return incomplete_networks
 
     def get_all_virtual_service(self):
         """
@@ -1127,6 +1145,8 @@ class NSXUtil():
         if domain_obj:
             domain_id = domain_obj[0]["id"]
         ns_name = "{}-{}".format(pool_name, "alb-nsgroup")
+        # ns group creation does not support spaces in name and id fields so remove all spaces
+        ns_name = ns_name.replace(" ", "")
         try:
             import requests
             import json
