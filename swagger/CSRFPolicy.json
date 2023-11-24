@@ -656,7 +656,8 @@
             "type": "object",
             "required": [
                 "index",
-                "match"
+                "match",
+                "name"
             ],
             "properties": {
                 "action": {

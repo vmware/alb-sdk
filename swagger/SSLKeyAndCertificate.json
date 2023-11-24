@@ -824,7 +824,7 @@
                     "type": "boolean"
                 },
                 "days_until_expire": {
-                    "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Valid range  1-3650. Allowed values are 1-3650. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 365,
                     "format": "int32"

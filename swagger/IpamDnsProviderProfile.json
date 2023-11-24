@@ -880,7 +880,6 @@
         "IpamDnsInfobloxProfile": {
             "type": "object",
             "required": [
-                "ip_address",
                 "password",
                 "username"
             ],
@@ -896,8 +895,12 @@
                         "$ref": "#/definitions/CustomParams"
                     }
                 },
+                "ip6_address": {
+                    "description": "IPv6 Address of Infoblox appliance. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/IpAddr"
+                },
                 "ip_address": {
-                    "description": "Address of Infoblox appliance. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "IPv4 Address of Infoblox appliance. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "network_view": {
@@ -906,6 +909,10 @@
                 },
                 "password": {
                     "description": "Password for API access for Infoblox appliance. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "profile_url": {
+                    "description": "url of the profile writen to /etc/hosts for HA between IPv6 and IPv4. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "usable_alloc_subnets": {
