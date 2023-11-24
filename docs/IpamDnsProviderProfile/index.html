@@ -359,12 +359,14 @@ font-style: italic;
     },
     "infoblox_profile" : {
       "extensible_attributes" : [ "" ],
+      "ip6_address" : "",
       "network_view" : "aeiou",
       "usable_alloc_subnets" : [ {
         "subnet" : "",
         "subnet6" : ""
       } ],
       "password" : "aeiou",
+      "profile_url" : "aeiou",
       "dns_view" : "aeiou",
       "ip_address" : "",
       "usable_domains" : [ "aeiou" ],
@@ -556,12 +558,14 @@ font-style: italic;
   },
   "infoblox_profile" : {
     "extensible_attributes" : [ "" ],
+    "ip6_address" : "",
     "network_view" : "aeiou",
     "usable_alloc_subnets" : [ {
       "subnet" : "",
       "subnet6" : ""
     } ],
     "password" : "aeiou",
+    "profile_url" : "aeiou",
     "dns_view" : "aeiou",
     "ip_address" : "",
     "usable_domains" : [ "aeiou" ],
@@ -824,12 +828,14 @@ font-style: italic;
   },
   "infoblox_profile" : {
     "extensible_attributes" : [ "" ],
+    "ip6_address" : "",
     "network_view" : "aeiou",
     "usable_alloc_subnets" : [ {
       "subnet" : "",
       "subnet6" : ""
     } ],
     "password" : "aeiou",
+    "profile_url" : "aeiou",
     "dns_view" : "aeiou",
     "ip_address" : "",
     "usable_domains" : [ "aeiou" ],
@@ -1032,12 +1038,14 @@ font-style: italic;
   },
   "infoblox_profile" : {
     "extensible_attributes" : [ "" ],
+    "ip6_address" : "",
     "network_view" : "aeiou",
     "usable_alloc_subnets" : [ {
       "subnet" : "",
       "subnet6" : ""
     } ],
     "password" : "aeiou",
+    "profile_url" : "aeiou",
     "dns_view" : "aeiou",
     "ip_address" : "",
     "usable_domains" : [ "aeiou" ],
@@ -1240,12 +1248,14 @@ font-style: italic;
   },
   "infoblox_profile" : {
     "extensible_attributes" : [ "" ],
+    "ip6_address" : "",
     "network_view" : "aeiou",
     "usable_alloc_subnets" : [ {
       "subnet" : "",
       "subnet6" : ""
     } ],
     "password" : "aeiou",
+    "profile_url" : "aeiou",
     "dns_view" : "aeiou",
     "ip_address" : "",
     "usable_domains" : [ "aeiou" ],
@@ -1472,9 +1482,11 @@ font-style: italic;
     <div class="field-items">
       <div class="param">dns_view (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> DNS view used for Infoblox host record creation, If this field is not configured by the user, then its value will be set to &#39;default&#39;. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">extensible_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#CustomParams">array[CustomParams]</a></span> Custom parameters that will passed to the Infoblox provider as extensible attributes. Field introduced in 18.2.7, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">ip_address </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Address of Infoblox appliance. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">ip6_address (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> IPv6 Address of Infoblox appliance. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">ip_address (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> IPv4 Address of Infoblox appliance. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">network_view (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Network view used for Infoblox host record creation, If this field is not configured by the user, then its value will be set to &#39;default&#39;. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">password </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Password for API access for Infoblox appliance. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">profile_url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> url of the profile writen to /etc/hosts for HA between IPv6 and IPv4. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">usable_alloc_subnets (optional)</div><div class="param-desc"><span class="param-type"><a href="#InfobloxSubnet">array[InfobloxSubnet]</a></span> Subnets to use for Infoblox IP allocation. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">usable_domains (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Usable domains to pick from Infoblox. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">username </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Username for API access for Infoblox appliance. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>

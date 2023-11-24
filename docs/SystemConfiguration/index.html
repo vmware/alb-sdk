@@ -296,6 +296,8 @@ font-style: italic;
     "cis_mode" : true,
     "banner" : "aeiou"
   },
+  "rekey_time_limit" : "aeiou",
+  "rekey_volume_limit" : "aeiou",
   "snmp_configuration" : {
     "snmp_v3_config" : {
       "engine_id" : "aeiou",
@@ -494,6 +496,8 @@ font-style: italic;
     "cis_mode" : true,
     "banner" : "aeiou"
   },
+  "rekey_time_limit" : "aeiou",
+  "rekey_volume_limit" : "aeiou",
   "snmp_configuration" : {
     "snmp_v3_config" : {
       "engine_id" : "aeiou",
@@ -692,6 +696,8 @@ font-style: italic;
     "cis_mode" : true,
     "banner" : "aeiou"
   },
+  "rekey_time_limit" : "aeiou",
+  "rekey_volume_limit" : "aeiou",
   "snmp_configuration" : {
     "snmp_v3_config" : {
       "engine_id" : "aeiou",
@@ -1176,6 +1182,8 @@ font-style: italic;
 <div class="param">ntp_configuration (optional)</div><div class="param-desc"><span class="param-type"><a href="#NTPConfiguration">NTPConfiguration</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">portal_configuration (optional)</div><div class="param-desc"><span class="param-type"><a href="#PortalConfiguration">PortalConfiguration</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">proxy_configuration (optional)</div><div class="param-desc"><span class="param-type"><a href="#ProxyConfiguration">ProxyConfiguration</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">rekey_time_limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Users can specify and update the time limit of RekeyLimit in sshd_config.If nothing is specified, the default setting will be none. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">rekey_volume_limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Users can specify and update the size/volume limit of RekeyLimit in sshd_config.If nothing is specified, the default setting will be default. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">secure_channel_configuration (optional)</div><div class="param-desc"><span class="param-type"><a href="#SecureChannelConfiguration">SecureChannelConfiguration</a></span> Configure Secure Channel properties. Field introduced in 18.1.4, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">snmp_configuration (optional)</div><div class="param-desc"><span class="param-type"><a href="#SnmpConfiguration">SnmpConfiguration</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ssh_ciphers (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Allowed Ciphers list for SSH to the management interface on the Controller and Service Engines. If this is not specified, all the default ciphers are allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>

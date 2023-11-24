@@ -340,7 +340,9 @@ font-style: italic;
     "saml" : {
       "idp" : {
         "metadata" : "aeiou",
-        "metadata_url" : "aeiou"
+        "metadata_url" : "aeiou",
+        "meta_data_download_interval" : 123,
+        "periodic_download" : true
       },
       "sp" : {
         "org_url" : "aeiou",
@@ -505,7 +507,9 @@ font-style: italic;
   "saml" : {
     "idp" : {
       "metadata" : "aeiou",
-      "metadata_url" : "aeiou"
+      "metadata_url" : "aeiou",
+      "meta_data_download_interval" : 123,
+      "periodic_download" : true
     },
     "sp" : {
       "org_url" : "aeiou",
@@ -741,7 +745,9 @@ font-style: italic;
   "saml" : {
     "idp" : {
       "metadata" : "aeiou",
-      "metadata_url" : "aeiou"
+      "metadata_url" : "aeiou",
+      "meta_data_download_interval" : 123,
+      "periodic_download" : true
     },
     "sp" : {
       "org_url" : "aeiou",
@@ -917,7 +923,9 @@ font-style: italic;
   "saml" : {
     "idp" : {
       "metadata" : "aeiou",
-      "metadata_url" : "aeiou"
+      "metadata_url" : "aeiou",
+      "meta_data_download_interval" : 123,
+      "periodic_download" : true
     },
     "sp" : {
       "org_url" : "aeiou",
@@ -1093,7 +1101,9 @@ font-style: italic;
   "saml" : {
     "idp" : {
       "metadata" : "aeiou",
-      "metadata_url" : "aeiou"
+      "metadata_url" : "aeiou",
+      "meta_data_download_interval" : 123,
+      "periodic_download" : true
     },
     "sp" : {
       "org_url" : "aeiou",
@@ -1309,8 +1319,10 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="SamlIdentityProviderSettings">SamlIdentityProviderSettings</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">metadata (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> SAML IDP metadata. Field introduced in 17.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+      <div class="param">meta_data_download_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The interval to query and download SAML IDP metadata using the metadata URL. Allowed values are 0-10080. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">metadata (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> SAML IDP metadata. Field introduced in 17.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">metadata_url (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> SAML IDP Federation Metadata Url. Field introduced in 30.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">periodic_download (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable Periodic Metadata Download. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
