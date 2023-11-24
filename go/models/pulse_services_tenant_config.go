@@ -14,6 +14,18 @@ type PulseServicesTenantConfig struct {
 	// License Escrow Interval duration. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	LicenseEscrowInterval *int32 `json:"license_escrow_interval,omitempty"`
 
+	// License Expiry Interval duration. Allowed values are 1-1440. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	LicenseExpiryInterval *int32 `json:"license_expiry_interval,omitempty"`
+
+	// License Reconcile Interval duration. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	LicenseReconcileInterval *int32 `json:"license_reconcile_interval,omitempty"`
+
+	// License Refresh Interval duration. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	LicenseRefreshInterval *int32 `json:"license_refresh_interval,omitempty"`
+
+	// License Renewal Interval duration. Allowed values are 1-1440. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	LicenseRenewalInterval *int32 `json:"license_renewal_interval,omitempty"`
+
 	// Token Refresh Interval duration. Allowed values are 1-240. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	TokenRefreshInterval *int32 `json:"token_refresh_interval,omitempty"`
 }

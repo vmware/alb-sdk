@@ -408,6 +408,9 @@ type EventDetails struct {
 	RebootSeDetails *RmRebootSeEventDetails `json:"reboot_se_details,omitempty"`
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	SamlMetadataFailedEvents *SamlMetadataUpdateFailedDetails `json:"saml_metadata_failed_events,omitempty"`
+
+	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SchedulerActionInfo *SchedulerActionDetails `json:"scheduler_action_info,omitempty"`
 
 	//  Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
