@@ -289,13 +289,13 @@ class ApiSession(Session):
 
             # Check if the IP address is IPv6
             if is_ipv6:
-                self.prefix = f'{protocol}://[{self.avi_credentials.controller}]'
+                self.prefix = '{}://[{}]'.format(protocol, self.avi_credentials.controller)
             else:
-                self.prefix = f'{protocol}://{self.avi_credentials.controller}'
+                self.prefix = '{}://{}'.format(protocol, self.avi_credentials.controller)
 
             # Include the port in the prefix if specified
             if port:
-                self.prefix += f':{port}'
+                self.prefix += ':{}'.format(port)
 
         self.timeout = timeout
         self.key = '%s:%s:%s' % (self.avi_credentials.controller,
