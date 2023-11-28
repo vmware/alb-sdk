@@ -134,6 +134,8 @@ OpenParen = pp.Literal("(").suppress()
 CloseParen = pp.Literal(")").suppress()
 OpenBrace = pp.Literal("{").suppress()
 CloseBrace = pp.Literal("}").suppress()
+If_then = pp.Literal("then").suppress()
+If_command = pp.Literal("if").suppress()
 
 StringPart = (
     (~UnaryOperator + pp.Word(pp.alphanums + "_/.-:*")) | Variable | FunctionCall
@@ -142,6 +144,8 @@ String = pp.Literal('"').suppress() + pp.ZeroOrMore(StringPart) + pp.Literal('"'
 Value << (StringPart | String)
 RuleName = pp.Combine(pp.Char("/") + pp.Word(pp.alphanums + "_-./")).set_parse_action(process_name)
 Number = pp.Word(pp.nums)
+IpField = pp.Word(pp.nums, max=3)
+IpAddr = pp.Combine(IpField + "." + IpField + "." + IpField + "." + IpField)
 
 
 base_condition = pp.Group(
@@ -186,17 +190,49 @@ Switch = (
     + pp.Literal("}")
 ).set_parse_action(process_switch)
 
-IfBlockContent = pp.Forward()
+#IfBlockContent = pp.Forward()
+# IfCase = (
+#     pp.OneOrMore(OpenBrace | OpenParen)
+#     + Condition
+#     + pp.OneOrMore(If_then | CloseBrace | CloseParen)
+# )('if_action')
+
+
+IfCase = OpenBrace + Condition + CloseBrace + pp.Optional(If_then)
+
+
 IfBlock = pp.Group(
-    pp.Literal("if")
+    If_command
+    + IfCase('if_cases')
     + OpenBrace
-    + Condition
+    + pp.OneOrMore(Statement)
     + CloseBrace
-    + pp.Literal("{")
-    + pp.OneOrMore(IfBlockContent | Statement)
-    + pp.Literal("}")
-)
-IfBlockContent << (IfBlock | Statement)
+    )
+
+#IfBlockContent << (IfBlock | Statement)
+
+# String Map Statement
+String_map = (
+    pp.Group(FunctionContent)('action_function')
+    + pp.Literal('[')
+    + pp.Literal('string map')
+    + pp.nestedExpr("{", "}", content=pp.OneOrMore(Statement))('action_map')
+    + FunctionCall('action_source')
+    + pp.Literal(']')
+    )('string_map')
+
+# Node Switch
+Node = (
+    pp.Literal('node')
+    + IpAddr
+    + pp.OneOrMore(':'| Number)
+)('action_node')
+
+# Pool Switch
+Pool = (
+    pp.Literal('pool')
+    + Value
+)('action_pool')
 
 HeaderOp = (pp.Literal("remove")("op") + (String | StringPart)("header_name")
             | pp.Literal("insert")("op") + String("header_name") + String("header_val")).set_parse_action(process_header_op)

@@ -36,7 +36,50 @@
         "when CLIENT_ACCEPTED {\n    # Get the country client IP\n    switch [whereis [IP::client_addr] country] {\n        \"CU\" -\n        \"IR\" -\n        \"KP\" -\n        \"SD\" -\n        \"SY\" {\n            # Reset the TCP connection\n            reject\n        }\n    }\n}\n"
     ],
     "ifblock": [
-        "                if { not (( [class match [IP::client_addr] equals mcafee_ips]) || ([class match [IP::client_addr] equals intel_ips])) } {\n                log local0. \"block [IP::client_addr] to [HTTP::host][HTTP::uri]\"\n                discard\n                }"
+        "  if { not (( [class match [IP::client_addr] equals mcafee_ips]) || ([class match [IP::client_addr] equals intel_ips])) } {\n                log local0. \"block [IP::client_addr] to [HTTP::host][HTTP::uri]\"\n                discard\n                }",
+        "  if { [HTTP::path] contains \"-12345\" } then {\n \n      # remove the HASHvalue from the path\n      HTTP::path [string map {\"/share/-12345/\" \"/share/\"} [HTTP::path]]\n \n      # send changed HTTP:URI/path to following node 10.10.10.10\n      node 10.10.10.10 443\n \n      }\n  }",
+        "  if { ([HTTP::uri] contains \"/ws-polling/\") } then {\n      pool payment_pool\n    }",
+        "  if { ([HTTP::path] contains \"-12345\") } then  {\n      pool payment_pool\n   }"
+    ],
+    "ifcase": [
+
+        "{ [HTTP::path] contains \"-12345\" } then ",
+        "{ ([HTTP::path] contains \"-12345\") }"
+    ],
+    "wrong_ifcase": [
+        "{ not (([HTTP::uri] contains \"/ws-polling/\")) )",
+        "{ not (([HTTP::uri] contains \"/ws-polling/\"))  then ",
+        " not (([HTTP::uri] contains \"/ws-polling/\"))",
+        " not (([HTTP::uri] contains \"/ws-polling/\")) }",
+        "{ not (([HTTP::uri] contains \"/ws-polling/\") }",
+        "{ not (([HTTP::uri]) contains \"/ws-polling/\")  then ",
+        "{ not (( [class match [IP::client_addr] equals mcafee_ips] || ([class match [IP::client_addr] equals intel_ips])) }",
+
+        "{  (([HTTP::uri] contains \"/ws-polling/\")) )",
+        "{  (([HTTP::uri] contains \"/ws-polling/\"))  then ",
+
+        "  (([HTTP::uri] contains \"/ws-polling/\"))",
+        "  (([HTTP::uri] contains \"/ws-polling/\")) }",
+
+        "{  ([HTTP::uri] contains \"/ws-polling/\") )",
+        "{  ([HTTP::uri] contains \"/ws-polling/\")  then ",
+
+        "  [HTTP::uri] contains \"/ws-polling/\")",
+        "  ([HTTP::uri] contains \"/ws-polling/\") }",
+
+        "{  (([HTTP::uri] contains \"/ws-polling/\") }",
+        "{  (([HTTP::uri]) contains \"/ws-polling/\")  then ",
+        "{  (( [class match [IP::client_addr] equals mcafee_ips] || ([class match [IP::client_addr] equals intel_ips])) }"
+    ],
+    "stringmap": [
+        "HTTP::path [string map {\"/share/-12345/\" \"/share/\"} [HTTP::path]]",
+        "HTTP::uri [string map {\"/public/\" \"/private/\"}[HTTP::uri]]"
+    ],
+    "poolswitch": [
+        "      pool payment_pool"
+    ],
+    "nodeswitch": [
+        "      node 10.10.10.10 443"
     ],
     "basecondition": [
         " [HTTP::uri] contains \"/ws-polling/\" ",
