@@ -37,4 +37,10 @@ type ControllerInterface struct {
 
 	// Public IP of interface. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	PublicIPOrName *IPAddr `json:"public_ip_or_name,omitempty"`
+
+	// Enable V4 IP on this interface. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	V4Enabled *bool `json:"v4_enabled,omitempty"`
+
+	// Enable V6 IP on this interface. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	V6Enabled *bool `json:"v6_enabled,omitempty"`
 }
