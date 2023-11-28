@@ -3961,10 +3961,12 @@ font-style: italic;
                 "ip_addr" : "",
                 "mask" : 123
               },
+              "v6_enabled" : true,
               "gateway6" : "",
               "gateway" : "",
               "ip6" : "",
-              "labels" : [ "aeiou" ]
+              "labels" : [ "aeiou" ],
+              "v4_enabled" : true
             } ],
             "password" : "aeiou",
             "vm_uuid" : "aeiou",
@@ -3972,6 +3974,7 @@ font-style: italic;
             "name" : "aeiou",
             "categories" : [ "aeiou" ],
             "vm_hostname" : "aeiou",
+            "ip6" : "",
             "vm_name" : "aeiou"
           }
         },
@@ -7899,10 +7902,12 @@ font-style: italic;
               "ip_addr" : "",
               "mask" : 123
             },
+            "v6_enabled" : true,
             "gateway6" : "",
             "gateway" : "",
             "ip6" : "",
-            "labels" : [ "aeiou" ]
+            "labels" : [ "aeiou" ],
+            "v4_enabled" : true
           } ],
           "password" : "aeiou",
           "vm_uuid" : "aeiou",
@@ -7910,6 +7915,7 @@ font-style: italic;
           "name" : "aeiou",
           "categories" : [ "aeiou" ],
           "vm_hostname" : "aeiou",
+          "ip6" : "",
           "vm_name" : "aeiou"
         }
       },
@@ -11908,10 +11914,12 @@ font-style: italic;
               "ip_addr" : "",
               "mask" : 123
             },
+            "v6_enabled" : true,
             "gateway6" : "",
             "gateway" : "",
             "ip6" : "",
-            "labels" : [ "aeiou" ]
+            "labels" : [ "aeiou" ],
+            "v4_enabled" : true
           } ],
           "password" : "aeiou",
           "vm_uuid" : "aeiou",
@@ -11919,6 +11927,7 @@ font-style: italic;
           "name" : "aeiou",
           "categories" : [ "aeiou" ],
           "vm_hostname" : "aeiou",
+          "ip6" : "",
           "vm_name" : "aeiou"
         }
       },
@@ -15857,10 +15866,12 @@ font-style: italic;
               "ip_addr" : "",
               "mask" : 123
             },
+            "v6_enabled" : true,
             "gateway6" : "",
             "gateway" : "",
             "ip6" : "",
-            "labels" : [ "aeiou" ]
+            "labels" : [ "aeiou" ],
+            "v4_enabled" : true
           } ],
           "password" : "aeiou",
           "vm_uuid" : "aeiou",
@@ -15868,6 +15879,7 @@ font-style: italic;
           "name" : "aeiou",
           "categories" : [ "aeiou" ],
           "vm_hostname" : "aeiou",
+          "ip6" : "",
           "vm_name" : "aeiou"
         }
       },
@@ -19806,10 +19818,12 @@ font-style: italic;
               "ip_addr" : "",
               "mask" : 123
             },
+            "v6_enabled" : true,
             "gateway6" : "",
             "gateway" : "",
             "ip6" : "",
-            "labels" : [ "aeiou" ]
+            "labels" : [ "aeiou" ],
+            "v4_enabled" : true
           } ],
           "password" : "aeiou",
           "vm_uuid" : "aeiou",
@@ -19817,6 +19831,7 @@ font-style: italic;
           "name" : "aeiou",
           "categories" : [ "aeiou" ],
           "vm_hostname" : "aeiou",
+          "ip6" : "",
           "vm_name" : "aeiou"
         }
       },
@@ -26698,7 +26713,8 @@ font-style: italic;
     <div class="field-items">
       <div class="param">categories (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Optional service categories that a node can be assigned (e.g. SYSTEM, INFRASTRUCTURE or ANALYTICS). Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">interfaces (optional)</div><div class="param-desc"><span class="param-type"><a href="#ControllerInterface">array[ControllerInterface]</a></span> Interface details of the controller node. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">ip </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> IP address of controller VM. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> V4 IP address of controller VM. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">ip6 (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> V6 IP address of controller VM. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">password (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The password we will use when authenticating with this node (Not persisted). Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">public_ip_or_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Public IP address or hostname of the controller VM. Field introduced in 17.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -27088,6 +27104,8 @@ font-style: italic;
 <div class="param">mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> IPv4 address mode DHCP/STATIC. Enum options - DHCP, STATIC, VIP, DOCKER_HOST. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">mode6 (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> IPv6 address mode STATIC. Enum options - DHCP, STATIC, VIP, DOCKER_HOST. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">public_ip_or_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> Public IP of interface. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">v4_enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable V4 IP on this interface. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">v6_enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable V6 IP on this interface. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
