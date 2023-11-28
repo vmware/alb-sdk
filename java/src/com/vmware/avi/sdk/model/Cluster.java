@@ -42,6 +42,9 @@ public class Cluster extends AviRestResource  {
     @JsonProperty("virtual_ip")
     private IpAddr virtualIp = null;
 
+    @JsonProperty("virtual_ip6")
+    private IpAddr virtualIp6 = null;
+
 
 
     /**
@@ -186,8 +189,8 @@ public class Cluster extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * A virtual ip address.
-     * This ip address will be dynamically reconfigured so that it always is the ip of the cluster leader.
+     * A v4 virtual ip address.
+     * This v4 ip address will be dynamically reconfigured so that it always is the ip of the cluster leader.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return virtualIp
@@ -198,14 +201,40 @@ public class Cluster extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * A virtual ip address.
-     * This ip address will be dynamically reconfigured so that it always is the ip of the cluster leader.
+     * A v4 virtual ip address.
+     * This v4 ip address will be dynamically reconfigured so that it always is the ip of the cluster leader.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param virtualIp set the virtualIp.
      */
     public void setVirtualIp(IpAddr virtualIp) {
         this.virtualIp = virtualIp;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * A v6 virtual ip address.
+     * This v6 ip address will be dynamically reconfigured so that it always is the ip of the cluster leader.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return virtualIp6
+     */
+    public IpAddr getVirtualIp6() {
+        return virtualIp6;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * A v6 virtual ip address.
+     * This v6 ip address will be dynamically reconfigured so that it always is the ip of the cluster leader.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param virtualIp6 set the virtualIp6.
+     */
+    public void setVirtualIp6(IpAddr virtualIp6) {
+        this.virtualIp6 = virtualIp6;
     }
 
 
@@ -223,6 +252,7 @@ public class Cluster extends AviRestResource  {
   Objects.equals(this.virtualIp, objCluster.virtualIp)&&
   Objects.equals(this.nodes, objCluster.nodes)&&
   Objects.equals(this.rejoinNodesAutomatically, objCluster.rejoinNodesAutomatically)&&
+  Objects.equals(this.virtualIp6, objCluster.virtualIp6)&&
   Objects.equals(this.tenantRef, objCluster.tenantRef);
     }
 
@@ -236,6 +266,7 @@ public class Cluster extends AviRestResource  {
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                         sb.append("    virtualIp: ").append(toIndentedString(virtualIp)).append("\n");
+                        sb.append("    virtualIp6: ").append(toIndentedString(virtualIp6)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
