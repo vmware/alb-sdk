@@ -390,6 +390,9 @@ public class EventDetails  {
     @JsonProperty("os_vnic_details")
     private OpenStackVnicChange osVnicDetails = null;
 
+    @JsonProperty("pkiprofile_details")
+    private PKIProfileDetails pkiprofileDetails = null;
+
     @JsonProperty("pool_deployment_failure_info")
     private PoolDeploymentFailureInfo poolDeploymentFailureInfo = null;
 
@@ -3220,6 +3223,30 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Pkiprofile event.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return pkiprofileDetails
+     */
+    public PKIProfileDetails getPkiprofileDetails() {
+        return pkiprofileDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Pkiprofile event.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param pkiprofileDetails set the pkiprofileDetails.
+     */
+    public void setPkiprofileDetails(PKIProfileDetails pkiprofileDetails) {
+        this.pkiprofileDetails = pkiprofileDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolDeploymentFailureInfo
@@ -5432,7 +5459,8 @@ public class EventDetails  {
   Objects.equals(this.databaseEventInfo, objEventDetails.databaseEventInfo)&&
   Objects.equals(this.dnsQueryError, objEventDetails.dnsQueryError)&&
   Objects.equals(this.connectionEvent, objEventDetails.connectionEvent)&&
-  Objects.equals(this.adaptreplEvent, objEventDetails.adaptreplEvent);
+  Objects.equals(this.adaptreplEvent, objEventDetails.adaptreplEvent)&&
+  Objects.equals(this.pkiprofileDetails, objEventDetails.pkiprofileDetails);
     }
 
     @Override
@@ -5562,6 +5590,7 @@ public class EventDetails  {
                         sb.append("    osSeVmDetails: ").append(toIndentedString(osSeVmDetails)).append("\n");
                         sb.append("    osSyncServicesDetails: ").append(toIndentedString(osSyncServicesDetails)).append("\n");
                         sb.append("    osVnicDetails: ").append(toIndentedString(osVnicDetails)).append("\n");
+                        sb.append("    pkiprofileDetails: ").append(toIndentedString(pkiprofileDetails)).append("\n");
                         sb.append("    poolDeploymentFailureInfo: ").append(toIndentedString(poolDeploymentFailureInfo)).append("\n");
                         sb.append("    poolDeploymentSuccessInfo: ").append(toIndentedString(poolDeploymentSuccessInfo)).append("\n");
                         sb.append("    poolDeploymentUpdateInfo: ").append(toIndentedString(poolDeploymentUpdateInfo)).append("\n");
