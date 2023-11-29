@@ -328,7 +328,9 @@ public class OAuthProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Buffering size for the responses from the oauth enpoints.
+     * Allowed values are 0-32768000.
      * Field introduced in 21.1.3.
+     * Unit is bytes.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 102400.
      * @return oauthRespBufferSz
@@ -340,7 +342,9 @@ public class OAuthProfile  {
     /**
      * This is the setter method to the attribute.
      * Buffering size for the responses from the oauth enpoints.
+     * Allowed values are 0-32768000.
      * Field introduced in 21.1.3.
+     * Unit is bytes.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 102400.
      * @param oauthRespBufferSz set the oauthRespBufferSz.

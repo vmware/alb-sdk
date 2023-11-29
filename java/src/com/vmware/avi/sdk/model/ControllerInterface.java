@@ -51,6 +51,12 @@ public class ControllerInterface  {
     @JsonProperty("public_ip_or_name")
     private IpAddr publicIpOrName = null;
 
+    @JsonProperty("v4_enabled")
+    private Boolean v4Enabled = null;
+
+    @JsonProperty("v6_enabled")
+    private Boolean v6Enabled = null;
+
 
 
     /**
@@ -315,6 +321,54 @@ public class ControllerInterface  {
         this.publicIpOrName = publicIpOrName;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enable v4 ip on this interface.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return v4Enabled
+     */
+    public Boolean getV4Enabled() {
+        return v4Enabled;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable v4 ip on this interface.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param v4Enabled set the v4Enabled.
+     */
+    public void setV4Enabled(Boolean  v4Enabled) {
+        this.v4Enabled = v4Enabled;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enable v6 ip on this interface.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return v6Enabled
+     */
+    public Boolean getV6Enabled() {
+        return v6Enabled;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable v6 ip on this interface.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param v6Enabled set the v6Enabled.
+     */
+    public void setV6Enabled(Boolean  v6Enabled) {
+        this.v6Enabled = v6Enabled;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -334,7 +388,9 @@ public class ControllerInterface  {
   Objects.equals(this.publicIpOrName, objControllerInterface.publicIpOrName)&&
   Objects.equals(this.mode6, objControllerInterface.mode6)&&
   Objects.equals(this.ip6, objControllerInterface.ip6)&&
-  Objects.equals(this.gateway6, objControllerInterface.gateway6);
+  Objects.equals(this.gateway6, objControllerInterface.gateway6)&&
+  Objects.equals(this.v4Enabled, objControllerInterface.v4Enabled)&&
+  Objects.equals(this.v6Enabled, objControllerInterface.v6Enabled);
     }
 
     @Override
@@ -351,6 +407,8 @@ public class ControllerInterface  {
                         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
                         sb.append("    mode6: ").append(toIndentedString(mode6)).append("\n");
                         sb.append("    publicIpOrName: ").append(toIndentedString(publicIpOrName)).append("\n");
+                        sb.append("    v4Enabled: ").append(toIndentedString(v4Enabled)).append("\n");
+                        sb.append("    v6Enabled: ").append(toIndentedString(v6Enabled)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

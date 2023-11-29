@@ -90,6 +90,12 @@ public class Cloud extends AviRestResource  {
     @JsonProperty("metrics_polling_interval")
     private Integer metricsPollingInterval = 300;
 
+    @JsonProperty("mgmt_ip_v4_enabled")
+    private Boolean mgmtIpV4Enabled = true;
+
+    @JsonProperty("mgmt_ip_v6_enabled")
+    private Boolean mgmtIpV6Enabled = true;
+
     @JsonProperty("mtu")
     private Integer mtu = 1500;
 
@@ -760,6 +766,54 @@ public class Cloud extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Enable ipv4 on the management interface of the serviceengine.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return mgmtIpV4Enabled
+     */
+    public Boolean getMgmtIpV4Enabled() {
+        return mgmtIpV4Enabled;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable ipv4 on the management interface of the serviceengine.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param mgmtIpV4Enabled set the mgmtIpV4Enabled.
+     */
+    public void setMgmtIpV4Enabled(Boolean  mgmtIpV4Enabled) {
+        this.mgmtIpV4Enabled = mgmtIpV4Enabled;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enable ipv6 on the management interface of the serviceengine.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return mgmtIpV6Enabled
+     */
+    public Boolean getMgmtIpV6Enabled() {
+        return mgmtIpV6Enabled;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable ipv6 on the management interface of the serviceengine.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param mgmtIpV6Enabled set the mgmtIpV6Enabled.
+     */
+    public void setMgmtIpV6Enabled(Boolean  mgmtIpV6Enabled) {
+        this.mgmtIpV6Enabled = mgmtIpV6Enabled;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Mtu setting for the cloud.
      * Unit is bytes.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -1225,6 +1279,8 @@ public class Cloud extends AviRestResource  {
   Objects.equals(this.enableVipOnAllInterfaces, objCloud.enableVipOnAllInterfaces)&&
   Objects.equals(this.maintenanceMode, objCloud.maintenanceMode)&&
   Objects.equals(this.resolveFqdnToIpv6, objCloud.resolveFqdnToIpv6)&&
+  Objects.equals(this.mgmtIpV4Enabled, objCloud.mgmtIpV4Enabled)&&
+  Objects.equals(this.mgmtIpV6Enabled, objCloud.mgmtIpV6Enabled)&&
   Objects.equals(this.tenantRef, objCloud.tenantRef)&&
   Objects.equals(this.licenseTier, objCloud.licenseTier)&&
   Objects.equals(this.autoscalePollingInterval, objCloud.autoscalePollingInterval)&&
@@ -1263,6 +1319,8 @@ public class Cloud extends AviRestResource  {
                         sb.append("    maintenanceMode: ").append(toIndentedString(maintenanceMode)).append("\n");
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    metricsPollingInterval: ").append(toIndentedString(metricsPollingInterval)).append("\n");
+                        sb.append("    mgmtIpV4Enabled: ").append(toIndentedString(mgmtIpV4Enabled)).append("\n");
+                        sb.append("    mgmtIpV6Enabled: ").append(toIndentedString(mgmtIpV6Enabled)).append("\n");
                         sb.append("    mtu: ").append(toIndentedString(mtu)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    nsxtConfiguration: ").append(toIndentedString(nsxtConfiguration)).append("\n");

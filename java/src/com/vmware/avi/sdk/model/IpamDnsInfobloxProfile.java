@@ -27,6 +27,9 @@ public class IpamDnsInfobloxProfile  {
     @JsonProperty("extensible_attributes")
     private List<CustomParams> extensibleAttributes = null;
 
+    @JsonProperty("ip6_address")
+    private IpAddr ip6Address = null;
+
     @JsonProperty("ip_address")
     private IpAddr ipAddress = null;
 
@@ -113,7 +116,31 @@ public class IpamDnsInfobloxProfile  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Address of infoblox appliance.
+     * Ipv6 address of infoblox appliance.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return ip6Address
+     */
+    public IpAddr getIp6Address() {
+        return ip6Address;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Ipv6 address of infoblox appliance.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param ip6Address set the ip6Address.
+     */
+    public void setIp6Address(IpAddr ip6Address) {
+        this.ip6Address = ip6Address;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Ipv4 address of infoblox appliance.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipAddress
@@ -124,7 +151,7 @@ public class IpamDnsInfobloxProfile  {
 
     /**
      * This is the setter method to the attribute.
-     * Address of infoblox appliance.
+     * Ipv4 address of infoblox appliance.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipAddress set the ipAddress.
@@ -314,7 +341,8 @@ public class IpamDnsInfobloxProfile  {
   Objects.equals(this.networkView, objIpamDnsInfobloxProfile.networkView)&&
   Objects.equals(this.usableDomains, objIpamDnsInfobloxProfile.usableDomains)&&
   Objects.equals(this.extensibleAttributes, objIpamDnsInfobloxProfile.extensibleAttributes)&&
-  Objects.equals(this.usableAllocSubnets, objIpamDnsInfobloxProfile.usableAllocSubnets);
+  Objects.equals(this.usableAllocSubnets, objIpamDnsInfobloxProfile.usableAllocSubnets)&&
+  Objects.equals(this.ip6Address, objIpamDnsInfobloxProfile.ip6Address);
     }
 
     @Override
@@ -323,6 +351,7 @@ public class IpamDnsInfobloxProfile  {
       sb.append("class IpamDnsInfobloxProfile {\n");
                   sb.append("    dnsView: ").append(toIndentedString(dnsView)).append("\n");
                         sb.append("    extensibleAttributes: ").append(toIndentedString(extensibleAttributes)).append("\n");
+                        sb.append("    ip6Address: ").append(toIndentedString(ip6Address)).append("\n");
                         sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
                         sb.append("    networkView: ").append(toIndentedString(networkView)).append("\n");
                         sb.append("    password: ").append(toIndentedString(password)).append("\n");
