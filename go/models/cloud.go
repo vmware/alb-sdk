@@ -84,6 +84,12 @@ type Cloud struct {
 	// Cloud metrics collector polling interval in seconds. Field introduced in 22.1.1. Unit is SECONDS. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	MetricsPollingInterval *int32 `json:"metrics_polling_interval,omitempty"`
 
+	// Enable IPv4 on the Management interface of the ServiceEngine. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	MgmtIPV4Enabled *bool `json:"mgmt_ip_v4_enabled,omitempty"`
+
+	// Enable IPv6 on the Management interface of the ServiceEngine. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	MgmtIPV6Enabled *bool `json:"mgmt_ip_v6_enabled,omitempty"`
+
 	// MTU setting for the cloud. Unit is BYTES. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Mtu *int32 `json:"mtu,omitempty"`
 
