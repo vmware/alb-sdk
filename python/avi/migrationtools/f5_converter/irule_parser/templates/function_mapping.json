@@ -1,0 +1,72 @@
+[
+  {
+    "function": "SSL::cipher version",
+    "mapping": "HTTP_POLICY_VAR_SSL_PROTOCOL"
+
+  },
+  {
+    "function": "SSL::sni name",
+    "mapping": "HTTP_POLICY_VAR_SSL_SERVER_NAME"
+
+  },
+  {
+    "function": "SSL::cipher name",
+    "mapping": "HTTP_POLICY_VAR_SSL_CIPHER"
+
+  },
+  {
+    "function": "X509::hash",
+    "mapping": "HTTP_POLICY_VAR_SSL_CLIENT_FINGERPRINT"
+
+  },
+  {
+    "function": "X509::serial_number",
+    "mapping": "HTTP_POLICY_VAR_SSL_CLIENT_SERIAL"
+
+  },
+  {
+    "function": "SSL::cert issuer",
+    "mapping": "HTTP_POLICY_VAR_SSL_CLIENT_ISSUER"
+
+  },
+  {
+    "function": "X509::issuer",
+    "mapping": "HTTP_POLICY_VAR_SSL_CLIENT_ISSUER"
+
+  },
+  {
+    "function": "X509::subject",
+    "mapping": "HTTP_POLICY_VAR_SSL_CLIENT_SUBJECT"
+
+  },
+  {
+    "function": "SSL::cert",
+    "mapping": "HTTP_POLICY_VAR_SSL_CLIENT_RAW"
+
+  },
+  {
+    "function": "X509::signature_algorithm",
+    "mapping": "HTTP_POLICY_VAR_SSL_CLIENT_SIGALG"
+
+  },
+  {
+    "function": "X509::not_valid_before",
+    "mapping": "HTTP_POLICY_VAR_SSL_CLIENT_NOTVALIDBEFORE"
+
+  },
+  {
+    "function": "X509::not_valid_after",
+    "mapping": "HTTP_POLICY_VAR_SSL_CLIENT_NOTVALIDAFTER"
+
+  },
+  {
+    "function": "SSL::cipher version",
+    "mapping": "HTTP_POLICY_VAR_SSL_CLIENT_VERSION"
+
+  },
+  {
+    "function": "IP::client_addr",
+    "mapping": "HTTP_POLICY_VAR_CLIENT_IP"
+
+  }
+]

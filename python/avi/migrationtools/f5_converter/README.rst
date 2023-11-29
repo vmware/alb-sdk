@@ -294,3 +294,12 @@ optional arguments:
   --vs_filter VS_FILTER
                         comma seperated names of virtualservices
   --vs_level_status     Add columns of vs reference and overall skipped settings in status excel sheet
+
+  
+  --custom_config       iRule/monitor custom mapping yml file path.(File containing converted iRules or health monitors)
+    
+    
+  --autogen_irules      flag to auto generate irules custom config
+        
+  --use_avi_config      flag to use avi config for creating custom config
+    

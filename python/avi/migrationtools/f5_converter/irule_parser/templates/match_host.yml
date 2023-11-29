@@ -1,0 +1,9 @@
+- enable: true
+  index: 1
+  name: {{ rule_name }}
+  match:
+    host_hdr:
+      match_case: INSENSITIVE
+      value:
+      - {{ value }}
+      match_criteria: {{ condition }}

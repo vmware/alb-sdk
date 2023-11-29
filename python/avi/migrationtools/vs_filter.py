@@ -82,9 +82,8 @@ def search_obj(entity, name, new_config, avi_config, depth, skip_ref_objects=ski
         found_obj = found_obj[0]
         print('| '*depth + '|- %s(%s)' % (name, path_key_map[entity]))
     elif entity in ['applicationprofile', 'networkprofile', 'healthmonitor',
-                    'sslkeyandcertificate', 'sslprofile']:
-        if str.startswith(str(name), 'System-'):
-            return
+                    'sslkeyandcertificate', 'sslprofile'] and str.startswith(str(name), 'System-'):
+        return
     elif entity == 'vrfcontext':
         return
     else:

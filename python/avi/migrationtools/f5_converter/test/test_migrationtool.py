@@ -138,7 +138,7 @@ def f5_conv(
         user=ARG_DEFAULT_VALUE['user'],
         password=None, controller_ip=None,
         tenant='admin', cloud_name=ARG_DEFAULT_VALUE['cloud_name'],
-        vs_state=ARG_DEFAULT_VALUE['vs_state'],
+        vs_state=ARG_DEFAULT_VALUE['vs_state'],f5_tenant=None,
         controller_version=None, f5_host_ip=None, f5_ssh_user=None,
         f5_ssh_password=None, f5_ssh_port=None, f5_key_file=None,
         ignore_config=None, partition_config=None, version=False,
@@ -147,14 +147,15 @@ def f5_conv(
         prefix=None, convertsnat=False, not_in_use=False, baseline_profile=None,
         f5_passphrase_file=None, vs_level_status=False, test_vip=None,
         vrf=None, segroup=None, custom_config=None, skip_pki=False,
-        distinct_app_profile=False, reuse_http_policy=False, args_config_file=None, excel_mappings=None):
+        distinct_app_profile=False, reuse_http_policy=False, args_config_file=None, excel_mappings=None,
+        autogen_irules=False, use_avi_config=False):
     args = Namespace(bigip_config_file=bigip_config_file,
                      skip_default_file=skip_default_file,
                      f5_config_version=f5_config_version,
                      input_folder_location=input_folder_location,
                      output_file_path=output_file_path, option=option,
                      user=user, password=password, controller_ip=controller_ip,
-                     tenant=tenant, cloud_name=cloud_name, vs_state=vs_state,
+                     tenant=tenant, cloud_name=cloud_name, vs_state=vs_state,f5_tenant=f5_tenant,
                      controller_version=controller_version,
                      f5_host_ip=f5_host_ip, f5_ssh_user=f5_ssh_user,
                      f5_ssh_password=f5_ssh_password,
@@ -174,7 +175,9 @@ def f5_conv(
                      skip_pki=skip_pki,
                      distinct_app_profile=distinct_app_profile,
                      reuse_http_policy=reuse_http_policy,
-                     args_config_file=args_config_file, excel_mappings=excel_mappings)
+                     args_config_file=args_config_file, excel_mappings=excel_mappings,
+                     autogen_irules=autogen_irules,
+                     use_avi_config=use_avi_config)
 
     args = get_terminal_args(terminal_args=args)
     f5_converter = F5Converter(args)

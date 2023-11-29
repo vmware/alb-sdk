@@ -1,0 +1,10 @@
+- enable: true
+  index: 1
+  name: {{ rule_name }}
+  match:
+    hdrs:
+      hdr: {{ hdr }}
+      match_case: INSENSITIVE
+      match_criteria: {{ condition }}
+      match_str:
+      - {{ value }}

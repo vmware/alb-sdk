@@ -30,6 +30,7 @@ from avi.migrationtools.f5_converter.conversion_util import F5Util
 from avi.migrationtools.f5_converter.ciphers_converter import CiphersConfigConv
 from avi.migrationtools.f5_converter.f5_config_parser import iRuleDiscovery
 from avi.migrationtools.f5_converter.f5_discovery import F5InventoryConv
+from avi.migrationtools.f5_converter.custom_config import CustomConfig
 
 # urllib3.disable_warnings()
 LOG = logging.getLogger(__name__)
@@ -342,9 +343,22 @@ class F5Converter(AviConverter):
         if self.custom_config:
             with open(self.custom_config) as stream:
                 custom_mappings = yaml.safe_load(stream)
-        elif self.autogen_irules:        
-            custom_mappings = irule_dis.load_irule_custom_config(output_dir)
-            
+        else :
+            if self.use_avi_config:
+                custom_config_obj = CustomConfig(self.controller_ip, self.user, self.password,
+                                        self.controller_version, self.tenant)
+                custom_config = custom_config_obj.build_custom_config()
+                custom_mappings = custom_config_obj.build_irule_config(custom_config)
+    
+            if self.autogen_irules:
+                autogen_custom_conf = irule_dis.load_irule_custom_config(output_dir)
+
+                if custom_mappings:
+                    key = "irule_custom_config"
+                    custom_mappings[key].extend(autogen_custom_conf[key])
+                else:
+                    custom_mappings=autogen_custom_conf
+
         migrated_ciphers_dict={}
         migrated_ciphers_group_dict={}
 
@@ -1044,6 +1058,10 @@ if __name__ == "__main__":
             % (sdk_version, args.controller_version)
         )
         exit(0)
+
+    if args.custom_config and not args.controller_ip:
+        print("Avi Controller credentials are required for custom config")
+        exit(1)
 
     if not os.path.isdir(args.output_file_path):
         print("Creating output directory ...")

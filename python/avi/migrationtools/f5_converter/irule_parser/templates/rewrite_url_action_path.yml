@@ -1,0 +1,5 @@
+    rewrite_url_action:
+      {{ path_token_dict }}
+        type: URI_PARAM_TYPE_TOKENIZED
+      query:
+        keep_query: true

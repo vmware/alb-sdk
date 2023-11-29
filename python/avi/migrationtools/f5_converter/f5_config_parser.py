@@ -18,6 +18,7 @@ class iRuleDiscovery():
        self.vs_pattern = '(?<=/'+re.escape(self.tenant)+'/)(.*)(?={)'
        self.pattern = '(?<=ltm rule /'+re.escape(self.tenant)+'/)(.*)(?= {)'
        self.irule_discovery_data={}
+       self.migrated_irules=[]
        
     def get_irule_discovery(self,output_dir,report_name):
         '''
@@ -113,8 +114,10 @@ class iRuleDiscovery():
                 irule_dict={
                     "Irule":irule,
                     "Vs" : vs,
-                    "vs_count":len(vs)
+                    "vs_count":len(vs),
+                    "Status": "SUCCESSFUL" if irule in self.migrated_irules else "SKIPPED"
                 }
+
                 listObj["Irule_discovery"].append(irule_dict)
             
         with open(convertedstatus_path, 'w') as json_file:
@@ -127,8 +130,9 @@ class iRuleDiscovery():
             bigip_conf = file.read()
         f5_irule_data = extract_irule_from_config(bigip_conf)
         irule_custom_config = parse_irule_for_f5_conv(f5_irule_data)
+        self.migrated_irules = [irule.get("rule_name") for irule in irule_custom_config ]
         yaml_data={"irule_custom_config":irule_custom_config}
-        
+
         yaml.dump(yaml_data, open(output_dir+'/autogen_irules.yaml', 'w'))
         return yaml_data
             

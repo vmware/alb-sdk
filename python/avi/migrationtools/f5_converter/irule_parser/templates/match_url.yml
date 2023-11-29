@@ -1,9 +1,9 @@
 - enable: true
   index: 1
+  name: {{ rule_name }}
   match:
     path:
       match_case: INSENSITIVE
-      match_criteria: CONTAINS
+      match_criteria: {{ condition }}
       match_str:
       - {{ match_str }}
-  name: {{ rule_name }}

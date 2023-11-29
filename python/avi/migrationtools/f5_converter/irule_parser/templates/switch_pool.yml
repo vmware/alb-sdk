@@ -1,0 +1,4 @@
+    switching_action:
+      action: HTTP_SWITCHING_SELECT_POOL
+      pool_ref: "/api/pool?name={{ pool_name }}"
+      status_code: HTTP_LOCAL_RESPONSE_STATUS_CODE_200
