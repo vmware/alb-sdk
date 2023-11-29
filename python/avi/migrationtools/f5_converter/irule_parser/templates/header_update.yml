@@ -1,0 +1,6 @@
+# TODO: AV-193174: Change name to a placeholder to be dynamically populated with irule name
+- avi_config:
+    http_request_policy:
+    name: header_update
+  rule_name: header_update
+  type: HTTPPolicySet

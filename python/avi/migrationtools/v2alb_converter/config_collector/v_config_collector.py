@@ -62,7 +62,7 @@ class NsxvExport:
             v_cert = vCert(self.v_host, self.v_user, self.v_pass, v_config_dir)
             v_cert.fetch_cert()
         except Exception as e:
-            msg = f"Error while exporting nsx-v configuration . Message: {e}"
+            msg = f"Error while exporting nsx-v configuration. Message: {e}"
             print(msg)
             LOG.error(msg)
 

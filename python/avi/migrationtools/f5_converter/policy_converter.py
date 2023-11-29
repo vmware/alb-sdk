@@ -225,7 +225,9 @@ class PolicyConfigConv(object):
         else:
             msg = "No rule found for policy {}".format(policy_name)
             LOG.debug(msg)
-            return msg
+            strMsg = dict()
+            strMsg["warning"] = msg
+            return strMsg
 
     def create_match_rule(self, match_dict, avi_config, rule_name, each_rule):
         """
