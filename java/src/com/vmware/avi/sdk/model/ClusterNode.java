@@ -30,6 +30,9 @@ public class ClusterNode  {
     @JsonProperty("ip")
     private IpAddr ip = null;
 
+    @JsonProperty("ip6")
+    private IpAddr ip6 = null;
+
     @JsonProperty("name")
     private String name = "node";
 
@@ -139,7 +142,7 @@ public class ClusterNode  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Ip address of controller vm.
+     * V4 ip address of controller vm.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ip
@@ -150,13 +153,37 @@ public class ClusterNode  {
 
     /**
      * This is the setter method to the attribute.
-     * Ip address of controller vm.
+     * V4 ip address of controller vm.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ip set the ip.
      */
     public void setIp(IpAddr ip) {
         this.ip = ip;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * V6 ip address of controller vm.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return ip6
+     */
+    public IpAddr getIp6() {
+        return ip6;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * V6 ip address of controller vm.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param ip6 set the ip6.
+     */
+    public void setIp6(IpAddr ip6) {
+        this.ip6 = ip6;
     }
 
     /**
@@ -374,7 +401,8 @@ public class ClusterNode  {
   Objects.equals(this.categories, objClusterNode.categories)&&
   Objects.equals(this.password, objClusterNode.password)&&
   Objects.equals(this.interfaces, objClusterNode.interfaces)&&
-  Objects.equals(this.staticRoutes, objClusterNode.staticRoutes);
+  Objects.equals(this.staticRoutes, objClusterNode.staticRoutes)&&
+  Objects.equals(this.ip6, objClusterNode.ip6);
     }
 
     @Override
@@ -384,6 +412,7 @@ public class ClusterNode  {
                   sb.append("    categories: ").append(toIndentedString(categories)).append("\n");
                         sb.append("    interfaces: ").append(toIndentedString(interfaces)).append("\n");
                         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+                        sb.append("    ip6: ").append(toIndentedString(ip6)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    password: ").append(toIndentedString(password)).append("\n");
                         sb.append("    publicIpOrName: ").append(toIndentedString(publicIpOrName)).append("\n");

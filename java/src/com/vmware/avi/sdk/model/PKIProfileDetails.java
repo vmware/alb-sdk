@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The NsxtTier1SegmentManualMode is a POJO class extends AviRestResource that used for creating
- * NsxtTier1SegmentManualMode.
+ * The PKIProfileDetails is a POJO class extends AviRestResource that used for creating
+ * PKIProfileDetails.
  *
  * @version 1.0
  * @since 
@@ -20,52 +20,57 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class NsxtTier1SegmentManualMode  {
-    @JsonProperty("tier1_lrs")
-    private List<Tier1LogicalRouterInfo> tier1Lrs = null;
+public class PKIProfileDetails  {
+    @JsonProperty("crls")
+    private String crls = null;
+
+    @JsonProperty("name")
+    private String name = null;
+
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Tier1 logical router placement information.
-     * Field introduced in 20.1.1.
-     * Minimum of 1 items required.
+     * Crl list.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return tier1Lrs
+     * @return crls
      */
-    public List<Tier1LogicalRouterInfo> getTier1Lrs() {
-        return tier1Lrs;
+    public String getCrls() {
+        return crls;
     }
 
     /**
-     * This is the setter method. this will set the tier1Lrs
-     * Tier1 logical router placement information.
-     * Field introduced in 20.1.1.
-     * Minimum of 1 items required.
+     * This is the setter method to the attribute.
+     * Crl list.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return tier1Lrs
+     * @param crls set the crls.
      */
-    public void setTier1Lrs(List<Tier1LogicalRouterInfo>  tier1Lrs) {
-        this.tier1Lrs = tier1Lrs;
+    public void setCrls(String  crls) {
+        this.crls = crls;
     }
 
     /**
-     * This is the setter method this will set the tier1Lrs
-     * Tier1 logical router placement information.
-     * Field introduced in 20.1.1.
-     * Minimum of 1 items required.
+     * This is the getter method this will return the attribute value.
+     * Name of pkiprofile.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return tier1Lrs
+     * @return name
      */
-    public NsxtTier1SegmentManualMode addTier1LrsItem(Tier1LogicalRouterInfo tier1LrsItem) {
-      if (this.tier1Lrs == null) {
-        this.tier1Lrs = new ArrayList<Tier1LogicalRouterInfo>();
-      }
-      this.tier1Lrs.add(tier1LrsItem);
-      return this;
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Name of pkiprofile.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param name set the name.
+     */
+    public void setName(String  name) {
+        this.name = name;
     }
 
 
@@ -77,15 +82,17 @@ public class NsxtTier1SegmentManualMode  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      NsxtTier1SegmentManualMode objNsxtTier1SegmentManualMode = (NsxtTier1SegmentManualMode) o;
-      return   Objects.equals(this.tier1Lrs, objNsxtTier1SegmentManualMode.tier1Lrs);
+      PKIProfileDetails objPKIProfileDetails = (PKIProfileDetails) o;
+      return   Objects.equals(this.name, objPKIProfileDetails.name)&&
+  Objects.equals(this.crls, objPKIProfileDetails.crls);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class NsxtTier1SegmentManualMode {\n");
-                  sb.append("    tier1Lrs: ").append(toIndentedString(tier1Lrs)).append("\n");
+      sb.append("class PKIProfileDetails {\n");
+                  sb.append("    crls: ").append(toIndentedString(crls)).append("\n");
+                        sb.append("    name: ").append(toIndentedString(name)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

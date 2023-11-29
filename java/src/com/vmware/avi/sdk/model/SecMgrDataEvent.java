@@ -31,7 +31,7 @@ public class SecMgrDataEvent  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Type of the generated for an application.
+     * Error type generated for an application.
      * Field introduced in 20.1.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -43,7 +43,7 @@ public class SecMgrDataEvent  {
 
     /**
      * This is the setter method to the attribute.
-     * Type of the generated for an application.
+     * Error type generated for an application.
      * Field introduced in 20.1.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.

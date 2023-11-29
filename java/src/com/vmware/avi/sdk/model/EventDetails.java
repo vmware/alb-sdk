@@ -390,6 +390,9 @@ public class EventDetails  {
     @JsonProperty("os_vnic_details")
     private OpenStackVnicChange osVnicDetails = null;
 
+    @JsonProperty("pkiprofile_details")
+    private PKIProfileDetails pkiprofileDetails = null;
+
     @JsonProperty("pool_deployment_failure_info")
     private PoolDeploymentFailureInfo poolDeploymentFailureInfo = null;
 
@@ -419,6 +422,9 @@ public class EventDetails  {
 
     @JsonProperty("reboot_se_details")
     private RmRebootSeEventDetails rebootSeDetails = null;
+
+    @JsonProperty("saml_metadata_failed_events")
+    private SamlMetadataUpdateFailedDetails samlMetadataFailedEvents = null;
 
     @JsonProperty("scheduler_action_info")
     private SchedulerActionDetails schedulerActionInfo = null;
@@ -3217,6 +3223,30 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Pkiprofile event.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return pkiprofileDetails
+     */
+    public PKIProfileDetails getPkiprofileDetails() {
+        return pkiprofileDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Pkiprofile event.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param pkiprofileDetails set the pkiprofileDetails.
+     */
+    public void setPkiprofileDetails(PKIProfileDetails pkiprofileDetails) {
+        this.pkiprofileDetails = pkiprofileDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return poolDeploymentFailureInfo
@@ -3415,6 +3445,26 @@ public class EventDetails  {
      */
     public void setRebootSeDetails(RmRebootSeEventDetails rebootSeDetails) {
         this.rebootSeDetails = rebootSeDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return samlMetadataFailedEvents
+     */
+    public SamlMetadataUpdateFailedDetails getSamlMetadataFailedEvents() {
+        return samlMetadataFailedEvents;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param samlMetadataFailedEvents set the samlMetadataFailedEvents.
+     */
+    public void setSamlMetadataFailedEvents(SamlMetadataUpdateFailedDetails samlMetadataFailedEvents) {
+        this.samlMetadataFailedEvents = samlMetadataFailedEvents;
     }
 
     /**
@@ -5291,6 +5341,7 @@ public class EventDetails  {
   Objects.equals(this.sslRenewFailedDetails, objEventDetails.sslRenewFailedDetails)&&
   Objects.equals(this.sslIgnoredDetails, objEventDetails.sslIgnoredDetails)&&
   Objects.equals(this.sslRevokedDetails, objEventDetails.sslRevokedDetails)&&
+  Objects.equals(this.samlMetadataFailedEvents, objEventDetails.samlMetadataFailedEvents)&&
   Objects.equals(this.clusterNodeAddDetails, objEventDetails.clusterNodeAddDetails)&&
   Objects.equals(this.clusterNodeRemoveDetails, objEventDetails.clusterNodeRemoveDetails)&&
   Objects.equals(this.clusterServiceFailedDetails, objEventDetails.clusterServiceFailedDetails)&&
@@ -5408,7 +5459,8 @@ public class EventDetails  {
   Objects.equals(this.databaseEventInfo, objEventDetails.databaseEventInfo)&&
   Objects.equals(this.dnsQueryError, objEventDetails.dnsQueryError)&&
   Objects.equals(this.connectionEvent, objEventDetails.connectionEvent)&&
-  Objects.equals(this.adaptreplEvent, objEventDetails.adaptreplEvent);
+  Objects.equals(this.adaptreplEvent, objEventDetails.adaptreplEvent)&&
+  Objects.equals(this.pkiprofileDetails, objEventDetails.pkiprofileDetails);
     }
 
     @Override
@@ -5538,6 +5590,7 @@ public class EventDetails  {
                         sb.append("    osSeVmDetails: ").append(toIndentedString(osSeVmDetails)).append("\n");
                         sb.append("    osSyncServicesDetails: ").append(toIndentedString(osSyncServicesDetails)).append("\n");
                         sb.append("    osVnicDetails: ").append(toIndentedString(osVnicDetails)).append("\n");
+                        sb.append("    pkiprofileDetails: ").append(toIndentedString(pkiprofileDetails)).append("\n");
                         sb.append("    poolDeploymentFailureInfo: ").append(toIndentedString(poolDeploymentFailureInfo)).append("\n");
                         sb.append("    poolDeploymentSuccessInfo: ").append(toIndentedString(poolDeploymentSuccessInfo)).append("\n");
                         sb.append("    poolDeploymentUpdateInfo: ").append(toIndentedString(poolDeploymentUpdateInfo)).append("\n");
@@ -5548,6 +5601,7 @@ public class EventDetails  {
                         sb.append("    rebalanceScaleinDetails: ").append(toIndentedString(rebalanceScaleinDetails)).append("\n");
                         sb.append("    rebalanceScaleoutDetails: ").append(toIndentedString(rebalanceScaleoutDetails)).append("\n");
                         sb.append("    rebootSeDetails: ").append(toIndentedString(rebootSeDetails)).append("\n");
+                        sb.append("    samlMetadataFailedEvents: ").append(toIndentedString(samlMetadataFailedEvents)).append("\n");
                         sb.append("    schedulerActionInfo: ").append(toIndentedString(schedulerActionInfo)).append("\n");
                         sb.append("    seBgpPeerDownDetails: ").append(toIndentedString(seBgpPeerDownDetails)).append("\n");
                         sb.append("    seBgpPeerStateChangeDetails: ").append(toIndentedString(seBgpPeerStateChangeDetails)).append("\n");

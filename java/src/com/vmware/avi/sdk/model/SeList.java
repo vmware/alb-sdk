@@ -48,6 +48,9 @@ public class SeList  {
     @JsonProperty("floating_intf_ip")
     private List<IpAddr> floatingIntfIp = null;
 
+    @JsonProperty("floating_intf_ip6_addresses")
+    private List<IpAddr> floatingIntfIp6Addresses = null;
+
     @JsonProperty("incarnation")
     private String incarnation = null;
 
@@ -334,6 +337,45 @@ public class SeList  {
         this.floatingIntfIp = new ArrayList<IpAddr>();
       }
       this.floatingIntfIp.add(floatingIntfIpItem);
+      return this;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Ipv6 floating interface ips for the routingservice.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return floatingIntfIp6Addresses
+     */
+    public List<IpAddr> getFloatingIntfIp6Addresses() {
+        return floatingIntfIp6Addresses;
+    }
+
+    /**
+     * This is the setter method. this will set the floatingIntfIp6Addresses
+     * Ipv6 floating interface ips for the routingservice.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return floatingIntfIp6Addresses
+     */
+    public void setFloatingIntfIp6Addresses(List<IpAddr>  floatingIntfIp6Addresses) {
+        this.floatingIntfIp6Addresses = floatingIntfIp6Addresses;
+    }
+
+    /**
+     * This is the setter method this will set the floatingIntfIp6Addresses
+     * Ipv6 floating interface ips for the routingservice.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return floatingIntfIp6Addresses
+     */
+    public SeList addFloatingIntfIp6AddressesItem(IpAddr floatingIntfIp6AddressesItem) {
+      if (this.floatingIntfIp6Addresses == null) {
+        this.floatingIntfIp6Addresses = new ArrayList<IpAddr>();
+      }
+      this.floatingIntfIp6Addresses.add(floatingIntfIp6AddressesItem);
       return this;
     }
 
@@ -877,7 +919,8 @@ public class SeList  {
   Objects.equals(this.activeOnCloud, objSeList.activeOnCloud)&&
   Objects.equals(this.cloudProgrammingDone, objSeList.cloudProgrammingDone)&&
   Objects.equals(this.cloudProgrammingStatus, objSeList.cloudProgrammingStatus)&&
-  Objects.equals(this.snatIp6Address, objSeList.snatIp6Address);
+  Objects.equals(this.snatIp6Address, objSeList.snatIp6Address)&&
+  Objects.equals(this.floatingIntfIp6Addresses, objSeList.floatingIntfIp6Addresses);
     }
 
     @Override
@@ -893,6 +936,7 @@ public class SeList  {
                         sb.append("    deleteInProgress: ").append(toIndentedString(deleteInProgress)).append("\n");
                         sb.append("    detachIpInProgress: ").append(toIndentedString(detachIpInProgress)).append("\n");
                         sb.append("    floatingIntfIp: ").append(toIndentedString(floatingIntfIp)).append("\n");
+                        sb.append("    floatingIntfIp6Addresses: ").append(toIndentedString(floatingIntfIp6Addresses)).append("\n");
                         sb.append("    incarnation: ").append(toIndentedString(incarnation)).append("\n");
                         sb.append("    isPortchannel: ").append(toIndentedString(isPortchannel)).append("\n");
                         sb.append("    isPrimary: ").append(toIndentedString(isPrimary)).append("\n");
