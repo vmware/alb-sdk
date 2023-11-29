@@ -377,6 +377,9 @@ type EventDetails struct {
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	OsVnicDetails *OpenStackVnicChange `json:"os_vnic_details,omitempty"`
 
+	// PKIProfile event. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	PkiprofileDetails *PKIprofileDetails `json:"pkiprofile_details,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	PoolDeploymentFailureInfo *PoolDeploymentFailureInfo `json:"pool_deployment_failure_info,omitempty"`
 
