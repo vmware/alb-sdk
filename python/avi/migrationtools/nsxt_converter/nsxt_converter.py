@@ -442,7 +442,7 @@ if __name__ == "__main__":
                              'settings in status excel sheet')
     parser.add_argument('-s', '--vs_state', choices=ARG_CHOICES['vs_state'],
                         help='State of created VS',
-                        default="deactivate")
+                         default="deactivate")
 
 
     start = datetime.now()

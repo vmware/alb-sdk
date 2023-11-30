@@ -729,9 +729,10 @@ class NsxvUtil:
                             print("\033[93m" + rollback_msg + "\033[0m")
                             LOG.debug(rollback_msg)
 
-                            vs_obj = alb_vs_list[alb_vs]
+                            vs_obj = self.session.get("virtualservice/{}".format(vs_obj.get("uuid")),
+                                                      tenant=vs_tenant).json()
                             vs_obj["traffic_enabled"] = True
-                            vs_obj["enabled"] = False
+                            vs_obj["enabled"] = True
                             if "analytics_policy" in vs_obj:
                                 vs_obj["analytics_policy"]["full_client_logs"]["enabled"] = False
                             alb_response = self.session.put("virtualservice/{}".format(vs_obj.get("uuid")),

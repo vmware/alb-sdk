@@ -83,8 +83,7 @@ class V2AviCleanup(AviConverter):
 if __name__ == "__main__":
     HELP_STR = """
     Usage:
-    python v2avi_traffic_cutover.py -n 192.168.100.101 -u admin -p password --alb_controller_ip 10.20.30.40 
-    --alb_controller_user admin --alb_controller_password admin
+    python v2avi_cleanup.py -n 192.168.100.101 -u admin -p password --edge edge-1 --vs-filter vs-1
     """
 
     parser = argparse.ArgumentParser(

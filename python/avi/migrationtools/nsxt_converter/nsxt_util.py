@@ -368,9 +368,17 @@ class NSXUtil():
                     print(cutover_msg)
                     vs_body.lb_service_path = None
                     vs_body.enabled = False
-                    self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.update,
-                                             nsxt_vs_list[nsxt_vs_name]["id"], vs_body)
-                    print("Disconnected traffic for VS {} on NSX-T".format(nsxt_vs_name))
+                    response = self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.update,
+                                                        nsxt_vs_list[nsxt_vs_name]["id"], vs_body)
+                    if response:
+                        v_cutover_msg = f"Disconnected traffic for VS {nsxt_vs_name} on NSX-T"
+                        print(v_cutover_msg)
+                        LOG.debug(v_cutover_msg)
+                    else:
+                        msg = f"Error in disconnecting traffic on NSX-T for VS {nsxt_vs_name}. "
+                        print("\033[91m" + msg + "\033[0m")
+                        LOG.error(msg)
+                        continue
 
                     for alb_vs in alb_vs_list:
                         vs_name_with_prefix = "{}-{}".format(prefix, nsxt_vs_name) if prefix else nsxt_vs_name
@@ -392,11 +400,18 @@ class NSXUtil():
                             alb_response = self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj,
                                                             tenant=vs_tenant)
                             if alb_response.status_code == 200:
-                                print("Enabled traffic for VS {} on ALB".format(nsxt_vs_name))
-                                print("Completed cutover for VS {}\n".format(nsxt_vs_name))
+                                enable_traffic_msg = f"Enabled traffic for VS {nsxt_vs_name} on ALB"
+                                print(enable_traffic_msg)
+                                LOG.debug(enable_traffic_msg)
+
+                                cutover_msg = f"Completed cutover for VS {nsxt_vs_name}\n"
+                                print(cutover_msg)
+                                LOG.debug(cutover_msg)
                             else:
-                                print("\033[91m" + "Error in enabling traffic on ALB. Message: ", str(alb_response.text)
-                                      + "\033[0m")
+                                msg = f"Error in enabling traffic on ALB. Message: {str(alb_response.text)}"
+                                print("\033[91m" + msg + "\033[0m")
+                                LOG.error(msg)
+
                                 print("\033[93m" + "Rollback traffic for VS {} on NSX-T started...".format(nsxt_vs_name)
                                       + "\033[0m")
                                 vs_body = self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.get,
@@ -405,9 +420,17 @@ class NSXUtil():
                                                                                         , nsxt_vs_name))
                                 vs_body.lb_service_path = lb_service_path
                                 vs_body.enabled = True
-                                self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.update,
-                                                         nsxt_vs_list[nsxt_vs_name]["id"], vs_body)
-                                print("\033[93m" + "Rollback for VS {} completed\n".format(nsxt_vs_name) + "\033[0m")
+                                response = self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.update,
+                                                                    nsxt_vs_list[nsxt_vs_name]["id"], vs_body)
+                                if response:
+                                    msg = "Traffic rollback for VS {} on NSX-T completed\n".format(nsxt_vs_name)
+                                    print("\033[93m" + msg + "\033[0m")
+                                    LOG.debug(msg)
+                                else:
+                                    msg = "Failed to rollback traffic for VS {} on NSX-T. Please try manual " \
+                                          "rollback on NSX-T.\n".format(nsxt_vs_name)
+                                    print("\033[93m" + msg + "\033[0m")
+                                    LOG.debug(msg)
                             break
         except Exception as e:
             print("\033[91m" + "Error while performing cutover. Message: ", str(e) + "\033[0m")
@@ -461,6 +484,7 @@ class NSXUtil():
                     LOG.debug(cutover_msg)
                     print(cutover_msg)
 
+                    vs_obj = None
                     for alb_vs in alb_vs_list:
                         vs_name_with_prefix = "{}-{}".format(prefix, nsxt_vs_name) if prefix else nsxt_vs_name
                         if alb_vs == vs_name_with_prefix:
@@ -472,11 +496,14 @@ class NSXUtil():
                             alb_response = self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj,
                                                             tenant=vs_tenant)
                             if alb_response.status_code == 200:
-                                print("Disconnected traffic for VS {} on ALB".format(nsxt_vs_name))
+                                disconnect_traffic_msg = f"Disconnected traffic for VS {nsxt_vs_name} on ALB"
+                                print(disconnect_traffic_msg)
+                                LOG.debug(disconnect_traffic_msg)
                                 is_alb_disconnected = True
                             else:
-                                print("\033[91m" + "Error in disconnecting traffic on ALB. Message: ",
-                                      str(alb_response.text) + "\033[0m")
+                                error_msg = f"Error in disconnecting traffic on ALB. Message: {str(alb_response.text)}"
+                                print("\033[91m" + error_msg + "\033[0m")
+                                LOG.error(error_msg)
                             break
 
                     if is_alb_disconnected:
@@ -484,10 +511,43 @@ class NSXUtil():
                                                                                 nsxt_vs_name))
                         vs_body.lb_service_path = lb_service_path
                         vs_body.enabled = True
-                        self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.update,
-                                                 nsxt_vs_list[nsxt_vs_name]["id"], vs_body)
-                        print("Enabled traffic for VS {} on NSX-T".format(nsxt_vs_name))
-                        print("Completed rollback for VS {}\n".format(nsxt_vs_name))
+                        response = self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.update,
+                                                            nsxt_vs_list[nsxt_vs_name]["id"], vs_body)
+                        if response:
+                            enable_nsxt_traffic_msg = f"Enabled traffic for VS {nsxt_vs_name} on NSX-T"
+                            print(enable_nsxt_traffic_msg)
+                            LOG.debug(enable_nsxt_traffic_msg)
+
+                            rollback_msg = f"Completed rollback for VS {nsxt_vs_name} on NSX-T\n"
+                            print(rollback_msg)
+                            LOG.debug(rollback_msg)
+                        else:
+                            error_msg = f"Error in enabling traffic on NSX-T for VS {nsxt_vs_name}."
+                            print("\033[91m" + error_msg + "\033[0m")
+                            LOG.error(error_msg)
+
+                            rollback_msg = "Rollback traffic for VS {} on ALB started...".format(nsxt_vs_name)
+                            print("\033[93m" + rollback_msg + "\033[0m")
+                            LOG.debug(rollback_msg)
+
+                            vs_obj = self.session.get("virtualservice/{}".format(vs_obj.get("uuid")),
+                                                      tenant=vs_tenant).json()
+                            vs_obj["traffic_enabled"] = True
+                            vs_obj["enabled"] = True
+                            if "analytics_policy" in vs_obj:
+                                vs_obj["analytics_policy"]["full_client_logs"]["enabled"] = False
+                            alb_response = self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj,
+                                                            tenant=vs_tenant)
+                            if alb_response.status_code == 200:
+                                msg = "Traffic rollback for VS {} completed\n".format(nsxt_vs_name)
+                                print("\033[93m" + msg + "\033[0m")
+                                LOG.warning(msg)
+                            else:
+                                disconnect_traffic_msg = f"Failed to rollback traffic for VS {nsxt_vs_name} on ALB. " \
+                                                         f"Message: {alb_response.text}"
+                                print("\033[91m" + disconnect_traffic_msg + "\033[0m")
+                                LOG.error(disconnect_traffic_msg)
+
         except Exception as e:
             print("\033[91m" + "Error while performing rollback. Message: ", str(e) + "\033[0m")
 
@@ -651,12 +711,15 @@ class NSXUtil():
                                     else:
                                         network = "Overlay"
 
-                                    is_dhcp_configured_on_avi,is_static_ip_pool_configured,is_ip_subnet_configured,static_ip_for_se_flag = \
-                                    self.get_dhcp_config_details_on_avi_side(cloud_name,seg.get("id"))
+                                    incomplete_networks = self.get_dhcp_config_details_on_avi_side(cloud_name,
+                                                                                                   seg.get("id"))
 
-                                    if not is_dhcp_configured_on_avi and (not is_static_ip_pool_configured or not is_ip_subnet_configured or not static_ip_for_se_flag):
-                                        warning_mesg = "Warning : configuration of  %s network is incomplete , please check it once " % seg.get("display_name")
-                                        LOG.debug(warning_mesg)
+                                    if incomplete_networks:
+                                        warning_msg = f"Warning: configuration of network(s) {incomplete_networks} " \
+                                                      f"for {seg.get('display_name')} is incomplete, " \
+                                                      f"please check it once."
+                                        print("\033[93m" + warning_msg + "\033[0m")
+                                        LOG.debug(warning_msg)
 
                             if seg.get("subnets"):
                                 subnets = []
@@ -697,25 +760,40 @@ class NSXUtil():
                 self.lb_services[lb["id"]]["warning_mesg"] = warning_mesg
 
     def get_dhcp_config_details_on_avi_side(self,cloud_name,seg_id):
-        is_dhcp_configured_on_avi = False
-        is_static_ip_pool_configured = False
-        is_ip_subnet_configured = False
-        static_ip_for_se_flag = False
-        cloud_id = [cl.get("uuid") for cl in self.cloud if cl.get("name") == cloud_name]
-        segment_list = self.session.get("network/?&cloud_ref.uuid=" + cloud_id[0]).json()["results"]
-        segment = [seg for seg in segment_list if seg.get("attrs")[0].get("value").split('segments/')[-1] == seg_id]
-        if segment :
-            is_dhcp_configured_on_avi = segment[0].get("dhcp_enabled")
-            if segment[0].get("configured_subnets"):
-                configured_subnets = segment[0].get("configured_subnets")
-                if configured_subnets[0].get("prefix"):
-                    is_ip_subnet_configured = True
-                    if configured_subnets[0].get("static_ip_ranges"):
-                        is_static_ip_pool_configured = True
-                        if configured_subnets[0].get("static_ip_ranges")[0].get("type") in ["STATIC_IPS_FOR_VIP_AND_SE","STATIC_IPS_FOR_SE"]:
-                             static_ip_for_se_flag = True
+        incomplete_networks = []
 
-        return is_dhcp_configured_on_avi,is_static_ip_pool_configured,is_ip_subnet_configured,static_ip_for_se_flag
+        cloud_id = [cl.get("uuid") for cl in self.cloud if cl.get("name") == cloud_name]
+        network_list = self.session.get("network/?&cloud_ref.uuid=" + cloud_id[0]).json()["results"]
+        for network in network_list:
+            if 'attrs' in network:
+                for attr in network.get("attrs"):
+                    if attr.get("value").split('segments/')[-1] == seg_id:
+                        LOG.debug(f"Network with segment id {seg_id} is {network}")
+
+                        is_dhcp_configured_on_avi = network.get("dhcp_enabled")
+                        is_static_ip_pool_configured = False
+                        is_ip_subnet_configured = False
+                        static_ip_for_se_flag = False
+
+                        configured_subnets = network.get("configured_subnets")
+                        if configured_subnets:
+                            for subnet in configured_subnets:
+                                if subnet.get("prefix"):
+                                    is_ip_subnet_configured = True
+                                    if subnet.get("static_ip_ranges"):
+                                        is_static_ip_pool_configured = True
+                                        for static_ip in subnet.get("static_ip_ranges"):
+                                            if static_ip.get("type") in ["STATIC_IPS_FOR_VIP_AND_SE",
+                                                                         "STATIC_IPS_FOR_SE"]:
+                                                static_ip_for_se_flag = True
+
+                        if not is_dhcp_configured_on_avi and (
+                                not is_static_ip_pool_configured or
+                                not is_ip_subnet_configured or
+                                not static_ip_for_se_flag):
+                            incomplete_networks.append(network)
+
+        return incomplete_networks
 
     def get_all_virtual_service(self):
         """
@@ -1067,6 +1145,8 @@ class NSXUtil():
         if domain_obj:
             domain_id = domain_obj[0]["id"]
         ns_name = "{}-{}".format(pool_name, "alb-nsgroup")
+        # ns group creation does not support spaces in name and id fields so remove all spaces
+        ns_name = ns_name.replace(" ", "")
         try:
             import requests
             import json
