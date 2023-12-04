@@ -68,7 +68,7 @@ class VsConfigConv(object):
         self.nsxt_ip = nsxt_ip
         self.nsxt_password = nsxt_password
 
-    def convert(self, alb_config, nsx_lb_config, prefix, tenant, vs_state, controller_version, traffic_enabled,
+    def convert(self, alb_config, nsx_lb_config, prefix, tenant, vs_state, controller_version, traffic_state,
                 cloud_tenant, ssh_root_password, nsxt_util, migration_input_config=None, vrf=None, segroup=None):
         '''
         LBVirtualServer to Avi Config vs converter
@@ -172,13 +172,14 @@ class VsConfigConv(object):
                 vs_temp = list(filter(lambda vs: vs["name"] == name, alb_config['VirtualService']))
                 if vs_temp:
                     name = '%s-%s' % (name, lb_vs["id"])
-                enabled = lb_vs.get('enabled')
-                if enabled and vs_state:
-                    enabled = (vs_state == 'enable')
+                vs_enabled = lb_vs.get('enabled')
+                if vs_enabled and vs_state:
+                    vs_enabled = (vs_state == 'enable')
+                vs_traffic_state = (traffic_state == 'enable')
                 alb_vs = dict(
-                    name=name,
-                    traffic_enabled=traffic_enabled,
-                    enabled=enabled,
+                    name=name.strip(),
+                    traffic_enabled=vs_traffic_state,
+                    enabled=vs_enabled,
                     cloud_ref=conv_utils.get_object_ref(cloud_name, 'cloud', cloud_tenant=cloud_tenant),
                     tenant_ref=conv_utils.get_object_ref(tenant, 'tenant')
                 )

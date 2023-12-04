@@ -325,6 +325,7 @@ class NSXUtil():
 
     def cutover_vs(self, vs_list, input_data, prefix, vs_tenant):
         vs_not_found = list()
+        alb_vs_not_found = list()
 
         try:
             nsxt_all_virtual_services = self.get_all_virtual_service()
@@ -334,7 +335,7 @@ class NSXUtil():
             for input_vs in vs_list:
                 vs_found = False
                 for nsxt_vs in nsxt_all_virtual_services:
-                    if nsxt_vs["display_name"] == input_vs:
+                    if nsxt_vs["display_name"] == input_vs.strip():
                         nsxt_vs_list[nsxt_vs["display_name"]] = nsxt_vs
                         vs_found = True
                         break
@@ -380,9 +381,12 @@ class NSXUtil():
                         LOG.error(msg)
                         continue
 
+                    alb_vs_found = False
                     for alb_vs in alb_vs_list:
                         vs_name_with_prefix = "{}-{}".format(prefix, nsxt_vs_name) if prefix else nsxt_vs_name
                         if alb_vs == vs_name_with_prefix:
+                            alb_vs_found = True
+
                             vs_obj = alb_vs_list[alb_vs]
                             vs_obj["traffic_enabled"] = True
                             vs_obj["enabled"] = True
@@ -411,35 +415,46 @@ class NSXUtil():
                                 msg = f"Error in enabling traffic on ALB. Message: {str(alb_response.text)}"
                                 print("\033[91m" + msg + "\033[0m")
                                 LOG.error(msg)
-
-                                print("\033[93m" + "Rollback traffic for VS {} on NSX-T started...".format(nsxt_vs_name)
-                                      + "\033[0m")
-                                vs_body = self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.get,
-                                                                   nsxt_vs_list[nsxt_vs_name]["id"])
-                                lb_service_path = vs_lb_mapping_list.get("{}_{}".format(nsxt_vs_list[nsxt_vs_name]["id"]
-                                                                                        , nsxt_vs_name))
-                                vs_body.lb_service_path = lb_service_path
-                                vs_body.enabled = True
-                                response = self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.update,
-                                                                    nsxt_vs_list[nsxt_vs_name]["id"], vs_body)
-                                if response:
-                                    msg = "Traffic rollback for VS {} on NSX-T completed\n".format(nsxt_vs_name)
-                                    print("\033[93m" + msg + "\033[0m")
-                                    LOG.debug(msg)
-                                else:
-                                    msg = "Failed to rollback traffic for VS {} on NSX-T. Please try manual " \
-                                          "rollback on NSX-T.\n".format(nsxt_vs_name)
-                                    print("\033[93m" + msg + "\033[0m")
-                                    LOG.debug(msg)
+                                self.revert_traffic(vs_lb_mapping_list, nsxt_vs_list, nsxt_vs_name)
                             break
+
+                    if not alb_vs_found:
+                        alb_vs_not_found.append(nsxt_vs_name)
+                        msg = f"Virtual service not found on ALB"
+                        print("\033[91m" + msg + "\033[0m")
+                        LOG.error(msg)
+                        self.revert_traffic(vs_lb_mapping_list, nsxt_vs_list, nsxt_vs_name)
+
         except Exception as e:
             print("\033[91m" + "Error while performing cutover. Message: ", str(e) + "\033[0m")
 
-        return vs_not_found
+        return vs_not_found, alb_vs_not_found
 
-    def rollback_vs(self, vs_list, input_data, prefix, vs_tenant):
+    def revert_traffic(self, vs_lb_mapping_list, nsxt_vs_list, nsxt_vs_name):
+        print("\033[93m" + "Rollback traffic for VS {} on NSX-T started...".format(nsxt_vs_name)
+              + "\033[0m")
+        vs_body = self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.get,
+                                           nsxt_vs_list[nsxt_vs_name]["id"])
+        lb_service_path = vs_lb_mapping_list.get("{}_{}".format(nsxt_vs_list[nsxt_vs_name]["id"]
+                                                                , nsxt_vs_name))
+        vs_body.lb_service_path = lb_service_path
+        vs_body.enabled = True
+        response = self.call_api_with_retry(self.nsx_api_client.infra.LbVirtualServers.update,
+                                            nsxt_vs_list[nsxt_vs_name]["id"], vs_body)
+        if response:
+            msg = "Traffic rollback for VS {} on NSX-T completed\n".format(nsxt_vs_name)
+            print("\033[93m" + msg + "\033[0m")
+            LOG.debug(msg)
+        else:
+            msg = "Failed to rollback traffic for VS {} on NSX-T. Please try manual " \
+                  "rollback on NSX-T.\n".format(nsxt_vs_name)
+            print("\033[93m" + msg + "\033[0m")
+            LOG.debug(msg)
+
+    def rollback_vs(self, vs_list, input_data, prefix, vs_tenant, default_vs_state, default_traffic_state):
         vs_not_found = list()
         vs_with_no_lb = list()
+        alb_vs_not_found = list()
 
         try:
             nsxt_all_virtual_services = self.get_all_virtual_service()
@@ -449,7 +464,7 @@ class NSXUtil():
             for input_vs in vs_list:
                 vs_found = False
                 for nsxt_vs in nsxt_all_virtual_services:
-                    if nsxt_vs["display_name"] == input_vs:
+                    if nsxt_vs["display_name"] == input_vs.strip():
                         nsxt_vs_list[nsxt_vs["display_name"]] = nsxt_vs
                         vs_found = True
                         break
@@ -485,12 +500,14 @@ class NSXUtil():
                     print(cutover_msg)
 
                     vs_obj = None
+                    alb_vs_found = False
                     for alb_vs in alb_vs_list:
                         vs_name_with_prefix = "{}-{}".format(prefix, nsxt_vs_name) if prefix else nsxt_vs_name
                         if alb_vs == vs_name_with_prefix:
+                            alb_vs_found = True
                             vs_obj = alb_vs_list[alb_vs]
-                            vs_obj["traffic_enabled"] = True
-                            vs_obj["enabled"] = False
+                            vs_obj["traffic_enabled"] = (default_traffic_state == 'enable')
+                            vs_obj["enabled"] = (default_vs_state == 'enable')
                             if "analytics_policy" in vs_obj:
                                 vs_obj["analytics_policy"]["full_client_logs"]["enabled"] = False
                             alb_response = self.session.put("virtualservice/{}".format(vs_obj.get("uuid")), vs_obj,
@@ -548,10 +565,12 @@ class NSXUtil():
                                 print("\033[91m" + disconnect_traffic_msg + "\033[0m")
                                 LOG.error(disconnect_traffic_msg)
 
+                    if not alb_vs_found:
+                        alb_vs_not_found.append(nsxt_vs_name)
         except Exception as e:
             print("\033[91m" + "Error while performing rollback. Message: ", str(e) + "\033[0m")
 
-        return vs_not_found, vs_with_no_lb
+        return vs_not_found, vs_with_no_lb, alb_vs_not_found
 
     def get_cloud_type(self, avi_cloud_list, tz_id, seg_id, tier1):
         is_seg_present = False
