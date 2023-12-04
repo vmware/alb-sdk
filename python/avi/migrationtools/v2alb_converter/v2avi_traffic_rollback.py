@@ -17,7 +17,7 @@ import sys
 from datetime import datetime
 from avi.migrationtools.avi_converter import AviConverter
 from avi.migrationtools.avi_migration_utils import get_count
-from v2avi_utils import NsxvUtil
+from avi.migrationtools.v2alb_converter.v2avi_utils import NsxvUtil
 
 
 LOG = logging.getLogger(__name__)
