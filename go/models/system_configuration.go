@@ -69,6 +69,9 @@ type SystemConfiguration struct {
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	ProxyConfiguration *ProxyConfiguration `json:"proxy_configuration,omitempty"`
 
+	// FQDN of SDDC Manager in VCF responsible for management of this ALB Controller Cluster. Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	SddcmanagerFqdn *string `json:"sddcmanager_fqdn,omitempty"`
+
 	// Configure Secure Channel properties. Field introduced in 18.1.4, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SecureChannelConfiguration *SecureChannelConfiguration `json:"secure_channel_configuration,omitempty"`
 
