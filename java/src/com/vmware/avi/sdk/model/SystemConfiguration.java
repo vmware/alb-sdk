@@ -75,6 +75,9 @@ public class SystemConfiguration extends AviRestResource  {
     @JsonProperty("proxy_configuration")
     private ProxyConfiguration proxyConfiguration = null;
 
+    @JsonProperty("sddcmanager_fqdn")
+    private String sddcmanagerFqdn = null;
+
     @JsonProperty("secure_channel_configuration")
     private SecureChannelConfiguration secureChannelConfiguration = null;
 
@@ -525,6 +528,30 @@ public class SystemConfiguration extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Fqdn of sddc manager in vcf responsible for management of this alb controller cluster.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sddcmanagerFqdn
+     */
+    public String getSddcmanagerFqdn() {
+        return sddcmanagerFqdn;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Fqdn of sddc manager in vcf responsible for management of this alb controller cluster.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sddcmanagerFqdn set the sddcmanagerFqdn.
+     */
+    public void setSddcmanagerFqdn(String  sddcmanagerFqdn) {
+        this.sddcmanagerFqdn = sddcmanagerFqdn;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Configure secure channel properties.
      * Field introduced in 18.1.4, 18.2.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -739,7 +766,8 @@ public class SystemConfiguration extends AviRestResource  {
   Objects.equals(this.commonCriteriaMode, objSystemConfiguration.commonCriteriaMode)&&
   Objects.equals(this.controllerAnalyticsPolicy, objSystemConfiguration.controllerAnalyticsPolicy)&&
   Objects.equals(this.hostKeyAlgorithmExclude, objSystemConfiguration.hostKeyAlgorithmExclude)&&
-  Objects.equals(this.kexAlgorithmExclude, objSystemConfiguration.kexAlgorithmExclude);
+  Objects.equals(this.kexAlgorithmExclude, objSystemConfiguration.kexAlgorithmExclude)&&
+  Objects.equals(this.sddcmanagerFqdn, objSystemConfiguration.sddcmanagerFqdn);
     }
 
     @Override
@@ -764,6 +792,7 @@ public class SystemConfiguration extends AviRestResource  {
                         sb.append("    ntpConfiguration: ").append(toIndentedString(ntpConfiguration)).append("\n");
                         sb.append("    portalConfiguration: ").append(toIndentedString(portalConfiguration)).append("\n");
                         sb.append("    proxyConfiguration: ").append(toIndentedString(proxyConfiguration)).append("\n");
+                        sb.append("    sddcmanagerFqdn: ").append(toIndentedString(sddcmanagerFqdn)).append("\n");
                         sb.append("    secureChannelConfiguration: ").append(toIndentedString(secureChannelConfiguration)).append("\n");
                         sb.append("    snmpConfiguration: ").append(toIndentedString(snmpConfiguration)).append("\n");
                         sb.append("    sshCiphers: ").append(toIndentedString(sshCiphers)).append("\n");
