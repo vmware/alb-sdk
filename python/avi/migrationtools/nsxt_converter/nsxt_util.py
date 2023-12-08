@@ -734,9 +734,11 @@ class NSXUtil():
                                                                                                    seg.get("id"))
 
                                     if incomplete_networks:
-                                        warning_msg = f"Warning: configuration of network(s) {incomplete_networks} " \
-                                                      f"for {seg.get('display_name')} is incomplete, " \
-                                                      f"please check it once."
+                                        warning_msg = f"Warning: Configuration of ALB network(s) {incomplete_networks} "\
+                                                      f"for segment {seg.get('display_name')} may be incomplete as " \
+                                                      f"dhcp is disabled and static ips are not configured in subnets. " \
+                                                      f"Please fix the network configuration to ensure data paths " \
+                                                      f"are correct."
                                         print("\033[93m" + warning_msg + "\033[0m")
                                         LOG.debug(warning_msg)
 
@@ -810,7 +812,7 @@ class NSXUtil():
                                 not is_static_ip_pool_configured or
                                 not is_ip_subnet_configured or
                                 not static_ip_for_se_flag):
-                            incomplete_networks.append(network)
+                            incomplete_networks.append(network.get('name'))
 
         return incomplete_networks
 

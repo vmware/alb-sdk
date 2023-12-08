@@ -577,7 +577,7 @@ class NsxvUtil:
                 response = self.update_virtual_server(
                     edge, nsxv_vs_list[vs_name]["virtualServerId"], vs_config
                 )
-                if response.status_code == 200:
+                if response.status_code == 204:
                     v_cutover_msg = f"Disconnected traffic for VS {vs_name} on NSX-V"
                     print(v_cutover_msg)
                     LOG.debug(v_cutover_msg)
@@ -631,7 +631,7 @@ class NsxvUtil:
                                 response = self.update_virtual_server(
                                     edge, nsxv_vs_list[vs_name]["virtualServerId"], vs_config
                                 )
-                                if response.status_code == 200:
+                                if response.status_code == 204:
                                     msg = "Traffic rollback for VS {} on NSX-V completed\n".format(vs_name)
                                     print("\033[93m" + msg + "\033[0m")
                                     LOG.debug(msg)
@@ -711,7 +711,7 @@ class NsxvUtil:
                         response = self.update_virtual_server(edge, nsxv_vs_list[vs_name]["virtualServerId"],
                                                               vs_config)
 
-                        if response.status_code == 200:
+                        if response.status_code == 204:
                             enable_nsxv_traffic_msg = f"Enabled traffic for VS {vs_name} on NSX-V"
                             print(enable_nsxv_traffic_msg)
                             LOG.debug(enable_nsxv_traffic_msg)
