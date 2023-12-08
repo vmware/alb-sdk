@@ -4,7 +4,9 @@
 import logging
 
 from avi.migrationtools.avi_migration_utils import update_count, HTTP_RESPONSE_CODE_1XX, HTTP_RESPONSE_CODE_2XX, \
-    HTTP_RESPONSE_CODE_3XX, HTTP_RESPONSE_CODE_4XX, HTTP_RESPONSE_CODE_5XX
+     HTTP_RESPONSE_CODE_3XX, HTTP_RESPONSE_CODE_4XX, HTTP_RESPONSE_CODE_5XX
+
+from avi.migrationtools.avi_migration_utils import update_count
 from avi.migrationtools.nsxt_converter.conversion_util import NsxtConvUtil, csv_writer_dict_list
 import avi.migrationtools.nsxt_converter.converter_constants as conv_const
 from avi.migrationtools.avi_migration_utils import MigrationUtil
@@ -227,7 +229,7 @@ class MonitorConfigConv(object):
                 # time.sleep(1)
 
                 LOG.info('[MONITOR] Migration completed for HM {}'.format(lb_hm['display_name']))
-            except:
+            except Exception as e:
                 update_count('error')
                 LOG.error("[MONITOR] Failed to convert Monitor: %s" % lb_hm['display_name'],
                           exc_info=True)

@@ -513,7 +513,6 @@ class PoolConfigConv(object):
                     continue
                 pool_segment = get_object_segments(vs_id,
                                                    member.get("ip_address"))
-
                 if pool_segment:
                     pool_skip = False
                     is_member_ip_in_range = True
