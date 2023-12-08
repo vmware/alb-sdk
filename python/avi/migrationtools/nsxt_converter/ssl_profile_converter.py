@@ -297,5 +297,3 @@ class SslProfileConfigConv(object):
         sup_cipher= [cipher for cipher in cipher_str.split(":") if cipher not in unsup_cipher_from_cipher_str]
         sup_cipher_str=":".join(sup_cipher)
         return sup_cipher_str,unsup_cipher_from_cipher_str
-
-
