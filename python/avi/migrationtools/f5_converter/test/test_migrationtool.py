@@ -9,7 +9,7 @@ import json
 import logging
 import os
 import subprocess
-import re
+
 import pandas as pd
 import pytest
 import yaml
@@ -110,9 +110,7 @@ setup = dict(
     segroup='test_se',
     custom_config_file=input_role_config_file,
     distinct_app_profile=True,
-    args_config_file=input_config_yaml,
-    excel_mappings=os.path.abspath(os.path.join(os.path.dirname(__file__),
-                                                'vs_mapping.xlsx'))
+    args_config_file=input_config_yaml
 )
 
 if not os.path.exists(setup.get("output_file_path")):
@@ -147,7 +145,7 @@ def f5_conv(
         prefix=None, convertsnat=False, not_in_use=False, baseline_profile=None,
         f5_passphrase_file=None, vs_level_status=False, test_vip=None,
         vrf=None, segroup=None, custom_config=None, skip_pki=False,
-        distinct_app_profile=False, reuse_http_policy=False, args_config_file=None, excel_mappings=None):
+        distinct_app_profile=False, reuse_http_policy=False, args_config_file=None):
     args = Namespace(bigip_config_file=bigip_config_file,
                      skip_default_file=skip_default_file,
                      f5_config_version=f5_config_version,
@@ -174,7 +172,7 @@ def f5_conv(
                      skip_pki=skip_pki,
                      distinct_app_profile=distinct_app_profile,
                      reuse_http_policy=reuse_http_policy,
-                     args_config_file=args_config_file, excel_mappings=excel_mappings)
+                     args_config_file=args_config_file)
 
     args = get_terminal_args(terminal_args=args)
     f5_converter = F5Converter(args)
@@ -1806,35 +1804,6 @@ class TestF5Converter:
             vs_object = data['VirtualService']
             for each_vs in vs_object:
                 assert each_vs['name'] in ['100-hol-advanced-http-vs', '101-hol-advanced-http-vs']
-
-    def test_re_ip_support(self, cleanup):
-        f5_conv(bigip_config_file=setup.get('config_file_name_v11'),
-                f5_config_version=setup.get('file_version_v11'),
-                controller_version=setup.get('controller_version_v17'),
-                tenant=file_attribute['tenant'],
-                cloud_name=file_attribute['cloud_name'],
-                no_profile_merge=file_attribute['no_profile_merge'],
-                output_file_path=setup.get('output_file_path'),
-                f5_ssh_port=setup.get('f5_ssh_port'),
-                vs_filter='01-hol-advanced-http-vs,02-hol-advanced-http-vs',
-                excel_mappings=setup.get('excel_mappings'))
-
-        data = pd.read_excel(setup.get('excel_mappings'))
-        df = pd.DataFrame(data)
-        o_file = "%s/%s" % (output_file, "hol_advanced_bigip-Output.json")
-        with open(o_file) as json_file:
-            data = json.load(json_file)
-            vs_objects = data['VirtualService']
-            vip_objects = data['VsVip']
-            assert len(vs_objects) == 2
-            assert len(vip_objects) == 2
-            for each_vs in vs_objects:
-                assert each_vs['name'] in ['01-hol-advanced-http-vs', '02-hol-advanced-http-vs']
-                vip_name=re.search(r'name=(.*?)&',each_vs['vsvip_ref']).group(1)
-                for i, vip in enumerate(vip_objects):
-                    if vip['name'] == vip_name:
-                        assert vip['vip'][0]['ip_address']['addr'] == df['New IP'][i]
-
 
 def teardown():
     pass

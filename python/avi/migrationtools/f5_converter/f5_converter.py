@@ -13,7 +13,6 @@ import argparse
 import logging
 import os
 import sys
-import pandas as pd
 import paramiko
 import avi.migrationtools
 import avi.migrationtools.f5_converter.converter_constants as conv_const
@@ -29,7 +28,6 @@ from avi.migrationtools.f5_converter import (f5_config_converter, f5_parser,
                                              scp_util)
 from avi.migrationtools.f5_converter.conversion_util import F5Util
 from avi.migrationtools.f5_converter.ciphers_converter import CiphersConfigConv
-from avi.migrationtools.f5_converter.f5_config_parser import iRuleDiscovery
 
 # urllib3.disable_warnings()
 LOG = logging.getLogger(__name__)
@@ -158,11 +156,8 @@ class F5Converter(AviConverter):
         self.segroup = args.segroup
         self.reuse_http_policy = args.reuse_http_policy
         self.skip_disabled_vs = args.skip_disabled_vs
-        # f5 tenant for irule discovery
-        self.f5_tenant=args.f5_tenant if args.f5_tenant else "Common"
         # Created f5 util object.
         self.conversion_util = F5Util()
-        self.excel_mappings = args.excel_mappings
 
     def print_pip_and_controller_version(self):
         """
@@ -344,20 +339,8 @@ class F5Converter(AviConverter):
         # Check if flag true then skip not in use object
         if self.not_in_use:
             avi_config = wipe_out_not_in_use(avi_config)
-        if self.excel_mappings:
-            data = pd.read_excel(self.excel_mappings)
-            df = pd.DataFrame(data)
-            for _, row in df.iterrows():
-                avi_config = str(avi_config).replace(row['Current IP'], row['New IP'])
-            avi_config = eval(avi_config)
-            LOG.debug("Avi config updated with Excel Mappings")
         self.write_output(avi_config, output_dir, '%s-Output.json' %
                           report_name)
-        
-        # Irule discovery
-        irule_dis=iRuleDiscovery(self.bigip_config_file,self.f5_tenant)
-        irule_dis.get_irule_discovery(output_dir,report_name)
-        
         if self.vs_filter:
             F5Util().remove_vs_names_when_vs_filter_is_provided(
                 output_dir=output_dir, report_name=report_name, vs_names=self.vs_filter)
@@ -378,7 +361,6 @@ class F5Converter(AviConverter):
                 self.f5_host_ip, self.f5_ssh_user, self.f5_ssh_password, "f5")
         if self.option == "auto-upload":
             self.upload_config_to_controller(avi_config)
-        
         print("Total Warning: ", get_count("warning"))
         print("Total Errors: ", get_count("error"))
 
@@ -795,9 +777,6 @@ if __name__ == "__main__":
         " each VS even though it is shared in F5 config",
     )
     parser.add_argument(
-        "--excel_mappings",
-        help="Absolute path for excel mapping file")
-    parser.add_argument(
         "-f",
         "--bigip_config_file",
         help="Absolute path for F5 config file")
@@ -948,10 +927,6 @@ if __name__ == "__main__":
         "--skip_disabled_vs",
         help="Flag for skipping those vs/s which are disabled on f5",
         action="store_true",
-    )
-    parser.add_argument(
-        "--f5_tenant",
-        help="f5 tenant for irule discovery"
     )
 
     terminal_args = parser.parse_args()
