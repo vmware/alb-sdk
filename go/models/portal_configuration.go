@@ -41,6 +41,9 @@ type PortalConfiguration struct {
 	// Strict checking of password strength for user accounts. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	PasswordStrengthCheck *bool `json:"password_strength_check,omitempty"`
 
+	// Reference to PKIProfile Config used for CRL validation. It is a reference to an object of type PKIProfile. Field introduced in 30.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	PkiprofileRef *string `json:"pkiprofile_ref,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	RedirectToHTTPS *bool `json:"redirect_to_https,omitempty"`
 

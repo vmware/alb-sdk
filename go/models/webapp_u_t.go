@@ -31,6 +31,9 @@ type WebappUT struct {
 	// Repeated message for nested f_sensitive test cases-level1. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	SensitiveTests []*L1FSensitiveTestCase `json:"sensitive_tests,omitempty"`
 
+	// Optional *bool for nested skip_optional_check test cases-level1. Field introduced in 30.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	SkipOptionalCheckTests *bool `json:"skip_optional_check_tests,omitempty"`
+
 	// Optional message for nested  max *string length test cases. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	StringLengthTest *L1StringLengthTestCase `json:"string_length_test,omitempty"`
 
