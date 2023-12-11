@@ -187,7 +187,7 @@ font-style: italic;
     <div class="app-desc">CLI ``` - configure systemconfiguration - show systemconfiguration - test systememail ``` </div>
     <div class="app-desc">More information: <a href="https://avinetworks.com/contact-us">https://avinetworks.com/contact-us</a></div>
     <div class="app-desc">Contact Info: <a href="support@avinetworks.com">support@avinetworks.com</a></div>
-    <div class="app-desc">Version: 30.1.1</div>
+    <div class="app-desc">Version: 30.1.2</div>
     <div class="app-desc">BasePath:/api</div>
     <div class="license-info">All rights reserved</div>
     <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
@@ -337,6 +337,7 @@ font-style: italic;
     "disable_swagger" : true,
     "sslkeyandcertificate_refs" : [ "aeiou" ],
     "password_strength_check" : true,
+    "pkiprofile_ref" : "aeiou",
     "enable_https" : true,
     "http_port" : 123,
     "use_uuid_from_input" : true,
@@ -535,6 +536,7 @@ font-style: italic;
     "disable_swagger" : true,
     "sslkeyandcertificate_refs" : [ "aeiou" ],
     "password_strength_check" : true,
+    "pkiprofile_ref" : "aeiou",
     "enable_https" : true,
     "http_port" : 123,
     "use_uuid_from_input" : true,
@@ -733,6 +735,7 @@ font-style: italic;
     "disable_swagger" : true,
     "sslkeyandcertificate_refs" : [ "aeiou" ],
     "password_strength_check" : true,
+    "pkiprofile_ref" : "aeiou",
     "enable_https" : true,
     "http_port" : 123,
     "use_uuid_from_input" : true,
@@ -1079,6 +1082,7 @@ font-style: italic;
 <div class="param">https_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> HTTPS port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">minimum_password_length (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Minimum password length for user accounts. Allowed values are 6-32. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">password_strength_check (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Strict checking of password strength for user accounts. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">pkiprofile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Reference to PKIProfile Config used for CRL validation. It is a reference to an object of type PKIProfile. Field introduced in 30.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">redirect_to_https (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">sslkeyandcertificate_refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Certificates for system portal. Maximum 2 allowed. Leave list empty to use system default certs. It is a reference to an object of type SSLKeyAndCertificate. Maximum of 2 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">sslprofile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type SSLProfile. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
