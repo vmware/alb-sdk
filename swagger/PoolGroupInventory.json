@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "30.1.1",
+        "version": "30.1.2",
         "title": "Avi PoolGroupInventory Object API",
         "contact": {
             "name": "Avi Networks Inc.",

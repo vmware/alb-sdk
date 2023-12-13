@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "30.1.1",
+        "version": "30.1.2",
         "title": "Avi WebappUT Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -740,6 +740,10 @@
                     "items": {
                         "$ref": "#/definitions/L1FSensitiveTestCase"
                     }
+                },
+                "skip_optional_check_tests": {
+                    "description": "Optional bool for nested skip_optional_check test cases-level1. Field introduced in 30.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
                 },
                 "string_length_test": {
                     "description": "Optional message for nested  max string length test cases. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",

@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "30.1.1",
+        "version": "30.1.2",
         "title": "Avi GslbService Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -938,6 +938,10 @@
                 "type"
             ],
             "properties": {
+                "fallback_cname": {
+                    "description": "Fallback CNAME to use in response to the client query when the GSLB service is DOWN. Field introduced in 30.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
                 "fallback_ip": {
                     "description": "Fallback IP address to use in A response to the client query when the GSLB service is DOWN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
@@ -947,7 +951,7 @@
                     "$ref": "#/definitions/IpAddr"
                 },
                 "type": {
-                    "description": "Response from DNS service towards the client when the GSLB service is DOWN. Enum options - GSLB_SERVICE_DOWN_RESPONSE_NONE, GSLB_SERVICE_DOWN_RESPONSE_ALL_RECORDS, GSLB_SERVICE_DOWN_RESPONSE_FALLBACK_IP, GSLB_SERVICE_DOWN_RESPONSE_EMPTY. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Response from DNS service towards the client when the GSLB service is DOWN. Enum options - GSLB_SERVICE_DOWN_RESPONSE_NONE, GSLB_SERVICE_DOWN_RESPONSE_ALL_RECORDS, GSLB_SERVICE_DOWN_RESPONSE_FALLBACK_IP, GSLB_SERVICE_DOWN_RESPONSE_EMPTY, GSLB_SERVICE_DOWN_RESPONSE_CNAME. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "GSLB_SERVICE_DOWN_RESPONSE_NONE"
                 }
