@@ -47,7 +47,7 @@ merge_object_mapping = {
 def convert(nsx_lb_config, input_path, output_path, tenant, prefix,
             migrate_to, object_merge_check, controller_version, ssh_root_password, nsxt_util, migration_input_config=None,
             vs_state=False, vs_level_status=False, vrf=None,
-            segroup=None, not_in_use=True, custom_mapping=None, traffic_enabled=False, cloud_tenant="admin",
+            segroup=None, not_in_use=True, custom_mapping=None, traffic_state=False, cloud_tenant="admin",
             nsxt_ip=None, nsxt_password=None):
 
     # load the yaml file attribute in nsxt_attributes.
@@ -86,7 +86,7 @@ def convert(nsx_lb_config, input_path, output_path, tenant, prefix,
         vs_converter = VsConfigConv(nsxt_attributes,object_merge_check, merge_object_mapping,sys_dict,
                                     nsxt_ip, nsxt_password)
         vs_converter.convert(avi_config_dict, nsx_lb_config, prefix,
-                             tenant, vs_state, controller_version, traffic_enabled,
+                             tenant, vs_state, controller_version, traffic_state,
                              cloud_tenant, ssh_root_password, nsxt_util, migration_input_config,
                              vrf, segroup)
         conv_utils.remove_dup_of(avi_config_dict)

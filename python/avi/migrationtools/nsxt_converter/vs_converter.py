@@ -68,7 +68,7 @@ class VsConfigConv(object):
         self.nsxt_ip = nsxt_ip
         self.nsxt_password = nsxt_password
 
-    def convert(self, alb_config, nsx_lb_config, prefix, tenant, vs_state, controller_version, traffic_enabled,
+    def convert(self, alb_config, nsx_lb_config, prefix, tenant, vs_state, controller_version, traffic_state,
                 cloud_tenant, ssh_root_password, nsxt_util, migration_input_config=None, vrf=None, segroup=None):
         '''
         LBVirtualServer to Avi Config vs converter
@@ -172,13 +172,14 @@ class VsConfigConv(object):
                 vs_temp = list(filter(lambda vs: vs["name"] == name, alb_config['VirtualService']))
                 if vs_temp:
                     name = '%s-%s' % (name, lb_vs["id"])
-                enabled = lb_vs.get('enabled')
-                if enabled and vs_state:
-                    enabled = (vs_state == 'enable')
+                vs_enabled = lb_vs.get('enabled')
+                if vs_enabled and vs_state:
+                    vs_enabled = (vs_state == 'enable')
+                vs_traffic_state = (traffic_state == 'enable')
                 alb_vs = dict(
-                    name=name,
-                    traffic_enabled=(enabled and traffic_enabled),
-                    enabled=enabled,
+                    name=name.strip(),
+                    traffic_enabled=vs_traffic_state,
+                    enabled=vs_enabled,
                     cloud_ref=conv_utils.get_object_ref(cloud_name, 'cloud', cloud_tenant=cloud_tenant),
                     tenant_ref=conv_utils.get_object_ref(tenant, 'tenant')
                 )
@@ -233,11 +234,14 @@ class VsConfigConv(object):
                            if val not in self.supported_attr]
                 na_list = [val for val in lb_vs.keys()
                            if val in self.common_na_attr or val in self.VS_na_attr]
+                
                 if segroup:
                     segroup_ref = conv_utils.get_object_ref(
                         segroup, 'serviceenginegroup', cloud_tenant,
                         cloud_name=cloud_name)
                     alb_vs['se_group_ref'] = segroup_ref
+                else:
+                    segroup="Default-Group"
                 client_pki = False
                 server_pki = False
 
@@ -617,14 +621,14 @@ class VsConfigConv(object):
                                         type="V4"
                                     )
                                     alb_vs["snat_ip"].append(snat_ip)
-                                    alb_vs["se_group_ref"] = conv_utils.get_object_ref("Default-Group",
+                                    alb_vs["se_group_ref"] = conv_utils.get_object_ref(segroup,
                                                                                        'serviceenginegroup',
                                                                                        cloud_name=cloud_name,
                                                                                        cloud_tenant=cloud_tenant,
                                                                                        tenant=cloud_tenant)
 
                             if pl_config[0]["snat_translation"].get("type") == "LBSnatAutoMap":
-                                alb_vs["se_group_ref"] = conv_utils.get_object_ref("Default-Group",
+                                alb_vs["se_group_ref"] = conv_utils.get_object_ref(segroup,
                                                                                    'serviceenginegroup',
                                                                                    cloud_name=cloud_name,
                                                                                    cloud_tenant=cloud_tenant,
@@ -818,7 +822,7 @@ class VsConfigConv(object):
                     LOG.debug('[VirtualService] Skipped Attribute {}:{}'.format(lb_vs['display_name'],
                                                                                 conv_status['skipped']))
 
-                LOG.info('[VirtualService] Migration completed for HM {}'.format(lb_vs['display_name']))
+                LOG.info('[VirtualService] Migration completed for VS {}'.format(lb_vs['display_name']))
             except Exception as e:
                 LOG.error("[VirtualService] Failed to convert VirtualService: {}".format(e))
                 update_count('error')

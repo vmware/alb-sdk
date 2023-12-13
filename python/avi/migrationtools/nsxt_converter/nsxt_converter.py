@@ -36,8 +36,8 @@ vips_not_configured, vs_with_custom_se_group, network_configuration_incomplete
 ARG_CHOICES = {
     'option': ['cli-upload', 'auto-upload'],
     'migrate_option': ['Avi', 'NSX'],
-    'vs_state': ['enable', 'deactivate']
-
+    'vs_state': ['enable', 'deactivate'],
+    'traffic_state': ['enable', 'deactivate']
 }
 LOG = logging.getLogger(__name__)
 
@@ -71,7 +71,7 @@ class NsxtConverter(AviConverter):
         self.vs_filter = args.vs_filter
         self.segroup = args.segroup
         self.patch = args.patch
-        self.traffic_enabled = args.traffic_enabled
+        self.traffic_state = args.traffic_state
         self.default_params_file = args.default_params_file
         self.cloud_tenant = args.cloud_tenant
         self.ssh_root_password = args.ssh_root_password
@@ -144,7 +144,7 @@ class NsxtConverter(AviConverter):
                 nsx_util, migration_input_config,
                 self.vs_state,
                 self.vs_level_status, None, self.segroup, self.not_in_use, None,
-                self.traffic_enabled, self.cloud_tenant,
+                self.traffic_state, self.cloud_tenant,
                 self.nsxt_ip, self.nsxt_password)
 
             avi_config = self.process_for_utils(alb_config, skip_ref_objects=["cloud_ref", "tenant_ref"])
@@ -177,6 +177,7 @@ class NsxtConverter(AviConverter):
                     virtual_services = self.vs_filter.split(',')
                 elif self.vs_filter and type(self.vs_filter) == list:
                     virtual_services = self.vs_filter
+                virtual_services = [vs.strip() for vs in virtual_services]
                 for vs_name in virtual_services:
                     if self.prefix:
                         if not vs_name.startswith(self.prefix):
@@ -294,7 +295,12 @@ if __name__ == "__main__":
 
     Example to use -s or --vs_state option:
         nsxt_converter.py -s enable
-    Usecase: Traffic enabled state of a VS after conversion to AVI (default value is disable).
+    Usecase: Default behaviour is VS state is disabled and traffic state is enabled after migration.
+    'enable' value means VS will be migrated with enable state. Recommended for VSs with non shared vip's.
+    Do not use IF LB configs are having shared VIP's. (Default 'traffic_state' is 'enable',
+    recommended - traffic_state should be set to 'deactivate')
+    'deactivate' value means VS will be migrated with inactive state. Recommended and default for VSs with shared vip's.
+    (Default 'traffic_state' is 'enable', recommended - traffic_state should be kept as 'enable')
 
     Example to use --alb_controller_version option:
         nsxt_converter.py --alb_controller_version 21.1.4
@@ -406,7 +412,7 @@ if __name__ == "__main__":
                         help='NSX-T Password')
     parser.add_argument('-port', '--nsxt_port', default=443,
                         help='NSX-T Port')
-    parser.add_argument( '--ssh_root_password',
+    parser.add_argument('--ssh_root_password',
                         help='ssh root  Password')
     # Added not in use flag
     parser.add_argument('--not_in_use',
@@ -428,9 +434,9 @@ if __name__ == "__main__":
     parser.add_argument('--segroup',
                         help='Update the available segroup ref with the '
                              'custom ref')
-    parser.add_argument('--traffic_enabled',
-                        help='Traffic Enabled on all migrated VS VIPs',
-                        action="store_true")
+    parser.add_argument('--traffic_state', choices=ARG_CHOICES['traffic_state'],
+                        help='Traffic state on all migrated VS VIPs. The default is \'enable\').',
+                        default="enable")
     # Added command line args to execute vs_filter.py with vs_name.
     parser.add_argument('--vs_filter',
                         help='comma separated names of virtualservices.\n'
@@ -441,8 +447,17 @@ if __name__ == "__main__":
                         help='Add columns of vs reference and overall skipped '
                              'settings in status excel sheet')
     parser.add_argument('-s', '--vs_state', choices=ARG_CHOICES['vs_state'],
-                        help='State of created VS')
-
+                        help='State of created VS. The default is \'deactivate\'.' +
+                        '\n\'enable\' value means VS will be migrated with enable state. '
+                        'Recommended for VSs with non shared vip\'s. '
+                        'Do not use IF LB configs are having shared VIP\'s. '
+                        '(Default \'traffic_state\' is \'enable\', '
+                        'recommended - traffic_state should be set to \'deactivate\')'
+                        '\n\'deactivate\' value means VS will be migrated with inactive state. '
+                        'Recommended and default for VSs with shared vip\'s. '
+                        '(Default \'traffic_state\' is \'enable\', '
+                        'recommended - traffic_state should be kept as \'enable\')',
+                        default="deactivate")
 
     start = datetime.now()
     args = parser.parse_args()
@@ -450,13 +465,15 @@ if __name__ == "__main__":
         if os.environ.get('nsxt_password'):
             args.nsxt_password = os.environ.get('nsxt_password')
         else:
-            print("\033[91m"+'ERROR: please provide nsxt password either through environment variable or as a script parameter'+"\033[0m")
+            print("\033[91m"+'ERROR: please provide nsxt password either through environment variable or '
+                             'as a script parameter'+"\033[0m")
             exit()
     if not args.alb_controller_password:
         if os.environ.get('alb_controller_password'):
             args.alb_controller_password= os.environ.get('alb_controller_password')
         else:
-            print('\033[91m'+'ERROR: please provide alb_controller_password either through environment variable or as a script parameter'+"\033[0m")
+            print('\033[91m'+'ERROR: please provide alb_controller_password either through environment variable or '
+                             'as a script parameter'+"\033[0m")
             exit()
     if not args.ssh_root_password:
         if os.environ.get('ssh_root_password'):

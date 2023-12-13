@@ -9,7 +9,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -17,7 +17,7 @@ jobs:
       - name: Set up Maven Central Repository
         uses: actions/setup-java@v1
         with:
-          java-version: 1.8
+          java-version: 11
           server-id: ossrh
           server-username: MAVEN_USERNAME
           server-password: MAVEN_PASSWORD
@@ -35,13 +35,13 @@ jobs:
         run: |
           echo "::set-output name=PUBLISH_ALL_TARGET::true"
           echo "::set-output name=TAG_NAME::${{ github.event.release.tag_name }}"
+          echo "::set-output name=PUBLISH_MIGRATION_TARGET::true"
+          echo "::set-output name=PUBLISH_SDK_TARGET::true"
           if [[ ${{ github.event.release.tag_name }} == *"migration-tool"* ]]; then
-            echo "::set-output name=PUBLISH_MIGRATION_TARGET::true"
             echo "::set-output name=PUBLISH_SDK_TARGET::false"
             echo "::set-output name=PUBLISH_ALL_TARGET::false"
           elif [[ ${{ github.event.release.tag_name }} == *"java-sdk"* ]] || [[ ${{ github.event.release.tag_name }} == *"python-sdk"* ]]; then
             echo "::set-output name=PUBLISH_MIGRATION_TARGET::false"
-            echo "::set-output name=PUBLISH_SDK_TARGET::true"
             echo "::set-output name=PUBLISH_ALL_TARGET::false"
           fi
 
@@ -75,6 +75,7 @@ jobs:
             mvn clean install -Dgpg.skip=true
           else
             echo "Normal tag found. Uploading java assets to public repo."
+            # mvn clean install -Dgpg.skip=true
             mvn clean --batch-mode deploy -DskipTests -Dgpg.passphrase=${{ secrets.AVISDK_PGP_PASSPHRASE }} -Denv.MAVEN_USERNAME=${{ secrets.OSSRH_USERNAME }} -Denv.MAVEN_PASSWORD=${{ secrets.OSSRH_TOKEN }}
           fi
           cd ..
@@ -100,21 +101,28 @@ jobs:
           mkdir dist
           if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
             ./create_sdk_pip_packages.sh sdk
-          elif [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET }} == true ]]; then
+          fi
+          if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET }} == true ]]; then
             ./create_sdk_pip_packages.sh migrationtools
           fi
           if [[ ${{ steps.publish_target.outputs.TAG_NAME }} == "test-"* ]]; then
             echo "Test tag found. Skipping python assets upload to public repo."
           else
             echo "Normal tag found. Uploading python assets to public repo."
-            ./create_sdk_pypi.sh sdk
+            if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
+              ./create_sdk_pypi.sh sdk
+            fi
+            if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET }} == true ]]; then
+              ./create_sdk_pypi.sh
+            fi
           fi
           ./create_sdk_pkgs.sh
           echo "AVI VERSION=== $AVI_VERSION"
           ls dist/
           if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_MIGRATION_TARGET }} == true ]]; then
             mv dist/avimigrationtools-$AVI_VERSION.tar.gz ../avimigrationtools-$AVI_VERSION.tar.gz
-          elif [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
+          fi
+          if [[ ${{ steps.publish_target.outputs.PUBLISH_ALL_TARGET }} == true ]] || [[ ${{ steps.publish_target.outputs.PUBLISH_SDK_TARGET }} == true ]]; then
             mv dist/avisdk-$AVI_VERSION.tar.gz ../avisdk-$AVI_VERSION.tar.gz
             #mv dist/python-avisdk_0_all.deb ../avisdk-$AVI_VERSION.deb
             mv dist/avisdk-$AVI_VERSION-1.noarch.rpm ../avisdk-$AVI_VERSION.rpm
