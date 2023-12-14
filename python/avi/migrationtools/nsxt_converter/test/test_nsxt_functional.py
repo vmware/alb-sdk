@@ -42,7 +42,7 @@ setup = dict(nsxt_ip=file_attribute['nsxt_ip'],
              segroup = None,
              patch = os.path.abspath(os.path.join(os.path.dirname(__file__),
                                        'patch.yaml')),
-             traffic_enabled = False,
+             traffic_state = 'enable',
              default_params_file = './default_params.json',
              cloud_tenant = 'admin'
         )
@@ -93,7 +93,7 @@ def Nsxt_conv(nsxt_ip=None, nsxt_user=None, nsxt_password=None, ssh_root_passwor
               controller_version = None, ansible_filter_types = None, vs_level_status = False,
               option = None, ansible = False, object_merge_check = True,
               vs_state = None, vs_filter = None, segroup = None, patch = None,
-              traffic_enabled = False, default_params_file = None, cloud_tenant = 'admin'
+              traffic_state = 'enable', default_params_file = None, cloud_tenant = 'admin'
               ):
     args = Namespace(nsxt_ip=nsxt_ip, nsxt_user=nsxt_user, nsxt_password=nsxt_password, ssh_root_password=ssh_root_password,
                      alb_controller_ip=controller_ip, alb_controller_password=password, alb_controller_user=user, alb_controller_version=alb_controller_version,
@@ -102,7 +102,7 @@ def Nsxt_conv(nsxt_ip=None, nsxt_user=None, nsxt_password=None, ssh_root_passwor
                      ansible_filter_types=ansible_filter_types, vs_level_status=vs_level_status,
                      option=option, ansible=ansible, no_object_merge=object_merge_check,
                      vs_state=vs_state, vs_filter=vs_filter, segroup=segroup, patch=patch,
-                     traffic_enabled=traffic_enabled, default_params_file=default_params_file, cloud_tenant=cloud_tenant
+                     traffic_state=traffic_state, default_params_file=default_params_file, cloud_tenant=cloud_tenant
                      )
     nsxt_converter = NsxtConverter(args)
     nsxt_converter.convert_lb_config(args)
@@ -191,8 +191,8 @@ class TestNSXTConverter:
         verify(resp.json()['count'] == 1, f"Expected count is 1 got {resp.json()['count']}")
         verify(resp.status_code == 200, f'Expected status code is 200 got {resp.status_code}')
         response =  resp.json()['results'][0]
-        verify(response.get('enabled') == True, f"Expected vs enabled state true got {response.get('enabled')}")
-        verify(not response.get('traffic_enabled'), f"Expected traffic enabled false got {response.get('traffic_enabled')}")
+        verify(not response.get('enabled'), f"Expected vs enabled state false got {response.get('enabled')}")
+        verify(response.get('traffic_enabled'), f"Expected traffic state true got {response.get('traffic_enabled')}")
         port = response['services'][0]['port']
 
         network_profile = response.get('network_profile_ref')
@@ -259,7 +259,7 @@ class TestNSXTConverter:
 
         response = resp.json()['results'][0]
         verify(not response.get('enabled'), f"Expected vs state false got {response.get('enabled')}")
-        verify(not response.get('traffic_enabled'), f"Expected traffic enabled false got {response.get('traffic_enabled')}")
+        verify(response.get('traffic_enabled'), f"Expected traffic enabled true got {response.get('traffic_enabled')}")
 
         log.info('Verify VS is UP on nsxt.')
         state = verify_vs_is_up_on_nsxt(nsxt_ip=setup.get('nsxt_ip'), nsxt_un=setup.get('nsxt_user'),
