@@ -51,8 +51,6 @@ class PolicyConfigConv(object):
         for each_policy in policy_config:
             try:
                 LOG.debug("Conversion started for the policy %s", each_policy)
-                if not policy_config[each_policy]:
-                    continue
                 tenant, policy_name = conv_utils.get_tenant_ref(each_policy)
                 if tenant_ref:
                     tenant = tenant_ref
