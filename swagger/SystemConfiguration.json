@@ -1119,6 +1119,10 @@
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ProxyConfiguration"
                 },
+                "sddcmanager_fqdn": {
+                    "description": "FQDN of SDDC Manager in VCF responsible for management of this ALB Controller Cluster. Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
                 "secure_channel_configuration": {
                     "description": "Configure Secure Channel properties. Field introduced in 18.1.4, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SecureChannelConfiguration"
