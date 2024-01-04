@@ -8,6 +8,9 @@ package models
 // swagger:model MetricsDbRuntime
 type MetricsDbRuntime struct {
 
+	// Db Client name. Can be of DB_CLIENT_RT/DB_CLIENT_BATCH/DB_CLIENT_RT_ARR. Field introduced in 30.2.1, 22.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	DbClientName *string `json:"db_client_name,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	DbNumClientQueries *int32 `json:"db_num_client_queries,omitempty"`
 
