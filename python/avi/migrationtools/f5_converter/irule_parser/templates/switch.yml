@@ -1,6 +1,0 @@
-- rule_name: path_switch
-  type: HTTPPolicySet
-  avi_config:
-    name: strip_path
-    http_request_policy:
-  is_internal_policy: false

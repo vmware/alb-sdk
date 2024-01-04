@@ -1,8 +1,0 @@
-{
-    "header_update": [
-        {
-            "irule": "ltm rule /Common/header_insert { when HTTP_REQUEST { HTTP::header insert \"X-SOURCE\" \"Akamai\" } }",
-            "avi_config": "{\"avi_config\": {\"http_request_policy\": {\"rules\": [{\"header_action\": {\"action\": \"HTTP_REPLACE_HDR\", \"hdr\": {\"name\": \"X-SOURCE\", \"value\": {\"val\": \"Akamai\"}}}}]}, \"name\": \"header_insert\"}, \"rule_name\": \"header_insert\", \"type\": \"HTTPPolicySet\"}"
-        }
-    ]
-}
