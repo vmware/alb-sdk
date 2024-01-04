@@ -429,6 +429,9 @@ public class EventDetails  {
     @JsonProperty("se_bgp_peer_state_change_details")
     private SeBgpPeerStateChangeDetails seBgpPeerStateChangeDetails = null;
 
+    @JsonProperty("se_debug_mode_event_detail")
+    private SeDebugModeEventDetail seDebugModeEventDetail = null;
+
     @JsonProperty("se_details")
     private SeMgrEventDetails seDetails = null;
 
@@ -3478,6 +3481,28 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return seDebugModeEventDetail
+     */
+    public SeDebugModeEventDetail getSeDebugModeEventDetail() {
+        return seDebugModeEventDetail;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param seDebugModeEventDetail set the seDebugModeEventDetail.
+     */
+    public void setSeDebugModeEventDetail(SeDebugModeEventDetail seDebugModeEventDetail) {
+        this.seDebugModeEventDetail = seDebugModeEventDetail;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDetails
@@ -5239,6 +5264,7 @@ public class EventDetails  {
   Objects.equals(this.seVsDelFlowsDisrupted, objEventDetails.seVsDelFlowsDisrupted)&&
   Objects.equals(this.seNtpSynchronizationFailed, objEventDetails.seNtpSynchronizationFailed)&&
   Objects.equals(this.seHighEgressProcLatencyEventDetails, objEventDetails.seHighEgressProcLatencyEventDetails)&&
+  Objects.equals(this.seDebugModeEventDetail, objEventDetails.seDebugModeEventDetail)&&
   Objects.equals(this.seHmPoolDetails, objEventDetails.seHmPoolDetails)&&
   Objects.equals(this.seHmVsDetails, objEventDetails.seHmVsDetails)&&
   Objects.equals(this.sePersistenceDetails, objEventDetails.sePersistenceDetails)&&
@@ -5523,6 +5549,7 @@ public class EventDetails  {
                         sb.append("    schedulerActionInfo: ").append(toIndentedString(schedulerActionInfo)).append("\n");
                         sb.append("    seBgpPeerDownDetails: ").append(toIndentedString(seBgpPeerDownDetails)).append("\n");
                         sb.append("    seBgpPeerStateChangeDetails: ").append(toIndentedString(seBgpPeerStateChangeDetails)).append("\n");
+                        sb.append("    seDebugModeEventDetail: ").append(toIndentedString(seDebugModeEventDetail)).append("\n");
                         sb.append("    seDetails: ").append(toIndentedString(seDetails)).append("\n");
                         sb.append("    seDiscontinuousTimeChangeEventDetails: ").append(toIndentedString(seDiscontinuousTimeChangeEventDetails)).append("\n");
                         sb.append("    seDupipEventDetails: ").append(toIndentedString(seDupipEventDetails)).append("\n");
