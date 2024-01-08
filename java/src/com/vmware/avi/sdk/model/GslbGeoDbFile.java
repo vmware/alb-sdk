@@ -27,6 +27,9 @@ public class GslbGeoDbFile  {
     @JsonProperty("file_id")
     private String fileId;
 
+    @JsonProperty("file_id_checksum")
+    private String fileIdChecksum;
+
     @JsonProperty("filename")
     private String filename = null;
 
@@ -40,7 +43,9 @@ public class GslbGeoDbFile  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * File checksum is internally computed.
+     * This field indicates the checksum of the original file.
+     * The checksum is internally computed.
+     * It's value changes every time the file is uploaded/modified.
      * Field introduced in 17.1.1.
      * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
      * edition.
@@ -52,7 +57,9 @@ public class GslbGeoDbFile  {
 
     /**
      * This is the setter method to the attribute.
-     * File checksum is internally computed.
+     * This field indicates the checksum of the original file.
+     * The checksum is internally computed.
+     * It's value changes every time the file is uploaded/modified.
      * Field introduced in 17.1.1.
      * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
      * edition.
@@ -64,7 +71,9 @@ public class GslbGeoDbFile  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * System internal identifier for the file.
+     * This field indicates the internal file used in the system.
+     * The user uploaded file will be retained while a corresponding internal file is generated to be consumed by various upstream (other sites) and
+     * downstream (ses) entities.
      * Field introduced in 17.1.1.
      * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
      * edition.
@@ -76,7 +85,9 @@ public class GslbGeoDbFile  {
 
     /**
      * This is the setter method to the attribute.
-     * System internal identifier for the file.
+     * This field indicates the internal file used in the system.
+     * The user uploaded file will be retained while a corresponding internal file is generated to be consumed by various upstream (other sites) and
+     * downstream (ses) entities.
      * Field introduced in 17.1.1.
      * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
      * edition.
@@ -84,6 +95,36 @@ public class GslbGeoDbFile  {
      */
     public void setFileId(String  fileId) {
         this.fileId = fileId;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * This field indicates the checksum of the internal file.
+     * The checksum is internally computed.
+     * It's value changes every time the internal file is regenerated.
+     * The internal file is regenerated whenever the original file is uploaded to the controller.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * @return fileIdChecksum
+     */
+    public String getFileIdChecksum() {
+        return fileIdChecksum;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This field indicates the checksum of the internal file.
+     * The checksum is internally computed.
+     * It's value changes every time the internal file is regenerated.
+     * The internal file is regenerated whenever the original file is uploaded to the controller.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
+     * edition.
+     * @param fileIdChecksum set the fileIdChecksum.
+     */
+    public void setFileIdChecksum(String  fileIdChecksum) {
+        this.fileIdChecksum = fileIdChecksum;
     }
 
     /**
@@ -140,7 +181,9 @@ public class GslbGeoDbFile  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Internal timestamp associated with the file.
+     * This field indicates the timestamp of when the file is associated to the gslbgeodbprofile.
+     * It is an internal generated timestamp.
+     * This value is a constant for the lifetime of the file and does not change every time the file is uploaded.
      * Field introduced in 17.1.1.
      * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
      * edition.
@@ -152,7 +195,9 @@ public class GslbGeoDbFile  {
 
     /**
      * This is the setter method to the attribute.
-     * Internal timestamp associated with the file.
+     * This field indicates the timestamp of when the file is associated to the gslbgeodbprofile.
+     * It is an internal generated timestamp.
+     * This value is a constant for the lifetime of the file and does not change every time the file is uploaded.
      * Field introduced in 17.1.1.
      * Allowed in enterprise edition with any value, essentials edition with any value, basic edition with any value, enterprise with cloud services
      * edition.
@@ -176,7 +221,8 @@ public class GslbGeoDbFile  {
   Objects.equals(this.format, objGslbGeoDbFile.format)&&
   Objects.equals(this.timestamp, objGslbGeoDbFile.timestamp)&&
   Objects.equals(this.checksum, objGslbGeoDbFile.checksum)&&
-  Objects.equals(this.fileId, objGslbGeoDbFile.fileId);
+  Objects.equals(this.fileId, objGslbGeoDbFile.fileId)&&
+  Objects.equals(this.fileIdChecksum, objGslbGeoDbFile.fileIdChecksum);
     }
 
     @Override
@@ -185,6 +231,7 @@ public class GslbGeoDbFile  {
       sb.append("class GslbGeoDbFile {\n");
                   sb.append("    checksum: ").append(toIndentedString(checksum)).append("\n");
                         sb.append("    fileId: ").append(toIndentedString(fileId)).append("\n");
+                        sb.append("    fileIdChecksum: ").append(toIndentedString(fileIdChecksum)).append("\n");
                         sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
                         sb.append("    format: ").append(toIndentedString(format)).append("\n");
                         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");

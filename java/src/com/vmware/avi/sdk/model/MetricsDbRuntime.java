@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricsDbRuntime  {
+    @JsonProperty("db_client_name")
+    private String dbClientName = null;
+
     @JsonProperty("db_num_client_queries")
     private Integer dbNumClientQueries = null;
 
@@ -46,6 +49,32 @@ public class MetricsDbRuntime  {
     private Integer dbRumRows = null;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Db client name.
+     * Can be of db_client_rt/db_client_batch/db_client_rt_arr.
+     * Field introduced in 30.2.1, 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return dbClientName
+     */
+    public String getDbClientName() {
+        return dbClientName;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Db client name.
+     * Can be of db_client_rt/db_client_batch/db_client_rt_arr.
+     * Field introduced in 30.2.1, 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param dbClientName set the dbClientName.
+     */
+    public void setDbClientName(String  dbClientName) {
+        this.dbClientName = dbClientName;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -224,14 +253,16 @@ public class MetricsDbRuntime  {
   Objects.equals(this.dbNumClientResp, objMetricsDbRuntime.dbNumClientResp)&&
   Objects.equals(this.dbQueueSize, objMetricsDbRuntime.dbQueueSize)&&
   Objects.equals(this.dbRumQueries, objMetricsDbRuntime.dbRumQueries)&&
-  Objects.equals(this.dbRumRows, objMetricsDbRuntime.dbRumRows);
+  Objects.equals(this.dbRumRows, objMetricsDbRuntime.dbRumRows)&&
+  Objects.equals(this.dbClientName, objMetricsDbRuntime.dbClientName);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class MetricsDbRuntime {\n");
-                  sb.append("    dbNumClientQueries: ").append(toIndentedString(dbNumClientQueries)).append("\n");
+                  sb.append("    dbClientName: ").append(toIndentedString(dbClientName)).append("\n");
+                        sb.append("    dbNumClientQueries: ").append(toIndentedString(dbNumClientQueries)).append("\n");
                         sb.append("    dbNumClientResp: ").append(toIndentedString(dbNumClientResp)).append("\n");
                         sb.append("    dbNumDbQueries: ").append(toIndentedString(dbNumDbQueries)).append("\n");
                         sb.append("    dbNumDbResp: ").append(toIndentedString(dbNumDbResp)).append("\n");
