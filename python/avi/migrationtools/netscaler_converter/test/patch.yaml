@@ -1,8 +1,0 @@
-HealthMonitor:
-  - match_name: pingmon
-    patch:
-      name: coolping
-
-  - match_regex_name: "*user-dns*"
-    patch:
-      interval: '10'

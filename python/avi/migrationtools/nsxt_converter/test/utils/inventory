@@ -1,6 +1,0 @@
-[all:vars]
-ansible_connection=smart
-ansible_user=username
-ansible_password=password
-[all]
-10.102.66.221
