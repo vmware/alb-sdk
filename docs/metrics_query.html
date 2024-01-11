@@ -11098,5 +11098,29 @@ Envoy Downstream Metrics.
 </tr>
 </table>
 </div>
+<h2 class='text-primary'> Redis_Queue_Stats Metrics </h2>
+<div class='container-fluid'>
+<p>
+Stats for task queue.
+</p>
+<table class='table table-bordered table-striped'>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Units</th>
+<th>Anomaly Detection</th>
+<th>Anomaly Models</th>
+<th>Priority</th>
+</tr>
+<tr>
+<td> redis_queue_stats.max_size </td>
+<td> Total count/size of each distinguished queue name. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+</table>
+</div>
 </body>
 </html></body
