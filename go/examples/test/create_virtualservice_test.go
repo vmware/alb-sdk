@@ -15,12 +15,18 @@ import (
 var cuuid string
 var uuid string
 var profuuid string
+var seuuid string
 
 func TestCreateVirtualservice(t *testing.T) {
+	user_headers := map[string]string{
+		"X-Avi-Cloud": "Test-vcenter-cloud",
+	}
+
 	aviClient, err := clients.NewAviClient(os.Getenv("AVI_CONTROLLER"), os.Getenv("AVI_USERNAME"),
 		session.SetPassword(os.Getenv("AVI_PASSWORD")),
 		session.SetTenant("avinetworks"),
 		session.SetVersion(os.Getenv("AVI_VERSION")),
+		session.SetUserHeader(user_headers),
 		session.SetInsecure)
 
 	if err != nil {
@@ -67,9 +73,18 @@ func TestCreateVirtualservice(t *testing.T) {
 		t.Fail()
 	}
 
+	// get se group uuid
+	var segobj interface{}
+	err = aviClient.AviSession.GetObjectByName("serviceenginegroup", "Default-Group", &segobj)
+	if err != nil {
+		fmt.Printf("\n [ERROR] : %s", err)
+		t.Fail()
+	}
+
 	cuuid = fmt.Sprint("/api/cloud?name=", cloudobj.(map[string]interface{})["name"])
 	profuuid = fmt.Sprint("/api/applicationpersistenceprofile?name=", profobj.(map[string]interface{})["name"])
 	uuid = fmt.Sprint("/api/healthmonitor?name=", obj.(map[string]interface{})["name"])
+	seuuid = fmt.Sprint("/api/serviceenginegroup?name=", segobj.(map[string]interface{})["name"])
 
 	// Use a pool client to create a pool with one server with IP 10.90.20.12, port 80
 	pobj := models.Pool{}
@@ -125,13 +140,14 @@ func TestCreateVirtualservice(t *testing.T) {
 	vsobj.CloudRef = &cuuid
 	port := (int32)(80)
 	vsobj.Services = append(vsobj.Services, &models.Service{Port: &port})
+	vsobj.SeGroupRef = &seuuid
 
 	nvsobj, err := aviClient.VirtualService.Create(&vsobj)
 	if err != nil {
 		fmt.Println("\n VS creation failed: ", err)
 		t.Fail()
 	}
-	fmt.Printf("\n VS obj: %v", nvsobj.TenantRef)
+	fmt.Printf("\n VS obj: %v", nvsobj.Name)
 
 	// Update VirtualService
 	vservice := models.VirtualService{}
