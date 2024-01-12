@@ -17,10 +17,10 @@ type ControllerInterface struct {
 	// Interface name. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	IfName *string `json:"if_name,omitempty"`
 
-	// IPv4 address of the interface. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// IPv4 prefix of the interface. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	IP *IPAddrPrefix `json:"ip,omitempty"`
 
-	// IPv6 address of the interface. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// IPv6 prefix of the interface. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	Ip6 *IPAddrPrefix `json:"ip6,omitempty"`
 
 	// Interface label like mgmt, secure channel or HSM. Enum options - MGMT, SE_SECURE_CHANNEL, HSM. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.

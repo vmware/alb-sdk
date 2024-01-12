@@ -17,6 +17,9 @@ type EventDetails struct {
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	AlbservicesCaseDetails *ALBServicesCase `json:"albservices_case_details,omitempty"`
 
+	// ALBservices file download event details. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	AlbservicesFileDownloadDetails *ALBServicesFileDownload `json:"albservices_file_download_details,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	AlbservicesFileUploadDetails *ALBServicesFileUpload `json:"albservices_file_upload_details,omitempty"`
 
@@ -422,6 +425,9 @@ type EventDetails struct {
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeBgpPeerStateChangeDetails *SeBgpPeerStateChangeDetails `json:"se_bgp_peer_state_change_details,omitempty"`
 
+	//  Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	SeDebugModeEventDetail *SeDebugModeEventDetail `json:"se_debug_mode_event_detail,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeDetails *SeMgrEventDetails `json:"se_details,omitempty"`
 
@@ -484,6 +490,9 @@ type EventDetails struct {
 
 	// SE NTP synchronization failed. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	SeNtpSynchronizationFailed *SeNtpSynchronizationFailed `json:"se_ntp_synchronization_failed,omitempty"`
+
+	//  Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	SeObjsyncPeerDownDetails *SeObjsyncPeerDownDetails `json:"se_objsync_peer_down_details,omitempty"`
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SePersistenceDetails *SePersistenceEventDetails `json:"se_persistence_details,omitempty"`

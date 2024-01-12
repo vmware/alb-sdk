@@ -41,7 +41,7 @@ type ALBServicesConfig struct {
 	Name *string `json:"name,omitempty"`
 
 	// Time interval in minutes. Allowed values are 5-60. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	PollingInterval *int32 `json:"polling_interval,omitempty"`
+	PollingInterval *uint32 `json:"polling_interval,omitempty"`
 
 	// The FQDN or IP address of the Pulse Cloud Services. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true

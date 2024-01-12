@@ -11,6 +11,7 @@ import (
 type AviClient struct {
 	AviSession                      *session.AviSession
 	ALBServicesConfig               *ALBServicesConfigClient
+	ALBServicesFileDownload         *ALBServicesFileDownloadClient
 	ALBServicesFileUpload           *ALBServicesFileUploadClient
 	ALBServicesJob                  *ALBServicesJobClient
 	ActionGroupConfig               *ActionGroupConfigClient
@@ -170,6 +171,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	}
 	aviClient.AviSession = aviSession
 	aviClient.ALBServicesConfig = NewALBServicesConfigClient(aviSession)
+	aviClient.ALBServicesFileDownload = NewALBServicesFileDownloadClient(aviSession)
 	aviClient.ALBServicesFileUpload = NewALBServicesFileUploadClient(aviSession)
 	aviClient.ALBServicesJob = NewALBServicesJobClient(aviSession)
 	aviClient.ActionGroupConfig = NewActionGroupConfigClient(aviSession)
