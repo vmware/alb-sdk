@@ -502,7 +502,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },
@@ -526,7 +526,7 @@
                     "type": "string"
                 },
                 "server_list": {
-                    "description": "List of DNS Server IP addresses. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "List of DNS Server IP(v4/v6) addresses or FQDNs. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/IpAddr"
@@ -566,7 +566,7 @@
                     "type": "string"
                 },
                 "mail_server_name": {
-                    "description": "Mail server host. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Mail server FQDN or IP(v4/v6) address. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "localhost"
                 },
@@ -574,7 +574,7 @@
                     "description": "Mail server port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 25,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "smtp_type": {
                     "description": "Type of SMTP Mail Service. Enum options - SMTP_NONE, SMTP_LOCAL_HOST, SMTP_SERVER, SMTP_ANONYMOUS_SERVER. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -713,7 +713,7 @@
                     "items": {
                         "type": "integer"
                     },
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },
@@ -761,7 +761,7 @@
                 "key_number": {
                     "description": "Key number to be assigned to the authentication-key. Allowed values are 1-65534. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },
@@ -776,7 +776,7 @@
                     }
                 },
                 "ntp_server_list": {
-                    "description": "List of NTP server hostnames or IP addresses. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "List of NTP server FQDNs or IP(v4/v6) addresses. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/IpAddr"
@@ -800,7 +800,7 @@
                 "key_number": {
                     "description": "Key number from the list of trusted keys used to authenticate this server. Allowed values are 1-65534. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "server": {
                     "description": "IP Address of the NTP Server. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -819,7 +819,7 @@
                     "description": "Force API session timeout after the specified time (in hours). Allowed values are 1-24. Field introduced in 18.2.3. Unit is HOURS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 24,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "disable_remote_cli_shell": {
                     "description": "Disable Remote CLI Shell Client access. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -847,22 +847,26 @@
                 "http_port": {
                     "description": "HTTP port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "https_port": {
                     "description": "HTTPS port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "minimum_password_length": {
                     "description": "Minimum password length for user accounts. Allowed values are 6-32. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 8,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "password_strength_check": {
                     "description": "Strict checking of password strength for user accounts. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
+                },
+                "pkiprofile_ref": {
+                    "description": "Reference to PKIProfile Config used for CRL validation. It is a reference to an object of type PKIProfile. Field introduced in 30.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "string"
                 },
                 "redirect_to_https": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -904,7 +908,7 @@
                 "port": {
                     "description": "Proxy port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "username": {
                     "description": "Username for proxy. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",

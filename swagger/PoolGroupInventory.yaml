@@ -416,7 +416,7 @@ definitions:
             file_length:
                 description: "File content length. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
     PoolGroupConfig:
         type: object
         required:
@@ -453,7 +453,7 @@ definitions:
             min_servers:
                 description: "The minimum number of servers to distribute traffic to. Allowed values are 1-65535. Special values are 0 - Disable. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             name:
                 description: "The name of the pool group. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
@@ -531,7 +531,7 @@ definitions:
                 description: "Ratio of selecting eligible pools in the pool group. . Allowed values are 1-1000. Special values are 0 - Do not select this pool for new connections. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 1), Basic edition(Allowed values- 1), Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
-                format: int32
+                format: uint32
     RoleFilterMatchLabel:
         type: object
         required:
