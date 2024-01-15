@@ -7,8 +7,8 @@ Created on Apr 22, 2016
 '''
 import argparse
 
-AVI_VERSION = '30.2.1'
-AVI_PIP_VERSION = '30.2.1'
+AVI_VERSION = 'eng'
+AVI_PIP_VERSION = 'eng'
 
 if __name__ == '__main__':
     HELP_STR = '''
