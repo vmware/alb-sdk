@@ -24,7 +24,7 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /poolinventory:
+    /pool-inventory:
         get:
             consumes:
                 -   application/json
@@ -132,7 +132,7 @@ paths:
                         $ref: "#/definitions/PoolInventory"
                 401:
                     description: log in failed
-    /poolinventory/{uuid}:
+    /pool-inventory/{uuid}:
         get:
             consumes:
                 -   application/json

@@ -18,7 +18,7 @@
     },
     "basePath": "/api",
     "paths": {
-        "/vsinventory": {
+        "/virtualservice-inventory": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -182,7 +182,7 @@
                 }
             }
         },
-        "/vsinventory/{uuid}": {
+        "/virtualservice-inventory/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
