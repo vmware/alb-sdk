@@ -18,7 +18,7 @@
     },
     "basePath": "/api",
     "paths": {
-        "/wafpolicypsmgroupinventory": {
+        "/wafpolicypsmgroup-inventory": {
             "get": {
                 "consumes": [
                     "application/json"
@@ -182,7 +182,7 @@
                 }
             }
         },
-        "/wafpolicypsmgroupinventory/{uuid}": {
+        "/wafpolicypsmgroup-inventory/{uuid}": {
             "get": {
                 "consumes": [
                     "application/json"
