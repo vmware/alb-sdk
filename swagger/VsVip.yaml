@@ -423,7 +423,7 @@ definitions:
                 description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
-                format: int32
+                format: uint32
     DiscoveredNetwork:
         type: object
         required:
@@ -470,11 +470,11 @@ definitions:
             num_records_in_response:
                 description: "Specifies the number of records returned for this FQDN. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             ttl:
                 description: "Time to live for fqdn record. Default value is chosen from DNS profile for this cloud if no value provided. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             type:
                 description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -639,7 +639,7 @@ definitions:
                 description: "Mask applied for the Vip, non-default mask supported only for wildcard Vip. Allowed values are 0-32. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 32), Basic edition(Allowed values- 32), Enterprise with Cloud Services edition."
                 type: integer
                 default: 32
-                format: int32
+                format: uint32
             subnet:
                 description: "Subnet providing reachability for client facing Vip IP. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
@@ -679,11 +679,11 @@ definitions:
             bgp_local_preference:
                 description: "LOCAL_PREF to be used for VsVip advertised. Applicable only over iBGP. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             bgp_num_as_path_prepend:
                 description: "Number of times the local AS should be prepended additionally to VsVip. Applicable only over eBGP. Allowed values are 1-10. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             bgp_peer_labels:
                 description: "Select BGP peers, using peer label, for VsVip advertisement. Field introduced in 20.1.5. Maximum of 128 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array
@@ -696,7 +696,7 @@ definitions:
                 description: "Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
             dns_info:
-                description: "Service discovery specific data including fully qualified domain name, type and Time-To-Live of the DNS record. Field introduced in 17.1.1. Maximum of 1000 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                description: "Service discovery specific data including fully qualified domain name, type and Time-To-Live of the DNS record. This takes effect only if dns profile isassociated with cloud. Field introduced in 17.1.1. Maximum of 1000 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/DnsInfo'

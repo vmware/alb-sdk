@@ -509,7 +509,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },
@@ -735,7 +735,7 @@
                 "index": {
                     "description": "Location index, this is used to determine the order of the locations. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "match": {
                     "description": "Apply these rules only if the request is matching this description. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -785,7 +785,7 @@
                 "index": {
                     "description": "Match_element index. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "match_case": {
                     "description": "Case sensitivity of match_op operation. Enum options - SENSITIVE, INSENSITIVE. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -827,7 +827,7 @@
                 "index": {
                     "description": "Rule index, this is used to determine the order of the rules. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "match_case": {
                     "description": "The field match_value_pattern regular expression is case sensitive. Enum options - SENSITIVE, INSENSITIVE. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -844,7 +844,7 @@
                 "match_value_max_length": {
                     "description": "The maximum allowed length of the match_value. If this is not set, the length will not be checked. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "match_value_pattern": {
                     "description": "A regular expression which describes the expected value. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",

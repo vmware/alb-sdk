@@ -1224,7 +1224,7 @@
                     "description": "Time interval between periodic polling of all Auto Scaling Groups. Allowed values are 60-1800. Field introduced in 17.1.3. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 600,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "ebs_encryption": {
                     "description": "EBS encryption mode and the master key to be used for encrypting SE AMI, Volumes, and Snapshots. Field introduced in 17.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1268,7 +1268,7 @@
                     "description": "Default TTL for all records. Allowed values are 1-172800. Field introduced in 17.1.3. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "use_iam_roles": {
                     "description": "Use IAM roles instead of access and secret key. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1423,7 +1423,7 @@
                     "description": "CloudConnector polling interval in seconds for external autoscale groups, minimum 60 seconds. Allowed values are 60-3600. Field introduced in 18.2.2. Unit is SECONDS. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 60), Basic edition(Allowed values- 60), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "aws_configuration": {
                     "description": " Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -1526,7 +1526,7 @@
                     "description": "Cloud metrics collector polling interval in seconds. Field introduced in 22.1.1. Unit is SECONDS. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 300,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "mgmt_ip_v4_enabled": {
                     "description": "Enable IPv4 on the Management interface of the ServiceEngine. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -1542,7 +1542,7 @@
                     "description": "MTU setting for the cloud. Unit is BYTES. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1500,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "name": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1690,7 +1690,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },
@@ -1756,13 +1756,13 @@
                 "fixed_ttl": {
                     "description": "If configured, this value used for refreshing the DNS entries.Overrides both received_ttl and min_ttl. The entries are refreshed only on fixed_ttleven when received_ttl is less than fixed_ttl. Allowed values are 5-2147483647. Field introduced in 20.1.5. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "min_ttl": {
                     "description": "If configured, the min_ttl overrides the ttl from responses when ttl < min_ttl,effectively ttl = max(recieved_ttl, min_ttl). Allowed values are 5-2147483647. Field introduced in 20.1.5. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "nameserver_ips": {
                     "description": "Name server IPv4 addresses. Field introduced in 20.1.5. Minimum of 1 items required. Maximum of 10 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -1788,7 +1788,7 @@
                     "description": "Sync frequency in seconds with frameworks. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "ca_tls_key_and_certificate_ref": {
                     "description": "UUID of the UCP CA TLS cert and key. It is a reference to an object of type SSLKeyAndCertificate. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1852,7 +1852,7 @@
                     "items": {
                         "type": "integer"
                     },
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "se_deployment_method": {
                     "description": "Use Fleet/SSH for SE deployment. Enum options - SE_CREATE_FLEET, SE_CREATE_SSH, SE_CREATE_POD. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1877,7 +1877,7 @@
                     "description": "New SE spawn rate per minute. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 25,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "se_volume": {
                     "description": "Host volume to be used as a disk for Avi SE, This is a disruptive change. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1947,13 +1947,13 @@
                     "description": "Listener port for publisher. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 80,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "subnet": {
                     "description": "Subnet for publisher. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 32,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "token": {
                     "description": "Token for tracking changes. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2217,7 +2217,7 @@
                     "description": "Priority of the routes created in GCP. Field introduced in 20.1.7, 21.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2000,
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },
@@ -2307,7 +2307,7 @@
                     "description": "SE Client Log disk size for cloud. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "se_sys_disk_path": {
                     "description": "SE System Logs disk path for cloud. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2317,7 +2317,7 @@
                     "description": "SE System Logs disk size for cloud. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "ssh_user_ref": {
                     "description": "Cloud connector user uuid for SSH to hosts. It is a reference to an object of type CloudConnectorUser. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2476,7 +2476,7 @@
                     "description": "Sync frequency in seconds with frameworks. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "container_port_match_http_service": {
                     "description": "Perform container port matching to create a HTTP Virtualservice instead of a TCP/UDP VirtualService. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2546,7 +2546,7 @@
                     "items": {
                         "type": "integer"
                     },
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "marathon_configurations": {
                     "description": "List of Marathon frameworks. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2602,7 +2602,7 @@
                     "description": "New SE spawn rate per minute. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 25,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "se_volume": {
                     "description": "Host volume to be used as a disk for Avi SE, This is a disruptive change. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2665,7 +2665,7 @@
                     "description": "Obsolete - ignored. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 4096,
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },
@@ -2736,7 +2736,7 @@
                     "description": "The number of SE data vNic's that can be connected to the Avi logical segment. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 16,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "tier1_lr_ids": {
                     "description": "Tier1 logical router IDs. Field introduced in 20.1.1. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2799,7 +2799,7 @@
                 "key_number": {
                     "description": "Key number to be assigned to the authentication-key. Allowed values are 1-65534. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },
@@ -2814,7 +2814,7 @@
                     }
                 },
                 "ntp_server_list": {
-                    "description": "List of NTP server hostnames or IP addresses. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "List of NTP server FQDNs or IP(v4/v6) addresses. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/IpAddr"
@@ -2838,7 +2838,7 @@
                 "key_number": {
                     "description": "Key number from the list of trusted keys used to authenticate this server. Allowed values are 1-65534. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "server": {
                     "description": "IP Address of the NTP Server. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2861,7 +2861,7 @@
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 8443,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "nuage_username": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3166,7 +3166,7 @@
                     "description": "Sync frequency in seconds with frameworks. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 300,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "auto_assign_fqdn": {
                     "description": "Auto assign FQDN to a virtual service if a valid FQDN is not configured. Field introduced in 17.2.8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3254,7 +3254,7 @@
                     "items": {
                         "type": "integer"
                     },
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "ing_exclude_attributes": {
                     "description": "Do not sync applications only for ingress that have these exclude attributes configured. Field introduced in 17.2.15, 18.1.5, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3303,7 +3303,7 @@
                 "num_shards": {
                     "description": "Enables sharding of Routes and Ingresses to this number (if non zero) of virtual services in the admin tenant per SEGroup. Sharding is done by hashing on the namespace of the Ingress/Route object. This knob is valid only if shared_virtualservice_namespace flag is set. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "override_service_ports": {
                     "description": "Override Service Ports with well known ports (80/443) for http/https Route/Ingress VirtualServices. Field introduced in 17.2.12,18.1.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3369,7 +3369,7 @@
                     "description": "Restart ServiceEngines by batch on ServiceEngineGroup updates (cpu, memory..etc). Field introduced in 17.2.15, 18.1.5, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "se_restart_force": {
                     "description": "Restart ServiceEngines forcely if VirtualServices failed to migrate to another SE. Field introduced in 17.2.15, 18.1.5, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3458,7 +3458,7 @@
                 "toleration_seconds": {
                     "description": "Pods that tolerate the taint with a specified toleration_seconds remain bound for the specified amount of time. Field introduced in 17.2.14, 18.1.5, 18.2.1. Unit is SECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "value": {
                     "description": "Value to match. Field introduced in 17.2.14, 18.1.5, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3476,12 +3476,12 @@
                 "end": {
                     "description": "TCP/UDP port range end (inclusive). Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "start": {
                     "description": "TCP/UDP port range start (inclusive). Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },
@@ -3519,7 +3519,7 @@
                 "port": {
                     "description": "Proxy port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "username": {
                     "description": "Username for proxy. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3538,7 +3538,7 @@
                     "description": "Sync frequency in seconds with frameworks. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "container_port_match_http_service": {
                     "description": "Perform container port matching to create a HTTP Virtualservice instead of a TCP/UDP VirtualService. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3594,7 +3594,7 @@
                     "items": {
                         "type": "integer"
                     },
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "nuage_controller": {
                     "description": "Nuage Overlay SDN Controller information. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3630,7 +3630,7 @@
                     "description": "New SE spawn rate per minute. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 25,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "se_volume": {
                     "description": "Host volume to be used as a disk for Avi SE, This is a disruptive change. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",

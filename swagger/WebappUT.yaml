@@ -354,7 +354,7 @@ definitions:
                 description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
-                format: int32
+                format: uint32
     L1FMandatoryTestCase:
         type: object
         required:
@@ -499,6 +499,25 @@ definitions:
             configpb_attributes:
                 description: "Protobuf versioning for config pbs. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigPbAttributes'
+            default_first_int:
+                description: "default uint64 field. Field introduced in 30.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                default: 1
+                format: uint64
+            default_second_int:
+                description: "default int64 field. Field introduced in 30.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                default: 2
+                format: int64
+            default_string:
+                description: "Default string field. Field introduced in 30.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+                default: "default string"
+            default_third_int:
+                description: "default int32 field. Field introduced in 30.1.2. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                default: 3
+                format: int32
             mandatory_test:
                 description: "Optional message for nested f_mandatory test cases defined at level1. Field introduced in 21.1.5, 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/L1FMandatoryTestCase'
