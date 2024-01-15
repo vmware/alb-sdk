@@ -183,6 +183,9 @@ public class VirtualService extends AviRestResource  {
     @JsonProperty("requests_rate_limit")
     private RateProfile requestsRateLimit = null;
 
+    @JsonProperty("revoke_vip_route")
+    private Boolean revokeVipRoute = false;
+
     @JsonProperty("saml_sp_config")
     private SAMLSPConfig samlSpConfig = null;
 
@@ -1749,6 +1752,34 @@ public class VirtualService extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Revoke the advertisement of virtual service via the cloud if it is marked down by health monitor.
+     * Supported for nsxt clouds only.this setting takes effect for future virtual service flaps.
+     * To advertise current vses that are down, please disable and re-enable the virtual service.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return revokeVipRoute
+     */
+    public Boolean getRevokeVipRoute() {
+        return revokeVipRoute;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Revoke the advertisement of virtual service via the cloud if it is marked down by health monitor.
+     * Supported for nsxt clouds only.this setting takes effect for future virtual service flaps.
+     * To advertise current vses that are down, please disable and re-enable the virtual service.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param revokeVipRoute set the revokeVipRoute.
+     */
+    public void setRevokeVipRoute(Boolean  revokeVipRoute) {
+        this.revokeVipRoute = revokeVipRoute;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Application-specific saml config.
      * Field introduced in 18.2.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -2944,6 +2975,7 @@ public class VirtualService extends AviRestResource  {
   Objects.equals(this.bulkSyncKvcache, objVirtualService.bulkSyncKvcache)&&
   Objects.equals(this.topologyPolicies, objVirtualService.topologyPolicies)&&
   Objects.equals(this.advertiseDownVs, objVirtualService.advertiseDownVs)&&
+  Objects.equals(this.revokeVipRoute, objVirtualService.revokeVipRoute)&&
   Objects.equals(this.description, objVirtualService.description)&&
   Objects.equals(this.tenantRef, objVirtualService.tenantRef)&&
   Objects.equals(this.cloudRef, objVirtualService.cloudRef)&&
@@ -3052,6 +3084,7 @@ public class VirtualService extends AviRestResource  {
                         sb.append("    poolRef: ").append(toIndentedString(poolRef)).append("\n");
                         sb.append("    removeListeningPortOnVsDown: ").append(toIndentedString(removeListeningPortOnVsDown)).append("\n");
                         sb.append("    requestsRateLimit: ").append(toIndentedString(requestsRateLimit)).append("\n");
+                        sb.append("    revokeVipRoute: ").append(toIndentedString(revokeVipRoute)).append("\n");
                         sb.append("    samlSpConfig: ").append(toIndentedString(samlSpConfig)).append("\n");
                         sb.append("    scaleoutEcmp: ").append(toIndentedString(scaleoutEcmp)).append("\n");
                         sb.append("    seGroupRef: ").append(toIndentedString(seGroupRef)).append("\n");

@@ -71,7 +71,7 @@ public class NatPolicyAction  {
     /**
      * This is the getter method this will return the attribute value.
      * Nat action type.
-     * Enum options - NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PORT.
+     * Enum options - NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PORT, NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PRESERVE_PORT.
      * Field introduced in 18.2.5.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -84,7 +84,7 @@ public class NatPolicyAction  {
     /**
      * This is the setter method to the attribute.
      * Nat action type.
-     * Enum options - NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PORT.
+     * Enum options - NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PORT, NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PRESERVE_PORT.
      * Field introduced in 18.2.5.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.

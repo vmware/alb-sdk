@@ -24,6 +24,9 @@ public class BotManagementLog  {
     @JsonProperty("classification")
     private BotClassification classification = null;
 
+    @JsonProperty("mapping_decision")
+    private BotMappingDecision mappingDecision = null;
+
     @JsonProperty("results")
     private List<BotEvaluationResult> results = null;
 
@@ -51,6 +54,30 @@ public class BotManagementLog  {
      */
     public void setClassification(BotClassification classification) {
         this.classification = classification;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Bot mapping details.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return mappingDecision
+     */
+    public BotMappingDecision getMappingDecision() {
+        return mappingDecision;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Bot mapping details.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param mappingDecision set the mappingDecision.
+     */
+    public void setMappingDecision(BotMappingDecision mappingDecision) {
+        this.mappingDecision = mappingDecision;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -103,7 +130,8 @@ public class BotManagementLog  {
       }
       BotManagementLog objBotManagementLog = (BotManagementLog) o;
       return   Objects.equals(this.results, objBotManagementLog.results)&&
-  Objects.equals(this.classification, objBotManagementLog.classification);
+  Objects.equals(this.classification, objBotManagementLog.classification)&&
+  Objects.equals(this.mappingDecision, objBotManagementLog.mappingDecision);
     }
 
     @Override
@@ -111,6 +139,7 @@ public class BotManagementLog  {
       StringBuilder sb = new StringBuilder();
       sb.append("class BotManagementLog {\n");
                   sb.append("    classification: ").append(toIndentedString(classification)).append("\n");
+                        sb.append("    mappingDecision: ").append(toIndentedString(mappingDecision)).append("\n");
                         sb.append("    results: ").append(toIndentedString(results)).append("\n");
                   sb.append("}");
       return sb.toString();

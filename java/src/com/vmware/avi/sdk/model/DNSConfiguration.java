@@ -52,7 +52,7 @@ public class DNSConfiguration  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * List of dns server ip addresses.
+     * List of dns server ip(v4/v6) addresses or fqdns.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverList
@@ -63,7 +63,7 @@ public class DNSConfiguration  {
 
     /**
      * This is the setter method. this will set the serverList
-     * List of dns server ip addresses.
+     * List of dns server ip(v4/v6) addresses or fqdns.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverList
@@ -74,7 +74,7 @@ public class DNSConfiguration  {
 
     /**
      * This is the setter method this will set the serverList
-     * List of dns server ip addresses.
+     * List of dns server ip(v4/v6) addresses or fqdns.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serverList

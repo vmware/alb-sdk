@@ -187,7 +187,7 @@ public class LdapAuthSettings  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Ldap server ip address or hostname.
+     * Ldap server ip(v4/v6) address or fqdn.
      * Use ip address if an auth profile is used to configure virtual service.
      * Minimum of 1 items required.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -200,7 +200,7 @@ public class LdapAuthSettings  {
 
     /**
      * This is the setter method. this will set the server
-     * Ldap server ip address or hostname.
+     * Ldap server ip(v4/v6) address or fqdn.
      * Use ip address if an auth profile is used to configure virtual service.
      * Minimum of 1 items required.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -213,7 +213,7 @@ public class LdapAuthSettings  {
 
     /**
      * This is the setter method this will set the server
-     * Ldap server ip address or hostname.
+     * Ldap server ip(v4/v6) address or fqdn.
      * Use ip address if an auth profile is used to configure virtual service.
      * Minimum of 1 items required.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.

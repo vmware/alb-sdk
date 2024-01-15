@@ -96,6 +96,9 @@ public class Pool extends AviRestResource  {
     @JsonProperty("graceful_disable_timeout")
     private Integer gracefulDisableTimeout = 1;
 
+    @JsonProperty("graceful_hm_down_disable_timeout")
+    private Integer gracefulHmDownDisableTimeout = -1;
+
     @JsonProperty("gslb_sp_enabled")
     private Boolean gslbSpEnabled;
 
@@ -917,6 +920,36 @@ public class Pool extends AviRestResource  {
      */
     public void setGracefulDisableTimeout(Integer  gracefulDisableTimeout) {
         this.gracefulDisableTimeout = gracefulDisableTimeout;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Time interval for gracefully closing the connections on server, when health monitoring marks the server down.
+     * Allowed values are 1-432000.
+     * Special values are 0 - immediate, -1 - infinite.
+     * Field introduced in 30.2.1.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as -1.
+     * @return gracefulHmDownDisableTimeout
+     */
+    public Integer getGracefulHmDownDisableTimeout() {
+        return gracefulHmDownDisableTimeout;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Time interval for gracefully closing the connections on server, when health monitoring marks the server down.
+     * Allowed values are 1-432000.
+     * Special values are 0 - immediate, -1 - infinite.
+     * Field introduced in 30.2.1.
+     * Unit is sec.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as -1.
+     * @param gracefulHmDownDisableTimeout set the gracefulHmDownDisableTimeout.
+     */
+    public void setGracefulHmDownDisableTimeout(Integer  gracefulHmDownDisableTimeout) {
+        this.gracefulHmDownDisableTimeout = gracefulHmDownDisableTimeout;
     }
 
     /**
@@ -2249,7 +2282,8 @@ public class Pool extends AviRestResource  {
   Objects.equals(this.useServiceSslMode, objPool.useServiceSslMode)&&
   Objects.equals(this.horizonProfile, objPool.horizonProfile)&&
   Objects.equals(this.poolType, objPool.poolType)&&
-  Objects.equals(this.lbAlgoRrPerSe, objPool.lbAlgoRrPerSe);
+  Objects.equals(this.lbAlgoRrPerSe, objPool.lbAlgoRrPerSe)&&
+  Objects.equals(this.gracefulHmDownDisableTimeout, objPool.gracefulHmDownDisableTimeout);
     }
 
     @Override
@@ -2281,6 +2315,7 @@ public class Pool extends AviRestResource  {
                         sb.append("    failAction: ").append(toIndentedString(failAction)).append("\n");
                         sb.append("    fewestTasksFeedbackDelay: ").append(toIndentedString(fewestTasksFeedbackDelay)).append("\n");
                         sb.append("    gracefulDisableTimeout: ").append(toIndentedString(gracefulDisableTimeout)).append("\n");
+                        sb.append("    gracefulHmDownDisableTimeout: ").append(toIndentedString(gracefulHmDownDisableTimeout)).append("\n");
                         sb.append("    gslbSpEnabled: ").append(toIndentedString(gslbSpEnabled)).append("\n");
                         sb.append("    healthMonitorRefs: ").append(toIndentedString(healthMonitorRefs)).append("\n");
                         sb.append("    horizonProfile: ").append(toIndentedString(horizonProfile)).append("\n");

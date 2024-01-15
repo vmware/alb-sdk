@@ -32,7 +32,7 @@ public class SaasLicensingInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Maximum service units limit for controller.
-     * Allowed values are 0-1000.
+     * Allowed values are 0-100000.
      * Special values are 0 - infinite.
      * Field introduced in 21.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -46,7 +46,7 @@ public class SaasLicensingInfo  {
     /**
      * This is the setter method to the attribute.
      * Maximum service units limit for controller.
-     * Allowed values are 0-1000.
+     * Allowed values are 0-100000.
      * Special values are 0 - infinite.
      * Field introduced in 21.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.

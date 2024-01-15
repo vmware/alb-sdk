@@ -33,8 +33,14 @@ public class WAFLimits  {
     @JsonProperty("num_applications")
     private Integer numApplications = null;
 
+    @JsonProperty("num_content_type_mappings")
+    private Integer numContentTypeMappings = null;
+
     @JsonProperty("num_data_files")
     private Integer numDataFiles = null;
+
+    @JsonProperty("num_exclude_list_per_rule_group")
+    private Integer numExcludeListPerRuleGroup = null;
 
     @JsonProperty("num_pre_post_crs_groups")
     private Integer numPrePostCrsGroups = null;
@@ -166,6 +172,30 @@ public class WAFLimits  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Number of allowed request content type mappings in waf profile.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return numContentTypeMappings
+     */
+    public Integer getNumContentTypeMappings() {
+        return numContentTypeMappings;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Number of allowed request content type mappings in waf profile.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param numContentTypeMappings set the numContentTypeMappings.
+     */
+    public void setNumContentTypeMappings(Integer  numContentTypeMappings) {
+        this.numContentTypeMappings = numContentTypeMappings;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Number of datafiles used in waf.
      * Field introduced in 21.1.3.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -186,6 +216,30 @@ public class WAFLimits  {
      */
     public void setNumDataFiles(Integer  numDataFiles) {
         this.numDataFiles = numDataFiles;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Number of exclude list entries in waf rule group.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return numExcludeListPerRuleGroup
+     */
+    public Integer getNumExcludeListPerRuleGroup() {
+        return numExcludeListPerRuleGroup;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Number of exclude list entries in waf rule group.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param numExcludeListPerRuleGroup set the numExcludeListPerRuleGroup.
+     */
+    public void setNumExcludeListPerRuleGroup(Integer  numExcludeListPerRuleGroup) {
+        this.numExcludeListPerRuleGroup = numExcludeListPerRuleGroup;
     }
 
     /**
@@ -452,7 +506,9 @@ public class WAFLimits  {
   Objects.equals(this.numRulesPerRulegroup, objWAFLimits.numRulesPerRulegroup)&&
   Objects.equals(this.numRuleTags, objWAFLimits.numRuleTags)&&
   Objects.equals(this.numPrePostCrsGroups, objWAFLimits.numPrePostCrsGroups)&&
-  Objects.equals(this.numAllowedRequestContentTypeCharsets, objWAFLimits.numAllowedRequestContentTypeCharsets);
+  Objects.equals(this.numAllowedRequestContentTypeCharsets, objWAFLimits.numAllowedRequestContentTypeCharsets)&&
+  Objects.equals(this.numContentTypeMappings, objWAFLimits.numContentTypeMappings)&&
+  Objects.equals(this.numExcludeListPerRuleGroup, objWAFLimits.numExcludeListPerRuleGroup);
     }
 
     @Override
@@ -463,7 +519,9 @@ public class WAFLimits  {
                         sb.append("    numAllowedRequestContentTypeCharsets: ").append(toIndentedString(numAllowedRequestContentTypeCharsets)).append("\n");
                         sb.append("    numAllowlistPolicyRules: ").append(toIndentedString(numAllowlistPolicyRules)).append("\n");
                         sb.append("    numApplications: ").append(toIndentedString(numApplications)).append("\n");
+                        sb.append("    numContentTypeMappings: ").append(toIndentedString(numContentTypeMappings)).append("\n");
                         sb.append("    numDataFiles: ").append(toIndentedString(numDataFiles)).append("\n");
+                        sb.append("    numExcludeListPerRuleGroup: ").append(toIndentedString(numExcludeListPerRuleGroup)).append("\n");
                         sb.append("    numPrePostCrsGroups: ").append(toIndentedString(numPrePostCrsGroups)).append("\n");
                         sb.append("    numPsmGroups: ").append(toIndentedString(numPsmGroups)).append("\n");
                         sb.append("    numPsmMatchElements: ").append(toIndentedString(numPsmMatchElements)).append("\n");

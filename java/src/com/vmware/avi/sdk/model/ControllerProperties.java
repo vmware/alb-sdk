@@ -66,8 +66,14 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("cleanup_sessions_timeout_period")
     private Integer cleanupSessionsTimeoutPeriod = 60;
 
+    @JsonProperty("cloud_discovery_interval")
+    private Integer cloudDiscoveryInterval = 5;
+
     @JsonProperty("cloud_reconcile")
     private Boolean cloudReconcile = true;
+
+    @JsonProperty("cloud_reconcile_interval")
+    private Integer cloudReconcileInterval = 5;
 
     @JsonProperty("cluster_ip_gratuitous_arp_period")
     private Integer clusterIpGratuitousArpPeriod = 60;
@@ -705,6 +711,34 @@ public class ControllerProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Time in minutes to wait between consecutive cloud discovery cycles.
+     * Allowed values are 1-1440.
+     * Field introduced in 30.2.1.
+     * Unit is min.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * @return cloudDiscoveryInterval
+     */
+    public Integer getCloudDiscoveryInterval() {
+        return cloudDiscoveryInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Time in minutes to wait between consecutive cloud discovery cycles.
+     * Allowed values are 1-1440.
+     * Field introduced in 30.2.1.
+     * Unit is min.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * @param cloudDiscoveryInterval set the cloudDiscoveryInterval.
+     */
+    public void setCloudDiscoveryInterval(Integer  cloudDiscoveryInterval) {
+        this.cloudDiscoveryInterval = cloudDiscoveryInterval;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Enable/disable periodic reconcile for all the clouds.
      * Field introduced in 17.2.14,18.1.5,18.2.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
@@ -725,6 +759,34 @@ public class ControllerProperties extends AviRestResource  {
      */
     public void setCloudReconcile(Boolean  cloudReconcile) {
         this.cloudReconcile = cloudReconcile;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Time in minutes to wait between consecutive cloud reconcile cycles.
+     * Allowed values are 1-1440.
+     * Field introduced in 30.2.1.
+     * Unit is min.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * @return cloudReconcileInterval
+     */
+    public Integer getCloudReconcileInterval() {
+        return cloudReconcileInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Time in minutes to wait between consecutive cloud reconcile cycles.
+     * Allowed values are 1-1440.
+     * Field introduced in 30.2.1.
+     * Unit is min.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * @param cloudReconcileInterval set the cloudReconcileInterval.
+     */
+    public void setCloudReconcileInterval(Integer  cloudReconcileInterval) {
+        this.cloudReconcileInterval = cloudReconcileInterval;
     }
 
     /**
@@ -3058,7 +3120,9 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.skopeoRetryLimit, objControllerProperties.skopeoRetryLimit)&&
   Objects.equals(this.skopeoRetryInterval, objControllerProperties.skopeoRetryInterval)&&
   Objects.equals(this.softMinMemPerSeLimit, objControllerProperties.softMinMemPerSeLimit)&&
-  Objects.equals(this.fileReferenceMappings, objControllerProperties.fileReferenceMappings);
+  Objects.equals(this.fileReferenceMappings, objControllerProperties.fileReferenceMappings)&&
+  Objects.equals(this.cloudReconcileInterval, objControllerProperties.cloudReconcileInterval)&&
+  Objects.equals(this.cloudDiscoveryInterval, objControllerProperties.cloudDiscoveryInterval);
     }
 
     @Override
@@ -3080,7 +3144,9 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    checkVsvipFqdnSyntax: ").append(toIndentedString(checkVsvipFqdnSyntax)).append("\n");
                         sb.append("    cleanupExpiredAuthtokenTimeoutPeriod: ").append(toIndentedString(cleanupExpiredAuthtokenTimeoutPeriod)).append("\n");
                         sb.append("    cleanupSessionsTimeoutPeriod: ").append(toIndentedString(cleanupSessionsTimeoutPeriod)).append("\n");
+                        sb.append("    cloudDiscoveryInterval: ").append(toIndentedString(cloudDiscoveryInterval)).append("\n");
                         sb.append("    cloudReconcile: ").append(toIndentedString(cloudReconcile)).append("\n");
+                        sb.append("    cloudReconcileInterval: ").append(toIndentedString(cloudReconcileInterval)).append("\n");
                         sb.append("    clusterIpGratuitousArpPeriod: ").append(toIndentedString(clusterIpGratuitousArpPeriod)).append("\n");
                         sb.append("    consistencyCheckTimeoutPeriod: ").append(toIndentedString(consistencyCheckTimeoutPeriod)).append("\n");
                         sb.append("    controllerResourceInfoCollectionPeriod: ").append(toIndentedString(controllerResourceInfoCollectionPeriod)).append("\n");
