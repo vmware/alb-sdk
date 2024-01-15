@@ -267,14 +267,14 @@ font-style: italic;
         "file_id" : "aeiou",
         "checksum" : "aeiou",
         "format" : "aeiou",
-        "timestamp" : 123456789
+        "timestamp" : ""
       },
-      "priority" : 123
+      "priority" : ""
     } ],
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
     "configpb_attributes" : {
-      "version" : 123
+      "version" : ""
     },
     "description" : "aeiou",
     "markers" : [ {
@@ -345,14 +345,14 @@ font-style: italic;
       "file_id" : "aeiou",
       "checksum" : "aeiou",
       "format" : "aeiou",
-      "timestamp" : 123456789
+      "timestamp" : ""
     },
-    "priority" : 123
+    "priority" : ""
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "description" : "aeiou",
   "markers" : [ {
@@ -494,14 +494,14 @@ font-style: italic;
       "file_id" : "aeiou",
       "checksum" : "aeiou",
       "format" : "aeiou",
-      "timestamp" : 123456789
+      "timestamp" : ""
     },
-    "priority" : 123
+    "priority" : ""
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "description" : "aeiou",
   "markers" : [ {
@@ -583,14 +583,14 @@ font-style: italic;
       "file_id" : "aeiou",
       "checksum" : "aeiou",
       "format" : "aeiou",
-      "timestamp" : 123456789
+      "timestamp" : ""
     },
-    "priority" : 123
+    "priority" : ""
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "description" : "aeiou",
   "markers" : [ {
@@ -672,14 +672,14 @@ font-style: italic;
       "file_id" : "aeiou",
       "checksum" : "aeiou",
       "format" : "aeiou",
-      "timestamp" : 123456789
+      "timestamp" : ""
     },
-    "priority" : 123
+    "priority" : ""
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "description" : "aeiou",
   "markers" : [ {
@@ -779,14 +779,14 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="GslbGeoDbEntry">GslbGeoDbEntry</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">file </div><div class="param-desc"><span class="param-type"><a href="#GslbGeoDbFile">GslbGeoDbFile</a></span> This field describes the GeoDb file. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">priority (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Priority of this geodb entry. This value should be unique in a repeated list of geodb entries.  Higher the value, then greater is the priority.  . Allowed values are 1-100. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">priority (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Priority of this geodb entry. This value should be unique in a repeated list of geodb entries.  Higher the value, then greater is the priority.  . Allowed values are 1-100. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -796,7 +796,7 @@ font-style: italic;
 <div class="param">file_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> System internal identifier for the file. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">filename (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Geodb Filename in the Avi supported formats. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">format (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This field indicates the file format. Enum options - GSLB_GEODB_FILE_FORMAT_AVI, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V6, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V4_AND_V6, GSLB_GEODB_FILE_FORMAT_AVI_V6, GSLB_GEODB_FILE_FORMAT_AVI_V4_AND_V6. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">timestamp (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Internal timestamp associated with the file. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int64</div>
+<div class="param">timestamp (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Internal timestamp associated with the file. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint64</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

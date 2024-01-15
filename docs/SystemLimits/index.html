@@ -270,7 +270,9 @@ font-style: italic;
         "num_data_files" : 123,
         "num_restricted_headers" : 123,
         "num_rule_tags" : 123,
+        "num_exclude_list_per_rule_group" : 123,
         "num_static_extensions" : 123,
+        "num_content_type_mappings" : 123,
         "num_allowed_request_content_type_charsets" : 123,
         "num_psm_match_elements" : 123,
         "num_allowlist_policy_rules" : 123,
@@ -306,6 +308,7 @@ font-style: italic;
         } ],
         "num_east_west_virtualservices" : 123,
         "num_virtualservices" : 123,
+        "num_waf_virtualservices" : 123,
         "num_servers" : 123,
         "num_clouds" : 123,
         "num_vrfs" : 123
@@ -341,7 +344,7 @@ font-style: italic;
       "rules_per_networksecuritypolicy" : 123
     },
     "configpb_attributes" : {
-      "version" : 123
+      "version" : ""
     },
     "controller_sizes" : [ {
       "flavor" : "aeiou",
@@ -429,7 +432,9 @@ font-style: italic;
       "num_data_files" : 123,
       "num_restricted_headers" : 123,
       "num_rule_tags" : 123,
+      "num_exclude_list_per_rule_group" : 123,
       "num_static_extensions" : 123,
+      "num_content_type_mappings" : 123,
       "num_allowed_request_content_type_charsets" : 123,
       "num_psm_match_elements" : 123,
       "num_allowlist_policy_rules" : 123,
@@ -465,6 +470,7 @@ font-style: italic;
       } ],
       "num_east_west_virtualservices" : 123,
       "num_virtualservices" : 123,
+      "num_waf_virtualservices" : 123,
       "num_servers" : 123,
       "num_clouds" : 123,
       "num_vrfs" : 123
@@ -500,7 +506,7 @@ font-style: italic;
     "rules_per_networksecuritypolicy" : 123
   },
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "controller_sizes" : [ {
     "flavor" : "aeiou",
@@ -659,7 +665,9 @@ font-style: italic;
       "num_data_files" : 123,
       "num_restricted_headers" : 123,
       "num_rule_tags" : 123,
+      "num_exclude_list_per_rule_group" : 123,
       "num_static_extensions" : 123,
+      "num_content_type_mappings" : 123,
       "num_allowed_request_content_type_charsets" : 123,
       "num_psm_match_elements" : 123,
       "num_allowlist_policy_rules" : 123,
@@ -695,6 +703,7 @@ font-style: italic;
       } ],
       "num_east_west_virtualservices" : 123,
       "num_virtualservices" : 123,
+      "num_waf_virtualservices" : 123,
       "num_servers" : 123,
       "num_clouds" : 123,
       "num_vrfs" : 123
@@ -730,7 +739,7 @@ font-style: italic;
     "rules_per_networksecuritypolicy" : 123
   },
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "controller_sizes" : [ {
     "flavor" : "aeiou",
@@ -829,7 +838,9 @@ font-style: italic;
       "num_data_files" : 123,
       "num_restricted_headers" : 123,
       "num_rule_tags" : 123,
+      "num_exclude_list_per_rule_group" : 123,
       "num_static_extensions" : 123,
+      "num_content_type_mappings" : 123,
       "num_allowed_request_content_type_charsets" : 123,
       "num_psm_match_elements" : 123,
       "num_allowlist_policy_rules" : 123,
@@ -865,6 +876,7 @@ font-style: italic;
       } ],
       "num_east_west_virtualservices" : 123,
       "num_virtualservices" : 123,
+      "num_waf_virtualservices" : 123,
       "num_servers" : 123,
       "num_clouds" : 123,
       "num_vrfs" : 123
@@ -900,7 +912,7 @@ font-style: italic;
     "rules_per_networksecuritypolicy" : 123
   },
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "controller_sizes" : [ {
     "flavor" : "aeiou",
@@ -999,7 +1011,9 @@ font-style: italic;
       "num_data_files" : 123,
       "num_restricted_headers" : 123,
       "num_rule_tags" : 123,
+      "num_exclude_list_per_rule_group" : 123,
       "num_static_extensions" : 123,
+      "num_content_type_mappings" : 123,
       "num_allowed_request_content_type_charsets" : 123,
       "num_psm_match_elements" : 123,
       "num_allowlist_policy_rules" : 123,
@@ -1035,6 +1049,7 @@ font-style: italic;
       } ],
       "num_east_west_virtualservices" : 123,
       "num_virtualservices" : 123,
+      "num_waf_virtualservices" : 123,
       "num_servers" : 123,
       "num_clouds" : 123,
       "num_vrfs" : 123
@@ -1070,7 +1085,7 @@ font-style: italic;
     "rules_per_networksecuritypolicy" : 123
   },
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "controller_sizes" : [ {
     "flavor" : "aeiou",
@@ -1146,7 +1161,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1211,6 +1226,7 @@ font-style: italic;
 <div class="param">num_virtualservices (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of virtualservices. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">num_virtualservices_rt_metrics (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of virtualservices with realtime metrics enabled. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">num_vrfs (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of vrfcontexts. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">num_waf_virtualservices (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of virtualservices configured with WAF. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1288,7 +1304,9 @@ font-style: italic;
 <div class="param">num_allowed_request_content_type_charsets (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of allowed request content type character sets in WAF. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">num_allowlist_policy_rules (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of rules used in WAF allowlist policy. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">num_applications (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of applications for which we use rules from sig provider. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">num_content_type_mappings (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of allowed request content type mappings in waf profile. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">num_data_files (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of datafiles used in WAF. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">num_exclude_list_per_rule_group (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of exclude list entries in waf rule group. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">num_pre_post_crs_groups (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of pre, post CRS groups. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">num_psm_groups (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of total PSM groups in WAF. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">num_psm_match_elements (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of match elements used in WAF PSM. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>

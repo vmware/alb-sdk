@@ -264,18 +264,18 @@ font-style: italic;
       "vs_uuid" : "aeiou",
       "uri_info" : [ {
         "uri_key" : "aeiou",
-        "uri_hits" : 123456789,
+        "uri_hits" : "",
         "param_info" : [ {
           "param_key" : "aeiou",
           "param_size_classes" : [ {
-            "hits" : 123456789,
+            "hits" : "",
             "len" : "aeiou"
           } ],
           "param_type_classes" : [ {
-            "hits" : 123456789,
+            "hits" : "",
             "type" : "aeiou"
           } ],
-          "param_hits" : 123456789
+          "param_hits" : ""
         } ]
       } ],
       "app_id" : "aeiou"
@@ -343,18 +343,18 @@ font-style: italic;
     "vs_uuid" : "aeiou",
     "uri_info" : [ {
       "uri_key" : "aeiou",
-      "uri_hits" : 123456789,
+      "uri_hits" : "",
       "param_info" : [ {
         "param_key" : "aeiou",
         "param_size_classes" : [ {
-          "hits" : 123456789,
+          "hits" : "",
           "len" : "aeiou"
         } ],
         "param_type_classes" : [ {
-          "hits" : 123456789,
+          "hits" : "",
           "type" : "aeiou"
         } ],
-        "param_hits" : 123456789
+        "param_hits" : ""
       } ]
     } ],
     "app_id" : "aeiou"
@@ -493,18 +493,18 @@ font-style: italic;
     "vs_uuid" : "aeiou",
     "uri_info" : [ {
       "uri_key" : "aeiou",
-      "uri_hits" : 123456789,
+      "uri_hits" : "",
       "param_info" : [ {
         "param_key" : "aeiou",
         "param_size_classes" : [ {
-          "hits" : 123456789,
+          "hits" : "",
           "len" : "aeiou"
         } ],
         "param_type_classes" : [ {
-          "hits" : 123456789,
+          "hits" : "",
           "type" : "aeiou"
         } ],
-        "param_hits" : 123456789
+        "param_hits" : ""
       } ]
     } ],
     "app_id" : "aeiou"
@@ -583,18 +583,18 @@ font-style: italic;
     "vs_uuid" : "aeiou",
     "uri_info" : [ {
       "uri_key" : "aeiou",
-      "uri_hits" : 123456789,
+      "uri_hits" : "",
       "param_info" : [ {
         "param_key" : "aeiou",
         "param_size_classes" : [ {
-          "hits" : 123456789,
+          "hits" : "",
           "len" : "aeiou"
         } ],
         "param_type_classes" : [ {
-          "hits" : 123456789,
+          "hits" : "",
           "type" : "aeiou"
         } ],
-        "param_hits" : 123456789
+        "param_hits" : ""
       } ]
     } ],
     "app_id" : "aeiou"
@@ -673,18 +673,18 @@ font-style: italic;
     "vs_uuid" : "aeiou",
     "uri_info" : [ {
       "uri_key" : "aeiou",
-      "uri_hits" : 123456789,
+      "uri_hits" : "",
       "param_info" : [ {
         "param_key" : "aeiou",
         "param_size_classes" : [ {
-          "hits" : 123456789,
+          "hits" : "",
           "len" : "aeiou"
         } ],
         "param_type_classes" : [ {
-          "hits" : 123456789,
+          "hits" : "",
           "type" : "aeiou"
         } ],
-        "param_hits" : 123456789
+        "param_hits" : ""
       } ]
     } ],
     "app_id" : "aeiou"
@@ -739,7 +739,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ParamInfo">ParamInfo</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">param_hits (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Number of hits for a param. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int64</div>
+      <div class="param">param_hits (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of hits for a param. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint64</div>
 <div class="param">param_key (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Param name. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">param_size_classes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ParamSizeClass">array[ParamSizeClass]</a></span> Various param size and its respective hit count. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">param_type_classes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ParamTypeClass">array[ParamTypeClass]</a></span> Various param type and its respective hit count. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -748,14 +748,14 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ParamSizeClass">ParamSizeClass</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">hits (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int64</div>
+      <div class="param">hits (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint64</div>
 <div class="param">len (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - EMPTY, SMALL, MEDIUM, LARGE, UNLIMITED. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="ParamTypeClass">ParamTypeClass</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">hits (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int64</div>
+      <div class="param">hits (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint64</div>
 <div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - PARAM_FLAG, PARAM_DIGITS, PARAM_HEXDIGITS, PARAM_WORD, PARAM_SAFE_TEXT, PARAM_SAFE_TEXT_MULTILINE, PARAM_TEXT, PARAM_TEXT_MULTILINE, PARAM_ALL. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
@@ -782,7 +782,7 @@ font-style: italic;
     <h3 class="field-label"><a name="URIInfo">URIInfo</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">param_info (optional)</div><div class="param-desc"><span class="param-type"><a href="#ParamInfo">array[ParamInfo]</a></span> Information about various params under a URI. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">uri_hits (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Total number of URI hits. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int64</div>
+<div class="param">uri_hits (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Total number of URI hits. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint64</div>
 <div class="param">uri_key (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> URI name. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>

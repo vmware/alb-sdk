@@ -271,7 +271,7 @@ font-style: italic;
       } ],
       "server" : [ "aeiou" ],
       "password" : "aeiou",
-      "port" : 123,
+      "port" : "",
       "service" : "aeiou"
     },
     "uuid" : "aeiou",
@@ -294,7 +294,7 @@ font-style: italic;
         "user_search_scope" : "aeiou"
       },
       "base_dn" : "aeiou",
-      "port" : 123,
+      "port" : "",
       "user_bind" : {
         "user_id_attribute" : "aeiou",
         "user_attributes" : [ "aeiou" ],
@@ -361,7 +361,7 @@ font-style: italic;
       }
     },
     "configpb_attributes" : {
-      "version" : 123
+      "version" : ""
     },
     "http" : {
       "cache_expiration_time" : 123,
@@ -438,7 +438,7 @@ font-style: italic;
     } ],
     "server" : [ "aeiou" ],
     "password" : "aeiou",
-    "port" : 123,
+    "port" : "",
     "service" : "aeiou"
   },
   "uuid" : "aeiou",
@@ -461,7 +461,7 @@ font-style: italic;
       "user_search_scope" : "aeiou"
     },
     "base_dn" : "aeiou",
-    "port" : 123,
+    "port" : "",
     "user_bind" : {
       "user_id_attribute" : "aeiou",
       "user_attributes" : [ "aeiou" ],
@@ -528,7 +528,7 @@ font-style: italic;
     }
   },
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "http" : {
     "cache_expiration_time" : 123,
@@ -676,7 +676,7 @@ font-style: italic;
     } ],
     "server" : [ "aeiou" ],
     "password" : "aeiou",
-    "port" : 123,
+    "port" : "",
     "service" : "aeiou"
   },
   "uuid" : "aeiou",
@@ -699,7 +699,7 @@ font-style: italic;
       "user_search_scope" : "aeiou"
     },
     "base_dn" : "aeiou",
-    "port" : 123,
+    "port" : "",
     "user_bind" : {
       "user_id_attribute" : "aeiou",
       "user_attributes" : [ "aeiou" ],
@@ -766,7 +766,7 @@ font-style: italic;
     }
   },
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "http" : {
     "cache_expiration_time" : 123,
@@ -854,7 +854,7 @@ font-style: italic;
     } ],
     "server" : [ "aeiou" ],
     "password" : "aeiou",
-    "port" : 123,
+    "port" : "",
     "service" : "aeiou"
   },
   "uuid" : "aeiou",
@@ -877,7 +877,7 @@ font-style: italic;
       "user_search_scope" : "aeiou"
     },
     "base_dn" : "aeiou",
-    "port" : 123,
+    "port" : "",
     "user_bind" : {
       "user_id_attribute" : "aeiou",
       "user_attributes" : [ "aeiou" ],
@@ -944,7 +944,7 @@ font-style: italic;
     }
   },
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "http" : {
     "cache_expiration_time" : 123,
@@ -1032,7 +1032,7 @@ font-style: italic;
     } ],
     "server" : [ "aeiou" ],
     "password" : "aeiou",
-    "port" : 123,
+    "port" : "",
     "service" : "aeiou"
   },
   "uuid" : "aeiou",
@@ -1055,7 +1055,7 @@ font-style: italic;
       "user_search_scope" : "aeiou"
     },
     "base_dn" : "aeiou",
-    "port" : 123,
+    "port" : "",
     "user_bind" : {
       "user_id_attribute" : "aeiou",
       "user_attributes" : [ "aeiou" ],
@@ -1122,7 +1122,7 @@ font-style: italic;
     }
   },
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "http" : {
     "cache_expiration_time" : 123,
@@ -1226,7 +1226,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1236,9 +1236,9 @@ font-style: italic;
 <div class="param">bind_as_administrator (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> LDAP administrator credentials are used to search for users and group memberships. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">email_attribute (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> LDAP attribute that refers to user email. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">full_name_attribute (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> LDAP attribute that refers to user&#39;s full name. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Query the LDAP servers on this port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Query the LDAP servers on this port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">security_mode </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> LDAP connection security mode. Enum options - AUTH_LDAP_SECURE_NONE, AUTH_LDAP_SECURE_USE_LDAPS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">server (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> LDAP server IP address or Hostname. Use IP address if an auth profile is used to configure Virtual Service. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">server (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> LDAP server IP(v4/v6) address or FQDN. Use IP address if an auth profile is used to configure Virtual Service. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">settings (optional)</div><div class="param-desc"><span class="param-type"><a href="#LdapDirectorySettings">LdapDirectorySettings</a></span> LDAP full directory configuration with administrator credentials. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">user_bind (optional)</div><div class="param-desc"><span class="param-type"><a href="#LdapUserBindSettings">LdapUserBindSettings</a></span> LDAP anonymous bind configuration. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
@@ -1359,7 +1359,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">authorization_attrs (optional)</div><div class="param-desc"><span class="param-type"><a href="#AuthTacacsPlusAttributeValuePair">array[AuthTacacsPlusAttributeValuePair]</a></span> TACACS+ authorization attribute value pairs. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">password (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> TACACS+ server shared secret. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> TACACS+ server listening port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> TACACS+ server listening port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">server (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> TACACS+ server IP address or FQDN. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">service (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> TACACS+ service. Enum options - AUTH_TACACS_PLUS_SERVICE_NONE, AUTH_TACACS_PLUS_SERVICE_LOGIN, AUTH_TACACS_PLUS_SERVICE_ENABLE, AUTH_TACACS_PLUS_SERVICE_PPP, AUTH_TACACS_PLUS_SERVICE_ARAP, AUTH_TACACS_PLUS_SERVICE_PT, AUTH_TACACS_PLUS_SERVICE_RCMD, AUTH_TACACS_PLUS_SERVICE_X25, AUTH_TACACS_PLUS_SERVICE_NASI, AUTH_TACACS_PLUS_SERVICE_FWPROXY. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->

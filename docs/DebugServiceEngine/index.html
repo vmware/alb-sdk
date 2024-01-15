@@ -262,22 +262,22 @@ font-style: italic;
   "count" : 123,
   "results" : [ {
     "capture_params" : {
-      "duration" : 123,
-      "file_count" : 123,
+      "duration" : "",
+      "file_count" : "",
       "pcap_ng" : true,
       "enable_ssl_session_key_capture" : true,
-      "pkt_size" : 123,
-      "num_pkts" : 123,
+      "pkt_size" : "",
+      "num_pkts" : "",
       "capture_file_size" : {
-        "percentage_size" : 123,
-        "absolute_size" : 123
+        "percentage_size" : "",
+        "absolute_size" : ""
       }
     },
     "seagent_debug" : [ {
       "trace_level" : "aeiou",
       "log_level" : "aeiou",
       "sub_module" : "aeiou",
-      "log_every_n" : 123
+      "log_every_n" : ""
     } ],
     "selogagent_debug" : "",
     "enable_rpc_timing_profiler" : true,
@@ -288,30 +288,30 @@ font-style: italic;
     } ],
     "capture" : true,
     "fault" : {
-      "se_waf_learning_alloc_fail_frequency" : 123,
-      "se_malloc_fail_type" : 123,
-      "se_malloc_fail_frequency" : 123,
+      "se_waf_learning_alloc_fail_frequency" : "",
+      "se_malloc_fail_type" : "",
+      "se_malloc_fail_frequency" : "",
       "se_mbuf_cl_sanity" : true,
-      "se_waf_alloc_fail_frequency" : 123,
-      "se_shm_malloc_fail_type" : 123,
-      "se_shm_malloc_fail_frequency" : 123,
+      "se_waf_alloc_fail_frequency" : "",
+      "se_shm_malloc_fail_type" : "",
+      "se_shm_malloc_fail_frequency" : "",
       "faults" : [ {
-        "num_skips" : 123,
+        "num_skips" : "",
         "fault_name" : "aeiou",
-        "arg" : 123456789,
+        "arg" : "",
         "function_name" : "aeiou",
-        "num_executions" : 123
+        "num_executions" : ""
       } ]
     },
     "benchmark_action" : "aeiou",
     "capture_filters" : {
-      "src_port" : 123,
+      "src_port" : "",
       "ip_proto" : "aeiou",
       "tcp_ack" : true,
       "tcp_syn" : true,
       "tcp_fin" : true,
-      "src_port_range_end" : 123,
-      "dst_port_start" : 123,
+      "src_port_range_end" : "",
+      "dst_port_start" : "",
       "tcp_push" : true,
       "capture_ip" : {
         "prefixes" : [ {
@@ -322,6 +322,7 @@ font-style: italic;
           "end" : "",
           "begin" : ""
         } ],
+        "match_operation" : "aeiou",
         "addrs" : [ {
           "addr" : "aeiou",
           "type" : "aeiou"
@@ -341,7 +342,7 @@ font-style: italic;
         "flow_probe_all" : true,
         "ipc_rx_res" : true
       },
-      "dst_port_end" : 123,
+      "dst_port_end" : "",
       "eth_proto" : "aeiou"
     },
     "uuid" : "aeiou",
@@ -349,19 +350,44 @@ font-style: italic;
     "_last_modified" : "aeiou",
     "trace_memory" : {
       "trace_shm_malloc_types" : [ {
-        "shm_malloc_type_index" : 123
+        "shm_malloc_type_index" : ""
       } ],
       "trace_malloc_types" : [ {
-        "malloc_type_index" : 123
+        "malloc_type_index" : ""
       } ]
     },
     "debug_ip" : "",
     "tenant_ref" : "aeiou",
     "benchmark_layer" : "aeiou",
     "name" : "aeiou",
+    "capture_pkt_filter" : {
+      "capture_tcp_filters" : [ {
+        "host_ip" : "",
+        "src_port_range" : {
+          "match_operation" : "aeiou",
+          "src_port_start" : "",
+          "src_port_end" : ""
+        },
+        "tcpflags" : [ {
+          "tcpflag" : {
+            "tcp_ack" : true,
+            "tcp_syn" : true,
+            "tcp_fin" : true,
+            "match_operation" : "aeiou",
+            "tcp_push" : true
+          }
+        } ],
+        "dst_port_range" : {
+          "match_operation" : "aeiou",
+          "dst_port_start" : "",
+          "dst_port_end" : ""
+        },
+        "eth_proto" : "aeiou"
+      } ]
+    },
     "cpu_shares" : [ {
       "shares" : 123,
-      "cpu" : 123
+      "cpu" : ""
     } ],
     "benchmark_rss_hash" : "aeiou"
   } ]
@@ -419,22 +445,22 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "capture_params" : {
-    "duration" : 123,
-    "file_count" : 123,
+    "duration" : "",
+    "file_count" : "",
     "pcap_ng" : true,
     "enable_ssl_session_key_capture" : true,
-    "pkt_size" : 123,
-    "num_pkts" : 123,
+    "pkt_size" : "",
+    "num_pkts" : "",
     "capture_file_size" : {
-      "percentage_size" : 123,
-      "absolute_size" : 123
+      "percentage_size" : "",
+      "absolute_size" : ""
     }
   },
   "seagent_debug" : [ {
     "trace_level" : "aeiou",
     "log_level" : "aeiou",
     "sub_module" : "aeiou",
-    "log_every_n" : 123
+    "log_every_n" : ""
   } ],
   "selogagent_debug" : "",
   "enable_rpc_timing_profiler" : true,
@@ -445,30 +471,30 @@ font-style: italic;
   } ],
   "capture" : true,
   "fault" : {
-    "se_waf_learning_alloc_fail_frequency" : 123,
-    "se_malloc_fail_type" : 123,
-    "se_malloc_fail_frequency" : 123,
+    "se_waf_learning_alloc_fail_frequency" : "",
+    "se_malloc_fail_type" : "",
+    "se_malloc_fail_frequency" : "",
     "se_mbuf_cl_sanity" : true,
-    "se_waf_alloc_fail_frequency" : 123,
-    "se_shm_malloc_fail_type" : 123,
-    "se_shm_malloc_fail_frequency" : 123,
+    "se_waf_alloc_fail_frequency" : "",
+    "se_shm_malloc_fail_type" : "",
+    "se_shm_malloc_fail_frequency" : "",
     "faults" : [ {
-      "num_skips" : 123,
+      "num_skips" : "",
       "fault_name" : "aeiou",
-      "arg" : 123456789,
+      "arg" : "",
       "function_name" : "aeiou",
-      "num_executions" : 123
+      "num_executions" : ""
     } ]
   },
   "benchmark_action" : "aeiou",
   "capture_filters" : {
-    "src_port" : 123,
+    "src_port" : "",
     "ip_proto" : "aeiou",
     "tcp_ack" : true,
     "tcp_syn" : true,
     "tcp_fin" : true,
-    "src_port_range_end" : 123,
-    "dst_port_start" : 123,
+    "src_port_range_end" : "",
+    "dst_port_start" : "",
     "tcp_push" : true,
     "capture_ip" : {
       "prefixes" : [ {
@@ -479,6 +505,7 @@ font-style: italic;
         "end" : "",
         "begin" : ""
       } ],
+      "match_operation" : "aeiou",
       "addrs" : [ {
         "addr" : "aeiou",
         "type" : "aeiou"
@@ -498,7 +525,7 @@ font-style: italic;
       "flow_probe_all" : true,
       "ipc_rx_res" : true
     },
-    "dst_port_end" : 123,
+    "dst_port_end" : "",
     "eth_proto" : "aeiou"
   },
   "uuid" : "aeiou",
@@ -506,19 +533,44 @@ font-style: italic;
   "_last_modified" : "aeiou",
   "trace_memory" : {
     "trace_shm_malloc_types" : [ {
-      "shm_malloc_type_index" : 123
+      "shm_malloc_type_index" : ""
     } ],
     "trace_malloc_types" : [ {
-      "malloc_type_index" : 123
+      "malloc_type_index" : ""
     } ]
   },
   "debug_ip" : "",
   "tenant_ref" : "aeiou",
   "benchmark_layer" : "aeiou",
   "name" : "aeiou",
+  "capture_pkt_filter" : {
+    "capture_tcp_filters" : [ {
+      "host_ip" : "",
+      "src_port_range" : {
+        "match_operation" : "aeiou",
+        "src_port_start" : "",
+        "src_port_end" : ""
+      },
+      "tcpflags" : [ {
+        "tcpflag" : {
+          "tcp_ack" : true,
+          "tcp_syn" : true,
+          "tcp_fin" : true,
+          "match_operation" : "aeiou",
+          "tcp_push" : true
+        }
+      } ],
+      "dst_port_range" : {
+        "match_operation" : "aeiou",
+        "dst_port_start" : "",
+        "dst_port_end" : ""
+      },
+      "eth_proto" : "aeiou"
+    } ]
+  },
   "cpu_shares" : [ {
     "shares" : 123,
-    "cpu" : 123
+    "cpu" : ""
   } ],
   "benchmark_rss_hash" : "aeiou"
 }</code></pre>
@@ -699,22 +751,22 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "capture_params" : {
-    "duration" : 123,
-    "file_count" : 123,
+    "duration" : "",
+    "file_count" : "",
     "pcap_ng" : true,
     "enable_ssl_session_key_capture" : true,
-    "pkt_size" : 123,
-    "num_pkts" : 123,
+    "pkt_size" : "",
+    "num_pkts" : "",
     "capture_file_size" : {
-      "percentage_size" : 123,
-      "absolute_size" : 123
+      "percentage_size" : "",
+      "absolute_size" : ""
     }
   },
   "seagent_debug" : [ {
     "trace_level" : "aeiou",
     "log_level" : "aeiou",
     "sub_module" : "aeiou",
-    "log_every_n" : 123
+    "log_every_n" : ""
   } ],
   "selogagent_debug" : "",
   "enable_rpc_timing_profiler" : true,
@@ -725,30 +777,30 @@ font-style: italic;
   } ],
   "capture" : true,
   "fault" : {
-    "se_waf_learning_alloc_fail_frequency" : 123,
-    "se_malloc_fail_type" : 123,
-    "se_malloc_fail_frequency" : 123,
+    "se_waf_learning_alloc_fail_frequency" : "",
+    "se_malloc_fail_type" : "",
+    "se_malloc_fail_frequency" : "",
     "se_mbuf_cl_sanity" : true,
-    "se_waf_alloc_fail_frequency" : 123,
-    "se_shm_malloc_fail_type" : 123,
-    "se_shm_malloc_fail_frequency" : 123,
+    "se_waf_alloc_fail_frequency" : "",
+    "se_shm_malloc_fail_type" : "",
+    "se_shm_malloc_fail_frequency" : "",
     "faults" : [ {
-      "num_skips" : 123,
+      "num_skips" : "",
       "fault_name" : "aeiou",
-      "arg" : 123456789,
+      "arg" : "",
       "function_name" : "aeiou",
-      "num_executions" : 123
+      "num_executions" : ""
     } ]
   },
   "benchmark_action" : "aeiou",
   "capture_filters" : {
-    "src_port" : 123,
+    "src_port" : "",
     "ip_proto" : "aeiou",
     "tcp_ack" : true,
     "tcp_syn" : true,
     "tcp_fin" : true,
-    "src_port_range_end" : 123,
-    "dst_port_start" : 123,
+    "src_port_range_end" : "",
+    "dst_port_start" : "",
     "tcp_push" : true,
     "capture_ip" : {
       "prefixes" : [ {
@@ -759,6 +811,7 @@ font-style: italic;
         "end" : "",
         "begin" : ""
       } ],
+      "match_operation" : "aeiou",
       "addrs" : [ {
         "addr" : "aeiou",
         "type" : "aeiou"
@@ -778,7 +831,7 @@ font-style: italic;
       "flow_probe_all" : true,
       "ipc_rx_res" : true
     },
-    "dst_port_end" : 123,
+    "dst_port_end" : "",
     "eth_proto" : "aeiou"
   },
   "uuid" : "aeiou",
@@ -786,19 +839,44 @@ font-style: italic;
   "_last_modified" : "aeiou",
   "trace_memory" : {
     "trace_shm_malloc_types" : [ {
-      "shm_malloc_type_index" : 123
+      "shm_malloc_type_index" : ""
     } ],
     "trace_malloc_types" : [ {
-      "malloc_type_index" : 123
+      "malloc_type_index" : ""
     } ]
   },
   "debug_ip" : "",
   "tenant_ref" : "aeiou",
   "benchmark_layer" : "aeiou",
   "name" : "aeiou",
+  "capture_pkt_filter" : {
+    "capture_tcp_filters" : [ {
+      "host_ip" : "",
+      "src_port_range" : {
+        "match_operation" : "aeiou",
+        "src_port_start" : "",
+        "src_port_end" : ""
+      },
+      "tcpflags" : [ {
+        "tcpflag" : {
+          "tcp_ack" : true,
+          "tcp_syn" : true,
+          "tcp_fin" : true,
+          "match_operation" : "aeiou",
+          "tcp_push" : true
+        }
+      } ],
+      "dst_port_range" : {
+        "match_operation" : "aeiou",
+        "dst_port_start" : "",
+        "dst_port_end" : ""
+      },
+      "eth_proto" : "aeiou"
+    } ]
+  },
   "cpu_shares" : [ {
     "shares" : 123,
-    "cpu" : 123
+    "cpu" : ""
   } ],
   "benchmark_rss_hash" : "aeiou"
 }</code></pre>
@@ -867,22 +945,22 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "capture_params" : {
-    "duration" : 123,
-    "file_count" : 123,
+    "duration" : "",
+    "file_count" : "",
     "pcap_ng" : true,
     "enable_ssl_session_key_capture" : true,
-    "pkt_size" : 123,
-    "num_pkts" : 123,
+    "pkt_size" : "",
+    "num_pkts" : "",
     "capture_file_size" : {
-      "percentage_size" : 123,
-      "absolute_size" : 123
+      "percentage_size" : "",
+      "absolute_size" : ""
     }
   },
   "seagent_debug" : [ {
     "trace_level" : "aeiou",
     "log_level" : "aeiou",
     "sub_module" : "aeiou",
-    "log_every_n" : 123
+    "log_every_n" : ""
   } ],
   "selogagent_debug" : "",
   "enable_rpc_timing_profiler" : true,
@@ -893,30 +971,30 @@ font-style: italic;
   } ],
   "capture" : true,
   "fault" : {
-    "se_waf_learning_alloc_fail_frequency" : 123,
-    "se_malloc_fail_type" : 123,
-    "se_malloc_fail_frequency" : 123,
+    "se_waf_learning_alloc_fail_frequency" : "",
+    "se_malloc_fail_type" : "",
+    "se_malloc_fail_frequency" : "",
     "se_mbuf_cl_sanity" : true,
-    "se_waf_alloc_fail_frequency" : 123,
-    "se_shm_malloc_fail_type" : 123,
-    "se_shm_malloc_fail_frequency" : 123,
+    "se_waf_alloc_fail_frequency" : "",
+    "se_shm_malloc_fail_type" : "",
+    "se_shm_malloc_fail_frequency" : "",
     "faults" : [ {
-      "num_skips" : 123,
+      "num_skips" : "",
       "fault_name" : "aeiou",
-      "arg" : 123456789,
+      "arg" : "",
       "function_name" : "aeiou",
-      "num_executions" : 123
+      "num_executions" : ""
     } ]
   },
   "benchmark_action" : "aeiou",
   "capture_filters" : {
-    "src_port" : 123,
+    "src_port" : "",
     "ip_proto" : "aeiou",
     "tcp_ack" : true,
     "tcp_syn" : true,
     "tcp_fin" : true,
-    "src_port_range_end" : 123,
-    "dst_port_start" : 123,
+    "src_port_range_end" : "",
+    "dst_port_start" : "",
     "tcp_push" : true,
     "capture_ip" : {
       "prefixes" : [ {
@@ -927,6 +1005,7 @@ font-style: italic;
         "end" : "",
         "begin" : ""
       } ],
+      "match_operation" : "aeiou",
       "addrs" : [ {
         "addr" : "aeiou",
         "type" : "aeiou"
@@ -946,7 +1025,7 @@ font-style: italic;
       "flow_probe_all" : true,
       "ipc_rx_res" : true
     },
-    "dst_port_end" : 123,
+    "dst_port_end" : "",
     "eth_proto" : "aeiou"
   },
   "uuid" : "aeiou",
@@ -954,19 +1033,44 @@ font-style: italic;
   "_last_modified" : "aeiou",
   "trace_memory" : {
     "trace_shm_malloc_types" : [ {
-      "shm_malloc_type_index" : 123
+      "shm_malloc_type_index" : ""
     } ],
     "trace_malloc_types" : [ {
-      "malloc_type_index" : 123
+      "malloc_type_index" : ""
     } ]
   },
   "debug_ip" : "",
   "tenant_ref" : "aeiou",
   "benchmark_layer" : "aeiou",
   "name" : "aeiou",
+  "capture_pkt_filter" : {
+    "capture_tcp_filters" : [ {
+      "host_ip" : "",
+      "src_port_range" : {
+        "match_operation" : "aeiou",
+        "src_port_start" : "",
+        "src_port_end" : ""
+      },
+      "tcpflags" : [ {
+        "tcpflag" : {
+          "tcp_ack" : true,
+          "tcp_syn" : true,
+          "tcp_fin" : true,
+          "match_operation" : "aeiou",
+          "tcp_push" : true
+        }
+      } ],
+      "dst_port_range" : {
+        "match_operation" : "aeiou",
+        "dst_port_start" : "",
+        "dst_port_end" : ""
+      },
+      "eth_proto" : "aeiou"
+    } ]
+  },
   "cpu_shares" : [ {
     "shares" : 123,
-    "cpu" : 123
+    "cpu" : ""
   } ],
   "benchmark_rss_hash" : "aeiou"
 }</code></pre>
@@ -1035,22 +1139,22 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "capture_params" : {
-    "duration" : 123,
-    "file_count" : 123,
+    "duration" : "",
+    "file_count" : "",
     "pcap_ng" : true,
     "enable_ssl_session_key_capture" : true,
-    "pkt_size" : 123,
-    "num_pkts" : 123,
+    "pkt_size" : "",
+    "num_pkts" : "",
     "capture_file_size" : {
-      "percentage_size" : 123,
-      "absolute_size" : 123
+      "percentage_size" : "",
+      "absolute_size" : ""
     }
   },
   "seagent_debug" : [ {
     "trace_level" : "aeiou",
     "log_level" : "aeiou",
     "sub_module" : "aeiou",
-    "log_every_n" : 123
+    "log_every_n" : ""
   } ],
   "selogagent_debug" : "",
   "enable_rpc_timing_profiler" : true,
@@ -1061,30 +1165,30 @@ font-style: italic;
   } ],
   "capture" : true,
   "fault" : {
-    "se_waf_learning_alloc_fail_frequency" : 123,
-    "se_malloc_fail_type" : 123,
-    "se_malloc_fail_frequency" : 123,
+    "se_waf_learning_alloc_fail_frequency" : "",
+    "se_malloc_fail_type" : "",
+    "se_malloc_fail_frequency" : "",
     "se_mbuf_cl_sanity" : true,
-    "se_waf_alloc_fail_frequency" : 123,
-    "se_shm_malloc_fail_type" : 123,
-    "se_shm_malloc_fail_frequency" : 123,
+    "se_waf_alloc_fail_frequency" : "",
+    "se_shm_malloc_fail_type" : "",
+    "se_shm_malloc_fail_frequency" : "",
     "faults" : [ {
-      "num_skips" : 123,
+      "num_skips" : "",
       "fault_name" : "aeiou",
-      "arg" : 123456789,
+      "arg" : "",
       "function_name" : "aeiou",
-      "num_executions" : 123
+      "num_executions" : ""
     } ]
   },
   "benchmark_action" : "aeiou",
   "capture_filters" : {
-    "src_port" : 123,
+    "src_port" : "",
     "ip_proto" : "aeiou",
     "tcp_ack" : true,
     "tcp_syn" : true,
     "tcp_fin" : true,
-    "src_port_range_end" : 123,
-    "dst_port_start" : 123,
+    "src_port_range_end" : "",
+    "dst_port_start" : "",
     "tcp_push" : true,
     "capture_ip" : {
       "prefixes" : [ {
@@ -1095,6 +1199,7 @@ font-style: italic;
         "end" : "",
         "begin" : ""
       } ],
+      "match_operation" : "aeiou",
       "addrs" : [ {
         "addr" : "aeiou",
         "type" : "aeiou"
@@ -1114,7 +1219,7 @@ font-style: italic;
       "flow_probe_all" : true,
       "ipc_rx_res" : true
     },
-    "dst_port_end" : 123,
+    "dst_port_end" : "",
     "eth_proto" : "aeiou"
   },
   "uuid" : "aeiou",
@@ -1122,19 +1227,44 @@ font-style: italic;
   "_last_modified" : "aeiou",
   "trace_memory" : {
     "trace_shm_malloc_types" : [ {
-      "shm_malloc_type_index" : 123
+      "shm_malloc_type_index" : ""
     } ],
     "trace_malloc_types" : [ {
-      "malloc_type_index" : 123
+      "malloc_type_index" : ""
     } ]
   },
   "debug_ip" : "",
   "tenant_ref" : "aeiou",
   "benchmark_layer" : "aeiou",
   "name" : "aeiou",
+  "capture_pkt_filter" : {
+    "capture_tcp_filters" : [ {
+      "host_ip" : "",
+      "src_port_range" : {
+        "match_operation" : "aeiou",
+        "src_port_start" : "",
+        "src_port_end" : ""
+      },
+      "tcpflags" : [ {
+        "tcpflag" : {
+          "tcp_ack" : true,
+          "tcp_syn" : true,
+          "tcp_fin" : true,
+          "match_operation" : "aeiou",
+          "tcp_push" : true
+        }
+      } ],
+      "dst_port_range" : {
+        "match_operation" : "aeiou",
+        "dst_port_start" : "",
+        "dst_port_end" : ""
+      },
+      "eth_proto" : "aeiou"
+    } ]
+  },
   "cpu_shares" : [ {
     "shares" : 123,
-    "cpu" : 123
+    "cpu" : ""
   } ],
   "benchmark_rss_hash" : "aeiou"
 }</code></pre>
@@ -1165,6 +1295,10 @@ font-style: italic;
     <li><a href="#CaptureFileSize"><code>CaptureFileSize</code></a></li>
     <li><a href="#CaptureFilters"><code>CaptureFilters</code></a></li>
     <li><a href="#CaptureIPC"><code>CaptureIPC</code></a></li>
+    <li><a href="#CapturePacketFilter"><code>CapturePacketFilter</code></a></li>
+    <li><a href="#CaptureTCP"><code>CaptureTCP</code></a></li>
+    <li><a href="#CaptureTCPFilter"><code>CaptureTCPFilter</code></a></li>
+    <li><a href="#CaptureTCPFlags"><code>CaptureTCPFlags</code></a></li>
     <li><a href="#DebugIpAddr"><code>DebugIpAddr</code></a></li>
     <li><a href="#DebugSeAgent"><code>DebugSeAgent</code></a></li>
     <li><a href="#DebugSeCpuShares"><code>DebugSeCpuShares</code></a></li>
@@ -1176,17 +1310,19 @@ font-style: italic;
     <li><a href="#DebugTraceMemory"><code>DebugTraceMemory</code></a></li>
     <li><a href="#DebugTraceShmMallocTypes"><code>DebugTraceShmMallocTypes</code></a></li>
     <li><a href="#DebugVirtualServiceCapture"><code>DebugVirtualServiceCapture</code></a></li>
+    <li><a href="#DestinationPortAddr"><code>DestinationPortAddr</code></a></li>
     <li><a href="#IpAddr"><code>IpAddr</code></a></li>
     <li><a href="#IpAddrPrefix"><code>IpAddrPrefix</code></a></li>
     <li><a href="#IpAddrRange"><code>IpAddrRange</code></a></li>
     <li><a href="#SeFault"><code>SeFault</code></a></li>
+    <li><a href="#SourcePortAddr"><code>SourcePortAddr</code></a></li>
   </ol>
 
   <div class="model">
     <h3 class="field-label"><a name="CaptureFileSize">CaptureFileSize</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">absolute_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum size in MB. Set 0 for avi default size. Allowed values are 100-512000. Special values are 0 - AVI_DEFAULT. Field introduced in 18.2.8. Unit is MB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">percentage_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Limits capture to percentage of free disk space. Set 0 for avi default size. Allowed values are 0-75. Field introduced in 18.2.8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">absolute_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum size in MB. Set 0 for avi default size. Allowed values are 100-512000. Special values are 0 - AVI_DEFAULT. Field introduced in 18.2.8. Unit is MB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">percentage_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Limits capture to percentage of free disk space. Set 0 for avi default size. Allowed values are 0-75. Field introduced in 18.2.8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1194,12 +1330,12 @@ font-style: italic;
     <div class="field-items">
       <div class="param">capture_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#DebugIpAddr">DebugIpAddr</a></span> Per packet IP filter. Matches with source and destination address. Curently not applicable for DebugServiceEngine. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">capture_ipc (optional)</div><div class="param-desc"><span class="param-type"><a href="#CaptureIPC">CaptureIPC</a></span> Capture filter for SE IPC. Not applicable for Debug Virtual Service. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">dst_port_end (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Destination Port range filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">dst_port_start (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Destination Port range filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">dst_port_end (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Destination Port range filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">dst_port_start (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Destination Port range filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">eth_proto (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Ethernet Proto filter. Enum options - ETH_TYPE_IPV4. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ip_proto (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> IP Proto filter. Support for TCP only for now. Enum options - IP_TYPE_TCP. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">src_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Source Port filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">src_port_range_end (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Source Port range end filter. If specified, the source port filter will be a range. The filter range will be between src_port and src_port_range_end. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">src_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Source Port filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">src_port_range_end (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Source Port range end filter. If specified, the source port filter will be a range. The filter range will be between src_port and src_port_range_end. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">tcp_ack (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> TCP ACK flag filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">tcp_fin (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> TCP FIN flag filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">tcp_push (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> TCP PUSH flag filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -1224,9 +1360,42 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3 class="field-label"><a name="CapturePacketFilter">CapturePacketFilter</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">capture_tcp_filters (optional)</div><div class="param-desc"><span class="param-type"><a href="#CaptureTCPFilter">array[CaptureTCPFilter]</a></span> TCP Params filter. And&#39;ed internally and Or&#39;ed amongst each other. . Field introduced in 30.2.1. Maximum of 20 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="CaptureTCP">CaptureTCP</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">tcpflag (optional)</div><div class="param-desc"><span class="param-type"><a href="#CaptureTCPFlags">CaptureTCPFlags</a></span> TCP flags filter. Or&#39;ed internally and And&#39;ed amongst each other. . Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="CaptureTCPFilter">CaptureTCPFilter</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">dst_port_range (optional)</div><div class="param-desc"><span class="param-type"><a href="#DestinationPortAddr">DestinationPortAddr</a></span> Destination Port range filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">eth_proto (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Ethernet Proto filter. Enum options - ETH_TYPE_IPV4. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">host_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#DebugIpAddr">DebugIpAddr</a></span> Per packet IP filter for Service Engine PCAP. Matches with source and destination address. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">src_port_range (optional)</div><div class="param-desc"><span class="param-type"><a href="#SourcePortAddr">SourcePortAddr</a></span> Source Port range filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">tcpflags (optional)</div><div class="param-desc"><span class="param-type"><a href="#CaptureTCP">array[CaptureTCP]</a></span> TCP flags filter. Or&#39;ed internally and And&#39;ed amongst each other. . Field introduced in 30.2.1. Maximum of 4 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="CaptureTCPFlags">CaptureTCPFlags</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">match_operation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">tcp_ack (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> TCP ACK flag filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">tcp_fin (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> TCP FIN flag filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">tcp_push (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> TCP PUSH flag filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">tcp_syn (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> TCP SYN flag filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3 class="field-label"><a name="DebugIpAddr">DebugIpAddr</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">addrs (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">array[IpAddr]</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">match_operation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">prefixes (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrPrefix">array[IpAddrPrefix]</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ranges (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrRange">array[IpAddrRange]</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
@@ -1234,7 +1403,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="DebugSeAgent">DebugSeAgent</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">log_every_n (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Log every nth message. Field introduced in 17.2.7. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">log_every_n (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Log every nth message. Field introduced in 17.2.7. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">log_level </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">sub_module </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - TASK_QUEUE_DEBUG, RPC_INFRA_DEBUG, JOB_MGR_DEBUG, TRANSACTION_DEBUG, SE_AGENT_DEBUG, SE_AGENT_METRICS_DEBUG, VIRTUALSERVICE_DEBUG, RES_MGR_DEBUG, SE_MGR_DEBUG, VI_MGR_DEBUG, METRICS_MANAGER_DEBUG, METRICS_MGR_DEBUG, EVENT_API_DEBUG, HS_MGR_DEBUG, ALERT_MGR_DEBUG, AUTOSCALE_MGR_DEBUG, APIC_AGENT_DEBUG, REDIS_INFRA_DEBUG, CLOUD_CONNECTOR_DEBUG, MESOS_METRICS_DEBUG, STATECACHE_MGR_DEBUG, NSX_AGENT_DEBUG, SE_AGENT_CPU_UTIL_DEBUG, SE_AGENT_MEM_UTIL_DEBUG, SE_RPC_PROXY_DEBUG, SE_AGENT_GSLB_DEBUG, METRICSAPI_SRV_DEBUG, SECURITYMGR_DEBUG, RES_MGR_READ_DEBUG, LICENSE_VMWSRVR_DEBUG, SE_AGENT_RESOLVERDB_DEBUG, LOGMANAGER_DEBUG, OSYNC_DEBUG. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">trace_level </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - TRACE_LEVEL_DISABLED, TRACE_LEVEL_ERROR, TRACE_LEVEL_DEBUG, TRACE_LEVEL_DEBUG_DETAIL. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -1243,7 +1412,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="DebugSeCpuShares">DebugSeCpuShares</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">cpu </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">cpu </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">shares </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
@@ -1257,13 +1426,13 @@ font-style: italic;
     <h3 class="field-label"><a name="DebugSeFault">DebugSeFault</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">faults (optional)</div><div class="param-desc"><span class="param-type"><a href="#SeFault">array[SeFault]</a></span> Set of faults to enable/disable. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">se_malloc_fail_frequency (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Fail SE malloc type at this frequency. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">se_malloc_fail_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Fail this SE malloc type. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">se_malloc_fail_frequency (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Fail SE malloc type at this frequency. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">se_malloc_fail_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Fail this SE malloc type. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">se_mbuf_cl_sanity (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Toggle assert on mbuf cluster sanity check fail. Field introduced in 17.2.13,18.1.3,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">se_shm_malloc_fail_frequency (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Fail SE SHM malloc type at this frequency. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">se_shm_malloc_fail_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Fail this SE SHM malloc type. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">se_waf_alloc_fail_frequency (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Fail SE WAF allocation at this frequency. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">se_waf_learning_alloc_fail_frequency (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Fail SE WAF learning allocation at this frequency. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">se_shm_malloc_fail_frequency (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Fail SE SHM malloc type at this frequency. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">se_shm_malloc_fail_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Fail this SE SHM malloc type. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">se_waf_alloc_fail_frequency (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Fail SE WAF allocation at this frequency. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">se_waf_learning_alloc_fail_frequency (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Fail SE WAF learning allocation at this frequency. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1277,6 +1446,7 @@ font-style: italic;
 <div class="param">capture (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable/disable packet capture. Field introduced in 18.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">capture_filters (optional)</div><div class="param-desc"><span class="param-type"><a href="#CaptureFilters">CaptureFilters</a></span> Per packet capture filters for Debug Service Engine. Not applicable for DOS pcap capture. . Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">capture_params (optional)</div><div class="param-desc"><span class="param-type"><a href="#DebugVirtualServiceCapture">DebugVirtualServiceCapture</a></span> Params for SE pcap. Field introduced in 17.2.14,18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">capture_pkt_filter (optional)</div><div class="param-desc"><span class="param-type"><a href="#CapturePacketFilter">CapturePacketFilter</a></span> Per packet capture filters for Debug Service Engine. Not applicable for DOS pcap capture. . Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">cpu_shares (optional)</div><div class="param-desc"><span class="param-type"><a href="#DebugSeCpuShares">array[DebugSeCpuShares]</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">debug_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#DebugIpAddr">DebugIpAddr</a></span> Per packet IP filter for Service Engine PCAP. Matches with source and destination address. Field introduced in 17.2.14,18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">enable_kdump (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enables the use of kdump on SE. Requires SE Reboot. Applicable only in case of VM Based deployments. Field introduced in 18.2.10, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -1303,7 +1473,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="DebugTraceMallocTypes">DebugTraceMallocTypes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">malloc_type_index (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Memory type to be traced for se_malloc and se_free. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">malloc_type_index (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Memory type to be traced for se_malloc and se_free. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1316,19 +1486,27 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="DebugTraceShmMallocTypes">DebugTraceShmMallocTypes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">shm_malloc_type_index (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Memory type to be traced for se_shmalloc and se_shmfree. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">shm_malloc_type_index (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Memory type to be traced for se_shmalloc and se_shmfree. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="DebugVirtualServiceCapture">DebugVirtualServiceCapture</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">capture_file_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#CaptureFileSize">CaptureFileSize</a></span> Maximum allowed size of PCAP Capture File per SE. Max(absolute_size, percentage_size) will be final value. Set both to 0 for avi default size. DOS, IPC and DROP pcaps not applicaple. Field introduced in 18.2.8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of minutes to capture packets. Use 0 to capture until manually stopped. Special values are 0 - infinite. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">duration (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of minutes to capture packets. Use 0 to capture until manually stopped. Special values are 0 - infinite. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">enable_ssl_session_key_capture (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable SSL session key capture. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">file_count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of files to maintain for SE pcap file rotation.file count set to 1 indicates no rotate. Allowed values are 1-10. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">num_pkts (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Total number of packets to capture. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">file_count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of files to maintain for SE pcap file rotation.file count set to 1 indicates no rotate. Allowed values are 1-10. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">num_pkts (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Total number of packets to capture. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">pcap_ng (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable PcapNg for packet capture. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">pkt_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of bytes of each packet to capture. Use 0 to capture the entire packet. Allowed values are 64-1514. Special values are 0 - full capture. Unit is BYTES. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">pkt_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of bytes of each packet to capture. Use 0 to capture the entire packet. Allowed values are 64-1514. Special values are 0 - full capture. Unit is BYTES. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="DestinationPortAddr">DestinationPortAddr</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">dst_port_end (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> TCP/UDP port range end (inclusive). Allowed values are 1-65535. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">dst_port_start (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> TCP/UDP port range start (inclusive). Allowed values are 1-65535. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">match_operation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1355,11 +1533,19 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="SeFault">SeFault</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">arg (optional)</div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span> Optional 64 bit unsigned integer that can be used within the enabled fault. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int64</div>
+      <div class="param">arg (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Optional 64 bit unsigned integer that can be used within the enabled fault. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint64</div>
 <div class="param">fault_name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of the target fault. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">function_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of the function that contains the target fault. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">num_executions (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of times the fault should be executed. Allowed values are 1-4294967295. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">num_skips (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of times the fault should be skipped before executing. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">num_executions (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of times the fault should be executed. Allowed values are 1-4294967295. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">num_skips (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of times the fault should be skipped before executing. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="SourcePortAddr">SourcePortAddr</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">match_operation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">src_port_end (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> TCP/UDP port range end (inclusive). Allowed values are 1-65535. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">src_port_start (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> TCP/UDP port range start (inclusive). Allowed values are 1-65535. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   </body>

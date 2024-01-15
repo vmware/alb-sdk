@@ -301,6 +301,7 @@ font-style: italic;
   <li><a href="#serviceengineUuidTcpFlowsGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/tcp-flows/</code></a></li>
   <li><a href="#serviceengineUuidVnicdbGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/vnicdb/</code></a></li>
   <li><a href="#serviceengineUuidVnicdbhistoryGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/vnicdbhistory/</code></a></li>
+  <li><a href="#serviceengineUuidVrfIpInfoGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/vrf-ip-info/</code></a></li>
   <li><a href="#serviceengineUuidVshashGet"><code><span class="http-method">get</span> /serviceengine/{uuid}/vshash/</code></a></li>
   </ol>
 
@@ -442,7 +443,7 @@ font-style: italic;
       "num_vcpus" : 123,
       "sockets" : 123,
       "cores_per_socket" : 123,
-      "num_datapath_processes" : 123,
+      "num_datapath_processes" : "",
       "hyper_threading" : true,
       "hypervisor_mode" : true
     },
@@ -461,7 +462,7 @@ font-style: italic;
     "container_mode" : true,
     "data_vnics" : [ {
       "vlan_id" : 123,
-      "vrf_id" : 123,
+      "vrf_id" : "",
       "is_hsm" : true,
       "port_uuid" : "aeiou",
       "delete_vnic" : true,
@@ -494,7 +495,7 @@ font-style: italic;
       "dp_deletion_done" : true,
       "vlan_interfaces" : [ {
         "dhcp_enabled" : true,
-        "vlan_id" : 123,
+        "vlan_id" : "",
         "if_name" : "aeiou",
         "ip6_autocfg_enabled" : true,
         "vrf_ref" : "aeiou",
@@ -578,7 +579,7 @@ font-style: italic;
     "num_vcpus" : 123,
     "sockets" : 123,
     "cores_per_socket" : 123,
-    "num_datapath_processes" : 123,
+    "num_datapath_processes" : "",
     "hyper_threading" : true,
     "hypervisor_mode" : true
   },
@@ -597,7 +598,7 @@ font-style: italic;
   "container_mode" : true,
   "data_vnics" : [ {
     "vlan_id" : 123,
-    "vrf_id" : 123,
+    "vrf_id" : "",
     "is_hsm" : true,
     "port_uuid" : "aeiou",
     "delete_vnic" : true,
@@ -630,7 +631,7 @@ font-style: italic;
     "dp_deletion_done" : true,
     "vlan_interfaces" : [ {
       "dhcp_enabled" : true,
-      "vlan_id" : 123,
+      "vlan_id" : "",
       "if_name" : "aeiou",
       "ip6_autocfg_enabled" : true,
       "vrf_ref" : "aeiou",
@@ -2451,7 +2452,7 @@ font-style: italic;
     "num_vcpus" : 123,
     "sockets" : 123,
     "cores_per_socket" : 123,
-    "num_datapath_processes" : 123,
+    "num_datapath_processes" : "",
     "hyper_threading" : true,
     "hypervisor_mode" : true
   },
@@ -2470,7 +2471,7 @@ font-style: italic;
   "container_mode" : true,
   "data_vnics" : [ {
     "vlan_id" : 123,
-    "vrf_id" : 123,
+    "vrf_id" : "",
     "is_hsm" : true,
     "port_uuid" : "aeiou",
     "delete_vnic" : true,
@@ -2503,7 +2504,7 @@ font-style: italic;
     "dp_deletion_done" : true,
     "vlan_interfaces" : [ {
       "dhcp_enabled" : true,
-      "vlan_id" : 123,
+      "vlan_id" : "",
       "if_name" : "aeiou",
       "ip6_autocfg_enabled" : true,
       "vrf_ref" : "aeiou",
@@ -4002,7 +4003,7 @@ font-style: italic;
     "num_vcpus" : 123,
     "sockets" : 123,
     "cores_per_socket" : 123,
-    "num_datapath_processes" : 123,
+    "num_datapath_processes" : "",
     "hyper_threading" : true,
     "hypervisor_mode" : true
   },
@@ -4021,7 +4022,7 @@ font-style: italic;
   "container_mode" : true,
   "data_vnics" : [ {
     "vlan_id" : 123,
-    "vrf_id" : 123,
+    "vrf_id" : "",
     "is_hsm" : true,
     "port_uuid" : "aeiou",
     "delete_vnic" : true,
@@ -4054,7 +4055,7 @@ font-style: italic;
     "dp_deletion_done" : true,
     "vlan_interfaces" : [ {
       "dhcp_enabled" : true,
-      "vlan_id" : 123,
+      "vlan_id" : "",
       "if_name" : "aeiou",
       "ip6_autocfg_enabled" : true,
       "vrf_ref" : "aeiou",
@@ -4305,7 +4306,7 @@ font-style: italic;
     "num_vcpus" : 123,
     "sockets" : 123,
     "cores_per_socket" : 123,
-    "num_datapath_processes" : 123,
+    "num_datapath_processes" : "",
     "hyper_threading" : true,
     "hypervisor_mode" : true
   },
@@ -4324,7 +4325,7 @@ font-style: italic;
   "container_mode" : true,
   "data_vnics" : [ {
     "vlan_id" : 123,
-    "vrf_id" : 123,
+    "vrf_id" : "",
     "is_hsm" : true,
     "port_uuid" : "aeiou",
     "delete_vnic" : true,
@@ -4357,7 +4358,7 @@ font-style: italic;
     "dp_deletion_done" : true,
     "vlan_interfaces" : [ {
       "dhcp_enabled" : true,
-      "vlan_id" : 123,
+      "vlan_id" : "",
       "if_name" : "aeiou",
       "ip6_autocfg_enabled" : true,
       "vrf_ref" : "aeiou",
@@ -6019,6 +6020,58 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
+  <div class="method"><a name="serviceengineUuidVrfIpInfoGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /serviceengine/{uuid}/vrf-ip-info/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">serviceengineUuidVrfIpInfoGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
   <div class="method"><a name="serviceengineUuidVshashGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
@@ -6131,13 +6184,13 @@ font-style: italic;
     <h3 class="field-label"><a name="SEFaultInjectExhaustParam">SEFaultInjectExhaustParam</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">leak (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">num </div><div class="param-desc"><span class="param-type"><a href="#long">Long</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int64</div>
+<div class="param">num </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint64</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3 class="field-label"><a name="SEFaultInjectSeParam">SEFaultInjectSeParam</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">core (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Inject fault in specific core. Field introduced in 18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">core (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Inject fault in specific core. Field introduced in 18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">obj_names (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Inject Fault on Objects. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">random_core (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Inject fault in random no of cores. Field introduced in 18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">se_agent_fault (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Set se-agent fault type. Enum options - SE_AGENT_FAULT_DISABLED, SE_AGENT_PRE_PROCESS_FAULT, SE_AGENT_POST_PROCESS_FAULT, SE_AGENT_DP_RESPONSE_FAULT, SE_AGENT_RANDOM_PROCESS_FAULT. Field introduced in 18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -6152,7 +6205,7 @@ font-style: italic;
 <div class="param">hyper_threading (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">hypervisor_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Indicates that the SE is running on a Virtual Machine. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">memory </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">num_datapath_processes (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Indicates the number of active datapath processes. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">num_datapath_processes (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Indicates the number of active datapath processes. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">num_vcpus </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">sockets (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
@@ -6220,7 +6273,7 @@ font-style: italic;
 <div class="param">vlan_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">vlan_interfaces (optional)</div><div class="param-desc"><span class="param-type"><a href="#VlanInterface">array[VlanInterface]</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">vnic_networks (optional)</div><div class="param-desc"><span class="param-type"><a href="#vNICNetwork">array[vNICNetwork]</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">vrf_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">vrf_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">vrf_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type VrfContext. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
@@ -6240,7 +6293,7 @@ font-style: italic;
 <div class="param">if_name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ip6_autocfg_enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable IPv6 auto configuration. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">is_mgmt (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">vlan_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> VLAN ID. Allowed values are 0-4096. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">vlan_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> VLAN ID. Allowed values are 0-4096. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">vnic_networks (optional)</div><div class="param-desc"><span class="param-type"><a href="#vNICNetwork">array[vNICNetwork]</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">vrf_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type VrfContext. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->

@@ -265,6 +265,12 @@ font-style: italic;
       "use_tls_fingerprint" : true,
       "enabled" : true
     },
+    "client_behavior_detector" : {
+      "bad_request_percent" : "",
+      "minimum_requests" : "",
+      "enabled" : true,
+      "minimum_requests_with_referer" : ""
+    },
     "description" : "aeiou",
     "uuid" : "aeiou",
     "url" : "aeiou",
@@ -365,7 +371,7 @@ font-style: italic;
         },
         "name" : "aeiou",
         "action" : "aeiou",
-        "index" : 123
+        "index" : ""
       } ]
     },
     "ip_location_detector" : {
@@ -437,6 +443,12 @@ font-style: italic;
   "user_agent_detector" : {
     "use_tls_fingerprint" : true,
     "enabled" : true
+  },
+  "client_behavior_detector" : {
+    "bad_request_percent" : "",
+    "minimum_requests" : "",
+    "enabled" : true,
+    "minimum_requests_with_referer" : ""
   },
   "description" : "aeiou",
   "uuid" : "aeiou",
@@ -538,7 +550,7 @@ font-style: italic;
       },
       "name" : "aeiou",
       "action" : "aeiou",
-      "index" : 123
+      "index" : ""
     } ]
   },
   "ip_location_detector" : {
@@ -682,6 +694,12 @@ font-style: italic;
     "use_tls_fingerprint" : true,
     "enabled" : true
   },
+  "client_behavior_detector" : {
+    "bad_request_percent" : "",
+    "minimum_requests" : "",
+    "enabled" : true,
+    "minimum_requests_with_referer" : ""
+  },
   "description" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
@@ -782,7 +800,7 @@ font-style: italic;
       },
       "name" : "aeiou",
       "action" : "aeiou",
-      "index" : 123
+      "index" : ""
     } ]
   },
   "ip_location_detector" : {
@@ -866,6 +884,12 @@ font-style: italic;
     "use_tls_fingerprint" : true,
     "enabled" : true
   },
+  "client_behavior_detector" : {
+    "bad_request_percent" : "",
+    "minimum_requests" : "",
+    "enabled" : true,
+    "minimum_requests_with_referer" : ""
+  },
   "description" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
@@ -966,7 +990,7 @@ font-style: italic;
       },
       "name" : "aeiou",
       "action" : "aeiou",
-      "index" : 123
+      "index" : ""
     } ]
   },
   "ip_location_detector" : {
@@ -1050,6 +1074,12 @@ font-style: italic;
     "use_tls_fingerprint" : true,
     "enabled" : true
   },
+  "client_behavior_detector" : {
+    "bad_request_percent" : "",
+    "minimum_requests" : "",
+    "enabled" : true,
+    "minimum_requests_with_referer" : ""
+  },
   "description" : "aeiou",
   "uuid" : "aeiou",
   "url" : "aeiou",
@@ -1150,7 +1180,7 @@ font-style: italic;
       },
       "name" : "aeiou",
       "action" : "aeiou",
-      "index" : 123
+      "index" : ""
     } ]
   },
   "ip_location_detector" : {
@@ -1192,6 +1222,7 @@ font-style: italic;
     <li><a href="#BotAllowList"><code>BotAllowList</code></a></li>
     <li><a href="#BotAllowRule"><code>BotAllowRule</code></a></li>
     <li><a href="#BotClassification"><code>BotClassification</code></a></li>
+    <li><a href="#BotConfigClientBehavior"><code>BotConfigClientBehavior</code></a></li>
     <li><a href="#BotConfigIPLocation"><code>BotConfigIPLocation</code></a></li>
     <li><a href="#BotConfigIPReputation"><code>BotConfigIPReputation</code></a></li>
     <li><a href="#BotConfigUserAgent"><code>BotConfigUserAgent</code></a></li>
@@ -1228,7 +1259,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">action </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The action to take. Enum options - BOT_ACTION_BYPASS, BOT_ACTION_CONTINUE. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">condition </div><div class="param-desc"><span class="param-type"><a href="#MatchTarget">MatchTarget</a></span> The condition to match. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">index </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Rules are processed in order of this index field. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">index </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Rules are processed in order of this index field. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A name describing the rule in a short form. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
@@ -1237,6 +1268,15 @@ font-style: italic;
     <div class="field-items">
       <div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> One of the system-defined Bot classification types. Enum options - HUMAN, GOOD_BOT, BAD_BOT, DANGEROUS_BOT, USER_DEFINED_BOT, UNKNOWN_CLIENT. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">user_defined_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> If &#39;type&#39; has BotClassificationTypes value &#39;USER_DEFINED&#39;, this is the user-defined value. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3 class="field-label"><a name="BotConfigClientBehavior">BotConfigClientBehavior</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class="field-items">
+      <div class="param">bad_request_percent (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Minimum percentage of bad requests for the client behavior component to identify as a bot. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Whether client behavior based Bot detection is enabled. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">minimum_requests (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Minimum requests for the client behavior component to make a decision. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint64</div>
+<div class="param">minimum_requests_with_referer (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Minimum requests with a referer for the client behavior component to not identify as a bot. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint64</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1275,6 +1315,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
 <div class="param">allow_list (optional)</div><div class="param-desc"><span class="param-type"><a href="#BotAllowList">BotAllowList</a></span> Allow the user to skip BotManagement for selected requests. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">client_behavior_detector </div><div class="param-desc"><span class="param-type"><a href="#BotConfigClientBehavior">BotConfigClientBehavior</a></span> The client behavior configuration used in this policy. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Human-readable description of this Bot Detection Policy. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">ip_location_detector </div><div class="param-desc"><span class="param-type"><a href="#BotConfigIPLocation">BotConfigIPLocation</a></span> The IP location configuration used in this policy. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">ip_reputation_detector </div><div class="param-desc"><span class="param-type"><a href="#BotConfigIPReputation">BotConfigIPReputation</a></span> The IP reputation configuration used in this policy. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
