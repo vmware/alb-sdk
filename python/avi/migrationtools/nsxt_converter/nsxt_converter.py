@@ -75,6 +75,7 @@ class NsxtConverter(AviConverter):
         self.default_params_file = args.default_params_file
         self.cloud_tenant = args.cloud_tenant
         self.ssh_root_password = args.ssh_root_password
+        self.skip_datapath_check = args.skip_datapath_check
 
     def convert_lb_config(self, args):
 
@@ -145,7 +146,7 @@ class NsxtConverter(AviConverter):
                 self.vs_state,
                 self.vs_level_status, None, self.segroup, self.not_in_use, None,
                 self.traffic_state, self.cloud_tenant,
-                self.nsxt_ip, self.nsxt_password)
+                self.nsxt_ip, self.nsxt_password, self.skip_datapath_check)
 
             avi_config = self.process_for_utils(alb_config, skip_ref_objects=["cloud_ref", "tenant_ref"])
             # Check if flag true then skip not in use object
@@ -446,6 +447,8 @@ if __name__ == "__main__":
     parser.add_argument('--vs_level_status', action='store_true',
                         help='Add columns of vs reference and overall skipped '
                              'settings in status excel sheet')
+    parser.add_argument('--skip_datapath_check', action='store_true',
+                        help='If provided will skip all the validations done for ensuring datapaths success')
     parser.add_argument('-s', '--vs_state', choices=ARG_CHOICES['vs_state'],
                         help='State of created VS. The default is \'deactivate\'.' +
                         '\n\'enable\' value means VS will be migrated with enable state. '

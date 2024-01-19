@@ -784,7 +784,11 @@ class NSXUtil():
         incomplete_networks = []
 
         cloud_id = [cl.get("uuid") for cl in self.cloud if cl.get("name") == cloud_name]
-        network_list = self.session.get("network/?&cloud_ref.uuid=" + cloud_id[0]).json()["results"]
+        network_list = self.session.get("network/?&cloud_ref.uuid=" + cloud_id[0])
+        if type(network_list) == dict:
+            network_list = network_list["results"]
+        else:
+            network_list = network_list.json()["results"]
         for network in network_list:
             if 'attrs' in network:
                 for attr in network.get("attrs"):
@@ -1314,4 +1318,3 @@ class NSXUtil():
         ip_group['tenant_ref'] = conv_utils.get_object_ref(tenant, 'tenant')
         alb_config['IpAddrGroup'].append(ip_group)
         return ip_group['name']
-
