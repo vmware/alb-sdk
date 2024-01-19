@@ -44,7 +44,7 @@ se_group_created_for_cloud = dict()
 
 class VsConfigConv(object):
     def __init__(self, nsxt_profile_attributes, object_merge_check, merge_object_mapping, sys_dict,
-                 nsxt_ip, nsxt_password):
+                 nsxt_ip, nsxt_password, skip_datapath_check):
         """
 
         """
@@ -67,6 +67,7 @@ class VsConfigConv(object):
         self.pki_count = 0
         self.nsxt_ip = nsxt_ip
         self.nsxt_password = nsxt_password
+        self.skip_datapath_check = skip_datapath_check
 
     def convert(self, alb_config, nsx_lb_config, prefix, tenant, vs_state, controller_version, traffic_state,
                 cloud_tenant, ssh_root_password, nsxt_util, migration_input_config=None, vrf=None, segroup=None):
@@ -234,7 +235,7 @@ class VsConfigConv(object):
                            if val not in self.supported_attr]
                 na_list = [val for val in lb_vs.keys()
                            if val in self.common_na_attr or val in self.VS_na_attr]
-                
+
                 if segroup:
                     segroup_ref = conv_utils.get_object_ref(
                         segroup, 'serviceenginegroup', cloud_tenant,
@@ -711,6 +712,9 @@ class VsConfigConv(object):
                         main_pool_ref = sorry_pool_ref
                         is_pg_created = True
 
+                if not pool_present and self.skip_datapath_check:
+                    # As datapath validation is skipped, attach pool anyway
+                    pool_present = True
                 if is_pg_created:
                     self.add_teir_to_poolgroup(main_pool_ref, alb_config, tier1_lr)
                     self.update_poolgroup_with_cloud(main_pool_ref, alb_config, cloud_name, tenant, cloud_tenant)
@@ -1175,24 +1179,25 @@ class VsConfigConv(object):
         :param avi_pool_list: List of pools to search pool object
         :param pool_ref: name of the pool
         """
-        for pool_obj in avi_pool_list:
-            if pool_ref == pool_obj["name"]:
-                pool_obj["placement_networks"] = list()
-                for sub in pool_segment:
-                    ip_addreses = dict(
-                        addr=sub["subnets"]["network_range"].split("/")[0],
-                        type="V4"
-                    )
-                    subnets = dict(
-                        subnet={
-                            "ip_addr": ip_addreses,
-                            "mask": sub["subnets"]["network_range"].split("/")[-1]
-                        },
-                        network_ref=conv_utils.get_object_ref(
-                            sub["seg_name"], 'network', tenant=tenant, cloud_name=cloud_name)
-                    )
-                    pool_obj["placement_networks"].append(subnets)
-                break
+        if pool_segment:
+            for pool_obj in avi_pool_list:
+                if pool_ref == pool_obj["name"]:
+                    pool_obj["placement_networks"] = list()
+                    for sub in pool_segment:
+                        ip_addreses = dict(
+                            addr=sub["subnets"]["network_range"].split("/")[0],
+                            type="V4"
+                        )
+                        subnets = dict(
+                            subnet={
+                                "ip_addr": ip_addreses,
+                                "mask": sub["subnets"]["network_range"].split("/")[-1]
+                            },
+                            network_ref=conv_utils.get_object_ref(
+                                sub["seg_name"], 'network', tenant=tenant, cloud_name=cloud_name)
+                        )
+                        pool_obj["placement_networks"].append(subnets)
+                    break
 
     def get_name(self, url):
 

@@ -23,7 +23,7 @@ pool_name_dict = {}
 vs_select_pool_action_list = dict()
 
 class PoolConfigConv(object):
-    def __init__(self, nsxt_pool_attributes, object_merge_check, merge_object_mapping, sys_dict):
+    def __init__(self, nsxt_pool_attributes, object_merge_check, merge_object_mapping, sys_dict, skip_datapath_check):
         """
         :param nsxt_pool_attributes: Supported attributes for pool migration
         """
@@ -37,6 +37,7 @@ class PoolConfigConv(object):
         self.object_merge_check = object_merge_check
         self.merge_object_mapping = merge_object_mapping
         self.sys_dict = sys_dict
+        self.skip_datapath_check = skip_datapath_check
 
     def convert(self, alb_config, nsx_lb_config, nsxt_util, prefix, tenant):
         '''
@@ -143,15 +144,18 @@ class PoolConfigConv(object):
                         conv_utils.print_progress_bar(progressbar_count, total_size, msg, prefix='Progress', suffix='')
                         continue
 
-                    if pool_skip:
+                    if pool_skip and not self.skip_datapath_check:
                         skipped_pools_list.append(name)
-                        skip_msg = 'Member ip not falling in segment range'
+                        skip_msg = 'Member ip not falling in segment range.'
                         conv_utils.add_status_row('pool', None, lb_pl['display_name'],
                                                   conv_const.STATUS_SKIPPED, skip_msg)
                         LOG.warning("POOL {} not migrated. Reason: {}".format(name,
                                                                               skip_msg))
                         conv_utils.print_progress_bar(progressbar_count, total_size, msg, prefix='Progress', suffix='')
                         continue
+                    else:
+                        LOG.warning("Skipping datapath validation for member not falling in segment range for pool {}".
+                                    format(name))
                 else:
                     skipped_pools_list.append(name)
                     skip_msg = 'Pool does not contains members'
@@ -501,8 +505,8 @@ class PoolConfigConv(object):
         is_member_ip_in_range=False
         for member in pool_members_list:
             for vs_id in vs_list:
-                LOG.debug("Checking pool member ip  %s falling in range or not  , pool %s attached with vip %s " % (member.get("ip_address"),
-                                                                                                                pool_name,vs_id))
+                LOG.debug("Checking pool member ip  %s falling in range or not  , pool %s attached with vip %s " %
+                          (member.get("ip_address"), pool_name, vs_id))
                 if vs_id in pool_segment_list.keys():
                     pool_skip = False
                     is_member_ip_in_range=True
@@ -535,7 +539,12 @@ class PoolConfigConv(object):
                         }
                         lb_list[lb] = pool_segment_list.get(vs_id)
                     pool_count += 1
+                elif self.skip_datapath_check:
+                    vs_pool_segment_list[vs_id] = {
+                        "pool_name": pool_name,
+                        "pool_segment": None
+                    }
+                    pool_count += 1
 
         return pool_segment_list, is_member_ip_in_range,pool_skip
-
 
