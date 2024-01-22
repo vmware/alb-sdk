@@ -1385,8 +1385,9 @@
                     "default": true
                 },
                 "use_standard_alb": {
-                    "description": "Use Standard SKU Azure Load Balancer. By default Basic SKU Load Balancer is used. Field introduced in 17.2.7. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
+                    "description": "Use Standard SKU Azure Load Balancer. By default Standard SKU Load Balancer is used. Field introduced in 17.2.7. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean",
+                    "default": true
                 }
             }
         },

@@ -657,6 +657,9 @@ definitions:
             name:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            nsxt_no_hotplug:
+                description: "If set to true for NSXT cloud, controller should not hotplug the VNICs. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
             powerstate:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string

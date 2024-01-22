@@ -662,7 +662,6 @@
         "BotDetectionPolicy": {
             "type": "object",
             "required": [
-                "client_behavior_detector",
                 "ip_location_detector",
                 "ip_reputation_detector",
                 "name",
