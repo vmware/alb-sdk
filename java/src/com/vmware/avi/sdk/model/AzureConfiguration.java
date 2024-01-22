@@ -55,7 +55,7 @@ public class AzureConfiguration  {
     private Boolean useManagedDisks = true;
 
     @JsonProperty("use_standard_alb")
-    private Boolean useStandardAlb = false;
+    private Boolean useStandardAlb = true;
 
 
     /**
@@ -372,10 +372,10 @@ public class AzureConfiguration  {
     /**
      * This is the getter method this will return the attribute value.
      * Use standard sku azure load balancer.
-     * By default basic sku load balancer is used.
+     * By default standard sku load balancer is used.
      * Field introduced in 17.2.7.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return useStandardAlb
      */
     public Boolean getUseStandardAlb() {
@@ -385,10 +385,10 @@ public class AzureConfiguration  {
     /**
      * This is the setter method to the attribute.
      * Use standard sku azure load balancer.
-     * By default basic sku load balancer is used.
+     * By default standard sku load balancer is used.
      * Field introduced in 17.2.7.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param useStandardAlb set the useStandardAlb.
      */
     public void setUseStandardAlb(Boolean  useStandardAlb) {
