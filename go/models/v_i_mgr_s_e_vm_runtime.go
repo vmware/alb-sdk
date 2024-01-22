@@ -95,6 +95,9 @@ type VIMgrSEVMRuntime struct {
 	// Required: true
 	Name *string `json:"name"`
 
+	// If set to true for NSXT cloud, controller should not hotplug the VNICs. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	NsxtNoHotplug *bool `json:"nsxt_no_hotplug,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Powerstate *string `json:"powerstate,omitempty"`
 
