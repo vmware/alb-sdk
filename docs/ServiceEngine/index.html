@@ -514,7 +514,8 @@ font-style: italic;
         } ]
       } ],
       "is_portchannel" : true
-    } ]
+    } ],
+    "nsxt_no_hotplug" : true
   } ]
 }</code></pre>
 
@@ -650,7 +651,8 @@ font-style: italic;
       } ]
     } ],
     "is_portchannel" : true
-  } ]
+  } ],
+  "nsxt_no_hotplug" : true
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -2523,7 +2525,8 @@ font-style: italic;
       } ]
     } ],
     "is_portchannel" : true
-  } ]
+  } ],
+  "nsxt_no_hotplug" : true
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -4074,7 +4077,8 @@ font-style: italic;
       } ]
     } ],
     "is_portchannel" : true
-  } ]
+  } ],
+  "nsxt_no_hotplug" : true
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -4377,7 +4381,8 @@ font-style: italic;
       } ]
     } ],
     "is_portchannel" : true
-  } ]
+  } ],
+  "nsxt_no_hotplug" : true
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -6227,6 +6232,7 @@ font-style: italic;
 <div class="param">hypervisor (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">mgmt_vnic (optional)</div><div class="param-desc"><span class="param-type"><a href="#vNIC">vNIC</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">nsxt_no_hotplug (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> If set to true, controller does not hotplugg the vNICs. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">resources (optional)</div><div class="param-desc"><span class="param-type"><a href="#SeResources">SeResources</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">se_group_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type ServiceEngineGroup. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
