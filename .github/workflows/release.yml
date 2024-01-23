@@ -33,22 +33,22 @@ jobs:
       - name: Set publish target
         id: publish_target
         run: |
-          echo "::set-output name=PUBLISH_ALL_TARGET::true"
-          echo "::set-output name=TAG_NAME::${{ github.event.release.tag_name }}"
+          echo "PUBLISH_ALL_TARGET=true" >> "$GITHUB_OUTPUT"
+          echo "TAG_NAME=${{ github.event.release.tag_name }}" >> "$GITHUB_OUTPUT"
           if [[ ${{ github.event.release.tag_name }} == *"migration-tool"* ]]; then
-            echo "::set-output name=PUBLISH_MIGRATION_TARGET::true"
-            echo "::set-output name=PUBLISH_SDK_TARGET::false"
-            echo "::set-output name=PUBLISH_ALL_TARGET::false"
+            echo "PUBLISH_MIGRATION_TARGET=true" >> "$GITHUB_OUTPUT"
+            echo "PUBLISH_SDK_TARGET=false" >> "$GITHUB_OUTPUT"
+            echo "PUBLISH_ALL_TARGET=false" >> "$GITHUB_OUTPUT"
           elif [[ ${{ github.event.release.tag_name }} == *"java-sdk"* ]] || [[ ${{ github.event.release.tag_name }} == *"python-sdk"* ]]; then
-            echo "::set-output name=PUBLISH_MIGRATION_TARGET::false"
-            echo "::set-output name=PUBLISH_SDK_TARGET::true"
-            echo "::set-output name=PUBLISH_ALL_TARGET::false"
+            echo "PUBLISH_MIGRATION_TARGET=false" >> "$GITHUB_OUTPUT"
+            echo "PUBLISH_SDK_TARGET=true" >> "$GITHUB_OUTPUT"
+            echo "PUBLISH_ALL_TARGET=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Get the version
         id: get_sdk_version
         run: | 
-          echo "::set-output name=AVI_VERSION::$(python ./python/version.py)"
+          echo "AVI_VERSION=$(python ./python/version.py)" >> "$GITHUB_OUTPUT"
           JAVA_VERSION=$(echo ${GITHUB_REF##*/} | cut -d - -f 2)
           if [[ "$JAVA_VERSION" == *"post"* ]]; then
             echo "Java version post"
@@ -61,7 +61,7 @@ jobs:
             JAVA_VERSION=$JAVA_VERSION.RELEASE
           fi
           echo "Java version ${JAVA_VERSION}"
-          echo "::set-output name=JAVA_RELEASE_VERSION::${JAVA_VERSION}"
+          echo "JAVA_RELEASE_VERSION=${JAVA_VERSION}" >> "$GITHUB_OUTPUT"
 
       - if: steps.publish_target.outputs.PUBLISH_ALL_TARGET == 'true' || contains(steps.publish_target.outputs.TAG_NAME, 'java-sdk')
         name: Publish JAVA
