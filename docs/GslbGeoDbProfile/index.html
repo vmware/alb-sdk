@@ -267,6 +267,7 @@ font-style: italic;
         "file_id" : "aeiou",
         "checksum" : "aeiou",
         "format" : "aeiou",
+        "file_id_checksum" : "aeiou",
         "timestamp" : ""
       },
       "priority" : ""
@@ -345,6 +346,7 @@ font-style: italic;
       "file_id" : "aeiou",
       "checksum" : "aeiou",
       "format" : "aeiou",
+      "file_id_checksum" : "aeiou",
       "timestamp" : ""
     },
     "priority" : ""
@@ -494,6 +496,7 @@ font-style: italic;
       "file_id" : "aeiou",
       "checksum" : "aeiou",
       "format" : "aeiou",
+      "file_id_checksum" : "aeiou",
       "timestamp" : ""
     },
     "priority" : ""
@@ -583,6 +586,7 @@ font-style: italic;
       "file_id" : "aeiou",
       "checksum" : "aeiou",
       "format" : "aeiou",
+      "file_id_checksum" : "aeiou",
       "timestamp" : ""
     },
     "priority" : ""
@@ -672,6 +676,7 @@ font-style: italic;
       "file_id" : "aeiou",
       "checksum" : "aeiou",
       "format" : "aeiou",
+      "file_id_checksum" : "aeiou",
       "timestamp" : ""
     },
     "priority" : ""
@@ -792,11 +797,12 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="GslbGeoDbFile">GslbGeoDbFile</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">checksum (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> File checksum is internally computed. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">file_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> System internal identifier for the file. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
+      <div class="param">checksum (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This field indicates the checksum of the original file. The checksum is internally computed. It&#39;s value changes every time the file is uploaded/modified. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">file_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This field indicates the internal file used in the system. The user uploaded file will be retained while a corresponding internal file is generated to be consumed by various upstream (Other sites) and downstream (SEs) entities. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
+<div class="param">file_id_checksum (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This field indicates the checksum of the internal file. The checksum is internally computed. It&#39;s value changes every time the internal file is regenerated. The internal file is regenerated whenever the original file is uploaded to the controller. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">filename (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Geodb Filename in the Avi supported formats. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">format (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This field indicates the file format. Enum options - GSLB_GEODB_FILE_FORMAT_AVI, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V6, GSLB_GEODB_FILE_FORMAT_MAXMIND_CITY_V4_AND_V6, GSLB_GEODB_FILE_FORMAT_AVI_V6, GSLB_GEODB_FILE_FORMAT_AVI_V4_AND_V6. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">timestamp (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Internal timestamp associated with the file. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint64</div>
+<div class="param">timestamp (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> This field indicates the timestamp of when the file is associated to the GslbGeodbProfile. It is an internal generated timestamp. This value is a constant for the lifetime of the File and does not change every time the file is uploaded. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint64</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
