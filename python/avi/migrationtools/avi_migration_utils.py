@@ -1451,3 +1451,8 @@ class MigrationUtil(object):
         if vs:
             vs_name = vs[0]['name']
         return vs_name
+
+    def get_vip_from_vsvip_ref(self, vsvip_name, avi_cfg):
+        for vip in avi_cfg['VsVip']:
+            if vip['name'] == vsvip_name:
+                return vip

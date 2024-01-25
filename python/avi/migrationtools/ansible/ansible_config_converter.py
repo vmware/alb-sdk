@@ -28,7 +28,7 @@ import yaml
 from avi.migrationtools.ansible.ansible_constant import \
     (USERNAME, PASSWORD, HTTP_TYPE, SSL_TYPE, DNS_TYPE, L4_TYPE, AVI_CONTROLLER,
      APPLICATION_PROFILE_REF, CREATE_OBJECT, GEN_TRAFFIC, common_task_args,
-     ansible_dict, SKIP_FIELDS, DEFAULT_SKIP_TYPES, HELP_STR, NAME, VIP,
+     ansible_dict, SKIP_FIELDS, DEFAULT_SKIP_TYPES, HELP_STR, NAME, VIP, VS_VIP_REF,
      SERVICES, CONTROLLER, API_VERSION, POOL_REF, TAGS, SERVER, VALIDATE_CERT,
      USER, REQEST_TYPE, IP_ADDRESS, TASKS, CONTROLLER_INPUT, USER_NAME,
      PASSWORD_NAME, F5_SERVER, F5_USERNAME, F5_PASSWORD, AVI_TRAFFIC, PORT,
@@ -442,58 +442,66 @@ class AviAnsibleConverterMigration(AviAnsibleConverterBase):
                 partition = data['partition-vs-mappings']
             else:
                 partition = self.partitions
-            ip = vs[VIP][0]['ip_address']['addr']
-            port = vs[SERVICES][0]['port']
-            vip = '%s:%s' % (ip, port)
-            if trafic_obj.get_status_vs(
-                    vs[NAME], vip, f5server, f5username, f5password, tenant,
-                    partitions=partition):
-
-                vs_dict = dict()
-                vs_dict[NAME] = vs[NAME]
-                vs_dict[VIP] = vs[VIP]
-                vs_dict[SERVICES] = vs[SERVICES]
-                vs_dict[CONTROLLER] = CONTROLLER_INPUT
-                vs_dict[USERNAME] = USER_NAME
-                vs_dict[PASSWORD] = PASSWORD_NAME
-                vs_dict[API_VERSION] = self.api_version
-
-                if POOL_REF in vs:
-                    sep_ele = vs[POOL_REF].split('&')
-                    removed_ref = sep_ele[0].split('?')
-                    vs_dict[POOL_REF] = removed_ref[0] + '?' + sep_ele[1]
-                f5_dict = self.get_f5_attributes(vs_dict)
-                f5_virtual_address_dict = \
-                    self.get_f5_virtual_address_attrs(vs_dict)
-                # Call to distinguish between f5 and netscaler
-                trafic_obj.create_ansible_disable(f5_dict, ansible_dict)
-                if instace_type == 'f5':
-                    trafic_obj.create_virtual_address_disable(
-                        f5_virtual_address_dict, ansible_dict)
-                trafic_obj.create_avi_ansible_enable(
-                    vs_dict, ansible_dict, test_vip=self.test_vip)
-                # Getting the request type
-                if APPLICATION_PROFILE_REF in vs:
-                    self.generate_avi_vs_traffic(
-                        vs_dict, ansible_dict,
-                        vs[APPLICATION_PROFILE_REF],
-                        tenant=tenant,
-                        test_vip=self.test_vip
-                    )
+            if vs['vh_type'] != 'VS_TYPE_VH_SNI':
+                if 'vsvip_ref' in vs.keys():
+                    vsvip_ref = vs[VS_VIP_REF]
+                    vs_vip_name = vsvip_ref[vsvip_ref.index('&name=')+6: vsvip_ref.rindex('&')]
+                    vipobj = mg_util.get_vip_from_vsvip_ref(vs_vip_name, self.avi_cfg)
+                    ip = vipobj[VIP][0]['ip_address']['addr']
                 else:
-                    self.generate_avi_vs_traffic(
-                        vs_dict, ansible_dict,
-                        'http',
-                        tenant=tenant
-                    )
-                if self.test_vip:
-                    trafic_obj.update_avi_ansible_vip(
-                        vs_dict, ansible_dict)
-                trafic_obj.create_avi_ansible_disable(vs_dict, ansible_dict)
-                trafic_obj.create_ansible_enable(f5_dict, ansible_dict)
-                if instace_type == 'f5':
-                    trafic_obj.create_virtual_address_enable(
-                        f5_virtual_address_dict, ansible_dict)
+                    ip = vs[VIP][0]['ip_address']['addr']
+                    vipobj = vs[VIP]
+                port = vs[SERVICES][0]['port']
+                vip = '%s:%s' % (ip, port)
+                if trafic_obj.get_status_vs(
+                        vs[NAME], vip, f5server, f5username, f5password, tenant,
+                        partitions=partition):
+
+                    vs_dict = dict()
+                    vs_dict[NAME] = vs[NAME]
+                    vs_dict[VIP] = vipobj[VIP]
+                    vs_dict[SERVICES] = vs[SERVICES]
+                    vs_dict[CONTROLLER] = CONTROLLER_INPUT
+                    vs_dict[USERNAME] = USER_NAME
+                    vs_dict[PASSWORD] = PASSWORD_NAME
+                    vs_dict[API_VERSION] = self.api_version
+
+                    if POOL_REF in vs:
+                        sep_ele = vs[POOL_REF].split('&')
+                        removed_ref = sep_ele[0].split('?')
+                        vs_dict[POOL_REF] = removed_ref[0] + '?' + sep_ele[1]
+                    f5_dict = self.get_f5_attributes(vs_dict)
+                    f5_virtual_address_dict = \
+                        self.get_f5_virtual_address_attrs(vs_dict)
+                    # Call to distinguish between f5 and netscaler
+                    trafic_obj.create_ansible_disable(f5_dict, ansible_dict)
+                    if instace_type == 'f5':
+                        trafic_obj.create_virtual_address_disable(
+                            f5_virtual_address_dict, ansible_dict)
+                    trafic_obj.create_avi_ansible_enable(
+                        vs_dict, ansible_dict, test_vip=self.test_vip)
+                    # Getting the request type
+                    if APPLICATION_PROFILE_REF in vs:
+                        self.generate_avi_vs_traffic(
+                            vs_dict, ansible_dict,
+                            vs[APPLICATION_PROFILE_REF],
+                            tenant=tenant,
+                            test_vip=self.test_vip
+                        )
+                    else:
+                        self.generate_avi_vs_traffic(
+                            vs_dict, ansible_dict,
+                            'http',
+                            tenant=tenant
+                        )
+                    if self.test_vip:
+                        trafic_obj.update_avi_ansible_vip(
+                            vs_dict, ansible_dict)
+                    trafic_obj.create_avi_ansible_disable(vs_dict, ansible_dict)
+                    trafic_obj.create_ansible_enable(f5_dict, ansible_dict)
+                    if instace_type == 'f5':
+                        trafic_obj.create_virtual_address_enable(
+                            f5_virtual_address_dict, ansible_dict)
             # Added call to check progress.
             progressbar_count += 1
             msg = "Ansible Generate Traffic..."
