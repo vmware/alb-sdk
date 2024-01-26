@@ -35,6 +35,6 @@ type UpgradeReadinessCheckObj struct {
 	// Total no. of checks. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	TotalChecks *int32 `json:"total_checks,omitempty"`
 
-	// Upgrade operations along with type requested such as UpgradeSystem UpgradeController etc. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH, EVAL_SEGROUP_RESUME. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// Upgrade operations along with type requested such as UpgradeSystem UpgradeController etc. Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH, EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	UpgradeOps *string `json:"upgrade_ops,omitempty"`
 }

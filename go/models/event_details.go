@@ -153,6 +153,9 @@ type EventDetails struct {
 	ClusterServiceRestoredDetails *ClusterServiceRestoredEvent `json:"cluster_service_restored_details,omitempty"`
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
+	ClustifyCheckDetails *ClustifyCheckEvent `json:"clustify_check_details,omitempty"`
+
+	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	CntlrHostListDetails *VinfraCntlrHostUnreachableList `json:"cntlr_host_list_details,omitempty"`
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
