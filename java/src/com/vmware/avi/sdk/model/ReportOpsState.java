@@ -83,7 +83,7 @@ public class ReportOpsState  {
     /**
      * This is the getter method this will return the attribute value.
      * The system operation's current fsm-state.
-     * Enum options - SYSTEM_REPORT_INIT, SYSTEM_REPORT_IN_PROGRESS, SYSTEM_REPORT_SUCCESS, SYSTEM_REPORT_WARNING, SYSTEM_REPORT_ERROR.
+     * Enum options - SYSTEM_REPORT_STARTED, SYSTEM_REPORT_IN_PROGRESS, SYSTEM_REPORT_SUCCESS, SYSTEM_REPORT_WARNING, SYSTEM_REPORT_ERROR.
      * Field introduced in 22.1.6.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -96,7 +96,7 @@ public class ReportOpsState  {
     /**
      * This is the setter method to the attribute.
      * The system operation's current fsm-state.
-     * Enum options - SYSTEM_REPORT_INIT, SYSTEM_REPORT_IN_PROGRESS, SYSTEM_REPORT_SUCCESS, SYSTEM_REPORT_WARNING, SYSTEM_REPORT_ERROR.
+     * Enum options - SYSTEM_REPORT_STARTED, SYSTEM_REPORT_IN_PROGRESS, SYSTEM_REPORT_SUCCESS, SYSTEM_REPORT_WARNING, SYSTEM_REPORT_ERROR.
      * Field introduced in 22.1.6.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
