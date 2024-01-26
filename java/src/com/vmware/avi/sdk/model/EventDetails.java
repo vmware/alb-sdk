@@ -165,6 +165,9 @@ public class EventDetails  {
     @JsonProperty("cluster_service_restored_details")
     private ClusterServiceRestoredEvent clusterServiceRestoredDetails = null;
 
+    @JsonProperty("clustify_check_details")
+    private ClustifyCheckEvent clustifyCheckDetails = null;
+
     @JsonProperty("cntlr_host_list_details")
     private VinfraCntlrHostUnreachableList cntlrHostListDetails = null;
 
@@ -1684,6 +1687,26 @@ public class EventDetails  {
      */
     public void setClusterServiceRestoredDetails(ClusterServiceRestoredEvent clusterServiceRestoredDetails) {
         this.clusterServiceRestoredDetails = clusterServiceRestoredDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return clustifyCheckDetails
+     */
+    public ClustifyCheckEvent getClustifyCheckDetails() {
+        return clustifyCheckDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param clustifyCheckDetails set the clustifyCheckDetails.
+     */
+    public void setClustifyCheckDetails(ClustifyCheckEvent clustifyCheckDetails) {
+        this.clustifyCheckDetails = clustifyCheckDetails;
     }
 
     /**
@@ -5430,6 +5453,7 @@ public class EventDetails  {
   Objects.equals(this.clusterNodeShutdownDetails, objEventDetails.clusterNodeShutdownDetails)&&
   Objects.equals(this.clusterNodeStartedDetails, objEventDetails.clusterNodeStartedDetails)&&
   Objects.equals(this.clusterConfigFailedDetails, objEventDetails.clusterConfigFailedDetails)&&
+  Objects.equals(this.clustifyCheckDetails, objEventDetails.clustifyCheckDetails)&&
   Objects.equals(this.clusterNodeDbFailedDetails, objEventDetails.clusterNodeDbFailedDetails)&&
   Objects.equals(this.memoryBalancerInfo, objEventDetails.memoryBalancerInfo)&&
   Objects.equals(this.controllerDiscontinuousTimeChangeEventDetails, objEventDetails.controllerDiscontinuousTimeChangeEventDetails)&&
@@ -5595,6 +5619,7 @@ public class EventDetails  {
                         sb.append("    clusterServiceCriticalFailureDetails: ").append(toIndentedString(clusterServiceCriticalFailureDetails)).append("\n");
                         sb.append("    clusterServiceFailedDetails: ").append(toIndentedString(clusterServiceFailedDetails)).append("\n");
                         sb.append("    clusterServiceRestoredDetails: ").append(toIndentedString(clusterServiceRestoredDetails)).append("\n");
+                        sb.append("    clustifyCheckDetails: ").append(toIndentedString(clustifyCheckDetails)).append("\n");
                         sb.append("    cntlrHostListDetails: ").append(toIndentedString(cntlrHostListDetails)).append("\n");
                         sb.append("    configActionDetails: ").append(toIndentedString(configActionDetails)).append("\n");
                         sb.append("    configCreateDetails: ").append(toIndentedString(configCreateDetails)).append("\n");
