@@ -14,6 +14,6 @@ type ReportOpsState struct {
 	// Descriptive reason for the state-change. Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	Reason *string `json:"reason,omitempty"`
 
-	// The system operation's current fsm-state. Enum options - SYSTEM_REPORT_INIT, SYSTEM_REPORT_IN_PROGRESS, SYSTEM_REPORT_SUCCESS, SYSTEM_REPORT_WARNING, SYSTEM_REPORT_ERROR. Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	// The system operation's current fsm-state. Enum options - SYSTEM_REPORT_STARTED, SYSTEM_REPORT_IN_PROGRESS, SYSTEM_REPORT_SUCCESS, SYSTEM_REPORT_WARNING, SYSTEM_REPORT_ERROR. Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	State *string `json:"state,omitempty"`
 }
