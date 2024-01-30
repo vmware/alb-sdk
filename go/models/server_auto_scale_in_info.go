@@ -42,5 +42,5 @@ type ServerAutoScaleInInfo struct {
 	ScaleinServerCandidates []*ServerID `json:"scalein_server_candidates,omitempty"`
 
 	// Desired number of servers for scheduled autocale. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
-	ScheduledDesiredCapacity uint32 `json:"scheduled_desired_capacity,omitempty"`
+	ScheduledDesiredCapacity *uint32 `json:"scheduled_desired_capacity,omitempty"`
 }

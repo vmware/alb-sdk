@@ -13,7 +13,7 @@ type Gslb struct {
 	LastModified *string `json:"_last_modified,omitempty"`
 
 	// Frequency with which messages are propagated to Vs Mgr. Value of 0 disables async behavior and RPC are sent inline. Allowed values are 0-5. Field introduced in 18.2.3. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	AsyncInterval uint32 `json:"async_interval,omitempty"`
+	AsyncInterval *uint32 `json:"async_interval,omitempty"`
 
 	// Max retries after which the remote site is treated as a fresh start. In fresh start all the configs are downloaded. Allowed values are 1-1024. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClearOnMaxRetries *uint32 `json:"clear_on_max_retries,omitempty"`
@@ -57,7 +57,7 @@ type Gslb struct {
 	SendInterval *uint32 `json:"send_interval,omitempty"`
 
 	// The user can specify a send-interval while entering maintenance mode. The validity of this 'maintenance send-interval' is only during maintenance mode. When the user leaves maintenance mode, the original send-interval is reinstated. This internal variable is used to store the original send-interval. . Field introduced in 18.2.3. Unit is SEC. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
-	SendIntervalPriorToMaintenanceMode uint32 `json:"send_interval_prior_to_maintenance_mode,omitempty"`
+	SendIntervalPriorToMaintenanceMode *uint32 `json:"send_interval_prior_to_maintenance_mode,omitempty"`
 
 	// Select Avi site member belonging to this Gslb. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Sites []*GslbSite `json:"sites,omitempty"`
@@ -79,5 +79,5 @@ type Gslb struct {
 	UUID *string `json:"uuid,omitempty"`
 
 	// The view-id is used in change-leader mode to differentiate partitioned groups while they have the same GSLB namespace. Each partitioned group will be able to operate independently by using the view-id. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViewID uint64 `json:"view_id,omitempty"`
+	ViewID *uint64 `json:"view_id,omitempty"`
 }

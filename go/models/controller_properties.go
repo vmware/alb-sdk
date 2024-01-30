@@ -34,7 +34,7 @@ type ControllerProperties struct {
 	AppviewxCompatMode *bool `json:"appviewx_compat_mode,omitempty"`
 
 	// Period for which asynchronous patch requests are queued. Allowed values are 30-120. Special values are 0 - Deactivated. Field introduced in 18.2.11, 20.1.3. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
-	AsyncPatchMergePeriod uint32 `json:"async_patch_merge_period,omitempty"`
+	AsyncPatchMergePeriod *uint32 `json:"async_patch_merge_period,omitempty"`
 
 	// Duration for which asynchronous patch requests should be kept, after being marked as SUCCESS or FAIL. Allowed values are 5-120. Field introduced in 18.2.11, 20.1.3. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	AsyncPatchRequestCleanupDuration *uint32 `json:"async_patch_request_cleanup_duration,omitempty"`
@@ -103,7 +103,7 @@ type ControllerProperties struct {
 	DNSRefreshPeriod *uint32 `json:"dns_refresh_period,omitempty"`
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	Dummy uint32 `json:"dummy,omitempty"`
+	Dummy *uint32 `json:"dummy,omitempty"`
 
 	// Allow editing of system limits. Keep in mind that these system limits have been carefully selected based on rigorous testing in our testig environments. Modifying these limits could destabilize your cluster. Do this at your own risk!. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	EditSystemLimits *bool `json:"edit_system_limits,omitempty"`
@@ -166,13 +166,13 @@ type ControllerProperties struct {
 	PermissionScopedSharedAdminNetworks *bool `json:"permission_scoped_shared_admin_networks,omitempty"`
 
 	// Period for rotate app persistence keys job. Allowed values are 1-1051200. Special values are 0 - Disabled. Unit is MIN. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition.
-	PersistenceKeyRotatePeriod uint32 `json:"persistence_key_rotate_period,omitempty"`
+	PersistenceKeyRotatePeriod *uint32 `json:"persistence_key_rotate_period,omitempty"`
 
 	// Burst limit on number of incoming requests. 0 to disable. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	PortalRequestBurstLimit uint32 `json:"portal_request_burst_limit,omitempty"`
+	PortalRequestBurstLimit *uint32 `json:"portal_request_burst_limit,omitempty"`
 
 	// Maximum average number of requests allowed per second. 0 to disable. Field introduced in 20.1.1. Unit is PER_SECOND. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	PortalRequestRateLimit uint32 `json:"portal_request_rate_limit,omitempty"`
+	PortalRequestRateLimit *uint32 `json:"portal_request_rate_limit,omitempty"`
 
 	// Token used for uploading tech-support to portal. Field introduced in 16.4.6,17.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	PortalToken *string `json:"portal_token,omitempty"`
