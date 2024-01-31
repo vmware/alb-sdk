@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResumeSeGroupParams  {
+    @JsonProperty("prechecks_only")
+    private Boolean prechecksOnly = false;
+
     @JsonProperty("se_group_options")
     private SeGroupResumeOptions seGroupOptions = null;
 
@@ -31,6 +34,30 @@ public class ResumeSeGroupParams  {
     private Boolean skipWarnings = false;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * This flag is set to run the pre-checks without the subsequent upgrade operations.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return prechecksOnly
+     */
+    public Boolean getPrechecksOnly() {
+        return prechecksOnly;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This flag is set to run the pre-checks without the subsequent upgrade operations.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param prechecksOnly set the prechecksOnly.
+     */
+    public void setPrechecksOnly(Boolean  prechecksOnly) {
+        this.prechecksOnly = prechecksOnly;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -137,14 +164,16 @@ public class ResumeSeGroupParams  {
       ResumeSeGroupParams objResumeSeGroupParams = (ResumeSeGroupParams) o;
       return   Objects.equals(this.seGroupOptions, objResumeSeGroupParams.seGroupOptions)&&
   Objects.equals(this.seGroupRefs, objResumeSeGroupParams.seGroupRefs)&&
-  Objects.equals(this.skipWarnings, objResumeSeGroupParams.skipWarnings);
+  Objects.equals(this.skipWarnings, objResumeSeGroupParams.skipWarnings)&&
+  Objects.equals(this.prechecksOnly, objResumeSeGroupParams.prechecksOnly);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class ResumeSeGroupParams {\n");
-                  sb.append("    seGroupOptions: ").append(toIndentedString(seGroupOptions)).append("\n");
+                  sb.append("    prechecksOnly: ").append(toIndentedString(prechecksOnly)).append("\n");
+                        sb.append("    seGroupOptions: ").append(toIndentedString(seGroupOptions)).append("\n");
                         sb.append("    seGroupRefs: ").append(toIndentedString(seGroupRefs)).append("\n");
                         sb.append("    skipWarnings: ").append(toIndentedString(skipWarnings)).append("\n");
                   sb.append("}");
