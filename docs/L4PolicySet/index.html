@@ -272,8 +272,8 @@ font-style: italic;
             "match_criteria" : "aeiou",
             "ports" : [ "" ],
             "port_ranges" : [ {
-              "start" : 123,
-              "end" : 123
+              "start" : "",
+              "end" : ""
             } ]
           },
           "client_ip" : {
@@ -308,7 +308,7 @@ font-style: italic;
     "is_internal_policy" : true,
     "name" : "aeiou",
     "configpb_attributes" : {
-      "version" : 123
+      "version" : ""
     },
     "description" : "aeiou",
     "markers" : [ {
@@ -385,8 +385,8 @@ font-style: italic;
           "match_criteria" : "aeiou",
           "ports" : [ "" ],
           "port_ranges" : [ {
-            "start" : 123,
-            "end" : 123
+            "start" : "",
+            "end" : ""
           } ]
         },
         "client_ip" : {
@@ -421,7 +421,7 @@ font-style: italic;
   "is_internal_policy" : true,
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "description" : "aeiou",
   "markers" : [ {
@@ -569,8 +569,8 @@ font-style: italic;
           "match_criteria" : "aeiou",
           "ports" : [ "" ],
           "port_ranges" : [ {
-            "start" : 123,
-            "end" : 123
+            "start" : "",
+            "end" : ""
           } ]
         },
         "client_ip" : {
@@ -605,7 +605,7 @@ font-style: italic;
   "is_internal_policy" : true,
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "description" : "aeiou",
   "markers" : [ {
@@ -693,8 +693,8 @@ font-style: italic;
           "match_criteria" : "aeiou",
           "ports" : [ "" ],
           "port_ranges" : [ {
-            "start" : 123,
-            "end" : 123
+            "start" : "",
+            "end" : ""
           } ]
         },
         "client_ip" : {
@@ -729,7 +729,7 @@ font-style: italic;
   "is_internal_policy" : true,
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "description" : "aeiou",
   "markers" : [ {
@@ -817,8 +817,8 @@ font-style: italic;
           "match_criteria" : "aeiou",
           "ports" : [ "" ],
           "port_ranges" : [ {
-            "start" : 123,
-            "end" : 123
+            "start" : "",
+            "end" : ""
           } ]
         },
         "client_ip" : {
@@ -853,7 +853,7 @@ font-style: italic;
   "is_internal_policy" : true,
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "description" : "aeiou",
   "markers" : [ {
@@ -911,7 +911,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1032,8 +1032,8 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="PortRange">PortRange</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">end </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> TCP/UDP port range end (inclusive). Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">start </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> TCP/UDP port range start (inclusive). Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">end </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> TCP/UDP port range end (inclusive). Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">start </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> TCP/UDP port range start (inclusive). Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

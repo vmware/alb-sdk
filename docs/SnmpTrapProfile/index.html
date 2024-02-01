@@ -262,7 +262,7 @@ font-style: italic;
   "count" : 123,
   "results" : [ {
     "trap_servers" : [ {
-      "port" : 123,
+      "port" : "",
       "community" : "aeiou",
       "ip_addr" : {
         "addr" : "aeiou",
@@ -280,7 +280,7 @@ font-style: italic;
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
     "configpb_attributes" : {
-      "version" : 123
+      "version" : ""
     },
     "uuid" : "aeiou",
     "url" : "aeiou",
@@ -340,7 +340,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "trap_servers" : [ {
-    "port" : 123,
+    "port" : "",
     "community" : "aeiou",
     "ip_addr" : {
       "addr" : "aeiou",
@@ -358,7 +358,7 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "uuid" : "aeiou",
   "url" : "aeiou",
@@ -489,7 +489,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "trap_servers" : [ {
-    "port" : 123,
+    "port" : "",
     "community" : "aeiou",
     "ip_addr" : {
       "addr" : "aeiou",
@@ -507,7 +507,7 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "uuid" : "aeiou",
   "url" : "aeiou",
@@ -578,7 +578,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "trap_servers" : [ {
-    "port" : 123,
+    "port" : "",
     "community" : "aeiou",
     "ip_addr" : {
       "addr" : "aeiou",
@@ -596,7 +596,7 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "uuid" : "aeiou",
   "url" : "aeiou",
@@ -667,7 +667,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "trap_servers" : [ {
-    "port" : 123,
+    "port" : "",
     "community" : "aeiou",
     "ip_addr" : {
       "addr" : "aeiou",
@@ -685,7 +685,7 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "uuid" : "aeiou",
   "url" : "aeiou",
@@ -792,7 +792,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -827,7 +827,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">community (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The community string to communicate with the trap server. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ip_addr </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> IP Address of the SNMP trap destination. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The UDP port of the trap server. Field introduced in 16.5.4,17.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The UDP port of the trap server. Field introduced in 16.5.4,17.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">user (optional)</div><div class="param-desc"><span class="param-type"><a href="#SnmpV3UserParams">SnmpV3UserParams</a></span> SNMP version 3 configuration. Field introduced in 17.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> SNMP version support. V2 or V3. Enum options - SNMP_VER2, SNMP_VER3. Field introduced in 17.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->

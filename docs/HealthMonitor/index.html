@@ -307,7 +307,7 @@ font-style: italic;
     "successful_checks" : 123,
     "receive_timeout" : 123,
     "configpb_attributes" : {
-      "version" : 123
+      "version" : ""
     },
     "is_federated" : true,
     "authentication" : {
@@ -331,7 +331,7 @@ font-style: italic;
       "exact_http_request" : true,
       "http_request" : "aeiou",
       "http_request_body" : "aeiou",
-      "response_size" : 123,
+      "response_size" : "",
       "http_response_code" : [ "aeiou" ],
       "maintenance_code" : [ "" ],
       "maintenance_response" : "aeiou"
@@ -474,7 +474,7 @@ font-style: italic;
   "successful_checks" : 123,
   "receive_timeout" : 123,
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "is_federated" : true,
   "authentication" : {
@@ -498,7 +498,7 @@ font-style: italic;
     "exact_http_request" : true,
     "http_request" : "aeiou",
     "http_request_body" : "aeiou",
-    "response_size" : 123,
+    "response_size" : "",
     "http_response_code" : [ "aeiou" ],
     "maintenance_code" : [ "" ],
     "maintenance_response" : "aeiou"
@@ -764,7 +764,7 @@ font-style: italic;
   "successful_checks" : 123,
   "receive_timeout" : 123,
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "is_federated" : true,
   "authentication" : {
@@ -788,7 +788,7 @@ font-style: italic;
     "exact_http_request" : true,
     "http_request" : "aeiou",
     "http_request_body" : "aeiou",
-    "response_size" : 123,
+    "response_size" : "",
     "http_response_code" : [ "aeiou" ],
     "maintenance_code" : [ "" ],
     "maintenance_response" : "aeiou"
@@ -942,7 +942,7 @@ font-style: italic;
   "successful_checks" : 123,
   "receive_timeout" : 123,
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "is_federated" : true,
   "authentication" : {
@@ -966,7 +966,7 @@ font-style: italic;
     "exact_http_request" : true,
     "http_request" : "aeiou",
     "http_request_body" : "aeiou",
-    "response_size" : 123,
+    "response_size" : "",
     "http_response_code" : [ "aeiou" ],
     "maintenance_code" : [ "" ],
     "maintenance_response" : "aeiou"
@@ -1120,7 +1120,7 @@ font-style: italic;
   "successful_checks" : 123,
   "receive_timeout" : 123,
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "is_federated" : true,
   "authentication" : {
@@ -1144,7 +1144,7 @@ font-style: italic;
     "exact_http_request" : true,
     "http_request" : "aeiou",
     "http_request_body" : "aeiou",
-    "response_size" : 123,
+    "response_size" : "",
     "http_response_code" : [ "aeiou" ],
     "maintenance_code" : [ "" ],
     "maintenance_response" : "aeiou"
@@ -1236,7 +1236,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1334,7 +1334,7 @@ font-style: italic;
 <div class="param">http_response_code (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> List of HTTP response codes to match as successful.  Default is 2xx. Enum options - HTTP_ANY, HTTP_1XX, HTTP_2XX, HTTP_3XX, HTTP_4XX, HTTP_5XX. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">maintenance_code (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">array[Integer]</a></span> Match or look for this HTTP response code indicating server maintenance.  A successful match results in the server being marked down. Allowed values are 101-599. Maximum of 4 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">maintenance_response (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Match or look for this keyword in the first 2KB of server header and body response indicating server maintenance.  A successful match results in the server being marked down. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">response_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Expected http/https response page size. Allowed values are 2048-16384. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">response_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Expected http/https response page size. Allowed values are 2048-16384. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">ssl_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#HealthMonitorSSLAttributes">HealthMonitorSSLAttributes</a></span> SSL attributes for HTTPS health monitor. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>

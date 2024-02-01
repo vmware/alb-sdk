@@ -268,13 +268,13 @@ font-style: italic;
       "format" : "aeiou",
       "syslog_server" : "aeiou",
       "pkiprofile_ref" : "aeiou",
-      "syslog_server_port" : 123,
+      "syslog_server_port" : "",
       "anon_auth" : true
     } ],
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
     "configpb_attributes" : {
-      "version" : 123
+      "version" : ""
     },
     "description" : "aeiou",
     "uuid" : "aeiou",
@@ -341,13 +341,13 @@ font-style: italic;
     "format" : "aeiou",
     "syslog_server" : "aeiou",
     "pkiprofile_ref" : "aeiou",
-    "syslog_server_port" : 123,
+    "syslog_server_port" : "",
     "anon_auth" : true
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "description" : "aeiou",
   "uuid" : "aeiou",
@@ -485,13 +485,13 @@ font-style: italic;
     "format" : "aeiou",
     "syslog_server" : "aeiou",
     "pkiprofile_ref" : "aeiou",
-    "syslog_server_port" : 123,
+    "syslog_server_port" : "",
     "anon_auth" : true
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "description" : "aeiou",
   "uuid" : "aeiou",
@@ -569,13 +569,13 @@ font-style: italic;
     "format" : "aeiou",
     "syslog_server" : "aeiou",
     "pkiprofile_ref" : "aeiou",
-    "syslog_server_port" : 123,
+    "syslog_server_port" : "",
     "anon_auth" : true
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "description" : "aeiou",
   "uuid" : "aeiou",
@@ -653,13 +653,13 @@ font-style: italic;
     "format" : "aeiou",
     "syslog_server" : "aeiou",
     "pkiprofile_ref" : "aeiou",
-    "syslog_server_port" : 123,
+    "syslog_server_port" : "",
     "anon_auth" : true
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "description" : "aeiou",
   "uuid" : "aeiou",
@@ -784,7 +784,7 @@ font-style: italic;
 <div class="param">pkiprofile_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Select the PKIProfile containing a CA or list of CA chainswhich will validate the certificate of the syslog server. It is a reference to an object of type PKIProfile. Field introduced in 17.2.17, 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ssl_key_and_certificate_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Select a certificate and key which will be used to authenticate to the syslog server. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 17.2.17, 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">syslog_server </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The destination Syslog server IP address or hostname. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">syslog_server_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The destination Syslog server&#39;s service port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">syslog_server_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The destination Syslog server&#39;s service port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">tls_enable (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable TLS to the syslog server. Field introduced in 17.2.16, 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">udp </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Network protocol to establish syslog session. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
@@ -799,7 +799,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   </body>

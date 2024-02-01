@@ -342,7 +342,7 @@ font-style: italic;
         "file" : {
           "file_content" : "aeiou",
           "content_type" : "aeiou",
-          "file_length" : 123
+          "file_length" : ""
         },
         "status_code" : "aeiou"
       },
@@ -353,14 +353,14 @@ font-style: italic;
       "pool_ref" : "aeiou",
       "priority_label" : "aeiou",
       "deployment_state" : "aeiou",
-      "ratio" : 123
+      "ratio" : ""
     } ],
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
     "configpb_attributes" : {
-      "version" : 123
+      "version" : ""
     },
-    "min_servers" : 123,
+    "min_servers" : "",
     "cloud_config_cksum" : "aeiou",
     "markers" : [ {
       "values" : [ "aeiou" ],
@@ -443,7 +443,7 @@ font-style: italic;
       "file" : {
         "file_content" : "aeiou",
         "content_type" : "aeiou",
-        "file_length" : 123
+        "file_length" : ""
       },
       "status_code" : "aeiou"
     },
@@ -454,14 +454,14 @@ font-style: italic;
     "pool_ref" : "aeiou",
     "priority_label" : "aeiou",
     "deployment_state" : "aeiou",
-    "ratio" : 123
+    "ratio" : ""
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
-  "min_servers" : 123,
+  "min_servers" : "",
   "cloud_config_cksum" : "aeiou",
   "markers" : [ {
     "values" : [ "aeiou" ],
@@ -673,7 +673,7 @@ font-style: italic;
       "file" : {
         "file_content" : "aeiou",
         "content_type" : "aeiou",
-        "file_length" : 123
+        "file_length" : ""
       },
       "status_code" : "aeiou"
     },
@@ -684,14 +684,14 @@ font-style: italic;
     "pool_ref" : "aeiou",
     "priority_label" : "aeiou",
     "deployment_state" : "aeiou",
-    "ratio" : 123
+    "ratio" : ""
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
-  "min_servers" : 123,
+  "min_servers" : "",
   "cloud_config_cksum" : "aeiou",
   "markers" : [ {
     "values" : [ "aeiou" ],
@@ -785,7 +785,7 @@ font-style: italic;
       "file" : {
         "file_content" : "aeiou",
         "content_type" : "aeiou",
-        "file_length" : 123
+        "file_length" : ""
       },
       "status_code" : "aeiou"
     },
@@ -796,14 +796,14 @@ font-style: italic;
     "pool_ref" : "aeiou",
     "priority_label" : "aeiou",
     "deployment_state" : "aeiou",
-    "ratio" : 123
+    "ratio" : ""
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
-  "min_servers" : 123,
+  "min_servers" : "",
   "cloud_config_cksum" : "aeiou",
   "markers" : [ {
     "values" : [ "aeiou" ],
@@ -897,7 +897,7 @@ font-style: italic;
       "file" : {
         "file_content" : "aeiou",
         "content_type" : "aeiou",
-        "file_length" : 123
+        "file_length" : ""
       },
       "status_code" : "aeiou"
     },
@@ -908,14 +908,14 @@ font-style: italic;
     "pool_ref" : "aeiou",
     "priority_label" : "aeiou",
     "deployment_state" : "aeiou",
-    "ratio" : 123
+    "ratio" : ""
   } ],
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
-  "min_servers" : 123,
+  "min_servers" : "",
   "cloud_config_cksum" : "aeiou",
   "markers" : [ {
     "values" : [ "aeiou" ],
@@ -1015,7 +1015,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1054,7 +1054,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">content_type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Mime-type of the content in the file. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">file_content </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> File content to used in the local HTTP response body. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">file_length (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> File content length. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">file_length (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> File content length. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -1080,7 +1080,7 @@ font-style: italic;
 <div class="param">implicit_priority_labels (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Whether an implicit set of priority labels is generated. Field introduced in 17.1.9,17.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">members (optional)</div><div class="param-desc"><span class="param-type"><a href="#PoolGroupMember">array[PoolGroupMember]</a></span> List of pool group members object of type PoolGroupMember. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">min_servers (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The minimum number of servers to distribute traffic to. Allowed values are 1-65535. Special values are 0 - Disable. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">min_servers (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The minimum number of servers to distribute traffic to. Allowed values are 1-65535. Special values are 0 - Disable. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The name of the pool group. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">priority_labels_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the priority labels. If not provided, pool group member priority label will be interpreted as a number with a larger number considered higher priority. It is a reference to an object of type PriorityLabels. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">service_metadata (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Metadata pertaining to the service provided by this PoolGroup. In Openshift/Kubernetes environments, app metadata info is stored. Any user input to this field will be overwritten by Avi Vantage. Field introduced in 17.2.14,18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -1103,7 +1103,7 @@ font-style: italic;
       <div class="param">deployment_state (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Pool deployment state used with the PG deployment policy. Enum options - EVALUATION_IN_PROGRESS, IN_SERVICE, OUT_OF_SERVICE, EVALUATION_FAILED. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">pool_ref </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the pool. It is a reference to an object of type Pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">priority_label (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> All pools with same priority are treated similarly in a pool group. The higher the number, the higher the priority.A pool with a higher priority is selected, as long as the pool is eligible or an explicit policy chooses a different pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">ratio (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Ratio of selecting eligible pools in the pool group. . Allowed values are 1-1000. Special values are 0 - Do not select this pool for new connections. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 1), Basic edition(Allowed values- 1), Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">ratio (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Ratio of selecting eligible pools in the pool group. . Allowed values are 1-1000. Special values are 0 - Do not select this pool for new connections. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 1), Basic edition(Allowed values- 1), Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

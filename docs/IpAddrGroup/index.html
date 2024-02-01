@@ -260,7 +260,7 @@ font-style: italic;
   "next" : "aeiou",
   "count" : 123,
   "results" : [ {
-    "marathon_service_port" : 123,
+    "marathon_service_port" : "",
     "ranges" : [ {
       "end" : "",
       "begin" : ""
@@ -273,7 +273,7 @@ font-style: italic;
     "description" : "aeiou",
     "ip_ports" : [ {
       "hostname" : "aeiou",
-      "port" : 123,
+      "port" : "",
       "ip" : "",
       "name" : "aeiou"
     } ],
@@ -287,7 +287,7 @@ font-style: italic;
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
     "configpb_attributes" : {
-      "version" : 123
+      "version" : ""
     },
     "country_codes" : [ "aeiou" ],
     "markers" : [ {
@@ -348,7 +348,7 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "marathon_service_port" : 123,
+  "marathon_service_port" : "",
   "ranges" : [ {
     "end" : "",
     "begin" : ""
@@ -361,7 +361,7 @@ font-style: italic;
   "description" : "aeiou",
   "ip_ports" : [ {
     "hostname" : "aeiou",
-    "port" : 123,
+    "port" : "",
     "ip" : "",
     "name" : "aeiou"
   } ],
@@ -375,7 +375,7 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "country_codes" : [ "aeiou" ],
   "markers" : [ {
@@ -507,7 +507,7 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "marathon_service_port" : 123,
+  "marathon_service_port" : "",
   "ranges" : [ {
     "end" : "",
     "begin" : ""
@@ -520,7 +520,7 @@ font-style: italic;
   "description" : "aeiou",
   "ip_ports" : [ {
     "hostname" : "aeiou",
-    "port" : 123,
+    "port" : "",
     "ip" : "",
     "name" : "aeiou"
   } ],
@@ -534,7 +534,7 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "country_codes" : [ "aeiou" ],
   "markers" : [ {
@@ -606,7 +606,7 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "marathon_service_port" : 123,
+  "marathon_service_port" : "",
   "ranges" : [ {
     "end" : "",
     "begin" : ""
@@ -619,7 +619,7 @@ font-style: italic;
   "description" : "aeiou",
   "ip_ports" : [ {
     "hostname" : "aeiou",
-    "port" : 123,
+    "port" : "",
     "ip" : "",
     "name" : "aeiou"
   } ],
@@ -633,7 +633,7 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "country_codes" : [ "aeiou" ],
   "markers" : [ {
@@ -705,7 +705,7 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "marathon_service_port" : 123,
+  "marathon_service_port" : "",
   "ranges" : [ {
     "end" : "",
     "begin" : ""
@@ -718,7 +718,7 @@ font-style: italic;
   "description" : "aeiou",
   "ip_ports" : [ {
     "hostname" : "aeiou",
-    "port" : 123,
+    "port" : "",
     "ip" : "",
     "name" : "aeiou"
   } ],
@@ -732,7 +732,7 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "country_codes" : [ "aeiou" ],
   "markers" : [ {
@@ -778,7 +778,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -798,7 +798,7 @@ font-style: italic;
 <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ip_ports (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrPort">array[IpAddrPort]</a></span> Configure (IP address, port) tuple(s). Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">marathon_app_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Populate IP addresses from tasks of this Marathon app. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">marathon_service_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Task port associated with marathon service port. If Marathon app has multiple service ports, this is required. Else, the first task port is used. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">marathon_service_port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Task port associated with marathon service port. If Marathon app has multiple service ports, this is required. Else, the first task port is used. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">markers (optional)</div><div class="param-desc"><span class="param-type"><a href="#RoleFilterMatchLabel">array[RoleFilterMatchLabel]</a></span> List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the IP address group. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">prefixes (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddrPrefix">array[IpAddrPrefix]</a></span> Configure IP address prefix(es). Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -822,7 +822,7 @@ font-style: italic;
       <div class="param">hostname (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Hostname of server. One of IP address or hostname should be set. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> IP Address of host. One of IP address or hostname should be set. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">port </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Port number of server. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">port </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Port number of server. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
