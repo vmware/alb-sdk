@@ -314,3 +314,13 @@ Changelog:
 2.0.5:
 
 * Fixed VRF handling with manual VsVip
+
+2.0.6:
+
+* Changed handling of Pool and PoolGroup references in VsDataScriptSet
+  * Will now try to preserve the names of Pools and PoolGroups when cloning a VsDataScriptSet if possible (e.g. when cloning to a different tenant/Controller)
+  * If name preservation is not possible, unique names will now be generated from the old Pool/PoolGroup name (previous behaviour was to generate names based on VsDataScript name)
+  * Will generate a warning that DataScript code changes may be needed, for example because a Pool or PoolGroup name could not be preserved
+* Changed handling of PoolGroup cloning
+  * Will now try to preserve the names of Pools when cloning a PoolGroup if possible (e.g. when cloning to a different tenant/Controller)
+  * If name preservation is not possible, unique names will now be generated from the old Pool name (previous behaviour was to generate names based on PoolGroup name)

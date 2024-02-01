@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 
 urllib3.disable_warnings()
 
-AVICLONE_VERSION = [2, 0, 5]
+AVICLONE_VERSION = [2, 0, 6]
 
 # Try to obtain the terminal width to allow spprint() to wrap output neatly.
 # If unable to determine, assume terminal width is 70 characters
@@ -340,7 +340,8 @@ class AviClone:
         return new_name
 
     def clone_object(self, old_name, new_name, object_type=None,
-                     force_clone=None, force_unique_name=False):
+                     force_clone=None, force_unique_name=False,
+                     old_obj=None):
         """
         Clones an object other than a Virtual Service or GSLB Service
 
@@ -350,14 +351,18 @@ class AviClone:
         Returns a tuple: json representation of the cloned object,
         list of additional objects created if any and any warnings generated
 
-        :param old_name: Name of existing object (name or uri)
+        :param old_name: Name of existing object (name or uri), or None if
+                         existing object is being passed via old_obj
         :param new_name: New name for cloned object
-        :param object_type: Type of object (or None to infer from name)
+        :param object_type: Type of object (or None to infer from old_name or
+                            old_obj)
         :param force_clone: List of referenced object attributes to forcibly
                             clone rather than re-use (for example
                             health_monitor_refs)
         :param force_unique_name: Resolve destination name conflicts by
                                   appending an index number
+        :param old_obj: Existing object to clone - can be specified instead
+                        of passing old_name if the object is already available
         :return: tuple - json representation of the cloned object, list of
                  additional objects created if any
         :rtype: tuple
@@ -368,34 +373,49 @@ class AviClone:
         created_objs = []
         warnings = []
 
-        if not object_type:
-            # If object_type is not specified, assume the old_name is in
-            # form object_type/uuid
-            if '/' in old_name:
-                object_type = old_name.split('/')[0]
-            else:
-                raise ValueError('Unable to determine object type for %s'
-                                 % object_type)
-
-        logger.debug('Cloning %s "%s" to "%s"', object_type,
-                     old_name, new_name)
-
-        if old_name.startswith(object_type + '/'):
-            old_obj = self.api.get(old_name, tenant_uuid=self.tenant_uuid,
-                                   params=('export_key=true'
-                                           if object_type == 'sslkeyandcertificate'
-                                           else None)).json()
+        if old_obj:
             old_name = old_obj['name']
+            if not object_type:
+                if 'url' in old_obj:
+                    object_type = old_obj['url'].split('/api/')[1].split('/')[0]
+                else:
+                    raise ValueError('Unable to determine object type for %s'
+                                     % old_name)
         else:
-            old_obj = self.api.get_object_by_name(object_type, old_name,
-                                                  tenant_uuid=self.tenant_uuid,
-                                                  params=({'export_key': True}
-                                                          if object_type == 'sslkeyandcertificate'
-                                                          else None))
+            if not object_type:
+                # If object_type is not specified, assume the old_name is in
+                # form object_type/uuid
+                if '/' in old_name:
+                    object_type = old_name.split('/')[0]
+                else:
+                    raise ValueError('Unable to determine object type for %s'
+                                    % old_name)
+
+            if old_name.startswith(object_type + '/'):
+                old_obj = self.api.get(old_name, tenant_uuid=self.tenant_uuid,
+                                params=('export_key=true'
+                                        if object_type == 'sslkeyandcertificate'
+                                        else None)).json()
+                old_name = old_obj['name']
+            else:
+                old_obj = self.api.get_object_by_name(object_type, old_name,
+                                tenant_uuid=self.tenant_uuid,
+                                params=({'export_key': True}
+                                        if object_type == 'sslkeyandcertificate'
+                                        else None))
 
         if not old_obj:
             raise Exception('Object of type %s named %s could not be found'
                             % (object_type, old_name))
+
+        if not new_name:
+            # If new_name is not specified, assume new object should use the
+            # name of the source object (force_unique_name may still cause
+            # the new name to then be uniquified)
+            new_name = old_name
+
+        logger.debug('Cloning %s "%s" to "%s"', object_type,
+                old_name, new_name)
 
         new_name = self.get_new_name(object_type, new_name, force_unique_name)
 
@@ -611,8 +631,6 @@ class AviClone:
 
         logger.debug('Running _processobject_poolgroup')
 
-        new_pool_group_name = obj['name']
-
         created_objs = []
         warnings = []
 
@@ -622,11 +640,9 @@ class AviClone:
                 for member in obj['members']:
                     if 'pool_ref' in member:
                         p_path = member['pool_ref'].split('/api/')[1]
-                        new_pool_name = '-'.join([new_pool_group_name,
-                                                  'pool', str(count)])
 
                         p_obj, p_created_objs, p_warnings = self.clone_object(
-                            old_name=p_path, new_name=new_pool_name,
+                            old_name=p_path, new_name=None,
                             force_clone=force_clone,
                             force_unique_name=True)
 
@@ -897,10 +913,16 @@ class AviClone:
                 # Remove cross-tenant references
                 logger.debug('Removing ca_certs references')
                 obj.pop('ca_certs', None)
-                obj.pop('key_base64', None)
-                obj.pop('certificate_base64', None)
 
+            obj.pop('key_base64', None)
+            obj.pop('certificate_base64', None)
             obj.pop('ocsp_error_status', None)
+
+            if obj.get('key', '') == '<sensitive>':
+                # Workaround for an issue where CA certs may return a value
+                # of <sensitive> for a key even with export_key=true and even
+                # though there is no key.
+                obj.pop('key', None)
 
             if 'key_passphrase' in obj:
                 old_name = obj['_clonevs_old_name']
@@ -1080,7 +1102,7 @@ class AviClone:
 
         logger.debug('Running _process_vsdatascriptset')
 
-        new_vsdatascriptset_name = obj['name']
+        vsdatascriptset_name = obj['name']
 
         created_objs = []
         warnings = []
@@ -1095,15 +1117,31 @@ class AviClone:
                         p_obj_url = self.clone_track[pool_ref]
                         logger.debug('Reusing previously cloned object %s',
                                      p_obj_url)
+                        warnings.append('VsDataScriptSet "%s" may require '
+                                        'code changes due to re-use of cloned '
+                                        'Pool.' % vsdatascriptset_name)
                     else:
                         # Otherwise, clone the pool
 
                         p_path = pool_ref.split('/api/')[1]
-                        p_name = '-'.join([obj['name'], 'pool'])
+                        old_pobj = self.api.get(p_path,
+                                                tenant_uuid=self.tenant_uuid).json()
+                        old_pname = old_pobj['name']
+
                         p_obj, p_created_objs, p_warnings = self.clone_object(
-                            old_name=p_path, new_name=p_name,
+                            old_name=old_pname, new_name=old_pname,
                             force_clone=force_clone,
-                            force_unique_name=True)
+                            force_unique_name=True,
+                            old_obj=old_pobj)
+
+                        new_pname = p_obj['name']
+
+                        if old_pname != new_pname:
+                            warnings.append('VsDataScriptSet "%s" may require '
+                                            'code changes due to cloned pool '
+                                            'name changing from "%s" to "%s".'
+                                            % (vsdatascriptset_name,
+                                               old_pname, new_pname))
 
                         created_objs.append(p_obj)
                         created_objs.extend(p_created_objs)
@@ -1121,14 +1159,31 @@ class AviClone:
                         pg_obj_url = self.clone_track[pool_group_ref]
                         logger.debug('Reusing previously cloned object %s',
                                      pg_obj_url)
+                        warnings.append('VsDataScriptSet "%s" may require '
+                                        'code changes due to re-use of cloned '
+                                        'PoolGroup.' % vsdatascriptset_name)
                     else:
                         pg_path = pool_group_ref.split('/api/')[1]
-                        pg_name = '-'.join([obj['name'], 'poolgroup'])
+                        old_pgobj = self.api.get(pg_path,
+                                                tenant_uuid=self.tenant_uuid).json()
+                        old_pgname = old_pgobj['name']
+
                         (pg_obj, pg_created_objs,
                          pg_warnings) = self.clone_object(
-                            old_name=pg_path, new_name=pg_name,
+                            old_name=old_pgname, new_name=old_pgname,
                             force_clone=force_clone,
-                            force_unique_name=True)
+                            force_unique_name=True,
+                            old_obj=old_pgobj)
+
+                        new_pgname = pg_obj['name']
+
+                        if old_pgname != new_pgname:
+                            warnings.append('VsDataScriptSet "%s" may require '
+                                            'code changes due to cloned '
+                                            'poolgroup name changing from '
+                                            '"%s" to "%s".'
+                                            % (vsdatascriptset_name,
+                                               old_pgname, new_pgname))
 
                         created_objs.append(pg_obj)
                         created_objs.extend(pg_created_objs)
@@ -1145,6 +1200,11 @@ class AviClone:
             new_objs, new_warnings = self._process_refs(parent_obj=obj,
                                                         refs=valid_ref_objects,
                                                         force_clone=force_clone)
+
+            if new_objs:
+                warnings.append('VsDataScriptSet "%s" may require code changes '
+                                'due to one or more cloned references.'
+                                % vsdatascriptset_name)
 
             created_objs.extend(new_objs)
             warnings.extend(new_warnings)
