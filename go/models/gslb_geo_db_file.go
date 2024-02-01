@@ -28,5 +28,5 @@ type GslbGeoDbFile struct {
 
 	// This field indicates the timestamp of when the file is associated to the GslbGeodbProfile. It is an internal generated timestamp. This value is a constant for the lifetime of the File and does not change every time the file is uploaded. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	// Read Only: true
-	Timestamp *int64 `json:"timestamp,omitempty"`
+	Timestamp *uint64 `json:"timestamp,omitempty"`
 }

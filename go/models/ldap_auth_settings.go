@@ -21,7 +21,7 @@ type LdapAuthSettings struct {
 	FullNameAttribute *string `json:"full_name_attribute,omitempty"`
 
 	// Query the LDAP servers on this port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	Port *int32 `json:"port,omitempty"`
+	Port *uint32 `json:"port,omitempty"`
 
 	// LDAP connection security mode. Enum options - AUTH_LDAP_SECURE_NONE, AUTH_LDAP_SECURE_USE_LDAPS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	SecurityMode *string `json:"security_mode,omitempty"`

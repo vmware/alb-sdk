@@ -10,7 +10,7 @@ type ServerAutoScaleInCompleteInfo struct {
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	Nscalein *int32 `json:"nscalein"`
+	Nscalein *uint32 `json:"nscalein"`
 
 	// UUID of the Pool. It is a reference to an object of type Pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true

@@ -9,7 +9,7 @@ package models
 type ReportEvent struct {
 
 	// Time taken to complete event in seconds. Field introduced in 22.1.6. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
-	Duration *int32 `json:"duration,omitempty"`
+	Duration *uint32 `json:"duration,omitempty"`
 
 	// Event end time. Field introduced in 22.1.6. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	EndTime *string `json:"end_time,omitempty"`

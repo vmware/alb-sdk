@@ -10,11 +10,11 @@ type ServerAutoScaleFailedInfo struct {
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	NumScaleinServers *int32 `json:"num_scalein_servers"`
+	NumScaleinServers *uint32 `json:"num_scalein_servers"`
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	NumServersUp *int32 `json:"num_servers_up"`
+	NumServersUp *uint32 `json:"num_servers_up"`
 
 	// UUID of the Pool. It is a reference to an object of type Pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true

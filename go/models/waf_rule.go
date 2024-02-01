@@ -17,7 +17,7 @@ type WafRule struct {
 
 	//  Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	Index *int32 `json:"index"`
+	Index *uint32 `json:"index"`
 
 	// The rule field is sensitive and will not be displayed. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	IsSensitive *bool `json:"is_sensitive,omitempty"`

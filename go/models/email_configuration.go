@@ -30,7 +30,7 @@ type EmailConfiguration struct {
 	MailServerName *string `json:"mail_server_name,omitempty"`
 
 	// Mail server port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	MailServerPort *int32 `json:"mail_server_port,omitempty"`
+	MailServerPort *uint32 `json:"mail_server_port,omitempty"`
 
 	// Type of SMTP Mail Service. Enum options - SMTP_NONE, SMTP_LOCAL_HOST, SMTP_SERVER, SMTP_ANONYMOUS_SERVER. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
