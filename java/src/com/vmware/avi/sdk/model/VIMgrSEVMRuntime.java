@@ -102,6 +102,9 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
     @JsonProperty("name")
     private String name = null;
 
+    @JsonProperty("nsxt_no_hotplug")
+    private Boolean nsxtNoHotplug = null;
+
     @JsonProperty("powerstate")
     private String powerstate = null;
 
@@ -762,6 +765,30 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * If set to true for nsxt cloud, controller should not hotplug the vnics.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return nsxtNoHotplug
+     */
+    public Boolean getNsxtNoHotplug() {
+        return nsxtNoHotplug;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * If set to true for nsxt cloud, controller should not hotplug the vnics.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param nsxtNoHotplug set the nsxtNoHotplug.
+     */
+    public void setNsxtNoHotplug(Boolean  nsxtNoHotplug) {
+        this.nsxtNoHotplug = nsxtNoHotplug;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return powerstate
@@ -1323,7 +1350,8 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
   Objects.equals(this.vsphereHaEnabled, objVIMgrSEVMRuntime.vsphereHaEnabled)&&
   Objects.equals(this.tenantRef, objVIMgrSEVMRuntime.tenantRef)&&
   Objects.equals(this.cloudRef, objVIMgrSEVMRuntime.cloudRef)&&
-  Objects.equals(this.gcpSeProjectId, objVIMgrSEVMRuntime.gcpSeProjectId);
+  Objects.equals(this.gcpSeProjectId, objVIMgrSEVMRuntime.gcpSeProjectId)&&
+  Objects.equals(this.nsxtNoHotplug, objVIMgrSEVMRuntime.nsxtNoHotplug);
     }
 
     @Override
@@ -1357,6 +1385,7 @@ public class VIMgrSEVMRuntime extends AviRestResource  {
                         sb.append("    managedObjectId: ").append(toIndentedString(managedObjectId)).append("\n");
                         sb.append("    memoryMb: ").append(toIndentedString(memoryMb)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                        sb.append("    nsxtNoHotplug: ").append(toIndentedString(nsxtNoHotplug)).append("\n");
                         sb.append("    powerstate: ").append(toIndentedString(powerstate)).append("\n");
                         sb.append("    securityGroupUuid: ").append(toIndentedString(securityGroupUuid)).append("\n");
                         sb.append("    segroupRef: ").append(toIndentedString(segroupRef)).append("\n");

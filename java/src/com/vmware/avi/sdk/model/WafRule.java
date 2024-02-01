@@ -85,7 +85,6 @@ public class WafRule  {
      * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
      * If there are multiple excludelist entries, it will be 'logical or' of them.
      * Field introduced in 17.2.3.
-     * Maximum of 64 items allowed.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return excludeList
@@ -100,7 +99,6 @@ public class WafRule  {
      * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
      * If there are multiple excludelist entries, it will be 'logical or' of them.
      * Field introduced in 17.2.3.
-     * Maximum of 64 items allowed.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return excludeList
@@ -115,7 +113,6 @@ public class WafRule  {
      * The fields in the exclude list entry are logically and'ed to deduce the exclusion criteria.
      * If there are multiple excludelist entries, it will be 'logical or' of them.
      * Field introduced in 17.2.3.
-     * Maximum of 64 items allowed.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return excludeList

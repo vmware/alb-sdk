@@ -30,6 +30,9 @@ public class EventDetails  {
     @JsonProperty("albservices_case_details")
     private ALBServicesCase albservicesCaseDetails = null;
 
+    @JsonProperty("albservices_file_download_details")
+    private ALBServicesFileDownload albservicesFileDownloadDetails = null;
+
     @JsonProperty("albservices_file_upload_details")
     private ALBServicesFileUpload albservicesFileUploadDetails = null;
 
@@ -161,6 +164,9 @@ public class EventDetails  {
 
     @JsonProperty("cluster_service_restored_details")
     private ClusterServiceRestoredEvent clusterServiceRestoredDetails = null;
+
+    @JsonProperty("clustify_check_details")
+    private ClustifyCheckEvent clustifyCheckDetails = null;
 
     @JsonProperty("cntlr_host_list_details")
     private VinfraCntlrHostUnreachableList cntlrHostListDetails = null;
@@ -435,6 +441,9 @@ public class EventDetails  {
     @JsonProperty("se_bgp_peer_state_change_details")
     private SeBgpPeerStateChangeDetails seBgpPeerStateChangeDetails = null;
 
+    @JsonProperty("se_debug_mode_event_detail")
+    private SeDebugModeEventDetail seDebugModeEventDetail = null;
+
     @JsonProperty("se_details")
     private SeMgrEventDetails seDetails = null;
 
@@ -497,6 +506,9 @@ public class EventDetails  {
 
     @JsonProperty("se_ntp_synchronization_failed")
     private SeNtpSynchronizationFailed seNtpSynchronizationFailed = null;
+
+    @JsonProperty("se_objsync_peer_down_details")
+    private SeObjsyncPeerDownDetails seObjsyncPeerDownDetails = null;
 
     @JsonProperty("se_persistence_details")
     private SePersistenceEventDetails sePersistenceDetails = null;
@@ -747,6 +759,30 @@ public class EventDetails  {
      */
     public void setAlbservicesCaseDetails(ALBServicesCase albservicesCaseDetails) {
         this.albservicesCaseDetails = albservicesCaseDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Albservices file download event details.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return albservicesFileDownloadDetails
+     */
+    public ALBServicesFileDownload getAlbservicesFileDownloadDetails() {
+        return albservicesFileDownloadDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Albservices file download event details.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param albservicesFileDownloadDetails set the albservicesFileDownloadDetails.
+     */
+    public void setAlbservicesFileDownloadDetails(ALBServicesFileDownload albservicesFileDownloadDetails) {
+        this.albservicesFileDownloadDetails = albservicesFileDownloadDetails;
     }
 
     /**
@@ -1651,6 +1687,26 @@ public class EventDetails  {
      */
     public void setClusterServiceRestoredDetails(ClusterServiceRestoredEvent clusterServiceRestoredDetails) {
         this.clusterServiceRestoredDetails = clusterServiceRestoredDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return clustifyCheckDetails
+     */
+    public ClustifyCheckEvent getClustifyCheckDetails() {
+        return clustifyCheckDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param clustifyCheckDetails set the clustifyCheckDetails.
+     */
+    public void setClustifyCheckDetails(ClustifyCheckEvent clustifyCheckDetails) {
+        this.clustifyCheckDetails = clustifyCheckDetails;
     }
 
     /**
@@ -3531,6 +3587,28 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return seDebugModeEventDetail
+     */
+    public SeDebugModeEventDetail getSeDebugModeEventDetail() {
+        return seDebugModeEventDetail;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Field introduced in 22.1.6.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param seDebugModeEventDetail set the seDebugModeEventDetail.
+     */
+    public void setSeDebugModeEventDetail(SeDebugModeEventDetail seDebugModeEventDetail) {
+        this.seDebugModeEventDetail = seDebugModeEventDetail;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seDetails
@@ -3967,6 +4045,28 @@ public class EventDetails  {
      */
     public void setSeNtpSynchronizationFailed(SeNtpSynchronizationFailed seNtpSynchronizationFailed) {
         this.seNtpSynchronizationFailed = seNtpSynchronizationFailed;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return seObjsyncPeerDownDetails
+     */
+    public SeObjsyncPeerDownDetails getSeObjsyncPeerDownDetails() {
+        return seObjsyncPeerDownDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param seObjsyncPeerDownDetails set the seObjsyncPeerDownDetails.
+     */
+    public void setSeObjsyncPeerDownDetails(SeObjsyncPeerDownDetails seObjsyncPeerDownDetails) {
+        this.seObjsyncPeerDownDetails = seObjsyncPeerDownDetails;
     }
 
     /**
@@ -5317,6 +5417,8 @@ public class EventDetails  {
   Objects.equals(this.seVsDelFlowsDisrupted, objEventDetails.seVsDelFlowsDisrupted)&&
   Objects.equals(this.seNtpSynchronizationFailed, objEventDetails.seNtpSynchronizationFailed)&&
   Objects.equals(this.seHighEgressProcLatencyEventDetails, objEventDetails.seHighEgressProcLatencyEventDetails)&&
+  Objects.equals(this.seDebugModeEventDetail, objEventDetails.seDebugModeEventDetail)&&
+  Objects.equals(this.seObjsyncPeerDownDetails, objEventDetails.seObjsyncPeerDownDetails)&&
   Objects.equals(this.seHmPoolDetails, objEventDetails.seHmPoolDetails)&&
   Objects.equals(this.seHmVsDetails, objEventDetails.seHmVsDetails)&&
   Objects.equals(this.sePersistenceDetails, objEventDetails.sePersistenceDetails)&&
@@ -5351,6 +5453,7 @@ public class EventDetails  {
   Objects.equals(this.clusterNodeShutdownDetails, objEventDetails.clusterNodeShutdownDetails)&&
   Objects.equals(this.clusterNodeStartedDetails, objEventDetails.clusterNodeStartedDetails)&&
   Objects.equals(this.clusterConfigFailedDetails, objEventDetails.clusterConfigFailedDetails)&&
+  Objects.equals(this.clustifyCheckDetails, objEventDetails.clustifyCheckDetails)&&
   Objects.equals(this.clusterNodeDbFailedDetails, objEventDetails.clusterNodeDbFailedDetails)&&
   Objects.equals(this.memoryBalancerInfo, objEventDetails.memoryBalancerInfo)&&
   Objects.equals(this.controllerDiscontinuousTimeChangeEventDetails, objEventDetails.controllerDiscontinuousTimeChangeEventDetails)&&
@@ -5431,6 +5534,7 @@ public class EventDetails  {
   Objects.equals(this.crsUpdateDetails, objEventDetails.crsUpdateDetails)&&
   Objects.equals(this.ipThreatDbEventData, objEventDetails.ipThreatDbEventData)&&
   Objects.equals(this.appSignatureEventData, objEventDetails.appSignatureEventData)&&
+  Objects.equals(this.albservicesFileDownloadDetails, objEventDetails.albservicesFileDownloadDetails)&&
   Objects.equals(this.nsxtInfo, objEventDetails.nsxtInfo)&&
   Objects.equals(this.nsxtImgDetails, objEventDetails.nsxtImgDetails)&&
   Objects.equals(this.vcenterClusterDetails, objEventDetails.vcenterClusterDetails)&&
@@ -5470,6 +5574,7 @@ public class EventDetails  {
                   sb.append("    adaptreplEvent: ").append(toIndentedString(adaptreplEvent)).append("\n");
                         sb.append("    addNetworksDetails: ").append(toIndentedString(addNetworksDetails)).append("\n");
                         sb.append("    albservicesCaseDetails: ").append(toIndentedString(albservicesCaseDetails)).append("\n");
+                        sb.append("    albservicesFileDownloadDetails: ").append(toIndentedString(albservicesFileDownloadDetails)).append("\n");
                         sb.append("    albservicesFileUploadDetails: ").append(toIndentedString(albservicesFileUploadDetails)).append("\n");
                         sb.append("    albservicesStatusDetails: ").append(toIndentedString(albservicesStatusDetails)).append("\n");
                         sb.append("    allSeupgradeEventDetails: ").append(toIndentedString(allSeupgradeEventDetails)).append("\n");
@@ -5514,6 +5619,7 @@ public class EventDetails  {
                         sb.append("    clusterServiceCriticalFailureDetails: ").append(toIndentedString(clusterServiceCriticalFailureDetails)).append("\n");
                         sb.append("    clusterServiceFailedDetails: ").append(toIndentedString(clusterServiceFailedDetails)).append("\n");
                         sb.append("    clusterServiceRestoredDetails: ").append(toIndentedString(clusterServiceRestoredDetails)).append("\n");
+                        sb.append("    clustifyCheckDetails: ").append(toIndentedString(clustifyCheckDetails)).append("\n");
                         sb.append("    cntlrHostListDetails: ").append(toIndentedString(cntlrHostListDetails)).append("\n");
                         sb.append("    configActionDetails: ").append(toIndentedString(configActionDetails)).append("\n");
                         sb.append("    configCreateDetails: ").append(toIndentedString(configCreateDetails)).append("\n");
@@ -5605,6 +5711,7 @@ public class EventDetails  {
                         sb.append("    schedulerActionInfo: ").append(toIndentedString(schedulerActionInfo)).append("\n");
                         sb.append("    seBgpPeerDownDetails: ").append(toIndentedString(seBgpPeerDownDetails)).append("\n");
                         sb.append("    seBgpPeerStateChangeDetails: ").append(toIndentedString(seBgpPeerStateChangeDetails)).append("\n");
+                        sb.append("    seDebugModeEventDetail: ").append(toIndentedString(seDebugModeEventDetail)).append("\n");
                         sb.append("    seDetails: ").append(toIndentedString(seDetails)).append("\n");
                         sb.append("    seDiscontinuousTimeChangeEventDetails: ").append(toIndentedString(seDiscontinuousTimeChangeEventDetails)).append("\n");
                         sb.append("    seDupipEventDetails: ").append(toIndentedString(seDupipEventDetails)).append("\n");
@@ -5626,6 +5733,7 @@ public class EventDetails  {
                         sb.append("    seLicensedBandwdithExceededEventDetails: ").append(toIndentedString(seLicensedBandwdithExceededEventDetails)).append("\n");
                         sb.append("    seMemoryLimitEventDetails: ").append(toIndentedString(seMemoryLimitEventDetails)).append("\n");
                         sb.append("    seNtpSynchronizationFailed: ").append(toIndentedString(seNtpSynchronizationFailed)).append("\n");
+                        sb.append("    seObjsyncPeerDownDetails: ").append(toIndentedString(seObjsyncPeerDownDetails)).append("\n");
                         sb.append("    sePersistenceDetails: ").append(toIndentedString(sePersistenceDetails)).append("\n");
                         sb.append("    sePoolLbDetails: ").append(toIndentedString(sePoolLbDetails)).append("\n");
                         sb.append("    seReconcileDetails: ").append(toIndentedString(seReconcileDetails)).append("\n");

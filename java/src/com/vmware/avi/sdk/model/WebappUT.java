@@ -21,6 +21,18 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WebappUT extends AviRestResource  {
+    @JsonProperty("default_first_int")
+    private Integer defaultFirstInt = 1;
+
+    @JsonProperty("default_second_int")
+    private Integer defaultSecondInt = 2;
+
+    @JsonProperty("default_string")
+    private String defaultString = "default string";
+
+    @JsonProperty("default_third_int")
+    private Integer defaultThirdInt = 3;
+
     @JsonProperty("mandatory_test")
     private L1FMandatoryTestCase mandatoryTest = null;
 
@@ -61,6 +73,102 @@ public class WebappUT extends AviRestResource  {
     private String uuid = null;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Default uint64 field.
+     * Field introduced in 30.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+     * @return defaultFirstInt
+     */
+    public Integer getDefaultFirstInt() {
+        return defaultFirstInt;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Default uint64 field.
+     * Field introduced in 30.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1.
+     * @param defaultFirstInt set the defaultFirstInt.
+     */
+    public void setDefaultFirstInt(Integer  defaultFirstInt) {
+        this.defaultFirstInt = defaultFirstInt;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Default int64 field.
+     * Field introduced in 30.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 2.
+     * @return defaultSecondInt
+     */
+    public Integer getDefaultSecondInt() {
+        return defaultSecondInt;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Default int64 field.
+     * Field introduced in 30.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 2.
+     * @param defaultSecondInt set the defaultSecondInt.
+     */
+    public void setDefaultSecondInt(Integer  defaultSecondInt) {
+        this.defaultSecondInt = defaultSecondInt;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Default string field.
+     * Field introduced in 30.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "default string".
+     * @return defaultString
+     */
+    public String getDefaultString() {
+        return defaultString;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Default string field.
+     * Field introduced in 30.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "default string".
+     * @param defaultString set the defaultString.
+     */
+    public void setDefaultString(String  defaultString) {
+        this.defaultString = defaultString;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Default int32 field.
+     * Field introduced in 30.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 3.
+     * @return defaultThirdInt
+     */
+    public Integer getDefaultThirdInt() {
+        return defaultThirdInt;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Default int32 field.
+     * Field introduced in 30.1.2.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 3.
+     * @param defaultThirdInt set the defaultThirdInt.
+     */
+    public void setDefaultThirdInt(Integer  defaultThirdInt) {
+        this.defaultThirdInt = defaultThirdInt;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -437,14 +545,22 @@ public class WebappUT extends AviRestResource  {
   Objects.equals(this.testSensitiveString, objWebappUT.testSensitiveString)&&
   Objects.equals(this.sensitiveTest, objWebappUT.sensitiveTest)&&
   Objects.equals(this.sensitiveTests, objWebappUT.sensitiveTests)&&
-  Objects.equals(this.skipOptionalCheckTests, objWebappUT.skipOptionalCheckTests);
+  Objects.equals(this.skipOptionalCheckTests, objWebappUT.skipOptionalCheckTests)&&
+  Objects.equals(this.defaultString, objWebappUT.defaultString)&&
+  Objects.equals(this.defaultFirstInt, objWebappUT.defaultFirstInt)&&
+  Objects.equals(this.defaultSecondInt, objWebappUT.defaultSecondInt)&&
+  Objects.equals(this.defaultThirdInt, objWebappUT.defaultThirdInt);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class WebappUT {\n");
-                  sb.append("    mandatoryTest: ").append(toIndentedString(mandatoryTest)).append("\n");
+                  sb.append("    defaultFirstInt: ").append(toIndentedString(defaultFirstInt)).append("\n");
+                        sb.append("    defaultSecondInt: ").append(toIndentedString(defaultSecondInt)).append("\n");
+                        sb.append("    defaultString: ").append(toIndentedString(defaultString)).append("\n");
+                        sb.append("    defaultThirdInt: ").append(toIndentedString(defaultThirdInt)).append("\n");
+                        sb.append("    mandatoryTest: ").append(toIndentedString(mandatoryTest)).append("\n");
                         sb.append("    mandatoryTests: ").append(toIndentedString(mandatoryTests)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    sensitiveTest: ").append(toIndentedString(sensitiveTest)).append("\n");

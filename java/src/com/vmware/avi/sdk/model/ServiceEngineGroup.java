@@ -2002,7 +2002,8 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Disable generic receive offload (gro) in dpdk poll-mode driver packet receive path.
-     * Gro is on by default on nics that do not support lro (large receive offload) or do not gain performance boost from lro.
+     * Gro can be enabled on nics that do not support lro (large receive offload) or do not gain performance boost from lro.
+     * Gro is on by default on nics in a system with 8 vcpus or higher.
      * Field introduced in 17.2.5, 18.1.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -2015,7 +2016,8 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Disable generic receive offload (gro) in dpdk poll-mode driver packet receive path.
-     * Gro is on by default on nics that do not support lro (large receive offload) or do not gain performance boost from lro.
+     * Gro can be enabled on nics that do not support lro (large receive offload) or do not gain performance boost from lro.
+     * Gro is on by default on nics in a system with 8 vcpus or higher.
      * Field introduced in 17.2.5, 18.1.1.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.

@@ -196,6 +196,7 @@ public class VsVip extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
+     * This takes effect only if dns profile isassociated with cloud.
      * Field introduced in 17.1.1.
      * Maximum of 1000 items allowed.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -209,6 +210,7 @@ public class VsVip extends AviRestResource  {
     /**
      * This is the setter method. this will set the dnsInfo
      * Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
+     * This takes effect only if dns profile isassociated with cloud.
      * Field introduced in 17.1.1.
      * Maximum of 1000 items allowed.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.
@@ -222,6 +224,7 @@ public class VsVip extends AviRestResource  {
     /**
      * This is the setter method this will set the dnsInfo
      * Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
+     * This takes effect only if dns profile isassociated with cloud.
      * Field introduced in 17.1.1.
      * Maximum of 1000 items allowed.
      * Allowed in enterprise edition with any value, enterprise with cloud services edition.

@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ConfigDeleteDetails  {
+    @JsonProperty("client_ip")
+    private String clientIp = null;
+
     @JsonProperty("error_message")
     private String errorMessage = null;
 
@@ -42,7 +45,30 @@ public class ConfigDeleteDetails  {
     @JsonProperty("user")
     private String user = null;
 
+    @JsonProperty("user_agent")
+    private String userAgent = null;
 
+
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return clientIp
+     */
+    public String getClientIp() {
+        return clientIp;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param clientIp set the clientIp.
+     */
+    public void setClientIp(String  clientIp) {
+        this.clientIp = clientIp;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -198,6 +224,26 @@ public class ConfigDeleteDetails  {
         this.user = user;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return userAgent
+     */
+    public String getUserAgent() {
+        return userAgent;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param userAgent set the userAgent.
+     */
+    public void setUserAgent(String  userAgent) {
+        this.userAgent = userAgent;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -214,20 +260,24 @@ public class ConfigDeleteDetails  {
   Objects.equals(this.resourceType, objConfigDeleteDetails.resourceType)&&
   Objects.equals(this.resourceName, objConfigDeleteDetails.resourceName)&&
   Objects.equals(this.errorMessage, objConfigDeleteDetails.errorMessage)&&
-  Objects.equals(this.resourceData, objConfigDeleteDetails.resourceData);
+  Objects.equals(this.resourceData, objConfigDeleteDetails.resourceData)&&
+  Objects.equals(this.userAgent, objConfigDeleteDetails.userAgent)&&
+  Objects.equals(this.clientIp, objConfigDeleteDetails.clientIp);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class ConfigDeleteDetails {\n");
-                  sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+                  sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
+                        sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
                         sb.append("    path: ").append(toIndentedString(path)).append("\n");
                         sb.append("    resourceData: ").append(toIndentedString(resourceData)).append("\n");
                         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
                         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
                         sb.append("    status: ").append(toIndentedString(status)).append("\n");
                         sb.append("    user: ").append(toIndentedString(user)).append("\n");
+                        sb.append("    userAgent: ").append(toIndentedString(userAgent)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

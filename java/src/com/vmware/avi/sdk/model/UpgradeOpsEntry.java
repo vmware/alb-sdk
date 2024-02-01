@@ -201,7 +201,7 @@ public class UpgradeOpsEntry extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Identifies the upgrade operations.
      * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
-     * EVAL_SEGROUP_RESUME.
+     * EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE.
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -215,7 +215,7 @@ public class UpgradeOpsEntry extends AviRestResource  {
      * This is the setter method to the attribute.
      * Identifies the upgrade operations.
      * Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME, EVAL_UPGRADE, EVAL_PATCH, EVAL_ROLLBACK, EVAL_ROLLBACKPATCH,
-     * EVAL_SEGROUP_RESUME.
+     * EVAL_SEGROUP_RESUME, EVAL_RESTORE, RESTORE.
      * Field introduced in 18.2.6.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.

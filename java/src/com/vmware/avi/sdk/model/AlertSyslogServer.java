@@ -178,7 +178,7 @@ public class AlertSyslogServer  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * The destination syslog server ip address or hostname.
+     * The destination syslog server ip(v4/v6) address or fqdn.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return syslogServer
@@ -189,7 +189,7 @@ public class AlertSyslogServer  {
 
     /**
      * This is the setter method to the attribute.
-     * The destination syslog server ip address or hostname.
+     * The destination syslog server ip(v4/v6) address or fqdn.
      * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param syslogServer set the syslogServer.

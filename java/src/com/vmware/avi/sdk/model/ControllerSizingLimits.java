@@ -51,6 +51,9 @@ public class ControllerSizingLimits  {
     @JsonProperty("num_vrfs")
     private Integer numVrfs = null;
 
+    @JsonProperty("num_waf_virtualservices")
+    private Integer numWafVirtualservices = null;
+
 
     /**
      * This is the getter method this will return the attribute value.
@@ -310,6 +313,30 @@ public class ControllerSizingLimits  {
         this.numVrfs = numVrfs;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum number of virtualservices configured with waf.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return numWafVirtualservices
+     */
+    public Integer getNumWafVirtualservices() {
+        return numWafVirtualservices;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum number of virtualservices configured with waf.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param numWafVirtualservices set the numWafVirtualservices.
+     */
+    public void setNumWafVirtualservices(Integer  numWafVirtualservices) {
+        this.numWafVirtualservices = numWafVirtualservices;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -329,6 +356,7 @@ public class ControllerSizingLimits  {
   Objects.equals(this.numVrfs, objControllerSizingLimits.numVrfs)&&
   Objects.equals(this.numClouds, objControllerSizingLimits.numClouds)&&
   Objects.equals(this.numTenants, objControllerSizingLimits.numTenants)&&
+  Objects.equals(this.numWafVirtualservices, objControllerSizingLimits.numWafVirtualservices)&&
   Objects.equals(this.controllerSizingCloudLimits, objControllerSizingLimits.controllerSizingCloudLimits);
     }
 
@@ -346,6 +374,7 @@ public class ControllerSizingLimits  {
                         sb.append("    numVirtualservices: ").append(toIndentedString(numVirtualservices)).append("\n");
                         sb.append("    numVirtualservicesRtMetrics: ").append(toIndentedString(numVirtualservicesRtMetrics)).append("\n");
                         sb.append("    numVrfs: ").append(toIndentedString(numVrfs)).append("\n");
+                        sb.append("    numWafVirtualservices: ").append(toIndentedString(numWafVirtualservices)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

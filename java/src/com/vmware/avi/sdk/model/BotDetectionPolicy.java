@@ -24,6 +24,9 @@ public class BotDetectionPolicy extends AviRestResource  {
     @JsonProperty("allow_list")
     private BotAllowList allowList = null;
 
+    @JsonProperty("client_behavior_detector")
+    private BotConfigClientBehavior clientBehaviorDetector = null;
+
     @JsonProperty("description")
     private String description = null;
 
@@ -84,6 +87,30 @@ public class BotDetectionPolicy extends AviRestResource  {
      */
     public void setAllowList(BotAllowList allowList) {
         this.allowList = allowList;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * The client behavior configuration used in this policy.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return clientBehaviorDetector
+     */
+    public BotConfigClientBehavior getClientBehaviorDetector() {
+        return clientBehaviorDetector;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * The client behavior configuration used in this policy.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param clientBehaviorDetector set the clientBehaviorDetector.
+     */
+    public void setClientBehaviorDetector(BotConfigClientBehavior clientBehaviorDetector) {
+        this.clientBehaviorDetector = clientBehaviorDetector;
     }
 
     /**
@@ -403,6 +430,7 @@ public class BotDetectionPolicy extends AviRestResource  {
   Objects.equals(this.ipReputationDetector, objBotDetectionPolicy.ipReputationDetector)&&
   Objects.equals(this.ipLocationDetector, objBotDetectionPolicy.ipLocationDetector)&&
   Objects.equals(this.userAgentDetector, objBotDetectionPolicy.userAgentDetector)&&
+  Objects.equals(this.clientBehaviorDetector, objBotDetectionPolicy.clientBehaviorDetector)&&
   Objects.equals(this.userConsolidatorRef, objBotDetectionPolicy.userConsolidatorRef)&&
   Objects.equals(this.systemConsolidatorRef, objBotDetectionPolicy.systemConsolidatorRef)&&
   Objects.equals(this.userBotMappingRef, objBotDetectionPolicy.userBotMappingRef)&&
@@ -414,6 +442,7 @@ public class BotDetectionPolicy extends AviRestResource  {
       StringBuilder sb = new StringBuilder();
       sb.append("class BotDetectionPolicy {\n");
                   sb.append("    allowList: ").append(toIndentedString(allowList)).append("\n");
+                        sb.append("    clientBehaviorDetector: ").append(toIndentedString(clientBehaviorDetector)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
                         sb.append("    ipLocationDetector: ").append(toIndentedString(ipLocationDetector)).append("\n");
                         sb.append("    ipReputationDetector: ").append(toIndentedString(ipReputationDetector)).append("\n");
