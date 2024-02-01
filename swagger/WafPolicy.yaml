@@ -402,22 +402,22 @@ definitions:
                 description: "Confidence threshold for label CONFIDENCE_HIGH. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 9500
-                format: int32
+                format: uint32
             confid_low_value:
                 description: "Confidence threshold for label CONFIDENCE_LOW. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 7500
-                format: int32
+                format: uint32
             confid_probable_value:
                 description: "Confidence threshold for label CONFIDENCE_PROBABLE. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 9000
-                format: int32
+                format: uint32
             confid_very_high_value:
                 description: "Confidence threshold for label CONFIDENCE_VERY_HIGH. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 9999
-                format: int32
+                format: uint32
     AppLearningParams:
         type: object
         properties:
@@ -432,22 +432,22 @@ definitions:
                 description: "Maximum number of params programmed for an application. Allowed values are 10-1000. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
-                format: int32
+                format: uint32
             max_uris:
                 description: "Maximum number of URI paths programmed for an application. Allowed values are 10-10000. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 500
-                format: int32
+                format: uint32
             min_hits_to_learn:
                 description: "Minimum number of occurances required for a Param to qualify for learning. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10000
-                format: int64
+                format: uint64
             sampling_percent:
                 description: "Percent of the requests subjected to Application learning. Allowed values are 1-100. Field introduced in 18.2.3. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
-                format: int32
+                format: uint32
             trusted_ipgroup_ref:
                 description: "If configured, learning will only be performed on requests from client IPs within the configured IP Address Group. It is a reference to an object of type IpAddrGroup. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
@@ -455,7 +455,7 @@ definitions:
                 description: "Frequency with which SE publishes Application learning data to controller. Allowed values are 1-60. Field introduced in 18.2.3. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 30
-                format: int32
+                format: uint32
     BotClassification:
         type: object
         required:
@@ -487,7 +487,7 @@ definitions:
                 description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
-                format: int32
+                format: uint32
     CookieMatch:
         type: object
         required:
@@ -770,7 +770,7 @@ definitions:
                 type: array
                 items:
                     type: integer
-                format: int32
+                format: uint32
     ProtocolMatch:
         type: object
         required:
@@ -1070,7 +1070,7 @@ definitions:
             index:
                 description: "Rules are processed in order of this index field. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             match:
                 description: "Match criteria describing requests to which this rule should be applied. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MatchTarget'
@@ -1081,7 +1081,7 @@ definitions:
                 description: "Percentage of traffic that is sampled. Allowed values are 0-100. Field introduced in 20.1.3. Unit is PERCENT. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
-                format: int32
+                format: uint32
     WafPolicyCRSUpdate:
         type: object
         required:
@@ -1129,7 +1129,7 @@ definitions:
             index:
                 description: " Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             is_sensitive:
                 description: "The rule field is sensitive and will not be displayed. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
@@ -1176,7 +1176,7 @@ definitions:
             index:
                 description: " Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             name:
                 description: " Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string

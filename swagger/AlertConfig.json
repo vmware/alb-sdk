@@ -550,7 +550,7 @@
                     "description": "An alert is expired and deleted after the expiry time has elapsed.  The original event triggering the alert remains in the event's log. Allowed values are 1-31536000. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 86400,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "name": {
                     "description": "Name of the alert configuration. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -572,7 +572,7 @@
                     "description": "Only if the Number of Events is reached or exceeded within the Time Window will an alert be generated. Allowed values are 1-31536000. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 300,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "source": {
                     "description": "Signifies system events or the type of client logsused in this alert configuration. Enum options - CONN_LOGS, APP_LOGS, EVENT_LOGS, METRICS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -590,13 +590,13 @@
                     "description": "An alert is created only when the number of events meets or exceeds this number within the chosen time frame. Allowed values are 1-65536. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "throttle": {
                     "description": "Alerts are suppressed (throttled) for this duration of time since the last alert was raised for this alert config. Allowed values are 0-31536000. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 600,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "url": {
                     "description": "url",
@@ -661,7 +661,7 @@
                 "threshold": {
                     "description": "Metric threshold for comparison. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },
@@ -726,7 +726,7 @@
                 "duration": {
                     "description": "Evaluation window for the Metrics. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "metric_id": {
                     "description": "Metric Id for the Alert. Eg. l4_client.avg_complete_conns. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -745,7 +745,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },

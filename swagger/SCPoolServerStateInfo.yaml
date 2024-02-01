@@ -372,7 +372,7 @@ definitions:
             reason_code:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int64
+                format: uint64
             reason_code_string:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -438,7 +438,7 @@ definitions:
             server_port:
                 description: " Allowed values are 1-65535. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
     TimeStamp:
         type: object
         required:

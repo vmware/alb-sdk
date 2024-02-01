@@ -371,7 +371,7 @@ definitions:
             index:
                 description: "Rules are processed in order of this index field. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             name:
                 description: "A name describing the rule in a short form. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
@@ -777,7 +777,7 @@ definitions:
                 type: array
                 items:
                     type: integer
-                format: int32
+                format: uint32
     ProtocolMatch:
         type: object
         required:
