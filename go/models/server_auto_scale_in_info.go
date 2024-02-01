@@ -22,11 +22,11 @@ type ServerAutoScaleInInfo struct {
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	NumScaleinServers *int32 `json:"num_scalein_servers"`
+	NumScaleinServers *uint32 `json:"num_scalein_servers"`
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	NumServersUp *int32 `json:"num_servers_up"`
+	NumServersUp *uint32 `json:"num_servers_up"`
 
 	// UUID of the Pool. It is a reference to an object of type Pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
@@ -42,5 +42,5 @@ type ServerAutoScaleInInfo struct {
 	ScaleinServerCandidates []*ServerID `json:"scalein_server_candidates,omitempty"`
 
 	// Desired number of servers for scheduled autocale. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
-	ScheduledDesiredCapacity *int32 `json:"scheduled_desired_capacity,omitempty"`
+	ScheduledDesiredCapacity *uint32 `json:"scheduled_desired_capacity,omitempty"`
 }
