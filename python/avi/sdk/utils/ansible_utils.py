@@ -10,6 +10,7 @@ import os
 import re
 import sys
 import yaml
+import time
 import logging
 from copy import deepcopy
 from avi.sdk.avi_api import ApiSession, ObjectNotFound, avi_sdk_syslog_logger, \
@@ -353,7 +354,7 @@ def get_api_context(module, api_creds):
 
 NO_UUID_OBJ = ['cluster', 'systemconfiguration', 'inventoryfaultconfig']
 SKIP_DELETE_ERROR = ["Cannot delete system default object", "Method \'DELETE\' not allowed"]
-
+BUFFER_DELAY = 120
 
 def get_idp_class(idp):
     """
@@ -499,6 +500,9 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
         changed = False
         err = False
         if not check_mode and existing_obj:
+            if obj_type == "serviceenginegroup":
+                se_deprovision_delay = existing_obj.get("se_deprovision_delay")
+                time.sleep((se_deprovision_delay * 60) + BUFFER_DELAY)
             try:
                 if name is not None:
                     # added api version to avi api call.
