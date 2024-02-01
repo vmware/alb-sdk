@@ -1514,12 +1514,12 @@
                 "page": {
                     "description": "page id for the anomaly query. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "page_size": {
                     "description": "size of each page of anomalies. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "pool_uuid": {
                     "description": "Pool name. This will apply to any backend stats that are specified in the query. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1911,7 +1911,7 @@
                 "num_samples": {
                     "description": "Number of actual data samples. It excludes fake data. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "sum": {
                     "description": "summation of all values. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",

@@ -508,12 +508,12 @@
                 "cfg_version": {
                     "description": "cfg-version synced to follower. . Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "cfg_version_in_flight": {
                     "description": "cfg-version in flight to follower. . Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "last_changed_time": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -615,12 +615,12 @@
                 "consistent_hash_mask": {
                     "description": "Mask to be applied on client IP for consistent hash algorithm. Allowed values are 1-31. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "consistent_hash_mask6": {
                     "description": "Mask to be applied on client IPV6 address for consistent hash algorithm. Allowed values are 1-127. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "description": {
                     "description": "User provided information that records member details such as application owner name, contact, etc. Field introduced in 17.1.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -649,7 +649,7 @@
                 "min_health_monitors_up": {
                     "description": "Minimum number of health monitors in UP state to mark the member UP. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "name": {
                     "description": "Name of the GSLB service pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -659,7 +659,7 @@
                     "description": "Priority of this pool of Members. The higher the number, the higher is the priority of the pool. The DNS Service chooses the pool with the highest priority that is operationally up. Allowed values are 0-100. Special values are 0 - Do not choose members from this pool.A priority of 0 is equivalent to disabling the pool.. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },
@@ -703,7 +703,7 @@
                     "description": "Preference order of this member in the group. The DNS Service chooses the member with the lowest preference that is operationally up. Allowed values are 1-128. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "public_ip": {
                     "description": "Alternate IP addresses of the pool member. In usual deployments, the VIP in the virtual service is a private IP address. This gets configured in the 'ip' field of the GSLB service. This field is used to host the public IP address for the VIP, which gets NATed to the private IP by a firewall. Client DNS requests coming in from within the intranet should have the private IP served in the A record, and requests from outside this should be served the public IP address. Field introduced in 17.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -713,7 +713,7 @@
                     "description": "Overrides the default ratio of 1.  Reduces the percentage the LB algorithm would pick the server in relation to its peers.  Range is 1-20. Allowed values are 1-20. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "resolve_fqdn_to_v6": {
                     "description": "This field indicates if the fqdn should be resolved to a v6 or a v4 address family. . Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -790,7 +790,7 @@
                 "ip_value_to_se": {
                     "description": "This is an internal field that conveys the IP address from the controller to service engine in binary format. . Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "ipv6_value_to_se": {
                     "description": "This is an internal field that conveys the IPV6 address from the controller to service engine in binary format. . Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -798,7 +798,7 @@
                     "items": {
                         "type": "integer"
                     },
-                    "format": "int64"
+                    "format": "uint64"
                 },
                 "oper_ips": {
                     "description": "Operational VIPs of the member  that can map to multiple VS IP addresses such as private, public and floating addresses. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -919,7 +919,7 @@
                 "min_members": {
                     "description": "The minimum number of members to distribute traffic to. Allowed values are 1-65535. Special values are 0 - Disable. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "name": {
                     "description": "Name of the GSLB Service. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -1191,7 +1191,7 @@
                 "reason_code": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int64"
+                    "format": "uint64"
                 },
                 "reason_code_string": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1289,12 +1289,12 @@
                 "port": {
                     "description": "The Virtual Service's port number. Allowed values are 0-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "port_range_end": {
                     "description": "The end of the Virtual Service's port number range. Allowed values are 1-65535. Special values are 0- single port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },

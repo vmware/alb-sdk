@@ -401,7 +401,7 @@ definitions:
                 description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
-                format: int32
+                format: uint32
     HealthMonitor:
         type: object
         required:
@@ -644,14 +644,14 @@ definitions:
                 type: array
                 items:
                     type: integer
-                format: int32
+                format: uint32
             maintenance_response:
                 description: "Match or look for this keyword in the first 2KB of server header and body response indicating server maintenance.  A successful match results in the server being marked down. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: string
             response_size:
                 description: "Expected http/https response page size. Allowed values are 2048-16384. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             ssl_attributes:
                 description: "SSL attributes for HTTPS health monitor. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthMonitorSSLAttributes'

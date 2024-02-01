@@ -724,7 +724,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },
@@ -823,7 +823,7 @@
                 "file_length": {
                     "description": "File content length. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },
@@ -911,7 +911,7 @@
                 "min_servers": {
                     "description": "The minimum number of servers to distribute traffic to. Allowed values are 1-65535. Special values are 0 - Disable. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "name": {
                     "description": "The name of the pool group. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -984,7 +984,7 @@
                     "description": "Ratio of selecting eligible pools in the pool group. . Allowed values are 1-1000. Special values are 0 - Do not select this pool for new connections. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 1), Basic edition(Allowed values- 1), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },

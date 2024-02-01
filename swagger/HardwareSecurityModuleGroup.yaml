@@ -354,7 +354,7 @@ definitions:
                 description: "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
-                format: int32
+                format: uint32
     HardwareSecurityModule:
         type: object
         required:
@@ -472,11 +472,11 @@ definitions:
             session_major_number:
                 description: "Major number of the sesseion. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             session_minor_number:
                 description: "Minor number of the sesseion. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
     HSMSafenetLuna:
         type: object
         required:
@@ -485,7 +485,7 @@ definitions:
             ha_group_num:
                 description: "Group Number of generated HA Group. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int64
+                format: uint64
             is_ha:
                 description: "Set to indicate HA across more than one servers. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
@@ -515,7 +515,7 @@ definitions:
             index:
                 description: " Field introduced in 16.5.2,17.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             partition_passwd:
                 description: "Password of the partition assigned to this client. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -545,12 +545,12 @@ definitions:
             module_id:
                 description: "Local module id of the netHSM device. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             priority:
                 description: "Priority class of the nethsm in an high availability setup. 1 is the highest priority and 100 is the lowest priority. Allowed values are 1-100. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
-                format: int32
+                format: uint32
             remote_ip:
                 description: "IP address of the netHSM device. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
@@ -558,7 +558,7 @@ definitions:
                 description: "Port at which the netHSM device accepts the connection. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 9004
-                format: int32
+                format: uint32
     HSMThalesRFS:
         type: object
         required:
@@ -571,7 +571,7 @@ definitions:
                 description: "Port at which the RFS server accepts the sync request from clients for Thales encrypted private key. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 9004
-                format: int32
+                format: uint32
     IpAddr:
         type: object
         required:
