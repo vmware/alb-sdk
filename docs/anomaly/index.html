@@ -381,7 +381,7 @@ font-style: italic;
           "min_ts" : "aeiou",
           "sum" : 1.3579000000000001069366817318950779736042022705078125,
           "last_sample" : 1.3579000000000001069366817318950779736042022705078125,
-          "num_samples" : 123
+          "num_samples" : ""
         }
       }
     } ],
@@ -579,7 +579,7 @@ font-style: italic;
         "min_ts" : "aeiou",
         "sum" : 1.3579000000000001069366817318950779736042022705078125,
         "last_sample" : 1.3579000000000001069366817318950779736042022705078125,
-        "num_samples" : 123
+        "num_samples" : ""
       }
     }
   } ],
@@ -775,7 +775,7 @@ font-style: italic;
           "min_ts" : "aeiou",
           "sum" : 1.3579000000000001069366817318950779736042022705078125,
           "last_sample" : 1.3579000000000001069366817318950779736042022705078125,
-          "num_samples" : 123
+          "num_samples" : ""
         }
       }
     } ],
@@ -973,7 +973,7 @@ font-style: italic;
         "min_ts" : "aeiou",
         "sum" : 1.3579000000000001069366817318950779736042022705078125,
         "last_sample" : 1.3579000000000001069366817318950779736042022705078125,
-        "num_samples" : 123
+        "num_samples" : ""
       }
     }
   } ],
@@ -1169,7 +1169,7 @@ font-style: italic;
           "min_ts" : "aeiou",
           "sum" : 1.3579000000000001069366817318950779736042022705078125,
           "last_sample" : 1.3579000000000001069366817318950779736042022705078125,
-          "num_samples" : 123
+          "num_samples" : ""
         }
       }
     } ],
@@ -1367,7 +1367,7 @@ font-style: italic;
         "min_ts" : "aeiou",
         "sum" : 1.3579000000000001069366817318950779736042022705078125,
         "last_sample" : 1.3579000000000001069366817318950779736042022705078125,
-        "num_samples" : 123
+        "num_samples" : ""
       }
     }
   } ],
@@ -1463,8 +1463,8 @@ font-style: italic;
 <div class="param">model (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - EXPONENTIAL_MOVING_AVG, EXPONENTIAL_WEIGHTED_MOVING_AVG, HOLTWINTERS_AT_AS, HOLTWINTERS_AT_MS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">obj_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> object id like vip or server ip. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">order_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Positive means sort from start and Negative sign means sort from end. Only metric_timestamp is supported for now. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">page (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> page id for the anomaly query. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">page_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> size of each page of anomalies. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">page (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> page id for the anomaly query. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">page_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> size of each page of anomalies. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">pool_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Pool name. This will apply to any backend stats that are specified in the query. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">priority (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> High priority Anomaly. Enum options - ANZ_PRIORITY_HIGH, ANZ_PRIORITY_MEDIUM, ANZ_PRIORITY_LOW. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">result_format (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> format of the data returned. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -1529,7 +1529,7 @@ font-style: italic;
 <div class="param">mean (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> arithmetic mean. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: double</div>
 <div class="param">min (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> minimum value in time series requested. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: double</div>
 <div class="param">min_ts (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> timestamp of the minimum value. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">num_samples (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of actual data samples. It excludes fake data. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">num_samples (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of actual data samples. It excludes fake data. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">sum (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> summation of all values. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: double</div>
 <div class="param">trend (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> slope of the data points across the time series requested. trend &#x3D; (last_value - avg)/avg. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: double</div>
     </div>  <!-- field-items -->

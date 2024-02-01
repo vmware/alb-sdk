@@ -295,7 +295,7 @@ font-style: italic;
         "name" : "aeiou"
       },
       "mesos_metrics_debug_filter" : {
-        "metrics_collection_frq" : 123,
+        "metrics_collection_frq" : "",
         "metric_entity" : "aeiou",
         "mesos_slave" : "aeiou",
         "mesos_master" : "aeiou"
@@ -310,7 +310,7 @@ font-style: italic;
       },
       "type" : "aeiou",
       "autoscale_mgr_debug_filter" : {
-        "intelligent_autoscale_period" : 123,
+        "intelligent_autoscale_period" : "",
         "pool_ref" : "aeiou",
         "enable_aws_autoscale_integration" : true
       },
@@ -427,7 +427,7 @@ font-style: italic;
       "name" : "aeiou"
     },
     "mesos_metrics_debug_filter" : {
-      "metrics_collection_frq" : 123,
+      "metrics_collection_frq" : "",
       "metric_entity" : "aeiou",
       "mesos_slave" : "aeiou",
       "mesos_master" : "aeiou"
@@ -442,7 +442,7 @@ font-style: italic;
     },
     "type" : "aeiou",
     "autoscale_mgr_debug_filter" : {
-      "intelligent_autoscale_period" : 123,
+      "intelligent_autoscale_period" : "",
       "pool_ref" : "aeiou",
       "enable_aws_autoscale_integration" : true
     },
@@ -630,7 +630,7 @@ font-style: italic;
       "name" : "aeiou"
     },
     "mesos_metrics_debug_filter" : {
-      "metrics_collection_frq" : 123,
+      "metrics_collection_frq" : "",
       "metric_entity" : "aeiou",
       "mesos_slave" : "aeiou",
       "mesos_master" : "aeiou"
@@ -645,7 +645,7 @@ font-style: italic;
     },
     "type" : "aeiou",
     "autoscale_mgr_debug_filter" : {
-      "intelligent_autoscale_period" : 123,
+      "intelligent_autoscale_period" : "",
       "pool_ref" : "aeiou",
       "enable_aws_autoscale_integration" : true
     },
@@ -773,7 +773,7 @@ font-style: italic;
       "name" : "aeiou"
     },
     "mesos_metrics_debug_filter" : {
-      "metrics_collection_frq" : 123,
+      "metrics_collection_frq" : "",
       "metric_entity" : "aeiou",
       "mesos_slave" : "aeiou",
       "mesos_master" : "aeiou"
@@ -788,7 +788,7 @@ font-style: italic;
     },
     "type" : "aeiou",
     "autoscale_mgr_debug_filter" : {
-      "intelligent_autoscale_period" : 123,
+      "intelligent_autoscale_period" : "",
       "pool_ref" : "aeiou",
       "enable_aws_autoscale_integration" : true
     },
@@ -916,7 +916,7 @@ font-style: italic;
       "name" : "aeiou"
     },
     "mesos_metrics_debug_filter" : {
-      "metrics_collection_frq" : 123,
+      "metrics_collection_frq" : "",
       "metric_entity" : "aeiou",
       "mesos_slave" : "aeiou",
       "mesos_master" : "aeiou"
@@ -931,7 +931,7 @@ font-style: italic;
     },
     "type" : "aeiou",
     "autoscale_mgr_debug_filter" : {
-      "intelligent_autoscale_period" : 123,
+      "intelligent_autoscale_period" : "",
       "pool_ref" : "aeiou",
       "enable_aws_autoscale_integration" : true
     },
@@ -1014,7 +1014,7 @@ font-style: italic;
     <h3 class="field-label"><a name="AutoScaleMgrDebugFilter">AutoScaleMgrDebugFilter</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">enable_aws_autoscale_integration (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable aws autoscale integration. This is an alpha feature. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">intelligent_autoscale_period (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> period of running intelligent autoscale check. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">intelligent_autoscale_period (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> period of running intelligent autoscale check. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">pool_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> uuid of the Pool. It is a reference to an object of type Pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
@@ -1090,7 +1090,7 @@ font-style: italic;
       <div class="param">mesos_master (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">mesos_slave (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">metric_entity (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">metrics_collection_frq (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">metrics_collection_frq (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

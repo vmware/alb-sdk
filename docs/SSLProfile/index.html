@@ -265,7 +265,7 @@ font-style: italic;
     "accepted_versions" : [ {
       "type" : "aeiou"
     } ],
-    "ssl_session_timeout" : 123,
+    "ssl_session_timeout" : "",
     "ec_named_curve" : "aeiou",
     "enable_early_data" : true,
     "description" : "aeiou",
@@ -291,7 +291,7 @@ font-style: italic;
     "name" : "aeiou",
     "prefer_client_cipher_ordering" : true,
     "configpb_attributes" : {
-      "version" : 123
+      "version" : ""
     },
     "signature_algorithm" : "aeiou",
     "markers" : [ {
@@ -357,7 +357,7 @@ font-style: italic;
   "accepted_versions" : [ {
     "type" : "aeiou"
   } ],
-  "ssl_session_timeout" : 123,
+  "ssl_session_timeout" : "",
   "ec_named_curve" : "aeiou",
   "enable_early_data" : true,
   "description" : "aeiou",
@@ -383,7 +383,7 @@ font-style: italic;
   "name" : "aeiou",
   "prefer_client_cipher_ordering" : true,
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "signature_algorithm" : "aeiou",
   "markers" : [ {
@@ -572,7 +572,7 @@ font-style: italic;
   "accepted_versions" : [ {
     "type" : "aeiou"
   } ],
-  "ssl_session_timeout" : 123,
+  "ssl_session_timeout" : "",
   "ec_named_curve" : "aeiou",
   "enable_early_data" : true,
   "description" : "aeiou",
@@ -598,7 +598,7 @@ font-style: italic;
   "name" : "aeiou",
   "prefer_client_cipher_ordering" : true,
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "signature_algorithm" : "aeiou",
   "markers" : [ {
@@ -675,7 +675,7 @@ font-style: italic;
   "accepted_versions" : [ {
     "type" : "aeiou"
   } ],
-  "ssl_session_timeout" : 123,
+  "ssl_session_timeout" : "",
   "ec_named_curve" : "aeiou",
   "enable_early_data" : true,
   "description" : "aeiou",
@@ -701,7 +701,7 @@ font-style: italic;
   "name" : "aeiou",
   "prefer_client_cipher_ordering" : true,
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "signature_algorithm" : "aeiou",
   "markers" : [ {
@@ -778,7 +778,7 @@ font-style: italic;
   "accepted_versions" : [ {
     "type" : "aeiou"
   } ],
-  "ssl_session_timeout" : 123,
+  "ssl_session_timeout" : "",
   "ec_named_curve" : "aeiou",
   "enable_early_data" : true,
   "description" : "aeiou",
@@ -804,7 +804,7 @@ font-style: italic;
   "name" : "aeiou",
   "prefer_client_cipher_ordering" : true,
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "signature_algorithm" : "aeiou",
   "markers" : [ {
@@ -850,7 +850,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -888,7 +888,7 @@ font-style: italic;
 <div class="param">send_close_notify (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Send &#39;close notify&#39; alert message for a clean shutdown of the SSL connection. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">signature_algorithm (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Signature Algorithms represented as defined by RFC5246-Section 7.4.1.4.1 andhttps //www.openssl.org/docs/man1.1.0/man3/SSL_CTX_set1_client_sigalgs_list.html. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">ssl_rating (optional)</div><div class="param-desc"><span class="param-type"><a href="#SSLRating">SSLRating</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">ssl_session_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The amount of time in seconds before an SSL session expires. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">ssl_session_timeout (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The amount of time in seconds before an SSL session expires. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">tags (optional)</div><div class="param-desc"><span class="param-type"><a href="#Tag">array[Tag]</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">tenant_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> SSL Profile Type. Enum options - SSL_PROFILE_TYPE_APPLICATION, SSL_PROFILE_TYPE_SYSTEM. Field introduced in 17.2.8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
