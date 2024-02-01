@@ -426,7 +426,7 @@ definitions:
             anomaly_penalty:
                 description: " Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             health_score:
                 description: " Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: number
@@ -437,11 +437,11 @@ definitions:
             resources_penalty:
                 description: " Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             security_penalty:
                 description: " Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
     IpAddr:
         type: object
         required:
@@ -468,7 +468,7 @@ definitions:
             reason_code:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int64
+                format: uint64
             reason_code_string:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string

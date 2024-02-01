@@ -648,7 +648,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },
@@ -681,7 +681,7 @@
                     "description": "Query the LDAP servers on this port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 389,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "security_mode": {
                     "description": "LDAP connection security mode. Enum options - AUTH_LDAP_SECURE_NONE, AUTH_LDAP_SECURE_USE_LDAPS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -689,7 +689,7 @@
                     "default": "AUTH_LDAP_SECURE_USE_LDAPS"
                 },
                 "server": {
-                    "description": "LDAP server IP address or Hostname. Use IP address if an auth profile is used to configure Virtual Service. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "LDAP server IP(v4/v6) address or FQDN. Use IP address if an auth profile is used to configure Virtual Service. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -804,8 +804,7 @@
         "OAuthAppSettings": {
             "type": "object",
             "required": [
-                "client_id",
-                "client_secret"
+                "client_id"
             ],
             "properties": {
                 "client_id": {
@@ -1072,7 +1071,7 @@
                     "description": "TACACS+ server listening port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 49,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "server": {
                     "description": "TACACS+ server IP address or FQDN. Minimum of 1 items required. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",

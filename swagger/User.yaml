@@ -419,7 +419,7 @@ definitions:
             uid:
                 description: " Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             unix_crypt_password:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string

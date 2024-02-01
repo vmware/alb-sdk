@@ -411,8 +411,6 @@ paths:
 definitions:
     NsxtSegmentRuntime:
         type: object
-        required:
-            -   origin_id
         properties:
             _last_modified:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."

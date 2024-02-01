@@ -394,11 +394,11 @@ definitions:
             absolute_size:
                 description: "Maximum size in MB. Set 0 for avi default size. Allowed values are 100-512000. Special values are 0 - AVI_DEFAULT. Field introduced in 18.2.8. Unit is MB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             percentage_size:
                 description: "Limits capture to percentage of free disk space. Set 0 for avi default size. Allowed values are 0-75. Field introduced in 18.2.8. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
     CaptureFilters:
         type: object
         properties:
@@ -411,11 +411,11 @@ definitions:
             dst_port_end:
                 description: "Destination Port range filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             dst_port_start:
                 description: "Destination Port range filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             eth_proto:
                 description: "Ethernet Proto filter. Enum options - ETH_TYPE_IPV4. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -425,11 +425,11 @@ definitions:
             src_port:
                 description: "Source Port filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             src_port_range_end:
                 description: "Source Port range end filter. If specified, the source port filter will be a range. The filter range will be between src_port and src_port_range_end. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             tcp_ack:
                 description: "TCP ACK flag filter. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
@@ -481,6 +481,60 @@ definitions:
             vs_hb:
                 description: "Vs heart beat filter for SE IPC. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
+    CapturePacketFilter:
+        type: object
+        properties:
+            capture_tcp_filters:
+                description: "TCP Params filter. And'ed internally and Or'ed amongst each other. . Field introduced in 30.2.1. Maximum of 20 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/CaptureTCPFilter'
+    CaptureTCP:
+        type: object
+        properties:
+            tcpflag:
+                description: "TCP flags filter. Or'ed internally and And'ed amongst each other. . Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/CaptureTCPFlags'
+    CaptureTCPFilter:
+        type: object
+        properties:
+            dst_port_range:
+                description: "Destination Port range filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/DestinationPortAddr'
+            eth_proto:
+                description: "Ethernet Proto filter. Enum options - ETH_TYPE_IPV4. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+                default: "ETH_TYPE_IPV4"
+            host_ip:
+                description: "Per packet IP filter for Service Engine PCAP. Matches with source and destination address. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/DebugIpAddr'
+            src_port_range:
+                description: "Source Port range filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/SourcePortAddr'
+            tcpflags:
+                description: "TCP flags filter. Or'ed internally and And'ed amongst each other. . Field introduced in 30.2.1. Maximum of 4 items allowed. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/CaptureTCP'
+    CaptureTCPFlags:
+        type: object
+        properties:
+            match_operation:
+                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+                default: "IS_IN"
+            tcp_ack:
+                description: "TCP ACK flag filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
+            tcp_fin:
+                description: "TCP FIN flag filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
+            tcp_push:
+                description: "TCP PUSH flag filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
+            tcp_syn:
+                description: "TCP SYN flag filter. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: boolean
     DebugIpAddr:
         type: object
         properties:
@@ -489,6 +543,10 @@ definitions:
                 type: array
                 items:
                     $ref: '#/definitions/IpAddr'
+            match_operation:
+                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+                default: "IS_IN"
             prefixes:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
@@ -509,7 +567,7 @@ definitions:
             log_every_n:
                 description: "Log every nth message. Field introduced in 17.2.7. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             log_level:
                 description: " Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -528,7 +586,7 @@ definitions:
             cpu:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             shares:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
@@ -552,30 +610,30 @@ definitions:
             se_malloc_fail_frequency:
                 description: "Fail SE malloc type at this frequency. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             se_malloc_fail_type:
                 description: "Fail this SE malloc type. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             se_mbuf_cl_sanity:
                 description: "Toggle assert on mbuf cluster sanity check fail. Field introduced in 17.2.13,18.1.3,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             se_shm_malloc_fail_frequency:
                 description: "Fail SE SHM malloc type at this frequency. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             se_shm_malloc_fail_type:
                 description: "Fail this SE SHM malloc type. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             se_waf_alloc_fail_frequency:
                 description: "Fail SE WAF allocation at this frequency. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             se_waf_learning_alloc_fail_frequency:
                 description: "Fail SE WAF learning allocation at this frequency. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
     DebugServiceEngine:
         type: object
         properties:
@@ -608,6 +666,9 @@ definitions:
             capture_params:
                 description: "Params for SE pcap. Field introduced in 17.2.14,18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DebugVirtualServiceCapture'
+            capture_pkt_filter:
+                description: "Per packet capture filters for Debug Service Engine. Not applicable for DOS pcap capture. . Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/CapturePacketFilter'
             cpu_shares:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
@@ -676,7 +737,7 @@ definitions:
             malloc_type_index:
                 description: "Memory type to be traced for se_malloc and se_free. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
     DebugTraceMemory:
         type: object
         properties:
@@ -696,7 +757,7 @@ definitions:
             shm_malloc_type_index:
                 description: "Memory type to be traced for se_shmalloc and se_shmfree. Field introduced in 22.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
     DebugVirtualServiceCapture:
         type: object
         properties:
@@ -706,7 +767,7 @@ definitions:
             duration:
                 description: "Number of minutes to capture packets. Use 0 to capture until manually stopped. Special values are 0 - infinite. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             enable_ssl_session_key_capture:
                 description: "Enable SSL session key capture. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
@@ -714,11 +775,11 @@ definitions:
                 description: "Number of files to maintain for SE pcap file rotation.file count set to 1 indicates no rotate. Allowed values are 1-10. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 2
-                format: int32
+                format: uint32
             num_pkts:
                 description: "Total number of packets to capture. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
             pcap_ng:
                 description: "Enable PcapNg for packet capture. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
@@ -727,7 +788,22 @@ definitions:
                 description: "Number of bytes of each packet to capture. Use 0 to capture the entire packet. Allowed values are 64-1514. Special values are 0 - full capture. Unit is BYTES. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 128
-                format: int32
+                format: uint32
+    DestinationPortAddr:
+        type: object
+        properties:
+            dst_port_end:
+                description: "TCP/UDP port range end (inclusive). Allowed values are 1-65535. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            dst_port_start:
+                description: "TCP/UDP port range start (inclusive). Allowed values are 1-65535. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            match_operation:
+                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+                default: "IS_IN"
     IpAddr:
         type: object
         required:
@@ -773,7 +849,7 @@ definitions:
             arg:
                 description: "Optional 64 bit unsigned integer that can be used within the enabled fault. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int64
+                format: uint64
             fault_name:
                 description: "The name of the target fault. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -784,8 +860,23 @@ definitions:
                 description: "Number of times the fault should be executed. Allowed values are 1-4294967295. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1
-                format: int32
+                format: uint32
             num_skips:
                 description: "Number of times the fault should be skipped before executing. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: int32
+                format: uint32
+    SourcePortAddr:
+        type: object
+        properties:
+            match_operation:
+                description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: string
+                default: "IS_IN"
+            src_port_end:
+                description: "TCP/UDP port range end (inclusive). Allowed values are 1-65535. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            src_port_start:
+                description: "TCP/UDP port range start (inclusive). Allowed values are 1-65535. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32

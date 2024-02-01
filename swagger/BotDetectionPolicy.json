@@ -533,7 +533,7 @@
                 "index": {
                     "description": "Rules are processed in order of this index field. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "name": {
                     "description": "A name describing the rule in a short form. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -554,6 +554,34 @@
                 "user_defined_type": {
                     "description": "If 'type' has BotClassificationTypes value 'USER_DEFINED', this is the user-defined value. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "string"
+                }
+            }
+        },
+        "BotConfigClientBehavior": {
+            "type": "object",
+            "properties": {
+                "bad_request_percent": {
+                    "description": "Minimum percentage of bad requests for the client behavior component to identify as a bot. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 20,
+                    "format": "uint32"
+                },
+                "enabled": {
+                    "description": "Whether client behavior based Bot detection is enabled. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "minimum_requests": {
+                    "description": "Minimum requests for the client behavior component to make a decision. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 3,
+                    "format": "uint64"
+                },
+                "minimum_requests_with_referer": {
+                    "description": "Minimum requests with a referer for the client behavior component to not identify as a bot. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 1,
+                    "format": "uint64"
                 }
             }
         },
@@ -648,6 +676,10 @@
                 "allow_list": {
                     "description": "Allow the user to skip BotManagement for selected requests. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/BotAllowList"
+                },
+                "client_behavior_detector": {
+                    "description": "The client behavior configuration used in this policy. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/BotConfigClientBehavior"
                 },
                 "description": {
                     "description": "Human-readable description of this Bot Detection Policy. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -1099,7 +1131,7 @@
                     "items": {
                         "type": "integer"
                     },
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },

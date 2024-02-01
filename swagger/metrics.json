@@ -2960,7 +2960,7 @@
                     "type": "boolean"
                 },
                 "join_tables": {
-                    "description": " Enum options - METRICS_TABLE_NONE, METRICS_TABLE_ANOMALY, METRICS_TABLE_CONTROLLER_STATS, METRICS_TABLE_HEALTH_SCORE, METRICS_TABLE_SE_STATS, METRICS_TABLE_VSERVER_L4_SERVER, METRICS_TABLE_VSERVER_L4_CLIENT, METRICS_TABLE_VSERVER_L7_CLIENT, METRICS_TABLE_VSERVER_L7_SERVER, METRICS_TABLE_RUM_PREAGG_BROWSER, METRICS_TABLE_RUM_PREAGG_COUNTRY, METRICS_TABLE_RUM_PREAGG_DEVTYPE, METRICS_TABLE_RUM_PREAGG_LANG, METRICS_TABLE_RUM_PREAGG_OS, METRICS_TABLE_RUM_PREAGG_URL, METRICS_TABLE_RUM_ANALYTICS, METRICS_TABLE_VM_STATS, METRICS_TABLE_RESOURCE_TIMING_DIM, METRICS_TABLE_RESOURCE_TIMING_BLOB, METRICS_TABLE_RUM_PREAGG_IPGROUP, METRICS_TABLE_DOS_ANALYTICS, METRICS_TABLE_APP_INSIGHTS, METRICS_TABLE_VSERVER_DNS, METRICS_TABLE_SERVER_DNS, METRICS_TABLE_SERVICE_INSIGHTS, METRICS_TABLE_SOURCE_INSIGHTS, METRICS_TABLE_TENANT_STATS, METRICS_TABLE_SE_IF_STATS, METRICS_TABLE_USER_METRICS, METRICS_TABLE_WAF_GROUP, METRICS_TABLE_WAF_TAG, METRICS_TABLE_WAF_RULE, METRICS_TABLE_PROCESS_STATS, METRICS_TABLE_VSERVER_HTTP2_CLIENT, METRICS_TABLE_PG_STAT_DATABASE, METRICS_TABLE_PG_STAT_ALL_TABLES, METRICS_TABLE_PG_STAT_ALL_INDEXES, METRICS_TABLE_PG_STAT_IO_ALL_TABLES, METRICS_TABLE_PG_STAT_CLASS, METRICS_TABLE_PG_STAT_BG_WRITER, METRICS_TABLE_WAF_WHITELIST, METRICS_TABLE_WAF_PSMGROUP, METRICS_TABLE_WAF_PSMLOCATION, METRICS_TABLE_WAF_PSMRULE, METRICS_TABLE_GSLB_STATS, METRICS_TABLE_VS_SCALEOUT, METRICS_TABLE_API_PERF_STATS, METRICS_TABLE_NSXT_STATS, METRICS_TABLE_ICAP, METRICS_TABLE_BOT, METRICS_TABLE_SEGROUP_STATS, METRICS_TABLE_ENVOY_UPSTREAM_STATS, METRICS_TABLE_ENVOY_DOWNSTREAM_STATS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - METRICS_TABLE_NONE, METRICS_TABLE_ANOMALY, METRICS_TABLE_CONTROLLER_STATS, METRICS_TABLE_HEALTH_SCORE, METRICS_TABLE_SE_STATS, METRICS_TABLE_VSERVER_L4_SERVER, METRICS_TABLE_VSERVER_L4_CLIENT, METRICS_TABLE_VSERVER_L7_CLIENT, METRICS_TABLE_VSERVER_L7_SERVER, METRICS_TABLE_RUM_PREAGG_BROWSER, METRICS_TABLE_RUM_PREAGG_COUNTRY, METRICS_TABLE_RUM_PREAGG_DEVTYPE, METRICS_TABLE_RUM_PREAGG_LANG, METRICS_TABLE_RUM_PREAGG_OS, METRICS_TABLE_RUM_PREAGG_URL, METRICS_TABLE_RUM_ANALYTICS, METRICS_TABLE_VM_STATS, METRICS_TABLE_RESOURCE_TIMING_DIM, METRICS_TABLE_RESOURCE_TIMING_BLOB, METRICS_TABLE_RUM_PREAGG_IPGROUP, METRICS_TABLE_DOS_ANALYTICS, METRICS_TABLE_APP_INSIGHTS, METRICS_TABLE_VSERVER_DNS, METRICS_TABLE_SERVER_DNS, METRICS_TABLE_SERVICE_INSIGHTS, METRICS_TABLE_SOURCE_INSIGHTS, METRICS_TABLE_TENANT_STATS, METRICS_TABLE_SE_IF_STATS, METRICS_TABLE_USER_METRICS, METRICS_TABLE_WAF_GROUP, METRICS_TABLE_WAF_TAG, METRICS_TABLE_WAF_RULE, METRICS_TABLE_PROCESS_STATS, METRICS_TABLE_VSERVER_HTTP2_CLIENT, METRICS_TABLE_PG_STAT_DATABASE, METRICS_TABLE_PG_STAT_ALL_TABLES, METRICS_TABLE_PG_STAT_ALL_INDEXES, METRICS_TABLE_PG_STAT_IO_ALL_TABLES, METRICS_TABLE_PG_STAT_CLASS, METRICS_TABLE_PG_STAT_BG_WRITER, METRICS_TABLE_WAF_WHITELIST, METRICS_TABLE_WAF_PSMGROUP, METRICS_TABLE_WAF_PSMLOCATION, METRICS_TABLE_WAF_PSMRULE, METRICS_TABLE_GSLB_STATS, METRICS_TABLE_VS_SCALEOUT, METRICS_TABLE_API_PERF_STATS, METRICS_TABLE_NSXT_STATS, METRICS_TABLE_ICAP, METRICS_TABLE_BOT, METRICS_TABLE_SEGROUP_STATS, METRICS_TABLE_ENVOY_UPSTREAM_STATS, METRICS_TABLE_ENVOY_DOWNSTREAM_STATS, METRICS_TABLE_REDIS_QUEUE_STATS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "metric_ids": {
@@ -3087,7 +3087,7 @@
                     "description": "Limit the number of dimensions in the result. specially useful in case of URLs. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "dimension_sampling": {
                     "description": "Deprecated. perform sampling for dimensional metrics. zero means auto. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3144,7 +3144,7 @@
                 "microservice_levels": {
                     "description": "number of levels of microservices map. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "obj_id": {
                     "description": "serverip port of the pool server. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3167,12 +3167,12 @@
                 "page": {
                     "description": "page id for the query. Allowed only for aggregation queries. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "page_size": {
                     "description": "page size of the query. Allowed only for the aggregation queries. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "pool_uuid": {
                     "description": "metrics for a member pool in a virtual service. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3358,7 +3358,7 @@
                 "num_samples": {
                     "description": "Number of actual data samples. It excludes fake data. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "sum": {
                     "description": "summation of all values. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",

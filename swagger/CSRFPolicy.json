@@ -544,7 +544,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },
@@ -617,7 +617,7 @@
                     "description": "CSRF token is rotated when this time expires. Tokens will be acceptable for twice the token_validity_time time. Allowed values are 10-1440. Special values are 0- unlimited. Field introduced in 30.2.1. Unit is MIN. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 360,
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "url": {
                     "description": "url",
@@ -673,7 +673,7 @@
                 "index": {
                     "description": "Rules are processed in order of this index field. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "uint32"
                 },
                 "match": {
                     "description": "Match criteria for requests to apply CSRF Action. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -1036,7 +1036,7 @@
                     "items": {
                         "type": "integer"
                     },
-                    "format": "int32"
+                    "format": "uint32"
                 }
             }
         },
