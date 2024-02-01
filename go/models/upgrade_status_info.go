@@ -135,6 +135,9 @@ type UpgradeStatusInfo struct {
 	// Flag is set only in the cluster if the upgrade is initiated as a system-upgrade. . Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	System *bool `json:"system,omitempty"`
 
+	// Tracks the list of reports created for node. It is a reference to an object of type SystemReport. Field introduced in 22.1.6, 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	SystemReportRefs []string `json:"system_report_refs,omitempty"`
+
 	// Completed set of tasks in the Upgrade operation. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	TasksCompleted *int32 `json:"tasks_completed,omitempty"`
 

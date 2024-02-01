@@ -55,8 +55,7 @@ type ALBServicesConfig struct {
 	SessionConfig *PulseServicesSessionConfig `json:"session_config,omitempty"`
 
 	// Split proxy configuration to connect external Pulse Cloud Services. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	// Required: true
-	SplitProxyConfiguration *ProxyConfiguration `json:"split_proxy_configuration"`
+	SplitProxyConfiguration *ProxyConfiguration `json:"split_proxy_configuration,omitempty"`
 
 	// Tenant based configuration data. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.
 	TenantConfig *PulseServicesTenantConfig `json:"tenant_config,omitempty"`
