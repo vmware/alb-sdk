@@ -6050,8 +6050,7 @@
         "OAuthAppSettings": {
             "type": "object",
             "required": [
-                "client_id",
-                "client_secret"
+                "client_id"
             ],
             "properties": {
                 "client_id": {

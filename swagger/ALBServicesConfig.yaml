@@ -386,7 +386,6 @@ definitions:
             -   ip_reputation_config
             -   portal_url
             -   saas_licensing_config
-            -   split_proxy_configuration
             -   user_agent_db_config
             -   waf_config
         properties:
