@@ -267,14 +267,14 @@ font-style: italic;
     "enabled" : true,
     "url" : "aeiou",
     "_last_modified" : "aeiou",
-    "frequency" : 123,
+    "frequency" : "",
     "end_date_time" : "aeiou",
     "backup_config_ref" : "aeiou",
     "run_mode" : "aeiou",
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
     "configpb_attributes" : {
-      "version" : 123
+      "version" : ""
     },
     "start_date_time" : "aeiou"
   } ]
@@ -338,14 +338,14 @@ font-style: italic;
   "enabled" : true,
   "url" : "aeiou",
   "_last_modified" : "aeiou",
-  "frequency" : 123,
+  "frequency" : "",
   "end_date_time" : "aeiou",
   "backup_config_ref" : "aeiou",
   "run_mode" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "start_date_time" : "aeiou"
 }</code></pre>
@@ -480,14 +480,14 @@ font-style: italic;
   "enabled" : true,
   "url" : "aeiou",
   "_last_modified" : "aeiou",
-  "frequency" : 123,
+  "frequency" : "",
   "end_date_time" : "aeiou",
   "backup_config_ref" : "aeiou",
   "run_mode" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "start_date_time" : "aeiou"
 }</code></pre>
@@ -562,14 +562,14 @@ font-style: italic;
   "enabled" : true,
   "url" : "aeiou",
   "_last_modified" : "aeiou",
-  "frequency" : 123,
+  "frequency" : "",
   "end_date_time" : "aeiou",
   "backup_config_ref" : "aeiou",
   "run_mode" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "start_date_time" : "aeiou"
 }</code></pre>
@@ -644,14 +644,14 @@ font-style: italic;
   "enabled" : true,
   "url" : "aeiou",
   "_last_modified" : "aeiou",
-  "frequency" : 123,
+  "frequency" : "",
   "end_date_time" : "aeiou",
   "backup_config_ref" : "aeiou",
   "run_mode" : "aeiou",
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "start_date_time" : "aeiou"
 }</code></pre>
@@ -687,7 +687,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -698,7 +698,7 @@ font-style: italic;
 <div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">end_date_time (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Scheduler end date and time. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">frequency (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Frequency at which CUSTOM scheduler will run. Allowed values are 0-60. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">frequency (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Frequency at which CUSTOM scheduler will run. Allowed values are 0-60. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">frequency_unit (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Unit at which CUSTOM scheduler will run. Enum options - SCHEDULER_FREQUENCY_UNIT_MIN, SCHEDULER_FREQUENCY_UNIT_HOUR, SCHEDULER_FREQUENCY_UNIT_DAY, SCHEDULER_FREQUENCY_UNIT_WEEK, SCHEDULER_FREQUENCY_UNIT_MONTH. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of scheduler. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">run_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Scheduler Run Mode. Enum options - RUN_MODE_PERIODIC, RUN_MODE_AT, RUN_MODE_NOW. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>

@@ -263,7 +263,7 @@ font-style: italic;
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
     "configpb_attributes" : {
-      "version" : 123
+      "version" : ""
     },
     "description" : "aeiou",
     "rules" : [ {
@@ -306,7 +306,7 @@ font-style: italic;
         } ],
         "type" : "aeiou"
       },
-      "index" : 123,
+      "index" : "",
       "created_by" : "aeiou"
     } ],
     "markers" : [ {
@@ -374,7 +374,7 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "description" : "aeiou",
   "rules" : [ {
@@ -417,7 +417,7 @@ font-style: italic;
       } ],
       "type" : "aeiou"
     },
-    "index" : 123,
+    "index" : "",
     "created_by" : "aeiou"
   } ],
   "markers" : [ {
@@ -556,7 +556,7 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "description" : "aeiou",
   "rules" : [ {
@@ -599,7 +599,7 @@ font-style: italic;
       } ],
       "type" : "aeiou"
     },
-    "index" : 123,
+    "index" : "",
     "created_by" : "aeiou"
   } ],
   "markers" : [ {
@@ -678,7 +678,7 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "description" : "aeiou",
   "rules" : [ {
@@ -721,7 +721,7 @@ font-style: italic;
       } ],
       "type" : "aeiou"
     },
-    "index" : 123,
+    "index" : "",
     "created_by" : "aeiou"
   } ],
   "markers" : [ {
@@ -800,7 +800,7 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "description" : "aeiou",
   "rules" : [ {
@@ -843,7 +843,7 @@ font-style: italic;
       } ],
       "type" : "aeiou"
     },
-    "index" : 123,
+    "index" : "",
     "created_by" : "aeiou"
   } ],
   "markers" : [ {
@@ -900,7 +900,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -982,7 +982,7 @@ font-style: italic;
     <h3 class="field-label"><a name="NatPolicyAction">NatPolicyAction</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">nat_info (optional)</div><div class="param-desc"><span class="param-type"><a href="#NatAddrInfo">array[NatAddrInfo]</a></span> Pool of IP Addresses used for Nat. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Nat Action Type. Enum options - NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PORT. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Nat Action Type. Enum options - NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PORT, NAT_POLICY_ACTION_TYPE_DYNAMIC_IP_PRESERVE_PORT. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -999,7 +999,7 @@ font-style: italic;
       <div class="param">action </div><div class="param-desc"><span class="param-type"><a href="#NatPolicyAction">NatPolicyAction</a></span> Nat rule Action Information. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">created_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Creator name. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">enable </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Nat rule enable flag. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">index </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Nat rule Index. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">index </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Nat rule Index. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">match </div><div class="param-desc"><span class="param-type"><a href="#NatMatchTarget">NatMatchTarget</a></span> Nat rule Match Criteria. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Nat rule Name. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->

@@ -274,13 +274,13 @@ font-style: italic;
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
     "configpb_attributes" : {
-      "version" : 123
+      "version" : ""
     },
     "rate_limiters" : [ {
-      "period" : 123,
-      "count" : 123,
+      "period" : "",
+      "count" : "",
       "name" : "aeiou",
-      "burst_sz" : 123
+      "burst_sz" : ""
     } ],
     "pool_group_refs" : [ "aeiou" ],
     "ssl_key_certificate_refs" : [ "aeiou" ],
@@ -362,13 +362,13 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "rate_limiters" : [ {
-    "period" : 123,
-    "count" : 123,
+    "period" : "",
+    "count" : "",
     "name" : "aeiou",
-    "burst_sz" : 123
+    "burst_sz" : ""
   } ],
   "pool_group_refs" : [ "aeiou" ],
   "ssl_key_certificate_refs" : [ "aeiou" ],
@@ -521,13 +521,13 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "rate_limiters" : [ {
-    "period" : 123,
-    "count" : 123,
+    "period" : "",
+    "count" : "",
     "name" : "aeiou",
-    "burst_sz" : 123
+    "burst_sz" : ""
   } ],
   "pool_group_refs" : [ "aeiou" ],
   "ssl_key_certificate_refs" : [ "aeiou" ],
@@ -620,13 +620,13 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "rate_limiters" : [ {
-    "period" : 123,
-    "count" : 123,
+    "period" : "",
+    "count" : "",
     "name" : "aeiou",
-    "burst_sz" : 123
+    "burst_sz" : ""
   } ],
   "pool_group_refs" : [ "aeiou" ],
   "ssl_key_certificate_refs" : [ "aeiou" ],
@@ -719,13 +719,13 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : 123
+    "version" : ""
   },
   "rate_limiters" : [ {
-    "period" : 123,
-    "count" : 123,
+    "period" : "",
+    "count" : "",
     "name" : "aeiou",
-    "burst_sz" : 123
+    "burst_sz" : ""
   } ],
   "pool_group_refs" : [ "aeiou" ],
   "ssl_key_certificate_refs" : [ "aeiou" ],
@@ -776,7 +776,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -789,10 +789,10 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="RateLimiter">RateLimiter</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">burst_sz (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Basic edition(Allowed values- 0), Essentials, Enterprise with Cloud Services edition. format: int32</div>
-<div class="param">count </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections, requests or packets permitted each period. Allowed values are 1-1000000000. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">burst_sz (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Basic edition(Allowed values- 0), Essentials, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">count </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Maximum number of connections, requests or packets permitted each period. Allowed values are 1-1000000000. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Identifier for Rate Limit. Constructed according to context. Field introduced in 18.2.9. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">period </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC. Allowed in Enterprise edition with any value, Basic edition(Allowed values- 1), Essentials, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">period </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC. Allowed in Enterprise edition with any value, Basic edition(Allowed values- 1), Essentials, Enterprise with Cloud Services edition. format: uint32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

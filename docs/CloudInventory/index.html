@@ -261,7 +261,7 @@ font-style: italic;
   "count" : 123,
   "results" : [ {
     "config" : {
-      "autoscale_polling_interval" : 123,
+      "autoscale_polling_interval" : "",
       "maintenance_mode" : true,
       "vtype" : "aeiou",
       "license_type" : "aeiou",
@@ -271,7 +271,7 @@ font-style: italic;
       "enable_vip_static_routes" : true,
       "uuid" : "aeiou",
       "url" : "aeiou",
-      "mtu" : 123,
+      "mtu" : "",
       "dhcp_enabled" : true,
       "dns_resolution_on_se" : true,
       "tenant_ref" : "aeiou",
@@ -381,7 +381,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "config" : {
-    "autoscale_polling_interval" : 123,
+    "autoscale_polling_interval" : "",
     "maintenance_mode" : true,
     "vtype" : "aeiou",
     "license_type" : "aeiou",
@@ -391,7 +391,7 @@ font-style: italic;
     "enable_vip_static_routes" : true,
     "uuid" : "aeiou",
     "url" : "aeiou",
-    "mtu" : 123,
+    "mtu" : "",
     "dhcp_enabled" : true,
     "dns_resolution_on_se" : true,
     "tenant_ref" : "aeiou",
@@ -572,7 +572,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "config" : {
-    "autoscale_polling_interval" : 123,
+    "autoscale_polling_interval" : "",
     "maintenance_mode" : true,
     "vtype" : "aeiou",
     "license_type" : "aeiou",
@@ -582,7 +582,7 @@ font-style: italic;
     "enable_vip_static_routes" : true,
     "uuid" : "aeiou",
     "url" : "aeiou",
-    "mtu" : 123,
+    "mtu" : "",
     "dhcp_enabled" : true,
     "dns_resolution_on_se" : true,
     "tenant_ref" : "aeiou",
@@ -703,7 +703,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "config" : {
-    "autoscale_polling_interval" : 123,
+    "autoscale_polling_interval" : "",
     "maintenance_mode" : true,
     "vtype" : "aeiou",
     "license_type" : "aeiou",
@@ -713,7 +713,7 @@ font-style: italic;
     "enable_vip_static_routes" : true,
     "uuid" : "aeiou",
     "url" : "aeiou",
-    "mtu" : 123,
+    "mtu" : "",
     "dhcp_enabled" : true,
     "dns_resolution_on_se" : true,
     "tenant_ref" : "aeiou",
@@ -834,7 +834,7 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "config" : {
-    "autoscale_polling_interval" : 123,
+    "autoscale_polling_interval" : "",
     "maintenance_mode" : true,
     "vtype" : "aeiou",
     "license_type" : "aeiou",
@@ -844,7 +844,7 @@ font-style: italic;
     "enable_vip_static_routes" : true,
     "uuid" : "aeiou",
     "url" : "aeiou",
-    "mtu" : 123,
+    "mtu" : "",
     "dhcp_enabled" : true,
     "dns_resolution_on_se" : true,
     "tenant_ref" : "aeiou",
@@ -941,7 +941,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="CloudConfig">CloudConfig</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">autoscale_polling_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> CloudConnector polling interval in seconds for external autoscale groups, minimum 60 seconds. Allowed values are 60-3600. Field introduced in 22.1.1. Unit is SECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+      <div class="param">autoscale_polling_interval (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> CloudConnector polling interval in seconds for external autoscale groups, minimum 60 seconds. Allowed values are 60-3600. Field introduced in 22.1.1. Unit is SECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">dhcp_enabled (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Select the IP address management scheme. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">dns_resolution_on_se (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">enable_vip_on_all_interfaces (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Enable VIP on all data interfaces for the Cloud. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
@@ -950,7 +950,7 @@ font-style: italic;
 <div class="param">license_tier (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Specifies the default license tier which would be used by new SE Groups. This field by default inherits the value from system configuration. Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS, ENTERPRISE_WITH_CLOUD_SERVICES. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">license_type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> If no license type is specified then default license enforcement for the cloud type is chosen. The default mappings are Container Cloud is Max Ses, OpenStack and VMware is cores and linux it is Sockets. Enum options - LIC_BACKEND_SERVERS, LIC_SOCKETS, LIC_CORES, LIC_HOSTS, LIC_SE_BANDWIDTH, LIC_METERED_SE_BANDWIDTH. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">maintenance_mode (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Cloud is in maintenance mode. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">mtu (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> MTU setting for the cloud. Field introduced in 22.1.1. Unit is BYTES. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">mtu (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> MTU setting for the cloud. Field introduced in 22.1.1. Unit is BYTES. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of the cloud. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">prefer_static_routes (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Prefer static routes over interface routes during VirtualService placement. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
 <div class="param">state_based_dns_registration (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> DNS records for VIPs are added/deleted based on the operational state of the VIPs. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>

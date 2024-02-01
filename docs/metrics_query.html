@@ -4441,6 +4441,14 @@ Controller Metrics
 <td> True </td>
 </tr>
 <tr>
+<td> controller_stats.max_mem_usage </td>
+<td> Max Memory usage as percentage of total configured or available memory </td>
+<td> PERCENT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
 <td> controller_stats.max_num_active_vs </td>
 <td> Max number of VS for the tenant </td>
 <td> METRIC_COUNT </td>
@@ -7394,7 +7402,7 @@ stats for processes running on controller
 </tr>
 <tr>
 <td> process_stats.avg_pss </td>
-<td> Average memory (in bytes) shared with other processes. </td>
+<td> Average memory (in Kilo bytes) shared with other processes. </td>
 <td> KILO_BYTES </td>
 <td> True </td>
 <td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
@@ -7428,6 +7436,14 @@ stats for processes running on controller
 <td> process_stats.max_cpu_pct </td>
 <td> Maximum cpu usage by this process. </td>
 <td> PERCENT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+<tr>
+<td> process_stats.max_pss </td>
+<td> Max memory (in Kilo bytes) shared with other processes. </td>
+<td> KILO_BYTES </td>
 <td> True </td>
 <td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
 <td> True </td>
@@ -11091,6 +11107,30 @@ Envoy Downstream Metrics.
 <tr>
 <td> envoy_downstream_stats.avg_downstream_rq_active </td>
 <td> Total active requests from downstream on controller Envoy. </td>
+<td> METRIC_COUNT </td>
+<td> True </td>
+<td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
+<td> True </td>
+</tr>
+</table>
+</div>
+<h2 class='text-primary'> Redis_Queue_Stats Metrics </h2>
+<div class='container-fluid'>
+<p>
+Stats for task queue.
+</p>
+<table class='table table-bordered table-striped'>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+<th>Units</th>
+<th>Anomaly Detection</th>
+<th>Anomaly Models</th>
+<th>Priority</th>
+</tr>
+<tr>
+<td> redis_queue_stats.max_size </td>
+<td> Total count/size of each distinguished queue name. </td>
 <td> METRIC_COUNT </td>
 <td> True </td>
 <td> EXPONENTIAL_WEIGHTED_MOVING_AVG </td>
