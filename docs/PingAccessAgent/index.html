@@ -264,12 +264,12 @@ font-style: italic;
     "tenant_ref" : "aeiou",
     "name" : "aeiou",
     "configpb_attributes" : {
-      "version" : ""
+      "version" : 123
     },
     "description" : "aeiou",
     "primary_server" : {
       "hostname" : "aeiou",
-      "port" : "",
+      "port" : 123,
       "ip" : {
         "addr" : "aeiou",
         "type" : "aeiou"
@@ -341,12 +341,12 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : ""
+    "version" : 123
   },
   "description" : "aeiou",
   "primary_server" : {
     "hostname" : "aeiou",
-    "port" : "",
+    "port" : 123,
     "ip" : {
       "addr" : "aeiou",
       "type" : "aeiou"
@@ -489,12 +489,12 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : ""
+    "version" : 123
   },
   "description" : "aeiou",
   "primary_server" : {
     "hostname" : "aeiou",
-    "port" : "",
+    "port" : 123,
     "ip" : {
       "addr" : "aeiou",
       "type" : "aeiou"
@@ -577,12 +577,12 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : ""
+    "version" : 123
   },
   "description" : "aeiou",
   "primary_server" : {
     "hostname" : "aeiou",
-    "port" : "",
+    "port" : 123,
     "ip" : {
       "addr" : "aeiou",
       "type" : "aeiou"
@@ -665,12 +665,12 @@ font-style: italic;
   "tenant_ref" : "aeiou",
   "name" : "aeiou",
   "configpb_attributes" : {
-    "version" : ""
+    "version" : 123
   },
   "description" : "aeiou",
   "primary_server" : {
     "hostname" : "aeiou",
-    "port" : "",
+    "port" : 123,
     "ip" : {
       "addr" : "aeiou",
       "type" : "aeiou"
@@ -721,7 +721,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -767,7 +767,7 @@ font-style: italic;
     <div class="field-items">
       <div class="param">hostname (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> DNS resolvable name of the server.  May be used in place of the IP address. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">ip </div><div class="param-desc"><span class="param-type"><a href="#IpAddr">IpAddr</a></span> IP address of the server in the poool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Port of the pool server listening for HTTP/HTTPS. Default value is the default port in the pool. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">port (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Port of the pool server listening for HTTP/HTTPS. Default value is the default port in the pool. Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

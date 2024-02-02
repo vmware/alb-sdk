@@ -261,14 +261,14 @@ font-style: italic;
   "count" : 123,
   "results" : [ {
     "last_login_timestamp" : "aeiou",
-    "concurrent_sessions" : "",
+    "concurrent_sessions" : 123,
     "last_login_ip" : "aeiou",
     "logged_in" : true,
     "name" : "aeiou",
     "login_failure_timestamps" : [ "aeiou" ],
     "last_password_update" : "aeiou",
     "previous_password" : [ "aeiou" ],
-    "failed_login_attempts" : "",
+    "failed_login_attempts" : 123,
     "uuid" : "aeiou",
     "url" : "aeiou",
     "_last_modified" : "aeiou"
@@ -327,14 +327,14 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "last_login_timestamp" : "aeiou",
-  "concurrent_sessions" : "",
+  "concurrent_sessions" : 123,
   "last_login_ip" : "aeiou",
   "logged_in" : true,
   "name" : "aeiou",
   "login_failure_timestamps" : [ "aeiou" ],
   "last_password_update" : "aeiou",
   "previous_password" : [ "aeiou" ],
-  "failed_login_attempts" : "",
+  "failed_login_attempts" : 123,
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
@@ -464,14 +464,14 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "last_login_timestamp" : "aeiou",
-  "concurrent_sessions" : "",
+  "concurrent_sessions" : 123,
   "last_login_ip" : "aeiou",
   "logged_in" : true,
   "name" : "aeiou",
   "login_failure_timestamps" : [ "aeiou" ],
   "last_password_update" : "aeiou",
   "previous_password" : [ "aeiou" ],
-  "failed_login_attempts" : "",
+  "failed_login_attempts" : 123,
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
@@ -541,14 +541,14 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "last_login_timestamp" : "aeiou",
-  "concurrent_sessions" : "",
+  "concurrent_sessions" : 123,
   "last_login_ip" : "aeiou",
   "logged_in" : true,
   "name" : "aeiou",
   "login_failure_timestamps" : [ "aeiou" ],
   "last_password_update" : "aeiou",
   "previous_password" : [ "aeiou" ],
-  "failed_login_attempts" : "",
+  "failed_login_attempts" : 123,
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
@@ -618,14 +618,14 @@ font-style: italic;
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
   "last_login_timestamp" : "aeiou",
-  "concurrent_sessions" : "",
+  "concurrent_sessions" : 123,
   "last_login_ip" : "aeiou",
   "logged_in" : true,
   "name" : "aeiou",
   "login_failure_timestamps" : [ "aeiou" ],
   "last_password_update" : "aeiou",
   "previous_password" : [ "aeiou" ],
-  "failed_login_attempts" : "",
+  "failed_login_attempts" : 123,
   "uuid" : "aeiou",
   "url" : "aeiou",
   "_last_modified" : "aeiou"
@@ -662,8 +662,8 @@ font-style: italic;
     <h3 class="field-label"><a name="UserActivity">UserActivity</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">_last_modified (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UNIX time since epoch in microseconds. Units(MICROSECONDS). </div>
-<div class="param">concurrent_sessions (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of concurrent user sessions open. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
-<div class="param">failed_login_attempts (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of failed login attempts before a successful login. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">concurrent_sessions (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of concurrent user sessions open. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">failed_login_attempts (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of failed login attempts before a successful login. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">last_login_ip (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> IP of the machine the user was last logged in from. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">last_login_timestamp (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Timestamp of last login. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">last_password_update (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Timestamp of last password update. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>

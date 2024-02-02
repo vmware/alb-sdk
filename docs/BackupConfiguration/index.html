@@ -276,12 +276,12 @@ font-style: italic;
     "name" : "aeiou",
     "aws_bucket_id" : "aeiou",
     "configpb_attributes" : {
-      "version" : ""
+      "version" : 123
     },
     "remote_file_transfer_protocol" : "aeiou",
     "upload_to_s3" : true,
     "upload_to_remote_host" : true,
-    "maximum_backups_stored" : ""
+    "maximum_backups_stored" : 123
   } ]
 }</code></pre>
 
@@ -352,12 +352,12 @@ font-style: italic;
   "name" : "aeiou",
   "aws_bucket_id" : "aeiou",
   "configpb_attributes" : {
-    "version" : ""
+    "version" : 123
   },
   "remote_file_transfer_protocol" : "aeiou",
   "upload_to_s3" : true,
   "upload_to_remote_host" : true,
-  "maximum_backups_stored" : ""
+  "maximum_backups_stored" : 123
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -499,12 +499,12 @@ font-style: italic;
   "name" : "aeiou",
   "aws_bucket_id" : "aeiou",
   "configpb_attributes" : {
-    "version" : ""
+    "version" : 123
   },
   "remote_file_transfer_protocol" : "aeiou",
   "upload_to_s3" : true,
   "upload_to_remote_host" : true,
-  "maximum_backups_stored" : ""
+  "maximum_backups_stored" : 123
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -586,12 +586,12 @@ font-style: italic;
   "name" : "aeiou",
   "aws_bucket_id" : "aeiou",
   "configpb_attributes" : {
-    "version" : ""
+    "version" : 123
   },
   "remote_file_transfer_protocol" : "aeiou",
   "upload_to_s3" : true,
   "upload_to_remote_host" : true,
-  "maximum_backups_stored" : ""
+  "maximum_backups_stored" : 123
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -673,12 +673,12 @@ font-style: italic;
   "name" : "aeiou",
   "aws_bucket_id" : "aeiou",
   "configpb_attributes" : {
-    "version" : ""
+    "version" : 123
   },
   "remote_file_transfer_protocol" : "aeiou",
   "upload_to_s3" : true,
   "upload_to_remote_host" : true,
-  "maximum_backups_stored" : ""
+  "maximum_backups_stored" : 123
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -720,7 +720,7 @@ font-style: italic;
 <div class="param">backup_file_prefix (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Prefix of the exported configuration file. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">backup_passphrase (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Default passphrase for configuration export and periodic backup. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">configpb_attributes (optional)</div><div class="param-desc"><span class="param-type"><a href="#ConfigPbAttributes">ConfigPbAttributes</a></span> Protobuf versioning for config pbs. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">maximum_backups_stored (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Rotate the backup files based on this count. Allowed values are 1-20. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">maximum_backups_stored (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Rotate the backup files based on this count. Allowed values are 1-20. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Name of backup configuration. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">remote_directory (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Directory at remote destination with write permission for ssh user. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">remote_file_transfer_protocol (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Remote file transfer protocol type. Enum options - SCP, SFTP. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Basic edition(Allowed values- SCP,SFTP), Enterprise with Cloud Services edition. </div>
@@ -745,7 +745,7 @@ font-style: italic;
   <div class="model">
     <h3 class="field-label"><a name="ConfigPbAttributes">ConfigPbAttributes</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
-      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+      <div class="param">version (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition. format: int32</div>
     </div>  <!-- field-items -->
   </div>
   </body>

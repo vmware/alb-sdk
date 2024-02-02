@@ -478,7 +478,7 @@ font-style: italic;
           "min_ts" : "aeiou",
           "sum" : 1.3579000000000001069366817318950779736042022705078125,
           "last_sample" : 1.3579000000000001069366817318950779736042022705078125,
-          "num_samples" : ""
+          "num_samples" : 123
         }
       }
     } ],
@@ -703,7 +703,7 @@ font-style: italic;
         "min_ts" : "aeiou",
         "sum" : 1.3579000000000001069366817318950779736042022705078125,
         "last_sample" : 1.3579000000000001069366817318950779736042022705078125,
-        "num_samples" : ""
+        "num_samples" : 123
       }
     }
   } ],
@@ -926,7 +926,7 @@ font-style: italic;
           "min_ts" : "aeiou",
           "sum" : 1.3579000000000001069366817318950779736042022705078125,
           "last_sample" : 1.3579000000000001069366817318950779736042022705078125,
-          "num_samples" : ""
+          "num_samples" : 123
         }
       }
     } ],
@@ -1151,7 +1151,7 @@ font-style: italic;
         "min_ts" : "aeiou",
         "sum" : 1.3579000000000001069366817318950779736042022705078125,
         "last_sample" : 1.3579000000000001069366817318950779736042022705078125,
-        "num_samples" : ""
+        "num_samples" : 123
       }
     }
   } ],
@@ -1374,7 +1374,7 @@ font-style: italic;
           "min_ts" : "aeiou",
           "sum" : 1.3579000000000001069366817318950779736042022705078125,
           "last_sample" : 1.3579000000000001069366817318950779736042022705078125,
-          "num_samples" : ""
+          "num_samples" : 123
         }
       }
     } ],
@@ -1599,7 +1599,7 @@ font-style: italic;
         "min_ts" : "aeiou",
         "sum" : 1.3579000000000001069366817318950779736042022705078125,
         "last_sample" : 1.3579000000000001069366817318950779736042022705078125,
-        "num_samples" : ""
+        "num_samples" : 123
       }
     }
   } ],
@@ -1822,7 +1822,7 @@ font-style: italic;
           "min_ts" : "aeiou",
           "sum" : 1.3579000000000001069366817318950779736042022705078125,
           "last_sample" : 1.3579000000000001069366817318950779736042022705078125,
-          "num_samples" : ""
+          "num_samples" : 123
         }
       }
     } ],
@@ -2047,7 +2047,7 @@ font-style: italic;
         "min_ts" : "aeiou",
         "sum" : 1.3579000000000001069366817318950779736042022705078125,
         "last_sample" : 1.3579000000000001069366817318950779736042022705078125,
-        "num_samples" : ""
+        "num_samples" : 123
       }
     }
   } ],
@@ -2108,7 +2108,7 @@ font-style: italic;
 <div class="param">mean (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> arithmetic mean. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: double</div>
 <div class="param">min (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> minimum value in time series requested. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: double</div>
 <div class="param">min_ts (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> timestamp of the minimum value. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">num_samples (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of actual data samples. It excludes fake data. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">num_samples (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Number of actual data samples. It excludes fake data. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">sum (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> summation of all values. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: double</div>
 <div class="param">trend (optional)</div><div class="param-desc"><span class="param-type"><a href="#double">Double</a></span> slope of the data points across the time series requested. trend &#x3D; (last_value - avg)/avg. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: double</div>
     </div>  <!-- field-items -->
@@ -2228,7 +2228,7 @@ font-style: italic;
 <div class="param">devtype (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Device type filter. Eg. devtype&#x3D;desktop. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">dimension_aggregation (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Aggregations for dimensions. Eg. use dimenstion_aggregation&#x3D;avg for averaged metric values. Enum options - METRICS_DIMENSION_AGG_NONE, METRICS_DIMENSION_AGG_AVG, METRICS_DIMENSION_AGG_SUM, METRICS_DIMENSION_AGG_MAX, METRICS_DIMENSION_AGG_MIN, METRICS_DIMENSION_AGG_PERCENT, METRICS_DIMENSION_AGG_ALL. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">dimension_filter_op (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Filters the obj_id based on the filter specified. Enum options - METRICS_FILTER_EQUALS, METRICS_FILTER_LIKE, METRICS_FILTER_CONTAINS, METRICS_FILTER_NOT_EQUALS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">dimension_limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Limit the number of dimensions in the result. specially useful in case of URLs. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">dimension_limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Limit the number of dimensions in the result. specially useful in case of URLs. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">dimension_sampling (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Deprecated. perform sampling for dimensional metrics. zero means auto. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">dimensions (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Group by dimensions for the metrics. Eg. For results by single dimension use dimensions&#x3D;browser. For results by browser and operating system use dimensions&#x3D;browser,os. Enum options - METRICS_DIMENSION_METRIC_TIMESTAMP, METRICS_DIMENSION_COUNTRY, METRICS_DIMENSION_OS, METRICS_DIMENSION_URL, METRICS_DIMENSION_DEVTYPE, METRICS_DIMENSION_LANG, METRICS_DIMENSION_BROWSER, METRICS_DIMENSION_IPGROUP, METRICS_DIMENSION_ATTACK, METRICS_DIMENSION_ASN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">entity_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> UUID of the entity. Eg. entity_uuid&#x3D;virtualservice-0-1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
@@ -2240,13 +2240,13 @@ font-style: italic;
 <div class="param">limit (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Max number of metric samples per metric requestedEg. limit&#x3D;100 implies return only 100 samples. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">metric_entity (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Describes the entity type for which metrics is requested. Eg. &amp;metric_entity&#x3D;VSERVER_METRICS_ENTITY. Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">metric_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Comma separated list of metrics requested.Eg. metric_id&#x3D;l4_client.avg_bandwidth,l7_client.avg_total_responses. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">microservice_levels (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> number of levels of microservices map. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">microservice_levels (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> number of levels of microservices map. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">obj_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> serverip port of the pool server. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">order_by (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Order metrics series by metric timestamp. -metric_timestamp will result in most recent value first in the time series. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">os (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Operating system filter. Eg. os&#x3D;mac. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">pad_missing_data (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Pad missing data when not available. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
-<div class="param">page (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> page id for the query. Allowed only for aggregation queries. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
-<div class="param">page_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> page size of the query. Allowed only for the aggregation queries. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">page (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> page id for the query. Allowed only for aggregation queries. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">page_size (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> page size of the query. Allowed only for the aggregation queries. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">pool_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> metrics for a member pool in a virtual service. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">prediction (optional)</div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Request prediction values instead of actual observed metrics in future if supported. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">result_format (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Deprecated. Please do not use this option. APIs only support JSON format. Enum options - METRICS_FORMAT_JSON, METRICS_FORMAT_CSV, METRICS_FORMAT_TXT, METRICS_FORMAT_PROTOBUF. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>

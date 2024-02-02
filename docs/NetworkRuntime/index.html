@@ -266,7 +266,7 @@ font-style: italic;
         "mask" : 123
       },
       "ip_range_runtimes" : [ {
-        "free_ip_count" : "",
+        "free_ip_count" : 123,
         "allocated_ips" : [ {
           "obj_info" : "aeiou",
           "ip" : {
@@ -276,7 +276,7 @@ font-style: italic;
           "obj_uuid" : "aeiou"
         } ],
         "type" : "aeiou",
-        "total_ip_count" : ""
+        "total_ip_count" : 123
       } ]
     } ],
     "obj_uuids" : [ "aeiou" ],
@@ -345,7 +345,7 @@ font-style: italic;
       "mask" : 123
     },
     "ip_range_runtimes" : [ {
-      "free_ip_count" : "",
+      "free_ip_count" : 123,
       "allocated_ips" : [ {
         "obj_info" : "aeiou",
         "ip" : {
@@ -355,7 +355,7 @@ font-style: italic;
         "obj_uuid" : "aeiou"
       } ],
       "type" : "aeiou",
-      "total_ip_count" : ""
+      "total_ip_count" : 123
     } ]
   } ],
   "obj_uuids" : [ "aeiou" ],
@@ -495,7 +495,7 @@ font-style: italic;
       "mask" : 123
     },
     "ip_range_runtimes" : [ {
-      "free_ip_count" : "",
+      "free_ip_count" : 123,
       "allocated_ips" : [ {
         "obj_info" : "aeiou",
         "ip" : {
@@ -505,7 +505,7 @@ font-style: italic;
         "obj_uuid" : "aeiou"
       } ],
       "type" : "aeiou",
-      "total_ip_count" : ""
+      "total_ip_count" : 123
     } ]
   } ],
   "obj_uuids" : [ "aeiou" ],
@@ -585,7 +585,7 @@ font-style: italic;
       "mask" : 123
     },
     "ip_range_runtimes" : [ {
-      "free_ip_count" : "",
+      "free_ip_count" : 123,
       "allocated_ips" : [ {
         "obj_info" : "aeiou",
         "ip" : {
@@ -595,7 +595,7 @@ font-style: italic;
         "obj_uuid" : "aeiou"
       } ],
       "type" : "aeiou",
-      "total_ip_count" : ""
+      "total_ip_count" : 123
     } ]
   } ],
   "obj_uuids" : [ "aeiou" ],
@@ -675,7 +675,7 @@ font-style: italic;
       "mask" : 123
     },
     "ip_range_runtimes" : [ {
-      "free_ip_count" : "",
+      "free_ip_count" : 123,
       "allocated_ips" : [ {
         "obj_info" : "aeiou",
         "ip" : {
@@ -685,7 +685,7 @@ font-style: italic;
         "obj_uuid" : "aeiou"
       } ],
       "type" : "aeiou",
-      "total_ip_count" : ""
+      "total_ip_count" : 123
     } ]
   } ],
   "obj_uuids" : [ "aeiou" ],
@@ -783,8 +783,8 @@ font-style: italic;
     <h3 class="field-label"><a name="StaticIpRangeRuntime">StaticIpRangeRuntime</a> <a class="up" href="#__Models">Up</a></h3>
     <div class="field-items">
       <div class="param">allocated_ips (optional)</div><div class="param-desc"><span class="param-type"><a href="#StaticIpAllocInfo">array[StaticIpAllocInfo]</a></span> Allocated IPs. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
-<div class="param">free_ip_count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Free IP count. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
-<div class="param">total_ip_count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Total IP count. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">free_ip_count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Free IP count. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
+<div class="param">total_ip_count (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Total IP count. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">type (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Object type (VIP only, Service Engine only, or both) which is using this IP group. Enum options - STATIC_IPS_FOR_SE, STATIC_IPS_FOR_VIP, STATIC_IPS_FOR_VIP_AND_SE. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. </div>
     </div>  <!-- field-items -->
   </div>
