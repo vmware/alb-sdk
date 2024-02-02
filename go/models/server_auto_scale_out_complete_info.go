@@ -13,7 +13,7 @@ type ServerAutoScaleOutCompleteInfo struct {
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	Nscaleout *uint32 `json:"nscaleout"`
+	Nscaleout *int32 `json:"nscaleout"`
 
 	// UUID of the Pool. It is a reference to an object of type Pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true

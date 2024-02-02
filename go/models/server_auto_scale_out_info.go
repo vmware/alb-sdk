@@ -22,11 +22,11 @@ type ServerAutoScaleOutInfo struct {
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	NumScaleoutServers *uint32 `json:"num_scaleout_servers"`
+	NumScaleoutServers *int32 `json:"num_scaleout_servers"`
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	NumServersUp *uint32 `json:"num_servers_up"`
+	NumServersUp *int32 `json:"num_servers_up"`
 
 	// UUID of the Pool. It is a reference to an object of type Pool. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
@@ -39,5 +39,5 @@ type ServerAutoScaleOutInfo struct {
 	ReasonCode *string `json:"reason_code,omitempty"`
 
 	// Desired number of servers for scheduled autoscale. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
-	ScheduledDesiredCapacity *uint32 `json:"scheduled_desired_capacity,omitempty"`
+	ScheduledDesiredCapacity *int32 `json:"scheduled_desired_capacity,omitempty"`
 }

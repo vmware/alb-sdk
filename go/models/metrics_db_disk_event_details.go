@@ -13,9 +13,9 @@ type MetricsDbDiskEventDetails struct {
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	MetricsFreeSz *uint64 `json:"metrics_free_sz"`
+	MetricsFreeSz *int64 `json:"metrics_free_sz"`
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	MetricsQuota *uint64 `json:"metrics_quota"`
+	MetricsQuota *int64 `json:"metrics_quota"`
 }

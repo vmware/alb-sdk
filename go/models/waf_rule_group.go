@@ -17,7 +17,7 @@ type WafRuleGroup struct {
 
 	//  Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	Index *uint32 `json:"index"`
+	Index *int32 `json:"index"`
 
 	//  Field introduced in 17.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true

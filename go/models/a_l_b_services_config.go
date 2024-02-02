@@ -42,7 +42,7 @@ type ALBServicesConfig struct {
 	OperationsConfig *OperationsConfig `json:"operations_config"`
 
 	// Time interval in minutes. Allowed values are 5-60. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	PollingInterval *uint32 `json:"polling_interval,omitempty"`
+	PollingInterval *int32 `json:"polling_interval,omitempty"`
 
 	// The FQDN or IP address of the customer portal. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true

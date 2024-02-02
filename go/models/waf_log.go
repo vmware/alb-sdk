@@ -27,19 +27,19 @@ type WafLog struct {
 	ApplicationRulesProcessed *bool `json:"application_rules_processed,omitempty"`
 
 	// Latency (in microseconds) in WAF Request Body Phase. Field introduced in 17.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	LatencyRequestBodyPhase *uint64 `json:"latency_request_body_phase,omitempty"`
+	LatencyRequestBodyPhase *int64 `json:"latency_request_body_phase,omitempty"`
 
 	// Latency (in microseconds) in WAF Request Header Phase. Field introduced in 17.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	LatencyRequestHeaderPhase *uint64 `json:"latency_request_header_phase,omitempty"`
+	LatencyRequestHeaderPhase *int64 `json:"latency_request_header_phase,omitempty"`
 
 	// Latency (in microseconds) in WAF Response Body Phase. Field introduced in 17.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	LatencyResponseBodyPhase *uint64 `json:"latency_response_body_phase,omitempty"`
+	LatencyResponseBodyPhase *int64 `json:"latency_response_body_phase,omitempty"`
 
 	// Latency (in microseconds) in WAF Response Header Phase. Field introduced in 17.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	LatencyResponseHeaderPhase *uint64 `json:"latency_response_header_phase,omitempty"`
+	LatencyResponseHeaderPhase *int64 `json:"latency_response_header_phase,omitempty"`
 
 	// The total memory (in bytes) consumed by WAF to process this request. Field introduced in 22.1.1. Unit is BYTES. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
-	MemoryAllocated *uint64 `json:"memory_allocated,omitempty"`
+	MemoryAllocated *int64 `json:"memory_allocated,omitempty"`
 
 	// Omitted Application rule log stats. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	OmittedAppRuleStats *OmittedWafLogStats `json:"omitted_app_rule_stats,omitempty"`
