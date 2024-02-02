@@ -953,7 +953,7 @@ definitions:
             anomaly_penalty:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             anomaly_score:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScoreAnomalyData'
@@ -967,7 +967,7 @@ definitions:
             num_samples:
                 description: "This keeps the num samples reported during aggregation queries. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             performance_score:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScorePerformanceData'
@@ -975,7 +975,7 @@ definitions:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
-                format: uint32
+                format: int32
             reason:
                 description: "Reason for the Health Score. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -985,14 +985,14 @@ definitions:
             resources_penalty:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             resources_score:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScoreResourcesData'
             security_penalty:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             security_threat_level:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HealthScoreSecurityData'
@@ -1060,7 +1060,7 @@ definitions:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 100
-                format: uint32
+                format: int32
             missing_intervals:
                 description: "Missing data intervals. data in these intervals are not used for stats calculation. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
@@ -1370,7 +1370,7 @@ definitions:
             num_samples:
                 description: "Number of actual data samples. It excludes fake data. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             sum:
                 description: "summation of all values. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number

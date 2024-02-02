@@ -521,19 +521,19 @@
                     "description": "Default required minimum receive interval (in ms) used in BFD. Allowed values are 500-4000000. Field introduced in 20.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "mintx": {
                     "description": "Default desired minimum transmit interval (in ms) used in BFD. Allowed values are 500-4000000. Field introduced in 20.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "multi": {
                     "description": "Default detection multiplier used in BFD. Allowed values are 3-255. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 3,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -554,7 +554,7 @@
                     "description": "Advertisement interval for this Peer. Allowed values are 1-60. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "bfd": {
                     "description": "Enable Bi-Directional Forward Detection. Only async mode supported. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -565,17 +565,17 @@
                     "description": "Connect timer for this Peer. Allowed values are 1-120. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "ebgp_multihop": {
                     "description": "TTL for multihop ebgp Peer. Allowed values are 0-255. Field introduced in 17.1.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "hold_time": {
                     "description": "Hold time for this Peer. Allowed values are 3-7200. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "ibgp_local_as_override": {
                     "description": "Override the profile level local_as with the peer level remote_as. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -584,7 +584,7 @@
                 "keepalive_interval": {
                     "description": "Keepalive interval for this Peer. Allowed values are 0-3600. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "label": {
                     "description": "Label used to enable learning and/or advertisement of routes to this peer. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -593,7 +593,7 @@
                 "local_as": {
                     "description": "Local AS to use for this ebgp peer. If specified, this will override the local AS configured at the VRF level. Allowed values are 1-4294967295. Field introduced in 17.1.6,17.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "md5_secret": {
                     "description": "Peer Autonomous System Md5 Digest Secret Key. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -614,7 +614,7 @@
                 "remote_as": {
                     "description": "Peer Autonomous System ID. Allowed values are 1-4294967295. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "shutdown": {
                     "description": "Shutdown the BGP peer. Field introduced in 17.2.4. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -648,7 +648,7 @@
                     "description": "Hold time for Peers. Allowed values are 3-7200. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 180,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "ibgp": {
                     "description": "BGP peer type. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -666,22 +666,22 @@
                     "description": "Keepalive interval for Peers. Allowed values are 0-3600. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "local_as": {
                     "description": "Local Autonomous System ID. Allowed values are 1-4294967295. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "local_preference": {
                     "description": "LOCAL_PREF to be used for routes advertised. Applicable only over iBGP. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "num_as_path_prepend": {
                     "description": "Number of times the local AS should be prepended additionally. Allowed values are 1-10. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "peers": {
                     "description": "BGP Peers. Maximum of 128 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -738,7 +738,7 @@
                     "description": "Maximum number of routes that can be learned from a BGP peer. Allowed values are 50-250. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 50,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -749,7 +749,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -772,13 +772,13 @@
                     "description": "Vrf config command buffer process interval. Allowed values are 1-4. Field introduced in 17.2.13,18.1.5,18.2.1. Unit is SECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "command_buffer_size": {
                     "description": "Vrf config command buffer size. Allowed values are 1-32768. Field introduced in 17.2.13,18.1.5,18.2.1. Unit is BYTES. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 32768,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "flags": {
                     "description": " Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -803,19 +803,19 @@
                     "description": "The number of consecutive failed gateway health checks before a gateway is marked down. Allowed values are 3-50. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "gateway_monitor_interval": {
                     "description": "The interval between two ping requests sent by the gateway monitor in milliseconds. If a value is not specified, requests are sent every second. Allowed values are 100-60000. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "gateway_monitor_success_threshold": {
                     "description": "The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up. Allowed values are 3-50. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 15,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "subnet": {
                     "description": "Subnet providing reachability for Multi-hop Gateway. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -834,19 +834,19 @@
                     "description": "The number of consecutive failed gateway health checks before a gateway is marked down. Allowed values are 3-50. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "gateway_monitor_interval": {
                     "description": "The interval between two ping requests sent by the gateway monitor in milliseconds. If a value is not specified, requests are sent every second. Allowed values are 100-60000. Field introduced in 17.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "gateway_monitor_success_threshold": {
                     "description": "The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up. Allowed values are 3-50. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 15,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },

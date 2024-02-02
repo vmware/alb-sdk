@@ -1480,7 +1480,7 @@
                 "disk_gb": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "enhanced_nw": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1497,17 +1497,17 @@
                 "max_ip6s_per_nic": {
                     "description": "Maximum number of IPv6 addresses that can be configured per NIC. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "max_ips_per_nic": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "max_nics": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "meta": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1528,12 +1528,12 @@
                 "ram_mb": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "vcpus": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -1578,7 +1578,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -1821,7 +1821,7 @@
                     "items": {
                         "type": "integer"
                     },
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -1835,7 +1835,7 @@
                     "description": "Real time metrics collection duration in minutes. 0 for infinite. Special values are 0 - infinite. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 30,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "enabled": {
                     "description": "Enables real time metrics collection.  When deactivated, 6 hour view is the most granular the system will track. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1898,19 +1898,19 @@
                     "description": "SE CPU limit for InterSE Object Distribution. Allowed values are 15-80. Field introduced in 20.1.3. Unit is PERCENT. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 30,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "objsync_hub_elect_interval": {
                     "description": "Hub election interval for InterSE Object Distribution. Allowed values are 30-300. Field introduced in 20.1.3. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "objsync_reconcile_interval": {
                     "description": "Reconcile interval for InterSE Object Distribution. Allowed values are 1-120. Field introduced in 20.1.3. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -1959,12 +1959,12 @@
                 "end": {
                     "description": "TCP/UDP port range end (inclusive). Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "start": {
                     "description": "TCP/UDP port range start (inclusive). Allowed values are 1-65535. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -1975,13 +1975,13 @@
                     "description": "Number of stages in msf rate limiter. Allowed values are 1-2. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "msf_stage_size": {
                     "description": "Each stage size in msf rate limiter. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 16384,
-                    "format": "uint64"
+                    "format": "int64"
                 }
             }
         },
@@ -2061,24 +2061,24 @@
                     "description": "A percent value of total SE memory reserved for applicationcaching. This is an SE bootup property and requires SE restart.Requires SE Reboot. Allowed values are 0 - 100. Special values are 0- disable. Field introduced in 18.2.3. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition. Special default for Essentials edition is 0, Basic edition is 0, Enterprise is 10.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "app_cache_threshold": {
                     "description": "The max memory that can be allocated for the app cache. This value will act as an upper bound on the cache size specified in app_cache_percent. Special values are 0- disable. Field introduced in 20.1.1. Unit is GB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "app_learning_memory_percent": {
                     "description": "A percent value of total SE memory reserved for Application learning. This is an SE bootup property and requires SE restart. Allowed values are 0 - 10. Field introduced in 18.2.3. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "archive_shm_limit": {
                     "description": "Amount of SE memory in GB until which shared memory is collected in core archive. Field introduced in 17.1.3. Unit is GB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 8,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "async_ssl": {
                     "description": "SSL handshakes will be handled by dedicated SSL Threads.Requires SE Reboot. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition.",
@@ -2088,7 +2088,7 @@
                     "description": "Number of Async SSL threads per se_dp.Requires SE Reboot. Allowed values are 1-16. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "auto_rebalance": {
                     "description": "If set, Virtual Services will be automatically migrated when load on an SE is less than minimum or more than maximum thresholds. Only Alerts are generated when the auto_rebalance is not set. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition.",
@@ -2100,7 +2100,7 @@
                     "items": {
                         "type": "integer"
                     },
-                    "format": "uint64"
+                    "format": "int64"
                 },
                 "auto_rebalance_criteria": {
                     "description": "Set of criteria for SE Auto Rebalance. Enum options - SE_AUTO_REBALANCE_CPU, SE_AUTO_REBALANCE_PPS, SE_AUTO_REBALANCE_MBPS, SE_AUTO_REBALANCE_OPEN_CONNS, SE_AUTO_REBALANCE_CPS. Field introduced in 17.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2138,7 +2138,7 @@
                     "description": "BGP peer state update interval. Allowed values are 5-100. Field introduced in 17.2.14,18.1.5,18.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "buffer_se": {
                     "description": "Excess Service Engine capacity provisioned for HA failover. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2167,7 +2167,7 @@
                     "description": "Percentage of memory for connection state. This will come at the expense of memory used for HTTP in-memory cache. Allowed values are 10-90. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 50,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "core_shm_app_cache": {
                     "description": "Include shared memory for app cache in core file.Requires SE Reboot. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2214,7 +2214,7 @@
                     "description": "Number of instructions before datascript times out. Allowed values are 0-100000000. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000000,
-                    "format": "uint64"
+                    "format": "int64"
                 },
                 "deactivate_ipv6_discovery": {
                     "description": "If activated, IPv6 address and route discovery are deactivated.Requires SE reboot. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -2278,61 +2278,61 @@
                     "description": "Timeout for downstream to become writable. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 3600000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "dp_aggressive_deq_interval_msec": {
                     "description": "Dequeue interval for receive queue from se_dp in aggressive mode. Allowed values are 1-1000. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "dp_aggressive_enq_interval_msec": {
                     "description": "Enqueue interval for request queue to se_dp in aggressive mode. Allowed values are 1-1000. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "dp_aggressive_hb_frequency": {
                     "description": "Frequency of SE - SE HB messages when aggressive failure mode detection is enabled. Field introduced in 20.1.3. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "dp_aggressive_hb_timeout_count": {
                     "description": "Consecutive HB failures after which failure is reported to controller,when aggressive failure mode detection is enabled. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "dp_deq_interval_msec": {
                     "description": "Dequeue interval for receive queue from se_dp. Allowed values are 1-1000. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 20,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "dp_enq_interval_msec": {
                     "description": "Enqueue interval for request queue to se_dp. Allowed values are 1-1000. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 20,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "dp_hb_frequency": {
                     "description": "Frequency of SE - SE HB messages when aggressive failure mode detection is not enabled. Field introduced in 20.1.3. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "dp_hb_timeout_count": {
                     "description": "Consecutive HB failures after which failure is reported to controller, when aggressive failure mode detection is not enabled. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "dpdk_gro_timeout_interval": {
                     "description": "The timeout for GRO coalescing interval. 0 indicates non-timer based GRO. Allowed values are 0-900. Field introduced in 22.1.1. Unit is MICROSECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 50,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "enable_gratarp_permanent": {
                     "description": "Enable GratArp for VIP_IP. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2357,12 +2357,12 @@
                 "ephemeral_portrange_end": {
                     "description": "End local ephemeral port number for outbound connections. Field introduced in 17.2.13, 18.1.5, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "ephemeral_portrange_start": {
                     "description": "Start local ephemeral port number for outbound connections. Field introduced in 17.2.13, 18.1.5, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "extra_config_multiplier": {
                     "description": "Multiplier for extra config to support large VS/Pool config. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2372,18 +2372,18 @@
                 "extra_shared_config_memory": {
                     "description": "Extra config memory to support large Geo DB configuration. Field introduced in 17.1.1. Unit is MB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "flow_table_new_syn_max_entries": {
                     "description": "Maximum number of flow table entries that have not completed TCP three-way handshake yet. Field introduced in 17.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "free_list_size": {
                     "description": "Number of entries in the free list. Field introduced in 17.2.10, 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1024,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "gcp_config": {
                     "description": "Google Cloud Platform, Service Engine Group Configuration. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -2393,13 +2393,13 @@
                     "description": "GratArp periodicity for VIP-IP. Allowed values are 5-30. Field introduced in 18.2.3. Unit is MIN. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "grpc_channel_connect_timeout": {
                     "description": "Timeout in seconds that SE waits for a grpc channel to connect to server, before it retries. Allowed values are 5-45. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 15,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "ha_mode": {
                     "description": "High Availability mode for all the Virtual Services using this Service Engine group. Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- HA_MODE_LEGACY_ACTIVE_STANDBY), Basic edition(Allowed values- HA_MODE_LEGACY_ACTIVE_STANDBY), Enterprise with Cloud Services edition. Special default for Essentials edition is HA_MODE_LEGACY_ACTIVE_STANDBY, Basic edition is HA_MODE_LEGACY_ACTIVE_STANDBY, Enterprise is HA_MODE_SHARED.",
@@ -2419,7 +2419,7 @@
                     "description": "Minimum required heap memory to apply any configuration. Allowed values are 0-100. Field introduced in 18.1.2. Unit is MB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 8,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "hm_on_standby": {
                     "description": "Enable active health monitoring from the standby SE for all placed virtual services. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition. Special default for Essentials edition is false, Basic edition is false, Enterprise is True.",
@@ -2446,7 +2446,7 @@
                     "description": "Minimum response size content length to sample for client insights. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 64), Basic edition(Allowed values- 64), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 64,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "hybrid_rss_mode": {
                     "description": "Toggles SE hybrid only mode of operation in DPDK mode with RSS configured;where-in each SE datapath instance operates as an independent standalonehybrid instance performing both dispatcher and proxy function. Requires reboot. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -2465,7 +2465,7 @@
                     "description": "Ignore RTT samples if it is above threshold. Field introduced in 17.1.6,17.2.2. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "ingress_access_data": {
                     "description": "Program SE security group ingress rules to allow VIP data access from remote CIDR type. Enum options - SG_INGRESS_ACCESS_NONE, SG_INGRESS_ACCESS_ALL, SG_INGRESS_ACCESS_VPC. Field introduced in 17.1.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2503,13 +2503,13 @@
                     "description": "Number of L7 connections that can be cached per core. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 16384,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "l7_resvd_listen_conns_per_core": {
                     "description": "Number of reserved L7 listener connections per core. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 256,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "labels": {
                     "description": "Labels associated with this SE group. Field introduced in 20.1.1. Maximum of 1 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2522,13 +2522,13 @@
                     "description": "Number of requests to dispatch from the request. queue at a regular interval. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 4,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "lbaction_rq_per_request_max_retries": {
                     "description": "Maximum retries per request in the request queue. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 22,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "least_load_core_selection": {
                     "description": "Select core with least load for new flow. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2556,43 +2556,43 @@
                     "description": "Maximum application log file size before rollover. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 4,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "log_agent_file_sz_conn": {
                     "description": "Maximum connection log file size before rollover. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 4,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "log_agent_file_sz_debug": {
                     "description": "Maximum debug log file size before rollover. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 4,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "log_agent_file_sz_event": {
                     "description": "Maximum event log file size before rollover. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 4,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "log_agent_log_storage_min_sz": {
                     "description": "Minimum storage allocated for logs irrespective of memory and cores. Field introduced in 21.1.1. Unit is MB. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1024,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "log_agent_max_concurrent_rsync": {
                     "description": "Maximum concurrent rsync requests initiated from log-agent to the Controller. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1024,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "log_agent_max_storage_excess_percent": {
                     "description": "Excess percentage threshold of disk size to trigger cleanup of logs on the Service Engine. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 110,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "log_agent_max_storage_ignore_percent": {
                     "description": "Maximum storage on the disk not allocated for logs on the Service Engine. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -2604,13 +2604,13 @@
                     "description": "Minimum storage allocated to any given VirtualService on the Service Engine. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "log_agent_sleep_interval": {
                     "description": "Internal timer to stall log-agent and prevent it from hogging CPU cycles on the Service Engine. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "log_agent_trace_enabled": {
                     "description": "Enable trace logs by default on Service Engine. Configuration operations are logged along with other important logs by Service Engine. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -2621,13 +2621,13 @@
                     "description": "Timeout to purge unknown Virtual Service logs from the Service Engine. Field introduced in 21.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1800,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "log_disksz": {
                     "description": "Maximum disk capacity (in MB) to be allocated to an SE. This is exclusively used for debug and log data. Unit is MB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "log_malloc_failure": {
                     "description": "SE will log memory allocation related failure to the se_trace file, wherever available. Field introduced in 20.1.2. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- true), Basic edition(Allowed values- true), Enterprise with Cloud Services edition.",
@@ -2638,7 +2638,7 @@
                     "description": "Maximum number of file names in a log message. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 64,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "markers": {
                     "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.7. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
@@ -2650,7 +2650,7 @@
                 "max_concurrent_external_hm": {
                     "description": "Maximum number of external health monitors that can run concurrently in a service engine. This helps control the CPU and memory use by external health monitors. Special values are 0- Value will be internally calculated based on cpu and memory. Field introduced in 18.2.7. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "max_cpu_usage": {
                     "description": "When CPU usage on an SE exceeds this threshold, Virtual Services hosted on this SE may be rebalanced to other SEs to reduce load. A new SE may be created as part of this process. Allowed values are 40-90. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2662,36 +2662,36 @@
                     "description": "Max bytes that can be allocated in a single mempool. Field introduced in 18.1.5. Unit is MB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 64,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "max_num_se_dps": {
                     "description": "Configures the maximum number of se_dp processes that handles traffic. If not configured, defaults to the number of CPUs on the SE. If decreased, it will only take effect after SE reboot. Allowed values are 1-128. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "max_public_ips_per_lb": {
                     "description": "Applicable to Azure platform only. Maximum number of public IPs per Azure LB. . Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 30,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "max_queues_per_vnic": {
                     "description": "Maximum number of queues per vnic Setting to '0' utilises all queues that are distributed across dispatcher cores. Allowed values are 0,1,2,4,8,16. Field introduced in 18.2.7, 20.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 1), Basic edition(Allowed values- 1), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "max_rules_per_lb": {
                     "description": "Applicable to Azure platform only. Maximum number of rules per Azure LB. . Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 150,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "max_scaleout_per_vs": {
                     "description": "Maximum number of active Service Engines for the Virtual Service. Allowed values are 1-64. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 4,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "max_se": {
                     "description": "Maximum number of Services Engines in this group. Allowed values are 0-1000. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2703,7 +2703,7 @@
                     "description": "Maximum of number of 4 KB pages allocated to the Linux kernel GRO subsystem for packet coalescing. This parameter is limited to supported kernels only. Requires SE Reboot. Allowed values are 1-17. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 17,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "max_vs_per_se": {
                     "description": "Maximum number of Virtual Services that can be placed on a single Service Engine. Allowed values are 1-1000. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2720,7 +2720,7 @@
                     "description": "Indicates the percent of memory reserved for config updates. Allowed values are 0-100. Field introduced in 18.1.2. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 15,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "memory_per_se": {
                     "description": "Amount of memory for each of the Service Engine virtual machines. Changes to this setting do not affect existing SEs. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2758,13 +2758,13 @@
                     "description": "Indicates the percent of memory reserved for connections. Allowed values are 0-100. Field introduced in 18.1.2. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 20,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "n_log_streaming_threads": {
                     "description": "Number of threads to use for log streaming. Allowed values are 1-100. Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "name": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2774,13 +2774,13 @@
                     "description": "Number of threads to poll for netlink messages excluding the thread for default namespace. Requires SE Reboot. Allowed values are 1-32. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "netlink_sock_buf_size": {
                     "description": "Socket buffer size for the netlink sockets. Requires SE Reboot. Allowed values are 1-128. Field introduced in 21.1.1. Unit is MEGA_BYTES. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 4,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "ngx_free_connection_stack": {
                     "description": "Free the connection stack. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -2790,13 +2790,13 @@
                     "description": "This setting limits the number of non-significant logs generated per second per core on this SE. Default is 100 logs per second. Set it to zero (0) to deactivate throttling. Field introduced in 17.1.3. Unit is PER_SECOND. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "ns_helper_deq_interval_msec": {
                     "description": "Dequeue interval for receive queue from NS HELPER. Allowed values are 1-1000. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 20,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "ntp_sync_fail_event": {
                     "description": "Toggle SE NTP synchronization failure events generation. Disabled by default. Field introduced in 22.1.2. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
@@ -2805,24 +2805,24 @@
                 "ntp_sync_status_interval": {
                     "description": "Configures the interval at which SE synchronization status with NTP server(s) is verified. A value of zero disables SE NTP synchronization status validation. Allowed values are 120-900. Special values are 0- disable. Field introduced in 22.1.2. Unit is SEC. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "num_dispatcher_cores": {
                     "description": "Number of dispatcher cores (0,1,2,4,8 or 16). If set to 0, then number of dispatcher cores is deduced automatically.Requires SE Reboot. Allowed values are 0,1,2,4,8,16. Field introduced in 17.2.12, 18.1.3, 18.2.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "num_dispatcher_queues": {
                     "description": "Number of queues to each dispatcher. Allowed values are 1-2. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "num_flow_cores_sum_changes_to_ignore": {
                     "description": "Number of changes in num flow cores sum to ignore. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 8,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "objsync_config": {
                     "description": "Configuration knobs for InterSE Object Distribution. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -2832,7 +2832,7 @@
                     "description": "TCP port on SE management interface for InterSE Object Distribution. Supported only for externally managed security groups. Not supported on full access deployments. Requires SE reboot. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 9001,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "openstack_availability_zones": {
                     "description": " Field introduced in 17.1.1. Maximum of 5 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2852,7 +2852,7 @@
                 "os_reserved_memory": {
                     "description": "Amount of extra memory to be reserved for use by the Operating System on a Service Engine. Unit is MB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "pcap_tx_mode": {
                     "description": "Determines the PCAP transmit mode of operation. Requires SE Reboot. Enum options - PCAP_TX_AUTO, PCAP_TX_SOCKET, PCAP_TX_RING. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -2863,7 +2863,7 @@
                     "description": "In PCAP mode, reserve a configured portion of TX ring resources for itself and the remaining portion for the RX ring to achieve better balance in terms of queue depth. Requires SE Reboot. Allowed values are 10-100. Field introduced in 20.1.3. Unit is PERCENT. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "per_app": {
                     "description": "Per-app SE mode is designed for deploying dedicated load balancers per app (VS). In this mode, each SE is limited to a max of 2 VSs. vCPUs in per-app SEs count towards licensing usage at 25% rate. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition.",
@@ -2891,31 +2891,31 @@
                     "description": "Routes in VRF are replayed at the specified interval. This should be increased if there are large number of routes. Allowed values are 0-3000. Field introduced in 22.1.3. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "resync_time_interval": {
                     "description": "Time interval to re-sync SE's time with wall clock time. Allowed values are 8-600000. Field introduced in 20.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 65536,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "sdb_flush_interval": {
                     "description": "SDB pipeline flush interval. Allowed values are 1-10000. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "sdb_pipeline_size": {
                     "description": "SDB pipeline size. Allowed values are 1-10000. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "sdb_scan_count": {
                     "description": "SDB scan count. Allowed values are 1-1000. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_bandwidth_type": {
                     "description": "Select the SE bandwidth for the bandwidth license. Enum options - SE_BANDWIDTH_UNLIMITED, SE_BANDWIDTH_25M, SE_BANDWIDTH_200M, SE_BANDWIDTH_1000M, SE_BANDWIDTH_10000M. Field introduced in 17.2.5. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- SE_BANDWIDTH_UNLIMITED), Basic edition(Allowed values- SE_BANDWIDTH_UNLIMITED), Enterprise with Cloud Services edition.",
@@ -2945,7 +2945,7 @@
                     "description": "Number of jiffies between polling interface state. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_dp_isolation": {
                     "description": "Toggle support to run SE datapath instances in isolation on exclusive CPUs. This improves latency and performance. However, this could reduce the total number of se_dp instances created on that SE instance. Supported for >= 8 CPUs. Requires SE reboot. Field introduced in 20.1.4. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -2954,59 +2954,59 @@
                 "se_dp_isolation_num_non_dp_cpus": {
                     "description": "Number of CPUs for non se-dp tasks in SE datapath isolation mode. Translates Total cpus minus 'num_non_dp_cpus' for datapath use. It is recommended to reserve an even number of CPUs for hyper-threaded processors. Requires SE reboot. Allowed values are 1-8. Special values are 0- auto. Field introduced in 20.1.4. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_dp_log_nf_enqueue_percent": {
                     "description": "Internal buffer full indicator on the Service Engine beyond which the unfiltered logs are abandoned. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 70,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_dp_log_udf_enqueue_percent": {
                     "description": "Internal buffer full indicator on the Service Engine beyond which the user filtered logs are abandoned. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 90,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_dp_max_hb_version": {
                     "description": "The highest supported SE-SE Heartbeat protocol version. This version is reported by Secondary SE to Primary SE in Heartbeat response messages. Allowed values are 1-3. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 3,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_dp_vnic_queue_stall_event_sleep": {
                     "description": "Time (in seconds) service engine waits for after generating a Vnic transmit queue stall event before resetting theNIC. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_dp_vnic_queue_stall_threshold": {
                     "description": "Number of consecutive transmit failures to look for before generating a Vnic transmit queue stall event. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_dp_vnic_queue_stall_timeout": {
                     "description": "Time (in milliseconds) to wait for network/NIC recovery on detecting a transmit queue stall after which service engine resets the NIC. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_dp_vnic_restart_on_queue_stall_count": {
                     "description": "Number of consecutive transmit queue stall events in se_dp_vnic_stall_se_restart_window to look for before restarting SE. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 3,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_dp_vnic_stall_se_restart_window": {
                     "description": "Window of time (in seconds) during which se_dp_vnic_restart_on_queue_stall_count number of consecutive stalls results in a SE restart. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 3600,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_dpdk_pmd": {
                     "description": "Determines if DPDK pool mode driver should be used or not   0  Automatically determine based on hypervisor/NIC type 1  Unconditionally use DPDK poll mode driver 2  Don't use DPDK poll mode driver.Requires SE Reboot. Allowed values are 0-2. Field introduced in 18.1.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_dump_core_on_assert": {
                     "description": "Enable core dump on assert. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
@@ -3015,19 +3015,19 @@
                 "se_emulated_cores": {
                     "description": "Use this to emulate more/less cpus than is actually available. One datapath process is started for each core. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_flow_probe_retries": {
                     "description": "Flow probe retry count if no replies are received.Requires SE Reboot. Allowed values are 0-5. Field introduced in 18.1.4, 18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_flow_probe_retry_timer": {
                     "description": "Timeout in milliseconds for flow probe retries.Requires SE Reboot. Allowed values are 20-50. Field introduced in 18.2.5. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 40,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_group_analytics_policy": {
                     "description": "Analytics Policy for ServiceEngineGroup. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -3041,17 +3041,17 @@
                 "se_ip_encap_ipc": {
                     "description": "Determines if SE-SE IPC messages are encapsulated in an IP header       0        Automatically determine based on hypervisor type    1        Use IP encap unconditionally    ~[0,1]   Don't use IP encapRequires SE Reboot. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_kni_burst_factor": {
                     "description": "This knob controls the resource availability and burst size used between SE datapath and KNI. This helps in minimising packet drops when there is higher KNI traffic (non-VIP traffic from and to Linux). The factor takes the following values      0-default.     1-doubles the burst size and KNI resources.     2-quadruples the burst size and KNI resources. Allowed values are 0-2. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_l3_encap_ipc": {
                     "description": "Determines if SE-SE IPC messages use SE interface IP instead of VIP        0        Automatically determine based on hypervisor type    1        Use SE interface IP unconditionally    ~[0,1]   Don't use SE interface IPRequires SE Reboot. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_log_buffer_app_blocking_dequeue": {
                     "description": "Internal flag that blocks dataplane until all application logs are flushed to log-agent process. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -3074,12 +3074,12 @@
                     "description": "The retry count for the multi-producer enqueue before yielding the CPU. To be used under surveillance of Avi Support. Field introduced in 20.1.3. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 500), Basic edition(Allowed values- 500), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 500,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_mtu": {
                     "description": "MTU for the VNICs of SEs in the SE group. Allowed values are 512-9000. Field introduced in 18.2.8, 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_name_prefix": {
                     "description": "Prefix to use for virtual machine name of Service Engines. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3089,7 +3089,7 @@
                 "se_packet_buffer_max": {
                     "description": "Internal use only. Used to artificially reduce the available number of packet buffers. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_pcap_lookahead": {
                     "description": "Enables lookahead mode of packet receive in PCAP mode. Introduced to overcome an issue with hv_netvsc driver. Lookahead mode attempts to ensure that application and kernel's view of the receive rings are consistent. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3098,13 +3098,13 @@
                 "se_pcap_pkt_count": {
                     "description": "Max number of packets the pcap interface can hold and if the value is 0 the optimum value will be chosen. The optimum value will be chosen based on SE-memory, Cloud Type and Number of Interfaces.Requires SE Reboot. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_pcap_pkt_sz": {
                     "description": "Max size of each packet in the pcap interface. Requires SE Reboot. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 69632,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_pcap_qdisc_bypass": {
                     "description": "Bypass the kernel's traffic control layer, to deliver packets directly to the driver. Enabling this feature results in egress packets not being captured in host tcpdump. Note   brief packet reordering or loss may occur upon toggle. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3114,18 +3114,18 @@
                 "se_pcap_reinit_frequency": {
                     "description": "Frequency in seconds at which periodically a PCAP reinit check is triggered. May be used in conjunction with the configuration pcap_reinit_threshold. (Valid range   15 mins - 12 hours, 0 - disables). Allowed values are 900-43200. Special values are 0- disable. Field introduced in 17.2.13, 18.1.3, 18.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_pcap_reinit_threshold": {
                     "description": "Threshold for input packet receive errors in PCAP mode exceeding which a PCAP reinit is triggered. If not set, an unconditional reinit is performed. This value is checked every pcap_reinit_frequency interval. Field introduced in 17.2.13, 18.1.3, 18.2.1. Unit is METRIC_COUNT. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_probe_port": {
                     "description": "TCP port on SE where echo service will be run. Field introduced in 17.2.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 7,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_rl_prop": {
                     "description": "Rate limiter properties. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3135,25 +3135,25 @@
                     "description": "Minimum time to wait on server between taking sampleswhen sampling the navigation timing data from the end user client. Field introduced in 18.2.6. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_rum_sampling_nav_percent": {
                     "description": "Percentage of navigation timing data from the end user client, used for sampling to get client insights. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_rum_sampling_res_interval": {
                     "description": "Minimum time to wait on server between taking sampleswhen sampling the resource timing data from the end user client. Field introduced in 18.2.6. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_rum_sampling_res_percent": {
                     "description": "Percentage of resource timing data from the end user client used for sampling to get client insight. Field introduced in 18.2.6. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_sb_dedicated_core": {
                     "description": "Sideband traffic will be handled by a dedicated core.Requires SE Reboot. Field introduced in 16.5.2, 17.1.9, 17.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3163,13 +3163,13 @@
                     "description": "Number of Sideband threads per SE.Requires SE Reboot. Allowed values are 1-128. Field introduced in 16.5.2, 17.1.9, 17.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_thread_multiplier": {
                     "description": "Multiplier for SE threads based on vCPU. Allowed values are 1-10. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 1), Basic edition(Allowed values- 1), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_time_tracker_props": {
                     "description": "SE per-packet latency tracking configuration. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
@@ -3182,58 +3182,58 @@
                 "se_tunnel_mode": {
                     "description": "Determines if Direct Secondary Return (DSR) from secondary SE is active or not  0  Automatically determine based on hypervisor type. 1  Enable tunnel mode - DSR is unconditionally disabled. 2  Disable tunnel mode - DSR is unconditionally enabled. Tunnel mode can be enabled or disabled at run-time. Allowed values are 0-2. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_tunnel_udp_port": {
                     "description": "UDP Port for tunneled packets from secondary to primary SE in Docker bridge mode.Requires SE Reboot. Field introduced in 17.1.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1550,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_tx_batch_size": {
                     "description": "Number of packets to batch for transmit to the nic. Requires SE Reboot. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 64,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_txq_threshold": {
                     "description": "Once the TX queue of the dispatcher reaches this threshold, hardware queues are not polled for further packets. To be used under surveillance of Avi Support. Allowed values are 512-32768. Field introduced in 20.1.2. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 2048), Basic edition(Allowed values- 2048), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2048,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_udp_encap_ipc": {
                     "description": "Determines if SE-SE IPC messages are encapsulated in a UDP header  0  Automatically determine based on hypervisor type. 1  Use UDP encap unconditionally.Requires SE Reboot. Allowed values are 0-1. Field introduced in 17.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_use_dpdk": {
                     "description": "Determines if DPDK library should be used or not   0  Automatically determine based on hypervisor type 1  Use DPDK if PCAP is not enabled 2  Don't use DPDK. Allowed values are 0-2. Field introduced in 18.1.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_vnic_tx_sw_queue_flush_frequency": {
                     "description": "Configure the frequency in milliseconds of software transmit spillover queue flush when enabled. This is necessary to flush any packets in the spillover queue in the absence of a packet transmit in the normal course of operation. Allowed values are 50-500. Special values are 0- disable. Field introduced in 20.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_vnic_tx_sw_queue_size": {
                     "description": "Configure the size of software transmit spillover queue when enabled. Requires SE Reboot. Allowed values are 128-2048. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 256,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_vs_hb_max_pkts_in_batch": {
                     "description": "Maximum number of aggregated vs heartbeat packets to send in a batch. Allowed values are 1-256. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 64,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_vs_hb_max_vs_in_pkt": {
                     "description": "Maximum number of virtualservices for which heartbeat messages are aggregated in one packet. Allowed values are 1-1024. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 256,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "self_se_election": {
                     "description": "Enable SEs to elect a primary amongst themselves in the absence of a connectivity to controller. Field introduced in 18.1.2. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- false), Basic edition(Allowed values- false), Enterprise with Cloud Services edition.",
@@ -3243,7 +3243,7 @@
                     "description": "Timeout for sending SE_READY without NS HELPER registration completion. Allowed values are 10-600. Field introduced in 21.1.1. Unit is SECONDS. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 300,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "service_ip6_subnets": {
                     "description": "IPv6 Subnets assigned to the SE group. Required for VS group placement. Field introduced in 18.1.1. Maximum of 128 items allowed. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3263,13 +3263,13 @@
                     "description": "Minimum required shared memory to apply any configuration. Allowed values are 0-100. Field introduced in 18.1.2. Unit is MB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 4,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "significant_log_throttle": {
                     "description": "This setting limits the number of significant logs generated per second per core on this SE. Default is 100 logs per second. Set it to zero (0) to deactivate throttling. Field introduced in 17.1.3. Unit is PER_SECOND. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "ssl_preprocess_sni_hostname": {
                     "description": "(Beta) Preprocess SSL Client Hello for SNI hostname extension.If set to True, this will apply SNI child's SSL protocol(s), if they are different from SNI Parent's allowed SSL protocol(s). Field introduced in 17.2.12, 18.1.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3280,7 +3280,7 @@
                     "description": "Number of SSL sessions that can be cached per VS. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 4096,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "tenant_ref": {
                     "description": " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3290,19 +3290,19 @@
                     "description": "The threshold for the transient shared config memory in the SE. Allowed values are 0-100. Field introduced in 20.1.1. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 30,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "udf_log_throttle": {
                     "description": "This setting limits the number of UDF logs generated per second per core on this SE. UDF logs are generated due to the configured client log filters or the rules with logging enabled. Default is 100 logs per second. Set it to zero (0) to deactivate throttling. Field introduced in 17.1.3. Unit is PER_SECOND. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "upstream_connect_timeout": {
                     "description": "Timeout for backend connection. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 3600000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "upstream_connpool_enable": {
                     "description": "Enable upstream connection pool,. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -3313,13 +3313,13 @@
                     "description": "Timeout for data to be received from backend. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 3600000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "upstream_send_timeout": {
                     "description": "Timeout for upstream to become writable. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 3600000), Basic edition(Allowed values- 3600000), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 3600000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "url": {
                     "description": "url",
@@ -3355,7 +3355,7 @@
                     "description": "Defines in seconds how long before an unused user-defined-metric is garbage collected. Field introduced in 21.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "uuid": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3415,37 +3415,37 @@
                     "description": "DHCP ip check interval. Allowed values are 1-1000. Field introduced in 21.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 6,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "vnic_dhcp_ip_max_retries": {
                     "description": "DHCP ip max retries. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "vnic_ip_delete_interval": {
                     "description": "wait interval before deleting IP. . Field introduced in 21.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "vnic_probe_interval": {
                     "description": "Probe vnic interval. Field introduced in 21.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "vnic_rpc_retry_interval": {
                     "description": "Time interval for retrying the failed VNIC RPC requests. Field introduced in 21.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "vnicdb_cmd_history_size": {
                     "description": "Size of vnicdb command history. Allowed values are 0-65535. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 256,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "vs_host_redundancy": {
                     "description": "Ensure primary and secondary Service Engines are deployed on different physical hosts. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- true), Basic edition(Allowed values- true), Enterprise with Cloud Services edition. Special default for Essentials edition is true, Basic edition is true, Enterprise is True.",
@@ -3456,36 +3456,36 @@
                     "description": "Time to wait for the scaled in SE to drain existing flows before marking the scalein done. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 30,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "vs_scalein_timeout_for_upgrade": {
                     "description": "During SE upgrade, Time to wait for the scaled-in SE to drain existing flows before marking the scalein done. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 30,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "vs_scaleout_timeout": {
                     "description": "Time to wait for the scaled out SE to become ready before marking the scaleout done. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 600,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "vs_se_scaleout_additional_wait_time": {
                     "description": "Wait time for sending scaleout ready notification after Virtual Service is marked UP. In certain deployments, there may be an additional delay to accept traffic. For example, for BGP, some time is needed for route advertisement. Allowed values are 0-20. Field introduced in 18.1.5,18.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "vs_se_scaleout_ready_timeout": {
                     "description": "Timeout in seconds for Service Engine to sendScaleout Ready notification of a Virtual Service. Allowed values are 0-90. Field introduced in 18.1.5,18.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "vs_switchover_timeout": {
                     "description": "During SE upgrade in a legacy active/standby segroup, Time to wait for the new primary SE to accept flows before marking the switchover done. Field introduced in 17.2.13,18.1.4,18.2.1. Unit is SEC. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 300,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "vss_placement": {
                     "description": "Parameters to place Virtual Services on only a subset of the cores of an SE. Field introduced in 17.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3504,7 +3504,7 @@
                     "description": "Memory pool size used for WAF.Requires SE Reboot. Field introduced in 17.2.3. Unit is KB. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 64,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -3605,13 +3605,13 @@
                     "description": "Maximum egress latency threshold between dispatcher and proxy. Field introduced in 22.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 20,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "event_gen_window": {
                     "description": "Window for cumulative event generation. Field introduced in 22.1.1. Unit is SECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 300,
-                    "format": "uint64"
+                    "format": "int64"
                 },
                 "ingress_audit_mode": {
                     "description": "Audit queueing latency from dispatcher to proxy. Enum options - SE_TT_AUDIT_OFF, SE_TT_AUDIT_ON, SE_TT_AUDIT_ON_WITH_EVENT. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -3622,7 +3622,7 @@
                     "description": "Maximum ingress latency threshold between dispatcher and proxy. Field introduced in 22.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 20,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -3776,79 +3776,79 @@
                     "description": "How many unknown User-Agents to batch up before querying Controller - unless max_wait_time is reached first. Allowed values are 1-500. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "controller_cache_size": {
                     "description": "The number of User-Agent entries to cache on the Controller. Allowed values are 500-10000000. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 300000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "max_age": {
                     "description": "Time interval in seconds after which an existing entry is refreshed from upstream if it has been accessed during max_last_hit_time. Allowed values are 60-604800. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 86400,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "max_last_hit_time": {
                     "description": "Time interval in seconds backwards from now during which an existing entry must have been hit for refresh from upstream. Entries that have last been accessed further in the past than max_last_hit time are not included in upstream refresh requests even if they are older than 'max_age'. Allowed values are 60-604800. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 86400,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "max_upstream_queries": {
                     "description": "How often at most to query controller for a given User-Agent. Allowed values are 2-100. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "max_wait_time": {
                     "description": "The time interval in seconds after which to make a request to the Controller, even if the 'batch_size' hasn't been reached yet. Allowed values are 20-100000. Field introduced in 21.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "num_entries_upstream_update": {
                     "description": "How many BotUACacheResult elements to include in an upstream update message. Allowed values are 1-10000. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "percent_reserved_for_bad_bots": {
                     "description": "How much space to reserve in percent for known bad bots. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 20,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "percent_reserved_for_browsers": {
                     "description": "How much space to reserve in percent for browsers. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 50,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "percent_reserved_for_good_bots": {
                     "description": "How much space to reserve in percent for known good bots. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 20,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "percent_reserved_for_outstanding": {
                     "description": "How much space to reserve in percent for outstanding upstream requests. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "se_cache_size": {
                     "description": "The number of User-Agent entries to cache on each Service Engine. Allowed values are 500-10000000. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 20000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "upstream_update_interval": {
                     "description": "How often in seconds to send updates about User-Agent cache entries to the next upstream cache. Field introduced in 21.1.1. Unit is SEC. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 3600,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -3929,19 +3929,19 @@
                     "description": "The amount of time, in seconds, when a Vip is withdrawn before a scaling activity starts. Field introduced in 17.2.12, 18.1.2. Unit is SECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "max_size": {
                     "description": "The maximum size of the group. Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "min_size": {
                     "description": "The minimum size of the group. Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "suspend": {
                     "description": "When set, scaling is suspended. Field introduced in 17.2.12, 18.1.2. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3984,13 +3984,13 @@
                     "description": "Degree of core non-affinity for VS placement. Allowed values are 1-256. Field introduced in 17.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "num_subcores": {
                     "description": "Number of sub-cores that comprise a CPU core. Allowed values are 1-128. Field introduced in 17.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 4,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         }

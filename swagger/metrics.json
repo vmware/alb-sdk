@@ -3087,7 +3087,7 @@
                     "description": "Limit the number of dimensions in the result. specially useful in case of URLs. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "dimension_sampling": {
                     "description": "Deprecated. perform sampling for dimensional metrics. zero means auto. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3144,7 +3144,7 @@
                 "microservice_levels": {
                     "description": "number of levels of microservices map. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "obj_id": {
                     "description": "serverip port of the pool server. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3167,12 +3167,12 @@
                 "page": {
                     "description": "page id for the query. Allowed only for aggregation queries. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "page_size": {
                     "description": "page size of the query. Allowed only for the aggregation queries. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "pool_uuid": {
                     "description": "metrics for a member pool in a virtual service. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3358,7 +3358,7 @@
                 "num_samples": {
                     "description": "Number of actual data samples. It excludes fake data. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "sum": {
                     "description": "summation of all values. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",

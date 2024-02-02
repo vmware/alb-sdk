@@ -580,7 +580,7 @@
                     "description": "If a client receives an HTTP response in less than the Satisfactory Latency Threshold, the request is considered Satisfied. It is considered Tolerated if it is not Satisfied and less than Tolerated Latency Factor multiplied by the Satisfactory Latency Threshold. Greater than this number and the client's request is considered Frustrated. Allowed values are 1-30000. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 500), Basic edition(Allowed values- 500), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 500,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "apdex_response_tolerated_factor": {
                     "description": "Client tolerated response latency factor. Client must receive a response within this factor times the satisfactory threshold (apdex_response_threshold) to be considered tolerated. Allowed values are 1-1000. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 4), Basic edition(Allowed values- 4), Enterprise with Cloud Services edition.",
@@ -592,7 +592,7 @@
                     "description": "Satisfactory client to Avi Round Trip Time(RTT). Allowed values are 1-2000. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 250), Basic edition(Allowed values- 250), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 250,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "apdex_rtt_tolerated_factor": {
                     "description": "Tolerated client to Avi Round Trip Time(RTT) factor.  It is a multiple of apdex_rtt_tolerated_factor. Allowed values are 1-1000. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 4), Basic edition(Allowed values- 4), Enterprise with Cloud Services edition.",
@@ -604,7 +604,7 @@
                     "description": "If a client is able to load a page in less than the Satisfactory Latency Threshold, the PageLoad is considered Satisfied.  It is considered tolerated if it is greater than Satisfied but less than the Tolerated Latency multiplied by Satisifed Latency. Greater than this number and the client's request is considered Frustrated.  A PageLoad includes the time for DNS lookup, download of all HTTP objects, and page render time. Allowed values are 1-30000. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 5000), Basic edition(Allowed values- 5000), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "apdex_rum_tolerated_factor": {
                     "description": "Virtual service threshold factor for tolerated Page Load Time (PLT) as multiple of apdex_rum_threshold. Allowed values are 1-1000. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 4), Basic edition(Allowed values- 4), Enterprise with Cloud Services edition.",
@@ -616,7 +616,7 @@
                     "description": "A server HTTP response is considered Satisfied if latency is less than the Satisfactory Latency Threshold. The response is considered tolerated when it is greater than Satisfied but less than the Tolerated Latency Factor * S_Latency.  Greater than this number and the server response is considered Frustrated. Allowed values are 1-30000. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 400), Basic edition(Allowed values- 400), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 400,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "apdex_server_response_tolerated_factor": {
                     "description": "Server tolerated response latency factor. Servermust response within this factor times the satisfactory threshold (apdex_server_response_threshold) to be considered tolerated. Allowed values are 1-1000. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 4), Basic edition(Allowed values- 4), Enterprise with Cloud Services edition.",
@@ -628,7 +628,7 @@
                     "description": "Satisfactory client to Avi Round Trip Time(RTT). Allowed values are 1-2000. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 125), Basic edition(Allowed values- 125), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 125,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "apdex_server_rtt_tolerated_factor": {
                     "description": "Tolerated client to Avi Round Trip Time(RTT) factor.  It is a multiple of apdex_rtt_tolerated_factor. Allowed values are 1-1000. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 4), Basic edition(Allowed values- 4), Enterprise with Cloud Services edition.",
@@ -652,49 +652,49 @@
                     "description": "A connection between client and Avi is considered lossy when more than this percentage of out of order packets are received. Allowed values are 1-100. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 50), Basic edition(Allowed values- 50), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 50,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "conn_lossy_timeo_rexmt_threshold": {
                     "description": "A connection between client and Avi is considered lossy when more than this percentage of packets are retransmitted due to timeout. Allowed values are 1-100. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 20), Basic edition(Allowed values- 20), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 20,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "conn_lossy_total_rexmt_threshold": {
                     "description": "A connection between client and Avi is considered lossy when more than this percentage of packets are retransmitted. Allowed values are 1-100. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 50), Basic edition(Allowed values- 50), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 50,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "conn_lossy_zero_win_size_event_threshold": {
                     "description": "A client connection is considered lossy when percentage of times a packet could not be trasmitted due to TCP zero window is above this threshold. Allowed values are 0-100. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 2), Basic edition(Allowed values- 2), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "conn_server_lossy_ooo_threshold": {
                     "description": "A connection between Avi and server is considered lossy when more than this percentage of out of order packets are received. Allowed values are 1-100. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 50), Basic edition(Allowed values- 50), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 50,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "conn_server_lossy_timeo_rexmt_threshold": {
                     "description": "A connection between Avi and server is considered lossy when more than this percentage of packets are retransmitted due to timeout. Allowed values are 1-100. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 20), Basic edition(Allowed values- 20), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 20,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "conn_server_lossy_total_rexmt_threshold": {
                     "description": "A connection between Avi and server is considered lossy when more than this percentage of packets are retransmitted. Allowed values are 1-100. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 50), Basic edition(Allowed values- 50), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 50,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "conn_server_lossy_zero_win_size_event_threshold": {
                     "description": "A server connection is considered lossy when percentage of times a packet could not be trasmitted due to TCP zero window is above this threshold. Allowed values are 0-100. Unit is PERCENT. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 2), Basic edition(Allowed values- 2), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 2,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "description": {
                     "description": " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -794,7 +794,7 @@
                     "items": {
                         "type": "integer"
                     },
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "exclude_stale_ocsp_responses_as_error": {
                     "description": "Exclude the Stale OCSP certificate status responses from the list of errors. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- true), Basic edition(Allowed values- true), Enterprise with Cloud Services edition.",
@@ -822,42 +822,42 @@
                     "description": "Skips health score computation of pool servers when number of servers in a pool is more than this setting. Allowed values are 0-5000. Special values are 0- server health score is deactivated. Field introduced in 17.2.13, 18.1.4. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition. Special default for Essentials edition is 0, Basic edition is 0, Enterprise is 20.",
                     "type": "integer",
                     "default": 20,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "hs_event_throttle_window": {
                     "description": "Time window (in secs) within which only unique health change events should occur. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 1209600), Basic edition(Allowed values- 1209600), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1209600,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "hs_max_anomaly_penalty": {
                     "description": "Maximum penalty that may be deducted from health score for anomalies. Allowed values are 0-100. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 10), Basic edition(Allowed values- 10), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "hs_max_resources_penalty": {
                     "description": "Maximum penalty that may be deducted from health score for high resource utilization. Allowed values are 0-100. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 25), Basic edition(Allowed values- 25), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 25,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "hs_max_security_penalty": {
                     "description": "Maximum penalty that may be deducted from health score based on security assessment. Allowed values are 0-100. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 100), Basic edition(Allowed values- 100), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "hs_min_dos_rate": {
                     "description": "DoS connection rate below which the DoS security assessment will not kick in. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 1000), Basic edition(Allowed values- 1000), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1000,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "hs_performance_boost": {
                     "description": "Adds free performance score credits to health score. It can be used for compensating health score for known slow applications. Allowed values are 0-100. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 0), Basic edition(Allowed values- 0), Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "hs_pscore_traffic_threshold_l4_client": {
                     "description": "Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 10), Basic edition(Allowed values- 10), Enterprise with Cloud Services edition.",
@@ -1006,7 +1006,7 @@
                     "description": "This flag sets the time duration of no live data traffic after which Virtual Service metrics processing is suspended. It is applicable only when enable_ondemand_metrics is set to false. Field introduced in 18.1.1. Unit is SECONDS. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1800,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "ranges": {
                     "description": "List of HTTP status code ranges to be excluded from being classified as an error. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -1030,7 +1030,7 @@
                     "description": "Maximum number of SIP messages added in logs for a SIP transaction. By default, this value is 20. Allowed values are 1-1000. Field introduced in 17.2.13, 18.1.5, 18.2.1. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 20), Basic edition(Allowed values- 20), Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 20,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "tenant_ref": {
                     "description": " It is a reference to an object of type Tenant. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1112,7 +1112,7 @@
                     "description": "The service port to use for the external servers. If multiple external servers have been specified, the single port number specified here will apply to all those servers for which an explicit port number has not been specified in the external server list. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 514,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "format_config": {
                     "description": "Configuration to specify the format of streamed logs. By default, each log is encoded in JSON format. Field introduced in 18.2.5. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1134,7 +1134,7 @@
                     "description": "Maximum number of logs per second streamed to the remote server. By default, 100 logs per second are streamed. Set this to zero(0) to not enforce any limit. Field introduced in 17.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "protocol": {
                     "description": "Protocol to use for streaming logs. Enum options - LOG_STREAMING_PROTOCOL_UDP, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_UDP, LOG_STREAMING_PROTOCOL_TCP, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_TCP, LOG_STREAMING_PROTOCOL_RAW_OVER_UDP, LOG_STREAMING_PROTOCOL_TLS, LOG_STREAMING_PROTOCOL_SYSLOG_OVER_TLS. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1173,7 +1173,7 @@
                     "description": "Protobuf version number. Gets incremented if there is se Diff of federated diff in config pbs.This field will be a monotonically increasing number indicating the number of Config Update operations. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Essentials edition with any value, Basic edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -1222,7 +1222,7 @@
                 "conn_est_threshold": {
                     "description": "Deprecated in 22.1.1. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "latency_audit_mode": {
                     "description": "Deprecated in 22.1.1. Enum options - LATENCY_AUDIT_OFF, LATENCY_AUDIT_ON, LATENCY_AUDIT_ON_WITH_SIG. Field introduced in 21.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -1231,7 +1231,7 @@
                 "latency_threshold": {
                     "description": "Deprecated in 22.1.1. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -1314,13 +1314,13 @@
                     "description": "Facility value, as defined in RFC5424, must be between 0 and 23 inclusive. Allowed values are 0-23. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 16,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "filtered_log_severity": {
                     "description": "Severity code, as defined in RFC5424, for filtered logs. This must be between 0 and 7 inclusive. Allowed values are 0-7. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "hostname": {
                     "description": "String to use as the hostname in the syslog messages. This string can contain only printable ASCII characters (hex 21 to hex 7E; no space allowed). Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1336,7 +1336,7 @@
                     "description": "Severity code, as defined in RFC5424, for non-significant logs. This must be between 0 and 7 inclusive. Allowed values are 0-7. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 6,
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "proc_id": {
                     "description": "As per RFC, if there is a change in value indicated there has been discontinuity in syslog reporting. Field introduced in 22.1.5. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -1347,7 +1347,7 @@
                     "description": "Severity code, as defined in RFC5424, for significant logs. This must be between 0 and 7 inclusive. Allowed values are 0-7. Field introduced in 18.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 4,
-                    "format": "uint32"
+                    "format": "int32"
                 }
             }
         },
@@ -1387,7 +1387,7 @@
                 "be_conn_est_threshold": {
                     "description": "Maximum threshold for TCP connection establishment time on server-side. Field introduced in 22.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "fe_conn_est_audit_mode": {
                     "description": "Audit TCP connection establishment time on client-side. Enum options - TT_AUDIT_OFF, TT_AUDIT_ON, TT_AUDIT_ON_WITH_SIG. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
@@ -1396,7 +1396,7 @@
                 "fe_conn_est_threshold": {
                     "description": "Maximum threshold for TCP connection establishment time on client-side. Field introduced in 22.1.1. Unit is MILLISECONDS. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",
                     "type": "integer",
-                    "format": "uint32"
+                    "format": "int32"
                 },
                 "ingress_sig_log": {
                     "description": "Add significance if ingress latency from dispatcher to proxy is breached on any flow. Field introduced in 22.1.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.",

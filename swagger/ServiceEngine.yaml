@@ -4351,7 +4351,7 @@ definitions:
             num:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint64
+                format: int64
     SEFaultInjectSeParam:
         type: object
         properties:
@@ -4359,7 +4359,7 @@ definitions:
                 description: "Inject fault in specific core. Field introduced in 18.1.5,18.2.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 1000
-                format: uint32
+                format: int32
             obj_names:
                 description: "Inject Fault on Objects. Field introduced in 21.1.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition."
                 type: array
@@ -4404,7 +4404,7 @@ definitions:
             num_datapath_processes:
                 description: "Indicates the number of active datapath processes. Field introduced in 20.1.1. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             num_vcpus:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
@@ -4519,7 +4519,7 @@ definitions:
             vlan_id:
                 description: "VLAN ID. Allowed values are 0-4096. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             vnic_networks:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
@@ -4634,7 +4634,7 @@ definitions:
             vrf_id:
                 description: " Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
-                format: uint32
+                format: int32
             vrf_ref:
                 description: " It is a reference to an object of type VrfContext. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
