@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ALBServicesCaseAttachment  {
     @JsonProperty("attachment_name")
-    private String attachmentName = null;
+    private String attachmentName;
 
     @JsonProperty("attachment_size")
-    private String attachmentSize = null;
+    private String attachmentSize;
 
     @JsonProperty("attachment_url")
-    private String attachmentUrl = null;
+    private String attachmentUrl;
 
 
 

@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DiskUsage  {
     @JsonProperty("cntlr_disk_free")
-    private List<OverallInfo> cntlrDiskFree = null;
+    private List<OverallInfo> cntlrDiskFree;
 
     @JsonProperty("cntlr_disk_usage")
-    private List<PartitionInfo> cntlrDiskUsage = null;
+    private List<PartitionInfo> cntlrDiskUsage;
 
     @JsonProperty("se_disk_free")
-    private List<OverallInfo> seDiskFree = null;
+    private List<OverallInfo> seDiskFree;
 
     @JsonProperty("se_disk_usage")
-    private List<PartitionInfo> seDiskUsage = null;
+    private List<PartitionInfo> seDiskUsage;
 
 
     /**

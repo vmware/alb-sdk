@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricsApiSrvDebugFilter  {
     @JsonProperty("entity_ref")
-    private String entityRef = null;
+    private String entityRef;
 
 
 

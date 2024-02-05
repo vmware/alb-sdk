@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StaticIpRange  {
     @JsonProperty("range")
-    private IpAddrRange range = null;
+    private IpAddrRange range;
 
     @JsonProperty("type")
     private String type = "STATIC_IPS_FOR_VIP_AND_SE";

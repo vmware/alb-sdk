@@ -25,10 +25,10 @@ public class RollbackSeGroupParams  {
     private Boolean prechecksOnly = false;
 
     @JsonProperty("se_group_options")
-    private SeGroupOptions seGroupOptions = null;
+    private SeGroupOptions seGroupOptions;
 
     @JsonProperty("se_group_refs")
-    private List<String> seGroupRefs = null;
+    private List<String> seGroupRefs;
 
     @JsonProperty("skip_warnings")
     private Boolean skipWarnings = false;

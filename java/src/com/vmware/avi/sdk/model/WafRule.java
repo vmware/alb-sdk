@@ -25,34 +25,34 @@ public class WafRule  {
     private Boolean enable = true;
 
     @JsonProperty("exclude_list")
-    private List<WafExcludeListEntry> excludeList = null;
+    private List<WafExcludeListEntry> excludeList;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("is_sensitive")
     private Boolean isSensitive = false;
 
     @JsonProperty("mode")
-    private String mode = null;
+    private String mode;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("paranoia_level")
-    private String paranoiaLevel = null;
+    private String paranoiaLevel;
 
     @JsonProperty("phase")
     private String phase;
 
     @JsonProperty("rule")
-    private String rule = null;
+    private String rule;
 
     @JsonProperty("rule_id")
-    private String ruleId = null;
+    private String ruleId;
 
     @JsonProperty("tags")
-    private List<String> tags = null;
+    private List<String> tags;
 
 
 

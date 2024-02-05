@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeThreshEventDetails  {
     @JsonProperty("curr_value")
-    private Integer currValue = null;
+    private Integer currValue;
 
     @JsonProperty("thresh")
-    private Integer thresh = null;
+    private Integer thresh;
 
 
 

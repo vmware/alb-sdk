@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NetworkSecurityRule  {
     @JsonProperty("action")
-    private String action = null;
+    private String action;
 
     @JsonProperty("age")
     private Integer age = 0;
 
     @JsonProperty("created_by")
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("enable")
-    private Boolean enable = null;
+    private Boolean enable;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("log")
     private Boolean log = false;
 
     @JsonProperty("match")
-    private NetworkSecurityMatchTarget match = null;
+    private NetworkSecurityMatchTarget match;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("rl_param")
-    private NetworkSecurityPolicyActionRLParam rlParam = null;
+    private NetworkSecurityPolicyActionRLParam rlParam;
 
 
 

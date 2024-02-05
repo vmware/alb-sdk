@@ -34,7 +34,7 @@ public class HTTPServerReselect  {
     private Integer retryTimeout = 0;
 
     @JsonProperty("svr_resp_code")
-    private HTTPReselectRespCode svrRespCode = null;
+    private HTTPReselectRespCode svrRespCode;
 
 
 

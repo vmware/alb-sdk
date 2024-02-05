@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafRuleGroupOverrides  {
     @JsonProperty("enable")
-    private Boolean enable = null;
+    private Boolean enable;
 
     @JsonProperty("exclude_list")
-    private List<WafExcludeListEntry> excludeList = null;
+    private List<WafExcludeListEntry> excludeList;
 
     @JsonProperty("mode")
-    private String mode = null;
+    private String mode;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("rule_overrides")
-    private List<WafRuleOverrides> ruleOverrides = null;
+    private List<WafRuleOverrides> ruleOverrides;
 
 
 

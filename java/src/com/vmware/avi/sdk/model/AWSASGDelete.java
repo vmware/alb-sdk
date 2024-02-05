@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AWSASGDelete  {
     @JsonProperty("asgs")
-    private List<String> asgs = null;
+    private List<String> asgs;
 
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("pool_uuid")
-    private String poolUuid = null;
+    private String poolUuid;
 
 
     /**

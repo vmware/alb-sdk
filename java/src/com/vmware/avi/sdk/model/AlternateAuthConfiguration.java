@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AlternateAuthConfiguration  {
     @JsonProperty("auth_profile_ref")
-    private String authProfileRef = null;
+    private String authProfileRef;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("mapping_rules")
-    private List<AuthMappingRule> mappingRules = null;
+    private List<AuthMappingRule> mappingRules;
 
 
 

@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeGroupVersion  {
     @JsonProperty("fips_mode")
-    private Boolean fipsMode = null;
+    private Boolean fipsMode;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("patch")
-    private String patch = null;
+    private String patch;
 
     @JsonProperty("version")
-    private String version = null;
+    private String version;
 
 
 

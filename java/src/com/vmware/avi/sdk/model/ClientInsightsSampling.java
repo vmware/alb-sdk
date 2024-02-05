@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ClientInsightsSampling  {
     @JsonProperty("client_ip")
-    private IpAddrMatch clientIp = null;
+    private IpAddrMatch clientIp;
 
     @JsonProperty("sample_uris")
-    private StringMatch sampleUris = null;
+    private StringMatch sampleUris;
 
     @JsonProperty("skip_uris")
-    private StringMatch skipUris = null;
+    private StringMatch skipUris;
 
 
 

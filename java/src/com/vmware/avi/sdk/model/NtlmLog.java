@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NtlmLog  {
     @JsonProperty("ntlm_detected")
-    private Boolean ntlmDetected = null;
+    private Boolean ntlmDetected;
 
     @JsonProperty("ntlm_status")
-    private String ntlmStatus = null;
+    private String ntlmStatus;
 
 
 

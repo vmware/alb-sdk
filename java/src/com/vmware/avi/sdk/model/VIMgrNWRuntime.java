@@ -22,73 +22,73 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VIMgrNWRuntime extends AviRestResource  {
     @JsonProperty("auto_expand")
-    private Boolean autoExpand = null;
+    private Boolean autoExpand;
 
     @JsonProperty("availability_zone")
-    private String availabilityZone = null;
+    private String availabilityZone;
 
     @JsonProperty("cloud_ref")
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("datacenter_uuid")
-    private String datacenterUuid = null;
+    private String datacenterUuid;
 
     @JsonProperty("dvs")
-    private Boolean dvs = null;
+    private Boolean dvs;
 
     @JsonProperty("host_refs")
-    private List<String> hostRefs = null;
+    private List<String> hostRefs;
 
     @JsonProperty("interested_nw")
-    private Boolean interestedNw = null;
+    private Boolean interestedNw;
 
     @JsonProperty("ip_subnet")
-    private List<VIMgrIPSubnetRuntime> ipSubnet = null;
+    private List<VIMgrIPSubnetRuntime> ipSubnet;
 
     @JsonProperty("logical_switch_id")
-    private String logicalSwitchId = null;
+    private String logicalSwitchId;
 
     @JsonProperty("managed_object_id")
-    private String managedObjectId = null;
+    private String managedObjectId;
 
     @JsonProperty("MgmtNW")
-    private Boolean MgmtNW = null;
+    private Boolean MgmtNW;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("num_ports")
-    private Integer numPorts = null;
+    private Integer numPorts;
 
     @JsonProperty("switch_name")
-    private String switchName = null;
+    private String switchName;
 
     @JsonProperty("tenant_name")
-    private String tenantName = null;
+    private String tenantName;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vlan")
-    private Integer vlan = null;
+    private Integer vlan;
 
     @JsonProperty("vlan_range")
-    private List<VlanRange> vlanRange = null;
+    private List<VlanRange> vlanRange;
 
     @JsonProperty("vm_refs")
-    private List<String> vmRefs = null;
+    private List<String> vmRefs;
 
     @JsonProperty("vrf_context_ref")
-    private String vrfContextRef = null;
+    private String vrfContextRef;
 
 
 

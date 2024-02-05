@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MicroServiceContainer  {
     @JsonProperty("container_id")
-    private String containerId = null;
+    private String containerId;
 
     @JsonProperty("host")
-    private String host = null;
+    private String host;
 
     @JsonProperty("ip")
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("port")
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("task_id")
-    private String taskId = null;
+    private String taskId;
 
 
 

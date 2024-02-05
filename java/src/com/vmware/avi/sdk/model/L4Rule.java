@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class L4Rule  {
     @JsonProperty("action")
-    private L4RuleAction action = null;
+    private L4RuleAction action;
 
     @JsonProperty("enable")
     private Boolean enable = true;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match")
-    private L4RuleMatchTarget match = null;
+    private L4RuleMatchTarget match;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

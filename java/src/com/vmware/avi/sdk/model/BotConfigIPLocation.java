@@ -25,13 +25,13 @@ public class BotConfigIPLocation  {
     private Boolean enabled = true;
 
     @JsonProperty("ip_location_db_ref")
-    private String ipLocationDbRef = null;
+    private String ipLocationDbRef;
 
     @JsonProperty("system_cloud_providers_ref")
-    private String systemCloudProvidersRef = null;
+    private String systemCloudProvidersRef;
 
     @JsonProperty("system_search_engines_ref")
-    private String systemSearchEnginesRef = null;
+    private String systemSearchEnginesRef;
 
 
 

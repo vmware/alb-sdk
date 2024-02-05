@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SysTestEmailParams  {
     @JsonProperty("cc_emails")
-    private String ccEmails = null;
+    private String ccEmails;
 
     @JsonProperty("subject")
-    private String subject = null;
+    private String subject;
 
     @JsonProperty("text")
-    private String text = null;
+    private String text;
 
     @JsonProperty("to_emails")
-    private String toEmails = null;
+    private String toEmails;
 
 
 

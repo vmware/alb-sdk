@@ -28,7 +28,7 @@ public class DnsRuleActionResponse  {
     private String rcode = "DNS_RCODE_NOERROR";
 
     @JsonProperty("resource_record_sets")
-    private List<DnsRuleDnsRrSet> resourceRecordSets = null;
+    private List<DnsRuleDnsRrSet> resourceRecordSets;
 
     @JsonProperty("truncation")
     private Boolean truncation = false;

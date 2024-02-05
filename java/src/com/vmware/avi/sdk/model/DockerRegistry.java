@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DockerRegistry  {
     @JsonProperty("oshift_registry")
-    private OshiftDockerRegistryMetaData oshiftRegistry = null;
+    private OshiftDockerRegistryMetaData oshiftRegistry;
 
     @JsonProperty("password")
-    private String password = null;
+    private String password;
 
     @JsonProperty("privates")
     private Boolean privates = false;
@@ -34,7 +34,7 @@ public class DockerRegistry  {
     private String registry = "avinetworks/se";
 
     @JsonProperty("username")
-    private String username = null;
+    private String username;
 
 
 

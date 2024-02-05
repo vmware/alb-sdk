@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafPolicyRequiredDataFile  {
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
 

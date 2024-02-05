@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NsxtTier1SegmentConfig  {
     @JsonProperty("automatic")
-    private NsxtTier1SegmentAutomaticMode automatic = null;
+    private NsxtTier1SegmentAutomaticMode automatic;
 
     @JsonProperty("manual")
-    private NsxtTier1SegmentManualMode manual = null;
+    private NsxtTier1SegmentManualMode manual;
 
     @JsonProperty("segment_config_mode")
     private String segmentConfigMode = "TIER1_SEGMENT_MANUAL";

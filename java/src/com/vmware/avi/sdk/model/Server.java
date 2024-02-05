@@ -22,49 +22,49 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Server  {
     @JsonProperty("autoscaling_group_name")
-    private String autoscalingGroupName = null;
+    private String autoscalingGroupName;
 
     @JsonProperty("availability_zone")
-    private String availabilityZone = null;
+    private String availabilityZone;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("discovered_networks")
-    private List<DiscoveredNetwork> discoveredNetworks = null;
+    private List<DiscoveredNetwork> discoveredNetworks;
 
     @JsonProperty("enabled")
     private Boolean enabled = true;
 
     @JsonProperty("external_orchestration_id")
-    private String externalOrchestrationId = null;
+    private String externalOrchestrationId;
 
     @JsonProperty("external_uuid")
-    private String externalUuid = null;
+    private String externalUuid;
 
     @JsonProperty("hostname")
-    private String hostname = null;
+    private String hostname;
 
     @JsonProperty("ip")
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("static")
     private Boolean isStatic = false;
 
     @JsonProperty("location")
-    private GeoLocation location = null;
+    private GeoLocation location;
 
     @JsonProperty("mac_address")
-    private String macAddress = null;
+    private String macAddress;
 
     @JsonProperty("nw_ref")
-    private String nwRef = null;
+    private String nwRef;
 
     @JsonProperty("port")
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("prst_hdr_val")
-    private String prstHdrVal = null;
+    private String prstHdrVal;
 
     @JsonProperty("ratio")
     private Integer ratio = 1;
@@ -76,13 +76,13 @@ public class Server  {
     private Boolean rewriteHostHeader = false;
 
     @JsonProperty("server_node")
-    private String serverNode = null;
+    private String serverNode;
 
     @JsonProperty("verify_network")
     private Boolean verifyNetwork = false;
 
     @JsonProperty("vm_ref")
-    private String vmRef = null;
+    private String vmRef;
 
 
 

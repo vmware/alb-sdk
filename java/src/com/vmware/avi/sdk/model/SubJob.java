@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SubJob  {
     @JsonProperty("expires_at")
-    private String expiresAt = null;
+    private String expiresAt;
 
     @JsonProperty("metadata")
-    private String metadata = null;
+    private String metadata;
 
     @JsonProperty("num_retries")
-    private Integer numRetries = null;
+    private Integer numRetries;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
 

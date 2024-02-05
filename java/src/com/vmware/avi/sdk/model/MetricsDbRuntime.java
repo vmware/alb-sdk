@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricsDbRuntime  {
     @JsonProperty("db_client_name")
-    private String dbClientName = null;
+    private String dbClientName;
 
     @JsonProperty("db_num_client_queries")
-    private Integer dbNumClientQueries = null;
+    private Integer dbNumClientQueries;
 
     @JsonProperty("db_num_client_resp")
-    private Integer dbNumClientResp = null;
+    private Integer dbNumClientResp;
 
     @JsonProperty("db_num_db_queries")
-    private Integer dbNumDbQueries = null;
+    private Integer dbNumDbQueries;
 
     @JsonProperty("db_num_db_resp")
-    private Integer dbNumDbResp = null;
+    private Integer dbNumDbResp;
 
     @JsonProperty("db_num_oom")
-    private Integer dbNumOom = null;
+    private Integer dbNumOom;
 
     @JsonProperty("db_queue_size")
-    private Integer dbQueueSize = null;
+    private Integer dbQueueSize;
 
     @JsonProperty("db_rum_queries")
-    private Integer dbRumQueries = null;
+    private Integer dbRumQueries;
 
     @JsonProperty("db_rum_rows")
-    private Integer dbRumRows = null;
+    private Integer dbRumRows;
 
 
 

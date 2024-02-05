@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafPSMLocationMatch  {
     @JsonProperty("host")
-    private HostHdrMatch host = null;
+    private HostHdrMatch host;
 
     @JsonProperty("methods")
-    private MethodMatch methods = null;
+    private MethodMatch methods;
 
     @JsonProperty("path")
-    private PathMatch path = null;
+    private PathMatch path;
 
 
 

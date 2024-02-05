@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SipMessage  {
     @JsonProperty("content")
-    private String content = null;
+    private String content;
 
     @JsonProperty("from_client")
-    private Boolean fromClient = null;
+    private Boolean fromClient;
 
     @JsonProperty("method")
-    private String method = null;
+    private String method;
 
     @JsonProperty("rcv_timestamp")
-    private Integer rcvTimestamp = null;
+    private Integer rcvTimestamp;
 
     @JsonProperty("rx_bytes")
-    private Integer rxBytes = null;
+    private Integer rxBytes;
 
     @JsonProperty("status")
-    private String status = null;
+    private String status;
 
     @JsonProperty("status_code")
-    private Integer statusCode = null;
+    private Integer statusCode;
 
     @JsonProperty("tx_bytes")
-    private Integer txBytes = null;
+    private Integer txBytes;
 
 
 

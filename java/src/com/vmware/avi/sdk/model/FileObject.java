@@ -22,52 +22,52 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class FileObject extends AviRestResource  {
     @JsonProperty("checksum")
-    private String checksum = null;
+    private String checksum;
 
     @JsonProperty("compressed")
     private Boolean compressed = false;
 
     @JsonProperty("created")
-    private String created = null;
+    private String created;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("expires_at")
-    private String expiresAt = null;
+    private String expiresAt;
 
     @JsonProperty("is_federated")
     private Boolean isFederated = false;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("path")
-    private String path = null;
+    private String path;
 
     @JsonProperty("read_only")
-    private Boolean readOnly = null;
+    private Boolean readOnly;
 
     @JsonProperty("restrict_download")
-    private Boolean restrictDownload = null;
+    private Boolean restrictDownload;
 
     @JsonProperty("size")
-    private Integer size = null;
+    private Integer size;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("version")
-    private String version = null;
+    private String version;
 
 
 

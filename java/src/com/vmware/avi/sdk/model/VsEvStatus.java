@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VsEvStatus  {
     @JsonProperty("notes")
-    private List<String> notes = null;
+    private List<String> notes;
 
     @JsonProperty("request")
-    private String request = null;
+    private String request;
 
     @JsonProperty("result")
-    private String result = null;
+    private String result;
 
 
     /**

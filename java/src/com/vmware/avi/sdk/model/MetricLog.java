@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricLog  {
     @JsonProperty("end_timestamp")
-    private Float endTimestamp = null;
+    private Float endTimestamp;
 
     @JsonProperty("metric_id")
-    private String metricId = null;
+    private String metricId;
 
     @JsonProperty("report_timestamp")
-    private Float reportTimestamp = null;
+    private Float reportTimestamp;
 
     @JsonProperty("step")
-    private Integer step = null;
+    private Integer step;
 
     @JsonProperty("time_series")
-    private MetricsQueryResponse timeSeries = null;
+    private MetricsQueryResponse timeSeries;
 
     @JsonProperty("value")
-    private Float value = null;
+    private Float value;
 
 
 

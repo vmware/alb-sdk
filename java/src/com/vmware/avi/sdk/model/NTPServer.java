@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NTPServer  {
     @JsonProperty("key_number")
-    private Integer keyNumber = null;
+    private Integer keyNumber;
 
     @JsonProperty("server")
-    private IpAddr server = null;
+    private IpAddr server;
 
 
 

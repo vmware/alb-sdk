@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class L4RulePortMatch  {
     @JsonProperty("match_criteria")
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("port_ranges")
-    private List<PortRange> portRanges = null;
+    private List<PortRange> portRanges;
 
     @JsonProperty("ports")
-    private List<Integer> ports = null;
+    private List<Integer> ports;
 
 
 

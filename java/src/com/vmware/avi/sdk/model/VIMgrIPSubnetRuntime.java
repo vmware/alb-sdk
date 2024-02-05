@@ -25,31 +25,31 @@ public class VIMgrIPSubnetRuntime extends AviRestResource  {
     private Boolean fipAvailable = false;
 
     @JsonProperty("fip_subnet_uuids")
-    private List<String> fipSubnetUuids = null;
+    private List<String> fipSubnetUuids;
 
     @JsonProperty("floatingip_subnets")
-    private List<FloatingIpSubnet> floatingipSubnets = null;
+    private List<FloatingIpSubnet> floatingipSubnets;
 
     @JsonProperty("ip_subnet")
-    private String ipSubnet = null;
+    private String ipSubnet;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("prefix")
-    private IpAddrPrefix prefix = null;
+    private IpAddrPrefix prefix;
 
     @JsonProperty("primary")
     private Boolean primary = false;
 
     @JsonProperty("ref_count")
-    private Integer refCount = null;
+    private Integer refCount;
 
     @JsonProperty("se_ref_count")
     private Integer seRefCount = 0;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

@@ -37,10 +37,10 @@ public class DnsServiceApplicationProfile  {
     private Boolean dnsOverTcpEnabled = true;
 
     @JsonProperty("dns_zones")
-    private List<DnsZone> dnsZones = null;
+    private List<DnsZone> dnsZones;
 
     @JsonProperty("domain_names")
-    private List<String> domainNames = null;
+    private List<String> domainNames;
 
     @JsonProperty("ecs_stripping_enabled")
     private Boolean ecsStrippingEnabled = true;
@@ -49,13 +49,13 @@ public class DnsServiceApplicationProfile  {
     private Boolean edns = true;
 
     @JsonProperty("edns_client_subnet_prefix_len")
-    private Integer ednsClientSubnetPrefixLen = null;
+    private Integer ednsClientSubnetPrefixLen;
 
     @JsonProperty("error_response")
     private String errorResponse = "DNS_ERROR_RESPONSE_NONE";
 
     @JsonProperty("name_server")
-    private String nameServer = null;
+    private String nameServer;
 
     @JsonProperty("negative_caching_ttl")
     private Integer negativeCachingTtl = 30;

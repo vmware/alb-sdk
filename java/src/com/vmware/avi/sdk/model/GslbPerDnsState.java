@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbPerDnsState extends AviRestResource  {
     @JsonProperty("geo_download")
-    private GslbDownloadStatus geoDownload = null;
+    private GslbDownloadStatus geoDownload;
 
     @JsonProperty("gslb_download")
-    private GslbDownloadStatus gslbDownload = null;
+    private GslbDownloadStatus gslbDownload;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("oper_status")
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
     @JsonProperty("placement_rules")
-    private List<GslbSubDomainPlacementRuntime> placementRules = null;
+    private List<GslbSubDomainPlacementRuntime> placementRules;
 
     @JsonProperty("se_list")
-    private List<String> seList = null;
+    private List<String> seList;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("valid_dns_vs")
     private Boolean validDnsVs = false;

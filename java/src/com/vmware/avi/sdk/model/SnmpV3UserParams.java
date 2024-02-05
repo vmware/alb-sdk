@@ -34,7 +34,7 @@ public class SnmpV3UserParams  {
     private String privType = "SNMP_V3_PRIV_DES";
 
     @JsonProperty("username")
-    private String username = null;
+    private String username;
 
 
 

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GatewayMonitor  {
     @JsonProperty("gateway_ip")
-    private IpAddr gatewayIp = null;
+    private IpAddr gatewayIp;
 
     @JsonProperty("gateway_monitor_fail_threshold")
     private Integer gatewayMonitorFailThreshold = 10;
@@ -34,7 +34,7 @@ public class GatewayMonitor  {
     private Integer gatewayMonitorSuccessThreshold = 15;
 
     @JsonProperty("subnet")
-    private IpAddrPrefix subnet = null;
+    private IpAddrPrefix subnet;
 
 
 

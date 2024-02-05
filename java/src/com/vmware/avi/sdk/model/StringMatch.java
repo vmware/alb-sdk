@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StringMatch  {
     @JsonProperty("match_criteria")
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("match_str")
-    private List<String> matchStr = null;
+    private List<String> matchStr;
 
     @JsonProperty("string_group_refs")
-    private List<String> stringGroupRefs = null;
+    private List<String> stringGroupRefs;
 
 
 

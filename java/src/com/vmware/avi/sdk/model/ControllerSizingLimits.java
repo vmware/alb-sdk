@@ -22,37 +22,37 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ControllerSizingLimits  {
     @JsonProperty("controller_sizing_cloud_limits")
-    private List<ControllerSizingCloudLimits> controllerSizingCloudLimits = null;
+    private List<ControllerSizingCloudLimits> controllerSizingCloudLimits;
 
     @JsonProperty("flavor")
-    private String flavor = null;
+    private String flavor;
 
     @JsonProperty("num_clouds")
-    private Integer numClouds = null;
+    private Integer numClouds;
 
     @JsonProperty("num_east_west_virtualservices")
-    private Integer numEastWestVirtualservices = null;
+    private Integer numEastWestVirtualservices;
 
     @JsonProperty("num_servers")
-    private Integer numServers = null;
+    private Integer numServers;
 
     @JsonProperty("num_serviceengines")
-    private Integer numServiceengines = null;
+    private Integer numServiceengines;
 
     @JsonProperty("num_tenants")
-    private Integer numTenants = null;
+    private Integer numTenants;
 
     @JsonProperty("num_virtualservices")
-    private Integer numVirtualservices = null;
+    private Integer numVirtualservices;
 
     @JsonProperty("num_virtualservices_rt_metrics")
-    private Integer numVirtualservicesRtMetrics = null;
+    private Integer numVirtualservicesRtMetrics;
 
     @JsonProperty("num_vrfs")
-    private Integer numVrfs = null;
+    private Integer numVrfs;
 
     @JsonProperty("num_waf_virtualservices")
-    private Integer numWafVirtualservices = null;
+    private Integer numWafVirtualservices;
 
 
     /**

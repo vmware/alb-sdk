@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class L4RuleMatchTarget  {
     @JsonProperty("client_ip")
-    private IpAddrMatch clientIp = null;
+    private IpAddrMatch clientIp;
 
     @JsonProperty("port")
-    private L4RulePortMatch port = null;
+    private L4RulePortMatch port;
 
     @JsonProperty("protocol")
-    private L4RuleProtocolMatch protocol = null;
+    private L4RuleProtocolMatch protocol;
 
 
 

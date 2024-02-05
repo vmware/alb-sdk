@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MemoryUsagePerNode  {
     @JsonProperty("mem_info")
-    private MemoryUsage memInfo = null;
+    private MemoryUsage memInfo;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

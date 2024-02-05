@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IcapNSXDefenderLog  {
     @JsonProperty("score")
-    private Integer score = null;
+    private Integer score;
 
     @JsonProperty("status_url")
-    private String statusUrl = null;
+    private String statusUrl;
 
     @JsonProperty("task_uuid")
-    private String taskUuid = null;
+    private String taskUuid;
 
 
 

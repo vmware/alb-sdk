@@ -25,10 +25,10 @@ public class SourcePortAddr  {
     private String matchOperation = "IS_IN";
 
     @JsonProperty("src_port_end")
-    private Integer srcPortEnd = null;
+    private Integer srcPortEnd;
 
     @JsonProperty("src_port_start")
-    private Integer srcPortStart = null;
+    private Integer srcPortStart;
 
 
 

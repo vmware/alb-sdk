@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OrgServiceUnits  {
     @JsonProperty("available_service_units")
-    private Float availableServiceUnits = null;
+    private Float availableServiceUnits;
 
     @JsonProperty("org_id")
-    private String orgId = null;
+    private String orgId;
 
     @JsonProperty("used_service_units")
-    private Float usedServiceUnits = null;
+    private Float usedServiceUnits;
 
 
 

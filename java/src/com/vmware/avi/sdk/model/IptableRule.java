@@ -22,34 +22,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IptableRule  {
     @JsonProperty("action")
-    private String action = null;
+    private String action;
 
     @JsonProperty("dnat_ip")
-    private IpAddr dnatIp = null;
+    private IpAddr dnatIp;
 
     @JsonProperty("dst_ip")
-    private IpAddrPrefix dstIp = null;
+    private IpAddrPrefix dstIp;
 
     @JsonProperty("dst_port")
-    private PortRange dstPort = null;
+    private PortRange dstPort;
 
     @JsonProperty("input_interface")
-    private String inputInterface = null;
+    private String inputInterface;
 
     @JsonProperty("output_interface")
-    private String outputInterface = null;
+    private String outputInterface;
 
     @JsonProperty("proto")
-    private String proto = null;
+    private String proto;
 
     @JsonProperty("src_ip")
-    private IpAddrPrefix srcIp = null;
+    private IpAddrPrefix srcIp;
 
     @JsonProperty("src_port")
-    private PortRange srcPort = null;
+    private PortRange srcPort;
 
     @JsonProperty("tag")
-    private String tag = null;
+    private String tag;
 
 
 

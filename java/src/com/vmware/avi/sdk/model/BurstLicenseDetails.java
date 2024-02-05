@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BurstLicenseDetails  {
     @JsonProperty("cores")
-    private Integer cores = null;
+    private Integer cores;
 
     @JsonProperty("end_time")
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("se_name")
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("se_uuid")
-    private String seUuid = null;
+    private String seUuid;
 
     @JsonProperty("start_time")
-    private String startTime = null;
+    private String startTime;
 
 
 

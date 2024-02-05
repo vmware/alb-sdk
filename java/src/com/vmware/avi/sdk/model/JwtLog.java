@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class JwtLog  {
     @JsonProperty("authn_rule_match")
-    private AuthnRuleMatch authnRuleMatch = null;
+    private AuthnRuleMatch authnRuleMatch;
 
     @JsonProperty("authz_rule_match")
-    private AuthzRuleMatch authzRuleMatch = null;
+    private AuthzRuleMatch authzRuleMatch;
 
     @JsonProperty("is_jwt_verified")
-    private Boolean isJwtVerified = null;
+    private Boolean isJwtVerified;
 
     @JsonProperty("token_payload")
-    private String tokenPayload = null;
+    private String tokenPayload;
 
 
 

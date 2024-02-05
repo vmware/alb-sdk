@@ -22,46 +22,46 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AuthProfile extends AviRestResource  {
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("http")
-    private AuthProfileHTTPClientParams http = null;
+    private AuthProfileHTTPClientParams http;
 
     @JsonProperty("jwt_profile_ref")
-    private String jwtProfileRef = null;
+    private String jwtProfileRef;
 
     @JsonProperty("ldap")
-    private LdapAuthSettings ldap = null;
+    private LdapAuthSettings ldap;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("oauth_profile")
-    private OAuthProfile oauthProfile = null;
+    private OAuthProfile oauthProfile;
 
     @JsonProperty("pa_agent_ref")
-    private String paAgentRef = null;
+    private String paAgentRef;
 
     @JsonProperty("saml")
-    private SamlSettings saml = null;
+    private SamlSettings saml;
 
     @JsonProperty("tacacs_plus")
-    private TacacsPlusAuthSettings tacacsPlus = null;
+    private TacacsPlusAuthSettings tacacsPlus;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

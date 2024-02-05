@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BotMappingRule  {
     @JsonProperty("classification")
-    private BotClassification classification = null;
+    private BotClassification classification;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match")
-    private BotMappingRuleMatchTarget match = null;
+    private BotMappingRuleMatchTarget match;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

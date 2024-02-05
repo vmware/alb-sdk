@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RateLimiterAction  {
     @JsonProperty("file")
-    private HTTPLocalFile file = null;
+    private HTTPLocalFile file;
 
     @JsonProperty("redirect")
-    private HTTPRedirectAction redirect = null;
+    private HTTPRedirectAction redirect;
 
     @JsonProperty("status_code")
     private String statusCode = "HTTP_LOCAL_RESPONSE_STATUS_CODE_429";

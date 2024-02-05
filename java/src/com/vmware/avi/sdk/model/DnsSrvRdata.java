@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsSrvRdata  {
     @JsonProperty("port")
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("priority")
     private Integer priority = 0;

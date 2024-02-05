@@ -25,7 +25,7 @@ public class vNICNetwork  {
     private Boolean ctlrAlloc = false;
 
     @JsonProperty("ip")
-    private IpAddrPrefix ip = null;
+    private IpAddrPrefix ip;
 
     @JsonProperty("mode")
     private String mode = "DHCP";

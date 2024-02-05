@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Tier1LogicalRouterInfo  {
     @JsonProperty("locale_service")
-    private String localeService = null;
+    private String localeService;
 
     @JsonProperty("segment_id")
-    private String segmentId = null;
+    private String segmentId;
 
     @JsonProperty("tier1_lr_id")
-    private String tier1LrId = null;
+    private String tier1LrId;
 
 
 

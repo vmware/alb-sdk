@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServerAutoScaleFailedInfo  {
     @JsonProperty("num_scalein_servers")
-    private Integer numScaleinServers = null;
+    private Integer numScaleinServers;
 
     @JsonProperty("num_servers_up")
-    private Integer numServersUp = null;
+    private Integer numServersUp;
 
     @JsonProperty("pool_ref")
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("reason_code")
     private String reasonCode = "SYSERR_SUCCESS";

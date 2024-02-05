@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CentralLicenseRefreshDetails  {
     @JsonProperty("message")
-    private String message = null;
+    private String message;
 
     @JsonProperty("service_units")
-    private Float serviceUnits = null;
+    private Float serviceUnits;
 
     @JsonProperty("tenant_uuid")
-    private String tenantUuid = null;
+    private String tenantUuid;
 
 
 

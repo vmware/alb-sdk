@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HealthMonitorLdap  {
     @JsonProperty("attributes")
-    private String attributes = null;
+    private String attributes;
 
     @JsonProperty("base_dn")
-    private String baseDn = null;
+    private String baseDn;
 
     @JsonProperty("filter")
-    private String filter = null;
+    private String filter;
 
     @JsonProperty("scope")
-    private String scope = null;
+    private String scope;
 
     @JsonProperty("ssl_attributes")
-    private HealthMonitorSSLAttributes sslAttributes = null;
+    private HealthMonitorSSLAttributes sslAttributes;
 
 
 

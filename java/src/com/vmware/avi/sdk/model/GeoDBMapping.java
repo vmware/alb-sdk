@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GeoDBMapping  {
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("elements")
-    private List<GeoDBMappingElement> elements = null;
+    private List<GeoDBMappingElement> elements;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

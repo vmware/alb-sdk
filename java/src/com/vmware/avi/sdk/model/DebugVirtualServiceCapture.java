@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DebugVirtualServiceCapture  {
     @JsonProperty("capture_file_size")
-    private CaptureFileSize captureFileSize = null;
+    private CaptureFileSize captureFileSize;
 
     @JsonProperty("duration")
     private Integer duration = 0;
@@ -34,7 +34,7 @@ public class DebugVirtualServiceCapture  {
     private Integer fileCount = 2;
 
     @JsonProperty("num_pkts")
-    private Integer numPkts = null;
+    private Integer numPkts;
 
     @JsonProperty("pcap_ng")
     private Boolean pcapNg = true;

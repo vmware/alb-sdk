@@ -34,43 +34,43 @@ public class WebappUT extends AviRestResource  {
     private Integer defaultThirdInt = 3;
 
     @JsonProperty("mandatory_test")
-    private L1FMandatoryTestCase mandatoryTest = null;
+    private L1FMandatoryTestCase mandatoryTest;
 
     @JsonProperty("mandatory_tests")
-    private List<L1FMandatoryTestCase> mandatoryTests = null;
+    private List<L1FMandatoryTestCase> mandatoryTests;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("sensitive_test")
-    private L1FSensitiveTestCase sensitiveTest = null;
+    private L1FSensitiveTestCase sensitiveTest;
 
     @JsonProperty("sensitive_tests")
-    private List<L1FSensitiveTestCase> sensitiveTests = null;
+    private List<L1FSensitiveTestCase> sensitiveTests;
 
     @JsonProperty("skip_optional_check_tests")
-    private Boolean skipOptionalCheckTests = null;
+    private Boolean skipOptionalCheckTests;
 
     @JsonProperty("string_length_test")
-    private L1StringLengthTestCase stringLengthTest = null;
+    private L1StringLengthTestCase stringLengthTest;
 
     @JsonProperty("string_length_tests")
-    private List<L1StringLengthTestCase> stringLengthTests = null;
+    private List<L1StringLengthTestCase> stringLengthTests;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("test_sensitive_string")
-    private String testSensitiveString = null;
+    private String testSensitiveString;
 
     @JsonProperty("test_string")
-    private String testString = null;
+    private String testString;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

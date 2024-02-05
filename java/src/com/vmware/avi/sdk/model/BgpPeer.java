@@ -40,43 +40,43 @@ public class BgpPeer  {
     private Integer ebgpMultihop = 0;
 
     @JsonProperty("hold_time")
-    private Integer holdTime = null;
+    private Integer holdTime;
 
     @JsonProperty("ibgp_local_as_override")
-    private Boolean ibgpLocalAsOverride = null;
+    private Boolean ibgpLocalAsOverride;
 
     @JsonProperty("keepalive_interval")
-    private Integer keepaliveInterval = null;
+    private Integer keepaliveInterval;
 
     @JsonProperty("label")
-    private String label = null;
+    private String label;
 
     @JsonProperty("local_as")
-    private Integer localAs = null;
+    private Integer localAs;
 
     @JsonProperty("md5_secret")
-    private String md5Secret = null;
+    private String md5Secret;
 
     @JsonProperty("network_ref")
-    private String networkRef = null;
+    private String networkRef;
 
     @JsonProperty("peer_ip")
-    private IpAddr peerIp = null;
+    private IpAddr peerIp;
 
     @JsonProperty("peer_ip6")
-    private IpAddr peerIp6 = null;
+    private IpAddr peerIp6;
 
     @JsonProperty("remote_as")
-    private Integer remoteAs = null;
+    private Integer remoteAs;
 
     @JsonProperty("shutdown")
     private Boolean shutdown = false;
 
     @JsonProperty("subnet")
-    private IpAddrPrefix subnet = null;
+    private IpAddrPrefix subnet;
 
     @JsonProperty("subnet6")
-    private IpAddrPrefix subnet6 = null;
+    private IpAddrPrefix subnet6;
 
 
 

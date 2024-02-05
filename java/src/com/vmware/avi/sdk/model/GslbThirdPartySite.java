@@ -28,16 +28,16 @@ public class GslbThirdPartySite  {
     private Boolean enabled = true;
 
     @JsonProperty("hm_proxies")
-    private List<GslbHealthMonitorProxy> hmProxies = null;
+    private List<GslbHealthMonitorProxy> hmProxies;
 
     @JsonProperty("location")
-    private GslbGeoLocation location = null;
+    private GslbGeoLocation location;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("ratio")
-    private Integer ratio = null;
+    private Integer ratio;
 
 
 

@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Matches  {
     @JsonProperty("match_element")
-    private String matchElement = null;
+    private String matchElement;
 
     @JsonProperty("match_value")
-    private String matchValue = null;
+    private String matchValue;
 
 
 

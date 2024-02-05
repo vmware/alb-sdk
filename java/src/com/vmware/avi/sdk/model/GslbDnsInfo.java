@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbDnsInfo  {
     @JsonProperty("dns_active")
-    private Boolean dnsActive = null;
+    private Boolean dnsActive;
 
     @JsonProperty("dns_vs_states")
-    private List<GslbPerDnsState> dnsVsStates = null;
+    private List<GslbPerDnsState> dnsVsStates;
 
     @JsonProperty("gs_status")
-    private GslbDnsGsStatus gsStatus = null;
+    private GslbDnsGsStatus gsStatus;
 
     @JsonProperty("retry_count")
-    private Integer retryCount = null;
+    private Integer retryCount;
 
 
 

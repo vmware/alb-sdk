@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SecMgrThreshold  {
     @JsonProperty("attack_type")
-    private String attackType = null;
+    private String attackType;
 
     @JsonProperty("threshold")
-    private Integer threshold = null;
+    private Integer threshold;
 
 
 

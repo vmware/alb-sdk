@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OCISetup  {
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("compartment_id")
-    private String compartmentId = null;
+    private String compartmentId;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("status")
-    private String status = null;
+    private String status;
 
     @JsonProperty("tenancy")
-    private String tenancy = null;
+    private String tenancy;
 
     @JsonProperty("vcn_id")
-    private String vcnId = null;
+    private String vcnId;
 
 
 

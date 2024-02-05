@@ -34,13 +34,13 @@ public class SeUpgradeParams extends AviRestResource  {
     private Boolean rollback = false;
 
     @JsonProperty("se_group_refs")
-    private List<String> seGroupRefs = null;
+    private List<String> seGroupRefs;
 
     @JsonProperty("suspend_on_failure")
     private Boolean suspendOnFailure = false;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

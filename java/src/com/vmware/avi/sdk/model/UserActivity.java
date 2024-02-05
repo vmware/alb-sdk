@@ -28,31 +28,31 @@ public class UserActivity extends AviRestResource  {
     private Integer failedLoginAttempts = 0;
 
     @JsonProperty("last_login_ip")
-    private String lastLoginIp = null;
+    private String lastLoginIp;
 
     @JsonProperty("last_login_timestamp")
-    private String lastLoginTimestamp = null;
+    private String lastLoginTimestamp;
 
     @JsonProperty("last_password_update")
-    private String lastPasswordUpdate = null;
+    private String lastPasswordUpdate;
 
     @JsonProperty("logged_in")
-    private Boolean loggedIn = null;
+    private Boolean loggedIn;
 
     @JsonProperty("login_failure_timestamps")
-    private List<String> loginFailureTimestamps = null;
+    private List<String> loginFailureTimestamps;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("previous_password")
-    private List<String> previousPassword = null;
+    private List<String> previousPassword;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsAttack  {
     @JsonProperty("attack_vector")
-    private String attackVector = null;
+    private String attackVector;
 
     @JsonProperty("enabled")
     private Boolean enabled = true;
@@ -31,10 +31,10 @@ public class DnsAttack  {
     private Integer maxMitigationAge = 60;
 
     @JsonProperty("mitigation_action")
-    private AttackMitigationAction mitigationAction = null;
+    private AttackMitigationAction mitigationAction;
 
     @JsonProperty("threshold")
-    private Integer threshold = null;
+    private Integer threshold;
 
 
 

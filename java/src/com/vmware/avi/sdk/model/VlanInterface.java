@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VlanInterface  {
     @JsonProperty("dhcp_enabled")
-    private Boolean dhcpEnabled = null;
+    private Boolean dhcpEnabled;
 
     @JsonProperty("enabled")
     private Boolean enabled = true;
 
     @JsonProperty("if_name")
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("ip6_autocfg_enabled")
-    private Boolean ip6AutocfgEnabled = null;
+    private Boolean ip6AutocfgEnabled;
 
     @JsonProperty("is_mgmt")
     private Boolean isMgmt = false;
@@ -40,10 +40,10 @@ public class VlanInterface  {
     private Integer vlanId = 0;
 
     @JsonProperty("vnic_networks")
-    private List<vNICNetwork> vnicNetworks = null;
+    private List<vNICNetwork> vnicNetworks;
 
     @JsonProperty("vrf_ref")
-    private String vrfRef = null;
+    private String vrfRef;
 
 
 

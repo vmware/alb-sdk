@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServerAutoScaleInCompleteInfo  {
     @JsonProperty("nscalein")
-    private Integer nscalein = null;
+    private Integer nscalein;
 
     @JsonProperty("pool_ref")
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("reason_code")
     private String reasonCode = "SYSERR_SUCCESS";
 
     @JsonProperty("scaled_in_servers")
-    private List<ServerId> scaledInServers = null;
+    private List<ServerId> scaledInServers;
 
 
 

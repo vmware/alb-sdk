@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SamlAttribute  {
     @JsonProperty("attr_name")
-    private String attrName = null;
+    private String attrName;
 
     @JsonProperty("attr_values")
-    private List<String> attrValues = null;
+    private List<String> attrValues;
 
 
 

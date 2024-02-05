@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CloudConnectorUserTestParams  {
     @JsonProperty("host")
-    private String host = null;
+    private String host;
 
 
 

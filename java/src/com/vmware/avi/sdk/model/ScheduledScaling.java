@@ -25,22 +25,22 @@ public class ScheduledScaling  {
     private Integer autoscalingDuration = 1;
 
     @JsonProperty("cron_expression")
-    private String cronExpression = null;
+    private String cronExpression;
 
     @JsonProperty("desired_capacity")
-    private Integer desiredCapacity = null;
+    private Integer desiredCapacity;
 
     @JsonProperty("enable")
     private Boolean enable = true;
 
     @JsonProperty("end_date")
-    private String endDate = null;
+    private String endDate;
 
     @JsonProperty("schedule_max_step")
     private Integer scheduleMaxStep = 1;
 
     @JsonProperty("start_date")
-    private String startDate = null;
+    private String startDate;
 
 
 

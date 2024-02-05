@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SSLRevokedDetails  {
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
 
 

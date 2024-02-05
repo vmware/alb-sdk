@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AlertRuleMetric  {
     @JsonProperty("duration")
-    private Integer duration = null;
+    private Integer duration;
 
     @JsonProperty("metric_id")
-    private String metricId = null;
+    private String metricId;
 
     @JsonProperty("metric_threshold")
-    private AlertMetricThreshold metricThreshold = null;
+    private AlertMetricThreshold metricThreshold;
 
 
 

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SummarizedInfo  {
     @JsonProperty("subnet_info")
-    private List<SummarizedSubnetInfo> subnetInfo = null;
+    private List<SummarizedSubnetInfo> subnetInfo;
 
 
     /**

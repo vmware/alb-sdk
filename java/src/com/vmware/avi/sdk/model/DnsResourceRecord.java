@@ -22,49 +22,49 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsResourceRecord  {
     @JsonProperty("addr6_ip_str")
-    private String addr6IpStr = null;
+    private String addr6IpStr;
 
     @JsonProperty("addr_ip")
-    private Integer addrIp = null;
+    private Integer addrIp;
 
     @JsonProperty("cname")
-    private String cname = null;
+    private String cname;
 
     @JsonProperty("dclass")
-    private Integer dclass = null;
+    private Integer dclass;
 
     @JsonProperty("location")
-    private GeoLocation location = null;
+    private GeoLocation location;
 
     @JsonProperty("mail_server")
-    private String mailServer = null;
+    private String mailServer;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("nsname")
-    private String nsname = null;
+    private String nsname;
 
     @JsonProperty("port")
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("priority")
-    private Integer priority = null;
+    private Integer priority;
 
     @JsonProperty("site_name")
-    private String siteName = null;
+    private String siteName;
 
     @JsonProperty("text_rdata")
-    private String textRdata = null;
+    private String textRdata;
 
     @JsonProperty("ttl")
-    private Integer ttl = null;
+    private Integer ttl;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("vs_name")
-    private String vsName = null;
+    private String vsName;
 
 
 

@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LicenseTierSwitchDetiails  {
     @JsonProperty("destination_tier")
-    private String destinationTier = null;
+    private String destinationTier;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("source_tier")
-    private String sourceTier = null;
+    private String sourceTier;
 
     @JsonProperty("status")
-    private String status = null;
+    private String status;
 
 
 

@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IcapLog  {
     @JsonProperty("action")
-    private String action = null;
+    private String action;
 
     @JsonProperty("request_logs")
-    private List<IcapRequestLog> requestLogs = null;
+    private List<IcapRequestLog> requestLogs;
 
 
 

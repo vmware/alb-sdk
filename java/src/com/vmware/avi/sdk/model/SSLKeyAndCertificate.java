@@ -22,37 +22,37 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SSLKeyAndCertificate extends AviRestResource  {
     @JsonProperty("ca_certs")
-    private List<CertificateAuthority> caCerts = null;
+    private List<CertificateAuthority> caCerts;
 
     @JsonProperty("certificate")
-    private SSLCertificate certificate = null;
+    private SSLCertificate certificate;
 
     @JsonProperty("certificate_base64")
     private Boolean certificateBase64 = false;
 
     @JsonProperty("certificate_management_profile_ref")
-    private String certificateManagementProfileRef = null;
+    private String certificateManagementProfileRef;
 
     @JsonProperty("created_by")
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("dynamic_params")
-    private List<CustomParams> dynamicParams = null;
+    private List<CustomParams> dynamicParams;
 
     @JsonProperty("enable_ocsp_stapling")
     private Boolean enableOcspStapling = false;
 
     @JsonProperty("enckey_base64")
-    private String enckeyBase64 = null;
+    private String enckeyBase64;
 
     @JsonProperty("enckey_name")
-    private String enckeyName = null;
+    private String enckeyName;
 
     @JsonProperty("format")
     private String format = "SSL_PEM";
 
     @JsonProperty("hardwaresecuritymodulegroup_ref")
-    private String hardwaresecuritymodulegroupRef = null;
+    private String hardwaresecuritymodulegroupRef;
 
     @JsonProperty("import_key_to_hsm")
     private Boolean importKeyToHsm = false;
@@ -61,25 +61,25 @@ public class SSLKeyAndCertificate extends AviRestResource  {
     private Boolean isFederated = false;
 
     @JsonProperty("key")
-    private String key = null;
+    private String key;
 
     @JsonProperty("key_base64")
     private Boolean keyBase64 = false;
 
     @JsonProperty("key_params")
-    private SSLKeyParams keyParams = null;
+    private SSLKeyParams keyParams;
 
     @JsonProperty("key_passphrase")
-    private String keyPassphrase = null;
+    private String keyPassphrase;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("ocsp_config")
-    private OCSPConfig ocspConfig = null;
+    private OCSPConfig ocspConfig;
 
     @JsonProperty("ocsp_error_status")
     private String ocspErrorStatus;
@@ -94,16 +94,16 @@ public class SSLKeyAndCertificate extends AviRestResource  {
     private String status = "SSL_CERTIFICATE_FINISHED";
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
     /**

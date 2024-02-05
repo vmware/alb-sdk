@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class FailAction  {
     @JsonProperty("local_rsp")
-    private FailActionHTTPLocalResponse localRsp = null;
+    private FailActionHTTPLocalResponse localRsp;
 
     @JsonProperty("redirect")
-    private FailActionHTTPRedirect redirect = null;
+    private FailActionHTTPRedirect redirect;
 
     @JsonProperty("type")
     private String type = "FAIL_ACTION_CLOSE_CONN";

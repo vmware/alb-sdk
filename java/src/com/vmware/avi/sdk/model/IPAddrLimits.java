@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IPAddrLimits  {
     @JsonProperty("ip_address_group_per_match_criteria")
-    private Integer ipAddressGroupPerMatchCriteria = null;
+    private Integer ipAddressGroupPerMatchCriteria;
 
     @JsonProperty("ip_address_prefix_per_match_criteria")
-    private Integer ipAddressPrefixPerMatchCriteria = null;
+    private Integer ipAddressPrefixPerMatchCriteria;
 
     @JsonProperty("ip_address_range_per_match_criteria")
-    private Integer ipAddressRangePerMatchCriteria = null;
+    private Integer ipAddressRangePerMatchCriteria;
 
     @JsonProperty("ip_addresses_per_match_criteria")
-    private Integer ipAddressesPerMatchCriteria = null;
+    private Integer ipAddressesPerMatchCriteria;
 
 
 

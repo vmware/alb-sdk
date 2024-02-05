@@ -49,16 +49,16 @@ public class HttpCacheConfig  {
     private Integer maxObjectSize = 4194304;
 
     @JsonProperty("mime_types_block_group_refs")
-    private List<String> mimeTypesBlockGroupRefs = null;
+    private List<String> mimeTypesBlockGroupRefs;
 
     @JsonProperty("mime_types_block_lists")
-    private List<String> mimeTypesBlockLists = null;
+    private List<String> mimeTypesBlockLists;
 
     @JsonProperty("mime_types_group_refs")
-    private List<String> mimeTypesGroupRefs = null;
+    private List<String> mimeTypesGroupRefs;
 
     @JsonProperty("mime_types_list")
-    private List<String> mimeTypesList = null;
+    private List<String> mimeTypesList;
 
     @JsonProperty("min_object_size")
     private Integer minObjectSize = 100;
@@ -67,7 +67,7 @@ public class HttpCacheConfig  {
     private Boolean queryCacheable = false;
 
     @JsonProperty("uri_non_cacheable")
-    private PathMatch uriNonCacheable = null;
+    private PathMatch uriNonCacheable;
 
     @JsonProperty("xcache_header")
     private Boolean xcacheHeader = true;

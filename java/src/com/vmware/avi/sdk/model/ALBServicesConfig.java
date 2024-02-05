@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ALBServicesConfig extends AviRestResource  {
     @JsonProperty("app_signature_config")
-    private AppSignatureConfig appSignatureConfig = null;
+    private AppSignatureConfig appSignatureConfig;
 
     @JsonProperty("asset_contact")
-    private ALBServicesUser assetContact = null;
+    private ALBServicesUser assetContact;
 
     @JsonProperty("case_config")
-    private CaseConfig caseConfig = null;
+    private CaseConfig caseConfig;
 
     @JsonProperty("feature_opt_in_status")
-    private PortalFeatureOptIn featureOptInStatus = null;
+    private PortalFeatureOptIn featureOptInStatus;
 
     @JsonProperty("ip_reputation_config")
-    private IpReputationConfig ipReputationConfig = null;
+    private IpReputationConfig ipReputationConfig;
 
     @JsonProperty("mode")
     private String mode = "MYVMWARE";
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("operations_config")
     private OperationsConfig operationsConfig;
@@ -49,22 +49,22 @@ public class ALBServicesConfig extends AviRestResource  {
     private Integer pollingInterval = 10;
 
     @JsonProperty("portal_url")
-    private String portalUrl = null;
+    private String portalUrl;
 
     @JsonProperty("saas_licensing_config")
-    private SaasLicensingInfo saasLicensingConfig = null;
+    private SaasLicensingInfo saasLicensingConfig;
 
     @JsonProperty("session_config")
-    private PulseServicesSessionConfig sessionConfig = null;
+    private PulseServicesSessionConfig sessionConfig;
 
     @JsonProperty("split_proxy_configuration")
-    private ProxyConfiguration splitProxyConfiguration = null;
+    private ProxyConfiguration splitProxyConfiguration;
 
     @JsonProperty("tenant_config")
-    private PulseServicesTenantConfig tenantConfig = null;
+    private PulseServicesTenantConfig tenantConfig;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
@@ -76,13 +76,13 @@ public class ALBServicesConfig extends AviRestResource  {
     private Boolean useTls = true;
 
     @JsonProperty("user_agent_db_config")
-    private UserAgentDBConfig userAgentDbConfig = null;
+    private UserAgentDBConfig userAgentDbConfig;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("waf_config")
-    private WafCrsConfig wafConfig = null;
+    private WafCrsConfig wafConfig;
 
 
 

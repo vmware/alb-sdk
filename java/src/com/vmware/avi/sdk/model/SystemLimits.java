@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SystemLimits extends AviRestResource  {
     @JsonProperty("controller_limits")
-    private ControllerLimits controllerLimits = null;
+    private ControllerLimits controllerLimits;
 
     @JsonProperty("controller_sizes")
-    private List<ControllerSize> controllerSizes = null;
+    private List<ControllerSize> controllerSizes;
 
     @JsonProperty("serviceengine_limits")
-    private ServiceEngineLimits serviceengineLimits = null;
+    private ServiceEngineLimits serviceengineLimits;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

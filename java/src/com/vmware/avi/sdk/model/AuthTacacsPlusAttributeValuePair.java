@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AuthTacacsPlusAttributeValuePair  {
     @JsonProperty("mandatory")
-    private Boolean mandatory = null;
+    private Boolean mandatory;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("value")
-    private String value = null;
+    private String value;
 
 
 

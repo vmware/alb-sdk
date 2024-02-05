@@ -25,10 +25,10 @@ public class EventDetailsFilter  {
     private String comparator = "ALERT_OP_EQ";
 
     @JsonProperty("event_details_key")
-    private String eventDetailsKey = null;
+    private String eventDetailsKey;
 
     @JsonProperty("event_details_value")
-    private String eventDetailsValue = null;
+    private String eventDetailsValue;
 
 
 

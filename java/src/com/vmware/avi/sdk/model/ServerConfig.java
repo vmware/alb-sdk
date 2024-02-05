@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServerConfig  {
     @JsonProperty("def_port")
-    private Boolean defPort = null;
+    private Boolean defPort;
 
     @JsonProperty("hostname")
-    private String hostname = null;
+    private String hostname;
 
     @JsonProperty("ip_addr")
-    private IpAddr ipAddr = null;
+    private IpAddr ipAddr;
 
     @JsonProperty("is_enabled")
-    private Boolean isEnabled = null;
+    private Boolean isEnabled;
 
     @JsonProperty("last_state")
     private String lastState = "OPER_UNAVAIL";
 
     @JsonProperty("location")
-    private GeoLocation location = null;
+    private GeoLocation location;
 
     @JsonProperty("oper_status")
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
     @JsonProperty("port")
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("propogate_state")
-    private Boolean propogateState = null;
+    private Boolean propogateState;
 
     @JsonProperty("timer_exists")
     private Boolean timerExists = false;

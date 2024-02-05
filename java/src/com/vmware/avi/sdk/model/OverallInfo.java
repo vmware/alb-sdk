@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OverallInfo  {
     @JsonProperty("available")
-    private Integer available = null;
+    private Integer available;
 
     @JsonProperty("free_percent")
-    private String freePercent = null;
+    private String freePercent;
 
     @JsonProperty("mount_path")
-    private String mountPath = null;
+    private String mountPath;
 
     @JsonProperty("path")
-    private String path = null;
+    private String path;
 
     @JsonProperty("size")
-    private Integer size = null;
+    private Integer size;
 
     @JsonProperty("used")
-    private Integer used = null;
+    private Integer used;
 
 
 

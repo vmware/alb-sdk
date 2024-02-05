@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GeoLocation  {
     @JsonProperty("latitude")
-    private Float latitude = null;
+    private Float latitude;
 
     @JsonProperty("longitude")
-    private Float longitude = null;
+    private Float longitude;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("tag")
-    private String tag = null;
+    private String tag;
 
 
 

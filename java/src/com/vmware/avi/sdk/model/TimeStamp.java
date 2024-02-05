@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TimeStamp  {
     @JsonProperty("secs")
-    private Integer secs = null;
+    private Integer secs;
 
     @JsonProperty("usecs")
-    private Integer usecs = null;
+    private Integer usecs;
 
 
 

@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HTTPClientAuthenticationParams  {
     @JsonProperty("auth_profile_ref")
-    private String authProfileRef = null;
+    private String authProfileRef;
 
     @JsonProperty("realm")
-    private String realm = null;
+    private String realm;
 
     @JsonProperty("request_uri_path")
-    private StringMatch requestUriPath = null;
+    private StringMatch requestUriPath;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
 

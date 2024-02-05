@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ProxyConfiguration  {
     @JsonProperty("host")
-    private String host = null;
+    private String host;
 
     @JsonProperty("password")
-    private String password = null;
+    private String password;
 
     @JsonProperty("port")
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("username")
-    private String username = null;
+    private String username;
 
 
 

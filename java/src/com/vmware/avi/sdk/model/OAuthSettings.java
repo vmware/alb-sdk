@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OAuthSettings  {
     @JsonProperty("app_settings")
-    private OAuthAppSettings appSettings = null;
+    private OAuthAppSettings appSettings;
 
     @JsonProperty("auth_profile_ref")
-    private String authProfileRef = null;
+    private String authProfileRef;
 
     @JsonProperty("resource_server")
-    private OAuthResourceServer resourceServer = null;
+    private OAuthResourceServer resourceServer;
 
 
 

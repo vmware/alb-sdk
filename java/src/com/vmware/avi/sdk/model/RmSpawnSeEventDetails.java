@@ -22,61 +22,61 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RmSpawnSeEventDetails  {
     @JsonProperty("availability_zone")
-    private String availabilityZone = null;
+    private String availabilityZone;
 
     @JsonProperty("cloud_name")
-    private String cloudName = null;
+    private String cloudName;
 
     @JsonProperty("cloud_uuid")
-    private String cloudUuid = null;
+    private String cloudUuid;
 
     @JsonProperty("flavor_name")
-    private String flavorName = null;
+    private String flavorName;
 
     @JsonProperty("host_name")
-    private String hostName = null;
+    private String hostName;
 
     @JsonProperty("host_uuid")
-    private String hostUuid = null;
+    private String hostUuid;
 
     @JsonProperty("memory")
-    private Integer memory = null;
+    private Integer memory;
 
     @JsonProperty("network_names")
-    private List<String> networkNames = null;
+    private List<String> networkNames;
 
     @JsonProperty("networks")
-    private List<String> networks = null;
+    private List<String> networks;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_cookie")
-    private String seCookie = null;
+    private String seCookie;
 
     @JsonProperty("se_grp_name")
-    private String seGrpName = null;
+    private String seGrpName;
 
     @JsonProperty("se_grp_uuid")
-    private String seGrpUuid = null;
+    private String seGrpUuid;
 
     @JsonProperty("se_name")
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("se_uuid")
-    private String seUuid = null;
+    private String seUuid;
 
     @JsonProperty("status_code")
-    private Integer statusCode = null;
+    private Integer statusCode;
 
     @JsonProperty("vcpus")
-    private Integer vcpus = null;
+    private Integer vcpus;
 
     @JsonProperty("vs_name")
-    private String vsName = null;
+    private String vsName;
 
     @JsonProperty("vs_uuid")
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

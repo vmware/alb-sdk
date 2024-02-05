@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GCPVIPAllocation  {
     @JsonProperty("ilb")
-    private GCPVIPILB ilb = null;
+    private GCPVIPILB ilb;
 
     @JsonProperty("mode")
     private String mode = "ROUTES";
 
     @JsonProperty("routes")
-    private GCPVIPRoutes routes = null;
+    private GCPVIPRoutes routes;
 
 
 

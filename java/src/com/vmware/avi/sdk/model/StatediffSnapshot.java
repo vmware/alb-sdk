@@ -22,58 +22,58 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StatediffSnapshot extends AviRestResource  {
     @JsonProperty("gslb_name")
-    private String gslbName = null;
+    private String gslbName;
 
     @JsonProperty("gslb_uuid")
-    private String gslbUuid = null;
+    private String gslbUuid;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("pool_name")
-    private String poolName = null;
+    private String poolName;
 
     @JsonProperty("pool_uuid")
-    private String poolUuid = null;
+    private String poolUuid;
 
     @JsonProperty("post_snapshot")
-    private postsnapshot postSnapshot = null;
+    private postsnapshot postSnapshot;
 
     @JsonProperty("pre_snapshot")
-    private presnapshot preSnapshot = null;
+    private presnapshot preSnapshot;
 
     @JsonProperty("se_group_name")
-    private String seGroupName = null;
+    private String seGroupName;
 
     @JsonProperty("se_group_uuid")
-    private String seGroupUuid = null;
+    private String seGroupUuid;
 
     @JsonProperty("se_name")
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("se_uuid")
-    private String seUuid = null;
+    private String seUuid;
 
     @JsonProperty("snapshot_type")
-    private String snapshotType = null;
+    private String snapshotType;
 
     @JsonProperty("statediff_operation_ref")
-    private String statediffOperationRef = null;
+    private String statediffOperationRef;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vs_name")
-    private String vsName = null;
+    private String vsName;
 
     @JsonProperty("vs_uuid")
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AppInfo  {
     @JsonProperty("app_hdr_name")
-    private String appHdrName = null;
+    private String appHdrName;
 
     @JsonProperty("app_hdr_value")
-    private String appHdrValue = null;
+    private String appHdrValue;
 
 
 

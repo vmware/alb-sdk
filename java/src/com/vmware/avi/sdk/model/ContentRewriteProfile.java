@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ContentRewriteProfile  {
     @JsonProperty("rewritable_content_ref")
-    private String rewritableContentRef = null;
+    private String rewritableContentRef;
 
     @JsonProperty("rsp_rewrite_rules")
-    private List<RspContentRewriteRule> rspRewriteRules = null;
+    private List<RspContentRewriteRule> rspRewriteRules;
 
 
 

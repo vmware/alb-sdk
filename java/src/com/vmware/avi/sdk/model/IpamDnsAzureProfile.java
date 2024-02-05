@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IpamDnsAzureProfile  {
     @JsonProperty("azure_serviceprincipal")
-    private AzureServicePrincipalCredentials azureServiceprincipal = null;
+    private AzureServicePrincipalCredentials azureServiceprincipal;
 
     @JsonProperty("azure_userpass")
-    private AzureUserPassCredentials azureUserpass = null;
+    private AzureUserPassCredentials azureUserpass;
 
     @JsonProperty("egress_service_subnets")
-    private List<String> egressServiceSubnets = null;
+    private List<String> egressServiceSubnets;
 
     @JsonProperty("resource_group")
-    private String resourceGroup = null;
+    private String resourceGroup;
 
     @JsonProperty("subscription_id")
-    private String subscriptionId = null;
+    private String subscriptionId;
 
     @JsonProperty("usable_domains")
-    private List<String> usableDomains = null;
+    private List<String> usableDomains;
 
     @JsonProperty("usable_network_uuids")
-    private List<String> usableNetworkUuids = null;
+    private List<String> usableNetworkUuids;
 
     @JsonProperty("use_enhanced_ha")
     private Boolean useEnhancedHa = false;
@@ -49,7 +49,7 @@ public class IpamDnsAzureProfile  {
     private Boolean useStandardAlb = false;
 
     @JsonProperty("virtual_network_ids")
-    private List<String> virtualNetworkIds = null;
+    private List<String> virtualNetworkIds;
 
 
 

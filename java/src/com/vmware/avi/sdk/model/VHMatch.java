@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VHMatch  {
     @JsonProperty("host")
-    private String host = null;
+    private String host;
 
     @JsonProperty("rules")
-    private List<VHMatchRule> rules = null;
+    private List<VHMatchRule> rules;
 
 
 

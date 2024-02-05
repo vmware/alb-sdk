@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class postsnapshot  {
     @JsonProperty("gssnapshot")
-    private FbGsInfo gssnapshot = null;
+    private FbGsInfo gssnapshot;
 
     @JsonProperty("poolsnapshot")
-    private FbPoolInfo poolsnapshot = null;
+    private FbPoolInfo poolsnapshot;
 
     @JsonProperty("sesnapshot")
-    private FbSeInfo sesnapshot = null;
+    private FbSeInfo sesnapshot;
 
     @JsonProperty("vssnapshot")
-    private FbVsInfo vssnapshot = null;
+    private FbVsInfo vssnapshot;
 
 
 

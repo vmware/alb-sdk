@@ -25,10 +25,10 @@ public class LocationHdrMatch  {
     private String matchCase = "INSENSITIVE";
 
     @JsonProperty("match_criteria")
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("value")
-    private List<String> value = null;
+    private List<String> value;
 
 
 

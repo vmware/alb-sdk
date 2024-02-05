@@ -22,55 +22,55 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DebugVirtualService extends AviRestResource  {
     @JsonProperty("capture")
-    private Boolean capture = null;
+    private Boolean capture;
 
     @JsonProperty("capture_filters")
-    private CaptureFilters captureFilters = null;
+    private CaptureFilters captureFilters;
 
     @JsonProperty("capture_params")
-    private DebugVirtualServiceCapture captureParams = null;
+    private DebugVirtualServiceCapture captureParams;
 
     @JsonProperty("capture_pkt_filter")
-    private CapturePacketFilter capturePktFilter = null;
+    private CapturePacketFilter capturePktFilter;
 
     @JsonProperty("cloud_ref")
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("debug_hm")
     private String debugHm = "DEBUG_VS_HM_NONE";
 
     @JsonProperty("debug_ip")
-    private DebugIpAddr debugIp = null;
+    private DebugIpAddr debugIp;
 
     @JsonProperty("dns_options")
-    private DebugDnsOptions dnsOptions = null;
+    private DebugDnsOptions dnsOptions;
 
     @JsonProperty("flags")
-    private List<DebugVsDataplane> flags = null;
+    private List<DebugVsDataplane> flags;
 
     @JsonProperty("latency_audit_filters")
-    private CaptureFilters latencyAuditFilters = null;
+    private CaptureFilters latencyAuditFilters;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("objsync")
-    private DebugVirtualServiceObjSync objsync = null;
+    private DebugVirtualServiceObjSync objsync;
 
     @JsonProperty("resync_flows")
     private Boolean resyncFlows = false;
 
     @JsonProperty("se_params")
-    private DebugVirtualServiceSeParams seParams = null;
+    private DebugVirtualServiceSeParams seParams;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

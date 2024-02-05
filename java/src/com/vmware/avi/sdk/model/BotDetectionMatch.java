@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BotDetectionMatch  {
     @JsonProperty("classifications")
-    private List<BotClassification> classifications = null;
+    private List<BotClassification> classifications;
 
     @JsonProperty("match_operation")
-    private String matchOperation = null;
+    private String matchOperation;
 
 
     /**

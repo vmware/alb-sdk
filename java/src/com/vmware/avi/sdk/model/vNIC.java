@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class vNIC  {
     @JsonProperty("adapter")
-    private String adapter = null;
+    private String adapter;
 
     @JsonProperty("aggregator_chgd")
     private Boolean aggregatorChgd = false;
@@ -31,7 +31,7 @@ public class vNIC  {
     private Boolean canSeDpTakeover = true;
 
     @JsonProperty("connected")
-    private Boolean connected = null;
+    private Boolean connected;
 
     @JsonProperty("del_pending")
     private Boolean delPending = false;
@@ -49,7 +49,7 @@ public class vNIC  {
     private Boolean enabled = true;
 
     @JsonProperty("if_name")
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("ip6_autocfg_enabled")
     private Boolean ip6AutocfgEnabled = true;
@@ -73,43 +73,43 @@ public class vNIC  {
     private Boolean linkUp = true;
 
     @JsonProperty("linux_name")
-    private String linuxName = null;
+    private String linuxName;
 
     @JsonProperty("mac_address")
-    private String macAddress = null;
+    private String macAddress;
 
     @JsonProperty("members")
-    private List<MemberInterface> members = null;
+    private List<MemberInterface> members;
 
     @JsonProperty("mtu")
     private Integer mtu = 1500;
 
     @JsonProperty("network_name")
-    private String networkName = null;
+    private String networkName;
 
     @JsonProperty("network_ref")
-    private String networkRef = null;
+    private String networkRef;
 
     @JsonProperty("pci_id")
-    private String pciId = null;
+    private String pciId;
 
     @JsonProperty("port_uuid")
-    private String portUuid = null;
+    private String portUuid;
 
     @JsonProperty("vlan_id")
     private Integer vlanId = 0;
 
     @JsonProperty("vlan_interfaces")
-    private List<VlanInterface> vlanInterfaces = null;
+    private List<VlanInterface> vlanInterfaces;
 
     @JsonProperty("vnic_networks")
-    private List<vNICNetwork> vnicNetworks = null;
+    private List<vNICNetwork> vnicNetworks;
 
     @JsonProperty("vrf_id")
     private Integer vrfId = 0;
 
     @JsonProperty("vrf_ref")
-    private String vrfRef = null;
+    private String vrfRef;
 
 
 

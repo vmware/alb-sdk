@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ClusterServiceCriticalFailureEvent  {
     @JsonProperty("node_name")
-    private String nodeName = null;
+    private String nodeName;
 
     @JsonProperty("service_name")
-    private String serviceName = null;
+    private String serviceName;
 
 
 

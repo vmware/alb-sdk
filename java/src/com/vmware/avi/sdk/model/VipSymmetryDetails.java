@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VipSymmetryDetails  {
     @JsonProperty("max_num_se_assigned")
-    private Integer maxNumSeAssigned = null;
+    private Integer maxNumSeAssigned;
 
     @JsonProperty("max_num_se_requested")
-    private Integer maxNumSeRequested = null;
+    private Integer maxNumSeRequested;
 
     @JsonProperty("min_num_se_assigned")
-    private Integer minNumSeAssigned = null;
+    private Integer minNumSeAssigned;
 
     @JsonProperty("min_num_se_requested")
-    private Integer minNumSeRequested = null;
+    private Integer minNumSeRequested;
 
     @JsonProperty("num_vs")
-    private Integer numVs = null;
+    private Integer numVs;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("vip_id")
-    private String vipId = null;
+    private String vipId;
 
     @JsonProperty("vsvip_name")
-    private String vsvipName = null;
+    private String vsvipName;
 
     @JsonProperty("vsvip_uuid")
-    private String vsvipUuid = null;
+    private String vsvipUuid;
 
 
 

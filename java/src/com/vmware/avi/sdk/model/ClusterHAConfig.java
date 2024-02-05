@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ClusterHAConfig  {
     @JsonProperty("cluster_id")
-    private String clusterId = null;
+    private String clusterId;
 
     @JsonProperty("override_vsphere_ha")
     private Boolean overrideVsphereHa = false;
 
     @JsonProperty("vmg_name")
-    private String vmgName = null;
+    private String vmgName;
 
 
 

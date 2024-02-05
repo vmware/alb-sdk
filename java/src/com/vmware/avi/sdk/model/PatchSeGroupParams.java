@@ -25,13 +25,13 @@ public class PatchSeGroupParams  {
     private Boolean prechecksOnly = false;
 
     @JsonProperty("se_group_options")
-    private SeGroupOptions seGroupOptions = null;
+    private SeGroupOptions seGroupOptions;
 
     @JsonProperty("se_group_refs")
-    private List<String> seGroupRefs = null;
+    private List<String> seGroupRefs;
 
     @JsonProperty("se_patch_ref")
-    private String sePatchRef = null;
+    private String sePatchRef;
 
     @JsonProperty("skip_warnings")
     private Boolean skipWarnings = false;

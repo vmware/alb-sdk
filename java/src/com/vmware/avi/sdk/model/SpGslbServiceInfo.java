@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SpGslbServiceInfo  {
     @JsonProperty("fqdns")
-    private List<String> fqdns = null;
+    private List<String> fqdns;
 
     @JsonProperty("gs_ref")
-    private String gsRef = null;
+    private String gsRef;
 
 
     /**

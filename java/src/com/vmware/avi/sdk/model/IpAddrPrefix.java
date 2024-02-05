@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IpAddrPrefix  {
     @JsonProperty("ip_addr")
-    private IpAddr ipAddr = null;
+    private IpAddr ipAddr;
 
     @JsonProperty("mask")
-    private Integer mask = null;
+    private Integer mask;
 
 
 

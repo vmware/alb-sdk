@@ -22,58 +22,58 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OAuthProfile  {
     @JsonProperty("authorization_endpoint")
-    private String authorizationEndpoint = null;
+    private String authorizationEndpoint;
 
     @JsonProperty("end_session_endpoint")
-    private String endSessionEndpoint = null;
+    private String endSessionEndpoint;
 
     @JsonProperty("instance_id")
-    private String instanceId = null;
+    private String instanceId;
 
     @JsonProperty("introspection_endpoint")
-    private String introspectionEndpoint = null;
+    private String introspectionEndpoint;
 
     @JsonProperty("issuer")
-    private String issuer = null;
+    private String issuer;
 
     @JsonProperty("jwks_timeout")
     private Integer jwksTimeout = 0;
 
     @JsonProperty("jwks_uri")
-    private String jwksUri = null;
+    private String jwksUri;
 
     @JsonProperty("oauth_controller_settings")
-    private OAuthAppSettings oauthControllerSettings = null;
+    private OAuthAppSettings oauthControllerSettings;
 
     @JsonProperty("oauth_profile_type")
     private String oauthProfileType = "CLIENT_OAUTH";
 
     @JsonProperty("oauth_provider")
-    private String oauthProvider = null;
+    private String oauthProvider;
 
     @JsonProperty("oauth_resp_buffer_sz")
     private Integer oauthRespBufferSz = 102400;
 
     @JsonProperty("org_id")
-    private String orgId = null;
+    private String orgId;
 
     @JsonProperty("pool_ref")
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("redirect_uri")
-    private String redirectUri = null;
+    private String redirectUri;
 
     @JsonProperty("service_id")
-    private String serviceId = null;
+    private String serviceId;
 
     @JsonProperty("service_name")
-    private String serviceName = null;
+    private String serviceName;
 
     @JsonProperty("token_endpoint")
-    private String tokenEndpoint = null;
+    private String tokenEndpoint;
 
     @JsonProperty("userinfo_endpoint")
-    private String userinfoEndpoint = null;
+    private String userinfoEndpoint;
 
 
 

@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeUpgradeVsDisruptedEventDetails  {
     @JsonProperty("ip")
-    private String ip = null;
+    private String ip;
 
     @JsonProperty("notes")
-    private List<String> notes = null;
+    private List<String> notes;
 
     @JsonProperty("vip_id")
-    private String vipId = null;
+    private String vipId;
 
     @JsonProperty("vs_uuid")
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

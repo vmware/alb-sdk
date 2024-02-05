@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ParamsInURI  {
     @JsonProperty("param_info")
-    private List<ParamInURI> paramInfo = null;
+    private List<ParamInURI> paramInfo;
 
 
     /**

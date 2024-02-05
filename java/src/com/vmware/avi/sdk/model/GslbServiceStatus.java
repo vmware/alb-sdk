@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbServiceStatus extends AviRestResource  {
     @JsonProperty("details")
-    private List<String> details = null;
+    private List<String> details;
 
     @JsonProperty("gs_runtime")
-    private GslbServiceRuntime gsRuntime = null;
+    private GslbServiceRuntime gsRuntime;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
     /**

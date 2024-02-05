@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MemoryBalancerRequest extends AviRestResource  {
     @JsonProperty("controller_info")
-    private ControllerInfo controllerInfo = null;
+    private ControllerInfo controllerInfo;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("node_uuid")
-    private String nodeUuid = null;
+    private String nodeUuid;
 
     @JsonProperty("process_info")
-    private ProcessInfo processInfo = null;
+    private ProcessInfo processInfo;
 
     @JsonProperty("process_instance")
-    private String processInstance = null;
+    private String processInstance;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("timestamp")
-    private String timestamp = null;
+    private String timestamp;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

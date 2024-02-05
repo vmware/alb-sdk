@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NatPolicyAction  {
     @JsonProperty("nat_info")
-    private List<NatAddrInfo> natInfo = null;
+    private List<NatAddrInfo> natInfo;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
     /**

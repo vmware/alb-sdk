@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SidebandProfile  {
     @JsonProperty("ip")
-    private List<IpAddr> ip = null;
+    private List<IpAddr> ip;
 
     @JsonProperty("sideband_max_request_body_size")
     private Integer sidebandMaxRequestBodySize = 1024;

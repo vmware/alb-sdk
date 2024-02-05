@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RancherConfiguration  {
     @JsonProperty("access_key")
-    private String accessKey = null;
+    private String accessKey;
 
     @JsonProperty("app_sync_frequency")
     private Integer appSyncFrequency = 60;
@@ -43,10 +43,10 @@ public class RancherConfiguration  {
     private Boolean disableAutoSeCreation = false;
 
     @JsonProperty("docker_registry_se")
-    private DockerRegistry dockerRegistrySe = null;
+    private DockerRegistry dockerRegistrySe;
 
     @JsonProperty("east_west_placement_subnet")
-    private IpAddrPrefix eastWestPlacementSubnet = null;
+    private IpAddrPrefix eastWestPlacementSubnet;
 
     @JsonProperty("enable_event_subscription")
     private Boolean enableEventSubscription = true;
@@ -58,25 +58,25 @@ public class RancherConfiguration  {
     private Boolean feproxyVipsEnableProxyArp = true;
 
     @JsonProperty("fleet_endpoint")
-    private String fleetEndpoint = null;
+    private String fleetEndpoint;
 
     @JsonProperty("http_container_ports")
-    private List<Integer> httpContainerPorts = null;
+    private List<Integer> httpContainerPorts;
 
     @JsonProperty("nuage_controller")
-    private NuageSDNController nuageController = null;
+    private NuageSDNController nuageController;
 
     @JsonProperty("rancher_servers")
-    private List<String> rancherServers = null;
+    private List<String> rancherServers;
 
     @JsonProperty("se_deployment_method")
     private String seDeploymentMethod = "SE_CREATE_SSH";
 
     @JsonProperty("se_exclude_attributes")
-    private List<MesosAttribute> seExcludeAttributes = null;
+    private List<MesosAttribute> seExcludeAttributes;
 
     @JsonProperty("se_include_attributes")
-    private List<MesosAttribute> seIncludeAttributes = null;
+    private List<MesosAttribute> seIncludeAttributes;
 
     @JsonProperty("se_spawn_rate")
     private Integer seSpawnRate = 25;
@@ -85,13 +85,13 @@ public class RancherConfiguration  {
     private String seVolume = "/opt/avi";
 
     @JsonProperty("secret_key")
-    private String secretKey = null;
+    private String secretKey;
 
     @JsonProperty("services_accessible_all_interfaces")
     private Boolean servicesAccessibleAllInterfaces = false;
 
     @JsonProperty("ssh_user_ref")
-    private String sshUserRef = null;
+    private String sshUserRef;
 
     @JsonProperty("use_container_ip_port")
     private Boolean useContainerIpPort = false;

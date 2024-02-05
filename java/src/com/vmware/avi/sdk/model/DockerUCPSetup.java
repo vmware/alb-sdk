@@ -22,40 +22,40 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DockerUCPSetup  {
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("docker_ucp_access")
-    private Boolean dockerUcpAccess = null;
+    private Boolean dockerUcpAccess;
 
     @JsonProperty("failed_hosts")
-    private List<String> failedHosts = null;
+    private List<String> failedHosts;
 
     @JsonProperty("fleet_endpoint")
-    private String fleetEndpoint = null;
+    private String fleetEndpoint;
 
     @JsonProperty("hosts")
-    private List<String> hosts = null;
+    private List<String> hosts;
 
     @JsonProperty("missing_hosts")
-    private List<String> missingHosts = null;
+    private List<String> missingHosts;
 
     @JsonProperty("new_hosts")
-    private List<String> newHosts = null;
+    private List<String> newHosts;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_deploy_method_access")
-    private Boolean seDeployMethodAccess = null;
+    private Boolean seDeployMethodAccess;
 
     @JsonProperty("se_name")
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("ucp_nodes")
-    private List<String> ucpNodes = null;
+    private List<String> ucpNodes;
 
     @JsonProperty("version")
-    private String version = null;
+    private String version;
 
 
 

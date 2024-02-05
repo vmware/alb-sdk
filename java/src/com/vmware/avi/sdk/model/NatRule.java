@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NatRule  {
     @JsonProperty("action")
-    private NatPolicyAction action = null;
+    private NatPolicyAction action;
 
     @JsonProperty("created_by")
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("enable")
-    private Boolean enable = null;
+    private Boolean enable;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match")
-    private NatMatchTarget match = null;
+    private NatMatchTarget match;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

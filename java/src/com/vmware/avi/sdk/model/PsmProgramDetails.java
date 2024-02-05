@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PsmProgramDetails  {
     @JsonProperty("error")
-    private String error = null;
+    private String error;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

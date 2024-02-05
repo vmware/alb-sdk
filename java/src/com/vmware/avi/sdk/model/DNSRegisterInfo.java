@@ -22,34 +22,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DNSRegisterInfo  {
     @JsonProperty("dns_info")
-    private List<DnsInfo> dnsInfo = null;
+    private List<DnsInfo> dnsInfo;
 
     @JsonProperty("error")
-    private String error = null;
+    private String error;
 
     @JsonProperty("fip")
-    private IpAddr fip = null;
+    private IpAddr fip;
 
     @JsonProperty("fip6")
-    private IpAddr fip6 = null;
+    private IpAddr fip6;
 
     @JsonProperty("total_records")
-    private Integer totalRecords = null;
+    private Integer totalRecords;
 
     @JsonProperty("vip")
-    private IpAddr vip = null;
+    private IpAddr vip;
 
     @JsonProperty("vip6")
-    private IpAddr vip6 = null;
+    private IpAddr vip6;
 
     @JsonProperty("vip_id")
-    private String vipId = null;
+    private String vipId;
 
     @JsonProperty("vs_names")
-    private List<String> vsNames = null;
+    private List<String> vsNames;
 
     @JsonProperty("vs_uuids")
-    private List<String> vsUuids = null;
+    private List<String> vsUuids;
 
 
     /**

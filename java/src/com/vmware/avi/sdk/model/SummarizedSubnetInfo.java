@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SummarizedSubnetInfo  {
     @JsonProperty("cidr_prefix")
-    private String cidrPrefix = null;
+    private String cidrPrefix;
 
     @JsonProperty("network")
-    private String network = null;
+    private String network;
 
 
 

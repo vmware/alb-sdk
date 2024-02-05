@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SSLExpireDetails  {
     @JsonProperty("days_left")
-    private Integer daysLeft = null;
+    private Integer daysLeft;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

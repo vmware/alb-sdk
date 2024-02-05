@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SSLCacheFilter  {
     @JsonProperty("ssl_session_id")
-    private String sslSessionId = null;
+    private String sslSessionId;
 
 
 

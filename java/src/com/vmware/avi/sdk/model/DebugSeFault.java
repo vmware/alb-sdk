@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DebugSeFault  {
     @JsonProperty("faults")
-    private List<SeFault> faults = null;
+    private List<SeFault> faults;
 
     @JsonProperty("se_malloc_fail_frequency")
     private Integer seMallocFailFrequency = 0;

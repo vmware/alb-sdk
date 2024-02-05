@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AwsEncryption  {
     @JsonProperty("master_key")
-    private String masterKey = null;
+    private String masterKey;
 
     @JsonProperty("mode")
     private String mode = "AWS_ENCRYPTION_MODE_NONE";

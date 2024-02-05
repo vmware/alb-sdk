@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DebugTraceMemory  {
     @JsonProperty("trace_malloc_types")
-    private List<DebugTraceMallocTypes> traceMallocTypes = null;
+    private List<DebugTraceMallocTypes> traceMallocTypes;
 
     @JsonProperty("trace_shm_malloc_types")
-    private List<DebugTraceShmMallocTypes> traceShmMallocTypes = null;
+    private List<DebugTraceShmMallocTypes> traceShmMallocTypes;
 
 
     /**

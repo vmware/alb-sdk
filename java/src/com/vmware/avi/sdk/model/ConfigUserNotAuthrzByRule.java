@@ -31,7 +31,7 @@ public class ConfigUserNotAuthrzByRule  {
     private String tenants = "No Tenants";
 
     @JsonProperty("user")
-    private String user = null;
+    private String user;
 
 
 

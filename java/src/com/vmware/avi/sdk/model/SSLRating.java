@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SSLRating  {
     @JsonProperty("compatibility_rating")
-    private String compatibilityRating = null;
+    private String compatibilityRating;
 
     @JsonProperty("performance_rating")
-    private String performanceRating = null;
+    private String performanceRating;
 
     @JsonProperty("security_score")
-    private String securityScore = null;
+    private String securityScore;
 
 
 

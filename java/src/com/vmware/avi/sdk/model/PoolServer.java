@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PoolServer  {
     @JsonProperty("hostname")
-    private String hostname = null;
+    private String hostname;
 
     @JsonProperty("ip")
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("port")
-    private Integer port = null;
+    private Integer port;
 
 
 

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsClientPortMatch  {
     @JsonProperty("client_ports")
-    private PortMatchGeneric clientPorts = null;
+    private PortMatchGeneric clientPorts;
 
 
 

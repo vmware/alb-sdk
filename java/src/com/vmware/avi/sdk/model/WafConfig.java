@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafConfig  {
     @JsonProperty("allowed_http_versions")
-    private List<String> allowedHttpVersions = null;
+    private List<String> allowedHttpVersions;
 
     @JsonProperty("allowed_methods")
-    private List<String> allowedMethods = null;
+    private List<String> allowedMethods;
 
     @JsonProperty("allowed_request_content_type_charsets")
-    private List<String> allowedRequestContentTypeCharsets = null;
+    private List<String> allowedRequestContentTypeCharsets;
 
     @JsonProperty("argument_separator")
     private String argumentSeparator = "&";
@@ -37,7 +37,7 @@ public class WafConfig  {
     private Integer clientRequestMaxBodySize = 32;
 
     @JsonProperty("content_type_mappings")
-    private List<WafContentTypeMapping> contentTypeMappings = null;
+    private List<WafContentTypeMapping> contentTypeMappings;
 
     @JsonProperty("cookie_format_version")
     private Integer cookieFormatVersion = 0;
@@ -67,10 +67,10 @@ public class WafConfig  {
     private String responseHdrDefaultAction = "phase:3,deny,status:403,log,auditlog";
 
     @JsonProperty("restricted_extensions")
-    private List<String> restrictedExtensions = null;
+    private List<String> restrictedExtensions;
 
     @JsonProperty("restricted_headers")
-    private List<String> restrictedHeaders = null;
+    private List<String> restrictedHeaders;
 
     @JsonProperty("send_status_header")
     private Boolean sendStatusHeader = false;
@@ -79,7 +79,7 @@ public class WafConfig  {
     private Integer serverResponseMaxBodySize = 128;
 
     @JsonProperty("static_extensions")
-    private List<String> staticExtensions = null;
+    private List<String> staticExtensions;
 
     @JsonProperty("status_code_for_rejected_requests")
     private String statusCodeForRejectedRequests = "HTTP_RESPONSE_CODE_403";

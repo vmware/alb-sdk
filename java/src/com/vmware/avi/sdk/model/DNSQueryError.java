@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DNSQueryError  {
     @JsonProperty("error")
-    private String error = null;
+    private String error;
 
     @JsonProperty("error_message")
-    private String errorMessage = null;
+    private String errorMessage;
 
     @JsonProperty("fqdn")
-    private String fqdn = null;
+    private String fqdn;
 
 
 

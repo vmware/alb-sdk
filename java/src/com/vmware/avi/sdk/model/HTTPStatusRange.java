@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HTTPStatusRange  {
     @JsonProperty("begin")
-    private Integer begin = null;
+    private Integer begin;
 
     @JsonProperty("end")
-    private Integer end = null;
+    private Integer end;
 
 
 

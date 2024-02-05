@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeFault  {
     @JsonProperty("arg")
-    private Integer arg = null;
+    private Integer arg;
 
     @JsonProperty("fault_name")
-    private String faultName = null;
+    private String faultName;
 
     @JsonProperty("function_name")
-    private String functionName = null;
+    private String functionName;
 
     @JsonProperty("num_executions")
     private Integer numExecutions = 1;

@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbService extends AviRestResource  {
     @JsonProperty("application_persistence_profile_ref")
-    private String applicationPersistenceProfileRef = null;
+    private String applicationPersistenceProfileRef;
 
     @JsonProperty("controller_health_status_enabled")
     private Boolean controllerHealthStatusEnabled = true;
 
     @JsonProperty("created_by")
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("domain_names")
-    private List<String> domainNames = null;
+    private List<String> domainNames;
 
     @JsonProperty("down_response")
-    private GslbServiceDownResponse downResponse = null;
+    private GslbServiceDownResponse downResponse;
 
     @JsonProperty("enabled")
     private Boolean enabled = true;
 
     @JsonProperty("groups")
-    private List<GslbPool> groups = null;
+    private List<GslbPool> groups;
 
     @JsonProperty("health_monitor_refs")
-    private List<String> healthMonitorRefs = null;
+    private List<String> healthMonitorRefs;
 
     @JsonProperty("health_monitor_scope")
     private String healthMonitorScope = "GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS";
@@ -55,19 +55,19 @@ public class GslbService extends AviRestResource  {
     private Boolean isFederated = true;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("min_members")
     private Integer minMembers = 0;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("num_dns_ip")
-    private Integer numDnsIp = null;
+    private Integer numDnsIp;
 
     @JsonProperty("pki_profile_ref")
-    private String pkiProfileRef = null;
+    private String pkiProfileRef;
 
     @JsonProperty("pool_algorithm")
     private String poolAlgorithm = "GSLB_SERVICE_ALGORITHM_PRIORITY";
@@ -79,13 +79,13 @@ public class GslbService extends AviRestResource  {
     private Boolean sitePersistenceEnabled = false;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("topology_policy_enabled")
     private Boolean topologyPolicyEnabled = false;
 
     @JsonProperty("ttl")
-    private Integer ttl = null;
+    private Integer ttl;
 
     @JsonProperty("url")
     private String url = "url";
@@ -94,7 +94,7 @@ public class GslbService extends AviRestResource  {
     private Boolean useEdnsClientSubnet = true;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("wildcard_match")
     private Boolean wildcardMatch = false;

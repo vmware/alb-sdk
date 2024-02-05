@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HSMSafenetLuna  {
     @JsonProperty("ha_group_num")
-    private Integer haGroupNum = null;
+    private Integer haGroupNum;
 
     @JsonProperty("is_ha")
     private Boolean isHa = false;
 
     @JsonProperty("node_info")
-    private List<HSMSafenetClientInfo> nodeInfo = null;
+    private List<HSMSafenetClientInfo> nodeInfo;
 
     @JsonProperty("server")
-    private List<HSMSafenetLunaServer> server = null;
+    private List<HSMSafenetLunaServer> server;
 
     @JsonProperty("server_pem")
-    private String serverPem = null;
+    private String serverPem;
 
     @JsonProperty("use_dedicated_network")
     private Boolean useDedicatedNetwork = false;

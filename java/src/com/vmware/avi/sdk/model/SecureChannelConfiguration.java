@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SecureChannelConfiguration  {
     @JsonProperty("sslkeyandcertificate_refs")
-    private List<String> sslkeyandcertificateRefs = null;
+    private List<String> sslkeyandcertificateRefs;
 
 
     /**

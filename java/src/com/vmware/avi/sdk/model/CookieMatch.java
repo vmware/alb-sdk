@@ -25,13 +25,13 @@ public class CookieMatch  {
     private String matchCase = "INSENSITIVE";
 
     @JsonProperty("match_criteria")
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("value")
-    private String value = null;
+    private String value;
 
 
 

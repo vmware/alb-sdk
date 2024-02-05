@@ -22,37 +22,37 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GCPConfiguration  {
     @JsonProperty("cloud_credentials_ref")
-    private String cloudCredentialsRef = null;
+    private String cloudCredentialsRef;
 
     @JsonProperty("encryption_keys")
-    private GCPEncryptionKeys encryptionKeys = null;
+    private GCPEncryptionKeys encryptionKeys;
 
     @JsonProperty("firewall_target_tags")
-    private List<String> firewallTargetTags = null;
+    private List<String> firewallTargetTags;
 
     @JsonProperty("gcp_service_account_email")
-    private String gcpServiceAccountEmail = null;
+    private String gcpServiceAccountEmail;
 
     @JsonProperty("gcs_bucket_name")
-    private String gcsBucketName = null;
+    private String gcsBucketName;
 
     @JsonProperty("gcs_project_id")
-    private String gcsProjectId = null;
+    private String gcsProjectId;
 
     @JsonProperty("network_config")
-    private GCPNetworkConfig networkConfig = null;
+    private GCPNetworkConfig networkConfig;
 
     @JsonProperty("region_name")
-    private String regionName = null;
+    private String regionName;
 
     @JsonProperty("se_project_id")
-    private String seProjectId = null;
+    private String seProjectId;
 
     @JsonProperty("vip_allocation_strategy")
-    private GCPVIPAllocation vipAllocationStrategy = null;
+    private GCPVIPAllocation vipAllocationStrategy;
 
     @JsonProperty("zones")
-    private List<String> zones = null;
+    private List<String> zones;
 
 
 

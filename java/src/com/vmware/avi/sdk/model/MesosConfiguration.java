@@ -46,10 +46,10 @@ public class MesosConfiguration  {
     private Boolean disableAutoSeCreation = false;
 
     @JsonProperty("docker_registry_se")
-    private DockerRegistry dockerRegistrySe = null;
+    private DockerRegistry dockerRegistrySe;
 
     @JsonProperty("east_west_placement_subnet")
-    private IpAddrPrefix eastWestPlacementSubnet = null;
+    private IpAddrPrefix eastWestPlacementSubnet;
 
     @JsonProperty("enable_event_subscription")
     private Boolean enableEventSubscription = true;
@@ -61,43 +61,43 @@ public class MesosConfiguration  {
     private Boolean feproxyContainerPortAsService = true;
 
     @JsonProperty("feproxy_route_publish")
-    private FeProxyRoutePublishConfig feproxyRoutePublish = null;
+    private FeProxyRoutePublishConfig feproxyRoutePublish;
 
     @JsonProperty("feproxy_vips_enable_proxy_arp")
     private Boolean feproxyVipsEnableProxyArp = true;
 
     @JsonProperty("fleet_endpoint")
-    private String fleetEndpoint = null;
+    private String fleetEndpoint;
 
     @JsonProperty("http_container_ports")
-    private List<Integer> httpContainerPorts = null;
+    private List<Integer> httpContainerPorts;
 
     @JsonProperty("marathon_configurations")
-    private List<MarathonConfiguration> marathonConfigurations = null;
+    private List<MarathonConfiguration> marathonConfigurations;
 
     @JsonProperty("marathon_se_deployment")
-    private MarathonSeDeployment marathonSeDeployment = null;
+    private MarathonSeDeployment marathonSeDeployment;
 
     @JsonProperty("mesos_url")
     private String mesosUrl = "http://leader.mesos:5050";
 
     @JsonProperty("node_availability_zone_label")
-    private String nodeAvailabilityZoneLabel = null;
+    private String nodeAvailabilityZoneLabel;
 
     @JsonProperty("nuage_controller")
-    private NuageSDNController nuageController = null;
+    private NuageSDNController nuageController;
 
     @JsonProperty("se_deployment_method")
     private String seDeploymentMethod = "MESOS_SE_CREATE_FLEET";
 
     @JsonProperty("se_exclude_attributes")
-    private List<MesosAttribute> seExcludeAttributes = null;
+    private List<MesosAttribute> seExcludeAttributes;
 
     @JsonProperty("se_include_attributes")
-    private List<MesosAttribute> seIncludeAttributes = null;
+    private List<MesosAttribute> seIncludeAttributes;
 
     @JsonProperty("se_resources")
-    private List<MesosSeResources> seResources = null;
+    private List<MesosSeResources> seResources;
 
     @JsonProperty("se_spawn_rate")
     private Integer seSpawnRate = 25;
@@ -109,7 +109,7 @@ public class MesosConfiguration  {
     private Boolean servicesAccessibleAllInterfaces = false;
 
     @JsonProperty("ssh_user_ref")
-    private String sshUserRef = null;
+    private String sshUserRef;
 
     @JsonProperty("use_bridge_ip_as_vip")
     private Boolean useBridgeIpAsVip = false;
@@ -124,7 +124,7 @@ public class MesosConfiguration  {
     private Boolean useVipsForEastWestServices = true;
 
     @JsonProperty("vip")
-    private IpAddr vip = null;
+    private IpAddr vip;
 
 
 

@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeGeoDbDetails  {
     @JsonProperty("file_name")
-    private String fileName = null;
+    private String fileName;
 
     @JsonProperty("geo_db_profile_name")
-    private String geoDbProfileName = null;
+    private String geoDbProfileName;
 
     @JsonProperty("geo_db_profile_ref")
-    private String geoDbProfileRef = null;
+    private String geoDbProfileRef;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_ref")
-    private String seRef = null;
+    private String seRef;
 
     @JsonProperty("vip_id")
-    private String vipId = null;
+    private String vipId;
 
     @JsonProperty("virtual_service")
-    private String virtualService = null;
+    private String virtualService;
 
 
 

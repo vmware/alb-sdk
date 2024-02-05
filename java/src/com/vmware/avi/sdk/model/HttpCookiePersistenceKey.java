@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HttpCookiePersistenceKey  {
     @JsonProperty("aes_key")
-    private String aesKey = null;
+    private String aesKey;
 
     @JsonProperty("hmac_key")
-    private String hmacKey = null;
+    private String hmacKey;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

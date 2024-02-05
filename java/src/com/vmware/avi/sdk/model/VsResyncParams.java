@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VsResyncParams extends AviRestResource  {
     @JsonProperty("se_ref")
-    private List<String> seRef = null;
+    private List<String> seRef;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
     /**

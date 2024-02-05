@@ -22,34 +22,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SecureKeyExchangeDetails extends AviRestResource  {
     @JsonProperty("ctlr_mgmt_ip")
-    private String ctlrMgmtIp = null;
+    private String ctlrMgmtIp;
 
     @JsonProperty("ctlr_public_ip")
-    private String ctlrPublicIp = null;
+    private String ctlrPublicIp;
 
     @JsonProperty("error")
-    private String error = null;
+    private String error;
 
     @JsonProperty("follower_ip")
-    private String followerIp = null;
+    private String followerIp;
 
     @JsonProperty("leader_ip")
-    private String leaderIp = null;
+    private String leaderIp;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("se_ip")
-    private String seIp = null;
+    private String seIp;
 
     @JsonProperty("source_ip")
-    private String sourceIp = null;
+    private String sourceIp;
 
     @JsonProperty("status")
-    private String status = null;
+    private String status;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

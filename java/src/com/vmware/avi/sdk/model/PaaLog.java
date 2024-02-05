@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PaaLog  {
     @JsonProperty("cache_hit")
-    private Boolean cacheHit = null;
+    private Boolean cacheHit;
 
     @JsonProperty("client_request_body_sent")
-    private Boolean clientRequestBodySent = null;
+    private Boolean clientRequestBodySent;
 
     @JsonProperty("request_logs")
-    private List<PaaRequestLog> requestLogs = null;
+    private List<PaaRequestLog> requestLogs;
 
 
 

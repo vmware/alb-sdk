@@ -25,22 +25,22 @@ public class Role extends AviRestResource  {
     private Boolean allowUnlabelledAccess = true;
 
     @JsonProperty("filters")
-    private List<RoleFilter> filters = null;
+    private List<RoleFilter> filters;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("privileges")
-    private List<Permission> privileges = null;
+    private List<Permission> privileges;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

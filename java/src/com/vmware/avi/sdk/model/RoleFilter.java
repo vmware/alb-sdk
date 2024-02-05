@@ -25,13 +25,13 @@ public class RoleFilter  {
     private Boolean enabled = true;
 
     @JsonProperty("match_label")
-    private RoleFilterMatchLabel matchLabel = null;
+    private RoleFilterMatchLabel matchLabel;
 
     @JsonProperty("match_operation")
     private String matchOperation = "ROLE_FILTER_EQUALS";
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

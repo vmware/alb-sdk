@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DosThreshold  {
     @JsonProperty("attack")
-    private String attack = null;
+    private String attack;
 
     @JsonProperty("max_value")
-    private Integer maxValue = null;
+    private Integer maxValue;
 
     @JsonProperty("min_value")
-    private Integer minValue = null;
+    private Integer minValue;
 
 
 

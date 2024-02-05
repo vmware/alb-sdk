@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AlertRule  {
     @JsonProperty("conn_app_log_rule")
-    private AlertFilter connAppLogRule = null;
+    private AlertFilter connAppLogRule;
 
     @JsonProperty("event_match_filter")
-    private String eventMatchFilter = null;
+    private String eventMatchFilter;
 
     @JsonProperty("metrics_rule")
-    private List<AlertRuleMetric> metricsRule = null;
+    private List<AlertRuleMetric> metricsRule;
 
     @JsonProperty("operator")
     private String operator = "OPERATOR_AND";
 
     @JsonProperty("sys_event_rule")
-    private List<AlertRuleEvent> sysEventRule = null;
+    private List<AlertRuleEvent> sysEventRule;
 
 
 

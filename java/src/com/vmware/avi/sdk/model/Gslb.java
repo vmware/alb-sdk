@@ -28,13 +28,13 @@ public class Gslb extends AviRestResource  {
     private Integer clearOnMaxRetries = 20;
 
     @JsonProperty("client_ip_addr_group")
-    private GslbClientIpAddrGroup clientIpAddrGroup = null;
+    private GslbClientIpAddrGroup clientIpAddrGroup;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("dns_configs")
-    private List<DNSConfig> dnsConfigs = null;
+    private List<DNSConfig> dnsConfigs;
 
     @JsonProperty("enable_config_by_members")
     private Boolean enableConfigByMembers = false;
@@ -46,37 +46,37 @@ public class Gslb extends AviRestResource  {
     private Boolean isFederated = true;
 
     @JsonProperty("leader_cluster_uuid")
-    private String leaderClusterUuid = null;
+    private String leaderClusterUuid;
 
     @JsonProperty("maintenance_mode")
     private Boolean maintenanceMode = false;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("replication_policy")
-    private ReplicationPolicy replicationPolicy = null;
+    private ReplicationPolicy replicationPolicy;
 
     @JsonProperty("send_interval")
     private Integer sendInterval = 15;
 
     @JsonProperty("sites")
-    private List<GslbSite> sites = null;
+    private List<GslbSite> sites;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("tenant_scoped")
     private Boolean tenantScoped = true;
 
     @JsonProperty("third_party_sites")
-    private List<GslbThirdPartySite> thirdPartySites = null;
+    private List<GslbThirdPartySite> thirdPartySites;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("view_id")
     private Integer viewId = 0;

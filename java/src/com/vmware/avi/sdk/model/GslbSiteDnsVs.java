@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbSiteDnsVs  {
     @JsonProperty("dns_vs_uuid")
-    private String dnsVsUuid = null;
+    private String dnsVsUuid;
 
     @JsonProperty("domain_names")
-    private List<String> domainNames = null;
+    private List<String> domainNames;
 
 
 

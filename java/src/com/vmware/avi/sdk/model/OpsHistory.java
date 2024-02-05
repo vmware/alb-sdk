@@ -22,37 +22,37 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OpsHistory  {
     @JsonProperty("duration")
-    private Integer duration = null;
+    private Integer duration;
 
     @JsonProperty("end_time")
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("ops")
-    private String ops = null;
+    private String ops;
 
     @JsonProperty("patch_version")
-    private String patchVersion = null;
+    private String patchVersion;
 
     @JsonProperty("se_upgrade_events")
-    private List<SeUpgradeEvents> seUpgradeEvents = null;
+    private List<SeUpgradeEvents> seUpgradeEvents;
 
     @JsonProperty("seg_status")
-    private SeGroupStatus segStatus = null;
+    private SeGroupStatus segStatus;
 
     @JsonProperty("start_time")
-    private String startTime = null;
+    private String startTime;
 
     @JsonProperty("state")
-    private UpgradeOpsState state = null;
+    private UpgradeOpsState state;
 
     @JsonProperty("statediff_ref")
-    private String statediffRef = null;
+    private String statediffRef;
 
     @JsonProperty("upgrade_events")
-    private List<EventMap> upgradeEvents = null;
+    private List<EventMap> upgradeEvents;
 
     @JsonProperty("version")
-    private String version = null;
+    private String version;
 
 
 

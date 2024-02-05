@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ManagementNetworkConfig  {
     @JsonProperty("overlay_segment")
-    private Tier1LogicalRouterInfo overlaySegment = null;
+    private Tier1LogicalRouterInfo overlaySegment;
 
     @JsonProperty("transport_zone")
-    private String transportZone = null;
+    private String transportZone;
 
     @JsonProperty("tz_type")
-    private String tzType = null;
+    private String tzType;
 
     @JsonProperty("vlan_segment")
-    private String vlanSegment = null;
+    private String vlanSegment;
 
 
 

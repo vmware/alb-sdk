@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ClientFingerprints  {
     @JsonProperty("filtered_tls_fingerprint")
-    private String filteredTlsFingerprint = null;
+    private String filteredTlsFingerprint;
 
     @JsonProperty("full_tls_fingerprint")
-    private String fullTlsFingerprint = null;
+    private String fullTlsFingerprint;
 
     @JsonProperty("normalized_tls_fingerprint")
-    private String normalizedTlsFingerprint = null;
+    private String normalizedTlsFingerprint;
 
     @JsonProperty("tls_client_info")
-    private TlsClientInfo tlsClientInfo = null;
+    private TlsClientInfo tlsClientInfo;
 
 
 

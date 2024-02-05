@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CloudTenantsDeleted  {
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("tenants")
-    private List<CloudTenantCleanup> tenants = null;
+    private List<CloudTenantCleanup> tenants;
 
     @JsonProperty("vtype")
-    private String vtype = null;
+    private String vtype;
 
 
 

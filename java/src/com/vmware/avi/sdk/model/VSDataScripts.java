@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VSDataScripts  {
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("vs_datascript_set_ref")
-    private String vsDatascriptSetRef = null;
+    private String vsDatascriptSetRef;
 
 
 

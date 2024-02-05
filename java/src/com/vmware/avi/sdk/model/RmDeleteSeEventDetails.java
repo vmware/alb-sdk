@@ -22,37 +22,37 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RmDeleteSeEventDetails  {
     @JsonProperty("cloud_name")
-    private String cloudName = null;
+    private String cloudName;
 
     @JsonProperty("cloud_uuid")
-    private String cloudUuid = null;
+    private String cloudUuid;
 
     @JsonProperty("host_name")
-    private String hostName = null;
+    private String hostName;
 
     @JsonProperty("host_uuid")
-    private String hostUuid = null;
+    private String hostUuid;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("se_cookie")
-    private String seCookie = null;
+    private String seCookie;
 
     @JsonProperty("se_grp_name")
-    private String seGrpName = null;
+    private String seGrpName;
 
     @JsonProperty("se_grp_uuid")
-    private String seGrpUuid = null;
+    private String seGrpUuid;
 
     @JsonProperty("se_name")
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("se_uuid")
-    private String seUuid = null;
+    private String seUuid;
 
     @JsonProperty("status_code")
-    private Integer statusCode = null;
+    private Integer statusCode;
 
 
 

@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LicenseInfo extends AviRestResource  {
     @JsonProperty("last_updated")
-    private Integer lastUpdated = null;
+    private Integer lastUpdated;
 
     @JsonProperty("service_cores")
-    private Float serviceCores = null;
+    private Float serviceCores;
 
     @JsonProperty("tenant_uuid")
-    private String tenantUuid = null;
+    private String tenantUuid;
 
     @JsonProperty("tier")
-    private String tier = null;
+    private String tier;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IpCommunity  {
     @JsonProperty("community")
-    private List<String> community = null;
+    private List<String> community;
 
     @JsonProperty("ip_begin")
-    private IpAddr ipBegin = null;
+    private IpAddr ipBegin;
 
     @JsonProperty("ip_end")
-    private IpAddr ipEnd = null;
+    private IpAddr ipEnd;
 
 
     /**

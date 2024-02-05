@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeVsDelFlowsDisrupted  {
     @JsonProperty("deleted_vs_name")
-    private String deletedVsName = null;
+    private String deletedVsName;
 
     @JsonProperty("num_vs_flows_disrupted")
-    private Integer numVsFlowsDisrupted = null;
+    private Integer numVsFlowsDisrupted;
 
     @JsonProperty("reporting_se_name")
-    private String reportingSeName = null;
+    private String reportingSeName;
 
 
 

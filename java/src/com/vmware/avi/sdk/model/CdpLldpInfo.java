@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CdpLldpInfo  {
     @JsonProperty("chassis")
-    private String chassis = null;
+    private String chassis;
 
     @JsonProperty("device")
-    private String device = null;
+    private String device;
 
     @JsonProperty("mgmtaddr")
-    private String mgmtaddr = null;
+    private String mgmtaddr;
 
     @JsonProperty("port")
-    private String port = null;
+    private String port;
 
     @JsonProperty("switch_info_type")
-    private String switchInfoType = null;
+    private String switchInfoType;
 
     @JsonProperty("system_name")
-    private String systemName = null;
+    private String systemName;
 
 
 

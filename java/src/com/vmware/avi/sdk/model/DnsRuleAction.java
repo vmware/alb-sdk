@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsRuleAction  {
     @JsonProperty("allow")
-    private DnsRuleActionAllowDrop allow = null;
+    private DnsRuleActionAllowDrop allow;
 
     @JsonProperty("dns_rate_limiter")
-    private DnsRateLimiter dnsRateLimiter = null;
+    private DnsRateLimiter dnsRateLimiter;
 
     @JsonProperty("gs_group_selection")
-    private DnsRuleActionGsGroupSelection gsGroupSelection = null;
+    private DnsRuleActionGsGroupSelection gsGroupSelection;
 
     @JsonProperty("gslb_site_selection")
-    private DnsRuleActionGslbSiteSelection gslbSiteSelection = null;
+    private DnsRuleActionGslbSiteSelection gslbSiteSelection;
 
     @JsonProperty("pool_switching")
-    private DnsRuleActionPoolSwitching poolSwitching = null;
+    private DnsRuleActionPoolSwitching poolSwitching;
 
     @JsonProperty("response")
-    private DnsRuleActionResponse response = null;
+    private DnsRuleActionResponse response;
 
 
 

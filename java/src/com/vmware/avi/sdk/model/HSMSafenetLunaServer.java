@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HSMSafenetLunaServer  {
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("partition_passwd")
-    private String partitionPasswd = null;
+    private String partitionPasswd;
 
     @JsonProperty("partition_serial_number")
-    private String partitionSerialNumber = null;
+    private String partitionSerialNumber;
 
     @JsonProperty("remote_ip")
-    private String remoteIp = null;
+    private String remoteIp;
 
     @JsonProperty("server_cert")
-    private String serverCert = null;
+    private String serverCert;
 
 
 

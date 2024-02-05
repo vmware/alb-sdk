@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AlertFilter  {
     @JsonProperty("filter_action")
-    private String filterAction = null;
+    private String filterAction;
 
     @JsonProperty("filter_string")
-    private String filterString = null;
+    private String filterString;
 
 
 

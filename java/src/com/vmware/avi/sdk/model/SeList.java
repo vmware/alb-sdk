@@ -22,37 +22,37 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeList  {
     @JsonProperty("active_on_cloud")
-    private Boolean activeOnCloud = null;
+    private Boolean activeOnCloud;
 
     @JsonProperty("active_on_se")
-    private Boolean activeOnSe = null;
+    private Boolean activeOnSe;
 
     @JsonProperty("admin_down_requested")
     private Boolean adminDownRequested = false;
 
     @JsonProperty("attach_ip_in_progress")
-    private Boolean attachIpInProgress = null;
+    private Boolean attachIpInProgress;
 
     @JsonProperty("cloud_programming_done")
-    private Boolean cloudProgrammingDone = null;
+    private Boolean cloudProgrammingDone;
 
     @JsonProperty("cloud_programming_status")
-    private String cloudProgrammingStatus = null;
+    private String cloudProgrammingStatus;
 
     @JsonProperty("delete_in_progress")
     private Boolean deleteInProgress = false;
 
     @JsonProperty("detach_ip_in_progress")
-    private Boolean detachIpInProgress = null;
+    private Boolean detachIpInProgress;
 
     @JsonProperty("floating_intf_ip")
-    private List<IpAddr> floatingIntfIp = null;
+    private List<IpAddr> floatingIntfIp;
 
     @JsonProperty("floating_intf_ip6_addresses")
-    private List<IpAddr> floatingIntfIp6Addresses = null;
+    private List<IpAddr> floatingIntfIp6Addresses;
 
     @JsonProperty("incarnation")
-    private String incarnation = null;
+    private String incarnation;
 
     @JsonProperty("is_portchannel")
     private Boolean isPortchannel = false;
@@ -67,31 +67,31 @@ public class SeList  {
     private Integer memory = 2001;
 
     @JsonProperty("mgmt_ip")
-    private IpAddr mgmtIp = null;
+    private IpAddr mgmtIp;
 
     @JsonProperty("mgmt_ip6")
-    private IpAddr mgmtIp6 = null;
+    private IpAddr mgmtIp6;
 
     @JsonProperty("scaleout_in_progress")
     private Boolean scaleoutInProgress = false;
 
     @JsonProperty("se_programming_done")
-    private Boolean seProgrammingDone = null;
+    private Boolean seProgrammingDone;
 
     @JsonProperty("se_ready_in_progress")
-    private Boolean seReadyInProgress = null;
+    private Boolean seReadyInProgress;
 
     @JsonProperty("se_ref")
-    private String seRef = null;
+    private String seRef;
 
     @JsonProperty("sec_idx")
     private Integer secIdx = 1;
 
     @JsonProperty("snat_ip")
-    private IpAddr snatIp = null;
+    private IpAddr snatIp;
 
     @JsonProperty("snat_ip6_address")
-    private IpAddr snatIp6Address = null;
+    private IpAddr snatIp6Address;
 
     @JsonProperty("vcpus")
     private Integer vcpus = 2;
@@ -100,13 +100,13 @@ public class SeList  {
     private Integer vip6SubnetMask = 128;
 
     @JsonProperty("vip_intf_ip")
-    private IpAddr vipIntfIp = null;
+    private IpAddr vipIntfIp;
 
     @JsonProperty("vip_intf_list")
-    private List<SeVipInterfaceList> vipIntfList = null;
+    private List<SeVipInterfaceList> vipIntfList;
 
     @JsonProperty("vip_intf_mac")
-    private String vipIntfMac = null;
+    private String vipIntfMac;
 
     @JsonProperty("vip_subnet_mask")
     private Integer vipSubnetMask = 32;
@@ -115,7 +115,7 @@ public class SeList  {
     private Integer vlanId = 0;
 
     @JsonProperty("vnic")
-    private List<VsSeVnic> vnic = null;
+    private List<VsSeVnic> vnic;
 
 
 

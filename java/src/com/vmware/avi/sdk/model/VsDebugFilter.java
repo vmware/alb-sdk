@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VsDebugFilter  {
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("se_uuid")
-    private String seUuid = null;
+    private String seUuid;
 
 
 

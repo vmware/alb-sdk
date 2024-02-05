@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsOptRecord  {
     @JsonProperty("dnssec_ok")
-    private Boolean dnssecOk = null;
+    private Boolean dnssecOk;
 
     @JsonProperty("options")
-    private List<DnsEdnsOption> options = null;
+    private List<DnsEdnsOption> options;
 
     @JsonProperty("udp_payload_size")
-    private Integer udpPayloadSize = null;
+    private Integer udpPayloadSize;
 
     @JsonProperty("version")
-    private Integer version = null;
+    private Integer version;
 
 
 

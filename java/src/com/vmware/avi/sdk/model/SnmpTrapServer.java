@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SnmpTrapServer  {
     @JsonProperty("community")
-    private String community = null;
+    private String community;
 
     @JsonProperty("ip_addr")
-    private IpAddr ipAddr = null;
+    private IpAddr ipAddr;
 
     @JsonProperty("port")
     private Integer port = 162;
 
     @JsonProperty("user")
-    private SnmpV3UserParams user = null;
+    private SnmpV3UserParams user;
 
     @JsonProperty("version")
     private String version = "SNMP_VER2";

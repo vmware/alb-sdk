@@ -25,10 +25,10 @@ public class AdminAuthConfiguration  {
     private Boolean allowLocalUserLogin = true;
 
     @JsonProperty("remote_auth_configurations")
-    private List<RemoteAuthConfiguration> remoteAuthConfigurations = null;
+    private List<RemoteAuthConfiguration> remoteAuthConfigurations;
 
     @JsonProperty("service_auth_configurations")
-    private List<ServiceAuthConfiguration> serviceAuthConfigurations = null;
+    private List<ServiceAuthConfiguration> serviceAuthConfigurations;
 
 
 

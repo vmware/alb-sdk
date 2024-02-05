@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ControllerSizingCloudLimits  {
     @JsonProperty("num_clouds")
-    private Integer numClouds = null;
+    private Integer numClouds;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
 

@@ -25,10 +25,10 @@ public class LearningLogPolicy  {
     private Boolean enabled = false;
 
     @JsonProperty("host")
-    private String host = null;
+    private String host;
 
     @JsonProperty("port")
-    private Integer port = null;
+    private Integer port;
 
 
 

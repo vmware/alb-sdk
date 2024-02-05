@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VirtualServiceResource  {
     @JsonProperty("memory")
-    private Integer memory = null;
+    private Integer memory;
 
     @JsonProperty("num_se")
-    private Integer numSe = null;
+    private Integer numSe;
 
     @JsonProperty("num_standby_se")
-    private Integer numStandbySe = null;
+    private Integer numStandbySe;
 
     @JsonProperty("num_vcpus")
-    private Integer numVcpus = null;
+    private Integer numVcpus;
 
 
 

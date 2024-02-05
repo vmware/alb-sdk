@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DebugDnsOptions  {
     @JsonProperty("domain_name")
-    private List<String> domainName = null;
+    private List<String> domainName;
 
     @JsonProperty("gslb_service_name")
-    private List<String> gslbServiceName = null;
+    private List<String> gslbServiceName;
 
 
     /**

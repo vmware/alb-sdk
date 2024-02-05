@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HealthMonitorSSLAttributes  {
     @JsonProperty("pki_profile_ref")
-    private String pkiProfileRef = null;
+    private String pkiProfileRef;
 
     @JsonProperty("server_name")
-    private String serverName = null;
+    private String serverName;
 
     @JsonProperty("ssl_key_and_certificate_ref")
-    private String sslKeyAndCertificateRef = null;
+    private String sslKeyAndCertificateRef;
 
     @JsonProperty("ssl_profile_ref")
-    private String sslProfileRef = null;
+    private String sslProfileRef;
 
 
 

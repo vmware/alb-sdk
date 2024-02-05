@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StaticRoute  {
     @JsonProperty("disable_gateway_monitor")
-    private Boolean disableGatewayMonitor = null;
+    private Boolean disableGatewayMonitor;
 
     @JsonProperty("if_name")
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("labels")
-    private List<KeyValue> labels = null;
+    private List<KeyValue> labels;
 
     @JsonProperty("next_hop")
-    private IpAddr nextHop = null;
+    private IpAddr nextHop;
 
     @JsonProperty("prefix")
-    private IpAddrPrefix prefix = null;
+    private IpAddrPrefix prefix;
 
     @JsonProperty("route_id")
-    private String routeId = null;
+    private String routeId;
 
 
 

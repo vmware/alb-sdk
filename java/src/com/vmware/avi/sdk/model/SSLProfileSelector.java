@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SSLProfileSelector  {
     @JsonProperty("client_ip_list")
-    private IpAddrMatch clientIpList = null;
+    private IpAddrMatch clientIpList;
 
     @JsonProperty("ssl_profile_ref")
-    private String sslProfileRef = null;
+    private String sslProfileRef;
 
 
 

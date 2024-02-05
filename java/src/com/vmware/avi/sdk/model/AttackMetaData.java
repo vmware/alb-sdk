@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AttackMetaData  {
     @JsonProperty("amplification")
-    private AttackDnsAmplification amplification = null;
+    private AttackDnsAmplification amplification;
 
     @JsonProperty("ip")
-    private String ip = null;
+    private String ip;
 
     @JsonProperty("max_resp_time")
-    private Integer maxRespTime = null;
+    private Integer maxRespTime;
 
     @JsonProperty("url")
     private String url = "url";

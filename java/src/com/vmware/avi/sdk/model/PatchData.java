@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PatchData  {
     @JsonProperty("patch_image_path")
-    private String patchImagePath = null;
+    private String patchImagePath;
 
     @JsonProperty("patch_image_ref")
-    private String patchImageRef = null;
+    private String patchImageRef;
 
     @JsonProperty("patch_version")
-    private String patchVersion = null;
+    private String patchVersion;
 
 
 

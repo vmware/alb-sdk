@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ControllerInternalAuth  {
     @JsonProperty("symmetric_jwks_keys")
-    private List<JWSKey> symmetricJwksKeys = null;
+    private List<JWSKey> symmetricJwksKeys;
 
 
     /**

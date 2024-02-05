@@ -25,10 +25,10 @@ public class BotConfigIPReputation  {
     private Boolean enabled = true;
 
     @JsonProperty("ip_reputation_db_ref")
-    private String ipReputationDbRef = null;
+    private String ipReputationDbRef;
 
     @JsonProperty("system_ip_reputation_mapping_ref")
-    private String systemIpReputationMappingRef = null;
+    private String systemIpReputationMappingRef;
 
 
 

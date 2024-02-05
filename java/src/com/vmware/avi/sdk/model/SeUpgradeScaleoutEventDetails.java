@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeUpgradeScaleoutEventDetails  {
     @JsonProperty("scaleout_params")
-    private VsScaleoutParams scaleoutParams = null;
+    private VsScaleoutParams scaleoutParams;
 
     @JsonProperty("vs_uuid")
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

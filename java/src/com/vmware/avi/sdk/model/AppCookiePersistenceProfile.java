@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AppCookiePersistenceProfile  {
     @JsonProperty("encryption_key")
-    private String encryptionKey = null;
+    private String encryptionKey;
 
     @JsonProperty("prst_hdr_name")
-    private String prstHdrName = null;
+    private String prstHdrName;
 
     @JsonProperty("timeout")
     private Integer timeout = 20;

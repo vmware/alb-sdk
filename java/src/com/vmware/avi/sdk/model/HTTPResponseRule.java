@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HTTPResponseRule  {
     @JsonProperty("all_headers")
-    private Boolean allHeaders = null;
+    private Boolean allHeaders;
 
     @JsonProperty("enable")
     private Boolean enable = true;
 
     @JsonProperty("hdr_action")
-    private List<HTTPHdrAction> hdrAction = null;
+    private List<HTTPHdrAction> hdrAction;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("loc_hdr_action")
-    private HTTPRewriteLocHdrAction locHdrAction = null;
+    private HTTPRewriteLocHdrAction locHdrAction;
 
     @JsonProperty("log")
-    private Boolean log = null;
+    private Boolean log;
 
     @JsonProperty("match")
-    private ResponseMatchTarget match = null;
+    private ResponseMatchTarget match;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

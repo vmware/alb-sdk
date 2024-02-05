@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IPThreatDBEventData  {
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("status")
-    private String status = null;
+    private String status;
 
     @JsonProperty("version")
-    private String version = null;
+    private String version;
 
 
 

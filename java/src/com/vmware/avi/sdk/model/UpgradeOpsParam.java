@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UpgradeOpsParam  {
     @JsonProperty("image_ref")
-    private String imageRef = null;
+    private String imageRef;
 
     @JsonProperty("patch_ref")
-    private String patchRef = null;
+    private String patchRef;
 
     @JsonProperty("se_group_options")
-    private SeGroupOptions seGroupOptions = null;
+    private SeGroupOptions seGroupOptions;
 
     @JsonProperty("se_group_resume_options")
-    private SeGroupResumeOptions seGroupResumeOptions = null;
+    private SeGroupResumeOptions seGroupResumeOptions;
 
 
 

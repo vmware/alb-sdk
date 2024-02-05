@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeVnicDownEventDetails  {
     @JsonProperty("if_name")
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("linux_name")
-    private String linuxName = null;
+    private String linuxName;
 
     @JsonProperty("mac")
-    private String mac = null;
+    private String mac;
 
     @JsonProperty("se_ref")
-    private String seRef = null;
+    private String seRef;
 
 
 

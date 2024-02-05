@@ -31,7 +31,7 @@ public class GslbGeoDbFile  {
     private String fileIdChecksum;
 
     @JsonProperty("filename")
-    private String filename = null;
+    private String filename;
 
     @JsonProperty("format")
     private String format = "GSLB_GEODB_FILE_FORMAT_AVI";

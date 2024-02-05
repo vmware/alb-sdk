@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class JobEntry extends AviRestResource  {
     @JsonProperty("expires_at")
-    private String expiresAt = null;
+    private String expiresAt;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("obj_key")
-    private String objKey = null;
+    private String objKey;
 
     @JsonProperty("subjobs")
-    private List<SubJob> subjobs = null;
+    private List<SubJob> subjobs;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

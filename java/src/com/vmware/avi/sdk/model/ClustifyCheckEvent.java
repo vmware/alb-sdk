@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ClustifyCheckEvent  {
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
 
 

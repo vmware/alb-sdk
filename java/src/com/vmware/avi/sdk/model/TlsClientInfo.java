@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TlsClientInfo  {
     @JsonProperty("cipher_suites")
-    private List<Integer> cipherSuites = null;
+    private List<Integer> cipherSuites;
 
     @JsonProperty("client_hello_tls_version")
-    private Integer clientHelloTlsVersion = null;
+    private Integer clientHelloTlsVersion;
 
     @JsonProperty("point_formats")
-    private List<Integer> pointFormats = null;
+    private List<Integer> pointFormats;
 
     @JsonProperty("supported_groups")
-    private List<Integer> supportedGroups = null;
+    private List<Integer> supportedGroups;
 
     @JsonProperty("tls_extensions")
-    private List<Integer> tlsExtensions = null;
+    private List<Integer> tlsExtensions;
 
     @JsonProperty("uses_grease")
-    private Boolean usesGrease = null;
+    private Boolean usesGrease;
 
 
     /**

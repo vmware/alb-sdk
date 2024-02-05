@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServiceMatch  {
     @JsonProperty("destination_port")
-    private PortMatch destinationPort = null;
+    private PortMatch destinationPort;
 
     @JsonProperty("protocol")
-    private L4RuleProtocolMatch protocol = null;
+    private L4RuleProtocolMatch protocol;
 
     @JsonProperty("source_port")
-    private PortMatch sourcePort = null;
+    private PortMatch sourcePort;
 
 
 

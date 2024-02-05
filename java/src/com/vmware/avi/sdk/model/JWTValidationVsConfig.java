@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class JWTValidationVsConfig  {
     @JsonProperty("audience")
-    private String audience = null;
+    private String audience;
 
     @JsonProperty("jwt_location")
     private String jwtLocation = "JWT_LOCATION_AUTHORIZATION_HEADER";
 
     @JsonProperty("jwt_name")
-    private String jwtName = null;
+    private String jwtName;
 
 
 

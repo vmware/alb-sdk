@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbGeoLocation  {
     @JsonProperty("location")
-    private GeoLocation location = null;
+    private GeoLocation location;
 
     @JsonProperty("source")
-    private String source = null;
+    private String source;
 
 
 

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricsDerivationData  {
     @JsonProperty("derivation_fn")
-    private String derivationFn = null;
+    private String derivationFn;
 
     @JsonProperty("exclude_derived_metric")
     private Boolean excludeDerivedMetric = false;
@@ -31,10 +31,10 @@ public class MetricsDerivationData  {
     private Boolean includeDerivationMetrics = false;
 
     @JsonProperty("join_tables")
-    private String joinTables = null;
+    private String joinTables;
 
     @JsonProperty("metric_ids")
-    private String metricIds = null;
+    private String metricIds;
 
     @JsonProperty("result_has_additional_fields")
     private Boolean resultHasAdditionalFields = false;

@@ -25,16 +25,16 @@ public class ErrorPage  {
     private Boolean enable = true;
 
     @JsonProperty("error_page_body_ref")
-    private String errorPageBodyRef = null;
+    private String errorPageBodyRef;
 
     @JsonProperty("error_redirect")
-    private String errorRedirect = null;
+    private String errorRedirect;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match")
-    private HTTPStatusMatch match = null;
+    private HTTPStatusMatch match;
 
 
 

@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Backup extends AviRestResource  {
     @JsonProperty("backup_config_ref")
-    private String backupConfigRef = null;
+    private String backupConfigRef;
 
     @JsonProperty("file_name")
-    private String fileName = null;
+    private String fileName;
 
     @JsonProperty("local_file_url")
-    private String localFileUrl = null;
+    private String localFileUrl;
 
     @JsonProperty("remote_file_url")
-    private String remoteFileUrl = null;
+    private String remoteFileUrl;
 
     @JsonProperty("scheduler_ref")
-    private String schedulerRef = null;
+    private String schedulerRef;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("timestamp")
-    private String timestamp = null;
+    private String timestamp;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

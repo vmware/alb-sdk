@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IpamDnsOCIProfile  {
     @JsonProperty("cloud_credentials_ref")
-    private String cloudCredentialsRef = null;
+    private String cloudCredentialsRef;
 
     @JsonProperty("region")
-    private String region = null;
+    private String region;
 
     @JsonProperty("tenancy")
-    private String tenancy = null;
+    private String tenancy;
 
     @JsonProperty("vcn_compartment_id")
-    private String vcnCompartmentId = null;
+    private String vcnCompartmentId;
 
     @JsonProperty("vcn_id")
-    private String vcnId = null;
+    private String vcnId;
 
 
 

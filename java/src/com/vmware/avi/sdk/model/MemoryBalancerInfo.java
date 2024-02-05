@@ -22,37 +22,37 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MemoryBalancerInfo  {
     @JsonProperty("child")
-    private List<ChildProcessInfo> child = null;
+    private List<ChildProcessInfo> child;
 
     @JsonProperty("controller_memory")
-    private Integer controllerMemory = null;
+    private Integer controllerMemory;
 
     @JsonProperty("controller_memory_usage_percent")
-    private Float controllerMemoryUsagePercent = null;
+    private Float controllerMemoryUsagePercent;
 
     @JsonProperty("debug_message")
-    private String debugMessage = null;
+    private String debugMessage;
 
     @JsonProperty("limit")
-    private Integer limit = null;
+    private Integer limit;
 
     @JsonProperty("memory_used")
-    private Integer memoryUsed = null;
+    private Integer memoryUsed;
 
     @JsonProperty("pid")
-    private Integer pid = null;
+    private Integer pid;
 
     @JsonProperty("process")
-    private String process = null;
+    private String process;
 
     @JsonProperty("process_mode")
-    private String processMode = null;
+    private String processMode;
 
     @JsonProperty("process_trend")
-    private String processTrend = null;
+    private String processTrend;
 
     @JsonProperty("threshold_percent")
-    private Float thresholdPercent = null;
+    private Float thresholdPercent;
 
 
     /**

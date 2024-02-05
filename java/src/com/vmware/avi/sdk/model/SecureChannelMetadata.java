@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SecureChannelMetadata  {
     @JsonProperty("key")
-    private String key = null;
+    private String key;
 
     @JsonProperty("val")
-    private String val = null;
+    private String val;
 
 
 

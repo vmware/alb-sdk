@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MarathonConfiguration  {
     @JsonProperty("framework_tag")
-    private String frameworkTag = null;
+    private String frameworkTag;
 
     @JsonProperty("marathon_password")
-    private String marathonPassword = null;
+    private String marathonPassword;
 
     @JsonProperty("marathon_url")
     private String marathonUrl = "http://leader.mesos:8080";
 
     @JsonProperty("marathon_username")
-    private String marathonUsername = null;
+    private String marathonUsername;
 
     @JsonProperty("private_port_range")
-    private PortRange privatePortRange = null;
+    private PortRange privatePortRange;
 
     @JsonProperty("public_port_range")
-    private PortRange publicPortRange = null;
+    private PortRange publicPortRange;
 
     @JsonProperty("tenant")
     private String tenant = "admin";

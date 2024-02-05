@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PortRange  {
     @JsonProperty("end")
-    private Integer end = null;
+    private Integer end;
 
     @JsonProperty("start")
-    private Integer start = null;
+    private Integer start;
 
 
 

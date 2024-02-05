@@ -28,7 +28,7 @@ public class AppLearningParams  {
     private Boolean learnFromAuthenticatedClientsOnly = false;
 
     @JsonProperty("learn_from_bots")
-    private BotDetectionMatch learnFromBots = null;
+    private BotDetectionMatch learnFromBots;
 
     @JsonProperty("max_params")
     private Integer maxParams = 100;
@@ -43,7 +43,7 @@ public class AppLearningParams  {
     private Integer samplingPercent = 1;
 
     @JsonProperty("trusted_ipgroup_ref")
-    private String trustedIpgroupRef = null;
+    private String trustedIpgroupRef;
 
     @JsonProperty("update_interval")
     private Integer updateInterval = 30;

@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NsxtT1Seg  {
     @JsonProperty("segment")
-    private String segment = null;
+    private String segment;
 
     @JsonProperty("tier1")
-    private String tier1 = null;
+    private String tier1;
 
 
 

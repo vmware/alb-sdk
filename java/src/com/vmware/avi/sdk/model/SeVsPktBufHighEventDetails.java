@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeVsPktBufHighEventDetails  {
     @JsonProperty("current_value")
-    private Integer currentValue = null;
+    private Integer currentValue;
 
     @JsonProperty("threshold")
-    private Integer threshold = null;
+    private Integer threshold;
 
     @JsonProperty("virtual_service")
-    private String virtualService = null;
+    private String virtualService;
 
 
 

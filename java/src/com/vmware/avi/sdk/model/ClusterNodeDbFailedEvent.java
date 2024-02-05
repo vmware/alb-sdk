@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ClusterNodeDbFailedEvent  {
     @JsonProperty("failure_count")
-    private Integer failureCount = null;
+    private Integer failureCount;
 
     @JsonProperty("ip")
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("node_name")
-    private String nodeName = null;
+    private String nodeName;
 
 
 

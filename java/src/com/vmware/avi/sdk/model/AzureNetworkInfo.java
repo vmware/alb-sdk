@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AzureNetworkInfo  {
     @JsonProperty("management_network_id")
-    private String managementNetworkId = null;
+    private String managementNetworkId;
 
     @JsonProperty("se_network_id")
-    private String seNetworkId = null;
+    private String seNetworkId;
 
     @JsonProperty("virtual_network_id")
-    private String virtualNetworkId = null;
+    private String virtualNetworkId;
 
 
 

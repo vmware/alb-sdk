@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HTTPRedirectAction  {
     @JsonProperty("add_string")
-    private String addString = null;
+    private String addString;
 
     @JsonProperty("host")
-    private URIParam host = null;
+    private URIParam host;
 
     @JsonProperty("keep_query")
     private Boolean keepQuery = true;
 
     @JsonProperty("path")
-    private URIParam path = null;
+    private URIParam path;
 
     @JsonProperty("port")
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("protocol")
-    private String protocol = null;
+    private String protocol;
 
     @JsonProperty("status_code")
     private String statusCode = "HTTP_REDIRECT_STATUS_CODE_302";

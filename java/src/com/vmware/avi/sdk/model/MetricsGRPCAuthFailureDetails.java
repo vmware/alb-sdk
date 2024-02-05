@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricsGRPCAuthFailureDetails  {
     @JsonProperty("peer")
-    private String peer = null;
+    private String peer;
 
 
 

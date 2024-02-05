@@ -25,16 +25,16 @@ public class WafRuleGroup  {
     private Boolean enable = true;
 
     @JsonProperty("exclude_list")
-    private List<WafExcludeListEntry> excludeList = null;
+    private List<WafExcludeListEntry> excludeList;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("rules")
-    private List<WafRule> rules = null;
+    private List<WafRule> rules;
 
 
 

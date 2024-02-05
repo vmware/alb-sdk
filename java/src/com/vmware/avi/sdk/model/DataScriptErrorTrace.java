@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DataScriptErrorTrace  {
     @JsonProperty("error")
-    private String error = null;
+    private String error;
 
     @JsonProperty("event")
-    private String event = null;
+    private String event;
 
     @JsonProperty("stack_trace")
-    private String stackTrace = null;
+    private String stackTrace;
 
 
 

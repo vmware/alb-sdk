@@ -25,7 +25,7 @@ public class HealthMonitorDNS  {
     private String qtype = "DNS_QUERY_TYPE";
 
     @JsonProperty("query_name")
-    private String queryName = null;
+    private String queryName;
 
     @JsonProperty("rcode")
     private String rcode = "RCODE_NO_ERROR";
@@ -34,7 +34,7 @@ public class HealthMonitorDNS  {
     private String recordType = "DNS_RECORD_A";
 
     @JsonProperty("response_string")
-    private String responseString = null;
+    private String responseString;
 
 
 

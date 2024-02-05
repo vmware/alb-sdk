@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServiceOAuth  {
     @JsonProperty("authorization_endpoint")
-    private String authorizationEndpoint = null;
+    private String authorizationEndpoint;
 
     @JsonProperty("client_id")
-    private String clientId = null;
+    private String clientId;
 
     @JsonProperty("org_id")
-    private String orgId = null;
+    private String orgId;
 
     @JsonProperty("service_id")
-    private String serviceId = null;
+    private String serviceId;
 
     @JsonProperty("service_name")
-    private String serviceName = null;
+    private String serviceName;
 
 
 

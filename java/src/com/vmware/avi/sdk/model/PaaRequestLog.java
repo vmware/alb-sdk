@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PaaRequestLog  {
     @JsonProperty("headers_received_from_server")
-    private String headersReceivedFromServer = null;
+    private String headersReceivedFromServer;
 
     @JsonProperty("headers_sent_to_server")
-    private String headersSentToServer = null;
+    private String headersSentToServer;
 
     @JsonProperty("http_version")
-    private String httpVersion = null;
+    private String httpVersion;
 
     @JsonProperty("method")
-    private String method = null;
+    private String method;
 
     @JsonProperty("pool_name")
-    private String poolName = null;
+    private String poolName;
 
     @JsonProperty("response_code")
-    private Integer responseCode = null;
+    private Integer responseCode;
 
     @JsonProperty("server_ip")
-    private Integer serverIp = null;
+    private Integer serverIp;
 
     @JsonProperty("servers_tried")
     private Integer serversTried = 0;
 
     @JsonProperty("uri_path")
-    private String uriPath = null;
+    private String uriPath;
 
 
 

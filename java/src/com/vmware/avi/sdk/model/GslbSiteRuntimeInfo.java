@@ -22,49 +22,49 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbSiteRuntimeInfo  {
     @JsonProperty("cluster_leader")
-    private String clusterLeader = null;
+    private String clusterLeader;
 
     @JsonProperty("cluster_uuid")
-    private String clusterUuid = null;
+    private String clusterUuid;
 
     @JsonProperty("dns_info")
-    private GslbDnsInfo dnsInfo = null;
+    private GslbDnsInfo dnsInfo;
 
     @JsonProperty("enabled")
-    private Boolean enabled = null;
+    private Boolean enabled;
 
     @JsonProperty("event_cache")
-    private EventCache eventCache = null;
+    private EventCache eventCache;
 
     @JsonProperty("hs_state")
-    private Boolean hsState = null;
+    private Boolean hsState;
 
     @JsonProperty("last_changed_time")
-    private TimeStamp lastChangedTime = null;
+    private TimeStamp lastChangedTime;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("num_of_retries")
     private Integer numOfRetries = 0;
 
     @JsonProperty("oper_status")
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
     @JsonProperty("role")
     private String role = "GSLB_NOT_A_MEMBER";
 
     @JsonProperty("rrtoken")
-    private List<String> rrtoken = null;
+    private List<String> rrtoken;
 
     @JsonProperty("site_type")
-    private String siteType = null;
+    private String siteType;
 
     @JsonProperty("state")
     private String state = "SITE_STATE_NULL";
 
     @JsonProperty("state_reason")
-    private String stateReason = null;
+    private String stateReason;
 
     @JsonProperty("sw_version")
     private String swVersion = "Not-Initialized";

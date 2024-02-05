@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VipAutoscaleConfiguration  {
     @JsonProperty("zones")
-    private List<VipAutoscaleZones> zones = null;
+    private List<VipAutoscaleZones> zones;
 
 
     /**

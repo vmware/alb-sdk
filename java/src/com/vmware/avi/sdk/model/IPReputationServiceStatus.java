@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IPReputationServiceStatus  {
     @JsonProperty("error")
-    private String error = null;
+    private String error;
 
     @JsonProperty("last_successful_update_check")
-    private TimeStamp lastSuccessfulUpdateCheck = null;
+    private TimeStamp lastSuccessfulUpdateCheck;
 
 
 

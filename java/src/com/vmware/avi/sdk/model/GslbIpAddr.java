@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbIpAddr  {
     @JsonProperty("ip")
-    private IpAddr ip = null;
+    private IpAddr ip;
 
 
 

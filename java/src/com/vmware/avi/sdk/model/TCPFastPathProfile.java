@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TCPFastPathProfile  {
     @JsonProperty("dsr_profile")
-    private DsrProfile dsrProfile = null;
+    private DsrProfile dsrProfile;
 
     @JsonProperty("enable_syn_protection")
     private Boolean enableSynProtection = false;

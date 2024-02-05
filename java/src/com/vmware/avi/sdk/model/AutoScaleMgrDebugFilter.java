@@ -25,10 +25,10 @@ public class AutoScaleMgrDebugFilter  {
     private Boolean enableAwsAutoscaleIntegration = false;
 
     @JsonProperty("intelligent_autoscale_period")
-    private Integer intelligentAutoscalePeriod = null;
+    private Integer intelligentAutoscalePeriod;
 
     @JsonProperty("pool_ref")
-    private String poolRef = null;
+    private String poolRef;
 
 
 

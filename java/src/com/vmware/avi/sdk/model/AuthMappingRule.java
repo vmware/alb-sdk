@@ -22,52 +22,52 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AuthMappingRule  {
     @JsonProperty("assign_policy")
-    private String assignPolicy = null;
+    private String assignPolicy;
 
     @JsonProperty("assign_role")
-    private String assignRole = null;
+    private String assignRole;
 
     @JsonProperty("assign_tenant")
-    private String assignTenant = null;
+    private String assignTenant;
 
     @JsonProperty("assign_userprofile")
-    private String assignUserprofile = null;
+    private String assignUserprofile;
 
     @JsonProperty("attribute_match")
-    private AuthMatchAttribute attributeMatch = null;
+    private AuthMatchAttribute attributeMatch;
 
     @JsonProperty("default_tenant_ref")
-    private String defaultTenantRef = null;
+    private String defaultTenantRef;
 
     @JsonProperty("group_match")
-    private AuthMatchGroupMembership groupMatch = null;
+    private AuthMatchGroupMembership groupMatch;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("is_superuser")
-    private Boolean isSuperuser = null;
+    private Boolean isSuperuser;
 
     @JsonProperty("policy_attribute_name")
-    private String policyAttributeName = null;
+    private String policyAttributeName;
 
     @JsonProperty("role_attribute_name")
-    private String roleAttributeName = null;
+    private String roleAttributeName;
 
     @JsonProperty("role_refs")
-    private List<String> roleRefs = null;
+    private List<String> roleRefs;
 
     @JsonProperty("tenant_attribute_name")
-    private String tenantAttributeName = null;
+    private String tenantAttributeName;
 
     @JsonProperty("tenant_refs")
-    private List<String> tenantRefs = null;
+    private List<String> tenantRefs;
 
     @JsonProperty("userprofile_attribute_name")
-    private String userprofileAttributeName = null;
+    private String userprofileAttributeName;
 
     @JsonProperty("userprofile_ref")
-    private String userprofileRef = null;
+    private String userprofileRef;
 
 
 

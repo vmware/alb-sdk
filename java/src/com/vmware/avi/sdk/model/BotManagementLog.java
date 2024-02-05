@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BotManagementLog  {
     @JsonProperty("classification")
-    private BotClassification classification = null;
+    private BotClassification classification;
 
     @JsonProperty("mapping_decision")
-    private BotMappingDecision mappingDecision = null;
+    private BotMappingDecision mappingDecision;
 
     @JsonProperty("results")
-    private List<BotEvaluationResult> results = null;
+    private List<BotEvaluationResult> results;
 
 
 

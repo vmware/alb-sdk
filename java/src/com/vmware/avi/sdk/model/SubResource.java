@@ -25,7 +25,7 @@ public class SubResource  {
     private Boolean excludeSubresources = false;
 
     @JsonProperty("subresources")
-    private List<String> subresources = null;
+    private List<String> subresources;
 
 
 

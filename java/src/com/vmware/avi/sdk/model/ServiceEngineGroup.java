@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("accelerated_networking")
-    private Boolean acceleratedNetworking = null;
+    private Boolean acceleratedNetworking;
 
     @JsonProperty("active_standby")
     private Boolean activeStandby = false;
@@ -34,7 +34,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private String algo = "PLACEMENT_ALGO_PACKED";
 
     @JsonProperty("allow_burst")
-    private Boolean allowBurst = null;
+    private Boolean allowBurst;
 
     @JsonProperty("app_cache_percent")
     private Integer appCachePercent;
@@ -58,10 +58,10 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean autoRebalance = false;
 
     @JsonProperty("auto_rebalance_capacity_per_se")
-    private List<Integer> autoRebalanceCapacityPerSe = null;
+    private List<Integer> autoRebalanceCapacityPerSe;
 
     @JsonProperty("auto_rebalance_criteria")
-    private List<String> autoRebalanceCriteria = null;
+    private List<String> autoRebalanceCriteria;
 
     @JsonProperty("auto_rebalance_interval")
     private Integer autoRebalanceInterval = 300;
@@ -70,7 +70,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean autoRedistributeActiveStandbyLoad = false;
 
     @JsonProperty("availability_zone_refs")
-    private List<String> availabilityZoneRefs = null;
+    private List<String> availabilityZoneRefs;
 
     @JsonProperty("baremetal_dispatcher_handles_flows")
     private Boolean baremetalDispatcherHandlesFlows = false;
@@ -85,7 +85,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer bufferSe = 1;
 
     @JsonProperty("cloud_ref")
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("compress_ip_rules_for_each_ns_subnet")
     private Boolean compressIpRulesForEachNsSubnet = true;
@@ -109,31 +109,31 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean cpuSocketAffinity = false;
 
     @JsonProperty("custom_securitygroups_data")
-    private List<String> customSecuritygroupsData = null;
+    private List<String> customSecuritygroupsData;
 
     @JsonProperty("custom_securitygroups_mgmt")
-    private List<String> customSecuritygroupsMgmt = null;
+    private List<String> customSecuritygroupsMgmt;
 
     @JsonProperty("custom_tag")
-    private List<CustomTag> customTag = null;
+    private List<CustomTag> customTag;
 
     @JsonProperty("data_network_id")
-    private String dataNetworkId = null;
+    private String dataNetworkId;
 
     @JsonProperty("datascript_timeout")
     private Integer datascriptTimeout = 1000000;
 
     @JsonProperty("deactivate_ipv6_discovery")
-    private Boolean deactivateIpv6Discovery = null;
+    private Boolean deactivateIpv6Discovery;
 
     @JsonProperty("deactivate_kni_filtering_at_dispatcher")
-    private Boolean deactivateKniFilteringAtDispatcher = null;
+    private Boolean deactivateKniFilteringAtDispatcher;
 
     @JsonProperty("dedicated_dispatcher_core")
-    private Boolean dedicatedDispatcherCore = null;
+    private Boolean dedicatedDispatcherCore;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("disable_avi_securitygroups")
     private Boolean disableAviSecuritygroups = false;
@@ -145,7 +145,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean disableFlowProbes = false;
 
     @JsonProperty("disable_gro")
-    private Boolean disableGro = null;
+    private Boolean disableGro;
 
     @JsonProperty("disable_se_memory_check")
     private Boolean disableSeMemoryCheck = false;
@@ -208,13 +208,13 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean enableMultiLb = false;
 
     @JsonProperty("enable_pcap_tx_ring")
-    private Boolean enablePcapTxRing = null;
+    private Boolean enablePcapTxRing;
 
     @JsonProperty("ephemeral_portrange_end")
-    private Integer ephemeralPortrangeEnd = null;
+    private Integer ephemeralPortrangeEnd;
 
     @JsonProperty("ephemeral_portrange_start")
-    private Integer ephemeralPortrangeStart = null;
+    private Integer ephemeralPortrangeStart;
 
     @JsonProperty("extra_config_multiplier")
     private Float extraConfigMultiplier = 0.0f;
@@ -229,7 +229,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer freeListSize = 1024;
 
     @JsonProperty("gcp_config")
-    private GCPSeGroupConfig gcpConfig = null;
+    private GCPSeGroupConfig gcpConfig;
 
     @JsonProperty("gratarp_permanent_periodicity")
     private Integer gratarpPermanentPeriodicity = 10;
@@ -244,7 +244,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean handlePerPktAttack = true;
 
     @JsonProperty("hardwaresecuritymodulegroup_ref")
-    private String hardwaresecuritymodulegroupRef = null;
+    private String hardwaresecuritymodulegroupRef;
 
     @JsonProperty("heap_minimum_config_memory")
     private Integer heapMinimumConfigMemory = 8;
@@ -253,10 +253,10 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean hmOnStandby;
 
     @JsonProperty("host_attribute_key")
-    private String hostAttributeKey = null;
+    private String hostAttributeKey;
 
     @JsonProperty("host_attribute_value")
-    private String hostAttributeValue = null;
+    private String hostAttributeValue;
 
     @JsonProperty("host_gateway_monitor")
     private Boolean hostGatewayMonitor = false;
@@ -271,7 +271,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean hybridRssMode = false;
 
     @JsonProperty("hypervisor")
-    private String hypervisor = null;
+    private String hypervisor;
 
     @JsonProperty("ignore_docker_mac_change")
     private Boolean ignoreDockerMacChange = true;
@@ -286,13 +286,13 @@ public class ServiceEngineGroup extends AviRestResource  {
     private String ingressAccessMgmt = "SG_INGRESS_ACCESS_ALL";
 
     @JsonProperty("instance_flavor")
-    private String instanceFlavor = null;
+    private String instanceFlavor;
 
     @JsonProperty("iptables")
-    private List<IptableRuleSet> iptables = null;
+    private List<IptableRuleSet> iptables;
 
     @JsonProperty("kni_allowed_server_ports")
-    private List<KniPortRange> kniAllowedServerPorts = null;
+    private List<KniPortRange> kniAllowedServerPorts;
 
     @JsonProperty("l7_conns_per_core")
     private Integer l7ConnsPerCore = 16384;
@@ -301,7 +301,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer l7ResvdListenConnsPerCore = 256;
 
     @JsonProperty("labels")
-    private List<KeyValue> labels = null;
+    private List<KeyValue> labels;
 
     @JsonProperty("lbaction_num_requests_to_dispatch")
     private Integer lbactionNumRequestsToDispatch = 4;
@@ -313,10 +313,10 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean leastLoadCoreSelection = true;
 
     @JsonProperty("license_tier")
-    private String licenseTier = null;
+    private String licenseTier;
 
     @JsonProperty("license_type")
-    private String licenseType = null;
+    private String licenseType;
 
     @JsonProperty("log_agent_compress_logs")
     private Boolean logAgentCompressLogs = true;
@@ -370,10 +370,10 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer logMessageMaxFileListSize = 64;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("max_concurrent_external_hm")
-    private Integer maxConcurrentExternalHm = null;
+    private Integer maxConcurrentExternalHm;
 
     @JsonProperty("max_cpu_usage")
     private Integer maxCpuUsage = 80;
@@ -382,7 +382,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer maxMemoryPerMempool = 64;
 
     @JsonProperty("max_num_se_dps")
-    private Integer maxNumSeDps = null;
+    private Integer maxNumSeDps;
 
     @JsonProperty("max_public_ips_per_lb")
     private Integer maxPublicIpsPerLb = 30;
@@ -418,10 +418,10 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer metricsCollectionMode = 1;
 
     @JsonProperty("mgmt_network_ref")
-    private String mgmtNetworkRef = null;
+    private String mgmtNetworkRef;
 
     @JsonProperty("mgmt_subnet")
-    private IpAddrPrefix mgmtSubnet = null;
+    private IpAddrPrefix mgmtSubnet;
 
     @JsonProperty("min_cpu_usage")
     private Integer minCpuUsage = 30;
@@ -439,7 +439,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer nLogStreamingThreads = 1;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("netlink_poller_threads")
     private Integer netlinkPollerThreads = 2;
@@ -472,19 +472,19 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer numFlowCoresSumChangesToIgnore = 8;
 
     @JsonProperty("objsync_config")
-    private ObjSyncConfig objsyncConfig = null;
+    private ObjSyncConfig objsyncConfig;
 
     @JsonProperty("objsync_port")
     private Integer objsyncPort = 4001;
 
     @JsonProperty("openstack_availability_zones")
-    private List<String> openstackAvailabilityZones = null;
+    private List<String> openstackAvailabilityZones;
 
     @JsonProperty("openstack_mgmt_network_name")
-    private String openstackMgmtNetworkName = null;
+    private String openstackMgmtNetworkName;
 
     @JsonProperty("openstack_mgmt_network_uuid")
-    private String openstackMgmtNetworkUuid = null;
+    private String openstackMgmtNetworkUuid;
 
     @JsonProperty("os_reserved_memory")
     private Integer osReservedMemory = 0;
@@ -511,7 +511,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private String placementMode = "PLACEMENT_MODE_AUTO";
 
     @JsonProperty("realtime_se_metrics")
-    private MetricsRealTimeUpdate realtimeSeMetrics = null;
+    private MetricsRealTimeUpdate realtimeSeMetrics;
 
     @JsonProperty("reboot_on_panic")
     private Boolean rebootOnPanic = true;
@@ -532,7 +532,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer sdbScanCount = 1000;
 
     @JsonProperty("se_bandwidth_type")
-    private String seBandwidthType = null;
+    private String seBandwidthType;
 
     @JsonProperty("se_delayed_flow_delete")
     private Boolean seDelayedFlowDelete = true;
@@ -541,7 +541,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer seDeprovisionDelay = 120;
 
     @JsonProperty("se_dos_profile")
-    private DosThresholdProfile seDosProfile = null;
+    private DosThresholdProfile seDosProfile;
 
     @JsonProperty("se_dp_hm_drops")
     private Integer seDpHmDrops = 0;
@@ -595,7 +595,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer seFlowProbeRetryTimer = 40;
 
     @JsonProperty("se_group_analytics_policy")
-    private SeGroupAnalyticsPolicy seGroupAnalyticsPolicy = null;
+    private SeGroupAnalyticsPolicy seGroupAnalyticsPolicy;
 
     @JsonProperty("se_hyperthreaded_mode")
     private String seHyperthreadedMode = "SE_CPU_HT_AUTO";
@@ -619,13 +619,13 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean seLogBufferEventsBlockingDequeue = true;
 
     @JsonProperty("se_lro")
-    private Boolean seLro = null;
+    private Boolean seLro;
 
     @JsonProperty("se_mp_ring_retry_count")
     private Integer seMpRingRetryCount = 500;
 
     @JsonProperty("se_mtu")
-    private Integer seMtu = null;
+    private Integer seMtu;
 
     @JsonProperty("se_name_prefix")
     private String seNamePrefix = "Avi";
@@ -655,7 +655,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer seProbePort = 7;
 
     @JsonProperty("se_rl_prop")
-    private RateLimiterProperties seRlProp = null;
+    private RateLimiterProperties seRlProp;
 
     @JsonProperty("se_rum_sampling_nav_interval")
     private Integer seRumSamplingNavInterval = 1;
@@ -679,10 +679,10 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer seThreadMultiplier = 1;
 
     @JsonProperty("se_time_tracker_props")
-    private SETimeTrackerProperties seTimeTrackerProps = null;
+    private SETimeTrackerProperties seTimeTrackerProps;
 
     @JsonProperty("se_tracert_port_range")
-    private PortRange seTracertPortRange = null;
+    private PortRange seTracertPortRange;
 
     @JsonProperty("se_tunnel_mode")
     private Integer seTunnelMode = 0;
@@ -721,10 +721,10 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer sendSeReadyTimeout = 300;
 
     @JsonProperty("service_ip6_subnets")
-    private List<IpAddrPrefix> serviceIp6Subnets = null;
+    private List<IpAddrPrefix> serviceIp6Subnets;
 
     @JsonProperty("service_ip_subnets")
-    private List<IpAddrPrefix> serviceIpSubnets = null;
+    private List<IpAddrPrefix> serviceIpSubnets;
 
     @JsonProperty("shm_minimum_config_memory")
     private Integer shmMinimumConfigMemory = 4;
@@ -739,7 +739,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer sslSessCachePerVs = 4096;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("transient_shared_memory_max")
     private Integer transientSharedMemoryMax = 30;
@@ -775,25 +775,25 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Boolean useObjsync = true;
 
     @JsonProperty("use_standard_alb")
-    private Boolean useStandardAlb = null;
+    private Boolean useStandardAlb;
 
     @JsonProperty("user_agent_cache_config")
-    private UserAgentCacheConfig userAgentCacheConfig = null;
+    private UserAgentCacheConfig userAgentCacheConfig;
 
     @JsonProperty("user_defined_metric_age")
     private Integer userDefinedMetricAge = 60;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vcenter_clusters")
-    private VcenterClusters vcenterClusters = null;
+    private VcenterClusters vcenterClusters;
 
     @JsonProperty("vcenter_datastore_mode")
     private String vcenterDatastoreMode = "VCENTER_DATASTORE_ANY";
 
     @JsonProperty("vcenter_datastores")
-    private List<VcenterDatastore> vcenterDatastores = null;
+    private List<VcenterDatastore> vcenterDatastores;
 
     @JsonProperty("vcenter_datastores_include")
     private Boolean vcenterDatastoresInclude = false;
@@ -802,19 +802,19 @@ public class ServiceEngineGroup extends AviRestResource  {
     private String vcenterFolder = "AviSeFolder";
 
     @JsonProperty("vcenter_hosts")
-    private VcenterHosts vcenterHosts = null;
+    private VcenterHosts vcenterHosts;
 
     @JsonProperty("vcenter_parking_vnic_pg")
-    private String vcenterParkingVnicPg = null;
+    private String vcenterParkingVnicPg;
 
     @JsonProperty("vcenters")
-    private List<PlacementScopeConfig> vcenters = null;
+    private List<PlacementScopeConfig> vcenters;
 
     @JsonProperty("vcpus_per_se")
     private Integer vcpusPerSe = 1;
 
     @JsonProperty("vip_asg")
-    private VipAutoscaleGroup vipAsg = null;
+    private VipAutoscaleGroup vipAsg;
 
     @JsonProperty("vnic_dhcp_ip_check_interval")
     private Integer vnicDhcpIpCheckInterval = 6;
@@ -862,7 +862,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     private Integer vsSwitchoverTimeout = 300;
 
     @JsonProperty("vss_placement")
-    private VssPlacement vssPlacement = null;
+    private VssPlacement vssPlacement;
 
     @JsonProperty("vss_placement_enabled")
     private Boolean vssPlacementEnabled = false;

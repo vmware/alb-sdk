@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ParamTypeClass  {
     @JsonProperty("hits")
-    private Integer hits = null;
+    private Integer hits;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
 

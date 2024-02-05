@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HSMThalesNetHsm  {
     @JsonProperty("esn")
-    private String esn = null;
+    private String esn;
 
     @JsonProperty("keyhash")
-    private String keyhash = null;
+    private String keyhash;
 
     @JsonProperty("module_id")
     private Integer moduleId = 0;
@@ -34,7 +34,7 @@ public class HSMThalesNetHsm  {
     private Integer priority = 100;
 
     @JsonProperty("remote_ip")
-    private IpAddr remoteIp = null;
+    private IpAddr remoteIp;
 
     @JsonProperty("remote_port")
     private Integer remotePort = 9004;

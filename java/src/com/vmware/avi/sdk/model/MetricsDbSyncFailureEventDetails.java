@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricsDbSyncFailureEventDetails  {
     @JsonProperty("node_name")
-    private String nodeName = null;
+    private String nodeName;
 
     @JsonProperty("process_name")
-    private String processName = null;
+    private String processName;
 
     @JsonProperty("timestamp")
-    private String timestamp = null;
+    private String timestamp;
 
 
 

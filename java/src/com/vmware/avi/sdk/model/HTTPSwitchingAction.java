@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HTTPSwitchingAction  {
     @JsonProperty("action")
-    private String action = null;
+    private String action;
 
     @JsonProperty("file")
-    private HTTPLocalFile file = null;
+    private HTTPLocalFile file;
 
     @JsonProperty("other_status_code")
-    private Integer otherStatusCode = null;
+    private Integer otherStatusCode;
 
     @JsonProperty("pool_group_ref")
-    private String poolGroupRef = null;
+    private String poolGroupRef;
 
     @JsonProperty("pool_ref")
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("server")
-    private PoolServer server = null;
+    private PoolServer server;
 
     @JsonProperty("status_code")
-    private String statusCode = null;
+    private String statusCode;
 
 
 

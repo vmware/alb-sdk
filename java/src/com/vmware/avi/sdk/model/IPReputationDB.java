@@ -22,37 +22,37 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IPReputationDB extends AviRestResource  {
     @JsonProperty("base_file_refs")
-    private List<String> baseFileRefs = null;
+    private List<String> baseFileRefs;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("incremental_file_refs")
-    private List<String> incrementalFileRefs = null;
+    private List<String> incrementalFileRefs;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("service_status")
-    private IPReputationServiceStatus serviceStatus = null;
+    private IPReputationServiceStatus serviceStatus;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vendor")
-    private String vendor = null;
+    private String vendor;
 
     @JsonProperty("version")
-    private String version = null;
+    private String version;
 
 
     /**

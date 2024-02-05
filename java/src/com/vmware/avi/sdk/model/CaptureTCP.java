@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CaptureTCP  {
     @JsonProperty("tcpflag")
-    private CaptureTCPFlags tcpflag = null;
+    private CaptureTCPFlags tcpflag;
 
 
 

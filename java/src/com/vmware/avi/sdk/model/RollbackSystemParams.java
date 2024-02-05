@@ -25,7 +25,7 @@ public class RollbackSystemParams  {
     private Boolean prechecksOnly = false;
 
     @JsonProperty("se_group_options")
-    private SeGroupOptions seGroupOptions = null;
+    private SeGroupOptions seGroupOptions;
 
     @JsonProperty("skip_warnings")
     private Boolean skipWarnings = false;

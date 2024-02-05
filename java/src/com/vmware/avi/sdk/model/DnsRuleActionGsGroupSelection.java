@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsRuleActionGsGroupSelection  {
     @JsonProperty("group_name")
-    private String groupName = null;
+    private String groupName;
 
 
 

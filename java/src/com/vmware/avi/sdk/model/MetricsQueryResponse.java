@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricsQueryResponse  {
     @JsonProperty("entity_uuid")
-    private String entityUuid = null;
+    private String entityUuid;
 
     @JsonProperty("id")
-    private String id = null;
+    private String id;
 
     @JsonProperty("limit")
-    private Integer limit = null;
+    private Integer limit;
 
     @JsonProperty("metric_entity")
-    private String metricEntity = null;
+    private String metricEntity;
 
     @JsonProperty("metric_id")
-    private String metricId = null;
+    private String metricId;
 
     @JsonProperty("series")
-    private List<MetricsDataSeries> series = null;
+    private List<MetricsDataSeries> series;
 
     @JsonProperty("start")
-    private String start = null;
+    private String start;
 
     @JsonProperty("step")
-    private Integer step = null;
+    private Integer step;
 
     @JsonProperty("stop")
-    private String stop = null;
+    private String stop;
 
 
 

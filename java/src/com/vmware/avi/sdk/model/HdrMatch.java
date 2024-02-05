@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HdrMatch  {
     @JsonProperty("hdr")
-    private String hdr = null;
+    private String hdr;
 
     @JsonProperty("match_case")
     private String matchCase = "INSENSITIVE";
 
     @JsonProperty("match_criteria")
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("value")
-    private List<String> value = null;
+    private List<String> value;
 
 
 

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CPUUsageInfo  {
     @JsonProperty("cpu_usage_on_nodes")
-    private List<CPUUsagePerNode> cpuUsageOnNodes = null;
+    private List<CPUUsagePerNode> cpuUsageOnNodes;
 
 
     /**

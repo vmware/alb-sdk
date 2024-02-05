@@ -25,37 +25,37 @@ public class Cloud extends AviRestResource  {
     private Integer autoscalePollingInterval = 60;
 
     @JsonProperty("aws_configuration")
-    private AwsConfiguration awsConfiguration = null;
+    private AwsConfiguration awsConfiguration;
 
     @JsonProperty("azure_configuration")
-    private AzureConfiguration azureConfiguration = null;
+    private AzureConfiguration azureConfiguration;
 
     @JsonProperty("cloudstack_configuration")
-    private CloudStackConfiguration cloudstackConfiguration = null;
+    private CloudStackConfiguration cloudstackConfiguration;
 
     @JsonProperty("custom_tags")
-    private List<CustomTag> customTags = null;
+    private List<CustomTag> customTags;
 
     @JsonProperty("dhcp_enabled")
     private Boolean dhcpEnabled = false;
 
     @JsonProperty("dns_provider_ref")
-    private String dnsProviderRef = null;
+    private String dnsProviderRef;
 
     @JsonProperty("dns_resolution_on_se")
     private Boolean dnsResolutionOnSe = false;
 
     @JsonProperty("dns_resolvers")
-    private List<DnsResolver> dnsResolvers = null;
+    private List<DnsResolver> dnsResolvers;
 
     @JsonProperty("docker_configuration")
-    private DockerConfiguration dockerConfiguration = null;
+    private DockerConfiguration dockerConfiguration;
 
     @JsonProperty("east_west_dns_provider_ref")
-    private String eastWestDnsProviderRef = null;
+    private String eastWestDnsProviderRef;
 
     @JsonProperty("east_west_ipam_provider_ref")
-    private String eastWestIpamProviderRef = null;
+    private String eastWestIpamProviderRef;
 
     @JsonProperty("enable_vip_on_all_interfaces")
     private Boolean enableVipOnAllInterfaces = false;
@@ -64,28 +64,28 @@ public class Cloud extends AviRestResource  {
     private Boolean enableVipStaticRoutes = false;
 
     @JsonProperty("gcp_configuration")
-    private GCPConfiguration gcpConfiguration = null;
+    private GCPConfiguration gcpConfiguration;
 
     @JsonProperty("ip6_autocfg_enabled")
     private Boolean ip6AutocfgEnabled = false;
 
     @JsonProperty("ipam_provider_ref")
-    private String ipamProviderRef = null;
+    private String ipamProviderRef;
 
     @JsonProperty("license_tier")
-    private String licenseTier = null;
+    private String licenseTier;
 
     @JsonProperty("license_type")
-    private String licenseType = null;
+    private String licenseType;
 
     @JsonProperty("linuxserver_configuration")
-    private LinuxServerConfiguration linuxserverConfiguration = null;
+    private LinuxServerConfiguration linuxserverConfiguration;
 
     @JsonProperty("maintenance_mode")
     private Boolean maintenanceMode = false;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("metrics_polling_interval")
     private Integer metricsPollingInterval = 300;
@@ -100,52 +100,52 @@ public class Cloud extends AviRestResource  {
     private Integer mtu = 1500;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("nsxt_configuration")
-    private NsxtConfiguration nsxtConfiguration = null;
+    private NsxtConfiguration nsxtConfiguration;
 
     @JsonProperty("ntp_configuration")
-    private NTPConfiguration ntpConfiguration = null;
+    private NTPConfiguration ntpConfiguration;
 
     @JsonProperty("obj_name_prefix")
-    private String objNamePrefix = null;
+    private String objNamePrefix;
 
     @JsonProperty("openstack_configuration")
-    private OpenStackConfiguration openstackConfiguration = null;
+    private OpenStackConfiguration openstackConfiguration;
 
     @JsonProperty("prefer_static_routes")
     private Boolean preferStaticRoutes = false;
 
     @JsonProperty("proxy_configuration")
-    private ProxyConfiguration proxyConfiguration = null;
+    private ProxyConfiguration proxyConfiguration;
 
     @JsonProperty("rancher_configuration")
-    private RancherConfiguration rancherConfiguration = null;
+    private RancherConfiguration rancherConfiguration;
 
     @JsonProperty("resolve_fqdn_to_ipv6")
     private Boolean resolveFqdnToIpv6 = false;
 
     @JsonProperty("se_group_template_ref")
-    private String seGroupTemplateRef = null;
+    private String seGroupTemplateRef;
 
     @JsonProperty("state_based_dns_registration")
     private Boolean stateBasedDnsRegistration = true;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vca_configuration")
-    private vCloudAirConfiguration vcaConfiguration = null;
+    private vCloudAirConfiguration vcaConfiguration;
 
     @JsonProperty("vcenter_configuration")
-    private vCenterConfiguration vcenterConfiguration = null;
+    private vCenterConfiguration vcenterConfiguration;
 
     @JsonProperty("vmc_deployment")
     private Boolean vmcDeployment = false;

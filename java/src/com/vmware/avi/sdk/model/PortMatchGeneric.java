@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PortMatchGeneric  {
     @JsonProperty("match_criteria")
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("ports")
-    private List<Integer> ports = null;
+    private List<Integer> ports;
 
     @JsonProperty("ranges")
-    private List<PortRange> ranges = null;
+    private List<PortRange> ranges;
 
 
 

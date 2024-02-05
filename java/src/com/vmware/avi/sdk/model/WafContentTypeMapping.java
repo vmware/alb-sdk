@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafContentTypeMapping  {
     @JsonProperty("content_type")
-    private String contentType = null;
+    private String contentType;
 
     @JsonProperty("match_op")
     private String matchOp = "EQUALS";
 
     @JsonProperty("request_body_parser")
-    private String requestBodyParser = null;
+    private String requestBodyParser;
 
 
 

@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VipRuntime  {
     @JsonProperty("ev")
-    private List<String> ev = null;
+    private List<String> ev;
 
     @JsonProperty("ev_status")
-    private VsEvStatus evStatus = null;
+    private VsEvStatus evStatus;
 
     @JsonProperty("first_se_assigned_time")
-    private TimeStamp firstSeAssignedTime = null;
+    private TimeStamp firstSeAssignedTime;
 
     @JsonProperty("first_time_placement")
     private Boolean firstTimePlacement = false;
@@ -40,22 +40,22 @@ public class VipRuntime  {
     private String fsmStateName = "VipFsmMap::Inactive";
 
     @JsonProperty("last_changed_time")
-    private TimeStamp lastChangedTime = null;
+    private TimeStamp lastChangedTime;
 
     @JsonProperty("last_scale_status")
-    private ScaleStatus lastScaleStatus = null;
+    private ScaleStatus lastScaleStatus;
 
     @JsonProperty("marked_for_delete")
     private Boolean markedForDelete = false;
 
     @JsonProperty("metrics_mgr_port")
-    private String metricsMgrPort = null;
+    private String metricsMgrPort;
 
     @JsonProperty("migrate_in_progress")
     private Boolean migrateInProgress = false;
 
     @JsonProperty("migrate_request")
-    private VsMigrateParams migrateRequest = null;
+    private VsMigrateParams migrateRequest;
 
     @JsonProperty("migrate_scalein_pending")
     private Boolean migrateScaleinPending = false;
@@ -67,37 +67,37 @@ public class VipRuntime  {
     private Integer numAdditionalSe = 0;
 
     @JsonProperty("prev_metrics_mgr_port")
-    private String prevMetricsMgrPort = null;
+    private String prevMetricsMgrPort;
 
     @JsonProperty("progress_percent")
     private Integer progressPercent = 0;
 
     @JsonProperty("requested_resource")
-    private VirtualServiceResource requestedResource = null;
+    private VirtualServiceResource requestedResource;
 
     @JsonProperty("scale_status")
-    private ScaleStatus scaleStatus = null;
+    private ScaleStatus scaleStatus;
 
     @JsonProperty("scalein_in_progress")
     private Boolean scaleinInProgress = false;
 
     @JsonProperty("scalein_request")
-    private VsScaleinParams scaleinRequest = null;
+    private VsScaleinParams scaleinRequest;
 
     @JsonProperty("scaleout_in_progress")
     private Boolean scaleoutInProgress = false;
 
     @JsonProperty("se_list")
-    private List<SeList> seList = null;
+    private List<SeList> seList;
 
     @JsonProperty("supp_runtime_status")
-    private OperationalStatus suppRuntimeStatus = null;
+    private OperationalStatus suppRuntimeStatus;
 
     @JsonProperty("user_scaleout_pending")
     private Boolean userScaleoutPending = false;
 
     @JsonProperty("vip_id")
-    private String vipId = null;
+    private String vipId;
 
     @JsonProperty("warmstart_resync_done")
     private Boolean warmstartResyncDone = false;

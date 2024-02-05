@@ -22,61 +22,61 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IcapRequestLog  {
     @JsonProperty("action")
-    private String action = null;
+    private String action;
 
     @JsonProperty("complete_body_sent")
-    private Boolean completeBodySent = null;
+    private Boolean completeBodySent;
 
     @JsonProperty("http_method")
-    private String httpMethod = null;
+    private String httpMethod;
 
     @JsonProperty("http_response_code")
-    private Integer httpResponseCode = null;
+    private Integer httpResponseCode;
 
     @JsonProperty("icap_absolute_uri")
-    private String icapAbsoluteUri = null;
+    private String icapAbsoluteUri;
 
     @JsonProperty("icap_headers_received_from_server")
-    private String icapHeadersReceivedFromServer = null;
+    private String icapHeadersReceivedFromServer;
 
     @JsonProperty("icap_headers_sent_to_server")
-    private String icapHeadersSentToServer = null;
+    private String icapHeadersSentToServer;
 
     @JsonProperty("icap_method")
-    private String icapMethod = null;
+    private String icapMethod;
 
     @JsonProperty("icap_response_code")
-    private Integer icapResponseCode = null;
+    private Integer icapResponseCode;
 
     @JsonProperty("icap_server_ip")
-    private Integer icapServerIp = null;
+    private Integer icapServerIp;
 
     @JsonProperty("icap_server_port")
-    private Integer icapServerPort = null;
+    private Integer icapServerPort;
 
     @JsonProperty("latency")
-    private Integer latency = null;
+    private Integer latency;
 
     @JsonProperty("modified_content_length")
-    private Integer modifiedContentLength = null;
+    private Integer modifiedContentLength;
 
     @JsonProperty("nsx_defender_log")
-    private IcapNSXDefenderLog nsxDefenderLog = null;
+    private IcapNSXDefenderLog nsxDefenderLog;
 
     @JsonProperty("opswat_log")
-    private IcapOPSWATLog opswatLog = null;
+    private IcapOPSWATLog opswatLog;
 
     @JsonProperty("pool_name")
-    private String poolName = null;
+    private String poolName;
 
     @JsonProperty("pool_uuid")
-    private String poolUuid = null;
+    private String poolUuid;
 
     @JsonProperty("source_port")
-    private Integer sourcePort = null;
+    private Integer sourcePort;
 
     @JsonProperty("vendor")
-    private String vendor = null;
+    private String vendor;
 
 
 

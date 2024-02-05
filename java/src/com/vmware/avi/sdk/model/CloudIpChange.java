@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CloudIpChange  {
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("ip")
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("ip6")
-    private IpAddr ip6 = null;
+    private IpAddr ip6;
 
     @JsonProperty("ip6_mask")
     private Integer ip6Mask = 128;
@@ -40,16 +40,16 @@ public class CloudIpChange  {
     private Integer ipMask = 32;
 
     @JsonProperty("mac_addr")
-    private String macAddr = null;
+    private String macAddr;
 
     @JsonProperty("port_uuid")
-    private String portUuid = null;
+    private String portUuid;
 
     @JsonProperty("se_vm_uuid")
-    private String seVmUuid = null;
+    private String seVmUuid;
 
     @JsonProperty("vtype")
-    private String vtype = null;
+    private String vtype;
 
 
 

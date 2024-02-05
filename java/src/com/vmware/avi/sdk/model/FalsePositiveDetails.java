@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class FalsePositiveDetails  {
     @JsonProperty("false_positive_results")
-    private List<FalsePositiveResult> falsePositiveResults = null;
+    private List<FalsePositiveResult> falsePositiveResults;
 
     @JsonProperty("vs_name")
-    private String vsName = null;
+    private String vsName;
 
     @JsonProperty("vs_uuid")
-    private String vsUuid = null;
+    private String vsUuid;
 
 
     /**

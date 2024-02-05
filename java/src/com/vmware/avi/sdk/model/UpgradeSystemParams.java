@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UpgradeSystemParams  {
     @JsonProperty("controller_patch_ref")
-    private String controllerPatchRef = null;
+    private String controllerPatchRef;
 
     @JsonProperty("image_ref")
-    private String imageRef = null;
+    private String imageRef;
 
     @JsonProperty("prechecks_only")
     private Boolean prechecksOnly = false;
 
     @JsonProperty("se_group_options")
-    private SeGroupOptions seGroupOptions = null;
+    private SeGroupOptions seGroupOptions;
 
     @JsonProperty("se_patch_ref")
-    private String sePatchRef = null;
+    private String sePatchRef;
 
     @JsonProperty("skip_warnings")
     private Boolean skipWarnings = false;

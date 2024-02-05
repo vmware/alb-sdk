@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MesosSeResources  {
     @JsonProperty("attribute_key")
-    private String attributeKey = null;
+    private String attributeKey;
 
     @JsonProperty("attribute_value")
-    private String attributeValue = null;
+    private String attributeValue;
 
     @JsonProperty("cpu")
     private Float cpu = 2.0f;

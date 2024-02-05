@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NsxtTier1SegmentAutomaticMode  {
     @JsonProperty("nsxt_segment_subnet")
-    private IpAddrPrefix nsxtSegmentSubnet = null;
+    private IpAddrPrefix nsxtSegmentSubnet;
 
     @JsonProperty("num_se_per_segment")
     private Integer numSePerSegment = 16;
 
     @JsonProperty("tier1_lr_ids")
-    private List<String> tier1LrIds = null;
+    private List<String> tier1LrIds;
 
 
 

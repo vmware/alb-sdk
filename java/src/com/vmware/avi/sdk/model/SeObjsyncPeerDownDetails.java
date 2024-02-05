@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeObjsyncPeerDownDetails  {
     @JsonProperty("peer_se_uuids")
-    private String peerSeUuids = null;
+    private String peerSeUuids;
 
 
 

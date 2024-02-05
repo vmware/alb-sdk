@@ -22,55 +22,55 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VsVip extends AviRestResource  {
     @JsonProperty("bgp_local_preference")
-    private Integer bgpLocalPreference = null;
+    private Integer bgpLocalPreference;
 
     @JsonProperty("bgp_num_as_path_prepend")
-    private Integer bgpNumAsPathPrepend = null;
+    private Integer bgpNumAsPathPrepend;
 
     @JsonProperty("bgp_peer_labels")
-    private List<String> bgpPeerLabels = null;
+    private List<String> bgpPeerLabels;
 
     @JsonProperty("cloud_ref")
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("dns_info")
-    private List<DnsInfo> dnsInfo = null;
+    private List<DnsInfo> dnsInfo;
 
     @JsonProperty("east_west_placement")
     private Boolean eastWestPlacement = false;
 
     @JsonProperty("ipam_selector")
-    private Selector ipamSelector = null;
+    private Selector ipamSelector;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("tier1_lr")
-    private String tier1Lr = null;
+    private String tier1Lr;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("use_standard_alb")
-    private Boolean useStandardAlb = null;
+    private Boolean useStandardAlb;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vip")
-    private List<Vip> vip = null;
+    private List<Vip> vip;
 
     @JsonProperty("vrf_context_ref")
-    private String vrfContextRef = null;
+    private String vrfContextRef;
 
     @JsonProperty("vsvip_cloud_config_cksum")
-    private String vsvipCloudConfigCksum = null;
+    private String vsvipCloudConfigCksum;
 
 
 

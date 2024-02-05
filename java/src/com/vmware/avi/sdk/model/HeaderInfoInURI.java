@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HeaderInfoInURI  {
     @JsonProperty("header_field_name")
-    private String headerFieldName = null;
+    private String headerFieldName;
 
     @JsonProperty("value")
-    private String value = null;
+    private String value;
 
 
 

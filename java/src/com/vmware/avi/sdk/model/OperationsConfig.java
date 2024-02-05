@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OperationsConfig  {
     @JsonProperty("inventory_config")
-    private InventoryConfig inventoryConfig = null;
+    private InventoryConfig inventoryConfig;
 
 
 

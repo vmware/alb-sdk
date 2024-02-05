@@ -22,58 +22,58 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VipSeAssigned  {
     @JsonProperty("active_on_cloud")
-    private Boolean activeOnCloud = null;
+    private Boolean activeOnCloud;
 
     @JsonProperty("active_on_se")
-    private Boolean activeOnSe = null;
+    private Boolean activeOnSe;
 
     @JsonProperty("admin_down_requested")
     private Boolean adminDownRequested = false;
 
     @JsonProperty("attach_ip_in_progress")
-    private Boolean attachIpInProgress = null;
+    private Boolean attachIpInProgress;
 
     @JsonProperty("connected")
-    private Boolean connected = null;
+    private Boolean connected;
 
     @JsonProperty("detach_ip_in_progress")
-    private Boolean detachIpInProgress = null;
+    private Boolean detachIpInProgress;
 
     @JsonProperty("mgmt_ip")
-    private IpAddr mgmtIp = null;
+    private IpAddr mgmtIp;
 
     @JsonProperty("mgmt_ip6")
-    private IpAddr mgmtIp6 = null;
+    private IpAddr mgmtIp6;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("oper_status")
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
     @JsonProperty("primary")
-    private Boolean primary = null;
+    private Boolean primary;
 
     @JsonProperty("ref")
-    private String ref = null;
+    private String ref;
 
     @JsonProperty("scalein_in_progress")
     private Boolean scaleinInProgress = false;
 
     @JsonProperty("scaleout_in_progress")
-    private Boolean scaleoutInProgress = null;
+    private Boolean scaleoutInProgress;
 
     @JsonProperty("se_ready_in_progress")
-    private Boolean seReadyInProgress = null;
+    private Boolean seReadyInProgress;
 
     @JsonProperty("snat_ip")
-    private IpAddr snatIp = null;
+    private IpAddr snatIp;
 
     @JsonProperty("snat_ip6_address")
-    private IpAddr snatIp6Address = null;
+    private IpAddr snatIp6Address;
 
     @JsonProperty("standby")
-    private Boolean standby = null;
+    private Boolean standby;
 
 
 

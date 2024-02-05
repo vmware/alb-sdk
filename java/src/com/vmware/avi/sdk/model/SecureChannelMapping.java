@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SecureChannelMapping extends AviRestResource  {
     @JsonProperty("auth_token")
-    private String authToken = null;
+    private String authToken;
 
     @JsonProperty("ip")
-    private String ip = null;
+    private String ip;
 
     @JsonProperty("is_controller")
     private Boolean isController = false;
 
     @JsonProperty("local_ip")
-    private String localIp = null;
+    private String localIp;
 
     @JsonProperty("marked_for_delete")
     private Boolean markedForDelete = false;
 
     @JsonProperty("metadata")
-    private List<SecureChannelMetadata> metadata = null;
+    private List<SecureChannelMetadata> metadata;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("pub_key")
-    private String pubKey = null;
+    private String pubKey;
 
     @JsonProperty("pub_key_pem")
-    private String pubKeyPem = null;
+    private String pubKeyPem;
 
     @JsonProperty("status")
     private String status = "SECURE_CHANNEL_NONE";
@@ -55,7 +55,7 @@ public class SecureChannelMapping extends AviRestResource  {
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

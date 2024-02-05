@@ -22,61 +22,61 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VSDataScriptSet extends AviRestResource  {
     @JsonProperty("created_by")
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("datascript")
-    private List<VSDataScript> datascript = null;
+    private List<VSDataScript> datascript;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("geo_db_ref")
-    private String geoDbRef = null;
+    private String geoDbRef;
 
     @JsonProperty("ip_reputation_db_ref")
-    private String ipReputationDbRef = null;
+    private String ipReputationDbRef;
 
     @JsonProperty("ipgroup_refs")
-    private List<String> ipgroupRefs = null;
+    private List<String> ipgroupRefs;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("pki_profile_refs")
-    private List<String> pkiProfileRefs = null;
+    private List<String> pkiProfileRefs;
 
     @JsonProperty("pool_group_refs")
-    private List<String> poolGroupRefs = null;
+    private List<String> poolGroupRefs;
 
     @JsonProperty("pool_refs")
-    private List<String> poolRefs = null;
+    private List<String> poolRefs;
 
     @JsonProperty("protocol_parser_refs")
-    private List<String> protocolParserRefs = null;
+    private List<String> protocolParserRefs;
 
     @JsonProperty("rate_limiters")
-    private List<RateLimiter> rateLimiters = null;
+    private List<RateLimiter> rateLimiters;
 
     @JsonProperty("ssl_key_certificate_refs")
-    private List<String> sslKeyCertificateRefs = null;
+    private List<String> sslKeyCertificateRefs;
 
     @JsonProperty("ssl_profile_refs")
-    private List<String> sslProfileRefs = null;
+    private List<String> sslProfileRefs;
 
     @JsonProperty("string_group_refs")
-    private List<String> stringGroupRefs = null;
+    private List<String> stringGroupRefs;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

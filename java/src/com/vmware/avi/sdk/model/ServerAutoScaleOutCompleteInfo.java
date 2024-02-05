@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServerAutoScaleOutCompleteInfo  {
     @JsonProperty("launch_config_uuid")
-    private String launchConfigUuid = null;
+    private String launchConfigUuid;
 
     @JsonProperty("nscaleout")
-    private Integer nscaleout = null;
+    private Integer nscaleout;
 
     @JsonProperty("pool_ref")
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("reason_code")
     private String reasonCode = "SYSERR_SUCCESS";
 
     @JsonProperty("scaled_out_servers")
-    private List<ServerId> scaledOutServers = null;
+    private List<ServerId> scaledOutServers;
 
 
 

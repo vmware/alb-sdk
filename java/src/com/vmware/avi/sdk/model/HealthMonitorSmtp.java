@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HealthMonitorSmtp  {
     @JsonProperty("domainname")
-    private String domainname = null;
+    private String domainname;
 
     @JsonProperty("mail_data")
-    private String mailData = null;
+    private String mailData;
 
     @JsonProperty("recipients_ids")
-    private List<String> recipientsIds = null;
+    private List<String> recipientsIds;
 
     @JsonProperty("sender_id")
-    private String senderId = null;
+    private String senderId;
 
     @JsonProperty("ssl_attributes")
-    private HealthMonitorSSLAttributes sslAttributes = null;
+    private HealthMonitorSSLAttributes sslAttributes;
 
 
 

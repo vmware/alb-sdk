@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafPolicyAllowlist  {
     @JsonProperty("rules")
-    private List<WafPolicyAllowlistRule> rules = null;
+    private List<WafPolicyAllowlistRule> rules;
 
 
     /**

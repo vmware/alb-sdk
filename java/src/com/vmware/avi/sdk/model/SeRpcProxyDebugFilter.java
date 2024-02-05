@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeRpcProxyDebugFilter  {
     @JsonProperty("method_name")
-    private String methodName = null;
+    private String methodName;
 
     @JsonProperty("queue")
-    private String queue = null;
+    private String queue;
 
     @JsonProperty("se_uuid")
-    private String seUuid = null;
+    private String seUuid;
 
 
 

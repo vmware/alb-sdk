@@ -7,6 +7,7 @@ package com.vmware.avi.sdk.model;
 
 import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -25,10 +26,10 @@ public class WafPolicy extends AviRestResource  {
     private Boolean allowModeDelegation = true;
 
     @JsonProperty("allowlist")
-    private WafPolicyAllowlist allowlist = null;
+    private WafPolicyAllowlist allowlist;
 
     @JsonProperty("application_signatures")
-    private WafApplicationSignatures applicationSignatures = null;
+    private WafApplicationSignatures applicationSignatures;
 
     @JsonProperty("auto_update_crs")
     private Boolean autoUpdateCrs = false;
@@ -37,16 +38,16 @@ public class WafPolicy extends AviRestResource  {
     private Boolean bypassStaticExtensions = true;
 
     @JsonProperty("confidence_override")
-    private AppLearningConfidenceOverride confidenceOverride = null;
+    private AppLearningConfidenceOverride confidenceOverride;
 
     @JsonProperty("created_by")
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("crs_overrides")
-    private List<WafRuleGroupOverrides> crsOverrides = null;
+    private List<WafRuleGroupOverrides> crsOverrides;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("enable_app_learning")
     private Boolean enableAppLearning = false;
@@ -54,17 +55,20 @@ public class WafPolicy extends AviRestResource  {
     @JsonProperty("enable_auto_rule_updates")
     private Boolean enableAutoRuleUpdates = true;
 
+    @JsonIgnore
+    private Boolean enableRegexLearning = false;
+
     @JsonProperty("failure_mode")
     private String failureMode = "WAF_FAILURE_MODE_OPEN";
 
     @JsonProperty("geo_db_ref")
-    private String geoDbRef = null;
+    private String geoDbRef;
 
     @JsonProperty("learning_params")
-    private AppLearningParams learningParams = null;
+    private AppLearningParams learningParams;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("min_confidence")
     private String minConfidence = "CONFIDENCE_VERY_HIGH";
@@ -73,22 +77,22 @@ public class WafPolicy extends AviRestResource  {
     private String mode = "WAF_MODE_DETECTION_ONLY";
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("paranoia_level")
     private String paranoiaLevel = "WAF_PARANOIA_LEVEL_LOW";
 
     @JsonProperty("positive_security_model")
-    private WafPositiveSecurityModel positiveSecurityModel = null;
+    private WafPositiveSecurityModel positiveSecurityModel;
 
     @JsonProperty("post_crs_groups")
-    private List<WafRuleGroup> postCrsGroups = null;
+    private List<WafRuleGroup> postCrsGroups;
 
     @JsonProperty("pre_crs_groups")
-    private List<WafRuleGroup> preCrsGroups = null;
+    private List<WafRuleGroup> preCrsGroups;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("updated_crs_rules_in_detection_mode")
     private Boolean updatedCrsRulesInDetectionMode = true;
@@ -97,13 +101,13 @@ public class WafPolicy extends AviRestResource  {
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("waf_crs_ref")
-    private String wafCrsRef = null;
+    private String wafCrsRef;
 
     @JsonProperty("waf_profile_ref")
-    private String wafProfileRef = null;
+    private String wafProfileRef;
 
 
 
@@ -392,6 +396,32 @@ public class WafPolicy extends AviRestResource  {
      */
     public void setEnableAutoRuleUpdates(Boolean  enableAutoRuleUpdates) {
         this.enableAutoRuleUpdates = enableAutoRuleUpdates;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enable dynamic regex generation for positive security model rules.
+     * This is an experimental feature and shouldn't be used in production.
+     * Field introduced in 20.1.1.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return enableRegexLearning
+     */
+    public Boolean getEnableRegexLearning() {
+        return enableRegexLearning;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enable dynamic regex generation for positive security model rules.
+     * This is an experimental feature and shouldn't be used in production.
+     * Field introduced in 20.1.1.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param enableRegexLearning set the enableRegexLearning.
+     */
+    public void setEnableRegexLearning(Boolean  enableRegexLearning) {
+        this.enableRegexLearning = enableRegexLearning;
     }
 
     /**
@@ -909,6 +939,7 @@ public class WafPolicy extends AviRestResource  {
   Objects.equals(this.minConfidence, objWafPolicy.minConfidence)&&
   Objects.equals(this.confidenceOverride, objWafPolicy.confidenceOverride)&&
   Objects.equals(this.enableAutoRuleUpdates, objWafPolicy.enableAutoRuleUpdates)&&
+  Objects.equals(this.enableRegexLearning, objWafPolicy.enableRegexLearning)&&
   Objects.equals(this.allowlist, objWafPolicy.allowlist)&&
   Objects.equals(this.geoDbRef, objWafPolicy.geoDbRef)&&
   Objects.equals(this.markers, objWafPolicy.markers)&&
@@ -933,6 +964,7 @@ public class WafPolicy extends AviRestResource  {
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
                         sb.append("    enableAppLearning: ").append(toIndentedString(enableAppLearning)).append("\n");
                         sb.append("    enableAutoRuleUpdates: ").append(toIndentedString(enableAutoRuleUpdates)).append("\n");
+                        sb.append("    enableRegexLearning: ").append(toIndentedString(enableRegexLearning)).append("\n");
                         sb.append("    failureMode: ").append(toIndentedString(failureMode)).append("\n");
                         sb.append("    geoDbRef: ").append(toIndentedString(geoDbRef)).append("\n");
                         sb.append("    learningParams: ").append(toIndentedString(learningParams)).append("\n");

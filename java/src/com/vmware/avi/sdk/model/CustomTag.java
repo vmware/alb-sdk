@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CustomTag  {
     @JsonProperty("tag_key")
-    private String tagKey = null;
+    private String tagKey;
 
     @JsonProperty("tag_val")
-    private String tagVal = null;
+    private String tagVal;
 
 
 

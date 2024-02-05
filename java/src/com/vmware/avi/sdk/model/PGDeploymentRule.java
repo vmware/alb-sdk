@@ -28,7 +28,7 @@ public class PGDeploymentRule  {
     private String operator = "CO_GE";
 
     @JsonProperty("threshold")
-    private Float threshold = null;
+    private Float threshold;
 
 
 

@@ -25,7 +25,7 @@ public class ServerAutoScalePolicy extends AviRestResource  {
     private Integer delayForServerGarbageCollection = 0;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("intelligent_autoscale")
     private Boolean intelligentAutoscale = false;
@@ -37,7 +37,7 @@ public class ServerAutoScalePolicy extends AviRestResource  {
     private Integer intelligentScaleoutMargin = 20;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("max_scalein_adjustment_step")
     private Integer maxScaleinAdjustmentStep = 1;
@@ -46,31 +46,31 @@ public class ServerAutoScalePolicy extends AviRestResource  {
     private Integer maxScaleoutAdjustmentStep = 1;
 
     @JsonProperty("max_size")
-    private Integer maxSize = null;
+    private Integer maxSize;
 
     @JsonProperty("min_size")
-    private Integer minSize = null;
+    private Integer minSize;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("scalein_alertconfig_refs")
-    private List<String> scaleinAlertconfigRefs = null;
+    private List<String> scaleinAlertconfigRefs;
 
     @JsonProperty("scalein_cooldown")
     private Integer scaleinCooldown = 300;
 
     @JsonProperty("scaleout_alertconfig_refs")
-    private List<String> scaleoutAlertconfigRefs = null;
+    private List<String> scaleoutAlertconfigRefs;
 
     @JsonProperty("scaleout_cooldown")
     private Integer scaleoutCooldown = 300;
 
     @JsonProperty("scheduled_scalings")
-    private List<ScheduledScaling> scheduledScalings = null;
+    private List<ScheduledScaling> scheduledScalings;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
@@ -79,7 +79,7 @@ public class ServerAutoScalePolicy extends AviRestResource  {
     private Boolean usePredictedLoad = false;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ReportEvent  {
     @JsonProperty("duration")
-    private Integer duration = null;
+    private Integer duration;
 
     @JsonProperty("end_time")
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("event_name")
-    private String eventName = null;
+    private String eventName;
 
     @JsonProperty("messages")
-    private List<String> messages = null;
+    private List<String> messages;
 
     @JsonProperty("start_time")
-    private String startTime = null;
+    private String startTime;
 
     @JsonProperty("status")
-    private String status = null;
+    private String status;
 
 
 

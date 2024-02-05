@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IPPersistenceProfile  {
     @JsonProperty("ip_mask")
-    private Integer ipMask = null;
+    private Integer ipMask;
 
     @JsonProperty("ip_persistent_timeout")
     private Integer ipPersistentTimeout = 5;

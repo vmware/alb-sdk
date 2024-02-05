@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbDnsGsStatus  {
     @JsonProperty("last_changed_time")
-    private TimeStamp lastChangedTime = null;
+    private TimeStamp lastChangedTime;
 
     @JsonProperty("num_partial_updates")
-    private Integer numPartialUpdates = null;
+    private Integer numPartialUpdates;
 
     @JsonProperty("partial_update_threshold")
     private Integer partialUpdateThreshold = 10;
 
     @JsonProperty("state")
-    private String state = null;
+    private String state;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
 

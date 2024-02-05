@@ -28,49 +28,49 @@ public class UpgradeStatusSummary extends AviRestResource  {
     private Boolean enableRollback = false;
 
     @JsonProperty("end_time")
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("image_ref")
-    private String imageRef = null;
+    private String imageRef;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("node_type")
-    private String nodeType = null;
+    private String nodeType;
 
     @JsonProperty("obj_cloud_ref")
-    private String objCloudRef = null;
+    private String objCloudRef;
 
     @JsonProperty("patch_image_ref")
-    private String patchImageRef = null;
+    private String patchImageRef;
 
     @JsonProperty("start_time")
-    private String startTime = null;
+    private String startTime;
 
     @JsonProperty("state")
-    private UpgradeOpsState state = null;
+    private UpgradeOpsState state;
 
     @JsonProperty("tasks_completed")
-    private Integer tasksCompleted = null;
+    private Integer tasksCompleted;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("total_tasks")
-    private Integer totalTasks = null;
+    private Integer totalTasks;
 
     @JsonProperty("upgrade_ops")
-    private String upgradeOps = null;
+    private String upgradeOps;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("version")
-    private String version = null;
+    private String version;
 
 
 

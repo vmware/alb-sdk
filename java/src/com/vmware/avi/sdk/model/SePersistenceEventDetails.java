@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SePersistenceEventDetails  {
     @JsonProperty("entries")
-    private Integer entries = null;
+    private Integer entries;
 
     @JsonProperty("pool")
-    private String pool = null;
+    private String pool;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
 

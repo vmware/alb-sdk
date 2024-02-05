@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HealthMonitorHttp  {
     @JsonProperty("auth_type")
-    private String authType = null;
+    private String authType;
 
     @JsonProperty("exact_http_request")
     private Boolean exactHttpRequest = false;
@@ -31,25 +31,25 @@ public class HealthMonitorHttp  {
     private String httpRequest = "GET / HTTP/1.0";
 
     @JsonProperty("http_request_body")
-    private String httpRequestBody = null;
+    private String httpRequestBody;
 
     @JsonProperty("http_response")
-    private String httpResponse = null;
+    private String httpResponse;
 
     @JsonProperty("http_response_code")
-    private List<String> httpResponseCode = null;
+    private List<String> httpResponseCode;
 
     @JsonProperty("maintenance_code")
-    private List<Integer> maintenanceCode = null;
+    private List<Integer> maintenanceCode;
 
     @JsonProperty("maintenance_response")
-    private String maintenanceResponse = null;
+    private String maintenanceResponse;
 
     @JsonProperty("response_size")
-    private Integer responseSize = null;
+    private Integer responseSize;
 
     @JsonProperty("ssl_attributes")
-    private HealthMonitorSSLAttributes sslAttributes = null;
+    private HealthMonitorSSLAttributes sslAttributes;
 
 
 

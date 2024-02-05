@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ImageEventMap  {
     @JsonProperty("nodes_events")
-    private List<ImageEvent> nodesEvents = null;
+    private List<ImageEvent> nodesEvents;
 
     @JsonProperty("sub_events")
-    private List<ImageEvent> subEvents = null;
+    private List<ImageEvent> subEvents;
 
     @JsonProperty("task_name")
-    private String taskName = null;
+    private String taskName;
 
 
     /**

@@ -22,34 +22,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ServerAutoScaleOutInfo  {
     @JsonProperty("alertconfig_name")
-    private String alertconfigName = null;
+    private String alertconfigName;
 
     @JsonProperty("alertconfig_ref")
-    private String alertconfigRef = null;
+    private String alertconfigRef;
 
     @JsonProperty("available_capacity")
-    private Float availableCapacity = null;
+    private Float availableCapacity;
 
     @JsonProperty("load")
-    private Float load = null;
+    private Float load;
 
     @JsonProperty("num_scaleout_servers")
-    private Integer numScaleoutServers = null;
+    private Integer numScaleoutServers;
 
     @JsonProperty("num_servers_up")
-    private Integer numServersUp = null;
+    private Integer numServersUp;
 
     @JsonProperty("pool_ref")
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("reason_code")
     private String reasonCode = "SYSERR_SUCCESS";
 
     @JsonProperty("scheduled_desired_capacity")
-    private Integer scheduledDesiredCapacity = null;
+    private Integer scheduledDesiredCapacity;
 
 
 

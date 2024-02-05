@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RouteInfo  {
     @JsonProperty("if_name")
-    private String ifName = null;
+    private String ifName;
 
     @JsonProperty("network_namespace")
     private String networkNamespace = "HOST_NAMESPACE";
 
     @JsonProperty("nexthop")
-    private IpAddr nexthop = null;
+    private IpAddr nexthop;
 
     @JsonProperty("subnet")
-    private IpAddrPrefix subnet = null;
+    private IpAddrPrefix subnet;
 
 
 

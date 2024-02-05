@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsRuleActionPoolSwitching  {
     @JsonProperty("pool_group_ref")
-    private String poolGroupRef = null;
+    private String poolGroupRef;
 
     @JsonProperty("pool_ref")
-    private String poolRef = null;
+    private String poolRef;
 
 
 

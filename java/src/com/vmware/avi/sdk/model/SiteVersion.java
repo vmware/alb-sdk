@@ -22,43 +22,43 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SiteVersion extends AviRestResource  {
     @JsonProperty("datetime")
-    private String datetime = null;
+    private String datetime;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("prev_target_version")
-    private Integer prevTargetVersion = null;
+    private Integer prevTargetVersion;
 
     @JsonProperty("replication_state")
-    private String replicationState = null;
+    private String replicationState;
 
     @JsonProperty("site_id")
-    private String siteId = null;
+    private String siteId;
 
     @JsonProperty("target_timeline")
-    private String targetTimeline = null;
+    private String targetTimeline;
 
     @JsonProperty("target_version")
-    private Integer targetVersion = null;
+    private Integer targetVersion;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("timeline")
-    private String timeline = null;
+    private String timeline;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("version")
-    private Integer version = null;
+    private Integer version;
 
     @JsonProperty("version_type")
-    private String versionType = null;
+    private String versionType;
 
 
 

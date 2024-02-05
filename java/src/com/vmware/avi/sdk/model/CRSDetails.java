@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CRSDetails  {
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("release_date")
-    private String releaseDate = null;
+    private String releaseDate;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("version")
-    private String version = null;
+    private String version;
 
 
 

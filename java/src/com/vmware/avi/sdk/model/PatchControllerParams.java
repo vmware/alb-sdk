@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PatchControllerParams  {
     @JsonProperty("controller_patch_ref")
-    private String controllerPatchRef = null;
+    private String controllerPatchRef;
 
     @JsonProperty("prechecks_only")
     private Boolean prechecksOnly = false;

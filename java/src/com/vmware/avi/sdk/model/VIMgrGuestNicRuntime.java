@@ -22,37 +22,37 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VIMgrGuestNicRuntime  {
     @JsonProperty("avi_internal_network")
-    private Boolean aviInternalNetwork = null;
+    private Boolean aviInternalNetwork;
 
     @JsonProperty("connected")
-    private Boolean connected = null;
+    private Boolean connected;
 
     @JsonProperty("del_pending")
     private Boolean delPending = false;
 
     @JsonProperty("guest_ip")
-    private List<VIMgrIPSubnetRuntime> guestIp = null;
+    private List<VIMgrIPSubnetRuntime> guestIp;
 
     @JsonProperty("label")
     private String label = "Unknown";
 
     @JsonProperty("mac_addr")
-    private String macAddr = null;
+    private String macAddr;
 
     @JsonProperty("mgmt_vnic")
-    private Boolean mgmtVnic = null;
+    private Boolean mgmtVnic;
 
     @JsonProperty("network_name")
-    private String networkName = null;
+    private String networkName;
 
     @JsonProperty("network_uuid")
-    private String networkUuid = null;
+    private String networkUuid;
 
     @JsonProperty("os_port_uuid")
-    private String osPortUuid = null;
+    private String osPortUuid;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
 

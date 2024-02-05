@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricsMissingDataInterval  {
     @JsonProperty("end")
-    private String end = null;
+    private String end;
 
     @JsonProperty("start")
-    private String start = null;
+    private String start;
 
 
 

@@ -25,52 +25,52 @@ public class IpamDnsProviderProfile extends AviRestResource  {
     private Boolean allocateIpInVrf = false;
 
     @JsonProperty("aws_profile")
-    private IpamDnsAwsProfile awsProfile = null;
+    private IpamDnsAwsProfile awsProfile;
 
     @JsonProperty("azure_profile")
-    private IpamDnsAzureProfile azureProfile = null;
+    private IpamDnsAzureProfile azureProfile;
 
     @JsonProperty("custom_profile")
-    private IpamDnsCustomProfile customProfile = null;
+    private IpamDnsCustomProfile customProfile;
 
     @JsonProperty("gcp_profile")
-    private IpamDnsGCPProfile gcpProfile = null;
+    private IpamDnsGCPProfile gcpProfile;
 
     @JsonProperty("infoblox_profile")
-    private IpamDnsInfobloxProfile infobloxProfile = null;
+    private IpamDnsInfobloxProfile infobloxProfile;
 
     @JsonProperty("internal_profile")
-    private IpamDnsInternalProfile internalProfile = null;
+    private IpamDnsInternalProfile internalProfile;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("oci_profile")
-    private IpamDnsOCIProfile ociProfile = null;
+    private IpamDnsOCIProfile ociProfile;
 
     @JsonProperty("openstack_profile")
-    private IpamDnsOpenstackProfile openstackProfile = null;
+    private IpamDnsOpenstackProfile openstackProfile;
 
     @JsonProperty("proxy_configuration")
-    private ProxyConfiguration proxyConfiguration = null;
+    private ProxyConfiguration proxyConfiguration;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("tencent_profile")
-    private IpamDnsTencentProfile tencentProfile = null;
+    private IpamDnsTencentProfile tencentProfile;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

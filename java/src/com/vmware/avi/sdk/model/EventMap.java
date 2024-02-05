@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class EventMap  {
     @JsonProperty("nodes_events")
-    private List<UpgradeEvent> nodesEvents = null;
+    private List<UpgradeEvent> nodesEvents;
 
     @JsonProperty("sub_events")
-    private List<UpgradeEvent> subEvents = null;
+    private List<UpgradeEvent> subEvents;
 
     @JsonProperty("task")
-    private String task = null;
+    private String task;
 
     @JsonProperty("task_name")
-    private String taskName = null;
+    private String taskName;
 
 
     /**

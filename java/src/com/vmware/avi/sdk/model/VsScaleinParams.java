@@ -7,6 +7,7 @@ package com.vmware.avi.sdk.model;
 
 import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -21,19 +22,42 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VsScaleinParams extends AviRestResource  {
+    @JsonIgnore
+    private Boolean adminDown = false;
+
     @JsonProperty("from_se_ref")
-    private String fromSeRef = null;
+    private String fromSeRef;
 
     @JsonProperty("scalein_primary")
-    private Boolean scaleinPrimary = null;
+    private Boolean scaleinPrimary;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vip_id")
-    private String vipId = null;
+    private String vipId;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return adminDown
+     */
+    public Boolean getAdminDown() {
+        return adminDown;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param adminDown set the adminDown.
+     */
+    public void setAdminDown(Boolean  adminDown) {
+        this.adminDown = adminDown;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -132,6 +156,7 @@ public class VsScaleinParams extends AviRestResource  {
       return   Objects.equals(this.uuid, objVsScaleinParams.uuid)&&
   Objects.equals(this.fromSeRef, objVsScaleinParams.fromSeRef)&&
   Objects.equals(this.scaleinPrimary, objVsScaleinParams.scaleinPrimary)&&
+  Objects.equals(this.adminDown, objVsScaleinParams.adminDown)&&
   Objects.equals(this.vipId, objVsScaleinParams.vipId);
     }
 
@@ -139,7 +164,8 @@ public class VsScaleinParams extends AviRestResource  {
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class VsScaleinParams {\n");
-                  sb.append("    fromSeRef: ").append(toIndentedString(fromSeRef)).append("\n");
+                  sb.append("    adminDown: ").append(toIndentedString(adminDown)).append("\n");
+                        sb.append("    fromSeRef: ").append(toIndentedString(fromSeRef)).append("\n");
                         sb.append("    scaleinPrimary: ").append(toIndentedString(scaleinPrimary)).append("\n");
                         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                         sb.append("    vipId: ").append(toIndentedString(vipId)).append("\n");

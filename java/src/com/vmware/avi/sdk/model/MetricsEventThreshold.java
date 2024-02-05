@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricsEventThreshold  {
     @JsonProperty("metrics_event_threshold_type")
-    private String metricsEventThresholdType = null;
+    private String metricsEventThresholdType;
 
     @JsonProperty("reset_threshold")
-    private Float resetThreshold = null;
+    private Float resetThreshold;
 
     @JsonProperty("watermark_thresholds")
-    private List<Integer> watermarkThresholds = null;
+    private List<Integer> watermarkThresholds;
 
 
 

@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BotMappingDecision  {
     @JsonProperty("mapping_name")
-    private String mappingName = null;
+    private String mappingName;
 
     @JsonProperty("mapping_rule_name")
-    private String mappingRuleName = null;
+    private String mappingRuleName;
 
 
 

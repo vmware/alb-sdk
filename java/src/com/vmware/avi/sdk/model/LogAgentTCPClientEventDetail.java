@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LogAgentTCPClientEventDetail  {
     @JsonProperty("error_code")
-    private String errorCode = null;
+    private String errorCode;
 
     @JsonProperty("error_reason")
-    private String errorReason = null;
+    private String errorReason;
 
     @JsonProperty("host")
-    private String host = null;
+    private String host;
 
     @JsonProperty("port")
-    private String port = null;
+    private String port;
 
 
 

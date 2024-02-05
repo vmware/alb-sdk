@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsZone  {
     @JsonProperty("admin_email")
-    private String adminEmail = null;
+    private String adminEmail;
 
     @JsonProperty("domain_name")
-    private String domainName = null;
+    private String domainName;
 
     @JsonProperty("name_server")
-    private String nameServer = null;
+    private String nameServer;
 
 
 

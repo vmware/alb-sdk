@@ -28,10 +28,10 @@ public class MarathonSeDeployment  {
     private String hostOs = "COREOS";
 
     @JsonProperty("resource_roles")
-    private List<String> resourceRoles = null;
+    private List<String> resourceRoles;
 
     @JsonProperty("uris")
-    private List<String> uris = null;
+    private List<String> uris;
 
 
 

@@ -22,34 +22,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RmBindVsSeEventDetails  {
     @JsonProperty("ip")
-    private String ip = null;
+    private String ip;
 
     @JsonProperty("ip6")
-    private String ip6 = null;
+    private String ip6;
 
     @JsonProperty("networks")
-    private List<String> networks = null;
+    private List<String> networks;
 
     @JsonProperty("primary")
-    private Boolean primary = null;
+    private Boolean primary;
 
     @JsonProperty("se_name")
-    private String seName = null;
+    private String seName;
 
     @JsonProperty("standby")
-    private Boolean standby = null;
+    private Boolean standby;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("vip_vnics")
-    private List<String> vipVnics = null;
+    private List<String> vipVnics;
 
     @JsonProperty("vs_name")
-    private String vsName = null;
+    private String vsName;
 
     @JsonProperty("vs_uuid")
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

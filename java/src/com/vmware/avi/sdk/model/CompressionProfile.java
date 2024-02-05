@@ -28,13 +28,13 @@ public class CompressionProfile  {
     private Integer bufSize = 4096;
 
     @JsonProperty("compressible_content_ref")
-    private String compressibleContentRef = null;
+    private String compressibleContentRef;
 
     @JsonProperty("compression")
     private Boolean compression = false;
 
     @JsonProperty("filter")
-    private List<CompressionFilter> filter = null;
+    private List<CompressionFilter> filter;
 
     @JsonProperty("hash_size")
     private Integer hashSize = 16384;
@@ -55,7 +55,7 @@ public class CompressionProfile  {
     private Integer minLength = 128;
 
     @JsonProperty("mobile_str_ref")
-    private String mobileStrRef = null;
+    private String mobileStrRef;
 
     @JsonProperty("remove_accept_encoding_header")
     private Boolean removeAcceptEncodingHeader = true;

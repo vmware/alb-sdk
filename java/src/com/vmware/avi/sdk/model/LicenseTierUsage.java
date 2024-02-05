@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LicenseTierUsage  {
     @JsonProperty("tier")
-    private String tier = null;
+    private String tier;
 
     @JsonProperty("usage")
-    private LicenseUsage usage = null;
+    private LicenseUsage usage;
 
 
 

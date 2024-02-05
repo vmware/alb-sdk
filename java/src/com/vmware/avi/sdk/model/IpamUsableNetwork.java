@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IpamUsableNetwork  {
     @JsonProperty("labels")
-    private List<KeyValueTuple> labels = null;
+    private List<KeyValueTuple> labels;
 
     @JsonProperty("nw_ref")
-    private String nwRef = null;
+    private String nwRef;
 
 
     /**

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SingleOptionalStringField  {
     @JsonProperty("test_string")
-    private String testString = null;
+    private String testString;
 
 
 

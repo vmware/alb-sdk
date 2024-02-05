@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HealthMonitorUdp  {
     @JsonProperty("maintenance_response")
-    private String maintenanceResponse = null;
+    private String maintenanceResponse;
 
     @JsonProperty("udp_request")
-    private String udpRequest = null;
+    private String udpRequest;
 
     @JsonProperty("udp_response")
-    private String udpResponse = null;
+    private String udpResponse;
 
 
 

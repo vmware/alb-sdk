@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeHmEventServerDetails  {
     @JsonProperty("app_info")
-    private List<AppInfo> appInfo = null;
+    private List<AppInfo> appInfo;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("failure_code")
-    private String failureCode = null;
+    private String failureCode;
 
     @JsonProperty("hostname")
-    private String hostname = null;
+    private String hostname;
 
     @JsonProperty("ip")
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("port")
-    private Integer port = null;
+    private Integer port;
 
     @JsonProperty("shm")
-    private List<SeHmEventShmDetails> shm = null;
+    private List<SeHmEventShmDetails> shm;
 
     @JsonProperty("ssl_error_code")
-    private String sslErrorCode = null;
+    private String sslErrorCode;
 
 
     /**

@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IpAddr  {
     @JsonProperty("addr")
-    private String addr = null;
+    private String addr;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
 

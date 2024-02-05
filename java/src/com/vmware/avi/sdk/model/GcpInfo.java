@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GcpInfo  {
     @JsonProperty("hostname")
-    private String hostname = null;
+    private String hostname;
 
     @JsonProperty("machine_type")
-    private String machineType = null;
+    private String machineType;
 
     @JsonProperty("network")
-    private String network = null;
+    private String network;
 
     @JsonProperty("project")
-    private String project = null;
+    private String project;
 
     @JsonProperty("subnet")
-    private String subnet = null;
+    private String subnet;
 
     @JsonProperty("zone")
-    private String zone = null;
+    private String zone;
 
 
 

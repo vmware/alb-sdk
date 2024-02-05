@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CloudProperties extends AviRestResource  {
     @JsonProperty("cc_props")
-    private CC_Properties ccProps = null;
+    private CC_Properties ccProps;
 
     @JsonProperty("cc_vtypes")
-    private List<String> ccVtypes = null;
+    private List<String> ccVtypes;
 
     @JsonProperty("hyp_props")
-    private List<Hypervisor_Properties> hypProps = null;
+    private List<Hypervisor_Properties> hypProps;
 
     @JsonProperty("info")
-    private List<CloudInfo> info = null;
+    private List<CloudInfo> info;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

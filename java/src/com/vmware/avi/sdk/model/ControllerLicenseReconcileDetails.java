@@ -22,34 +22,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ControllerLicenseReconcileDetails  {
     @JsonProperty("new_available_service_cores")
-    private Float newAvailableServiceCores = null;
+    private Float newAvailableServiceCores;
 
     @JsonProperty("new_consumed_service_cores")
-    private Float newConsumedServiceCores = null;
+    private Float newConsumedServiceCores;
 
     @JsonProperty("new_escrow_service_cores")
-    private Float newEscrowServiceCores = null;
+    private Float newEscrowServiceCores;
 
     @JsonProperty("new_remaining_service_cores")
-    private Float newRemainingServiceCores = null;
+    private Float newRemainingServiceCores;
 
     @JsonProperty("old_available_service_cores")
-    private Float oldAvailableServiceCores = null;
+    private Float oldAvailableServiceCores;
 
     @JsonProperty("old_consumed_service_cores")
-    private Float oldConsumedServiceCores = null;
+    private Float oldConsumedServiceCores;
 
     @JsonProperty("old_escrow_service_cores")
-    private Float oldEscrowServiceCores = null;
+    private Float oldEscrowServiceCores;
 
     @JsonProperty("old_remaining_service_cores")
-    private Float oldRemainingServiceCores = null;
+    private Float oldRemainingServiceCores;
 
     @JsonProperty("tenant_uuid")
-    private String tenantUuid = null;
+    private String tenantUuid;
 
     @JsonProperty("tier")
-    private String tier = null;
+    private String tier;
 
 
 

@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IpAddrMatch  {
     @JsonProperty("addrs")
-    private List<IpAddr> addrs = null;
+    private List<IpAddr> addrs;
 
     @JsonProperty("group_refs")
-    private List<String> groupRefs = null;
+    private List<String> groupRefs;
 
     @JsonProperty("match_criteria")
-    private String matchCriteria = null;
+    private String matchCriteria;
 
     @JsonProperty("prefixes")
-    private List<IpAddrPrefix> prefixes = null;
+    private List<IpAddrPrefix> prefixes;
 
     @JsonProperty("ranges")
-    private List<IpAddrRange> ranges = null;
+    private List<IpAddrRange> ranges;
 
 
     /**

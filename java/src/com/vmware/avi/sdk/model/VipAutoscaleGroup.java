@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VipAutoscaleGroup  {
     @JsonProperty("configuration")
-    private VipAutoscaleConfiguration configuration = null;
+    private VipAutoscaleConfiguration configuration;
 
     @JsonProperty("policy")
-    private VipAutoscalePolicy policy = null;
+    private VipAutoscalePolicy policy;
 
 
 

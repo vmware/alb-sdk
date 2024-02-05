@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GetLogRecommendations  {
     @JsonProperty("requests")
-    private List<RecommendationRequest> requests = null;
+    private List<RecommendationRequest> requests;
 
 
     /**

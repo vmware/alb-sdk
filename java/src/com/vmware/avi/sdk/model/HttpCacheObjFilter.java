@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HttpCacheObjFilter  {
     @JsonProperty("key")
-    private String key = null;
+    private String key;
 
     @JsonProperty("raw_key")
-    private String rawKey = null;
+    private String rawKey;
 
     @JsonProperty("resource_name")
-    private String resourceName = null;
+    private String resourceName;
 
     @JsonProperty("resource_type")
-    private String resourceType = null;
+    private String resourceType;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
 

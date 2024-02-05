@@ -22,43 +22,43 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class L7limits  {
     @JsonProperty("http_policies_per_vs")
-    private Integer httpPoliciesPerVs = null;
+    private Integer httpPoliciesPerVs;
 
     @JsonProperty("num_compression_filters")
-    private Integer numCompressionFilters = null;
+    private Integer numCompressionFilters;
 
     @JsonProperty("num_custom_str")
-    private Integer numCustomStr = null;
+    private Integer numCustomStr;
 
     @JsonProperty("num_matches_per_rule")
-    private Integer numMatchesPerRule = null;
+    private Integer numMatchesPerRule;
 
     @JsonProperty("num_rules_per_evh_host")
-    private Integer numRulesPerEvhHost = null;
+    private Integer numRulesPerEvhHost;
 
     @JsonProperty("num_rules_per_http_policy")
-    private Integer numRulesPerHttpPolicy = null;
+    private Integer numRulesPerHttpPolicy;
 
     @JsonProperty("num_strgroups_per_match")
-    private Integer numStrgroupsPerMatch = null;
+    private Integer numStrgroupsPerMatch;
 
     @JsonProperty("str_cache_mime")
-    private Integer strCacheMime = null;
+    private Integer strCacheMime;
 
     @JsonProperty("str_groups_cache_mime")
-    private Integer strGroupsCacheMime = null;
+    private Integer strGroupsCacheMime;
 
     @JsonProperty("str_groups_no_cache_mime")
-    private Integer strGroupsNoCacheMime = null;
+    private Integer strGroupsNoCacheMime;
 
     @JsonProperty("str_groups_no_cache_uri")
-    private Integer strGroupsNoCacheUri = null;
+    private Integer strGroupsNoCacheUri;
 
     @JsonProperty("str_no_cache_mime")
-    private Integer strNoCacheMime = null;
+    private Integer strNoCacheMime;
 
     @JsonProperty("str_no_cache_uri")
-    private Integer strNoCacheUri = null;
+    private Integer strNoCacheUri;
 
 
 

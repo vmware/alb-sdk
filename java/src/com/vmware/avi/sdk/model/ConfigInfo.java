@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ConfigInfo  {
     @JsonProperty("queue")
-    private List<VersionInfo> queue = null;
+    private List<VersionInfo> queue;
 
     @JsonProperty("reader_count")
-    private Integer readerCount = null;
+    private Integer readerCount;
 
     @JsonProperty("state")
-    private String state = null;
+    private String state;
 
     @JsonProperty("writer_count")
-    private Integer writerCount = null;
+    private Integer writerCount;
 
 
     /**

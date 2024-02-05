@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NetworkSubnetInfo  {
     @JsonProperty("free")
-    private Integer free = null;
+    private Integer free;
 
     @JsonProperty("network_name")
-    private String networkName = null;
+    private String networkName;
 
     @JsonProperty("network_uuid")
-    private String networkUuid = null;
+    private String networkUuid;
 
     @JsonProperty("subnet")
-    private IpAddrPrefix subnet = null;
+    private IpAddrPrefix subnet;
 
     @JsonProperty("total")
-    private Integer total = null;
+    private Integer total;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("used")
-    private Integer used = null;
+    private Integer used;
 
 
 

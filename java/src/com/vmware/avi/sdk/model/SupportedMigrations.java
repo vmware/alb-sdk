@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SupportedMigrations  {
     @JsonProperty("api_version")
-    private String apiVersion = null;
+    private String apiVersion;
 
     @JsonProperty("controller_host_min_free_disk_size")
     private Integer controllerHostMinFreeDiskSize = 10;
@@ -46,7 +46,7 @@ public class SupportedMigrations  {
     private Integer maxActiveVersions = 2;
 
     @JsonProperty("min_supported_api_version")
-    private String minSupportedApiVersion = null;
+    private String minSupportedApiVersion;
 
     @JsonProperty("podman_controller_host_min_free_disk_size")
     private Integer podmanControllerHostMinFreeDiskSize = 24;
@@ -76,7 +76,7 @@ public class SupportedMigrations  {
     private Integer seMinTotalDisk = 10;
 
     @JsonProperty("versions")
-    private List<String> versions = null;
+    private List<String> versions;
 
 
 

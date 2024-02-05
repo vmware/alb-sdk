@@ -25,61 +25,61 @@ public class DynamicDnsRecord extends AviRestResource  {
     private String algorithm = "DNS_RECORD_RESPONSE_ROUND_ROBIN";
 
     @JsonProperty("cname")
-    private DnsCnameRdata cname = null;
+    private DnsCnameRdata cname;
 
     @JsonProperty("delegated")
     private Boolean delegated = false;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("dns_vs_uuid")
-    private String dnsVsUuid = null;
+    private String dnsVsUuid;
 
     @JsonProperty("fqdn")
-    private String fqdn = null;
+    private String fqdn;
 
     @JsonProperty("ip6_address")
-    private List<DnsAAAARdata> ip6Address = null;
+    private List<DnsAAAARdata> ip6Address;
 
     @JsonProperty("ip_address")
-    private List<DnsARdata> ipAddress = null;
+    private List<DnsARdata> ipAddress;
 
     @JsonProperty("metadata")
-    private String metadata = null;
+    private String metadata;
 
     @JsonProperty("mx_records")
-    private List<DnsMxRdata> mxRecords = null;
+    private List<DnsMxRdata> mxRecords;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("ns")
-    private List<DnsNsRdata> ns = null;
+    private List<DnsNsRdata> ns;
 
     @JsonProperty("num_records_in_response")
-    private Integer numRecordsInResponse = null;
+    private Integer numRecordsInResponse;
 
     @JsonProperty("service_locators")
-    private List<DnsSrvRdata> serviceLocators = null;
+    private List<DnsSrvRdata> serviceLocators;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("ttl")
-    private Integer ttl = null;
+    private Integer ttl;
 
     @JsonProperty("txt_records")
-    private List<DnsTxtRdata> txtRecords = null;
+    private List<DnsTxtRdata> txtRecords;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("wildcard_match")
     private Boolean wildcardMatch = false;

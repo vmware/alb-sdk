@@ -25,19 +25,19 @@ public class PoolGroupDeploymentPolicy extends AviRestResource  {
     private Boolean autoDisableOldProdPools = true;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("evaluation_duration")
     private Integer evaluationDuration = 300;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("rules")
-    private List<PGDeploymentRule> rules = null;
+    private List<PGDeploymentRule> rules;
 
     @JsonProperty("scheme")
     private String scheme = "BLUE_GREEN";
@@ -46,7 +46,7 @@ public class PoolGroupDeploymentPolicy extends AviRestResource  {
     private Integer targetTestTrafficRatio = 100;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("test_traffic_ratio_rampup")
     private Integer testTrafficRatioRampup = 100;
@@ -55,10 +55,10 @@ public class PoolGroupDeploymentPolicy extends AviRestResource  {
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("webhook_ref")
-    private String webhookRef = null;
+    private String webhookRef;
 
 
 

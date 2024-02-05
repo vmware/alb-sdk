@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UpgradeOpsState  {
     @JsonProperty("last_changed_time")
-    private TimeStamp lastChangedTime = null;
+    private TimeStamp lastChangedTime;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("rebooted")
-    private Boolean rebooted = null;
+    private Boolean rebooted;
 
     @JsonProperty("state")
-    private String state = null;
+    private String state;
 
 
 

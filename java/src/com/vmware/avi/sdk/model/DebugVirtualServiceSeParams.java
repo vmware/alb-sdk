@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DebugVirtualServiceSeParams  {
     @JsonProperty("se_refs")
-    private List<String> seRefs = null;
+    private List<String> seRefs;
 
 
     /**

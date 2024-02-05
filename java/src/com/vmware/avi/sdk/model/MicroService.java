@@ -22,37 +22,37 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MicroService extends AviRestResource  {
     @JsonProperty("application_name")
-    private String applicationName = null;
+    private String applicationName;
 
     @JsonProperty("cloud_config_cksum")
-    private String cloudConfigCksum = null;
+    private String cloudConfigCksum;
 
     @JsonProperty("containers")
-    private List<MicroServiceContainer> containers = null;
+    private List<MicroServiceContainer> containers;
 
     @JsonProperty("created_by")
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("ip_list")
-    private Boolean ipList = null;
+    private Boolean ipList;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("orchestrator_name")
-    private String orchestratorName = null;
+    private String orchestratorName;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

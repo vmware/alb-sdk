@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DosRateLimitProfile  {
     @JsonProperty("dos_profile")
-    private DosThresholdProfile dosProfile = null;
+    private DosThresholdProfile dosProfile;
 
     @JsonProperty("rl_profile")
-    private RateLimiterProfile rlProfile = null;
+    private RateLimiterProfile rlProfile;
 
 
 

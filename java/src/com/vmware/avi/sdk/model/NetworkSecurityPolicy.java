@@ -22,40 +22,40 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NetworkSecurityPolicy extends AviRestResource  {
     @JsonProperty("cloud_config_cksum")
-    private String cloudConfigCksum = null;
+    private String cloudConfigCksum;
 
     @JsonProperty("created_by")
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("geo_db_ref")
-    private String geoDbRef = null;
+    private String geoDbRef;
 
     @JsonProperty("internal")
-    private Boolean internal = null;
+    private Boolean internal;
 
     @JsonProperty("ip_reputation_db_ref")
-    private String ipReputationDbRef = null;
+    private String ipReputationDbRef;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("rules")
-    private List<NetworkSecurityRule> rules = null;
+    private List<NetworkSecurityRule> rules;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

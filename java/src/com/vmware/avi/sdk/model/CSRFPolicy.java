@@ -25,16 +25,16 @@ public class CSRFPolicy extends AviRestResource  {
     private String cookieName = "X-CSRF-TOKEN";
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("rules")
-    private List<CSRFRule> rules = null;
+    private List<CSRFRule> rules;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("token_validity_time_min")
     private Integer tokenValidityTimeMin = 360;
@@ -43,7 +43,7 @@ public class CSRFPolicy extends AviRestResource  {
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeReconcileDetails  {
     @JsonProperty("new_service_cores")
-    private Float newServiceCores = null;
+    private Float newServiceCores;
 
     @JsonProperty("old_service_cores")
-    private Float oldServiceCores = null;
+    private Float oldServiceCores;
 
     @JsonProperty("se_uuid")
-    private String seUuid = null;
+    private String seUuid;
 
     @JsonProperty("tenant_uuid")
-    private String tenantUuid = null;
+    private String tenantUuid;
 
     @JsonProperty("tier")
-    private String tier = null;
+    private String tier;
 
 
 

@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CloudTenantCleanup  {
     @JsonProperty("id")
-    private String id = null;
+    private String id;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("num_ports")
-    private Integer numPorts = null;
+    private Integer numPorts;
 
     @JsonProperty("num_se")
-    private Integer numSe = null;
+    private Integer numSe;
 
     @JsonProperty("num_secgrp")
-    private Integer numSecgrp = null;
+    private Integer numSecgrp;
 
     @JsonProperty("num_svrgrp")
-    private Integer numSvrgrp = null;
+    private Integer numSvrgrp;
 
 
 

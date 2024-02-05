@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AWSASGNotifDetails  {
     @JsonProperty("asg_name")
-    private String asgName = null;
+    private String asgName;
 
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("event_type")
-    private String eventType = null;
+    private String eventType;
 
     @JsonProperty("instance_id")
-    private String instanceId = null;
+    private String instanceId;
 
     @JsonProperty("instance_ip_addr")
-    private IpAddr instanceIpAddr = null;
+    private IpAddr instanceIpAddr;
 
     @JsonProperty("pool_ref")
-    private String poolRef = null;
+    private String poolRef;
 
     @JsonProperty("vpc_id")
-    private String vpcId = null;
+    private String vpcId;
 
 
 

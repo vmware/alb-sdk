@@ -22,34 +22,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Tenant extends AviRestResource  {
     @JsonProperty("attrs")
-    private List<KeyValue> attrs = null;
+    private List<KeyValue> attrs;
 
     @JsonProperty("config_settings")
-    private TenantConfiguration configSettings = null;
+    private TenantConfiguration configSettings;
 
     @JsonProperty("created_by")
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("enforce_label_group")
     private Boolean enforceLabelGroup = false;
 
     @JsonProperty("label_group_refs")
-    private List<String> labelGroupRefs = null;
+    private List<String> labelGroupRefs;
 
     @JsonProperty("local")
     private Boolean local = true;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
     /**

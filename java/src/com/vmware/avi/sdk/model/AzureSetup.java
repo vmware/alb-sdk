@@ -22,34 +22,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AzureSetup  {
     @JsonProperty("alb_id")
-    private String albId = null;
+    private String albId;
 
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("nic_id")
-    private String nicId = null;
+    private String nicId;
 
     @JsonProperty("reason")
-    private String reason = null;
+    private String reason;
 
     @JsonProperty("resource_group")
-    private String resourceGroup = null;
+    private String resourceGroup;
 
     @JsonProperty("status")
-    private String status = null;
+    private String status;
 
     @JsonProperty("subscription_id")
-    private String subscriptionId = null;
+    private String subscriptionId;
 
     @JsonProperty("vips")
-    private List<IpAddr> vips = null;
+    private List<IpAddr> vips;
 
     @JsonProperty("vnet_id")
-    private String vnetId = null;
+    private String vnetId;
 
     @JsonProperty("vs_uuids")
-    private List<String> vsUuids = null;
+    private List<String> vsUuids;
 
 
 

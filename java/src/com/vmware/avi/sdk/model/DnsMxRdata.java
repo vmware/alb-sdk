@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsMxRdata  {
     @JsonProperty("host")
-    private String host = null;
+    private String host;
 
     @JsonProperty("priority")
-    private Integer priority = null;
+    private Integer priority;
 
 
 

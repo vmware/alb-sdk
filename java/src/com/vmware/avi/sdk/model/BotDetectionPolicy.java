@@ -22,46 +22,46 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BotDetectionPolicy extends AviRestResource  {
     @JsonProperty("allow_list")
-    private BotAllowList allowList = null;
+    private BotAllowList allowList;
 
     @JsonProperty("client_behavior_detector")
-    private BotConfigClientBehavior clientBehaviorDetector = null;
+    private BotConfigClientBehavior clientBehaviorDetector;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("ip_location_detector")
-    private BotConfigIPLocation ipLocationDetector = null;
+    private BotConfigIPLocation ipLocationDetector;
 
     @JsonProperty("ip_reputation_detector")
-    private BotConfigIPReputation ipReputationDetector = null;
+    private BotConfigIPReputation ipReputationDetector;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("system_bot_mapping_ref")
-    private String systemBotMappingRef = null;
+    private String systemBotMappingRef;
 
     @JsonProperty("system_consolidator_ref")
-    private String systemConsolidatorRef = null;
+    private String systemConsolidatorRef;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("user_agent_detector")
-    private BotConfigUserAgent userAgentDetector = null;
+    private BotConfigUserAgent userAgentDetector;
 
     @JsonProperty("user_bot_mapping_ref")
-    private String userBotMappingRef = null;
+    private String userBotMappingRef;
 
     @JsonProperty("user_consolidator_ref")
-    private String userConsolidatorRef = null;
+    private String userConsolidatorRef;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

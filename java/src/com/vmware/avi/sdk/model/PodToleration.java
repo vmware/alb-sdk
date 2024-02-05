@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PodToleration  {
     @JsonProperty("effect")
-    private String effect = null;
+    private String effect;
 
     @JsonProperty("key")
-    private String key = null;
+    private String key;
 
     @JsonProperty("operator")
     private String operator = "EQUAL";
 
     @JsonProperty("toleration_seconds")
-    private Integer tolerationSeconds = null;
+    private Integer tolerationSeconds;
 
     @JsonProperty("value")
-    private String value = null;
+    private String value;
 
 
 

@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ReportDetail  {
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("node_ref")
-    private String nodeRef = null;
+    private String nodeRef;
 
     @JsonProperty("node_type")
-    private String nodeType = null;
+    private String nodeType;
 
     @JsonProperty("obj_cloud_ref")
-    private String objCloudRef = null;
+    private String objCloudRef;
 
     @JsonProperty("system_readiness")
-    private UpgradeReadinessCheckObj systemReadiness = null;
+    private UpgradeReadinessCheckObj systemReadiness;
 
 
 

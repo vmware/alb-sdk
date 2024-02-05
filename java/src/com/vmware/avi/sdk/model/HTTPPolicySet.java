@@ -22,46 +22,46 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HTTPPolicySet extends AviRestResource  {
     @JsonProperty("cloud_config_cksum")
-    private String cloudConfigCksum = null;
+    private String cloudConfigCksum;
 
     @JsonProperty("created_by")
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("geo_db_ref")
-    private String geoDbRef = null;
+    private String geoDbRef;
 
     @JsonProperty("http_request_policy")
-    private HTTPRequestPolicy httpRequestPolicy = null;
+    private HTTPRequestPolicy httpRequestPolicy;
 
     @JsonProperty("http_response_policy")
-    private HTTPResponsePolicy httpResponsePolicy = null;
+    private HTTPResponsePolicy httpResponsePolicy;
 
     @JsonProperty("http_security_policy")
-    private HTTPSecurityPolicy httpSecurityPolicy = null;
+    private HTTPSecurityPolicy httpSecurityPolicy;
 
     @JsonProperty("ip_reputation_db_ref")
-    private String ipReputationDbRef = null;
+    private String ipReputationDbRef;
 
     @JsonProperty("is_internal_policy")
     private Boolean isInternalPolicy = false;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

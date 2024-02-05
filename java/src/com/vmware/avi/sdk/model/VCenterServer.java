@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VCenterServer extends AviRestResource  {
     @JsonProperty("cloud_ref")
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("content_lib")
-    private ContentLibConfig contentLib = null;
+    private ContentLibConfig contentLib;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vcenter_credentials_ref")
-    private String vcenterCredentialsRef = null;
+    private String vcenterCredentialsRef;
 
     @JsonProperty("vcenter_url")
-    private String vcenterUrl = null;
+    private String vcenterUrl;
 
 
 

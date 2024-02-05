@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OIDCConfig  {
     @JsonProperty("oidc_enable")
-    private Boolean oidcEnable = null;
+    private Boolean oidcEnable;
 
     @JsonProperty("profile")
     private Boolean profile = true;
 
     @JsonProperty("userinfo")
-    private Boolean userinfo = null;
+    private Boolean userinfo;
 
 
 

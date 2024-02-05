@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CloudVnicChange  {
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("mac_addrs")
-    private List<String> macAddrs = null;
+    private List<String> macAddrs;
 
     @JsonProperty("se_vm_uuid")
-    private String seVmUuid = null;
+    private String seVmUuid;
 
     @JsonProperty("vnics")
-    private List<CC_VnicInfo> vnics = null;
+    private List<CC_VnicInfo> vnics;
 
     @JsonProperty("vtype")
-    private String vtype = null;
+    private String vtype;
 
 
 

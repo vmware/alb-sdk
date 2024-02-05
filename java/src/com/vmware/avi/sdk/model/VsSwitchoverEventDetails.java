@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VsSwitchoverEventDetails  {
     @JsonProperty("error_message")
-    private String errorMessage = null;
+    private String errorMessage;
 
     @JsonProperty("ip")
-    private String ip = null;
+    private String ip;
 
     @JsonProperty("ip6")
-    private String ip6 = null;
+    private String ip6;
 
     @JsonProperty("rpc_status")
-    private Integer rpcStatus = null;
+    private Integer rpcStatus;
 
     @JsonProperty("se_assigned")
-    private List<VipSeAssigned> seAssigned = null;
+    private List<VipSeAssigned> seAssigned;
 
     @JsonProperty("se_requested")
-    private VirtualServiceResource seRequested = null;
+    private VirtualServiceResource seRequested;
 
     @JsonProperty("vs_uuid")
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

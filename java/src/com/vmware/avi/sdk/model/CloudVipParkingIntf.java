@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CloudVipParkingIntf  {
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("intf_id")
-    private String intfId = null;
+    private String intfId;
 
     @JsonProperty("subnet_id")
-    private String subnetId = null;
+    private String subnetId;
 
     @JsonProperty("vtype")
-    private String vtype = null;
+    private String vtype;
 
 
 

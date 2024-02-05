@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafApplicationSignatures  {
     @JsonProperty("provider_ref")
-    private String providerRef = null;
+    private String providerRef;
 
     @JsonProperty("rule_overrides")
-    private List<WafRuleOverrides> ruleOverrides = null;
+    private List<WafRuleOverrides> ruleOverrides;
 
     @JsonProperty("ruleset_version")
     private String rulesetVersion;
 
     @JsonProperty("selected_applications")
-    private List<String> selectedApplications = null;
+    private List<String> selectedApplications;
 
 
 

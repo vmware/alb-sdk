@@ -25,7 +25,7 @@ public class HTTPApplicationProfile  {
     private Boolean allowDotsInHeaderName = false;
 
     @JsonProperty("cache_config")
-    private HttpCacheConfig cacheConfig = null;
+    private HttpCacheConfig cacheConfig;
 
     @JsonProperty("client_body_timeout")
     private Integer clientBodyTimeout = 30000;
@@ -49,7 +49,7 @@ public class HTTPApplicationProfile  {
     private Boolean collectClientTlsFingerprint = false;
 
     @JsonProperty("compression_profile")
-    private CompressionProfile compressionProfile = null;
+    private CompressionProfile compressionProfile;
 
     @JsonProperty("connection_multiplexing_enabled")
     private Boolean connectionMultiplexingEnabled = true;
@@ -88,7 +88,7 @@ public class HTTPApplicationProfile  {
     private Boolean hstsSubdomainsEnabled;
 
     @JsonProperty("http2_profile")
-    private HTTP2ApplicationProfile http2Profile = null;
+    private HTTP2ApplicationProfile http2Profile;
 
     @JsonProperty("http_to_https")
     private Boolean httpToHttps = false;
@@ -142,7 +142,7 @@ public class HTTPApplicationProfile  {
     private Boolean passThroughXAccelHeaders = false;
 
     @JsonProperty("pki_profile_ref")
-    private String pkiProfileRef = null;
+    private String pkiProfileRef;
 
     @JsonProperty("post_accept_timeout")
     private Integer postAcceptTimeout = 30000;
@@ -160,16 +160,16 @@ public class HTTPApplicationProfile  {
     private Boolean serverSideRedirectToHttps = false;
 
     @JsonProperty("session_config")
-    private HTTPSessionConfig sessionConfig = null;
+    private HTTPSessionConfig sessionConfig;
 
     @JsonProperty("ssl_client_certificate_action")
-    private SSLClientCertificateAction sslClientCertificateAction = null;
+    private SSLClientCertificateAction sslClientCertificateAction;
 
     @JsonProperty("ssl_client_certificate_mode")
     private String sslClientCertificateMode = "SSL_CLIENT_CERTIFICATE_NONE";
 
     @JsonProperty("true_client_ip")
-    private TrueClientIPConfig trueClientIp = null;
+    private TrueClientIPConfig trueClientIp;
 
     @JsonProperty("use_app_keepalive_timeout")
     private Boolean useAppKeepaliveTimeout = false;

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BgpProfile  {
     @JsonProperty("community")
-    private List<String> community = null;
+    private List<String> community;
 
     @JsonProperty("hold_time")
     private Integer holdTime = 180;
@@ -31,25 +31,25 @@ public class BgpProfile  {
     private Boolean ibgp = true;
 
     @JsonProperty("ip_communities")
-    private List<IpCommunity> ipCommunities = null;
+    private List<IpCommunity> ipCommunities;
 
     @JsonProperty("keepalive_interval")
     private Integer keepaliveInterval = 60;
 
     @JsonProperty("local_as")
-    private Integer localAs = null;
+    private Integer localAs;
 
     @JsonProperty("local_preference")
-    private Integer localPreference = null;
+    private Integer localPreference;
 
     @JsonProperty("num_as_path_prepend")
-    private Integer numAsPathPrepend = null;
+    private Integer numAsPathPrepend;
 
     @JsonProperty("peers")
-    private List<BgpPeer> peers = null;
+    private List<BgpPeer> peers;
 
     @JsonProperty("routing_options")
-    private List<BgpRoutingOptions> routingOptions = null;
+    private List<BgpRoutingOptions> routingOptions;
 
     @JsonProperty("send_community")
     private Boolean sendCommunity = true;

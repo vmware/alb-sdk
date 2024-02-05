@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsRateLimiter  {
     @JsonProperty("action")
-    private DnsRuleRLAction action = null;
+    private DnsRuleRLAction action;
 
     @JsonProperty("rate_limiter_object")
-    private RateLimiter rateLimiterObject = null;
+    private RateLimiter rateLimiterObject;
 
 
 

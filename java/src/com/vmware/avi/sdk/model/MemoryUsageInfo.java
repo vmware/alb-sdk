@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MemoryUsageInfo  {
     @JsonProperty("mem_usage_on_nodes")
-    private List<MemoryUsagePerNode> memUsageOnNodes = null;
+    private List<MemoryUsagePerNode> memUsageOnNodes;
 
 
     /**

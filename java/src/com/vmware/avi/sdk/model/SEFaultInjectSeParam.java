@@ -25,7 +25,7 @@ public class SEFaultInjectSeParam  {
     private Integer core = 1000;
 
     @JsonProperty("obj_names")
-    private List<String> objNames = null;
+    private List<String> objNames;
 
     @JsonProperty("random_core")
     private Boolean randomCore = false;

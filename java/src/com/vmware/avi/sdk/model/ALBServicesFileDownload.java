@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ALBServicesFileDownload extends AviRestResource  {
     @JsonProperty("destination_dir")
-    private String destinationDir = null;
+    private String destinationDir;
 
     @JsonProperty("file_type")
-    private String fileType = null;
+    private String fileType;
 
     @JsonProperty("file_uri")
-    private String fileUri = null;
+    private String fileUri;
 
     @JsonProperty("message")
     private String message;
@@ -37,19 +37,19 @@ public class ALBServicesFileDownload extends AviRestResource  {
     private ALBServicesFileDownloadMetadata metadata;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("status")
     private String status;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

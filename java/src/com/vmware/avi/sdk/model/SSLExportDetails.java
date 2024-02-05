@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SSLExportDetails  {
     @JsonProperty("user")
-    private String user = null;
+    private String user;
 
 
 

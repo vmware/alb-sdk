@@ -28,10 +28,10 @@ public class OAuthResourceServer  {
     private Integer introspectionDataTimeout = 0;
 
     @JsonProperty("jwt_params")
-    private JWTValidationParams jwtParams = null;
+    private JWTValidationParams jwtParams;
 
     @JsonProperty("opaque_token_params")
-    private OpaqueTokenValidationParams opaqueTokenParams = null;
+    private OpaqueTokenValidationParams opaqueTokenParams;
 
 
 

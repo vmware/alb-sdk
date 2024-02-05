@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CaseConfig  {
     @JsonProperty("additional_emails")
-    private List<String> additionalEmails = null;
+    private List<String> additionalEmails;
 
     @JsonProperty("enable_auto_case_creation_on_controller_failure")
     private Boolean enableAutoCaseCreationOnControllerFailure = false;

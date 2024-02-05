@@ -22,64 +22,64 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Image extends AviRestResource  {
     @JsonProperty("cloud_info_values")
-    private List<ImageCloudData> cloudInfoValues = null;
+    private List<ImageCloudData> cloudInfoValues;
 
     @JsonProperty("controller_info")
-    private PackageDetails controllerInfo = null;
+    private PackageDetails controllerInfo;
 
     @JsonProperty("controller_patch_name")
-    private String controllerPatchName = null;
+    private String controllerPatchName;
 
     @JsonProperty("controller_patch_ref")
-    private String controllerPatchRef = null;
+    private String controllerPatchRef;
 
     @JsonProperty("duration")
-    private Integer duration = null;
+    private Integer duration;
 
     @JsonProperty("end_time")
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("events")
-    private List<ImageEventMap> events = null;
+    private List<ImageEventMap> events;
 
     @JsonProperty("fips_mode_transition_applicable")
     private Boolean fipsModeTransitionApplicable = true;
 
     @JsonProperty("img_state")
-    private ImageUploadOpsStatus imgState = null;
+    private ImageUploadOpsStatus imgState;
 
     @JsonProperty("migrations")
-    private SupportedMigrations migrations = null;
+    private SupportedMigrations migrations;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("progress")
     private Integer progress = 0;
 
     @JsonProperty("se_info")
-    private PackageDetails seInfo = null;
+    private PackageDetails seInfo;
 
     @JsonProperty("se_patch_name")
-    private String sePatchName = null;
+    private String sePatchName;
 
     @JsonProperty("se_patch_ref")
-    private String sePatchRef = null;
+    private String sePatchRef;
 
     @JsonProperty("start_time")
-    private String startTime = null;
+    private String startTime;
 
     @JsonProperty("tasks_completed")
     private Integer tasksCompleted = 0;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("total_tasks")
     private Integer totalTasks = 0;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
     @JsonProperty("uber_bundle")
     private Boolean uberBundle = false;
@@ -88,7 +88,7 @@ public class Image extends AviRestResource  {
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
     /**

@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbServiceDownResponse  {
     @JsonProperty("fallback_cname")
-    private String fallbackCname = null;
+    private String fallbackCname;
 
     @JsonProperty("fallback_ip")
-    private IpAddr fallbackIp = null;
+    private IpAddr fallbackIp;
 
     @JsonProperty("fallback_ip6")
-    private IpAddr fallbackIp6 = null;
+    private IpAddr fallbackIp6;
 
     @JsonProperty("type")
     private String type = "GSLB_SERVICE_DOWN_RESPONSE_NONE";

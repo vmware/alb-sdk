@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsServiceDomain  {
     @JsonProperty("domain_name")
-    private String domainName = null;
+    private String domainName;
 
     @JsonProperty("pass_through")
     private Boolean passThrough = true;
 
     @JsonProperty("record_ttl")
-    private Integer recordTtl = null;
+    private Integer recordTtl;
 
 
 

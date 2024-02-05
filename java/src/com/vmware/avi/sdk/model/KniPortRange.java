@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class KniPortRange  {
     @JsonProperty("protocol")
-    private String protocol = null;
+    private String protocol;
 
     @JsonProperty("range")
-    private PortRange range = null;
+    private PortRange range;
 
 
 

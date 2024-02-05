@@ -22,46 +22,46 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LicenseExpiryDetails  {
     @JsonProperty("backend_servers")
-    private Integer backendServers = null;
+    private Integer backendServers;
 
     @JsonProperty("burst_cores")
-    private Integer burstCores = null;
+    private Integer burstCores;
 
     @JsonProperty("cores")
-    private Integer cores = null;
+    private Integer cores;
 
     @JsonProperty("cpu_cores")
-    private Float cpuCores = null;
+    private Float cpuCores;
 
     @JsonProperty("expiry_at")
-    private String expiryAt = null;
+    private String expiryAt;
 
     @JsonProperty("license_id")
-    private String licenseId = null;
+    private String licenseId;
 
     @JsonProperty("license_tier")
-    private List<String> licenseTier = null;
+    private List<String> licenseTier;
 
     @JsonProperty("license_type")
-    private String licenseType = null;
+    private String licenseType;
 
     @JsonProperty("max_apps")
-    private Integer maxApps = null;
+    private Integer maxApps;
 
     @JsonProperty("max_ses")
-    private Integer maxSes = null;
+    private Integer maxSes;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("service_cores")
-    private Float serviceCores = null;
+    private Float serviceCores;
 
     @JsonProperty("sockets")
-    private Integer sockets = null;
+    private Integer sockets;
 
     @JsonProperty("throughput")
-    private Integer throughput = null;
+    private Integer throughput;
 
 
 

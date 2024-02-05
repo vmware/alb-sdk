@@ -22,70 +22,70 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NsxtSegmentRuntime extends AviRestResource  {
     @JsonProperty("cloud_ref")
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("dhcp6_ranges")
-    private List<String> dhcp6Ranges = null;
+    private List<String> dhcp6Ranges;
 
     @JsonProperty("dhcp_enabled")
     private Boolean dhcpEnabled = true;
 
     @JsonProperty("dhcp_ranges")
-    private List<String> dhcpRanges = null;
+    private List<String> dhcpRanges;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("nw_name")
-    private String nwName = null;
+    private String nwName;
 
     @JsonProperty("nw_ref")
-    private String nwRef = null;
+    private String nwRef;
 
     @JsonProperty("opaque_network_id")
-    private String opaqueNetworkId = null;
+    private String opaqueNetworkId;
 
     @JsonProperty("origin_id")
-    private String originId = null;
+    private String originId;
 
     @JsonProperty("security_only_nsxt")
     private Boolean securityOnlyNsxt = false;
 
     @JsonProperty("segment_gw")
-    private String segmentGw = null;
+    private String segmentGw;
 
     @JsonProperty("segment_gw6")
-    private String segmentGw6 = null;
+    private String segmentGw6;
 
     @JsonProperty("segment_id")
-    private String segmentId = null;
+    private String segmentId;
 
     @JsonProperty("segname")
-    private String segname = null;
+    private String segname;
 
     @JsonProperty("subnet")
-    private String subnet = null;
+    private String subnet;
 
     @JsonProperty("subnet6")
-    private String subnet6 = null;
+    private String subnet6;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("tier1_id")
-    private String tier1Id = null;
+    private String tier1Id;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vlan_ids")
-    private List<String> vlanIds = null;
+    private List<String> vlanIds;
 
     @JsonProperty("vrf_context_ref")
-    private String vrfContextRef = null;
+    private String vrfContextRef;
 
 
 

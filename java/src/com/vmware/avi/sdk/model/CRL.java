@@ -22,40 +22,40 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CRL  {
     @JsonProperty("body")
-    private String body = null;
+    private String body;
 
     @JsonProperty("common_name")
-    private String commonName = null;
+    private String commonName;
 
     @JsonProperty("distinguished_name")
-    private String distinguishedName = null;
+    private String distinguishedName;
 
     @JsonProperty("etag")
-    private String etag = null;
+    private String etag;
 
     @JsonProperty("file_ref")
-    private String fileRef = null;
+    private String fileRef;
 
     @JsonProperty("fingerprint")
-    private String fingerprint = null;
+    private String fingerprint;
 
     @JsonProperty("last_refreshed")
-    private String lastRefreshed = null;
+    private String lastRefreshed;
 
     @JsonProperty("last_update")
-    private String lastUpdate = null;
+    private String lastUpdate;
 
     @JsonProperty("next_update")
-    private String nextUpdate = null;
+    private String nextUpdate;
 
     @JsonProperty("server_url")
-    private String serverUrl = null;
+    private String serverUrl;
 
     @JsonProperty("text")
-    private String text = null;
+    private String text;
 
     @JsonProperty("update_interval")
-    private Integer updateInterval = null;
+    private Integer updateInterval;
 
 
 

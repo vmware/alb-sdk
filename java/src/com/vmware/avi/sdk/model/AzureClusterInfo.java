@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AzureClusterInfo  {
     @JsonProperty("cloud_credential_ref")
-    private String cloudCredentialRef = null;
+    private String cloudCredentialRef;
 
     @JsonProperty("subscription_id")
-    private String subscriptionId = null;
+    private String subscriptionId;
 
 
 

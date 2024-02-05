@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AWSSetup  {
     @JsonProperty("access_key_id")
-    private String accessKeyId = null;
+    private String accessKeyId;
 
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("error_string")
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("privilege")
-    private String privilege = null;
+    private String privilege;
 
     @JsonProperty("region")
-    private String region = null;
+    private String region;
 
     @JsonProperty("vpc_id")
-    private String vpcId = null;
+    private String vpcId;
 
 
 

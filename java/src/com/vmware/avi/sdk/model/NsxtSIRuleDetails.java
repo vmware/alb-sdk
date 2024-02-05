@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NsxtSIRuleDetails  {
     @JsonProperty("action")
-    private String action = null;
+    private String action;
 
     @JsonProperty("destexclude")
-    private Boolean destexclude = null;
+    private Boolean destexclude;
 
     @JsonProperty("dests")
-    private List<String> dests = null;
+    private List<String> dests;
 
     @JsonProperty("direction")
-    private String direction = null;
+    private String direction;
 
     @JsonProperty("error_string")
-    private String errorString = null;
+    private String errorString;
 
     @JsonProperty("pool")
-    private String pool = null;
+    private String pool;
 
     @JsonProperty("segroup")
-    private String segroup = null;
+    private String segroup;
 
     @JsonProperty("services")
-    private List<String> services = null;
+    private List<String> services;
 
     @JsonProperty("sources")
-    private List<String> sources = null;
+    private List<String> sources;
 
 
 

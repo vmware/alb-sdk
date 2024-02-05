@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PackageDetails  {
     @JsonProperty("build")
-    private BuildInfo build = null;
+    private BuildInfo build;
 
     @JsonProperty("hash")
-    private String hash = null;
+    private String hash;
 
     @JsonProperty("patch")
-    private PatchInfo patch = null;
+    private PatchInfo patch;
 
     @JsonProperty("path")
-    private String path = null;
+    private String path;
 
 
 

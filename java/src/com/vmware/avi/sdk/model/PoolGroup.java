@@ -22,58 +22,58 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PoolGroup extends AviRestResource  {
     @JsonProperty("cloud_config_cksum")
-    private String cloudConfigCksum = null;
+    private String cloudConfigCksum;
 
     @JsonProperty("cloud_ref")
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("created_by")
-    private String createdBy = null;
+    private String createdBy;
 
     @JsonProperty("deactivate_primary_pool_on_down")
     private Boolean deactivatePrimaryPoolOnDown = false;
 
     @JsonProperty("deployment_policy_ref")
-    private String deploymentPolicyRef = null;
+    private String deploymentPolicyRef;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("enable_http2")
     private Boolean enableHttp2;
 
     @JsonProperty("fail_action")
-    private FailAction failAction = null;
+    private FailAction failAction;
 
     @JsonProperty("implicit_priority_labels")
     private Boolean implicitPriorityLabels = false;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("members")
-    private List<PoolGroupMember> members = null;
+    private List<PoolGroupMember> members;
 
     @JsonProperty("min_servers")
     private Integer minServers = 0;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("priority_labels_ref")
-    private String priorityLabelsRef = null;
+    private String priorityLabelsRef;
 
     @JsonProperty("service_metadata")
-    private String serviceMetadata = null;
+    private String serviceMetadata;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

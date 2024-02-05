@@ -22,43 +22,43 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbServiceRuntime extends AviRestResource  {
     @JsonProperty("checksum")
-    private String checksum = null;
+    private String checksum;
 
     @JsonProperty("domain_names")
-    private List<String> domainNames = null;
+    private List<String> domainNames;
 
     @JsonProperty("flr_state")
-    private List<CfgState> flrState = null;
+    private List<CfgState> flrState;
 
     @JsonProperty("groups")
-    private List<GslbPoolRuntime> groups = null;
+    private List<GslbPoolRuntime> groups;
 
     @JsonProperty("ldr_state")
-    private CfgState ldrState = null;
+    private CfgState ldrState;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("oper_status")
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
     @JsonProperty("send_event")
-    private Boolean sendEvent = null;
+    private Boolean sendEvent;
 
     @JsonProperty("send_status")
-    private Boolean sendStatus = null;
+    private Boolean sendStatus;
 
     @JsonProperty("services_state")
-    private String servicesState = null;
+    private String servicesState;
 
     @JsonProperty("sp_oper_status")
-    private OperationalStatus spOperStatus = null;
+    private OperationalStatus spOperStatus;
 
     @JsonProperty("tenant_name")
-    private String tenantName = null;
+    private String tenantName;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeHmEventShmDetails  {
     @JsonProperty("average_response_time")
-    private Integer averageResponseTime = null;
+    private Integer averageResponseTime;
 
     @JsonProperty("health_monitor")
-    private String healthMonitor = null;
+    private String healthMonitor;
 
     @JsonProperty("resp_string")
-    private String respString = null;
+    private String respString;
 
     @JsonProperty("response_code")
-    private Integer responseCode = null;
+    private Integer responseCode;
 
 
 

@@ -55,13 +55,13 @@ public class TCPProxyProfile  {
     private Integer maxRetransmissions = 8;
 
     @JsonProperty("max_segment_size")
-    private Integer maxSegmentSize = null;
+    private Integer maxSegmentSize;
 
     @JsonProperty("max_syn_retransmissions")
     private Integer maxSynRetransmissions = 8;
 
     @JsonProperty("min_rexmt_timeout")
-    private Integer minRexmtTimeout = null;
+    private Integer minRexmtTimeout;
 
     @JsonProperty("nagles_algorithm")
     private Boolean naglesAlgorithm = false;
@@ -73,7 +73,7 @@ public class TCPProxyProfile  {
     private Integer receiveWindow = 64;
 
     @JsonProperty("reorder_threshold")
-    private Integer reorderThreshold = null;
+    private Integer reorderThreshold;
 
     @JsonProperty("slow_start_scaling_factor")
     private Integer slowStartScalingFactor = 1;

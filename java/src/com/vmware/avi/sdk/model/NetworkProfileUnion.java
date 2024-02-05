@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NetworkProfileUnion  {
     @JsonProperty("sctp_fast_path_profile")
-    private SCTPFastPathProfile sctpFastPathProfile = null;
+    private SCTPFastPathProfile sctpFastPathProfile;
 
     @JsonProperty("sctp_proxy_profile")
-    private SCTPProxyProfile sctpProxyProfile = null;
+    private SCTPProxyProfile sctpProxyProfile;
 
     @JsonProperty("tcp_fast_path_profile")
-    private TCPFastPathProfile tcpFastPathProfile = null;
+    private TCPFastPathProfile tcpFastPathProfile;
 
     @JsonProperty("tcp_proxy_profile")
-    private TCPProxyProfile tcpProxyProfile = null;
+    private TCPProxyProfile tcpProxyProfile;
 
     @JsonProperty("type")
     private String type = "PROTOCOL_TYPE_TCP_PROXY";
 
     @JsonProperty("udp_fast_path_profile")
-    private UDPFastPathProfile udpFastPathProfile = null;
+    private UDPFastPathProfile udpFastPathProfile;
 
     @JsonProperty("udp_proxy_profile")
-    private UDPProxyProfile udpProxyProfile = null;
+    private UDPProxyProfile udpProxyProfile;
 
 
 

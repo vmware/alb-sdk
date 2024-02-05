@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ImageCloudData  {
     @JsonProperty("cloud_data_values")
-    private List<ImageCloudSpecificData> cloudDataValues = null;
+    private List<ImageCloudSpecificData> cloudDataValues;
 
     @JsonProperty("cloud_name")
-    private String cloudName = null;
+    private String cloudName;
 
 
     /**

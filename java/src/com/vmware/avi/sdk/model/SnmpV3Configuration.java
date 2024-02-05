@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SnmpV3Configuration  {
     @JsonProperty("engine_id")
-    private String engineId = null;
+    private String engineId;
 
     @JsonProperty("user")
-    private SnmpV3UserParams user = null;
+    private SnmpV3UserParams user;
 
 
 

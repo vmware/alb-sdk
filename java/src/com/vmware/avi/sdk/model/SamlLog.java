@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SamlLog  {
     @JsonProperty("is_saml_authentication_used")
-    private Boolean isSamlAuthenticationUsed = null;
+    private Boolean isSamlAuthenticationUsed;
 
     @JsonProperty("saml_attribute_lists")
-    private List<SamlAttribute> samlAttributeLists = null;
+    private List<SamlAttribute> samlAttributeLists;
 
     @JsonProperty("saml_auth_status")
-    private String samlAuthStatus = null;
+    private String samlAuthStatus;
 
     @JsonProperty("saml_authn_rule_match")
-    private SamlAuthnRuleMatch samlAuthnRuleMatch = null;
+    private SamlAuthnRuleMatch samlAuthnRuleMatch;
 
     @JsonProperty("saml_authz_rule_match")
-    private SamlAuthzRuleMatch samlAuthzRuleMatch = null;
+    private SamlAuthzRuleMatch samlAuthzRuleMatch;
 
     @JsonProperty("saml_session_cookie_expired")
-    private Boolean samlSessionCookieExpired = null;
+    private Boolean samlSessionCookieExpired;
 
     @JsonProperty("userid")
-    private String userid = null;
+    private String userid;
 
 
 

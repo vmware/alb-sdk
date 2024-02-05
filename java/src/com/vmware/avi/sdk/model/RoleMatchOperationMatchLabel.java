@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RoleMatchOperationMatchLabel  {
     @JsonProperty("match_label")
-    private RoleFilterMatchLabel matchLabel = null;
+    private RoleFilterMatchLabel matchLabel;
 
     @JsonProperty("match_operation")
     private String matchOperation = "ROLE_FILTER_EQUALS";

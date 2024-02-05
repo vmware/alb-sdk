@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbReplicationStats  {
     @JsonProperty("acknowledged_version")
-    private Integer acknowledgedVersion = null;
+    private Integer acknowledgedVersion;
 
     @JsonProperty("pending_object_count")
-    private Integer pendingObjectCount = null;
+    private Integer pendingObjectCount;
 
     @JsonProperty("received_version")
-    private Integer receivedVersion = null;
+    private Integer receivedVersion;
 
 
 

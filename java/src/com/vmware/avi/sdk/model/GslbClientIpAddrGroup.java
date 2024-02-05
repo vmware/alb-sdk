@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbClientIpAddrGroup  {
     @JsonProperty("addrs")
-    private List<IpAddr> addrs = null;
+    private List<IpAddr> addrs;
 
     @JsonProperty("prefixes")
-    private List<IpAddrPrefix> prefixes = null;
+    private List<IpAddrPrefix> prefixes;
 
     @JsonProperty("ranges")
-    private List<IpAddrRange> ranges = null;
+    private List<IpAddrRange> ranges;
 
     @JsonProperty("type")
     private String type = "GSLB_IP_PUBLIC";

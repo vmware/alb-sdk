@@ -7,6 +7,7 @@ package com.vmware.avi.sdk.model;
 
 import java.util.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -21,25 +22,48 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VsScaleoutParams extends AviRestResource  {
+    @JsonIgnore
+    private Boolean adminUp = false;
+
     @JsonProperty("new_vcpus")
-    private Integer newVcpus = null;
+    private Integer newVcpus;
 
     @JsonProperty("to_host_ref")
-    private String toHostRef = null;
+    private String toHostRef;
 
     @JsonProperty("to_new_se")
     private Boolean toNewSe = false;
 
     @JsonProperty("to_se_ref")
-    private String toSeRef = null;
+    private String toSeRef;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vip_id")
-    private String vipId = null;
+    private String vipId;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return adminUp
+     */
+    public Boolean getAdminUp() {
+        return adminUp;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Allowed in enterprise edition with any value, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param adminUp set the adminUp.
+     */
+    public void setAdminUp(Boolean  adminUp) {
+        this.adminUp = adminUp;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -181,6 +205,7 @@ public class VsScaleoutParams extends AviRestResource  {
   Objects.equals(this.toSeRef, objVsScaleoutParams.toSeRef)&&
   Objects.equals(this.toNewSe, objVsScaleoutParams.toNewSe)&&
   Objects.equals(this.toHostRef, objVsScaleoutParams.toHostRef)&&
+  Objects.equals(this.adminUp, objVsScaleoutParams.adminUp)&&
   Objects.equals(this.newVcpus, objVsScaleoutParams.newVcpus)&&
   Objects.equals(this.vipId, objVsScaleoutParams.vipId);
     }
@@ -189,7 +214,8 @@ public class VsScaleoutParams extends AviRestResource  {
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class VsScaleoutParams {\n");
-                  sb.append("    newVcpus: ").append(toIndentedString(newVcpus)).append("\n");
+                  sb.append("    adminUp: ").append(toIndentedString(adminUp)).append("\n");
+                        sb.append("    newVcpus: ").append(toIndentedString(newVcpus)).append("\n");
                         sb.append("    toHostRef: ").append(toIndentedString(toHostRef)).append("\n");
                         sb.append("    toNewSe: ").append(toIndentedString(toNewSe)).append("\n");
                         sb.append("    toSeRef: ").append(toIndentedString(toSeRef)).append("\n");

@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RspContentRewriteRule  {
     @JsonProperty("enable")
-    private Boolean enable = null;
+    private Boolean enable;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("pairs")
-    private List<SearchReplacePair> pairs = null;
+    private List<SearchReplacePair> pairs;
 
 
 

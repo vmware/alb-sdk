@@ -22,34 +22,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeMemoryLimitEventDetails  {
     @JsonProperty("config_memory_status")
-    private String configMemoryStatus = null;
+    private String configMemoryStatus;
 
     @JsonProperty("heap_config_hard_limit")
-    private Integer heapConfigHardLimit = null;
+    private Integer heapConfigHardLimit;
 
     @JsonProperty("heap_config_soft_limit")
-    private Integer heapConfigSoftLimit = null;
+    private Integer heapConfigSoftLimit;
 
     @JsonProperty("heap_config_usage")
-    private Integer heapConfigUsage = null;
+    private Integer heapConfigUsage;
 
     @JsonProperty("heap_conn_usage")
-    private Integer heapConnUsage = null;
+    private Integer heapConnUsage;
 
     @JsonProperty("se_ref")
-    private String seRef = null;
+    private String seRef;
 
     @JsonProperty("shm_config_hard_limit")
-    private Integer shmConfigHardLimit = null;
+    private Integer shmConfigHardLimit;
 
     @JsonProperty("shm_config_soft_limit")
-    private Integer shmConfigSoftLimit = null;
+    private Integer shmConfigSoftLimit;
 
     @JsonProperty("shm_config_usage")
-    private Integer shmConfigUsage = null;
+    private Integer shmConfigUsage;
 
     @JsonProperty("shm_conn_usage")
-    private Integer shmConnUsage = null;
+    private Integer shmConnUsage;
 
 
 

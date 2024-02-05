@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OpenStackLbPluginOp  {
     @JsonProperty("cc_id")
-    private String ccId = null;
+    private String ccId;
 
     @JsonProperty("command")
-    private String command = null;
+    private String command;
 
     @JsonProperty("detail")
-    private String detail = null;
+    private String detail;
 
     @JsonProperty("elapsed")
-    private Integer elapsed = null;
+    private Integer elapsed;
 
     @JsonProperty("id")
-    private String id = null;
+    private String id;
 
     @JsonProperty("prov")
-    private String prov = null;
+    private String prov;
 
     @JsonProperty("result")
-    private String result = null;
+    private String result;
 
 
 

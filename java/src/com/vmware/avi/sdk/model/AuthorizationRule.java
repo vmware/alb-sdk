@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AuthorizationRule  {
     @JsonProperty("action")
-    private AuthorizationAction action = null;
+    private AuthorizationAction action;
 
     @JsonProperty("enable")
     private Boolean enable = true;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("match")
-    private AuthorizationMatch match = null;
+    private AuthorizationMatch match;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

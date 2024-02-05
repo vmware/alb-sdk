@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LDAPVSConfig  {
     @JsonProperty("realm")
-    private String realm = null;
+    private String realm;
 
     @JsonProperty("se_auth_ldap_bind_timeout")
     private Integer seAuthLdapBindTimeout = 5000;

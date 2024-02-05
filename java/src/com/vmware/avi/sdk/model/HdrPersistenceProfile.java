@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HdrPersistenceProfile  {
     @JsonProperty("prst_hdr_name")
-    private String prstHdrName = null;
+    private String prstHdrName;
 
 
 

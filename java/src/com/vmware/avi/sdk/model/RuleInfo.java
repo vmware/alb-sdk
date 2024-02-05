@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RuleInfo  {
     @JsonProperty("matches")
-    private List<Matches> matches = null;
+    private List<Matches> matches;
 
     @JsonProperty("rule_group_id")
-    private String ruleGroupId = null;
+    private String ruleGroupId;
 
     @JsonProperty("rule_id")
-    private String ruleId = null;
+    private String ruleId;
 
 
     /**

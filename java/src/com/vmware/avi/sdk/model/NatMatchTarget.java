@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NatMatchTarget  {
     @JsonProperty("destination_ip")
-    private IpAddrMatch destinationIp = null;
+    private IpAddrMatch destinationIp;
 
     @JsonProperty("services")
-    private ServiceMatch services = null;
+    private ServiceMatch services;
 
     @JsonProperty("source_ip")
-    private IpAddrMatch sourceIp = null;
+    private IpAddrMatch sourceIp;
 
 
 

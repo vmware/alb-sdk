@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsAAAARdata  {
     @JsonProperty("ip6_address")
-    private IpAddr ip6Address = null;
+    private IpAddr ip6Address;
 
 
 

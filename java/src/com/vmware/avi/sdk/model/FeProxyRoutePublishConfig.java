@@ -31,7 +31,7 @@ public class FeProxyRoutePublishConfig  {
     private Integer subnet = 32;
 
     @JsonProperty("token")
-    private String token = null;
+    private String token;
 
 
 

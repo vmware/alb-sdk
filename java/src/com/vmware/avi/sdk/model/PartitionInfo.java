@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PartitionInfo  {
     @JsonProperty("path")
-    private String path = null;
+    private String path;
 
     @JsonProperty("quota")
-    private Integer quota = null;
+    private Integer quota;
 
     @JsonProperty("size")
-    private Integer size = null;
+    private Integer size;
 
 
 

@@ -22,31 +22,31 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VsError  {
     @JsonProperty("event_timestamp")
-    private TimeStamp eventTimestamp = null;
+    private TimeStamp eventTimestamp;
 
     @JsonProperty("reason")
-    private List<String> reason = null;
+    private List<String> reason;
 
     @JsonProperty("se_group_ha_mode")
-    private String seGroupHaMode = null;
+    private String seGroupHaMode;
 
     @JsonProperty("se_group_ref")
-    private String seGroupRef = null;
+    private String seGroupRef;
 
     @JsonProperty("se_ref")
-    private String seRef = null;
+    private String seRef;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("traffic_status")
-    private String trafficStatus = null;
+    private String trafficStatus;
 
     @JsonProperty("vip_id")
-    private String vipId = null;
+    private String vipId;
 
     @JsonProperty("vs_ref")
-    private String vsRef = null;
+    private String vsRef;
 
 
 

@@ -43,10 +43,10 @@ public class PortalConfiguration  {
     private Boolean enableHttps = true;
 
     @JsonProperty("http_port")
-    private Integer httpPort = null;
+    private Integer httpPort;
 
     @JsonProperty("https_port")
-    private Integer httpsPort = null;
+    private Integer httpsPort;
 
     @JsonProperty("minimum_password_length")
     private Integer minimumPasswordLength = 8;
@@ -55,16 +55,16 @@ public class PortalConfiguration  {
     private Boolean passwordStrengthCheck = false;
 
     @JsonProperty("pkiprofile_ref")
-    private String pkiprofileRef = null;
+    private String pkiprofileRef;
 
     @JsonProperty("redirect_to_https")
     private Boolean redirectToHttps = true;
 
     @JsonProperty("sslkeyandcertificate_refs")
-    private List<String> sslkeyandcertificateRefs = null;
+    private List<String> sslkeyandcertificateRefs;
 
     @JsonProperty("sslprofile_ref")
-    private String sslprofileRef = null;
+    private String sslprofileRef;
 
     @JsonProperty("use_uuid_from_input")
     private Boolean useUuidFromInput = false;

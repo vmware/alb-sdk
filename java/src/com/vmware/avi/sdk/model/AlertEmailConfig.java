@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AlertEmailConfig extends AviRestResource  {
     @JsonProperty("cc_emails")
-    private String ccEmails = null;
+    private String ccEmails;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("to_emails")
-    private String toEmails = null;
+    private String toEmails;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

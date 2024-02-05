@@ -22,43 +22,43 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeUpgradeEvents  {
     @JsonProperty("from_se_ref")
-    private String fromSeRef = null;
+    private String fromSeRef;
 
     @JsonProperty("num_se")
-    private Integer numSe = null;
+    private Integer numSe;
 
     @JsonProperty("num_se_group")
-    private Integer numSeGroup = null;
+    private Integer numSeGroup;
 
     @JsonProperty("num_vs")
-    private Integer numVs = null;
+    private Integer numVs;
 
     @JsonProperty("reason")
-    private List<String> reason = null;
+    private List<String> reason;
 
     @JsonProperty("se_group_ha_mode")
-    private String seGroupHaMode = null;
+    private String seGroupHaMode;
 
     @JsonProperty("se_group_ref")
-    private String seGroupRef = null;
+    private String seGroupRef;
 
     @JsonProperty("se_ref")
-    private String seRef = null;
+    private String seRef;
 
     @JsonProperty("sub_tasks")
-    private List<String> subTasks = null;
+    private List<String> subTasks;
 
     @JsonProperty("task")
-    private String task = null;
+    private String task;
 
     @JsonProperty("to_se_ref")
-    private String toSeRef = null;
+    private String toSeRef;
 
     @JsonProperty("traffic_status")
-    private String trafficStatus = null;
+    private String trafficStatus;
 
     @JsonProperty("vs_ref")
-    private String vsRef = null;
+    private String vsRef;
 
 
 

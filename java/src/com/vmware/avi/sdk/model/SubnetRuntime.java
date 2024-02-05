@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SubnetRuntime  {
     @JsonProperty("ip_range_runtimes")
-    private List<StaticIpRangeRuntime> ipRangeRuntimes = null;
+    private List<StaticIpRangeRuntime> ipRangeRuntimes;
 
     @JsonProperty("prefix")
-    private IpAddrPrefix prefix = null;
+    private IpAddrPrefix prefix;
 
 
     /**

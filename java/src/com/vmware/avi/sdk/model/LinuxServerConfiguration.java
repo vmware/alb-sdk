@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LinuxServerConfiguration  {
     @JsonProperty("hosts")
-    private List<LinuxServerHost> hosts = null;
+    private List<LinuxServerHost> hosts;
 
     @JsonProperty("se_inband_mgmt")
     private Boolean seInbandMgmt = false;
 
     @JsonProperty("se_log_disk_path")
-    private String seLogDiskPath = null;
+    private String seLogDiskPath;
 
     @JsonProperty("se_log_disk_size_GB")
     private Integer seLogDiskSizeGb = 5;
 
     @JsonProperty("se_sys_disk_path")
-    private String seSysDiskPath = null;
+    private String seSysDiskPath;
 
     @JsonProperty("se_sys_disk_size_GB")
     private Integer seSysDiskSizeGb = 10;
 
     @JsonProperty("ssh_user_ref")
-    private String sshUserRef = null;
+    private String sshUserRef;
 
 
     /**

@@ -34,22 +34,22 @@ public class DebugServiceEngine extends AviRestResource  {
     private String benchmarkRssHash = "SE_BENCHMARK_DISABLE_HASH";
 
     @JsonProperty("capture")
-    private Boolean capture = null;
+    private Boolean capture;
 
     @JsonProperty("capture_filters")
-    private CaptureFilters captureFilters = null;
+    private CaptureFilters captureFilters;
 
     @JsonProperty("capture_params")
-    private DebugVirtualServiceCapture captureParams = null;
+    private DebugVirtualServiceCapture captureParams;
 
     @JsonProperty("capture_pkt_filter")
-    private CapturePacketFilter capturePktFilter = null;
+    private CapturePacketFilter capturePktFilter;
 
     @JsonProperty("cpu_shares")
-    private List<DebugSeCpuShares> cpuShares = null;
+    private List<DebugSeCpuShares> cpuShares;
 
     @JsonProperty("debug_ip")
-    private DebugIpAddr debugIp = null;
+    private DebugIpAddr debugIp;
 
     @JsonProperty("enable_kdump")
     private Boolean enableKdump = false;
@@ -58,31 +58,31 @@ public class DebugServiceEngine extends AviRestResource  {
     private Boolean enableRpcTimingProfiler = false;
 
     @JsonProperty("fault")
-    private DebugSeFault fault = null;
+    private DebugSeFault fault;
 
     @JsonProperty("flags")
-    private List<DebugSeDataplane> flags = null;
+    private List<DebugSeDataplane> flags;
 
     @JsonProperty("name")
     private String name = "VM name unknown";
 
     @JsonProperty("seagent_debug")
-    private List<DebugSeAgent> seagentDebug = null;
+    private List<DebugSeAgent> seagentDebug;
 
     @JsonProperty("selogagent_debug")
-    private DebugSeAgent selogagentDebug = null;
+    private DebugSeAgent selogagentDebug;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("trace_memory")
-    private DebugTraceMemory traceMemory = null;
+    private DebugTraceMemory traceMemory;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

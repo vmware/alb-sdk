@@ -25,10 +25,10 @@ public class SSLKeyParams  {
     private String algorithm = "SSL_KEY_ALGORITHM_RSA";
 
     @JsonProperty("ec_params")
-    private SSLKeyECParams ecParams = null;
+    private SSLKeyECParams ecParams;
 
     @JsonProperty("rsa_params")
-    private SSLKeyRSAParams rsaParams = null;
+    private SSLKeyRSAParams rsaParams;
 
 
 

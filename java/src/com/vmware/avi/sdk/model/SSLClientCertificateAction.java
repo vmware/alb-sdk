@@ -25,7 +25,7 @@ public class SSLClientCertificateAction  {
     private Boolean closeConnection = false;
 
     @JsonProperty("headers")
-    private List<SSLClientRequestHeader> headers = null;
+    private List<SSLClientRequestHeader> headers;
 
 
 

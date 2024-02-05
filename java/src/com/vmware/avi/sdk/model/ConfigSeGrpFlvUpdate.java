@@ -22,22 +22,22 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ConfigSeGrpFlvUpdate  {
     @JsonProperty("new_flv")
-    private String newFlv = null;
+    private String newFlv;
 
     @JsonProperty("old_flv")
-    private String oldFlv = null;
+    private String oldFlv;
 
     @JsonProperty("se_group_name")
-    private String seGroupName = null;
+    private String seGroupName;
 
     @JsonProperty("se_group_uuid")
-    private String seGroupUuid = null;
+    private String seGroupUuid;
 
     @JsonProperty("tenant_name")
-    private String tenantName = null;
+    private String tenantName;
 
     @JsonProperty("tenant_uuid")
-    private String tenantUuid = null;
+    private String tenantUuid;
 
 
 

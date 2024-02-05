@@ -22,52 +22,52 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VrfContext extends AviRestResource  {
     @JsonProperty("attrs")
-    private List<KeyValue> attrs = null;
+    private List<KeyValue> attrs;
 
     @JsonProperty("bfd_profile")
-    private BfdProfile bfdProfile = null;
+    private BfdProfile bfdProfile;
 
     @JsonProperty("bgp_profile")
-    private BgpProfile bgpProfile = null;
+    private BgpProfile bgpProfile;
 
     @JsonProperty("cloud_ref")
-    private String cloudRef = null;
+    private String cloudRef;
 
     @JsonProperty("debugvrfcontext")
-    private DebugVrfContext debugvrfcontext = null;
+    private DebugVrfContext debugvrfcontext;
 
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("gateway_mon")
-    private List<GatewayMonitor> gatewayMon = null;
+    private List<GatewayMonitor> gatewayMon;
 
     @JsonProperty("internal_gateway_monitor")
-    private InternalGatewayMonitor internalGatewayMonitor = null;
+    private InternalGatewayMonitor internalGatewayMonitor;
 
     @JsonProperty("lldp_enable")
     private Boolean lldpEnable = true;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("static_routes")
-    private List<StaticRoute> staticRoutes = null;
+    private List<StaticRoute> staticRoutes;
 
     @JsonProperty("system_default")
     private Boolean systemDefault = false;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
     /**

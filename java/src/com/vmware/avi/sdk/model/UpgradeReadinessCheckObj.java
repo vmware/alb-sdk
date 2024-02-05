@@ -22,34 +22,34 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UpgradeReadinessCheckObj  {
     @JsonProperty("checks")
-    private List<MustChecksInfo> checks = null;
+    private List<MustChecksInfo> checks;
 
     @JsonProperty("checks_completed")
-    private Integer checksCompleted = null;
+    private Integer checksCompleted;
 
     @JsonProperty("duration")
-    private Integer duration = null;
+    private Integer duration;
 
     @JsonProperty("end_time")
-    private String endTime = null;
+    private String endTime;
 
     @JsonProperty("image_ref")
-    private String imageRef = null;
+    private String imageRef;
 
     @JsonProperty("patch_image_ref")
-    private String patchImageRef = null;
+    private String patchImageRef;
 
     @JsonProperty("start_time")
-    private String startTime = null;
+    private String startTime;
 
     @JsonProperty("state")
-    private UpgradeOpsState state = null;
+    private UpgradeOpsState state;
 
     @JsonProperty("total_checks")
-    private Integer totalChecks = null;
+    private Integer totalChecks;
 
     @JsonProperty("upgrade_ops")
-    private String upgradeOps = null;
+    private String upgradeOps;
 
 
     /**

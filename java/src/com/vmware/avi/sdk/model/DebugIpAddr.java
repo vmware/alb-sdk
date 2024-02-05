@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DebugIpAddr  {
     @JsonProperty("addrs")
-    private List<IpAddr> addrs = null;
+    private List<IpAddr> addrs;
 
     @JsonProperty("match_operation")
     private String matchOperation = "IS_IN";
 
     @JsonProperty("prefixes")
-    private List<IpAddrPrefix> prefixes = null;
+    private List<IpAddrPrefix> prefixes;
 
     @JsonProperty("ranges")
-    private List<IpAddrRange> ranges = null;
+    private List<IpAddrRange> ranges;
 
 
     /**

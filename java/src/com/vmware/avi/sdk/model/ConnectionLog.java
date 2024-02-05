@@ -25,106 +25,106 @@ public class ConnectionLog  {
     private Boolean adf = false;
 
     @JsonProperty("average_turntime")
-    private Integer averageTurntime = null;
+    private Integer averageTurntime;
 
     @JsonProperty("avg_ingress_latency_be")
-    private Integer avgIngressLatencyBe = null;
+    private Integer avgIngressLatencyBe;
 
     @JsonProperty("avg_ingress_latency_fe")
-    private Integer avgIngressLatencyFe = null;
+    private Integer avgIngressLatencyFe;
 
     @JsonProperty("client_dest_port")
-    private Integer clientDestPort = null;
+    private Integer clientDestPort;
 
     @JsonProperty("client_ip")
-    private Integer clientIp = null;
+    private Integer clientIp;
 
     @JsonProperty("client_ip6")
-    private String clientIp6 = null;
+    private String clientIp6;
 
     @JsonProperty("client_location")
-    private String clientLocation = null;
+    private String clientLocation;
 
     @JsonProperty("client_log_filter_name")
-    private String clientLogFilterName = null;
+    private String clientLogFilterName;
 
     @JsonProperty("client_rtt")
-    private Integer clientRtt = null;
+    private Integer clientRtt;
 
     @JsonProperty("client_src_port")
-    private Integer clientSrcPort = null;
+    private Integer clientSrcPort;
 
     @JsonProperty("conn_est_time_be")
-    private Integer connEstTimeBe = null;
+    private Integer connEstTimeBe;
 
     @JsonProperty("conn_est_time_fe")
-    private Integer connEstTimeFe = null;
+    private Integer connEstTimeFe;
 
     @JsonProperty("connection_ended")
     private Boolean connectionEnded = true;
 
     @JsonProperty("dns_etype")
-    private String dnsEtype = null;
+    private String dnsEtype;
 
     @JsonProperty("dns_fqdn")
-    private String dnsFqdn = null;
+    private String dnsFqdn;
 
     @JsonProperty("dns_ips")
-    private List<Integer> dnsIps = null;
+    private List<Integer> dnsIps;
 
     @JsonProperty("dns_qtype")
-    private String dnsQtype = null;
+    private String dnsQtype;
 
     @JsonProperty("dns_request")
-    private DnsRequest dnsRequest = null;
+    private DnsRequest dnsRequest;
 
     @JsonProperty("dns_response")
-    private DnsResponse dnsResponse = null;
+    private DnsResponse dnsResponse;
 
     @JsonProperty("dns_tcp_conn_close_from_se")
-    private Boolean dnsTcpConnCloseFromSe = null;
+    private Boolean dnsTcpConnCloseFromSe;
 
     @JsonProperty("ds_log")
-    private String dsLog = null;
+    private String dsLog;
 
     @JsonProperty("gslbpool_name")
-    private String gslbpoolName = null;
+    private String gslbpoolName;
 
     @JsonProperty("gslbservice")
-    private String gslbservice = null;
+    private String gslbservice;
 
     @JsonProperty("gslbservice_name")
-    private String gslbserviceName = null;
+    private String gslbserviceName;
 
     @JsonProperty("log_id")
-    private Integer logId = null;
+    private Integer logId;
 
     @JsonProperty("max_ingress_latency_be")
-    private Integer maxIngressLatencyBe = null;
+    private Integer maxIngressLatencyBe;
 
     @JsonProperty("max_ingress_latency_fe")
-    private Integer maxIngressLatencyFe = null;
+    private Integer maxIngressLatencyFe;
 
     @JsonProperty("microservice")
-    private String microservice = null;
+    private String microservice;
 
     @JsonProperty("microservice_name")
-    private String microserviceName = null;
+    private String microserviceName;
 
     @JsonProperty("mss")
     private Integer mss = 1500;
 
     @JsonProperty("network_security_policy_rule_name")
-    private String networkSecurityPolicyRuleName = null;
+    private String networkSecurityPolicyRuleName;
 
     @JsonProperty("num_syn_retransmit")
-    private Integer numSynRetransmit = null;
+    private Integer numSynRetransmit;
 
     @JsonProperty("num_transaction")
-    private Integer numTransaction = null;
+    private Integer numTransaction;
 
     @JsonProperty("num_window_shrink")
-    private Integer numWindowShrink = null;
+    private Integer numWindowShrink;
 
     @JsonProperty("ocsp_status_resp_sent")
     private Boolean ocspStatusRespSent = false;
@@ -136,49 +136,49 @@ public class ConnectionLog  {
     private Boolean persistenceUsed = false;
 
     @JsonProperty("pool")
-    private String pool = null;
+    private String pool;
 
     @JsonProperty("pool_name")
-    private String poolName = null;
+    private String poolName;
 
     @JsonProperty("protocol")
-    private String protocol = null;
+    private String protocol;
 
     @JsonProperty("proxy_protocol")
-    private String proxyProtocol = null;
+    private String proxyProtocol;
 
     @JsonProperty("report_timestamp")
-    private Integer reportTimestamp = null;
+    private Integer reportTimestamp;
 
     @JsonProperty("retransmits")
     private Integer retransmits = 0;
 
     @JsonProperty("rx_bytes")
-    private Integer rxBytes = null;
+    private Integer rxBytes;
 
     @JsonProperty("rx_pkts")
-    private Integer rxPkts = null;
+    private Integer rxPkts;
 
     @JsonProperty("server_conn_src_ip")
-    private Integer serverConnSrcIp = null;
+    private Integer serverConnSrcIp;
 
     @JsonProperty("server_conn_src_ip6")
-    private String serverConnSrcIp6 = null;
+    private String serverConnSrcIp6;
 
     @JsonProperty("server_dest_port")
-    private Integer serverDestPort = null;
+    private Integer serverDestPort;
 
     @JsonProperty("server_ip")
-    private Integer serverIp = null;
+    private Integer serverIp;
 
     @JsonProperty("server_ip6")
-    private String serverIp6 = null;
+    private String serverIp6;
 
     @JsonProperty("server_name")
-    private String serverName = null;
+    private String serverName;
 
     @JsonProperty("server_num_window_shrink")
-    private Integer serverNumWindowShrink = null;
+    private Integer serverNumWindowShrink;
 
     @JsonProperty("server_out_of_orders")
     private Integer serverOutOfOrders = 0;
@@ -187,64 +187,64 @@ public class ConnectionLog  {
     private Integer serverRetransmits = 0;
 
     @JsonProperty("server_rtt")
-    private Integer serverRtt = null;
+    private Integer serverRtt;
 
     @JsonProperty("server_rx_bytes")
-    private Integer serverRxBytes = null;
+    private Integer serverRxBytes;
 
     @JsonProperty("server_rx_pkts")
-    private Integer serverRxPkts = null;
+    private Integer serverRxPkts;
 
     @JsonProperty("server_src_port")
-    private Integer serverSrcPort = null;
+    private Integer serverSrcPort;
 
     @JsonProperty("server_timeouts")
     private Integer serverTimeouts = 0;
 
     @JsonProperty("server_total_bytes")
-    private Integer serverTotalBytes = null;
+    private Integer serverTotalBytes;
 
     @JsonProperty("server_total_pkts")
-    private Integer serverTotalPkts = null;
+    private Integer serverTotalPkts;
 
     @JsonProperty("server_tx_bytes")
-    private Integer serverTxBytes = null;
+    private Integer serverTxBytes;
 
     @JsonProperty("server_tx_pkts")
-    private Integer serverTxPkts = null;
+    private Integer serverTxPkts;
 
     @JsonProperty("server_zero_window_size_events")
     private Integer serverZeroWindowSizeEvents = 0;
 
     @JsonProperty("service_engine")
-    private String serviceEngine = null;
+    private String serviceEngine;
 
     @JsonProperty("significance")
-    private String significance = null;
+    private String significance;
 
     @JsonProperty("significant")
-    private Integer significant = null;
+    private Integer significant;
 
     @JsonProperty("significant_log")
-    private List<String> significantLog = null;
+    private List<String> significantLog;
 
     @JsonProperty("sip_log")
-    private SipLog sipLog = null;
+    private SipLog sipLog;
 
     @JsonProperty("sni_hostname")
-    private String sniHostname = null;
+    private String sniHostname;
 
     @JsonProperty("ssl_cipher")
-    private String sslCipher = null;
+    private String sslCipher;
 
     @JsonProperty("ssl_session_id")
-    private String sslSessionId = null;
+    private String sslSessionId;
 
     @JsonProperty("ssl_version")
-    private String sslVersion = null;
+    private String sslVersion;
 
     @JsonProperty("start_timestamp")
-    private Integer startTimestamp = null;
+    private Integer startTimestamp;
 
     @JsonProperty("timeouts")
     private Integer timeouts = 0;
@@ -259,25 +259,25 @@ public class ConnectionLog  {
     private Integer totalTime = 0;
 
     @JsonProperty("tx_bytes")
-    private Integer txBytes = null;
+    private Integer txBytes;
 
     @JsonProperty("tx_pkts")
-    private Integer txPkts = null;
+    private Integer txPkts;
 
     @JsonProperty("udf")
     private Boolean udf = false;
 
     @JsonProperty("vcpu_id")
-    private Integer vcpuId = null;
+    private Integer vcpuId;
 
     @JsonProperty("virtualservice")
-    private String virtualservice = null;
+    private String virtualservice;
 
     @JsonProperty("vs_ip")
-    private Integer vsIp = null;
+    private Integer vsIp;
 
     @JsonProperty("vs_ip6")
-    private String vsIp6 = null;
+    private String vsIp6;
 
     @JsonProperty("zero_window_size_events")
     private Integer zeroWindowSizeEvents = 0;

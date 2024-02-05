@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MetricsDataSeries  {
     @JsonProperty("data")
-    private List<MetricsData> data = null;
+    private List<MetricsData> data;
 
     @JsonProperty("header")
-    private MetricsDataHeader header = null;
+    private MetricsDataHeader header;
 
 
     /**

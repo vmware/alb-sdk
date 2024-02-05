@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UpgradeControllerParams  {
     @JsonProperty("controller_patch_ref")
-    private String controllerPatchRef = null;
+    private String controllerPatchRef;
 
     @JsonProperty("image_ref")
-    private String imageRef = null;
+    private String imageRef;
 
     @JsonProperty("prechecks_only")
     private Boolean prechecksOnly = false;

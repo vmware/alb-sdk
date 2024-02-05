@@ -25,10 +25,10 @@ public class SamlIdentityProviderSettings  {
     private Integer metaDataDownloadInterval = 60;
 
     @JsonProperty("metadata")
-    private String metadata = null;
+    private String metadata;
 
     @JsonProperty("metadata_url")
-    private String metadataUrl = null;
+    private String metadataUrl;
 
     @JsonProperty("periodic_download")
     private Boolean periodicDownload = false;

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DiskUsageInfo  {
     @JsonProperty("disk_usage_on_nodes")
-    private List<DiskUsagePerNode> diskUsageOnNodes = null;
+    private List<DiskUsagePerNode> diskUsageOnNodes;
 
 
     /**

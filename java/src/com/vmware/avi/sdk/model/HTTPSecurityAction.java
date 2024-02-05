@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HTTPSecurityAction  {
     @JsonProperty("action")
-    private String action = null;
+    private String action;
 
     @JsonProperty("file")
-    private HTTPLocalFile file = null;
+    private HTTPLocalFile file;
 
     @JsonProperty("https_port")
-    private Integer httpsPort = null;
+    private Integer httpsPort;
 
     @JsonProperty("rate_profile")
-    private HTTPSecurityActionRateProfile rateProfile = null;
+    private HTTPSecurityActionRateProfile rateProfile;
 
     @JsonProperty("status_code")
-    private String statusCode = null;
+    private String statusCode;
 
 
 

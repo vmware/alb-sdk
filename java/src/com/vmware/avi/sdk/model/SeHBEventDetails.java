@@ -25,13 +25,13 @@ public class SeHBEventDetails  {
     private Integer hbType = 1;
 
     @JsonProperty("remote_se_ref")
-    private String remoteSeRef = null;
+    private String remoteSeRef;
 
     @JsonProperty("reporting_se_ref")
-    private String reportingSeRef = null;
+    private String reportingSeRef;
 
     @JsonProperty("vs_uuid")
-    private String vsUuid = null;
+    private String vsUuid;
 
 
 

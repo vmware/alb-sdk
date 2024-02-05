@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OpenStackConfiguration  {
     @JsonProperty("admin_tenant")
-    private String adminTenant = null;
+    private String adminTenant;
 
     @JsonProperty("admin_tenant_uuid")
-    private String adminTenantUuid = null;
+    private String adminTenantUuid;
 
     @JsonProperty("allowed_address_pairs")
     private Boolean allowedAddressPairs = true;
@@ -34,7 +34,7 @@ public class OpenStackConfiguration  {
     private Boolean antiAffinity = true;
 
     @JsonProperty("auth_url")
-    private String authUrl = null;
+    private String authUrl;
 
     @JsonProperty("config_drive")
     private Boolean configDrive = true;
@@ -43,13 +43,13 @@ public class OpenStackConfiguration  {
     private Boolean contrailDisablePolicy = false;
 
     @JsonProperty("contrail_endpoint")
-    private String contrailEndpoint = null;
+    private String contrailEndpoint;
 
     @JsonProperty("contrail_plugin")
     private Boolean contrailPlugin = false;
 
     @JsonProperty("custom_se_image_properties")
-    private List<Property> customSeImageProperties = null;
+    private List<Property> customSeImageProperties;
 
     @JsonProperty("enable_os_object_caching")
     private Boolean enableOsObjectCaching = false;
@@ -67,7 +67,7 @@ public class OpenStackConfiguration  {
     private String hypervisor = "KVM";
 
     @JsonProperty("hypervisor_properties")
-    private List<OpenStackHypervisorProperties> hypervisorProperties = null;
+    private List<OpenStackHypervisorProperties> hypervisorProperties;
 
     @JsonProperty("img_format")
     private String imgFormat = "OS_IMG_FMT_AUTO";
@@ -79,16 +79,16 @@ public class OpenStackConfiguration  {
     private Boolean insecure = true;
 
     @JsonProperty("keystone_host")
-    private String keystoneHost = null;
+    private String keystoneHost;
 
     @JsonProperty("map_admin_to_cloudadmin")
     private Boolean mapAdminToCloudadmin = false;
 
     @JsonProperty("mgmt_network_name")
-    private String mgmtNetworkName = null;
+    private String mgmtNetworkName;
 
     @JsonProperty("mgmt_network_uuid")
-    private String mgmtNetworkUuid = null;
+    private String mgmtNetworkUuid;
 
     @JsonProperty("name_owner")
     private Boolean nameOwner = true;
@@ -97,22 +97,22 @@ public class OpenStackConfiguration  {
     private Boolean neutronRbac = true;
 
     @JsonProperty("password")
-    private String password = null;
+    private String password;
 
     @JsonProperty("privilege")
-    private String privilege = null;
+    private String privilege;
 
     @JsonProperty("prov_name")
-    private List<String> provName = null;
+    private List<String> provName;
 
     @JsonProperty("provider_vip_networks")
-    private List<OpenStackVipNetwork> providerVipNetworks = null;
+    private List<OpenStackVipNetwork> providerVipNetworks;
 
     @JsonProperty("region")
-    private String region = null;
+    private String region;
 
     @JsonProperty("role_mapping")
-    private List<OpenStackRoleMapping> roleMapping = null;
+    private List<OpenStackRoleMapping> roleMapping;
 
     @JsonProperty("security_groups")
     private Boolean securityGroups = true;
@@ -130,7 +130,7 @@ public class OpenStackConfiguration  {
     private Boolean useKeystoneAuth = true;
 
     @JsonProperty("username")
-    private String username = null;
+    private String username;
 
     @JsonProperty("vip_port_in_admin_tenant")
     private Boolean vipPortInAdminTenant = false;

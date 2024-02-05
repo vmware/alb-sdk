@@ -22,46 +22,46 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CloudConnectorUser extends AviRestResource  {
     @JsonProperty("azure_serviceprincipal")
-    private AzureServicePrincipalCredentials azureServiceprincipal = null;
+    private AzureServicePrincipalCredentials azureServiceprincipal;
 
     @JsonProperty("azure_userpass")
-    private AzureUserPassCredentials azureUserpass = null;
+    private AzureUserPassCredentials azureUserpass;
 
     @JsonProperty("gcp_credentials")
-    private GCPCredentials gcpCredentials = null;
+    private GCPCredentials gcpCredentials;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("nsxt_credentials")
-    private NsxtCredentials nsxtCredentials = null;
+    private NsxtCredentials nsxtCredentials;
 
     @JsonProperty("oci_credentials")
-    private OCICredentials ociCredentials = null;
+    private OCICredentials ociCredentials;
 
     @JsonProperty("password")
-    private String password = null;
+    private String password;
 
     @JsonProperty("private_key")
-    private String privateKey = null;
+    private String privateKey;
 
     @JsonProperty("public_key")
-    private String publicKey = null;
+    private String publicKey;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("tencent_credentials")
-    private TencentCredentials tencentCredentials = null;
+    private TencentCredentials tencentCredentials;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("vcenter_credentials")
-    private VCenterCredentials vcenterCredentials = null;
+    private VCenterCredentials vcenterCredentials;
 
 
 

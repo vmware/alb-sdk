@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BotAllowRule  {
     @JsonProperty("action")
-    private String action = null;
+    private String action;
 
     @JsonProperty("condition")
-    private MatchTarget condition = null;
+    private MatchTarget condition;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
 
 

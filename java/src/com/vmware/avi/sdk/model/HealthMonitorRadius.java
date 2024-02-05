@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HealthMonitorRadius  {
     @JsonProperty("password")
-    private String password = null;
+    private String password;
 
     @JsonProperty("shared_secret")
-    private String sharedSecret = null;
+    private String sharedSecret;
 
     @JsonProperty("username")
-    private String username = null;
+    private String username;
 
 
 

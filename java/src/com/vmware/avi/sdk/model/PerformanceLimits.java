@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PerformanceLimits  {
     @JsonProperty("max_concurrent_connections")
-    private Integer maxConcurrentConnections = null;
+    private Integer maxConcurrentConnections;
 
     @JsonProperty("max_throughput")
-    private Integer maxThroughput = null;
+    private Integer maxThroughput;
 
 
 

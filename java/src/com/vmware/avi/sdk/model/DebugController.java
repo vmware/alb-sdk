@@ -22,28 +22,28 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DebugController extends AviRestResource  {
     @JsonProperty("filters")
-    private DebugFilterUnion filters = null;
+    private DebugFilterUnion filters;
 
     @JsonProperty("log_level")
-    private String logLevel = null;
+    private String logLevel;
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("sub_module")
-    private String subModule = null;
+    private String subModule;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("trace_level")
-    private String traceLevel = null;
+    private String traceLevel;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

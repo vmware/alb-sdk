@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbSubDomainPlacementRuntime  {
     @JsonProperty("placement_allowed")
-    private Boolean placementAllowed = null;
+    private Boolean placementAllowed;
 
     @JsonProperty("sub_domain")
-    private String subDomain = null;
+    private String subDomain;
 
     @JsonProperty("transition_ops")
     private String transitionOps = "GSLB_NONE";

@@ -22,37 +22,37 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NuageSDNController  {
     @JsonProperty("nuage_organization")
-    private String nuageOrganization = null;
+    private String nuageOrganization;
 
     @JsonProperty("nuage_password")
-    private String nuagePassword = null;
+    private String nuagePassword;
 
     @JsonProperty("nuage_port")
     private Integer nuagePort = 8443;
 
     @JsonProperty("nuage_username")
-    private String nuageUsername = null;
+    private String nuageUsername;
 
     @JsonProperty("nuage_vsd_host")
-    private String nuageVsdHost = null;
+    private String nuageVsdHost;
 
     @JsonProperty("se_domain")
-    private String seDomain = null;
+    private String seDomain;
 
     @JsonProperty("se_enterprise")
-    private String seEnterprise = null;
+    private String seEnterprise;
 
     @JsonProperty("se_network")
-    private String seNetwork = null;
+    private String seNetwork;
 
     @JsonProperty("se_policy_group")
-    private String sePolicyGroup = null;
+    private String sePolicyGroup;
 
     @JsonProperty("se_user")
-    private String seUser = null;
+    private String seUser;
 
     @JsonProperty("se_zone")
-    private String seZone = null;
+    private String seZone;
 
 
 

@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IptableRuleSet  {
     @JsonProperty("chain")
-    private String chain = null;
+    private String chain;
 
     @JsonProperty("rules")
-    private List<IptableRule> rules = null;
+    private List<IptableRule> rules;
 
     @JsonProperty("table")
-    private String table = null;
+    private String table;
 
 
 

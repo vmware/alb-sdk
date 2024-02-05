@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ControllerSize  {
     @JsonProperty("flavor")
-    private String flavor = null;
+    private String flavor;
 
     @JsonProperty("min_cpus")
-    private Integer minCpus = null;
+    private Integer minCpus;
 
     @JsonProperty("min_memory")
-    private Integer minMemory = null;
+    private Integer minMemory;
 
 
 

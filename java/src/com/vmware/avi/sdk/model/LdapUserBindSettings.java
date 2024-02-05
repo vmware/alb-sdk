@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LdapUserBindSettings  {
     @JsonProperty("dn_template")
-    private String dnTemplate = null;
+    private String dnTemplate;
 
     @JsonProperty("token")
     private String token = "<user>";
 
     @JsonProperty("user_attributes")
-    private List<String> userAttributes = null;
+    private List<String> userAttributes;
 
     @JsonProperty("user_id_attribute")
-    private String userIdAttribute = null;
+    private String userIdAttribute;
 
 
 

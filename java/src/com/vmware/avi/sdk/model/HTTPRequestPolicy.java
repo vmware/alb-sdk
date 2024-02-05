@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class HTTPRequestPolicy  {
     @JsonProperty("rules")
-    private List<HTTPRequestRule> rules = null;
+    private List<HTTPRequestRule> rules;
 
 
     /**

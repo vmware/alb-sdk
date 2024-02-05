@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SingleLicense  {
     @JsonProperty("addons")
-    private List<String> addons = null;
+    private List<String> addons;
 
     @JsonProperty("burst_cores")
-    private Integer burstCores = null;
+    private Integer burstCores;
 
     @JsonProperty("capacity")
     private Float capacity = 0.0f;
@@ -34,73 +34,73 @@ public class SingleLicense  {
     private Integer ccu = 0;
 
     @JsonProperty("cores")
-    private Float cores = null;
+    private Float cores;
 
     @JsonProperty("cpu_cores")
     private Float cpuCores = 0.0f;
 
     @JsonProperty("created_on")
-    private String createdOn = null;
+    private String createdOn;
 
     @JsonProperty("customer_name")
-    private String customerName = null;
+    private String customerName;
 
     @JsonProperty("enforced_params")
-    private List<String> enforcedParams = null;
+    private List<String> enforcedParams;
 
     @JsonProperty("expired")
     private Boolean expired = false;
 
     @JsonProperty("last_update")
-    private String lastUpdate = null;
+    private String lastUpdate;
 
     @JsonProperty("license_id")
-    private String licenseId = null;
+    private String licenseId;
 
     @JsonProperty("license_name")
-    private String licenseName = null;
+    private String licenseName;
 
     @JsonProperty("license_string")
-    private String licenseString = null;
+    private String licenseString;
 
     @JsonProperty("license_tier")
-    private List<String> licenseTier = null;
+    private List<String> licenseTier;
 
     @JsonProperty("license_type")
-    private String licenseType = null;
+    private String licenseType;
 
     @JsonProperty("max_ses")
-    private Integer maxSes = null;
+    private Integer maxSes;
 
     @JsonProperty("se_bandwidth_limits")
-    private List<SEBandwidthLimit> seBandwidthLimits = null;
+    private List<SEBandwidthLimit> seBandwidthLimits;
 
     @JsonProperty("serial_key")
-    private String serialKey = null;
+    private String serialKey;
 
     @JsonProperty("service_cores")
     private Float serviceCores = 0.0f;
 
     @JsonProperty("sockets")
-    private Integer sockets = null;
+    private Integer sockets;
 
     @JsonProperty("start_on")
-    private String startOn = null;
+    private String startOn;
 
     @JsonProperty("tenant_uuid")
-    private String tenantUuid = null;
+    private String tenantUuid;
 
     @JsonProperty("tier_type")
-    private String tierType = null;
+    private String tierType;
 
     @JsonProperty("unit")
     private String unit = "SERVICE_UNIT";
 
     @JsonProperty("valid_until")
-    private String validUntil = null;
+    private String validUntil;
 
     @JsonProperty("version")
-    private String version = null;
+    private String version;
 
 
     /**

@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RmModifyVnic  {
     @JsonProperty("mac_addr")
-    private String macAddr = null;
+    private String macAddr;
 
     @JsonProperty("network_name")
-    private String networkName = null;
+    private String networkName;
 
     @JsonProperty("network_uuid")
-    private String networkUuid = null;
+    private String networkUuid;
 
 
 

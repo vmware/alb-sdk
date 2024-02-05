@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class OpenStackHypervisorProperties  {
     @JsonProperty("hypervisor")
-    private String hypervisor = null;
+    private String hypervisor;
 
     @JsonProperty("image_properties")
-    private List<Property> imageProperties = null;
+    private List<Property> imageProperties;
 
 
 

@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AlertRuleEvent  {
     @JsonProperty("event_details")
-    private List<EventDetailsFilter> eventDetails = null;
+    private List<EventDetailsFilter> eventDetails;
 
     @JsonProperty("event_id")
-    private String eventId = null;
+    private String eventId;
 
     @JsonProperty("not_cond")
     private Boolean notCond = false;

@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IpamDnsTencentProfile  {
     @JsonProperty("cloud_credentials_ref")
-    private String cloudCredentialsRef = null;
+    private String cloudCredentialsRef;
 
     @JsonProperty("region")
-    private String region = null;
+    private String region;
 
     @JsonProperty("usable_subnet_ids")
-    private List<String> usableSubnetIds = null;
+    private List<String> usableSubnetIds;
 
     @JsonProperty("vpc_id")
-    private String vpcId = null;
+    private String vpcId;
 
     @JsonProperty("zones")
-    private List<TencentZoneNetwork> zones = null;
+    private List<TencentZoneNetwork> zones;
 
 
 

@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RemoteAuthConfiguration  {
     @JsonProperty("auth_mapping_profile_ref")
-    private String authMappingProfileRef = null;
+    private String authMappingProfileRef;
 
     @JsonProperty("auth_profile_ref")
-    private String authProfileRef = null;
+    private String authProfileRef;
 
     @JsonProperty("index")
-    private Integer index = null;
+    private Integer index;
 
 
 

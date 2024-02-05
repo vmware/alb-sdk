@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WafPolicyPSMGroup extends AviRestResource  {
     @JsonProperty("description")
-    private String description = null;
+    private String description;
 
     @JsonProperty("enable")
     private Boolean enable = true;
@@ -34,25 +34,25 @@ public class WafPolicyPSMGroup extends AviRestResource  {
     private Boolean isLearningGroup = false;
 
     @JsonProperty("locations")
-    private List<WafPSMLocation> locations = null;
+    private List<WafPSMLocation> locations;
 
     @JsonProperty("markers")
-    private List<RoleFilterMatchLabel> markers = null;
+    private List<RoleFilterMatchLabel> markers;
 
     @JsonProperty("miss_action")
     private String missAction = "WAF_ACTION_NO_OP";
 
     @JsonProperty("name")
-    private String name = null;
+    private String name;
 
     @JsonProperty("tenant_ref")
-    private String tenantRef = null;
+    private String tenantRef;
 
     @JsonProperty("url")
     private String url = "url";
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
 
 

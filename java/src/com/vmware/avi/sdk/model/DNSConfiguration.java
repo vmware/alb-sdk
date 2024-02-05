@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DNSConfiguration  {
     @JsonProperty("search_domain")
-    private String searchDomain = null;
+    private String searchDomain;
 
     @JsonProperty("server_list")
-    private List<IpAddr> serverList = null;
+    private List<IpAddr> serverList;
 
 
 

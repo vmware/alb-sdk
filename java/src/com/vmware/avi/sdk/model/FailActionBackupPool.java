@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class FailActionBackupPool  {
     @JsonProperty("backup_pool_ref")
-    private String backupPoolRef = null;
+    private String backupPoolRef;
 
 
 

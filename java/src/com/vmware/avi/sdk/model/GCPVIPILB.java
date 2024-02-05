@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GCPVIPILB  {
     @JsonProperty("cloud_router_names")
-    private List<String> cloudRouterNames = null;
+    private List<String> cloudRouterNames;
 
 
     /**

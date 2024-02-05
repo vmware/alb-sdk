@@ -22,19 +22,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AuthorizationMatch  {
     @JsonProperty("access_token")
-    private JWTMatch accessToken = null;
+    private JWTMatch accessToken;
 
     @JsonProperty("attr_matches")
-    private List<AuthAttributeMatch> attrMatches = null;
+    private List<AuthAttributeMatch> attrMatches;
 
     @JsonProperty("host_hdr")
-    private HostHdrMatch hostHdr = null;
+    private HostHdrMatch hostHdr;
 
     @JsonProperty("method")
-    private MethodMatch method = null;
+    private MethodMatch method;
 
     @JsonProperty("path")
-    private PathMatch path = null;
+    private PathMatch path;
 
 
 

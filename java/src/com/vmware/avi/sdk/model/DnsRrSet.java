@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DnsRrSet  {
     @JsonProperty("cname")
-    private DnsCnameRdata cname = null;
+    private DnsCnameRdata cname;
 
     @JsonProperty("fqdn")
-    private String fqdn = null;
+    private String fqdn;
 
     @JsonProperty("ip6_addresses")
-    private List<DnsAAAARdata> ip6Addresses = null;
+    private List<DnsAAAARdata> ip6Addresses;
 
     @JsonProperty("ip_addresses")
-    private List<DnsARdata> ipAddresses = null;
+    private List<DnsARdata> ipAddresses;
 
     @JsonProperty("nses")
-    private List<DnsNsRdata> nses = null;
+    private List<DnsNsRdata> nses;
 
     @JsonProperty("ttl")
-    private Integer ttl = null;
+    private Integer ttl;
 
     @JsonProperty("type")
-    private String type = null;
+    private String type;
 
 
 

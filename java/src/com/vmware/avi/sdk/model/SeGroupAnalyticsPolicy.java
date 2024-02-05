@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SeGroupAnalyticsPolicy  {
     @JsonProperty("metrics_event_thresholds")
-    private List<MetricsEventThreshold> metricsEventThresholds = null;
+    private List<MetricsEventThreshold> metricsEventThresholds;
 
 
     /**

@@ -25,37 +25,37 @@ public class AnomalyEventDetails  {
     private Float deviation = 0.0f;
 
     @JsonProperty("metric_id")
-    private String metricId = null;
+    private String metricId;
 
     @JsonProperty("metric_timestamp")
-    private String metricTimestamp = null;
+    private String metricTimestamp;
 
     @JsonProperty("model")
     private String model = "EXPONENTIAL_WEIGHTED_MOVING_AVG";
 
     @JsonProperty("models")
-    private List<String> models = null;
+    private List<String> models;
 
     @JsonProperty("node_id")
-    private String nodeId = null;
+    private String nodeId;
 
     @JsonProperty("obj_type")
-    private String objType = null;
+    private String objType;
 
     @JsonProperty("pool_name")
-    private String poolName = null;
+    private String poolName;
 
     @JsonProperty("pool_uuid")
-    private String poolUuid = null;
+    private String poolUuid;
 
     @JsonProperty("priority")
-    private String priority = null;
+    private String priority;
 
     @JsonProperty("server")
-    private String server = null;
+    private String server;
 
     @JsonProperty("value")
-    private Float value = null;
+    private Float value;
 
 
 

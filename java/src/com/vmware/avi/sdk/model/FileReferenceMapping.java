@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class FileReferenceMapping  {
     @JsonProperty("file_path")
-    private String filePath = null;
+    private String filePath;
 
     @JsonProperty("reference")
-    private String reference = null;
+    private String reference;
 
 
 

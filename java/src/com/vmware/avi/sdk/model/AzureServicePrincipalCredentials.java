@@ -22,13 +22,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AzureServicePrincipalCredentials  {
     @JsonProperty("application_id")
-    private String applicationId = null;
+    private String applicationId;
 
     @JsonProperty("authentication_token")
-    private String authenticationToken = null;
+    private String authenticationToken;
 
     @JsonProperty("tenant_id")
-    private String tenantId = null;
+    private String tenantId;
 
 
 

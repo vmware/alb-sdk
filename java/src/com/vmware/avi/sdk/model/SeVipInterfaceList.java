@@ -25,16 +25,16 @@ public class SeVipInterfaceList  {
     private Boolean isPortchannel = false;
 
     @JsonProperty("networks")
-    private List<DiscoveredNetwork> networks = null;
+    private List<DiscoveredNetwork> networks;
 
     @JsonProperty("vip_intf_ip")
-    private IpAddr vipIntfIp = null;
+    private IpAddr vipIntfIp;
 
     @JsonProperty("vip_intf_ip6")
-    private IpAddr vipIntfIp6 = null;
+    private IpAddr vipIntfIp6;
 
     @JsonProperty("vip_intf_mac")
-    private String vipIntfMac = null;
+    private String vipIntfMac;
 
     @JsonProperty("vlan_id")
     private Integer vlanId = 0;

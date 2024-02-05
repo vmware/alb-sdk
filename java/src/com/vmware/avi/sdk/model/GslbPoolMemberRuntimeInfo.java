@@ -22,67 +22,67 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GslbPoolMemberRuntimeInfo  {
     @JsonProperty("app_type")
-    private String appType = null;
+    private String appType;
 
     @JsonProperty("cluster_uuid")
-    private String clusterUuid = null;
+    private String clusterUuid;
 
     @JsonProperty("controller_status")
-    private OperationalStatus controllerStatus = null;
+    private OperationalStatus controllerStatus;
 
     @JsonProperty("datapath_status")
-    private List<GslbPoolMemberDatapathStatus> datapathStatus = null;
+    private List<GslbPoolMemberDatapathStatus> datapathStatus;
 
     @JsonProperty("fqdn")
-    private String fqdn = null;
+    private String fqdn;
 
     @JsonProperty("gs_name")
-    private String gsName = null;
+    private String gsName;
 
     @JsonProperty("gs_uuid")
-    private String gsUuid = null;
+    private String gsUuid;
 
     @JsonProperty("health_monitor_info")
-    private List<String> healthMonitorInfo = null;
+    private List<String> healthMonitorInfo;
 
     @JsonProperty("ip")
-    private IpAddr ip = null;
+    private IpAddr ip;
 
     @JsonProperty("ip_value_to_se")
-    private Integer ipValueToSe = null;
+    private Integer ipValueToSe;
 
     @JsonProperty("ipv6_value_to_se")
-    private List<Integer> ipv6ValueToSe = null;
+    private List<Integer> ipv6ValueToSe;
 
     @JsonProperty("oper_ips")
-    private List<IpAddr> operIps = null;
+    private List<IpAddr> operIps;
 
     @JsonProperty("oper_status")
-    private OperationalStatus operStatus = null;
+    private OperationalStatus operStatus;
 
     @JsonProperty("services")
-    private List<Service> services = null;
+    private List<Service> services;
 
     @JsonProperty("site_name")
-    private String siteName = null;
+    private String siteName;
 
     @JsonProperty("sp_pools")
-    private List<GslbServiceSitePersistencePool> spPools = null;
+    private List<GslbServiceSitePersistencePool> spPools;
 
     @JsonProperty("vip_type")
-    private String vipType = null;
+    private String vipType;
 
     @JsonProperty("vs_name")
-    private String vsName = null;
+    private String vsName;
 
     @JsonProperty("vs_uuid")
-    private String vsUuid = null;
+    private String vsUuid;
 
     @JsonProperty("vserver_l4_metrics")
-    private VserverL4MetricsObj vserverL4Metrics = null;
+    private VserverL4MetricsObj vserverL4Metrics;
 
     @JsonProperty("vserver_l7_metrics")
-    private VserverL7MetricsObj vserverL7Metrics = null;
+    private VserverL7MetricsObj vserverL7Metrics;
 
 
 

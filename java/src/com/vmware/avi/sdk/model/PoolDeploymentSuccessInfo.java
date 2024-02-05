@@ -22,25 +22,25 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PoolDeploymentSuccessInfo extends AviRestResource  {
     @JsonProperty("prev_in_service_pool_name")
-    private String prevInServicePoolName = null;
+    private String prevInServicePoolName;
 
     @JsonProperty("prev_in_service_pool_ref")
-    private String prevInServicePoolRef = null;
+    private String prevInServicePoolRef;
 
     @JsonProperty("ratio")
-    private Integer ratio = null;
+    private Integer ratio;
 
     @JsonProperty("results")
-    private List<PGDeploymentRuleResult> results = null;
+    private List<PGDeploymentRuleResult> results;
 
     @JsonProperty("uuid")
-    private String uuid = null;
+    private String uuid;
 
     @JsonProperty("webhook_reason")
-    private String webhookReason = null;
+    private String webhookReason;
 
     @JsonProperty("webhook_result")
-    private Boolean webhookResult = null;
+    private Boolean webhookResult;
 
 
 
