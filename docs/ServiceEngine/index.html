@@ -485,10 +485,12 @@ font-style: italic;
       } ],
       "network_ref" : "aeiou",
       "adapter" : "aeiou",
+      "num_tx_descriptors" : "",
       "pci_id" : "aeiou",
       "network_name" : "aeiou",
       "ip6_autocfg_enabled" : true,
       "del_pending" : true,
+      "num_rx_descriptors" : "",
       "is_mgmt" : true,
       "mtu" : 123,
       "connected" : true,
@@ -622,10 +624,12 @@ font-style: italic;
     } ],
     "network_ref" : "aeiou",
     "adapter" : "aeiou",
+    "num_tx_descriptors" : "",
     "pci_id" : "aeiou",
     "network_name" : "aeiou",
     "ip6_autocfg_enabled" : true,
     "del_pending" : true,
+    "num_rx_descriptors" : "",
     "is_mgmt" : true,
     "mtu" : 123,
     "connected" : true,
@@ -2548,10 +2552,12 @@ font-style: italic;
     } ],
     "network_ref" : "aeiou",
     "adapter" : "aeiou",
+    "num_tx_descriptors" : "",
     "pci_id" : "aeiou",
     "network_name" : "aeiou",
     "ip6_autocfg_enabled" : true,
     "del_pending" : true,
+    "num_rx_descriptors" : "",
     "is_mgmt" : true,
     "mtu" : 123,
     "connected" : true,
@@ -4100,10 +4106,12 @@ font-style: italic;
     } ],
     "network_ref" : "aeiou",
     "adapter" : "aeiou",
+    "num_tx_descriptors" : "",
     "pci_id" : "aeiou",
     "network_name" : "aeiou",
     "ip6_autocfg_enabled" : true,
     "del_pending" : true,
+    "num_rx_descriptors" : "",
     "is_mgmt" : true,
     "mtu" : 123,
     "connected" : true,
@@ -4404,10 +4412,12 @@ font-style: italic;
     } ],
     "network_ref" : "aeiou",
     "adapter" : "aeiou",
+    "num_tx_descriptors" : "",
     "pci_id" : "aeiou",
     "network_name" : "aeiou",
     "ip6_autocfg_enabled" : true,
     "del_pending" : true,
+    "num_rx_descriptors" : "",
     "is_mgmt" : true,
     "mtu" : 123,
     "connected" : true,
@@ -6327,6 +6337,8 @@ font-style: italic;
 <div class="param">mtu (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
 <div class="param">network_name (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">network_ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  It is a reference to an object of type Network. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
+<div class="param">num_rx_descriptors (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> User defined value for RX descriptor ring size, expressed as power of 2. Setting a value of 0 implies the default value for that environment. (Tech-Preview, vCenter only). Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
+<div class="param">num_tx_descriptors (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> User defined value for TX descriptor ring size, expressed as power of 2. Setting a value of 0 implies the default value for that environment. (Tech-Preview, vCenter only). Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition. format: uint32</div>
 <div class="param">pci_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">port_uuid (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. </div>
 <div class="param">vlan_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition. format: int32</div>
