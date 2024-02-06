@@ -39,7 +39,7 @@ setup(
     ],
     include_package_data=True,
     install_requires=['pyyaml', 'requests', 'pyparsing', 'paramiko', 'avisdk',
-                      'pycrypto', 'ecdsa', 'pyOpenssl', 'nose-html-reporting',
+                      'pycryptodome', 'ecdsa', 'pyOpenssl', 'nose-html-reporting',
                       'nose-testconfig', 'ConfigParser', 'xlsxwriter', 'jinja2',
                       'pandas', 'openpyxl', 'appdirs',  'pexpect',
                       'unittest2', 'networkx', 'xmltodict'],
