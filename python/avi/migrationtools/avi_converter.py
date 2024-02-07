@@ -105,7 +105,9 @@ class AviConverter(object):
         '''
         list_with_max_280_char = ['VsVip', 'PoolGroup', 'Pool', 'NetworkSecurityPolicy', 'HTTPPolicySet']
         for key in avi_config.keys():
-            if key in list_with_max_280_char:
+            if key in ['UnsupportedProfiles', 'OneConnect']:
+                pass
+            elif key in list_with_max_280_char:
                 self.trim_length_if_name_field_exceeds_max_char(avi_config[key], avi_config, key, 280)
             else:
                 self.trim_length_if_name_field_exceeds_max_char(avi_config[key], avi_config, key, 256)
