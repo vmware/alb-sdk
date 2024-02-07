@@ -35,7 +35,7 @@ located in this repository will help you understand the basics about how Avi wor
                          [--patch PATCH]
                          [--prefix PREFIX]
                          [--segroup SEGROUP]
-                         [--traffic_state]
+                         [--traffic_enabled]
                          [--vs_filter VS_FILTER]
                          [--vs_level_status]
                          [-s {enable,deactivate}]
@@ -49,12 +49,7 @@ located in this repository will help you understand the basics about how Avi wor
 
     Example to use -s or --vs_state option:
         nsxt_converter.py -s enable
-    Usecase: Default behaviour is VS state is disabled and traffic state is enabled after migration.
-    'enable' value means VS will be migrated with enable state. Recommended for VSs with non shared vip's.
-    Do not use IF LB configs are having shared VIP's. (Default 'traffic_state' is 'enable',
-    recommended - traffic_state should be set to 'deactivate')
-    'deactivate' value means VS will be migrated with inactive state. Recommended and default for VSs with shared vip's.
-    (Default 'traffic_state' is 'enable', recommended - traffic_state should be kept as 'enable')
+    Usecase: Traffic enabled state of a VS after conversion to AVI (default value is disable).
 
     Example to use --alb_controller_version option:
         nsxt_converter.py --alb_controller_version 21.1.4
@@ -169,13 +164,11 @@ located in this repository will help you understand the basics about how Avi wor
   --patch PATCH         Run config_patch please provide location of patch.yaml
   --prefix PREFIX       Prefix for objects
   --segroup SEGROUP     Update the available segroup ref with the custom ref
-  --traffic_state       Traffic state on all migrated VS VIPs. The default is 'enable'.
+  --traffic_enabled     Traffic Enabled on all migrated VS VIPs
   --vs_filter VS_FILTER
                         comma separated names of virtualservices.
                         Note: If patch data is supplied, vs_name should match the new name given in it
   --vs_level_status     Add columns of vs reference and overall skipped settings in status excel sheet
   -s {enable,deactivate}, --vs_state {enable,deactivate}
-                        State of created VS. The default is 'deactivate'.
-                        'enable' value means VS will be migrated with enable state. Recommended for VSs with non shared vip's. Do not use IF LB configs are having shared VIP's. (Default 'traffic_state' is 'enable', recommended - traffic_state should be set to 'deactivate')
-                        'deactivate' value means VS will be migrated with inactive state. Recommended and default for VSs with shared vip's. (Default 'traffic_state' is 'enable', recommended - traffic_state should be kept as 'enable')
+                        State of created VS
   ```
