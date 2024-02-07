@@ -249,6 +249,9 @@ public class EventDetails  {
     @JsonProperty("disc_summary")
     private VinfraDiscSummaryDetails discSummary;
 
+    @JsonProperty("disk_cleanup_event_details")
+    private LogMgrCleanupEventDetails diskCleanupEventDetails;
+
     @JsonProperty("dns_query_error")
     private DNSQueryError dnsQueryError;
 
@@ -2261,6 +2264,30 @@ public class EventDetails  {
      */
     public void setDiscSummary(VinfraDiscSummaryDetails discSummary) {
         this.discSummary = discSummary;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Log files exsiting on controller need to be cleanup.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return diskCleanupEventDetails
+     */
+    public LogMgrCleanupEventDetails getDiskCleanupEventDetails() {
+        return diskCleanupEventDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Log files exsiting on controller need to be cleanup.
+     * Field introduced in 30.2.1.
+     * Allowed in enterprise edition with any value, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param diskCleanupEventDetails set the diskCleanupEventDetails.
+     */
+    public void setDiskCleanupEventDetails(LogMgrCleanupEventDetails diskCleanupEventDetails) {
+        this.diskCleanupEventDetails = diskCleanupEventDetails;
     }
 
     /**
@@ -5564,7 +5591,8 @@ public class EventDetails  {
   Objects.equals(this.dnsQueryError, objEventDetails.dnsQueryError)&&
   Objects.equals(this.connectionEvent, objEventDetails.connectionEvent)&&
   Objects.equals(this.adaptreplEvent, objEventDetails.adaptreplEvent)&&
-  Objects.equals(this.pkiprofileDetails, objEventDetails.pkiprofileDetails);
+  Objects.equals(this.pkiprofileDetails, objEventDetails.pkiprofileDetails)&&
+  Objects.equals(this.diskCleanupEventDetails, objEventDetails.diskCleanupEventDetails);
     }
 
     @Override
@@ -5647,6 +5675,7 @@ public class EventDetails  {
                         sb.append("    detachIpStatusDetails: ").append(toIndentedString(detachIpStatusDetails)).append("\n");
                         sb.append("    disableSeMigrateDetails: ").append(toIndentedString(disableSeMigrateDetails)).append("\n");
                         sb.append("    discSummary: ").append(toIndentedString(discSummary)).append("\n");
+                        sb.append("    diskCleanupEventDetails: ").append(toIndentedString(diskCleanupEventDetails)).append("\n");
                         sb.append("    dnsQueryError: ").append(toIndentedString(dnsQueryError)).append("\n");
                         sb.append("    dnsSyncInfo: ").append(toIndentedString(dnsSyncInfo)).append("\n");
                         sb.append("    dockerUcpDetails: ").append(toIndentedString(dockerUcpDetails)).append("\n");
