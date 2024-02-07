@@ -1,9 +1,10 @@
 # Copyright 2021 VMware, Inc.
 # SPDX-License-Identifier: Apache License 2.0
 
-import time, logging
+import logging
 
-import com.vmware.nsx_policy.model_client as model_client
+from avi.migrationtools.avi_migration_utils import update_count, HTTP_RESPONSE_CODE_1XX, HTTP_RESPONSE_CODE_2XX, \
+     HTTP_RESPONSE_CODE_3XX, HTTP_RESPONSE_CODE_4XX, HTTP_RESPONSE_CODE_5XX
 
 from avi.migrationtools.avi_migration_utils import update_count
 from avi.migrationtools.nsxt_converter.conversion_util import NsxtConvUtil, csv_writer_dict_list
@@ -51,24 +52,23 @@ class MonitorConfigConv(object):
     def get_alb_response_codes(self, response_codes):
         if not response_codes:
             return None
-        HttpResponseCode = model_client.ALBHealthMonitorHttp
         codes = list()
         for code in response_codes:
             if code < 200:
-                if HttpResponseCode.HTTP_RESPONSE_CODE_1XX not in codes:
-                    codes.append(HttpResponseCode.HTTP_RESPONSE_CODE_1XX)
+                if HTTP_RESPONSE_CODE_1XX not in codes:
+                    codes.append(HTTP_RESPONSE_CODE_1XX)
             elif code > 199 and code < 300:
-                if HttpResponseCode.HTTP_RESPONSE_CODE_2XX not in codes:
-                    codes.append(HttpResponseCode.HTTP_RESPONSE_CODE_2XX)
+                if HTTP_RESPONSE_CODE_2XX not in codes:
+                    codes.append(HTTP_RESPONSE_CODE_2XX)
             elif code > 299 and code < 400:
-                if HttpResponseCode.HTTP_RESPONSE_CODE_3XX not in codes:
-                    codes.append(HttpResponseCode.HTTP_RESPONSE_CODE_3XX)
+                if HTTP_RESPONSE_CODE_3XX not in codes:
+                    codes.append(HTTP_RESPONSE_CODE_3XX)
             elif code > 399 and code < 500:
-                if HttpResponseCode.HTTP_RESPONSE_CODE_4XX not in codes:
-                    codes.append(HttpResponseCode.HTTP_RESPONSE_CODE_4XX)
+                if HTTP_RESPONSE_CODE_4XX not in codes:
+                    codes.append(HTTP_RESPONSE_CODE_4XX)
             elif code > 499 and code < 600:
-                if HttpResponseCode.HTTP_RESPONSE_CODE_5XX not in codes:
-                    codes.append(HttpResponseCode.HTTP_RESPONSE_CODE_5XX)
+                if HTTP_RESPONSE_CODE_5XX not in codes:
+                    codes.append(HTTP_RESPONSE_CODE_5XX)
         return codes
 
     def update_alb_type(self, lb_hm, alb_hm, skipped):
@@ -229,7 +229,7 @@ class MonitorConfigConv(object):
                 # time.sleep(1)
 
                 LOG.info('[MONITOR] Migration completed for HM {}'.format(lb_hm['display_name']))
-            except:
+            except Exception as e:
                 update_count('error')
                 LOG.error("[MONITOR] Failed to convert Monitor: %s" % lb_hm['display_name'],
                           exc_info=True)
@@ -312,24 +312,30 @@ class MonitorConfigConv(object):
             http_response=lb_hm.get('response_body'),
             http_response_code=self.get_alb_response_codes(lb_hm['response_status_codes']),
         )
+        
         if lb_hm.get('server_ssl_profile_binding', None):
             server_ssl_profile_binding = lb_hm.get('server_ssl_profile_binding', None)
-            ssl_profile_path = server_ssl_profile_binding["ssl_profile_path"]
-            ssl_profile_name = ssl_profile_path.split('/')[-1]
-            if prefix:
-                ssl_profile_name = prefix + '-' + ssl_profile_name
-            ssl_attributes = {
-                "ssl_profile_ref": conv_utils.get_object_ref(
-                    ssl_profile_name, 'sslprofile', tenant=tenant)
-            }
-
+            if server_ssl_profile_binding.get("ssl_profile_path"):
+                ssl_profile_path = server_ssl_profile_binding["ssl_profile_path"]
+                ssl_profile_name = ssl_profile_path.split('/')[-1]
+                if prefix:
+                    ssl_profile_name = prefix + '-' + ssl_profile_name
+                ssl_attributes = {
+                    "ssl_profile_ref": conv_utils.get_object_ref(
+                        ssl_profile_name, 'sslprofile', tenant=tenant)
+                }
+            else:
+                # attaching system default ssl profile to https type monitor
+                ssl_attributes =  {
+                            "ssl_profile_ref": "/api/sslprofile/?tenant=%s&name=%s"
+                            % ("admin", "System-Standard")
+                        }
             if server_ssl_profile_binding.get("client_certificate_path", None):
                 ca_cert_obj = self.update_ca_cert_obj(lb_hm['display_name'], alb_config, [], tenant, prefix,
                                                       cert_type='SSL_CERTIFICATE_TYPE_VIRTUALSERVICE')
                 ssl_attributes[
                     "ssl_key_and_certificate_ref"] = "/api/sslkeyandcertificate/?tenant=%s&name=%s" % (
-                tenant, ca_cert_obj.get(
-                    "name"))
+                    tenant, ca_cert_obj.get("name"))
                 converted_alb_ssl_certs.append(ca_cert_obj)
 
             alb_hm["https_monitor"]['ssl_attributes'] = ssl_attributes
