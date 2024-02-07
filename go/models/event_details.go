@@ -236,6 +236,9 @@ type EventDetails struct {
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	DiscSummary *VinfraDiscSummaryDetails `json:"disc_summary,omitempty"`
 
+	// Log files exsiting on controller need to be cleanup. Field introduced in 30.2.1. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
+	DiskCleanupEventDetails *LogMgrCleanupEventDetails `json:"disk_cleanup_event_details,omitempty"`
+
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSQueryError *DNSQueryError `json:"dns_query_error,omitempty"`
 
