@@ -139,10 +139,16 @@ class MigrationUtil(object):
         tenant = 'admin'
         if name and name.startswith('/'):
             parts = name.split('/', 2)
-            tenant = parts[1]
-            if not parts[2]:
-                LOG.warning('Invalid tenant ref : %s', name)
-            name = parts[2]
+            # Max length of parts is 3 assuming tenant present. If no tenant, parse just the name
+            if len(parts) == 2:
+                # e.g /test-pool
+                name = parts[1]
+            else:
+                # e.g /admin/test-pool
+                tenant = parts[1]
+                if not parts[2]:
+                    LOG.warning('Invalid tenant ref : %s', name)
+                name = parts[2]
         elif name and '/' in name:
             parts = name.split('/')
             # Changed the index to get the tenant and name in case of

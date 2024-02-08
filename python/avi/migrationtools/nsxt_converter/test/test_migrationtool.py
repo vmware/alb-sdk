@@ -12,6 +12,8 @@ import pytest
 import yaml
 
 import subprocess
+from avi.migrationtools.nsxt_converter.test.conftest import option
+
 from avi.migrationtools.avi_migration_utils import get_count, set_update_count
 from avi.migrationtools.nsxt_converter.nsxt_converter import NsxtConverter
 
@@ -21,8 +23,8 @@ from avi.migrationtools.test.common.test_clean_reboot \
     import verify_controller_is_up, clean_reboot
 
 
-config_file = pytest.config.getoption('--config')
-output_file = pytest.config.getoption('--out')
+config_file = option.config
+output_file = option.out
 
 with open(config_file) as f:
     file_attribute = yaml.load(f, Loader=yaml.Loader)
@@ -55,7 +57,8 @@ setup = dict(nsxt_ip=file_attribute['nsxt_ip'],
                                        'patch.yaml')),
              traffic_state = 'enable',
              default_params_file = None,
-             cloud_tenant = 'admin'
+             cloud_tenant = 'admin',
+             skip_datapath_check = False,
         )
 
 if not os.path.exists(setup.get("output_file_path")):
@@ -90,8 +93,8 @@ def Nsxt_conv(nsxt_ip=None, nsxt_user=None, nsxt_password=None, ssh_root_passwor
                      ansible_filter_types=ansible_filter_types, vs_level_status=vs_level_status,
                      option=option, ansible=ansible, no_object_merge=object_merge_check,
                      vs_state=vs_state, vs_filter=vs_filter, segroup=segroup, patch=patch,
-                     traffic_state=traffic_state, default_params_file=default_params_file, cloud_tenant=cloud_tenant
-                     )
+                     traffic_state=traffic_state, default_params_file=default_params_file, cloud_tenant=cloud_tenant,
+                     skip_datapath_check = False)
     nsxt_converter = NsxtConverter(args)
     nsxt_converter.convert_lb_config(args)
 

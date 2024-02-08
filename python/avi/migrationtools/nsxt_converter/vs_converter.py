@@ -226,11 +226,23 @@ class VsConfigConv(object):
                     else:
                         vsvip_ref = conv_utils.get_object_ref(vip["name"], 'vsvip', tenant=tenant, cloud_name=cloud_name)
                     alb_vs['vsvip_ref'] = vsvip_ref
-                alb_vs['services'] = [
-                    dict(
-                        port=int(lb_vs.get('ports')[0]),
-                        enable_ssl=False
-                    )]
+                alb_vs['services'] = []
+                ports = lb_vs.get('ports')
+                for port in ports:
+                    if isinstance(port, str) and '-' in port:
+                        port_start = port.split("-")[0]
+                        port_end_range = port.split("-")[-1]
+                        port_dict = dict(
+                            port=int(port_start),
+                            enable_ssl=False,
+                            port_range_end=port_end_range
+                        )
+                    else:
+                        port_dict = dict(
+                            port=int(port),
+                            enable_ssl=False
+                        )
+                    alb_vs['services'].append(port_dict)
                 skipped = [val for val in lb_vs.keys()
                            if val not in self.supported_attr]
                 na_list = [val for val in lb_vs.keys()
@@ -713,9 +725,6 @@ class VsConfigConv(object):
                         main_pool_ref = sorry_pool_ref
                         is_pg_created = True
 
-                if not pool_present and self.skip_datapath_check:
-                    # As datapath validation is skipped, attach pool anyway
-                    pool_present = True
                 if is_pg_created:
                     self.add_teir_to_poolgroup(main_pool_ref, alb_config, tier1_lr)
                     self.update_poolgroup_with_cloud(main_pool_ref, alb_config, cloud_name, tenant, cloud_tenant)
@@ -829,9 +838,9 @@ class VsConfigConv(object):
 
                 LOG.info('[VirtualService] Migration completed for VS {}'.format(lb_vs['display_name']))
             except Exception as e:
-                LOG.error("[VirtualService] Failed to convert VirtualService: {}".format(e))
+                LOG.error("[VirtualService] Error while converting VirtualService: {}".format(e))
                 update_count('error')
-                LOG.error("[VirtualServer] Failed to convert Monitor: %s" % lb_vs['display_name'],
+                LOG.error("[VirtualServer] Failed to convert VirtualService: %s" % lb_vs['display_name'],
                           exc_info=True)
                 conv_utils.add_status_row('virtualservice', None, lb_vs['display_name'],
                                           conv_const.STATUS_ERROR, "Conversion failure")
