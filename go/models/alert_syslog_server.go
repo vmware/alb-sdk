@@ -25,7 +25,7 @@ type AlertSyslogServer struct {
 	SyslogServer *string `json:"syslog_server"`
 
 	// The destination Syslog server's service port. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	SyslogServerPort *uint32 `json:"syslog_server_port,omitempty"`
+	SyslogServerPort *int32 `json:"syslog_server_port,omitempty"`
 
 	// Enable TLS to the syslog server. Field introduced in 17.2.16, 18.2.3. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	TLSEnable *bool `json:"tls_enable,omitempty"`

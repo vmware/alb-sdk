@@ -134,13 +134,13 @@ type VirtualService struct {
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
 	// Maximum connections per second per client IP. Allowed values are 10-1000. Special values are 0- unlimited. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	MaxCpsPerClient *uint32 `json:"max_cps_per_client,omitempty"`
+	MaxCpsPerClient *int32 `json:"max_cps_per_client,omitempty"`
 
 	// Microservice representing the virtual service. It is a reference to an object of type MicroService. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	MicroserviceRef *string `json:"microservice_ref,omitempty"`
 
 	// Minimum number of UP pools to mark VS up. Field introduced in 18.2.1, 17.2.12. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	MinPoolsUp *uint32 `json:"min_pools_up,omitempty"`
+	MinPoolsUp *int32 `json:"min_pools_up,omitempty"`
 
 	// Name for the Virtual Service. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
@@ -217,7 +217,7 @@ type VirtualService struct {
 	SslProfileSelectors []*SSLProfileSelector `json:"ssl_profile_selectors,omitempty"`
 
 	// Expected number of SSL session cache entries (may be exceeded). Allowed values are 1024-16383. Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
-	SslSessCacheAvgSize *uint32 `json:"ssl_sess_cache_avg_size,omitempty"`
+	SslSessCacheAvgSize *int32 `json:"ssl_sess_cache_avg_size,omitempty"`
 
 	// The SSO Policy attached to the virtualservice. It is a reference to an object of type SSOPolicy. Field introduced in 18.2.3. Allowed in Enterprise edition with any value, Enterprise with Cloud Services edition.
 	SsoPolicyRef *string `json:"sso_policy_ref,omitempty"`
@@ -287,5 +287,5 @@ type VirtualService struct {
 	WafPolicyRef *string `json:"waf_policy_ref,omitempty"`
 
 	// The Quality of Service weight to assign to traffic transmitted from this Virtual Service.  A higher weight will prioritize traffic versus other Virtual Services sharing the same Service Engines. Allowed values are 1-128. Allowed in Enterprise edition with any value, Essentials edition(Allowed values- 1), Basic edition(Allowed values- 1), Enterprise with Cloud Services edition.
-	Weight *uint32 `json:"weight,omitempty"`
+	Weight *int32 `json:"weight,omitempty"`
 }

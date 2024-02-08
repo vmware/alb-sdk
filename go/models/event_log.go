@@ -57,7 +57,7 @@ type EventLog struct {
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	ReportTimestamp *uint64 `json:"report_timestamp"`
+	ReportTimestamp *int64 `json:"report_timestamp"`
 
 	//  Allowed in Enterprise edition with any value, Essentials, Basic, Enterprise with Cloud Services edition.
 	Tenant *string `json:"tenant,omitempty"`
