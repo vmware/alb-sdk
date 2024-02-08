@@ -707,8 +707,9 @@ class VsConfigConv(object):
                     if is_pg_created:
                         self.add_sorry_pool_member_to_poolgroup(alb_config, main_pool_ref, sorry_pool_ref)
                     else:
-                        self.attach_pool_to_sry_pool_group(alb_config, main_pool_ref,
-                                                           sorry_pool_ref, tenant, cloud_name)
+                        if pool_present:
+                            self.attach_pool_to_sry_pool_group(alb_config, main_pool_ref,
+                                                            sorry_pool_ref, tenant, cloud_name)
                         main_pool_ref = sorry_pool_ref
                         is_pg_created = True
 
