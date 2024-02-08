@@ -284,9 +284,19 @@ class NSXUtil():
     @retry_with_backoff(retries=10, backoff_in_seconds=1)
     def call_api_with_retry(self, api, *args, **kwargs):
         time.sleep(0.1)
-        results = api(*args, **kwargs)
-        if results and "results" in vars(results):
-            results = results.to_dict().get("results", [])
+        results = []
+        api_resp = api(*args, **kwargs)
+        if api_resp and "results" in vars(api_resp):
+            results = api_resp.to_dict().get("results", [])
+
+            while 'cursor' in api_resp.to_dict() and api_resp.to_dict()['cursor']:
+                print(f"Cursor: {api_resp.to_dict()['cursor']}")
+                kwargs['cursor'] = str(api_resp.to_dict()['cursor'])
+                api_resp = api(*args, **kwargs)
+                if api_resp and "results" in vars(api_resp):
+                    for result in api_resp.to_dict().get("results", []):
+                        results.append(result)
+
         return results
 
     def nsx_cleanup(self):
@@ -1250,11 +1260,13 @@ class NSXUtil():
              })
 
     def get_nsx_group_details(self,group_path):
+        ns_group_name = None
         domain_id = group_path.split('domains/')[1].split("/groups")[0]
         ns_group_id = group_path.split('groups/')[1]
         ns_groups_list = self.call_api_with_retry(self.nsx_api_client.infra.domains.Groups.list, domain_id)
         ns_group = [ns_g for ns_g in ns_groups_list if ns_g['id'] == ns_group_id]
-        ns_group_name = ns_group[0]['display_name']
+        if ns_group:
+            ns_group_name = ns_group[0]['display_name']
         ns_ip_addr = None
         ip_addr = self.call_api_with_retry(self.nsx_api_client.infra.domains.groups.members.IpAddresses.list, domain_id,
                                            ns_group_id)

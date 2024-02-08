@@ -214,8 +214,12 @@ class ConfigPatch(object):
     def deep_update(self, d, u):
         for k, v in u.items():
             if isinstance(v, collections.Mapping):
+                if len(v.keys()) == 0:
+                    d[k] = {}
                 d[k] = self.deep_update(d.get(k, {}), v)
             elif isinstance(v, list):
+                if len(v) == 0:
+                    d[k] = []
                 for index, i in enumerate(v):
                     if isinstance(i, collections.Mapping) and k in d and len(d[k]) >= index + 1:
                         d[k][index] = self.deep_update(d[k][index], i)
